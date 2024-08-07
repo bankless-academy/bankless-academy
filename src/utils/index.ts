@@ -35,6 +35,7 @@ import { airstackGraphQLClient } from 'utils/airstack'
 import { wagmiConfig } from 'utils/wagmi'
 import { NFTAddress } from 'constants/nft'
 import { TABLES, db } from 'utils/db'
+import { ACHIEVEMENTS } from 'constants/achievements'
 
 declare global {
   interface Window {
@@ -821,16 +822,19 @@ export const lessonLink = (lesson: LessonType) => {
   return `${DOMAIN_URL}/lessons/${lesson.slug}`
 }
 
+export function calculateExplorerAchievements(achievements: string[]) {
+  return achievements
+    .map((a) => ACHIEVEMENTS[a]?.points)
+    .reduce((acc, points) => (acc += points), 0)
+
+}
+
 export function calculateExplorerScore(stats: UserStatsType) {
   return 3 * (stats?.datadisks?.length || 0) +
     (stats?.handbooks?.length || 0) +
     (stats?.badges || 0) +
     (stats?.referrals?.length || 0) +
-    (stats?.donations
-      ? (Object.keys(stats?.donations)?.length || 0) > 1
-        ? 3
-        : 0
-      : 0) +
+    calculateExplorerAchievements(stats?.achievements || []) +
     (stats?.valid_stamps?.length || 0)
 
 }
@@ -913,3 +917,71 @@ export const formatTime = (ms: number) => {
     .toString()
     .padStart(2, '0')},${milliseconds.toString().padStart(3, '0').substring(0, 2)}`
 }
+
+export const fetchGitcoinDonations = async (address: string): Promise<number> => {
+  const query = `
+    query MyQuery {
+      donations(
+        condition: {donorAddress: "${address}"}
+      ) {
+        id
+      }
+    }
+  `;
+
+  try {
+    const response = await fetch('https://grants-stack-indexer-v2.gitcoin.co/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    // console.log(result.data);
+    return result.data?.donations?.length || 0
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return 0
+  }
+};
+
+export const fetchGivethDonations = async (address: string): Promise<number> => {
+  const query = `
+    query {
+  userByAddress(address: "${address}") {
+    donationsCount
+  }
+}
+  `;
+
+  try {
+    const response = await fetch('https://mainnet.serve.giveth.io/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    // console.log(result.data);
+    return result.data?.userByAddress?.donationsCount || 0
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return 0
+  }
+};

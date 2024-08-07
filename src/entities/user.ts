@@ -5,7 +5,8 @@ export interface UserStatsType {
   valid_stamps?: string[]
   ens_name?: string
   ens_avatar?: string
-  donations?: { [key: string]: any }
+  // donations?: { [key: string]: any }
+  achievements?: string[]
   score?: number
   rank?: number
   referrals?: { profile_address: string, created_at: string }[]

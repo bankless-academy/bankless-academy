@@ -10,12 +10,12 @@ import {
 import { useTranslation } from 'react-i18next'
 
 import { LESSONS } from 'constants/index'
-import { DONATION_MAPPING } from 'constants/donations'
 import InternalLink from './InternalLink'
 import { STAMP_PLATFORMS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from './ExternalLink'
+import { ACHIEVEMENTS } from 'constants/achievements'
 
 const Badges = ({
   badges,
@@ -25,17 +25,12 @@ const Badges = ({
 }: {
   badges: number[] | string[]
   badgeToHighlight?: number | string
-  type?: 'badges' | 'collectibles' | 'donations' | 'stamps'
+  type?: 'badges' | 'collectibles' | 'achievements' | 'stamps'
   isMyProfile?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [isSmallScreen] = useSmallScreen()
-
-  // TEMP
-  const achievements = badges.some(
-    (badge) => type === 'donations' && badge in DONATION_MAPPING
-  )
 
   return (
     <>
@@ -58,35 +53,46 @@ const Badges = ({
               spacing={2}
               p={2}
             >
-              {type === 'donations' && (
-                <Box
-                  justifySelf="center"
-                  p={1}
-                  position="relative"
-                  opacity={achievements ? '1' : '0.3'}
-                >
-                  <ExternalLink href="https://explorer.gitcoin.co/?utm_source=app.banklessacademy.com&utm_medium=website&utm_campaign=explorer_profile">
-                    <Image
-                      src={`/images/gitcoin/gitcoin-donation.png`}
-                      border="1px #2d292d solid"
-                      borderRadius="8px"
-                      alt={'Gitcoin Donation'}
-                      title={'Gitcoin Donation'}
-                    />
-                    <Box
-                      fontWeight="bold"
-                      fontSize="sm"
-                      position="absolute"
-                      bottom="-11px"
-                      left="0"
-                      width="100%"
-                      textAlign="center"
-                      color="white"
-                    >
-                      Gitcoin Donation
-                    </Box>
-                  </ExternalLink>
-                </Box>
+              {type === 'achievements' && (
+                <>
+                  {Object.keys(ACHIEVEMENTS).map((a, index) => {
+                    if (a in ACHIEVEMENTS) {
+                      const achievement = ACHIEVEMENTS[a]
+                      const isAchievementDone = (badges as string[]).includes(a)
+                      return (
+                        <Box
+                          justifySelf="center"
+                          p={1}
+                          position="relative"
+                          opacity={isAchievementDone ? '1' : '0.3'}
+                          key={`achievement-${index}`}
+                        >
+                          <ExternalLink href={achievement.link}>
+                            <Image
+                              src={achievement.image}
+                              border="1px #2d292d solid"
+                              borderRadius="8px"
+                              alt={achievement.description}
+                              title={achievement.description}
+                            />
+                            <Box
+                              fontWeight="bold"
+                              fontSize="sm"
+                              position="absolute"
+                              bottom="-11px"
+                              left="0"
+                              width="100%"
+                              textAlign="center"
+                              color="white"
+                            >
+                              {achievement.description}
+                            </Box>
+                          </ExternalLink>
+                        </Box>
+                      )
+                    }
+                  })}
+                </>
               )}
               {badges?.map((badge, index) => {
                 if (!type) {

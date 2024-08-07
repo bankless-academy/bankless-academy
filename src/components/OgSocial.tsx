@@ -1,5 +1,5 @@
 import { MAX_BADGES } from 'constants/badges'
-import { MAX_ACHIEVEMENT } from 'constants/donations'
+import { MAX_ACHIEVEMENT } from 'constants/achievements'
 import { DEFAULT_ENS, DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { MAX_STAMPS } from 'constants/passport'
 
@@ -136,7 +136,8 @@ const OgSocial = ({
     badges?: number
     datadisks?: string[]
     handbooks?: string[]
-    donations?: { [key: string]: any }
+    // donations?: { [key: string]: any }
+    achievements?: string[]
     valid_stamps?: string[]
     referrals?: { profile_address: string; created_at: string }[]
   }

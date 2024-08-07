@@ -28,7 +28,8 @@ const Og = (): JSX.Element => (
           badges: 10,
           handbooks: ['H001'],
           datadisks: ['D001'],
-          donations: ['GR11', 'GR12'],
+          // donations: ['GR11', 'GR12'],
+          achievements: ['Gitcoin', 'Giveth'],
           valid_stamps: ['Google', 'Facebook'],
           referrals: [
             {

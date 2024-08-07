@@ -33,6 +33,7 @@ import {
   shortenAddress,
   api,
   Mixpanel,
+  calculateExplorerAchievements,
 } from 'utils/index'
 import ProgressTitle from 'components/ProgressTitle'
 import ExternalLink from 'components/ExternalLink'
@@ -42,7 +43,7 @@ import Layout from 'layout/Layout'
 import SelectCommunity from 'components/SelectCommunity'
 import Helper from 'components/Helper'
 import { maxReferrals } from 'components/OgSocial'
-import { MAX_ACHIEVEMENT } from 'constants/donations'
+import { MAX_ACHIEVEMENT } from 'constants/achievements'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -586,30 +587,19 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 <Box w={isSmallScreen ? '100%' : '50%'}>
                   <ProgressTitle
                     title={`Achievement`}
-                    score={
-                      user.stats?.donations
-                        ? (Object.keys(user.stats?.donations)?.length || 0) > 1
-                          ? 3
-                          : 0
-                        : 0
-                    }
+                    score={calculateExplorerAchievements(
+                      user.stats?.achievements || []
+                    )}
                     max={MAX_ACHIEVEMENT}
                     definition={
                       <>
-                        {'Donating during a '}
-                        <ExternalLink
-                          underline="true"
-                          href="https://explorer.gitcoin.co/?utm_source=app.banklessacademy.com&utm_medium=website&utm_campaign=explorer_profile"
-                        >
-                          Gitcoin Round
-                        </ExternalLink>
-                        {` using Allo Protocol (after June 2023) increases your score by 3 points. More achievements to come soon! `}
+                        {`Donating on Gitcoin using Allo Protocol (donation made after June 2023) or Giveth increases your score by 3 points. More achievements to come soon!`}
                       </>
                     }
                   />
                   <Badges
-                    badges={Object.keys(user.stats?.donations || {})}
-                    type="donations"
+                    badges={user.stats?.achievements || []}
+                    type="achievements"
                     isMyProfile={isMyProfile}
                   />
                 </Box>
