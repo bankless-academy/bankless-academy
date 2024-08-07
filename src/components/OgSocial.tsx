@@ -1,7 +1,13 @@
 import { MAX_BADGES } from 'constants/badges'
-import { MAX_ACHIEVEMENT } from 'constants/achievements'
+import { ACHIEVEMENTS, MAX_ACHIEVEMENT } from 'constants/achievements'
 import { DEFAULT_ENS, DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { MAX_STAMPS } from 'constants/passport'
+
+export function calculateExplorerAchievements(achievements: string[]) {
+  return achievements
+    .map((a) => ACHIEVEMENTS[a]?.points)
+    .reduce((acc, points) => (acc += points), 0)
+}
 
 const DEFAULT_IMAGE =
   'https://app.banklessacademy.com/images/explorer_avatar.png'
@@ -107,13 +113,7 @@ const Skills = ({ stats }) => {
       />
       <Skill
         skill="Achievement"
-        score={
-          stats?.donations
-            ? (Object.keys(stats?.donations)?.length || 0) > 1
-              ? 3
-              : 0
-            : 0
-        }
+        score={calculateExplorerAchievements(stats?.achievements || [])}
         max={MAX_ACHIEVEMENT}
       />
     </div>

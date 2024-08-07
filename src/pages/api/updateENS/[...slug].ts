@@ -58,7 +58,6 @@ export default async function handler(
       TABLE.users.id,
       TABLE.users.ens_name,
       TABLE.users.ens_avatar,
-      TABLE.users.donations,
       TABLE.users.ba_stamps
     )
     .whereILike('address', addressLowerCase)

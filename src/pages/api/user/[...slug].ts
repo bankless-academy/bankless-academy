@@ -86,7 +86,7 @@ export default async function handler(
         TABLE.users.address,
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
-        TABLE.users.donations,
+        TABLE.users.achievements,
         TABLE.users.ba_stamps,
         TABLE.users.community,
       )
@@ -119,7 +119,7 @@ export default async function handler(
         TABLE.users.address,
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
-        TABLE.users.donations,
+        TABLE.users.achievements,
         TABLE.users.ba_stamps,
         TABLE.users.community,
       )
@@ -143,6 +143,7 @@ export default async function handler(
     .select(
       TABLE.users.address, TABLE.users.ens_name, TABLE.users.created_at)
     .where(TABLE.users.referrer, '=', userExist.id)
+    // ignore referrals via smart_nft
     .whereNull(TABLE.users.smart_nft_start_at)
   const referrals = referralsAddresses.map(r => { return { profile_address: r.ens_name || r.address, created_at: r.created_at } })
   console.log('referrals', referrals)
@@ -196,15 +197,31 @@ export default async function handler(
   console.log(stamps)
   stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
   // achievements
-  stats.achievements = []
-  const gitcoinDonations = await fetchGitcoinDonations(userExist?.address?.toLowerCase())
-  // console.log('gitcoinDonations', gitcoinDonations)
-  if (gitcoinDonations > 0)
-    stats.achievements.push('Gitcoin')
-  const givethDonations = await fetchGivethDonations(userExist?.address?.toLowerCase())
-  // console.log('gitcoinDonations', gitcoinDonations)
-  if (givethDonations > 0)
-    stats.achievements.push('Giveth')
+  stats.achievements = (userExist && typeof userExist?.achievements === 'object' && userExist?.achievements !== null) ? Object.keys(userExist?.achievements) : []
+  if (!stats.achievements?.includes('gitcoin-donation')) {
+    const gitcoinDonations = await fetchGitcoinDonations(userExist?.address?.toLowerCase())
+    // console.log('gitcoinDonations', gitcoinDonations)
+    if (gitcoinDonations > 0) {
+      stats.achievements.push('gitcoin-donation')
+      const updated = await db.raw(
+        `update "users" set "achievements" = achievements || ? where "users"."id" = ?`,
+        [{ 'gitcoin-donation': gitcoinDonations }, userExist?.id]
+      )
+      console.log('gitcoin-donation updated', updated)
+    }
+  }
+  if (!stats.achievements?.includes('giveth-donation')) {
+    const givethDonations = await fetchGivethDonations(userExist?.address?.toLowerCase())
+    // console.log('gitcoinDonations', gitcoinDonations)
+    if (givethDonations > 0) {
+      stats.achievements.push('giveth-donation')
+      const updated = await db.raw(
+        `update "users" set "achievements" = achievements || ? where "users"."id" = ?`,
+        [{ 'giveth-donation': givethDonations }, userExist?.id]
+      )
+      console.log('giveth-donation updated', updated)
+    }
+  }
   // donations (deprecated)
   // stats.donations = userExist.donations
   if (addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c') {
@@ -236,7 +253,7 @@ export default async function handler(
         "Farcaster",
         "Poh"
       ],
-      achievements: ['Gitcoin', 'Giveth'],
+      achievements: ['gitcoin-donation', 'giveth-donation'],
       // "donations": {
       //   "GCR1": {
       //     "amountUSD": "N/A"
