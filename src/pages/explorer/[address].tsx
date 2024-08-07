@@ -213,6 +213,8 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
 
   const referrals = user?.stats?.referrals?.length || 0
 
+  const displayCommunity = isMyProfile ? community : user?.community
+
   if (user)
     // TODO: create Profile component
     return (
@@ -248,7 +250,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               textAlign="center"
               textTransform="uppercase"
               mt="40px"
-              mb={community ? '0' : '8'}
+              mb={displayCommunity ? '0' : '8'}
             >
               {user.ensName?.includes('.')
                 ? user.ensName
@@ -256,7 +258,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 ? profileAddress
                 : shortenAddress(profileAddress)}
             </Text>
-            {community && (
+            {displayCommunity && (
               <Box mt="0" mb="6" mx="4" display="flex" placeContent="center">
                 <Text
                   as="h2"
@@ -268,7 +270,9 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 >
                   <Box display="flex" justifyContent="center">
                     <Box>-[&nbsp;</Box>
-                    <Box mt="2.5px">{community}</Box>
+                    <Box mt="2.5px">
+                      {isMyProfile ? community : user.community}
+                    </Box>
                     <Box>&nbsp;]-</Box>
                   </Box>
                 </Text>
@@ -389,6 +393,9 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                             </Button>
                           </InputRightAddon>
                         </InputGroup>
+                      </Box>
+                      <Box mt="4" color="#ffffff70">
+                        * Your email is not displayed in your public profile.
                       </Box>
                     </Box>
                     <Box m="8" flex="1">
@@ -514,30 +521,34 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     definition={`Share knowledge with others by onboarding them. Each validated referral (new Explorer claimed at least 1 Badge) increases your score by 1 point.`}
                   />
                   <Box maxHeight="445px" overflow="scroll">
-                    {referrals > 0
-                      ? user?.stats?.referrals?.map((ref, index) => {
-                          const date = new Date(ref.created_at)
-                            .toLocaleDateString('en-GB')
-                            .replace(/\//g, '/')
-                          return (
-                            <Box
-                              key={`ref-${index}`}
-                              mt="2"
-                              display="flex"
-                              placeContent="end"
+                    {referrals > 0 ? (
+                      user?.stats?.referrals?.map((ref, index) => {
+                        const date = new Date(ref.created_at)
+                          .toLocaleDateString('en-GB')
+                          .replace(/\//g, '/')
+                        return (
+                          <Box
+                            key={`ref-${index}`}
+                            mt="2"
+                            display="flex"
+                            placeContent="end"
+                          >
+                            <ExternalLink
+                              href={`/explorer/${ref.profile_address}`}
                             >
-                              <ExternalLink
-                                href={`/explorer/${ref.profile_address}`}
-                              >
-                                {ref.profile_address?.includes('.')
-                                  ? ref.profile_address
-                                  : shortenAddress(ref.profile_address)}
-                              </ExternalLink>
-                              <Box ml="2">{date}</Box>
-                            </Box>
-                          )
-                        })
-                      : 'No referrals yet'}
+                              {ref.profile_address?.includes('.')
+                                ? ref.profile_address
+                                : shortenAddress(ref.profile_address)}
+                            </ExternalLink>
+                            <Box ml="2">{date}</Box>
+                          </Box>
+                        )
+                      })
+                    ) : (
+                      <Box mt="2" display="flex" placeContent="end">
+                        No referrals yet
+                      </Box>
+                    )}
                   </Box>
                 </Box>
               </Box>
@@ -593,7 +604,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     max={MAX_ACHIEVEMENT}
                     definition={
                       <>
-                        {`Donating on Gitcoin using Allo Protocol (donation made after June 2023) or Giveth increases your score by 3 points. More achievements to come soon!`}
+                        {`Donating on Gitcoin since June 2023 (using Allo Protocol) or Giveth increases your score by 3 points. More achievements to come soon!`}
                       </>
                     }
                   />
