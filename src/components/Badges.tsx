@@ -59,37 +59,37 @@ const Badges = ({
                     if (a in ACHIEVEMENTS) {
                       const achievement = ACHIEVEMENTS[a]
                       const isAchievementDone = (badges as string[]).includes(a)
-                      return (
-                        <Box
-                          justifySelf="center"
-                          p={1}
-                          position="relative"
-                          opacity={isAchievementDone ? '1' : '0.3'}
-                          key={`achievement-${index}`}
-                        >
-                          <ExternalLink href={achievement.link}>
-                            <Image
-                              src={achievement.image}
-                              border="1px #2d292d solid"
-                              borderRadius="8px"
-                              alt={achievement.description}
-                              title={achievement.description}
-                            />
-                            <Box
-                              fontWeight="bold"
-                              fontSize="sm"
-                              position="absolute"
-                              bottom="-11px"
-                              left="0"
-                              width="100%"
-                              textAlign="center"
-                              color="white"
-                            >
-                              {achievement.description}
-                            </Box>
-                          </ExternalLink>
-                        </Box>
-                      )
+                      if (isAchievementDone || isMyProfile)
+                        return (
+                          <Box
+                            justifySelf="center"
+                            p={1}
+                            position="relative"
+                            opacity={isAchievementDone ? '1' : '0.3'}
+                            key={`achievement-${index}`}
+                          >
+                            <ExternalLink href={achievement.link}>
+                              <Box>
+                                <Image
+                                  src={achievement.image}
+                                  border="1px #2d292d solid"
+                                  borderRadius="8px"
+                                  alt={achievement.description}
+                                  title={achievement.description}
+                                />
+                                <Box
+                                  fontWeight="bold"
+                                  fontSize="sm"
+                                  width="100%"
+                                  textAlign="center"
+                                  color="white"
+                                >
+                                  {achievement.description}
+                                </Box>
+                              </Box>
+                            </ExternalLink>
+                          </Box>
+                        )
                     }
                   })}
                 </>

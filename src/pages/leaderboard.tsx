@@ -138,7 +138,7 @@ const columns = [
           </>
         )
     },
-    header: 'Donations',
+    header: 'Achievements',
   }),
   columnHelper.accessor('valid_stamps_count', {
     cell: (info) => {

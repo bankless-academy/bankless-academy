@@ -604,7 +604,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     max={MAX_ACHIEVEMENT}
                     definition={
                       <>
-                        {`Donating on Gitcoin since June 2023 (using Allo Protocol) or Giveth increases your score by 3 points. More achievements to come soon!`}
+                        {`Donations made on Gitcoin since June 2023 (using Allo Protocol) or Giveth increases your score by 3 points. More achievements to come soon!`}
                       </>
                     }
                   />
