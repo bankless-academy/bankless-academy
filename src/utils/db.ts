@@ -24,7 +24,9 @@ export const TABLE = {
     sybil_user_id: 'users.sybil_user_id',
     ens_name: 'users.ens_name',
     ens_avatar: 'users.ens_avatar',
-    donations: 'users.donations',
+    // deprecated
+    // donations: 'users.donations',
+    achievements: 'users.achievements',
     referrer: 'users.referrer',
     ba_stamps: 'users.ba_stamps',
     socials: 'users.socials',
