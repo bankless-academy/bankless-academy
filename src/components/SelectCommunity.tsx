@@ -80,6 +80,18 @@ const SelectCommunity = (): any => {
               </Button>
             </InputRightAddon>
           </InputGroup>
+          <Box placeContent="center" ml="2">
+            <XCircle
+              color="#ffffff70"
+              size={24}
+              cursor="pointer"
+              onClick={async () => {
+                setCommunity('')
+                updateCommunity('')
+                setAddCommunity(false)
+              }}
+            />
+          </Box>
         </Box>
       ) : (
         <Box mt="8" mx="4" display="flex" placeContent="center">
