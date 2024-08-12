@@ -44,6 +44,7 @@ import SelectCommunity from 'components/SelectCommunity'
 import Helper from 'components/Helper'
 import { maxReferrals } from 'components/OgSocial'
 import { MAX_ACHIEVEMENT } from 'constants/achievements'
+import { MacScrollbar } from 'mac-scrollbar'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -520,7 +521,12 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     max={maxReferrals(referrals)}
                     definition={`Share knowledge with others by onboarding them. Each validated referral (new Explorer claimed at least 1 Badge) increases your score by 1 point.`}
                   />
-                  <Box maxHeight="445px" overflow="scroll">
+
+                  <MacScrollbar
+                    skin="dark"
+                    suppressScrollX={true}
+                    style={{ height: '445px', paddingRight: '18px' }}
+                  >
                     {referrals > 0 ? (
                       user?.stats?.referrals?.map((ref, index) => {
                         const date = new Date(ref.created_at)
@@ -549,7 +555,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                         No referrals yet
                       </Box>
                     )}
-                  </Box>
+                  </MacScrollbar>
                 </Box>
               </Box>
               <Box
@@ -595,7 +601,10 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 m="8"
                 maxW={isSmallScreen ? '600px' : '100%'}
               >
-                <Box w={isSmallScreen ? '100%' : '50%'}>
+                <Box
+                  w={isSmallScreen ? '100%' : '50%'}
+                  mr={isSmallScreen ? '0' : '50px'}
+                >
                   <ProgressTitle
                     title={`Achievement`}
                     score={calculateExplorerAchievements(
@@ -614,6 +623,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     isMyProfile={isMyProfile}
                   />
                 </Box>
+                <Box w={isSmallScreen ? '100%' : '50%'}></Box>
               </Box>
             </Box>
           </Card>
