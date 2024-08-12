@@ -489,7 +489,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     isProfile={true}
                     definition={
                       <>
-                        <Box mb="4">{`Explorer Score measures your Bankless Journey's progress. Score calculation and point system can involve in the future.`}</Box>
+                        <Box mb="4">{`Your Explorer Score measures progress along your Bankless journey. Score calculation may evolve in the future.`}</Box>
                       </>
                     }
                   />
