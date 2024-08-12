@@ -483,7 +483,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 >
                   {user.stats.score || 0}
                 </Box>
-                <Box position="absolute" top="35px" right="11px">
+                <Box position="absolute" top="38px" right="109px">
                   <Helper
                     title={`Explorer Score`}
                     isProfile={true}
