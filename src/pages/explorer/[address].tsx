@@ -498,14 +498,14 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               <Box display={isSmallScreen ? 'block' : 'flex'} m="8">
                 <Box
                   w={isSmallScreen ? '100%' : '50%'}
-                  mr={isSmallScreen ? '0' : '50px'}
+                  pr={isSmallScreen ? '0' : '50px'}
+                  flex="1 1 0px"
                 >
                   <ProgressTitle
                     title={`Badge`}
                     score={user.stats.badges || 0}
                     max={MAX_BADGES}
                     definition={`Each lesson Badge increases your score by 1 point.`}
-                    // description={`Your KNOWLEDGE score measures your lesson & quest progress.`}
                   />
                   <Badges
                     badges={user.badgeTokenIds}
@@ -514,7 +514,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     isMyProfile={isMyProfile}
                   />
                 </Box>
-                <Box w={isSmallScreen ? '100%' : '50%'}>
+                <Box w={isSmallScreen ? '100%' : '50%'} flex="1 1 0px">
                   <ProgressTitle
                     title={`Referral`}
                     score={referrals}
@@ -525,7 +525,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   <MacScrollbar
                     skin="dark"
                     suppressScrollX={true}
-                    style={{ height: '445px', paddingRight: '18px' }}
+                    style={{ maxHeight: '445px', paddingRight: '18px' }}
                   >
                     {referrals > 0 ? (
                       user?.stats?.referrals?.map((ref, index) => {
@@ -565,7 +565,8 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               >
                 <Box
                   w={isSmallScreen ? '100%' : '50%'}
-                  mr={isSmallScreen ? '0' : '50px'}
+                  pr={isSmallScreen ? '0' : '50px'}
+                  flex="1 1 0px"
                 >
                   <ProgressTitle
                     title={`Ownership`}
@@ -582,7 +583,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     isMyProfile={isMyProfile}
                   />
                 </Box>
-                <Box w={isSmallScreen ? '100%' : '50%'}>
+                <Box w={isSmallScreen ? '100%' : '50%'} flex="1 1 0px">
                   <ProgressTitle
                     title={`Humanity`}
                     score={user.stats?.valid_stamps?.length || 0}
@@ -603,7 +604,8 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               >
                 <Box
                   w={isSmallScreen ? '100%' : '50%'}
-                  mr={isSmallScreen ? '0' : '50px'}
+                  pr={isSmallScreen ? '0' : '50px'}
+                  flex="1 1 0px"
                 >
                   <ProgressTitle
                     title={`Achievement`}
@@ -623,7 +625,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     isMyProfile={isMyProfile}
                   />
                 </Box>
-                <Box w={isSmallScreen ? '100%' : '50%'}></Box>
+                <Box w={isSmallScreen ? '100%' : '50%'} flex="1 1 0px"></Box>
               </Box>
             </Box>
           </Card>
