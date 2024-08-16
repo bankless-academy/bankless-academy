@@ -15,9 +15,12 @@ import {
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
+import { signMessage } from '@wagmi/core'
 import { ShieldCheck, PlusCircle, XCircle } from '@phosphor-icons/react'
 
-import { api } from 'utils/index'
+import { api, verifySignature } from 'utils/index'
+import { WALLET_SIGNATURE_MESSAGE_PROFILE } from 'constants/index'
+import { wagmiConfig } from 'utils/wagmi'
 
 const COMMUNITIES = [
   'Boys Club',
@@ -34,21 +37,53 @@ const SelectCommunity = (): any => {
   const { address } = useAccount()
   const [community, setCommunity] = useLocalStorage(`community`, '')
   const [addCommunity, setAddCommunity] = useState(false)
+  const [profileSignature, setProfileSignature] = useLocalStorage(
+    'profile-signature',
+    ''
+  )
 
-  const updateCommunity = async (community) => {
-    try {
-      const result = await api('/api/update-community', {
-        address,
-        community,
-      })
-      if (result && result.status === 200) {
-        setCommunity(community)
-      } else {
-        // TODO: handle errors
-        console.log(result)
+  const updateCommunity = async (newCommunity) => {
+    let signature = profileSignature
+    const previousCommunity = community
+    let isSignatureAreadyVerified = verifySignature(
+      address,
+      signature,
+      WALLET_SIGNATURE_MESSAGE_PROFILE
+    )
+    if (!isSignatureAreadyVerified) {
+      try {
+        signature = await signMessage(wagmiConfig, {
+          account: address,
+          message: WALLET_SIGNATURE_MESSAGE_PROFILE,
+        })
+      } catch (error) {
+        console.log(error)
       }
-    } catch (error) {
-      console.log(error)
+      setProfileSignature(signature)
+      isSignatureAreadyVerified = verifySignature(
+        address,
+        signature,
+        WALLET_SIGNATURE_MESSAGE_PROFILE
+      )
+    }
+    if (isSignatureAreadyVerified) {
+      try {
+        const result = await api('/api/update-community', {
+          address,
+          community: newCommunity,
+          signature,
+        })
+        if (result && result.status === 200) {
+          setCommunity(newCommunity)
+        } else {
+          // TODO: handle errors
+          console.log(result)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    } else {
+      setCommunity(previousCommunity)
     }
   }
 

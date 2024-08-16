@@ -3,9 +3,9 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
-  GENERIC_ERROR_MESSAGE,
+  GENERIC_ERROR_MESSAGE, WALLET_SIGNATURE_MESSAGE_PROFILE,
 } from 'constants/index'
-// import { verifySignature } from 'utils/index'
+import { verifySignature } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 
 export default async function handler(
@@ -24,11 +24,11 @@ export default async function handler(
 
   // TODO: replace with https://docs.walletconnect.com/web3modal/nextjs/siwe
 
-  // if (!signature)
-  //   return res.status(400).json({ error: 'Missing wallet signature' })
+  if (!signature)
+    return res.status(400).json({ error: 'Missing wallet signature' })
 
-  // if (!verifySignature(address, signature, community))
-  //   return res.status(403).json({ error: 'Wrong signature' })
+  if (!verifySignature(address, signature, WALLET_SIGNATURE_MESSAGE_PROFILE))
+    return res.status(403).json({ error: 'Wrong signature' })
 
   try {
     const userId = await getUserId(address, embed)
