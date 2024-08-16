@@ -1194,7 +1194,11 @@ const Lesson = ({
             <>
               <Button
                 size="lg"
-                isDisabled={lesson.badgeId && !Quest?.isQuestCompleted}
+                isDisabled={
+                  lesson.badgeId &&
+                  !Quest?.isQuestCompleted &&
+                  lesson.slug !== 'ethereum-basics'
+                }
                 onClick={() => closeLesson()}
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}

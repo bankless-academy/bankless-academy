@@ -164,7 +164,7 @@ With the Ethereum app layer enabled, new websites with Ethereum functionality im
 - 🤝 sending or trading currencies, stocks and other digital goods, but with **low fees and 24/7 service**.
 - 📻 connection with your favourite creators, but you can **unlock unique perks and opportunities** while ensuring your money goes directly to the artist.
 - 👪 social media, but if you dislike the platform you can **easily transfer your social circle** to a new one.
-- 🗳️ donating to your favourite projects, but even a $1 donation receives a **large matching bonus****, meaning greater impact**.
+- 🗳️ donating to your favorite projects, but even a $1 donation receives **a large matching bonus, meaning greater impact**.
 - ⚙️ renting out your computer’s processing power for **passive income**.
 
 By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has made its economy `decentralized` (this is the “d” in “dApp”). `Decentralized services` get better and better as they compete on quality — not unclear business practices and control.
