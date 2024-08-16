@@ -119,7 +119,7 @@ export default function Page({
   const [email, setEmail] = useState(localStorage.getItem('email'))
   const [initialEmail] = useState(localStorage.getItem('email'))
   const toast = useToast()
-  const [ens] = useLocalStorage(`ens-cache`, {})
+  const [ens] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
 
   const wallets = localStorage.getItem('wallets')
@@ -343,14 +343,19 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                                     isClosable: true,
                                   })
                                 else {
+                                  const addressLower = address?.toLowerCase()
                                   const result = await api(
                                     '/api/subscribe-newsletter',
                                     {
                                       email,
                                       wallet: address,
                                       ens:
-                                        address && address in ens
-                                          ? ens[address]?.name
+                                        addressLower &&
+                                        addressLower in ens &&
+                                        !ens[addressLower]?.name?.includes(
+                                          '...'
+                                        )
+                                          ? ens[addressLower]?.name
                                           : undefined,
                                     }
                                   )
