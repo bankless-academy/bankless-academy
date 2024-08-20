@@ -23,15 +23,15 @@ import { WALLET_SIGNATURE_MESSAGE_PROFILE } from 'constants/index'
 import { wagmiConfig } from 'utils/wagmi'
 
 const COMMUNITIES = [
-  'Boys Club',
-  'DAO Punk',
-  'FWB',
+  'Bankless',
+  'DAOpunks',
+  'Chippi',
   'Gitcoin',
   'Giveth',
-  'Optimism Collective',
+  'Optimism',
   'SheFi',
   'Zerion',
-].sort()
+].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
 
 const SelectCommunity = (): any => {
   const { address } = useAccount()
