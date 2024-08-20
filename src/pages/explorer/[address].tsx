@@ -507,10 +507,16 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   flex="1 1 0px"
                 >
                   <ProgressTitle
-                    title={`Badge`}
+                    title={`Badges`}
                     score={user.stats.badges || 0}
                     max={MAX_BADGES}
-                    definition={`Each lesson Badge increases your score by 1 point.`}
+                    definition={
+                      <>
+                        {`Explorers study their surroundings.`}
+                        <br />
+                        {`Each lesson badge increases your score by 1 point.`}
+                      </>
+                    }
                   />
                   <Badges
                     badges={user.badgeTokenIds}
@@ -524,7 +530,13 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     title={`Referral`}
                     score={referrals}
                     max={maxReferrals(referrals)}
-                    definition={`Share knowledge with others by onboarding them. Each validated referral (new Explorer claimed at least 1 Badge) increases your score by 1 point.`}
+                    definition={
+                      <>
+                        {`Explorers share knowledge with others.`}
+                        <br />
+                        {`Each friend referred (after claiming their first badge) increases your score by 1 point.`}
+                      </>
+                    }
                   />
 
                   <MacScrollbar
@@ -556,8 +568,27 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                         )
                       })
                     ) : (
-                      <Box mt="2" display="flex" placeContent="end">
-                        No referrals yet
+                      <Box
+                        mt="2"
+                        display="flex"
+                        flexDirection="column"
+                        textAlign="right"
+                      >
+                        <Box>No referrals yet.</Box>
+                        {isMyProfile && (
+                          <Box mt="4">
+                            <Button
+                              variant="primary"
+                              leftIcon={<CopySimple size="30px" />}
+                              onClick={() => onCopy()}
+                              isActive={hasCopied}
+                            >
+                              {hasCopied
+                                ? t('Referral Link Copied')
+                                : t('Copy Referral Link')}
+                            </Button>
+                          </Box>
+                        )}
                       </Box>
                     )}
                   </MacScrollbar>
@@ -580,7 +611,13 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                       (user.stats?.handbooks?.length || 0)
                     }
                     max={MAX_COLLECTIBLES}
-                    definition={`Each Handbook increases your score by 1 point, and each DataDisk increases it by 3.`}
+                    definition={
+                      <>
+                        {`Explorers own digital items.`}
+                        <br />
+                        {`Each Handbook increases your score by 1 point, and each DataDisk increases it by 3 points.`}
+                      </>
+                    }
                   />
                   <Badges
                     badges={collectibles}
@@ -593,7 +630,13 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     title={`Humanity`}
                     score={user.stats?.valid_stamps?.length || 0}
                     max={MAX_STAMPS}
-                    definition={`Each stamp you collect by connecting an account increases your score by 1 point.`}
+                    definition={
+                      <>
+                        {`Explorers can prove they aren’t bots.`}
+                        <br />
+                        {`Each account you connect (through Gitcoin Passport) increases your score by 1 point.`}
+                      </>
+                    }
                   />
                   <Badges
                     badges={user.stats?.valid_stamps || []}
@@ -620,7 +663,9 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     max={MAX_ACHIEVEMENT}
                     definition={
                       <>
-                        {`Donations made on Gitcoin since June 2023 (using Allo Protocol) or Giveth increases your score by 3 points. More achievements to come soon!`}
+                        {`Explorers go above and beyond.`}
+                        <br />
+                        {`Each achievement grants a unique amount of points.`}
                       </>
                     }
                   />
