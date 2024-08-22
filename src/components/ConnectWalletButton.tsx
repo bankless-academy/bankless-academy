@@ -74,6 +74,7 @@ const ConnectWalletButton = ({
   //   address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)
+  const [, setScore] = useLocalStorage(`score`, 0)
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
@@ -212,7 +213,7 @@ const ConnectWalletButton = ({
         const community = res?.data?.community
         setCommunity(community)
         const score = res?.data?.stats?.score || 0
-        localStorage.setItem('score', score)
+        setScore(score)
         const badgeTokenIds = res?.data?.badgeTokenIds
         if (Array.isArray(badgeTokenIds)) {
           const badgesMinted = BADGE_IDS.filter((badgeId) =>

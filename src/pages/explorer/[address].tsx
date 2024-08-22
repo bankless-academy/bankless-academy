@@ -113,6 +113,7 @@ export default function Page({
   const [error, setError] = useState(preloadError)
   const [fullProfileAddress, setFullProfileAddress] = useState('')
   const [isMyProfile, setIsMyProfile] = useState(false)
+  const [, setScore] = useLocalStorage(`score`, 0)
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
@@ -159,6 +160,7 @@ export default function Page({
 
   useEffect(() => {
     setIsMyProfile(address?.toLowerCase() === user?.address)
+    if (address?.toLowerCase() === user?.address) setScore(user?.stats?.score)
   }, [user, address])
 
   useEffect(() => {
@@ -179,7 +181,7 @@ export default function Page({
         setUser({ ...user, ...updatedUser })
       }
     }
-  }, [passportLS, isMyProfile])
+  }, [passportLS])
 
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
