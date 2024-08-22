@@ -985,3 +985,5 @@ export const fetchGivethDonations = async (address: string): Promise<number> => 
     return 0
   }
 };
+
+export const countCommonElements = (arr1, arr2) => arr2.filter(item => new Set(arr1).has(item)).length;

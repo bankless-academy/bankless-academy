@@ -7,11 +7,11 @@ import { normalize } from 'viem/ens'
 
 import kudosBadges from 'data/badges.json'
 import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, DEFAULT_AVATAR, DOMAIN_URL, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
-import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS } from 'constants/badges'
+import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS, badgePublishedIds } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { UserStatsType, UserType } from 'entities/user'
 import { ALLOWED_PROVIDERS } from 'constants/passport'
-import { calculateExplorerScore, fetchGitcoinDonations, fetchGivethDonations } from 'utils/index'
+import { calculateExplorerScore, countCommonElements, fetchGitcoinDonations, fetchGivethDonations } from 'utils/index'
 
 async function getBadgeTokensIds(address: string, isProfile: boolean): Promise<number[]> {
   try {
@@ -191,7 +191,7 @@ export default async function handler(
   // handbooks
   stats.handbooks = handbooks
   // badges
-  stats.badges = badgeTokenIds?.length
+  stats.badges = countCommonElements(badgeTokenIds, badgePublishedIds)
   // valid_stamps
   const stamps = Object.keys(userExist.ba_stamps)
   console.log(stamps)
