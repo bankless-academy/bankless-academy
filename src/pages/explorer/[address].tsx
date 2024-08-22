@@ -131,25 +131,21 @@ export default function Page({
       try {
         const res = await fetch(`/api/user/${profileAddress}?profile=true`)
         if (!res.ok) setError('Failed to fetch user data.')
-        const user: UserType = await res.json()
+        const loadedUser: UserType = await res.json()
         if (user?.error) {
-          setError(user?.error)
-        } else if (user) {
-          setIsMyProfile(false)
-          console.log(user)
+          setError(loadedUser?.error)
+        } else if (loadedUser) {
+          console.log(loadedUser)
           if (
             typeof window !== 'undefined' &&
-            wallets.includes(user.address) &&
+            wallets.includes(loadedUser.address) &&
             referral !== 'true'
           ) {
             const redirect = `/explorer/${profileAddress}?referral=true`
             window.history.replaceState(null, null, redirect)
           }
-          setFullProfileAddress(user.address)
-          if (address?.toLowerCase() === user.address) {
-            setIsMyProfile(true)
-          }
-          setUser(user)
+          setFullProfileAddress(loadedUser.address)
+          setUser(loadedUser)
         }
       } catch (error) {
         console.log(error)
@@ -159,7 +155,11 @@ export default function Page({
       }
     }
     loadUser()
-  }, [profileAddress, address])
+  }, [profileAddress])
+
+  useEffect(() => {
+    setIsMyProfile(address?.toLowerCase() === user?.address)
+  }, [user, address])
 
   useEffect(() => {
     if (isMyProfile && passportLS?.stamps && passportLS?.version) {

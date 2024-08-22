@@ -67,13 +67,11 @@ const ConnectWalletButton = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { open } = useWeb3Modal()
-  const { connector, isConnected } = useAccount()
-  let { address } = useAccount()
-  const { chainId } = useAccount()
-  const { query, asPath } = useRouter()
-  const { simulate } = query
-  if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
-    address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
+  const { address, connector, isConnected, chainId } = useAccount()
+  const { asPath } = useRouter()
+  // const { simulate } = query
+  // if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
+  //   address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)
   const { signMessageAsync } = useSignMessage()
