@@ -261,9 +261,9 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                           >
                             this article
                           </ExternalLink>
-                          {` to learn how to register your web3 username and avatar with ENS.`}
+                          {` to register your web3 username and avatar with the Ethereum Name Service (ENS).`}
                           <br />
-                          {`Both of these will be shown across web3, not just here.`}
+                          {`Your ENS user info will be displayed here, and on other web3 sites you visit.`}
                         </Box>
                       </>
                     }
