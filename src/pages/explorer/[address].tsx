@@ -236,6 +236,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               h="284px"
               borderRadius="50%"
               backgroundImage="linear-gradient(180deg, #A379BD 0%, #5B5198 100%)"
+              position="relative"
             >
               <Image
                 w="260px"
@@ -245,6 +246,30 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 backgroundColor="black"
                 src={user.avatar}
               />
+              {isMyProfile && (
+                <Box position="absolute" top="25px" right="25px">
+                  <Helper
+                    title={`Profile username & avatar`}
+                    isProfile={true}
+                    definition={
+                      <>
+                        <Box mb="4">
+                          {`Check out `}
+                          <ExternalLink
+                            underline="true"
+                            href="/lessons/registering-your-web3-username"
+                          >
+                            this article
+                          </ExternalLink>
+                          {` to learn how to register your web3 username and avatar with ENS.`}
+                          <br />
+                          {`Both of these will be shown across web3, not just here.`}
+                        </Box>
+                      </>
+                    }
+                  />
+                </Box>
+              )}
             </Box>
             <Text
               as="h2"
