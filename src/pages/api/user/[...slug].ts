@@ -7,16 +7,16 @@ import { normalize } from 'viem/ens'
 
 import kudosBadges from 'data/badges.json'
 import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, DEFAULT_AVATAR, DOMAIN_URL, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
-import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS } from 'constants/badges'
+import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS, badgePublishedIds } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { UserStatsType, UserType } from 'entities/user'
 import { ALLOWED_PROVIDERS } from 'constants/passport'
-import { calculateExplorerScore } from 'utils/index'
+import { calculateExplorerScore, countCommonElements, fetchGitcoinDonations, fetchGivethDonations } from 'utils/index'
 
-async function getBadgeTokensIds(address: string): Promise<number[]> {
+async function getBadgeTokensIds(address: string, isProfile: boolean): Promise<number[]> {
   try {
     const badges = await axios.get(
-      `${BADGE_API}${ALCHEMY_KEY_BACKEND}/getNFTsForOwner?owner=${address}&contractAddresses[]=${BADGE_ADDRESS}&withMetadata=false&pageSize=100`
+      `${BADGE_API}${isProfile ? ALCHEMY_KEY_BACKEND : process.env.ALCHEMY_KEY2}/getNFTsForOwner?owner=${address}&contractAddresses[]=${BADGE_ADDRESS}&withMetadata=false&pageSize=${BADGE_IDS?.length}`
     )
     console.log(badges.data)
     const badgeTokenIds = badges.data.ownedNfts
@@ -86,8 +86,9 @@ export default async function handler(
         TABLE.users.address,
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
-        TABLE.users.donations,
-        TABLE.users.ba_stamps
+        TABLE.users.achievements,
+        TABLE.users.ba_stamps,
+        TABLE.users.community,
       )
       .whereILike('ens_name', addressLowerCase)
     // console.log('userExist', userExist)
@@ -115,10 +116,12 @@ export default async function handler(
     [userExist] = await db(TABLES.users)
       .select(
         TABLE.users.id,
+        TABLE.users.address,
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
-        TABLE.users.donations,
-        TABLE.users.ba_stamps
+        TABLE.users.achievements,
+        TABLE.users.ba_stamps,
+        TABLE.users.community,
       )
       .whereILike('address', addressLowerCase)
     console.log('user', userExist)
@@ -138,16 +141,18 @@ export default async function handler(
   // referrals
   const referralsAddresses = await db(TABLES.users)
     .select(
-      TABLE.users.address, TABLE.users.ens_name)
+      TABLE.users.address, TABLE.users.ens_name, TABLE.users.created_at)
     .where(TABLE.users.referrer, '=', userExist.id)
-  const referrals = referralsAddresses.map(r => r.ens_name || r.address)
+    // ignore referrals via smart_nft
+    .whereNull(TABLE.users.smart_nft_start_at)
+  const referrals = referralsAddresses.map(r => { return { profile_address: r.ens_name || r.address, created_at: r.created_at } })
   console.log('referrals', referrals)
 
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
   const badgeTokenIds = [...new Set([
     // DEV: comment these 2 lines when testing
-    ...(await getBadgeTokensIds(addressLowerCase)),
+    ...(await getBadgeTokensIds(addressLowerCase, profile === 'true')),
     ...oldBadgeTokenIds
   ])]
 
@@ -186,13 +191,39 @@ export default async function handler(
   // handbooks
   stats.handbooks = handbooks
   // badges
-  stats.badges = badgeTokenIds?.length
+  stats.badges = countCommonElements(badgeTokenIds, badgePublishedIds)
   // valid_stamps
   const stamps = Object.keys(userExist.ba_stamps)
   console.log(stamps)
   stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
-  // donations
-  stats.donations = userExist.donations
+  // achievements
+  stats.achievements = (userExist && typeof userExist?.achievements === 'object' && userExist?.achievements !== null) ? Object.keys(userExist?.achievements) : []
+  if (!stats.achievements?.includes('gitcoin-donation')) {
+    const gitcoinDonations = await fetchGitcoinDonations(userExist?.address?.toLowerCase())
+    // console.log('gitcoinDonations', gitcoinDonations)
+    if (gitcoinDonations > 0) {
+      stats.achievements.push('gitcoin-donation')
+      const updated = await db.raw(
+        `update "users" set "achievements" = achievements || ? where "users"."id" = ?`,
+        [{ 'gitcoin-donation': gitcoinDonations }, userExist?.id]
+      )
+      console.log('gitcoin-donation updated', updated)
+    }
+  }
+  if (!stats.achievements?.includes('giveth-donation')) {
+    const givethDonations = await fetchGivethDonations(userExist?.address?.toLowerCase())
+    // console.log('gitcoinDonations', gitcoinDonations)
+    if (givethDonations > 0) {
+      stats.achievements.push('giveth-donation')
+      const updated = await db.raw(
+        `update "users" set "achievements" = achievements || ? where "users"."id" = ?`,
+        [{ 'giveth-donation': givethDonations }, userExist?.id]
+      )
+      console.log('giveth-donation updated', updated)
+    }
+  }
+  // donations (deprecated)
+  // stats.donations = userExist.donations
   if (addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c') {
     stats =
     {
@@ -222,35 +253,46 @@ export default async function handler(
         "Farcaster",
         "Poh"
       ],
-      "donations": {
-        "GCR1": {
-          "amountUSD": "N/A"
+      achievements: ['gitcoin-donation', 'giveth-donation'],
+      // "donations": {
+      //   "GCR1": {
+      //     "amountUSD": "N/A"
+      //   },
+      //   "GR11": {
+      //     "amountUSD": "N/A"
+      //   },
+      //   "GR12": {
+      //     "amountUSD": "N/A"
+      //   },
+      //   "GR13": {
+      //     "amountUSD": "N/A"
+      //   },
+      //   "GR14": {
+      //     "amountUSD": "N/A"
+      //   },
+      //   "GR15": {
+      //     "amountUSD": "N/A"
+      //   },
+      //   "GR16": {
+      //     "amountUSD": "N/A"
+      //   },
+      //   "GR18": {
+      //     "amountUSD": 1.13241802
+      //   },
+      //   "GR19": {
+      //     "amountUSD": 1.40381813
+      //   },
+      // },
+      referrals: [
+        {
+          profile_address: 'web3explorer.eth',
+          created_at: '2022-01-25T20:50:41.027Z',
         },
-        "GR11": {
-          "amountUSD": "N/A"
+        {
+          profile_address: 'didierkrux.eth',
+          created_at: '2023-02-04T01:05:27.555Z',
         },
-        "GR12": {
-          "amountUSD": "N/A"
-        },
-        "GR13": {
-          "amountUSD": "N/A"
-        },
-        "GR14": {
-          "amountUSD": "N/A"
-        },
-        "GR15": {
-          "amountUSD": "N/A"
-        },
-        "GR16": {
-          "amountUSD": "N/A"
-        },
-        "GR18": {
-          "amountUSD": 1.13241802
-        },
-        "GR19": {
-          "amountUSD": 1.40381813
-        }
-      },
+      ],
       "score": 37
     }
   }
@@ -269,6 +311,7 @@ export default async function handler(
     stats,
     badgeTokenIds,
     kudosTokenIds,
+    community: userExist.community
   }
 
   return res.status(200).json(data)

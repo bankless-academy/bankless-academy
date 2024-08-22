@@ -10,11 +10,12 @@ import {
 import { useTranslation } from 'react-i18next'
 
 import { LESSONS } from 'constants/index'
-import { DONATION_MAPPING } from 'constants/donations'
 import InternalLink from './InternalLink'
 import { STAMP_PLATFORMS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
 import { useSmallScreen } from 'hooks/index'
+import ExternalLink from './ExternalLink'
+import { ACHIEVEMENTS } from 'constants/achievements'
 
 const Badges = ({
   badges,
@@ -24,7 +25,7 @@ const Badges = ({
 }: {
   badges: number[] | string[]
   badgeToHighlight?: number | string
-  type?: 'badges' | 'collectibles' | 'donations' | 'stamps'
+  type?: 'badges' | 'collectibles' | 'achievements' | 'stamps'
   isMyProfile?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
@@ -52,36 +53,48 @@ const Badges = ({
               spacing={2}
               p={2}
             >
+              {type === 'achievements' && (
+                <>
+                  {Object.keys(ACHIEVEMENTS).map((a, index) => {
+                    if (a in ACHIEVEMENTS) {
+                      const achievement = ACHIEVEMENTS[a]
+                      const isAchievementDone = (badges as string[]).includes(a)
+                      if (isAchievementDone || isMyProfile)
+                        return (
+                          <Box
+                            justifySelf="center"
+                            p={1}
+                            position="relative"
+                            opacity={isAchievementDone ? '1' : '0.3'}
+                            key={`achievement-${index}`}
+                          >
+                            <ExternalLink href={achievement.link}>
+                              <Box>
+                                <Image
+                                  src={achievement.image}
+                                  border="1px #2d292d solid"
+                                  borderRadius="8px"
+                                  alt={achievement.description}
+                                  title={achievement.description}
+                                />
+                                <Box
+                                  fontWeight="bold"
+                                  fontSize="sm"
+                                  width="100%"
+                                  textAlign="center"
+                                  color="white"
+                                >
+                                  {achievement.description}
+                                </Box>
+                              </Box>
+                            </ExternalLink>
+                          </Box>
+                        )
+                    }
+                  })}
+                </>
+              )}
               {badges?.map((badge, index) => {
-                if (type === 'donations' && badge in DONATION_MAPPING)
-                  return (
-                    <Box
-                      key={`badge-${index}`}
-                      justifySelf="center"
-                      p={1}
-                      position="relative"
-                    >
-                      <Image
-                        src={`/images/gitcoin/gitcoin-donation.png`}
-                        border="1px #2d292d solid"
-                        borderRadius="8px"
-                        alt={DONATION_MAPPING[badge]}
-                        title={DONATION_MAPPING[badge]}
-                      />
-                      <Box
-                        fontWeight="bold"
-                        fontSize="lg"
-                        position="absolute"
-                        bottom="2px"
-                        left="0"
-                        width="100%"
-                        textAlign="center"
-                        color="white"
-                      >
-                        {badge}
-                      </Box>
-                    </Box>
-                  )
                 if (!type) {
                   const lesson = LESSONS.find(
                     (lesson) => lesson.badgeId === badge

@@ -62,8 +62,10 @@ export default async function handler(
         merge_fields
       })
       console.log(response)
-      if (response && response.email_address === email)
+      if (response && response.email_address === email) {
+        // TODO: save email in DB if we have an address to associate with
         return res.status(200).json({ result: 'OK' })
+      }
       else
         return res.status(403).json({ error: 'Problem with Mailchimp API.' })
     } else {

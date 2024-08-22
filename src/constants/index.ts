@@ -147,7 +147,9 @@ export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
 export const DISCLAIMER_ENABLED =
   process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
 
-export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to prove I own it so I can claim the lesson badge.'
+export const WALLET_SIGNATURE_MESSAGE = 'I am signing a message with my wallet to verify ownership and claim the lesson badge.'
+
+export const WALLET_SIGNATURE_MESSAGE_PROFILE = 'I am signing a message with my wallet to verify ownership and update my profile.'
 
 export const POTION_API = 'https://potion.banklessacademy.com'
 

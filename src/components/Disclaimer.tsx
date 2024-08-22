@@ -42,7 +42,8 @@ const Disclaimer = ({
     const disclaimerTimestamp =
       parseInt(localStorage.getItem(`disclaimer-${lesson.slug}`)) || 0
     const skipDisclaimer = currentTimestamp - disclaimerTimestamp < 60 * 60 * 24
-    if (!DISCLAIMER_ENABLED || skipDisclaimer) accepted()
+    if (!DISCLAIMER_ENABLED || skipDisclaimer || lesson?.level === 'Essentials')
+      accepted()
     else onOpenHelpModal()
   }, [])
 
@@ -71,19 +72,11 @@ const Disclaimer = ({
         <ModalBody>
           <Box>
             <Box mb="4">
-              {t('Remember, engaging in crypto is risky.')}{' '}
-              {t(
-                'This is the frontier of technology and finance, it’s not for everyone.'
-              )}{' '}
-              {t(
-                'Even the most trained Explorers can lose what they put in — but in building expertise, you reduce risk.'
-              )}
+              {`Remember, this is the frontier of technology and finance. Even the most trained Explorers can make mistakes and lose money. Education only reduces risk.`}
             </Box>
             <Box mb="4" fontWeight="bold">
               <ExternalLink underline="true" href="/disclaimer">
-                {t(
-                  'Do you accept full responsibility for your own Bankless journey?'
-                )}
+                {`Do you accept full responsibility for your Bankless journey?`}
               </ExternalLink>
             </Box>
             {/* <Box
@@ -103,7 +96,7 @@ const Disclaimer = ({
           </Box>
         </ModalBody>
         <ModalFooter>
-          <Button
+          {/* <Button
             variant="secondaryWhite"
             onClick={() => {
               onCloseHelpModal()
@@ -111,7 +104,7 @@ const Disclaimer = ({
             }}
           >
             {t('Take me back')}
-          </Button>
+          </Button> */}
 
           <Button
             variant="primaryWhite"
