@@ -13,10 +13,10 @@ import { UserStatsType, UserType } from 'entities/user'
 import { ALLOWED_PROVIDERS } from 'constants/passport'
 import { calculateExplorerScore, fetchGitcoinDonations, fetchGivethDonations } from 'utils/index'
 
-async function getBadgeTokensIds(address: string): Promise<number[]> {
+async function getBadgeTokensIds(address: string, isProfile: boolean): Promise<number[]> {
   try {
     const badges = await axios.get(
-      `${BADGE_API}${ALCHEMY_KEY_BACKEND}/getNFTsForOwner?owner=${address}&contractAddresses[]=${BADGE_ADDRESS}&withMetadata=false&pageSize=100`
+      `${BADGE_API}${isProfile ? ALCHEMY_KEY_BACKEND : process.env.ALCHEMY_KEY2}/getNFTsForOwner?owner=${address}&contractAddresses[]=${BADGE_ADDRESS}&withMetadata=false&pageSize=${BADGE_IDS?.length}`
     )
     console.log(badges.data)
     const badgeTokenIds = badges.data.ownedNfts
@@ -152,7 +152,7 @@ export default async function handler(
   console.log(oldBadgeTokenIds)
   const badgeTokenIds = [...new Set([
     // DEV: comment these 2 lines when testing
-    ...(await getBadgeTokensIds(addressLowerCase)),
+    ...(await getBadgeTokensIds(addressLowerCase, profile === 'true')),
     ...oldBadgeTokenIds
   ])]
 
