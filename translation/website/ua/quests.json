@@ -4,7 +4,7 @@
     "2. It's now being verified by network miners...": "2. Зараз вона перевіряється мережевими майнерами...",
     "3. Your transaction is added to the blockchain “database”...": "3. Ваша транзакція додана до \"бази даних\" блокчейну...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4. Сатоші Накамото отримав ваш біткоїн!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Використовуючи наш біткоїн-симулятор, відправте <strong>0.00000001</strong> BTC на адресу Сатоші Накамото",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address",
     "Recipient": "Отримувач",
     "Address": "Адреса",
     "Asset": "Актив",
