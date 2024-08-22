@@ -232,7 +232,7 @@ const Leaderboard = (): JSX.Element => {
 
   if (leaderboard && fetchedAt && !isLoadingProfile)
     return (
-      <Container maxW="container.xl">
+      <Container maxW="container.xxl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
           {isLoadingProfile
             ? 'Loading Explorer Profile'

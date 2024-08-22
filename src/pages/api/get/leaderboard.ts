@@ -6,7 +6,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import badges from 'data/badges.json'
 import { fetchBE } from 'utils/server'
-import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
+import { BADGE_ADDRESS, badgePublishedIds } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from 'constants/passport'
 import { calculateExplorerScore } from 'utils/index'
@@ -74,7 +74,7 @@ export default async function handler(
         badges[address] = badgeIds
       }
       // intersect badgeIds
-      badges[address] = badges[address].filter(badgeId => BADGE_IDS.includes(badgeId))
+      badges[address] = badges[address].filter(badgeId => badgePublishedIds.includes(badgeId))
     }
 
     for (const [address, badgeIds] of Object.entries(badges)) {
