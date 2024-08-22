@@ -407,7 +407,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     <Box m="8" flex="1">
                       <ProfileTitle
                         title="Community"
-                        description="Explore under the banner of your favourite community."
+                        description="Explore under the banner of your favorite community."
                       />
                       <SelectCommunity />
                     </Box>
@@ -634,7 +634,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                       <>
                         {`Explorers can prove they aren’t bots.`}
                         <br />
-                        {`Each account you connect (through Gitcoin Passport) increases your score by 1 point.`}
+                        {`Each account you connect increases your score by 1 point.`}
                       </>
                     }
                   />
