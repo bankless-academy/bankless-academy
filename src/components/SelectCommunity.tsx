@@ -23,12 +23,11 @@ import { WALLET_SIGNATURE_MESSAGE_PROFILE } from 'constants/index'
 import { wagmiConfig } from 'utils/wagmi'
 
 const COMMUNITIES = [
-  'Bankless',
-  'DAOpunks',
   'Chippi',
   'Gitcoin',
-  'Giveth',
   'Optimism',
+  'Pudgy Penguins',
+  'Regens Unite',
   'SheFi',
   'Zerion',
 ].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
