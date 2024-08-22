@@ -4,7 +4,7 @@
     "2. It's now being verified by network miners...": "2. 网络矿工正在对其进行验证...",
     "3. Your transaction is added to the blockchain “database”...": "3.您的交易将被添加到区块链 \"数据库 \"中...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4.中本聪收到了你的比特币！",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "使用我们的比特币模拟器，发送<strong>0.00000001</strong>BTC 到中本聪的地址",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address",
     "Recipient": "接收者",
     "Address": "地址",
     "Asset": "资产",
