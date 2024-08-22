@@ -127,7 +127,7 @@ yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -lg fr
 
 ### How does it work
 
-The [import script](https://github.com/bankless-academy/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/didierkrux/potion](https://github.com/didierkrux/potion) and transforms the content into [this Object](https://github.com/bankless-academy/bankless-academy/blob/main/src/constants/lessons.ts).
+The [import script](https://github.com/bankless-academy/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/bankless-academy/potion](https://github.com/bankless-academy/potion) and transforms the content into [this Object](https://github.com/bankless-academy/bankless-academy/blob/main/src/constants/lessons.ts).
 
 ## How to import keywords definitions from Notion
 
