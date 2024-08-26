@@ -105,8 +105,9 @@ export default function Page({
   badgeToHighlight?: number
   preloadError?: string
 }) {
+  const random = Math.floor(Math.random() * 100000)
   const profileUrl =
-    typeof window !== 'undefined' ? `${window.location.href}` : ''
+    typeof window !== 'undefined' ? `${window.location.href}&r=${random}` : ''
   const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
   const { referral } = router.query
   const [user, setUser] = useState<UserType | null>(null)
@@ -191,7 +192,7 @@ export default function Page({
     collectibles.push(user?.stats.handbooks[i])
   }
 
-  const shareLink = typeof window !== 'undefined' ? window.location.href : ''
+  const shareLink = profileUrl
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
