@@ -693,7 +693,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                       <>
                         {`Explorers go above and beyond.`}
                         <br />
-                        {`Each achievement increases your score by 3 points.`}
+                        {`Each achievement grants a unique amount of points.`}
                       </>
                     }
                   />

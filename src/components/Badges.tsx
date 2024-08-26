@@ -16,6 +16,7 @@ import PassportModal from 'components/PassportModal'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from './ExternalLink'
 import { ACHIEVEMENTS } from 'constants/achievements'
+import Helper from 'components/Helper'
 
 const Badges = ({
   badges,
@@ -68,6 +69,17 @@ const Badges = ({
                             opacity={isAchievementDone ? '1' : '0.3'}
                             key={`achievement-${index}`}
                           >
+                            <Box position="absolute" top="9px" right="5px">
+                              <Helper
+                                title={achievement.description}
+                                isProfile={true}
+                                definition={
+                                  <>
+                                    <Box mb="4">{achievement.helper}</Box>
+                                  </>
+                                }
+                              />
+                            </Box>
                             <ExternalLink href={achievement.link}>
                               <Box>
                                 <Image
