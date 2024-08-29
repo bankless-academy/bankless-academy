@@ -114,7 +114,7 @@ export default function Page({
   const [error, setError] = useState(preloadError)
   const [fullProfileAddress, setFullProfileAddress] = useState('')
   const [isMyProfile, setIsMyProfile] = useState(false)
-  const [, setScore] = useLocalStorage(`score`, 0)
+  const [score, setScore] = useLocalStorage(`score`, 0)
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
@@ -132,12 +132,15 @@ export default function Page({
     const loadUser = async () => {
       try {
         const res = await fetch(`/api/user/${profileAddress}?profile=true`)
-        if (!res.ok) setError('Failed to fetch user data.')
+        if (!res.ok) {
+          setError('Failed to fetch user data.')
+          return
+        }
         const loadedUser: UserType = await res.json()
-        if (user?.error) {
+
+        if (loadedUser?.error) {
           setError(loadedUser?.error)
-        } else if (loadedUser) {
-          console.log(loadedUser)
+        } else {
           if (
             typeof window !== 'undefined' &&
             wallets.includes(loadedUser.address) &&
@@ -146,8 +149,13 @@ export default function Page({
             const redirect = `/explorer/${profileAddress}?referral=true`
             window.history.replaceState(null, null, redirect)
           }
-          setFullProfileAddress(loadedUser.address)
-          setUser(loadedUser)
+
+          if (loadedUser.address !== fullProfileAddress) {
+            setFullProfileAddress(loadedUser.address)
+          }
+          if (JSON.stringify(loadedUser) !== JSON.stringify(user)) {
+            setUser(loadedUser)
+          }
         }
       } catch (error) {
         console.log(error)
@@ -156,19 +164,33 @@ export default function Page({
         )
       }
     }
-    loadUser()
+
+    // Add a check to prevent re-fetching if not necessary
+    if (profileAddress && (!user || user.address !== profileAddress)) {
+      loadUser()
+    }
   }, [profileAddress])
 
   useEffect(() => {
-    setIsMyProfile(address?.toLowerCase() === user?.address)
-    if (address?.toLowerCase() === user?.address) setScore(user?.stats?.score)
+    const newIsMyProfile = address?.toLowerCase() === user?.address
+    if (isMyProfile !== newIsMyProfile) {
+      setIsMyProfile(newIsMyProfile)
+    }
+
+    if (newIsMyProfile && user?.stats?.score !== score) {
+      setScore(user?.stats?.score)
+    }
   }, [user, address])
 
   useEffect(() => {
     if (isMyProfile && passportLS?.stamps && passportLS?.version) {
       // update user stamps without requiring to refresh
       const valid_stamps = Object.keys(passportLS.stamps)
-      if (valid_stamps?.length) {
+      if (
+        user &&
+        valid_stamps?.length &&
+        user?.stats?.valid_stamps?.length !== valid_stamps.length
+      ) {
         const updatedUser: any = {
           stats: {
             ...user.stats,

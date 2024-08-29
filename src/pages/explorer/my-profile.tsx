@@ -4,6 +4,7 @@ import { Container, Heading, Box, Image, Text } from '@chakra-ui/react'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 
 import { MetaData } from 'components/Head'
 import { UserType } from 'entities/user'
@@ -23,6 +24,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 export default function Page() {
+  const router = useRouter()
   const [error, setError] = useState('')
   const { address, isConnected } = useAccount()
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
@@ -40,7 +42,7 @@ export default function Page() {
           setError(user?.error)
         } else if (user) {
           console.log(user)
-          window.location.href = `/explorer/${user.ensName || user.address}`
+          router.push(`/explorer/${user.ensName || user.address}?referral=true`)
         }
       } catch (error) {
         console.log(error)

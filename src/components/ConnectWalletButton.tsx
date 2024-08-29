@@ -269,7 +269,7 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    if (siwe?.length) {
+    if (SIWE_ENABLED && siwe?.length) {
       verify()
     }
   }, [])
