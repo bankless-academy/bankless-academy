@@ -25,8 +25,10 @@ const StyledBox = styled(Box)`
   #lottie .actionNext:hover,
   #lottie .actionPrev:hover {
     path {
-      fill-opacity: 0.2;
-      fill: black;
+      /* fill-opacity: 0.2;
+      fill: black; */
+      /* opacity: 0.6; */
+      filter: brightness(60%);
     }
   }
 `
