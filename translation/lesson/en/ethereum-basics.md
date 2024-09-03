@@ -45,9 +45,9 @@ To understand why millions of people are using Ethereum across the world, we nee
 
 # A Global Town Square
 
-Over the last forty years, the internet has become the town square of the world.
+Over the last forty years, the internet has become the world’s town square.
 
-This online world allows total strangers to meet to exchange information, goods and services, or to build relationships, businesses and even social movements together. It’s the greatest intersection of social connection, expression and innovation that humanity has ever had.
+Here, total strangers connect, exchange ideas, goods and services, and even ignite global movements together. It's humanity's most powerful intersection of connection, creativity, and innovation.
 
 **But it has one big problem…**
 
