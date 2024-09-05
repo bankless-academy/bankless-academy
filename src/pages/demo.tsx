@@ -67,16 +67,25 @@ const Demo = (): JSX.Element => {
                       ).filter((badgeId) => badgeId !== 1 && badgeId !== 12)
                     )
                   )
-                  alert(
-                    'Demo state is now activated ✅. Badge demo state will be lost if you refresh the page or go to your profile page.'
-                  )
+                  alert('Demo state is now activated ✅. ')
                 }}
                 mb={4}
                 colorScheme="red"
               >
-                Reset demo state for Bitcoin Basics & Wallet Basics + remove
-                Gitcoin Passport stamps
+                Activate demo state
               </Button>
+              <Box>
+                Resets state for Bitcoin Basics & Wallet Basics: slides +
+                quizzes + quests.
+                <br />
+                Simulates no badge for Bitcoin Basics & Wallet Basics. Badges
+                will appear again if you refresh the page or go to your Explorer
+                profile.
+                <br />
+                Disables live badge detection.
+                <br />
+                Removes Gitcoin Passport stamps.
+              </Box>
               <br />
               <br />
               <Button
@@ -85,10 +94,11 @@ const Demo = (): JSX.Element => {
                   alert('Demo state is now disabled.')
                 }}
                 mb={4}
-                colorScheme="red"
+                colorScheme="green"
               >
-                Disable demo hack
+                Disable demo state
               </Button>
+              <Box>Activates back live badge detection.</Box>
             </Box>
           ) : (
             <>Connect your wallet first</>
