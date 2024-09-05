@@ -168,22 +168,24 @@ const MintBadge = ({
   useEffect(() => {
     if (address) {
       if (!passportLS.verified) checkPassport()
-      axios
-        .get(`/api/user/${address}?badges=true`)
-        .then(function (userBadges) {
-          const badgeAlreadyClaimed: boolean =
-            userBadges?.data?.badgeTokenIds.find(
-              (badge: number) => badge === badgeId
-            ) || false
-          if (badgeAlreadyClaimed) {
-            setIsBadgeMintedLS(true)
-          } else {
-            setIsBadgeMintedLS(false)
-          }
-        })
-        .catch(function (error) {
-          console.error(error)
-        })
+      if (localStorage.getItem('demo') !== 'true') {
+        axios
+          .get(`/api/user/${address}?badges=true`)
+          .then(function (userBadges) {
+            const badgeAlreadyClaimed: boolean =
+              userBadges?.data?.badgeTokenIds.find(
+                (badge: number) => badge === badgeId
+              ) || false
+            if (badgeAlreadyClaimed) {
+              setIsBadgeMintedLS(true)
+            } else {
+              setIsBadgeMintedLS(false)
+            }
+          })
+          .catch(function (error) {
+            console.error(error)
+          })
+      }
     }
   }, [address])
 
