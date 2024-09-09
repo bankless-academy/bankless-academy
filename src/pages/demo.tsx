@@ -75,8 +75,9 @@ const Demo = (): JSX.Element => {
                 Activate demo state
               </Button>
               <Box>
-                Resets state for Bitcoin Basics & Wallet Basics: slides +
-                quizzes + quests.
+                Resets state for Bitcoin Basics: slides + quests.
+                <br />
+                Resets state for Wallet Basics: slides + quizzes + quests.
                 <br />
                 Simulates no badge for Bitcoin Basics & Wallet Basics. Badges
                 will appear again if you refresh the page or go to your Explorer
