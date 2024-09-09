@@ -50,12 +50,12 @@ const Demo = (): JSX.Element => {
                   // reset state for Bitcoin Basics
                   localStorage.removeItem('bitcoin-basics')
                   localStorage.removeItem('isBadgeMinted-12')
-                  localStorage.removeItem('quiz-bitcoin-basics-1')
-                  localStorage.removeItem('quiz-bitcoin-basics-2')
-                  localStorage.removeItem('quiz-bitcoin-basics-3')
-                  localStorage.removeItem('quiz-bitcoin-basics-4')
-                  localStorage.removeItem('quiz-bitcoin-basics-5')
-                  localStorage.removeItem('quiz-bitcoin-basics-6')
+                  // localStorage.removeItem('quiz-bitcoin-basics-1')
+                  // localStorage.removeItem('quiz-bitcoin-basics-2')
+                  // localStorage.removeItem('quiz-bitcoin-basics-3')
+                  // localStorage.removeItem('quiz-bitcoin-basics-4')
+                  // localStorage.removeItem('quiz-bitcoin-basics-5')
+                  // localStorage.removeItem('quiz-bitcoin-basics-6')
                   localStorage.removeItem('quest-bitcoin-basics')
                   localStorage.removeItem('animation-bitcoin')
                   // remove
