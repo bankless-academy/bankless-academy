@@ -66,12 +66,14 @@ const quizComplete = (lesson: LessonType): boolean => {
         parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
           slide.quiz.rightAnswerNumber
       )
-    } else if (slide.type === 'POLL') {
-      quizAnswers.push(
-        JSON.parse(localStorage.getItem(`quiz-${slide.quiz.id}`) || '[]')
-          ?.length > 0
-      )
     }
+    // POLL answers are not mandatory for now
+    // if (slide.type === 'POLL') {
+    //   quizAnswers.push(
+    //     JSON.parse(localStorage.getItem(`quiz-${slide.quiz.id}`) || '[]')
+    //       ?.length > 0
+    //   )
+    // }
   }
   return !quizAnswers.includes(false)
 }
