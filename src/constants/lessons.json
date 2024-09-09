@@ -300,7 +300,8 @@
     "languages": [],
     "level": "Essentials",
     "lessonWriters": "Tetranome",
-    "publicationStatus": "hidden",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-09-10",
     "featuredOrderOnHomepage": null,
     "isCommentsEnabled": false,
     "endOfLessonRedirect": null,
@@ -341,8 +342,7 @@
       "ether",
       "centralized exchange",
       "value-extraction",
-      "value-creation",
-      " wallet"
+      "value-creation"
     ],
     "slides": [
       {
@@ -367,7 +367,7 @@
         "type": "LEARN",
         "notionId": "e4260ebbeda44a4596fb1d1d73e3375b",
         "title": "One-sided Trades",
-        "content": "<div class=\"bloc1\"><p>We call them <code>centralized services</code> because all the power is in one place. It’s often like being stuck under the rule of a king who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…</p><p>💸 Banks charge you fees and invest your money for their own profit. .</p><p>💳 Payment networks, like Visa & Mastercard, sell your purchase data to advertisers.</p><p>📞 Social platforms, like Instagram, can view your private conversations.</p><p>🪓 Content platforms, like YouTube, can freely delete creators’ entire careers — with no fair trial.</p><p>These shady rules and fees are often hidden away in the ‘Terms & Conditions’, and tend to get worse over time. Take a closer look at your favorite service agreements here: <a href='https://tosdr.org/'>https://tosdr.org/</a> 👀</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/one-sided-trades-8d68270f.svg'></div>"
+        "content": "<div class=\"bloc1\"><p>We call them <code>centralized services</code> because all the power is in one place. It’s often like being stuck under the rule of a king who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…</p><p>💸 Banks charge you fees and invest your money for their own profit.</p><p>💳 Payment networks, like Visa & Mastercard, sell your purchase data to advertisers.</p><p>📞 Social platforms, like Instagram, can view your private conversations.</p><p>🪓 Content platforms, like YouTube, can freely delete creators’ entire careers — with no fair trial.</p><p>These shady rules and fees are often hidden away in the ‘Terms & Conditions’, and tend to get worse over time. Take a closer look at your favorite service agreements here: <a href='https://tosdr.org/'>https://tosdr.org/</a> 👀</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/one-sided-trades-8d68270f.svg'></div>"
       },
       {
         "type": "QUIZ",
@@ -507,7 +507,7 @@
         "type": "LEARN",
         "notionId": "04662fd3b840472ab6c20aec0dab7a12",
         "title": "Joining the Movement",
-        "content": "<div class=\"bloc1\"><p>💪 <strong>It’s time to take control of your digital life.</strong></p><hr><p>Ethereum is eroding the walls that intermediaries have put up around their corners of the internet, transforming an economy of <code>value-extraction</code> into one of <code>value-creation</code>. It’s time for powerful yet fair online services, true ownership over your digital assets, bold new communities, transformative work opportunities, and more.</p><p>Ready to make your mark?</p><p>To start your journey you’ll need to create your <code>crypto</code><code> wallet</code>. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, “Wallet Basics”.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/joining-the-movement-44086b0b.png'></div>"
+        "content": "<div class=\"bloc1\"><p>💪 <strong>It’s time to take control of your digital life.</strong></p><hr><p>Ethereum is eroding the walls that intermediaries have put up around their corners of the internet, transforming an economy of <code>value-extraction</code> into one of <code>value-creation</code>. It’s time for powerful yet fair online services, true ownership over your digital assets, bold new communities, transformative work opportunities, and more.</p><p>Ready to make your mark?</p><p>To start your journey you’ll need to create your <code>crypto wallet</code>. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, “Wallet Basics”.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/joining-the-movement-44086b0b.png'></div>"
       },
       {
         "type": "POLL",

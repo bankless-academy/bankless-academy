@@ -67,7 +67,7 @@ Think of how big banks manage your purchases, Meta monitors your social interact
 
 We call them `centralized services` because all the power is in one place. It’s often like being stuck under the rule of a king who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…
 
-💸 Banks charge you fees and invest your money for their own profit. .
+💸 Banks charge you fees and invest your money for their own profit.
 
 💳 Payment networks, like Visa & Mastercard, sell your purchase data to advertisers.
 
@@ -311,7 +311,7 @@ Ethereum is eroding the walls that intermediaries have put up around their corne
 
 Ready to make your mark?
 
-To start your journey you’ll need to create your `crypto` `wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, “Wallet Basics”.
+To start your journey you’ll need to create your `crypto wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, “Wallet Basics”.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
 
