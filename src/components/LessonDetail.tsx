@@ -17,6 +17,7 @@ import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
 import {
   DOMAIN_URL,
+  IS_COLLECTIBLE_ACTIVATED,
   IS_PROD,
   IS_WALLET_DISABLED,
   IS_WHITELABEL,
@@ -120,6 +121,7 @@ const LessonDetail = ({
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
 
   const isLessonCollected =
+    IS_COLLECTIBLE_ACTIVATED &&
     !!lesson.lessonCollectibleTokenAddress?.length &&
     lessonsCollectedLS.includes(
       lesson.lessonCollectibleTokenAddress.toLowerCase()
@@ -328,7 +330,7 @@ const LessonDetail = ({
                       </Box>
                     </>
                   )}
-                  {lesson.hasCollectible ? (
+                  {IS_COLLECTIBLE_ACTIVATED && lesson.hasCollectible ? (
                     <MintDatadiskButton lesson={lesson} />
                   ) : null}
                 </Box>

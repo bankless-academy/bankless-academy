@@ -175,3 +175,5 @@ export const LanguageDescription: LanguageDescriptionType = Object.fromEntries(
     ua: 'Українська',
   }).sort((a, b) => a[1].localeCompare(b[1]))
 )
+
+export const IS_COLLECTIBLE_ACTIVATED = false

@@ -1,13 +1,13 @@
 [
   {
     "badgeImageLink": "/images/bitcoin-basics/badge-89138e57.png",
-    "lessonImageLink": "/images/bitcoin-basics/lesson-4a87d990.png",
+    "lessonImageLink": "/images/bitcoin-basics/lesson-bdb5731e.png",
     "lessonCollectedImageLink": "/images/bitcoin-basics/datadisk-collected-15700488.png",
     "lessonCollectibleGif": "/images/bitcoin-basics/datadisk-gif-ba7bb13b.gif",
     "lessonCollectibleVideo": "/images/bitcoin-basics/datadisk-video-c4e04385.webm",
     "lessonCollectibleMintID": "65e62382de00ef68ee5d7454",
     "lessonCollectibleTokenAddress": "0x92B55D5254bC93A4f282224A9C3bD2b7e0eF37fc",
-    "socialImageLink": "/images/bitcoin-basics/social-9bc40686.jpg",
+    "socialImageLink": "/images/bitcoin-basics/social-8aecaca4.jpg",
     "learningActions": "",
     "marketingDescription": "What is Bitcoin? Explore the first successful cryptocurrency and rethink money.",
     "badgeId": 12,
@@ -349,7 +349,7 @@
         "type": "LEARN",
         "notionId": "020b00dc30e4460583a7fe08be2bbd15",
         "title": "Ethereum Basics",
-        "content": "<div class=\"bloc1\"><p>Welcome, Explorer, to one of the most important lessons at Bankless Academy.</p><p>Today we’re looking at Ethereum: the next era of the internet. It’s a revolutionary platform powering a world of new internet <code>apps</code> and digital currencies.</p><p>A simple way to think of Ethereum is like the Google or Apple <code>app store</code>, but with some key differences:</p><ul><li>💸 It uses <code>cryptocurrency</code> instead of <code>fiat currency</code> like the US dollar, the euro, or the Chinese yuan.</li><li>📡 It’s a layer added directly to your internet browser, unlocking new applications directly on websites.</li><li>⚖️ The rules are agreed on by users and app builders. There’s no central corporation in charge.</li></ul><p>To understand why millions of people are using Ethereum across the world, we need to look at its core mission…</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/ethereum-basics-b2e09ce5.png'></div>"
+        "content": "<div class=\"bloc1\"><p>Welcome, Explorer, to one of the most important lessons at Bankless Academy.</p><p>Today we’re looking at Ethereum: the next era of the internet. It’s a revolutionary platform powering a world of new internet <code>apps</code> and digital currencies.</p><p>A simple way to think of Ethereum is like the Google or Apple <code>app store</code>, but with some key differences:</p><ul><li>💸 It uses <code>cryptocurrency</code> instead of <code>fiat currency</code> (the US dollar, the euro, or the Chinese yuan).</li><li>📡 It’s a layer added directly to your internet browser, unlocking new functionality on websites.</li><li>⚖️ The store rules are agreed on by users and app builders. There’s no central corporation in charge.</li></ul><p>To understand why millions of people are using Ethereum across the world, we need to look at its core mission…</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/ethereum-basics-b2e09ce5.png'></div>"
       },
       {
         "type": "LEARN",
@@ -1311,7 +1311,7 @@
         "type": "LEARN",
         "notionId": "ed9bce57432f473982482dbd98e33ae5",
         "title": "Social Media Best Practices",
-        "content": "<div class=\"bloc1\"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a large community you trust - and ask in public.</p></div><div class=\"bloc2\"><img src='/images/web3-security/social-media-best-practices-48ad350f.svg'></div>"
+        "content": "<div class=\"bloc1\"><p>Practices for staying safe:</p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a large community you trust - and ask in public.</p></div><div class=\"bloc2\"><img src='/images/web3-security/social-media-best-practices-48ad350f.svg'></div>"
       },
       {
         "type": "LEARN",
@@ -1666,13 +1666,13 @@
   },
   {
     "badgeImageLink": "/images/layer-2-blockchains/badge-4336366c.png",
-    "lessonImageLink": "/images/layer-2-blockchains/lesson-610c8e39.png",
+    "lessonImageLink": "/images/layer-2-blockchains/lesson-adbad089.png",
     "lessonCollectedImageLink": "/images/layer-2-blockchains/datadisk-collected-3073d815.png",
     "lessonCollectibleGif": "/images/layer-2-blockchains/datadisk-gif-2a93bd15.gif",
     "lessonCollectibleVideo": "/images/layer-2-blockchains/datadisk-video-bfdfdef9.webm",
     "lessonCollectibleMintID": "64b810dda23ab034b49a1340",
     "lessonCollectibleTokenAddress": "0x5ce61b80931Ea67565f0532965DDe5be2d41331d",
-    "socialImageLink": "/images/layer-2-blockchains/social-8b42e35e.jpg",
+    "socialImageLink": "/images/layer-2-blockchains/social-6e75d165.jpg",
     "learningActions": "",
     "marketingDescription": "The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.",
     "badgeId": 8,

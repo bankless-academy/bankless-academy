@@ -165,7 +165,7 @@ Social media `red flags`:
 
 # Social Media Best Practices
 
-Practices for staying safe**:**
+Practices for staying safe:
 
 ✅ If they have to direct message you to sell their product, you probably don’t want it.
 

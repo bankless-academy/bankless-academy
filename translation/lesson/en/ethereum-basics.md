@@ -35,9 +35,9 @@ Today we’re looking at Ethereum: the next era of the internet. It’s a revolu
 
 A simple way to think of Ethereum is like the Google or Apple `app store`, but with some key differences:
 
-- 💸 It uses `cryptocurrency` instead of `fiat currency` like the US dollar, the euro, or the Chinese yuan.
-- 📡 It’s a layer added directly to your internet browser, unlocking new applications directly on websites.
-- ⚖️ The rules are agreed on by users and app builders. There’s no central corporation in charge.
+- 💸 It uses `cryptocurrency` instead of `fiat currency` (the US dollar, the euro, or the Chinese yuan).
+- 📡 It’s a layer added directly to your internet browser, unlocking new functionality on websites.
+- ⚖️ The store rules are agreed on by users and app builders. There’s no central corporation in charge.
 
 To understand why millions of people are using Ethereum across the world, we need to look at its core mission…
 

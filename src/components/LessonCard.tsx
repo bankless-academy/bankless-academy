@@ -4,7 +4,7 @@ import { CircleWavyCheck } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 
-import { IS_WHITELABEL } from 'constants/index'
+import { IS_COLLECTIBLE_ACTIVATED, IS_WHITELABEL } from 'constants/index'
 import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import { Mixpanel } from 'utils/index'
@@ -87,6 +87,7 @@ const LessonCard = ({
   const isArticleRead =
     lesson.isArticle && localStorage.getItem(lesson.slug) === 'true'
   const isLessonCollected =
+    IS_COLLECTIBLE_ACTIVATED &&
     !!lesson.lessonCollectibleTokenAddress?.length &&
     lessonsCollectedLS?.includes(
       lesson.lessonCollectibleTokenAddress.toLowerCase()
@@ -123,7 +124,7 @@ const LessonCard = ({
           ) : (
             <Tag size="md" backgroundColor="transparent"></Tag>
           )}
-          {lesson.hasCollectible && (
+          {IS_COLLECTIBLE_ACTIVATED && lesson.hasCollectible && (
             <StyledTag size="md" variant="outline" color="white" gold="true">
               {!isLessonCollected
                 ? t('Collectible Available')
