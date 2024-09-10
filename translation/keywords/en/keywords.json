@@ -293,6 +293,12 @@
     "definition": "A mechanism that does not discriminate for or against any specific people.",
     "glossary": true
   },
+  "crypto": {
+    "keyword": "crypto",
+    "keyword_plural": "cryptos",
+    "definition": "(Cryptocurrency) Currencies native to the internet, not an individual country. Rather than being managed by a central bank, they’re often governed by their users.",
+    "glossary": true
+  },
   "crypto wallet": {
     "keyword": "crypto wallet",
     "keyword_plural": "crypto wallets",
@@ -507,6 +513,12 @@
     "keyword": "Ethereum Virtual Machine",
     "keyword_plural": "Ethereum Virtual Machines",
     "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network.",
+    "glossary": true
+  },
+  "fiat": {
+    "keyword": "fiat",
+    "keyword_plural": "fiats",
+    "definition": "A national currency that, rather than being backed by a commodity like gold, derives value from the public's trust in the issuer.",
     "glossary": true
   },
   "fomo": {

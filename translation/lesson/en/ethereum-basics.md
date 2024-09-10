@@ -35,7 +35,7 @@ Today we’re looking at Ethereum: the next era of the internet. It’s a revolu
 
 A simple way to think of Ethereum is like the Google or Apple `app store`, but with some key differences:
 
-- 💸 It uses `cryptocurrency` instead of `fiat currency` (the US dollar, the euro, or the Chinese yuan).
+- 💸 It uses `cryptocurrency` instead of `fiat` currency (the US dollar, the euro, or the Chinese yuan).
 - 📡 It’s a layer added directly to your internet browser, unlocking new functionality on websites.
 - ⚖️ The store rules are agreed on by users and app builders. There’s no central corporation in charge.
 
@@ -59,7 +59,7 @@ Here, total strangers connect, exchange ideas, goods and services, and even igni
 
 `Centralized services` have more control over the internet than ever before, acting as `intermediaries` for almost everything you do online.
 
-Think of how big banks manage your purchases, Meta monitors your social interactions, and Apple or Google control the apps you can have on your phone. Through their rules, fees, and corporate motives, they have an incredible influence over your digital exchanges.
+Think of how big banks manage your purchases, Facebook and Instagram connect your social interactions, and Apple or Google control the apps you can have on your phone. Through their rules, fees, and corporate motives, they have an incredible influence over your digital exchanges.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/centralized-services-adf5be05.svg)
 

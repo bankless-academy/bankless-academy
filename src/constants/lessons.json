@@ -324,7 +324,7 @@
       "apps",
       "app store",
       "cryptocurrency",
-      "fiat currency",
+      "fiat",
       "centralized services",
       "intermediaries",
       "value-extractive",
@@ -349,7 +349,7 @@
         "type": "LEARN",
         "notionId": "020b00dc30e4460583a7fe08be2bbd15",
         "title": "Ethereum Basics",
-        "content": "<div class=\"bloc1\"><p>Welcome, Explorer, to one of the most important lessons at Bankless Academy.</p><p>Today we’re looking at Ethereum: the next era of the internet. It’s a revolutionary platform powering a world of new internet <code>apps</code> and digital currencies.</p><p>A simple way to think of Ethereum is like the Google or Apple <code>app store</code>, but with some key differences:</p><ul><li>💸 It uses <code>cryptocurrency</code> instead of <code>fiat currency</code> (the US dollar, the euro, or the Chinese yuan).</li><li>📡 It’s a layer added directly to your internet browser, unlocking new functionality on websites.</li><li>⚖️ The store rules are agreed on by users and app builders. There’s no central corporation in charge.</li></ul><p>To understand why millions of people are using Ethereum across the world, we need to look at its core mission…</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/ethereum-basics-b2e09ce5.png'></div>"
+        "content": "<div class=\"bloc1\"><p>Welcome, Explorer, to one of the most important lessons at Bankless Academy.</p><p>Today we’re looking at Ethereum: the next era of the internet. It’s a revolutionary platform powering a world of new internet <code>apps</code> and digital currencies.</p><p>A simple way to think of Ethereum is like the Google or Apple <code>app store</code>, but with some key differences:</p><ul><li>💸 It uses <code>cryptocurrency</code> instead of <code>fiat</code> currency (the US dollar, the euro, or the Chinese yuan).</li><li>📡 It’s a layer added directly to your internet browser, unlocking new functionality on websites.</li><li>⚖️ The store rules are agreed on by users and app builders. There’s no central corporation in charge.</li></ul><p>To understand why millions of people are using Ethereum across the world, we need to look at its core mission…</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/ethereum-basics-b2e09ce5.png'></div>"
       },
       {
         "type": "LEARN",
@@ -361,7 +361,7 @@
         "type": "LEARN",
         "notionId": "9dc478de7dd64901a3c0b38cf67f500b",
         "title": "Centralized Services",
-        "content": "<div class=\"bloc1\"><p><strong>The internet relies on a small group of corporations that don’t always have our best interests at heart.</strong></p><p><code>Centralized services</code> have more control over the internet than ever before, acting as <code>intermediaries</code> for almost everything you do online.</p><p>Think of how big banks manage your purchases, Meta monitors your social interactions, and Apple or Google control the apps you can have on your phone. Through their rules, fees, and corporate motives, they have an incredible influence over your digital exchanges.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/centralized-services-adf5be05.svg'></div>"
+        "content": "<div class=\"bloc1\"><p><strong>The internet relies on a small group of corporations that don’t always have our best interests at heart.</strong></p><p><code>Centralized services</code> have more control over the internet than ever before, acting as <code>intermediaries</code> for almost everything you do online.</p><p>Think of how big banks manage your purchases, Facebook and Instagram connect your social interactions, and Apple or Google control the apps you can have on your phone. Through their rules, fees, and corporate motives, they have an incredible influence over your digital exchanges.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/centralized-services-adf5be05.svg'></div>"
       },
       {
         "type": "LEARN",
