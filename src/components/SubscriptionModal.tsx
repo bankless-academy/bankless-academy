@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Modal,
   ModalOverlay,
@@ -34,7 +34,8 @@ const SubscriptionModal = ({
   const toast = useToast()
   const { address } = useAccount()
   const [ens] = useLocalStorage(`name-cache`, {})
-  const [email, setEmail] = useState(localStorage.getItem('email'))
+  const [email, setEmail] = useLocalStorage('email', '')
+
   return (
     <Modal onClose={onClose} size={'xl'} isCentered isOpen={isOpen}>
       <ModalOverlay backdropFilter="blur(10px)" />

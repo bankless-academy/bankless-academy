@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Image, HStack, Spacer, Flex, Button } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
@@ -14,6 +14,7 @@ import SwitchNetworkButton from 'components/SwitchNetworkButton/index'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
+import OnboardingModal from 'components/OnboardingModal'
 
 declare global {
   interface Navigator {
@@ -48,6 +49,15 @@ const Nav: React.FC = () => {
         : (queryString.parse(window.location.search)?.webapp || '')?.toString()
       : undefined
   const isEmbedded = typeof window !== 'undefined' && window !== window.parent
+
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const [onboarding] = useLocalStorage('onboarding', '')
+
+  useEffect(() => {
+    if (onboarding === '') {
+      setIsOnboardingModalOpen(true)
+    }
+  }, [onboarding])
 
   useEffect((): void => {
     const embedValue =
@@ -105,6 +115,9 @@ const Nav: React.FC = () => {
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">
+            <Button onClick={() => setIsOnboardingModalOpen(true)}>
+              popup
+            </Button>
             <InternalLink href={`/lessons`} alt="Explore Lessons" zIndex={2}>
               <Button
                 variant={
@@ -129,6 +142,12 @@ const Nav: React.FC = () => {
           </HStack>
         </Flex>
       </Box>
+      <OnboardingModal
+        isOpen={isOnboardingModalOpen}
+        onClose={() => {
+          setIsOnboardingModalOpen(false)
+        }}
+      />
     </header>
   )
 }
