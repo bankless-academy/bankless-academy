@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   Modal,
   ModalOverlay,
@@ -21,7 +22,9 @@ import { useAccount } from 'wagmi'
 import { LOGO, PROJECT_NAME } from 'constants/index'
 import { Envelope } from '@phosphor-icons/react'
 import { t } from 'i18next'
-import { emailRegex, api, Mixpanel } from 'utils/index'
+import { emailRegex, api, Mixpanel, shortenAddress } from 'utils/index'
+import ProfileScore from 'components/ProfileScore'
+import { UserType } from 'entities/user'
 
 const OnboardingModal = ({
   isOpen,
@@ -34,10 +37,28 @@ const OnboardingModal = ({
   const [step, setStep] = useState<'initial' | 'learn' | 'subscribe'>('initial')
   const [, setOnboarding] = useLocalStorage('onboarding', '')
   const [email, setEmail] = useLocalStorage('email', '')
+  const referrer = localStorage.getItem('referrer')
+  const [referrerData, setReferrerData] = useState<UserType | null>(null)
   const [initialEmail] = useLocalStorage('email', '')
   const toast = useToast()
   const { address } = useAccount()
   const [ens] = useLocalStorage(`name-cache`, {})
+
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const res = await fetch(`/api/user/${referrer}?profile=true`)
+        const user: UserType = await res.json()
+        if (user) {
+          console.log(user)
+          setReferrerData(user)
+        }
+      } catch (error) {
+        error.log(error)
+      }
+    }
+    if (referrer) loadUser()
+  }, [referrer])
 
   useEffect(() => {
     if (isOpen) {
@@ -146,36 +167,49 @@ const OnboardingModal = ({
                   >
                     Welcome to {PROJECT_NAME}!
                   </Text>
-                  <Box
-                    display="flex"
-                    flexDir={isMobileScreen ? 'column' : 'row'}
-                    alignItems="center"
-                  >
-                    <Image
-                      height="180px"
-                      src="/images/LEVELUP.png"
-                      alt="Explorer Profile"
-                      zIndex="1"
-                    />
+                  {referrerData?.address ? (
                     <Box
-                      backgroundColor="#3F3154"
-                      borderRightRadius="100px"
-                      borderLeftRadius={isMobileScreen ? '100px' : '0'}
-                      p="24px 48px"
-                      marginLeft={isMobileScreen ? '0' : '-70px'}
-                      w={isMobileScreen ? '90%' : 'auto'}
-                      mt={isMobileScreen ? '-45px' : '0'}
+                      display="flex"
+                      flexDir={isMobileScreen ? 'column' : 'row'}
+                      alignItems="center"
+                      maxW="400px"
+                      m="24px auto 0"
                     >
                       <Box
-                        ml={isMobileScreen ? '0' : '20px'}
-                        w={isMobileScreen ? 'auto' : '215px'}
-                        textAlign={isMobileScreen ? 'center' : 'left'}
+                        zIndex="1"
+                        transform="scale(0.9)"
+                        position="relative"
                       >
-                        <Text>You were referred by:</Text>
-                        <Text fontWeight="bold">TETRANOME.ETH</Text>
+                        <ProfileScore
+                          avatar={referrerData.avatar}
+                          score={referrerData.stats.score}
+                        />
+                      </Box>
+                      <Box
+                        backgroundColor="#3F3154"
+                        borderRightRadius="100px"
+                        borderLeftRadius={isMobileScreen ? '100px' : '0'}
+                        p="24px 48px"
+                        marginLeft={isMobileScreen ? '0' : '-50px'}
+                        w={isMobileScreen ? '90%' : 'auto'}
+                        mt={isMobileScreen ? '-45px' : '0'}
+                      >
+                        <Box
+                          ml={isMobileScreen ? '0' : '0px'}
+                          w={isMobileScreen ? 'auto' : '200px'}
+                          textAlign="center"
+                        >
+                          <Text>You were referred by:</Text>
+                          <Text fontWeight="bold" textTransform="uppercase">
+                            {referrerData.ensName ||
+                              shortenAddress(referrerData.address)}
+                          </Text>
+                        </Box>
                       </Box>
                     </Box>
-                  </Box>
+                  ) : (
+                    <Box h="24px" />
+                  )}
                   <Box mt="24px">
                     <Text>Your digital transformation begins here.</Text>
                     <Text mt="8px">

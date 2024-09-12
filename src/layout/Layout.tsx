@@ -11,6 +11,7 @@ import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 import { shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
+import ProfileScore from 'components/ProfileScore'
 
 export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | ''
 
@@ -183,44 +184,7 @@ const Layout = ({
                     borderBottom={page === 'PROFILE' ? '2px solid #B85FF1' : ''}
                     position="relative"
                   >
-                    <Box
-                      margin="auto"
-                      pt="10px"
-                      w="170px"
-                      h="170px"
-                      borderRadius="50%"
-                      backgroundImage="linear-gradient(180deg, #A379BD 0%, #5B5198 100%)"
-                    >
-                      <Image
-                        w="150px"
-                        h="150px"
-                        margin="auto"
-                        borderRadius="50%"
-                        backgroundColor="black"
-                        src={avatar !== '' ? avatar : DEFAULT_AVATAR}
-                        fallbackSrc={DEFAULT_AVATAR}
-                      />
-                      {score > 0 && (
-                        <Box position="absolute" top="33px" right="28px">
-                          <Image src="/images/profile-hex.svg" />
-                          <Box
-                            position="absolute"
-                            top="0"
-                            right="0"
-                            width="66px"
-                            height="75px"
-                            display="flex"
-                            justifyContent="center"
-                            alignItems="center"
-                            fontSize="28px"
-                            fontWeight="bold"
-                            color="white"
-                          >
-                            {score}
-                          </Box>
-                        </Box>
-                      )}
-                    </Box>
+                    <ProfileScore avatar={avatar} score={score} />
                     <Box
                       textAlign="center"
                       mt="8"
