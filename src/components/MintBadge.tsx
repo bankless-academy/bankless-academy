@@ -1,17 +1,6 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react'
-import {
-  Button,
-  useToast,
-  Box,
-  useDisclosure,
-  // Popover,
-  // PopoverTrigger,
-  // PopoverContent,
-  // PopoverCloseButton,
-  // PopoverArrow,
-  // PopoverBody,
-} from '@chakra-ui/react'
+import { Button, useToast, Box, useDisclosure } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useWaitForTransactionReceipt } from 'wagmi'
@@ -42,32 +31,23 @@ const MintBadge = ({
     `isBadgeMinted-${badgeId}`,
     false
   )
-  // const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [status, setStatus] = useState('')
   const [showConfetti, setShowConfetti] = useState(false)
   const [hash, setHash] = useState('')
-  // const [showPopover, setShowPopover] = useState(false)
   const [isMintingInProgress, setIsMintingInProgress] = useState(false)
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
     EMPTY_PASSPORT
   )
   const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
+  const [referrer] = useLocalStorage('referrer', '')
   const { query } = useRouter()
   const { simulate } = query
-  // const {
-  //   isOpen: isOpenPopOver,
-  //   onOpen: onOpenPopOver,
-  //   onClose: onClosePopOver,
-  // } = useDisclosure()
-  // const [isSmallScreen] = useSmallScreen()
 
   const { address } = useAccount()
   const toast = useToast()
 
   const { isOpen, onOpen, onClose } = useDisclosure()
-
-  // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
   async function checkPassport() {
     const result = await api('/api/passport', { address })
@@ -80,21 +60,9 @@ const MintBadge = ({
     }
   }
 
-  // useEffect(() => {
-  //   if (isQuestCompleted && badgesMintedLS?.length === 0 && !showPopover) {
-  //     setTimeout(() => {
-  //       onOpenPopOver()
-  //       setShowPopover(true)
-  //     }, 1000)
-  //   }
-  // }, [badgesMintedLS])
-
   const { isLoading, isSuccess } = useWaitForTransactionReceipt({
     chainId: polygon.id,
-    hash:
-      // DEV: simulate tx
-      // '0x5f746594b5570220b618a02b0010806b3b6a57ba4ea0670b386b3cdda088fd3e' ||
-      hash as any,
+    hash: hash as any,
     pollingInterval: 1_000,
   })
 
@@ -205,7 +173,7 @@ const MintBadge = ({
         address,
         badgeId,
         signature: signature,
-        referrer: localStorage.getItem('referrer'),
+        referrer: referrer,
       }
       setIsMintingInProgress(true)
       toast.closeAll()
@@ -286,14 +254,6 @@ const MintBadge = ({
 
   return (
     <>
-      {/* <Popover
-        isOpen={isOpenPopOver}
-        placement={isSmallScreen ? 'bottom' : 'right'}
-        returnFocusOnClose={false}
-        onOpen={onOpenPopOver}
-        onClose={onClosePopOver}
-      > */}
-      {/* <PopoverTrigger> */}
       {!showConfetti && !isLoading && (
         <Button
           variant={'primary'}
@@ -313,7 +273,6 @@ const MintBadge = ({
           {t('Claim Badge')}
         </Button>
       )}
-      {/* </PopoverTrigger> */}
       <PassportModal isOpen={isOpen} onClose={onClose} />
       <Confetti
         showConfetti={showConfetti}
@@ -326,30 +285,6 @@ const MintBadge = ({
           setShowConfetti(false)
         }}
       />
-      {/* <PopoverContent>
-          <PopoverCloseButton />
-          <PopoverArrow />
-          <PopoverBody textAlign="left">
-            <Box mt="2" p="2">
-              If you have a crypto wallet, you can now mint your lesson badge
-              here!
-            </Box>
-            <Box mb="2" p="2">
-              {`If you don't have a wallet yet, check out our '`}
-              <ExternalLink
-                underline="true"
-                href="/lessons/creating-a-crypto-wallet"
-              >
-                Creating a Crypto Wallet
-              </ExternalLink>
-              {`' walkthrough. Wallets are your account on the blockchain!`}
-            </Box>
-          </PopoverBody>
-        </PopoverContent> */}
-      {/* {isSmallScreen && (
-          <Box position="absolute" height="250px" w="1px"></Box>
-        )} */}
-      {/* </Popover> */}
     </>
   )
 }

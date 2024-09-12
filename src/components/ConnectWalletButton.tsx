@@ -16,7 +16,7 @@ import { Wallet, Power, UserCircle } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 import { useAccount, useSignMessage, useDisconnect } from 'wagmi'
 import { getEnsName, getEnsAvatar } from '@wagmi/core'
@@ -88,6 +88,11 @@ const ConnectWalletButton = ({
   const [ens, setEns] = useState('')
   const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [currentWallet, setCurrentWallet] = useLocalStorage(
+    'current_wallet',
+    ''
+  )
+  const [referrer, setReferrer] = useLocalStorage('referrer', '')
   const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
     'refreshBadges',
     false
@@ -95,19 +100,47 @@ const ConnectWalletButton = ({
   const [, setCommunity] = useLocalStorage(`community`, '')
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { disconnect } = useDisconnect()
-  // const { disconnect } = useDisconnect({
-  //   onError(error) {
-  //     console.log('Error while disconnecting', error)
-  //   },
-  //   onSuccess() {
-  //     console.log('Disconnect success')
-  //     // HACK: mobile wallet disconnect issues
-  //     if (localStorage.getItem('wagmi.wallet').includes('walletConnect')) {
-  //       console.log('force reload')
-  //       location.reload()
-  //     }
-  //   },
-  // })
+  const { referral } = router.query
+
+  useEffect(() => {
+    const getAddress = async (ens: string) => {
+      try {
+        const res = await fetch(`https://api.ensdata.net/${ens}`)
+        const data = await res.json()
+        console.log('referralAddress', data)
+        return data.address?.toLowerCase()
+      } catch (error) {
+        console.log(error)
+        return ''
+      }
+    }
+
+    const extractAdressFromUrl = (pathname) => {
+      const segments = pathname.split('/')
+      return segments[segments.length - 1].split('?')[0]
+    }
+
+    const handleReferral = async () => {
+      const referralString =
+        (referral as string) === 'true' && asPath?.startsWith('/explorer/')
+          ? extractAdressFromUrl(asPath)
+          : (referral as string)
+      // console.log('referralString', referralString)
+      if (referralString?.length) {
+        const referralAddress = referralString?.includes('.')
+          ? await getAddress(referralString)
+          : referralString?.toLowerCase()
+        // console.log('referralAddress', referralAddress)
+        // console.log('currentWallet', currentWallet)
+
+        if (referrer === '' && currentWallet !== referralAddress)
+          setReferrer(referralAddress)
+      }
+    }
+
+    handleReferral()
+    if (currentWallet === referrer) setReferrer('')
+  }, [asPath, referral, currentWallet, referrer])
 
   const isLessonPage = asPath.includes('/lessons')
   const isProfilePage = asPath.includes('/explorer/my-profile')
@@ -239,10 +272,10 @@ const ConnectWalletButton = ({
   const loadAddress = (address) => {
     setConnectWalletPopupLS(false)
     onClose()
-    if (localStorage.getItem('current_wallet') !== address?.toLowerCase()) {
+    if (currentWallet !== address?.toLowerCase()) {
       localStorage.removeItem('passport')
     }
-    localStorage.setItem('current_wallet', address?.toLowerCase())
+    setCurrentWallet(address?.toLowerCase())
     updateName(address)
     const wallets = localStorage.getItem('wallets')
       ? JSON.parse(localStorage.getItem('wallets'))
@@ -467,7 +500,7 @@ const ConnectWalletButton = ({
                 {t('Connect your wallet to proceed.')}
               </Heading>
               <Text textAlign="center">
-                {`Don’t know how? `}
+                {`Don't know how? `}
                 <ExternalLink
                   underline="true"
                   href="https://app.banklessacademy.com/lessons/creating-a-crypto-wallet"

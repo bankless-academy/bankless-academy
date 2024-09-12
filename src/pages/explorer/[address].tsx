@@ -112,7 +112,6 @@ export default function Page({
   const { referral } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
-  const [fullProfileAddress, setFullProfileAddress] = useState('')
   const [isMyProfile, setIsMyProfile] = useState(false)
   const [score, setScore] = useLocalStorage(`score`, 0)
   const { address } = useAccount()
@@ -148,10 +147,6 @@ export default function Page({
           ) {
             const redirect = `/explorer/${profileAddress}?referral=true`
             window.history.replaceState(null, null, redirect)
-          }
-
-          if (loadedUser.address !== fullProfileAddress) {
-            setFullProfileAddress(loadedUser.address)
           }
           if (JSON.stringify(loadedUser) !== JSON.stringify(user)) {
             setUser(loadedUser)
@@ -222,20 +217,6 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   const twitterLink = generateTwitterLink(share, shareLink)
 
   const farcasterLink = generateFarcasterLink(share, shareLink)
-
-  if (
-    referral?.length &&
-    !isMyProfile &&
-    !localStorage.getItem('referrer')?.length &&
-    fullProfileAddress
-  ) {
-    localStorage.setItem('referrer', fullProfileAddress?.toLowerCase())
-    console.log('referrer added', localStorage.getItem('referrer'))
-  }
-  if (address && localStorage.getItem('referrer') === address?.toLowerCase()) {
-    localStorage.setItem('referrer', '')
-    console.log('reset referrer')
-  }
 
   const referrals = user?.stats?.referrals?.length || 0
 

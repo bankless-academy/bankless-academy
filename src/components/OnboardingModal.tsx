@@ -38,7 +38,7 @@ const OnboardingModal = ({
   const [step, setStep] = useState<'initial' | 'learn' | 'subscribe'>('initial')
   const [, setOnboarding] = useLocalStorage('onboarding', '')
   const [email, setEmail] = useLocalStorage('email', '')
-  const referrer = localStorage.getItem('referrer')
+  const [referrer] = useLocalStorage('referrer', '')
   const [referrerData, setReferrerData] = useState<UserType | null>(null)
   const [initialEmail] = useLocalStorage('email', '')
   const toast = useToast()
@@ -55,7 +55,7 @@ const OnboardingModal = ({
           setReferrerData(user)
         }
       } catch (error) {
-        error.log(error)
+        console.error(error)
       }
     }
     if (referrer) loadUser()
