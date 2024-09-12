@@ -30,6 +30,8 @@ const Demo = (): JSX.Element => {
                 onClick={async () => {
                   // reset email
                   localStorage.removeItem('email')
+                  // reset referrer
+                  localStorage.removeItem('referrer')
                   // reset my stamps
                   await api('/api/passport', {
                     address,
@@ -77,7 +79,7 @@ const Demo = (): JSX.Element => {
                 Activate demo state
               </Button>
               <Box>
-                Deletes email state.
+                Deletes email and referrer.
                 <br />
                 Resets state for Bitcoin Basics: slides + quests.
                 <br />
