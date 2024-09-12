@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Button,
   Menu,
@@ -13,10 +13,10 @@ import { Mixpanel } from 'utils/index'
 import { useTranslation } from 'react-i18next'
 import { Bug, Gear } from '@phosphor-icons/react'
 
-import SubscriptionModal from 'components/SubscriptionModal'
 import InstallAppModal from 'components/InstallAppModal'
 import ExternalLink from 'components/ExternalLink'
 import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
+import OnboardingModal from 'components/OnboardingModal'
 
 const OptionMenu = ({
   isSmallScreen,
@@ -26,12 +26,12 @@ const OptionMenu = ({
   isWebApp: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const { isOpen, onOpen, onClose } = useDisclosure()
   const {
     isOpen: isOpenAppModal,
     onOpen: onOpenAppModal,
     onClose: onCloseAppModal,
   } = useDisclosure()
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
 
   const twitterLink = `https://x.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
 
@@ -76,7 +76,7 @@ const OptionMenu = ({
             <>
               <MenuItem
                 onClick={() => {
-                  onOpen()
+                  setIsOnboardingModalOpen(true)
                   Mixpanel.track('click_internal_link', {
                     link: 'modal',
                     name: 'Newsletter signup',
@@ -158,7 +158,13 @@ const OptionMenu = ({
           </ExternalLink>
         </MenuList>
       </Menu>
-      <SubscriptionModal isOpen={isOpen} onClose={onClose} />
+      <OnboardingModal
+        isOpen={isOnboardingModalOpen}
+        onClose={() => {
+          setIsOnboardingModalOpen(false)
+        }}
+        newsletterOnly={true}
+      />
       <InstallAppModal
         isOpen={isOpenAppModal}
         onClose={onCloseAppModal}

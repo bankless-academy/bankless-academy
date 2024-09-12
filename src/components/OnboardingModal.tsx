@@ -30,9 +30,11 @@ import { UserType } from 'entities/user'
 const OnboardingModal = ({
   isOpen,
   onClose,
+  newsletterOnly,
 }: {
   isOpen: boolean
   onClose: () => void
+  newsletterOnly?: boolean
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [step, setStep] = useState<'initial' | 'learn' | 'subscribe'>('initial')
@@ -69,7 +71,7 @@ const OnboardingModal = ({
 
   useEffect(() => {
     if (isOpen) {
-      setStep('initial')
+      setStep(newsletterOnly ? 'subscribe' : 'initial')
     }
   }, [isOpen])
 
@@ -170,9 +172,13 @@ const OnboardingModal = ({
     ),
     subscribe: (
       <>
-        <Button onClick={handlePrevStep} variant="secondaryWhite" size="lg">
-          Back
-        </Button>
+        {newsletterOnly ? (
+          <Box />
+        ) : (
+          <Button onClick={handlePrevStep} variant="secondaryWhite" size="lg">
+            Back
+          </Button>
+        )}
         <Button onClick={handleNextStep} variant="primaryWhite" size="lg">
           Sign-up
         </Button>
@@ -186,8 +192,8 @@ const OnboardingModal = ({
       size={isMobileScreen ? 'full' : 'xl'}
       isCentered
       isOpen={isOpen}
-      closeOnOverlayClick={false}
-      closeOnEsc={false}
+      closeOnOverlayClick={step === 'subscribe' || !!email}
+      closeOnEsc={step === 'subscribe' || !!email}
     >
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent
@@ -198,7 +204,7 @@ const OnboardingModal = ({
         overflowY="auto"
         maxH="var(--chakra-vh)"
       >
-        {step === 'subscribe' && <ModalCloseButton />}
+        {(step === 'subscribe' || !!email) && <ModalCloseButton />}
         <ModalBody
           padding={isMobileScreen ? '0' : 'default'}
           pb="4"

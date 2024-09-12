@@ -186,11 +186,6 @@ const LessonCards = ({
             />
           )
         })}
-        {/* <SubscriptionModal
-        lesson={selectedLesson}
-        isOpen={isOpen}
-        onClose={onClose}
-      /> */}
       </SimpleGrid>
       <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />
     </Box>
