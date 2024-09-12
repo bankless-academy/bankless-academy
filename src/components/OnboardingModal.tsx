@@ -14,6 +14,7 @@ import {
   InputGroup,
   InputLeftElement,
   useToast,
+  ModalFooter,
 } from '@chakra-ui/react'
 import { useState, useEffect } from 'react'
 import { useLocalStorage } from 'usehooks-ts'
@@ -68,21 +69,26 @@ const OnboardingModal = ({
 
   const handleNextStep = async () => {
     if (step === 'initial') setStep('learn')
-    else if (step === 'learn') setStep('subscribe')
-    else {
+    else if (step === 'learn') {
+      if (email) {
+        setOnboarding('done')
+        onClose()
+      } else setStep('subscribe')
+    } else {
+      // subscribe
       toast.closeAll()
       if (!email)
         toast({
-          title: t('Email missing'),
-          description: t('Provide an email.'),
+          title: `Email missing.`,
+          description: `Please provide an email address.`,
           status: 'warning',
           duration: 10000,
           isClosable: true,
         })
       else if (emailRegex.test(email) === false)
         toast({
-          title: t('Wrong email format'),
-          description: t('Please check your email.'),
+          title: `Wrong email format.`,
+          description: `Please check your email.`,
           status: 'warning',
           duration: 10000,
           isClosable: true,
@@ -115,6 +121,8 @@ const OnboardingModal = ({
             duration: 10000,
             isClosable: true,
           })
+          setOnboarding('done')
+          onClose()
         } else {
           toast({
             title: t(
@@ -127,9 +135,43 @@ const OnboardingModal = ({
           })
         }
       }
-      setOnboarding('done')
-      onClose()
     }
+  }
+
+  const handlePrevStep = () => {
+    if (step === 'learn') setStep('initial')
+    else if (step === 'subscribe') setStep('learn')
+  }
+
+  const Buttons = {
+    initial: (
+      <>
+        <Box />
+        <Button onClick={handleNextStep} variant="primaryWhite" size="lg">
+          Next
+        </Button>
+      </>
+    ),
+    learn: (
+      <>
+        <Button onClick={handlePrevStep} variant="secondaryWhite" size="lg">
+          Back
+        </Button>
+        <Button onClick={handleNextStep} variant="primaryWhite" size="lg">
+          Start
+        </Button>
+      </>
+    ),
+    subscribe: (
+      <>
+        <Button onClick={handlePrevStep} variant="secondaryWhite" size="lg">
+          Back
+        </Button>
+        <Button onClick={handleNextStep} variant="primaryWhite" size="lg">
+          Sign-up
+        </Button>
+      </>
+    ),
   }
 
   return (
@@ -151,7 +193,11 @@ const OnboardingModal = ({
         maxH="var(--chakra-vh)"
       >
         {step === 'subscribe' && <ModalCloseButton />}
-        <ModalBody padding={isMobileScreen ? '0' : 'default'} pb="4">
+        <ModalBody
+          padding={isMobileScreen ? '0' : 'default'}
+          pb="4"
+          alignContent="center"
+        >
           {step === 'initial' && (
             <>
               <Box mt="24px">
@@ -177,7 +223,7 @@ const OnboardingModal = ({
                     >
                       <Box
                         zIndex="1"
-                        transform="scale(0.9)"
+                        transform={isMobileScreen ? 'scale(0.7)' : 'scale(0.9)'}
                         position="relative"
                       >
                         <ProfileScore
@@ -189,10 +235,10 @@ const OnboardingModal = ({
                         backgroundColor="#3F3154"
                         borderRightRadius="100px"
                         borderLeftRadius={isMobileScreen ? '100px' : '0'}
-                        p="24px 48px"
+                        p={isMobileScreen ? '16px 32px' : '24px 48px'}
                         marginLeft={isMobileScreen ? '0' : '-50px'}
                         w={isMobileScreen ? '90%' : 'auto'}
-                        mt={isMobileScreen ? '-45px' : '0'}
+                        mt={isMobileScreen ? '-40px' : '0'}
                       >
                         <Box
                           ml={isMobileScreen ? '0' : '0px'}
@@ -213,21 +259,11 @@ const OnboardingModal = ({
                   <Box mt="24px">
                     <Text>Your digital transformation begins here.</Text>
                     <Text mt="8px">
-                      It’s time to start your crypto journey and change your
-                      digital life forever.
+                      {`It's time to start your crypto journey and change your
+                      digital life forever.`}
                     </Text>
                   </Box>
                 </Box>
-              </Box>
-              <Box display="flex" justifyContent="flex-end">
-                <Button
-                  onClick={handleNextStep}
-                  mt="4"
-                  variant="primaryWhite"
-                  size="lg"
-                >
-                  Next
-                </Button>
               </Box>
             </>
           )}
@@ -242,14 +278,14 @@ const OnboardingModal = ({
                 >
                   Start your crypto journey!
                 </Box>
-                <Box maxW="480px" m="auto">
+                <Box maxW="480px" m="auto" mt={isMobileScreen ? '0' : '24px'}>
                   <Box
                     display="flex"
                     flexDir={isMobileScreen ? 'column' : 'row'}
                     alignItems="center"
                   >
                     <Image
-                      height="152px"
+                      height={isMobileScreen ? '130px' : '152px'}
                       src="/images/LESSON.png"
                       alt="Lesson"
                       zIndex="1"
@@ -258,10 +294,10 @@ const OnboardingModal = ({
                       backgroundColor="#3F3154"
                       borderRightRadius="100px"
                       borderLeftRadius={isMobileScreen ? '100px' : '0'}
-                      p="24px 48px"
+                      p={isMobileScreen ? '16px 32px' : '24px 48px'}
                       marginLeft={isMobileScreen ? '0' : '-70px'}
                       w={isMobileScreen ? '90%' : 'auto'}
-                      mt={isMobileScreen ? '-45px' : '0'}
+                      mt={isMobileScreen ? '-40px' : '0'}
                     >
                       <Box ml={isMobileScreen ? '0' : '20px'}>
                         <Text fontWeight="bold">1. Lessons & Quests</Text>
@@ -276,7 +312,7 @@ const OnboardingModal = ({
                     mt={isMobileScreen ? '0' : '-36px'}
                   >
                     <Image
-                      height="180px"
+                      height={isMobileScreen ? '150px' : '180px'}
                       src="/images/BADGE.png"
                       alt="Badge"
                       zIndex="1"
@@ -285,14 +321,14 @@ const OnboardingModal = ({
                       backgroundColor="#3F3154"
                       borderLeftRadius="100px"
                       borderRightRadius={isMobileScreen ? '100px' : '0'}
-                      p="24px 48px"
+                      p={isMobileScreen ? '16px 32px' : '24px 48px'}
                       marginRight={isMobileScreen ? '0' : '-70px'}
                       w={isMobileScreen ? '90%' : 'auto'}
-                      mt={isMobileScreen ? '-45px' : '0'}
+                      mt={isMobileScreen ? '-40px' : '0'}
                     >
                       <Box w={isMobileScreen ? 'auto' : '250px'}>
                         <Text fontWeight="bold">2. Claim Badges</Text>
-                        <Text pl="17px">Showcase your expertise.</Text>
+                        <Text pl="18px">Showcase your expertise.</Text>
                       </Box>
                     </Box>
                   </Box>
@@ -303,7 +339,7 @@ const OnboardingModal = ({
                     mt={isMobileScreen ? '0' : '-36px'}
                   >
                     <Image
-                      height="180px"
+                      height={isMobileScreen ? '150px' : '180px'}
                       src="/images/LEVELUP.png"
                       alt="Explorer Profile"
                       zIndex="1"
@@ -312,30 +348,20 @@ const OnboardingModal = ({
                       backgroundColor="#3F3154"
                       borderRightRadius="100px"
                       borderLeftRadius={isMobileScreen ? '100px' : '0'}
-                      p="24px 48px"
+                      p={isMobileScreen ? '16px 32px' : '24px 48px'}
                       marginLeft={isMobileScreen ? '0' : '-70px'}
                       w={isMobileScreen ? '90%' : 'auto'}
-                      mt={isMobileScreen ? '-45px' : '0'}
+                      mt={isMobileScreen ? '-40px' : '0'}
                     >
                       <Box
                         ml={isMobileScreen ? '0' : '20px'}
                         w={isMobileScreen ? 'auto' : '215px'}
                       >
                         <Text fontWeight="bold">3. Level Up</Text>
-                        <Text pl="17px">Build your digital identity.</Text>
+                        <Text pl="18px">Build your digital identity.</Text>
                       </Box>
                     </Box>
                   </Box>
-                </Box>
-                <Box display="flex" justifyContent="flex-end">
-                  <Button
-                    onClick={handleNextStep}
-                    mt="4"
-                    variant="primaryWhite"
-                    size="lg"
-                  >
-                    Start
-                  </Button>
                 </Box>
               </Box>
             </>
@@ -364,24 +390,18 @@ const OnboardingModal = ({
                     mb="8"
                     onChange={(e): void => {
                       setEmail(e.target.value)
-                      localStorage.setItem('email', e.target.value)
                     }}
                   />
                 </InputGroup>
               </Box>
-              <Box display="flex" justifyContent="flex-end">
-                <Button
-                  onClick={handleNextStep}
-                  mt="4"
-                  variant="primaryWhite"
-                  size="lg"
-                >
-                  Sign-up
-                </Button>
-              </Box>
             </>
           )}
         </ModalBody>
+        <ModalFooter>
+          <Box display="flex" justifyContent="space-between" w="100%">
+            {Buttons[step]}
+          </Box>
+        </ModalFooter>
       </ModalContent>
     </Modal>
   )

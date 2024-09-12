@@ -67,7 +67,6 @@ const SubscriptionModal = ({
               mb="8"
               onChange={(e): void => {
                 setEmail(e.target.value)
-                localStorage.setItem('email', e.target.value)
               }}
             />
           </InputGroup>
