@@ -28,6 +28,8 @@ const Demo = (): JSX.Element => {
             <Box>
               <Button
                 onClick={async () => {
+                  // reset email
+                  localStorage.removeItem('email')
                   // reset my stamps
                   await api('/api/passport', {
                     address,
@@ -75,6 +77,8 @@ const Demo = (): JSX.Element => {
                 Activate demo state
               </Button>
               <Box>
+                Deletes email state.
+                <br />
                 Resets state for Bitcoin Basics: slides + quests.
                 <br />
                 Resets state for Wallet Basics: slides + quizzes + quests.
