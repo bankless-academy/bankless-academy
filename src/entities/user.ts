@@ -14,6 +14,7 @@ export interface UserStatsType {
 }
 export interface UserType {
   address: string
+  emailLinked: boolean
   ensName: string
   avatar: string
   stats?: UserStatsType

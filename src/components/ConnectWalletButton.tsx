@@ -93,6 +93,7 @@ const ConnectWalletButton = ({
     ''
   )
   const [referrer, setReferrer] = useLocalStorage('referrer', '')
+  const [emailLinked, setEmailLinked] = useLocalStorage('emailLinked', false)
   const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
     'refreshBadges',
     false
@@ -101,6 +102,7 @@ const ConnectWalletButton = ({
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { disconnect } = useDisconnect()
   const { referral } = router.query
+  const [email] = useLocalStorage('email', localStorage.getItem('email') || '')
 
   useEffect(() => {
     const getAddress = async (ens: string) => {
@@ -242,11 +244,27 @@ const ConnectWalletButton = ({
 
   function refreshBadges() {
     if (address)
-      axios.get(`/api/user/${address}`).then((res) => {
+      axios.get(`/api/user/${address}`).then(async (res) => {
         const community = res?.data?.community
         setCommunity(community)
         const score = res?.data?.stats?.score || 0
         setScore(score)
+        if (
+          !emailLinked &&
+          !res?.data?.emailLinked &&
+          email?.length &&
+          address?.length
+        ) {
+          try {
+            const res = await api('/api/link-email', { email, address })
+            console.log('res', res.data)
+            if (res.data?.message) {
+              setEmailLinked(true)
+            }
+          } catch (error) {
+            console.error('error', error)
+          }
+        }
         const badgeTokenIds = res?.data?.badgeTokenIds
         if (Array.isArray(badgeTokenIds)) {
           const badgesMinted = BADGE_IDS.filter((badgeId) =>

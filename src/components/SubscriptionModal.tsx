@@ -34,7 +34,10 @@ const SubscriptionModal = ({
   const toast = useToast()
   const { address } = useAccount()
   const [ens] = useLocalStorage(`name-cache`, {})
-  const [email, setEmail] = useLocalStorage('email', '')
+  const [email, setEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
 
   return (
     <Modal onClose={onClose} size={'xl'} isCentered isOpen={isOpen}>

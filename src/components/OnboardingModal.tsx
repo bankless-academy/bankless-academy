@@ -37,10 +37,16 @@ const OnboardingModal = ({
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [step, setStep] = useState<'initial' | 'learn' | 'subscribe'>('initial')
   const [, setOnboarding] = useLocalStorage('onboarding', '')
-  const [email, setEmail] = useLocalStorage('email', '')
+  const [email, setEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
   const [referrer] = useLocalStorage('referrer', '')
   const [referrerData, setReferrerData] = useState<UserType | null>(null)
-  const [initialEmail] = useLocalStorage('email', '')
+  const [initialEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
   const toast = useToast()
   const { address } = useAccount()
   const [ens] = useLocalStorage(`name-cache`, {})
@@ -106,7 +112,7 @@ const OnboardingModal = ({
               : undefined,
         })
         if (result && result.status === 200) {
-          localStorage.setItem('email', email)
+          setEmail(email)
           localStorage.setItem(`newsletter`, 'true')
           Mixpanel.track(
             initialEmail?.length ? 'subscribe_newsletter' : 'update_newsletter',

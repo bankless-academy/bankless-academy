@@ -117,8 +117,14 @@ export default function Page({
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
-  const [email, setEmail] = useLocalStorage('email', '')
-  const [initialEmail] = useLocalStorage('email', '')
+  const [email, setEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
+  const [initialEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
   const toast = useToast()
   const [ens] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
@@ -148,7 +154,7 @@ export default function Page({
             const redirect = `/explorer/${profileAddress}?referral=true`
             window.history.replaceState(null, null, redirect)
           }
-          if (JSON.stringify(loadedUser) !== JSON.stringify(user)) {
+          if (loadedUser?.address !== user?.address) {
             setUser(loadedUser)
           }
         }
