@@ -197,11 +197,12 @@ const OnboardingModal = ({
           padding={isMobileScreen ? '0' : 'default'}
           pb="4"
           alignContent="center"
+          minH={isMobileScreen ? 'default' : '548px'}
         >
           {step === 'initial' && (
             <>
               <Box mt="24px">
-                <Box display="flex" justifyContent="center">
+                <Box display="flex" justifyContent="center" mt="24px">
                   <Image maxW="80%" src={LOGO} alt={PROJECT_NAME} />
                 </Box>
                 <Box maxW="480px" m={isMobileScreen ? '16px' : 'auto'}>
@@ -368,13 +369,19 @@ const OnboardingModal = ({
           )}
           {step === 'subscribe' && (
             <>
-              <Box display="flex" flexDir="column" alignItems="center">
+              <Box
+                display="flex"
+                flexDir="column"
+                alignItems="center"
+                maxW="90%"
+                m="auto"
+              >
                 <Image src="/images/emailKey.png" alt="Email" maxW="250px" />
                 <Box textAlign="center">
                   <Text fontWeight="bold" fontSize="2xl">
                     Sign up, unlock your power!
                   </Text>
-                  <Text>
+                  <Text mt="18px">
                     Enter your email to receive expert guidance and key updates.
                   </Text>
                 </Box>
