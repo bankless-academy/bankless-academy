@@ -365,16 +365,16 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                                 toast.closeAll()
                                 if (!email)
                                   toast({
-                                    title: t('Email missing'),
-                                    description: t('Provide an email.'),
+                                    title: `Email missing.`,
+                                    description: `Please provide an email address.`,
                                     status: 'warning',
                                     duration: 10000,
                                     isClosable: true,
                                   })
                                 else if (emailRegex.test(email) === false)
                                   toast({
-                                    title: t('Wrong email format'),
-                                    description: t('Please check your email.'),
+                                    title: `Wrong email format.`,
+                                    description: `Please check your email.`,
                                     status: 'warning',
                                     duration: 10000,
                                     isClosable: true,
@@ -397,7 +397,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                                     }
                                   )
                                   if (result && result.status === 200) {
-                                    localStorage.setItem('email', email)
+                                    setEmail(email)
                                     localStorage.setItem(`newsletter`, 'true')
                                     Mixpanel.track(
                                       initialEmail?.length
