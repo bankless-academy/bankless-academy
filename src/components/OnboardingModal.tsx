@@ -72,13 +72,14 @@ const OnboardingModal = ({
   useEffect(() => {
     if (isOpen) {
       setStep(newsletterOnly ? 'subscribe' : 'initial')
+      setOnboarding(Date.now().toString())
     }
   }, [isOpen])
 
   const handleNextStep = async () => {
     if (step === 'initial') setStep('learn')
     else if (step === 'learn') {
-      if (email) {
+      if (email && localStorage.getItem('newsletter') === 'true') {
         setOnboarding('done')
         onClose()
       } else setStep('subscribe')

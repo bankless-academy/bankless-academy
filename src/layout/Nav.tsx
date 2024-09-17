@@ -54,7 +54,12 @@ const Nav: React.FC = () => {
   const [onboarding] = useLocalStorage('onboarding', '')
 
   useEffect(() => {
-    if (onboarding === '') {
+    // if onboarding is not done, and it's been more than 3 days since the last popup, show it again
+    if (
+      onboarding === '' ||
+      (onboarding !== 'done' &&
+        Date.now() - Number(onboarding) > 60 * 60 * 24 * 3 * 1000)
+    ) {
       setIsOnboardingModalOpen(true)
     }
   }, [onboarding])
