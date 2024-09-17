@@ -37,7 +37,9 @@ const OnboardingModal = ({
   newsletterOnly?: boolean
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
-  const [step, setStep] = useState<'initial' | 'learn' | 'subscribe'>('initial')
+  const [step, setStep] = useState<'initial' | 'learn' | 'subscribe' | ''>(
+    newsletterOnly ? '' : 'initial'
+  )
   const [, setOnboarding] = useLocalStorage('onboarding', '')
   const [email, setEmail] = useLocalStorage(
     'email',
@@ -66,8 +68,8 @@ const OnboardingModal = ({
         console.error(error)
       }
     }
-    if (referrer) loadUser()
-  }, [referrer])
+    if (referrer && step === 'initial') loadUser()
+  }, [referrer, step])
 
   useEffect(() => {
     if (isOpen) {
