@@ -41,6 +41,7 @@ const Disclaimer = ({
     const currentTimestamp = Math.floor(Date.now() / 1000)
     const disclaimerTimestamp =
       parseInt(localStorage.getItem(`disclaimer-${lesson.slug}`)) || 0
+    // if it's been more than 1 day since the last popup, show it again
     const skipDisclaimer = currentTimestamp - disclaimerTimestamp < 60 * 60 * 24
     if (!DISCLAIMER_ENABLED || skipDisclaimer || lesson?.level === 'Essentials')
       accepted()
