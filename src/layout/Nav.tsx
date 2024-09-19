@@ -120,9 +120,9 @@ const Nav: React.FC = () => {
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">
-            <Button onClick={() => setIsOnboardingModalOpen(true)}>
+            {/* <Button onClick={() => setIsOnboardingModalOpen(true)}>
               popup
-            </Button>
+            </Button> */}
             <InternalLink href={`/lessons`} alt="Explore Lessons" zIndex={2}>
               <Button
                 variant={
