@@ -60,7 +60,9 @@ const Nav: React.FC = () => {
       (onboarding !== 'done' &&
         Date.now() - Number(onboarding) > 60 * 60 * 24 * 3 * 1000)
     ) {
-      setIsOnboardingModalOpen(true)
+      setTimeout(() => {
+        setIsOnboardingModalOpen(true)
+      }, 15000)
     }
   }, [onboarding])
 
