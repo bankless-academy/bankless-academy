@@ -285,7 +285,7 @@ const OnboardingModal = ({
           )}
           {step === 'learn' && (
             <>
-              <Box>
+              <Box textUnderlineOffset="4px">
                 <Box
                   fontWeight="bold"
                   fontSize="2xl"
@@ -294,87 +294,110 @@ const OnboardingModal = ({
                 >
                   Start your crypto journey!
                 </Box>
-                <Box maxW="480px" m="auto" mt={isMobileScreen ? '0' : '24px'}>
+                <Box maxW="480px" m="auto" my={isMobileScreen ? '0' : '32px'}>
                   <Box
                     display="flex"
-                    flexDir={isMobileScreen ? 'column' : 'row'}
+                    position="relative"
+                    flexDir="column"
                     alignItems="center"
                   >
                     <Image
-                      height={isMobileScreen ? '130px' : '152px'}
+                      position={isMobileScreen ? 'relative' : 'absolute'}
+                      top="-37px"
+                      left="-40px"
+                      height={isMobileScreen ? '130px' : '197px'}
                       src="/images/LESSON.png"
                       alt="Lesson"
                       zIndex="1"
                     />
                     <Box
                       backgroundColor="#3F3154"
-                      borderRightRadius="100px"
-                      borderLeftRadius={isMobileScreen ? '100px' : '0'}
+                      borderRadius="100px"
                       p={isMobileScreen ? '16px 32px' : '24px 48px'}
-                      marginLeft={isMobileScreen ? '0' : '-70px'}
-                      w={isMobileScreen ? '90%' : 'auto'}
-                      mt={isMobileScreen ? '-40px' : '0'}
-                    >
-                      <Box ml={isMobileScreen ? '0' : '20px'}>
-                        <Text fontWeight="bold">1. Lessons & Quests</Text>
-                        <Text pl="16px">Gain practical skills.</Text>
-                      </Box>
-                    </Box>
-                  </Box>
-                  <Box
-                    display="flex"
-                    flexDir={isMobileScreen ? 'column' : 'row-reverse'}
-                    alignItems="center"
-                    mt={isMobileScreen ? '0' : '-36px'}
-                  >
-                    <Image
-                      height={isMobileScreen ? '150px' : '180px'}
-                      src="/images/BADGE.png"
-                      alt="Badge"
-                      zIndex="1"
-                    />
-                    <Box
-                      backgroundColor="#3F3154"
-                      borderLeftRadius="100px"
-                      borderRightRadius={isMobileScreen ? '100px' : '0'}
-                      p={isMobileScreen ? '16px 32px' : '24px 48px'}
-                      marginRight={isMobileScreen ? '0' : '-70px'}
-                      w={isMobileScreen ? '90%' : 'auto'}
-                      mt={isMobileScreen ? '-40px' : '0'}
-                    >
-                      <Box w={isMobileScreen ? 'auto' : '250px'}>
-                        <Text fontWeight="bold">2. Claim Badges</Text>
-                        <Text pl="18px">Showcase your expertise.</Text>
-                      </Box>
-                    </Box>
-                  </Box>
-                  <Box
-                    display="flex"
-                    flexDir={isMobileScreen ? 'column' : 'row'}
-                    alignItems="center"
-                    mt={isMobileScreen ? '0' : '-36px'}
-                  >
-                    <Image
-                      height={isMobileScreen ? '150px' : '180px'}
-                      src="/images/LEVELUP.png"
-                      alt="Explorer Profile"
-                      zIndex="1"
-                    />
-                    <Box
-                      backgroundColor="#3F3154"
-                      borderRightRadius="100px"
-                      borderLeftRadius={isMobileScreen ? '100px' : '0'}
-                      p={isMobileScreen ? '16px 32px' : '24px 48px'}
-                      marginLeft={isMobileScreen ? '0' : '-70px'}
-                      w={isMobileScreen ? '90%' : 'auto'}
+                      w={isMobileScreen ? '90%' : '100%'}
                       mt={isMobileScreen ? '-40px' : '0'}
                     >
                       <Box
-                        ml={isMobileScreen ? '0' : '20px'}
-                        w={isMobileScreen ? 'auto' : '215px'}
+                        ml={isMobileScreen ? '0' : '222px'}
+                        w={isMobileScreen ? 'auto' : '176px'}
                       >
-                        <Text fontWeight="bold">3. Level Up</Text>
-                        <Text pl="18px">Build your digital identity.</Text>
+                        <Text fontSize="lg" fontWeight="bold">
+                          1. Lessons & Quests
+                        </Text>
+                        <Text pl="17px">
+                          Gain <u>theoretical</u> and <u>practical</u> skills.
+                        </Text>
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Box
+                    display="flex"
+                    position="relative"
+                    flexDir="column"
+                    alignItems="center"
+                    mt={isMobileScreen ? '0' : '48px'}
+                  >
+                    <Image
+                      height={isMobileScreen ? '150px' : '230px'}
+                      src="/images/BADGE.png"
+                      alt="Badge"
+                      zIndex="1"
+                      position={isMobileScreen ? 'relative' : 'absolute'}
+                      top="-52px"
+                      right="-34px"
+                    />
+                    <Box
+                      backgroundColor="#3F3154"
+                      borderRadius="100px"
+                      p={isMobileScreen ? '16px 32px' : '24px 48px'}
+                      w={isMobileScreen ? '90%' : '100%'}
+                      mt={isMobileScreen ? '-40px' : '0'}
+                    >
+                      <Box w={isMobileScreen ? 'auto' : '270px'}>
+                        <Text fontSize="lg" fontWeight="bold">
+                          2. Claim Badges
+                        </Text>
+                        <Text pl="20px">
+                          Showcase your expertise with{' '}
+                          <u>onchain certifications</u>.
+                        </Text>
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Box
+                    display="flex"
+                    position="relative"
+                    flexDir="column"
+                    alignItems="center"
+                    mt={isMobileScreen ? '0' : '48px'}
+                  >
+                    <Image
+                      height={isMobileScreen ? '150px' : '230px'}
+                      src="/images/LEVELUP.png"
+                      alt="Explorer Profile"
+                      zIndex="1"
+                      position={isMobileScreen ? 'relative' : 'absolute'}
+                      top="-52px"
+                      left="-34px"
+                    />
+                    <Box
+                      backgroundColor="#3F3154"
+                      borderRadius="100px"
+                      p={isMobileScreen ? '16px 32px' : '24px 48px'}
+                      w={isMobileScreen ? '90%' : '100%'}
+                      mt={isMobileScreen ? '-40px' : '0'}
+                    >
+                      <Box
+                        ml={isMobileScreen ? '0' : '161px'}
+                        w={isMobileScreen ? 'auto' : '257px'}
+                      >
+                        <Text fontSize="lg" fontWeight="bold">
+                          3. Level Up
+                        </Text>
+                        <Text pl="20px">
+                          Build your digital identity through your{' '}
+                          <u>Explorer Profile</u>.
+                        </Text>
                       </Box>
                     </Box>
                   </Box>
