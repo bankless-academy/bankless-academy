@@ -140,7 +140,7 @@ const HomePage = (): JSX.Element => {
                     mt="-15px"
                     w="100%"
                   >
-                    {t(`Your platform for building digital independence.`)}
+                    Your crypto journey starts here.
                   </Text>
                 </Box>
               )}

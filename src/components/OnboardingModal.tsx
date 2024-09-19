@@ -302,10 +302,10 @@ const OnboardingModal = ({
                     alignItems="center"
                   >
                     <Image
-                      position={isMobileScreen ? 'relative' : 'absolute'}
-                      top="-37px"
-                      left="-40px"
-                      height={isMobileScreen ? '130px' : '197px'}
+                      position={isMobileScreen ? 'unset' : 'absolute'}
+                      top="-43px"
+                      left="-36px"
+                      height={isMobileScreen ? '128px' : '210px'}
                       src="/images/LESSON.png"
                       alt="Lesson"
                       zIndex="1"
@@ -315,17 +315,17 @@ const OnboardingModal = ({
                       borderRadius="100px"
                       p={isMobileScreen ? '16px 32px' : '24px 48px'}
                       w={isMobileScreen ? '90%' : '100%'}
-                      mt={isMobileScreen ? '-40px' : '0'}
+                      mt={isMobileScreen ? '-35px' : '0'}
                     >
                       <Box
-                        ml={isMobileScreen ? '0' : '222px'}
+                        ml={isMobileScreen ? '0' : '230px'}
                         w={isMobileScreen ? 'auto' : '176px'}
                       >
                         <Text fontSize="lg" fontWeight="bold">
-                          1. Lessons & Quests
+                          1. Take Lessons
                         </Text>
                         <Text pl="17px">
-                          Gain <u>theoretical</u> and <u>practical</u> skills.
+                          Gain new skills and complete <u>Quests</u>.
                         </Text>
                       </Box>
                     </Box>
@@ -342,7 +342,7 @@ const OnboardingModal = ({
                       src="/images/BADGE.png"
                       alt="Badge"
                       zIndex="1"
-                      position={isMobileScreen ? 'relative' : 'absolute'}
+                      position={isMobileScreen ? 'unset' : 'absolute'}
                       top="-52px"
                       right="-34px"
                     />
@@ -351,7 +351,7 @@ const OnboardingModal = ({
                       borderRadius="100px"
                       p={isMobileScreen ? '16px 32px' : '24px 48px'}
                       w={isMobileScreen ? '90%' : '100%'}
-                      mt={isMobileScreen ? '-40px' : '0'}
+                      mt={isMobileScreen ? '-35px' : '0'}
                     >
                       <Box w={isMobileScreen ? 'auto' : '270px'}>
                         <Text fontSize="lg" fontWeight="bold">
@@ -359,7 +359,7 @@ const OnboardingModal = ({
                         </Text>
                         <Text pl="20px">
                           Showcase your expertise with{' '}
-                          <u>onchain certifications</u>.
+                          <u>Onchain Certifications</u>.
                         </Text>
                       </Box>
                     </Box>
@@ -376,7 +376,7 @@ const OnboardingModal = ({
                       src="/images/LEVELUP.png"
                       alt="Explorer Profile"
                       zIndex="1"
-                      position={isMobileScreen ? 'relative' : 'absolute'}
+                      position={isMobileScreen ? 'unset' : 'absolute'}
                       top="-52px"
                       left="-34px"
                     />
@@ -385,7 +385,7 @@ const OnboardingModal = ({
                       borderRadius="100px"
                       p={isMobileScreen ? '16px 32px' : '24px 48px'}
                       w={isMobileScreen ? '90%' : '100%'}
-                      mt={isMobileScreen ? '-40px' : '0'}
+                      mt={isMobileScreen ? '-35px' : '0'}
                     >
                       <Box
                         ml={isMobileScreen ? '0' : '161px'}
