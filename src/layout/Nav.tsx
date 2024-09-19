@@ -62,7 +62,7 @@ const Nav: React.FC = () => {
     ) {
       setTimeout(() => {
         setIsOnboardingModalOpen(true)
-      }, 15000)
+      }, 10000)
     }
   }, [onboarding])
 

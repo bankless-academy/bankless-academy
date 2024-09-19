@@ -126,7 +126,7 @@ const OnboardingModal = ({
             }
           )
           toast({
-            title: t('Thanks for subscribing Explorer 🧑‍🚀'),
+            title: `You're all signed up, Explorer! 🧑‍🚀`,
             description: t(`You'll hear from us soon!`),
             status: 'success',
             duration: 5000,
