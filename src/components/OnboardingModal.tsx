@@ -373,7 +373,7 @@ const OnboardingModal = ({
                   >
                     <Image
                       height={isMobileScreen ? '150px' : '230px'}
-                      src="/images/LEVELUP.png"
+                      src="/images/Level.png"
                       alt="Explorer Profile"
                       zIndex="1"
                       position={isMobileScreen ? 'unset' : 'absolute'}
