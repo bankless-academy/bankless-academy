@@ -32,6 +32,7 @@ export const TABLE = {
     socials: 'users.socials',
     community: 'users.community',
     smart_nft_start_at: 'smart_nft_start_at',
+    newsletter_email: 'users.newsletter_email',
   },
   // deprecated
   // quests: {

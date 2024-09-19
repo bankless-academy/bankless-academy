@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 
 import { MetaData } from 'components/Head'
 import HomePage from 'pages/index'
-import SubscriptionModal from 'components/SubscriptionModal'
-import { useDisclosure } from '@chakra-ui/react'
+import OnboardingModal from 'components/OnboardingModal'
 
 const pageMeta: MetaData = {
   title: 'Newsletter',
@@ -20,15 +19,21 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Newsletter = (): JSX.Element => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
 
   useEffect(() => {
-    onOpen()
+    setIsOnboardingModalOpen(true)
   }, [])
 
   return (
     <>
-      <SubscriptionModal isOpen={isOpen} onClose={onClose} />
+      <OnboardingModal
+        isOpen={isOnboardingModalOpen}
+        onClose={() => {
+          setIsOnboardingModalOpen(false)
+        }}
+        newsletterOnly={true}
+      />
       <HomePage />
     </>
   )

@@ -202,6 +202,11 @@ const App = ({
                     .chakra-toast > div > div > div > div > div > div > div {
                       max-width: calc(100vw - 108px);
                     }
+                    @media (max-width: 480px) {
+                      .chakra-toast {
+                        margin-bottom: 80px !important;
+                      }
+                    }
                     /* menu + popover styling */
                     .chakra-menu__menu-list,
                     .chakra-popover__content {

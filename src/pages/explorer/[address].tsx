@@ -112,14 +112,19 @@ export default function Page({
   const { referral } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
-  const [fullProfileAddress, setFullProfileAddress] = useState('')
   const [isMyProfile, setIsMyProfile] = useState(false)
   const [score, setScore] = useLocalStorage(`score`, 0)
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
-  const [email, setEmail] = useState(localStorage.getItem('email'))
-  const [initialEmail] = useState(localStorage.getItem('email'))
+  const [email, setEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
+  const [initialEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
   const toast = useToast()
   const [ens] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
@@ -149,11 +154,7 @@ export default function Page({
             const redirect = `/explorer/${profileAddress}?referral=true`
             window.history.replaceState(null, null, redirect)
           }
-
-          if (loadedUser.address !== fullProfileAddress) {
-            setFullProfileAddress(loadedUser.address)
-          }
-          if (JSON.stringify(loadedUser) !== JSON.stringify(user)) {
+          if (loadedUser?.address !== user?.address) {
             setUser(loadedUser)
           }
         }
@@ -222,20 +223,6 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   const twitterLink = generateTwitterLink(share, shareLink)
 
   const farcasterLink = generateFarcasterLink(share, shareLink)
-
-  if (
-    referral?.length &&
-    !isMyProfile &&
-    !localStorage.getItem('referrer')?.length &&
-    fullProfileAddress
-  ) {
-    localStorage.setItem('referrer', fullProfileAddress?.toLowerCase())
-    console.log('referrer added', localStorage.getItem('referrer'))
-  }
-  if (address && localStorage.getItem('referrer') === address?.toLowerCase()) {
-    localStorage.setItem('referrer', '')
-    console.log('reset referrer')
-  }
 
   const referrals = user?.stats?.referrals?.length || 0
 
@@ -378,16 +365,16 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                                 toast.closeAll()
                                 if (!email)
                                   toast({
-                                    title: t('Email missing'),
-                                    description: t('Provide an email.'),
+                                    title: `Email missing.`,
+                                    description: `Please provide an email address.`,
                                     status: 'warning',
                                     duration: 10000,
                                     isClosable: true,
                                   })
                                 else if (emailRegex.test(email) === false)
                                   toast({
-                                    title: t('Wrong email format'),
-                                    description: t('Please check your email.'),
+                                    title: `Wrong email format.`,
+                                    description: `Please check your email.`,
                                     status: 'warning',
                                     duration: 10000,
                                     isClosable: true,
@@ -410,7 +397,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                                     }
                                   )
                                   if (result && result.status === 200) {
-                                    localStorage.setItem('email', email)
+                                    setEmail(email)
                                     localStorage.setItem(`newsletter`, 'true')
                                     Mixpanel.track(
                                       initialEmail?.length

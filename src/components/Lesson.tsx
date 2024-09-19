@@ -589,9 +589,6 @@ const Lesson = ({
           status: 'success',
           duration: 20000,
           isClosable: true,
-          containerStyle: {
-            marginBottom: '81px !important',
-          },
         })
       // correct answer
       if (slide.type === 'QUIZ') {
@@ -631,9 +628,6 @@ const Lesson = ({
           status: 'warning',
           duration: 20000,
           isClosable: true,
-          containerStyle: {
-            marginBottom: '81px !important',
-          },
         })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {

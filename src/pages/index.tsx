@@ -8,7 +8,6 @@ import {
   SimpleGrid,
   Image,
   Center,
-  useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
@@ -31,9 +30,9 @@ import {
 } from 'components/Icons'
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
 import { Mixpanel } from 'utils/index'
-import SubscriptionModal from 'components/SubscriptionModal'
 import { useSmallScreen } from 'hooks/index'
-
+import { useState } from 'react'
+import OnboardingModal from 'components/OnboardingModal'
 const Card = styled(Box)`
   border: 1px solid #72757b;
   padding: var(--chakra-space-8);
@@ -101,7 +100,7 @@ const IS_PARTNERSHIP_ACTIVACTED = true
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation('homepage')
   const [isSmallScreen] = useSmallScreen()
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
 
   if (IS_WHITELABEL) return <WhitelabelHomepage />
   else
@@ -141,7 +140,7 @@ const HomePage = (): JSX.Element => {
                     mt="-15px"
                     w="100%"
                   >
-                    {t(`Your platform for building digital independence.`)}
+                    Your crypto journey starts here.
                   </Text>
                 </Box>
               )}
@@ -298,7 +297,7 @@ const HomePage = (): JSX.Element => {
                     variant="primary"
                     size="lg"
                     onClick={() => {
-                      onOpen()
+                      setIsOnboardingModalOpen(true)
                       Mixpanel.track('click_internal_link', {
                         link: 'modal',
                         name: 'Newsletter signup',
@@ -319,7 +318,13 @@ const HomePage = (): JSX.Element => {
                 </Box>
               </Box>
             </Box>
-            <SubscriptionModal isOpen={isOpen} onClose={onClose} />
+            <OnboardingModal
+              isOpen={isOnboardingModalOpen}
+              onClose={() => {
+                setIsOnboardingModalOpen(false)
+              }}
+              newsletterOnly={true}
+            />
             <FeaturedLessons />
             <>
               {/* <Box mt="16">

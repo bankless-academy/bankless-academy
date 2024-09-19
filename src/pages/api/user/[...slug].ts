@@ -89,6 +89,7 @@ export default async function handler(
         TABLE.users.achievements,
         TABLE.users.ba_stamps,
         TABLE.users.community,
+        TABLE.users.newsletter_email,
       )
       .whereILike('ens_name', addressLowerCase)
     // console.log('userExist', userExist)
@@ -122,12 +123,14 @@ export default async function handler(
         TABLE.users.achievements,
         TABLE.users.ba_stamps,
         TABLE.users.community,
+        TABLE.users.newsletter_email,
       )
       .whereILike('address', addressLowerCase)
     console.log('user', userExist)
     if (!userExist) {
       const emptyUser: UserType = {
         address: addressLowerCase,
+        emailLinked: false,
         ensName: null,
         avatar: DEFAULT_AVATAR,
         stats: {},
@@ -306,6 +309,7 @@ export default async function handler(
 
   const data: UserType = {
     address: addressLowerCase,
+    emailLinked: userExist.newsletter_email?.length > 0,
     ensName,
     avatar: avatar || DEFAULT_AVATAR,
     stats,

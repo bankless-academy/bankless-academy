@@ -9,6 +9,7 @@ sendGridClient.setApiKey(process.env.SENDGRID_API_KEY)
 const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY
 
 import { GENERIC_ERROR_MESSAGE, NOTION_IDS } from 'constants/index'
+import { TABLES, db } from 'utils/db'
 
 const NEWSLETTER_LIST_IDS = {
   // newsletter: 'd957b2bf-9885-4bab-a4dd-e3736de25838',
@@ -63,7 +64,14 @@ export default async function handler(
       })
       console.log(response)
       if (response && response.email_address === email) {
-        // TODO: save email in DB if we have an address to associate with
+        // Link email to wallet in DB
+        if (wallet?.length) {
+          await db(TABLES.users)
+            .where('address', 'ilike', `%${wallet}%`)
+            .update({
+              newsletter_email: email,
+            })
+        }
         return res.status(200).json({ result: 'OK' })
       }
       else
