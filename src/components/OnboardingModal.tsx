@@ -93,7 +93,7 @@ const OnboardingModal = ({
           title: `Email missing.`,
           description: `Please provide an email address.`,
           status: 'warning',
-          duration: 10000,
+          duration: 5000,
           isClosable: true,
         })
       else if (emailRegex.test(email) === false)
@@ -101,7 +101,7 @@ const OnboardingModal = ({
           title: `Wrong email format.`,
           description: `Please check your email.`,
           status: 'warning',
-          duration: 10000,
+          duration: 5000,
           isClosable: true,
         })
       else {
@@ -129,7 +129,7 @@ const OnboardingModal = ({
             title: t('Thanks for subscribing Explorer 🧑‍🚀'),
             description: t(`You'll hear from us soon!`),
             status: 'success',
-            duration: 10000,
+            duration: 5000,
             isClosable: true,
           })
           setOnboarding('done')
@@ -141,7 +141,7 @@ const OnboardingModal = ({
             ),
             description: t('Please try again later.'),
             status: 'warning',
-            duration: 10000,
+            duration: 5000,
             isClosable: true,
           })
         }
