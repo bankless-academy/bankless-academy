@@ -167,7 +167,7 @@ By removing intermediaries, banks, and individual accounts for each service, Eth
 
 # Using a dApp
 
-Using `dApps` is similar to using regular apps and internet services.
+Using a `dApp` is similar to using regular apps and internet services.
 
 Let’s simulate using a dApp for swapping `crypto` online. In this simulation we’ll swap USDC, an `onchain` US dollar, for `ETH`, Ethereum’s native currency.
 
@@ -176,9 +176,9 @@ Let’s simulate using a dApp for swapping `crypto` online. In this simulation w
 3. Swap all of your USDC to ETH by clicking “Maximum”.
 4. Initiate the swap.
 5. In your wallet, check the terms of your trade, and then sign.
-6. Great! Your swap is being processed on Ethereum and will finalize shortly.
+6. Great! Ethereum has processed your crypto swap!
 
-Plugging your wallet into a dApp and swapping cryptocurrencies is that easy. Now you can send it to friends, use it to make purchases, or try other financial service dApps.
+Plugging your wallet into a dApp and swapping crypto is that easy. Now you can send it to friends, use it to make purchases, or try other financial service dApps.
 
 [embed](https://app.banklessacademy.com/animation/swap)
 
@@ -204,7 +204,7 @@ On Ethereum, services get better and better because…
 
 ---
 
-Ethereum makes it possible for you to send and store `crypto` without a intermediaries, with better services at lower costs.
+Ethereum makes it possible for you to send and store `crypto` without intermediaries, with better services at lower costs.
 
 ⚡ With crypto, you can send money anywhere in the world for as little as one cent — and it only takes a few seconds! Compare this to sending money through a bank, where they can charge you 3-4% in fees, and take 1-5 days.
 
@@ -221,7 +221,7 @@ Let’s use another simulation to practice sending cryptocurrency. Try sending y
 1. Unlock your wallet.
 2. Inside of your wallet, select send.
 3. Adjust the amount to 0.015 ETH by clicking “Maximum”.
-4. Confirm the token and amount.
+4. Confirm the currency and amount.
 5. In contacts, select banklessacademy.eth.
 6. That’s it! Your international transfer was done in seconds, and no intermediary could stop you.
 
