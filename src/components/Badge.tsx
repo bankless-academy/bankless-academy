@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { useState } from 'react'
-import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
+import { Box, Button, Image as ChakraImage, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
 import { useAccount, useEnsName } from 'wagmi'
@@ -35,6 +35,7 @@ const Badge = ({
   isQuestCompleted: boolean
 }): JSX.Element => {
   const { t, i18n } = useTranslation()
+  const toast = useToast()
   const [triggerOpen, setTriggerOpen] = useState(false)
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
@@ -83,6 +84,22 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
       }
       triggerOpen={triggerOpen}
       helpLink="/faq#ee66feb29b2041549f364a3480064aac"
+      onCloseParent={() => {
+        if (!address) {
+          // do nothing
+        } else if (!isQuestCompleted) {
+          toast.closeAll()
+          toast({
+            title: 'Badge claiming',
+            description: `Complete the lesson${
+              lesson?.quest ? ' and the quest' : ''
+            } before claiming the badge.`,
+            status: 'warning',
+            duration: 10000,
+            isClosable: true,
+          })
+        }
+      }}
     />
   )
 

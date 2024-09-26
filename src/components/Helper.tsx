@@ -102,6 +102,7 @@ const Helper = ({
   isProfile,
   triggerOpen,
   helpLink,
+  onCloseParent,
 }: {
   title: ReactNode
   definition: ReactNode
@@ -109,6 +110,7 @@ const Helper = ({
   isProfile?: boolean
   triggerOpen?: boolean
   helpLink?: string
+  onCloseParent?: () => void
 }): React.ReactElement => {
   const { t } = useTranslation()
   const {
@@ -124,11 +126,18 @@ const Helper = ({
     }
   }, [triggerOpen])
 
+  const handleClose = () => {
+    onCloseHelpModal()
+    if (onCloseParent) {
+      onCloseParent()
+    }
+  }
+
   return (
     <>
       <ButtonHelper isProfile={isProfile} onOpenHelpModal={onOpenHelpModal} />
       <Modal
-        onClose={onCloseHelpModal}
+        onClose={handleClose}
         size={fullscreen && isMobileScreen ? 'full' : 'md'}
         isOpen={isOpenHelpModal}
         isCentered
@@ -151,7 +160,7 @@ const Helper = ({
             w="100%"
           >
             <Box w="36px"></Box>
-            <Button variant="primaryWhite" onClick={onCloseHelpModal}>
+            <Button variant="primaryWhite" onClick={handleClose}>
               {t('Got it')}
             </Button>
             <Box w="36px">
