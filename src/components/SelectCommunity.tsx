@@ -11,6 +11,7 @@ import {
   Input,
   InputGroup,
   InputRightAddon,
+  useToast,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { useAccount } from 'wagmi'
@@ -35,11 +36,12 @@ const COMMUNITIES = [
 const SelectCommunity = (): any => {
   const { address } = useAccount()
   const [community, setCommunity] = useLocalStorage(`community`, '')
-  const [addCommunity, setAddCommunity] = useState(false)
+  const [addCommunity, setAddCommunity] = useState('')
   const [profileSignature, setProfileSignature] = useLocalStorage(
     'profile-signature',
     ''
   )
+  const toast = useToast()
 
   const updateCommunity = async (newCommunity) => {
     let signature = profileSignature
@@ -50,14 +52,25 @@ const SelectCommunity = (): any => {
       WALLET_SIGNATURE_MESSAGE_PROFILE
     )
     if (!isSignatureAreadyVerified) {
+      toast.closeAll()
+      toast({
+        title: `Update community`,
+        description: `Open your wallet to sign a message.`,
+        status: 'info',
+        duration: null,
+      })
       try {
         signature = await signMessage(wagmiConfig, {
           account: address,
           message: WALLET_SIGNATURE_MESSAGE_PROFILE,
         })
       } catch (error) {
+        toast.closeAll()
+        setCommunity(addCommunity || previousCommunity)
         console.log(error)
       }
+      if (!signature) return
+      toast.closeAll()
       setProfileSignature(signature)
       isSignatureAreadyVerified = verifySignature(
         address,
@@ -82,13 +95,13 @@ const SelectCommunity = (): any => {
         console.log(error)
       }
     } else {
-      setCommunity(previousCommunity)
+      setCommunity(addCommunity || previousCommunity)
     }
   }
 
   return (
     <>
-      {addCommunity ? (
+      {addCommunity !== '' ? (
         <Box my="8" mx="4" display="flex" placeContent="center">
           <InputGroup maxW="400px">
             <Input
@@ -107,7 +120,7 @@ const SelectCommunity = (): any => {
                 borderLeftRadius="0"
                 onClick={async () => {
                   updateCommunity(community)
-                  setAddCommunity(false)
+                  setAddCommunity('')
                 }}
               >
                 Save
@@ -122,7 +135,7 @@ const SelectCommunity = (): any => {
               onClick={async () => {
                 setCommunity('')
                 updateCommunity('')
-                setAddCommunity(false)
+                setAddCommunity('')
               }}
             />
           </Box>
@@ -195,7 +208,7 @@ const SelectCommunity = (): any => {
                     minH="40px"
                     onClick={() => {
                       setCommunity('')
-                      setAddCommunity(true)
+                      setAddCommunity(community)
                     }}
                     backgroundColor="default"
                   >

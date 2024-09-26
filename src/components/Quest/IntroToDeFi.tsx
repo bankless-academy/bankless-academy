@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Box } from '@chakra-ui/react'
+import { Button, Box, useToast } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { signMessage } from '@wagmi/core'
 
@@ -23,15 +23,28 @@ const IntroToDeFi = (
       ? VERBS.includes(localStorage.getItem('quest-intro-to-defi'))
       : null
   )
+  const toast = useToast()
 
   const sign = async () => {
     const message = `I want to learn more about ${answer}`
 
     try {
+      toast.closeAll()
+      toast({
+        title: `Intro to DeFi quest`,
+        description: `Open your wallet to sign a message.`,
+        status: 'info',
+        duration: null,
+      })
       const signature = await signMessage(wagmiConfig, {
         account: account as `0x${string}`,
         message,
+      }).catch((error) => {
+        console.error(error)
+        toast.closeAll()
       })
+      toast.closeAll()
+      if (!signature) return
       const verified = verifySignature(account, signature, message)
       if (verified) {
         track('intro_to_defi_quest_answer', answer)

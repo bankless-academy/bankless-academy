@@ -163,12 +163,29 @@ const MintBadge = ({
     // TODO: add 1 min timeout
 
     try {
+      toast.closeAll()
+      toast({
+        title: `Badge claiming`,
+        description: `Open your wallet to sign a message.`,
+        status: 'info',
+        duration: null,
+      })
       const signature = simulate
         ? 'simulate_signature'
         : await signMessage(wagmiConfig, {
             account: address,
             message: WALLET_SIGNATURE_MESSAGE,
+          }).catch((error) => {
+            console.error(error)
+            toast.closeAll()
           })
+      toast.closeAll()
+      if (!signature) {
+        setStatus('')
+        setIsMintingInProgress(false)
+        toast.closeAll()
+        return
+      }
       const bodyParameters = {
         address,
         badgeId,
