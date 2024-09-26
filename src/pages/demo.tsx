@@ -32,6 +32,10 @@ const Demo = (): JSX.Element => {
                   localStorage.removeItem('email')
                   // reset newsletter
                   localStorage.removeItem('newsletter')
+                  // reset onboarding
+                  localStorage.removeItem('onboarding')
+                  // reset onboarding retry
+                  localStorage.removeItem('onboarding-retry')
                   // reset referrer
                   localStorage.removeItem('referrer')
                   // reset my stamps

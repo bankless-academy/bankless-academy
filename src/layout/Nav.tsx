@@ -31,6 +31,7 @@ const Nav: React.FC = () => {
     `connectWalletPopup`,
     false
   )
+  const [onboardingRetry] = useLocalStorage('onboarding-retry', 0)
 
   const isProfilePage = asPath.includes('/explorer/my-profile')
 
@@ -54,11 +55,13 @@ const Nav: React.FC = () => {
   const [onboarding] = useLocalStorage('onboarding', '')
 
   useEffect(() => {
-    // if onboarding is not done, and it's been more than 3 days since the last popup, show it again
+    // if onboarding is not done, and it's been more than 3 days since the last popup, show it again, max 3 times
+    const threeDays = 60 * 60 * 24 * 3 * 1000
     if (
-      onboarding === '' ||
-      (onboarding !== 'done' &&
-        Date.now() - Number(onboarding) > 60 * 60 * 24 * 3 * 1000)
+      (onboarding === '' ||
+        (onboarding !== 'done' &&
+          Date.now() - Number(onboarding) > threeDays)) &&
+      onboardingRetry < 3
     ) {
       setTimeout(() => {
         setIsOnboardingModalOpen(true)

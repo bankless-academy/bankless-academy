@@ -41,6 +41,10 @@ const OnboardingModal = ({
     newsletterOnly ? '' : 'initial'
   )
   const [, setOnboarding] = useLocalStorage('onboarding', '')
+  const [onboardingRetry, setOnboardingRetry] = useLocalStorage(
+    'onboarding-retry',
+    0
+  )
   const [email, setEmail] = useLocalStorage(
     'email',
     localStorage.getItem('email') || ''
@@ -75,6 +79,7 @@ const OnboardingModal = ({
     if (isOpen) {
       setStep(newsletterOnly ? 'subscribe' : 'initial')
       setOnboarding(Date.now().toString())
+      setOnboardingRetry(onboardingRetry + 1)
     }
   }, [isOpen])
 
@@ -189,14 +194,22 @@ const OnboardingModal = ({
     ),
   }
 
+  const allowClose =
+    // last step
+    step === 'subscribe' ||
+    // email provided
+    !!email ||
+    // not the first time
+    onboardingRetry > 1
+
   return (
     <Modal
       onClose={onClose}
       size={isMobileScreen ? 'full' : 'xl'}
       isCentered
       isOpen={isOpen}
-      closeOnOverlayClick={step === 'subscribe' || !!email}
-      closeOnEsc={step === 'subscribe' || !!email}
+      closeOnOverlayClick={allowClose}
+      closeOnEsc={allowClose}
     >
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent
@@ -207,7 +220,7 @@ const OnboardingModal = ({
         overflowY="auto"
         maxH="var(--chakra-vh)"
       >
-        {(step === 'subscribe' || !!email) && <ModalCloseButton />}
+        {allowClose && <ModalCloseButton />}
         <ModalBody
           padding={isMobileScreen ? '0' : 'default'}
           pb="4"
