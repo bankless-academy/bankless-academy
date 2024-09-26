@@ -187,7 +187,9 @@ const LessonCards = ({
           )
         })}
       </SimpleGrid>
-      <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />
+      {level === 'Essentials' && (
+        <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />
+      )}
     </Box>
   )
 }
