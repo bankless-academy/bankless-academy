@@ -56,7 +56,7 @@ const SelectCommunity = (): any => {
       toast({
         title: `Update community`,
         description: `Open your wallet to sign a message.`,
-        status: 'info',
+        status: 'warning',
         duration: null,
       })
       try {

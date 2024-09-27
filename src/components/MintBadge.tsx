@@ -167,7 +167,7 @@ const MintBadge = ({
       toast({
         title: `Badge claiming`,
         description: `Open your wallet to sign a message.`,
-        status: 'info',
+        status: 'warning',
         duration: null,
       })
       const signature = simulate

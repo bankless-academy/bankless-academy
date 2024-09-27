@@ -33,7 +33,7 @@ const IntroToDeFi = (
       toast({
         title: `Intro to DeFi quest`,
         description: `Open your wallet to sign a message.`,
-        status: 'info',
+        status: 'warning',
         duration: null,
       })
       const signature = await signMessage(wagmiConfig, {
