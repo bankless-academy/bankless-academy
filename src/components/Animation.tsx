@@ -42,10 +42,22 @@ const Tooltip = styled.div`
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.5s ease-in-out;
   pointer-events: none; /* Ensure the tooltip does not interfere with pointer events */
   visibility: hidden;
   opacity: 0;
+  animation: floatAnimation 2s infinite;
+
+  @keyframes floatAnimation {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
   ::after {
     content: '';
     position: absolute;
