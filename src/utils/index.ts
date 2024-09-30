@@ -208,7 +208,7 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['polygon'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `'https://polygon-mainnet.infura.io/v3/'${INFURA_KEY}`
+            `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`
           ),
       }
       const provider = ethers.getDefaultProvider(polygon)
