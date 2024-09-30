@@ -80,7 +80,7 @@
     "mixpanel": "^0.17.0",
     "mixpanel-browser": "^2.45.0",
     "net": "^1.0.2",
-    "next": "^14.0.2",
+    "next": "^14.2.10",
     "notion-client": "^6.13.8",
     "notion-to-md": "^3.0.1",
     "permissionless": "^0.1.35",
