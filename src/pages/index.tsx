@@ -137,7 +137,7 @@ const HomePage = (): JSX.Element => {
                 <Box ml="25%" w="73%">
                   <Text
                     fontSize={isSmallScreen ? '20px' : '25px'}
-                    mt="-15px"
+                    mt={isSmallScreen ? '-5px' : '-15px'}
                     w="100%"
                   >
                     Your crypto journey starts here.
