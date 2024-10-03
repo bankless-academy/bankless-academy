@@ -3,6 +3,7 @@ import { Text, Image, Button, Box, useToast } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
 import { LessonType } from 'entities/lesson'
 import Lesson from 'components/Lesson'
@@ -91,6 +92,8 @@ const LessonDetail = ({
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
   const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
+  const router = useRouter()
+  const pageEndsWithDatadisk = router?.query?.slug?.[0]?.endsWith('-datadisk')
   const toast = useToast()
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
@@ -123,7 +126,7 @@ const LessonDetail = ({
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
 
   const isLessonCollected =
-    IS_COLLECTIBLE_ACTIVATED &&
+    (IS_COLLECTIBLE_ACTIVATED || pageEndsWithDatadisk) &&
     !!lesson.lessonCollectibleTokenAddress?.length &&
     lessonsCollectedLS.includes(
       lesson.lessonCollectibleTokenAddress.toLowerCase()
@@ -332,7 +335,8 @@ const LessonDetail = ({
                       </Box>
                     </>
                   )}
-                  {IS_COLLECTIBLE_ACTIVATED && lesson.hasCollectible ? (
+                  {(IS_COLLECTIBLE_ACTIVATED || pageEndsWithDatadisk) &&
+                  lesson.hasCollectible ? (
                     <MintDatadiskButton lesson={lesson} />
                   ) : null}
                 </Box>
