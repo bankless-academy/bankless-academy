@@ -61,6 +61,17 @@ const switchChainButton = ({
         )
         setCurrentNetwork(NETWORKS[networkName])
       }
+    } else {
+      // wrong network
+      toast.closeAll()
+      toast({
+        title: t('Wrong network detected'),
+        description: t('Please switch back to Ethereum Mainnet'),
+        status: 'warning',
+        duration: null,
+        isClosable: true,
+      })
+      setIsNetworkUnknown(true)
     }
   }, [chain?.id])
 
@@ -92,9 +103,7 @@ const switchChainButton = ({
                   isTruncated
                   display={isSmallScreen ? 'none' : 'inherit'}
                 >
-                  {isNetworkUnknown
-                    ? 'Unsupported network'
-                    : currentNetwork.name}
+                  {isNetworkUnknown ? 'Unknown network' : currentNetwork.name}
                 </Box>
                 {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
               </Box>
