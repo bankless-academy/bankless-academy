@@ -178,14 +178,23 @@ const MintBadge = ({
           }).catch((error) => {
             console.error(error)
             toast.closeAll()
+            let errorMessage = error?.message?.split('\n')[0]
+            if (errorMessage.includes('switch chain'))
+              errorMessage += ` Try changing the network to Ethereum manually from your wallet.`
+            toast({
+              title: `Badge claiming error`,
+              description: `Error while signing the message: ${errorMessage}`,
+              status: 'error',
+              duration: 20000,
+              isClosable: true,
+            })
           })
-      toast.closeAll()
       if (!signature) {
         setStatus('')
         setIsMintingInProgress(false)
-        toast.closeAll()
         return
       }
+      toast.closeAll()
       const bodyParameters = {
         address,
         badgeId,

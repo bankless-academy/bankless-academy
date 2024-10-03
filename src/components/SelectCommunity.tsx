@@ -65,8 +65,18 @@ const SelectCommunity = (): any => {
           message: WALLET_SIGNATURE_MESSAGE_PROFILE,
         })
       } catch (error) {
-        toast.closeAll()
         setCommunity(addCommunity || previousCommunity)
+        toast.closeAll()
+        let errorMessage = error?.message?.split('\n')[0]
+        if (errorMessage.includes('switch chain'))
+          errorMessage += ` Try changing the network to Ethereum manually from your wallet.`
+        toast({
+          title: `Update community error`,
+          description: `Error while signing the message: ${errorMessage}`,
+          status: 'error',
+          duration: 20000,
+          isClosable: true,
+        })
         console.log(error)
       }
       if (!signature) return
