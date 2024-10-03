@@ -5,7 +5,7 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
   GENERIC_ERROR_MESSAGE, WALLET_SIGNATURE_MESSAGE_PROFILE,
 } from 'constants/index'
-import { verifySignature } from 'utils/index'
+import { verifySignature } from 'utils/SignatureUtil'
 import { trackBE } from 'utils/mixpanel'
 
 export default async function handler(
@@ -13,7 +13,7 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, embed, signature, community } = req.body
+  const { address, embed, signature, community, chainId } = req.body
   // console.log(req)
   if (!address)
     return res.status(400).json({ error: 'Wrong params' })
@@ -27,7 +27,10 @@ export default async function handler(
   if (!signature)
     return res.status(400).json({ error: 'Missing wallet signature' })
 
-  if (!verifySignature(address, signature, WALLET_SIGNATURE_MESSAGE_PROFILE))
+  if (!chainId)
+    return res.status(400).json({ error: 'Missing chainId' })
+
+  if (!await verifySignature({ address, signature, message: WALLET_SIGNATURE_MESSAGE_PROFILE, chainId }))
     return res.status(403).json({ error: 'Wrong signature' })
 
   try {

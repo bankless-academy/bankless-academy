@@ -3,9 +3,11 @@ import { Button, Box, useToast } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { signMessage } from '@wagmi/core'
 
-import { track, verifySignature } from 'utils/index'
+import { track } from 'utils/index'
 import { theme } from 'theme/index'
 import { wagmiConfig } from 'utils/wagmi'
+import { verifySignature } from 'utils/SignatureUtil'
+import { useAccount } from 'wagmi'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -15,6 +17,7 @@ const IntroToDeFi = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { chain } = useAccount()
   const [answer, setAnswer] = useState(
     localStorage.getItem('quest-intro-to-defi')
   )
@@ -52,10 +55,16 @@ const IntroToDeFi = (
           duration: 20000,
           isClosable: true,
         })
+        setIsSignatureVerified(false)
       })
       if (!signature) return
       toast.closeAll()
-      const verified = verifySignature(account, signature, message)
+      const verified = await verifySignature({
+        address: account,
+        message,
+        signature,
+        chainId: chain.id,
+      })
       if (verified) {
         track('intro_to_defi_quest_answer', answer)
       }
@@ -63,6 +72,7 @@ const IntroToDeFi = (
       localStorage.setItem('quest-intro-to-defi', verified ? answer : 'false')
     } catch (error) {
       console.error(error)
+      setIsSignatureVerified(false)
     }
   }
 

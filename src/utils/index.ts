@@ -156,19 +156,21 @@ export function recoverPersonalSignature(sig: string, msg: string): string {
   return signer
 }
 
-export function verifySignature(
-  address: string,
-  signature: string,
-  message: string
-): boolean {
-  try {
-    const signer = recoverPersonalSignature(signature, message)
-    return signer.toLowerCase() === address.toLowerCase()
-  } catch (error) {
-    console.error(error)
-    return false
-  }
-}
+// deprecated, use verifySignature from SignatureUtil.ts
+
+// export function verifySignature(
+//   address: string,
+//   signature: string,
+//   message: string
+// ): boolean {
+//   try {
+//     const signer = recoverPersonalSignature(signature, message)
+//     return signer.toLowerCase() === address.toLowerCase()
+//   } catch (error) {
+//     console.error(error)
+//     return false
+//   }
+// }
 
 export async function getSignature(
   library: Web3Provider,

@@ -11,16 +11,17 @@ import {
   ALCHEMY_KEY_BACKEND,
 } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
-import { api, verifySignature } from 'utils/index'
+import { api } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
+import { verifySignature } from 'utils/SignatureUtil'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, badgeId, embed, signature, referrer } = req.body
+  const { address, badgeId, embed, signature, referrer, chainId } = req.body
   // console.log(req)
   if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
@@ -33,7 +34,10 @@ export default async function handler(
   if (!signature)
     return res.status(400).json({ error: 'Missing wallet signature' })
 
-  if (!verifySignature(address, signature, WALLET_SIGNATURE_MESSAGE))
+  if (!chainId)
+    return res.status(400).json({ error: 'Missing chainId' })
+
+  if (!await verifySignature({ address, signature, message: WALLET_SIGNATURE_MESSAGE, chainId }))
     return res.status(403).json({ error: 'Wrong signature' })
 
   const message = { tokenId: badgeId }

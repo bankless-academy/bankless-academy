@@ -14,15 +14,15 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
-import { useAccount } from 'wagmi'
+import { useAccount, useWalletClient } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 import { signMessage } from '@wagmi/core'
 import { ShieldCheck, PlusCircle, XCircle } from '@phosphor-icons/react'
 
-import { api, verifySignature } from 'utils/index'
+import { api } from 'utils/index'
 import { WALLET_SIGNATURE_MESSAGE_PROFILE } from 'constants/index'
 import { wagmiConfig } from 'utils/wagmi'
-
+import { verifySignature } from 'utils/SignatureUtil'
 const COMMUNITIES = [
   'Chippi',
   'Gitcoin',
@@ -36,6 +36,7 @@ const COMMUNITIES = [
 const SelectCommunity = (): any => {
   const { address } = useAccount()
   const [community, setCommunity] = useLocalStorage(`community`, '')
+  const { data: walletClient } = useWalletClient()
   const [addCommunity, setAddCommunity] = useState('')
   const [profileSignature, setProfileSignature] = useLocalStorage(
     'profile-signature',
@@ -46,11 +47,13 @@ const SelectCommunity = (): any => {
   const updateCommunity = async (newCommunity) => {
     let signature = profileSignature
     const previousCommunity = community
-    let isSignatureAreadyVerified = verifySignature(
+    const chainId = await walletClient?.getChainId()
+    let isSignatureAreadyVerified = await verifySignature({
       address,
       signature,
-      WALLET_SIGNATURE_MESSAGE_PROFILE
-    )
+      message: WALLET_SIGNATURE_MESSAGE_PROFILE,
+      chainId,
+    })
     if (!isSignatureAreadyVerified) {
       toast.closeAll()
       toast({
@@ -82,11 +85,12 @@ const SelectCommunity = (): any => {
       if (!signature) return
       toast.closeAll()
       setProfileSignature(signature)
-      isSignatureAreadyVerified = verifySignature(
+      isSignatureAreadyVerified = await verifySignature({
         address,
         signature,
-        WALLET_SIGNATURE_MESSAGE_PROFILE
-      )
+        message: WALLET_SIGNATURE_MESSAGE_PROFILE,
+        chainId,
+      })
     }
     if (isSignatureAreadyVerified) {
       try {
@@ -94,18 +98,43 @@ const SelectCommunity = (): any => {
           address,
           community: newCommunity,
           signature,
+          chainId,
         })
         if (result && result.status === 200) {
           setCommunity(newCommunity)
         } else {
           // TODO: handle errors
           console.log(result)
+          toast.closeAll()
+          toast({
+            title: `Update community error`,
+            description: `Error while updating the community: ${result?.data?.error}`,
+            status: 'error',
+            duration: 20000,
+            isClosable: true,
+          })
         }
       } catch (error) {
         console.log(error)
+        toast.closeAll()
+        toast({
+          title: `Update community error`,
+          description: `Error while updating the community: ${error}`,
+          status: 'error',
+          duration: 20000,
+          isClosable: true,
+        })
       }
     } else {
       setCommunity(addCommunity || previousCommunity)
+      toast.closeAll()
+      toast({
+        title: `Update community error`,
+        description: `Wrong signature`,
+        status: 'error',
+        duration: 20000,
+        isClosable: true,
+      })
     }
   }
 

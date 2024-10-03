@@ -44,7 +44,7 @@ const MintBadge = ({
   const { query } = useRouter()
   const { simulate } = query
 
-  const { address } = useAccount()
+  const { address, chain } = useAccount()
   const toast = useToast()
 
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -200,6 +200,7 @@ const MintBadge = ({
         badgeId,
         signature: signature,
         referrer: referrer,
+        chainId: chain?.id,
       }
       setIsMintingInProgress(true)
       toast.closeAll()
