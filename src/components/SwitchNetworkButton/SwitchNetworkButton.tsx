@@ -129,9 +129,15 @@ const switchChainButton = ({
                   onClick={async () => {
                     if (isConnected) {
                       try {
-                        await switchChain(wagmiConfig, {
-                          chainId: NETWORKS[network].chainId,
-                        })
+                        if (walletClient?.type === 'walletConnect') {
+                          await walletClient.switchChain({
+                            id: NETWORKS[network].chainId,
+                          })
+                        } else {
+                          await switchChain(wagmiConfig, {
+                            chainId: NETWORKS[network].chainId,
+                          })
+                        }
                         if (
                           (await walletClient?.getChainId()) !==
                           NETWORKS[network].chainId
