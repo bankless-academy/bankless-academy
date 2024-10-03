@@ -1,21 +1,20 @@
 /* eslint-disable no-console */
 import { useState } from 'react'
-import { Box, Button, Image as ChakraImage, useToast } from '@chakra-ui/react'
+import { Box, Button, useDisclosure, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
 import { useAccount, useEnsName } from 'wagmi'
-import { ShootingStar } from '@phosphor-icons/react'
+import { ShareFat, ShootingStar } from '@phosphor-icons/react'
 import styled from '@emotion/styled'
 
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
 import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL_ } from 'constants/index'
 import { BADGE_OPENSEA_URL, BADGE_TO_KUDOS_IDS } from 'constants/badges'
-import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
 import Card from 'components/Card'
-import { generateFarcasterLink, generateTwitterLink } from 'utils/index'
+import ShareModal from 'components/ShareModal'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   box-shadow: none;
@@ -51,6 +50,11 @@ const Badge = ({
     `connectWalletPopup`,
     false
   )
+  const {
+    isOpen: isShareOpen,
+    onOpen: onShareOpen,
+    onClose: onShareClose,
+  } = useDisclosure()
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   // TODO: TRANSLATE
   const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
@@ -62,13 +66,9 @@ const Badge = ({
           : address || current_wallet
       }?badge=${lesson.badgeId}&referral=true`
 
-  const share = `I've just claimed my "${lesson.name}" onchain certification at @${TWITTER_ACCOUNT} 🎉
+  const shareMessage = `I've just claimed my "${lesson.name}" onchain certification at @${TWITTER_ACCOUNT} 🎉
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
-
-  const twitterLink = generateTwitterLink(share, shareLink)
-
-  const farcasterLink = generateFarcasterLink(share, shareLink)
 
   const BadgeHelper = (
     <Helper
@@ -145,60 +145,30 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           <Box p="4">
             {isBadgeMintedLS ? (
               <Box>
-                <Box pb="1">
-                  <ExternalLink href={twitterLink} mr="2">
-                    <StyledButton
-                      variant="primary"
-                      height="51px"
-                      w="100%"
-                      borderBottomRadius="0"
-                      leftIcon={<ShootingStar width="28px" height="28px" />}
-                      isDisabled={true}
-                    >
-                      {t('Badge Claimed')}
-                    </StyledButton>
-                  </ExternalLink>
-                </Box>
-                <Box pb="1">
-                  <ExternalLink href={twitterLink} mr="2">
-                    <Button
-                      variant="primary"
-                      w="100%"
-                      borderRadius="0"
-                      leftIcon={
-                        <ChakraImage width="20px" src="/images/TwitterX.svg" />
-                      }
-                    >
-                      {t('Share on Twitter / X')}
-                    </Button>
-                  </ExternalLink>
-                </Box>
-                <Box pb="1">
-                  <ExternalLink href={farcasterLink} mr="2">
-                    <Button
-                      variant="primary"
-                      w="100%"
-                      borderRadius="0"
-                      leftIcon={
-                        <ChakraImage width="20px" src="/images/Farcaster.svg" />
-                      }
-                    >
-                      {t('Share on Farcaster')}
-                    </Button>
-                  </ExternalLink>
-                </Box>
-                <ExternalLink href={OpenSeaBadgeLink}>
-                  <Button
+                <Box pb="2">
+                  <StyledButton
                     variant="primary"
+                    height="51px"
                     w="100%"
-                    borderTopRadius="0"
-                    leftIcon={
-                      <ChakraImage width="24px" src="/images/OpenSea.svg" />
-                    }
+                    borderBottomRadius="0"
+                    leftIcon={<ShootingStar width="28px" height="28px" />}
+                    isDisabled={true}
                   >
-                    {t('View on OpenSea')}
-                  </Button>
-                </ExternalLink>
+                    {t('Badge Claimed')}
+                  </StyledButton>
+                </Box>
+                <Button
+                  variant="primary"
+                  w="100%"
+                  height="51px"
+                  borderTopRadius="0"
+                  leftIcon={<ShareFat width="28px" height="28px" />}
+                  onClick={() => {
+                    onShareOpen()
+                  }}
+                >
+                  Share & Refer
+                </Button>
               </Box>
             ) : (
               <Box position="relative">
@@ -230,6 +200,12 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             )}
           </Box>
         </Box>
+        <ShareModal
+          isOpen={isShareOpen}
+          onClose={onShareClose}
+          shareMessage={shareMessage}
+          shareLink={shareLink}
+        />
       </StyledCard>
     </Box>
   )

@@ -870,6 +870,31 @@ export const generateFarcasterLink = (text: string, link: string) => {
   )}&embeds%5B%5D=${encodeURIComponent(link)}`
 }
 
+export const generateHeyLink = (text: string, link: string) => {
+  return `https://hey.xyz/?text=${encodeURIComponent(
+    text?.replace('@BanklessAcademy', '@banklessacademy')?.replace('@Gitcoin', '@gitcoin')
+  )}&url=${encodeURIComponent(link)}`
+}
+
+export const generateTelegramLink = (text: string, link: string) => {
+  return `https://t.me/share/url?text=${encodeURIComponent(
+    text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin')
+  )}&url=${encodeURIComponent(link)}`
+}
+
+export const generateLinkedinLink = (text: string, link: string) => {
+  // title not supported
+  return `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(link)}&title=${encodeURIComponent(text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin'))}`
+}
+export const generateFacebookLink = (text: string, link: string) => {
+  // quote not supported
+  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}&quote=${encodeURIComponent(text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin'))}`
+}
+
+export const generateWhatsappLink = (text: string, link: string) => {
+  return `https://wa.me/?text=${encodeURIComponent(text?.replace(` 🎉`, '.')?.replace(`👨‍🚀`, '')?.replace(`🚀`, '')?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin') + ' ' + link)}`
+}
+
 export const openLesson = async (
   openedLesson: string,
   lesson: LessonType,

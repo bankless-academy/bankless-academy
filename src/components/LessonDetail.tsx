@@ -1,6 +1,13 @@
 import styled from '@emotion/styled'
-import { Text, Image, Button, Box, useToast } from '@chakra-ui/react'
-import { ArrowUUpLeft } from '@phosphor-icons/react'
+import {
+  Text,
+  Image,
+  Button,
+  Box,
+  useToast,
+  useDisclosure,
+} from '@chakra-ui/react'
+import { ArrowUUpLeft, ShareFat } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
@@ -18,16 +25,20 @@ import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
 import {
   DOMAIN_URL,
+  DOMAIN_URL_,
   IS_COLLECTIBLE_ACTIVATED,
   IS_PROD,
   IS_WALLET_DISABLED,
   IS_WHITELABEL,
   TOKEN_GATING_ENABLED,
+  TWITTER_ACCOUNT,
 } from 'constants/index'
 import { useEffect } from 'react'
 import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
 import LanguageSwitch from 'components/LanguageSwitch'
+import ShareModal from './ShareModal'
+import { useAccount, useEnsName } from 'wagmi'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -95,6 +106,15 @@ const LessonDetail = ({
   const router = useRouter()
   const pageEndsWithDatadisk = router?.query?.slug?.[0]?.endsWith('-datadisk')
   const toast = useToast()
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.badgeId}`,
+    false
+  )
+  const {
+    isOpen: isShareOpen,
+    onOpen: onShareOpen,
+    onClose: onShareClose,
+  } = useDisclosure()
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -134,6 +154,26 @@ const LessonDetail = ({
 
   const tallyId =
     lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
+
+  const current_wallet: any = localStorage.getItem('current_wallet') || ''
+  const { address } = useAccount()
+  const { data: ensName } = useEnsName({
+    address: address,
+    chainId: 1,
+  })
+  const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
+  const referral = `${
+    typeof ensName === 'string' && ensName?.includes('.')
+      ? ensName
+      : address || current_wallet
+  }`
+  const shareLink = `${DOMAIN_URL_}/lessons/${langURL}${lesson.slug}${
+    referral ? `?referral=${referral}` : ''
+  }`
+
+  const shareMessage = `Learn about "${lesson.name}" on @${TWITTER_ACCOUNT} 🎉
+
+Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
   return (
     <>
@@ -223,8 +263,35 @@ const LessonDetail = ({
                   </Box>
                 </OpenLesson>
               </Box>
-              <Box display="flex" justifyContent="center" mb="8">
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                mb="8"
+                flexDirection="column"
+                gap="4"
+              >
                 <LessonButton lesson={lesson} click />
+                {!isBadgeMintedLS && (
+                  <>
+                    <Button
+                      variant="secondaryBig"
+                      size="lg"
+                      leftIcon={<ShareFat width="24px" height="24px" />}
+                      onClick={() => {
+                        onShareOpen()
+                      }}
+                    >
+                      Share & Refer
+                    </Button>
+                    <ShareModal
+                      isOpen={isShareOpen}
+                      onClose={onShareClose}
+                      shareMessage={shareMessage}
+                      shareLink={shareLink}
+                    />
+                  </>
+                )}
               </Box>
               <Box>
                 <Text
