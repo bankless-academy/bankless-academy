@@ -78,7 +78,7 @@ const ShareAction = ({
           <Image width="50px" src="/images/share/share-WhatsApp.png" />
         </ExternalLink>
         <ExternalLink href={linkedinLink}>
-          <Image width="50px" src="/images/share/share-Linkedin.png" />
+          <Image width="50px" src="/images/share/share-LinkedIn.png" />
         </ExternalLink>
       </Box>
       <Box
