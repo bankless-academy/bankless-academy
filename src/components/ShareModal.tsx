@@ -122,23 +122,33 @@ const ShareModal = ({
               </Box>
             </Box>
           ) : (
-            <Box display="flex" gap="10px" position="relative" mt="20px">
-              <Image
-                position="absolute"
-                top="-8px"
-                left="-30px"
-                width="50px"
-                src="/images/share/plus-one.png"
-              />
-              <Box
-                borderRadius="30px"
-                backgroundColor="#3F3154"
-                p="8px 24px"
-                color="white"
-                fontSize="14px"
-                fontWeight="500"
-              >
-                Connect your wallet and earn referral rewards!
+            <Box
+              display="flex"
+              gap="10px"
+              mt="20px"
+              mb="40px"
+              justifyContent="center"
+            >
+              <Box position="relative">
+                <Image
+                  position="absolute"
+                  top="50%"
+                  left="0"
+                  transform="translateY(-50%)"
+                  width="50px"
+                  src="/images/share/plus-one.png"
+                />
+                <Box
+                  borderRadius="30px"
+                  backgroundColor="#3F3154"
+                  p="8px 24px"
+                  color="white"
+                  fontSize="14px"
+                  fontWeight="500"
+                  ml="30px"
+                >
+                  Connect your wallet and earn referral rewards!
+                </Box>
               </Box>
             </Box>
           )}

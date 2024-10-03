@@ -9,7 +9,7 @@ import styled from '@emotion/styled'
 
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
-import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL_ } from 'constants/index'
+import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
 import { BADGE_OPENSEA_URL, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
@@ -58,9 +58,11 @@ const Badge = ({
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   // TODO: TRANSLATE
   const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
+  const locationOrigin =
+    typeof window !== 'undefined' ? `${window.location.origin}` : ''
   const shareLink = IS_WHITELABEL
-    ? `${DOMAIN_URL_}/lessons/${langURL}${lesson.slug}`
-    : `${DOMAIN_URL_}/explorer/${
+    ? `${locationOrigin}/lessons/${langURL}${lesson.slug}`
+    : `${locationOrigin}/explorer/${
         typeof ensName === 'string' && ensName?.includes('.')
           ? ensName
           : address || current_wallet

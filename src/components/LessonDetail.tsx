@@ -25,7 +25,6 @@ import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
 import {
   DOMAIN_URL,
-  DOMAIN_URL_,
   IS_COLLECTIBLE_ACTIVATED,
   IS_PROD,
   IS_WALLET_DISABLED,
@@ -167,7 +166,9 @@ const LessonDetail = ({
       ? ensName
       : address || current_wallet
   }`
-  const shareLink = `${DOMAIN_URL_}/lessons/${langURL}${lesson.slug}${
+  const locationOrigin =
+    typeof window !== 'undefined' ? `${window.location.origin}` : ''
+  const shareLink = `${locationOrigin}/lessons/${langURL}${lesson.slug}${
     referral ? `?referral=${referral}` : ''
   }`
 
