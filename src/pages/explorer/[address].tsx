@@ -43,6 +43,7 @@ import { maxReferrals } from 'components/OgSocial'
 import { MAX_ACHIEVEMENT } from 'constants/achievements'
 import { MacScrollbar } from 'mac-scrollbar'
 import ShareAction from 'components/ShareAction'
+import LESSONS from 'constants/lessons'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -106,7 +107,7 @@ export default function Page({
   const profileUrl =
     typeof window !== 'undefined' ? `${window.location.href}` : ''
   const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
-  const { referral } = router.query
+  const { referral, badge } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
   const [isMyProfile, setIsMyProfile] = useState(false)
@@ -128,6 +129,18 @@ export default function Page({
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
     : []
+
+  useEffect(() => {
+    if (badge !== '') {
+      const lesson = LESSONS.find(
+        (lesson) => lesson.badgeId === parseInt(badge as string)
+      )
+      if (lesson) {
+        const redirect = `/lessons/${lesson.slug}?referral=${profileAddress}`
+        window.location.href = redirect
+      }
+    }
+  }, [badge])
 
   useEffect(() => {
     const loadUser = async () => {
