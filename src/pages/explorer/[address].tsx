@@ -107,7 +107,7 @@ export default function Page({
   const profileUrl =
     typeof window !== 'undefined' ? `${window.location.href}` : ''
   const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
-  const { referral, badge } = router.query
+  const { referral, badge, lng } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
   const [isMyProfile, setIsMyProfile] = useState(false)
@@ -132,15 +132,18 @@ export default function Page({
 
   useEffect(() => {
     if (badge !== '') {
+      // redirect badge referral to lesson
       const lesson = LESSONS.find(
         (lesson) => lesson.badgeId === parseInt(badge as string)
       )
       if (lesson) {
-        const redirect = `/lessons/${lesson.slug}?referral=${profileAddress}`
+        const redirect = `/lessons/${lng ? `${lng}/` : ''}${
+          lesson.slug
+        }?referral=${profileAddress}`
         window.location.href = redirect
       }
     }
-  }, [badge])
+  }, [badge, lng])
 
   useEffect(() => {
     const loadUser = async () => {

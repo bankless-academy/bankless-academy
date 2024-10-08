@@ -56,18 +56,19 @@ const Badge = ({
     onClose: onShareClose,
   } = useDisclosure()
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
-  // TODO: TRANSLATE
-  const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
+  const langURL = i18n.language !== 'en' ? `${i18n.language}` : ''
+  const lang = langURL ? `&lng=${langURL}` : ''
   const locationOrigin =
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
   const shareLink = IS_WHITELABEL
-    ? `${locationOrigin}/lessons/${langURL}${lesson.slug}`
+    ? `${locationOrigin}/lessons/${lang}${lesson.slug}`
     : `${locationOrigin}/explorer/${
         typeof ensName === 'string' && ensName?.includes('.')
           ? ensName
           : address || current_wallet
-      }?badge=${lesson.badgeId}&referral=true`
+      }?badge=${lesson.badgeId}&referral=true${lang}`
 
+  // TODO: TRANSLATE
   const shareMessage = `I've just claimed my "${lesson.name}" onchain certification at @${TWITTER_ACCOUNT} 🎉
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
