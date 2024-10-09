@@ -105,10 +105,6 @@ const LessonDetail = ({
   const router = useRouter()
   const pageEndsWithDatadisk = router?.query?.slug?.[0]?.endsWith('-datadisk')
   const toast = useToast()
-  const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.badgeId}`,
-    false
-  )
   const {
     isOpen: isShareOpen,
     onOpen: onShareOpen,
@@ -273,26 +269,24 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 gap="4"
               >
                 <LessonButton lesson={lesson} click />
-                {!isBadgeMintedLS && (
-                  <>
-                    <Button
-                      variant="secondaryBig"
-                      size="lg"
-                      leftIcon={<ShareFat width="24px" height="24px" />}
-                      onClick={() => {
-                        onShareOpen()
-                      }}
-                    >
-                      Share & Refer
-                    </Button>
-                    <ShareModal
-                      isOpen={isShareOpen}
-                      onClose={onShareClose}
-                      shareMessage={shareMessage}
-                      shareLink={shareLink}
-                    />
-                  </>
-                )}
+                <>
+                  <Button
+                    variant="secondaryBig"
+                    size="lg"
+                    leftIcon={<ShareFat width="24px" height="24px" />}
+                    onClick={() => {
+                      onShareOpen()
+                    }}
+                  >
+                    Share & Refer
+                  </Button>
+                  <ShareModal
+                    isOpen={isShareOpen}
+                    onClose={onShareClose}
+                    shareMessage={shareMessage}
+                    shareLink={shareLink}
+                  />
+                </>
               </Box>
               <Box>
                 <Text
