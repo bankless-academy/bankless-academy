@@ -239,6 +239,9 @@ const ConnectWalletButton = ({
     }
     const newNameCache = JSON.parse(JSON.stringify(nameCache))
     newNameCache[addressLower] = { name, avatar }
+    if (name?.includes('.')) {
+      newNameCache[name] = { name, avatar }
+    }
     setNameCache(newNameCache)
   }
 
