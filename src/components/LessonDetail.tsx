@@ -36,7 +36,7 @@ import { useEffect } from 'react'
 import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
 import LanguageSwitch from 'components/LanguageSwitch'
-import ShareModal from './ShareModal'
+import ShareModal from 'components/ShareModal'
 import { useAccount, useEnsName } from 'wagmi'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
@@ -150,7 +150,7 @@ const LessonDetail = ({
   const tallyId =
     lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
 
-  const current_wallet: any = localStorage.getItem('current_wallet') || ''
+  const [currentWallet] = useLocalStorage('current_wallet', '')
   const { address } = useAccount()
   const { data: ensName } = useEnsName({
     address: address,
@@ -160,7 +160,7 @@ const LessonDetail = ({
   const referral = `${
     typeof ensName === 'string' && ensName?.includes('.')
       ? ensName
-      : address || current_wallet
+      : address || currentWallet
   }`
   const locationOrigin =
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
@@ -283,6 +283,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   <ShareModal
                     isOpen={isShareOpen}
                     onClose={onShareClose}
+                    shareTitle="Share Lesson, Earn Points"
                     shareMessage={shareMessage}
                     shareLink={shareLink}
                   />

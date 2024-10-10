@@ -13,25 +13,30 @@ import {
 import { shortenAddress } from 'utils'
 import ProfileScore from 'components/ProfileScore'
 import { useLocalStorage } from 'usehooks-ts'
-import { useAccount } from 'wagmi'
 import Helper from 'components/Helper'
 import ShareAction from './ShareAction'
 
 const ShareModal = ({
   isOpen,
   onClose,
+  shareTitle,
   shareMessage,
   shareLink,
 }: {
   isOpen: boolean
   onClose: () => void
+  shareTitle: string
   shareMessage: string
   shareLink: string
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [score] = useLocalStorage(`score`, 0)
   const [nameCache] = useLocalStorage(`name-cache`, {})
-  const { address } = useAccount()
+
+  const hasReferral = shareLink.includes('referral=')
+  const address = shareLink.includes('referral=true')
+    ? shareLink?.split('/explorer/')[1]?.split('?')[0]
+    : shareLink.split('referral=')[1] || ''
   const addressLower = address?.toLowerCase()
 
   const ens = address
@@ -45,8 +50,6 @@ const ShareModal = ({
       ? nameCache[addressLower].avatar
       : ''
     : ''
-
-  const hasReferral = shareLink.includes('referral=')
 
   return (
     <Modal
@@ -64,7 +67,7 @@ const ShareModal = ({
         overflowY="auto"
         maxH="var(--chakra-vh)"
       >
-        <ModalHeader>Share</ModalHeader>
+        <ModalHeader>{shareTitle}</ModalHeader>
         <ModalCloseButton />
         <ModalBody alignContent="center">
           <ShareAction shareMessage={shareMessage} shareLink={shareLink} />

@@ -40,7 +40,7 @@ const Badge = ({
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
-  const current_wallet: any = localStorage.getItem('current_wallet')
+  const [currentWallet] = useLocalStorage('current_wallet', '')
   const { address } = useAccount()
   const { data: ensName } = useEnsName({
     address: address,
@@ -65,7 +65,7 @@ const Badge = ({
     : `${locationOrigin}/explorer/${
         typeof ensName === 'string' && ensName?.includes('.')
           ? ensName
-          : address || current_wallet
+          : address || currentWallet
       }?badge=${lesson.badgeId}&referral=true${lang}`
 
   // TODO: TRANSLATE
@@ -206,6 +206,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         <ShareModal
           isOpen={isShareOpen}
           onClose={onShareClose}
+          shareTitle="Share Badge, Earn Points"
           shareMessage={shareMessage}
           shareLink={shareLink}
         />
