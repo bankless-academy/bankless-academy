@@ -167,7 +167,6 @@ const LessonCards = ({
         spacing={4}
         my={8}
         gap={6}
-        float={level === 'Community Lessons' ? 'inline-start' : 'inherit'}
       >
         {Lessons.filter((lesson) => {
           if (level) {
@@ -186,6 +185,8 @@ const LessonCards = ({
             />
           )
         })}
+        {/* HACK: Add fake empty card for community lessons */}
+        {level === 'Community Lessons' && <Box />}
       </SimpleGrid>
       {level === 'Essentials' && (
         <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />
