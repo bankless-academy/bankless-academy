@@ -31,7 +31,8 @@ import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
-import { airstackGraphQLClient } from 'utils/airstack'
+import { lensGraphQLClient } from 'utils/gql/lens'
+import { airstackGraphQLClient } from 'utils/gql/airstack'
 import { wagmiConfig } from 'utils/wagmi'
 import { NFTAddress } from 'constants/nft'
 import { TABLES, db } from 'utils/db'
@@ -425,7 +426,8 @@ const withMixpanel = {
         ? JSON.parse(localStorage.getItem('wallets'))
         : [],
     }
-    const current_wallet = localStorage.getItem('current_wallet')
+    const current_wallet: any =
+      localStorage.getItem('current_wallet')?.replaceAll('"', '') || ''
     if (current_wallet) {
       const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
       if (!mp_current_wallet?.length) {
@@ -733,31 +735,42 @@ export async function getLensProfile(address: string): Promise<{
     avatar: null,
   }
   try {
-    const query = gql`query GetLensHandle {
-      Socials(
-        input: {filter: {dappName: {_eq: lens}, identity: {_eq: "${address}"}}, blockchain: ethereum}
-      ) {
-        Social {
-          profileName
-          isDefault
-          profileHandle
-          profileImageContentValue {
-            image {
-              small
+    const query = gql`
+    query GetLensHandle($request: ProfilesManagedRequest!) {
+      profilesManaged(request: $request) {
+        items {
+          handle {
+            localName
+          }
+          metadata {
+            picture {
+              ... on ImageSet {
+                optimized {
+                  uri
+                }
+              }
             }
           }
-          profileImage
         }
       }
-    }`
-    const r: any = await airstackGraphQLClient.request(query)
-    const profile = r?.Socials?.Social?.[0]
-    console.log(profile)
-    const name = profile?.profileHandle
-    if (name?.startsWith('@'))
-      res.name = name?.replace("@", "") + '.lens'
-    res.avatar = profile?.profileImageContentValue?.image?.small
-    return res
+    }
+  `
+    const variables = {
+      request: {
+        for: address
+      }
+    }
+    const r: any = await lensGraphQLClient.request(query, variables)
+    const items = r.profilesManaged.items
+    if (!items || items.length === 0) {
+      // No profiles found for this address
+      return res
+    }
+    const lastProfile = items[items.length - 1]
+    const name = lastProfile.handle.localName.split('.')[0] + '.lens'
+    const avatar =
+      lastProfile.metadata?.picture?.optimized?.uri || null
+    return { name, avatar }
   } catch (error) {
     console.error(error)
     return res
