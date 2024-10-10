@@ -274,7 +274,7 @@ const OnboardingModal = ({
                           w={isMobileScreen ? 'auto' : '200px'}
                           textAlign="center"
                         >
-                          <Text>You were referred by:</Text>
+                          <Text fontStyle="italic">You were referred by:</Text>
                           <Text fontWeight="bold" textTransform="uppercase">
                             {referrerData.ensName ||
                               shortenAddress(referrerData.address)}

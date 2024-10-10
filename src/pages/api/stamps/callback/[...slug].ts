@@ -15,7 +15,7 @@ import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from "constants/passport"
 import { TABLE, TABLES, db } from "utils/db"
 import { trackBE } from "utils/mixpanel"
 import { gql } from "graphql-request"
-import { airstackGraphQLClient } from "utils/airstack"
+import { airstackGraphQLClient } from "utils/gql/airstack"
 
 export const VERSION = "v0.0.0";
 

@@ -232,13 +232,16 @@ const ConnectWalletButton = ({
         if (ud?.length) {
           replaceName(ud)
           replaceAvatar(
-            `https://resolve.unstoppabledomains.com/image-src/${ud}`
+            `https://api.unstoppabledomains.com/metadata/image-src/${ud}`
           )
         }
       }
     }
     const newNameCache = JSON.parse(JSON.stringify(nameCache))
     newNameCache[addressLower] = { name, avatar }
+    if (name?.includes('.')) {
+      newNameCache[name] = { name, avatar }
+    }
     setNameCache(newNameCache)
   }
 

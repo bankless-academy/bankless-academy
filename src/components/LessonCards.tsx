@@ -158,7 +158,7 @@ const LessonCards = ({
             : level === 'Level 1'
             ? `Level up your knowledge and abilities with more specific topics and quests.`
             : level === 'Community Lessons'
-            ? `Lessons written with our ecosystem partners.`
+            ? `Get involved with our ecosystem partners.`
             : `Quick guides for getting your crypto journey started.`}
         </Heading>
       ) : null}

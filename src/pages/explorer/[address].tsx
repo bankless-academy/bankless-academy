@@ -11,11 +11,10 @@ import {
   InputLeftElement,
   InputRightAddon,
   Text,
-  useClipboard,
   useMediaQuery,
   useToast,
 } from '@chakra-ui/react'
-import { CopySimple, Envelope } from '@phosphor-icons/react'
+import { Envelope } from '@phosphor-icons/react'
 import router from 'next/router'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
@@ -28,8 +27,6 @@ import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { UserType } from 'entities/user'
 import {
   emailRegex,
-  generateFarcasterLink,
-  generateTwitterLink,
   shortenAddress,
   api,
   Mixpanel,
@@ -45,6 +42,8 @@ import Helper from 'components/Helper'
 import { maxReferrals } from 'components/OgSocial'
 import { MAX_ACHIEVEMENT } from 'constants/achievements'
 import { MacScrollbar } from 'mac-scrollbar'
+import ShareAction from 'components/ShareAction'
+import LESSONS from 'constants/lessons'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -105,17 +104,15 @@ export default function Page({
   badgeToHighlight?: number
   preloadError?: string
 }) {
-  const random = Math.floor(Math.random() * 100000)
   const profileUrl =
-    typeof window !== 'undefined' ? `${window.location.href}&r=${random}` : ''
+    typeof window !== 'undefined' ? `${window.location.href}` : ''
   const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
-  const { referral } = router.query
+  const { referral, badge, lng } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
   const [isMyProfile, setIsMyProfile] = useState(false)
   const [score, setScore] = useLocalStorage(`score`, 0)
   const { address } = useAccount()
-  const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
   const [email, setEmail] = useLocalStorage(
     'email',
@@ -132,6 +129,21 @@ export default function Page({
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
     : []
+
+  useEffect(() => {
+    if (badge !== '') {
+      // redirect badge referral to lesson
+      const lesson = LESSONS.find(
+        (lesson) => lesson.badgeId === parseInt(badge as string)
+      )
+      if (lesson) {
+        const redirect = `/lessons/${lng ? `${lng}/` : ''}${
+          lesson.slug
+        }?referral=${profileAddress}`
+        window.location.href = redirect
+      }
+    }
+  }, [badge, lng])
 
   useEffect(() => {
     const loadUser = async () => {
@@ -219,10 +231,6 @@ export default function Page({
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
-
-  const twitterLink = generateTwitterLink(share, shareLink)
-
-  const farcasterLink = generateFarcasterLink(share, shareLink)
 
   const referrals = user?.stats?.referrals?.length || 0
 
@@ -455,53 +463,11 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                         title="Share"
                         description="Share your profile, earn referral points!"
                       />
-                      <Box justifyContent="center" w="256px" m="32px auto 0">
-                        <Box pb="2">
-                          <ExternalLink href={twitterLink} mr="2">
-                            <Button
-                              variant="primary"
-                              w="100%"
-                              borderBottomRadius="0"
-                              leftIcon={
-                                <Image
-                                  width="24px"
-                                  src="/images/TwitterX.svg"
-                                />
-                              }
-                            >
-                              {t('Share on Twitter / X')}
-                            </Button>
-                          </ExternalLink>
-                        </Box>
-                        <Box pb="2">
-                          <ExternalLink href={farcasterLink} mr="2">
-                            <Button
-                              variant="primary"
-                              w="100%"
-                              borderRadius="0"
-                              leftIcon={
-                                <Image
-                                  width="24px"
-                                  src="/images/Farcaster.svg"
-                                />
-                              }
-                            >
-                              {t('Share on Farcaster')}
-                            </Button>
-                          </ExternalLink>
-                        </Box>
-                        <Button
-                          variant="primary"
-                          w="100%"
-                          borderTopRadius="0"
-                          leftIcon={<CopySimple size="30px" />}
-                          onClick={() => onCopy()}
-                          isActive={hasCopied}
-                        >
-                          {hasCopied
-                            ? t('Referral Link Copied')
-                            : t('Copy Referral Link')}
-                        </Button>
+                      <Box justifyContent="center" w="100%" m="32px auto 0">
+                        <ShareAction
+                          shareMessage={share}
+                          shareLink={shareLink}
+                        />
                       </Box>
                     </Box>
                     <Box m="8" flex="1"></Box>
@@ -611,20 +577,12 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                         flexDirection="column"
                         textAlign="right"
                       >
-                        <Box>No referrals yet.</Box>
+                        <Box mb="4">No referrals yet.</Box>
                         {isMyProfile && (
-                          <Box mt="4">
-                            <Button
-                              variant="primary"
-                              leftIcon={<CopySimple size="30px" />}
-                              onClick={() => onCopy()}
-                              isActive={hasCopied}
-                            >
-                              {hasCopied
-                                ? t('Referral Link Copied')
-                                : t('Copy Referral Link')}
-                            </Button>
-                          </Box>
+                          <ShareAction
+                            shareMessage={share}
+                            shareLink={shareLink}
+                          />
                         )}
                       </Box>
                     )}
