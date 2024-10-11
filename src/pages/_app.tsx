@@ -15,6 +15,7 @@ import { WagmiProvider } from 'wagmi'
 import Router from 'next/router'
 import { useWeb3ModalState } from '@web3modal/wagmi/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import * as Sentry from '@sentry/nextjs'
 
 import Head, { MetaData } from 'components/Head'
 import Layout from 'layout/index'
@@ -49,11 +50,13 @@ const App = ({
       process.env.NEXT_PUBLIC_MAINTENANCE !== DEBUG) ||
     pageProps.pageMeta?.title === 'Maintenance'
   ) {
-    return <>Maintenance in progress ...</>
+    return (
+      <Sentry.ErrorBoundary>Maintenance in progress ...</Sentry.ErrorBoundary>
+    )
   }
   if (pageProps.pageMeta?.nolayout) {
     return (
-      <>
+      <Sentry.ErrorBoundary>
         <Head metadata={pageProps.pageMeta} />
         <ThemeProvider>
           <Global styles={css``} />
@@ -65,7 +68,7 @@ const App = ({
             </NonSSRWrapper>
           )}
         </ThemeProvider>
-      </>
+      </Sentry.ErrorBoundary>
     )
   }
 
@@ -113,7 +116,14 @@ const App = ({
   }, [Router])
 
   return (
-    <>
+    <Sentry.ErrorBoundary
+    //  fallback={({ error } : any) => (
+    //   <div>
+    //     <h1>Oops! Something went wrong.</h1>
+    //     <p>{error?.message}</p>
+    //   </div>
+    // )}
+    >
       <Head metadata={pageProps.pageMeta} />
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
@@ -278,7 +288,7 @@ const App = ({
           <Overlay hidden={!open} />
         </NonSSRWrapper>
       </ThemeProvider>
-    </>
+    </Sentry.ErrorBoundary>
   )
 }
 

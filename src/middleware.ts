@@ -1,11 +1,13 @@
 /* eslint-disable no-console */
+import * as Sentry from '@sentry/nextjs';
+
 // middleware.ts
 // TODO: migrate to https://github.com/neet/next-composition
 import { NextResponse } from 'next/server'
 import { userAgent } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export default function middleware(request: NextRequest): NextResponse {
+export function middleware(request: NextRequest): NextResponse {
   const ipAddress = request.ip || 'local'
   // Detect and redirect bots
   const ua = userAgent(request)
@@ -29,6 +31,15 @@ export default function middleware(request: NextRequest): NextResponse {
   } else return NextResponse.next()
 }
 
+// Wrap the middleware function with Sentry error tracking
+export default Sentry.wrapMiddlewareWithSentry(middleware);
+
+Sentry.init({
+  // ... other configurations ...
+  attachStacktrace: true,
+});
+
+// Apply middleware only to specific routes
 export const config = {
   matcher: ['/api/passport', '/api/mint-badge', '/api/validate-quest'],
 }
