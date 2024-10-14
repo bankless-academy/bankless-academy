@@ -94,6 +94,7 @@ const ShareModal = ({
                 marginLeft={isMobileScreen ? '0' : '-50px'}
                 w={isMobileScreen ? '100%' : 'auto'}
                 mt={isMobileScreen ? '-40px' : '0'}
+                border="1px solid rgba(255, 255, 255, 0.16)"
               >
                 <Box
                   ml={isMobileScreen ? '0' : '0px'}
