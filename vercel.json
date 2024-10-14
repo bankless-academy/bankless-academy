@@ -105,6 +105,17 @@
     {
       "source": "/lesson/images/:slug",
       "destination": "/images/:slug"
+    },
+    {
+      "source": "/images/:slug/social-(.*)",
+      "destination": "/api/lesson-image?slug=:slug&type=social",
+      "has": [
+        {
+          "type": "header",
+          "key": "x-matched-path",
+          "value": "/_error"
+        }
+      ]
     }
   ],
   "redirects": [
