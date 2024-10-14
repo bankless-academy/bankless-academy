@@ -68,6 +68,8 @@ axios
       fs.mkdirSync(`public/${PROJECT_DIR}lesson`)
     }
     const promiseArray = notionRows.data.map(async (notion, index) => {
+      // wait 200ms to avoid rate limiting
+      await new Promise(resolve => setTimeout(resolve, index * 200));
       // DEV_MODE: only test first lesson
       // if (index > 1) return
 
@@ -97,19 +99,19 @@ axios
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.badgeId === undefined) lesson.badgeId = null
-      if (lesson.datadiskVectorMint === undefined) delete lesson.datadiskVectorMint
-      if (lesson.collectibleId === undefined) delete lesson.collectibleId
+      if (lesson.datadiskVectorMint === undefined || lesson.datadiskVectorMint === '') delete lesson.datadiskVectorMint
+      if (lesson.collectibleId === undefined || lesson.collectibleId === '') delete lesson.collectibleId
       if (lesson.badgeImageLink === undefined) lesson.badgeImageLink = null
       if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
       if (lesson.lessonCollectibleVideo === undefined) delete lesson.lessonCollectibleVideo
       if (lesson.lessonCollectibleGif === undefined) delete lesson.lessonCollectibleGif
-      if (lesson.lessonCollectibleMintID === undefined) delete lesson.lessonCollectibleMintID
-      if (lesson.lessonCollectibleTokenAddress === undefined) delete lesson.lessonCollectibleTokenAddress
+      if (lesson.lessonCollectibleMintID === undefined || lesson.lessonCollectibleMintID === '') delete lesson.lessonCollectibleMintID
+      if (lesson.lessonCollectibleTokenAddress === undefined || lesson.lessonCollectibleTokenAddress === '') delete lesson.lessonCollectibleTokenAddress
       if (lesson.lessonCollectibleMintID && lesson.lessonCollectibleTokenAddress) lesson.hasCollectible = true
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.difficulty === undefined) delete lesson.difficulty
-      if (lesson.endOfLessonText === undefined) delete lesson.endOfLessonText
-      if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
+      if (lesson.endOfLessonText === undefined || lesson.endOfLessonText === '') delete lesson.endOfLessonText
+      if (lesson.marketingDescription === undefined || lesson.marketingDescription === '') lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
       if (lesson.learnings === undefined) lesson.learnings = ''
       if (lesson.publicationDate === undefined || lesson.publicationDate === null || !lesson.publicationDate.startsWith('20')) delete lesson.publicationDate
@@ -123,20 +125,20 @@ axios
       else lesson.languages.sort()
       if (lesson.level === undefined) delete lesson.level
       if (!lesson.tags || lesson.tags.length === 0) delete lesson.tags
-      if (lesson.community === undefined) delete lesson.community
-      if (lesson.questSocialMessage === undefined) delete lesson.questSocialMessage
-      if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
+      if (lesson.community === undefined || lesson.community === '') delete lesson.community
+      if (lesson.questSocialMessage === undefined || lesson.questSocialMessage === '') delete lesson.questSocialMessage
+      if (lesson.lessonWriters === undefined || lesson.lessonWriters === '') delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
-      if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
-      if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
+      if (lesson.mirrorLink === undefined || lesson.mirrorLink === '' || lesson.mirrorLink === null) delete lesson.mirrorLink
+      if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === '' || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
       if (lesson.areMirrorNFTAllCollected === undefined) delete lesson.areMirrorNFTAllCollected
-      if (lesson.sponsorName === undefined || lesson.sponsorName === null) delete lesson.sponsorName
+      if (lesson.sponsorName === undefined || lesson.sponsorName === '' || lesson.sponsorName === null) delete lesson.sponsorName
       if (lesson.sponsorLogo === undefined || lesson.sponsorLogo === null) delete lesson.sponsorLogo
-      if (lesson.nftGating === undefined || lesson.nftGating === null) delete lesson.nftGating
-      if (lesson.nftGatingRequirements === undefined || lesson.nftGatingRequirements === null) delete lesson.nftGatingRequirements
-      if (lesson.nftGatingImageLink === undefined || lesson.nftGatingImageLink === null) delete lesson.nftGatingImageLink
-      if (lesson.nftGatingLink === undefined || lesson.nftGatingLink === null) delete lesson.nftGatingLink
-      if (lesson.nftGatingCTA === undefined || lesson.nftGatingCTA === null) delete lesson.nftGatingCTA
+      if (lesson.nftGating === undefined || lesson.nftGating === '' || lesson.nftGating === null) delete lesson.nftGating
+      if (lesson.nftGatingRequirements === undefined || lesson.nftGatingRequirements === '' || lesson.nftGatingRequirements === null) delete lesson.nftGatingRequirements
+      if (lesson.nftGatingImageLink === undefined || lesson.nftGatingImageLink === '' || lesson.nftGatingImageLink === null) delete lesson.nftGatingImageLink
+      if (lesson.nftGatingLink === undefined || lesson.nftGatingLink === '' || lesson.nftGatingLink === null) delete lesson.nftGatingLink
+      if (lesson.nftGatingCTA === undefined || lesson.nftGatingCTA === '' || lesson.nftGatingCTA === null) delete lesson.nftGatingCTA
 
       // console.log(lesson)
 
