@@ -14,6 +14,8 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     try {
       const response = await fetch(request.url, { method: 'HEAD' });
       if (response.status === 404) {
+        console.log('detected 404 for image:', pathname);
+
         const slug = pathname.split('/')[2];
         const type = pathname?.split('/')[3]?.split('-')[0];
         const rewriteUrl = new URL(`/api/lesson-image?slug=${slug}&type=${type}`, request.url);
@@ -53,5 +55,5 @@ Sentry.init({
 
 // Apply middleware only to specific routes
 export const config = {
-  matcher: ['/api/passport', '/api/mint-badge', '/api/validate-quest', '/images/:path*'],
+  matcher: ['/api/passport', '/api/mint-badge', '/api/validate-quest', '/images/(.*)/social-(.*)', '/images/(.*)/lesson-(.*)'],
 }
