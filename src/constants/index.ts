@@ -110,6 +110,17 @@ export const MIRROR_WHITELISTED_ACCOUNTS = [
   'hirokennelly.eth',
 ]
 
+export const DEMO_ACCOUNTS_IDS = [
+  // didierkrux.eth
+  56,
+  // web3explorer.eth
+  27074,
+  // ornellaweb3.eth
+  10275,
+  // tetranome.eth
+  737
+]
+
 export const MIRROR_ARTICLE_ADDRESSES = LESSONS.filter(
   (lesson) => lesson.mirrorNFTAddress
 ).map((lesson) => lesson.mirrorNFTAddress)

@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
-import { GENERIC_ERROR_MESSAGE } from 'constants/index'
+import { DEMO_ACCOUNTS_IDS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION, REQUIRED_PASSPORT_SCORE } from 'constants/passport'
 import { trackBE } from 'utils/mixpanel'
 import { PassportResponseSchema, fetchPassport, submitPassport } from 'utils/passport_lib'
@@ -37,16 +37,7 @@ export default async function handler(
     return res.status(403).json({ error: 'userId not found' })
   }
 
-  const isDemoAccount = [
-    // D
-    56,
-    // web3x
-    27074,
-    // O
-    10275,
-    // T
-    737
-  ].includes(userId)
+  const isDemoAccount = DEMO_ACCOUNTS_IDS.includes(userId)
 
   // Allow to reset stamps for demo
   if (reset && isDemoAccount) {

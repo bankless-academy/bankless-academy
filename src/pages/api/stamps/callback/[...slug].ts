@@ -16,7 +16,7 @@ import { TABLE, TABLES, db } from "utils/db"
 import { trackBE } from "utils/mixpanel"
 import { gql } from "graphql-request"
 import { airstackGraphQLClient } from "utils/gql/airstack"
-
+import { DEMO_ACCOUNTS_IDS } from "constants/index"
 export const VERSION = "v0.0.0";
 
 export type GenerateTwitterAuthUrlRequestBody = {
@@ -101,6 +101,8 @@ export default async function handler(
       // trackBE(address, 'issue_user_not_found', { context: 'callback' })
       return res.status(403).json({ error: 'userId not found' })
     }
+
+    const isDemoAccount = DEMO_ACCOUNTS_IDS.includes(userId)
 
     if (platform === 'google') {
       const googleProvider = new google.GoogleProvider();
@@ -304,7 +306,7 @@ export default async function handler(
       // console.log(sybilQuery.toString())
       sybil = await sybilQuery
       console.log('sybil', sybil)
-      if (sybil?.length) {
+      if (sybil?.length && !isDemoAccount) {
         // mark this user as a sybil attacker
         console.log('fraud detected:', sybil)
         trackBE(address, 'duplicate_stamps_ba', {
