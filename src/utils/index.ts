@@ -1003,11 +1003,15 @@ export const fetchGivethDonations = async (address: string): Promise<number> => 
 };
 
 export const fetchExplorerData = async (address: string): Promise<{
-  address: string
   handbooks: string[]
   datadisks: string[]
   polBadges: number[]
 }> => {
+  const OwnerAssets = {
+    handbooks: [],
+    datadisks: [],
+    polBadges: []
+  }
   const query = `
     query MyQuery {
   OwnerAssets(where: {address: {_ilike: "${address}"}}) {
@@ -1035,16 +1039,16 @@ export const fetchExplorerData = async (address: string): Promise<{
     }
 
     const result = await response.json();
-    // console.log(result.data);
-    return result.data?.OwnerAssets[0]
+    console.log(result.data);
+    const OwnerAssets = result.data?.OwnerAssets[0] || {}
+    return {
+      handbooks: OwnerAssets?.handbooks || [],
+      datadisks: OwnerAssets?.datadisks || [],
+      polBadges: OwnerAssets?.polBadges || []
+    }
   } catch (error) {
     console.error('Error fetching data:', error);
-    return {
-      address: '',
-      handbooks: [],
-      datadisks: [],
-      polBadges: []
-    }
+    return OwnerAssets
   }
 };
 
