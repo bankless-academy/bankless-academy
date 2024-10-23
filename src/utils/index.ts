@@ -32,7 +32,6 @@ import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
 import { lensGraphQLClient } from 'utils/gql/lens'
-import { airstackGraphQLClient } from 'utils/gql/airstack'
 import { wagmiConfig } from 'utils/wagmi'
 import { NFTAddress } from 'constants/nft'
 import { TABLES, db } from 'utils/db'
@@ -332,35 +331,12 @@ export async function validateOnchainQuest(
       console.log('optimismBalance: ', optimismBalance)
       const polygonBalance = await getTokenBalance(AlchemyNetwork.MATIC_MAINNET, address, ['0x0266f4f08d82372cf0fcbccc0ff74309089c74d1'])
       console.log('polygonBalance: ', polygonBalance)
-      const query = gql`
-      query MyQuery {
-        Ethereum: TokenBalances(
-          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xae78736cd615f374d3085123a210448e74fc6393"}, tokenType: {_eq: ERC20}}, blockchain: ethereum, limit: 50}
-        ) {
-          TokenBalance {
-            formattedAmount
-          }
-        }
-        Base: TokenBalances(
-          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c"}, tokenType: {_eq: ERC20}}, blockchain: base, limit: 50}
-        ) {
-          TokenBalance {
-            formattedAmount
-          }
-        }
-      }`
+      const ethereumBalance = await getTokenBalance(AlchemyNetwork.ETH_MAINNET, address, ['0xae78736cd615f374d3085123a210448e74fc6393'])
+      console.log('ethereumBalance: ', ethereumBalance)
+      const baseBalance = await getTokenBalance(AlchemyNetwork.BASE_MAINNET, address, ['0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c'])
+      console.log('baseBalance: ', baseBalance)
       try {
-        const data = await airstackGraphQLClient.request(query)
-        const networks = Object.keys(data)
-        let balance = arbitrumBalance + optimismBalance + polygonBalance
-        for (const network of networks) {
-          if (data[network].TokenBalance !== null) {
-            const networkTokenBalance = data[network].TokenBalance[0].formattedAmount
-            console.log(`${network}Balance: `, networkTokenBalance)
-            balance += networkTokenBalance
-          }
-        }
-        console.log(data)
+        const balance = arbitrumBalance + optimismBalance + polygonBalance + ethereumBalance + baseBalance
         console.log(balance)
         // allow a bit less than 0.001 in case someone only buys for 0.001 ETH worth of rETH
         return balance >= 0.00085
