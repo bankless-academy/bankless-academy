@@ -109,7 +109,7 @@ export default async function handler(
 
     return res.status(200).json(data)
   } catch (error) {
-    console.error(console.error())
+    console.log(error)
     res.status(500)
   }
 

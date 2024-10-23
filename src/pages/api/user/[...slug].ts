@@ -182,7 +182,7 @@ export default async function handler(
   if (profile === 'true') {
     // async update ENS (available on next call)
     fetch(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
-      .catch(error => console.error('Error updating ENS:', error))
+      .catch(error => console.log('Error updating ENS:', error))
   }
 
   let stats: UserStatsType = {}
@@ -209,7 +209,7 @@ export default async function handler(
       method: 'POST',
       body: JSON.stringify({ address: addressLowerCase })
     })
-      .catch(error => console.error('Error calling gitcoin-donation achievement:', error))
+      .catch(error => console.log('Error calling gitcoin-donation achievement:', error))
   }
   if (!stats.achievements?.includes('giveth-donation')) {
     // async call: result available on next call
@@ -220,7 +220,7 @@ export default async function handler(
       method: 'POST',
       body: JSON.stringify({ address: addressLowerCase })
     })
-      .catch(error => console.error('Error calling giveth-donation achievement:', error))
+      .catch(error => console.log('Error calling giveth-donation achievement:', error))
   }
   if (userExist?.ens_name?.length > 0) {
     stats.achievements.push('ens-name')
