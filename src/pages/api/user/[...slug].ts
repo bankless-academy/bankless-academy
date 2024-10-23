@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
 import { mainnet } from 'viem/chains'
 import { createPublicClient, http } from 'viem'
 import { normalize } from 'viem/ens'
@@ -181,12 +180,9 @@ export default async function handler(
   const avatar = userExist?.ens_avatar || DEFAULT_AVATAR
 
   if (profile === 'true') {
-    try {
-      // async update ENS (available on next call)
-      axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
-    } catch (error) {
-      console.error(error)
-    }
+    // async update ENS (available on next call)
+    fetch(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
+      .catch(error => console.error('Error updating ENS:', error))
   }
 
   let stats: UserStatsType = {}
@@ -213,6 +209,7 @@ export default async function handler(
       method: 'POST',
       body: JSON.stringify({ address: addressLowerCase })
     })
+      .catch(error => console.error('Error calling gitcoin-donation achievement:', error))
   }
   if (!stats.achievements?.includes('giveth-donation')) {
     // async call: result available on next call
@@ -223,6 +220,7 @@ export default async function handler(
       method: 'POST',
       body: JSON.stringify({ address: addressLowerCase })
     })
+      .catch(error => console.error('Error calling giveth-donation achievement:', error))
   }
   if (userExist?.ens_name?.length > 0) {
     stats.achievements.push('ens-name')
