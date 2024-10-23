@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import * as Sentry from '@sentry/nextjs';
+// import * as Sentry from '@sentry/nextjs';
 import { NextResponse } from 'next/server'
 import { userAgent } from 'next/server'
 import type { NextRequest } from 'next/server'
@@ -46,12 +46,14 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 }
 
 // Wrap the middleware function with Sentry error tracking
-export default Sentry.wrapMiddlewareWithSentry(middleware);
+// export default Sentry.wrapMiddlewareWithSentry(middleware);
 
-Sentry.init({
-  // ... other configurations ...
-  attachStacktrace: true,
-});
+export default middleware;
+
+// Sentry.init({
+//   // ... other configurations ...
+//   attachStacktrace: true,
+// });
 
 // Apply middleware only to specific routes
 export const config = {

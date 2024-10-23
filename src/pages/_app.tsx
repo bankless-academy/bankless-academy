@@ -116,14 +116,7 @@ const App = ({
   }, [Router])
 
   return (
-    <Sentry.ErrorBoundary
-    //  fallback={({ error } : any) => (
-    //   <div>
-    //     <h1>Oops! Something went wrong.</h1>
-    //     <p>{error?.message}</p>
-    //   </div>
-    // )}
-    >
+    <Sentry.ErrorBoundary>
       <Head metadata={pageProps.pageMeta} />
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
