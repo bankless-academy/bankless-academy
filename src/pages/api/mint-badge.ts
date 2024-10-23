@@ -346,7 +346,7 @@ export default async function handler(
       console.log(error)
       console.error(error?.response?.data)
       trackBE(address, 'mint_kudos_issue', {
-        error: error?.response?.data,
+        error,
         badgeId,
         address,
       })
