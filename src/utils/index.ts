@@ -1002,4 +1002,50 @@ export const fetchGivethDonations = async (address: string): Promise<number> => 
   }
 };
 
+export const fetchExplorerData = async (address: string): Promise<{
+  address: string
+  handbooks: string[]
+  datadisks: string[]
+  polBadges: number[]
+}> => {
+  const query = `
+    query MyQuery {
+  OwnerAssets(where: {address: {_ilike: "${address}"}}) {
+    address
+    handbooks
+    datadisks
+    polBadges
+  }
+}
+  `;
+
+  try {
+    const response = await fetch('https://indexer.bigdevenergy.link/96427d0/v1/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    // console.log(result.data);
+    return result.data?.OwnerAssets[0]
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      address: '',
+      handbooks: [],
+      datadisks: [],
+      polBadges: []
+    }
+  }
+};
+
 export const countCommonElements = (arr1, arr2) => arr2.filter(item => new Set(arr1).has(item)).length;

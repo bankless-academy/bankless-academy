@@ -82,13 +82,17 @@ const Badges = ({
                             </Box>
                             <ExternalLink href={achievement.link}>
                               <Box>
-                                <Image
-                                  src={achievement.image}
+                                <Box
+                                  p="2"
                                   border="1px #2d292d solid"
                                   borderRadius="8px"
-                                  alt={achievement.description}
-                                  title={achievement.description}
-                                />
+                                >
+                                  <Image
+                                    src={achievement.image}
+                                    alt={achievement.description}
+                                    title={achievement.description}
+                                  />
+                                </Box>
                                 <Box
                                   fontWeight="bold"
                                   fontSize="sm"

@@ -6,62 +6,62 @@ import { createPublicClient, http } from 'viem'
 import { normalize } from 'viem/ens'
 
 import kudosBadges from 'data/badges.json'
-import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, DEFAULT_AVATAR, DOMAIN_URL, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
-import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS, badgePublishedIds } from 'constants/badges'
+import { ALCHEMY_KEY_BACKEND, DEFAULT_AVATAR, DOMAIN_URL } from 'constants/index'
+import { BADGE_TO_KUDOS_IDS, badgePublishedIds } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { UserStatsType, UserType } from 'entities/user'
 import { ALLOWED_PROVIDERS } from 'constants/passport'
-import { calculateExplorerScore, countCommonElements, fetchGitcoinDonations, fetchGivethDonations } from 'utils/index'
+import { calculateExplorerScore, countCommonElements, fetchExplorerData } from 'utils/index'
 
-async function getBadgeTokensIds(address: string, isProfile: boolean): Promise<number[]> {
-  try {
-    const badges = await axios.get(
-      `${BADGE_API}${isProfile ? ALCHEMY_KEY_BACKEND : process.env.ALCHEMY_KEY2}/getNFTsForOwner?owner=${address}&contractAddresses[]=${BADGE_ADDRESS}&withMetadata=false&pageSize=${BADGE_IDS?.length}`
-    )
-    console.log(badges.data)
-    const badgeTokenIds = badges.data.ownedNfts
-      .map((token) =>
-        BADGE_IDS.includes(parseInt(token.tokenId))
-          ? parseInt(token.tokenId)
-          : null
-      )
-      .filter((tokenId) => tokenId)
-    console.log(badgeTokenIds)
-    return badgeTokenIds
-  } catch (error) {
-    console.error(error)
-    return []
-  }
-}
+// async function getBadgeTokensIds(address: string, isProfile: boolean): Promise<number[]> {
+//   try {
+//     const badges = await axios.get(
+//       `${BADGE_API}${isProfile ? ALCHEMY_KEY_BACKEND : process.env.ALCHEMY_KEY2}/getNFTsForOwner?owner=${address}&contractAddresses[]=${BADGE_ADDRESS}&withMetadata=false&pageSize=${BADGE_IDS?.length}`
+//     )
+//     console.log(badges.data)
+//     const badgeTokenIds = badges.data.ownedNfts
+//       .map((token) =>
+//         BADGE_IDS.includes(parseInt(token.tokenId))
+//           ? parseInt(token.tokenId)
+//           : null
+//       )
+//       .filter((tokenId) => tokenId)
+//     console.log(badgeTokenIds)
+//     return badgeTokenIds
+//   } catch (error) {
+//     console.error(error)
+//     return []
+//   }
+// }
 
-async function getUserCollectibles(address: string): Promise<{ datadisks: string[], handbooks: string[] }> {
-  try {
-    const ownerNFTs = await axios.get(
-      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
-        (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
-      ).join('')}${MIRROR_ARTICLE_ADDRESSES.map(
-        (articleAddress) => `&contractAddresses[]=${articleAddress}`
-      ).join('')}&withMetadata=false`
-    )
-    const datadisks = []
-    const handbooks = []
-    if (ownerNFTs.data) {
-      // console.log(ownerNFTs.data.ownedNfts)
-      for (const nft of ownerNFTs.data.ownedNfts) {
-        const datadisk = (LESSONS.find(lesson => lesson.lessonCollectibleTokenAddress?.toLowerCase() === nft.contract.address?.toLowerCase()))?.collectibleId || ''
-        if (datadisk) datadisks.push(datadisk)
-      }
-      for (const nft of ownerNFTs.data.ownedNfts) {
-        const handbook = (LESSONS.find(lesson => lesson.mirrorNFTAddress?.toLowerCase() === nft.contract.address?.toLowerCase()))?.collectibleId || ''
-        if (handbook) handbooks.push(handbook)
-      }
-    }
-    return { datadisks, handbooks }
-  } catch (error) {
-    console.error(error)
-    return { datadisks: [], handbooks: [] }
-  }
-}
+// async function getUserCollectibles(address: string): Promise<{ datadisks: string[], handbooks: string[] }> {
+//   try {
+//     const ownerNFTs = await axios.get(
+//       `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
+//         (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
+//       ).join('')}${MIRROR_ARTICLE_ADDRESSES.map(
+//         (articleAddress) => `&contractAddresses[]=${articleAddress}`
+//       ).join('')}&withMetadata=false`
+//     )
+//     const datadisks = []
+//     const handbooks = []
+//     if (ownerNFTs.data) {
+//       // console.log(ownerNFTs.data.ownedNfts)
+//       for (const nft of ownerNFTs.data.ownedNfts) {
+//         const datadisk = (LESSONS.find(lesson => lesson.lessonCollectibleTokenAddress?.toLowerCase() === nft.contract.address?.toLowerCase()))?.collectibleId || ''
+//         if (datadisk) datadisks.push(datadisk)
+//       }
+//       for (const nft of ownerNFTs.data.ownedNfts) {
+//         const handbook = (LESSONS.find(lesson => lesson.mirrorNFTAddress?.toLowerCase() === nft.contract.address?.toLowerCase()))?.collectibleId || ''
+//         if (handbook) handbooks.push(handbook)
+//       }
+//     }
+//     return { datadisks, handbooks }
+//   } catch (error) {
+//     console.error(error)
+//     return { datadisks: [], handbooks: [] }
+//   }
+// }
 
 export default async function handler(
   req: NextApiRequest,
@@ -153,9 +153,11 @@ export default async function handler(
 
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
+  const explorerData = await fetchExplorerData(addressLowerCase)
   const badgeTokenIds = [...new Set([
     // DEV: comment these 2 lines when testing
-    ...(await getBadgeTokensIds(addressLowerCase, profile === 'true')),
+    // ...(await getBadgeTokensIds(addressLowerCase, profile === 'true')),
+    ...explorerData.polBadges,
     ...oldBadgeTokenIds
   ])]
 
@@ -188,7 +190,8 @@ export default async function handler(
   }
 
   let stats: UserStatsType = {}
-  const { datadisks, handbooks } = await getUserCollectibles(addressLowerCase)
+  // const { datadisks, handbooks } = await getUserCollectibles(addressLowerCase)
+  const { datadisks, handbooks } = { datadisks: explorerData.datadisks, handbooks: explorerData.handbooks }
   // datadisks
   stats.datadisks = datadisks
   // handbooks
@@ -202,28 +205,27 @@ export default async function handler(
   // achievements
   stats.achievements = (userExist && typeof userExist?.achievements === 'object' && userExist?.achievements !== null) ? Object.keys(userExist?.achievements) : []
   if (!stats.achievements?.includes('gitcoin-donation')) {
-    const gitcoinDonations = await fetchGitcoinDonations(userExist?.address?.toLowerCase())
-    // console.log('gitcoinDonations', gitcoinDonations)
-    if (gitcoinDonations > 0) {
-      stats.achievements.push('gitcoin-donation')
-      const updated = await db.raw(
-        `update "users" set "achievements" = achievements || ? where "users"."id" = ?`,
-        [{ 'gitcoin-donation': gitcoinDonations }, userExist?.id]
-      )
-      console.log('gitcoin-donation updated', updated)
-    }
+    // async call: result available on next call
+    fetch(`${DOMAIN_URL}/api/achievements/gitcoin-donation`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({ address: addressLowerCase })
+    })
   }
   if (!stats.achievements?.includes('giveth-donation')) {
-    const givethDonations = await fetchGivethDonations(userExist?.address?.toLowerCase())
-    // console.log('gitcoinDonations', gitcoinDonations)
-    if (givethDonations > 0) {
-      stats.achievements.push('giveth-donation')
-      const updated = await db.raw(
-        `update "users" set "achievements" = achievements || ? where "users"."id" = ?`,
-        [{ 'giveth-donation': givethDonations }, userExist?.id]
-      )
-      console.log('giveth-donation updated', updated)
-    }
+    // async call: result available on next call
+    fetch(`${DOMAIN_URL}/api/achievements/giveth-donation`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({ address: addressLowerCase })
+    })
+  }
+  if (userExist?.ens_name?.length > 0) {
+    stats.achievements.push('ens-name')
   }
   // donations (deprecated)
   // stats.donations = userExist.donations
