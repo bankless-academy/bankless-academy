@@ -188,9 +188,10 @@ export default async function handler(
       })).json()
       // select confidence: 95% = [1]
       console.log(estimation)
-      console.log(estimation.blockPrices[0].estimatedPrices[1])
-      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxFeePerGas || 40
-      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxPriorityFeePerGas || 40
+      console.log('estimation.blockPrices', estimation.blockPrices)
+      // 99% confidence
+      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxFeePerGas || 40
+      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxPriorityFeePerGas || 40
       const options: any = {}
       if (IS_BADGE_PROD) {
         options.maxFeePerGas = ethers.utils.parseUnits(
