@@ -1,5 +1,4 @@
 
-
 export const ACHIEVEMENTS = {
   'gitcoin-donation': {
     label: 'Gitcoin',
@@ -17,10 +16,18 @@ export const ACHIEVEMENTS = {
     image: '/images/giveth-donation.png',
     link: 'https://giveth.io/project/bankless-academy?utm_source=app.banklessacademy.com&utm_medium=website&utm_campaign=explorer_profile'
   },
+  'octant-donation': {
+    label: 'Octant',
+    description: 'Octant Donation',
+    helper: 'Donating on Octant increases your score by 3 points.',
+    points: 3,
+    image: '/images/octant-donation.png',
+    link: 'https://octant.app/home?utm_source=app.banklessacademy.com&utm_medium=website&utm_campaign=explorer_profile'
+  },
   'ens-name': {
     label: 'ENS Name',
     description: 'ENS Name',
-    helper: 'Registering and setting an ENS primary name for your Ethereum address increases your score by 3 points.',
+    helper: 'Registering and setting an primary ENS Name for your Ethereum address increases your score by 3 points.',
     points: 3,
     image: '/images/ens-name.png',
     link: 'https://app.ens.domains/?utm_source=app.banklessacademy.com&utm_medium=website&utm_campaign=explorer_profile'

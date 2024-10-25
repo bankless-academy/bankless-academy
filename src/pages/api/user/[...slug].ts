@@ -222,6 +222,17 @@ export default async function handler(
     })
       .catch(error => console.log('Error calling giveth-donation achievement:', error))
   }
+  if (!stats.achievements?.includes('octant-donation')) {
+    // async call: result available on next call
+    fetch(`${DOMAIN_URL}/api/achievements/octant-donation`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({ address: addressLowerCase })
+    })
+      .catch(error => console.log('Error calling octant-donation achievement:', error))
+  }
   if (userExist?.ens_name?.length > 0) {
     stats.achievements.push('ens-name')
   }
