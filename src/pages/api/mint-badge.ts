@@ -271,7 +271,21 @@ export default async function handler(
           status: error?.reason,
         })
       }
-      const mint = await contract[contractFunction](...functionParams, options)
+
+      let mint;
+      try {
+        mint = await contract[contractFunction](...functionParams, options)
+      } catch (error) {
+        if (error.code === 'SERVER_ERROR' && error.error && error.error.code === -32000) {
+          console.log('Transaction underpriced. Increasing maxPriorityFeePerGas...');
+          options.maxPriorityFeePerGas = ethers.utils.parseUnits('25', 'gwei');
+          console.log('Updated options:', options);
+          mint = await contract[contractFunction](...functionParams, options);
+        } else {
+          throw error;
+        }
+      }
+
       // DEV: uncomment this line to test simulate minting
       // const mint = { hash: 'test' }
       console.log(mint)
