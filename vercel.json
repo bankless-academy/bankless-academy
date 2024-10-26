@@ -131,12 +131,8 @@
   ],
   "crons": [
     {
-      "path": "/api/cron/bankless-dao-news",
-      "schedule": "0 0 * * *"
-    },
-    {
       "path": "/api/cron/leaderboard",
-      "schedule": "0 */2 * * *"
+      "schedule": "0 */12 * * *"
     }
   ]
 }
