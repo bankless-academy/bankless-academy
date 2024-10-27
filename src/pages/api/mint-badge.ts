@@ -281,6 +281,11 @@ export default async function handler(
           options.maxPriorityFeePerGas = ethers.utils.parseUnits('25', 'gwei');
           console.log('Updated options:', options);
           mint = await contract[contractFunction](...functionParams, options);
+        } else if (error.code === 'UNPREDICTABLE_GAS_LIMIT') {
+          console.log('Unpredictable gas limit. Setting manual gas limit...');
+          options.gasLimit = ethers.utils.hexlify(550000);
+          console.log('Updated options:', options);
+          mint = await contract[contractFunction](...functionParams, options);
         } else {
           throw error;
         }
