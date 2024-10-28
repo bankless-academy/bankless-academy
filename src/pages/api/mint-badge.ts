@@ -9,6 +9,7 @@ import {
   GENERIC_ERROR_MESSAGE,
   WALLET_SIGNATURE_MESSAGE,
   ALCHEMY_KEY_BACKEND,
+  DOMAIN_URL,
 } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
 import { api } from 'utils/index'
@@ -20,8 +21,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  // check params + signature
-  const { address, badgeId, embed, signature, referrer, chainId } = req.body
+  const DEV_SECRET = process.env.DEV_SECRET
+  const isDev = DEV_SECRET && req.query?.dev === DEV_SECRET
+  const param = isDev ? req.query : req.body
+    // check params + signature
+  const { address, embed, signature, referrer, chainId } = param
+  let { badgeId } = param
   // console.log(req)
   if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
@@ -31,14 +36,18 @@ export default async function handler(
   console.log('badgeId: ', badgeId)
   console.log('signature: ', signature)
 
-  if (!signature)
-    return res.status(400).json({ error: 'Missing wallet signature' })
+  if (isDev) {
+    badgeId = parseInt(badgeId)
+  } else {
+    if (!signature)
+      return res.status(400).json({ error: 'Missing wallet signature' })
 
-  if (!chainId)
-    return res.status(400).json({ error: 'Missing chainId' })
+    if (!chainId)
+      return res.status(400).json({ error: 'Missing chainId' })
 
-  if (!await verifySignature({ address, signature, message: WALLET_SIGNATURE_MESSAGE, chainId }))
-    return res.status(403).json({ error: 'Wrong signature' })
+    if (!await verifySignature({ address, signature, message: WALLET_SIGNATURE_MESSAGE, chainId }))
+      return res.status(403).json({ error: 'Wrong signature' })
+  }
 
   const message = { tokenId: badgeId }
   console.log('message: ', message)
@@ -109,7 +118,7 @@ export default async function handler(
     }
 
     const userBadges = await axios.get(
-      `${req.headers.origin}/api/user/${address}?badges=true`
+      `${DOMAIN_URL}/api/user/${address}?badges=true`
     )
     // console.log('userBadges', userBadges?.data?.data)
 
@@ -125,7 +134,7 @@ export default async function handler(
     }
 
     // Sybil check with Academy Passport
-    const result = await api(`${req.headers.origin}/api/passport`, {
+    const result = await api(`${DOMAIN_URL}/api/passport`, {
       address: address,
     })
     if (result && result.status === 200) {
