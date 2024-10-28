@@ -12,6 +12,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
+import Announcement from 'components/Announcement'
 
 export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | ''
 
@@ -155,6 +156,7 @@ const Layout = ({
         display="block"
         backgroundColor="#161515"
       >
+        <Announcement />
         <Container maxW="container.xl" pb={isSmallScreen ? '16' : '0'}>
           {children}
         </Container>

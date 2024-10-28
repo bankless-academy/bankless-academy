@@ -14,6 +14,8 @@ import SwitchNetworkButton from 'components/SwitchNetworkButton/index'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
+import { api } from 'utils/index'
+import { AnnouncementType } from 'entities/announcement'
 import OnboardingModal from 'components/OnboardingModal'
 
 declare global {
@@ -30,6 +32,10 @@ const Nav: React.FC = () => {
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
+  )
+  const [, setAnnouncements] = useLocalStorage<AnnouncementType[] | null>(
+    'announcements',
+    null
   )
   const [onboardingRetry] = useLocalStorage('onboarding-retry', 0)
 
@@ -96,6 +102,23 @@ const Nav: React.FC = () => {
       alt={PROJECT_NAME}
     />
   )
+
+  const getAnnouncements = async () => {
+    try {
+      const a = await api('/api/get/announcement', {})
+      if (a?.data) {
+        setAnnouncements(a.data)
+      } else {
+        setAnnouncements(null)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    getAnnouncements()
+  }, [])
 
   return (
     <header>
