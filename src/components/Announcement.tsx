@@ -37,7 +37,6 @@ const Announcement = (): React.ReactElement => {
             <ExternalLink
               underline="true"
               href={announcement.link}
-              // fontWeight={['normal', 'bold']}
               fontWeight="bold"
               fontSize={['14px', '18px']}
             >

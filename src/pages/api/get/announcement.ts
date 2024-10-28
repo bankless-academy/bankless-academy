@@ -20,7 +20,6 @@ export default async function handler(
         description: a.fields.Description,
         start: a.fields.Start,
         end: a.fields.End,
-        // image: a.fields.Image,
         link: a.fields.Link,
       }
       if (

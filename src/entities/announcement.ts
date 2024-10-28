@@ -4,6 +4,5 @@ export interface AnnouncementType {
   description: string
   start: string
   end: string
-  // image: string
   link: string
 }
