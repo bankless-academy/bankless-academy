@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
 import { isMobile } from 'react-device-detect'
 import { useAccount } from 'wagmi'
+import queryString from 'query-string'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import MODULES from 'constants/whitelabel_modules'
@@ -19,7 +20,7 @@ export const StyledHeading = styled(Heading)`
     display: flex;
     flex-basis: 100%;
     align-items: center;
-    margin: 48px 0;
+    margin: 64px 0 24px;
 
     &:before,
     &:after {
@@ -50,7 +51,12 @@ const LessonCards = ({
 }): React.ReactElement => {
   const router = useRouter()
   const [isSmallScreen] = useSmallScreen()
-  const { all, slug } = router.query
+  const { slug } = router.query
+
+  const all =
+    typeof window !== 'undefined'
+      ? queryString.parse(window.location.search).all
+      : undefined
 
   // const [stats, setStats]: any = useState(null)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
@@ -78,7 +84,7 @@ const LessonCards = ({
             lesson.publicationStatus === 'publish' &&
             lesson.moduleId === moduleId
         )
-      : all !== undefined
+      : all === null
       ? LESSONS
       : LESSONS.filter(
           (lesson) =>
@@ -135,9 +141,27 @@ const LessonCards = ({
 
   return (
     <Box>
-      <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
+      <StyledHeading as="h1" size="2xl" textAlign="center">
         {level || moduleName || "Explorer's Handbook"}
       </StyledHeading>
+      {!moduleName ? (
+        <Heading
+          as="h2"
+          size="md"
+          fontWeight="normal"
+          textAlign="center"
+          mt={4}
+          mb={8}
+        >
+          {level === 'Essentials'
+            ? `Begin your crypto journey with these entry-level topics and quests.`
+            : level === 'Level 1'
+            ? `Level up your knowledge and abilities with more specific topics and quests.`
+            : level === 'Community Lessons'
+            ? `Get involved with our ecosystem partners.`
+            : `Quick guides for getting your crypto journey started.`}
+        </Heading>
+      ) : null}
       <SimpleGrid
         minChildWidth={isSmallScreen ? 'unset' : '400px'}
         spacing={4}
@@ -161,13 +185,12 @@ const LessonCards = ({
             />
           )
         })}
-        {/* <SubscriptionModal
-        lesson={selectedLesson}
-        isOpen={isOpen}
-        onClose={onClose}
-      /> */}
+        {/* HACK: Add fake empty card for community lessons */}
+        {level === 'Community Lessons' && <Box />}
       </SimpleGrid>
-      <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />
+      {level === 'Essentials' && (
+        <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />
+      )}
     </Box>
   )
 }

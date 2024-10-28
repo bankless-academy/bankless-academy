@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Modal,
   ModalOverlay,
@@ -33,8 +33,12 @@ const SubscriptionModal = ({
   const { t } = useTranslation()
   const toast = useToast()
   const { address } = useAccount()
-  const [ens] = useLocalStorage(`ens-cache`, {})
-  const [email, setEmail] = useState(localStorage.getItem('email'))
+  const [ens] = useLocalStorage(`name-cache`, {})
+  const [email, setEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
+
   return (
     <Modal onClose={onClose} size={'xl'} isCentered isOpen={isOpen}>
       <ModalOverlay backdropFilter="blur(10px)" />
@@ -66,7 +70,6 @@ const SubscriptionModal = ({
               mb="8"
               onChange={(e): void => {
                 setEmail(e.target.value)
-                localStorage.setItem('email', e.target.value)
               }}
             />
           </InputGroup>
@@ -94,12 +97,15 @@ const SubscriptionModal = ({
                   })
                 else {
                   const paramBE = lesson ? { notionId: lesson.notionId } : {}
+                  const addressLower = address?.toLowerCase()
                   const result = await api('/api/subscribe-newsletter', {
                     email,
                     wallet: address,
                     ens:
-                      address && address in ens
-                        ? ens[address]?.name
+                      addressLower &&
+                      addressLower in ens &&
+                      !ens[addressLower]?.name?.includes('...')
+                        ? ens[addressLower]?.name
                         : undefined,
                     ...paramBE,
                   })
@@ -121,7 +127,7 @@ const SubscriptionModal = ({
                       }
                     )
                     toast({
-                      title: t('Thanks for subscribing Explorer 🧑‍🚀'),
+                      title: `You're all signed up, Explorer! 🧑‍🚀`,
                       description: t(`You'll hear from us soon!`),
                       status: 'success',
                       duration: 10000,

@@ -24,10 +24,15 @@ export const TABLE = {
     sybil_user_id: 'users.sybil_user_id',
     ens_name: 'users.ens_name',
     ens_avatar: 'users.ens_avatar',
-    donations: 'users.donations',
+    // deprecated
+    // donations: 'users.donations',
+    achievements: 'users.achievements',
     referrer: 'users.referrer',
     ba_stamps: 'users.ba_stamps',
-    socials: 'users.socials'
+    socials: 'users.socials',
+    community: 'users.community',
+    smart_nft_start_at: 'smart_nft_start_at',
+    newsletter_email: 'users.newsletter_email',
   },
   // deprecated
   // quests: {
@@ -68,7 +73,7 @@ export const TABLE = {
   },
 }
 
-export async function getUserId(address: string, embed: string, isBot?: boolean): Promise<number> {
+export async function getUserId(address: string, embed: string, isBot?: boolean, referral?: boolean): Promise<number> {
   try {
     // ilike = case insensitive search
     const [user] = await db(TABLES.users)
@@ -77,7 +82,14 @@ export async function getUserId(address: string, embed: string, isBot?: boolean)
     console.log('user', user)
     let createUser = null
     if (!user) {
-      [createUser] = await db(TABLES.users).insert({ address: address }, [
+      let referrer = null
+      if (referral) {
+        [referrer] = await db(TABLES.users)
+          .select('id')
+          .where('address', 'ilike', `%${referral}%`)
+        console.log('referrer', referrer)
+      }
+      [createUser] = await db(TABLES.users).insert({ address: address, referrer: referrer?.id }, [
         'id',
       ])
       console.log('createUser', createUser)

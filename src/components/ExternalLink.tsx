@@ -15,7 +15,8 @@ const ExternalLink = ({
   alt,
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
-  const i18nextLng = localStorage.getItem('i18nextLng')
+  const i18nextLng =
+    typeof window !== 'undefined' ? localStorage.getItem('i18nextLng') : 'en'
   const isLessonLink =
     href?.startsWith('/lessons/') ||
     href?.startsWith('https://app.banklessacademy.com/lessons/')

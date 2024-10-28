@@ -58,7 +58,6 @@ export default async function handler(
       TABLE.users.id,
       TABLE.users.ens_name,
       TABLE.users.ens_avatar,
-      TABLE.users.donations,
       TABLE.users.ba_stamps
     )
     .whereILike('address', addressLowerCase)
@@ -79,8 +78,9 @@ export default async function handler(
 
     let avatar = null
     if (ensData?.avatar_small?.length > 0) {
-      if (await fileIsLoading(ensData.avatar_small) === true) {
-        avatar = ensData.avatar_small
+      const avatar_small = `${ensData.avatar_small}?cache=ba`
+      if (await fileIsLoading(avatar_small) === true) {
+        avatar = avatar_small
       } else if (userExist.ens_avatar?.length > 0 && await fileIsLoading(userExist.ens_avatar) === false) {
         console.log('check if old link is loading')
         avatar = DEFAULT_AVATAR
@@ -109,7 +109,7 @@ export default async function handler(
 
     return res.status(200).json(data)
   } catch (error) {
-    console.error(console.error())
+    console.log(error)
     res.status(500)
   }
 

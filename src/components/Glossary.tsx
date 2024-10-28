@@ -65,12 +65,11 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
               {letter.replace('number', '#')}
             </Box>
             {groupedTerms[letter].map((term) => (
-              <>
+              <React.Fragment key={term.id}>
                 <Box
                   as="h3"
                   fontSize="2xl"
                   fontWeight="bold"
-                  key={term.id}
                   id={term.id}
                   mt={8}
                   mb={6}
@@ -78,7 +77,7 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
                   {term.name}
                 </Box>
                 <Box mb={8}>{term.definition}</Box>
-              </>
+              </React.Fragment>
             ))}
           </Box>
         ))}

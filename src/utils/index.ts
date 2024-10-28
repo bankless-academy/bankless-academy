@@ -31,8 +31,11 @@ import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
-import { airstackGraphQLClient } from 'utils/airstack'
+import { lensGraphQLClient } from 'utils/gql/lens'
 import { wagmiConfig } from 'utils/wagmi'
+import { NFTAddress } from 'constants/nft'
+import { TABLES, db } from 'utils/db'
+import { ACHIEVEMENTS } from 'constants/achievements'
 
 declare global {
   interface Window {
@@ -153,19 +156,21 @@ export function recoverPersonalSignature(sig: string, msg: string): string {
   return signer
 }
 
-export function verifySignature(
-  address: string,
-  signature: string,
-  message: string
-): boolean {
-  try {
-    const signer = recoverPersonalSignature(signature, message)
-    return signer.toLowerCase() === address.toLowerCase()
-  } catch (error) {
-    console.error(error)
-    return false
-  }
-}
+// deprecated, use verifySignature from SignatureUtil.ts
+
+// export function verifySignature(
+//   address: string,
+//   signature: string,
+//   message: string
+// ): boolean {
+//   try {
+//     const signer = recoverPersonalSignature(signature, message)
+//     return signer.toLowerCase() === address.toLowerCase()
+//   } catch (error) {
+//     console.error(error)
+//     return false
+//   }
+// }
 
 export async function getSignature(
   library: Web3Provider,
@@ -200,15 +205,15 @@ export async function validateOnchainQuest(
   try {
     if (quest === 'DEXAggregators') {
       const check = []
-      const matic: Network = {
-        name: 'matic',
-        chainId: NETWORKS['matic'].chainId,
+      const polygon: Network = {
+        name: 'polygon',
+        chainId: NETWORKS['polygon'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `${NETWORKS['matic'].infuraRpcUrl}${INFURA_KEY}`
+            `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`
           ),
       }
-      const provider = ethers.getDefaultProvider(matic)
+      const provider = ethers.getDefaultProvider(polygon)
       const receipt = await provider.waitForTransaction(tx, 2)
       // console.log('receipt', receipt.status)
       if (receipt?.status) {
@@ -263,7 +268,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
@@ -311,7 +315,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
@@ -328,35 +331,12 @@ export async function validateOnchainQuest(
       console.log('optimismBalance: ', optimismBalance)
       const polygonBalance = await getTokenBalance(AlchemyNetwork.MATIC_MAINNET, address, ['0x0266f4f08d82372cf0fcbccc0ff74309089c74d1'])
       console.log('polygonBalance: ', polygonBalance)
-      const query = gql`
-      query MyQuery {
-        Ethereum: TokenBalances(
-          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xae78736cd615f374d3085123a210448e74fc6393"}, tokenType: {_eq: ERC20}}, blockchain: ethereum, limit: 50}
-        ) {
-          TokenBalance {
-            formattedAmount
-          }
-        }
-        Base: TokenBalances(
-          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c"}, tokenType: {_eq: ERC20}}, blockchain: base, limit: 50}
-        ) {
-          TokenBalance {
-            formattedAmount
-          }
-        }
-      }`
+      const ethereumBalance = await getTokenBalance(AlchemyNetwork.ETH_MAINNET, address, ['0xae78736cd615f374d3085123a210448e74fc6393'])
+      console.log('ethereumBalance: ', ethereumBalance)
+      const baseBalance = await getTokenBalance(AlchemyNetwork.BASE_MAINNET, address, ['0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c'])
+      console.log('baseBalance: ', baseBalance)
       try {
-        const data = await airstackGraphQLClient.request(query)
-        const networks = Object.keys(data)
-        let balance = arbitrumBalance + optimismBalance + polygonBalance
-        for (const network of networks) {
-          if (data[network].TokenBalance !== null) {
-            const networkTokenBalance = data[network].TokenBalance[0].formattedAmount
-            console.log(`${network}Balance: `, networkTokenBalance)
-            balance += networkTokenBalance
-          }
-        }
-        console.log(data)
+        const balance = arbitrumBalance + optimismBalance + polygonBalance + ethereumBalance + baseBalance
         console.log(balance)
         // allow a bit less than 0.001 in case someone only buys for 0.001 ETH worth of rETH
         return balance >= 0.00085
@@ -371,7 +351,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
@@ -423,7 +402,8 @@ const withMixpanel = {
         ? JSON.parse(localStorage.getItem('wallets'))
         : [],
     }
-    const current_wallet = localStorage.getItem('current_wallet')
+    const current_wallet: any =
+      localStorage.getItem('current_wallet')?.replaceAll('"', '') || ''
     if (current_wallet) {
       const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
       if (!mp_current_wallet?.length) {
@@ -600,6 +580,98 @@ export async function getArticlesCollectors(
   }
 }
 
+// getNFTInfo from either tokenId or address
+export async function getNFTInfo(
+  address: string,
+  tokenId: string
+): Promise<{ time?: string, tokenIds?: number[] }> {
+  const res = {
+    time: '--:--,--',
+    tokenIds: []
+  }
+  const ERC721_ABI = [
+    {
+      "inputs": [
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      ],
+      "name": "ownerOf",
+      "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "address", "name": "owner", "type": "address" }
+      ],
+      "name": "tokensOfOwner",
+      "outputs": [
+        { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)"
+  ];
+  const provider = new ethers.providers.JsonRpcProvider(`https://base-mainnet.infura.io/v3/${INFURA_KEY}`);
+
+  const contract = new ethers.Contract(NFTAddress, ERC721_ABI, provider);
+
+  try {
+    const owner = tokenId ? await contract.ownerOf(tokenId) : address
+    res.tokenIds = address ? (await contract.tokensOfOwner(address)).map(bigNum => bigNum.toNumber()) : [tokenId]
+    console.log(res.tokenIds)
+    const latestTokenId = res.tokenIds.at(-1)
+
+    console.log('latestTokenId', latestTokenId)
+
+    if (latestTokenId) {
+      // Get the Transfer event for the mint
+      const filter = contract.filters.Transfer(null, null, latestTokenId);
+      const events = await contract.queryFilter(filter, 0, 'latest');
+
+      // The first Transfer event for this token ID should be the mint
+      const mintEvent = events[0];
+      const mintBlock = await provider.getBlock(mintEvent.blockNumber);
+      const mintTimestamp = new Date(mintBlock.timestamp * 1000).toISOString();
+
+      console.log(`Owner: ${owner}`);
+      console.log(`Mint Timestamp: ${mintTimestamp}`);
+      console.log(`tokenIds: ${res.tokenIds}`);
+
+      const smart_nft_mint_at = new Date(mintTimestamp).getTime()
+      const [user] = await db(TABLES.users)
+        .select('smart_nft_start_at')
+        .where('address', 'ilike', `%${owner}%`)
+      if (user?.smart_nft_start_at) {
+        const smart_nft_start_at = user.smart_nft_start_at.getTime();
+        console.log('smart_nft_start_at', smart_nft_start_at)
+        if (smart_nft_mint_at > smart_nft_start_at)
+          res.time = formatTime(smart_nft_mint_at - smart_nft_start_at)
+      }
+    }
+    return res
+
+  } catch (error) {
+    console.error('Error fetching NFT data:', error);
+    return res
+  }
+}
+
+export async function getNFTsCollectors(
+  nftAddress: string
+): Promise<any[]> {
+  try {
+    const NFTCollectors = await axios.get(
+      `https://base-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${nftAddress}&withTokenBalances=true`
+    )
+    // console.log(NFTCollectors.data)
+    return NFTCollectors.data?.ownerAddresses || []
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
 export async function isHolderOfNFT(
   address: string,
   openSeaLink: string
@@ -639,31 +711,42 @@ export async function getLensProfile(address: string): Promise<{
     avatar: null,
   }
   try {
-    const query = gql`query GetLensHandle {
-      Socials(
-        input: {filter: {dappName: {_eq: lens}, identity: {_eq: "${address}"}}, blockchain: ethereum}
-      ) {
-        Social {
-          profileName
-          isDefault
-          profileHandle
-          profileImageContentValue {
-            image {
-              small
+    const query = gql`
+    query GetLensHandle($request: ProfilesManagedRequest!) {
+      profilesManaged(request: $request) {
+        items {
+          handle {
+            localName
+          }
+          metadata {
+            picture {
+              ... on ImageSet {
+                optimized {
+                  uri
+                }
+              }
             }
           }
-          profileImage
         }
       }
-    }`
-    const r: any = await airstackGraphQLClient.request(query)
-    const profile = r?.Socials?.Social?.[0]
-    console.log(profile)
-    const name = profile?.profileHandle
-    if (name?.startsWith('@'))
-      res.name = name?.replace("@", "") + '.lens'
-    res.avatar = profile?.profileImageContentValue?.image?.small
-    return res
+    }
+  `
+    const variables = {
+      request: {
+        for: address
+      }
+    }
+    const r: any = await lensGraphQLClient.request(query, variables)
+    const items = r.profilesManaged.items
+    if (!items || items.length === 0) {
+      // No profiles found for this address
+      return res
+    }
+    const lastProfile = items[items.length - 1]
+    const name = lastProfile.handle.localName.split('.')[0] + '.lens'
+    const avatar =
+      lastProfile.metadata?.picture?.optimized?.uri || null
+    return { name, avatar }
   } catch (error) {
     console.error(error)
     return res
@@ -730,12 +813,21 @@ export const lessonLink = (lesson: LessonType) => {
   return `${DOMAIN_URL}/lessons/${lesson.slug}`
 }
 
+export function calculateExplorerAchievements(achievements: string[]) {
+  return achievements
+    .map((a) => ACHIEVEMENTS[a]?.points)
+    .reduce((acc, points) => (acc += points), 0)
+
+}
+
 export function calculateExplorerScore(stats: UserStatsType) {
   return 3 * (stats?.datadisks?.length || 0) +
     (stats?.handbooks?.length || 0) +
     (stats?.badges || 0) +
-    (Object.keys(stats?.donations || {})?.length || 0) +
+    (stats?.referrals?.length || 0) +
+    calculateExplorerAchievements(stats?.achievements || []) +
     (stats?.valid_stamps?.length || 0)
+
 }
 
 export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: string, tokenContractAddresses: string[]) => {
@@ -763,8 +855,33 @@ export const generateTwitterLink = (text: string, link: string) => {
 
 export const generateFarcasterLink = (text: string, link: string) => {
   return `https://warpcast.com/~/compose?text=${encodeURIComponent(
-    text?.replace('@BanklessAcademy', '@banklessacademy')
+    text?.replace('@BanklessAcademy', '@banklessacademy')?.replace('@Gitcoin', '@gitcoin')
   )}&embeds%5B%5D=${encodeURIComponent(link)}`
+}
+
+export const generateHeyLink = (text: string, link: string) => {
+  return `https://hey.xyz/?text=${encodeURIComponent(
+    text?.replace('@BanklessAcademy', '@banklessacademy')?.replace('@Gitcoin', '@gitcoin')
+  )}&url=${encodeURIComponent(link)}`
+}
+
+export const generateTelegramLink = (text: string, link: string) => {
+  return `https://t.me/share/url?text=${encodeURIComponent(
+    text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin')
+  )}&url=${encodeURIComponent(link)}`
+}
+
+export const generateLinkedinLink = (text: string, link: string) => {
+  // title not supported
+  return `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(link)}&title=${encodeURIComponent(text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin'))}`
+}
+export const generateFacebookLink = (text: string, link: string) => {
+  // quote not supported
+  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}&quote=${encodeURIComponent(text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin'))}`
+}
+
+export const generateWhatsappLink = (text: string, link: string) => {
+  return `https://wa.me/?text=${encodeURIComponent(text?.replace(` 🎉`, '.')?.replace(`👨‍🚀`, '')?.replace(`🚀`, '')?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin') + ' ' + link)}`
 }
 
 export const openLesson = async (
@@ -806,3 +923,133 @@ export const openLesson = async (
     )
   )
 }
+
+export const formatTime = (ms: number) => {
+  const minutes = Math.floor(ms / 60000)
+  const seconds = Math.floor((ms % 60000) / 1000)
+  const milliseconds = ms % 1000
+
+  return `${minutes.toString().padStart(2, '0')}:${seconds
+    .toString()
+    .padStart(2, '0')},${milliseconds.toString().padStart(3, '0').substring(0, 2)}`
+}
+
+export const fetchGitcoinDonations = async (address: string): Promise<number> => {
+  const query = `
+    query MyQuery {
+      donations(
+        condition: {donorAddress: "${address}"}
+      ) {
+        id
+      }
+    }
+  `;
+
+  try {
+    const response = await fetch('https://grants-stack-indexer-v2.gitcoin.co/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    // console.log(result.data);
+    return result.data?.donations?.length || 0
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return 0
+  }
+};
+
+export const fetchGivethDonations = async (address: string): Promise<number> => {
+  const query = `
+    query {
+  userByAddress(address: "${address}") {
+    donationsCount
+  }
+}
+  `;
+
+  try {
+    const response = await fetch('https://mainnet.serve.giveth.io/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    // console.log(result.data);
+    return result.data?.userByAddress?.donationsCount || 0
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return 0
+  }
+};
+
+export const fetchExplorerData = async (address: string): Promise<{
+  handbooks: string[]
+  datadisks: string[]
+  polBadges: number[]
+}> => {
+  const OwnerAssets = {
+    handbooks: [],
+    datadisks: [],
+    polBadges: []
+  }
+  const query = `
+    query MyQuery {
+  OwnerAssets(where: {address: {_ilike: "${address}"}}) {
+    address
+    handbooks
+    datadisks
+    polBadges
+  }
+}
+  `;
+
+  try {
+    const response = await fetch('https://indexer.bigdevenergy.link/96427d0/v1/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log(result.data);
+    const OwnerAssets = result.data?.OwnerAssets[0] || {}
+    return {
+      handbooks: OwnerAssets?.handbooks || [],
+      datadisks: OwnerAssets?.datadisks || [],
+      polBadges: OwnerAssets?.polBadges || []
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return OwnerAssets
+  }
+};
+
+export const countCommonElements = (arr1, arr2) => arr2.filter(item => new Set(arr1).has(item)).length;

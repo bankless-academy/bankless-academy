@@ -6,11 +6,15 @@ import {
   Container,
   Heading,
   Image,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightAddon,
   Text,
-  useClipboard,
   useMediaQuery,
+  useToast,
 } from '@chakra-ui/react'
-import { CopySimple } from '@phosphor-icons/react'
+import { Envelope } from '@phosphor-icons/react'
 import router from 'next/router'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
@@ -22,16 +26,24 @@ import { MetaData } from 'components/Head'
 import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { UserType } from 'entities/user'
 import {
-  generateFarcasterLink,
-  generateTwitterLink,
+  emailRegex,
   shortenAddress,
+  api,
+  Mixpanel,
+  calculateExplorerAchievements,
 } from 'utils/index'
 import ProgressTitle from 'components/ProgressTitle'
 import ExternalLink from 'components/ExternalLink'
-import { MAX_DONATIONS } from 'constants/donations'
 import { MAX_BADGES } from 'constants/badges'
 import { EMPTY_PASSPORT, MAX_STAMPS } from 'constants/passport'
 import Layout from 'layout/Layout'
+import SelectCommunity from 'components/SelectCommunity'
+import Helper from 'components/Helper'
+import { maxReferrals } from 'components/OgSocial'
+import { MAX_ACHIEVEMENT } from 'constants/achievements'
+import { MacScrollbar } from 'mac-scrollbar'
+import ShareAction from 'components/ShareAction'
+import LESSONS from 'constants/lessons'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -61,6 +73,28 @@ export async function getServerSideProps({ query }) {
   return { props: { ...data, pageMeta } }
 }
 
+export const ProfileTitle = ({
+  title,
+  description,
+}: {
+  title: string
+  description: string
+}): React.ReactElement => (
+  <Box borderBottom="1px solid #989898">
+    <Box
+      fontSize="2xl"
+      fontWeight="bold"
+      textTransform="uppercase"
+      textAlign="left"
+    >
+      {title}
+    </Box>
+    <Box fontSize="md" color="#CBCBCB" mb="2">
+      {description}
+    </Box>
+  </Box>
+)
+
 export default function Page({
   profileAddress,
   badgeToHighlight,
@@ -72,51 +106,68 @@ export default function Page({
 }) {
   const profileUrl =
     typeof window !== 'undefined' ? `${window.location.href}` : ''
-  const [isSmallScreen] = useMediaQuery(['(max-width: 981px)'])
-  const { referral } = router.query
+  const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
+  const { referral, badge, lng } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
-  const [fullProfileAddress, setFullProfileAddress] = useState('')
   const [isMyProfile, setIsMyProfile] = useState(false)
+  const [score, setScore] = useLocalStorage(`score`, 0)
   const { address } = useAccount()
-  const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
+  const [email, setEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
+  const [initialEmail] = useLocalStorage(
+    'email',
+    localStorage.getItem('email') || ''
+  )
+  const toast = useToast()
+  const [ens] = useLocalStorage(`name-cache`, {})
+  const [community] = useLocalStorage(`community`, '')
 
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
     : []
 
   useEffect(() => {
+    if (badge !== '') {
+      // redirect badge referral to lesson
+      const lesson = LESSONS.find(
+        (lesson) => lesson.badgeId === parseInt(badge as string)
+      )
+      if (lesson) {
+        const redirect = `/lessons/${lng ? `${lng}/` : ''}${
+          lesson.slug
+        }?referral=${profileAddress}`
+        window.location.href = redirect
+      }
+    }
+  }, [badge, lng])
+
+  useEffect(() => {
     const loadUser = async () => {
       try {
         const res = await fetch(`/api/user/${profileAddress}?profile=true`)
-        if (!res.ok) setError('Failed to fetch user data.')
-        const user: UserType = await res.json()
-        if (user?.error) {
-          setError(user?.error)
-        } else if (user) {
-          setIsMyProfile(false)
-          console.log(user)
+        if (!res.ok) {
+          setError('Failed to fetch user data.')
+          return
+        }
+        const loadedUser: UserType = await res.json()
+
+        if (loadedUser?.error) {
+          setError(loadedUser?.error)
+        } else {
           if (
             typeof window !== 'undefined' &&
-            wallets.includes(user.address) &&
+            wallets.includes(loadedUser.address) &&
             referral !== 'true'
           ) {
             const redirect = `/explorer/${profileAddress}?referral=true`
             window.history.replaceState(null, null, redirect)
           }
-          if (user?.stats?.referrals?.length) {
-            user?.stats?.referrals.map((r) => {
-              console.log(
-                'Explorer onboarded: ',
-                `https://app.banklessacademy.com/explorer/${r}`
-              )
-            })
-          }
-          setFullProfileAddress(user.address)
-          setUser(user)
-          if (wallets.includes(user.address)) {
-            setIsMyProfile(true)
+          if (loadedUser?.address !== user?.address) {
+            setUser(loadedUser)
           }
         }
       } catch (error) {
@@ -126,14 +177,33 @@ export default function Page({
         )
       }
     }
-    loadUser()
+
+    // Add a check to prevent re-fetching if not necessary
+    if (profileAddress && (!user || user.address !== profileAddress)) {
+      loadUser()
+    }
   }, [profileAddress])
+
+  useEffect(() => {
+    const newIsMyProfile = address?.toLowerCase() === user?.address
+    if (isMyProfile !== newIsMyProfile) {
+      setIsMyProfile(newIsMyProfile)
+    }
+
+    if (newIsMyProfile && user?.stats?.score !== score) {
+      setScore(user?.stats?.score)
+    }
+  }, [user, address])
 
   useEffect(() => {
     if (isMyProfile && passportLS?.stamps && passportLS?.version) {
       // update user stamps without requiring to refresh
       const valid_stamps = Object.keys(passportLS.stamps)
-      if (valid_stamps?.length) {
+      if (
+        user &&
+        valid_stamps?.length &&
+        user?.stats?.valid_stamps?.length !== valid_stamps.length
+      ) {
         const updatedUser: any = {
           stats: {
             ...user.stats,
@@ -147,7 +217,7 @@ export default function Page({
         setUser({ ...user, ...updatedUser })
       }
     }
-  }, [passportLS, isMyProfile])
+  }, [passportLS])
 
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
@@ -157,35 +227,25 @@ export default function Page({
     collectibles.push(user?.stats.handbooks[i])
   }
 
-  const shareLink = typeof window !== 'undefined' ? window.location.href : ''
+  const shareLink = profileUrl
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
 
-  const twitterLink = generateTwitterLink(share, shareLink)
+  const referrals = user?.stats?.referrals?.length || 0
 
-  const farcasterLink = generateFarcasterLink(share, shareLink)
-
-  if (
-    referral?.length &&
-    !isMyProfile &&
-    !localStorage.getItem('referrer')?.length &&
-    fullProfileAddress
-  ) {
-    localStorage.setItem('referrer', fullProfileAddress?.toLowerCase())
-    console.log('referrer added', localStorage.getItem('referrer'))
-  }
-  if (address && localStorage.getItem('referrer') === address?.toLowerCase()) {
-    localStorage.setItem('referrer', '')
-    console.log('reset referrer')
-  }
+  const displayCommunity = isMyProfile ? community : user?.community
 
   if (user)
     // TODO: create Profile component
     return (
       <Layout page={isMyProfile ? 'PROFILE' : ''}>
-        <Container maxW="container.lg">
-          <Card mt="180px" borderRadius="2xl !important">
+        <Container maxW="container.lg" paddingX={isSmallScreen ? '0' : '16px'}>
+          <Card
+            mt="180px"
+            borderRadius="2xl !important"
+            background="linear-gradient(223deg, #A379BD30, #5B519830) !important"
+          >
             <Box
               margin="auto"
               mt="-130px"
@@ -194,6 +254,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               h="284px"
               borderRadius="50%"
               backgroundImage="linear-gradient(180deg, #A379BD 0%, #5B5198 100%)"
+              position="relative"
             >
               <Image
                 w="260px"
@@ -203,6 +264,30 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 backgroundColor="black"
                 src={user.avatar}
               />
+              {isMyProfile && (
+                <Box position="absolute" top="25px" right="25px">
+                  <Helper
+                    title={`Profile username & avatar`}
+                    isProfile={true}
+                    definition={
+                      <>
+                        <Box mb="4">
+                          {`Check out `}
+                          <ExternalLink
+                            underline="true"
+                            href="/lessons/registering-your-web3-username"
+                          >
+                            this article
+                          </ExternalLink>
+                          {` to register your web3 username and avatar with the Ethereum Name Service (ENS).`}
+                          <br />
+                          {`Your ENS user info will be displayed here, and on other web3 sites you visit.`}
+                        </Box>
+                      </>
+                    }
+                  />
+                </Box>
+              )}
             </Box>
             <Text
               as="h2"
@@ -211,7 +296,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               textAlign="center"
               textTransform="uppercase"
               mt="40px"
-              mb="8"
+              mb={displayCommunity ? '0' : '8'}
             >
               {user.ensName?.includes('.')
                 ? user.ensName
@@ -219,48 +304,175 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 ? profileAddress
                 : shortenAddress(profileAddress)}
             </Text>
-            {isMyProfile && (
-              <Box justifyContent="center" w="256px" m="auto" mb="8">
-                <Box pb="2">
-                  <ExternalLink href={twitterLink} mr="2">
-                    <Button
-                      variant="primary"
-                      w="100%"
-                      borderBottomRadius="0"
-                      leftIcon={
-                        <Image width="24px" src="/images/TwitterX.svg" />
-                      }
-                    >
-                      {t('Share on Twitter / X')}
-                    </Button>
-                  </ExternalLink>
-                </Box>
-                <Box pb="2">
-                  <ExternalLink href={farcasterLink} mr="2">
-                    <Button
-                      variant="primary"
-                      w="100%"
-                      borderRadius="0"
-                      leftIcon={
-                        <Image width="24px" src="/images/Farcaster.svg" />
-                      }
-                    >
-                      {t('Share on Farcaster')}
-                    </Button>
-                  </ExternalLink>
-                </Box>
-                <Button
-                  variant="primary"
-                  w="100%"
-                  borderTopRadius="0"
-                  leftIcon={<CopySimple size="30px" />}
-                  onClick={() => onCopy()}
-                  isActive={hasCopied}
+            {displayCommunity && (
+              <Box mt="0" mb="6" mx="4" display="flex" placeContent="center">
+                <Text
+                  as="h2"
+                  fontSize="3xl"
+                  fontWeight="bold"
+                  textAlign="center"
+                  textTransform="uppercase"
+                  color="#ffffff70"
                 >
-                  {hasCopied
-                    ? t('Profile Link Copied')
-                    : t('Copy Profile Link')}
-                </Button>
+                  <Box display="flex" justifyContent="center">
+                    <Box>-[&nbsp;</Box>
+                    <Box mt="2.5px">
+                      {isMyProfile ? community : user.community}
+                    </Box>
+                    <Box>&nbsp;]-</Box>
+                  </Box>
+                </Text>
+              </Box>
+            )}
+            {isMyProfile && (
+              <Box
+                backgroundColor="#161515"
+                borderBottomRadius="var(--chakra-radii-2xl) !important"
+              >
+                <Box
+                  background="linear-gradient(107.1deg,
+    rgba(46, 33, 33, 0.3) -3.13%,
+    rgba(80, 73, 84, 0.3) 16.16%,
+    rgba(94, 89, 104, 0.3) 29.38%,
+    rgba(86, 81, 94, 0.3) 41.5%,
+    rgba(23, 21, 21, 0.3) 102.65%
+  )"
+                  // hack
+                  paddingBottom="1px"
+                  borderBottomRadius="var(--chakra-radii-2xl) !important"
+                >
+                  <Box
+                    display={isSmallScreen ? 'block' : 'flex'}
+                    borderTop="1px solid #524f4f"
+                  >
+                    <Box m="8" flex="1">
+                      <ProfileTitle
+                        title="Email"
+                        description="Link your email to receive our monthly newsletter."
+                      />
+                      <Box mt="8" display="flex" placeContent="center">
+                        <InputGroup maxW="400px">
+                          <InputLeftElement pointerEvents="none">
+                            <Envelope size="32" />
+                          </InputLeftElement>
+                          <Input
+                            value={email}
+                            placeholder={'Enter your email address...'}
+                            type="email"
+                            onChange={(e): void => {
+                              setEmail(e.target.value)
+                            }}
+                          />
+                          <InputRightAddon padding="0">
+                            <Button
+                              variant="primary"
+                              width="100%"
+                              borderRadius="6px"
+                              borderLeftRadius="0"
+                              onClick={async () => {
+                                toast.closeAll()
+                                if (!email)
+                                  toast({
+                                    title: `Email missing.`,
+                                    description: `Please provide an email address.`,
+                                    status: 'warning',
+                                    duration: 10000,
+                                    isClosable: true,
+                                  })
+                                else if (emailRegex.test(email) === false)
+                                  toast({
+                                    title: `Wrong email format.`,
+                                    description: `Please check your email.`,
+                                    status: 'warning',
+                                    duration: 10000,
+                                    isClosable: true,
+                                  })
+                                else {
+                                  const addressLower = address?.toLowerCase()
+                                  const result = await api(
+                                    '/api/subscribe-newsletter',
+                                    {
+                                      email,
+                                      wallet: address,
+                                      ens:
+                                        addressLower &&
+                                        addressLower in ens &&
+                                        !ens[addressLower]?.name?.includes(
+                                          '...'
+                                        )
+                                          ? ens[addressLower]?.name
+                                          : undefined,
+                                    }
+                                  )
+                                  if (result && result.status === 200) {
+                                    setEmail(email)
+                                    localStorage.setItem(`newsletter`, 'true')
+                                    Mixpanel.track(
+                                      initialEmail?.length
+                                        ? 'subscribe_newsletter'
+                                        : 'update_newsletter',
+                                      {
+                                        email: email,
+                                      }
+                                    )
+                                    toast({
+                                      title: t(
+                                        'Thanks for subscribing Explorer 🧑‍🚀'
+                                      ),
+                                      description: t(
+                                        `You'll hear from us soon!`
+                                      ),
+                                      status: 'success',
+                                      duration: 10000,
+                                      isClosable: true,
+                                    })
+                                  } else {
+                                    toast({
+                                      title: t(
+                                        `Something went wrong... we couldn't add your subscription.`
+                                      ),
+                                      description: t('Please try again later.'),
+                                      status: 'warning',
+                                      duration: 10000,
+                                      isClosable: true,
+                                    })
+                                  }
+                                }
+                              }}
+                            >
+                              Save
+                            </Button>
+                          </InputRightAddon>
+                        </InputGroup>
+                      </Box>
+                      <Box mt="4" color="#ffffff70">
+                        * Your email is not displayed in your public profile.
+                      </Box>
+                    </Box>
+                    <Box m="8" flex="1">
+                      <ProfileTitle
+                        title="Community"
+                        description="Explore under the banner of your favorite community."
+                      />
+                      <SelectCommunity />
+                    </Box>
+                  </Box>
+                  <Box display={isSmallScreen ? 'block' : 'flex'}>
+                    <Box m="8" flex="1">
+                      <ProfileTitle
+                        title="Share"
+                        description="Share your profile, earn referral points!"
+                      />
+                      <Box justifyContent="center" w="100%" m="32px auto 0">
+                        <ShareAction
+                          shareMessage={share}
+                          shareLink={shareLink}
+                        />
+                      </Box>
+                    </Box>
+                    <Box m="8" flex="1"></Box>
+                  </Box>
+                </Box>
               </Box>
             )}
           </Card>
@@ -279,19 +491,35 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 >
                   {user.stats.score || 0}
                 </Box>
+                <Box position="absolute" top="38px" right="109px">
+                  <Helper
+                    title={`Explorer Score`}
+                    isProfile={true}
+                    definition={
+                      <>
+                        <Box mb="4">{`Your Explorer Score measures progress along your Bankless journey. Score calculation may evolve in the future.`}</Box>
+                      </>
+                    }
+                  />
+                </Box>
               </Box>
               <Box display={isSmallScreen ? 'block' : 'flex'} m="8">
                 <Box
                   w={isSmallScreen ? '100%' : '50%'}
-                  mr={isSmallScreen ? '0' : '50px'}
+                  pr={isSmallScreen ? '0' : '50px'}
+                  flex="1 1 0px"
                 >
                   <ProgressTitle
-                    title={t('Badges')}
+                    title={`Badges`}
                     score={user.stats.badges || 0}
                     max={MAX_BADGES}
-                    description={t(
-                      `Each lesson badge increases your score by 1 point.`
-                    )}
+                    definition={
+                      <>
+                        {`Explorers study their surroundings.`}
+                        <br />
+                        {`Each lesson badge increases your score by 1 point.`}
+                      </>
+                    }
                   />
                   <Badges
                     badges={user.badgeTokenIds}
@@ -300,22 +528,115 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     isMyProfile={isMyProfile}
                   />
                 </Box>
-                <Box w={isSmallScreen ? '100%' : '50%'}>
+                <Box w={isSmallScreen ? '100%' : '50%'} flex="1 1 0px">
                   <ProgressTitle
-                    title={t('Collectibles')}
+                    title={`Referral`}
+                    score={referrals}
+                    max={maxReferrals(referrals)}
+                    definition={
+                      <>
+                        {`Explorers share knowledge with others.`}
+                        <br />
+                        {`Each friend referred (after claiming their first badge) increases your score by 1 point.`}
+                      </>
+                    }
+                  />
+
+                  <MacScrollbar
+                    skin="dark"
+                    suppressScrollX={true}
+                    style={{ maxHeight: '445px', paddingRight: '18px' }}
+                  >
+                    {referrals > 0 ? (
+                      user?.stats?.referrals?.map((ref, index) => {
+                        const date = new Date(ref.created_at)
+                          .toLocaleDateString('en-GB')
+                          .replace(/\//g, '/')
+                        return (
+                          <Box
+                            key={`ref-${index}`}
+                            mt="2"
+                            display="flex"
+                            placeContent="end"
+                          >
+                            <ExternalLink
+                              href={`/explorer/${ref.profile_address}`}
+                            >
+                              {ref.profile_address?.includes('.')
+                                ? ref.profile_address
+                                : shortenAddress(ref.profile_address)}
+                            </ExternalLink>
+                            <Box ml="2">{date}</Box>
+                          </Box>
+                        )
+                      })
+                    ) : (
+                      <Box
+                        mt="2"
+                        display="flex"
+                        flexDirection="column"
+                        textAlign="right"
+                      >
+                        <Box mb="4">No referrals yet.</Box>
+                        {isMyProfile && (
+                          <ShareAction
+                            shareMessage={share}
+                            shareLink={shareLink}
+                          />
+                        )}
+                      </Box>
+                    )}
+                  </MacScrollbar>
+                </Box>
+              </Box>
+              <Box
+                display={isSmallScreen ? 'block' : 'flex'}
+                m="8"
+                maxW={isSmallScreen ? '600px' : '100%'}
+              >
+                <Box
+                  w={isSmallScreen ? '100%' : '50%'}
+                  pr={isSmallScreen ? '0' : '50px'}
+                  flex="1 1 0px"
+                >
+                  <ProgressTitle
+                    title={`Ownership`}
                     score={
                       3 * (user.stats?.datadisks?.length || 0) +
                       (user.stats?.handbooks?.length || 0)
                     }
                     max={MAX_COLLECTIBLES}
-                    description={t(
-                      `Each Handbook increases your score by 1 point, and each DataDisk increases it by 3.`
-                    )}
+                    definition={
+                      <>
+                        {`Explorers own digital items.`}
+                        <br />
+                        {`Each Handbook increases your score by 1 point, and each DataDisk increases it by 3 points.`}
+                      </>
+                    }
                   />
                   <Badges
                     badges={collectibles}
                     type="collectibles"
                     isMyProfile={isMyProfile}
+                  />
+                </Box>
+                <Box w={isSmallScreen ? '100%' : '50%'} flex="1 1 0px">
+                  <ProgressTitle
+                    title={`Humanity`}
+                    score={user.stats?.valid_stamps?.length || 0}
+                    max={MAX_STAMPS}
+                    definition={
+                      <>
+                        {`Explorers can prove they aren’t bots.`}
+                        <br />
+                        {`Each account you connect increases your score by 1 point.`}
+                      </>
+                    }
+                  />
+                  <Badges
+                    badges={user.stats?.valid_stamps || []}
+                    type="stamps"
+                    isMyProfile={address && isMyProfile}
                   />
                 </Box>
               </Box>
@@ -326,41 +647,30 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               >
                 <Box
                   w={isSmallScreen ? '100%' : '50%'}
-                  mr={isSmallScreen ? '0' : '50px'}
+                  pr={isSmallScreen ? '0' : '50px'}
+                  flex="1 1 0px"
                 >
                   <ProgressTitle
-                    title={t('Donations')}
-                    score={
-                      user.stats?.donations
-                        ? Object.keys(user.stats?.donations)?.length || 0
-                        : 0
-                    }
-                    max={MAX_DONATIONS}
-                    description={t(
-                      `Each round you donate to Bankless Academy on Gitcoin increases your score by 1 point. Points are updated at the end of a round.`
+                    title={`Achievement`}
+                    score={calculateExplorerAchievements(
+                      user.stats?.achievements || []
                     )}
+                    max={MAX_ACHIEVEMENT}
+                    definition={
+                      <>
+                        {`Explorers go above and beyond.`}
+                        <br />
+                        {`Each achievement grants a unique amount of points.`}
+                      </>
+                    }
                   />
                   <Badges
-                    badges={Object.keys(user.stats?.donations || {})}
-                    type="donations"
+                    badges={user.stats?.achievements || []}
+                    type="achievements"
                     isMyProfile={isMyProfile}
                   />
                 </Box>
-                <Box w={isSmallScreen ? '100%' : '50%'}>
-                  <ProgressTitle
-                    title={t('Stamps')}
-                    score={user.stats?.valid_stamps?.length || 0}
-                    max={MAX_STAMPS}
-                    description={t(
-                      `Each stamp you collect by connecting an account increases your score by 1 point.`
-                    )}
-                  />
-                  <Badges
-                    badges={user.stats?.valid_stamps || []}
-                    type="stamps"
-                    isMyProfile={address && isMyProfile}
-                  />
-                </Box>
+                <Box w={isSmallScreen ? '100%' : '50%'} flex="1 1 0px"></Box>
               </Box>
             </Box>
           </Card>

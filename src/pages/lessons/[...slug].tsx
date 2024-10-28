@@ -40,7 +40,10 @@ const processMD = async (md, lang, englishLesson, updatedAt) => {
       const slides = content?.split('# ')
       slides.shift()
       // console.log(slides)
-      for (let i = 0; i < newLesson.slides?.length - 1; i++) {
+      const numberOfSlides = newLesson.slides.filter(
+        (s) => s.type !== 'QUEST'
+      ).length
+      for (let i = 0; i < numberOfSlides; i++) {
         // console.log(i)
         const [slide_title] = (slides[i] || '').split('\n\n')
         const slide_content = slides[i]
@@ -70,7 +73,11 @@ const processMD = async (md, lang, englishLesson, updatedAt) => {
             )
           }
         }
-        if (newLesson.slides[i].type === 'QUIZ' && slide_content) {
+        if (
+          (newLesson.slides[i].type === 'QUIZ' ||
+            newLesson.slides[i].type === 'POLL') &&
+          slide_content
+        ) {
           // console.log(slide_content)
           newLesson.slides[i].md = slide_content
           const [question] = slide_content.split('\n\n')

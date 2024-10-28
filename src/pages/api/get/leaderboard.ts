@@ -6,7 +6,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import badges from 'data/badges.json'
 import { fetchBE } from 'utils/server'
-import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
+import { BADGE_ADDRESS, badgePublishedIds } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from 'constants/passport'
 import { calculateExplorerScore } from 'utils/index'
@@ -74,7 +74,7 @@ export default async function handler(
         badges[address] = badgeIds
       }
       // intersect badgeIds
-      badges[address] = badges[address].filter(badgeId => BADGE_IDS.includes(badgeId))
+      badges[address] = badges[address].filter(badgeId => badgePublishedIds.includes(badgeId))
     }
 
     for (const [address, badgeIds] of Object.entries(badges)) {
@@ -107,15 +107,26 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
         if (user.ens_avatar !== null && address in leaderboard)
           leaderboard[address].ens_avatar = user.ens_avatar
       }
-      const donations = await db(TABLES.users)
-        .select(TABLE.users.address, TABLE.users.donations)
-        .whereNot(TABLE.users.donations, '{}')
-      console.log(donations)
-      for (const donation of donations) {
-        const a = donation.address.toLowerCase()
+      // donations (deprecated)
+      // const donations = await db(TABLES.users)
+      //   .select(TABLE.users.address, TABLE.users.donations)
+      //   .whereNot(TABLE.users.donations, '{}')
+      // console.log(donations)
+      // for (const donation of donations) {
+      //   const a = donation.address.toLowerCase()
+      //   if (a in leaderboard) {
+      //     leaderboard[a].donations = donation.donations
+      //     // leaderboard[a].donations_count = Object.keys(donation.donations)?.length || 0
+      //   }
+      // }
+      const achievements = await db(TABLES.users)
+        .select(TABLE.users.address, TABLE.users.achievements)
+        .whereNot(TABLE.users.achievements, '{}')
+      console.log(achievements)
+      for (const achievement of achievements) {
+        const a = achievement.address.toLowerCase()
         if (a in leaderboard) {
-          leaderboard[a].donations = donation.donations
-          // leaderboard[a].donations_count = Object.keys(donation.donations)?.length || 0
+          leaderboard[a].achievements = (achievement && typeof achievement?.achievements === 'object' && achievement?.achievements !== null) ? Object.keys(achievement?.achievements) : []
         }
       }
       // passport
@@ -136,6 +147,8 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
         .distinct(TABLE.users.referrer)
         .leftJoin('users AS r', 'users.referrer', 'r.id')
         .whereNotNull(TABLE.users.referrer)
+        // ignore referrals via smart_nft
+        .whereNull('users.smart_nft_start_at')
         .groupBy(TABLE.users.referrer)
         .groupBy('r.address')
       console.log(referrals)

@@ -27,7 +27,7 @@ export default async function handler(
       },
     }
     const r = await axios.get(
-      `https://resolve.unstoppabledomains.com/reverse/${address}`,
+      `https://api.unstoppabledomains.com/resolve/reverse/${address}`,
       config
     )
     console.log(r)

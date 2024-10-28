@@ -211,7 +211,7 @@ const blockTypesToIgnore = [
   // "embed",
   "equation",
   // "divider",
-  "toggle",
+  // "toggle",
   // "to_do",
   "synced_block",
   "column_list",

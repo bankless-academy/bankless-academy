@@ -33,6 +33,7 @@ import {
 } from 'utils/index'
 import Keyword from 'components/Keyword'
 import LanguageSwitch from 'components/LanguageSwitch'
+import MintNFT from 'components/MintNFT'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -537,6 +538,8 @@ const Article = ({
   const [numberCollected, setNumberCollected] = useState<number | '...'>('...')
   const { address } = useAccount()
 
+  const isSmartWalletLesson = lesson.slug === 'creating-a-smart-wallet'
+
   useEffect(() => {
     Mixpanel.track('open_lesson', {
       lesson: lesson?.englishName,
@@ -627,6 +630,7 @@ const Article = ({
         </SimpleGrid>
       )}
       <LanguageSwitch lesson={lesson} />
+      {isSmartWalletLesson && <MintNFT />}
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
           components={{

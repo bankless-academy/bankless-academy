@@ -7,11 +7,10 @@ import { Box, Button } from '@chakra-ui/react'
 
 import { ImageData, Props } from 'pages/api/frame-og/[props]'
 import { DOMAIN_URL_, LESSONS } from 'constants/index'
-import ExternalLink from 'components/ExternalLink'
 
 const questionSchema = z.object({
   question: z.string().min(1).max(100),
-  answers: z.array(z.string().max(50)).min(2).max(4),
+  answers: z.array(z.string().max(60)).min(2).max(4),
   correct: z.number().min(0).max(3),
 })
 
@@ -109,7 +108,7 @@ export default function UI({
           <Box mt="2">
             {buttons.map((button, index) =>
               button && button === CTA ? (
-                <ExternalLink
+                <a
                   key={button}
                   href={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lessonSlug}&platform=web&provenance=quiz`}
                 >
@@ -120,7 +119,7 @@ export default function UI({
                   >
                     {button}
                   </Button>
-                </ExternalLink>
+                </a>
               ) : (
                 <Button
                   key={button}
@@ -163,13 +162,13 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   for (const slide of lesson.slides) {
     if (
       slide.type === 'QUIZ' &&
-      slide.quiz.answers.filter((answer) => answer.length <= 50).length ===
+      slide.quiz.answers.filter((answer) => answer.length <= 60).length ===
         slide.quiz.answers.length &&
       slide.quiz.answers.length >= 2 &&
       slide.quiz.answers.length <= 4
     ) {
       quiz.questions.push({
-        question: slide.quiz.question,
+        question: slide.quiz.question?.replaceAll('<br>', ' '),
         answers: slide.quiz.answers,
         correct: slide.quiz.rightAnswerNumber - 1,
       })
@@ -293,6 +292,8 @@ function render(
         v: VERSION,
         state: {
           type: 'question',
+          numQuestion: state.index - 1,
+          totalQuestions: quiz.questions.length,
           question: question.question,
           answers: question.answers,
           selection: null,
@@ -307,6 +308,8 @@ function render(
         v: VERSION,
         state: {
           type: 'question',
+          numQuestion: state.index - 1,
+          totalQuestions: quiz.questions.length,
           question: question.question,
           answers: question.answers,
           selection: {

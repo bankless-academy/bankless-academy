@@ -17,6 +17,7 @@ import ExternalLink from 'components/ExternalLink'
 import { api } from 'utils/index'
 import { AnnouncementType } from 'entities/announcement'
 import Announcement from 'components/Announcement'
+import OnboardingModal from 'components/OnboardingModal'
 
 declare global {
   interface Navigator {
@@ -36,6 +37,7 @@ const Nav: React.FC = () => {
   const [announcement, setAnnouncement] = useState<AnnouncementType | null>(
     null
   )
+  const [onboardingRetry] = useLocalStorage('onboarding-retry', 0)
 
   const isProfilePage = asPath.includes('/explorer/my-profile')
 
@@ -54,6 +56,24 @@ const Nav: React.FC = () => {
         : (queryString.parse(window.location.search)?.webapp || '')?.toString()
       : undefined
   const isEmbedded = typeof window !== 'undefined' && window !== window.parent
+
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const [onboarding] = useLocalStorage('onboarding', '')
+
+  useEffect(() => {
+    // if onboarding is not done, and it's been more than 3 days since the last popup, show it again, max 3 times
+    const threeDays = 60 * 60 * 24 * 3 * 1000
+    if (
+      (onboarding === '' ||
+        (onboarding !== 'done' &&
+          Date.now() - Number(onboarding) > threeDays)) &&
+      onboardingRetry < 3
+    ) {
+      setTimeout(() => {
+        setIsOnboardingModalOpen(true)
+      }, 10000)
+    }
+  }, [onboarding])
 
   useEffect((): void => {
     const embedValue =
@@ -126,6 +146,9 @@ const Nav: React.FC = () => {
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">
+            {/* <Button onClick={() => setIsOnboardingModalOpen(true)}>
+              popup
+            </Button> */}
             <InternalLink href={`/lessons`} alt="Explore Lessons" zIndex={2}>
               <Button
                 variant={
@@ -151,6 +174,12 @@ const Nav: React.FC = () => {
           {announcement && <Announcement announcement={announcement} />}
         </Flex>
       </Box>
+      <OnboardingModal
+        isOpen={isOnboardingModalOpen}
+        onClose={() => {
+          setIsOnboardingModalOpen(false)
+        }}
+      />
     </header>
   )
 }

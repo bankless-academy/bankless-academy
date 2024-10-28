@@ -12,11 +12,13 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
-import { useSwitchChain, useAccount } from 'wagmi'
+import { useAccount, useWalletClient } from 'wagmi'
 import { useTranslation } from 'react-i18next'
+import { switchChain } from '@wagmi/core'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 import { IS_WALLET_DISABLED } from 'constants/index'
+import { wagmiConfig } from 'utils/wagmi'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -37,11 +39,10 @@ const switchChainButton = ({
   const [currentNetwork, setCurrentNetwork] = useState(NETWORKS.mainnet)
   const [isNetworkUnknown, setIsNetworkUnknown] = useState(false)
   const { isConnected, chain } = useAccount()
-  const { switchChain } = useSwitchChain()
-
+  const { data: walletClient } = useWalletClient()
   useEffect(() => {
     if (chain?.id) {
-      if (!SUPPORTED_NETWORKS_IDS.includes(chain?.id)) {
+      if (!(SUPPORTED_NETWORKS_IDS as number[]).includes(chain?.id)) {
         // wrong network
         toast.closeAll()
         toast({
@@ -61,6 +62,17 @@ const switchChainButton = ({
         )
         setCurrentNetwork(NETWORKS[networkName])
       }
+    } else {
+      // wrong network
+      toast.closeAll()
+      toast({
+        title: t('Wrong network detected'),
+        description: t('Please switch back to Ethereum Mainnet'),
+        status: 'warning',
+        duration: null,
+        isClosable: true,
+      })
+      setIsNetworkUnknown(true)
     }
   }, [chain?.id])
 
@@ -92,9 +104,7 @@ const switchChainButton = ({
                   isTruncated
                   display={isSmallScreen ? 'none' : 'inherit'}
                 >
-                  {isNetworkUnknown
-                    ? 'Unsupported network'
-                    : currentNetwork.name}
+                  {isNetworkUnknown ? 'Unknown network' : currentNetwork.name}
                 </Box>
                 {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
               </Box>
@@ -116,21 +126,36 @@ const switchChainButton = ({
                 <MenuItem
                   key={index}
                   minH="40px"
-                  onClick={() => {
-                    try {
-                      if (isConnected)
-                        switchChain({ chainId: NETWORKS[network].chainId })
-                    } catch (error) {
-                      toast.closeAll()
-                      toast({
-                        title: t('Error while trying to change the network.'),
-                        description: t(
-                          'When using Wallet Connect, change the network from your wallet.'
-                        ),
-                        status: 'warning',
-                        duration: 20000,
-                        isClosable: true,
-                      })
+                  onClick={async () => {
+                    if (isConnected) {
+                      try {
+                        if (walletClient?.type === 'walletConnect') {
+                          await walletClient.switchChain({
+                            id: NETWORKS[network].chainId,
+                          })
+                        } else {
+                          await switchChain(wagmiConfig, {
+                            chainId: NETWORKS[network].chainId,
+                          })
+                        }
+                        if (
+                          (await walletClient?.getChainId()) !==
+                          NETWORKS[network].chainId
+                        ) {
+                          throw new Error(
+                            'Error while trying to change the network.'
+                          )
+                        }
+                      } catch (error) {
+                        toast.closeAll()
+                        toast({
+                          title: `Error while trying to change the network.`,
+                          description: `Try changing the network to '${NETWORKS[network].name}' manually from your wallet.`,
+                          status: 'warning',
+                          duration: 20000,
+                          isClosable: true,
+                        })
+                      }
                     }
                   }}
                   backgroundColor={
@@ -141,7 +166,6 @@ const switchChainButton = ({
                 >
                   <Image
                     height={25}
-                    rounded="full"
                     src={NETWORKS[network].image}
                     alt={NETWORKS[network].name}
                     mr="12px"

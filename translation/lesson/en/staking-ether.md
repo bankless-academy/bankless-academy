@@ -141,7 +141,7 @@ Yes, rewards depend on two key factors:
 
 * **Number of Validator Nodes:** With more participants, rewards are further divided.
 
-Rewards also change based on the staking method chosen. Check out our [“Staking on Ethereum” lesson](https://beta.banklessacademy.com/lessons/staking-on-ethereum) to learn more!
+Rewards also change based on the staking method chosen. Check out our [“Staking on Ethereum” lesson](https://app.banklessacademy.com/lessons/staking-on-ethereum) to learn more!
 
 ### How do I run a validator node?
 

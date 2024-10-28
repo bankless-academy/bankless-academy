@@ -16,7 +16,7 @@ import { Wallet, Power, UserCircle } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 import { useAccount, useSignMessage, useDisconnect } from 'wagmi'
 import { getEnsName, getEnsAvatar } from '@wagmi/core'
@@ -67,15 +67,14 @@ const ConnectWalletButton = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { open } = useWeb3Modal()
-  const { connector, isConnected } = useAccount()
-  let { address } = useAccount()
-  const { chainId } = useAccount()
-  const { query, asPath } = useRouter()
-  const { simulate } = query
-  if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
-    address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
+  const { address, connector, isConnected, chainId } = useAccount()
+  const { asPath } = useRouter()
+  // const { simulate } = query
+  // if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
+  //   address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)
+  const [, setScore] = useLocalStorage(`score`, 0)
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
@@ -89,25 +88,61 @@ const ConnectWalletButton = ({
   const [ens, setEns] = useState('')
   const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [currentWallet, setCurrentWallet] = useLocalStorage(
+    'current_wallet',
+    ''
+  )
+  const [referrer, setReferrer] = useLocalStorage('referrer', '')
+  const [emailLinked, setEmailLinked] = useLocalStorage('emailLinked', false)
   const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
     'refreshBadges',
     false
   )
+  const [, setCommunity] = useLocalStorage(`community`, '')
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { disconnect } = useDisconnect()
-  // const { disconnect } = useDisconnect({
-  //   onError(error) {
-  //     console.log('Error while disconnecting', error)
-  //   },
-  //   onSuccess() {
-  //     console.log('Disconnect success')
-  //     // HACK: mobile wallet disconnect issues
-  //     if (localStorage.getItem('wagmi.wallet').includes('walletConnect')) {
-  //       console.log('force reload')
-  //       location.reload()
-  //     }
-  //   },
-  // })
+  const { referral } = router.query
+  const [email] = useLocalStorage('email', localStorage.getItem('email') || '')
+
+  useEffect(() => {
+    const getAddress = async (ens: string) => {
+      try {
+        const res = await fetch(`https://api.ensdata.net/${ens}`)
+        const data = await res.json()
+        console.log('referralAddress', data)
+        return data.address?.toLowerCase()
+      } catch (error) {
+        console.log(error)
+        return ''
+      }
+    }
+
+    const extractAdressFromUrl = (pathname) => {
+      const segments = pathname.split('/')
+      return segments[segments.length - 1].split('?')[0]
+    }
+
+    const handleReferral = async () => {
+      const referralString =
+        (referral as string) === 'true' && asPath?.startsWith('/explorer/')
+          ? extractAdressFromUrl(asPath)
+          : (referral as string)
+      // console.log('referralString', referralString)
+      if (referralString?.length) {
+        const referralAddress = referralString?.includes('.')
+          ? await getAddress(referralString)
+          : referralString?.toLowerCase()
+        // console.log('referralAddress', referralAddress)
+        // console.log('currentWallet', currentWallet)
+
+        if (referrer === '' && currentWallet !== referralAddress)
+          setReferrer(referralAddress)
+      }
+    }
+
+    handleReferral()
+    if (currentWallet === referrer) setReferrer('')
+  }, [asPath, referral, currentWallet, referrer])
 
   const isLessonPage = asPath.includes('/lessons')
   const isProfilePage = asPath.includes('/explorer/my-profile')
@@ -155,9 +190,11 @@ const ConnectWalletButton = ({
         avatar = newAvatar
       }
     }
-    if (nameCache[address]?.name) setName(nameCache[address].name)
+    const addressLower = address?.toLowerCase()
+    if (nameCache[addressLower]?.name) setName(nameCache[addressLower].name)
     else setName(name)
-    if (nameCache[address]?.avatar) setAvatar(nameCache[address].avatar)
+    if (nameCache[addressLower]?.avatar)
+      setAvatar(nameCache[addressLower].avatar)
     else setAvatar(avatar)
 
     const ensName =
@@ -195,21 +232,42 @@ const ConnectWalletButton = ({
         if (ud?.length) {
           replaceName(ud)
           replaceAvatar(
-            `https://resolve.unstoppabledomains.com/image-src/${ud}`
+            `https://api.unstoppabledomains.com/metadata/image-src/${ud}`
           )
         }
       }
     }
     const newNameCache = JSON.parse(JSON.stringify(nameCache))
-    newNameCache[address] = { name, avatar }
+    newNameCache[addressLower] = { name, avatar }
+    if (name?.includes('.')) {
+      newNameCache[name] = { name, avatar }
+    }
     setNameCache(newNameCache)
   }
 
   function refreshBadges() {
     if (address)
-      axios.get(`/api/user/${address}`).then((res) => {
+      axios.get(`/api/user/${address}`).then(async (res) => {
+        const community = res?.data?.community
+        setCommunity(community)
         const score = res?.data?.stats?.score || 0
-        localStorage.setItem('score', score)
+        setScore(score)
+        if (
+          !emailLinked &&
+          !res?.data?.emailLinked &&
+          email?.length &&
+          address?.length
+        ) {
+          try {
+            const res = await api('/api/link-email', { email, address })
+            console.log('res', res.data)
+            if (res.data?.message) {
+              setEmailLinked(true)
+            }
+          } catch (error) {
+            console.error('error', error)
+          }
+        }
         const badgeTokenIds = res?.data?.badgeTokenIds
         if (Array.isArray(badgeTokenIds)) {
           const badgesMinted = BADGE_IDS.filter((badgeId) =>
@@ -235,10 +293,10 @@ const ConnectWalletButton = ({
   const loadAddress = (address) => {
     setConnectWalletPopupLS(false)
     onClose()
-    if (localStorage.getItem('current_wallet') !== address?.toLowerCase()) {
+    if (currentWallet !== address?.toLowerCase()) {
       localStorage.removeItem('passport')
     }
-    localStorage.setItem('current_wallet', address?.toLowerCase())
+    setCurrentWallet(address?.toLowerCase())
     updateName(address)
     const wallets = localStorage.getItem('wallets')
       ? JSON.parse(localStorage.getItem('wallets'))
@@ -265,7 +323,7 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    if (siwe?.length) {
+    if (SIWE_ENABLED && siwe?.length) {
       verify()
     }
   }, [])
@@ -463,7 +521,7 @@ const ConnectWalletButton = ({
                 {t('Connect your wallet to proceed.')}
               </Heading>
               <Text textAlign="center">
-                {`Don’t know how? `}
+                {`Don't know how? `}
                 <ExternalLink
                   underline="true"
                   href="https://app.banklessacademy.com/lessons/creating-a-crypto-wallet"

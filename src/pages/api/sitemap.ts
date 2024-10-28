@@ -5,6 +5,8 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { DEFAULT_METADATA, DOMAIN_URL, GENERIC_ERROR_MESSAGE, LESSONS, PROJECT_DESCRIPTION, PROJECT_NAME, imageMeta } from 'constants/index'
 import { lessonLink } from "utils"
 import { pageMeta as lessonsPageMeta } from 'pages/lessons/index'
+import { pageMeta as glossaryPageMeta } from 'pages/glossary'
+import { pageMeta as oscPageMeta } from 'pages/onchain-summer-challenge'
 
 const SPLIT = `\`\`\`
 
@@ -122,7 +124,7 @@ export default async function handler(
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
     })
     feed.addItem({
-      title: `FAQ - ${PROJECT_NAME}`,
+      title: `FAQ`,
       id: `/faq`,
       link: `${DOMAIN_URL}/faq`,
       description: PROJECT_DESCRIPTION,
@@ -130,12 +132,20 @@ export default async function handler(
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
     })
     feed.addItem({
-      title: `Glossary - ${PROJECT_NAME}`,
+      title: `${glossaryPageMeta.title}`,
       id: `/glossary`,
       link: `${DOMAIN_URL}/glossary`,
       description: PROJECT_DESCRIPTION,
       date: lastUpdate,
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+    })
+    feed.addItem({
+      title: `${oscPageMeta.title}`,
+      id: `/onchain-summer-challenge`,
+      link: `${DOMAIN_URL}/onchain-summer-challenge`,
+      description: `${oscPageMeta.description}`,
+      date: lastUpdate,
+      image: `${DOMAIN_URL}${oscPageMeta.image}`
     })
     for (const lesson of lessons) {
       feed.addItem(lesson)

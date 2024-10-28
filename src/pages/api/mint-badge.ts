@@ -9,18 +9,24 @@ import {
   GENERIC_ERROR_MESSAGE,
   WALLET_SIGNATURE_MESSAGE,
   ALCHEMY_KEY_BACKEND,
+  DOMAIN_URL,
 } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
-import { api, verifySignature } from 'utils/index'
+import { api } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
+import { verifySignature } from 'utils/SignatureUtil'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  // check params + signature
-  const { address, badgeId, embed, signature, referrer } = req.body
+  const DEV_SECRET = process.env.DEV_SECRET
+  const isDev = DEV_SECRET && req.query?.dev === DEV_SECRET
+  const param = isDev ? req.query : req.body
+    // check params + signature
+  const { address, embed, signature, referrer, chainId } = param
+  let { badgeId } = param
   // console.log(req)
   if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
@@ -30,11 +36,18 @@ export default async function handler(
   console.log('badgeId: ', badgeId)
   console.log('signature: ', signature)
 
-  if (!signature)
-    return res.status(400).json({ error: 'Missing wallet signature' })
+  if (isDev) {
+    badgeId = parseInt(badgeId)
+  } else {
+    if (!signature)
+      return res.status(400).json({ error: 'Missing wallet signature' })
 
-  if (!verifySignature(address, signature, WALLET_SIGNATURE_MESSAGE))
-    return res.status(403).json({ error: 'Wrong signature' })
+    if (!chainId)
+      return res.status(400).json({ error: 'Missing chainId' })
+
+    if (!await verifySignature({ address, signature, message: WALLET_SIGNATURE_MESSAGE, chainId }))
+      return res.status(403).json({ error: 'Wrong signature' })
+  }
 
   const message = { tokenId: badgeId }
   console.log('message: ', message)
@@ -71,7 +84,8 @@ export default async function handler(
 
     let questStatus = ''
 
-    if (!questCompleted?.id) {
+    // Exception: No quest page for Ethereum Basics (badgeId !== 14)
+    if (!questCompleted?.id && badgeId !== 14) {
       questStatus = 'quest not completed'
       console.log(questStatus)
       return res.status(403).json({ status: questStatus })
@@ -104,7 +118,7 @@ export default async function handler(
     }
 
     const userBadges = await axios.get(
-      `${req.headers.origin}/api/user/${address}?badges=true`
+      `${DOMAIN_URL}/api/user/${address}?badges=true`
     )
     // console.log('userBadges', userBadges?.data?.data)
 
@@ -120,7 +134,7 @@ export default async function handler(
     }
 
     // Sybil check with Academy Passport
-    const result = await api(`${req.headers.origin}/api/passport`, {
+    const result = await api(`${DOMAIN_URL}/api/passport`, {
       address: address,
     })
     if (result && result.status === 200) {
@@ -183,9 +197,10 @@ export default async function handler(
       })).json()
       // select confidence: 95% = [1]
       console.log(estimation)
-      console.log(estimation.blockPrices[0].estimatedPrices[1])
-      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxFeePerGas || 40
-      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxPriorityFeePerGas || 40
+      console.log('estimation.blockPrices', estimation.blockPrices)
+      // 99% confidence
+      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxFeePerGas || 40
+      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxPriorityFeePerGas || 40
       const options: any = {}
       if (IS_BADGE_PROD) {
         options.maxFeePerGas = ethers.utils.parseUnits(
@@ -265,7 +280,37 @@ export default async function handler(
           status: error?.reason,
         })
       }
-      const mint = await contract[contractFunction](...functionParams, options)
+
+      let mint;
+      try {
+        mint = await contract[contractFunction](...functionParams, options)
+      } catch (error) {
+        options.gasLimit = ethers.utils.hexlify(100000); // Higher gas limit for complex transactions
+        options.maxFeePerGas = ethers.utils.parseUnits('330', 'gwei'); // Higher max fee for faster processing
+        options.maxPriorityFeePerGas = ethers.utils.parseUnits('80', 'gwei'); // Higher priority fee to incentivize miners
+        console.log('Updated options with higher gas fees:', options);
+        mint = await contract[contractFunction](...functionParams, options);
+        // if (error.code === 'SERVER_ERROR' && error.error && error.error.code === -32000) {
+        //   console.log('Transaction underpriced. Increasing maxPriorityFeePerGas...');
+        //   options.maxPriorityFeePerGas = ethers.utils.parseUnits('25', 'gwei');
+        //   console.log('Updated options:', options);
+        //   mint = await contract[contractFunction](...functionParams, options);
+        // } else if (error.code === 'UNPREDICTABLE_GAS_LIMIT') {
+        //   console.log('Unpredictable gas limit. Setting manual gas limit...');
+        //   options.gasLimit = ethers.utils.hexlify(550000);
+        //   console.log('Updated options:', options);
+        //   mint = await contract[contractFunction](...functionParams, options);
+        // } else if (error.code === 'UNPREDICTABLE_GAS_LIMIT' && error.error && error.error.code === -32000) {
+        //   console.log('Max priority fee per gas higher than max fee per gas. Adjusting fees...');
+        //   options.maxPriorityFeePerGas = ethers.utils.parseUnits('10', 'gwei');
+        //   options.maxFeePerGas = ethers.utils.parseUnits('20', 'gwei');
+        //   console.log('Updated options:', options);
+        //   mint = await contract[contractFunction](...functionParams, options);
+        // } else {
+        //   throw error;
+        // }
+      }
+
       // DEV: uncomment this line to test simulate minting
       // const mint = { hash: 'test' }
       console.log(mint)
@@ -313,10 +358,12 @@ export default async function handler(
           console.log('no referrer')
         }
 
-        const updated = await db(TABLES.completions)
+        if (questCompleted?.id) {
+          const updated = await db(TABLES.completions)
           .where(TABLE.completions.id, questCompleted.id)
           .update({ transaction_at: db.raw("NOW()"), transaction_hash: mint.hash })
-        console.log(`updated `, updated)
+          console.log(`updated `, updated)
+        }
         trackBE(address, 'mint_badge', {
           lesson: lessonName,
           badgeId,
@@ -339,7 +386,7 @@ export default async function handler(
       console.log(error)
       console.error(error?.response?.data)
       trackBE(address, 'mint_kudos_issue', {
-        error: error?.response?.data,
+        error,
         badgeId,
         address,
       })

@@ -6,12 +6,12 @@ import { createColumnHelper } from '@tanstack/react-table'
 
 import { MetaData } from 'components/Head'
 import { DataTable } from 'components/DataTable'
-import { shortenAddress } from 'utils/index'
+import { calculateExplorerAchievements, shortenAddress } from 'utils/index'
 import InternalLink from 'components/InternalLink'
 import { useRouter } from 'next/router'
 import { STAMP_PLATFORMS } from 'constants/passport'
 import { COLLECTIBLE_DETAILS } from 'constants/index'
-import { DONATION_MAPPING } from 'constants/donations'
+import { ACHIEVEMENTS } from 'constants/achievements'
 
 const pageMeta: MetaData = {
   title: 'Bankless Explorer Leaderboard',
@@ -23,8 +23,10 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export const getDonationdetails = (donations) => {
-  return Object.keys(donations).map((donation) => DONATION_MAPPING[donation])
+export const getAchievementDetails = (achievements) => {
+  return achievements.map(
+    (achievement) => ACHIEVEMENTS[achievement]?.description
+  )
 }
 
 type UnitConversion = {
@@ -38,8 +40,8 @@ type UnitConversion = {
   badges: number
   ens_name?: string
   ens_avatar?: string
-  donations?: { [key: string]: any }
-  donations_count?: number
+  achievements: string[]
+  achievements_count?: number
   valid_stamps?: string[]
   valid_stamps_count?: number
   referrals?: number
@@ -113,29 +115,30 @@ const columns = [
     },
     header: 'Handbooks',
   }),
-  columnHelper.accessor('donations_count', {
+  columnHelper.accessor('achievements_count', {
     cell: (info) => {
-      const donations = info.row.original?.donations
-      if (typeof donations === 'object') {
-        const donationdetails = getDonationdetails(donations).join(', ')
-        const numberOfDonations = info.getValue()
+      const achievements = info.row.original?.achievements
+      if (achievements?.length) {
+        const achievementdetails =
+          getAchievementDetails(achievements)?.join(', ')
+        const pointsForAchievements = info.getValue()
         return (
           <>
-            <Tooltip label={donationdetails}>
-              <Box>{numberOfDonations}</Box>
+            <Tooltip label={achievementdetails}>
+              <Box>{pointsForAchievements}</Box>
             </Tooltip>
           </>
         )
       } else
         return (
           <>
-            <Tooltip label="No donation yet.">
+            <Tooltip label="No Achievements yet.">
               <Box>0</Box>
             </Tooltip>
           </>
         )
     },
-    header: 'Donations',
+    header: 'Achievements',
   }),
   columnHelper.accessor('valid_stamps_count', {
     cell: (info) => {
@@ -185,8 +188,11 @@ const Leaderboard = (): JSX.Element => {
             addressData.datadisks_count = addressData.datadisks?.length || 0
             addressData.handbooks_count = addressData.handbooks?.length || 0
             addressData.referrals = addressData?.referrals || 0
-            addressData.donations_count =
-              Object.keys(addressData.donations || {})?.length || 0
+            // addressData.donations_count =
+            //   Object.keys(addressData.donations || {})?.length || 0
+            addressData.achievements_count = calculateExplorerAchievements(
+              addressData?.achievements || []
+            )
             data.push({ address, ...addressData })
           }
           setLeaderboard(data)
@@ -226,7 +232,7 @@ const Leaderboard = (): JSX.Element => {
 
   if (leaderboard && fetchedAt && !isLoadingProfile)
     return (
-      <Container maxW="container.xl">
+      <Container maxW="container.xxl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
           {isLoadingProfile
             ? 'Loading Explorer Profile'

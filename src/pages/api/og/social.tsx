@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { ImageResponse } from '@vercel/og'
 import OgSocial from 'components/OgSocial'
-import { DEFAULT_AVATAR, DOMAIN_URL, LESSONS } from 'constants/index'
+import { DEFAULT_AVATAR, DOMAIN_URL_, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { NextApiRequest } from 'next'
 
@@ -60,7 +60,7 @@ export default async function handler(req: NextApiRequest) {
   let error = ''
   if (!address) error = 'missing address'
 
-  const res = await fetch(`${DOMAIN_URL}/api/user/${address}`)
+  const res = await fetch(`${DOMAIN_URL_}/api/user/${address}`)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
@@ -105,7 +105,7 @@ export default async function handler(req: NextApiRequest) {
 
   const fontData = await fetch(
     new URL(
-      `${DOMAIN_URL}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`,
+      `${DOMAIN_URL_}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`,
       import.meta.url
     )
   ).then((res) => res.arrayBuffer())
@@ -122,7 +122,7 @@ export default async function handler(req: NextApiRequest) {
   console.log(ensData)
   if (ensData?.avatar_small?.length > 0) {
     // convert to v1 to return png instead of webp
-    const avatar = ensData.avatar_small
+    const avatar = `${ensData.avatar_small}?cache=ba`
     // .replace('api.center.dev/v2/', 'api.center.dev/v1/')
     // .replace('/nft/', '/')
     // .replace('/render/', '/')
@@ -146,7 +146,7 @@ export default async function handler(req: NextApiRequest) {
   }
 
   const explorerName =
-    user.ensName || address?.includes('.') ? address : shortenAddress(address)
+    user.ensName || (address?.includes('.') ? address : shortenAddress(address))
 
   return new ImageResponse(
     (
@@ -155,12 +155,14 @@ export default async function handler(req: NextApiRequest) {
           <OgSocial
             explorerAvatar={user.avatar}
             explorerName={explorerName}
-            badgeImageLink={`${DOMAIN_URL}${badgeImageLink}`}
+            community={user.community}
+            badgeImageLink={`${DOMAIN_URL_}${badgeImageLink}`}
           />
         ) : (
           <OgSocial
             explorerAvatar={user.avatar}
             explorerName={explorerName}
+            community={user.community}
             score={user.stats.score || 0}
             stats={user.stats}
           />
