@@ -20,14 +20,10 @@ const Announcement = (): React.ReactElement => {
           alignSelf="center"
           alignItems="center"
           color="white"
+          p="4px 8px"
         >
-          <Box
-            display="flex"
-            alignItems="center"
-            textAlign="center"
-            m="4px auto"
-          >
-            <Box mx="4px">
+          <Box display="flex" alignItems="center" textAlign="center" m="auto">
+            <Box mr="8px">
               <Megaphone
                 width={24}
                 height={24}
