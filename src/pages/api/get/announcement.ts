@@ -20,15 +20,23 @@ export default async function handler(
         description: a.fields.Description,
         start: a.fields.Start,
         end: a.fields.End,
-        image: a.fields.Image,
+        // image: a.fields.Image,
         link: a.fields.Link,
       }
-      if (announcement.isActif)
+      if (
+        announcement.isActif &&
+        announcement.start &&
+        announcement.end &&
+        new Date(announcement.start) < new Date() &&
+        new Date(announcement.end) > new Date()
+      ) {
         console.log(announcement)
-      return res.status(200).send(announcement)
+        r.push(announcement)
+        break
+      }
     }
     console.log(r)
-    return res.status(200).send({})
+    return res.status(200).send(r)
   } catch (error) {
     console.error(error)
     return res.status(500).json({ error })

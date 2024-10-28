@@ -33,6 +33,8 @@ import { Mixpanel } from 'utils/index'
 import { useSmallScreen } from 'hooks/index'
 import { useState } from 'react'
 import OnboardingModal from 'components/OnboardingModal'
+import Announcement from 'components/Announcement'
+
 const Card = styled(Box)`
   border: 1px solid #72757b;
   padding: var(--chakra-space-8);
@@ -106,6 +108,7 @@ const HomePage = (): JSX.Element => {
   else
     return (
       <>
+        <Announcement />
         <Center
           height="80vh"
           bgImage={HOMEPAGE_BACKGROUND}

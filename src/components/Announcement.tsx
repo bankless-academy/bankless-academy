@@ -1,66 +1,50 @@
-import { useEffect } from 'react'
-import {
-  Image,
-  CloseButton,
-  useDisclosure,
-  Box,
-  Button,
-} from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+import { Megaphone } from '@phosphor-icons/react'
 
 import { AnnouncementType } from 'entities/announcement'
 import ExternalLink from 'components/ExternalLink'
+import { useLocalStorage } from 'usehooks-ts'
 
-const Announcement = ({
-  announcement,
-}: {
-  announcement?: AnnouncementType
-}): React.ReactElement => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
-  useEffect(() => {
-    onOpen()
-  }, [])
-
-  if (isOpen)
+const Announcement = (): React.ReactElement => {
+  const [announcements] = useLocalStorage<AnnouncementType[] | null>(
+    'announcements',
+    null
+  )
+  const [announcement] = announcements
+  if (announcement)
     return (
       <Box zIndex={10}>
         <Box
-          bg="linear-gradient(180deg, #a379bdf0 0%, #5a5198f0 100%)"
-          border="2px solid #B68BCC"
-          borderRadius="3xl"
-          position="fixed"
-          bottom="20px"
-          left="20px"
+          bg="#a379bdf0"
           display="flex"
-          mr="20px"
-          maxW="500px"
+          alignSelf="center"
+          alignItems="center"
+          color="white"
         >
-          <CloseButton
-            position="absolute"
-            top="8px"
-            right="12px"
-            onClick={() => onClose()}
-          />
-          <Box p="6">
-            <Box display="flex" alignItems="center">
-              <Image src={announcement.image} h="150px" maxH="30vw" />
-              <Box
-                m="4"
-                display="flex"
-                alignSelf="center"
-                flexFlow="column"
-                alignItems="center"
-              >
-                <Box textAlign="center" mb="4">
-                  {announcement.description}
-                </Box>
-                <ExternalLink href={announcement.link}>
-                  <Button variant="primaryWhite">
-                    {announcement.announcement}
-                  </Button>
-                </ExternalLink>
-              </Box>
+          <Box
+            display="flex"
+            alignItems="center"
+            textAlign="center"
+            m="4px auto"
+          >
+            <Box mx="4px">
+              <Megaphone
+                width={24}
+                height={24}
+                style={{ transform: 'scaleX(-1)' }}
+              />
             </Box>
+            <ExternalLink
+              underline="true"
+              href={announcement.link}
+              // fontWeight={['normal', 'bold']}
+              fontWeight="bold"
+              fontSize={['14px', '18px']}
+            >
+              {announcement.announcement}
+              {` - `}
+              {announcement.description}
+            </ExternalLink>
           </Box>
         </Box>
       </Box>

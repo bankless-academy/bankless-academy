@@ -16,7 +16,6 @@ import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
 import { api } from 'utils/index'
 import { AnnouncementType } from 'entities/announcement'
-import Announcement from 'components/Announcement'
 import OnboardingModal from 'components/OnboardingModal'
 
 declare global {
@@ -34,7 +33,8 @@ const Nav: React.FC = () => {
     `connectWalletPopup`,
     false
   )
-  const [announcement, setAnnouncement] = useState<AnnouncementType | null>(
+  const [, setAnnouncements] = useLocalStorage<AnnouncementType[] | null>(
+    'announcements',
     null
   )
   const [onboardingRetry] = useLocalStorage('onboarding-retry', 0)
@@ -103,11 +103,13 @@ const Nav: React.FC = () => {
     />
   )
 
-  const getAnnouncement = async () => {
+  const getAnnouncements = async () => {
     try {
       const a = await api('/api/get/announcement', {})
       if (a?.data) {
-        setAnnouncement(a.data)
+        setAnnouncements(a.data)
+      } else {
+        setAnnouncements(null)
       }
     } catch (error) {
       console.error(error)
@@ -115,7 +117,7 @@ const Nav: React.FC = () => {
   }
 
   useEffect(() => {
-    getAnnouncement()
+    getAnnouncements()
   }, [])
 
   return (
@@ -171,7 +173,6 @@ const Nav: React.FC = () => {
               isWebApp={webapp === 'true'}
             />
           </HStack>
-          {announcement && <Announcement announcement={announcement} />}
         </Flex>
       </Box>
       <OnboardingModal
