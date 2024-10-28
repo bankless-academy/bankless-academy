@@ -10,7 +10,7 @@ const Announcement = (): React.ReactElement => {
     'announcements',
     null
   )
-  const [announcement] = announcements
+  const announcement = announcements ? announcements[0] : null
   if (announcement)
     return (
       <Box zIndex={10}>
