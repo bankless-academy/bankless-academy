@@ -276,19 +276,30 @@ export default async function handler(
       try {
         mint = await contract[contractFunction](...functionParams, options)
       } catch (error) {
-        if (error.code === 'SERVER_ERROR' && error.error && error.error.code === -32000) {
-          console.log('Transaction underpriced. Increasing maxPriorityFeePerGas...');
-          options.maxPriorityFeePerGas = ethers.utils.parseUnits('25', 'gwei');
-          console.log('Updated options:', options);
-          mint = await contract[contractFunction](...functionParams, options);
-        } else if (error.code === 'UNPREDICTABLE_GAS_LIMIT') {
-          console.log('Unpredictable gas limit. Setting manual gas limit...');
-          options.gasLimit = ethers.utils.hexlify(550000);
-          console.log('Updated options:', options);
-          mint = await contract[contractFunction](...functionParams, options);
-        } else {
-          throw error;
-        }
+        options.gasLimit = ethers.utils.hexlify(100000); // Higher gas limit for complex transactions
+        options.maxFeePerGas = ethers.utils.parseUnits('330', 'gwei'); // Higher max fee for faster processing
+        options.maxPriorityFeePerGas = ethers.utils.parseUnits('80', 'gwei'); // Higher priority fee to incentivize miners
+        console.log('Updated options with higher gas fees:', options);
+        mint = await contract[contractFunction](...functionParams, options);
+        // if (error.code === 'SERVER_ERROR' && error.error && error.error.code === -32000) {
+        //   console.log('Transaction underpriced. Increasing maxPriorityFeePerGas...');
+        //   options.maxPriorityFeePerGas = ethers.utils.parseUnits('25', 'gwei');
+        //   console.log('Updated options:', options);
+        //   mint = await contract[contractFunction](...functionParams, options);
+        // } else if (error.code === 'UNPREDICTABLE_GAS_LIMIT') {
+        //   console.log('Unpredictable gas limit. Setting manual gas limit...');
+        //   options.gasLimit = ethers.utils.hexlify(550000);
+        //   console.log('Updated options:', options);
+        //   mint = await contract[contractFunction](...functionParams, options);
+        // } else if (error.code === 'UNPREDICTABLE_GAS_LIMIT' && error.error && error.error.code === -32000) {
+        //   console.log('Max priority fee per gas higher than max fee per gas. Adjusting fees...');
+        //   options.maxPriorityFeePerGas = ethers.utils.parseUnits('10', 'gwei');
+        //   options.maxFeePerGas = ethers.utils.parseUnits('20', 'gwei');
+        //   console.log('Updated options:', options);
+        //   mint = await contract[contractFunction](...functionParams, options);
+        // } else {
+        //   throw error;
+        // }
       }
 
       // DEV: uncomment this line to test simulate minting
