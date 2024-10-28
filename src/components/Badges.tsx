@@ -8,6 +8,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
+import React from 'react'
 
 import { LESSONS } from 'constants/index'
 import InternalLink from './InternalLink'
@@ -81,17 +82,17 @@ const Badges = ({
                                       <Box mb="4">
                                         {achievement.helper
                                           .split(achievement.label)
-                                          .map((part, index, array) => (
-                                            <>
+                                          .map((part, i, array) => (
+                                            <React.Fragment key={`helper-${i}`}>
                                               {part}
-                                              {index < array.length - 1 && (
+                                              {i < array.length - 1 && (
                                                 <ExternalLink
                                                   href={achievement.link}
                                                 >
                                                   {achievement.label}
                                                 </ExternalLink>
                                               )}
-                                            </>
+                                            </React.Fragment>
                                           ))}
                                       </Box>
                                     </>
