@@ -23,7 +23,7 @@ const Announcement = (): React.ReactElement => {
           p="4px 8px"
         >
           <Box display="flex" alignItems="center" textAlign="center" m="auto">
-            <Box mr="8px">
+            <Box mr="4px">
               <Megaphone
                 width={24}
                 height={24}
