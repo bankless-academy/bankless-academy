@@ -286,7 +286,7 @@ const HomePage = (): JSX.Element => {
                     </Heading>
                     <Text fontSize="lg" mt="2">
                       {t(
-                        `Collect badges and other onchain rewards for successfully finishing lessons and quests.`
+                        `Collect badges for successfully finishing lessons and quests.`
                       )}
                     </Text>
                   </Card>
@@ -454,7 +454,7 @@ const HomePage = (): JSX.Element => {
                   </Heading>
                   <Text fontSize="2xl" mb="8">
                     {t(
-                      `From reviewing lessons to partnering with our platform, there are plenty of options for collaborating with the Academy Squad.`
+                      `From reviewing lessons to partnering with our platform, there are plenty of options for collaborating with Bankless Academy.`
                     )}
                   </Text>
                   <SimpleGrid
@@ -494,7 +494,7 @@ const HomePage = (): JSX.Element => {
                       </Heading>
                       <Text fontSize="lg" mt="2">
                         {t(
-                          `Our whitelabel platform has helped numerous DAOs kick-start their community education journey - without any developer knowledge!`
+                          `Our whitelabel platform has helped DAOs kick-start their community education journey - without any developer knowledge!`
                         )}
                       </Text>
                       <Box
@@ -517,9 +517,7 @@ const HomePage = (): JSX.Element => {
                         {t(`Partner With Us`)}
                       </Heading>
                       <Text fontSize="lg" mt="2">
-                        {t(
-                          `Do you have an interesting value proposition for our team?`
-                        )}
+                        {t(`Do you have an interesting value proposition?`)}
                         <br />
 
                         {t(`Reach out below so we can start a conversation.`)}
@@ -545,7 +543,7 @@ const HomePage = (): JSX.Element => {
                       </Heading>
                       <Text fontSize="lg" mt="2">
                         {t(
-                          `Everyone can help make Bankless Academy better. Provide feedback on lessons or translations and receive an onchain badge once your feedback is included.`
+                          `Everyone can help make Bankless Academy better. Provide feedback on lessons or translations and receive an onchain recognition once your feedback is included.`
                         )}
                       </Text>
                     </Card>
@@ -557,7 +555,9 @@ const HomePage = (): JSX.Element => {
                       <Text fontSize="lg" mt="2">
                         {t(`Got what it takes to join the Academy Squad?`)}
                         <br />
-                        {t(` We want to hear from you.`)}
+                        {t(
+                          `We want to hear from you if you have a passion for education and web3.`
+                        )}
                       </Text>
                       <Box
                         display="flex"
@@ -576,7 +576,7 @@ const HomePage = (): JSX.Element => {
                     <Card>
                       <Text fontSize="lg" mb="2">
                         {t(
-                          `Or if you just like what we’re doing, you can help by funding us below.`
+                          `If you like what we’re doing, you can help by funding us below.`
                         )}
                       </Text>
                       <ExternalLink
