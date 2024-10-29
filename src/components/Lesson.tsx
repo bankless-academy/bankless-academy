@@ -794,47 +794,54 @@ const Lesson = ({
     }
     if (node.type === 'tag' && node.name === 'code') {
       // Tooltip with definition
-      const keyword = node.children[0]?.data
-      const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
-      const lowerCaseKeywordSingular =
-        lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
-          ? lowerCaseKeyword.slice(0, -1)
-          : undefined
-      if (!lowerCaseKeyword?.length) return <>{keyword}</>
-      const englishDefition =
-        keywords[lowerCaseKeyword]?.definition ||
-        keywords[lowerCaseKeywordSingular]?.definition
-      const definition =
-        i18n.language !== 'en'
-          ? !t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' }).endsWith(
-              '.definition'
-            )
-            ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
-            : !t(`${lowerCaseKeywordSingular}.definition`, {
-                ns: 'keywords',
-              }).endsWith('.definition')
-            ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
+      try {
+        const keyword = node.children[0]?.data
+        const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
+        const lowerCaseKeywordSingular =
+          lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
+            ? lowerCaseKeyword.slice(0, -1)
+            : undefined
+        if (!lowerCaseKeyword?.length) return <>{keyword}</>
+        const englishDefition =
+          keywords[lowerCaseKeyword]?.definition ||
+          keywords[lowerCaseKeywordSingular]?.definition
+        const definition =
+          i18n.language !== 'en'
+            ? !t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' }).endsWith(
+                '.definition'
+              )
+              ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
+              : !t(`${lowerCaseKeywordSingular}.definition`, {
+                  ns: 'keywords',
+                }).endsWith('.definition')
+              ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
+              : englishDefition
             : englishDefition
-          : englishDefition
-      const nextHasPunctuation =
-        node.next?.data && ['.', ',', ':'].includes(node.next.data)
-      const extra = nextHasPunctuation ? node.next.data : ''
-      if (nextHasPunctuation) node.next.data = ''
-      if (!definition?.length) console.log('Missing definition:', keyword)
-      return definition?.length ? (
-        <span style={{ whiteSpace: 'nowrap' }}>
-          <Keyword
-            definition={definition}
-            keyword={keyword}
-            forceEnglish={
-              i18n.language !== 'en' && englishDefition === definition
-            }
-          />
-          {extra}
-        </span>
-      ) : (
-        <span className="is-missing">{keyword}</span>
-      )
+        const nextHasPunctuation =
+          node.next?.data && ['.', ',', ':'].includes(node.next?.data)
+        const extra = nextHasPunctuation ? node.next?.data : ''
+        if (nextHasPunctuation) node.next.data = ''
+        if (!definition?.length) console.log('Missing definition:', keyword)
+        return definition?.length ? (
+          <>
+            <span style={{ whiteSpace: 'nowrap' }}>
+              <Keyword
+                definition={definition}
+                keyword={keyword}
+                forceEnglish={
+                  i18n.language !== 'en' && englishDefition === definition
+                }
+              />
+            </span>
+            {extra}
+          </>
+        ) : (
+          <span className="is-missing">{keyword}</span>
+        )
+      } catch (error) {
+        console.error('Error in code tag processing:', error)
+        return null
+      }
     }
   }
 
