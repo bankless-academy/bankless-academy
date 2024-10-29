@@ -62,10 +62,7 @@ const OptionMenu = ({
             </MenuItem>
           </ExternalLink>
           {!IS_WHITELABEL && (
-            <ExternalLink
-              href="https://app.dework.xyz/bankless-academy-25331/suggestions"
-              color="white"
-            >
+            <ExternalLink href="/feature-request" color="white">
               <MenuItem>
                 {t('Feature Request')}&nbsp;
                 <Gear />
