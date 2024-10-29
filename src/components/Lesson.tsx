@@ -874,12 +874,13 @@ const Lesson = ({
             position="relative"
             top={isSmallScreen ? '8px' : '-38px'}
             left={isSmallScreen ? '2px' : '-55px'}
-            size={isSmallScreen ? 'md' : 'lg'}
+            size="lg"
             iconSpacing="0"
             variant="secondaryBig"
             leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
             onClick={() => closeLesson()}
             p="0"
+            _hover={{ p: '0' }}
           ></Button>
         </Box>
       )}
@@ -1107,6 +1108,7 @@ const Lesson = ({
               leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
               ml={longSlide ? '600px' : '0'}
               p="0"
+              _hover={{ p: '0' }}
               iconSpacing="0"
             >
               {isSmallScreen ? '' : 'Prev'}

@@ -217,11 +217,12 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     position="relative"
                     top={isSmallScreen ? '-4px' : '-70px'}
                     left={isSmallScreen ? '-10px' : '-72px'}
-                    size={isSmallScreen ? 'md' : 'lg'}
+                    size="lg"
                     iconSpacing="0"
                     variant="secondaryBig"
                     leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
                     p="0"
+                    _hover={{ p: '0' }}
                   ></Button>
                 </InternalLink>
               </Box>
