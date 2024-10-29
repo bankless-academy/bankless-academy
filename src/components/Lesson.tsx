@@ -868,18 +868,18 @@ const Lesson = ({
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
-      {!lesson?.isPreview && (
+      {!lesson?.isPreview && !isSmallScreen && (
         <Box h="0">
           <Button
             position="relative"
             top={isSmallScreen ? '8px' : '-38px'}
-            left={isSmallScreen ? '2px' : '-67px'}
+            left={isSmallScreen ? '2px' : '-55px'}
             size={isSmallScreen ? 'md' : 'lg'}
             iconSpacing="0"
             variant="secondaryBig"
             leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
             onClick={() => closeLesson()}
-            p={isSmallScreen ? '0' : 'auto'}
+            p="0"
           ></Button>
         </Box>
       )}
@@ -1098,6 +1098,20 @@ const Lesson = ({
       </Box>
       <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
         <HStack flex="auto">
+          {isSmallScreen && (
+            <Button
+              ref={buttonLeftRef}
+              variant="secondaryBig"
+              size="lg"
+              onClick={() => closeLesson()}
+              leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+              ml={longSlide ? '600px' : '0'}
+              p="0"
+              iconSpacing="0"
+            >
+              {isSmallScreen ? '' : 'Prev'}
+            </Button>
+          )}
           {!isFirstSlide && (
             <Button
               ref={buttonLeftRef}
@@ -1107,7 +1121,7 @@ const Lesson = ({
               leftIcon={<ArrowBackIcon />}
               ml={longSlide ? '600px' : '0'}
             >
-              {isLastSlide && isSmallScreen ? '' : 'Prev'}
+              {isSmallScreen ? '' : 'Prev'}
             </Button>
           )}
           {
