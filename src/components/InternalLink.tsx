@@ -3,7 +3,6 @@ import {
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
 } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import { Mixpanel, getNodeText } from 'utils/index'
@@ -18,7 +17,6 @@ const InternalLink = ({
   ignoreLocale,
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
-  const router = useRouter()
   const [i18nextLng, setI18nextLng] = useState('en')
 
   useEffect(() => {
@@ -54,8 +52,8 @@ const InternalLink = ({
           const name = alt || getNodeText(children) || 'NO_NAME'
           Mixpanel.track('click_internal_link', { link, name })
           // HACK: fix link from explorer page
-          if (router.pathname.startsWith('/explorer/'))
-            window.location.href = iHref
+          // if (router.pathname.startsWith('/explorer/'))
+          //   window.location.href = iHref
         }}
       >
         {children}
