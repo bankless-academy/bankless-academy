@@ -103,6 +103,7 @@
     "rss-parser": "^3.13.0",
     "siwe": "^1.1.6",
     "stringify-object": "^3.3.0",
+    "three": "^0.170.0",
     "tls": "^0.0.1",
     "twitter-api-v2": "^1.15.2",
     "usehooks-ts": "^3.1.0",
