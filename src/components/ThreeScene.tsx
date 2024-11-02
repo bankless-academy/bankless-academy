@@ -1,31 +1,28 @@
-export interface Item {
+'use client'
+
+import { useEffect, useRef } from 'react'
+import * as THREE from 'three'
+
+interface Item {
   imageUrl: string
   text: string
   link: string
 }
 
-export const items: Item[] = [
-  {
-    imageUrl: '/images/vr/uniswap-logo.png',
-    text: 'Uniswap',
-    link: 'https://uniswap.org',
-  },
-  {
-    imageUrl: '/images/vr/opensea-logo.png',
-    text: 'OpenSea',
-    link: 'https://opensea.io',
-  },
-  // Add more items as needed
-]
-// components/ThreeScene.tsx
-import React, { useEffect, useRef } from 'react'
-import * as THREE from 'three'
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-
-const ThreeScene: React.FC = () => {
+export default function ThreeWorld() {
   const mountRef = useRef<HTMLDivElement>(null)
+  const items: Item[] = [
+    {
+      imageUrl: '/images/vr/uniswap-logo.png',
+      text: 'Uniswap',
+      link: 'https://uniswap.org',
+    },
+    {
+      imageUrl: '/images/vr/opensea-logo.png',
+      text: 'OpenSea',
+      link: 'https://opensea.io',
+    },
+  ]
 
   useEffect(() => {
     if (!mountRef.current) return
@@ -34,318 +31,150 @@ const ThreeScene: React.FC = () => {
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
       75,
-      mountRef.current.clientWidth / mountRef.current.clientHeight,
+      window.innerWidth / window.innerHeight,
       0.1,
       1000
     )
     const renderer = new THREE.WebGLRenderer({ antialias: true })
-
-    renderer.setSize(
-      mountRef.current.clientWidth,
-      mountRef.current.clientHeight
-    )
+    renderer.setSize(window.innerWidth, window.innerHeight)
     mountRef.current.appendChild(renderer.domElement)
 
-    // Lighting
-    const light = new THREE.AmbientLight(0xffffff)
-    scene.add(light)
-
-    // Add point light for better illumination
-    const pointLight = new THREE.PointLight(0x4444ff, 1, 100)
-    pointLight.position.set(0, 0, 5)
-    scene.add(pointLight)
-
-    // Position camera
+    // Camera position
     camera.position.z = 5
 
-    // Raycaster for click events
-    const raycaster = new THREE.Raycaster()
-    const mouse = new THREE.Vector2()
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
+    scene.add(ambientLight)
 
-    // Particles system
-    const createParticles = (position: THREE.Vector3) => {
-      const particlesGeometry = new THREE.BufferGeometry()
-      const particleCount = 50
-      const positions = new Float32Array(particleCount * 3)
-      const velocities: THREE.Vector3[] = []
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5)
+    directionalLight.position.set(0, 1, 2)
+    scene.add(directionalLight)
 
-      for (let i = 0; i < particleCount; i++) {
-        const i3 = i * 3
-        positions[i3] = position.x
-        positions[i3 + 1] = position.y
-        positions[i3 + 2] = position.z
+    // Create boxes for each item
+    const boxes: THREE.Mesh[] = []
+    const boxGeometry = new THREE.BoxGeometry(1.5, 2, 0.1)
+    const textureLoader = new THREE.TextureLoader()
 
-        velocities.push(
-          new THREE.Vector3(
-            (Math.random() - 0.5) * 0.1,
-            (Math.random() - 0.5) * 0.1,
-            (Math.random() - 0.5) * 0.1
-          )
-        )
-      }
-
-      particlesGeometry.setAttribute(
-        'position',
-        new THREE.Float32BufferAttribute(positions, 3)
-      )
-      const particlesMaterial = new THREE.PointsMaterial({
-        color: 0x4444ff,
-        size: 0.05,
+    items.forEach((item, index) => {
+      // Create material for the box
+      const boxMaterial = new THREE.MeshPhongMaterial({
+        color: 0xffffff,
         transparent: true,
         opacity: 0.8,
       })
 
-      const particles = new THREE.Points(particlesGeometry, particlesMaterial)
-      scene.add(particles)
+      const box = new THREE.Mesh(boxGeometry, boxMaterial)
+      box.position.x = (index - items.length / 2 + 0.5) * 2
+      boxes.push(box)
+      scene.add(box)
 
-      return { particles, velocities }
-    }
-
-    let activeParticles: {
-      particles: THREE.Points
-      velocities: THREE.Vector3[]
-    } | null = null
-
-    // Load font
-    const fontLoader = new FontLoader()
-    fontLoader.load('/fonts/helvetiker_regular.typeface.json', (font) => {
-      let xOffset = -items.length
-
-      // Define consistent image size
-      const IMAGE_WIDTH = 1
-      const IMAGE_HEIGHT = 1
-
-      items.forEach((item) => {
-        // Create a group to hold image and text
-        const group = new THREE.Group()
-        group.position.x = xOffset
-
-        // Create transparent white box to visualize group
-        const boxGeometry = new THREE.BoxGeometry(1.2, 1.5, 0.1)
-        const boxMaterial = new THREE.MeshPhongMaterial({
-          color: 0xffffff,
-          transparent: true,
-          opacity: 0.2,
-        })
-        const box = new THREE.Mesh(boxGeometry, boxMaterial)
-        box.position.y = -0.5
-        box.userData = { link: item.link } // Move link to box only
-        group.add(box)
-
-        // Load image texture
-        const textureLoader = new THREE.TextureLoader()
-        const texture = textureLoader.load(item.imageUrl)
-        texture.minFilter = THREE.LinearFilter
-        texture.magFilter = THREE.LinearFilter
-
-        // Create image plane with fixed dimensions
-        const geometry = new THREE.PlaneGeometry(IMAGE_WIDTH, IMAGE_HEIGHT)
-        const material = new THREE.MeshPhongMaterial({
+      // Load and add image
+      textureLoader.load(item.imageUrl, (texture) => {
+        const imageGeometry = new THREE.PlaneGeometry(1, 1)
+        const imageMaterial = new THREE.MeshBasicMaterial({
           map: texture,
-          emissive: new THREE.Color(0x4444ff),
-          emissiveIntensity: 0,
+          transparent: true,
         })
-        const plane = new THREE.Mesh(geometry, material)
-        group.add(plane)
+        const imageMesh = new THREE.Mesh(imageGeometry, imageMaterial)
+        imageMesh.position.z = 0.06
+        imageMesh.position.y = 0.2
+        box.add(imageMesh)
 
-        // Create text
-        const textGeometry = new TextGeometry(item.text, {
-          font: font,
-          size: 0.2,
-          height: 0.05,
-        })
-        const textMaterial = new THREE.MeshPhongMaterial({
-          color: 0xffffff,
-          emissive: new THREE.Color(0x4444ff),
-          emissiveIntensity: 0,
-        })
-        const textMesh = new THREE.Mesh(textGeometry, textMaterial)
+        // Add text
+        const canvas = document.createElement('canvas')
+        const context = canvas.getContext('2d')
+        if (context) {
+          canvas.width = 256
+          canvas.height = 64
+          context.fillStyle = '#000000'
+          context.font = 'bold 32px Arial'
+          context.textAlign = 'center'
+          context.fillText(item.text, canvas.width / 2, canvas.height / 2)
 
-        // Position text under the image
-        textMesh.position.x = -0.5
-        textMesh.position.y = -1
-        group.add(textMesh)
-
-        scene.add(group)
-        xOffset += 2
+          const textTexture = new THREE.CanvasTexture(canvas)
+          const textGeometry = new THREE.PlaneGeometry(1, 0.25)
+          const textMaterial = new THREE.MeshBasicMaterial({
+            map: textTexture,
+            transparent: true,
+          })
+          const textMesh = new THREE.Mesh(textGeometry, textMaterial)
+          textMesh.position.y = -0.6
+          textMesh.position.z = 0.06
+          box.add(textMesh)
+        }
       })
     })
 
-    // OrbitControls for navigation
-    const controls = new OrbitControls(camera, renderer.domElement)
-    controls.enableDamping = true
-    controls.dampingFactor = 0.25
-    controls.enableZoom = true
-    // Disable controls during hover/click interactions
-    controls.enabled = false
+    // Raycaster for interaction
+    const raycaster = new THREE.Raycaster()
+    const mouse = new THREE.Vector2()
+    let hoveredBox: THREE.Mesh | null = null
+
+    // Mouse move handler
+    const onMouseMove = (event: MouseEvent) => {
+      const rect = renderer.domElement.getBoundingClientRect()
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
+
+      raycaster.setFromCamera(mouse, camera)
+      const intersects = raycaster.intersectObjects(boxes)
+
+      // Reset all boxes to white
+      boxes.forEach((box) => {
+        ;(box.material as THREE.MeshPhongMaterial).color.setHex(0xffffff)
+      })
+
+      // Change cursor and color on hover
+      if (intersects.length > 0) {
+        hoveredBox = intersects[0].object as THREE.Mesh
+        ;(hoveredBox.material as THREE.MeshPhongMaterial).color.setHex(0xffd700)
+        document.body.style.cursor = 'pointer'
+      } else {
+        hoveredBox = null
+        document.body.style.cursor = 'default'
+      }
+    }
+
+    // Click handler
+    const onClick = () => {
+      if (hoveredBox) {
+        const index = boxes.indexOf(hoveredBox)
+        if (index !== -1) {
+          window.open(items[index].link, '_blank')
+        }
+      }
+    }
+
+    // Add event listeners
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('click', onClick)
 
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate)
-      controls.update()
-
-      // Update particles
-      if (activeParticles) {
-        const positions = activeParticles.particles.geometry.attributes.position
-          .array as Float32Array
-        for (let i = 0; i < positions.length / 3; i++) {
-          const i3 = i * 3
-          positions[i3] += activeParticles.velocities[i].x
-          positions[i3 + 1] += activeParticles.velocities[i].y
-          positions[i3 + 2] += activeParticles.velocities[i].z
-        }
-        activeParticles.particles.geometry.attributes.position.needsUpdate =
-          true
-      }
-
       renderer.render(scene, camera)
     }
     animate()
 
-    // Handle window resize
-    const onWindowResize = () => {
+    // Handle resize
+    const handleResize = () => {
       if (!mountRef.current) return
-
-      camera.aspect =
-        mountRef.current.clientWidth / mountRef.current.clientHeight
+      camera.aspect = window.innerWidth / window.innerHeight
       camera.updateProjectionMatrix()
-
-      renderer.setSize(
-        mountRef.current.clientWidth,
-        mountRef.current.clientHeight
-      )
+      renderer.setSize(window.innerWidth, window.innerHeight)
     }
-    window.addEventListener('resize', onWindowResize)
+    window.addEventListener('resize', handleResize)
 
-    // Event listener for clicks
-    const onMouseClick = (event: MouseEvent) => {
-      if (!mountRef.current) return
-
-      // Calculate mouse position in normalized device coordinates
-      mouse.x = (event.clientX / mountRef.current.clientWidth) * 2 - 1
-      mouse.y = -(event.clientY / mountRef.current.clientHeight) * 2 + 1
-
-      // Update the picking ray with the camera and mouse position
-      raycaster.setFromCamera(mouse, camera)
-
-      // Calculate objects intersecting the picking ray
-      const intersects = raycaster.intersectObjects(scene.children, true)
-
-      if (intersects.length > 0) {
-        const clickedObject = intersects[0].object
-        if (
-          clickedObject instanceof THREE.Mesh &&
-          clickedObject.userData.link
-        ) {
-          window.open(clickedObject.userData.link, '_blank')
-        }
-      }
-    }
-
-    let isHovering = false
-    let hoverTimeout: NodeJS.Timeout | null = null
-    let currentHoverObject: THREE.Mesh | null = null
-
-    // Event listener for mouse move to change cursor and show tooltip
-    const onMouseMove = (event: MouseEvent) => {
-      if (!mountRef.current) return
-
-      // Calculate mouse position in normalized device coordinates
-      mouse.x = (event.clientX / mountRef.current.clientWidth) * 2 - 1
-      mouse.y = -(event.clientY / mountRef.current.clientHeight) * 2 + 1
-
-      // Update the picking ray with the camera and mouse position
-      raycaster.setFromCamera(mouse, camera)
-
-      // Calculate objects intersecting the picking ray
-      const intersects = raycaster.intersectObjects(scene.children, true)
-
-      // Clear previous hover timeout
-      if (hoverTimeout) {
-        clearTimeout(hoverTimeout)
-      }
-
-      hoverTimeout = setTimeout(() => {
-        // Reset previous hover state
-        if (
-          currentHoverObject &&
-          currentHoverObject.material instanceof THREE.MeshPhongMaterial
-        ) {
-          currentHoverObject.material.emissiveIntensity = 0
-        }
-
-        // Remove previous particles if they exist and not hovering
-        if (activeParticles && !isHovering) {
-          scene.remove(activeParticles.particles)
-          activeParticles = null
-        }
-
-        if (intersects.length > 0) {
-          const hoveredObject = intersects[0].object
-          if (
-            hoveredObject instanceof THREE.Mesh &&
-            hoveredObject.userData.link
-          ) {
-            if (currentHoverObject !== hoveredObject) {
-              isHovering = true
-              currentHoverObject = hoveredObject
-              controls.enabled = false
-              mountRef.current!.style.cursor = 'pointer'
-              mountRef.current!.title = hoveredObject.userData.link
-
-              // Apply glow effect only to the box
-              if (hoveredObject.material instanceof THREE.MeshPhongMaterial) {
-                hoveredObject.material.emissive.setHex(0x4444ff)
-                hoveredObject.material.emissiveIntensity = 0.5
-              }
-
-              // Create particles around the hovered object if not already present
-              if (!activeParticles) {
-                activeParticles = createParticles(hoveredObject.position)
-              }
-            }
-          } else {
-            resetHoverState()
-          }
-        } else {
-          resetHoverState()
-        }
-      }, 100) // Add 100ms delay before updating hover state
-    }
-
-    const resetHoverState = () => {
-      isHovering = false
-      if (
-        currentHoverObject &&
-        currentHoverObject.material instanceof THREE.MeshPhongMaterial
-      ) {
-        currentHoverObject.material.emissiveIntensity = 0
-      }
-      currentHoverObject = null
-      controls.enabled = true
-      if (mountRef.current) {
-        mountRef.current.style.cursor = 'default'
-        mountRef.current.title = ''
-      }
-    }
-
-    mountRef.current.addEventListener('click', onMouseClick)
-    mountRef.current.addEventListener('mousemove', onMouseMove)
-
-    // Cleanup on unmount
+    // Cleanup
     return () => {
-      window.removeEventListener('resize', onWindowResize)
-      mountRef.current?.removeEventListener('click', onMouseClick)
-      mountRef.current?.removeEventListener('mousemove', onMouseMove)
-      if (hoverTimeout) {
-        clearTimeout(hoverTimeout)
+      if (mountRef.current) {
+        mountRef.current.removeChild(renderer.domElement)
       }
-      renderer.dispose()
-      mountRef.current?.removeChild(renderer.domElement)
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('click', onClick)
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
-  return <div ref={mountRef} style={{ width: '100%', height: '100vh' }} />
+  return <div ref={mountRef} className="w-full h-screen" />
 }
-
-export default ThreeScene
