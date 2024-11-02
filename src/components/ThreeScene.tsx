@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 interface Item {
   imageUrl: string
@@ -41,6 +42,12 @@ export default function ThreeWorld() {
 
     // Camera position
     camera.position.z = 5
+
+    // OrbitControls
+    const controls = new OrbitControls(camera, renderer.domElement)
+    controls.enableDamping = true
+    controls.dampingFactor = 0.25
+    controls.enableZoom = true
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
@@ -152,6 +159,7 @@ export default function ThreeWorld() {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate)
+      controls.update()
       renderer.render(scene, camera)
     }
     animate()
