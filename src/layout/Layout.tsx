@@ -79,8 +79,8 @@ const MobileButton = ({
           ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
           : '#3F3253'
       }
-      borderX={isActive ? '2px solid #9d72dc' : ''}
-      borderLeft={isActive ? '2px solid #9d72dc' : '2px solid #574572'}
+      borderRight={'2px solid #574572'}
+      borderTop={isActive ? '2px solid #9d72dc' : ''}
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -327,14 +327,6 @@ const Layout = ({
             label="Lessons"
             isActive={page === 'LESSON'}
             imageSrc="/images/lesson-logo-mobile.svg"
-            borderLeft={0}
-            borderRight={
-              page === 'HANDBOOK'
-                ? '0'
-                : page === 'LESSON'
-                ? '2px solid #9d72dc'
-                : '0'
-            }
             pwa={pwa}
           />
           <MobileButton
@@ -342,13 +334,6 @@ const Layout = ({
             label="Handbooks"
             isActive={page === 'HANDBOOK'}
             imageSrc="/images/handbook-logo-mobile.svg"
-            borderLeft={
-              page === 'LESSON'
-                ? '0'
-                : page === 'HANDBOOK'
-                ? '2px solid #9d72dc'
-                : '2px solid #574572'
-            }
             pwa={pwa}
           />
           <MobileButton
@@ -356,13 +341,6 @@ const Layout = ({
             label="Glossary"
             isActive={page === 'GLOSSARY'}
             imageSrc="/images/glossary-logo-mobile.svg"
-            borderLeft={
-              page === 'HANDBOOK'
-                ? '0'
-                : page === 'GLOSSARY'
-                ? '2px solid #9d72dc'
-                : '2px solid #574572'
-            }
             pwa={pwa}
           />
           <MobileButton
@@ -374,13 +352,6 @@ const Layout = ({
             label="Profile"
             isActive={page === 'PROFILE'}
             imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
-            borderLeft={
-              page === 'GLOSSARY'
-                ? '0'
-                : page === 'PROFILE'
-                ? '2px solid #9d72dc'
-                : '2px solid #574572'
-            }
             borderRight={0}
             pwa={pwa}
           />
