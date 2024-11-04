@@ -49,16 +49,21 @@ const Nav: React.FC = () => {
     typeof window !== 'undefined'
       ? (queryString.parse(window.location.search)?.fullembed || '')?.toString()
       : undefined
-  const webapp =
-    typeof window !== 'undefined'
-      ? window?.navigator?.standalone
-        ? 'true'
-        : (queryString.parse(window.location.search)?.webapp || '')?.toString()
-      : undefined
   const isEmbedded = typeof window !== 'undefined' && window !== window.parent
 
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
   const [onboarding] = useLocalStorage('onboarding', '')
+
+  const [pwa, setPwa] = useLocalStorage('pwa', false)
+
+  useEffect(() => {
+    if (
+      typeof window !== 'undefined' &&
+      window.location.search.includes('webapp=true')
+    ) {
+      setPwa(true)
+    }
+  }, [setPwa])
 
   useEffect(() => {
     // if onboarding is not done, and it's been more than 3 days since the last popup, show it again, max 3 times
@@ -76,14 +81,13 @@ const Nav: React.FC = () => {
   }, [onboarding])
 
   useEffect((): void => {
-    const embedValue =
-      webapp === 'true'
-        ? 'webapp'
-        : fullembed?.length
-        ? fullembed
-        : embed?.length
-        ? embed
-        : ''
+    const embedValue = pwa
+      ? 'webapp'
+      : fullembed?.length
+      ? fullembed
+      : embed?.length
+      ? embed
+      : ''
     // for front-end & back-end tracking
     if (
       localStorage.getItem('embed') === 'webapp' ||
@@ -168,10 +172,7 @@ const Nav: React.FC = () => {
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             ) : null}
             <ConnectWalletButton isSmallScreen={isSmallScreen} />
-            <OptionMenu
-              isSmallScreen={isSmallScreen}
-              isWebApp={webapp === 'true'}
-            />
+            <OptionMenu isSmallScreen={isSmallScreen} isWebApp={pwa} />
           </HStack>
         </Flex>
       </Box>

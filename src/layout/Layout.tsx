@@ -59,12 +59,14 @@ const MobileButton = ({
   link,
   label,
   imageSrc,
+  pwa,
   ...props
 }: {
   isActive: boolean
   link: string
   label: string
   imageSrc?: string
+  pwa: boolean
   [key: string]: any
 }): React.ReactElement => {
   const button = (
@@ -86,6 +88,7 @@ const MobileButton = ({
       color="white"
       {...props}
       pt={label === 'Profile' ? '6px' : '0'}
+      pb={pwa ? '16px' : '0'}
     >
       <Image
         src={imageSrc}
@@ -96,8 +99,19 @@ const MobileButton = ({
         borderRadius="50%"
         fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
         border={label === 'Profile' && isActive ? '2px solid #9d72dc' : ''}
+        mt={label === 'Profile' && pwa ? '4px' : '0'}
       />
-      <Box mt={label === 'Profile' ? '6px' : '-3px'}>{label}</Box>
+      <Box
+        mt={
+          label === 'Profile' && pwa
+            ? '4px'
+            : label === 'Profile'
+            ? '6px'
+            : '-3px'
+        }
+      >
+        {label}
+      </Box>
     </Box>
   )
   return (
@@ -122,6 +136,7 @@ const Layout = ({
   const [isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
   const addressLower = address?.toLowerCase()
+  const [pwa] = useLocalStorage('pwa', false)
   const username = address
     ? addressLower in nameCache &&
       nameCache[addressLower]?.name?.includes('.eth')
@@ -320,6 +335,7 @@ const Layout = ({
                 ? '2px solid #9d72dc'
                 : '0'
             }
+            pwa={pwa}
           />
           <MobileButton
             link="/lessons/handbook"
@@ -333,6 +349,7 @@ const Layout = ({
                 ? '2px solid #9d72dc'
                 : '2px solid #574572'
             }
+            pwa={pwa}
           />
           <MobileButton
             link="/glossary"
@@ -346,6 +363,7 @@ const Layout = ({
                 ? '2px solid #9d72dc'
                 : '2px solid #574572'
             }
+            pwa={pwa}
           />
           <MobileButton
             link={
@@ -364,6 +382,7 @@ const Layout = ({
                 : '2px solid #574572'
             }
             borderRight={0}
+            pwa={pwa}
           />
         </Box>
       )}
