@@ -14,7 +14,7 @@ import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
 
-export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | ''
+export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | 'INDEX' | ''
 
 const DesktopButton = ({
   isActive,
@@ -29,10 +29,10 @@ const DesktopButton = ({
 }): React.ReactElement => {
   const button = (
     <Box w="100%" h="100%" display="flex" alignItems="center" color="white">
-      <Box ml="4" display="flex">
+      <Box ml="6" display="flex">
         <Image src={imageSrc} />
       </Box>
-      <Box ml="4" fontSize="xl" fontWeight="semibold">
+      <Box ml="6" fontSize="xl" fontWeight="semibold" textAlign="center">
         {label}
       </Box>
     </Box>
@@ -48,7 +48,6 @@ const DesktopButton = ({
       borderY={isActive ? '2px solid #9d72dc' : ''}
       borderBottom={isActive ? '2px solid #9d72dc' : '2px solid #574572'}
       mt={isActive ? '-2px' : '0'}
-      // pb={isActive ? '2px' : ''}
     >
       {isActive ? button : <InternalLink href={link}>{button}</InternalLink>}
     </Box>
@@ -60,38 +59,63 @@ const MobileButton = ({
   link,
   label,
   imageSrc,
+  pwa,
+  ...props
 }: {
   isActive: boolean
   link: string
   label: string
   imageSrc?: string
+  pwa: boolean
+  [key: string]: any
 }): React.ReactElement => {
   const button = (
     <Box
-      borderRadius="50%"
-      w="52px"
-      h="52px"
+      flex="1"
+      w="100%"
+      h="100%"
       background={
         isActive
           ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
           : '#3F3253'
       }
-      border={isActive ? '2px solid #9d72dc' : ''}
+      borderX={isActive ? '2px solid #9d72dc' : ''}
+      borderLeft={isActive ? '2px solid #9d72dc' : '2px solid #574572'}
       display="flex"
       alignItems="center"
       justifyContent="center"
+      flexDirection="column"
+      color="white"
+      {...props}
+      pt={label === 'Profile' ? '6px' : '0'}
+      pb={pwa ? '16px' : '0'}
     >
       <Image
         src={imageSrc}
         alt={label}
         title={label}
+        w={label === 'Profile' ? '38px' : '52px'}
+        h={label === 'Profile' ? '38px' : '52px'}
         borderRadius="50%"
         fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
+        border={label === 'Profile' && isActive ? '2px solid #9d72dc' : ''}
+        mt={label === 'Profile' && pwa ? '4px' : '0'}
       />
+      <Box
+        mt={
+          label === 'Profile' && pwa
+            ? '4px'
+            : label === 'Profile'
+            ? '6px'
+            : '-3px'
+        }
+      >
+        {label}
+      </Box>
     </Box>
   )
   return (
-    <Box>
+    <Box flex="1">
       {isActive ? button : <InternalLink href={link}>{button}</InternalLink>}
     </Box>
   )
@@ -112,6 +136,7 @@ const Layout = ({
   const [isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
   const addressLower = address?.toLowerCase()
+  const [pwa] = useLocalStorage('pwa', false)
   const username = address
     ? addressLower in nameCache &&
       nameCache[addressLower]?.name?.includes('.eth')
@@ -132,6 +157,10 @@ const Layout = ({
 
   async function openModal() {
     await open({ view: 'Connect' })
+  }
+
+  if (page === 'INDEX' && !isSmallScreen) {
+    return <>{children}</>
   }
 
   const menuBarWidth = '280px'
@@ -156,10 +185,14 @@ const Layout = ({
         display="block"
         backgroundColor="#161515"
       >
-        <Announcement />
-        <Container maxW="container.xl" pb={isSmallScreen ? '16' : '0'}>
-          {children}
-        </Container>
+        {page !== 'GLOSSARY' && <Announcement />}
+        {page === 'INDEX' || page === '' ? (
+          children
+        ) : (
+          <Container maxW="container.xl" pb={isSmallScreen ? '16' : '0'}>
+            {children}
+          </Container>
+        )}
       </Box>
       {!isSmallScreen ? (
         <>
@@ -258,13 +291,13 @@ const Layout = ({
             <Box>
               <DesktopButton
                 link="/lessons"
-                label="Lesson Select"
+                label="Lessons"
                 isActive={page === 'LESSON'}
                 imageSrc="/images/lesson-logo.svg"
               />
               <DesktopButton
                 link="/lessons/handbook"
-                label="Handbook"
+                label="Handbooks"
                 isActive={page === 'HANDBOOK'}
                 imageSrc="/images/handbook-logo.svg"
               />
@@ -286,11 +319,52 @@ const Layout = ({
           bg="black"
           display="flex"
           zIndex="2"
-          justifyContent="space-around"
-          placeItems="center"
           borderTop="1px solid #222222"
         >
           {/* Mobile menu */}
+          <MobileButton
+            link="/lessons"
+            label="Lessons"
+            isActive={page === 'LESSON'}
+            imageSrc="/images/lesson-logo-mobile.svg"
+            borderLeft={0}
+            borderRight={
+              page === 'HANDBOOK'
+                ? '0'
+                : page === 'LESSON'
+                ? '2px solid #9d72dc'
+                : '0'
+            }
+            pwa={pwa}
+          />
+          <MobileButton
+            link="/lessons/handbook"
+            label="Handbooks"
+            isActive={page === 'HANDBOOK'}
+            imageSrc="/images/handbook-logo-mobile.svg"
+            borderLeft={
+              page === 'LESSON'
+                ? '0'
+                : page === 'HANDBOOK'
+                ? '2px solid #9d72dc'
+                : '2px solid #574572'
+            }
+            pwa={pwa}
+          />
+          <MobileButton
+            link="/glossary"
+            label="Glossary"
+            isActive={page === 'GLOSSARY'}
+            imageSrc="/images/glossary-logo-mobile.svg"
+            borderLeft={
+              page === 'HANDBOOK'
+                ? '0'
+                : page === 'GLOSSARY'
+                ? '2px solid #9d72dc'
+                : '2px solid #574572'
+            }
+            pwa={pwa}
+          />
           <MobileButton
             link={
               username !== ''
@@ -300,24 +374,15 @@ const Layout = ({
             label="Profile"
             isActive={page === 'PROFILE'}
             imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
-          />
-          <MobileButton
-            link="/lessons"
-            label="Essentials"
-            isActive={page === 'LESSON'}
-            imageSrc="/images/lesson-logo-mobile.svg"
-          />
-          <MobileButton
-            link="/lessons/handbook"
-            label="Handbook"
-            isActive={page === 'HANDBOOK'}
-            imageSrc="/images/handbook-logo-mobile.svg"
-          />
-          <MobileButton
-            link="/glossary"
-            label="Glossary"
-            isActive={page === 'GLOSSARY'}
-            imageSrc="/images/glossary-logo-mobile.svg"
+            borderLeft={
+              page === 'GLOSSARY'
+                ? '0'
+                : page === 'PROFILE'
+                ? '2px solid #9d72dc'
+                : '2px solid #574572'
+            }
+            borderRight={0}
+            pwa={pwa}
           />
         </Box>
       )}

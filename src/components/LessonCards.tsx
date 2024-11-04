@@ -154,7 +154,7 @@ const LessonCards = ({
           mb={8}
         >
           {level === 'Essentials'
-            ? `Begin your crypto journey with these entry-level topics and quests.`
+            ? `Begin your crypto journey with these entry-level lessons.`
             : level === 'Level 1'
             ? `Level up your knowledge and abilities with more specific topics and quests.`
             : level === 'Community Lessons'
