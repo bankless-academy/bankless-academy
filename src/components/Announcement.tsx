@@ -30,12 +30,14 @@ const Announcement = (): React.ReactElement => {
                 style={{ transform: 'scaleX(-1)' }}
               />
             </Box>
-            <Box fontWeight="bold" fontSize={['14px', '18px']}>
-              <span style={{ marginRight: '4px' }}>
+            <Box fontSize={['14px', '18px']}>
+              <Box as="span" style={{ marginRight: '4px' }} fontWeight="bold">
                 {announcement.announcement}
-              </span>
+              </Box>
               <ExternalLink underline="true" href={announcement.link}>
-                {announcement.description}
+                <Box as="span" fontWeight="normal">
+                  {announcement.description}
+                </Box>
               </ExternalLink>
             </Box>
           </Box>
