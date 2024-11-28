@@ -1024,7 +1024,7 @@ export const fetchExplorerData = async (address: string): Promise<{
   `;
 
   try {
-    const response = await fetch('https://indexer.bigdevenergy.link/96427d0/v1/graphql', {
+    const response = await fetch('https://indexer.dev.hyperindex.xyz/8daa27c/v1/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
