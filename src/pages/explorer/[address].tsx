@@ -23,7 +23,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import Badges from 'components/Badges'
 import Card from 'components/Card'
 import { MetaData } from 'components/Head'
-import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
+import { DEFAULT_AVATAR, DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { UserType } from 'entities/user'
 import {
   emailRegex,
@@ -320,7 +320,12 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 margin="auto"
                 borderRadius="50%"
                 backgroundColor="black"
-                src={user.avatar}
+                fallbackSrc={DEFAULT_AVATAR}
+                src={
+                  user.ensName?.endsWith('.eth')
+                    ? `https://metadata.ens.domains/mainnet/avatar/${user.ensName}`
+                    : user.avatar
+                }
               />
               {isMyProfile && (
                 <Box position="absolute" top="25px" right="25px">

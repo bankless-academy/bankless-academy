@@ -72,6 +72,7 @@ export default async function handler(
     badges,
   } = req.query
   let addressLowerCase = address.toLowerCase()
+  const ensNameTemp = addressLowerCase?.endsWith('.eth') ? addressLowerCase : null
   // console.log('address', address)
 
   if (!address) return res.status(400).json({ error: 'Wrong params' })
@@ -130,7 +131,7 @@ export default async function handler(
       const emptyUser: UserType = {
         address: addressLowerCase,
         emailLinked: false,
-        ensName: null,
+        ensName: ensNameTemp,
         avatar: DEFAULT_AVATAR,
         stats: {},
         badgeTokenIds: [],
