@@ -48,7 +48,7 @@ const WalletBasics = (
                     lineHeight="1.5em"
                   >
                     {t('1. Download and install the Zerion wallet from ')}
-                    <ExternalLink href="https://zerion.io/">
+                    <ExternalLink href="https://link.zerion.io/referral?code=H9C9AZOTA">
                       zerion.io
                     </ExternalLink>
                   </Box>
