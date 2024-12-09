@@ -382,6 +382,19 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 </Text>
               </Box>
             )}
+            {/* ENS edit profile */}
+            {isMyProfile && user.ensName?.endsWith('.eth') && (
+              <Box textAlign="right" m="4">
+                <ExternalLink href={`https://app.ens.domains/${user.ensName}`}>
+                  <Button
+                    variant="secondary"
+                    leftIcon={<Image src="/images/ens.svg" />}
+                  >
+                    Edit profile
+                  </Button>
+                </ExternalLink>
+              </Box>
+            )}
             {/* EFP stats */}
             {efpStats !== null && isFollowing !== null && (
               <Box
