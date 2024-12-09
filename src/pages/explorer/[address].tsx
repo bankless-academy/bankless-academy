@@ -107,6 +107,7 @@ export default function Page({
   const profileUrl =
     typeof window !== 'undefined' ? `${window.location.href}` : ''
   const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
+  const [isMobileScreen] = useMediaQuery(['(max-width: 800px)'])
   const { referral, badge, lng } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
@@ -125,6 +126,11 @@ export default function Page({
   const toast = useToast()
   const [ens] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
+  const [efpStats, setEfpStats] = useState<{
+    followers_count: number
+    following_count: number
+  } | null>(null)
+  const [isFollowing, setIsFollowing] = useState<boolean>(false)
 
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
@@ -219,6 +225,58 @@ export default function Page({
     }
   }, [passportLS])
 
+  useEffect(() => {
+    const fetchEfpStats = async () => {
+      try {
+        const res = await fetch(
+          `https://api.ethfollow.xyz/api/v1/users/${profileAddress}/stats`
+        )
+        if (!res.ok) {
+          console.error('Failed to fetch EFP stats.')
+          return
+        }
+        const stats = await res.json()
+        if (
+          stats &&
+          stats?.followers_count >= 0 &&
+          stats?.following_count >= 0
+        ) {
+          setEfpStats(stats)
+        }
+      } catch (error) {
+        console.error('Error fetching EFP stats:', error)
+      }
+    }
+
+    if (profileAddress) {
+      fetchEfpStats()
+    }
+  }, [profileAddress])
+
+  useEffect(() => {
+    const fetchEfpStats = async () => {
+      try {
+        const res = await fetch(
+          `https://api.ethfollow.xyz/api/v1/users/${profileAddress}/${address}/followerState`
+        )
+        if (!res.ok) {
+          console.error('Failed to fetch follower state.')
+          return
+        }
+        const followerState = await res.json()
+        if (followerState && followerState?.state) {
+          setIsFollowing(followerState?.state?.follow)
+        }
+      } catch (error) {
+        console.error('Error fetching follower state:', error)
+      }
+    }
+
+    if (profileAddress && address) {
+      fetchEfpStats()
+    }
+  }, [profileAddress, address])
+
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
     collectibles.push(user?.stats.datadisks[i])
@@ -239,7 +297,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   if (user)
     // TODO: create Profile component
     return (
-      <Layout page={isMyProfile ? 'PROFILE' : ''}>
+      <Layout page={isMyProfile ? 'PROFILE' : 'PROFILE'}>
         <Container maxW="container.lg" paddingX={isSmallScreen ? '0' : '16px'}>
           <Card
             mt="180px"
@@ -322,6 +380,68 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     <Box>&nbsp;]-</Box>
                   </Box>
                 </Text>
+              </Box>
+            )}
+            {/* ENS edit profile */}
+            {isMyProfile && (
+              <Box textAlign="right" m="4">
+                <ExternalLink
+                  href={`https://app.ens.domains/${
+                    user.ensName?.endsWith('.eth') ? user.ensName : ''
+                  }`}
+                >
+                  <Button
+                    variant="secondary"
+                    leftIcon={<Image src="/images/ens.svg" />}
+                  >
+                    Edit profile
+                  </Button>
+                </ExternalLink>
+              </Box>
+            )}
+            {/* EFP stats */}
+            {efpStats !== null && isFollowing !== null && (
+              <Box
+                display="flex"
+                placeContent="center"
+                alignItems="center"
+                gap="32px"
+                fontSize="xl"
+                fontWeight="bold"
+                backgroundColor="#161515"
+                borderBottomRadius={isMyProfile ? '0' : '2xl'}
+                padding="16px"
+              >
+                <Box>
+                  <ExternalLink
+                    href={`https://ethfollow.xyz/${profileAddress}`}
+                  >
+                    <Button
+                      variant={isFollowing ? 'secondary' : 'primary'}
+                      leftIcon={
+                        <Image
+                          src={
+                            isFollowing
+                              ? '/images/efp-white.svg'
+                              : '/images/efp.svg'
+                          }
+                        />
+                      }
+                    >
+                      {isFollowing ? 'Following' : 'Follow'}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <Box
+                  display="flex"
+                  flexDirection={isMobileScreen ? 'column' : 'row'}
+                  gap="16px"
+                >
+                  <Box>{`${efpStats.followers_count} Follower${
+                    efpStats.followers_count > 1 ? 's' : ''
+                  }`}</Box>
+                  <Box>{`${efpStats.following_count} Following`}</Box>
+                </Box>
               </Box>
             )}
             {isMyProfile && (

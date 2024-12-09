@@ -227,6 +227,7 @@ const Layout = ({
                       fontSize="xl"
                       fontWeight="bold"
                       textTransform="uppercase"
+                      whiteSpace="nowrap"
                     >
                       {ens.includes('.') ? ens : shortenAddress(username)}
                     </Box>
