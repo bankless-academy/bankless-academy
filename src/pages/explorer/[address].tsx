@@ -383,9 +383,13 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               </Box>
             )}
             {/* ENS edit profile */}
-            {isMyProfile && user.ensName?.endsWith('.eth') && (
+            {isMyProfile && (
               <Box textAlign="right" m="4">
-                <ExternalLink href={`https://app.ens.domains/${user.ensName}`}>
+                <ExternalLink
+                  href={`https://app.ens.domains/${
+                    user.ensName?.endsWith('.eth') ? user.ensName : ''
+                  }`}
+                >
                   <Button
                     variant="secondary"
                     leftIcon={<Image src="/images/ens.svg" />}
