@@ -61,3 +61,6 @@ export const BADGE_TO_KUDOS_IDS = {
   '8': '14886',
   '9': '15463'
 }
+
+// TODO: update to prod
+export const BASE_BADGE_CONTRACT_ADDRESS = '0x0bc0599049eedfdee459c12692ac1063eca932a6'

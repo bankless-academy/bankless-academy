@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-import { formatEther } from 'viem'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
@@ -11,11 +10,13 @@ import {
   ALCHEMY_KEY_BACKEND,
   DOMAIN_URL,
 } from 'constants/index'
-import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
+import { BASE_BADGE_CONTRACT_ADDRESS, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
 import { api } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
 import { verifySignature } from 'utils/SignatureUtil'
+import { base } from 'viem/chains'
+import { JsonRpcProvider } from '@ethersproject/providers'
 
 export default async function handler(
   req: NextApiRequest,
@@ -186,9 +187,10 @@ export default async function handler(
           status: questStatus,
         })
       }
-      // Cancel tx if gas > 300 gwei
+      // Cancel tx if gas > 0.05 gwei
+      const GWEI_LIMIT = 0.05
       // estimate gas fees
-      const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=137`, {
+      const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=${base.id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -199,8 +201,8 @@ export default async function handler(
       console.log(estimation)
       console.log('estimation.blockPrices', estimation.blockPrices)
       // 99% confidence
-      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxFeePerGas || 40
-      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxPriorityFeePerGas || 40
+      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxFeePerGas || 0.1
+      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxPriorityFeePerGas || 0.001
       const options: any = {}
       if (IS_BADGE_PROD) {
         options.maxFeePerGas = ethers.utils.parseUnits(
@@ -213,8 +215,8 @@ export default async function handler(
         )
       }
       console.log(options)
-      if (maxFeePerGasInGwei > 500) {
-        questStatus = 'Polygon is currently experiencing high gas prices... try again in 1 hour.'
+      if (maxFeePerGasInGwei > GWEI_LIMIT) {
+        questStatus = 'Base is currently experiencing high gas prices... try again in 1 hour.'
         console.log(questStatus)
         return res.status(403).json({ status: questStatus })
       }
@@ -225,94 +227,52 @@ export default async function handler(
 
       console.log('mint !!!!!!!!!')
       // send email alert if balance < 1 MATIC
+      // TODO: check of Base balance is enough
       // TODO: add alternate provider + handle timeout
-      const provider = new ethers.providers.AlchemyProvider(IS_BADGE_PROD ? 'matic' : 'maticmum', ALCHEMY_KEY_BACKEND)
-      const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
-      console.log('balance: ', balance)
-      if (parseInt(balance) < 1) {
-        console.log('low balance')
-        trackBE(address, 'low_balance')
-      }
+      const provider = new JsonRpcProvider(`https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
+      // const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
+      // console.log('balance: ', balance)
+      // if (parseInt(balance) < 1) {
+      //   console.log('low balance')
+      //   trackBE(address, 'low_balance')
+      // }
       // prod: 0x472A74C4F7e281e590Bed861daa66721A6ACADBC
       // dev: 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
+      // TODO: replace with smart wallet (easier to manage gas fees + limits)
       const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
-      const contract = new ethers.Contract(BADGE_ADDRESS, [
+      const contract = new ethers.Contract(BASE_BADGE_CONTRACT_ADDRESS, [
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "account",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "id",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "bytes",
+              "internalType": "bytes[]",
               "name": "data",
-              "type": "bytes"
+              "type": "bytes[]"
             }
           ],
-          "name": "mint",
+          "name": "multicall",
           "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
-        },
+        }
       ], signer)
-      const contractFunction = 'mint(address,uint256,uint256,bytes)'
-      const functionParams = [address.toLowerCase(), badgeId, 1, '0x00']
-      // console.log(functionParams)
-      try {
-        // transaction simulation
-        const simulation = await contract.callStatic[contractFunction](...functionParams)
-        console.log('simulation', simulation)
-      } catch (error) {
-        console.log(error)
-        return res.status(500).json({
-          error: 'simulation fail',
-          status: error?.reason,
-        })
-      }
+
+      // Construct multicall data with dynamic badgeId
+      const multicallData = [
+        `0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000c4c238d1ee000000000000000000000000da1d8a345fc6934da60e81b392f485cbfd350eae00000000000000000000000000000000000000000000000000000000000000${badgeId.toString(16).padStart(2, '0')}000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`
+      ]
 
       let mint;
       try {
-        mint = await contract[contractFunction](...functionParams, options)
+        mint = await contract.multicall(multicallData, options)
       } catch (error) {
-        options.gasLimit = ethers.utils.hexlify(100000); // Higher gas limit for complex transactions
-        options.maxFeePerGas = ethers.utils.parseUnits('330', 'gwei'); // Higher max fee for faster processing
-        options.maxPriorityFeePerGas = ethers.utils.parseUnits('80', 'gwei'); // Higher priority fee to incentivize miners
-        console.log('Updated options with higher gas fees:', options);
-        mint = await contract[contractFunction](...functionParams, options);
-        // if (error.code === 'SERVER_ERROR' && error.error && error.error.code === -32000) {
-        //   console.log('Transaction underpriced. Increasing maxPriorityFeePerGas...');
-        //   options.maxPriorityFeePerGas = ethers.utils.parseUnits('25', 'gwei');
-        //   console.log('Updated options:', options);
-        //   mint = await contract[contractFunction](...functionParams, options);
-        // } else if (error.code === 'UNPREDICTABLE_GAS_LIMIT') {
-        //   console.log('Unpredictable gas limit. Setting manual gas limit...');
-        //   options.gasLimit = ethers.utils.hexlify(550000);
-        //   console.log('Updated options:', options);
-        //   mint = await contract[contractFunction](...functionParams, options);
-        // } else if (error.code === 'UNPREDICTABLE_GAS_LIMIT' && error.error && error.error.code === -32000) {
-        //   console.log('Max priority fee per gas higher than max fee per gas. Adjusting fees...');
-        //   options.maxPriorityFeePerGas = ethers.utils.parseUnits('10', 'gwei');
-        //   options.maxFeePerGas = ethers.utils.parseUnits('20', 'gwei');
-        //   console.log('Updated options:', options);
-        //   mint = await contract[contractFunction](...functionParams, options);
-        // } else {
-        //   throw error;
-        // }
+        console.log('error', error)
+        // options.gasLimit = ethers.utils.hexlify(100000)
+        // options.maxFeePerGas = ethers.utils.parseUnits('330', 'gwei')
+        // options.maxPriorityFeePerGas = ethers.utils.parseUnits('80', 'gwei')
+        // console.log('Updated options with higher gas fees:', options)
+        // mint = await contract.multicall(multicallData, options)
       }
 
-      // DEV: uncomment this line to test simulate minting
-      // const mint = { hash: 'test' }
       console.log(mint)
 
       if (mint?.hash) {
