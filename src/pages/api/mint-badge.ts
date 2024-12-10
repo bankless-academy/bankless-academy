@@ -188,7 +188,7 @@ export default async function handler(
         })
       }
       // Cancel tx if gas > 0.05 gwei
-      const GWEI_LIMIT = 0.05
+      const GWEI_LIMIT = 0.2
       // estimate gas fees
       const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=${base.id}`, {
         method: 'GET',
@@ -197,22 +197,20 @@ export default async function handler(
           'Authorization': process.env.BLOCKNATIVE_API_KEY
         },
       })).json()
-      // select confidence: 95% = [1]
-      console.log(estimation)
-      console.log('estimation.blockPrices', estimation.blockPrices)
-      // 99% confidence
-      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxFeePerGas || 0.1
-      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[0].maxPriorityFeePerGas || 0.001
+      console.log('estimation.blockPrices', JSON.stringify(estimation.blockPrices, null, 2))
+      // select confidence: 90% confidence [2]
+      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[2].maxFeePerGas || 0.2
+      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[2].maxPriorityFeePerGas || 0.001
       const options: any = {}
       // 160k gas limit
       // options.gasLimit = ethers.utils.hexlify(160000)
       if (IS_BADGE_PROD) {
         options.maxFeePerGas = ethers.utils.parseUnits(
-          Math.ceil(maxFeePerGasInGwei) + '',
+          maxFeePerGasInGwei.toFixed(9),
           'gwei'
         )
         options.maxPriorityFeePerGas = ethers.utils.parseUnits(
-          Math.ceil(maxPriorityFeePerGasInGwei) + '',
+          maxPriorityFeePerGasInGwei.toFixed(9),
           'gwei'
         )
       }

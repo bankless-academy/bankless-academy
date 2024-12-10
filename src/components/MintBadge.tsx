@@ -9,11 +9,11 @@ import { Gear, SealCheck, ShootingStar } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { wagmiConfig } from 'utils/wagmi'
-import { polygon } from 'viem/chains'
+import { base } from 'viem/chains'
 
 import ExternalLink from 'components/ExternalLink'
 import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
-import { BADGE_EXPLORER } from 'constants/badges'
+import { BADGE_EXPLORER, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { api } from 'utils/index'
 import PassportModal from 'components/PassportModal'
@@ -61,7 +61,7 @@ const MintBadge = ({
   }
 
   const { isLoading, isSuccess } = useWaitForTransactionReceipt({
-    chainId: polygon.id,
+    chainId: base.id,
     hash: hash as any,
     pollingInterval: 1_000,
   })
@@ -83,7 +83,7 @@ const MintBadge = ({
                   <ExternalLink
                     underline="true"
                     href={txLink}
-                    alt="Polyscan transaction link"
+                    alt="Basescan transaction link"
                   >
                     {`${txLink.substring(0, 50)}...`}
                   </ExternalLink>
@@ -101,7 +101,7 @@ const MintBadge = ({
 
   useEffect(() => {
     if (isSuccess) {
-      const zerionLink = `https://app.zerion.io/nfts/polygon/0x3436d8af0b617deef5aadbafc56f293e102dd886:${badgeId}?address=${address}`
+      const zerionLink = `https://app.zerion.io/nfts/base/${BASE_BADGE_CONTRACT_ADDRESS}:${badgeId}?address=${address}`
       toast.closeAll()
       setShowConfetti(true)
       toast({
