@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
@@ -11,7 +12,7 @@ import {
   DOMAIN_URL,
 } from 'constants/index'
 import { BASE_BADGE_CONTRACT_ADDRESS, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
-import { api } from 'utils/index'
+import { api, fetchExplorerData } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
 import { verifySignature } from 'utils/SignatureUtil'
@@ -77,7 +78,7 @@ export default async function handler(
       return res.status(403).json({ error: 'credentialId not found' })
 
     const [questCompleted] = await db(TABLES.completions)
-      .select(TABLE.completions.id, TABLE.completions.transaction_at, TABLE.completions.transaction_hash)
+      .select(TABLE.completions.id, TABLE.completions.transaction_at, TABLE.completions.transaction_hash, TABLE.completions.credential_asked_at)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
       .where(TABLE.completions.is_quest_completed, true)
@@ -85,11 +86,42 @@ export default async function handler(
 
     let questStatus = ''
 
+    // Ignore minting if credential_asked_at less than 30 seconds ago
+    const credentialAskedAt = new Date(questCompleted.credential_asked_at)
+    const now = new Date()
+    const diff = (now.getTime() - credentialAskedAt.getTime()) / 1000
+    if (questCompleted?.credential_asked_at && diff < 30) {
+      questStatus = 'Minting already in progress...'
+      console.log(questStatus)
+      return res.status(200).json({ status: questStatus })
+    }
+
     // Exception: No quest page for Ethereum Basics (badgeId !== 14)
     if (!questCompleted?.id && badgeId !== 14) {
       questStatus = 'quest not completed'
       console.log(questStatus)
       return res.status(403).json({ status: questStatus })
+    }
+
+    // update credential_asked_at
+    await db(TABLES.completions)
+      .where(TABLE.completions.id, questCompleted.id)
+      .update({ credential_asked_at: db.raw("NOW()") })
+
+    console.log('questCompleted', questCompleted)
+
+    const explorerData = await fetchExplorerData(address)
+
+    if (explorerData.failed) {
+      questStatus = 'Explorer data not found'
+      console.log(questStatus)
+      return res.status(200).json({ status: questStatus })
+    }
+
+    if (explorerData.badges.includes(badgeId)) {
+      questStatus = 'Badge already minted.'
+      console.log(questStatus)
+      return res.status(200).json({ status: questStatus })
     }
 
     if (IS_BADGE_PROD && questCompleted?.transaction_at) {
@@ -266,6 +298,10 @@ export default async function handler(
       let mint;
       try {
         mint = await contract.multicall(multicallData, options)
+        // // simulate mint
+        // mint = {
+        //   hash: '0x7a23abe9306e6f499c582e45fa8ffd6e3fde4c85f37a35c055bae01d6aa3213d'
+        // }
       } catch (error) {
         console.log('error', error)
         // options.gasLimit = ethers.utils.hexlify(100000)
