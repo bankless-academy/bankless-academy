@@ -25,8 +25,7 @@ export const BADGE_ADDRESS = IS_BADGE_PROD ? '0x3436d8af0b617DeEF5AADBaFC56f293e
 
 export const BADGE_EXPLORER = 'https://basescan.org/'
 
-// TODO: update to prod
-export const BASE_BADGE_CONTRACT_ADDRESS = '0x0bc0599049eedfdee459c12692ac1063eca932a6'
+export const BASE_BADGE_CONTRACT_ADDRESS = '0xfc902e91affd9dd02df4c1e57dac7b096512f286'
 
 export const BADGE_OPENSEA_URL = `https://opensea.io/assets/base/${BASE_BADGE_CONTRACT_ADDRESS}/`
 
