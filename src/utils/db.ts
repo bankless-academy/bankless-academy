@@ -67,9 +67,10 @@ export const TABLE = {
     // credential_claimed_at: 'completions.credential_claimed_at',
     transaction_at: 'completions.transaction_at',
     transaction_hash: 'completions.transaction_hash',
-    is_quest_completed: 'is_quest_completed',
-    is_quest_conversion: 'is_quest_conversion',
-    quest_completed_at: 'quest_completed_at'
+    is_quest_completed: 'completions.is_quest_completed',
+    is_quest_conversion: 'completions.is_quest_conversion',
+    quest_completed_at: 'completions.quest_completed_at',
+    credential_asked_at: 'completions.credential_asked_at'
   },
 }
 
