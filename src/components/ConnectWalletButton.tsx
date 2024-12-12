@@ -203,6 +203,9 @@ const ConnectWalletButton = ({
         : await getEnsName(wagmiConfig, {
             address,
             chainId: mainnet.id,
+          }).catch((error) => {
+            console.error('Error fetching ENS name:', error)
+            return null // Return null if there's an error
           })
     // console.log(ensName)
     if (ensName) {
