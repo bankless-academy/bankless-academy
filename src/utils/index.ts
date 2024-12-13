@@ -1036,7 +1036,7 @@ export const fetchExplorerData = async (address: string): Promise<{
   try {
     // DEV: local indexer
     const isLocal = false
-    const response = await fetch(isLocal ? 'http://localhost:8080/v1/graphql' : 'https://indexer.dev.hyperindex.xyz/8daa27c/v1/graphql', {
+    const response = await fetch(isLocal ? 'http://localhost:8080/v1/graphql' : 'https://indexer.dev.hyperindex.xyz/5123782/v1/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
