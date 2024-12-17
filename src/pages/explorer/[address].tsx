@@ -397,7 +397,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 >
                   <Button
                     variant="secondary"
-                    leftIcon={<Image src="/images/ens.svg" />}
+                    leftIcon={<Image h="20px" src="/images/ens.svg" />}
                   >
                     Edit profile
                   </Button>
@@ -425,6 +425,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                       variant={isFollowing ? 'secondary' : 'primary'}
                       leftIcon={
                         <Image
+                          h="20px"
                           src={
                             isFollowing
                               ? '/images/efp-white.svg'
