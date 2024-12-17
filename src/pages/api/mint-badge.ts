@@ -87,7 +87,7 @@ export default async function handler(
     let questStatus = ''
 
     // Ignore minting if credential_asked_at less than 30 seconds ago
-    if (questCompleted) {
+    if (questCompleted?.credential_asked_at) {
       const credentialAskedAt = new Date(questCompleted.credential_asked_at)
       const now = new Date()
       const diff = (now.getTime() - credentialAskedAt.getTime()) / 1000
@@ -106,9 +106,13 @@ export default async function handler(
     }
 
     // update credential_asked_at
-    await db(TABLES.completions)
-      .where(TABLE.completions.id, questCompleted.id)
-      .update({ credential_asked_at: db.raw("NOW()") })
+    if (questCompleted?.id) {
+      await db(TABLES.completions)
+        .where(TABLE.completions.id, questCompleted.id)
+        .update({ credential_asked_at: db.raw("NOW()") })
+    } else {
+      console.log('questCompleted is undefined or does not have an id')
+    }
 
     console.log('questCompleted', questCompleted)
 
