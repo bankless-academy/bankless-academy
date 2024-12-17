@@ -87,13 +87,15 @@ export default async function handler(
     let questStatus = ''
 
     // Ignore minting if credential_asked_at less than 30 seconds ago
-    const credentialAskedAt = new Date(questCompleted.credential_asked_at)
-    const now = new Date()
-    const diff = (now.getTime() - credentialAskedAt.getTime()) / 1000
-    if (questCompleted?.credential_asked_at && diff < 30) {
-      questStatus = 'Minting already in progress...'
-      console.log(questStatus)
-      return res.status(200).json({ status: questStatus })
+    if (questCompleted) {
+      const credentialAskedAt = new Date(questCompleted.credential_asked_at)
+      const now = new Date()
+      const diff = (now.getTime() - credentialAskedAt.getTime()) / 1000
+      if (diff < 30) {
+        questStatus = 'Minting already in progress...'
+        console.log(questStatus)
+        return res.status(200).json({ status: questStatus })
+      }
     }
 
     // Exception: No quest page for Ethereum Basics (badgeId !== 14)
