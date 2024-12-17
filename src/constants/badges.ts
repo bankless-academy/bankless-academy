@@ -1,5 +1,5 @@
 import { LESSONS } from 'constants/index'
-import { polygon, polygonMumbai } from 'viem/chains'
+import { base } from 'viem/chains'
 // import { WHITELABEL } from 'constants/whitelabel'
 
 const badgeIds = LESSONS.filter((lesson) => lesson.badgeId).map(
@@ -23,15 +23,13 @@ export const IS_BADGE_PROD = true
 
 export const BADGE_ADDRESS = IS_BADGE_PROD ? '0x3436d8af0b617DeEF5AADBaFC56f293e102DD886' : '0xa0656F29Efd33b5d6729C467096f07C1643B275A'
 
-export const BADGE_EXPLORER = IS_BADGE_PROD
-  ? 'https://polygonscan.com/'
-  : 'https://mumbai.polygonscan.com/'
+export const BADGE_EXPLORER = 'https://basescan.org/'
 
-export const BADGE_OPENSEA_URL = IS_BADGE_PROD
-  ? `https://opensea.io/assets/matic/${BADGE_ADDRESS}/`
-  : `https://testnets.opensea.io/assets/mumbai/${BADGE_ADDRESS}/`
+export const BASE_BADGE_CONTRACT_ADDRESS = '0xfc902e91affd9dd02df4c1e57dac7b096512f286'
 
-export const BADGE_CHAIN_ID = IS_BADGE_PROD ? polygon.id : polygonMumbai.id
+export const BADGE_OPENSEA_URL = `https://opensea.io/assets/base/${BASE_BADGE_CONTRACT_ADDRESS}/`
+
+export const BADGE_CHAIN_ID = base.id
 
 export const BADGE_MINTER = IS_BADGE_PROD ?
   // banklessacademy.polygon
@@ -61,3 +59,4 @@ export const BADGE_TO_KUDOS_IDS = {
   '8': '14886',
   '9': '15463'
 }
+

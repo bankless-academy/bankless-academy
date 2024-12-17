@@ -1005,12 +1005,19 @@ export const fetchGivethDonations = async (address: string): Promise<number> => 
 export const fetchExplorerData = async (address: string): Promise<{
   handbooks: string[]
   datadisks: string[]
+  badges: number[]
   polBadges: number[]
+  baseBadges: number[]
+  kudosBadges: number[]
+  failed?: boolean
 }> => {
   const OwnerAssets = {
     handbooks: [],
     datadisks: [],
-    polBadges: []
+    badges: [],
+    polBadges: [],
+    baseBadges: [],
+    kudosBadges: []
   }
   const query = `
     query MyQuery {
@@ -1018,13 +1025,18 @@ export const fetchExplorerData = async (address: string): Promise<{
     address
     handbooks
     datadisks
+    badges
     polBadges
+    baseBadges
+    kudosBadges
   }
 }
   `;
 
   try {
-    const response = await fetch('https://indexer.dev.hyperindex.xyz/5123782/v1/graphql', {
+    // DEV: local indexer
+    const isLocal = false
+    const response = await fetch(isLocal ? 'http://localhost:8080/v1/graphql' : 'https://indexer.dev.hyperindex.xyz/5123782/v1/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1044,11 +1056,14 @@ export const fetchExplorerData = async (address: string): Promise<{
     return {
       handbooks: OwnerAssets?.handbooks || [],
       datadisks: OwnerAssets?.datadisks || [],
-      polBadges: OwnerAssets?.polBadges || []
+      badges: OwnerAssets?.badges || [],
+      polBadges: OwnerAssets?.polBadges || [],
+      baseBadges: OwnerAssets?.baseBadges || [],
+      kudosBadges: OwnerAssets?.kudosBadges || []
     }
   } catch (error) {
     console.error('Error fetching data:', error);
-    return OwnerAssets
+    return { ...OwnerAssets, failed: true }
   }
 };
 

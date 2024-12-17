@@ -151,14 +151,10 @@ export default async function handler(
   const referrals = referralsAddresses.map(r => { return { profile_address: r.ens_name || r.address, created_at: r.created_at } })
   console.log('referrals', referrals)
 
-  const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
-  console.log(oldBadgeTokenIds)
   const explorerData = await fetchExplorerData(addressLowerCase)
   const badgeTokenIds = [...new Set([
-    // DEV: comment these 2 lines when testing
-    // ...(await getBadgeTokensIds(addressLowerCase, profile === 'true')),
-    ...explorerData.polBadges,
-    ...oldBadgeTokenIds
+    // DEV: comment line when testing
+    ...explorerData.badges
   ])]
 
   const kudosTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
