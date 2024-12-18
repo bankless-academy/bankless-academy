@@ -12,7 +12,7 @@ import {
   Heading,
   useDisclosure,
 } from '@chakra-ui/react'
-import { Wallet, Power, UserCircle } from '@phosphor-icons/react'
+import { Wallet, UserCircle, SignOut } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
@@ -473,7 +473,7 @@ const ConnectWalletButton = ({
                   w="100%"
                   size={isSmallScreen ? 'md' : 'lg'}
                   variant="secondaryWhite"
-                  leftIcon={<Power weight="bold" />}
+                  leftIcon={<SignOut weight="bold" />}
                   onClick={disconnectWallet}
                 >
                   {t('Disconnect Wallet')}
