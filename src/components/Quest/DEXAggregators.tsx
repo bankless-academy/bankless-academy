@@ -6,6 +6,8 @@ import {
   InputGroup,
   Spinner,
   Image,
+  Text,
+  Button,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
@@ -13,6 +15,8 @@ import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import { api } from 'utils/index'
+import { StyledLessonCard } from 'components/LessonCard'
+import { ArrowSquareOut } from '@phosphor-icons/react'
 
 const DEXAggregators = (
   account: string
@@ -36,7 +40,7 @@ const DEXAggregators = (
         const result = await api('/api/validate-quest', {
           address: account,
           quest: 'DEXAggregators',
-          tx: tx?.replaceAll('https://polygonscan.com/tx/', ''),
+          tx: tx?.replaceAll('https://basescan.org/tx/', ''),
         })
         if (result && result.status === 200) {
           setIsCheckingTx(false)
@@ -62,6 +66,8 @@ const DEXAggregators = (
     if (account) validateQuest(tx)
   }, [account])
 
+  const helperTitle = 'How to swap tokens with 1inch'
+
   return {
     isQuestCompleted: isTransactionVerified === 'true',
     questComponent: (
@@ -70,18 +76,18 @@ const DEXAggregators = (
           <div className="bloc1">
             <p>
               {'1. Load '}
-              <ExternalLink href="https://app.1inch.io/#/137/simple/swap/MATIC">
+              <ExternalLink href="https://app.1inch.io/#/8453/simple/swap/8453:ETH">
                 1inch
               </ExternalLink>
               {' on the '}
               <Image
-                alt="Polygon"
-                src="/images/matic.svg"
+                alt="Base"
+                src="/images/base.svg"
                 display="inline-flex"
                 height="24px"
                 m="0px 5px -5px 0"
               />
-              <b>Polygon network</b>
+              <b>Base network</b>
               {'.'}
             </p>
             <p>{'2. Swap any token.'}</p>
@@ -117,25 +123,47 @@ const DEXAggregators = (
             </InputGroup>
             {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
               <Box mb="4">
-                <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
-                done on <b>Polygon network</b> and not the token approval
-                transaction hash. Watch the video for more information.
+                <b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction
+                hash done on <b>Base network</b> and not the token{' '}
+                <b>approval</b> transaction hash.
               </Box>
             )}
             <Box mt="4">
               <b>Disclaimer:</b> Unfortunately, this quest is not available for
               US residents at the moment due to geographic restrictions.
-              <br />
-              <Box mt="2">
-                We expect this to be resolved in the coming months.
-              </Box>
             </Box>
           </div>
-          <div className="bloc2">
-            <iframe
-              src="https://www.youtube.com/embed/FBrFUJiBbZk?rel=0"
-              allowFullScreen
-            ></iframe>
+          <div className="bloc2" style={{ alignSelf: 'center' }}>
+            <StyledLessonCard
+              borderRadius="3xl"
+              maxW="400px"
+              textAlign="center"
+              m="auto"
+            >
+              <Box zIndex="2" position="relative">
+                <Box py="8">
+                  <Text mt="0 !important" fontSize="xl" fontWeight="bold">
+                    {helperTitle}
+                  </Text>
+                  <ExternalLink
+                    href={`https://help.1inch.io/en/articles/4585153-how-to-swap-tokens-with-classic-mode-on-1inch`}
+                    alt={helperTitle}
+                  >
+                    <Image src="/images/1inch-swap-preview.jpg" />
+                  </ExternalLink>
+                </Box>
+                <Box pb="8">
+                  <ExternalLink
+                    href={`https://help.1inch.io/en/articles/4585153-how-to-swap-tokens-with-classic-mode-on-1inch`}
+                    alt={helperTitle}
+                  >
+                    <Button leftIcon={<ArrowSquareOut />} variant="primary">
+                      Read documentation
+                    </Button>
+                  </ExternalLink>
+                </Box>
+              </Box>
+            </StyledLessonCard>
           </div>
         </Box>
       </>

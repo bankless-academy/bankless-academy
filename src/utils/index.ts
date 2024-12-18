@@ -205,29 +205,31 @@ export async function validateOnchainQuest(
   try {
     if (quest === 'DEXAggregators') {
       const check = []
-      const polygon: Network = {
-        name: 'polygon',
-        chainId: NETWORKS['polygon'].chainId,
+      const base: Network = {
+        name: 'base',
+        chainId: NETWORKS['base'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`
+            `https://base-mainnet.infura.io/v3/${INFURA_KEY}`
           ),
       }
-      const provider = ethers.getDefaultProvider(polygon)
+      const provider = ethers.getDefaultProvider(base)
       const receipt = await provider.waitForTransaction(tx, 2)
       // console.log('receipt', receipt.status)
       if (receipt?.status) {
         check.push(true)
-        console.log('OK tx status confirmed')
+        console.log('1/3 OK tx status confirmed')
         const txDetails = await provider.getTransaction(tx)
         // console.log('txDetails', txDetails)
         const logs = JSON.stringify((await provider.getTransactionReceipt(tx)).logs)
+        // console.log('logs', logs)
+        const isTokenApproval = txDetails.data?.startsWith('0x095ea7b3')
         if (txDetails) {
           if (txDetails.data.toLowerCase().includes(address.toLowerCase().substring(2)) ||
             logs.toLowerCase().includes(address.toLowerCase().substring(2))
           ) {
             check.push(true)
-            console.log('OK wallet interaction')
+            console.log('2/3 OK wallet interaction')
           }
           // 1inch v4 router contract
           const address1inchV4 =
@@ -253,8 +255,10 @@ export async function validateOnchainQuest(
             logs.includes(address1inchV6.substring(2)) ||
             logs.includes(address1inchLP.substring(2))
           ) {
-            check.push(true)
-            console.log('OK 1inch router contract interaction')
+            if (!isTokenApproval) {
+              check.push(true)
+              console.log('3/3 OK 1inch router contract interaction')
+            }
           }
         }
       }
