@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon, ExternalLinkIcon } from '@chakra-ui/icons'
-import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 import { theme } from 'theme/index'
 import { api } from 'utils/index'
@@ -16,15 +15,10 @@ const Layer2Blockchains = (
   questComponent: React.ReactElement
 } => {
   const [isSmallScreen] = useSmallScreen()
-  const { open } = useWeb3Modal()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-layer-2-blockchains') || 'false'
   )
   const [isLoading, setIsLoading] = useState(false)
-
-  async function openOnramp() {
-    await open({ view: 'OnRampProviders' })
-  }
 
   const validateQuest = async () => {
     try {
@@ -137,13 +131,22 @@ const Layer2Blockchains = (
                 </Text>
                 1.{' '}
                 <Button
-                  onClick={openOnramp}
+                  as="a"
+                  cursor="pointer"
+                  onClick={() =>
+                    window.open(
+                      `https://pay.coinbase.com/buy/select-asset?appId=bf18c88d-495a-463b-b249-0b9d3656cf5e&destinationWallets=%5B%7B%22address%22%3A%22${account}%22%2C%22blockchains%22%3A%5B%22optimism%22%2C%22base%22%5D%2C%22assets%22%3A%5B%5D%7D%5D&partnerUserId=0xe1887fF140BfA9D3b45D0B2077b7471124acD242&defaultNetwork=base&defaultExperience=send`,
+                      '_blank',
+                      'width=470,height=750'
+                    )
+                  }
                   borderRadius="3xl"
                   bg="#0052FF"
                   _hover={{
                     bg: '#0043d3',
+                    color: 'white !important',
                   }}
-                  color="white"
+                  color="white !important"
                 >
                   Onramp via Coinbase
                 </Button>
