@@ -51,7 +51,7 @@ const ButtonHelper = ({
   onOpenHelpModal,
   isProfile,
 }: {
-  onOpenHelpModal: any
+  onOpenHelpModal: (e: React.MouseEvent) => void
   isProfile?: boolean
 }): JSX.Element => {
   const [isHover, setIsHover] = useState(false)
@@ -81,10 +81,7 @@ const ButtonHelper = ({
       <IconButton
         variant="unstyled"
         size={isHover ? 'lg' : 'md'}
-        onClick={(e) => {
-          e.stopPropagation()
-          onOpenHelpModal()
-        }}
+        onClick={onOpenHelpModal}
         display="contents"
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
@@ -135,7 +132,14 @@ const Helper = ({
 
   return (
     <>
-      <ButtonHelper isProfile={isProfile} onOpenHelpModal={onOpenHelpModal} />
+      <ButtonHelper
+        isProfile={isProfile}
+        onOpenHelpModal={(e: React.MouseEvent) => {
+          e.preventDefault()
+          e.stopPropagation()
+          onOpenHelpModal()
+        }}
+      />
       <Modal
         onClose={handleClose}
         size={fullscreen && isMobileScreen ? 'full' : 'md'}
