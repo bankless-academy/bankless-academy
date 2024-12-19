@@ -314,19 +314,19 @@ export async function validateOnchainQuest(
       return check?.length === 3
     }
     else if (quest === 'Layer2Blockchains') {
-      const optimism: Network = {
-        name: 'optimism',
-        chainId: NETWORKS['optimism'].chainId,
+      const base: Network = {
+        name: 'base',
+        chainId: NETWORKS['base'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
+            `https://base-mainnet.infura.io/v3/${INFURA_KEY}`
           ),
       }
-      const provider = ethers.getDefaultProvider(optimism)
+      const provider = ethers.getDefaultProvider(base)
       const bigNumberBalance = await provider.getBalance(address.toLowerCase())
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
-      return balance >= 0.001
+      return balance >= 0.0002
     }
     else if (quest === 'StakingOnEthereum') {
       const arbitrumBalance = await getTokenBalance(AlchemyNetwork.ARB_MAINNET, address, ['0xec70dcb4a1efa46b8f2d97c310c9c4790ba5ffa8'])

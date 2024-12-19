@@ -87,6 +87,7 @@ const App = ({
     themeVariables,
     allowUnsupportedChain: true,
     enableAnalytics: true,
+    enableOnramp: true,
     featuredWalletIds: [
       // Zerion
       'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
