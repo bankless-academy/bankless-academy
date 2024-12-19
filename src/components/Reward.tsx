@@ -21,7 +21,7 @@ const Reward = ({
           justifyContent="center"
           color="white"
         >
-          {'Earn 1 USDGLO'}
+          {'Earn USDGLO'}
           <Image
             src="/images/understanding-stablecoins/sponsor-d3df6afb.png"
             width="24px"
