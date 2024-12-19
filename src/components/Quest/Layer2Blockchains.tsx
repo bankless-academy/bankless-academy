@@ -148,7 +148,9 @@ const Layer2Blockchains = (
                   Onramp via Coinbase
                 </Button>
                 <br />
-                <Box mt="2">{'👆 free withdrawal recommended'}</Box>
+                <Box mt="2" ml="5">
+                  {'👆 free withdrawal recommended'}
+                </Box>
                 <Box mt="4">
                   2.{' '}
                   <ExternalLink href={`/lessons/${lesson.slug}`}>
