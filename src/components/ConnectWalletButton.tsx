@@ -43,6 +43,7 @@ import {
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, shortenAddress, api } from 'utils/index'
 import { wagmiConfig } from 'utils/wagmi'
+import OnrampButton from './OnrampButton'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -467,6 +468,14 @@ const ConnectWalletButton = ({
                     {t('My Explorer Profile')}
                   </Button>
                 </InternalLink>
+              </Box>
+              <Box textAlign="center" m="2">
+                <OnrampButton
+                  w="100%"
+                  size={isSmallScreen ? 'md' : 'lg'}
+                  border="2px solid white"
+                  address={address}
+                />
               </Box>
               <Box textAlign="center" m="2">
                 <Button

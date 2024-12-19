@@ -7,6 +7,7 @@ import { api } from 'utils/index'
 import { useSmallScreen } from 'hooks/index'
 import { LESSONS } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
+import OnrampButton from 'components/OnrampButton'
 
 const Layer2Blockchains = (
   account: string
@@ -129,27 +130,7 @@ const Layer2Blockchains = (
                 <Text mx="0 !important" fontSize="md">
                   {'Options to fund your wallet on Base:'}
                 </Text>
-                1.{' '}
-                <Button
-                  as="a"
-                  cursor="pointer"
-                  onClick={() =>
-                    window.open(
-                      `https://pay.coinbase.com/buy/select-asset?appId=bf18c88d-495a-463b-b249-0b9d3656cf5e&destinationWallets=%5B%7B%22address%22%3A%22${account}%22%2C%22blockchains%22%3A%5B%22optimism%22%2C%22base%22%5D%2C%22assets%22%3A%5B%5D%7D%5D&partnerUserId=0xe1887fF140BfA9D3b45D0B2077b7471124acD242&defaultNetwork=base&defaultExperience=send`,
-                      '_blank',
-                      'width=470,height=750'
-                    )
-                  }
-                  borderRadius="3xl"
-                  bg="#0052FF"
-                  _hover={{
-                    bg: '#0043d3',
-                    color: 'white !important',
-                  }}
-                  color="white !important"
-                >
-                  Onramp via Coinbase
-                </Button>
+                1. <OnrampButton address={account} />
                 <br />
                 <Box mt="2" ml="5">
                   {'👆 free withdrawal recommended'}
