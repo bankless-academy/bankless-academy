@@ -19,13 +19,10 @@ import styled from '@emotion/styled'
 import router, { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 import { useAccount, useSignMessage, useDisconnect } from 'wagmi'
-import { getEnsName, getEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 import { useTranslation } from 'react-i18next'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
-import { mainnet } from '@wagmi/core/chains'
-import { normalize } from 'viem/ens'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -42,7 +39,6 @@ import {
 } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, shortenAddress, api } from 'utils/index'
-import { wagmiConfig } from 'utils/wagmi'
 import OnrampButton from './OnrampButton'
 
 const Overlay = styled(Box)`
@@ -198,24 +194,30 @@ const ConnectWalletButton = ({
       setAvatar(nameCache[addressLower].avatar)
     else setAvatar(avatar)
 
+    const getEnsData = async (address: string) => {
+      try {
+        const res = await fetch(`https://api.ensdata.net/${address}`)
+        const data = await res.json()
+        console.log('ensData', data)
+        return data
+      } catch (error) {
+        console.log(error)
+        return null
+      }
+    }
+
+    const ensData = await getEnsData(addressLower)
+    console.log('ensData', ensData)
+
     const ensName =
       address.toLowerCase() === '0xb00e26e79352882391604e24b371a3f3c8658e8c'
         ? DEFAULT_ENS
-        : await getEnsName(wagmiConfig, {
-            address,
-            chainId: mainnet.id,
-          }).catch((error) => {
-            console.error('Error fetching ENS name:', error)
-            return null // Return null if there's an error
-          })
+        : ensData?.ens
     // console.log(ensName)
     if (ensName) {
       setEns(ensName)
       replaceName(ensName)
-      const ensAvatar = await getEnsAvatar(wagmiConfig, {
-        name: normalize(ensName),
-        chainId: mainnet.id,
-      })
+      const ensAvatar = ensData?.avatar_small
       // console.log(ensAvatar)
       if (ensAvatar) replaceAvatar(ensAvatar)
       if (ensName === DEFAULT_ENS) replaceAvatar(DEFAULT_AVATAR)
