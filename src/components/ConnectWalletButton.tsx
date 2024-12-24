@@ -17,7 +17,7 @@ import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import router, { useRouter } from 'next/router'
-import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { useAppKit } from '@reown/appkit/react'
 import { useAccount, useSignMessage, useDisconnect } from 'wagmi'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
@@ -63,7 +63,7 @@ const ConnectWalletButton = ({
   isSmallScreen: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const { open } = useWeb3Modal()
+  const { open } = useAppKit()
   const { address, connector, isConnected, chainId } = useAccount()
   const { asPath } = useRouter()
   // const { simulate } = query

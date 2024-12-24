@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { Box, Container, Image, Button } from '@chakra-ui/react'
 import { ReactElement } from 'react'
-import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { useAppKit } from '@reown/appkit/react'
 import { Wallet } from '@phosphor-icons/react'
 
 import { LessonTypeType } from 'entities/lesson'
@@ -129,7 +129,7 @@ const Layout = ({
   page?: PageType
 }): React.ReactElement => {
   const { address } = useAccount()
-  const { open } = useWeb3Modal()
+  const { open } = useAppKit()
   const [nameCache] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
   const [score] = useLocalStorage(`score`, 0)

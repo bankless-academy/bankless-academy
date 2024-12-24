@@ -9,11 +9,9 @@ import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
 import { Box, Container, Heading, Image } from '@chakra-ui/react'
-// https://docs.walletconnect.com/2.0/web3modal/react/about
-import { createWeb3Modal } from '@web3modal/wagmi/react'
+import { createAppKit, useAppKitState } from '@reown/appkit/react'
 import { WagmiProvider } from 'wagmi'
 import Router from 'next/router'
-import { useWeb3ModalState } from '@web3modal/wagmi/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import * as Sentry from '@sentry/nextjs'
 
@@ -23,7 +21,12 @@ import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
 import NonSSRWrapper from 'components/NonSSRWrapper'
 import 'utils/translation'
-import { WALLET_CONNECT_PROJECT_ID, wagmiConfig } from 'utils/wagmi'
+import {
+  WALLET_CONNECT_PROJECT_ID,
+  wagmiAdapter,
+  networks,
+  metadata,
+} from 'utils/wagmi'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -80,14 +83,20 @@ const App = ({
     '--w3m-accent': '#B85FF1',
     '--w3m-color-mix': '#B85FF1',
   }
-  createWeb3Modal({
-    wagmiConfig,
+  createAppKit({
+    adapters: [wagmiAdapter],
+    networks,
+    metadata: metadata,
     projectId: WALLET_CONNECT_PROJECT_ID,
     themeMode: 'dark',
     themeVariables,
     allowUnsupportedChain: true,
-    enableAnalytics: true,
-    enableOnramp: true,
+    features: {
+      analytics: true,
+      onramp: true,
+      email: false,
+      socials: [],
+    },
     featuredWalletIds: [
       // Zerion
       'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
@@ -100,8 +109,7 @@ const App = ({
     ],
   })
 
-  const { open } = useWeb3ModalState()
-
+  const stateData = useAppKitState()
   const [isLoadingProfile, setIsLoadingProfile] = useState(false)
   useEffect(() => {
     Router.events.on('routeChangeStart', (url) => {
@@ -122,7 +130,7 @@ const App = ({
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
         <NonSSRWrapper>
-          <WagmiProvider config={wagmiConfig}>
+          <WagmiProvider config={wagmiAdapter.wagmiConfig}>
             <QueryClientProvider client={queryClient}>
               <>
                 <Global
@@ -131,7 +139,7 @@ const App = ({
                       font-family: 'ClearSans';
                       src: url(/fonts/clear-sans/TTF/ClearSans-Bold.ttf);
                     }
-                    .web3modal-modal-lightbox {
+                    /* .web3modal-modal-lightbox {
                       background: linear-gradient(
                         152.97deg,
                         rgba(0, 0, 0, 0.45) 0%,
@@ -143,7 +151,7 @@ const App = ({
                       border: 1px solid #646587 !important;
                       box-shadow: 0px 0px 50px 0px rgba(123, 0, 255, 0.25) !important;
                       backdrop-filter: blur(42px) !important;
-                    }
+                    } */
                     /* Disable focus border in Chakra-UI */
                     *:focus {
                       box-shadow: none !important;
@@ -279,7 +287,7 @@ const App = ({
             </QueryClientProvider>
           </WagmiProvider>
 
-          <Overlay hidden={!open} />
+          <Overlay hidden={!stateData.open} />
         </NonSSRWrapper>
       </ThemeProvider>
     </Sentry.ErrorBoundary>

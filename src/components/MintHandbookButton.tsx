@@ -8,7 +8,7 @@ import { useWaitForTransactionReceipt, useAccount } from 'wagmi'
 import { simulateContract, writeContract } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
-import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { useAppKit } from '@reown/appkit/react'
 
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
@@ -32,7 +32,7 @@ const MintHandbookButton = ({
   }
   const { t } = useTranslation()
   const { address, chain } = useAccount()
-  const { open } = useWeb3Modal()
+  const { open } = useAppKit()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')

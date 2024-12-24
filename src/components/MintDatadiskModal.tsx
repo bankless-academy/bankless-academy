@@ -27,7 +27,7 @@ import { simulateContract, writeContract } from '@wagmi/core'
 import { useTranslation } from 'react-i18next'
 import { parseEther } from 'viem'
 import { Gear, SealCheck } from '@phosphor-icons/react'
-import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { useAppKit } from '@reown/appkit/react'
 
 import { LessonType } from 'entities/lesson'
 import Datadisk from 'components/Datadisk'
@@ -50,7 +50,7 @@ const MintDatadiskModal = ({
   numberOfOwners: number
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const { open } = useWeb3Modal()
+  const { open } = useAppKit()
   const { address, chain } = useAccount()
   const [isSmallScreen] = useSmallScreen()
   const toast = useToast()

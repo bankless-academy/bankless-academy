@@ -5,7 +5,7 @@ import { switchChain, simulateContract, writeContract } from '@wagmi/core'
 import { base } from 'wagmi/chains'
 import { useWaitForTransactionReceipt, useAccount } from 'wagmi'
 import { Gear, SealCheck } from '@phosphor-icons/react'
-import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { useAppKit } from '@reown/appkit/react'
 import { useCapabilities, useWriteContracts } from 'wagmi/experimental'
 
 import ExternalLink from 'components/ExternalLink'
@@ -19,7 +19,7 @@ import { client } from 'utils/paymaster'
 const MintNFT = (): JSX.Element => {
   const { address, chain } = useAccount()
   const account = useAccount()
-  const { open } = useWeb3Modal()
+  const { open } = useAppKit()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
