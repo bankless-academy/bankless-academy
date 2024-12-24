@@ -243,7 +243,7 @@ const SocialSharing = (
                       {isQuestValidated === 'true' ? (
                         <CheckIcon color={theme.colors.correct} />
                       ) : isLoading ? (
-                        <Spinner speed="1s" />
+                        <Spinner size="sm" speed="1s" />
                       ) : isQuestValidated === 'false' ? (
                         <CloseIcon color={theme.colors.incorrect} />
                       ) : null}

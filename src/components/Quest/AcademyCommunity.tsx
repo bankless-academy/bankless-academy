@@ -71,7 +71,7 @@ const AcademyCommunity = (
                     account ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     )
                   }
                 >
@@ -88,7 +88,7 @@ const AcademyCommunity = (
                     ) : (
                       <>
                         {hasUserJoinedGM === null ? (
-                          <Spinner speed="1s" />
+                          <Spinner size="sm" speed="1s" />
                         ) : (
                           <CloseIcon color={theme.colors.incorrect} />
                         )}
@@ -110,7 +110,7 @@ const AcademyCommunity = (
                     ) : (
                       <>
                         {hasUserJoinedBA === null ? (
-                          <Spinner speed="1s" />
+                          <Spinner size="sm" speed="1s" />
                         ) : (
                           <CloseIcon color={theme.colors.incorrect} />
                         )}

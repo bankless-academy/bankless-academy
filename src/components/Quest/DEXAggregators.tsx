@@ -110,7 +110,7 @@ const DEXAggregators = (
               />
               <InputRightElement>
                 {isCheckingTx ? (
-                  <Spinner speed="1s" color="orange" />
+                  <Spinner size="sm" speed="1s" color="orange" />
                 ) : isTransactionVerified === 'true' ? (
                   <CheckIcon color={theme.colors.correct} />
                 ) : (
