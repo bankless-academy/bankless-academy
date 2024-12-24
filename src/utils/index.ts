@@ -314,19 +314,16 @@ export async function validateOnchainQuest(
       return check?.length === 3
     }
     else if (quest === 'Layer2Blockchains') {
-      const base: Network = {
-        name: 'base',
-        chainId: NETWORKS['base'].chainId,
-        _defaultProvider: (providers) =>
-          new providers.JsonRpcProvider(
-            `https://base-mainnet.infura.io/v3/${INFURA_KEY}`
-          ),
+      const baseBalance = await getBalance(AlchemyNetwork.BASE_MAINNET, address)
+      const optimismBalance = await getBalance(AlchemyNetwork.OPT_MAINNET, address)
+      try {
+        const balance = optimismBalance + baseBalance
+        console.log('balance: ', balance)
+        return balance >= 0.0002
+      } catch (e) {
+        console.error(e)
+        return false
       }
-      const provider = ethers.getDefaultProvider(base)
-      const bigNumberBalance = await provider.getBalance(address.toLowerCase())
-      const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
-      console.log('balance: ', balance)
-      return balance >= 0.0002
     }
     else if (quest === 'StakingOnEthereum') {
       const arbitrumBalance = await getTokenBalance(AlchemyNetwork.ARB_MAINNET, address, ['0xec70dcb4a1efa46b8f2d97c310c9c4790ba5ffa8'])
@@ -848,6 +845,22 @@ export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: str
 
   // TEMP: hardcode 18 decimals for token
   return parseInt(res?.tokenBalances[0]?.tokenBalance, 16) / Math.pow(10, 18)
+}
+
+export const getBalance = async (network: AlchemyNetwork, ownerAddress: string) => {
+  const settings = {
+    apiKey: ALCHEMY_KEY_BACKEND,
+    network,
+  };
+  const alchemy = new Alchemy(settings);
+
+  const res = await alchemy.core.getBalance(
+    ownerAddress,
+  );
+
+  const balance = ethers.BigNumber.from(res).toString();
+  // console.log(`balance: ${balance}`);
+  return parseFloat(balance) / Math.pow(10, 18);
 }
 
 export const generateTwitterLink = (text: string, link: string) => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
+import { Box, Spinner, Button, VStack, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 
 import { theme } from 'theme/index'
@@ -65,15 +65,15 @@ const Layer2Blockchains = (
           <div className="bloc1">
             <Box m="4">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {`Begin your L2 journey on `}
-                <Image
+                {`Begin your L2 journey.`}
+                {/* <Image
                   alt="Base"
                   src="/images/base.svg"
                   display="inline-flex"
                   height="24px"
                   m="0px 5px -5px 0"
                 />
-                {'Base.'}
+                {'Base.'} */}
               </Text>
               <VStack mt="8" alignItems="start">
                 {/* <Button
@@ -120,7 +120,7 @@ const Layer2Blockchains = (
                     )
                   }
                 >
-                  {'Hold a balance of at least 0.0002 ETH on Base'}
+                  {'Hold a balance of at least 0.0002 ETH on Base or Optimism'}
                 </Button>
               </VStack>
               {/* <Box mt="8">
@@ -128,12 +128,12 @@ const Layer2Blockchains = (
               </Box> */}
               <Box mt="8">
                 <Text mx="0 !important" fontSize="md">
-                  {'Options to fund your wallet on Base:'}
+                  {'Options to fund your wallet:'}
                 </Text>
                 1. <OnrampButton address={account} />
                 <br />
                 <Box mt="2" ml="5">
-                  {'👆 free withdrawal recommended'}
+                  {'👆 free withdrawal to Base recommended'}
                 </Box>
                 <Box mt="4">
                   2.{' '}
