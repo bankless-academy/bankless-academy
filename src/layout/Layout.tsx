@@ -74,28 +74,21 @@ const MobileButton = ({
       flex="1"
       w="100%"
       h="100%"
-      background={
-        isActive
-          ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
-          : '#3F3253'
-      }
-      borderRight={'2px solid #574572'}
-      borderTop={isActive ? '2px solid #9d72dc' : ''}
       display="flex"
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      color="white"
+      color={isActive ? '#9d72dc' : 'white'}
       {...props}
-      pt={label === 'Profile' ? '6px' : '0'}
-      pb={pwa ? '16px' : '0'}
+      pt={label === 'Profile' ? '8px' : pwa ? '2px' : '0'}
+      pb={pwa ? '16px' : '2px'}
     >
       <Image
         src={imageSrc}
         alt={label}
         title={label}
-        w={label === 'Profile' ? '38px' : '52px'}
-        h={label === 'Profile' ? '38px' : '52px'}
+        w={label === 'Profile' ? '36px' : pwa ? '50px' : '52px'}
+        h={label === 'Profile' ? '36px' : pwa ? '50px' : '52px'}
         borderRadius="50%"
         fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
         border={label === 'Profile' && isActive ? '2px solid #9d72dc' : ''}
@@ -317,7 +310,8 @@ const Layout = ({
           w="100vw"
           h="81px"
           bottom="0"
-          bg="black"
+          background="#3f3253e7"
+          backdropFilter="blur(10px)"
           display="flex"
           zIndex="2"
           borderTop="1px solid #222222"
@@ -327,21 +321,33 @@ const Layout = ({
             link="/lessons"
             label="Lessons"
             isActive={page === 'LESSON'}
-            imageSrc="/images/lesson-logo-mobile.svg"
+            imageSrc={
+              page === 'LESSON'
+                ? '/images/lesson-logo-mobile-active.svg'
+                : '/images/lesson-logo-mobile.svg'
+            }
             pwa={pwa}
           />
           <MobileButton
             link="/lessons/handbook"
             label="Handbooks"
             isActive={page === 'HANDBOOK'}
-            imageSrc="/images/handbook-logo-mobile.svg"
+            imageSrc={
+              page === 'HANDBOOK'
+                ? '/images/handbook-logo-mobile-active.svg'
+                : '/images/handbook-logo-mobile.svg'
+            }
             pwa={pwa}
           />
           <MobileButton
             link="/glossary"
             label="Glossary"
             isActive={page === 'GLOSSARY'}
-            imageSrc="/images/glossary-logo-mobile.svg"
+            imageSrc={
+              page === 'GLOSSARY'
+                ? '/images/glossary-logo-mobile-active.svg'
+                : '/images/glossary-logo-mobile.svg'
+            }
             pwa={pwa}
           />
           <MobileButton
