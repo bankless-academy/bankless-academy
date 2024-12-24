@@ -1,8 +1,11 @@
 import { Box, Image } from '@chakra-ui/react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 import { LessonType } from 'entities/lesson'
 import Helper from 'components/Helper'
 import ExternalLink from './ExternalLink'
+import { countExplorerBadges } from 'utils'
 
 const Reward = ({
   lesson,
@@ -11,6 +14,19 @@ const Reward = ({
   lesson: LessonType
   displayHelper?: boolean
 }) => {
+  const [count, setCount] = useState<number | null>(null)
+  useEffect(() => {
+    const fetchCount = async () => {
+      const count = await countExplorerBadges(14)
+      setCount(count)
+    }
+    if (displayHelper) {
+      fetchCount()
+    }
+  }, [displayHelper])
+
+  const maxRewards = 250
+
   return (
     <>
       {lesson.slug === 'ethereum-basics' && (
@@ -44,6 +60,15 @@ const Reward = ({
                       this badge previously are already eligible ✅
                       <br />
                       <br />
+                      {count !== null && count > 0 && (
+                        <>
+                          {count > maxRewards
+                            ? 'No more rewards left.'
+                            : `${maxRewards - count} USDGLO left to claim.`}
+                          <br />
+                          <br />
+                        </>
+                      )}
                       <ExternalLink
                         underline="true"
                         href="https://x.com/BanklessAcademy/status/1869412319819956491"

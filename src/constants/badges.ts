@@ -60,3 +60,7 @@ export const BADGE_TO_KUDOS_IDS = {
   '9': '15463'
 }
 
+// DEV: local indexer
+const isLocalIndexer = false
+
+export const INDEXER_URL = isLocalIndexer ? 'http://localhost:8080/v1/graphql' : 'https://indexer.dev.hyperindex.xyz/5123782/v1/graphql'

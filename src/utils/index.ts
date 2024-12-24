@@ -36,6 +36,7 @@ import { wagmiConfig } from 'utils/wagmi'
 import { NFTAddress } from 'constants/nft'
 import { TABLES, db } from 'utils/db'
 import { ACHIEVEMENTS } from 'constants/achievements'
+import { INDEXER_URL } from 'constants/badges'
 
 declare global {
   interface Window {
@@ -1051,9 +1052,7 @@ export const fetchExplorerData = async (address: string): Promise<{
   `;
 
   try {
-    // DEV: local indexer
-    const isLocal = false
-    const response = await fetch(isLocal ? 'http://localhost:8080/v1/graphql' : 'https://indexer.dev.hyperindex.xyz/5123782/v1/graphql', {
+    const response = await fetch(INDEXER_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1081,6 +1080,39 @@ export const fetchExplorerData = async (address: string): Promise<{
   } catch (error) {
     console.error('Error fetching data:', error);
     return { ...OwnerAssets, failed: true }
+  }
+};
+
+export const countExplorerBadges = async (badgeId: number): Promise<number | null> => {
+  const query = `
+    query Count {
+  OwnerAssets(where: {badges: {_contains: [${badgeId}]}}) {
+    address
+  }
+}
+  `;
+
+  try {
+    const response = await fetch(INDEXER_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log(result.data);
+    return result.data?.OwnerAssets?.length || null
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null
   }
 };
 
