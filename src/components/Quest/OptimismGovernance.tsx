@@ -72,9 +72,11 @@ const OptimismGovernance = (
                 {t('Begin your Optimism Network journey by delegating OP.')}
               </Text>
               <VStack mt="8" alignItems="start">
-                <Button
+                {/* <Button
                   cursor="default"
                   whiteSpace="break-spaces"
+                  height="auto"
+                  p="16px"
                   rightIcon={
                     account ? (
                       <CheckIcon color={theme.colors.correct} />
@@ -84,10 +86,15 @@ const OptimismGovernance = (
                   }
                 >
                   {t('1. Connect your wallet to Bankless Academy')}
-                </Button>
+                </Button> */}
                 <Button
                   cursor="default"
                   whiteSpace="break-spaces"
+                  height="auto"
+                  justifyContent="space-between"
+                  p="16px"
+                  w="90%"
+                  maxW="400px"
                   rightIcon={
                     isTransactionVerified === 'true' ? (
                       <CheckIcon color={theme.colors.correct} />
@@ -98,15 +105,20 @@ const OptimismGovernance = (
                     )
                   }
                 >
-                  {t('2. Select a Delegate for your OP')}
+                  <Box display="block" textAlign="left">
+                    {`Select a `}
+                    <ExternalLink href="https://vote.optimism.io/delegates">
+                      Delegate
+                    </ExternalLink>
+                    {` for your OP`}
+                    <Box display="block" mt="6px">
+                      {`or delegate to `}
+                      <ExternalLink href="https://vote.optimism.io/delegates/banklessacademy.eth">
+                        Bankless Academy
+                      </ExternalLink>
+                    </Box>
+                  </Box>
                 </Button>
-                <Box>
-                  {t('See the delegation platform here')}
-                  {': '}
-                  <ExternalLink href="https://vote.optimism.io/">
-                    vote.optimism.io
-                  </ExternalLink>
-                </Box>
               </VStack>
               <Box mt="8">
                 {t('Tip')}
