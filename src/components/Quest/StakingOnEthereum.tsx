@@ -67,7 +67,7 @@ const StakingOnEthereum = (
                 {`Begin your staking journey with Rocket Pool.`}
               </Text>
               <VStack mt="8" alignItems="start">
-                <Button
+                {/* <Button
                   cursor="default"
                   textAlign="start"
                   height="fit-content"
@@ -75,7 +75,7 @@ const StakingOnEthereum = (
                     account ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     )
                   }
                 >
@@ -86,7 +86,7 @@ const StakingOnEthereum = (
                   >
                     {'1. Connect your wallet to Bankless Academy.'}
                   </Box>
-                </Button>
+                </Button> */}
                 <Button
                   cursor="default"
                   textAlign="start"
@@ -95,7 +95,7 @@ const StakingOnEthereum = (
                     isTransactionVerified === 'true' ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : isLoading ? (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     ) : (
                       <CloseIcon color={theme.colors.incorrect} />
                     )
@@ -106,19 +106,19 @@ const StakingOnEthereum = (
                     whiteSpace="break-spaces"
                     lineHeight="1.5em"
                   >
-                    {'2. Obtain 0.001 rETH on any supported network*.'}
+                    {'Obtain 0.0002 rETH on any supported network*.'}
                     <Box ml="2">
-                      {'a) Mint rETH via '}
+                      {'a) Visit a '}
+                      <ExternalLink href="https://app.uniswap.org/explore/tokens/base/0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c">
+                        Decentralized Exchange
+                      </ExternalLink>
+                      {' to swap for rETH (Optimism or Base recommended)'}
+                      <br />
+                      {'b) Or mint rETH on Mainnet via '}
                       <ExternalLink href="https://stake.rocketpool.net/">
                         Rocket Pool
                       </ExternalLink>
                       {' (0.01 ETH minimum)'}
-                      <br />
-                      {'b) Visit a '}
-                      <ExternalLink href="https://app.uniswap.org/tokens/optimism/0x9bcef72be871e61ed4fbbc7630889bee758eb81d">
-                        Decentralized Exchange
-                      </ExternalLink>
-                      {' to swap for rETH'}
                     </Box>
                   </Box>
                 </Button>

@@ -339,8 +339,8 @@ export async function validateOnchainQuest(
       try {
         const balance = arbitrumBalance + optimismBalance + polygonBalance + ethereumBalance + baseBalance
         console.log(balance)
-        // allow a bit less than 0.001 in case someone only buys for 0.001 ETH worth of rETH
-        return balance >= 0.00085
+        // allow a bit less than 0.0002 rETH in case someone only buys for 0.0002 ETH worth of rETH
+        return balance >= 0.00016
       } catch (e) {
         console.error(e)
         return false
