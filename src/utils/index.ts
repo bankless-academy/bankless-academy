@@ -1108,7 +1108,7 @@ export const countExplorerBadges = async (badgeId: number): Promise<number | nul
     }
 
     const result = await response.json();
-    console.log(result.data);
+    // console.log(result.data);
     return result.data?.OwnerAssets?.length || null
   } catch (error) {
     console.error('Error fetching data:', error);
