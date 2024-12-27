@@ -224,7 +224,6 @@ export async function validateOnchainQuest(
         // console.log('txDetails', txDetails)
         const logs = JSON.stringify((await provider.getTransactionReceipt(tx)).logs)
         // console.log('logs', logs)
-        const isTokenApproval = txDetails.data?.startsWith('0x095ea7b3')
         if (txDetails) {
           if (txDetails.data.toLowerCase().includes(address.toLowerCase().substring(2)) ||
             logs.toLowerCase().includes(address.toLowerCase().substring(2))
@@ -256,6 +255,7 @@ export async function validateOnchainQuest(
             logs.includes(address1inchV6.substring(2)) ||
             logs.includes(address1inchLP.substring(2))
           ) {
+            const isTokenApproval = txDetails.data?.startsWith('0x095ea7b3')
             if (!isTokenApproval) {
               check.push(true)
               console.log('3/3 OK 1inch router contract interaction')
@@ -295,19 +295,26 @@ export async function validateOnchainQuest(
           // Velodrome v2 router contract
           const velodromeRouterV2 =
             '0xa062ae8a9c5e11aaa026fc2670b0d65ccc8b2858'.toLowerCase()
-          // Velodrome Universal Router
-          const velodromeUR =
+          // Velodrome Universal Router 1
+          const velodromeUR1 =
             '0xF132bdb9573867cD72f2585C338B923F973EB817'.toLowerCase()
+          // Velodrome Universal Router 2
+          const velodromeUR2 =
+            '0x4bF3E32de155359D1D75e8B474b66848221142fc'.toLowerCase()
           if (
-            [velodromeRouterV1, velodromeRouterV2, velodromeUR].includes(
+            [velodromeRouterV1, velodromeRouterV2, velodromeUR1, velodromeUR2].includes(
               txDetails.to.toLowerCase()
             ) ||
             txDetails.data.includes(velodromeRouterV1.substring(2)) ||
             txDetails.data.includes(velodromeRouterV2.substring(2)) ||
-            txDetails.data.includes(velodromeUR.substring(2))
+            txDetails.data.includes(velodromeUR1.substring(2)) ||
+            txDetails.data.includes(velodromeUR2.substring(2))
           ) {
-            check.push(true)
-            console.log('OK Velodrome router contract interaction')
+            const isTokenApproval = txDetails.data?.startsWith('0x095ea7b3')
+            if (!isTokenApproval) {
+              check.push(true)
+              console.log('OK Velodrome router contract interaction')
+            }
           }
         }
       }

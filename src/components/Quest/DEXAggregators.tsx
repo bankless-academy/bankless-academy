@@ -40,7 +40,8 @@ const DEXAggregators = (
         const result = await api('/api/validate-quest', {
           address: account,
           quest: 'DEXAggregators',
-          tx: tx?.replaceAll('https://basescan.org/tx/', ''),
+          // if tx contains a URL, just keep the tx hash
+          tx: tx?.includes('/') ? tx?.split('/')?.pop() : tx,
         })
         if (result && result.status === 200) {
           setIsCheckingTx(false)

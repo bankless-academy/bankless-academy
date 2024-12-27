@@ -41,9 +41,8 @@ const DecentralizedExchanges = (
         const result = await api('/api/validate-quest', {
           address: account,
           quest: 'DecentralizedExchanges',
-          tx: tx
-            ?.replaceAll('https://optimistic.etherscan.io/tx/', '')
-            ?.replaceAll('https://blockscout.com/optimism/mainnet/tx/', ''),
+          // if tx contains a URL, just keep the tx hash
+          tx: tx?.includes('/') ? tx?.split('/')?.pop() : tx,
         })
         if (result && result.status === 200) {
           setIsCheckingTx(false)
