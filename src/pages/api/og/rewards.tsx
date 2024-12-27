@@ -12,7 +12,9 @@ export const config = {
 export default async function handler(req: NextApiRequest) {
   console.log('req', req)
 
-  const rewards = await fetch(`${DOMAIN_URL_}/api/rewards?badge=14`)
+  const rewards = await fetch(`${DOMAIN_URL_}/api/rewards?badge=14`, {
+    cache: 'no-store',
+  })
   const rewardsData = await rewards.json()
   console.log(rewardsData)
   // const url = new URL(req.url)
