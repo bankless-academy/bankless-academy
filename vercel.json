@@ -59,6 +59,15 @@
           "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
         }
       ]
+    },
+    {
+      "source": "/api/og/rewards",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache"
+        }
+      ]
     }
   ],
   "rewrites": [
