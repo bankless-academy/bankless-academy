@@ -36,7 +36,7 @@ import { wagmiConfig } from 'utils/wagmi'
 import { NFTAddress } from 'constants/nft'
 import { TABLES, db } from 'utils/db'
 import { ACHIEVEMENTS } from 'constants/achievements'
-import { INDEXER_URL } from 'constants/badges'
+import { INDEXER_URL, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
 
 declare global {
   interface Window {
@@ -702,6 +702,31 @@ export async function isHolderOfNFT(
           (nft) => parseInt(nft.id.tokenId, 16).toString() === tokenId
         ).length > 0
       )
+    } else {
+      return false
+    }
+  } catch (error) {
+    console.error(error)
+    return false
+  }
+}
+
+export async function isHolderOfBadge(
+  address: string,
+  badgeId: number
+): Promise<boolean> {
+  try {
+    const ownerNFTs = await axios.get(
+      `https://base-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getNFTs?owner=${address}&pageSize=100&contractAddresses[]=${BASE_BADGE_CONTRACT_ADDRESS}&withMetadata=false`
+    )
+    if (ownerNFTs.data) {
+      // console.log('ownerNFTs', ownerNFTs.data)
+      // console.log('badgeId', ownerNFTs.data?.ownedNfts[0]?.id?.tokenId)
+      return ownerNFTs.data?.ownedNfts.some(nft => {
+        const tokenId = parseInt(nft.id.tokenId, 16).toString()
+        console.log('comparing tokenId', tokenId, 'with badgeId', badgeId)
+        return tokenId === badgeId.toString()
+      })
     } else {
       return false
     }

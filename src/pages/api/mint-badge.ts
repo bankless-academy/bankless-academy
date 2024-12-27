@@ -12,7 +12,7 @@ import {
   DOMAIN_URL,
 } from 'constants/index'
 import { BASE_BADGE_CONTRACT_ADDRESS, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
-import { api, fetchExplorerData } from 'utils/index'
+import { api, fetchExplorerData, isHolderOfBadge } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
 import { verifySignature } from 'utils/SignatureUtil'
@@ -124,7 +124,11 @@ export default async function handler(
       return res.status(200).json({ status: questStatus })
     }
 
-    if (explorerData.badges.includes(badgeId)) {
+    // check if user already has the badge on Base
+    const isBadgeAlreadyClaimed = await isHolderOfBadge(address, badgeId)
+    console.log('isBadgeAlreadyClaimed', isBadgeAlreadyClaimed)
+
+    if (explorerData.badges.includes(badgeId) || isBadgeAlreadyClaimed) {
       questStatus = 'Badge already minted.'
       console.log(questStatus)
       return res.status(200).json({ status: questStatus })
