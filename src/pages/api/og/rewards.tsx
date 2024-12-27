@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { ImageResponse } from '@vercel/og'
-import { NextApiRequest } from 'next'
+import { NextRequest } from 'next/server'
 
 import OGRewards from 'components/OGRewards'
 import { DOMAIN_URL_ } from 'constants/index'
@@ -9,18 +9,23 @@ export const config = {
   runtime: 'edge',
 }
 
-export default async function handler(req: NextApiRequest) {
-  console.log('req', req)
+export default async function handler(req: NextRequest) {
+  const { searchParams } = new URL(req.url)
+  // console.log(searchParams)
+  const total = searchParams.get('total')
 
-  const rewards = await fetch(`${DOMAIN_URL_}/api/rewards?badge=14`, {
-    cache: 'no-store',
-  })
-  const rewardsData = await rewards.json()
-  console.log(rewardsData)
-  // const url = new URL(req.url)
-  // const urlParams = new URLSearchParams(url.search)
-  // const time = urlParams.get('time')
-  // console.log(time)
+  const maxRewards = 250
+
+  let rewardsData = { rewards: `${maxRewards} USDGLO in rewards` }
+
+  if (!total || typeof total !== 'string') {
+    const rewards = await fetch(`${DOMAIN_URL_}/api/rewards?badge=14`, {
+      cache: 'no-store',
+    })
+    rewardsData = await rewards.json()
+  }
+
+  // console.log(rewardsData)
 
   const fontData = await fetch(
     new URL(
@@ -39,5 +44,8 @@ export default async function handler(req: NextApiRequest) {
         style: 'normal',
       },
     ],
+    headers: {
+      'Cache-Control': 'no-store, no-cache',
+    },
   })
 }
