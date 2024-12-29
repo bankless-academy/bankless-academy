@@ -133,7 +133,7 @@ Alors que l'offre maximale de `BTC` ne peut pas dépasser 21 millions, de nouvel
 
 La `politique monétaire` fixe du Bitcoin en fait un atout attrayant pour ceux qui cherchent à préserver la valeur à long terme, leur permettant de suivre la hausse des coûts.
 
-Sa valeur à court terme reste volatile en raison de la spéculation du marché.
+Its short term value remains volatile due to market speculation.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
