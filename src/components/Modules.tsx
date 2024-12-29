@@ -8,7 +8,7 @@ import InternalLink from 'components/InternalLink'
 import { IS_WHITELABEL, LESSONS } from 'constants/index'
 import { ModuleType } from 'entities/module'
 import { useSmallScreen } from 'hooks/index'
-import { Mixpanel } from 'utils'
+import { Mixpanel } from 'utils/index'
 
 const LessonGrid = styled(SimpleGrid)`
   border-bottom: 1px solid #72757b;

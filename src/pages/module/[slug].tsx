@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
+import { Container } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 import { MetaData } from 'components/Head'
@@ -47,18 +47,14 @@ const ModulesPage = (): JSX.Element => {
           parentModule={module}
         />
       ) : (
-        <>
-          <Heading as="h1" size="2xl" textAlign="center" m={4}>
-            {module.parentModule &&
-              `${
-                MODULES.find((m) => m.moduleId === module.parentModule)?.name
-              } - `}
-            {module.name}
-          </Heading>
-          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} mt={8}>
-            <LessonCards />
-          </SimpleGrid>
-        </>
+        <LessonCards
+          moduleName={`${
+            module.parentModule &&
+            `${
+              MODULES.find((m) => m.moduleId === module.parentModule)?.name
+            } - `
+          }${module.name}`}
+        />
       )}
     </Container>
   )

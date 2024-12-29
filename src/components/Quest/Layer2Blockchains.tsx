@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
-import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
+import { Box, Spinner, Button, VStack, Text } from '@chakra-ui/react'
+import { CheckIcon, CloseIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 
-import { LessonCard } from 'components/LessonCards'
 import { theme } from 'theme/index'
-import { api } from 'utils'
-import { useSmallScreen } from 'hooks'
-import InternalLink from 'components/InternalLink'
+import { api } from 'utils/index'
+import { useSmallScreen } from 'hooks/index'
 import { LESSONS } from 'constants/index'
+import ExternalLink from 'components/ExternalLink'
+import OnrampButton from 'components/OnrampButton'
 
 const Layer2Blockchains = (
   account: string
@@ -63,24 +63,32 @@ const Layer2Blockchains = (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
-            <Box ml="8">
+            <Box m="4">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {`Begin your L2 journey on the Optimism Network.`}
+                {`Begin your L2 journey.`}
+                {/* <Image
+                  alt="Base"
+                  src="/images/base.svg"
+                  display="inline-flex"
+                  height="24px"
+                  m="0px 5px -5px 0"
+                />
+                {'Base.'} */}
               </Text>
               <VStack mt="8" alignItems="start">
-                <Button
+                {/* <Button
                   cursor="default"
                   whiteSpace="break-spaces"
                   rightIcon={
                     account ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     )
                   }
                 >
                   {'1. Connect your wallet to Bankless Academy'}
-                </Button>
+                </Button> */}
                 {/* TODO: add step later */}
                 {/* <Button
                   cursor="default"
@@ -89,7 +97,7 @@ const Layer2Blockchains = (
                     isTransactionVerified === 'true' ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : isTransactionVerified === 'loading' ? (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     ) : (
                       <CloseIcon color={theme.colors.incorrect} />
                     )
@@ -100,23 +108,40 @@ const Layer2Blockchains = (
                 <Button
                   cursor="default"
                   whiteSpace="break-spaces"
+                  height="auto"
+                  p="16px"
                   rightIcon={
                     isTransactionVerified === 'true' ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : isLoading ? (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     ) : (
                       <CloseIcon color={theme.colors.incorrect} />
                     )
                   }
                 >
-                  {
-                    '2. Hold a balance of at least 0.001 ETH on Optimism Network'
-                  }
+                  {'Hold a balance of at least 0.0002 ETH on Base or Optimism'}
                 </Button>
               </VStack>
-              <Box mt="8">
+              {/* <Box mt="8">
                 {`Tip: Check our Explorer's Handbook entry on 'How to Fund a Wallet on Layer 2' to find the best funding pathway for you.`}
+              </Box> */}
+              <Box mt="8">
+                <Text mx="0 !important" fontSize="md">
+                  {'Options to fund your wallet:'}
+                </Text>
+                1. <OnrampButton address={account} />
+                <br />
+                <Box mt="2" ml="5">
+                  {'👆 free withdrawal to Base recommended'}
+                </Box>
+                <Box mt="4">
+                  2.{' '}
+                  <ExternalLink href={`/lessons/${lesson.slug}`}>
+                    Explore other options{' '}
+                    <ExternalLinkIcon mx="2px" mt="-4px" />
+                  </ExternalLink>
+                </Box>
               </Box>
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
@@ -127,8 +152,9 @@ const Layer2Blockchains = (
               )}
             </Box>
           </div>
-          <div className="bloc2">
-            <LessonCard
+          {/* TODO: video demo on how to fund wallet on Base via Coinbase */}
+          {/* <div className="bloc2">
+            <StyledLessonCard
               borderRadius="3xl"
               maxW="400px"
               textAlign="center"
@@ -157,8 +183,8 @@ const Layer2Blockchains = (
                   </InternalLink>
                 </Box>
               </Box>
-            </LessonCard>
-          </div>
+            </StyledLessonCard>
+          </div> */}
         </Box>
       </>
     ),

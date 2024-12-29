@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-Principais Conclusões Confira [a lição completa](https://app.banklessacademy.com/lessons/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
+Este é um resumo de nossa lição [Princípios Básicos de Carteiras](https://app.banklessacademy.com/lessons/wallet-basics), juntamente com um passo a passo para a missão. Confira [a lição completa](https://app.banklessacademy.com/lessons/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
 
 ---
 
@@ -55,7 +55,7 @@ As carteiras têm dois pedaços de informação essenciais:
 
 - Uma `chave privada`, que funciona como sua _senha_. Esta informação deve ser sempre mantida em segredo e não pode ser alterada.
 
-Proteger sua chave privada é fundamental, pois essa chave concede acesso instantâneo à sua carteira. Você nunca deve compartilhar sua chave privada. beatrizabreupeixoto
+Proteger sua chave privada é fundamental, pois essa chave concede acesso instantâneo à sua carteira. Você nunca deve compartilhar sua chave privada. Você pode aprender mais assistindo [à lição completa](https://app.banklessacademy.com/lessons/wallet-basics).
 
 Hoje vamos configurar nossa primeira carteira, usando nossa carteira de criptomoedas recomendada: Zerion!
 
@@ -91,7 +91,7 @@ Saiba mais sobre criptomoedas em nossa lição **[Princípios Básicos do Bitcoi
 
 ### O que são chaves públicas e privadas?
 
-A `encriptação` de chaves públicas/privadas permite que sua carteira torne algumas informações públicas, como o endereço para o qual outras pessoas podem enviar criptomoedas para você, mantendo o acesso às suas criptomoedas privado. Uma chave é como o endereço da casa de suas criptomoedas, e a outra abre a porta da frente. Uma chave é como o endereço da casa de suas criptomoedas, e a outra abre a porta da frente.
+A `encriptação` de chaves públicas/privadas permite que sua carteira torne algumas informações públicas, como o endereço para o qual outras pessoas podem enviar criptomoedas para você, mantendo o acesso às suas criptomoedas privado. Uma chave é como o endereço da casa de suas criptomoedas, e a outra abre a porta da frente.
 
 Você pode compartilhar sua chave pública com qualquer pessoa em quem confie para lhe enviar criptomoedas, mas sua chave privada é apenas para seus olhos, pois ela concede acesso a todos os ativos dentro da carteira. Nunca o compartilhe, mesmo que seu contato afirme ser da Bankless Academy ou da Zerion.
 

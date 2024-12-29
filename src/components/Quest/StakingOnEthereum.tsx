@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
-import { LessonCard } from 'components/LessonCards'
+import { StyledLessonCard } from 'components/LessonCard'
 import { theme } from 'theme/index'
-import { api } from 'utils'
-import { useSmallScreen } from 'hooks'
+import { api } from 'utils/index'
+import { useSmallScreen } from 'hooks/index'
 import InternalLink from 'components/InternalLink'
 import { LESSONS } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
@@ -67,7 +67,7 @@ const StakingOnEthereum = (
                 {`Begin your staking journey with Rocket Pool.`}
               </Text>
               <VStack mt="8" alignItems="start">
-                <Button
+                {/* <Button
                   cursor="default"
                   textAlign="start"
                   height="fit-content"
@@ -75,7 +75,7 @@ const StakingOnEthereum = (
                     account ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     )
                   }
                 >
@@ -86,7 +86,7 @@ const StakingOnEthereum = (
                   >
                     {'1. Connect your wallet to Bankless Academy.'}
                   </Box>
-                </Button>
+                </Button> */}
                 <Button
                   cursor="default"
                   textAlign="start"
@@ -95,7 +95,7 @@ const StakingOnEthereum = (
                     isTransactionVerified === 'true' ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : isLoading ? (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     ) : (
                       <CloseIcon color={theme.colors.incorrect} />
                     )
@@ -106,19 +106,19 @@ const StakingOnEthereum = (
                     whiteSpace="break-spaces"
                     lineHeight="1.5em"
                   >
-                    {'2. Obtain 0.001 rETH on any supported network*.'}
+                    {'Obtain 0.0002 rETH on any supported network*.'}
                     <Box ml="2">
-                      {'a) Mint rETH via '}
+                      {'a) Visit a '}
+                      <ExternalLink href="https://app.uniswap.org/explore/tokens/base/0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c">
+                        Decentralized Exchange
+                      </ExternalLink>
+                      {' to swap for rETH (Optimism or Base recommended)'}
+                      <br />
+                      {'b) Or mint rETH on Mainnet via '}
                       <ExternalLink href="https://stake.rocketpool.net/">
                         Rocket Pool
                       </ExternalLink>
                       {' (0.01 ETH minimum)'}
-                      <br />
-                      {'b) Visit a '}
-                      <ExternalLink href="https://app.uniswap.org/tokens/optimism/0x9bcef72be871e61ed4fbbc7630889bee758eb81d">
-                        Decentralized Exchange
-                      </ExternalLink>
-                      {' to swap for rETH'}
                     </Box>
                   </Box>
                 </Button>
@@ -140,7 +140,7 @@ const StakingOnEthereum = (
             </Box>
           </div>
           <div className="bloc2" style={{ alignSelf: 'center' }}>
-            <LessonCard
+            <StyledLessonCard
               borderRadius="3xl"
               maxW="400px"
               textAlign="center"
@@ -169,7 +169,7 @@ const StakingOnEthereum = (
                   </InternalLink>
                 </Box>
               </Box>
-            </LessonCard>
+            </StyledLessonCard>
           </div>
         </Box>
       </>

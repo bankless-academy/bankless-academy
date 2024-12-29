@@ -13,7 +13,7 @@ import {
   REQUIRED_PASSPORT_SCORE,
 } from 'constants/passport'
 import { theme } from 'theme/index'
-import { api, shortenAddress } from 'utils'
+import { api, shortenAddress } from 'utils/index'
 
 const PassportComponent = ({
   displayStamps,
@@ -46,51 +46,72 @@ const PassportComponent = ({
     }
   }, [refreshPassportLS])
 
-  async function checkPassport() {
-    setIsLoading(true)
-    const result = await api('/api/passport', { address, isProfile })
-    if (result && result.status === 200) {
-      setIsLoading(false)
-      // console.log('passport', result.data)
-      if (result.data?.error) {
-        toast.closeAll()
-        if (result.data?.error.includes('ERR_BAD_RESPONSE')) {
-          toast({
-            title: t('Gitcoin Passport stamps not loading'),
-            description: (
-              <ExternalLink
-                underline="true"
-                href="/faq#17f5d5963c644fa7af5e32598bd6c793"
-              >
-                {t('Follow these steps and try again')}
-              </ExternalLink>
-            ),
-            status: 'warning',
-            duration: null,
-            isClosable: true,
-          })
-        } else {
-          toast({
-            title: t('Gitcoin Passport issue'),
-            description: (
-              <ExternalLink underline="true" href="/report-an-issue">
-                {t('Report an Issue')}
-              </ExternalLink>
-            ),
-            status: 'warning',
-            duration: null,
-            isClosable: true,
-          })
+  const checkPassport = async () => {
+    try {
+      setIsLoading(true)
+      const result = await api('/api/passport', { address, isProfile })
+      if (result && result.status === 200) {
+        setIsLoading(false)
+        if (result.data?.error) {
+          toast.closeAll()
+          if (result.data?.error.includes('ERR_BAD_RESPONSE')) {
+            toast({
+              title: t('Gitcoin Passport stamps not loading'),
+              description: (
+                <ExternalLink
+                  underline="true"
+                  href="/faq#17f5d5963c644fa7af5e32598bd6c793"
+                >
+                  {t('Follow these steps and try again')}
+                </ExternalLink>
+              ),
+              status: 'warning',
+              duration: null,
+              isClosable: true,
+            })
+          } else {
+            toast({
+              title: t('Gitcoin Passport issue'),
+              description: (
+                <ExternalLink underline="true" href="/report-an-issue">
+                  {t('Report an Issue')}
+                </ExternalLink>
+              ),
+              status: 'warning',
+              duration: null,
+              isClosable: true,
+            })
+          }
         }
+        setPassportLS(result.data)
+      } else {
+        console.error('Error checking passport:', result.data?.error)
+        setIsLoading(false)
+        toast({
+          title: t('Error checking passport'),
+          description: t(
+            'An unexpected error occurred. Please try again later.'
+          ),
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        })
       }
-      setPassportLS(result.data)
-    } else {
-      // TODO: handle errors
+    } catch (error) {
+      console.error('Error checking passport:', error)
+      setIsLoading(false)
+      toast({
+        title: t('Error checking passport'),
+        description: t('An unexpected error occurred. Please try again later.'),
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
     }
   }
 
   const numberOfStampsLeftToCollect =
-    NUMBER_OF_STAMP_REQUIRED - passportLS.validStampsCount
+    NUMBER_OF_STAMP_REQUIRED - (passportLS.validStampsCount || 0)
 
   return (
     <>
@@ -103,7 +124,7 @@ const PassportComponent = ({
               alignItems="center"
               justifyContent="center"
             >
-              <Image src="/images/warning.png" height="40px" />
+              <Image src="/images/warning.png" height="40px" alt="Warning" />
             </Box>
             <Text
               fontSize="xl"
@@ -142,7 +163,7 @@ const PassportComponent = ({
                     fontWeight="bold"
                   >
                     {passportLS?.score !== '...' &&
-                    (passportLS?.score as any) >= REQUIRED_PASSPORT_SCORE
+                    Number(passportLS?.score) >= REQUIRED_PASSPORT_SCORE
                       ? t(
                           'You already have a Gitcoin Passport score > {{required_score}}, so you are not required to connect more accounts.',
                           { required_score: REQUIRED_PASSPORT_SCORE }
@@ -163,7 +184,7 @@ const PassportComponent = ({
       <Box textAlign="center">
         <Button
           variant="outline"
-          onClick={() => checkPassport()}
+          onClick={checkPassport}
           isLoading={isLoading}
           loadingText="Refreshing"
           mt="4"

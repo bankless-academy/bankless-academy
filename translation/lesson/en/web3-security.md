@@ -159,13 +159,13 @@ Social media `red flags`:
 
 🚩 **Guaranteed returns:** Nothing is guaranteed in crypto.
 
-🚩 **Un****requested links and offers,** _especially in direct messages_.
+🚩 **Unrequested links and offers,** _especially in direct messages_.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-safety-a76a39f4.svg)
 
 # Social Media Best Practices
 
-Practices for staying safe**:**
+Practices for staying safe:
 
 ✅ If they have to direct message you to sell their product, you probably don’t want it.
 
@@ -173,7 +173,7 @@ Practices for staying safe**:**
 
 ✅ Verify everything with an outside source, like another official project account.
 
-✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our [Explorer Community](https://bankless.ac/community) is a great place for questions like these.
+✅ If you’re ever uncertain, check with reputable members from a large community you trust - and ask in public.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-best-practices-48ad350f.svg)
 
@@ -217,7 +217,7 @@ Is a hardware wallet more secure than a hot wallet?
 
 After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple `wallets`. Here is a compartmentalized strategy using three separate wallets:
 
-1. **Social Wallet:** A wallet that serves as your web3 identity for logins —  like for the [Bankless Academy community](https://app.banklessacademy.com/lessons/academy-community) or web3 social media — use a `hardware wallet` for extra security.
+1. **Social Wallet:** A wallet that serves as your web3 identity for logins —  like for web3 social media — use a `hardware wallet` for extra security.
 2. **Trading Wallet:** A `hot wallet` for trading and other activities involving funds that may need to be moved on short notice.
 3. **HODL Wallet:** A `hardware wallet` for the long-term `HODL` — these are funds intended to hold for a long time. It’s recommended to _**not**_ use this wallet for interacting with smart contracts.
 

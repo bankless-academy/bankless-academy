@@ -16,7 +16,13 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser, { processNodes } from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
+import {
+  Warning,
+  ArrowUUpLeft,
+  Bug,
+  Square,
+  CheckSquare,
+} from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
@@ -31,14 +37,20 @@ import Card from 'components/Card'
 import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils'
+import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import {
   IS_PROD,
   IS_WHITELABEL,
   KEYWORDS,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
-import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
+import {
+  LearnIcon,
+  QuizIcon,
+  PollIcon,
+  QuestIcon,
+  RewardsIcon,
+} from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
 import NFT from 'components/NFT'
@@ -134,6 +146,10 @@ export const Slide = styled(Card)<{
       font-size: var(--chakra-fontSizes-xl);
       ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin: 0.8em;
+      ${(props) =>
+        (props.slidetype === 'QUIZ' || props.slidetype === 'POLL') &&
+        props.issmallscreen === 'true' &&
+        'margin: 0.8em 0 0 0;'};
     }
     h2 {
       font-weight: bold;
@@ -147,6 +163,10 @@ export const Slide = styled(Card)<{
       font-size: var(--chakra-fontSizes-xl);
       ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin-left: 2em;
+    }
+    /* hide all sibling elements that come after the <ol> element */
+    ol.animation-in-progress ~ * {
+      display: none;
     }
     li {
       margin-bottom: 8px;
@@ -178,6 +198,35 @@ export const Slide = styled(Card)<{
       padding-left: 1em;
       border-left: 2px solid white;
     }
+
+    // toggle
+    details {
+      border-radius: 8px;
+      margin-bottom: 5px;
+      overflow: hidden;
+    }
+    summary {
+      padding: 15px;
+      background-color: #3f3154;
+      cursor: pointer;
+      position: relative;
+    }
+    .content-detail {
+      border-radius: 0 0 8px 8px;
+      border: 1px solid #a873d2;
+      border-top: 0px;
+    }
+    summary:hover {
+    }
+    details[open] summary {
+      background: linear-gradient(134deg, #67407e, #354374);
+      border: 1px solid #a873d2;
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
+    }
+    .content-detail {
+      padding: 15px;
+    }
   }
 `
 
@@ -206,18 +255,37 @@ export type AnswerStateType = 'UNSELECTED' | 'CORRECT' | 'WRONG'
 const QuizAnswer = styled(Button)<{
   answerstate: AnswerStateType
   isActive: boolean
+  isPoll: boolean
 }>`
-  ${(props) => props.isActive && 'cursor: default;'};
+  ${(props) => props.isActive && !props.isPoll && `cursor: default;`};
   ${(props) =>
     props.answerstate === 'UNSELECTED' &&
     props.isActive &&
-    'background: #1C1C1C !important;'}
+    !props.isPoll &&
+    `background: #1C1C1C !important;`}
+  ${(props) =>
+    props.answerstate === 'UNSELECTED' &&
+    props.isPoll &&
+    `background-color: #3f3154 !important;`}
   ${(props) =>
     props.answerstate === 'CORRECT' &&
-    'background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%) !important;'}
+    !props.isPoll &&
+    `background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%) !important;`}
+  ${(props) =>
+    props.answerstate === 'CORRECT' &&
+    props.isPoll &&
+    `
+    background: linear-gradient(134deg, #67407e, #354374) !important;
+    border: 1px solid #a873d2 !important;
+  `}
   ${(props) =>
     props.answerstate === 'WRONG' &&
-    'background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%) !important;'}
+    !props.isPoll &&
+    `background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%) !important;`}
+   .chakra-button__icon {
+    margin-bottom: 0;
+  }
+  height: 56px;
 `
 
 const SlideNav = styled(Box)<{ issmallscreen?: string }>`
@@ -270,9 +338,7 @@ const Lesson = ({
   const buttonRightRef = useRef(null)
   const slideRef = useRef(null)
   const answerRef = useRef([])
-  const [currentSlide, setCurrentSlide] = useState(
-    parseInt(localStorage.getItem(lesson.slug) || '0')
-  )
+  const [currentSlide, setCurrentSlide] = useLocalStorage(`${lesson.slug}`, 0)
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   const [longSlide, setLongSlide] = useState<boolean>(false)
   const [, isSmallScreen] = useSmallScreen()
@@ -291,6 +357,11 @@ const Lesson = ({
 
   const { embed } = router.query
   const slide = lesson.slides[currentSlide]
+  const [quizSlide, setQuizSlide] = useLocalStorage(
+    `quiz-${slide?.quiz?.id}`,
+    []
+  )
+  const isQuizSlideArray = Array.isArray(quizSlide)
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
@@ -301,11 +372,25 @@ const Lesson = ({
     '/animation/'
   )
   // const matchAnimation = /src=["']\/animation\/([^"']+)["']/.exec(slide.content)
+  // console.log(matchAnimation)
+  // const animationSlideId = matchAnimation?.length ? matchAnimation[1] : ''
   const animationSlideId =
+    // Bitcoin Basics
     lesson.notionId === '6a440f5dd00a4179811178943bf89e1d'
       ? 'bitcoin'
-      : lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75'
+      : // Staking on Ethereum
+      lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75'
       ? 'validating-tx-with-ethereum-staking'
+      : // Ethereum Basics
+      lesson.notionId === '2a957f2be160403ebdd7c89a4f0fa01d'
+      ? // - 1 to currentSlide because starting at 0
+        currentSlide === 11 - 1
+        ? 'swap'
+        : currentSlide === 14 - 1
+        ? 'send'
+        : currentSlide === 17 - 1
+        ? 'ethereum'
+        : ''
       : ''
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationSlideId}`,
@@ -334,6 +419,39 @@ const Lesson = ({
 
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
+
+    // toggle
+    const accordions = document.querySelectorAll('.bloc1')
+    accordions.forEach((accordion) => {
+      const details = accordion.querySelectorAll('details')
+
+      // Open the first accordion by default
+      if (details.length > 0) {
+        details[0].setAttribute('open', 'true')
+      }
+
+      details.forEach((detail) => {
+        // Check if content div already exists
+        if (!detail.querySelector('.content-detail')) {
+          // Wrap content in a div
+          const content = document.createElement('div')
+          content.className = 'content-detail'
+          while (detail.childNodes.length > 1) {
+            content.appendChild(detail.childNodes[1])
+          }
+          detail.appendChild(content)
+        }
+
+        // Add click event listener
+        detail.addEventListener('click', () => {
+          details.forEach((otherDetail) => {
+            if (otherDetail !== detail) {
+              otherDetail.removeAttribute('open')
+            }
+          })
+        })
+      })
+    })
   }, [currentSlide])
 
   useEffect((): void => {
@@ -404,7 +522,7 @@ const Lesson = ({
     if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
       setAnimationStepLS(animationStepLS + 1)
       if (isSmallScreen) scrollDown()
-    } else goToNextSlide()
+    } else if (!(slide.quiz && !answerIsCorrect)) goToNextSlide()
   }
 
   const goToPrevSlide = () => {
@@ -451,7 +569,7 @@ const Lesson = ({
   }
 
   const selectAnswer = (e, answerNumber: number) => {
-    if (slide.type !== 'QUIZ') return
+    if (!(slide.type === 'QUIZ' || slide.type === 'POLL')) return
     if (lesson.slug === 'bankless-archetypes') {
       slide.quiz.rightAnswerNumber = answerNumber
       setSelectedAnswerNumber(answerNumber)
@@ -461,27 +579,48 @@ const Lesson = ({
     const feedback = slide.quiz?.feedback?.length
       ? slide.quiz?.feedback[answerNumber - 1]
       : undefined
-    if (slide.quiz.rightAnswerNumber === answerNumber) {
+    if (
+      slide.quiz.rightAnswerNumber === answerNumber ||
+      (slide.type === 'POLL' && answerNumber)
+    ) {
       if (feedback?.length)
         toast({
           title: feedback,
           status: 'success',
           duration: 20000,
           isClosable: true,
-          containerStyle: {
-            marginBottom: '81px !important',
-          },
         })
       // correct answer
-      Mixpanel.track('quiz_correct_answer', {
-        lesson: lesson?.englishName,
-        quiz_question: `${slide.quiz.id.split('-').pop()}. ${
-          slide.quiz.question
-        }`,
-        retry:
-          slide.quiz.id in quizRetryCount ? quizRetryCount[slide.quiz.id] : 0,
-      })
-      localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
+      if (slide.type === 'QUIZ') {
+        Mixpanel.track('quiz_correct_answer', {
+          lesson: lesson?.englishName,
+          quiz_question: `${slide.quiz.id.split('-').pop()}. ${
+            slide.quiz.question
+          }`,
+          retry:
+            slide.quiz.id in quizRetryCount ? quizRetryCount[slide.quiz.id] : 0,
+        })
+      }
+      const answerNumberString = answerNumber.toString()
+      if (slide.type === 'POLL') {
+        // case for multiple answers
+        let setQuiz = Array.isArray(quizSlide) ? quizSlide : []
+        if (setQuiz?.includes(answerNumberString)) {
+          setQuiz = setQuiz.filter(function (v) {
+            return v !== answerNumberString
+          })
+        } else {
+          setQuiz.push(answerNumberString)
+          Mixpanel.track('poll_answer', {
+            lesson: lesson?.englishName,
+            quiz_question: `${slide.quiz.id.split('-').pop()}. ${
+              slide.quiz.question
+            }`,
+            quiz_answer: slide.quiz.answers[answerNumber - 1],
+          })
+        }
+        setQuizSlide(setQuiz)
+      } else localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumberString)
     } else if (!answerIsCorrect) {
       if (feedback?.length)
         toast({
@@ -489,9 +628,6 @@ const Lesson = ({
           status: 'warning',
           duration: 20000,
           isClosable: true,
-          containerStyle: {
-            marginBottom: '81px !important',
-          },
         })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {
@@ -510,6 +646,12 @@ const Lesson = ({
     }
   }
 
+  const answerIsCorrect =
+    (slide?.quiz &&
+      parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
+        slide.quiz.rightAnswerNumber) ||
+    (slide.type === 'POLL' && quizSlide?.length)
+
   // shortcuts
   // TODO: add modal with all the shortcuts
   useHotkeys('?,shift+/', () =>
@@ -521,6 +663,7 @@ const Lesson = ({
     isAnimationSlide,
     animationStepLS,
     animationSlideId,
+    slide,
     currentSlide,
     isFirstSlide,
     isDesktop,
@@ -530,6 +673,7 @@ const Lesson = ({
     animationStepLS,
     animationSlideId,
     slide,
+    answerIsCorrect,
     isLastSlide,
     currentSlide,
     lesson,
@@ -603,6 +747,19 @@ const Lesson = ({
       // HACK: integrate the embed animation iframe as a component
       return <Animation animationId={animationSlideId} />
     }
+    if (isAnimationSlide && node.type === 'tag' && node.name === 'ol') {
+      // only show all sibling elements that come after the <ol> element if all animation steps are complete
+      const isAnimationInProgress = animationStepLS + 1 < animationSteps
+      return (
+        <ol
+          className={
+            isAnimationInProgress ? 'animation-in-progress' : 'animation'
+          }
+        >
+          {processNodes(node.children, transform)}
+        </ol>
+      )
+    }
     if (isAnimationSlide && node.type === 'tag' && node.name === 'li') {
       // hide next steps
       if (animationStepLS < index) return null
@@ -637,47 +794,54 @@ const Lesson = ({
     }
     if (node.type === 'tag' && node.name === 'code') {
       // Tooltip with definition
-      const keyword = node.children[0]?.data
-      const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
-      const lowerCaseKeywordSingular =
-        lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
-          ? lowerCaseKeyword.slice(0, -1)
-          : undefined
-      if (!lowerCaseKeyword?.length) return <>{keyword}</>
-      const englishDefition =
-        keywords[lowerCaseKeyword]?.definition ||
-        keywords[lowerCaseKeywordSingular]?.definition
-      const definition =
-        i18n.language !== 'en'
-          ? !t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' }).endsWith(
-              '.definition'
-            )
-            ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
-            : !t(`${lowerCaseKeywordSingular}.definition`, {
-                ns: 'keywords',
-              }).endsWith('.definition')
-            ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
+      try {
+        const keyword = node.children[0]?.data
+        const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
+        const lowerCaseKeywordSingular =
+          lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
+            ? lowerCaseKeyword.slice(0, -1)
+            : undefined
+        if (!lowerCaseKeyword?.length) return <>{keyword}</>
+        const englishDefition =
+          keywords[lowerCaseKeyword]?.definition ||
+          keywords[lowerCaseKeywordSingular]?.definition
+        const definition =
+          i18n.language !== 'en'
+            ? !t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' }).endsWith(
+                '.definition'
+              )
+              ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
+              : !t(`${lowerCaseKeywordSingular}.definition`, {
+                  ns: 'keywords',
+                }).endsWith('.definition')
+              ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
+              : englishDefition
             : englishDefition
-          : englishDefition
-      const nextHasPunctuation =
-        node.next?.data && ['.', ',', ':'].includes(node.next.data)
-      const extra = nextHasPunctuation ? node.next.data : ''
-      if (nextHasPunctuation) node.next.data = ''
-      if (!definition?.length) console.log('Missing definition:', keyword)
-      return definition?.length ? (
-        <span style={{ whiteSpace: 'nowrap' }}>
-          <Keyword
-            definition={definition}
-            keyword={keyword}
-            forceEnglish={
-              i18n.language !== 'en' && englishDefition === definition
-            }
-          />
-          {extra}
-        </span>
-      ) : (
-        <span className="is-missing">{keyword}</span>
-      )
+        const nextHasPunctuation =
+          node.next?.data && ['.', ',', ':'].includes(node.next?.data)
+        const extra = nextHasPunctuation ? node.next?.data : ''
+        if (nextHasPunctuation) node.next.data = ''
+        if (!definition?.length) console.log('Missing definition:', keyword)
+        return definition?.length ? (
+          <>
+            <span style={{ whiteSpace: 'nowrap' }}>
+              <Keyword
+                definition={definition}
+                keyword={keyword}
+                forceEnglish={
+                  i18n.language !== 'en' && englishDefition === definition
+                }
+              />
+            </span>
+            {extra}
+          </>
+        ) : (
+          <span className="is-missing">{keyword}</span>
+        )
+      } catch (error) {
+        console.error('Error in code tag processing:', error)
+        return null
+      }
     }
   }
 
@@ -690,11 +854,6 @@ const Lesson = ({
       localStorage.getItem(`quiz-${slide.quiz.id}`)
     )
   }
-
-  const answerIsCorrect =
-    slide?.quiz &&
-    parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
-      slide.quiz.rightAnswerNumber
 
   return (
     <Slide
@@ -709,18 +868,19 @@ const Lesson = ({
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
-      {!lesson?.isPreview && (
+      {!lesson?.isPreview && !isSmallScreen && (
         <Box h="0">
           <Button
             position="relative"
             top={isSmallScreen ? '8px' : '-38px'}
-            left={isSmallScreen ? '2px' : '-67px'}
-            size={isSmallScreen ? 'md' : 'lg'}
+            left={isSmallScreen ? '2px' : '-55px'}
+            size="lg"
             iconSpacing="0"
             variant="secondaryBig"
             leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
             onClick={() => closeLesson()}
-            p={isSmallScreen ? '0' : 'auto'}
+            p="0"
+            _hover={{ p: '0' }}
           ></Button>
         </Box>
       )}
@@ -737,11 +897,12 @@ const Lesson = ({
         <Box display="inline-flex" alignItems="center" mr="4">
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
+          {slide.type === 'POLL' && <PollIcon />}
           {slide.type === 'QUEST' && <QuestIcon />}
           {slide.type === 'END' && <RewardsIcon />}
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
-          {slide.type === 'QUIZ' ? (
+          {slide.type === 'QUIZ' || slide.type === 'POLL' ? (
             <>
               {lesson?.isPreview || !IS_PROD ? (
                 <Box display="contents" color="orange">
@@ -750,7 +911,7 @@ const Lesson = ({
               ) : (
                 ''
               )}
-              {t('Knowledge Check')}
+              {slide.type === 'QUIZ' ? t('Knowledge Check') : 'Poll'}
             </>
           ) : slide.type === 'QUEST' ? (
             <>
@@ -787,23 +948,28 @@ const Lesson = ({
           className="content"
           minH="calc(100vh - 360px)"
           pb={isSmallScreen ? '6' : 0}
-          pt={4}
+          pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 4}
         >
           {slide.type === 'LEARN' && (
             <Box ref={slideRef}>
               {ReactHtmlParser(slide.content, { transform })}
             </Box>
           )}
-          {slide.type === 'QUIZ' && (
+          {(slide.type === 'QUIZ' || slide.type === 'POLL') && (
             <>
-              {slide.quiz?.question && (
-                <Box>
-                  <h2>
-                    {ReactHtmlParser(slide?.quiz?.question, { transform })}
-                  </h2>
-                </Box>
-              )}
-              <Answers mt={4} mx={2} minH={isSmallScreen ? '380px' : '500px'}>
+              <Answers
+                mx={2}
+                minH={isSmallScreen ? '470px' : '590px'}
+                display="flex"
+                flexDirection="column"
+              >
+                {slide.quiz?.question && (
+                  <Box maxW="750px" margin="0 auto 32px">
+                    <h2>
+                      {ReactHtmlParser(slide?.quiz?.question, { transform })}
+                    </h2>
+                  </Box>
+                )}
                 <ButtonGroup size="lg" w="100%">
                   <SimpleGrid
                     columns={[null, null, 1]}
@@ -813,10 +979,13 @@ const Lesson = ({
                   >
                     {[1, 2, 3, 4, 5].map((n) => {
                       const answerState = answerIsCorrect
-                        ? slide.quiz.rightAnswerNumber === n
+                        ? slide.quiz.rightAnswerNumber === n ||
+                          (slide.type === 'POLL' &&
+                            isQuizSlideArray &&
+                            quizSlide?.includes(n.toString()))
                           ? 'CORRECT'
                           : 'UNSELECTED'
-                        : selectedAnswerNumber === n
+                        : selectedAnswerNumber === n && slide.type === 'QUIZ'
                         ? 'WRONG'
                         : 'UNSELECTED'
                       if (slide.quiz.answers?.length >= n)
@@ -828,20 +997,41 @@ const Lesson = ({
                             maxW="500px"
                             p="4"
                             h="auto"
-                            border={
-                              answerState === 'UNSELECTED' &&
-                              '1px solid #646587'
+                            className={
+                              slide.type === 'POLL'
+                                ? isQuizSlideArray &&
+                                  quizSlide?.includes(n.toString())
+                                  ? 'poll checked'
+                                  : 'poll'
+                                : 'quiz'
                             }
+                            border={
+                              answerState === 'UNSELECTED'
+                                ? '1px solid #646587'
+                                : '1px solid #64658700'
+                            }
+                            fontWeight="normal"
                             whiteSpace="break-spaces"
                             onClick={(e) => {
-                              if (answerState !== 'CORRECT') selectAnswer(e, n)
+                              if (
+                                answerState !== 'CORRECT' ||
+                                slide.type === 'POLL'
+                              )
+                                selectAnswer(e, n)
                             }}
                             answerstate={answerState}
                             justifyContent="space-between"
                             textAlign="left"
                             rightIcon={
-                              answerState === 'CORRECT' ? (
-                                <CheckIcon color="white" />
+                              answerState === 'UNSELECTED' &&
+                              slide.type === 'POLL' ? (
+                                <Square color="white" size={26} />
+                              ) : answerState === 'CORRECT' ? (
+                                slide.type === 'POLL' ? (
+                                  <CheckSquare color="white" size={26} />
+                                ) : (
+                                  <CheckIcon color="white" />
+                                )
                               ) : (
                                 answerState === 'WRONG' && (
                                   <Warning weight="bold" color="white" />
@@ -849,9 +1039,11 @@ const Lesson = ({
                               )
                             }
                             isActive={
-                              answerIsCorrect &&
-                              lesson.slug !== 'bankless-archetypes'
+                              (answerIsCorrect &&
+                                lesson.slug !== 'bankless-archetypes') ||
+                              slide.type === 'POLL'
                             }
+                            isPoll={slide.type === 'POLL'.toString()}
                           >
                             {slide.quiz.answers[n - 1]}
                           </QuizAnswer>
@@ -907,6 +1099,21 @@ const Lesson = ({
       </Box>
       <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
         <HStack flex="auto">
+          {isSmallScreen && (
+            <Button
+              ref={buttonLeftRef}
+              variant="secondaryBig"
+              size="lg"
+              onClick={() => closeLesson()}
+              leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+              ml={longSlide ? '600px' : '0'}
+              p="0"
+              _hover={{ p: '0' }}
+              iconSpacing="0"
+            >
+              {isSmallScreen ? '' : 'Prev'}
+            </Button>
+          )}
           {!isFirstSlide && (
             <Button
               ref={buttonLeftRef}
@@ -916,7 +1123,7 @@ const Lesson = ({
               leftIcon={<ArrowBackIcon />}
               ml={longSlide ? '600px' : '0'}
             >
-              {isLastSlide && isSmallScreen ? '' : 'Prev'}
+              {isSmallScreen ? '' : 'Prev'}
             </Button>
           )}
           {
@@ -925,7 +1132,8 @@ const Lesson = ({
               !lesson?.isPreview &&
               !IS_WHITELABEL &&
               (slide.type === 'LEARN' ||
-                (slide.type === 'QUIZ' && answerIsCorrect)) &&
+                ((slide.type === 'QUIZ' || slide.type === 'POLL') &&
+                  answerIsCorrect)) &&
               address && (
                 <>
                   <EditContentModal lesson={lesson} slide={slide} />
@@ -1003,7 +1211,11 @@ const Lesson = ({
             <>
               <Button
                 size="lg"
-                isDisabled={lesson.badgeId && !Quest?.isQuestCompleted}
+                isDisabled={
+                  lesson.badgeId &&
+                  !Quest?.isQuestCompleted &&
+                  lesson.slug !== 'ethereum-basics'
+                }
                 onClick={() => closeLesson()}
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}

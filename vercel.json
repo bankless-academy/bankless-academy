@@ -1,6 +1,15 @@
 {
   "headers": [
     {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin-allow-popups"
+        }
+      ]
+    },
+    {
       "source": "/images/(.*)/(.*)",
       "headers": [
         {
@@ -50,6 +59,15 @@
           "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
         }
       ]
+    },
+    {
+      "source": "/api/og/rewards",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache"
+        }
+      ]
     }
   ],
   "rewrites": [
@@ -64,6 +82,10 @@
     {
       "source": "/faq",
       "destination": "/notion/faq"
+    },
+    {
+      "source": "/about",
+      "destination": "/notion/about"
     },
     {
       "source": "/disclaimer",
@@ -118,12 +140,8 @@
   ],
   "crons": [
     {
-      "path": "/api/cron/bankless-dao-news",
-      "schedule": "0 0 * * *"
-    },
-    {
       "path": "/api/cron/leaderboard",
-      "schedule": "0 */2 * * *"
+      "schedule": "0 */12 * * *"
     }
   ]
 }

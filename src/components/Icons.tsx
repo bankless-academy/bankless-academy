@@ -2,7 +2,8 @@ import { Icon } from '@chakra-ui/react'
 import {
   BookOpen,
   LightbulbFilament,
-  Sword,
+  ChartBar,
+  RocketLaunch,
   Medal,
   Pencil,
   GraduationCap,
@@ -37,9 +38,22 @@ export const QuizIcon = (): React.ReactElement => (
   />
 )
 
+export const PollIcon = (): React.ReactElement => (
+  <Icon
+    as={ChartBar}
+    w={10}
+    h={10}
+    bg="linear-gradient(148deg, #B3F6FF, #A485FF)"
+    color="black"
+    borderRadius="50%"
+    p="2"
+    boxShadow="0px 0px 15px 0px #A4A5FF"
+  />
+)
+
 export const QuestIcon = (): React.ReactElement => (
   <Icon
-    as={Sword}
+    as={RocketLaunch}
     w={10}
     h={10}
     bg="linear-gradient(148.06deg, #FFDFB0 7.86%, #FF84DC 90.48%)"

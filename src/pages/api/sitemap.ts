@@ -5,6 +5,8 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { DEFAULT_METADATA, DOMAIN_URL, GENERIC_ERROR_MESSAGE, LESSONS, PROJECT_DESCRIPTION, PROJECT_NAME, imageMeta } from 'constants/index'
 import { lessonLink } from "utils"
 import { pageMeta as lessonsPageMeta } from 'pages/lessons/index'
+import { pageMeta as glossaryPageMeta } from 'pages/glossary'
+import { pageMeta as oscPageMeta } from 'pages/onchain-summer-challenge'
 
 const SPLIT = `\`\`\`
 
@@ -57,6 +59,17 @@ export default async function handler(
           date: new Date(lesson.publicationDate),
           image: `${DOMAIN_URL}${lesson.socialImageLink}`
         })
+        if (!lesson?.isArticle) {
+          // content page
+          lessons.push({
+            title: `${lesson.englishName}`,
+            id: `/lessons/${lesson.slug}/content`,
+            link: `${lessonLink(lesson)}/content`,
+            description: lesson.description,
+            date: new Date(lesson.publicationDate),
+            image: `${DOMAIN_URL}${lesson.socialImageLink}`
+          })
+        }
 
         const languagePromises = lesson.languages.map(async (language) => {
           const md = await fetch(
@@ -74,6 +87,17 @@ export default async function handler(
             date: new Date(lesson.publicationDate),
             image: `${DOMAIN_URL}${lesson.socialImageLink}`
           })
+          if (!lesson?.isArticle) {
+            // content page
+            lessons.push({
+              title: `${translatedLesson.name}`,
+              id: `/lessons/${language}/${lesson.slug}/content`,
+              link: `${lessonLink(lesson).replace('/lessons/', `/lessons/${language}/`)}/content`,
+              description: translatedLesson.description,
+              date: new Date(lesson.publicationDate),
+              image: `${DOMAIN_URL}${lesson.socialImageLink}`
+            })
+          }
         })
 
         await Promise.all(languagePromises)
@@ -100,12 +124,28 @@ export default async function handler(
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
     })
     feed.addItem({
-      title: `${PROJECT_NAME} - FAQ`,
+      title: `FAQ`,
       id: `/faq`,
       link: `${DOMAIN_URL}/faq`,
       description: PROJECT_DESCRIPTION,
       date: lastUpdate,
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+    })
+    feed.addItem({
+      title: `${glossaryPageMeta.title}`,
+      id: `/glossary`,
+      link: `${DOMAIN_URL}/glossary`,
+      description: PROJECT_DESCRIPTION,
+      date: lastUpdate,
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+    })
+    feed.addItem({
+      title: `${oscPageMeta.title}`,
+      id: `/onchain-summer-challenge`,
+      link: `${DOMAIN_URL}/onchain-summer-challenge`,
+      description: `${oscPageMeta.description}`,
+      date: lastUpdate,
+      image: `${DOMAIN_URL}${oscPageMeta.image}`
     })
     for (const lesson of lessons) {
       feed.addItem(lesson)

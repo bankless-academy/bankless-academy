@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import Parser from 'rss-parser'
 
 import LESSONS from 'constants/lessons'
-import { lessonLink } from 'utils'
+import { lessonLink } from 'utils/index'
 import { DOMAIN_URL, POTION_API } from 'constants/index'
 import { fetchBE } from 'utils/server'
 

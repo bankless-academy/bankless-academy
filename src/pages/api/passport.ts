@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
-import { GENERIC_ERROR_MESSAGE } from 'constants/index'
+import { DEMO_ACCOUNTS_IDS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION, REQUIRED_PASSPORT_SCORE } from 'constants/passport'
 import { trackBE } from 'utils/mixpanel'
 import { PassportResponseSchema, fetchPassport, submitPassport } from 'utils/passport_lib'
@@ -16,7 +15,7 @@ export default async function handler(
   const version = PASSPORT_VERSION
   const param =
     DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
-  const { address, embed, isProfile } = param
+  const { address, embed, isProfile, reset } = param
 
   if (!address || typeof address === 'object')
     return res.status(400).json({ error: 'Wrong params' })
@@ -37,27 +36,43 @@ export default async function handler(
     return res.status(403).json({ error: 'userId not found' })
   }
 
+  const isDemoAccount = DEMO_ACCOUNTS_IDS.includes(userId)
+
+  // Allow to reset stamps for demo
+  if (reset && isDemoAccount) {
+    console.log(`Reset stamps for ${address}`)
+    await db(TABLES.users)
+      .where(TABLE.users.id, userId)
+      .update({ ba_stamps: {} })
+    return res.status(200).json({})
+  }
+
   const [user] = await db(TABLES.users)
     .select(TABLE.users.sybil_user_id, TABLE.users.ba_stamps)
     .where('address', 'ilike', `%${address}%`)
 
   const initial_stamps = Object.keys(user.ba_stamps)
   console.log('initial_stamps', initial_stamps)
-  if (!initial_stamps?.includes('preloaded')) {
-    await axios.get(
-      `${req.headers.origin}/api/stamps/callback/farcaster?json=true&address=${address}`
-    )
-    await axios.get(
-      `${req.headers.origin}/api/stamps/callback/ens?json=true&address=${address}`
-    )
-    // await axios.get(
-    //   `${req.headers.origin}/api/stamps/callback/poh?json=true&address=${address}`
-    // )
-    await db.raw(
-      `update "users" set "ba_stamps" = ba_stamps || ? where "users"."id" = ?`,
-      [{ preloaded: true }, userId]
-    )
-    console.log('stamp_preloaded')
+  if (!initial_stamps?.includes('preloaded') && !isDemoAccount) {
+    // pre-load farcaster & ens
+    try {
+      await fetch(
+        `${req.headers.origin}/api/stamps/callback/farcaster?json=true&address=${address}`
+      )
+      await fetch(
+        `${req.headers.origin}/api/stamps/callback/ens?json=true&address=${address}`
+      )
+      // await fetch(
+      //   `${req.headers.origin}/api/stamps/callback/poh?json=true&address=${address}`
+      // )
+      await db.raw(
+        `update "users" set "ba_stamps" = ba_stamps || ? where "users"."id" = ?`,
+        [{ preloaded: true }, userId]
+      )
+      console.log('stamp_preloaded')
+    } catch (error) {
+      console.error('Error preloading stamps:', error)
+    }
   }
 
   // TODO: make this dynamic
@@ -89,20 +104,24 @@ export default async function handler(
 
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
-      if (!isProfile) {
-        const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
-        // console.log(submit)
-        if (submit.status === 200) {
-          const fetchScore = await fetchPassport(address, PASSPORT_COMMUNITY_ID)
-          if (fetchScore.ok) {
-            const res = PassportResponseSchema.parse(await fetchScore.json())
-            console.log(res)
-            if (res?.score) {
-              score = parseInt(res.score)
+      if (!isProfile && !isDemoAccount) {
+        try {
+          const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
+          // console.log(submit)
+          if (submit.status === 200) {
+            const fetchScore = await fetchPassport(address, PASSPORT_COMMUNITY_ID)
+            if (fetchScore.ok) {
+              const res = PassportResponseSchema.parse(await fetchScore.json())
+              console.log(res)
+              if (res?.score) {
+                score = parseInt(res.score)
+              }
+            } else {
+              console.log('score not found ...')
             }
-          } else {
-            console.log('score not found ...')
           }
+        } catch (error) {
+          console.error('Error fetching passport score:', error)
         }
       }
       const [{ ba_stamps: stampHashes }] = await db(TABLES.users)

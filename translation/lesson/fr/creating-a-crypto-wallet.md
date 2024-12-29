@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-Guide pas à pas Consultez [la leçon complète](https://app.banklessacademy.com/lessons/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge!**
+Voici un résumé de la leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/wallet-basics), ainsi qu'une marche à suivre pour la quête. Consultez [la leçon complète](https://app.banklessacademy.com/lessons/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge!**
 
 ---
 
@@ -47,7 +47,7 @@ Guide pas à pas Consultez [la leçon complète](https://app.banklessacademy.com
 
 Les wallets de cryptomonnaies sont un élément essentiel de l'équipement web3, vous permettant d'utiliser la `cryptomonnaie` sur votre ordinateur ou téléphone. Les wallets sont accessibles à l'aide d'un logiciel appelé "wallet app" - une extension de navigateur web pour votre ordinateur, ou une application sur votre téléphone.
 
-Et ce n'est pas tout. Didier Krux Nous pouvons les utiliser pour échanger des cryptomonnaies avec d'autres personnes, nous connecter à des applications blockchain, **et même collecter des objets numériques comme les badges de la Bankless Academy.** Plus nous explorons, plus nos wallets prennent de l'importance - certains les considérant comme le début de l'identité numérique.
+Et ce n'est pas tout. Les wallets sont plus que des comptes pour détenir des cryptomonnaies - ils sont notre connexion à la blockchain. Nous pouvons les utiliser pour échanger des cryptomonnaies avec d'autres personnes, nous connecter à des applications blockchain, **et même collecter des objets numériques comme les badges de la Bankless Academy.** Plus nous explorons, plus nos wallets prennent de l'importance - certains les considérant comme le début de l'identité numérique.
 
 Les wallets contiennent deux éléments essentiels d'information sur les comptes :
 

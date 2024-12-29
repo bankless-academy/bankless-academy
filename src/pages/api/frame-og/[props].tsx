@@ -4,6 +4,7 @@ import { NextRequest } from 'next/server'
 import { z } from 'zod'
 
 import { DOMAIN_URL } from 'constants/index'
+import ProgressStepsBasic from 'components/ProgressStepsBasic'
 
 export const runtime = 'edge'
 
@@ -17,8 +18,10 @@ const schema = z.object({
     }),
     z.object({
       type: z.literal('question'),
+      numQuestion: z.number(),
+      totalQuestions: z.number(),
       question: z.string(),
-      answers: z.array(z.string().max(50)).min(2).max(4),
+      answers: z.array(z.string().max(60)).min(2).max(4),
       selection: z
         .object({
           selected: z.number(),
@@ -98,13 +101,21 @@ function Screen(props: Props) {
       tw="relative w-full h-full flex flex-col items-center justify-center"
       style={{ backgroundColor: '#161515' }}
     >
+      {props.state?.totalQuestions && (
+        <ProgressStepsBasic
+          step={props.state.numQuestion}
+          total={props.state.totalQuestions}
+        />
+      )}
       <WWTBAMUI
         green={selection && selection.correct}
         red={selection && selection.selected}
         nb={props.state.answers?.length}
       />
       <div
-        tw="absolute flex items-center justify-center text-center text-white text-5xl overflow-hidden"
+        tw={`absolute flex items-center justify-center text-center text-white overflow-hidden ${
+          props.state.question.length > 100 ? 'text-4xl' : 'text-5xl'
+        }`}
         style={{ left: 164, top: 75, width: 859, height: 154 }}
       >
         {props.state.question}
@@ -114,19 +125,40 @@ function Screen(props: Props) {
         return (
           <div
             key={index}
-            tw="absolute flex items-center justify-start text-left text-white text-4xl overflow-hidden"
+            tw={`absolute flex items-center text-left text-white ${
+              answer.length > 47
+                ? 'text-2xl'
+                : answer.length > 40
+                ? 'text-3xl'
+                : 'text-4xl'
+            }`}
             style={{
               left: coords[index].x,
               top: coords[index].y,
-              width: 414,
+              width: 440,
               height: 85,
             }}
           >
-            <span>
-              <span style={{ color: '#FFBF00', marginRight: 10 }}>
+            <span tw="flex">
+              <span
+                tw="items-center justify-center"
+                style={{
+                  color: '#FFBF00',
+                  paddingRight: 20,
+                  height: 85,
+                }}
+              >
                 {buttons[index]}:
               </span>
-              <span style={{ marginLeft: 10 }}>{answer}</span>
+              <span
+                tw="items-center"
+                style={{
+                  width: 380,
+                  height: 85,
+                }}
+              >
+                {answer}
+              </span>
             </span>
           </div>
         )

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import WalletConnect from 'components/Quest/WalletConnect'
+import SocialSharing from 'components/Quest/SocialSharing'
 import BitcoinBasics from 'components/Quest/BitcoinBasics'
 import WalletBasics from 'components/Quest/WalletBasics'
 import IntroToDeFi from 'components/Quest/IntroToDeFi'
@@ -18,7 +19,8 @@ import { useAccount } from 'wagmi'
 
 import { useSmallScreen } from 'hooks/index'
 import { QUESTS } from 'constants/index'
-import { api } from 'utils'
+import { api } from 'utils/index'
+import { LessonType } from 'entities/lesson'
 
 export type QuestComponentType = typeof QUESTS[number]
 
@@ -36,12 +38,12 @@ export const ONCHAIN_QUESTS = [
 ]
 
 // TODO: revamp QuestComponent
-const QuestComponent = (
-  component: QuestComponentType | null,
-  badgeId?: number
-): QuestType => {
+const QuestComponent = (lesson: LessonType, badgeId?: number): QuestType => {
+  const component = lesson?.quest
+  const isSocialSharing = lesson?.questSocialMessage?.length > 0
   const QUEST_COMPONENTS = {
     WalletConnect: WalletConnect,
+    SocialSharing: SocialSharing,
     BitcoinBasics: BitcoinBasics,
     WalletBasics: WalletBasics,
     IntroToDeFi: IntroToDeFi,
@@ -61,18 +63,23 @@ const QuestComponent = (
   const { address } = useAccount()
   const [isSmallScreen] = useSmallScreen()
 
-  const Component =
-    component === 'BitcoinBasics'
-      ? QUEST_COMPONENTS['BitcoinBasics']({ test: false })
-      : component === 'ConceptosBasicosDeBlockchain'
-      ? // HACK: TEMP
-        QUEST_COMPONENTS['BlockchainBasics']('es')
-      : component === 'BlockchainBasics'
-      ? // HACK: TEMP
-        QUEST_COMPONENTS['BlockchainBasics']('en')
-      : component in QUEST_COMPONENTS
-      ? QUEST_COMPONENTS[component](address)
-      : WalletConnect(address)
+  const Component = isSocialSharing
+    ? QUEST_COMPONENTS['SocialSharing'](
+        address,
+        component,
+        lesson.questSocialMessage
+      )
+    : component === 'BitcoinBasics'
+    ? QUEST_COMPONENTS['BitcoinBasics']({ test: false })
+    : component === 'ConceptosBasicosDeBlockchain'
+    ? // HACK: TEMP
+      QUEST_COMPONENTS['BlockchainBasics']('es')
+    : component === 'BlockchainBasics'
+    ? // HACK: TEMP
+      QUEST_COMPONENTS['BlockchainBasics']('en')
+    : component in QUEST_COMPONENTS
+    ? QUEST_COMPONENTS[component](address)
+    : WalletConnect(address)
 
   useEffect(() => {
     const validateQuest = async () => {

@@ -1,6 +1,6 @@
 ---
 TITLE: ウォレットの基礎
-DESCRIPTION: 仮想通貨ウォレットとは Learn more and create your “Ethereum account” today!
+DESCRIPTION: 仮想通貨ウォレットとは 詳細については、今すぐ最初の財布を作成してください！
 LANGUAGE: 英語
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: X

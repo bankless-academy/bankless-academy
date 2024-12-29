@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-import { formatEther } from 'viem'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
@@ -9,18 +9,26 @@ import {
   GENERIC_ERROR_MESSAGE,
   WALLET_SIGNATURE_MESSAGE,
   ALCHEMY_KEY_BACKEND,
+  DOMAIN_URL,
 } from 'constants/index'
-import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
-import { api, verifySignature } from 'utils'
+import { BASE_BADGE_CONTRACT_ADDRESS, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
+import { api, fetchExplorerData, isHolderOfBadge } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
+import { verifySignature } from 'utils/SignatureUtil'
+import { base } from 'viem/chains'
+import { JsonRpcProvider } from '@ethersproject/providers'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  // check params + signature
-  const { address, badgeId, embed, signature, referrer } = req.body
+  const DEV_SECRET = process.env.DEV_SECRET
+  const isDev = DEV_SECRET && req.query?.dev === DEV_SECRET
+  const param = isDev ? req.query : req.body
+    // check params + signature
+  const { address, embed, signature, referrer, chainId } = param
+  let { badgeId } = param
   // console.log(req)
   if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
@@ -30,11 +38,18 @@ export default async function handler(
   console.log('badgeId: ', badgeId)
   console.log('signature: ', signature)
 
-  if (!signature)
-    return res.status(400).json({ error: 'Missing wallet signature' })
+  if (isDev) {
+    badgeId = parseInt(badgeId)
+  } else {
+    if (!signature)
+      return res.status(400).json({ error: 'Missing wallet signature' })
 
-  if (!verifySignature(address, signature, WALLET_SIGNATURE_MESSAGE))
-    return res.status(403).json({ error: 'Wrong signature' })
+    if (!chainId)
+      return res.status(400).json({ error: 'Missing chainId' })
+
+    if (!await verifySignature({ address, signature, message: WALLET_SIGNATURE_MESSAGE, chainId }))
+      return res.status(403).json({ error: 'Wrong signature' })
+  }
 
   const message = { tokenId: badgeId }
   console.log('message: ', message)
@@ -63,7 +78,7 @@ export default async function handler(
       return res.status(403).json({ error: 'credentialId not found' })
 
     const [questCompleted] = await db(TABLES.completions)
-      .select(TABLE.completions.id, TABLE.completions.transaction_at, TABLE.completions.transaction_hash)
+      .select(TABLE.completions.id, TABLE.completions.transaction_at, TABLE.completions.transaction_hash, TABLE.completions.credential_asked_at)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
       .where(TABLE.completions.is_quest_completed, true)
@@ -71,10 +86,52 @@ export default async function handler(
 
     let questStatus = ''
 
-    if (!questCompleted?.id) {
+    // Ignore minting if credential_asked_at less than 30 seconds ago
+    if (questCompleted?.credential_asked_at) {
+      const credentialAskedAt = new Date(questCompleted.credential_asked_at)
+      const now = new Date()
+      const diff = (now.getTime() - credentialAskedAt.getTime()) / 1000
+      if (diff < 30) {
+        questStatus = 'Minting already in progress...'
+        console.log(questStatus)
+        return res.status(200).json({ status: questStatus })
+      }
+    }
+
+    // Exception: No quest page for Ethereum Basics (badgeId !== 14)
+    if (!questCompleted?.id && badgeId !== 14) {
       questStatus = 'quest not completed'
       console.log(questStatus)
       return res.status(403).json({ status: questStatus })
+    }
+
+    // update credential_asked_at
+    if (questCompleted?.id) {
+      await db(TABLES.completions)
+        .where(TABLE.completions.id, questCompleted.id)
+        .update({ credential_asked_at: db.raw("NOW()") })
+    } else {
+      console.log('questCompleted is undefined or does not have an id')
+    }
+
+    console.log('questCompleted', questCompleted)
+
+    const explorerData = await fetchExplorerData(address)
+
+    if (explorerData.failed) {
+      questStatus = 'Explorer data not found'
+      console.log(questStatus)
+      return res.status(200).json({ status: questStatus })
+    }
+
+    // check if user already has the badge on Base
+    const isBadgeAlreadyClaimed = await isHolderOfBadge(address, badgeId)
+    console.log('isBadgeAlreadyClaimed', isBadgeAlreadyClaimed)
+
+    if (explorerData.badges.includes(badgeId) || isBadgeAlreadyClaimed) {
+      questStatus = 'Badge already minted.'
+      console.log(questStatus)
+      return res.status(200).json({ status: questStatus })
     }
 
     if (IS_BADGE_PROD && questCompleted?.transaction_at) {
@@ -104,7 +161,7 @@ export default async function handler(
     }
 
     const userBadges = await axios.get(
-      `${req.headers.origin}/api/user/${address}?badges=true`
+      `${DOMAIN_URL}/api/user/${address}?badges=true`
     )
     // console.log('userBadges', userBadges?.data?.data)
 
@@ -120,7 +177,7 @@ export default async function handler(
     }
 
     // Sybil check with Academy Passport
-    const result = await api(`${req.headers.origin}/api/passport`, {
+    const result = await api(`${DOMAIN_URL}/api/passport`, {
       address: address,
     })
     if (result && result.status === 200) {
@@ -172,34 +229,36 @@ export default async function handler(
           status: questStatus,
         })
       }
-      // Cancel tx if gas > 300 gwei
+      // Cancel tx if gas > 0.05 gwei
+      const GWEI_LIMIT = 0.2
       // estimate gas fees
-      const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=137`, {
+      const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=${base.id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': process.env.BLOCKNATIVE_API_KEY
         },
       })).json()
-      // select confidence: 95% = [1]
-      console.log(estimation)
-      console.log(estimation.blockPrices[0].estimatedPrices[1])
-      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxFeePerGas || 40
-      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxPriorityFeePerGas || 40
+      console.log('estimation.blockPrices', JSON.stringify(estimation.blockPrices, null, 2))
+      // select confidence: 90% confidence [2]
+      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[2].maxFeePerGas || 0.2
+      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[2].maxPriorityFeePerGas || 0.001
       const options: any = {}
+      // 160k gas limit
+      // options.gasLimit = ethers.utils.hexlify(160000)
       if (IS_BADGE_PROD) {
         options.maxFeePerGas = ethers.utils.parseUnits(
-          Math.ceil(maxFeePerGasInGwei) + '',
+          maxFeePerGasInGwei.toFixed(9),
           'gwei'
         )
         options.maxPriorityFeePerGas = ethers.utils.parseUnits(
-          Math.ceil(maxPriorityFeePerGasInGwei) + '',
+          maxPriorityFeePerGasInGwei.toFixed(9),
           'gwei'
         )
       }
       console.log(options)
-      if (maxFeePerGasInGwei > 500) {
-        questStatus = 'Polygon is currently experiencing high gas prices... try again in 1 hour.'
+      if (maxFeePerGasInGwei > GWEI_LIMIT) {
+        questStatus = 'Base is currently experiencing high gas prices... try again in 1 hour.'
         console.log(questStatus)
         return res.status(403).json({ status: questStatus })
       }
@@ -210,64 +269,58 @@ export default async function handler(
 
       console.log('mint !!!!!!!!!')
       // send email alert if balance < 1 MATIC
+      // TODO: check of Base balance is enough
       // TODO: add alternate provider + handle timeout
-      const provider = new ethers.providers.AlchemyProvider(IS_BADGE_PROD ? 'matic' : 'maticmum', ALCHEMY_KEY_BACKEND)
-      const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
-      console.log('balance: ', balance)
-      if (parseInt(balance) < 1) {
-        console.log('low balance')
-        trackBE(address, 'low_balance')
-      }
+      const provider = new JsonRpcProvider(`https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
+      // const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
+      // console.log('balance: ', balance)
+      // if (parseInt(balance) < 1) {
+      //   console.log('low balance')
+      //   trackBE(address, 'low_balance')
+      // }
       // prod: 0x472A74C4F7e281e590Bed861daa66721A6ACADBC
       // dev: 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
+      // TODO: replace with smart wallet (easier to manage gas fees + limits)
       const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
-      const contract = new ethers.Contract(BADGE_ADDRESS, [
+      const contract = new ethers.Contract(BASE_BADGE_CONTRACT_ADDRESS, [
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "account",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "id",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "bytes",
+              "internalType": "bytes[]",
               "name": "data",
-              "type": "bytes"
+              "type": "bytes[]"
             }
           ],
-          "name": "mint",
+          "name": "multicall",
           "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
-        },
+        }
       ], signer)
-      const contractFunction = 'mint(address,uint256,uint256,bytes)'
-      const functionParams = [address.toLowerCase(), badgeId, 1, '0x00']
-      // console.log(functionParams)
+
+      // Construct multicall data with dynamic badgeId and address
+      const addressPadded = address.toLowerCase().replace('0x', '')
+      const badgeIdHex = badgeId.toString(16).padStart(2, '0')
+      const multicallData = [
+        `0xac9650d800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000c4c238d1ee000000000000000000000000${addressPadded}00000000000000000000000000000000000000000000000000000000000000${badgeIdHex}000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`
+      ]
+
+      let mint;
       try {
-        // transaction simulation
-        const simulation = await contract.callStatic[contractFunction](...functionParams)
-        console.log('simulation', simulation)
+        mint = await contract.multicall(multicallData, options)
+        // // simulate mint
+        // mint = {
+        //   hash: '0x7a23abe9306e6f499c582e45fa8ffd6e3fde4c85f37a35c055bae01d6aa3213d'
+        // }
       } catch (error) {
-        console.log(error)
-        return res.status(500).json({
-          error: 'simulation fail',
-          status: error?.reason,
-        })
+        console.log('error', error)
+        // options.gasLimit = ethers.utils.hexlify(100000)
+        // options.maxFeePerGas = ethers.utils.parseUnits('330', 'gwei')
+        // options.maxPriorityFeePerGas = ethers.utils.parseUnits('80', 'gwei')
+        // console.log('Updated options with higher gas fees:', options)
+        // mint = await contract.multicall(multicallData, options)
       }
-      const mint = await contract[contractFunction](...functionParams, options)
-      // DEV: uncomment this line to test simulate minting
-      // const mint = { hash: 'test' }
+
       console.log(mint)
 
       if (mint?.hash) {
@@ -313,10 +366,12 @@ export default async function handler(
           console.log('no referrer')
         }
 
-        const updated = await db(TABLES.completions)
+        if (questCompleted?.id) {
+          const updated = await db(TABLES.completions)
           .where(TABLE.completions.id, questCompleted.id)
           .update({ transaction_at: db.raw("NOW()"), transaction_hash: mint.hash })
-        console.log(`updated `, updated)
+          console.log(`updated `, updated)
+        }
         trackBE(address, 'mint_badge', {
           lesson: lessonName,
           badgeId,
@@ -339,7 +394,7 @@ export default async function handler(
       console.log(error)
       console.error(error?.response?.data)
       trackBE(address, 'mint_kudos_issue', {
-        error: error?.response?.data,
+        error,
         badgeId,
         address,
       })

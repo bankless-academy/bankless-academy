@@ -113,6 +113,8 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           href={
             metadata?.canonical
               ? `${DOMAIN_URL_}${metadata.canonical}`
+              : canonical?.endsWith('-datadisk')
+              ? canonical?.replace('-datadisk', '')
               : canonical
           }
         />
@@ -164,7 +166,8 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
               property="fc:frame:image"
               content={
                 isDatadisk
-                  ? `${DOMAIN_URL_}${lesson.lessonCollectibleGif}`
+                  ? // TODO: add back .gif for FC < 10MB + make dynamic
+                    `${DOMAIN_URL_}/images/${lesson.slug}/social-datadisk.jpg`
                   : image
               }
             />

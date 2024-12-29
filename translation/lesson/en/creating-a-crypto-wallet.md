@@ -2,7 +2,7 @@
 TITLE: Creating a Crypto Wallet
 DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
 LANGUAGE: English
-WRITERS: 
+WRITERS: Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
@@ -65,11 +65,11 @@ Set up your first wallet on your computer, using the walkthrough below, or keep 
 
 ### Computer Wallet
 
-[](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
+[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
 ### Phone Wallet
 
-[](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
+[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 
 ---

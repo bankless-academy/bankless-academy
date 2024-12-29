@@ -1,31 +1,43 @@
 import styled from '@emotion/styled'
-import { Text, Image, Button, Box } from '@chakra-ui/react'
-import { ArrowUUpLeft } from '@phosphor-icons/react'
+import {
+  Text,
+  Image,
+  Button,
+  Box,
+  useToast,
+  useDisclosure,
+} from '@chakra-ui/react'
+import { ArrowUUpLeft, ShareFat } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
 import { LessonType } from 'entities/lesson'
 import Lesson from 'components/Lesson'
 import Card from 'components/Card'
 import Badge from 'components/Badge'
 import QuestComponent from 'components/Quest/QuestComponent'
-import CollectLessonButton from 'components/CollectLessonButton'
+import MintDatadiskButton from 'components/MintDatadiskButton'
 import InternalLink from 'components/InternalLink'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 import LessonButton from 'components/LessonButton'
 import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
 import {
   DOMAIN_URL,
+  IS_COLLECTIBLE_ACTIVATED,
   IS_PROD,
   IS_WALLET_DISABLED,
   IS_WHITELABEL,
   TOKEN_GATING_ENABLED,
+  TWITTER_ACCOUNT,
 } from 'constants/index'
 import { useEffect } from 'react'
-import { Mixpanel, scrollDown, scrollTop } from 'utils'
+import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
 import LanguageSwitch from 'components/LanguageSwitch'
+import ShareModal from 'components/ShareModal'
+import { useAccount, useEnsName } from 'wagmi'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -40,11 +52,14 @@ const StyledBox = styled(Box)`
 const closeLesson = (
   openedLesson: string,
   lesson: LessonType,
-  Quest
+  Quest,
+  toast
 ): string => {
   const openedLessonArray = JSON.parse(openedLesson)
+  toast.closeAll()
   if (
     Quest?.isQuestCompleted &&
+    quizComplete(lesson) &&
     lesson?.badgeId &&
     !(localStorage.getItem(`isBadgeMinted-${lesson.badgeId}`) === 'true')
   )
@@ -63,6 +78,13 @@ const quizComplete = (lesson: LessonType): boolean => {
           slide.quiz.rightAnswerNumber
       )
     }
+    // POLL answers are not mandatory for now
+    // if (slide.type === 'POLL') {
+    //   quizAnswers.push(
+    //     JSON.parse(localStorage.getItem(`quiz-${slide.quiz.id}`) || '[]')
+    //       ?.length > 0
+    //   )
+    // }
   }
   return !quizAnswers.includes(false)
 }
@@ -80,6 +102,14 @@ const LessonDetail = ({
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
   const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
+  const router = useRouter()
+  const pageEndsWithDatadisk = router?.query?.slug?.[0]?.endsWith('-datadisk')
+  const toast = useToast()
+  const {
+    isOpen: isShareOpen,
+    onOpen: onShareOpen,
+    onClose: onShareClose,
+  } = useDisclosure()
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -92,7 +122,7 @@ const LessonDetail = ({
       language: i18n.language,
     })
     scrollTop()
-    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
+    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
   }, [])
 
   useEffect((): void => {
@@ -101,12 +131,17 @@ const LessonDetail = ({
 
   const isQuizComplete = quizComplete(lesson)
 
-  const Quest = QuestComponent(lesson.quest, lesson.badgeId)
+  const Quest =
+    // HACK: no quest for Ethereum Basics
+    lesson.slug === 'ethereum-basics' && quizComplete(lesson)
+      ? { isQuestCompleted: true, questComponent: <></> }
+      : QuestComponent(lesson, lesson.badgeId)
 
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
 
   const isLessonCollected =
+    (IS_COLLECTIBLE_ACTIVATED || pageEndsWithDatadisk) &&
     !!lesson.lessonCollectibleTokenAddress?.length &&
     lessonsCollectedLS.includes(
       lesson.lessonCollectibleTokenAddress.toLowerCase()
@@ -115,6 +150,28 @@ const LessonDetail = ({
   const tallyId =
     lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
 
+  const [currentWallet] = useLocalStorage('current_wallet', '')
+  const { address } = useAccount()
+  const { data: ensName } = useEnsName({
+    address: address,
+    chainId: 1,
+  })
+  const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
+  const referral = `${
+    typeof ensName === 'string' && ensName?.includes('.')
+      ? ensName
+      : address || currentWallet
+  }`
+  const locationOrigin =
+    typeof window !== 'undefined' ? `${window.location.origin}` : ''
+  const shareLink = `${locationOrigin}/lessons/${langURL}${lesson.slug}${
+    referral ? `?referral=${referral}` : ''
+  }`
+
+  const shareMessage = `Learn about "${lesson.name}" on @${TWITTER_ACCOUNT} 🎉
+
+Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
+
   return (
     <>
       {JSON.parse(openLessonLS)?.includes(lesson.slug) ? (
@@ -122,7 +179,7 @@ const LessonDetail = ({
           lesson={lesson}
           extraKeywords={extraKeywords}
           closeLesson={() =>
-            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
+            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
           }
           Quest={Quest}
         />
@@ -159,12 +216,13 @@ const LessonDetail = ({
                   <Button
                     position="relative"
                     top={isSmallScreen ? '-4px' : '-70px'}
-                    left={isSmallScreen ? '-10px' : '-83px'}
-                    size={isSmallScreen ? 'md' : 'lg'}
+                    left={isSmallScreen ? '-10px' : '-72px'}
+                    size="lg"
                     iconSpacing="0"
                     variant="secondaryBig"
                     leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
-                    p={isSmallScreen ? '0' : 'auto'}
+                    p="0"
+                    _hover={{ p: '0' }}
                   ></Button>
                 </InternalLink>
               </Box>
@@ -203,8 +261,34 @@ const LessonDetail = ({
                   </Box>
                 </OpenLesson>
               </Box>
-              <Box display="flex" justifyContent="center" mb="8">
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                mb="8"
+                flexDirection="column"
+                gap="4"
+              >
                 <LessonButton lesson={lesson} click />
+                <>
+                  <Button
+                    variant="secondaryBig"
+                    size="lg"
+                    leftIcon={<ShareFat width="24px" height="24px" />}
+                    onClick={() => {
+                      onShareOpen()
+                    }}
+                  >
+                    Share & Refer
+                  </Button>
+                  <ShareModal
+                    isOpen={isShareOpen}
+                    onClose={onShareClose}
+                    shareTitle="Share Lesson, Earn Points"
+                    shareMessage={shareMessage}
+                    shareLink={shareLink}
+                  />
+                </>
               </Box>
               <Box>
                 <Text
@@ -302,7 +386,7 @@ const LessonDetail = ({
                           borderBottom="1px solid #989898"
                           pb="2"
                         >
-                          {t('Rewards')}
+                          Badge
                         </Text>
                       </Box>
                       <Box textAlign="center">
@@ -315,8 +399,9 @@ const LessonDetail = ({
                       </Box>
                     </>
                   )}
-                  {lesson.hasCollectible ? (
-                    <CollectLessonButton lesson={lesson} />
+                  {(IS_COLLECTIBLE_ACTIVATED || pageEndsWithDatadisk) &&
+                  lesson.hasCollectible ? (
+                    <MintDatadiskButton lesson={lesson} />
                   ) : null}
                 </Box>
               )}

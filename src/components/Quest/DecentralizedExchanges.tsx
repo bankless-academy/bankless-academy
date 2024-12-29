@@ -14,8 +14,8 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
-import { api } from 'utils'
-import { LessonCard } from 'components/LessonCards'
+import { api } from 'utils/index'
+import { StyledLessonCard } from 'components/LessonCard'
 import { LESSONS } from 'constants/index'
 import InternalLink from 'components/InternalLink'
 
@@ -41,9 +41,8 @@ const DecentralizedExchanges = (
         const result = await api('/api/validate-quest', {
           address: account,
           quest: 'DecentralizedExchanges',
-          tx: tx
-            ?.replaceAll('https://optimistic.etherscan.io/tx/', '')
-            ?.replaceAll('https://blockscout.com/optimism/mainnet/tx/', ''),
+          // if tx contains a URL, just keep the tx hash
+          tx: tx?.includes('/') ? tx?.split('/')?.pop() : tx,
         })
         if (result && result.status === 200) {
           setIsCheckingTx(false)
@@ -121,7 +120,7 @@ const DecentralizedExchanges = (
               />
               <InputRightElement>
                 {isCheckingTx ? (
-                  <Spinner speed="1s" color="orange" />
+                  <Spinner size="sm" speed="1s" color="orange" />
                 ) : isTransactionVerified === 'true' ? (
                   <CheckIcon color={theme.colors.correct} />
                 ) : (
@@ -142,7 +141,7 @@ const DecentralizedExchanges = (
             )}
           </div>
           <div className="bloc2">
-            <LessonCard
+            <StyledLessonCard
               borderRadius="3xl"
               maxW="400px"
               textAlign="center"
@@ -171,7 +170,7 @@ const DecentralizedExchanges = (
                   </InternalLink>
                 </Box>
               </Box>
-            </LessonCard>
+            </StyledLessonCard>
           </div>
         </Box>
       </>

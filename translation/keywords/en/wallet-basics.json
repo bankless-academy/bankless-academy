@@ -64,6 +64,11 @@
     "keyword_plural": "hot wallets",
     "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
+  "cold wallet": {
+    "keyword": "cold wallet",
+    "keyword_plural": "cold wallets",
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
+  },
   "self-custody": {
     "keyword": "self-custody",
     "keyword_plural": "self-custodys",

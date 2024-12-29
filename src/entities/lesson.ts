@@ -1,7 +1,10 @@
 import { QuestComponentType } from 'components/Quest/QuestComponent'
 
-export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'END'
+export type SlideType = 'LEARN' | 'QUIZ' | 'POLL' | 'QUEST' | 'END'
 export type LanguageType = 'en' | 'br' | 'cn' | 'de' | 'es' | 'fr' | 'it' | 'jp' | 'tr' | 'ua'
+export type LanguageDescriptionType = { [Key in LanguageType as string]?: string }
+export type LevelType = 'Essentials' | 'Level 1' | 'Level 2' | 'Community Lessons'
+export type LessonTypeType = 'LESSON' | 'HANDBOOK'
 
 export interface LessonType {
   name: string
@@ -13,6 +16,9 @@ export interface LessonType {
   collectibleId?: string
   description: string
   languages?: LanguageType[]
+  level?: LevelType
+  tags?: string[]
+  community?: string
   lessonWriters?: string
   marketingDescription: string
   duration: number
@@ -31,6 +37,7 @@ export interface LessonType {
   learningActions: string
   knowledgeRequirements?: string
   quest?: QuestComponentType
+  questSocialMessage?: string
   imageLinks?: string[]
   publicationStatus: 'publish' | 'planned' | 'hidden'
   publicationDate?: string
@@ -55,6 +62,7 @@ export interface LessonType {
   nftGatingCTA?: string
   lang?: LanguageType
   keywords?: string[]
+  showContent?: boolean
   slides?: {
     type: SlideType
     title: string

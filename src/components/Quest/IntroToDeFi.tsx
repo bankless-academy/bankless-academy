@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Button, Box, useToast } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
-import { useNetwork, useAccount } from 'wagmi'
-import { switchNetwork, signMessage } from '@wagmi/core'
+import { signMessage } from '@wagmi/core'
 
-import { track, verifySignature } from 'utils'
-import { NETWORKS } from 'constants/networks'
+import { track } from 'utils/index'
 import { theme } from 'theme/index'
+import { wagmiConfig } from 'utils/wagmi'
+import { verifySignature } from 'utils/SignatureUtil'
+import { useAccount } from 'wagmi'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -16,6 +17,7 @@ const IntroToDeFi = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { chain } = useAccount()
   const [answer, setAnswer] = useState(
     localStorage.getItem('quest-intro-to-defi')
   )
@@ -26,35 +28,43 @@ const IntroToDeFi = (
   )
   const toast = useToast()
 
-  const { chain } = useNetwork()
-  const { connector } = useAccount()
-
   const sign = async () => {
-    if (![1, 10, 137].includes(chain?.id)) {
-      const network = Object.values(NETWORKS).find(
-        (network) => network.chainId === 1
-      )
-      toast.closeAll()
-      if (connector?.name !== 'MetaMask') {
-        toast({
-          title: 'Wrong network',
-          description: `Switch network to ${network.name} before signing this message.`,
-          status: 'warning',
-          duration: null,
-          isClosable: true,
-        })
-      }
-      try {
-        await switchNetwork({ chainId: 1 })
-      } catch (error) {
-        console.error(console.error)
-      }
-    }
     const message = `I want to learn more about ${answer}`
 
     try {
-      const signature = await signMessage({ message })
-      const verified = verifySignature(account, signature, message)
+      toast.closeAll()
+      toast({
+        title: `Intro to DeFi quest`,
+        description: `Open your wallet to sign a message.`,
+        status: 'warning',
+        duration: null,
+      })
+      const signature = await signMessage(wagmiConfig, {
+        account: account as `0x${string}`,
+        message,
+      }).catch((error) => {
+        console.error(error)
+        toast.closeAll()
+        let errorMessage = error?.message?.split('\n')[0]
+        if (errorMessage.includes('switch chain'))
+          errorMessage += ` Try changing the network to Ethereum manually from your wallet.`
+        toast({
+          title: `Intro to DeFi quest error`,
+          description: `Error while signing the message: ${errorMessage}`,
+          status: 'error',
+          duration: 20000,
+          isClosable: true,
+        })
+        setIsSignatureVerified(false)
+      })
+      if (!signature) return
+      toast.closeAll()
+      const verified = await verifySignature({
+        address: account,
+        message,
+        signature,
+        chainId: chain.id,
+      })
       if (verified) {
         track('intro_to_defi_quest_answer', answer)
       }
@@ -62,6 +72,7 @@ const IntroToDeFi = (
       localStorage.setItem('quest-intro-to-defi', verified ? answer : 'false')
     } catch (error) {
       console.error(error)
+      setIsSignatureVerified(false)
     }
   }
 

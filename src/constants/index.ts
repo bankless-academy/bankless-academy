@@ -4,6 +4,7 @@ import DEFAULT_LESSONS from 'constants/lessons'
 import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
 import DEFAULT_KEYWORDS from '../../translation/keywords/en/keywords.json'
 import WHITELABEL_KEYWORDS from '../../whitelabel-keywords.json'
+import { LanguageDescriptionType } from 'entities/lesson'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
 
@@ -95,6 +96,7 @@ export const TWITTER_ACCOUNT = WHITELABEL?.twitter_account || `BanklessAcademy`
 
 export const NOTION_PAGES = WHITELABEL?.notion_pages || {
   faq: '8fe3275ffbe74e598cb4574d0207a185',
+  about: 'a151306a46164a34973ae88e36f7a9d0',
   disclaimer: '360b86a86d50421ba3bc7f55607f064a',
   'privacy-policy': '0c0a262eb63243db97ed235c4512518f',
 }
@@ -106,6 +108,17 @@ export const MIRROR_WHITELISTED_ACCOUNTS = [
   'ispeaknerd.eth',
   'ornellaweb3.eth',
   'hirokennelly.eth',
+]
+
+export const DEMO_ACCOUNTS_IDS = [
+  // didierkrux.eth
+  56,
+  // web3explorer.eth
+  27074,
+  // ornellaweb3.eth
+  10275,
+  // tetranome.eth
+  737
 ]
 
 export const MIRROR_ARTICLE_ADDRESSES = LESSONS.filter(
@@ -145,7 +158,9 @@ export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
 export const DISCLAIMER_ENABLED =
   process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
 
-export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to prove I own it so I can claim the lesson badge.'
+export const WALLET_SIGNATURE_MESSAGE = 'I am signing a message with my wallet to verify ownership and claim the lesson badge.'
+
+export const WALLET_SIGNATURE_MESSAGE_PROFILE = 'I am signing a message with my wallet to verify ownership and update my profile.'
 
 export const POTION_API = 'https://potion.banklessacademy.com'
 
@@ -157,3 +172,19 @@ export const DEFAULT_ENS = 'web3explorer.eth'
 
 export const NB_DATADISK_MAX = 2
 
+export const LanguageDescription: LanguageDescriptionType = Object.fromEntries(
+  Object.entries({
+    en: 'English',
+    br: 'Português (BR)',
+    cn: '简体中文',
+    de: 'Deutsch',
+    es: 'Español',
+    fr: 'Français',
+    it: 'Italiano',
+    jp: '英語',
+    tr: 'Türkçe',
+    ua: 'Українська',
+  }).sort((a, b) => a[1].localeCompare(b[1]))
+)
+
+export const IS_COLLECTIBLE_ACTIVATED = false

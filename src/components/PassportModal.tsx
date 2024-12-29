@@ -125,7 +125,7 @@ const PassportModal = ({
               </Box>
             )} */}
             <Box my="4">
-              {`Explorers must connect at least ${NUMBER_OF_STAMP_REQUIRED} accounts in order to collect Bankless Academy rewards. `}
+              {`Explorers must connect at least ${NUMBER_OF_STAMP_REQUIRED} accounts in order to collect Bankless Academy lesson badges. `}
               <ExternalLink
                 underline="true"
                 href="/faq#36c048c07dea4b289d466a4318e41eb2"

@@ -1,6 +1,6 @@
 ---
 TITLE: Conceptos Básicos de la Billetera
-DESCRIPTION: '¿Qué es una billetera cripto? Learn more and create your “Ethereum account” today!'
+DESCRIPTION: '¿Qué es una billetera cripto? ¡Aprende más y crea tu primera billetera hoy!'
 LANGUAGE: Español
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: OrnellaWeb3

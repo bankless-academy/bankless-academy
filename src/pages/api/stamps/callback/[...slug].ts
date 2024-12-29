@@ -15,8 +15,8 @@ import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from "constants/passport"
 import { TABLE, TABLES, db } from "utils/db"
 import { trackBE } from "utils/mixpanel"
 import { gql } from "graphql-request"
-import { graphQLClient } from "utils/airstack"
-
+import { airstackGraphQLClient } from "utils/gql/airstack"
+import { DEMO_ACCOUNTS_IDS } from "constants/index"
 export const VERSION = "v0.0.0";
 
 export type GenerateTwitterAuthUrlRequestBody = {
@@ -102,6 +102,8 @@ export default async function handler(
       return res.status(403).json({ error: 'userId not found' })
     }
 
+    const isDemoAccount = DEMO_ACCOUNTS_IDS.includes(userId)
+
     if (platform === 'google') {
       const googleProvider = new google.GoogleProvider();
       result = await googleProvider.verify({
@@ -131,6 +133,7 @@ export default async function handler(
           const status = checkAge.errors
           console.log('twitter age', status)
           res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
+          return
         } else {
           result.valid = true
         }
@@ -146,6 +149,7 @@ export default async function handler(
       } catch (error) {
         console.log('twitter error', error)
         res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${error}&platform=${platform}`)
+        return
       }
     } else if (platform === 'facebook') {
       const FacebookProvider = new facebook.FacebookProvider();
@@ -207,7 +211,7 @@ export default async function handler(
         }
       }`
       try {
-        const data: any = await graphQLClient.request(query)
+        const data: any = await airstackGraphQLClient.request(query)
         console.log(data)
         if (data?.Socials?.Social?.length) {
           const fid = data?.Socials?.Social[0].userId
@@ -302,7 +306,7 @@ export default async function handler(
       // console.log(sybilQuery.toString())
       sybil = await sybilQuery
       console.log('sybil', sybil)
-      if (sybil?.length) {
+      if (sybil?.length && !isDemoAccount) {
         // mark this user as a sybil attacker
         console.log('fraud detected:', sybil)
         trackBE(address, 'duplicate_stamps_ba', {
@@ -325,6 +329,7 @@ export default async function handler(
           })
         } else {
           res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}&fraud=${fraud}`)
+          return
         }
       }
       // add stamps to ba_stamps

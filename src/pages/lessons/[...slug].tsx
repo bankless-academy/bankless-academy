@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Container } from '@chakra-ui/react'
+import { Box, Container, Text, Image, Center } from '@chakra-ui/react'
 import fs from 'fs'
 
 import { MetaData } from 'components/Head'
@@ -11,6 +11,8 @@ import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { markdown } from 'utils/markdown'
 import { useTranslation } from 'react-i18next'
+import LessonContent from 'components/LessonContent'
+import Layout from 'layout/Layout'
 
 const SPLIT = `\`\`\`
 
@@ -38,7 +40,10 @@ const processMD = async (md, lang, englishLesson, updatedAt) => {
       const slides = content?.split('# ')
       slides.shift()
       // console.log(slides)
-      for (let i = 0; i < newLesson.slides?.length - 1; i++) {
+      const numberOfSlides = newLesson.slides.filter(
+        (s) => s.type !== 'QUEST'
+      ).length
+      for (let i = 0; i < numberOfSlides; i++) {
         // console.log(i)
         const [slide_title] = (slides[i] || '').split('\n\n')
         const slide_content = slides[i]
@@ -68,7 +73,11 @@ const processMD = async (md, lang, englishLesson, updatedAt) => {
             )
           }
         }
-        if (newLesson.slides[i].type === 'QUIZ' && slide_content) {
+        if (
+          (newLesson.slides[i].type === 'QUIZ' ||
+            newLesson.slides[i].type === 'POLL') &&
+          slide_content
+        ) {
           // console.log(slide_content)
           newLesson.slides[i].md = slide_content
           const [question] = slide_content.split('\n\n')
@@ -107,17 +116,25 @@ const processMD = async (md, lang, englishLesson, updatedAt) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log('params', params)
   const slug = (
-    params.slug?.length === 1 ? params.slug[0] : params.slug[1]
+    params.slug[0].length === 2 ? params.slug[1] : params.slug[0]
   )?.replace('-datadisk', '')
-  const language: any = params.slug?.length === 1 ? 'en' : params.slug[0]
+  console.log('slug', slug)
+  const language: any = params.slug[0].length === 2 ? params.slug[0] : 'en'
+  console.log('language', language)
   let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
-  if (!currentLesson)
+  if (!currentLesson) {
     // lesson not found
+    console.log('lesson not found')
     return {
       props: {},
     }
+  }
   // console.log(currentLesson)
+  const showContent = params.slug[params.slug?.length - 1] === 'content'
+  console.log('showContent', showContent)
+  currentLesson.showContent = showContent
   if (currentLesson?.languages) {
     for (const language of currentLesson.languages) {
       if (
@@ -168,13 +185,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
-  const isDatadisk = params.slug[0]?.endsWith('-datadisk')
+  const isDatadisk = (params.slug as any).join('/').includes('-datadisk')
 
   const pageMeta: MetaData = {
     title: currentLesson.name,
     description: currentLesson.description,
+    // TODO: import via CMS
     image: isDatadisk
-      ? 'https://app.banklessacademy.com/images/layer-2-blockchains/social-datadisk.jpg'
+      ? `https://app.banklessacademy.com/images/${currentLesson.slug}/social-datadisk.jpg`
       : currentLesson.socialImageLink || DEFAULT_METADATA.image,
     isLesson: !currentLesson.isArticle,
     lesson: currentLesson,
@@ -184,10 +202,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: { pageMeta },
   }
 }
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = []
   for (const lesson of LESSONS) {
     paths.push({ params: { slug: [lesson.slug] } })
+    paths.push({ params: { slug: [lesson.slug, 'content'] } })
     if (lesson.lessonCollectibleGif)
       paths.push({
         params: { slug: [`${lesson.slug}-datadisk`] },
@@ -195,10 +215,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
     if (lesson.languages) {
       for (const lang of lesson.languages) {
         paths.push({ params: { slug: [lang, lesson.slug] } })
+        paths.push({ params: { slug: [lang, lesson.slug, 'content'] } })
       }
     }
   }
-  // console.log(paths)
+  // console.log('paths', paths)
   return {
     paths,
     fallback: true,
@@ -214,7 +235,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
 
   const lang =
     typeof window !== 'undefined' &&
-    window.location.pathname.split('/').length === 4
+    window.location.pathname.split('/')[2].length === 2
       ? window.location.pathname.split('/')[2]
       : 'en'
 
@@ -234,11 +255,66 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
     return (
       <>
         {lesson.isArticle ? (
-          <Article lesson={lesson} />
+          <Layout page="">
+            <Article lesson={lesson} />
+          </Layout>
         ) : (
-          <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>
-            <LessonDetail lesson={lesson} />
-          </Container>
+          <>
+            {lesson?.showContent ? (
+              <>
+                <Center
+                  height="58vh"
+                  bgImage="/images/homepage_background_v4_half.png"
+                  bgSize="cover"
+                  bgPosition="bottom"
+                  pb="16px"
+                >
+                  <Box
+                    width="100%"
+                    maxW="800px"
+                    textAlign="center"
+                    alignItems="center"
+                    height="100%"
+                    alignContent="end"
+                  >
+                    <Box w="100%" maxW="90%">
+                      <Image
+                        style={{
+                          filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                        }}
+                        maxW="90%"
+                        src="/images/BanklessAcademy.svg"
+                        alt="Bankless Academy"
+                        m="auto"
+                      />
+                      <Box ml="25%" w="73%">
+                        <Text
+                          fontSize={isSmallScreen ? '20px' : '25px'}
+                          mt="-15px"
+                          w="100%"
+                        >
+                          {`Your platform for building digital independence.`}
+                        </Text>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Center>
+                <Container
+                  maxW="container.xl"
+                  px={isSmallScreen ? '8px' : '16px'}
+                >
+                  <LessonContent lesson={lesson} />
+                </Container>
+              </>
+            ) : (
+              <Container
+                maxW="container.xl"
+                px={isSmallScreen ? '8px' : '16px'}
+              >
+                <LessonDetail lesson={lesson} />
+              </Container>
+            )}
+          </>
         )}
       </>
     )

@@ -1,12 +1,21 @@
 import { MAX_BADGES } from 'constants/badges'
-import { MAX_DONATIONS } from 'constants/donations'
+import { ACHIEVEMENTS, MAX_ACHIEVEMENT } from 'constants/achievements'
 import { DEFAULT_ENS, DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { MAX_STAMPS } from 'constants/passport'
+
+export function calculateExplorerAchievements(achievements: string[]) {
+  return achievements
+    .map((a) => ACHIEVEMENTS[a]?.points)
+    .reduce((acc, points) => (acc += points), 0)
+}
 
 const DEFAULT_IMAGE =
   'https://app.banklessacademy.com/images/explorer_avatar.png'
 
 const DEFAULT_SCORE = 16
+
+export const maxReferrals = (referrals: number) =>
+  referrals < 6 ? 8 : referrals < 11 ? 15 : referrals < 21 ? 15 : referrals
 
 const Skill = ({ skill, score, max }) => (
   <div
@@ -14,7 +23,7 @@ const Skill = ({ skill, score, max }) => (
       display: 'flex',
       marginTop: '24px',
       width: '100%',
-      height: '40px',
+      height: '36px',
       justifyContent: 'flex-end',
       position: 'relative',
     }}
@@ -24,7 +33,7 @@ const Skill = ({ skill, score, max }) => (
         display: 'flex',
         alignItems: 'center',
         width: '30px',
-        height: '40px',
+        height: '36px',
         color: '#FFFFFF',
         justifyContent: 'flex-end',
         paddingRight: '8px',
@@ -36,7 +45,7 @@ const Skill = ({ skill, score, max }) => (
       style={{
         display: 'flex',
         width: `${(score / max) * 230}px`,
-        height: '40px',
+        height: '36px',
         background:
           'linear-gradient(135.91deg, #634c70 29.97%, #3a355a 99.26%)',
         borderBottomLeftRadius: '2px',
@@ -49,7 +58,7 @@ const Skill = ({ skill, score, max }) => (
         width: '200px',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '40px',
+        height: '36px',
         border: '2px solid #8a68a2',
         borderLeft: '0',
         backgroundColor: 'transparent',
@@ -75,54 +84,62 @@ const Skill = ({ skill, score, max }) => (
   </div>
 )
 
-const Skills = ({ stats }) => (
-  <div
-    style={{
-      display: 'flex',
-      position: 'relative',
-      width: '550px',
-      height: '258px',
-      marginTop: '4px',
-      flexWrap: 'wrap',
-    }}
-  >
-    <Skill skill="Badges" score={stats?.badges || 0} max={MAX_BADGES} />
-    <Skill
-      skill="Collectibles"
-      score={
-        3 * (stats?.datadisks?.length || 0) + (stats?.handbooks?.length || 0)
-      }
-      max={MAX_COLLECTIBLES}
-    />
-    <Skill
-      skill="Donations"
-      score={stats?.donations ? Object.keys(stats?.donations)?.length || 0 : 0}
-      max={MAX_DONATIONS}
-    />
-    <Skill
-      skill="Stamps"
-      score={stats?.valid_stamps?.length || 0}
-      max={MAX_STAMPS}
-    />
-  </div>
-)
+const Skills = ({ stats }) => {
+  const referrals = stats?.referrals?.length || 0
+  return (
+    <div
+      style={{
+        display: 'flex',
+        position: 'relative',
+        width: '550px',
+        height: '258px',
+        marginTop: '4px',
+        flexWrap: 'wrap',
+      }}
+    >
+      <Skill skill="Badges" score={stats?.badges || 0} max={MAX_BADGES} />
+      <Skill skill="Referral" score={referrals} max={maxReferrals(referrals)} />
+      <Skill
+        skill="Ownership"
+        score={
+          3 * (stats?.datadisks?.length || 0) + (stats?.handbooks?.length || 0)
+        }
+        max={MAX_COLLECTIBLES}
+      />
+      <Skill
+        skill="Humanity"
+        score={stats?.valid_stamps?.length || 0}
+        max={MAX_STAMPS}
+      />
+      <Skill
+        skill="Achievement"
+        score={calculateExplorerAchievements(stats?.achievements || [])}
+        max={MAX_ACHIEVEMENT}
+      />
+    </div>
+  )
+}
 
 const OgSocial = ({
   explorerName,
+  community,
   explorerAvatar,
   score,
   stats,
   badgeImageLink,
 }: {
   explorerName?: string
+  community?: string
   explorerAvatar?: string
   score?: number
   stats?: {
     badges?: number
     datadisks?: string[]
     handbooks?: string[]
-    donations?: { [key: string]: any }
+    // donations?: { [key: string]: any }
+    achievements?: string[]
     valid_stamps?: string[]
+    referrals?: { profile_address: string; created_at: string }[]
   }
   badgeImageLink?: string
 }): React.ReactElement => {
@@ -180,7 +197,7 @@ const OgSocial = ({
         style={{
           display: 'flex',
           position: 'absolute',
-          top: '432px',
+          top: '410px',
           left: '32px',
           width: '433px',
           height: '119px',
@@ -195,6 +212,37 @@ const OgSocial = ({
       >
         {explorerName || DEFAULT_ENS}
       </div>
+      {community && (
+        <div
+          style={{
+            display: 'flex',
+            position: 'absolute',
+            top: '464px',
+            left: '32px',
+            width: '433px',
+            height: '119px',
+            fontSize: 32,
+            fontFamily: 'ClearSans',
+            color: '#ffffff70',
+            textAlign: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textTransform: 'uppercase',
+          }}
+        >
+          <div>-[</div>
+          <div
+            style={{
+              marginTop: '1.3px',
+              marginLeft: '4px',
+              marginRight: '4px',
+            }}
+          >
+            {community}
+          </div>
+          <div>]-</div>
+        </div>
+      )}
       {badgeImageLink ? (
         <img
           style={{
@@ -213,7 +261,7 @@ const OgSocial = ({
           style={{
             display: 'flex',
             position: 'absolute',
-            top: '300px',
+            top: '272px',
             left: '568px',
             width: '550px',
             height: '258px',

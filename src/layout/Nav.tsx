@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Image, HStack, Spacer, Flex, Button } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
@@ -10,10 +10,13 @@ import { useLocalStorage } from 'usehooks-ts'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
 import OptionMenu from 'components/OptionMenu'
-import SwitchNetworkButton from 'components/SwitchNetworkButton/'
+import SwitchNetworkButton from 'components/SwitchNetworkButton/index'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
+import { api } from 'utils/index'
+import { AnnouncementType } from 'entities/announcement'
+import OnboardingModal from 'components/OnboardingModal'
 
 declare global {
   interface Navigator {
@@ -30,6 +33,11 @@ const Nav: React.FC = () => {
     `connectWalletPopup`,
     false
   )
+  const [, setAnnouncements] = useLocalStorage<AnnouncementType[] | null>(
+    'announcements',
+    null
+  )
+  const [onboardingRetry] = useLocalStorage('onboarding-retry', 0)
 
   const isProfilePage = asPath.includes('/explorer/my-profile')
 
@@ -41,23 +49,45 @@ const Nav: React.FC = () => {
     typeof window !== 'undefined'
       ? (queryString.parse(window.location.search)?.fullembed || '')?.toString()
       : undefined
-  const webapp =
-    typeof window !== 'undefined'
-      ? window?.navigator?.standalone
-        ? 'true'
-        : (queryString.parse(window.location.search)?.webapp || '')?.toString()
-      : undefined
   const isEmbedded = typeof window !== 'undefined' && window !== window.parent
 
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const [onboarding] = useLocalStorage('onboarding', '')
+
+  const [pwa, setPwa] = useLocalStorage('pwa', false)
+
+  useEffect(() => {
+    if (
+      typeof window !== 'undefined' &&
+      window.location.search.includes('webapp=true')
+    ) {
+      setPwa(true)
+    }
+  }, [setPwa])
+
+  useEffect(() => {
+    // if onboarding is not done, and it's been more than 3 days since the last popup, show it again, max 3 times
+    const threeDays = 60 * 60 * 24 * 3 * 1000
+    if (
+      (onboarding === '' ||
+        (onboarding !== 'done' &&
+          Date.now() - Number(onboarding) > threeDays)) &&
+      onboardingRetry < 3
+    ) {
+      setTimeout(() => {
+        setIsOnboardingModalOpen(true)
+      }, 10000)
+    }
+  }, [onboarding])
+
   useEffect((): void => {
-    const embedValue =
-      webapp === 'true'
-        ? 'webapp'
-        : fullembed?.length
-        ? fullembed
-        : embed?.length
-        ? embed
-        : ''
+    const embedValue = pwa
+      ? 'webapp'
+      : fullembed?.length
+      ? fullembed
+      : embed?.length
+      ? embed
+      : ''
     // for front-end & back-end tracking
     if (
       localStorage.getItem('embed') === 'webapp' ||
@@ -76,6 +106,23 @@ const Nav: React.FC = () => {
       alt={PROJECT_NAME}
     />
   )
+
+  const getAnnouncements = async () => {
+    try {
+      const a = await api('/api/get/announcement', {})
+      if (a?.data) {
+        setAnnouncements(a.data)
+      } else {
+        setAnnouncements(null)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    getAnnouncements()
+  }, [])
 
   return (
     <header>
@@ -105,6 +152,9 @@ const Nav: React.FC = () => {
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">
+            {/* <Button onClick={() => setIsOnboardingModalOpen(true)}>
+              popup
+            </Button> */}
             <InternalLink href={`/lessons`} alt="Explore Lessons" zIndex={2}>
               <Button
                 variant={
@@ -122,13 +172,16 @@ const Nav: React.FC = () => {
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             ) : null}
             <ConnectWalletButton isSmallScreen={isSmallScreen} />
-            <OptionMenu
-              isSmallScreen={isSmallScreen}
-              isWebApp={webapp === 'true'}
-            />
+            <OptionMenu isSmallScreen={isSmallScreen} isWebApp={pwa} />
           </HStack>
         </Flex>
       </Box>
+      <OnboardingModal
+        isOpen={isOnboardingModalOpen}
+        onClose={() => {
+          setIsOnboardingModalOpen(false)
+        }}
+      />
     </header>
   )
 }

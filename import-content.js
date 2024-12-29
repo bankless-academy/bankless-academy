@@ -10,104 +10,28 @@ const knex = require('knex')
 const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
-const { Client } = require("@notionhq/client")
-const { NotionToMarkdown } = require("notion-to-md")
 
 const config = require('./knexfile.js')
 const db = knex(config)
 const { TABLES } = require('./db.js')
+const {
+  KEY_MATCHING,
+  LESSON_SPLITTER,
+} = require('./config.js')
+const {
+  slugify,
+  downloadImage,
+  getImagePath,
+  extractKeywords,
+  writeFile,
+  importTranslations,
+  mdHeader,
+  placeholder,
+  n2m,
+} = require('./utils.js')
 
 const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED || false
 
-const notion = new Client({
-  auth: process.env.NOTION_SECRET,
-})
-
-const n2m = new NotionToMarkdown({ notionClient: notion })
-
-// types of blocs to ignore
-// BlockType https://github.com/souvikinator/notion-to-md/blob/master/src/types/index.ts
-const blockTypesToIgnore = [
-  // "image",
-  "video",
-  "file",
-  "pdf",
-  "table",
-  "bookmark",
-  // "embed",
-  "equation",
-  // "divider",
-  "toggle",
-  // "to_do",
-  "synced_block",
-  "column_list",
-  "column",
-  "link_preview",
-  // "link_to_page",
-  // "paragraph",
-  // "heading_1",
-  // "heading_2",
-  "heading_3",
-  // "bulleted_list_item",
-  // "numbered_list_item",
-  // "quote",
-  "template",
-  "child_page",
-  "child_database",
-  "code",
-  "callout",
-  "breadcrumb",
-  "table_of_contents",
-  "audio",
-  "unsupported"
-]
-for (const blockType of blockTypesToIgnore) {
-  n2m.setCustomTransformer(blockType, async () => {
-    return ""
-  })
-}
-
-n2m.setCustomTransformer("image", async (b) => {
-  // console.log(b)
-  return `![](https://www.notion.so/image/${encodeURIComponent(b?.image?.file?.url?.split('?')[0].replace('https://s3.', 'https://s3-'))}?table=block&id=${b?.id})`
-})
-
-// const PROTOCOL_VERSION = "0.01"
-
-const LESSON_SPLITTER = `\`\`\`
-
----`
-
-// LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
-// PROTOCOL VERSION: ${PROTOCOL_VERSION}
-
-const mdHeader = (lesson, format) => `---
-TITLE: ${lesson.name}
-DESCRIPTION: ${lesson.description}
-LANGUAGE: English
-WRITERS: ${lesson.lessonWriters || ''}
-TRANSLATORS: X
-LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
-FORMAT: ${format}
----
-
-\`\`\`
-__________________________________________________________________________________________________________________________________________________________
-
-$$$$$$$\\                      $$\\       $$\\                                      $$$$$$\\                           $$\\                                   
-$$  __$$\\                     $$ |      $$ |                                    $$  __$$\\                          $$ |                                  
-$$ |  $$ | $$$$$$\\  $$$$$$$\\  $$ |  $$\\ $$ | $$$$$$\\   $$$$$$$\\  $$$$$$$\\       $$ /  $$ | $$$$$$$\\ $$$$$$\\   $$$$$$$ | $$$$$$\\  $$$$$$\\$$$$\\  $$\\   $$\\ 
-$$$$$$$\\ | \\____$$\\ $$  __$$\\ $$ | $$  |$$ |$$  __$$\\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\\____$$\\ $$  __$$ |$$  __$$\\ $$  _$$  _$$\\ $$ |  $$ |
-$$  __$$\\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\\$$$$$$\\  \\$$$$$$\\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
-$$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \\____$$\\  \\____$$\\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
-$$$$$$$  |\\$$$$$$$ |$$ |  $$ |$$ | \\$$\\ $$ |\\$$$$$$$\\ $$$$$$$  |$$$$$$$  |      $$ |  $$ |\\$$$$$$$\\\\$$$$$$$ |\\$$$$$$$ |\\$$$$$$$\\ $$ | $$ | $$ |\\$$$$$$$ |
-\\_______/  \\_______|\\__|  \\__|\\__|  \\__|\\__| \\_______|\\_______/ \\_______/       \\__|  \\__| \\_______|\\_______| \\_______| \\_______|\\__| \\__| \\__| \\____$$ |
-                                                                                                                                               $$\\   $$ |
-PORTABLE LESSON DATADISK COLLECTION                                                                                                            \\$$$$$$  |
-                                                                                                                                                \\______/
-__________________________________________________________________________________________________________________________________________________________
-${LESSON_SPLITTER}
-`
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
@@ -118,54 +42,13 @@ const ALL_ENGLISH_KEYWORDS = require(KEYWORDS_FILE)
 const DEFAULT_NOTION_ID = '129141602de240e484356bd85f7c75e0'
 const POTION_API = 'https://potion.banklessacademy.com'
 
-const KEY_MATCHING = {
-  'Kudos image': 'badgeImageLink',
-  'Lesson image': 'lessonImageLink',
-  'Lesson collected image': 'lessonCollectedImageLink',
-  'Lesson collectible gif': 'lessonCollectibleGif',
-  'Lesson collectible video': 'lessonCollectibleVideo',
-  'Lesson collectible mint ID': 'lessonCollectibleMintID',
-  'Lesson collectible token address': 'lessonCollectibleTokenAddress',
-  'Social image': 'socialImageLink',
-  'What will you be able to do after this lesson?': 'learningActions',
-  'Landing page copy': 'marketingDescription',
-  'Badge ID': 'badgeId',
-  'DataDisk vector mint': 'datadiskVectorMint',
-  'Collectible ID': 'collectibleId',
-  'Duration in minutes': 'duration',
-  'What will you learn from this?': 'learnings',
-  Difficulty: 'difficulty',
-  Description: 'description',
-  Name: 'name',
-  'Languages': 'languages',
-  'Lesson Writers': 'lessonWriters',
-  Module: 'moduleId',
-  Quest: 'quest',
-  'Publication status': 'publicationStatus',
-  'Publication Date': 'publicationDate',
-  'Featured order on homepage': 'featuredOrderOnHomepage',
-  'Enable Comments': 'isCommentsEnabled',
-  'End of Lesson redirect': 'endOfLessonRedirect',
-  'End of Lesson text': 'endOfLessonText',
-  // 'Community discussion link': 'communityDiscussionLink',
-  'Mirror link': 'mirrorLink',
-  'Mirror NFT address': 'mirrorNFTAddress',
-  'Mirror NFT all collected': 'areMirrorNFTAllCollected',
-  'Sponsor Name': 'sponsorName',
-  'Sponsor Logo': 'sponsorLogo',
-  'NFT Gating': 'nftGating',
-  'NFT Gating Requirements': 'nftGatingRequirements',
-  'NFT Gating Image': 'nftGatingImageLink',
-  'NFT Gating Link': 'nftGatingLink',
-  'NFT Gating CTA': 'nftGatingCTA',
-}
-
 const program = new Command()
 program
   .option('-d, --debug', 'output extra debugging (not implemented ATM)')
   .option('-nid, --notionID <type>', 'specify Notion ID of the database', process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID)
   .option('-lid, --lessonID <type>', 'specify Lesson Notion ID')
   .option('-lg, --translate <type>', 'specific language to translate (fr, es, ...) or all')
+  .option('-gk, --generateKeywords', 'generate keyword translation files for each language')
 
 program.parse(process.argv)
 const NOTION_ID = program.opts().notionID
@@ -174,104 +57,6 @@ const LESSON_NOTION_ID = program.opts().lessonID
 console.log('LESSON_NOTION_ID', LESSON_NOTION_ID)
 const TRANSLATION_LANGUAGE = program.opts().translate
 console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
-
-const slugify = (text) => text.toLowerCase()
-  .replace('á', 'a')
-  .replace(/<[^>]*>?/gm, '') // remove tags
-  .replace(/[^a-z0-9\. -]/g, '') // remove invalid chars
-  .replace(/\s+/g, '-') // collapse whitespace and replace by -
-  .replace(/-+/g, '-') // collapse dashes
-
-const get_img = (imageLink, slug, image_name) => {
-  const [file_name] = imageLink.split('?')
-  const file_extension = (file_name.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/))?.[1].replace('jpeg', 'jpg') || 'png'
-  // console.log(file_extension)
-  // create "unique" hash based on Notion imageLink (different when re-uploaded)
-  const hash = crc32(file_name)
-  const image_dir = `/${PROJECT_DIR}images/${slug}`
-  const local_image_dir = `public${image_dir}`
-  // create image directory dynamically in case it doesn't exist yet
-  if (!fs.existsSync(local_image_dir)) {
-    fs.mkdirSync(local_image_dir)
-  }
-  const image_path = `${image_dir}/${slugify(image_name)}-${hash}.${file_extension}`
-  // console.log('image_path', image_path)
-  const local_image_path = `public${image_path}`
-  if (!fs.existsSync(local_image_path)) {
-    download_image(imageLink, local_image_path)
-    console.log('downloading image: ', local_image_path)
-  }
-  return image_path
-}
-
-const download_image = (url, image_path) =>
-  axios({
-    url,
-    responseType: 'stream',
-  }).then(function (response) {
-    response.data.pipe(fs.createWriteStream(image_path))
-  })
-
-const placeholder = (lesson, size, image_name) => {
-  const placeholder_link = `https://placehold.co/${size}/4b4665/FFFFFF/png?text=${lesson.name.replaceAll(' ', '+')}`
-  return get_img(placeholder_link, lesson.slug, image_name)
-}
-
-const importTranslations = async (lesson) => {
-  if (!TRANSLATION_LANGUAGE) return
-  for (const language of lesson.languages) {
-    if (language === TRANSLATION_LANGUAGE || TRANSLATION_LANGUAGE === 'all') {
-      console.log('import translation:', language)
-      try {
-        const random = Math.floor(Math.random() * 100000)
-        const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${random}`
-        // console.log(crowdinFile)
-        const crowdin = await axios.get(crowdinFile)
-        // console.log(crowdin)
-        if (crowdin.status === 200) {
-          // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
-          const newTranslation = crowdin.data
-            // fix Crowdin bug
-            .replace(`***
-
-#`, `---
-
-#`)
-          const [, title, description] = crowdin.data.match(/---\nTITLE:\s(.*?)\nDESCRIPTION:\s(.*?)\n/)
-          // console.log('title', title)
-          // console.log('description', description)
-          const lessonInfoPath = `translation/website/${language}/lesson.json`
-          const lessonInfo = fs.existsSync(lessonInfoPath) ? await fs.promises.readFile(lessonInfoPath, 'utf8') : '{}'
-          const translationInfo = {}
-          translationInfo[lesson.name] = title
-          translationInfo[lesson.description] = description
-          // console.log('translationInfo', translationInfo)
-          const jsonLessonInfo = { ...JSON.parse(lessonInfo), ...translationInfo }
-          // console.log('jsonLessonInfo', jsonLessonInfo)
-          fs.writeFile(lessonInfoPath, `${JSON.stringify(jsonLessonInfo, null, 2)}`, (error) => {
-            if (error) throw error
-          })
-          // console.log(newTranslation)
-          const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
-          const existingTranslation = fs.existsSync(lessonPath) ? await fs.promises.readFile(lessonPath, 'utf8') : ''
-          // console.log(existingTranslation)
-          // check if translation has been modified
-          if (newTranslation.trim() !== existingTranslation.trim()) {
-            console.log('- new translation available')
-            fs.writeFile(lessonPath, `${newTranslation}`, (error) => {
-              if (error) throw error
-            })
-          } else {
-            console.log('- same same')
-          }
-        }
-      } catch (error) {
-
-        console.log(`- ${language} not available yet`)
-      }
-    }
-  }
-}
 
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
@@ -283,6 +68,8 @@ axios
       fs.mkdirSync(`public/${PROJECT_DIR}lesson`)
     }
     const promiseArray = notionRows.data.map(async (notion, index) => {
+      // wait 200ms to avoid rate limiting
+      await new Promise(resolve => setTimeout(resolve, index * 200));
       // DEV_MODE: only test first lesson
       // if (index > 1) return
 
@@ -312,19 +99,19 @@ axios
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.badgeId === undefined) lesson.badgeId = null
-      if (lesson.datadiskVectorMint === undefined) delete lesson.datadiskVectorMint
-      if (lesson.collectibleId === undefined) delete lesson.collectibleId
+      if (lesson.datadiskVectorMint === undefined || lesson.datadiskVectorMint === '') delete lesson.datadiskVectorMint
+      if (lesson.collectibleId === undefined || lesson.collectibleId === '') delete lesson.collectibleId
       if (lesson.badgeImageLink === undefined) lesson.badgeImageLink = null
       if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
       if (lesson.lessonCollectibleVideo === undefined) delete lesson.lessonCollectibleVideo
       if (lesson.lessonCollectibleGif === undefined) delete lesson.lessonCollectibleGif
-      if (lesson.lessonCollectibleMintID === undefined) delete lesson.lessonCollectibleMintID
-      if (lesson.lessonCollectibleTokenAddress === undefined) delete lesson.lessonCollectibleTokenAddress
+      if (lesson.lessonCollectibleMintID === undefined || lesson.lessonCollectibleMintID === '') delete lesson.lessonCollectibleMintID
+      if (lesson.lessonCollectibleTokenAddress === undefined || lesson.lessonCollectibleTokenAddress === '') delete lesson.lessonCollectibleTokenAddress
       if (lesson.lessonCollectibleMintID && lesson.lessonCollectibleTokenAddress) lesson.hasCollectible = true
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.difficulty === undefined) delete lesson.difficulty
-      if (lesson.endOfLessonText === undefined) delete lesson.endOfLessonText
-      if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
+      if (lesson.endOfLessonText === undefined || lesson.endOfLessonText === '') delete lesson.endOfLessonText
+      if (lesson.marketingDescription === undefined || lesson.marketingDescription === '') lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
       if (lesson.learnings === undefined) lesson.learnings = ''
       if (lesson.publicationDate === undefined || lesson.publicationDate === null || !lesson.publicationDate.startsWith('20')) delete lesson.publicationDate
@@ -336,18 +123,22 @@ axios
       if (lesson.languages === undefined) delete lesson.languages
       // sort languages alphabetically
       else lesson.languages.sort()
-      if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
+      if (lesson.level === undefined) delete lesson.level
+      if (!lesson.tags || lesson.tags.length === 0) delete lesson.tags
+      if (lesson.community === undefined || lesson.community === '') delete lesson.community
+      if (lesson.questSocialMessage === undefined || lesson.questSocialMessage === '') delete lesson.questSocialMessage
+      if (lesson.lessonWriters === undefined || lesson.lessonWriters === '') delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
-      if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
-      if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
+      if (lesson.mirrorLink === undefined || lesson.mirrorLink === '' || lesson.mirrorLink === null) delete lesson.mirrorLink
+      if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === '' || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
       if (lesson.areMirrorNFTAllCollected === undefined) delete lesson.areMirrorNFTAllCollected
-      if (lesson.sponsorName === undefined || lesson.sponsorName === null) delete lesson.sponsorName
+      if (lesson.sponsorName === undefined || lesson.sponsorName === '' || lesson.sponsorName === null) delete lesson.sponsorName
       if (lesson.sponsorLogo === undefined || lesson.sponsorLogo === null) delete lesson.sponsorLogo
-      if (lesson.nftGating === undefined || lesson.nftGating === null) delete lesson.nftGating
-      if (lesson.nftGatingRequirements === undefined || lesson.nftGatingRequirements === null) delete lesson.nftGatingRequirements
-      if (lesson.nftGatingImageLink === undefined || lesson.nftGatingImageLink === null) delete lesson.nftGatingImageLink
-      if (lesson.nftGatingLink === undefined || lesson.nftGatingLink === null) delete lesson.nftGatingLink
-      if (lesson.nftGatingCTA === undefined || lesson.nftGatingCTA === null) delete lesson.nftGatingCTA
+      if (lesson.nftGating === undefined || lesson.nftGating === '' || lesson.nftGating === null) delete lesson.nftGating
+      if (lesson.nftGatingRequirements === undefined || lesson.nftGatingRequirements === '' || lesson.nftGatingRequirements === null) delete lesson.nftGatingRequirements
+      if (lesson.nftGatingImageLink === undefined || lesson.nftGatingImageLink === '' || lesson.nftGatingImageLink === null) delete lesson.nftGatingImageLink
+      if (lesson.nftGatingLink === undefined || lesson.nftGatingLink === '' || lesson.nftGatingLink === null) delete lesson.nftGatingLink
+      if (lesson.nftGatingCTA === undefined || lesson.nftGatingCTA === '' || lesson.nftGatingCTA === null) delete lesson.nftGatingCTA
 
       // console.log(lesson)
 
@@ -396,6 +187,8 @@ axios
                 lesson.articleContent = data?.content?.body
                   .replace(/\\\[/g, "[")
                   .replace(/\\\]/g, "]")
+                  // manual fix
+                  .replace("beta.banklessacademy.com", "app.banklessacademy.com")
                 // console.log('lesson', lesson)
 
                 if (lesson.articleContent.includes('\n\n\n---\n\n')) {
@@ -413,27 +206,27 @@ axios
                 // TODO: save mirror images locally
 
                 if (lesson.lessonImageLink) {
-                  lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
+                  lesson.lessonImageLink = await getImagePath(lesson.lessonImageLink, lesson.slug, 'lesson')
                 }
                 if (lesson.socialImageLink) {
-                  lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
+                  lesson.socialImageLink = await getImagePath(lesson.socialImageLink, lesson.slug, 'social')
                 }
                 if (lesson.sponsorLogo) {
-                  lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
+                  lesson.sponsorLogo = await getImagePath(lesson.sponsorLogo, lesson.slug, 'sponsor')
                 }
 
                 lesson.imageLinks = []
                 lessons[index] = lesson
                 if (MD_ENABLED) {
                   // import translations
-                  importTranslations(lesson)
+                  await importTranslations(lesson, TRANSLATION_LANGUAGE)
                   // console.log(lesson.articleContent)
                   let lessonContentMD = lesson.articleContent
                   try {
                     // HACK: replace youtube links with iframe
                     var youtubeRegex = /<(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})>/g;
                     // Replace YouTube URL with iframe tag
-                    lessonContentMD = lessonContentMD.replace(youtubeRegex, "[](https://www.youtube-nocookie.com/embed/$1)");
+                    lessonContentMD = lessonContentMD.replace(youtubeRegex, "[youtube-embed](https://www.youtube-nocookie.com/embed/$1)");
                     // HACK: replace image
                     const imageRegex = /!\[.*?\]\((.*?)\)/g;
                     let match
@@ -455,12 +248,34 @@ axios
                       // console.log(local_image_path)
                       lesson.imageLinks.push(image_path)
                       if (!fs.existsSync(local_image_path)) {
-                        download_image(imageLink, local_image_path)
+                        await downloadImage(imageLink, local_image_path)
                         console.log('downloading image: ', local_image_path)
                       }
                       lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${image_path}`)
                     }
                     lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/images/', '/images/')
+                    const keywords = extractKeywords(lesson.articleContent)
+                    lesson.keywords = keywords
+                    // console.log('keywords', keywords)
+                    if (LESSON_NOTION_ID && program.opts().generateKeywords) {
+                      // create keyword lesson file
+                      const lessonKV = {}
+                      for (const keyword of keywords) {
+                        if (keyword in ALL_ENGLISH_KEYWORDS) {
+                          lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+                        } else {
+                          const singularKeyword = keyword.slice(0, -1)
+                          if (singularKeyword in ALL_ENGLISH_KEYWORDS) {
+                            lessonKV[singularKeyword] = ALL_ENGLISH_KEYWORDS[singularKeyword]
+                          }
+                        }
+                      }
+                      if (Object.keys(lessonKV).length) {
+                        const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
+                        console.log('lessonKV', lessonKV)
+                        await writeFile(lessonKeywordPath, lessonKV)
+                      }
+                    }
                     // write/update file
                     const lessonPath = `translation/lesson/en/${lesson.slug}.md`
                     const lessonHeader = mdHeader(lesson, 'HANDBOOK')
@@ -477,9 +292,7 @@ axios
                         if (plh.trim() !== lh.trim() ||
                           previousLessonContentMD.trim() !== lessonContentMD.trim()
                         ) {
-                          fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
-                            if (error) throw error
-                          })
+                          await writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`)
                           console.log(
                             `"${lesson.name}" updated in ${lessonPath}`
                           )
@@ -490,9 +303,7 @@ axios
                       }
                     }
                     else {
-                      fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
-                        if (error) throw error
-                      })
+                      await writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`)
                       console.log(
                         `"${lesson.name}" exported in ${lessonPath}`
                       )
@@ -526,19 +337,19 @@ axios
           }
 
           if (lesson.badgeImageLink) {
-            lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'badge')
-          } else lesson.badgeImageLink = placeholder(lesson, '600x600', 'badge')
+            lesson.badgeImageLink = await getImagePath(lesson.badgeImageLink, lesson.slug, 'badge')
+          } else lesson.badgeImageLink = await placeholder(lesson, '600x600', 'badge')
           if (lesson.lessonImageLink) {
-            lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
-          } else lesson.lessonImageLink = placeholder(lesson, '1200x600', 'lesson')
+            lesson.lessonImageLink = await getImagePath(lesson.lessonImageLink, lesson.slug, 'lesson')
+          } else lesson.lessonImageLink = await placeholder(lesson, '1200x600', 'lesson')
           if (lesson.socialImageLink) {
-            lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
-          } else lesson.socialImageLink = placeholder(lesson, '1200x600', 'social')
+            lesson.socialImageLink = await getImagePath(lesson.socialImageLink, lesson.slug, 'social')
+          } else lesson.socialImageLink = await placeholder(lesson, '1200x600', 'social')
           if (lesson.sponsorLogo) {
-            lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
+            lesson.sponsorLogo = await getImagePath(lesson.sponsorLogo, lesson.slug, 'sponsor')
           }
           if (lesson.nftGatingImageLink) {
-            lesson.nftGatingImageLink = get_img(lesson.nftGatingImageLink, lesson.slug, 'nft')
+            lesson.nftGatingImageLink = await getImagePath(lesson.nftGatingImageLink, lesson.slug, 'nft')
           }
           delete lesson.areMirrorNFTAllCollected
 
@@ -598,10 +409,16 @@ axios
                   slide.quiz.feedback.push(feedback)
 
                 const isChecked = checkbox?.checked
-                if (isChecked) slide.quiz.rightAnswerNumber = nb
+                // 1 correct answer
+                if (isChecked && slide.quiz.rightAnswerNumber === undefined && slide.type !== 'POLL') slide.quiz.rightAnswerNumber = nb
+                // multiple answers correct -> replace QUIZ type with POLL
+                else if (isChecked) {
+                  slide.type = 'POLL'
+                  delete slide.quiz.rightAnswerNumber
+                }
               }
               if (slide.quiz.feedback?.length === 0) delete slide.quiz.feedback
-              if (!slide.quiz.rightAnswerNumber && lesson.slug !== 'bankless-archetypes')
+              if (!slide.quiz.rightAnswerNumber && slide.type === 'QUIZ' && lesson.slug !== 'bankless-archetypes')
                 throw new Error(
                   `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
                 )
@@ -634,7 +451,7 @@ axios
                 slide.content = slide.content.replace(imageLink, image_path)
                 lesson.imageLinks.push(image_path)
                 if (!fs.existsSync(local_image_path)) {
-                  download_image(imageLink, local_image_path)
+                  downloadImage(imageLink, local_image_path)
                   console.log('downloading image: ', local_image_path)
                 }
               }
@@ -675,20 +492,23 @@ axios
             return slide
           })
           lesson.keywords = allKeywords
-          if (LESSON_NOTION_ID) {
+          if (LESSON_NOTION_ID && program.opts().generateKeywords) {
             // create keyword lesson file
             const lessonKV = {}
             for (const keyword of allKeywords) {
               if (keyword in ALL_ENGLISH_KEYWORDS) {
                 lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+              } else {
+                const singularKeyword = keyword.slice(0, -1)
+                if (singularKeyword in ALL_ENGLISH_KEYWORDS) {
+                  lessonKV[singularKeyword] = ALL_ENGLISH_KEYWORDS[singularKeyword]
+                }
               }
             }
             if (Object.keys(lessonKV).length) {
               const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
               console.log('lessonKV', lessonKV)
-              fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
-                if (error) throw error
-              })
+              await writeFile(lessonKeywordPath, lessonKV)
             }
           }
           const componentName = PROJECT_DIR.replace(/[^A-Za-z0-9]/g, '') + lesson.name
@@ -715,13 +535,13 @@ axios
 
           if (lesson.hasCollectible) {
             if (lesson.lessonCollectedImageLink) {
-              lesson.lessonCollectedImageLink = get_img(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
+              lesson.lessonCollectedImageLink = await getImagePath(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
             }
             if (lesson.lessonCollectibleGif) {
-              lesson.lessonCollectibleGif = get_img(lesson.lessonCollectibleGif, lesson.slug, 'datadisk-gif')
+              lesson.lessonCollectibleGif = await getImagePath(lesson.lessonCollectibleGif, lesson.slug, 'datadisk-gif')
             }
             if (lesson.lessonCollectibleVideo) {
-              lesson.lessonCollectibleVideo = get_img(lesson.lessonCollectibleVideo, lesson.slug, 'datadisk-video')
+              lesson.lessonCollectibleVideo = await getImagePath(lesson.lessonCollectibleVideo, lesson.slug, 'datadisk-video')
             }
           }
 
@@ -735,17 +555,21 @@ axios
 
           if (MD_ENABLED) {
             // import translations
-            importTranslations(lesson)
+            await importTranslations(lesson, TRANSLATION_LANGUAGE)
             // convert to MD
             console.log(`Converting "${lesson.name}" to MD`)
             try {
               const mdblocks = await n2m.pageToMarkdown(notion.id)
               const mdString = n2m.toMarkdownString(mdblocks)
+              let lessonContentMD = mdString?.parent || ''
               // hide answers
-              let lessonContentMD = mdString?.parent?.replaceAll('[x]', '[ ]') || ''
-              lessonContentMD = lessonContentMD.replaceAll('\n\n\n\n', '\n\n')
-              lessonContentMD = lessonContentMD.replaceAll('\n\n\n', '\n\n')
-              const slides = lessonContentMD.split('\n# ')
+              lessonContentMD = lessonContentMD?.replaceAll('[x]', '[ ]')
+              lessonContentMD = lessonContentMD?.replaceAll('  </details>', '</details>')
+              lessonContentMD = lessonContentMD?.replaceAll('</details><details>', '</details>\n<details>')
+              lessonContentMD = lessonContentMD?.replaceAll('\n\n\n\n', '\n\n')
+              lessonContentMD = lessonContentMD?.replaceAll('\n\n\n', '\n\n')
+              lessonContentMD = lessonContentMD?.replaceAll('</details>\n#', '</details>\n\n#')
+              const slides = lessonContentMD?.split('\n# ')
               slides.shift()
               let quiz_nb = 0
               let j = 0
@@ -790,9 +614,7 @@ axios
                   if (plh.trim() !== lh.trim() ||
                     previousLessonContentMD.trim() !== lessonContentMD.trim()
                   ) {
-                    fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
-                      if (error) throw error
-                    })
+                    await writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`)
                     console.log(
                       `"${lesson.name}" updated in ${lessonPath}`
                     )
@@ -803,9 +625,7 @@ axios
                 }
               }
               else {
-                fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
-                  if (error) throw error
-                })
+                await writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`)
                 console.log(
                   `"${lesson.name}" exported in ${lessonPath}`
                 )
@@ -816,8 +636,9 @@ axios
             }
           }
         })
+      return
     })
-    await axios.all(promiseArray).then(() => {
+    await axios.all(promiseArray).then(async () => {
       if (LESSON_NOTION_ID) {
         const existingLessons = require(`./src/constants/${LESSON_FILENAME}.json`)
         const newLesson = lessons.pop()
@@ -840,17 +661,17 @@ const LESSONS: LessonType[] = ${stringifyObject(lessons, {
 export default LESSONS
 `
       if (!TRANSLATION_LANGUAGE) {
-        fs.writeFile(`src/constants/${LESSON_FILENAME}.ts`, FILE_CONTENT, (error) => {
-          if (error) throw error
-        })
-        fs.writeFile(`src/constants/${LESSON_FILENAME}.json`, JSON.stringify(lessons.filter(item => item !== null), null, 2), (error) => {
-          if (error) throw error
-        })
+
+        await writeFile(`src/constants/${LESSON_FILENAME}.ts`, FILE_CONTENT)
+        await writeFile(`src/constants/${LESSON_FILENAME}.json`, lessons.filter(item => item !== null))
       }
       console.log(
         `export done -> check syntax & typing errors in src/constants/${LESSON_FILENAME}.ts`
       )
+      return
     })
+    console.log('import content done!')
+    process.exit()
   })
   .catch((error) => {
     console.error(error)

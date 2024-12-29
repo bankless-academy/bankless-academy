@@ -3,10 +3,10 @@ import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { useTranslation } from 'react-i18next'
 
-import { LessonCard } from 'components/LessonCards'
+import { StyledLessonCard } from 'components/LessonCard'
 import { theme } from 'theme/index'
-import { api } from 'utils'
-import { useSmallScreen } from 'hooks'
+import { api } from 'utils/index'
+import { useSmallScreen } from 'hooks/index'
 import InternalLink from 'components/InternalLink'
 import { LESSONS } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
@@ -18,6 +18,7 @@ const OptimismGovernance = (
   questComponent: React.ReactElement
 } => {
   const { t } = useTranslation('quests', { keyPrefix: 'OptimismGovernance' })
+  const { t: tl } = useTranslation('lesson')
   const [isSmallScreen] = useSmallScreen()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-optimism-governance') || 'false'
@@ -71,48 +72,61 @@ const OptimismGovernance = (
                 {t('Begin your Optimism Network journey by delegating OP.')}
               </Text>
               <VStack mt="8" alignItems="start">
-                <Button
+                {/* <Button
                   cursor="default"
                   whiteSpace="break-spaces"
+                  height="auto"
+                  p="16px"
                   rightIcon={
                     account ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     )
                   }
                 >
                   {t('1. Connect your wallet to Bankless Academy')}
-                </Button>
+                </Button> */}
                 <Button
                   cursor="default"
                   whiteSpace="break-spaces"
+                  height="auto"
+                  justifyContent="space-between"
+                  p="16px"
+                  w="90%"
+                  maxW="400px"
                   rightIcon={
                     isTransactionVerified === 'true' ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : isLoading ? (
-                      <Spinner speed="1s" />
+                      <Spinner size="sm" speed="1s" />
                     ) : (
                       <CloseIcon color={theme.colors.incorrect} />
                     )
                   }
                 >
-                  {t('2. Select a Delegate for your OP')}
+                  <Box display="block" textAlign="left">
+                    {`Select a `}
+                    <ExternalLink href="https://vote.optimism.io/delegates">
+                      Delegate
+                    </ExternalLink>
+                    {` for your OP`}
+                    <Box display="block" mt="6px">
+                      {`or delegate to `}
+                      <ExternalLink href="https://vote.optimism.io/delegates/banklessacademy.eth">
+                        Bankless Academy
+                      </ExternalLink>
+                    </Box>
+                  </Box>
                 </Button>
-                <Box>
-                  {t('See the delegation platform here')}
-                  {': '}
-                  <ExternalLink href="https://vote.optimism.io/">
-                    vote.optimism.io
-                  </ExternalLink>
-                </Box>
               </VStack>
               <Box mt="8">
-                {t('Tip: ')}
+                {t('Tip')}
+                {`: `}
                 {t(
                   "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
                   {
-                    lesson_title: lesson.name,
+                    lesson_title: tl(lesson.englishName),
                     interpolation: { escapeValue: false },
                   }
                 )}
@@ -127,7 +141,7 @@ const OptimismGovernance = (
             </Box>
           </div>
           <div className="bloc2">
-            <LessonCard
+            <StyledLessonCard
               borderRadius="3xl"
               maxW="400px"
               textAlign="center"
@@ -136,11 +150,11 @@ const OptimismGovernance = (
               <Box zIndex="2" position="relative">
                 <Box py="8">
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
-                    {lesson.name}
+                    {tl(lesson.englishName)}
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.englishName}
+                    alt={tl(lesson.englishName)}
                     target="_blank"
                   >
                     <Image src={lesson.lessonImageLink} />
@@ -149,14 +163,14 @@ const OptimismGovernance = (
                 <Box pb="8">
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.englishName}
+                    alt={tl(lesson.englishName)}
                     target="_blank"
                   >
                     <Button variant="primary">{t('Read Entry')}</Button>
                   </InternalLink>
                 </Box>
               </Box>
-            </LessonCard>
+            </StyledLessonCard>
           </div>
         </Box>
       </>

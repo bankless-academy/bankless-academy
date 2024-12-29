@@ -5,7 +5,7 @@ import ReactHtmlParser from 'react-html-parser'
 import { LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { ARCHETYPES_MATRIX } from 'constants/archetypes'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 
 const BanklessArchetypes = (): {
   isQuestCompleted: boolean

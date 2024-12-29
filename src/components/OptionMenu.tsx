@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Button,
   Menu,
@@ -9,14 +9,14 @@ import {
   Box,
   Image,
 } from '@chakra-ui/react'
-import { Mixpanel } from 'utils'
+import { Mixpanel } from 'utils/index'
 import { useTranslation } from 'react-i18next'
 import { Bug, Gear } from '@phosphor-icons/react'
 
-import SubscriptionModal from 'components/SubscriptionModal'
 import InstallAppModal from 'components/InstallAppModal'
 import ExternalLink from 'components/ExternalLink'
 import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
+import OnboardingModal from 'components/OnboardingModal'
 
 const OptionMenu = ({
   isSmallScreen,
@@ -26,14 +26,14 @@ const OptionMenu = ({
   isWebApp: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const { isOpen, onOpen, onClose } = useDisclosure()
   const {
     isOpen: isOpenAppModal,
     onOpen: onOpenAppModal,
     onClose: onCloseAppModal,
   } = useDisclosure()
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
 
-  const twitterLink = `https://twitter.com/${TWITTER_ACCOUNT}`
+  const twitterLink = `https://x.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
 
   return (
     <Box zIndex="10">
@@ -49,6 +49,9 @@ const OptionMenu = ({
           <ExternalLink href="/faq" color="white">
             <MenuItem>{t('FAQ')}</MenuItem>
           </ExternalLink>
+          <ExternalLink href="/about" color="white">
+            <MenuItem>About</MenuItem>
+          </ExternalLink>
           <ExternalLink href="/disclaimer" color="white">
             <MenuItem>{t('Disclaimer')}</MenuItem>
           </ExternalLink>
@@ -59,10 +62,7 @@ const OptionMenu = ({
             </MenuItem>
           </ExternalLink>
           {!IS_WHITELABEL && (
-            <ExternalLink
-              href="https://app.dework.xyz/bankless-academy-25331/suggestions"
-              color="white"
-            >
+            <ExternalLink href="/feature-request" color="white">
               <MenuItem>
                 {t('Feature Request')}&nbsp;
                 <Gear />
@@ -73,7 +73,7 @@ const OptionMenu = ({
             <>
               <MenuItem
                 onClick={() => {
-                  onOpen()
+                  setIsOnboardingModalOpen(true)
                   Mixpanel.track('click_internal_link', {
                     link: 'modal',
                     name: 'Newsletter signup',
@@ -155,7 +155,13 @@ const OptionMenu = ({
           </ExternalLink>
         </MenuList>
       </Menu>
-      <SubscriptionModal isOpen={isOpen} onClose={onClose} />
+      <OnboardingModal
+        isOpen={isOnboardingModalOpen}
+        onClose={() => {
+          setIsOnboardingModalOpen(false)
+        }}
+        newsletterOnly={true}
+      />
       <InstallAppModal
         isOpen={isOpenAppModal}
         onClose={onCloseAppModal}

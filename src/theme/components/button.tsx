@@ -64,7 +64,6 @@ const primary = {
       right: 0,
       bottom: 0,
       borderRadius: '8px',
-      borderBottomRadius: '0',
       padding: '1px',
       '-webkit-mask':
         'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',

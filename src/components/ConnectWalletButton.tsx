@@ -12,14 +12,14 @@ import {
   Heading,
   useDisclosure,
 } from '@chakra-ui/react'
-import { Wallet, Power, UserCircle } from '@phosphor-icons/react'
+import { Wallet, UserCircle, SignOut } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
-import { useRouter } from 'next/router'
-import { useWeb3Modal } from '@web3modal/wagmi/react'
-import { useAccount, useNetwork, useSignMessage, useDisconnect } from 'wagmi'
-import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
+import router, { useRouter } from 'next/router'
+import { useAppKit } from '@reown/appkit/react'
+import { useAccount, useSignMessage } from 'wagmi'
+import { useDisconnect } from '@reown/appkit/react'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 import { useTranslation } from 'react-i18next'
@@ -39,7 +39,8 @@ import {
   SIWE_ENABLED,
 } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
-import { getUD, getLensProfile, shortenAddress, api } from 'utils'
+import { getUD, shortenAddress, api } from 'utils/index'
+import OnrampButton from './OnrampButton'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -63,16 +64,15 @@ const ConnectWalletButton = ({
   isSmallScreen: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const { open } = useWeb3Modal()
-  const { connector, isConnected } = useAccount()
-  let { address } = useAccount()
-  const { query, asPath } = useRouter()
-  const { simulate } = query
-  if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
-    address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
-  const { chain } = useNetwork()
+  const { open } = useAppKit()
+  const { address, connector, isConnected, chainId } = useAccount()
+  const { asPath } = useRouter()
+  // const { simulate } = query
+  // if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
+  //   address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)
+  const [, setScore] = useLocalStorage(`score`, 0)
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
@@ -86,24 +86,61 @@ const ConnectWalletButton = ({
   const [ens, setEns] = useState('')
   const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [currentWallet, setCurrentWallet] = useLocalStorage(
+    'current_wallet',
+    ''
+  )
+  const [referrer, setReferrer] = useLocalStorage('referrer', '')
+  const [emailLinked, setEmailLinked] = useLocalStorage('emailLinked', false)
   const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
     'refreshBadges',
     false
   )
+  const [, setCommunity] = useLocalStorage(`community`, '')
   const { onOpen, onClose, isOpen } = useDisclosure()
-  const { disconnect } = useDisconnect({
-    onError(error) {
-      console.log('Error while disconnecting', error)
-    },
-    onSuccess() {
-      console.log('Disconnect success')
-      // HACK: mobile wallet disconnect issues
-      if (localStorage.getItem('wagmi.wallet').includes('walletConnect')) {
-        console.log('force reload')
-        location.reload()
+  const { disconnect } = useDisconnect()
+  const { referral } = router.query
+  const [email] = useLocalStorage('email', localStorage.getItem('email') || '')
+
+  useEffect(() => {
+    const getAddress = async (ens: string) => {
+      try {
+        const res = await fetch(`https://api.ensdata.net/${ens}`)
+        const data = await res.json()
+        console.log('referralAddress', data)
+        return data.address?.toLowerCase()
+      } catch (error) {
+        console.log(error)
+        return ''
       }
-    },
-  })
+    }
+
+    const extractAdressFromUrl = (pathname) => {
+      const segments = pathname.split('/')
+      return segments[segments.length - 1].split('?')[0]
+    }
+
+    const handleReferral = async () => {
+      const referralString =
+        (referral as string) === 'true' && asPath?.startsWith('/explorer/')
+          ? extractAdressFromUrl(asPath)
+          : (referral as string)
+      // console.log('referralString', referralString)
+      if (referralString?.length) {
+        const referralAddress = referralString?.includes('.')
+          ? await getAddress(referralString)
+          : referralString?.toLowerCase()
+        // console.log('referralAddress', referralAddress)
+        // console.log('currentWallet', currentWallet)
+
+        if (referrer === '' && currentWallet !== referralAddress)
+          setReferrer(referralAddress)
+      }
+    }
+
+    handleReferral()
+    if (currentWallet === referrer) setReferrer('')
+  }, [asPath, referral, currentWallet, referrer])
 
   const isLessonPage = asPath.includes('/lessons')
   const isProfilePage = asPath.includes('/explorer/my-profile')
@@ -136,6 +173,7 @@ const ConnectWalletButton = ({
   }
 
   async function updateName(address) {
+    // console.log('updateName')
     let name = shortenAddress(address)
     let avatar = makeBlockie(address)
     const replaceName = (newName) => {
@@ -150,30 +188,47 @@ const ConnectWalletButton = ({
         avatar = newAvatar
       }
     }
-    if (nameCache[address]?.name) setName(nameCache[address].name)
+    const addressLower = address?.toLowerCase()
+    if (nameCache[addressLower]?.name) setName(nameCache[addressLower].name)
     else setName(name)
-    if (nameCache[address]?.avatar) setAvatar(nameCache[address].avatar)
+    if (nameCache[addressLower]?.avatar)
+      setAvatar(nameCache[addressLower].avatar)
     else setAvatar(avatar)
+
+    const getEnsData = async (address: string) => {
+      try {
+        const res = await fetch(`https://api.ensdata.net/${address}`)
+        const data = await res.json()
+        console.log('ensData', data)
+        return data
+      } catch (error) {
+        console.log(error)
+        return null
+      }
+    }
+
+    const ensData = await getEnsData(addressLower)
+    console.log('ensData', ensData)
 
     const ensName =
       address.toLowerCase() === '0xb00e26e79352882391604e24b371a3f3c8658e8c'
         ? DEFAULT_ENS
-        : await fetchEnsName({
-            address,
-            chainId: 1,
-          })
+        : ensData?.ens
+    // console.log(ensName)
     if (ensName) {
       setEns(ensName)
       replaceName(ensName)
-      const ensAvatar = await fetchEnsAvatar({
-        name: ensName,
-        chainId: 1,
-      })
+      const ensAvatar = ensData?.avatar_small
+      // console.log(ensAvatar)
       if (ensAvatar) replaceAvatar(ensAvatar)
       if (ensName === DEFAULT_ENS) replaceAvatar(DEFAULT_AVATAR)
     } else {
       setEns('')
-      const lensProfile = await getLensProfile(address)
+      const { data: lensProfile } = await api(
+        `/api/lens?address=${address}`,
+        {}
+      )
+      console.log(lensProfile)
       if (lensProfile.name) {
         replaceName(lensProfile.name)
         if (lensProfile.avatar) {
@@ -184,19 +239,42 @@ const ConnectWalletButton = ({
         if (ud?.length) {
           replaceName(ud)
           replaceAvatar(
-            `https://resolve.unstoppabledomains.com/image-src/${ud}`
+            `https://api.unstoppabledomains.com/metadata/image-src/${ud}`
           )
         }
       }
     }
     const newNameCache = JSON.parse(JSON.stringify(nameCache))
-    newNameCache[address] = { name, avatar }
+    newNameCache[addressLower] = { name, avatar }
+    if (name?.includes('.')) {
+      newNameCache[name] = { name, avatar }
+    }
     setNameCache(newNameCache)
   }
 
   function refreshBadges() {
     if (address)
-      axios.get(`/api/user/${address}?badges=true`).then((res) => {
+      axios.get(`/api/user/${address}`).then(async (res) => {
+        const community = res?.data?.community
+        setCommunity(community)
+        const score = res?.data?.stats?.score || 0
+        setScore(score)
+        if (
+          !emailLinked &&
+          !res?.data?.emailLinked &&
+          email?.length &&
+          address?.length
+        ) {
+          try {
+            const res = await api('/api/link-email', { email, address })
+            console.log('res', res.data)
+            if (res.data?.message) {
+              setEmailLinked(true)
+            }
+          } catch (error) {
+            console.error('error', error)
+          }
+        }
         const badgeTokenIds = res?.data?.badgeTokenIds
         if (Array.isArray(badgeTokenIds)) {
           const badgesMinted = BADGE_IDS.filter((badgeId) =>
@@ -222,10 +300,10 @@ const ConnectWalletButton = ({
   const loadAddress = (address) => {
     setConnectWalletPopupLS(false)
     onClose()
-    if (localStorage.getItem('current_wallet') !== address?.toLowerCase()) {
+    if (currentWallet !== address?.toLowerCase()) {
       localStorage.removeItem('passport')
     }
-    localStorage.setItem('current_wallet', address?.toLowerCase())
+    setCurrentWallet(address?.toLowerCase())
     updateName(address)
     const wallets = localStorage.getItem('wallets')
       ? JSON.parse(localStorage.getItem('wallets'))
@@ -252,13 +330,13 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    if (siwe?.length) {
+    if (SIWE_ENABLED && siwe?.length) {
       verify()
     }
   }, [])
 
   const signIn = async () => {
-    const chainId = chain?.id
+    // console.log('signIn')
     if (!chainId || waitingForSIWE || isDisconnecting) return
     const timeout = setTimeout(() => {
       console.log('SIWE timeout')
@@ -282,6 +360,7 @@ const ConnectWalletButton = ({
       })
       await new Promise((resolve) => setTimeout(resolve, 500))
       const signature = await signMessageAsync({
+        account: address,
         message: message.prepareMessage(),
       })
       clearTimeout(timeout)
@@ -318,7 +397,7 @@ const ConnectWalletButton = ({
 
   useEffect(() => {
     if (address && !SIWE_ENABLED) {
-      console.log(address)
+      console.log('loadAddress', address)
       loadAddress(address)
     }
   }, [address])
@@ -394,11 +473,19 @@ const ConnectWalletButton = ({
                 </InternalLink>
               </Box>
               <Box textAlign="center" m="2">
+                <OnrampButton
+                  w="100%"
+                  size={isSmallScreen ? 'md' : 'lg'}
+                  border="2px solid white"
+                  address={address}
+                />
+              </Box>
+              <Box textAlign="center" m="2">
                 <Button
                   w="100%"
                   size={isSmallScreen ? 'md' : 'lg'}
                   variant="secondaryWhite"
-                  leftIcon={<Power weight="bold" />}
+                  leftIcon={<SignOut weight="bold" />}
                   onClick={disconnectWallet}
                 >
                   {t('Disconnect Wallet')}
@@ -449,7 +536,7 @@ const ConnectWalletButton = ({
                 {t('Connect your wallet to proceed.')}
               </Heading>
               <Text textAlign="center">
-                {`Don’t know how? `}
+                {`Don't know how? `}
                 <ExternalLink
                   underline="true"
                   href="https://app.banklessacademy.com/lessons/creating-a-crypto-wallet"

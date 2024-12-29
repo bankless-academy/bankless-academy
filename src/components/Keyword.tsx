@@ -13,7 +13,14 @@ const Keyword = ({
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Tooltip hasArrow label={definition} closeOnClick={false} isOpen={isOpen}>
+    <Tooltip
+      hasArrow
+      label={definition}
+      closeOnClick={false}
+      isOpen={isOpen}
+      color="black"
+      background="#B498CD"
+    >
       <span
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}

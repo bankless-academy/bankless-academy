@@ -14,14 +14,17 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { useTranslation } from 'react-i18next'
 
 import { theme } from 'theme/index'
-import { useSmallScreen } from 'hooks'
-import { LessonCard } from 'components/LessonCards'
+import { useSmallScreen } from 'hooks/index'
+import { StyledLessonCard } from 'components/LessonCard'
 
 const DEFAULT_ANSWERS = ['1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3', '0']
-const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.00000001']
+const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.02']
 
 const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
   const { t } = useTranslation('quests', { keyPrefix: 'BitcoinBasics' })
+  // HACK: or else translation is skipped...
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { t: tl } = useTranslation('lesson')
   const [isSmallScreen] = useSmallScreen()
   const [hasSimulationRun, setHasSimulationRun] = useState(false)
   const [animationStep, setAnimationStep] = useState(null)
@@ -40,9 +43,11 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
       : DEFAULT_ANSWERS
   )
 
+  const numericAmount = parseFloat(selected[1]?.replace(',', '.') || 5)
   const areAnswersCorrect =
-    JSON.stringify(selected)?.replace('0,0', '0.0') ===
-    JSON.stringify(CORRECT_ANSWERS)
+    selected[0]?.toLowerCase() === CORRECT_ANSWERS[0]?.toLowerCase() &&
+    numericAmount > 0 &&
+    numericAmount <= parseFloat(CORRECT_ANSWERS[1])
   localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
 
   const animationSteps = [
@@ -78,7 +83,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
             <div
               dangerouslySetInnerHTML={{
                 __html: `${t(
-                  'Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address'
+                  'Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address'
                 )}: `,
               }}
             />
@@ -123,7 +128,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
             )}
           </Box>
         ) : (
-          <LessonCard
+          <StyledLessonCard
             borderRadius="3xl"
             maxW={isSmallScreen ? '100%' : '500px'}
             textAlign="center"
@@ -155,8 +160,8 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
                   }}
                 />
                 <InputRightElement>
-                  {!hasSimulationRun ? null : toAddress ===
-                    CORRECT_ANSWERS[0] ? (
+                  {!hasSimulationRun ? null : toAddress?.toLowerCase() ===
+                    CORRECT_ANSWERS[0]?.toLowerCase() ? (
                     <CheckIcon color={theme.colors.correct} />
                   ) : (
                     <CloseIcon color={theme.colors.incorrect} />
@@ -192,8 +197,8 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
                     }}
                   />
                   <InputRightElement>
-                    {!hasSimulationRun ? null : amount ===
-                      CORRECT_ANSWERS[1] ? (
+                    {!hasSimulationRun ? null : numericAmount > 0 &&
+                      numericAmount <= parseFloat(CORRECT_ANSWERS[1]) ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
                       <CloseIcon color={theme.colors.incorrect} />
@@ -202,7 +207,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
                 </InputGroup>
               </Box>
               <Text textAlign="left" m="0 !important">
-                {t(`Balance`)}: 0.0005
+                {t(`Balance`)}: {CORRECT_ANSWERS[1]}
               </Text>
               {areAnswersCorrect !== true && (
                 <Box mt="36px !important" textAlign="center">
@@ -217,7 +222,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
                 </Box>
               )}
             </Box>
-          </LessonCard>
+          </StyledLessonCard>
         )}
       </div>
     </Box>

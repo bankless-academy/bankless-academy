@@ -16,6 +16,8 @@ import {
 import { ReactNode, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import ExternalLink from 'components/ExternalLink'
+
 const QuestionIcon = (props) => (
   <Icon
     width={props.size === 'lg' ? '30px' : '24px'}
@@ -49,7 +51,7 @@ const ButtonHelper = ({
   onOpenHelpModal,
   isProfile,
 }: {
-  onOpenHelpModal: any
+  onOpenHelpModal: (e: React.MouseEvent) => void
   isProfile?: boolean
 }): JSX.Element => {
   const [isHover, setIsHover] = useState(false)
@@ -79,10 +81,7 @@ const ButtonHelper = ({
       <IconButton
         variant="unstyled"
         size={isHover ? 'lg' : 'md'}
-        onClick={(e) => {
-          e.stopPropagation()
-          onOpenHelpModal()
-        }}
+        onClick={onOpenHelpModal}
         display="contents"
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
@@ -99,12 +98,16 @@ const Helper = ({
   fullscreen,
   isProfile,
   triggerOpen,
+  helpLink,
+  onCloseParent,
 }: {
   title: ReactNode
   definition: ReactNode
   fullscreen?: boolean
   isProfile?: boolean
   triggerOpen?: boolean
+  helpLink?: string
+  onCloseParent?: () => void
 }): React.ReactElement => {
   const { t } = useTranslation()
   const {
@@ -120,11 +123,25 @@ const Helper = ({
     }
   }, [triggerOpen])
 
+  const handleClose = () => {
+    onCloseHelpModal()
+    if (onCloseParent) {
+      onCloseParent()
+    }
+  }
+
   return (
     <>
-      <ButtonHelper isProfile={isProfile} onOpenHelpModal={onOpenHelpModal} />
+      <ButtonHelper
+        isProfile={isProfile}
+        onOpenHelpModal={(e: React.MouseEvent) => {
+          e.preventDefault()
+          e.stopPropagation()
+          onOpenHelpModal()
+        }}
+      />
       <Modal
-        onClose={onCloseHelpModal}
+        onClose={handleClose}
         size={fullscreen && isMobileScreen ? 'full' : 'md'}
         isOpen={isOpenHelpModal}
         isCentered
@@ -141,10 +158,24 @@ const Helper = ({
           <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>{definition}</ModalBody>
-          <ModalFooter m="auto">
-            <Button variant="primaryWhite" onClick={onCloseHelpModal}>
+          <ModalFooter
+            justifyContent="space-between"
+            alignSelf="center"
+            w="100%"
+          >
+            <Box w="36px"></Box>
+            <Button variant="primaryWhite" onClick={handleClose}>
               {t('Got it')}
             </Button>
+            <Box w="36px">
+              {helpLink ? (
+                <ExternalLink underline="true" href={helpLink}>
+                  Help
+                </ExternalLink>
+              ) : (
+                ''
+              )}
+            </Box>
           </ModalFooter>
         </ModalContent>
       </Modal>

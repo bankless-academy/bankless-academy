@@ -2,6 +2,7 @@
 
 ## Project Links
 
+- [Press & Media Kit](https://bankless.ac/kit): About Bankless Academy, Brand Assets, Team, Official Links and Press Links.
 - [Whitelabel](https://whitelabel.banklessacademy.com/): Build your own web3 educational platform in no time by leveraging Bankless Academy’s infrastructure.
 - [Documentation](https://documentation.banklessacademy.com/): Understand how you can integrate Bankless Academy to your website.
 - [FAQ](https://app.banklessacademy.com/faq): Frequently Asked Questions about Bankless Academy.
@@ -49,7 +50,7 @@ Setup and connection to database are done via [Knex.js](https://knexjs.org/#Migr
 
 ### Config
 
-DM `DidierKrux.eth🏴#1559` on Discord if you need the configs to add to your .env.local file (see [.env.example](https://github.com/bankless-academy/bankless-academy/blob/main/.env.example)).
+DM `@didierkrux` on Telegram if you need the configs to add to your .env.local file (see [.env.example](https://github.com/bankless-academy/bankless-academy/blob/main/.env.example)).
 
 ### Migrations
 
@@ -126,7 +127,7 @@ yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -lg fr
 
 ### How does it work
 
-The [import script](https://github.com/bankless-academy/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/didierkrux/potion](https://github.com/didierkrux/potion) and transforms the content into [this Object](https://github.com/bankless-academy/bankless-academy/blob/main/src/constants/lessons.ts).
+The [import script](https://github.com/bankless-academy/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/bankless-academy/potion](https://github.com/bankless-academy/potion) and transforms the content into [this Object](https://github.com/bankless-academy/bankless-academy/blob/main/src/constants/lessons.ts).
 
 ## How to import keywords definitions from Notion
 
