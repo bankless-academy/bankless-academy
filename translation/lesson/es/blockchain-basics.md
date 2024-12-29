@@ -2,7 +2,7 @@
 TITLE: Conceptos Básicos de Blockchain
 DESCRIPTION: Aprende sobre la arquitectura fundamental de la tecnología de cadena de bloques [blockchain].
 LANGUAGE: Español
-WRITERS:
+WRITERS: iSpeakNerd
 TRANSLATORS: OrnellaWeb3
 LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 FORMAT: LESSON
