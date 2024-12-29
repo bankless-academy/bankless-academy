@@ -133,7 +133,7 @@ Embora o suprimento máxima de `BTC` não possa exceder os 21 milhões, novas mo
 
 A `política monetária` fixa do Bitcoin o torna um ativo atraente para aqueles que buscam preservar valor a longo prazo, permitindo acompanhar os custos crescentes.
 
-Seu valor a curto prazo continua sendo volátil devido à especulação de mercado.
+Its short term value remains volatile due to market speculation.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
