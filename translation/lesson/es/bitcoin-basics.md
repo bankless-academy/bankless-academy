@@ -72,7 +72,7 @@ Verdadero o Falso:
 
 - [ ] Verdadero
 
-> ¡Correcto! Cuanto más dinero hay en circulación, menos valor tiene.
+> ¡Correcto! A mayor cantidad disponible, menor valor, por lo que el dinero de todos pierde valor, poco a poco.
 
 - [ ] Falso
 
@@ -84,7 +84,7 @@ Con la introducción del dinero en papel, las monedas pasaron a ser 'respaldadas
 
 Luego, en el siglo XX, vino la caída de este “`estándar de oro`”.
 
-Los metales preciosos se fueron desconectando poco a poco de las monedas de todo el mundo, un esfuerzo que permitiría a la economía de cualquier país crecer más allá de su oferta de oro. Los banco centrales ya no necesitaban oro para crear su moneda. Cada uno podría crear tanto dinero nuevo como considerara necesario para la economía de su país. Al controlar firmemente la oferta monetaria, también podrían controlar su valor.
+Los metales preciosos se fueron desconectando poco a poco de las monedas de todo el mundo, un esfuerzo que permitiría a la economía de cualquier país crecer más allá de su oferta de oro. Cada uno podría crear tanto dinero nuevo como considerara necesario para la economía de su país. Al controlar firmemente la oferta monetaria, también podrían controlar su valor.
 
 Entrando en la era digital, la moneda electrónica ha reemplazado masivamente a la moneda física. Almacenar nuestro dinero en bancos comerciales nos ha proporcionado la comodidad de las tarjetas de crédito y las aplicaciones de pago. Aunque es fácil y seguro, también interpone empresas con ánimo de lucro entre las personas y su dinero.
 
@@ -215,12 +215,12 @@ Gestionarás tu cuenta usando tu `billetera de criptomonedas` conectada a tu nav
 
 > ¡Correcto! Tanto Bitcoin como el correo electrónico innovan sobre los servicios que les precedieron.
 
-# La Red Bitcoin
+# OrnellaWeb3
 
 Cambiemos de marcha y demos una mirada al motor de Bitcoin:
 **La red Bitcoin**.
 
-Bitcoin se ejecuta en una red compartida alojada en miles de computadoras en todo el mundo. Cada computador de la red, desempeña un papel en mantener su funcionamiento. ¡La red existe a través de ellos! Si una computadora procesa una transacción fraudulenta, existe otra para corregirla.
+Bitcoin se ejecuta en una red compartida alojada en miles de computadoras en todo el mundo. Cada computador de la red, desempeña un papel en mantener su funcionamiento. Si una computadora procesa una transacción fraudulenta, existe otra para corregirla.
 
 Esto también significa, que no existe un único punto sobre el cual ejercer presión en un intento de hackeo. Para controlar la red, habría que comprometer la mayoría de las computadoras.
 
@@ -302,7 +302,7 @@ Descentralizando el dinero y eliminando a los `custodios` podemos:
 
 La nueva era del dinero defiende los valores fundamentales de la democracia para aumentar la calidad de la vida cotidiana de los ciudadanos de todo el mundo, y tú, estás invitado.
 
-"La democracia proporciona un entorno que respeta los derechos humanos y las libertades fundamentales, y en el que se ejerce la voluntad libremente expresada de las personas" — Naciones Unidas.
+"La democracia proporciona un entorno que respeta los derechos humanos y las libertades fundamentales, y en el que se ejerce la voluntad libremente expresada de las personas" — Naciones Unidas. — Naciones Unidas.
 
 # Tu Misión Bitcoin
 

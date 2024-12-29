@@ -1,0 +1,77 @@
+{
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2'ler",
+    "definition": "İnternetin, blok zinciri altyapısı bulunmayan mevcut durumu."
+  },
+  "web3": {
+    "keyword": "web3",
+    "keyword_plural": "web3'ler",
+    "definition": "Kullanıcıların varlıklarını ve verilerini kendi gözetimleri altında tutabildiği, blok zincirlerinden oluşan interneti ifade eder."
+  },
+  "cryptocurrency": {
+    "keyword": "kripto para",
+    "keyword_plural": "kripto paralar",
+    "definition": "Merkezi otoriteler yerine blok zinciri teknolojisi tarafından barındırılan bir dijital para birimi."
+  },
+  "blockchain apps": {
+    "keyword": "blok zinciri uygulamaları",
+    "keyword_plural": "blok zinciri uygulamaları",
+    "definition": "Kripto para takas etmenize, web3 sosyal medyasını kullanmanıza, hayır amaçlı bağışlar yapmanıza ve hatta Bankless Academy'de olduğu gibi zincir üstü bir şeyler öğrenmenize olanak tanıyan blok zinciri uygulamaları."
+  },
+  "blockchain": {
+    "keyword": "blok zinciri",
+    "keyword_plural": "blok zincirleri",
+    "definition": "Kripto para işlemlerinin kaydının, dünyanın dört bir yanından birçok bilgisayarda tutulduğu sistem."
+  },
+  "wallet app": {
+    "keyword": "cüzdan uygulaması",
+    "keyword_plural": "cüzdan uygulamaları",
+    "definition": "Bilgisayarınızda veya telefonunuzda, blok zincirindeki cüzdanınıza bağlanmak için kullanılan bir uygulama."
+  },
+  "public key": {
+    "keyword": "genel anahtar",
+    "keyword_plural": "genel anahtarlar",
+    "definition": "Genel anahtar, cüzdanınızın adresidir. Başkalarına size kripto varlıkları göndermeleri için bir referans noktası verir."
+  },
+  "private key": {
+    "keyword": "özel anahtar",
+    "keyword_plural": "özel anahtarlar",
+    "definition": "Özel anahtar, cüzdanınıza erişim sunarak diğer cüzdanlara kripto varlıkları göndermenize olanak tanır."
+  },
+  "wallet": {
+    "keyword": "cüzdan",
+    "keyword_plural": "cüzdanlar",
+    "definition": "Cüzdan, blok zincirinde kripto varlıkları göndermek ve almak için kullanılan bir uygulama veya cihazdır."
+  },
+  "recovery phrase": {
+    "keyword": "kurtarma ifadesi",
+    "keyword_plural": "kurtarma ifadeleri",
+    "definition": "Kurtarma ifadesi, cüzdanınızın genel anahtarını ve özel anahtarını oluşturmak için kullanılan 12 ila 24 kelimelik bir sözcük listesidir."
+  },
+  "self-custody wallet": {
+    "keyword": "gözetimsiz cüzdan",
+    "keyword_plural": "gözetimsiz cüzdanlar",
+    "definition": "(Emanete tabi olmayan cüzdan) Gözetimsiz bir cüzdanla, özel anahtarlarınızın kontrolü sizde olur ve kripto varlıklarınızı siz kontrol edersiniz."
+  },
+  "custodial wallet": {
+    "keyword": "gözetimli cüzdan",
+    "keyword_plural": "gözetimli cüzdanlar",
+    "definition": "Gözetimli bir cüzdanda özel anahtarları, yani kripto varlıklarınıza erişimi başka bir taraf kontrol eder."
+  },
+  "hot wallet": {
+    "keyword": "sıcak cüzdan",
+    "keyword_plural": "sıcak cüzdanlar",
+    "definition": "Sürekli internete bağlı olan bir gözetimsiz cüzdan türü."
+  },
+  "cold wallet": {
+    "keyword": "soğuk cüzdan",
+    "keyword_plural": "soğuk cüzdanlar",
+    "definition": "Çevrimdışı donanımda saklanan bir gözetimsiz cüzdan türü."
+  },
+  "self-custody": {
+    "keyword": "gözetimsizlik",
+    "keyword_plural": "gözetimsizlikler",
+    "definition": "Varlıklarınızı sadece sizin erişebileceğiniz bir yerde tutma yolu."
+  }
+}

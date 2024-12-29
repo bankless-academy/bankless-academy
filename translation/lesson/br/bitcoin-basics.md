@@ -1,6 +1,6 @@
 ---
 TITLE: Princípios Básicos do Bitcoin
-DESCRIPTION: O que é o Bitcoin? Explore a primeira criptomoeda de sucesso e repense a forma como você vê o dinheiro.
+DESCRIPTION: beatrizabreupeixoto Explore a primeira criptomoeda de sucesso e repense a forma como você vê o dinheiro.
 LANGUAGE: Português
 WRITERS: Tetranome
 TRANSLATORS: beatrizabreupeixoto

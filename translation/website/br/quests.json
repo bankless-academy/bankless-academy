@@ -4,7 +4,7 @@
     "2. It's now being verified by network miners...": "2. Sua transação está sendo verificada pelos mineradores da rede...",
     "3. Your transaction is added to the blockchain “database”...": "3. Sua transação foi adicionada ao \"banco de dados\" da blockchain...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto recebeu seu Bitcoin!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Usando nosso simulador de Bitcoin, envie <strong>0.00000001</strong> BTC para o endereço de Satoshi Nakamoto",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address",
     "Recipient": "Destinatário",
     "Address": "Endereço",
     "Asset": "Ativo",

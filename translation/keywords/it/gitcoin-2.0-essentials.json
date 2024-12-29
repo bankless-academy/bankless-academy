@@ -1,0 +1,14 @@
+{
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "keyword_plural": "Allo Protocols",
+    "definition": "An open-source protocol that enables groups to efficiently and transparently allocate pooled capital.",
+    "glossary": false
+  },
+  "quadratic funding": {
+    "keyword": "quadratic funding",
+    "keyword_plural": "quadratic fundings",
+    "definition": "A crowd-funding mechanism that amplifies available resources with individual donations of any size acting as votes. The broader the support, the bigger the impact!",
+    "glossary": true
+  }
+}

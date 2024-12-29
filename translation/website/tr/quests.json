@@ -4,7 +4,7 @@
     "2. It's now being verified by network miners...": "2. Şimdi ağdaki madenciler tarafından doğrulanıyor...",
     "3. Your transaction is added to the blockchain “database”...": "3. İşleminiz, blok zinciri \"veri tabanına\" ekleniyor...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto Bitcoin'inizi aldı!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Bitcoin simülatörümüzü kullanarak Satoshi Nakamoto'nun adresine <strong>0.00000001</strong> BTC gönderin",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address",
     "Recipient": "Alıcı",
     "Address": "Adres",
     "Asset": "Varlık",

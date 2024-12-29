@@ -31,7 +31,7 @@ ________________________________________________________________________________
 
 Bienvenue, explorateur audacieux, à la frontière de l'innovation numérique.
 
-À la Bankless Academy, notre mission est de fournir aux explorateurs tels que vous les meilleurs outils et connaissances pour naviguer dans l'univers de la blockchain et "go bankless!" [se passer de banque]
+À la Bankless Academy, notre mission est de fournir aux explorateurs tels que vous les meilleurs outils et connaissances pour naviguer dans l'univers de la blockchain et "go bankless!"
 
 Aujourd'hui, nous nous penchons sur la `cryptomonnaie` qui a tout déclenché : le Bitcoin.
 
@@ -68,11 +68,11 @@ Au fur et à mesure que les sociétés se développaient, la banque centrale d'u
 # Knowledge Check 1
 
 Vrai ou faux :
-« À mesure que l'on ajoute de la monnaie à un système monétaire, la monnaie existante perd de sa valeur. »
+« À mesure que l'on ajoute de la monnaie à un système monétaire, la monnaie existante perd de sa valeur.
 
 - [ ] Vrai
 
-> Correct ! Plus il y a d'argent, moins il a de valeur.
+> Toutes les réponses ci-dessus. Plus il y a d'argent, moins il a de valeur.
 
 - [ ] Faux
 
@@ -94,7 +94,7 @@ Les métaux précieux ont été lentement déconnectés des monnaies du monde en
 
 Le problème de notre système financier actuel est le manque de contrôle que nous avons sur notre argent et le fait que cela réduit notre capacité à décider librement de ce que nous voulons épargner et de ce que nous voulons dépenser.
 
-Les `banques centrales`, la banque gérant la `politique monétaire`, peut introduire n'importe quelle somme d'argent nouvelle. Cette absence de `rareté` fait que notre argent vaut souvent de moins en moins chaque année. L'argent avec une valeur imprévisible et décroissante nous oblige souvent à le dépenser: **“Si mon argent va avoir moins de valeur chaque année, pourquoi économiser ? Autant le dépenser maintenant. "** 💸
+Les `banques centrales`, la banque gérant la `politique monétaire`, peut introduire n'importe quelle somme d'argent nouvelle. Cette absence de `rareté` fait que notre argent vaut souvent de moins en moins chaque année. L'argent avec une valeur imprévisible et décroissante nous oblige souvent à le dépenser: \*\*“Si mon argent va avoir moins de valeur chaque année, pourquoi économiser ? Autant le dépenser maintenant.
 
 Les `banques commerciales`, celles qui sont utilisées pour l'épargne et les dépenses quotidiennes, influencent également nos habitudes de consommation. En tant que `dépositaire`, ils peuvent bloquer les transactions ou confisquer nos fonds. Certaines banques ont empêché leurs clients d'acheter des crypto-monnaies ! **Si votre banque peut geler vos économies à tout moment… êtes-vous vraiment propriétaire de votre argent?** 💸
 
@@ -155,8 +155,7 @@ Comment Bitcoin favorise-t-il la préservation de la valeur à long terme ?
 
 ---
 
-Dans les démocraties, la propriété est un droit de l'homme protégé car elle permet aux citoyens de mieux contrôler leur vie et d'être plus libres.
-Nous ne pouvons pas agir librement lorsque nos moyens de survie sont conditionnels, jugés par des entreprises ou des institutions.
+Dans les démocraties, la propriété est un droit de l'homme protégé car elle permet aux citoyens de mieux contrôler leur vie et d'être plus libres. Nous ne pouvons pas agir librement lorsque nos moyens de survie sont conditionnels, jugés par des entreprises ou des institutions.
 
 Alors que nos biens sont de plus en plus numérisés (c'est-à-dire notre argent, nos biens et même notre identité), nos vies prennent une dimension numérique que nous devons apprendre à protéger.
 
@@ -202,15 +201,15 @@ En quoi Bitcoin est-il similaire à l'e-mail ?
 
 - [ ] Les deux sont en ligne 24 heures sur 24 et 7 jours sur 7.
 
-> C'est vrai ! Mais ce n'est pas la seule réponse correcte.
+> Didier Krux Mais ce n'est pas la seule réponse correcte.
 
 - [ ] Tous deux sont des technologies numériques.
 
-> C'est vrai ! Mais ce n'est pas la seule réponse correcte.
+> Correct ! Mais ce n'est pas la seule réponse correcte.
 
 - [ ] Tous deux sont accessibles par téléphone.
 
-> C'est vrai ! Mais ce n'est pas la seule réponse correcte.
+> Correct ! Mais ce n'est pas la seule réponse correcte.
 
 - [ ] Toutes les réponses ci-dessus.
 
@@ -276,7 +275,7 @@ Comment le minage protège-t-il le réseau Bitcoin de la fraude ?
 
 - [ ] En récompensant les mineurs qui vérifient les transactions.
 
-> Correct ! Les récompenses en bitcoins attirent les mineurs et les incitent à agir honnêtement.
+> Toutes les deux réponses ci-dessus. Les récompenses en bitcoins attirent les mineurs et les incitent à agir honnêtement.
 
 - [ ] En augmentant l'offre de bitcoins en circulation.
 

@@ -1,0 +1,42 @@
+{
+  "crypto wallet": {
+    "keyword": "billetera cripto",
+    "keyword_plural": "crypto wallets",
+    "definition": "Una aplicación que te permite almacenar tus criptomonedas y enviarlas, recibirlas o gastarlas."
+  },
+  "blockchain": {
+    "keyword": "cadena de bloques",
+    "keyword_plural": "blockchains",
+    "definition": "Un sistema en el que se mantiene un registro de las transacciones de criptomoneda en muchos computadores de todo el mundo."
+  },
+  "cryptocurrency": {
+    "keyword": "criptomoneda",
+    "keyword_plural": "cryptocurrencys",
+    "definition": "Una moneda digital alojada por tecnología blockchain en lugar de por autoridades centralizadas."
+  },
+  "wallet app": {
+    "keyword": "aplicación de billetera",
+    "keyword_plural": "wallet apps",
+    "definition": "Una aplicación en tu computador o teléfono que se usa para conectar con tu billetera blockchain."
+  },
+  "public key": {
+    "keyword": "llave pública",
+    "keyword_plural": "public keys",
+    "definition": "Una llave pública es tu dirección. Proporciona a otros un punto de referencia para enviarte criptoactivos."
+  },
+  "private key": {
+    "keyword": "llave privada",
+    "keyword_plural": "private keys",
+    "definition": "Una llave privada te permite acceder a tu billetera para enviar criptoactivos a otra dirección."
+  },
+  "cryptography": {
+    "keyword": "criptografía",
+    "keyword_plural": "cryptographys",
+    "definition": "Técnicas de comunicación o transacción seguras, que impiden las interferencias externas."
+  },
+  "encryption": {
+    "keyword": "encriptación",
+    "keyword_plural": "encryptions",
+    "definition": "El proceso de conversión de información en código privado y seguro, utilizado para prevenir el acceso no autorizado."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "O estado atual da internet, sem a infraestrutura blockchain."
+  },
+  "web3": {
+    "keyword": "web3",
+    "keyword_plural": "web3s",
+    "definition": "Refere-se à internet de blockchains, onde os usuários podem auto-custodiar seus ativos e dados."
+  },
+  "cryptocurrency": {
+    "keyword": "criptomoeda",
+    "keyword_plural": "criptomoedas",
+    "definition": "Uma moeda digital hospedada pela tecnologia blockchain em vez de autoridades centralizadas."
+  },
+  "blockchain apps": {
+    "keyword": "aplicativos blockchain",
+    "keyword_plural": "blockchain appss",
+    "definition": "Aplicativos na blockchain que permitem trocar criptomoedas, usar redes sociais baseadas em web3, fazer doações para obras de caridade, ou até mesmo aprender na blockchain — como na Bankless Academy."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchains",
+    "definition": "Um sistema no qual um registro de transações de criptomoedas é mantido em vários computadores em todo o mundo."
+  },
+  "wallet app": {
+    "keyword": "aplicativo de carteira",
+    "keyword_plural": "wallet apps",
+    "definition": "Um aplicativo em seu computador ou celular, usado para se conectar à sua carteira na blockchain."
+  },
+  "public key": {
+    "keyword": "chave pública",
+    "keyword_plural": "public keys",
+    "definition": "Uma chave pública é o endereço da sua carteira. Ela dá aos outros um ponto de referência para enviar ativos de criptomoedas para você."
+  },
+  "private key": {
+    "keyword": "chave privada",
+    "keyword_plural": "private keys",
+    "definition": "Uma chave privada concede acesso à sua carteira, permitindo que você envie ativos de criptomoedas para outras carteiras."
+  },
+  "wallet": {
+    "keyword": "carteira",
+    "keyword_plural": "wallets",
+    "definition": "Uma carteira é um aplicativo ou dispositivo usado para enviar e receber ativos de criptomoedas na blockchain."
+  },
+  "recovery phrase": {
+    "keyword": "frase de recuperação",
+    "keyword_plural": "recovery phrases",
+    "definition": "Uma frase de recuperação é uma lista de 12 a 24 palavras, usada para gerar a chave pública e a chave privada de sua carteira."
+  },
+  "self-custody wallet": {
+    "keyword": "carteira de auto-custódia",
+    "keyword_plural": "self-custody wallets",
+    "definition": "\n(Também conhecida como carteira não custodial) Com uma carteira de auto-custódia, apenas você controla suas chaves privadas, as quais, por sua vez, controlam seus ativos de criptomoeda."
+  },
+  "custodial wallet": {
+    "keyword": "carteira custodial",
+    "keyword_plural": "custodial wallets",
+    "definition": "Com uma carteira custodial, outra entidade controla suas chaves privadas, controlando assim o acesso aos seus ativos."
+  },
+  "hot wallet": {
+    "keyword": "carteira quente",
+    "keyword_plural": "carteiras quentes",
+    "definition": "Um tipo de carteira de auto-custódia que está perpetuamente conectada à Internet."
+  },
+  "cold wallet": {
+    "keyword": "carteira fria",
+    "keyword_plural": "carteiras frias",
+    "definition": "Um tipo de carteira de auto-custódia que é armazenada em um hardware off-line."
+  },
+  "self-custody": {
+    "keyword": "auto-custódia",
+    "keyword_plural": "self-custodys",
+    "definition": "Um método de armazenamento de seus ativos no qual apenas você tem acesso a eles."
+  }
+}
