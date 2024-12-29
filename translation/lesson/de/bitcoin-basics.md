@@ -133,7 +133,7 @@ While the max supply of `BTC` can’t exceed 21 million, new currency is added t
 
 Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
 
-It’s short term value remains volatile due to market speculation.
+Its short term value remains volatile due to market speculation.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
