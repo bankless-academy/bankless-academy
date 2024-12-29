@@ -1,9 +1,11 @@
 ---
-TITLE: Ethereum Basics
-DESCRIPTION: What is Ethereum? Unlock the “new internet” and your digital freedom.
-LANGUAGE: English
+TITLE: Les bases d’Ethereum
+DESCRIPTION: |-
+  TITLE: Les bases d’Ethereum
+  DESCRIPTION: Qu’est-ce qu’Ethereum ? Découvrez la “nouvelle internet” et votre liberté numérique.
+LANGUAGE: Français
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: ChatGPT o1
 LINK: https://app.banklessacademy.com/lessons/ethereum-basics
 FORMAT: LESSON
 ---
@@ -27,61 +29,61 @@ ________________________________________________________________________________
 
 ---
 
-# Ethereum Basics
+# Les bases d’Ethereum
 
-Welcome, Explorer, to one of the most important lessons at Bankless Academy.
+Bienvenue, Explorateur, dans l’une des leçons les plus importantes de Bankless Academy.
 
-Today we’re looking at Ethereum: the next era of the internet. It’s a revolutionary platform powering a world of new internet `apps` and digital currencies.
+Aujourd’hui, nous allons découvrir Ethereum : la prochaine ère d’internet. C’est une plateforme révolutionnaire qui alimente un monde de nouvelles `apps` internet et de monnaies numériques.
 
-A simple way to think of Ethereum is like the Google or Apple `app store`, but with some key differences:
+Une façon simple de penser à Ethereum est de l’imaginer comme l’`app store` de Google ou d’Apple, mais avec quelques différences clés :
 
-- 💸 It uses `cryptocurrency` instead of `fiat` currency (the US dollar, the euro, or the Chinese yuan).
-- 📡 It’s a layer added directly to your internet browser, unlocking new functionality on websites.
-- ⚖️ The store rules are agreed on by users and app builders. There’s no central corporation in charge.
+- 💸 Il utilise de la `cryptomonnaie` plutôt qu’une monnaie `fiat` (le dollar américain, l’euro ou le yuan chinois).
+- 📡 C’est une couche ajoutée directement à votre navigateur internet, débloquant de nouvelles fonctionnalités sur les sites web.
+- ⚖️ Les règles de la boutique sont convenues par les utilisateurs et les développeurs d’applications. Il n’y a pas de grande entreprise centrale en charge.
 
-To understand why millions of people are using Ethereum across the world, we need to look at its core mission…
+Pour comprendre pourquoi des millions de personnes à travers le monde utilisent Ethereum, nous devons examiner sa mission principale…
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
 
-# A Global Town Square
+# Une place publique mondiale
 
-Over the last forty years, the internet has become the world’s town square.
+Au cours des quarante dernières années, internet est devenue la place publique du monde.
 
-Here, total strangers connect, exchange ideas, goods and services, and even ignite global movements together. It's humanity's most powerful intersection of connection, creativity, and innovation.
+Ici, des inconnus totaux se rencontrent, échangent des idées, des biens et des services, et peuvent même ensemble déclencher des mouvements mondiaux. C’est le carrefour le plus puissant de l’humanité pour la connexion, la créativité et l’innovation.
 
-**But it has one big problem…**
+**Mais il y a un gros problème…**
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/a-global-town-square-fcb47024.svg)
 
-# Centralized Services
+# Des services centralisés
 
-**The internet relies on a small group of corporations that don’t always have our best interests at heart.**
+**Internet repose sur un petit groupe de grandes entreprises qui n’ont pas toujours nos meilleurs intérêts à cœur.**
 
-`Centralized services` have more control over the internet than ever before, acting as `intermediaries` for almost everything you do online.
+Les `services centralisés` ont plus de contrôle sur internet que jamais, agissant comme des `intermédiaires` pour presque tout ce que vous faites en ligne.
 
-Think of how big banks manage your purchases, Facebook and Instagram connect your social interactions, and Apple or Google control the apps you can have on your phone. Through their rules, fees, and corporate motives, they have an incredible influence over your digital exchanges.
+Pensez à la façon dont les grandes banques gèrent vos achats, comment Facebook et Instagram régissent vos interactions sociales, ou comment Apple ou Google contrôlent les apps que vous pouvez avoir sur votre téléphone. À travers leurs règles, leurs frais et leurs objectifs d’entreprise, ils exercent une influence considérable sur vos échanges numériques.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/centralized-services-adf5be05.svg)
 
-# One-sided Trades
+# Des échanges à sens unique
 
-We call them `centralized services` because all the power is in one place. It’s often like being stuck under the rule of a king who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…
+On les appelle des `services centralisés` parce que tout le pouvoir se trouve au même endroit. C’est souvent comme être coincé sous le règne d’un roi qui sait exactement comment obtenir ce qu’il veut de vous. Vous seriez surpris de la réalité de vos échanges…
 
-💸 Banks charge you fees and invest your money for their own profit.
+💸 Les banques vous facturent des frais et investissent votre argent pour leur propre profit.
 
-💳 Payment networks, like Visa & Mastercard, sell your purchase data to advertisers.
+💳 Les réseaux de paiement, comme Visa & Mastercard, vendent vos données d’achat à des annonceurs.
 
-📞 Social platforms, like Instagram, can view your private conversations.
+📞 Les plateformes sociales, comme Instagram, peuvent lire vos conversations privées.
 
-🪓 Content platforms, like YouTube, can freely delete creators’ entire careers — with no fair trial.
+🪓 Les plateformes de contenus, comme YouTube, peuvent supprimer librement la chaîne d’un créateur — sans procès équitable.
 
-These shady rules and fees are often hidden away in the ‘Terms & Conditions’, and tend to get worse over time. Take a closer look at your favorite service agreements here: [https://tosdr.org/](https://tosdr.org/) 👀
+Ces règles et frais douteux sont souvent cachés dans les « Termes & Conditions » et ont tendance à empirer avec le temps. Regardez de plus près les conditions d’utilisation de vos services préférés ici : [https://tosdr.org/](https://tosdr.org/) 👀
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/one-sided-trades-8d68270f.svg)
 
 # Knowledge Check 1
 
-True or False: Centralized services have unnecessary control over your online activity.
+Vrai ou Faux : Les services centralisés exercent un contrôle excessif sur votre activité en ligne.
 
 - [ ] True
 
@@ -91,233 +93,233 @@ True or False: Centralized services have unnecessary control over your online ac
 
 > Try again.
 
-# An Open Internet
+# Un internet ouvert
 
-😤 **Had enough of platforms that don’t respect your needs?**
+😤 **Assez des plateformes qui ne respectent pas vos besoins ?**
 
 ---
 
-This is the `value-extractive` internet we’ve become used to.
+C’est l’internet `exploiteur de valeur` auquel nous sommes habitués.
 
-Called “walled gardens” for how restrictive these services are and how difficult they make it to leave, finding better alternatives can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades.
+On les appelle « jardins fermés » à cause du caractère restrictif de ces services et de la difficulté à en sortir. Trouver de meilleures alternatives prend du temps et peut être coûteux. Il est souvent plus simple de subir les frais élevés, le manque de transparence et les échanges à sens unique.
 
-We need a fairer, more reliable internet, beyond intermediaries and their walled gardens. We need an online space where power is held by the user — the way the internet was initially built to be.
+Nous avons besoin d’un internet plus juste et plus fiable, au-delà des intermédiaires et de leurs jardins fermés. Nous avons besoin d’un espace en ligne où le pouvoir est détenu par l’utilisateur — comme internet était initialement conçu pour l’être.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/an-open-internet-31819e5b.svg)
 
-# Peer-to-Peer Trades
+# Les échanges de pair à pair
 
-The solution starts with changing how the internet is connected.
+La solution commence par changer la façon dont internet est interconnectée.
 
-In traditional internet services, information or money from one `peer` goes through an `intermediary` checkpoint before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.
+Dans les services internet traditionnels, l’information ou l’argent d’un `pair` passe par un point de contrôle `intermédiaire` avant d’arriver à destination. Théoriquement, ces intermédiaires peuvent faire ce qu’ils veulent avant la fin de l’échange.
 
-**Peer → Intermediary → Peer**
+**Pair → Intermédiaire → Pair**
 
-But there’s a second model of computer interaction, called `peer-to-peer` networking. It replaces intermediary services with automated, transparent processes, using computer code.
+Mais il existe un deuxième modèle d’interaction informatique, appelé réseau `pair-à-pair`. Il remplace les services intermédiaires par des processus automatisés et transparents, grâce à du code informatique.
 
-**Peer → Automation → Peer**
+**Pair → Automatisation → Pair**
 
-It’s like replacing your intermediary with a self-service kiosk. Here, nobody is above the rules; “Code, not kings.” Services become more predictable, fees go down, and users regain control over their interactions.
+C’est comme remplacer un intermédiaire par une borne de libre-service. Ici, personne n’est au-dessus des règles ; « Du code, pas des rois ». Les services deviennent plus prévisibles, les frais diminuent et les utilisateurs reprennent le contrôle de leurs interactions.
 
-As we’ll see, a peer-to-peer internet changes everything.
+Comme nous allons le voir, un internet pair-à-pair change tout.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/peer-to-peer-trades-f043c3c0.svg)
 
 # Knowledge Check 2
 
-How can automation improve your online experiences?
+Comment l’automatisation peut-elle améliorer vos expériences en ligne ?
 
-- [ ] By increasing the reach of intermediaries.
+- [ ] En augmentant la portée des intermédiaires.
 
 > Try again.
 
-- [ ] By giving participants more control.
+- [ ] En offrant plus de contrôle aux utilisateurs.
 
 > Correct!
 
-# Ethereum: The Open Internet
+# Ethereum : l’internet ouvert
 
-⚖️ **Wouldn’t the internet be a better place if the same rules applied to everyone?**
+⚖️ **Internet ne serait-il pas meilleur si les mêmes règles s’appliquaient à tout le monde ?**
 
 ---
 
-Think of Ethereum as a digital city, where everything—from businesses to public services—is run by self-service, transparent systems. There are no intermediaries. With public-facing programming, users can easily review their trade terms and even inspect how the system works.
+Pensez à Ethereum comme une ville numérique, où tout — des entreprises aux services publics — est géré par des systèmes automatisés et transparents. Il n’y a pas d’intermédiaires. Grâce à une programmation ouverte au public, les utilisateurs peuvent facilement vérifier les conditions de leurs échanges et même inspecter le fonctionnement du système.
 
-Transactions in the city are noted on a public record called the `Ethereum blockchain`. The blockchain tracks and stores digital property in the city, removing the need for another classic intermediary — the bank!
+Les transactions dans cette ville sont notées dans un registre public appelé la `blockchain Ethereum`. La blockchain suit et stocke la propriété numérique dans la ville, supprimant le besoin d’un autre intermédiaire classique : la banque !
 
-Even the city’s governance process is automated. Any changes to a system’s rules are agreed on by users and builders. A small tax on each transaction goes towards maintaining the city.
+Même le processus de gouvernance de la ville est automatisé. Tout changement dans les règles d’un système est approuvé par les utilisateurs et les développeurs. Une petite taxe sur chaque transaction sert à maintenir la ville.
 
-On Ethereum, democratic code has replaced kings. Nobody is above the rules.
+Sur Ethereum, c’est le code démocratique qui remplace les rois. Personne n’est au-dessus des règles.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg)
 
-# The Decentralized Economy
+# L’économie décentralisée
 
-To access Ethereum you’ll use your computer or mobile device’s web browser. With just one account you can log into the entirety of this new internet — a single login called a `crypto wallet`. This universal account makes it easier to change services and escape “walled gardens”.
+Pour accéder à Ethereum, vous utiliserez le navigateur web de votre ordinateur ou de votre appareil mobile. Avec un seul compte, vous pouvez vous connecter à l’ensemble de ce nouvel internet — un identifiant unique appelé `crypto wallet`. Ce compte universel facilite le changement de service et la sortie des « jardins fermés ».
 
-When you enable the Ethereum app layer, you can access new websites known as `dApps`. These are the self-service systems we mentioned earlier. dApps offer digital goods and services like:
+Quand vous activez la couche d’applications Ethereum, vous accédez à de nouveaux sites web appelés `dApps`. Ce sont les systèmes automatisés dont nous parlions. Les dApps proposent des biens et services numériques comme :
 
-- 🤝 sending or trading currencies, stocks and other digital goods, but with **low fees and 24/7 service**.
-- 📻 connection with your favorite creators, but you can **unlock unique perks and opportunities** while ensuring your money goes directly to the artist.
-- 👪 social media, but if you dislike the platform you can **easily transfer your social circle** to a new one.
-- 🗳️ donating to your favorite projects, but even a $1 donation receives **a large matching bonus, meaning greater impact**.
-- ⚙️ renting out your computer’s processing power for **passive income**.
+- 🤝 envoyer ou échanger des devises, des actions et d’autres biens numériques, avec des **frais réduits et un service 24h/24, 7j/7**.
+- 📻 se connecter à vos créateurs préférés, mais en **débloquant des avantages et opportunités uniques** tout en garantissant que votre argent va directement à l’artiste.
+- 👪 des médias sociaux, mais si vous n’aimez pas la plateforme, vous pouvez **facilement transférer votre communauté** sur une nouvelle.
+- 🗳️ faire un don à vos projets favoris, mais même un don de 1 $ peut recevoir **un bonus de contrepartie important, pour un impact plus fort**.
+- ⚙️ louer la puissance de calcul de votre ordinateur pour **générer un revenu passif**.
 
-By removing intermediaries, banks, and individual accounts for each service, Ethereum has made its economy `decentralized` (this is the “d” in “dApp”). dApps get better and better as they compete on quality — not unclear business practices and control.
+En supprimant les intermédiaires, les banques et les comptes individuels pour chaque service, Ethereum a rendu son économie `décentralisée` (c’est le “d” de “dApp”). Les dApps s’améliorent au fur et à mesure qu’elles rivalisent sur la qualité — et non pas sur des pratiques commerciales opaques ou la prise de contrôle.
 
-# Using a dApp
+# Utiliser une dApp
 
-Using a `dApp` is similar to using regular apps and internet services.
+Utiliser une `dApp` est similaire à utiliser des apps et des services internet classiques.
 
-Let’s simulate using a dApp for swapping `crypto` online. In this simulation we’ll swap USDC, an `onchain` US dollar, for `ETH`, Ethereum’s native currency.
+Faisons une simulation d’une dApp pour échanger des `cryptos` en ligne. Dans cet exemple, nous allons échanger de l’USDC, un dollar américain `onchain`, contre de l’`ETH`, la monnaie native d’Ethereum.
 
-1. Connect your `crypto wallet` to the dApp’s website.
-2. Confirm that you want to allow this dApp to interact with your Ethereum wallet.
-3. Swap all of your USDC to ETH by clicking “Maximum”.
-4. Initiate the swap.
-5. In your wallet, check the terms of your trade, and then sign.
-6. Great! Ethereum has processed your crypto swap!
+1. Connectez votre `crypto wallet` au site web de la dApp.
+2. Confirmez que vous souhaitez autoriser cette dApp à interagir avec votre wallet Ethereum.
+3. Échangez tout votre USDC en ETH en cliquant sur « Maximum ».
+4. Lancez l’échange.
+5. Dans votre wallet, vérifiez les conditions de l’échange, puis signez.
+6. Parfait ! Ethereum a traité votre échange de crypto !
 
-Plugging your wallet into a dApp and swapping crypto is that easy. Now you can send it to friends, use it to make purchases, or try other financial service dApps.
+Connecter votre wallet à une dApp et échanger des cryptos est aussi simple que cela. Vous pouvez ensuite envoyer ces fonds à des amis, les utiliser pour payer des achats ou essayer d’autres dApps de services financiers.
 
 [embed](https://app.banklessacademy.com/animation/swap)
 
 # Knowledge Check 3
 
-On Ethereum, services get better and better because…
+Sur Ethereum, les services s’améliorent parce que…
 
-- [ ] Business practices are more transparent.
-
-> Try again.
-
-- [ ] You can easily change service providers.
+- [ ] Les pratiques commerciales sont plus transparentes.
 
 > Try again.
 
-- [ ] Both of the above.
+- [ ] Vous pouvez facilement changer de fournisseur de services.
+
+> Try again.
+
+- [ ] Les deux à la fois.
 
 > Correct!
 
-# A Global Banking System
+# Un système bancaire mondial
 
-⌛ **Do you want a faster, cheaper way to transfer money internationally?**
+⌛ **Vous cherchez un moyen plus rapide et moins cher d’envoyer de l’argent à l’international ?**
 
 ---
 
-Ethereum makes it possible for you to send and store `crypto` without intermediaries, with better services at lower costs.
+Ethereum vous permet d’envoyer et de stocker de la `crypto` sans intermédiaires, avec de meilleurs services et à moindre coût.
 
-⚡ With crypto, you can send money anywhere in the world for as little as one cent — and it only takes a few seconds! Compare this to sending money through a bank, where they can charge you 3-4% in fees, and take 1-5 days.
+⚡ Avec la crypto, vous pouvez envoyer de l’argent n’importe où dans le monde pour un centime — et en seulement quelques secondes ! Comparez cela à un virement bancaire, où les frais peuvent atteindre 3 à 4 %, et prendre entre 1 et 5 jours.
 
-🔐 You’re the only person with access to your Ethereum account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are stored in your personal `crypto wallet` — the same one you used to connect to a dApp earlier.
+🔐 Vous êtes la seule personne à avoir accès à votre compte Ethereum. Il n’y a pas d’intermédiaire qui prête vos économies ou qui contrôle l’usage de votre argent. Les fonds sont stockés dans votre `crypto wallet` personnel — le même que vous avez utilisé pour vous connecter à une dApp plus tôt.
 
-On Ethereum, you’re your own bank, and you feel like it!
+Sur Ethereum, vous êtes votre propre banque, et vous sentez la différence !
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/a-global-banking-system-5a241dfc.svg)
 
-# Sending a Payment
+# Envoyer un paiement
 
-Let’s use another simulation to practice sending cryptocurrency. Try sending your 0.015 `ETH` to the Bankless Academy `crypto wallet`.
+Faisons un autre exercice pour nous entraîner à envoyer de la cryptomonnaie. Essayez d’envoyer vos 0,015 `ETH` au `crypto wallet` de Bankless Academy.
 
-1. Unlock your wallet.
-2. Inside of your wallet, select send.
-3. Adjust the amount to 0.015 ETH by clicking “Maximum”.
-4. Confirm the currency and amount.
-5. In contacts, select banklessacademy.eth.
-6. That’s it! Your international transfer was done in seconds, and no intermediary could stop you.
+1. Déverrouillez votre wallet.
+2. Dans votre wallet, sélectionnez “envoyer”.
+3. Réglez le montant à 0,015 ETH en cliquant sur « Maximum ».
+4. Confirmez la devise et le montant.
+5. Dans vos contacts, sélectionnez banklessacademy.eth.
+6. C’est terminé ! Votre transfert international est fait en quelques secondes, et aucun intermédiaire ne pouvait l’arrêter.
 
-With Ethereum wallets, you can own and send more than just cryptocurrency. Transferable assets include any digital property that can be stored `onchain`. Digital art, club memberships, show tickets, stocks, website address ownership, and even real-world property rights have made their way onto Ethereum.
+Avec un wallet Ethereum, vous pouvez détenir et envoyer bien plus que de la cryptomonnaie. Les actifs transférables incluent tout type de propriété numérique stockée `onchain`. L’art numérique, les cartes de membre, les billets de spectacle, les actions, la propriété d’un nom de domaine ou même des droits de propriété dans le monde réel ont déjà fait leur chemin sur Ethereum.
 
 [embed](https://app.banklessacademy.com/animation/send)
 
 # Knowledge Check 4
 
-True or False: On Ethereum, you can be your own bank.
+Vrai ou Faux : Sur Ethereum, vous pouvez être votre propre banque.
 
 - [ ] True
 
-> Correct. On Ethereum you can go “Bankless”! Lower fees, more control over your money.
+> Correct. Sur Ethereum vous pouvez aller “Bankless” ! Des frais plus bas, plus de contrôle sur votre argent.
 
 - [ ] False
 
 > Try again.
 
-# How it Works
+# Comment ça marche
 
-Let’s bring everything together by taking a quick look at how Ethereum makes it all possible.
+Regroupons tout ce que nous avons appris en examinant rapidement comment Ethereum rend tout cela possible.
 
-As a `peer-to-peer` network, Ethereum is made up of tens of thousands of computers spread across the world. These devices, known as `validator nodes`, have been volunteered by their owners to help run the network. Using automated software, a validator will process transactions and verify the results of others to prevent fraud. In doing so, the validator generates `ether` rewards for its owner.
+En tant que réseau `pair-à-pair`, Ethereum est composé de dizaines de milliers d’ordinateurs répartis dans le monde entier. Ces appareils, appelés `nœuds validateurs`, sont fournis volontairement par leurs propriétaires pour aider à faire fonctionner le réseau. Grâce à un logiciel automatisé, un validateur traite des transactions et vérifie les résultats des autres pour empêcher toute fraude. Ce faisant, il génère des récompenses en `ether` pour son propriétaire.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/how-it-works-08c71cad.svg)
 
-# How it Works (Pt. II)
+# Comment ça marche (2e partie)
 
-The transaction you submitted earlier was processed by these Ethereum network `validator nodes`.
+La transaction que vous avez effectuée plus tôt a été traitée par ces `nœuds validateurs` du réseau Ethereum.
 
-1. Your ETH transaction was submitted to the Ethereum Network.
-2. A validator checked your transaction for errors. Other validators double-checked their results.
-3. Your transaction was added to the network’s public ledger, the `Ethereum blockchain`.
-4. We received your transferred ETH in our account.
+1. Votre transaction en ETH a été envoyée au réseau Ethereum.
+2. Un validateur a vérifié votre transaction pour s’assurer qu’elle ne contenait pas d’erreurs. D’autres validateurs ont contrôlé ses résultats.
+3. Votre transaction a été ajoutée au registre public du réseau, la `blockchain Ethereum`.
+4. Nous avons reçu votre ETH dans notre compte.
 
-You might be wondering why these validators don’t just run off with your funds. The short answer is because Ethereum makes this virtually impossible. Your upcoming lesson, “Blockchain Basics”, will help you understand more.
+Vous vous demandez peut-être pourquoi ces validateurs ne s’enfuient pas simplement avec vos fonds. La réponse courte, c’est qu’Ethereum rend cela pratiquement impossible. Votre prochaine leçon, « Les bases de la blockchain », vous en apprendra plus.
 
 [embed](https://app.banklessacademy.com/animation/ethereum)
 
-# Common Questions
+# Questions fréquentes
 
 <details>
-  <summary>How was Ethereum created?</summary>
+  <summary>Ethereum est-il sûr ?</summary>
 
-Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through `decentralized` governance. This distribution of power strengthens the network’s founding vision of an open internet.
+Ethereum a été lancé en 2015. Initialement géré par la Fondation Ethereum, il est désormais piloté par une communauté mondiale grâce à une gouvernance `décentralisée`. Cette répartition du pouvoir renforce la vision fondatrice du réseau, à savoir un internet ouvert.
 
 </details>
 <details>
-  <summary>Is Ethereum safe?</summary>
+  <summary>Ethereum est-il éco-responsable ?</summary>
 
-Your digital property on Ethereum can't be stolen directly. However, scammers can trick you into giving them access to your assets. Our “Web3 Security” lesson will teach you the basics of staying safe and avoiding simple mistakes that can cost you money.
-
-</details>
-<details>
-  <summary>Is Ethereum widely used?</summary>
-
-Yes. Today, Ethereum's legality and adoption are so strong that [big businesses are investing in it](https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/). Businesses, such as [Sony](https://www.bankless.com/sony-introduces-soneium-its-ethereum-l2-network) and [Visa](https://caribbean.visa.com/about-visa/newsroom/press-releases/visa-network-to-settle-transactions-in-usd-coin-usdc.html), are even building on it.
+Vos biens numériques sur Ethereum ne peuvent pas être volés directement. Cependant, des arnaqueurs peuvent vous tromper pour que vous leur donniez accès à vos actifs. Notre leçon « Sécurité Web3 » vous enseignera les bases pour rester prudent et éviter les erreurs simples qui peuvent vous coûter cher.
 
 </details>
 <details>
-  <summary>Is Ethereum used for criminal activity?</summary>
+  <summary>Ethereum est-il largement utilisé ?</summary>
 
-[Research performed by Chainalysis](https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/) shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. This is far below the [estimated 2-5% of global GDP](https://www.forbes.com/sites/haileylennon/2021/01/19/the-false-narrative-of-bitcoins-role-in-illicit-activity/) suspected to be involved in criminal activity. Ethereum’s high transparency also makes it easy for investigators to track and prosecute criminals acting `onchain`.
-
-</details>
-<details>
-  <summary>Is Ethereum energy efficient?</summary>
-
-As Ethereum’s daily usage grew the community identified a growing environmental impact. A major network upgrade, called "The Merge", [reduced Ethereum's energy consumption by 99.9%](https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/). This achievement showcases Ethereum's adaptability to the needs of its users!
+Oui. Aujourd’hui, la légalité et l’adoption d’Ethereum sont telles que [de grandes entreprises y investissent](https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/). Des entreprises comme [Sony](https://www.bankless.com/sony-introduces-soneium-its-ethereum-l2-network) et [Visa](https://caribbean.visa.com/about-visa/newsroom/press-releases/visa-network-to-settle-transactions-in-usd-coin-usdc.html) construisent même des projets dessus.
 
 </details>
 <details>
-  <summary>How can I invest in Ethereum?</summary>
+  <summary>Ethereum est-il utilisé à des fins criminelles ?</summary>
 
-To invest in Ethereum, you’ll want to own `ETH`, the network’s native cryptocurrency. ETH can be bought through your `crypto wallet` — we’ll be helping you create yours in the next lesson. You can also buy ETH on a `centralized exchange` like Coinbase or Binance, but you won’t be able to use it on Ethereum until you transfer it to a wallet.
+[Une étude menée par Chainalysis](https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/) montre qu’en 2022, environ 0,24 % des transactions en cryptomonnaie ont été utilisées à des fins criminelles. C’est bien en dessous des [2 à 5 % du PIB mondial](https://www.forbes.com/sites/haileylennon/2021/01/19/the-false-narrative-of-bitcoins-role-in-illicit-activity/) suspectés d’être liés à des activités criminelles. La grande transparence d’Ethereum facilite également le travail des enquêteurs pour repérer et poursuivre les criminels opérant `onchain`.
+
+</details>
+<details>
+  <summary>Comment Ethereum a-t-il été créé ?</summary>
+
+À mesure que l’utilisation quotidienne d’Ethereum augmentait, la communauté a pris conscience d’un impact environnemental croissant. Une importante mise à jour du réseau, appelée « The Merge », [a réduit la consommation d’énergie d’Ethereum de 99,9 %](https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/). C’est la preuve de la capacité d’Ethereum à s’adapter aux besoins de ses utilisateurs !
+
+</details>
+<details>
+  <summary>Comment puis-je investir dans Ethereum ?</summary>
+
+Pour investir dans Ethereum, vous voudrez posséder de l’`ETH`, la cryptomonnaie native du réseau. Vous pouvez acheter de l’ETH via votre `crypto wallet` — nous vous aiderons à en créer un dans la prochaine leçon. Vous pouvez également acheter de l’ETH sur une `plateforme centralisée` comme Coinbase ou Binance, mais vous ne pourrez pas l’utiliser sur Ethereum avant de le transférer dans un wallet.
 
 </details>
 
-# Joining the Movement
+# Rejoindre le mouvement
 
-💪 **It’s time to take control of your digital life.**
+💪 **Il est temps de reprendre le contrôle de votre vie numérique.**
 
 ---
 
-Ethereum is eroding the walls that intermediaries have put up around their corners of the internet, transforming an economy of `value-extraction` into one of `value-creation`. It’s time for powerful yet fair online services, true ownership over your digital assets, bold new communities, transformative work opportunities, and more.
+Ethereum démolit peu à peu les barrières que les intermédiaires ont érigées autour de leurs recoins d’internet, transformant une économie d’`extraction de valeur` en une économie de `création de valeur`. Place à des services en ligne à la fois puissants et équitables, à la véritable propriété de vos actifs numériques, à de nouvelles communautés audacieuses, à des opportunités de travail transformantes, et bien plus encore.
 
-Ready to make your mark?
+Prêt à laisser votre empreinte ?
 
-To start your journey you’ll need to create your `crypto wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, “Wallet Basics”.
+Pour commencer votre aventure, vous aurez besoin de créer votre `crypto wallet`. C’est votre passeport pour l’univers Ethereum. Nous allons configurer le vôtre dans la prochaine leçon, « Les bases du wallet ».
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
 
 # Knowledge Check 5
 
-How do you imagine yourself using Ethereum? (Check all that apply)
+Comment vous imaginez-vous utiliser Ethereum ? (Cochez tout ce qui s’applique)
 
 - [ ] Exploring new digital goods and services.
 - [ ] Sending money internationally.
