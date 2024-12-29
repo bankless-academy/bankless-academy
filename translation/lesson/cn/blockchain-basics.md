@@ -2,7 +2,7 @@
 TITLE: 区块链基础知识
 DESCRIPTION: 了解区块链技术的基本架构。
 LANGUAGE: 简体中文（Simplified Chinese）
-WRITERS:
+WRITERS: iSpeakNerd
 TRANSLATORS: 183Aaros.eth
 LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 FORMAT: LESSON
