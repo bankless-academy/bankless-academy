@@ -1,6 +1,6 @@
 ---
 TITLE: Le Basi Del Portafoglio
-DESCRIPTION: Cos'è un portafoglio di criptovalute? Learn more and create your “Ethereum account” today!
+DESCRIPTION: Cos'è un portafoglio di criptovalute? Scopri di più e crea il tuo primo portafoglio oggi stesso!
 LANGUAGE: Italiano
 WRITERS: Ap0ll0517, Jordy, Tetranoma
 TRANSLATORS: fa3io
