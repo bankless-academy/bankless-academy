@@ -1,6 +1,6 @@
 ---
 TITLE: Princípios Básicos de Carteiras
-DESCRIPTION: O que é uma carteira de criptomoedas? Learn more and create your “Ethereum account” today!
+DESCRIPTION: O que é uma carteira de criptomoedas? Saiba mais e crie sua primeira carteira hoje!
 LANGUAGE: Português
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: beatrizabreupeixoto
@@ -89,7 +89,7 @@ Esta é uma das coisas mais importantes que você deve entender sobre as carteir
 
 A maioria de nós está acostumada a esses recursos. Se esquecermos uma senha, clicamos em um botão, fazemos algumas coisas e recebemos uma nova senha. Simples.
 
-O mesmo não acontece com as carteiras de criptomoedas. Devido à forma como as blockchains funcionam, as carteiras recebem um "endereço" e uma "senha" complexa quando são criadas. Você não as escolhe.
+O mesmo não acontece com as carteiras de criptomoedas. Devido à forma como as blockchains funcionam, as carteiras recebem um "endereço" e uma "senha" complexa quando são criadas.
 
 É impossível alterar essa combinação de endereço e senha, embora você possa criar uma nova carteira a qualquer altura, se necessário. Vamos aprender um pouco mais sobre esses endereços e senhas especiais, para que nos possamos sentir confiantes ao usá-los!
 
