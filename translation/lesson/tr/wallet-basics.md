@@ -1,6 +1,6 @@
 ---
 TITLE: Cüzdanın Temelleri
-DESCRIPTION: Kripto para cüzdanı nedir? Learn more and create your “Ethereum account” today!
+DESCRIPTION: Kripto para cüzdanı nedir? Ayrıntılı bilgi edinin ve ilk cüzdanınızı hemen oluşturun!
 LANGUAGE: Türkçe
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: İlknur Beyaz
