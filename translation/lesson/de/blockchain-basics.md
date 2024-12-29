@@ -2,7 +2,7 @@
 TITLE: Blockchain Grundlagen
 DESCRIPTION: Erfahre mehr über die grundlegende Architektur der Blockchain-Technologie.
 LANGUAGE: Deutsch
-WRITERS:
+WRITERS: iSpeakNerd
 TRANSLATORS: Ruben Silva Otero
 LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 FORMAT: LESSON
