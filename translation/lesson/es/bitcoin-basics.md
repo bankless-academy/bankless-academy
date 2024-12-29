@@ -72,7 +72,7 @@ Verdadero o Falso:
 
 - [ ] Verdadero
 
-> ¡Correcto! Cuanto más dinero hay en circulación, menos valor tiene.
+> ¡Correcto! A mayor cantidad disponible, menor valor, por lo que el dinero de todos pierde valor, poco a poco.
 
 - [ ] Falso
 
@@ -215,7 +215,7 @@ Gestionarás tu cuenta usando tu `billetera de criptomonedas` conectada a tu nav
 
 > ¡Correcto! Tanto Bitcoin como el correo electrónico innovan sobre los servicios que les precedieron.
 
-# La Red Bitcoin
+# OrnellaWeb3
 
 Cambiemos de marcha y demos una mirada al motor de Bitcoin:
 **La red Bitcoin**.
