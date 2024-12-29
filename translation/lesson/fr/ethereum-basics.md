@@ -1,8 +1,6 @@
 ---
 TITLE: Les bases d’Ethereum
-DESCRIPTION: |-
-  TITLE: Les bases d’Ethereum
-  DESCRIPTION: Qu’est-ce qu’Ethereum ? Découvrez la “nouvelle internet” et votre liberté numérique.
+DESCRIPTION: Qu’est-ce qu’Ethereum ? Découvrez la “nouvelle internet” et votre liberté numérique.
 LANGUAGE: Français
 WRITERS: Tetranome
 TRANSLATORS: ChatGPT o1
@@ -85,13 +83,13 @@ Ces règles et frais douteux sont souvent cachés dans les « Termes & Condition
 
 Vrai ou Faux : Les services centralisés exercent un contrôle excessif sur votre activité en ligne.
 
-- [ ] True
+- [ ] Vrai
 
-> Correct!
+> Correcte !
 
-- [ ] False
+- [ ] Faux
 
-> Try again.
+> Veuillez réessayer.
 
 # Un internet ouvert
 
@@ -135,7 +133,7 @@ Comment l’automatisation peut-elle améliorer vos expériences en ligne ?
 
 - [ ] En offrant plus de contrôle aux utilisateurs.
 
-> Correct!
+> Correcte !
 
 # Ethereum : l’internet ouvert
 
@@ -190,15 +188,15 @@ Sur Ethereum, les services s’améliorent parce que…
 
 - [ ] Les pratiques commerciales sont plus transparentes.
 
-> Try again.
+> Veuillez réessayer.
 
 - [ ] Vous pouvez facilement changer de fournisseur de services.
 
-> Try again.
+> Veuillez réessayer.
 
 - [ ] Les deux à la fois.
 
-> Correct!
+> Correcte !
 
 # Un système bancaire mondial
 
@@ -235,13 +233,13 @@ Avec un wallet Ethereum, vous pouvez détenir et envoyer bien plus que de la cry
 
 Vrai ou Faux : Sur Ethereum, vous pouvez être votre propre banque.
 
-- [ ] True
+- [ ] Vrai
 
 > Correct. Sur Ethereum vous pouvez aller “Bankless” ! Des frais plus bas, plus de contrôle sur votre argent.
 
-- [ ] False
+- [ ] Faux
 
-> Try again.
+> Veuillez réessayer.
 
 # Comment ça marche
 
@@ -321,9 +319,9 @@ Pour commencer votre aventure, vous aurez besoin de créer votre `crypto wallet`
 
 Comment vous imaginez-vous utiliser Ethereum ? (Cochez tout ce qui s’applique)
 
-- [ ] Exploring new digital goods and services.
-- [ ] Sending money internationally.
-- [ ] Investing in Ethereum projects.
-- [ ] Connecting with the artists I love.
-- [ ] Contributing to powerful community projects.
-- [ ] Building innovative dApps.
+- [ ] Explorer de nouveaux biens et services numériques.
+- [ ] Envoyer de l’argent à l’international.
+- [ ] Investir dans des projets Ethereum.
+- [ ] Me connecter avec les artistes que j’aime.
+- [ ] Contribuer à des projets communautaires d’envergure.
+- [ ] Construire des dApps innovantes.
