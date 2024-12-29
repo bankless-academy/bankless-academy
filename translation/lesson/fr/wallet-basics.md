@@ -1,6 +1,6 @@
 ---
 TITLE: Les bases d'un wallet
-DESCRIPTION: Qu'est-ce qu'un portefeuille crypto ? Learn more and create your “Ethereum account” today!
+DESCRIPTION: Qu'est-ce qu'un portefeuille crypto ? Apprenez-en plus et créez votre premier wallet dès aujourd'hui !
 LANGUAGE: Français
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: Didier Krux
