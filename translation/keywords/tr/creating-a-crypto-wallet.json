@@ -1,13 +1,13 @@
 {
   "crypto wallet": {
-    "keyword": "crypto wallet",
-    "keyword_plural": "crypto wallets",
-    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+    "keyword": "kripto cüzdanı",
+    "keyword_plural": "kripto cüzdanları",
+    "definition": "Kripto paranızı saklamanıza ve göndermenize/almanıza ya da harcamanıza olanak tanıyan bir uygulama."
   },
   "blockchain": {
-    "keyword": "blockchain",
-    "keyword_plural": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "keyword": "blok zinciri",
+    "keyword_plural": "blok zincirleri",
+    "definition": "Kripto para işlemlerinin kaydının, dünyanın dört bir yanından birçok bilgisayarda tutulduğu sistem."
   },
   "cryptocurrency": {
     "keyword": "kripto para",
@@ -15,28 +15,28 @@
     "definition": "Merkezi otoriteler yerine blok zinciri teknolojisi tarafından barındırılan bir dijital para birimi."
   },
   "wallet app": {
-    "keyword": "wallet app",
-    "keyword_plural": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "keyword": "cüzdan uygulaması",
+    "keyword_plural": "cüzdan uygulamaları",
+    "definition": "Bilgisayarınızda veya telefonunuzda, blok zincirindeki cüzdanınıza bağlanmak için kullanılan bir uygulama."
   },
   "public key": {
-    "keyword": "public key",
-    "keyword_plural": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "keyword": "genel anahtar",
+    "keyword_plural": "genel anahtarlar",
+    "definition": "Genel anahtar, cüzdanınızın adresidir. Başkalarına size kripto varlıkları göndermeleri için bir referans noktası verir."
   },
   "private key": {
-    "keyword": "private key",
-    "keyword_plural": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "keyword": "özel anahtar",
+    "keyword_plural": "özel anahtarlar",
+    "definition": "Özel anahtar, cüzdanınıza erişim sunarak diğer cüzdanlara kripto varlıkları göndermenize olanak tanır."
   },
   "cryptography": {
     "keyword": "kriptografi",
-    "keyword_plural": "cryptographys",
+    "keyword_plural": "kriptografiler",
     "definition": "Dışarıdan müdahaleyi önleyen güvenli iletişim veya işlem teknikleri."
   },
   "encryption": {
     "keyword": "şifreleme",
-    "keyword_plural": "encryptions",
+    "keyword_plural": "şifrelemeler",
     "definition": "İzinsiz erişimi önlemek amacıyla bilgileri gizli ve güvenli koda dönüştürme işlemi."
   }
 }
