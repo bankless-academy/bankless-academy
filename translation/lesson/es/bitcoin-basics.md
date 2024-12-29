@@ -133,7 +133,7 @@ Mientras que la oferta máxima de `BTC` no puede superar los 21 millones, se agr
 
 La `política monetaria` de Bitcoin, al ser fija, lo convierte en un activo atractivo para quienes buscan preservar el valor a largo plazo, ya que a su vez permite estar al día con el aumento del costo de vida.
 
-Su valor a corto plazo permanece volátil debido a la especulación del mercado.
+Its short term value remains volatile due to market speculation.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
