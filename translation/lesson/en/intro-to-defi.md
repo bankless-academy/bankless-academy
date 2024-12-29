@@ -2,7 +2,7 @@
 TITLE: Intro to DeFi
 DESCRIPTION: Understand the basics of decentralized finance.
 LANGUAGE: English
-WRITERS: 
+WRITERS: Ap0ll0
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/intro-to-defi
 FORMAT: LESSON

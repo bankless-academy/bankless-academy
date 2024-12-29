@@ -2,7 +2,7 @@
 TITLE: Managing Token Allowances
 DESCRIPTION: Protect your wallet from unwanted smart contract interactions.
 LANGUAGE: English
-WRITERS: Marcus, Tetranome
+WRITERS: estmcmxci, Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/managing-token-allowances
 FORMAT: HANDBOOK
@@ -153,4 +153,5 @@ Your wallet may contain a “sweeper bot,” a script that monitors and acts on 
 
 **Patron**
 
-This unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!
+This unsponsored article is part of your free Bankless Academy education. \
+Collect the article to support future content!

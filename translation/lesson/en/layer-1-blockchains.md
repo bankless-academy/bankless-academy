@@ -2,7 +2,7 @@
 TITLE: Layer 1 Blockchains
 DESCRIPTION: Understand how Layer 1 blockchains work - and learn their limitations!
 LANGUAGE: English
-WRITERS: 
+WRITERS: iSpeakNerd
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/layer-1-blockchains
 FORMAT: LESSON
