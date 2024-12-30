@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+
 import { countExplorerBadges } from 'utils'
+import { IS_REWARDS_ACTIVATED } from 'constants/index'
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,9 +14,9 @@ export default async function handler(
 
     const count = await countExplorerBadges(Number(badge))
     const maxRewards = 250
-    const rewards = `${maxRewards - count > 0
+    const rewards = `${maxRewards - count > 0 && IS_REWARDS_ACTIVATED
       ? `${maxRewards - count} USDGLO remaining`
-      : 'No more rewards left'
+      : 'All rewards claimed.'
       }`
     return res.status(200).json({ rewards })
   } catch (error) {
