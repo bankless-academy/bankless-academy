@@ -188,3 +188,5 @@ export const LanguageDescription: LanguageDescriptionType = Object.fromEntries(
 )
 
 export const IS_COLLECTIBLE_ACTIVATED = false
+
+export const IS_REWARDS_ACTIVATED = false

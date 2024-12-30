@@ -6,6 +6,7 @@ import { LessonType } from 'entities/lesson'
 import Helper from 'components/Helper'
 import ExternalLink from './ExternalLink'
 import { countExplorerBadges } from 'utils'
+import { IS_REWARDS_ACTIVATED } from 'constants/index'
 
 const Reward = ({
   lesson,
@@ -29,7 +30,7 @@ const Reward = ({
 
   return (
     <>
-      {lesson.slug === 'ethereum-basics' && (
+      {IS_REWARDS_ACTIVATED && lesson.slug === 'ethereum-basics' && (
         <Box
           position="relative"
           display="flex"
