@@ -164,7 +164,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
             property="fc:frame"
             content={JSON.stringify({
               version: 'next',
-              imageUrl: `${DOMAIN_URL_}${DEFAULT_METADATA.image}`,
+              imageUrl: `${DOMAIN_URL_}/images/bankless_academy_v3_frame.jpg`,
               button: {
                 title: 'Launch Frame',
                 action: {
