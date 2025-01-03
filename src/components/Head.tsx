@@ -158,6 +158,24 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           href="/rss.xml"
         />
         {/* Farcaster Frame */}
+        {/* Farcaster Frame v2 */}
+        <meta
+          property="fc:frame"
+          content={JSON.stringify({
+            version: 'next',
+            imageUrl: `${DOMAIN_URL_}${DEFAULT_METADATA.image}`,
+            button: {
+              title: 'Launch Frame',
+              action: {
+                type: 'launch_frame',
+                name: 'Bankless Academy Learning Frame',
+                url: `${DOMAIN_URL_}?webapp=true`,
+                splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
+                splashBackgroundColor: '#000000',
+              },
+            },
+          })}
+        />
         {/* FC: lesson */}
         {isLesson && lesson && (
           <>
