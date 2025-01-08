@@ -69,7 +69,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
 
   const lesson = metadata?.lesson
 
-  const isDatadisk = metadata?.isDatadisk
+  // const isDatadisk = metadata?.isDatadisk
 
   const isLesson = metadata?.isLesson && lesson
 
@@ -158,7 +158,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           href="/rss.xml"
         />
         {/* Farcaster Frame */}
-        {/* Farcaster Frame v2: only load for home page */}
+        {/* Farcaster Frame v2: home page */}
         {router.pathname === '/' && (
           <meta
             property="fc:frame"
@@ -166,7 +166,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
               version: 'next',
               imageUrl: `${DOMAIN_URL_}/images/bankless_academy_v3_frame.jpg`,
               button: {
-                title: 'Launch Frame',
+                title: 'Start Learning',
                 action: {
                   type: 'launch_frame',
                   name: 'Bankless Academy Learning Frame',
@@ -178,37 +178,54 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
             })}
           />
         )}
-        {/* FC: lesson */}
+        {/* Farcaster Frame v2: lesson */}
         {isLesson && lesson && (
-          <>
-            <meta property="fc:frame" content="vNext" />
-            <meta
-              property="fc:frame:image"
-              content={
-                isDatadisk
-                  ? // TODO: add back .gif for FC < 10MB + make dynamic
-                    `${DOMAIN_URL_}/images/${lesson.slug}/social-datadisk.jpg`
-                  : image
-              }
-            />
-            <meta
-              property="fc:frame:post_url"
-              content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${
-                lesson.slug
-              }&platform=farcaster&provenance=${
-                isDatadisk ? 'datadisk' : 'lesson'
-              }`}
-            />
-            <meta name="fc:frame:button:1:action" content="post_redirect" />
-            <meta
-              property={`fc:frame:button:1`}
-              content={
-                isDatadisk
-                  ? `Mint a DataDisk, Support Free Education.`
-                  : `Learn and claim your free lesson badge now!`
-              }
-            />
-          </>
+          <meta
+            property="fc:frame"
+            content={JSON.stringify({
+              version: 'next',
+              imageUrl: `${DOMAIN_URL_}/api/og/lesson-frame?image_path=${lesson.socialImageLink}`,
+              button: {
+                title: 'Start Learning',
+                action: {
+                  type: 'launch_frame',
+                  name: 'Bankless Academy Learning Frame',
+                  url: `${DOMAIN_URL_}/lesson/${lesson.slug}?webapp=true`,
+                  splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
+                  splashBackgroundColor: '#000000',
+                },
+              },
+            })}
+          />
+          // <>
+          //   <meta property="fc:frame" content="vNext" />
+          //   <meta
+          //     property="fc:frame:image"
+          //     content={
+          //       isDatadisk
+          //         ? // TODO: add back .gif for FC < 10MB + make dynamic
+          //           `${DOMAIN_URL_}/images/${lesson.slug}/social-datadisk.jpg`
+          //         : image
+          //     }
+          //   />
+          //   <meta
+          //     property="fc:frame:post_url"
+          //     content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${
+          //       lesson.slug
+          //     }&platform=farcaster&provenance=${
+          //       isDatadisk ? 'datadisk' : 'lesson'
+          //     }`}
+          //   />
+          //   <meta name="fc:frame:button:1:action" content="post_redirect" />
+          //   <meta
+          //     property={`fc:frame:button:1`}
+          //     content={
+          //       isDatadisk
+          //         ? `Mint a DataDisk, Support Free Education.`
+          //         : `Learn and claim your free lesson badge now!`
+          //     }
+          //   />
+          // </>
         )}
         {/* FC: article */}
         {lesson?.isArticle && (
