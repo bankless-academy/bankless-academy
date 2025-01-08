@@ -190,7 +190,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
                 action: {
                   type: 'launch_frame',
                   name: 'Bankless Academy Learning Frame',
-                  url: `${DOMAIN_URL_}/lesson/${lesson.slug}?webapp=true`,
+                  url: `${DOMAIN_URL_}/lessons/${lesson.slug}?webapp=true`,
                   splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
                   splashBackgroundColor: '#000000',
                 },
