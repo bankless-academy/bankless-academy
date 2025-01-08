@@ -14,6 +14,6 @@ export default async function handler(
   const { address } = req.query
   console.log(address)
   twitterOAuth.initClientAndGetAuthUrl(`${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/twitter?address=${address}`).then((authUrl) => {
-    res.redirect(authUrl)
+    res.redirect(authUrl?.replace('https://twitter.com', 'https://x.com'))
   });
 }
