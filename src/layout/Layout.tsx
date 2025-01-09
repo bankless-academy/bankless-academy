@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { Box, Container, Image, Button } from '@chakra-ui/react'
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import { useAppKit } from '@reown/appkit/react'
 import { Wallet } from '@phosphor-icons/react'
 
@@ -13,6 +13,7 @@ import { shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
+import { LessonIcon, HandbookIcon, GlossaryIcon } from 'components/Icons'
 
 export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | 'INDEX' | ''
 
@@ -20,17 +21,17 @@ const DesktopButton = ({
   isActive,
   link,
   label,
-  imageSrc,
+  icon: Icon,
 }: {
   isActive: boolean
   link: string
   label: string
-  imageSrc: string
+  icon: React.ComponentType<any>
 }): React.ReactElement => {
   const button = (
     <Box w="100%" h="100%" display="flex" alignItems="center" color="white">
       <Box ml="6" display="flex">
-        <Image src={imageSrc} />
+        <Icon width="46px" height="46px" />
       </Box>
       <Box ml="6" fontSize="xl" fontWeight="semibold" textAlign="center">
         {label}
@@ -58,17 +59,20 @@ const MobileButton = ({
   isActive,
   link,
   label,
-  imageSrc,
+  icon: Icon,
   pwa,
   ...props
 }: {
   isActive: boolean
   link: string
   label: string
+  icon?: React.ComponentType<any>
   imageSrc?: string
   pwa: boolean
   [key: string]: any
-}): React.ReactElement => {
+}): ReactElement => {
+  const iconSize = pwa ? '28px' : '34px'
+
   const button = (
     <Box
       flex="1"
@@ -80,61 +84,35 @@ const MobileButton = ({
       flexDirection="column"
       color={isActive ? '#9d72dc' : 'white'}
       {...props}
-      pt={
-        label === 'Profile' && pwa
-          ? '6px'
-          : label === 'Profile'
-          ? '8px'
-          : pwa
-          ? '2px'
-          : '0'
-      }
+      pt={pwa ? '6px' : '2px'}
       pb={pwa ? '16px' : '2px'}
     >
-      <Image
-        src={imageSrc}
-        alt={label}
-        title={label}
-        w={
-          label === 'Profile' && pwa
-            ? '28px'
-            : label === 'Profile'
-            ? '36px'
-            : pwa
-            ? '42px'
-            : '52px'
-        }
-        h={
-          label === 'Profile' && pwa
-            ? '28px'
-            : label === 'Profile'
-            ? '36px'
-            : pwa
-            ? '42px'
-            : '52px'
-        }
-        borderRadius="50%"
-        fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
-        border={
-          label === 'Profile'
-            ? isActive
-              ? '2px solid #9d72dc'
-              : '1px solid white'
-            : ''
-        }
-        mt={label === 'Profile' && pwa ? '4px' : '0'}
-      />
-      <Box
-        mt={
-          label === 'Profile' && pwa
-            ? '4px'
-            : label === 'Profile'
-            ? '6px'
-            : '-3px'
-        }
-      >
-        {label}
-      </Box>
+      {Icon ? (
+        <Icon
+          width={iconSize}
+          height={iconSize}
+          color={isActive ? '#9d72dc' : 'white'}
+        />
+      ) : (
+        <Image
+          src={props.imageSrc}
+          alt={label}
+          title={label}
+          w={iconSize}
+          h={iconSize}
+          borderRadius="50%"
+          fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
+          border={
+            label === 'Profile'
+              ? isActive
+                ? '2px solid #9d72dc'
+                : '1px solid white'
+              : ''
+          }
+          mt={'2px'}
+        />
+      )}
+      <Box mt={pwa ? '2px' : '4px'}>{label}</Box>
     </Box>
   )
   return (
@@ -317,19 +295,19 @@ const Layout = ({
                 link="/lessons"
                 label="Lessons"
                 isActive={page === 'LESSON'}
-                imageSrc="/images/lesson-logo.svg"
+                icon={LessonIcon}
               />
               <DesktopButton
                 link="/lessons/handbook"
                 label="Handbooks"
                 isActive={page === 'HANDBOOK'}
-                imageSrc="/images/handbook-logo.svg"
+                icon={HandbookIcon}
               />
               <DesktopButton
                 link="/glossary"
                 label="Glossary"
                 isActive={page === 'GLOSSARY'}
-                imageSrc="/images/glossary-logo.svg"
+                icon={GlossaryIcon}
               />
             </Box>
           </Box>
@@ -351,33 +329,21 @@ const Layout = ({
             link="/lessons"
             label="Lessons"
             isActive={page === 'LESSON'}
-            imageSrc={
-              page === 'LESSON'
-                ? '/images/lesson-logo-mobile-active.svg'
-                : '/images/lesson-logo-mobile.svg'
-            }
+            icon={LessonIcon}
             pwa={pwa}
           />
           <MobileButton
             link="/lessons/handbook"
             label="Handbooks"
             isActive={page === 'HANDBOOK'}
-            imageSrc={
-              page === 'HANDBOOK'
-                ? '/images/handbook-logo-mobile-active.svg'
-                : '/images/handbook-logo-mobile.svg'
-            }
+            icon={HandbookIcon}
             pwa={pwa}
           />
           <MobileButton
             link="/glossary"
             label="Glossary"
             isActive={page === 'GLOSSARY'}
-            imageSrc={
-              page === 'GLOSSARY'
-                ? '/images/glossary-logo-mobile-active.svg'
-                : '/images/glossary-logo-mobile.svg'
-            }
+            icon={GlossaryIcon}
             pwa={pwa}
           />
           <MobileButton
