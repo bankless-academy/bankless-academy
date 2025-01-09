@@ -80,18 +80,48 @@ const MobileButton = ({
       flexDirection="column"
       color={isActive ? '#9d72dc' : 'white'}
       {...props}
-      pt={label === 'Profile' ? '8px' : pwa ? '2px' : '0'}
+      pt={
+        label === 'Profile' && pwa
+          ? '6px'
+          : label === 'Profile'
+          ? '8px'
+          : pwa
+          ? '2px'
+          : '0'
+      }
       pb={pwa ? '16px' : '2px'}
     >
       <Image
         src={imageSrc}
         alt={label}
         title={label}
-        w={label === 'Profile' ? '36px' : pwa ? '50px' : '52px'}
-        h={label === 'Profile' ? '36px' : pwa ? '50px' : '52px'}
+        w={
+          label === 'Profile' && pwa
+            ? '28px'
+            : label === 'Profile'
+            ? '36px'
+            : pwa
+            ? '42px'
+            : '52px'
+        }
+        h={
+          label === 'Profile' && pwa
+            ? '28px'
+            : label === 'Profile'
+            ? '36px'
+            : pwa
+            ? '42px'
+            : '52px'
+        }
         borderRadius="50%"
         fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
-        border={label === 'Profile' && isActive ? '2px solid #9d72dc' : ''}
+        border={
+          label === 'Profile'
+            ? isActive
+              ? '2px solid #9d72dc'
+              : '1px solid white'
+            : ''
+        }
         mt={label === 'Profile' && pwa ? '4px' : '0'}
       />
       <Box
