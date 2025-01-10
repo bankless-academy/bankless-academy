@@ -49,6 +49,48 @@ const App = ({
   pageMeta: MetaData
   isNotion: boolean
 }>): JSX.Element => {
+  const [isTelegramWebApp, setIsTelegramWebApp] = useState(false)
+
+  useEffect(() => {
+    // Check if running as Telegram Mini App
+    if (typeof window !== 'undefined' && window.Telegram?.WebApp) {
+      setIsTelegramWebApp(true)
+      const tg = window.Telegram.WebApp
+
+      // Apply Telegram theme colors
+      if (tg.themeParams) {
+        document.documentElement.style.setProperty(
+          '--tg-theme-bg-color',
+          tg.themeParams.bg_color
+        )
+        document.documentElement.style.setProperty(
+          '--tg-theme-text-color',
+          tg.themeParams.text_color
+        )
+        document.documentElement.style.setProperty(
+          '--tg-theme-hint-color',
+          tg.themeParams.hint_color
+        )
+        document.documentElement.style.setProperty(
+          '--tg-theme-link-color',
+          tg.themeParams.link_color
+        )
+        document.documentElement.style.setProperty(
+          '--tg-theme-button-color',
+          tg.themeParams.button_color
+        )
+        document.documentElement.style.setProperty(
+          '--tg-theme-button-text-color',
+          tg.themeParams.button_text_color
+        )
+        document.documentElement.style.setProperty(
+          '--tg-theme-secondary-bg-color',
+          tg.themeParams.secondary_bg_color
+        )
+      }
+    }
+  }, [])
+
   if (
     (process.env.NEXT_PUBLIC_MAINTENANCE &&
       process.env.NEXT_PUBLIC_MAINTENANCE !== DEBUG) ||
@@ -128,7 +170,7 @@ const App = ({
   return (
     <Sentry.ErrorBoundary>
       <Head metadata={pageProps.pageMeta} />
-      {!isMobile && <GlobalScrollbar skin="dark" />}
+      {!isMobile && !isTelegramWebApp && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
         <NonSSRWrapper>
           <WagmiProvider config={wagmiAdapter.wagmiConfig}>
@@ -140,6 +182,21 @@ const App = ({
                       @font-face {
                         font-family: 'ClearSans';
                         src: url(/fonts/clear-sans/TTF/ClearSans-Bold.ttf);
+                      }
+                      /* Telegram Mini App theme variables */
+                      :root {
+                        --tg-theme-bg-color: #000000;
+                        --tg-theme-text-color: #ffffff;
+                        --tg-theme-hint-color: #999999;
+                        --tg-theme-link-color: #b85ff1;
+                        --tg-theme-button-color: #b85ff1;
+                        --tg-theme-button-text-color: #ffffff;
+                        --tg-theme-secondary-bg-color: #1a1a1a;
+                      }
+                      /* Apply Telegram theme to body */
+                      body {
+                        background-color: var(--tg-theme-bg-color) !important;
+                        color: var(--tg-theme-text-color) !important;
                       }
                       /* .web3modal-modal-lightbox {
                         background: linear-gradient(

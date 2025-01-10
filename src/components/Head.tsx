@@ -63,6 +63,13 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         hotjarLib.hotjar.initialize(2568813, 6)
       })
     }
+
+    // Initialize Telegram Mini App
+    if (typeof window !== 'undefined' && window.Telegram?.WebApp) {
+      const tg = window.Telegram.WebApp
+      tg.ready()
+      tg.expand()
+    }
   }, [])
 
   const canonical = url?.split('?')[0]
@@ -156,6 +163,11 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           type="application/rss+xml"
           title="Bankless Academy lesson feed"
           href="/rss.xml"
+        />
+        {/* Telegram Mini App */}
+        <Script
+          src="https://telegram.org/js/telegram-web-app.js?56"
+          strategy="beforeInteractive"
         />
         {/* Farcaster Frame */}
         {/* Farcaster Frame v2: home page */}
