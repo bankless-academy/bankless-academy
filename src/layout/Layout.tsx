@@ -3,6 +3,7 @@ import { Box, Container, Image, Button } from '@chakra-ui/react'
 import React, { ReactElement } from 'react'
 import { useAppKit } from '@reown/appkit/react'
 import { Wallet } from '@phosphor-icons/react'
+import { useRouter } from 'next/router'
 
 import { LessonTypeType } from 'entities/lesson'
 import InternalLink from 'components/InternalLink'
@@ -82,7 +83,7 @@ const MobileButton = ({
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      color={isActive ? '#9d72dc' : 'white'}
+      color={isActive ? 'white' : '#9d72dc'}
       {...props}
       pt={pwa ? '6px' : '2px'}
       pb={pwa ? '16px' : '2px'}
@@ -91,7 +92,7 @@ const MobileButton = ({
         <Icon
           width={iconSize}
           height={iconSize}
-          color={isActive ? '#9d72dc' : 'white'}
+          color={isActive ? 'white' : '#9d72dc'}
         />
       ) : (
         <Image
@@ -101,12 +102,12 @@ const MobileButton = ({
           w={iconSize}
           h={iconSize}
           borderRadius="50%"
-          fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
+          // fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
           border={
             label === 'Profile'
               ? isActive
-                ? '2px solid #9d72dc'
-                : '1px solid white'
+                ? '2px solid white'
+                : '1px solid #9d72dc'
               : ''
           }
           mt={'2px'}
@@ -131,6 +132,7 @@ const Layout = ({
 }): React.ReactElement => {
   const { address } = useAccount()
   const { open } = useAppKit()
+  const router = useRouter()
   const [nameCache] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
   const [score] = useLocalStorage(`score`, 0)
@@ -328,21 +330,24 @@ const Layout = ({
           <MobileButton
             link="/lessons"
             label="Lessons"
-            isActive={page === 'LESSON'}
+            isActive={
+              router.pathname.startsWith('/lessons') &&
+              !router.pathname.startsWith('/lessons/handbook')
+            }
             icon={LessonIcon}
             pwa={pwa}
           />
           <MobileButton
             link="/lessons/handbook"
             label="Handbooks"
-            isActive={page === 'HANDBOOK'}
+            isActive={router.pathname.startsWith('/lessons/handbook')}
             icon={HandbookIcon}
             pwa={pwa}
           />
           <MobileButton
             link="/glossary"
             label="Glossary"
-            isActive={page === 'GLOSSARY'}
+            isActive={router.pathname.startsWith('/glossary')}
             icon={GlossaryIcon}
             pwa={pwa}
           />
@@ -353,7 +358,7 @@ const Layout = ({
                 : `explorer/my-profile`
             }
             label="Profile"
-            isActive={page === 'PROFILE'}
+            isActive={router.pathname.startsWith('/explorer')}
             imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
             borderRight={0}
             pwa={pwa}
