@@ -332,10 +332,7 @@ const Layout = ({
           <MobileButton
             link="/lessons"
             label="Lessons"
-            isActive={
-              router.pathname.startsWith('/lessons') &&
-              !router.pathname.startsWith('/lessons/handbook')
-            }
+            isActive={router.pathname === '/lessons'}
             icon={LessonIcon}
             pwa={pwa}
           />
