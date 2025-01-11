@@ -141,7 +141,12 @@ const LessonCards = ({
 
   return (
     <Box>
-      <StyledHeading as="h1" size="2xl" textAlign="center">
+      <StyledHeading
+        as="h1"
+        size="2xl"
+        textAlign="center"
+        pt={isSmallScreen ? '20px' : '0'}
+      >
         {level || moduleName || "Explorer's Handbook"}
       </StyledHeading>
       {!moduleName ? (

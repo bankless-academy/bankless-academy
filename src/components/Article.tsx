@@ -578,7 +578,11 @@ const Article = ({
     articlesCollectedLS.includes(lesson.mirrorNFTAddress)
 
   return (
-    <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
+    <Container
+      maxW="container.md"
+      p={isSmallScreen ? '0' : 'unset'}
+      mb={isSmallScreen ? '90px' : '0'}
+    >
       <Image
         src={lesson.lessonImageLink}
         w="100%"

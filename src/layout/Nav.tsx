@@ -56,6 +56,8 @@ const Nav: React.FC = () => {
 
   const [pwa, setPwa] = useLocalStorage('pwa', false)
 
+  const isHomePage = asPath === '/'
+
   useEffect(() => {
     if (
       typeof window !== 'undefined' &&
@@ -155,20 +157,22 @@ const Nav: React.FC = () => {
             {/* <Button onClick={() => setIsOnboardingModalOpen(true)}>
               popup
             </Button> */}
-            <InternalLink href={`/lessons`} alt="Explore Lessons" zIndex={2}>
-              <Button
-                variant={
-                  asPath?.startsWith('/lessons') || isProfilePage
-                    ? 'secondary'
-                    : 'primary'
-                }
-                size={isSmallScreen ? 'sm' : 'md'}
-                onClick={() => setConnectWalletPopupLS(false)}
-              >
-                {isSmallScreen ? t('Lessons') : t('Explore Lessons')}
-              </Button>
-            </InternalLink>
-            {isConnected ? (
+            {isHomePage && !isSmallScreen && (
+              <InternalLink href={`/lessons`} alt="Explore Lessons" zIndex={2}>
+                <Button
+                  variant={
+                    asPath?.startsWith('/lessons') || isProfilePage
+                      ? 'secondary'
+                      : 'primary'
+                  }
+                  size={isSmallScreen ? 'sm' : 'md'}
+                  onClick={() => setConnectWalletPopupLS(false)}
+                >
+                  {isSmallScreen ? t('Lessons') : t('Explore Lessons')}
+                </Button>
+              </InternalLink>
+            )}
+            {isConnected && !isHomePage ? (
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             ) : null}
             <ConnectWalletButton isSmallScreen={isSmallScreen} />

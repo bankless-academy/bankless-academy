@@ -15,7 +15,6 @@ import { useTranslation } from 'react-i18next'
 import Footer from 'layout/Footer'
 import FeaturedLessons from 'components/FeaturedLessons'
 import ExternalLink from 'components/ExternalLink'
-import InternalLink from 'components/InternalLink'
 import WhitelabelHomepage from 'pages/whitelabel_homepage'
 import {
   LearnIcon,
@@ -110,7 +109,7 @@ const HomePage = (): JSX.Element => {
       <Layout page="INDEX">
         <>
           <Center
-            height="80vh"
+            height={isSmallScreen ? '74vh' : '80vh'}
             bgImage={HOMEPAGE_BACKGROUND}
             bgSize="cover"
             bgPosition="center"
@@ -137,10 +136,10 @@ const HomePage = (): JSX.Element => {
                   m="auto"
                 />
                 {IS_PARTNERSHIP_ACTIVACTED && (
-                  <Box ml="25%" w="73%">
+                  <Box ml="21%" w="79%">
                     <Text
                       fontSize={isSmallScreen ? '20px' : '25px'}
-                      mt={isSmallScreen ? '-5px' : '-15px'}
+                      mt={isSmallScreen ? '0' : '-15px'}
                       w="100%"
                     >
                       Your crypto journey starts here.
@@ -148,7 +147,7 @@ const HomePage = (): JSX.Element => {
                   </Box>
                 )}
               </Box>
-              <Box
+              {/* <Box
                 bottom="60px"
                 height="70px"
                 display="flex"
@@ -167,7 +166,7 @@ const HomePage = (): JSX.Element => {
                     </Box>
                   </Button>
                 </InternalLink>
-              </Box>
+              </Box> */}
             </Stack>
           </Center>
           {IS_PARTNERSHIP_ACTIVACTED && (
