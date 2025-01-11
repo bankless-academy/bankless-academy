@@ -72,7 +72,7 @@ const MobileButton = ({
   pwa: boolean
   [key: string]: any
 }): ReactElement => {
-  const iconSize = pwa ? '28px' : '34px'
+  const iconSize = pwa ? '26px' : '32px'
 
   const button = (
     <Box
@@ -83,7 +83,7 @@ const MobileButton = ({
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      color={isActive ? 'white' : '#9d72dc'}
+      color={isActive ? 'white' : '#959393'}
       {...props}
       pt={pwa ? '6px' : '2px'}
       pb={pwa ? '16px' : '2px'}
@@ -92,7 +92,7 @@ const MobileButton = ({
         <Icon
           width={iconSize}
           height={iconSize}
-          color={isActive ? 'white' : '#9d72dc'}
+          color={isActive ? 'white' : '#959393'}
         />
       ) : (
         <Image
@@ -107,13 +107,15 @@ const MobileButton = ({
             label === 'Profile'
               ? isActive
                 ? '2px solid white'
-                : '1px solid #9d72dc'
+                : '1px solid #959393'
               : ''
           }
           mt={'2px'}
         />
       )}
-      <Box mt={pwa ? '2px' : '4px'}>{label}</Box>
+      <Box mt={pwa ? '2px' : '4px'} fontSize="14px">
+        {label}
+      </Box>
     </Box>
   )
   return (
@@ -320,7 +322,7 @@ const Layout = ({
           w="100vw"
           h="81px"
           bottom="0"
-          background="#3f3253e7"
+          background="#2b2b2bdd"
           backdropFilter="blur(10px)"
           display="flex"
           zIndex="2"
