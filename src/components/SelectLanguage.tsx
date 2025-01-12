@@ -31,7 +31,7 @@ const SelectLanguage = ({
   const selectedLanguage = lessonSlugs?.length > 1 ? lessonSlugs[0] : null
   const [defaultLanguage, setDefaultLanguage] = useLocalStorage(
     'default-language',
-    selectedLanguage
+    selectedLanguage && selectedLanguage.length === 2
       ? selectedLanguage
       : typeof window !== 'undefined'
       ? window.navigator.language.split('-')[0]
@@ -85,7 +85,13 @@ const SelectLanguage = ({
               </Text>
             </Text>
             {Object.entries(LanguageDescription).map(([code, name]) => {
-              const lessonSlug = lessonSlugs?.[lessonSlugs.length - 1]
+              const lessonSlug = router.asPath.endsWith('/content')
+                ? lessonSlugs?.[lessonSlugs.length - 2]
+                : lessonSlugs?.[lessonSlugs.length - 1]
+
+              const content = router.asPath.endsWith('/content')
+                ? `/content`
+                : ''
               const lessonAvailable = lessonSlug
                 ? LESSONS.find(
                     (lesson) =>
@@ -100,20 +106,24 @@ const SelectLanguage = ({
                   onClick={() => {
                     i18n.changeLanguage(code)
                     setDefaultLanguage(code)
-                    // Update lesson and handbook pages to match the language
-                    if (lessonAvailable) {
-                      router.push(`/lessons/${code}/${lessonSlug}`)
+                    if (isLessonPage) {
+                      // Update lesson and handbook pages to match the language
+                      if (lessonAvailable) {
+                        router.push(`/lessons/${code}/${lessonSlug}${content}`)
+                      } else {
+                        router.push(`/lessons/${lessonSlug}${content}`)
+                      }
                     }
                     // Refresh internal links without page reload
                     refreshLanguage()
                   }}
                   backgroundColor={
-                    i18n.language === code ? 'blackAlpha.300' : 'default'
+                    defaultLanguage === code ? 'blackAlpha.300' : 'default'
                   }
                 >
                   <Box flex="1" isTruncated>
                     {name}
-                    {!isLessonPage
+                    {!isLessonPage || code === 'en'
                       ? ''
                       : lessonAvailable && code !== 'en'
                       ? ''

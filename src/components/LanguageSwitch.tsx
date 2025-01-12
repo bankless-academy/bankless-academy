@@ -1,13 +1,13 @@
 import React from 'react'
 import { Box, Button } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
 import { LanguageType, LessonType } from 'entities/lesson'
 import { Mixpanel } from 'utils/index'
 import { LanguageDescription } from 'constants/index'
-import InternalLink from 'components/InternalLink'
+import { useLanguage } from 'contexts/LanguageContext'
 
 const StyledButton = styled(Button)<{ isselected?: string }>`
   padding: 16px;
@@ -40,7 +40,8 @@ const LanguageSwitch = ({
   lesson: LessonType
 }): React.ReactElement => {
   const { i18n } = useTranslation()
-  // const router = useRouter()
+  const router = useRouter()
+  const { refreshLanguage } = useLanguage()
 
   const languages = Object.keys(LanguageDescription).filter((v: LanguageType) =>
     lesson.languages?.includes(v)
@@ -49,6 +50,23 @@ const LanguageSwitch = ({
   const content = window.location.pathname?.endsWith('/content')
     ? '/content'
     : ''
+
+  const handleLanguageChange = (lang: string, path: string) => {
+    i18n.changeLanguage(lang)
+    refreshLanguage()
+    router.push(path)
+
+    Mixpanel.track(lesson.isArticle ? 'open_lesson' : 'lesson_briefing', {
+      lesson: lesson?.englishName,
+      language: lang,
+    })
+    Mixpanel.track('change_language', {
+      lesson: lesson?.englishName,
+      language: lang,
+      link: path,
+      name: lang,
+    })
+  }
 
   return (
     <Box>
@@ -61,80 +79,34 @@ const LanguageSwitch = ({
             alignItems="center"
             m="auto"
           >
-            <InternalLink
-              href={`/lessons/${lesson.slug}${content}`}
-              ignoreLocale
+            <StyledButton
+              variant="secondary"
+              isselected={(
+                i18n.language === 'en' ||
+                !lesson.languages.includes(i18n.language as any)
+              )?.toString()}
+              m={2}
+              onClick={() =>
+                handleLanguageChange('en', `/lessons/${lesson.slug}${content}`)
+              }
             >
-              <StyledButton
-                // variant={
-                //   i18n.language === 'en' ||
-                //   !lesson.languages.includes(i18n.language as any)
-                //     ? 'primary'
-                //     : 'secondary'
-                // }
-                variant="secondary"
-                isselected={(
-                  i18n.language === 'en' ||
-                  !lesson.languages.includes(i18n.language as any)
-                )?.toString()}
-                // title={LanguageDescription['en']}
-                m={2}
-                onClick={() => {
-                  // i18n.changeLanguage('en', () =>
-                  //   router.push(`/lessons/${lesson.slug}${content}`)
-                  // )
-                  Mixpanel.track(
-                    lesson.isArticle ? 'open_lesson' : 'lesson_briefing',
-                    {
-                      lesson: lesson?.englishName,
-                      language: 'en',
-                    }
-                  )
-                  Mixpanel.track('change_language', {
-                    lesson: lesson?.englishName,
-                    language: 'en',
-                    link: `/lessons/${lesson.slug}`,
-                    name: 'en',
-                  })
-                }}
-              >
-                {LanguageDescription['en']}
-              </StyledButton>
-            </InternalLink>
+              {LanguageDescription['en']}
+            </StyledButton>
             {languages.map((l) => (
-              <InternalLink
-                href={`/lessons/${l}/${lesson.slug}${content}`}
+              <StyledButton
                 key={`key-${l}`}
-                ignoreLocale
+                variant="secondary"
+                isselected={(i18n.language === l)?.toString()}
+                onClick={() =>
+                  handleLanguageChange(
+                    l,
+                    `/lessons/${l}/${lesson.slug}${content}`
+                  )
+                }
+                m={2}
               >
-                <StyledButton
-                  // variant={i18n.language === l ? 'primary' : 'secondary'}
-                  variant="secondary"
-                  isselected={(i18n.language === l)?.toString()}
-                  // title={l in LanguageDescription ? LanguageDescription[l] : ''}
-                  onClick={() => {
-                    // i18n.changeLanguage(l, () =>
-                    //   router.push(`/lessons/${l}/${lesson.slug}${content}`)
-                    // )
-                    Mixpanel.track(
-                      lesson.isArticle ? 'open_lesson' : 'lesson_briefing',
-                      {
-                        lesson: lesson?.englishName,
-                        language: l,
-                      }
-                    )
-                    Mixpanel.track('change_language', {
-                      lesson: lesson?.englishName,
-                      language: l,
-                      link: `/lessons/${l}/${lesson.slug}`,
-                      name: l,
-                    })
-                  }}
-                  m={2}
-                >
-                  {l in LanguageDescription ? LanguageDescription[l] : ''}
-                </StyledButton>
-              </InternalLink>
+                {l in LanguageDescription ? LanguageDescription[l] : ''}
+              </StyledButton>
             ))}
           </Box>
         </Box>
