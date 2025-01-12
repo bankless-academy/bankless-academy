@@ -43,7 +43,9 @@ const OptionMenu = ({
           as={Button}
           size={isSmallScreen ? 'sm' : 'md'}
           w={isSmallScreen ? '28px' : '32px'}
-          leftIcon={<DotsThreeVertical weight="bold" size={32} />}
+          leftIcon={
+            <DotsThreeVertical weight="bold" size={isSmallScreen ? 28 : 32} />
+          }
           iconSpacing="0px"
           p="0px !important"
           display="grid"

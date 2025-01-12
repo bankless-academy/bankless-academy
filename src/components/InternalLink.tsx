@@ -3,10 +3,10 @@ import {
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
 } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
 
 import { Mixpanel, getNodeText } from 'utils/index'
 import { LESSONS } from 'constants/index'
+import { useLanguage } from 'contexts/LanguageContext'
 
 type ChakraLinkAndNextProps = ChakraLinkProps & LinkProps & any
 
@@ -17,13 +17,7 @@ const InternalLink = ({
   ignoreLocale,
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
-  const [i18nextLng, setI18nextLng] = useState('en')
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setI18nextLng(localStorage.getItem('i18nextLng') || 'en')
-    }
-  }, [])
+  const { currentLanguage } = useLanguage()
 
   const isLessonLink =
     (href?.startsWith('/lessons/') ||
@@ -34,13 +28,13 @@ const InternalLink = ({
 
   const iHref =
     isLessonLink &&
-    i18nextLng !== 'en' &&
+    currentLanguage !== 'en' &&
     LESSONS.some(
       (lesson) =>
         lesson.slug === lessonSlug &&
-        (lesson.languages as any)?.includes(i18nextLng)
+        (lesson.languages as any)?.includes(currentLanguage)
     )
-      ? href.replace('/lessons/', `/lessons/${i18nextLng}/`)
+      ? href.replace('/lessons/', `/lessons/${currentLanguage}/`)
       : href
 
   return (
@@ -51,9 +45,6 @@ const InternalLink = ({
           const link = iHref || 'NO_LINK'
           const name = alt || getNodeText(children) || 'NO_NAME'
           Mixpanel.track('click_internal_link', { link, name })
-          // HACK: fix link from explorer page
-          // if (router.pathname.startsWith('/explorer/'))
-          //   window.location.href = iHref
         }}
       >
         {children}

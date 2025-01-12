@@ -17,6 +17,7 @@ import ExternalLink from 'components/ExternalLink'
 import { api } from 'utils/index'
 import { AnnouncementType } from 'entities/announcement'
 import OnboardingModal from 'components/OnboardingModal'
+import SelectLanguage from 'components/SelectLanguage'
 
 declare global {
   interface Navigator {
@@ -172,6 +173,7 @@ const Nav: React.FC = () => {
                 </Button>
               </InternalLink>
             )}
+            <SelectLanguage isSmallScreen={isSmallScreen} />
             {isConnected ? (
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             ) : null}

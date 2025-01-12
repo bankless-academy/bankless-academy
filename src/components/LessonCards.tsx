@@ -145,7 +145,7 @@ const LessonCards = ({
         as="h1"
         size="2xl"
         textAlign="center"
-        pt={isSmallScreen ? '20px' : '0'}
+        pt={isSmallScreen ? '12px' : '0'}
       >
         {level || moduleName || "Explorer's Handbook"}
       </StyledHeading>
@@ -153,10 +153,11 @@ const LessonCards = ({
         <Heading
           as="h2"
           size="md"
+          color="gray.500"
           fontWeight="normal"
           textAlign="center"
           mt={4}
-          mb={8}
+          mb={6}
         >
           {level === 'Essentials'
             ? `Begin your crypto journey with these entry-level lessons.`

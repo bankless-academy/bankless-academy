@@ -35,7 +35,6 @@ import {
 import { useEffect } from 'react'
 import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
-import LanguageSwitch from 'components/LanguageSwitch'
 import ShareModal from 'components/ShareModal'
 import { useAccount, useEnsName } from 'wagmi'
 
@@ -211,21 +210,26 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             position="relative"
           >
             <Box m="auto" p={isSmallScreen ? '12px' : 'auto'}>
-              <Box h="0">
-                <InternalLink href="/lessons" alt={`Back to Lesson Selection`}>
-                  <Button
-                    position="relative"
-                    top={isSmallScreen ? '-4px' : '-70px'}
-                    left={isSmallScreen ? '-10px' : '-72px'}
-                    size="lg"
-                    iconSpacing="0"
-                    variant="secondaryBig"
-                    leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
-                    p="0"
-                    _hover={{ p: '0' }}
-                  ></Button>
-                </InternalLink>
-              </Box>
+              {!isSmallScreen && (
+                <Box h="0">
+                  <InternalLink
+                    href="/lessons"
+                    alt={`Back to Lesson Selection`}
+                  >
+                    <Button
+                      position="relative"
+                      top={isSmallScreen ? '-4px' : '-70px'}
+                      left={isSmallScreen ? '-10px' : '-72px'}
+                      size="lg"
+                      iconSpacing="0"
+                      variant="secondaryBig"
+                      leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+                      p="0"
+                      _hover={{ p: '0' }}
+                    ></Button>
+                  </InternalLink>
+                </Box>
+              )}
               <Text
                 as="h1"
                 fontSize="3xl"
@@ -240,7 +244,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               >
                 {lesson.name}
               </Text>
-              <LanguageSwitch lesson={lesson} />
+              {/* <LanguageSwitch lesson={lesson} /> */}
               <Box
                 display="flex"
                 mt="4"

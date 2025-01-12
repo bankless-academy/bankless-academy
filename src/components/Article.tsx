@@ -32,7 +32,6 @@ import {
   Mixpanel,
 } from 'utils/index'
 import Keyword from 'components/Keyword'
-import LanguageSwitch from 'components/LanguageSwitch'
 import MintNFT from 'components/MintNFT'
 
 // TODO: clean dirty copy/paste style
@@ -633,7 +632,6 @@ const Article = ({
           </Box>
         </SimpleGrid>
       )}
-      <LanguageSwitch lesson={lesson} />
       {isSmartWalletLesson && <MintNFT />}
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
