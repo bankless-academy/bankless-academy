@@ -80,9 +80,11 @@ const SelectLanguage = ({
               color="lightgrey"
             >
               Select default language
-              <Text fontSize="xs" color="lightgrey">
-                * Translation not available
-              </Text>
+              {isLessonPage && (
+                <Text fontSize="xs" color="lightgrey">
+                  * Translation not available
+                </Text>
+              )}
             </Text>
             {Object.entries(LanguageDescription).map(([code, name]) => {
               const lessonSlug = router.asPath.endsWith('/content')
