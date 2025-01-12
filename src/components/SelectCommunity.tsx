@@ -181,7 +181,7 @@ const SelectCommunity = (): any => {
         </Box>
       ) : (
         <Box mt="8" mx="4" display="flex" placeContent="center">
-          <Menu>
+          <Menu autoSelect={false}>
             {({ isOpen }) => (
               <>
                 <MenuButton

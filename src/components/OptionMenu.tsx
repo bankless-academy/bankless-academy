@@ -37,7 +37,7 @@ const OptionMenu = ({
 
   return (
     <Box zIndex="10">
-      <Menu>
+      <Menu autoSelect={false}>
         <MenuButton
           variant="secondary"
           as={Button}

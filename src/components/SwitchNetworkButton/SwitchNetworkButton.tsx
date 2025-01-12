@@ -80,7 +80,7 @@ const switchChainButton = ({
 
   return (
     <div>
-      <Menu>
+      <Menu autoSelect={false}>
         {({ isOpen }) => (
           <>
             <MenuButton

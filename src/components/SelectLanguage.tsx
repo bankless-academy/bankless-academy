@@ -47,7 +47,7 @@ const SelectLanguage = ({
   }, [defaultLanguage, i18n])
 
   return (
-    <Menu>
+    <Menu autoSelect={false}>
       {({ isOpen }) => (
         <>
           <MenuButton
