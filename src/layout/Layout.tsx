@@ -16,7 +16,13 @@ import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
 import { LessonIcon, HandbookIcon, GlossaryIcon } from 'components/Icons'
 
-export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | 'INDEX' | ''
+export type PageType =
+  | LessonTypeType
+  | 'LESSON-DETAIL'
+  | 'PROFILE'
+  | 'GLOSSARY'
+  | 'INDEX'
+  | ''
 
 const DesktopButton = ({
   isActive,
@@ -164,7 +170,7 @@ const Layout = ({
     await open({ view: 'Connect' })
   }
 
-  if (page === 'INDEX' && !isSmallScreen) {
+  if ((page === 'INDEX' || page === 'LESSON-DETAIL') && !isSmallScreen) {
     return <>{children}</>
   }
 

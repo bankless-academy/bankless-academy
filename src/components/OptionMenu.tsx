@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { Mixpanel } from 'utils/index'
 import { useTranslation } from 'react-i18next'
-import { Bug, Gear } from '@phosphor-icons/react'
+import { Bug, DotsThreeVertical, Gear } from '@phosphor-icons/react'
 
 import InstallAppModal from 'components/InstallAppModal'
 import ExternalLink from 'components/ExternalLink'
@@ -42,9 +42,13 @@ const OptionMenu = ({
           variant="secondary"
           as={Button}
           size={isSmallScreen ? 'sm' : 'md'}
-        >
-          ...
-        </MenuButton>
+          w={isSmallScreen ? '28px' : '32px'}
+          leftIcon={<DotsThreeVertical weight="bold" size={32} />}
+          iconSpacing="0px"
+          p="0px !important"
+          display="grid"
+          alignContent="center"
+        ></MenuButton>
         <MenuList>
           <ExternalLink href="/faq" color="white">
             <MenuItem>{t('FAQ')}</MenuItem>

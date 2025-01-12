@@ -26,7 +26,7 @@ declare global {
 
 const Nav: React.FC = () => {
   const [isSmallScreen] = useSmallScreen()
-  const { asPath } = useRouter()
+  const { asPath, route } = useRouter()
   const { t } = useTranslation()
   const { isConnected } = useAccount()
   const [, setConnectWalletPopupLS] = useLocalStorage(
@@ -56,7 +56,7 @@ const Nav: React.FC = () => {
 
   const [pwa, setPwa] = useLocalStorage('pwa', false)
 
-  const isHomePage = asPath === '/'
+  const isHomePage = route === '/'
 
   useEffect(() => {
     if (
@@ -168,11 +168,11 @@ const Nav: React.FC = () => {
                   size={isSmallScreen ? 'sm' : 'md'}
                   onClick={() => setConnectWalletPopupLS(false)}
                 >
-                  {isSmallScreen ? t('Lessons') : t('Explore Lessons')}
+                  {isSmallScreen ? t('Lessons') : t('Start')}
                 </Button>
               </InternalLink>
             )}
-            {isConnected && !isHomePage ? (
+            {isConnected ? (
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             ) : null}
             <ConnectWalletButton isSmallScreen={isSmallScreen} />

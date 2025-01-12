@@ -1182,7 +1182,9 @@ const Lesson = ({
           )}
         </HStack>
         <HStack>
-          {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
+          {slide.type === 'QUEST' &&
+          !Quest?.isQuestCompleted &&
+          !isSmallScreen ? (
             <Tooltip
               hasArrow
               label={t(

@@ -259,7 +259,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
             <Article lesson={lesson} />
           </Layout>
         ) : (
-          <>
+          <Layout page="LESSON-DETAIL">
             {lesson?.showContent ? (
               <>
                 <Center
@@ -314,7 +314,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
                 <LessonDetail lesson={lesson} />
               </Container>
             )}
-          </>
+          </Layout>
         )}
       </>
     )
