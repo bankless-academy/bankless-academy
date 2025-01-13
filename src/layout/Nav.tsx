@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Image, HStack, Spacer, Flex, Button } from '@chakra-ui/react'
+import { Box, Image, HStack, Spacer, Flex } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
-import { useTranslation } from 'react-i18next'
-import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -27,8 +25,6 @@ declare global {
 
 const Nav: React.FC = () => {
   const [isSmallScreen, , , isTinyScreen] = useSmallScreen()
-  const { asPath, route } = useRouter()
-  const { t } = useTranslation()
   const { isConnected } = useAccount()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
@@ -39,8 +35,6 @@ const Nav: React.FC = () => {
     null
   )
   const [onboardingRetry] = useLocalStorage('onboarding-retry', 0)
-
-  const isProfilePage = asPath.includes('/explorer/my-profile')
 
   const embed =
     typeof window !== 'undefined'
@@ -56,8 +50,6 @@ const Nav: React.FC = () => {
   const [onboarding] = useLocalStorage('onboarding', '')
 
   const [pwa, setPwa] = useLocalStorage('pwa', false)
-
-  const isHomePage = route === '/'
 
   useEffect(() => {
     if (
@@ -155,24 +147,6 @@ const Nav: React.FC = () => {
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">
-            {/* <Button onClick={() => setIsOnboardingModalOpen(true)}>
-              popup
-            </Button> */}
-            {isHomePage && !isSmallScreen && (
-              <InternalLink href={`/lessons`} alt="Explore Lessons" zIndex={2}>
-                <Button
-                  variant={
-                    asPath?.startsWith('/lessons') || isProfilePage
-                      ? 'secondary'
-                      : 'primary'
-                  }
-                  size={isSmallScreen ? 'sm' : 'md'}
-                  onClick={() => setConnectWalletPopupLS(false)}
-                >
-                  {isSmallScreen ? t('Lessons') : t('Start')}
-                </Button>
-              </InternalLink>
-            )}
             <SelectLanguage isSmallScreen={isSmallScreen} />
             {isConnected ? (
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />

@@ -10,6 +10,7 @@ import {
   Handshake,
   Eye,
   UsersThree,
+  HandHeart,
 } from '@phosphor-icons/react'
 import { SVGProps } from 'react'
 
@@ -133,6 +134,19 @@ export const EyeIcon = (): React.ReactElement => (
 export const UsersThreeIcon = (): React.ReactElement => (
   <Icon
     as={UsersThree}
+    w={10}
+    h={10}
+    bg="radial-gradient(48.3% 48.3% at 50.57% 48.3%, #B793F3 0%, #9867EB 100%)"
+    color="black"
+    borderRadius="50%"
+    p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+  />
+)
+
+export const DonateIcon = (): React.ReactElement => (
+  <Icon
+    as={HandHeart}
     w={10}
     h={10}
     bg="radial-gradient(48.3% 48.3% at 50.57% 48.3%, #B793F3 0%, #9867EB 100%)"

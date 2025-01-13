@@ -57,7 +57,7 @@ const FeaturedLessons: React.FC = () => {
               <Heading fontSize="2xl">
                 {t(lesson.name, { ns: 'lesson' })}
               </Heading>
-              <Text fontSize="lg" my="4">
+              <Text fontSize="lg" my="4" color="#9E9E9E">
                 {t(lesson.description, { ns: 'lesson' })}
               </Text>
               <InternalLink

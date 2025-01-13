@@ -26,6 +26,7 @@ import {
   HandshakeIcon,
   EyeIcon,
   UsersThreeIcon,
+  DonateIcon,
 } from 'components/Icons'
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
 import { Mixpanel } from 'utils/index'
@@ -33,6 +34,7 @@ import { useSmallScreen } from 'hooks/index'
 import { useState } from 'react'
 import OnboardingModal from 'components/OnboardingModal'
 import Layout from 'layout/Layout'
+import InternalLink from 'components/InternalLink'
 
 const Card = styled(Box)`
   border: 1px solid #72757b;
@@ -147,26 +149,18 @@ const HomePage = (): JSX.Element => {
                   </Box>
                 )}
               </Box>
-              {/* <Box
+              <Box
                 bottom="60px"
                 height="70px"
                 display="flex"
                 alignItems="center"
               >
                 <InternalLink href={`/lessons`} alt="Explore Lessons">
-                  <Button
-                    variant="primary"
-                    size="lg"
-                    height="-webkit-fit-content"
-                    width="-webkit-fit-content"
-                    style={{ padding: '0 23px' }}
-                  >
-                    <Box m="21px" fontSize="20px">
-                      {t('Explore Lessons')}
-                    </Box>
+                  <Button variant="primaryBig" size="lg">
+                    <Box>{t('Start Learning')}</Box>
                   </Button>
                 </InternalLink>
-              </Box> */}
+              </Box>
             </Stack>
           </Center>
           {IS_PARTNERSHIP_ACTIVACTED && (
@@ -186,7 +180,12 @@ const HomePage = (): JSX.Element => {
                 placeItems="center"
               >
                 <Box w="100%" borderBottom="3px solid #423952" />
-                <Text fontSize="xl" minW="250px" textAlign="center">
+                <Text
+                  fontSize="xl"
+                  minW="250px"
+                  textAlign="center"
+                  color="#9E9E9E"
+                >
                   {t('alongside our Partners:')}
                 </Text>
                 <Box w="100%" borderBottom="3px solid #423952" />
@@ -228,7 +227,7 @@ const HomePage = (): JSX.Element => {
                 <Heading as="h2" size="xl" m="auto">
                   {t(`Start Your Bankless Journey`)}
                 </Heading>
-                <Box fontSize="lg" mt="6">
+                <Box fontSize="lg" mt="6" color="#9E9E9E">
                   {t(
                     `Bankless Academy is on a mission to ensure every web3 Explorer is ready for their crypto-verse voyage.`
                   )}
@@ -250,7 +249,7 @@ const HomePage = (): JSX.Element => {
                     <Heading size="lg" mt="2">
                       {t(`Advance Your Knowledge`)}
                     </Heading>
-                    <Text fontSize="lg" mt="2">
+                    <Text fontSize="lg" mt="2" color="#9E9E9E">
                       {t(
                         `From basics to deep dives, discover the world of web3 with content built alongside leading experts.`
                       )}
@@ -261,7 +260,7 @@ const HomePage = (): JSX.Element => {
                     <Heading size="lg" mt="2">
                       {t(`Test Your Abilities`)}
                     </Heading>
-                    <Text fontSize="lg" mt="2">
+                    <Text fontSize="lg" mt="2" color="#9E9E9E">
                       {t(
                         `Complete activities that test your command of crypto concepts.`
                       )}
@@ -272,7 +271,7 @@ const HomePage = (): JSX.Element => {
                     <Heading size="lg" mt="2">
                       {t(`Complete Quests`)}
                     </Heading>
-                    <Text fontSize="lg" mt="2">
+                    <Text fontSize="lg" mt="2" color="#9E9E9E">
                       {t(
                         `Put knowledge into action with quests that reward first-hand experience.`
                       )}
@@ -283,7 +282,7 @@ const HomePage = (): JSX.Element => {
                     <Heading size="lg" mt="2">
                       {t(`Earn Rewards`)}
                     </Heading>
-                    <Text fontSize="lg" mt="2">
+                    <Text fontSize="lg" mt="2" color="#9E9E9E">
                       {t(
                         `Collect badges for successfully finishing lessons and quests.`
                       )}
@@ -306,7 +305,7 @@ const HomePage = (): JSX.Element => {
                 >
                   <Box>
                     <NewsletterButton
-                      variant="primary"
+                      variant="primaryBig"
                       size="lg"
                       onClick={() => {
                         setIsOnboardingModalOpen(true)
@@ -323,9 +322,11 @@ const HomePage = (): JSX.Element => {
                   <Box
                     ml={isSmallScreen ? '0' : '2'}
                     mt={isSmallScreen ? '4' : '0'}
+                    fontSize={isSmallScreen ? 'md' : 'lg'}
+                    color="#9E9E9E"
                   >
                     {t(
-                      `Sign up for our newsletter to be notified of new lessons and platform updates!`
+                      `Sign up for the newsletter to be notified of new lessons and platform updates!`
                     )}
                   </Box>
                 </Box>
@@ -451,7 +452,7 @@ const HomePage = (): JSX.Element => {
                   <Heading as="h2" size="xl" mt="16" mb="8">
                     {t(`Work With Us!`)}
                   </Heading>
-                  <Text fontSize="2xl" mb="8">
+                  <Text fontSize="xl" mb="8" color="#9E9E9E">
                     {t(
                       `From reviewing lessons to partnering with our platform, there are plenty of options for collaborating with Bankless Academy.`
                     )}
@@ -467,7 +468,7 @@ const HomePage = (): JSX.Element => {
                       <Heading size="lg" mt="2">
                         {t(`Collaborate On A Lesson`)}
                       </Heading>
-                      <Text fontSize="lg" mt="2">
+                      <Text fontSize="lg" mt="2" color="#9E9E9E">
                         {t(
                           `Join protocols such as 1inch in building a lesson with Bankless Academy, introducing Explorers to Bankless tools and learning more about your community in the process.`
                         )}
@@ -491,7 +492,7 @@ const HomePage = (): JSX.Element => {
                       <Heading size="lg" mt="2">
                         {t(`Open Your Own Academy`)}
                       </Heading>
-                      <Text fontSize="lg" mt="2">
+                      <Text fontSize="lg" mt="2" color="#9E9E9E">
                         {t(
                           `Our whitelabel platform has helped DAOs kick-start their community education journey - without any developer knowledge!`
                         )}
@@ -515,7 +516,7 @@ const HomePage = (): JSX.Element => {
                       <Heading size="lg" mt="2">
                         {t(`Partner With Us`)}
                       </Heading>
-                      <Text fontSize="lg" mt="2">
+                      <Text fontSize="lg" mt="2" color="#9E9E9E">
                         {t(`Do you have an interesting value proposition?`)}
                         <br />
 
@@ -540,7 +541,7 @@ const HomePage = (): JSX.Element => {
                       <Heading size="lg" mt="2">
                         {t(`Improve Our Lessons`)}
                       </Heading>
-                      <Text fontSize="lg" mt="2">
+                      <Text fontSize="lg" mt="2" color="#9E9E9E">
                         {t(
                           `Everyone can help make Bankless Academy better. Provide feedback on lessons or translations and receive an onchain recognition once your feedback is included.`
                         )}
@@ -551,7 +552,7 @@ const HomePage = (): JSX.Element => {
                       <Heading size="lg" mt="2">
                         {t(`Join Our Team`)}
                       </Heading>
-                      <Text fontSize="lg" mt="2">
+                      <Text fontSize="lg" mt="2" color="#9E9E9E">
                         {t(`Got what it takes to join the Academy Squad?`)}
                         <br />
                         {t(
@@ -573,11 +574,10 @@ const HomePage = (): JSX.Element => {
                       </Box>
                     </Card>
                     <Card>
-                      <Text fontSize="lg" mb="2">
-                        {t(
-                          `If you like what we’re doing, you can help by funding us below.`
-                        )}
-                      </Text>
+                      <DonateIcon />
+                      <Heading size="lg" mt="2" mb="2">
+                        {t(`Support Us`)}
+                      </Heading>
                       <ExternalLink
                         href="https://giveth.io/donate/bankless-academy"
                         alt="Donate via Giveth"
@@ -587,7 +587,7 @@ const HomePage = (): JSX.Element => {
                           src="/images/Donate-via-Giveth.png"
                         />
                       </ExternalLink>
-                      <Text fontSize="lg" mt="2">
+                      <Text fontSize="lg" mt="2" color="#9E9E9E">
                         {t(
                           `We rely on our public-goods business model to continue providing a free, Bankless education!`
                         )}
