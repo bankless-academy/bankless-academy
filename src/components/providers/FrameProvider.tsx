@@ -47,7 +47,8 @@ export function FrameProvider({ children }: FrameProviderProps) {
   }
 
   if (!isSDKLoaded || !sdk) {
-    return <div>Loading...</div>
+    return null
+    // return <div>Loading...</div>
   }
 
   return (

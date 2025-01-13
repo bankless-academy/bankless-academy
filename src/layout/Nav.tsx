@@ -26,7 +26,7 @@ declare global {
 }
 
 const Nav: React.FC = () => {
-  const [isSmallScreen] = useSmallScreen()
+  const [isSmallScreen, , , isTinyScreen] = useSmallScreen()
   const { asPath, route } = useRouter()
   const { t } = useTranslation()
   const { isConnected } = useAccount()
@@ -105,7 +105,7 @@ const Nav: React.FC = () => {
     <Image
       height={isSmallScreen ? '31px' : '40px'}
       ml={isSmallScreen ? '' : '2'}
-      src={isSmallScreen ? LOGO_SMALL : LOGO}
+      src={isTinyScreen ? LOGO_SMALL : LOGO}
       alt={PROJECT_NAME}
     />
   )

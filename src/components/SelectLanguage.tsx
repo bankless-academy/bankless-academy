@@ -55,6 +55,8 @@ const SelectLanguage = ({
             as={Button}
             variant="secondary"
             size={isSmallScreen ? 'sm' : 'md'}
+            border={isSmallScreen ? '1px solid transparent' : 'default'}
+            px={isSmallScreen ? '11px !important' : '16px'}
             leftIcon={<Globe />}
             iconSpacing={isSmallScreen ? '0' : '1'}
           >
@@ -79,7 +81,7 @@ const SelectLanguage = ({
               bg="var(--chakra-colors-whiteAlpha-200)"
               color="lightgrey"
             >
-              Select default language
+              Select preferred language
               {isLessonPage && (
                 <Text fontSize="xs" color="lightgrey">
                   * Translation not available

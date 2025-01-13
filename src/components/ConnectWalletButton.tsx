@@ -425,6 +425,8 @@ const ConnectWalletButton = ({
             <Button
               variant={name ? 'secondary' : 'primary'}
               size={isSmallScreen ? 'sm' : 'md'}
+              border={isSmallScreen ? '1px solid transparent' : 'default'}
+              px={isSmallScreen ? '11px !important' : '16px'}
               onClick={() => onOpen()}
             >
               <Box display="flex" alignItems="center">

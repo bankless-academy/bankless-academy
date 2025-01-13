@@ -88,6 +88,8 @@ const switchChainButton = ({
               as={Button}
               variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
+              border={isSmallScreen ? '1px solid transparent' : 'default'}
+              px={isSmallScreen ? '11px !important' : '16px'}
             >
               <Box display="flex" alignItems="center">
                 <Image

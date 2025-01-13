@@ -153,7 +153,7 @@ const LessonCards = ({
         <Heading
           as="h2"
           size="md"
-          color="gray.500"
+          color="#9E9E9E"
           fontWeight="normal"
           textAlign="center"
           mt={4}
