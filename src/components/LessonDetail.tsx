@@ -251,7 +251,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 justifyContent="space-between"
                 maxW="450px"
                 m="auto"
-                mb="8"
+                mb="4"
               >
                 <OpenLesson lesson={lesson} click>
                   <Box py="2">
@@ -288,25 +288,27 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 <Text as="p" fontSize="medium" py="4">
                   {lesson.description}
                 </Text>
-                <Box display="flex" justifyContent="center">
-                  <Button
-                    variant="secondaryBig"
-                    size="lg"
-                    leftIcon={<ShareFat width="24px" height="24px" />}
-                    onClick={() => {
-                      onShareOpen()
-                    }}
-                  >
-                    Share & Refer
-                  </Button>
-                  <ShareModal
-                    isOpen={isShareOpen}
-                    onClose={onShareClose}
-                    shareTitle="Share Lesson, Earn Points"
-                    shareMessage={shareMessage}
-                    shareLink={shareLink}
-                  />
-                </Box>
+                {badgesMintedLS?.includes(lesson.badgeId) && (
+                  <Box display="flex" justifyContent="center" mt="2" mb="8">
+                    <Button
+                      variant="secondaryBig"
+                      size="lg"
+                      leftIcon={<ShareFat width="24px" height="24px" />}
+                      onClick={() => {
+                        onShareOpen()
+                      }}
+                    >
+                      Share & Refer
+                    </Button>
+                    <ShareModal
+                      isOpen={isShareOpen}
+                      onClose={onShareClose}
+                      shareTitle="Share Lesson, Earn Points"
+                      shareMessage={shareMessage}
+                      shareLink={shareLink}
+                    />
+                  </Box>
+                )}
                 {!IS_PROD &&
                   i18n.language !== 'en' &&
                   lesson.translationDate && (
