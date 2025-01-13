@@ -274,7 +274,21 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 gap="4"
               >
                 <LessonButton lesson={lesson} click />
-                <>
+              </Box>
+              <Box>
+                <Text
+                  as="h2"
+                  fontSize="2xl"
+                  fontWeight="bold"
+                  borderBottom="1px solid #989898"
+                  pb="2"
+                >
+                  {t('Lesson Description')}
+                </Text>
+                <Text as="p" fontSize="medium" py="4">
+                  {lesson.description}
+                </Text>
+                <Box display="flex" justifyContent="center">
                   <Button
                     variant="secondaryBig"
                     size="lg"
@@ -292,21 +306,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     shareMessage={shareMessage}
                     shareLink={shareLink}
                   />
-                </>
-              </Box>
-              <Box>
-                <Text
-                  as="h2"
-                  fontSize="2xl"
-                  fontWeight="bold"
-                  borderBottom="1px solid #989898"
-                  pb="2"
-                >
-                  {t('Lesson Description')}
-                </Text>
-                <Text as="p" fontSize="medium" py="4">
-                  {lesson.description}
-                </Text>
+                </Box>
                 {!IS_PROD &&
                   i18n.language !== 'en' &&
                   lesson.translationDate && (
