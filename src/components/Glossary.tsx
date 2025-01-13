@@ -76,7 +76,9 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
                 >
                   {term.name}
                 </Box>
-                <Box mb={8}>{term.definition}</Box>
+                <Box mb={8} color="#9E9E9E">
+                  {term.definition}
+                </Box>
               </React.Fragment>
             ))}
           </Box>
