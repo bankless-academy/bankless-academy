@@ -10,7 +10,7 @@ import InternalLink from 'components/InternalLink'
 import { useSmallScreen, useWindowScrollPositions } from 'hooks/index'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
-import { shortenAddress } from 'utils/index'
+import { scrollTop, shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
@@ -126,7 +126,29 @@ const MobileButton = ({
   )
   return (
     <Box flex="1">
-      {isActive ? button : <InternalLink href={link}>{button}</InternalLink>}
+      {isActive ? (
+        <Box
+          w="100%"
+          h="100%"
+          onClick={() => {
+            scrollTop()
+          }}
+          userSelect="none"
+          cursor="pointer"
+        >
+          {button}
+        </Box>
+      ) : (
+        <InternalLink
+          href={link}
+          userSelect="none"
+          onClick={() => {
+            scrollTop()
+          }}
+        >
+          {button}
+        </InternalLink>
+      )}
     </Box>
   )
 }
