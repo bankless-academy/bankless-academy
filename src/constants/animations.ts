@@ -2,6 +2,7 @@ export const ANIMATIONS = {
   // Bitcoin Basics
   bitcoin: {
     name: 'Bitcoin animation',
+    type: 'Simulation',
     description: 'Animation description',
     socialImageLink: null,
     steps: [
@@ -14,6 +15,7 @@ export const ANIMATIONS = {
   // Staking on Ethereum
   'validating-tx-with-ethereum-staking': {
     name: 'Ethereum Staking Animation',
+    type: 'Animation',
     description: 'Validating transactions when staking with Ethereum.',
     socialImageLink: null,
     steps: [
@@ -28,7 +30,8 @@ export const ANIMATIONS = {
   },
   // Ethereum Basics
   swap: {
-    name: 'Swap Animation',
+    name: 'Using a dApp',
+    type: 'Simulation',
     description: 'Making a swap on a DEX',
     socialImageLink: null,
     steps: [
@@ -41,7 +44,8 @@ export const ANIMATIONS = {
     ],
   },
   send: {
-    name: 'Sending Animation',
+    name: 'Sending a Payment',
+    type: 'Simulation',
     description: 'Sending a Payment',
     socialImageLink: null,
     steps: [
@@ -55,6 +59,7 @@ export const ANIMATIONS = {
   },
   ethereum: {
     name: 'Ethereum Animation',
+    type: 'Animation',
     description: 'How it Works',
     socialImageLink: null,
     steps: [

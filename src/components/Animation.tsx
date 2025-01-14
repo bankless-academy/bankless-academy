@@ -33,6 +33,33 @@ const StyledBox = styled(Box)`
   }
 `
 
+const Simulation = styled.div<{ isSimulation: string; title: string }>`
+  ${({ isSimulation, title }) =>
+    isSimulation === 'true' &&
+    `
+      border: 1px dashed #916ab8;
+      border-width: 1px;
+      border-radius: 10px;
+      margin: 10px;
+      position: relative;
+      ::before {
+        content: '${title}';
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: transparent;
+        color: #916ab8;
+        padding: 8px 0;
+      }
+    `}
+`
+
 const Tooltip = styled.div`
   width: 120px;
   background-color: #d5d5d5;
@@ -225,44 +252,51 @@ const Animation = ({
       m="auto"
       ref={containerRef}
     >
-      {isLottie ? (
-        <Player
-          autoplay={true}
-          loop={false}
-          keepLastFrame={true}
-          controls={false}
-          src={currentStep}
-          style={{ height: '100%', width: '100%' }}
-        />
-      ) : (
-        <Image src={currentStep} style={{ height: '100%', width: '100%' }} />
-      )}
-      {isEmbedded && animationStepLS > 0 && (
-        <Button
-          variant="secondary"
-          onClick={() => clickLeft()}
-          position="absolute"
-          top="calc(50% - 20px)"
-          left="0"
-        >
-          &lt;
-        </Button>
-      )}
-      {isEmbedded && animationStepLS + 1 < animation.steps.length && (
-        <Button
-          position="absolute"
-          variant="primary"
-          top="calc(50% - 20px)"
-          right="0"
-          onClick={() => clickRight()}
-        >
-          &gt;
-        </Button>
-      )}
-      {animationStepLS === 0 && (
-        <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
-      )}
-      <Tooltip ref={prevTooltipRef}>Click here to go back</Tooltip>
+      <Simulation
+        isSimulation="true"
+        title={`${animation.type}: ${animation.name} - ${
+          animationStepLS + 1
+        } / ${animationLength}`}
+      >
+        {isLottie ? (
+          <Player
+            autoplay={true}
+            loop={false}
+            keepLastFrame={true}
+            controls={false}
+            src={currentStep}
+            style={{ height: '100%', width: '100%' }}
+          />
+        ) : (
+          <Image src={currentStep} style={{ height: '100%', width: '100%' }} />
+        )}
+        {isEmbedded && animationStepLS > 0 && (
+          <Button
+            variant="secondary"
+            onClick={() => clickLeft()}
+            position="absolute"
+            top="calc(50% - 20px)"
+            left="0"
+          >
+            &lt;
+          </Button>
+        )}
+        {isEmbedded && animationStepLS + 1 < animation.steps.length && (
+          <Button
+            position="absolute"
+            variant="primary"
+            top="calc(50% - 20px)"
+            right="0"
+            onClick={() => clickRight()}
+          >
+            &gt;
+          </Button>
+        )}
+        {animationStepLS === 0 && (
+          <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
+        )}
+        <Tooltip ref={prevTooltipRef}>Click here to go back</Tooltip>
+      </Simulation>
     </StyledBox>
   )
 }
