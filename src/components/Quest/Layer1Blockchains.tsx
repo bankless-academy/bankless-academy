@@ -1,205 +1,131 @@
 import React, { useState } from 'react'
-import { Box, Image } from '@chakra-ui/react'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import { Box, Checkbox, Stack, Text } from '@chakra-ui/react'
 
-import { theme } from 'theme/index'
-import { useSmallScreen } from 'hooks/index'
-
-const ITEMS = ['Bitcoin', 'Ethereum', 'Solana', 'Binance Smart Chain']
-const ICONS = [
-  '/images/btc.svg',
-  '/images/eth.svg',
-  '/images/sol.svg',
-  '/images/bnb.svg',
+const BLOCKCHAINS = [
+  {
+    name: 'Bitcoin',
+    correctAnswers: ['decentralisation', 'security'],
+  },
+  {
+    name: 'Ethereum',
+    correctAnswers: ['decentralisation', 'security'],
+  },
 ]
 
-const CORRECT_ANSWERS = [1, 1, 2, 2]
+const CHARACTERISTICS = ['decentralisation', 'scalability', 'security']
 
 const isQuestCompleted = (state) => {
-  return (
-    state[1].map((v) => v.value).includes(ITEMS[0]) &&
-    state[1].map((v) => v.value).includes(ITEMS[1]) &&
-    state[2].map((v) => v.value).includes(ITEMS[2]) &&
-    state[2].map((v) => v.value).includes(ITEMS[3])
-  )
+  return BLOCKCHAINS.every((blockchain, idx) => {
+    const selectedCharacteristics = CHARACTERISTICS.filter(
+      (_, charIdx) => state[idx][charIdx]
+    )
+    return (
+      selectedCharacteristics.length === 2 &&
+      selectedCharacteristics.every((char) =>
+        blockchain.correctAnswers.includes(char)
+      )
+    )
+  })
 }
-
-const getItems = () =>
-  ITEMS.map((v, index) => ({
-    id: `item-${index}`,
-    content: `${v}`,
-    value: v,
-    index: index,
-  }))
-
-const dropList = (state, ind) => {
-  const el = state[ind]
-
-  const areAllAnswersSelected = state[0].length === 0
-
-  return (
-    <Droppable key={ind} droppableId={`${ind}`} style={{ flexGrow: 1 }}>
-      {(provided, snapshot) => (
-        <Box
-          ref={provided.innerRef}
-          style={getListStyle(snapshot.isDraggingOver, ind)}
-          {...provided.droppableProps}
-        >
-          {el.map((item, index) => (
-            <Draggable key={item.id} draggableId={item.id} index={index}>
-              {(provided, snapshot) => (
-                <Box
-                  ref={provided.innerRef}
-                  {...provided.draggableProps}
-                  {...provided.dragHandleProps}
-                  style={getItemStyle(
-                    snapshot.isDragging,
-                    provided.draggableProps.style,
-                    !areAllAnswersSelected
-                      ? null
-                      : CORRECT_ANSWERS[item.index] === ind
-                  )}
-                  display="flex"
-                  borderRadius="8px"
-                  alignItems="center"
-                  justifyContent="center"
-                  padding="6px"
-                  mb="1"
-                  userSelect="none"
-                >
-                  <Image
-                    src={ICONS[item.index]}
-                    width="30px"
-                    height="30px"
-                    mr="2"
-                  />
-                  {item.content}
-                </Box>
-              )}
-            </Draggable>
-          ))}
-          {provided.placeholder}
-        </Box>
-      )}
-    </Droppable>
-  )
-}
-
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list)
-  const [removed] = result.splice(startIndex, 1)
-  result.splice(endIndex, 0, removed)
-
-  return result
-}
-
-const move = (source, destination, droppableSource, droppableDestination) => {
-  const sourceClone = Array.from(source)
-  const destClone = Array.from(destination)
-  const [removed] = sourceClone.splice(droppableSource.index, 1)
-
-  destClone.splice(droppableDestination.index, 0, removed)
-
-  const result = {}
-  result[droppableSource.droppableId] = sourceClone
-  result[droppableDestination.droppableId] = destClone
-
-  return result
-}
-const grid = 8
-
-const getItemStyle = (isDragging, draggableStyle, correct: boolean | null) => ({
-  userSelect: 'none',
-  background:
-    correct === true
-      ? theme.colors.correctGradient
-      : correct === false
-      ? theme.colors.incorrectGradient
-      : isDragging
-      ? '#916AB8'
-      : 'grey',
-  ...draggableStyle,
-})
-const getListStyle = (isDraggingOver, index) => ({
-  background: isDraggingOver
-    ? 'lightblue'
-    : index === 0
-    ? 'lightgrey'
-    : 'antiquewhite',
-  borderRadius: '8px',
-  padding: grid,
-  width: 250,
-  minHeight: 200,
-})
 
 const Layer1Blockchains = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const [state, setState] = useState(
+  const [selections, setSelections] = useState(
     localStorage.getItem('quest-layer-1-blockchains')
       ? JSON.parse(localStorage.getItem('quest-layer-1-blockchains'))
-      : [getItems(), [], []]
+      : [
+          [false, false, false],
+          [false, false, false],
+        ]
   )
-  const [isSmallScreen] = useSmallScreen()
 
-  function onDragEnd(result) {
-    const { source, destination } = result
+  const handleCheckboxChange = (
+    blockchainIndex: number,
+    characteristicIndex: number
+  ) => {
+    const newSelections = [...selections]
+    newSelections[blockchainIndex][characteristicIndex] =
+      !newSelections[blockchainIndex][characteristicIndex]
 
-    if (!destination) {
-      return
-    }
-    const sInd = +source.droppableId
-    const dInd = +destination.droppableId
+    localStorage.setItem(
+      'quest-layer-1-blockchains',
+      JSON.stringify(newSelections)
+    )
+    setSelections(newSelections)
+  }
 
-    if (sInd === dInd) {
-      const items = reorder(state[sInd], source.index, destination.index)
-      const newState = [...state]
-      newState[sInd.toString()] = items
-      setState(newState)
-    } else {
-      const result = move(state[sInd], state[dInd], source, destination)
-      const newState = [...state]
-      newState[sInd] = result[sInd]
-      newState[dInd] = result[dInd]
-
-      localStorage.setItem(
-        'quest-layer-1-blockchains',
-        JSON.stringify(newState)
+  const isBlockchainCorrect = (blockchainIndex: number) => {
+    const selectedCharacteristics = CHARACTERISTICS.filter(
+      (_, charIdx) => selections[blockchainIndex][charIdx]
+    )
+    return (
+      selectedCharacteristics.length === 2 &&
+      selectedCharacteristics.every((char) =>
+        BLOCKCHAINS[blockchainIndex].correctAnswers.includes(char)
       )
-      setState(newState)
-    }
+    )
+  }
+
+  const hasAllSelected = (blockchainIndex: number) => {
+    return selections[blockchainIndex].every(Boolean)
   }
 
   return {
-    isQuestCompleted: isQuestCompleted(state),
+    isQuestCompleted: isQuestCompleted(selections),
     questComponent: (
       <>
-        <h2>
-          {`Given the current state of blockchain technology, blockchains can only optimize for 2 of the 3 characteristics, at most.`}
+        <Text fontSize="lg" mb={4}>
+          Given the current state of blockchain technology, blockchains can only
+          optimize for 2 of the 3 characteristics, at most.
           <br />
-          {`Please drag and drop the following blockchains into their corresponding characteristics.`}
-        </h2>
-        <Box display="flex" flexWrap="wrap" justifyContent="center">
-          <DragDropContext onDragEnd={onDragEnd}>
-            {dropList(state, 0)}
-            <Box flexBasis="100%" height="30px" />
-            <Box display={isSmallScreen ? 'block' : 'flex'}>
-              <Box mr="4">
-                <Box textAlign="center" m="2">
-                  Decentralisation and Security
-                </Box>
-                {dropList(state, 1)}
-              </Box>
-              <Box>
-                <Box textAlign="center" m="2">
-                  Scalability
-                </Box>
-                {dropList(state, 2)}
+          Tick which characteristics Bitcoin and Ethereum initially optimized
+          for.
+        </Text>
+        <Stack
+          mt="4"
+          spacing={6}
+          align="stretch"
+          flexDirection={{ base: 'column', md: 'row' }}
+        >
+          {BLOCKCHAINS.map((blockchain, blockchainIndex) => (
+            <Box
+              key={blockchain.name}
+              p={4}
+              minW="280px"
+              borderWidth={1}
+              borderRadius="md"
+              borderColor={
+                hasAllSelected(blockchainIndex)
+                  ? '#A94462'
+                  : isBlockchainCorrect(blockchainIndex)
+                  ? '#44A991'
+                  : 'inherit'
+              }
+            >
+              <Text fontWeight="bold" mb={2}>
+                {blockchain.name}
+              </Text>
+              <Box pl={4} display="flex" flexDirection="column" gap={2}>
+                {CHARACTERISTICS.map((characteristic, charIndex) => (
+                  <Checkbox
+                    key={characteristic}
+                    isChecked={selections[blockchainIndex][charIndex]}
+                    onChange={() =>
+                      handleCheckboxChange(blockchainIndex, charIndex)
+                    }
+                    mb={2}
+                    colorScheme="purple"
+                  >
+                    {characteristic.charAt(0).toUpperCase() +
+                      characteristic.slice(1)}
+                  </Checkbox>
+                ))}
               </Box>
             </Box>
-          </DragDropContext>
-        </Box>
+          ))}
+        </Stack>
       </>
     ),
   }
