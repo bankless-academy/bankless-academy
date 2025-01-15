@@ -90,7 +90,7 @@ const MintHandbookButton = ({
         ],
     functionName: 'purchase',
     args: isNewContract
-      ? [address, '', '0x0000000000000000000000000000000000000000']
+      ? [address, '', '0xe1887fF140BfA9D3b45D0B2077b7471124acD242']
       : [address, ''],
     chainId: optimism.id,
     // 0.01 + 0.00069 in collector fee
