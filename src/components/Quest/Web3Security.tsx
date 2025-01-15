@@ -53,14 +53,14 @@ const Web3Security = (): {
               onClick={() =>
                 setSelected(selected.map((v, i) => (i === 0 ? !v : v)))
               }
-              src="/images/web3-security/quest/elon-musk-scam.jpg"
+              src="/images/web3-security/quest/elon-musk-scam.jpg?1"
             />
             <Image
               border={selected[1] ? '3px solid rgb(145, 106, 184)' : ''}
               onClick={() =>
                 setSelected(selected.map((v, i) => (i === 1 ? !v : v)))
               }
-              src="/images/web3-security/quest/nitro-discord-scam.png"
+              src="/images/web3-security/quest/nitro-discord-scam.png?1"
             />
           </Box>
           <Box display={isSmallScreen ? 'block' : 'flex'} mt="0 !important">
@@ -70,14 +70,14 @@ const Web3Security = (): {
               onClick={() =>
                 setSelected(selected.map((v, i) => (i === 2 ? !v : v)))
               }
-              src="/images/web3-security/quest/collabland-join.jpg"
+              src="/images/web3-security/quest/optimism-airdrop.jpg"
             />
             <Image
               border={selected[3] ? '3px solid rgb(145, 106, 184)' : ''}
               onClick={() =>
                 setSelected(selected.map((v, i) => (i === 3 ? !v : v)))
               }
-              src="/images/web3-security/quest/metamask-wallets-scam.jpg"
+              src="/images/web3-security/quest/metamask-wallets-scam.jpg?1"
             />
           </Box>
           <h2>
