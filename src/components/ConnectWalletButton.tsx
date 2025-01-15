@@ -40,7 +40,8 @@ import {
 } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, shortenAddress, api } from 'utils/index'
-import OnrampButton from './OnrampButton'
+import OnrampButton from 'components/OnrampButton'
+import BridgeButton from 'components/BridgeButton'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -475,8 +476,15 @@ const ConnectWalletButton = ({
                 </InternalLink>
               </Box>
               <Box textAlign="center" m="2">
+                <BridgeButton
+                  w="100%"
+                  size={isSmallScreen ? 'md' : 'lg'}
+                  border="2px solid white"
+                  address={address}
+                />
                 <OnrampButton
                   w="100%"
+                  mt="2"
                   size={isSmallScreen ? 'md' : 'lg'}
                   border="2px solid white"
                   address={address}

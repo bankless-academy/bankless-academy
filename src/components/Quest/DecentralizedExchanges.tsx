@@ -18,6 +18,8 @@ import { api } from 'utils/index'
 import { StyledLessonCard } from 'components/LessonCard'
 import { LESSONS } from 'constants/index'
 import InternalLink from 'components/InternalLink'
+import OnrampButton from 'components/OnrampButton'
+import BridgeButton from 'components/BridgeButton'
 
 const DecentralizedExchanges = (
   account: string
@@ -131,6 +133,20 @@ const DecentralizedExchanges = (
                 )}
               </InputRightElement>
             </InputGroup>
+            <Box m="4">
+              <b>Ressources:</b>
+              <Box
+                display="flex"
+                flexDirection={{ base: 'column', md: 'row' }}
+                gap="4"
+                mt="4"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <BridgeButton border="2px solid white" address={account} />
+                <OnrampButton border="2px solid white" address={account} />
+              </Box>
+            </Box>
             {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
               <Box mb="4">
                 <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash

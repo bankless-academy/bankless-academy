@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react'
+import { Button, Image } from '@chakra-ui/react'
 
 const OnrampButton = ({
   address,
@@ -28,6 +28,7 @@ const OnrampButton = ({
         color: 'white !important',
       }}
       color="white !important"
+      leftIcon={<Image h="20px" src={'/images/coinbase-logo.svg'} />}
       {...props}
     >
       Onramp via Coinbase
