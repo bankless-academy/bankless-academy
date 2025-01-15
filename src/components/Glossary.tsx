@@ -31,7 +31,7 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
       <Box
         position="fixed"
         top="80px"
-        right="18px"
+        right="8px"
         h={isSmallScreen ? 'calc(100% - 160px)' : 'calc(100% - 90px)'}
         display="grid"
         overflowY="scroll"

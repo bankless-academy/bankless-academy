@@ -218,7 +218,7 @@ const HomePage = (): JSX.Element => {
           )}
           <Box
             bgColor="#1F2023"
-            p="4"
+            p={isSmallScreen ? '2' : '4'}
             overflow="hidden"
             mb={isSmallScreen ? '81px' : '0'}
           >

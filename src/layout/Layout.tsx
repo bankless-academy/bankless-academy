@@ -222,7 +222,17 @@ const Layout = ({
         {page === 'INDEX' || page === '' ? (
           children
         ) : (
-          <Container maxW="container.xl" pb={isSmallScreen ? '16' : '0'}>
+          <Container
+            maxW="container.xl"
+            px={
+              isSmallScreen
+                ? page === 'LESSON-DETAIL' || page === 'GLOSSARY'
+                  ? '0'
+                  : '4'
+                : '4'
+            }
+            pb={isSmallScreen ? (page === 'HANDBOOK' ? '16' : '0') : '0'}
+          >
             {children}
           </Container>
         )}
