@@ -31,10 +31,12 @@ const OnboardingModal = ({
   isOpen,
   onClose,
   newsletterOnly,
+  forceOnboarding,
 }: {
   isOpen: boolean
   onClose: () => void
   newsletterOnly?: boolean
+  forceOnboarding?: boolean
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [step, setStep] = useState<'initial' | 'learn' | 'subscribe' | ''>(
@@ -200,7 +202,7 @@ const OnboardingModal = ({
     // email provided
     !!email ||
     // not the first time
-    onboardingRetry > 1
+    (onboardingRetry > 1 && !forceOnboarding)
 
   return (
     <Modal
