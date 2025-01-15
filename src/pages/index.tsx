@@ -102,7 +102,7 @@ const IS_PARTNERSHIP_ACTIVACTED = true
 
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation('homepage')
-  const [isSmallScreen] = useSmallScreen()
+  const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
 
   if (IS_WHITELABEL) return <WhitelabelHomepage />
@@ -220,7 +220,7 @@ const HomePage = (): JSX.Element => {
             bgColor="#1F2023"
             p={isSmallScreen ? '2' : '4'}
             overflow="hidden"
-            mb={isSmallScreen ? '81px' : '0'}
+            mb={isMediumScreen ? '81px' : '0'}
           >
             <Container maxW="container.lg">
               <Box mt="12">

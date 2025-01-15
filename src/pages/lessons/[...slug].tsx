@@ -228,7 +228,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // TODO: move to /lesson/lesson-name + add redirect
 
 const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
-  const [isSmallScreen] = useSmallScreen()
+  const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const lesson = pageMeta?.lesson
 
   const lang =
@@ -306,6 +306,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
               <Container
                 maxW="container.xl"
                 px={isSmallScreen ? '8px' : '16px'}
+                minH={isMediumScreen ? 'calc(100vh - 146px)' : 'default'}
               >
                 <LessonDetail lesson={lesson} />
               </Container>

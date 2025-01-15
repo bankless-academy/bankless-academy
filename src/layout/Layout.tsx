@@ -231,7 +231,7 @@ const Layout = ({
                   : '4'
                 : '4'
             }
-            pb={isSmallScreen ? (page === 'HANDBOOK' ? '16' : '0') : '0'}
+            pb={isSmallScreen ? (page === 'LESSON-DETAIL' ? '0' : '16') : '0'}
           >
             {children}
           </Container>

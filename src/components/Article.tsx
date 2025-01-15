@@ -494,7 +494,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     ${(props) =>
       props.issmallscreen === 'true'
         ? `
-      max-width: 100vw;
+      width: 100vw;
+      max-width: 720px;
       margin-left: -24px;
       margin-right: -24px;
       `
@@ -529,7 +530,7 @@ const Article = ({
   extraKeywords?: any
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
-  const [isSmallScreen] = useSmallScreen()
+  const [, isSmallScreen] = useSmallScreen()
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
     []

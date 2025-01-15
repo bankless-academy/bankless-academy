@@ -115,7 +115,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
       `${BADGE_OPENSEA_URL}${lesson.badgeId}`
 
   return (
-    <Box textAlign="center" mb="40px">
+    <Box textAlign="center" mb="20px">
       <StyledCard width="290px" m="auto">
         <Box
           width="290px"
