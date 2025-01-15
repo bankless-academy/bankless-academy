@@ -32,14 +32,38 @@ const Layer1Blockchains = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const [selections, setSelections] = useState(
-    localStorage.getItem('quest-layer-1-blockchains')
-      ? JSON.parse(localStorage.getItem('quest-layer-1-blockchains'))
-      : [
-          [false, false, false],
-          [false, false, false],
-        ]
-  )
+  const [selections, setSelections] = useState(() => {
+    const savedState = localStorage.getItem('quest-layer-1-blockchains')
+    if (!savedState) {
+      return [
+        [false, false, false],
+        [false, false, false],
+      ]
+    }
+
+    const parsedState = JSON.parse(savedState)
+    // Check if it's old version state (array with 3 arrays)
+    if (Array.isArray(parsedState) && parsedState.length === 3) {
+      // Convert old state to new format
+      // In old version, index 1 was for decentralization/security and 2 was for scalability
+      const newState = [
+        [false, false, false],
+        [false, false, false],
+      ]
+
+      // Bitcoin and Ethereum should be in index 1 (decentralization/security)
+      if (parsedState[1].some((item) => item.value === 'Bitcoin')) {
+        newState[0] = [true, false, true] // decentralization and security
+      }
+      if (parsedState[1].some((item) => item.value === 'Ethereum')) {
+        newState[1] = [true, false, true] // decentralization and security
+      }
+
+      return newState
+    }
+
+    return parsedState
+  })
 
   const handleCheckboxChange = (
     blockchainIndex: number,
@@ -77,11 +101,11 @@ const Layer1Blockchains = (): {
     questComponent: (
       <>
         <Text fontSize="lg" mb={4}>
-          Given the current state of blockchain technology, blockchains can only
-          optimize for 2 of the 3 characteristics, at most.
+          Given the current state of blockchain technology, blockchains can
+          optimize for at most two of the three characteristics.
           <br />
-          Tick which characteristics Bitcoin and Ethereum initially optimized
-          for.
+          Tick the characteristics that Bitcoin and Ethereum initially
+          prioritized.
         </Text>
         <Stack
           mt="4"
