@@ -44,9 +44,9 @@ export const Simulation = styled.div<{ title: string }>`
       position: relative;
       ::before {
         content: '${title}';
-        width: 100%;
+        width: 96%;
         text-align: center;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: bold;
         display: block;
         position: absolute;
