@@ -5,7 +5,7 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { DEMO_ACCOUNTS_IDS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION, REQUIRED_PASSPORT_SCORE } from 'constants/passport'
 import { trackBE } from 'utils/mixpanel'
-import { PassportResponseSchema, fetchPassport, submitPassport } from 'utils/passport_lib'
+import { PassportResponseSchema, fetchPassport } from 'utils/passport_lib'
 
 export default async function handler(
   req: NextApiRequest,
@@ -106,20 +106,20 @@ export default async function handler(
     try {
       if (!isProfile && !isDemoAccount) {
         try {
-          const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
+          // const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
           // console.log(submit)
-          if (submit.status === 200) {
+          // if (submit.status === 200) {
             const fetchScore = await fetchPassport(address, PASSPORT_COMMUNITY_ID)
             if (fetchScore.ok) {
               const res = PassportResponseSchema.parse(await fetchScore.json())
-              console.log(res)
+              console.log('Passport score: ', res)
               if (res?.score) {
                 score = parseInt(res.score)
               }
             } else {
               console.log('score not found ...')
             }
-          }
+          // }
         } catch (error) {
           console.error('Error fetching passport score:', error)
         }
