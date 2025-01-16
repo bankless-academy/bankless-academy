@@ -178,10 +178,10 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
               version: 'next',
               imageUrl: `${DOMAIN_URL_}/images/bankless_academy_v3_frame.jpg`,
               button: {
-                title: 'Start Learning',
+                title: 'Learn and claim your free lesson badge!',
                 action: {
                   type: 'launch_frame',
-                  name: 'Bankless Academy Learning Frame',
+                  name: 'Bankless Academy',
                   url: `${DOMAIN_URL_}?webapp=true`,
                   splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
                   splashBackgroundColor: '#000000',
@@ -198,10 +198,10 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
               version: 'next',
               imageUrl: `${DOMAIN_URL_}/api/og/lesson-frame?image_path=${lesson.socialImageLink}`,
               button: {
-                title: 'Start Learning',
+                title: 'Learn and claim your free lesson badge!',
                 action: {
                   type: 'launch_frame',
-                  name: 'Bankless Academy Learning Frame',
+                  name: 'Bankless Academy',
                   url: `${DOMAIN_URL_}/lessons/${lesson.slug}?webapp=true`,
                   splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
                   splashBackgroundColor: '#000000',
