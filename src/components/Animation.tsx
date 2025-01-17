@@ -116,6 +116,7 @@ const Animation = ({
   const [isDisabled, setIsDisabled] = useState(false)
 
   const containerRef = useRef<HTMLDivElement>(null)
+  const playerRef = useRef<Player>(null)
 
   const nextTooltipRef = useRef()
   const prevTooltipRef = useRef()
@@ -254,6 +255,15 @@ const Animation = ({
     }
   }
 
+  const reloadAnimation = () => {
+    if (playerRef.current) {
+      // Cast playerRef.current to Player type to access setSeeker method
+      const player = playerRef.current as Player
+      player.stop() // Stop the animation first
+      player.play() // Then restart it from beginning
+    }
+  }
+
   useHotkeys('left', () => clickLeft(), [isDisabled, animationStepLS])
   useHotkeys('right', () => clickRight(), [isDisabled, animationStepLS])
 
@@ -279,6 +289,7 @@ const Animation = ({
         >
           {isLottie ? (
             <Player
+              ref={playerRef}
               autoplay={true}
               loop={false}
               keepLastFrame={true}
@@ -312,6 +323,21 @@ const Animation = ({
               onClick={() => clickRight()}
             >
               &gt;
+            </Button>
+          )}
+          {animation.type === 'Animation' && (
+            <Button
+              position="absolute"
+              variant="secondary"
+              bottom="10px"
+              right="10px"
+              size="sm"
+              padding="12px !important"
+              border="1px solid transparent"
+              title="Reload animation"
+              onClick={reloadAnimation}
+            >
+              ↺
             </Button>
           )}
           {animationStepLS >= 0 && (
