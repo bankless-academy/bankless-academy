@@ -2,7 +2,7 @@
 import { Box, Container, Image, Button } from '@chakra-ui/react'
 import React, { ReactElement } from 'react'
 import { useAppKit } from '@reown/appkit/react'
-import { Wallet } from '@phosphor-icons/react'
+import { Wallet, RocketLaunch } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 
 import { LessonTypeType } from 'entities/lesson'
@@ -20,6 +20,7 @@ export type PageType =
   | LessonTypeType
   | 'LESSON-DETAIL'
   | 'PROFILE'
+  | 'EXPLORE'
   | 'GLOSSARY'
   | 'INDEX'
   | ''
@@ -38,7 +39,10 @@ const DesktopButton = ({
   const button = (
     <Box w="100%" h="100%" display="flex" alignItems="center" color="white">
       <Box ml="6" display="flex">
-        <Icon width="46px" height="46px" />
+        <Icon
+          width={link === '/explore' ? '46px' : '40px'}
+          height={link === '/explore' ? '46px' : '40px'}
+        />
       </Box>
       <Box ml="6" fontSize="xl" fontWeight="semibold" textAlign="center">
         {label}
@@ -346,6 +350,12 @@ const Layout = ({
                 icon={HandbookIcon}
               />
               <DesktopButton
+                link="/explore"
+                label="Explore"
+                isActive={page === 'EXPLORE'}
+                icon={RocketLaunch}
+              />
+              <DesktopButton
                 link="/glossary"
                 label="Glossary"
                 isActive={page === 'GLOSSARY'}
@@ -382,10 +392,10 @@ const Layout = ({
             pwa={pwa}
           />
           <MobileButton
-            link="/glossary"
-            label="Glossary"
-            isActive={router.pathname.startsWith('/glossary')}
-            icon={GlossaryIcon}
+            link="/explore"
+            label="Explore"
+            isActive={router.pathname.startsWith('/explore')}
+            icon={RocketLaunch}
             pwa={pwa}
           />
           <MobileButton
