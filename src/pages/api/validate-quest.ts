@@ -8,16 +8,26 @@ import { ONCHAIN_QUESTS } from 'components/Quest/QuestComponent'
 import { validateOnchainQuest } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 
-function extractFirstLink(str) {
-  // Regular expression to match URLs
-  const urlRegex = /(https?:\/\/[^\s]+)/;
-
-  // Match the first URL in the string
-  const match = str.match(urlRegex);
-
-  // If a match is found, return the URL, otherwise return null
-  return match ? match[0] : null;
+type TwitterResponse = {
+  success: boolean
+  data: {
+    mentions: { username: string }[]
+    urls: string[]
+    text: string
+    isRetweet: boolean
+  }
 }
+
+// function extractFirstLink(str) {
+//   // Regular expression to match URLs
+//   const urlRegex = /(https?:\/\/[^\s]+)/;
+
+//   // Match the first URL in the string
+//   const match = str.match(urlRegex);
+
+//   // If a match is found, return the URL, otherwise return null
+//   return match ? match[0] : null;
+// }
 
 export default async function handler(
   req: NextApiRequest,
@@ -141,7 +151,7 @@ export default async function handler(
       } else if (socialSharingQuestType === 'TWEET') {
         // TWEET intent
         if (!messageLink || !messageLink.startsWith('http')) {
-          return res.status(403).json({ error: 'Missing Message Link' })
+          return res.status(403).json({ isQuestValidated: false, error: 'Missing Message Link' })
         }
         try {
           const messageId = messageLink.split('/').pop()
@@ -162,15 +172,25 @@ export default async function handler(
             console.log('resolvedLink', resolvedLink)
           } else {
             // Twitter verification
-            const client = new TwitterApi(process.env.TWITTER_BEARER_TOKEN).readOnly;
-            const tweet = await client.v2.tweets(messageId)
-            console.log('tweet', tweet)
-            message = tweet.data[0]?.text
+            const twitterResponse = await fetch(`https://x.banklessacademy.com/api/tweets/${messageId}`, {
+              headers: {
+                'X-API-KEY': process.env.TWITTER_CLIENT_API_KEY
+              }
+            })
+            const twitterData: TwitterResponse = await twitterResponse.json()
+            console.log('twitterData', twitterData)
+            if (!twitterData.success) {
+              return res.status(200).json({
+                isQuestValidated: false,
+                error: 'Could not verify tweet. Please try again.',
+              })
+            }
+
+            message = twitterData.data.text
             console.log('message', message)
-            const firstLink = extractFirstLink(message)
-            console.log('firstLink', firstLink)
-            const resolvedLinkResponse = firstLink ? await fetch(firstLink) : ''
-            resolvedLink = resolvedLinkResponse !== '' ? resolvedLinkResponse.redirected ? resolvedLinkResponse.url?.toLowerCase() : '' : ''
+
+            // Get the first URL from the urls array
+            resolvedLink = twitterData.data.urls[0]
             console.log('resolvedLink', resolvedLink)
           }
           const messageIncludesTwitterTag = message?.toLowerCase()?.includes('@BanklessAcademy'.toLowerCase())

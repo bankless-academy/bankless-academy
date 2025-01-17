@@ -63,13 +63,20 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         hotjarLib.hotjar.initialize(2568813, 6)
       })
     }
+
+    // Initialize Telegram Mini App
+    if (typeof window !== 'undefined' && window.Telegram?.WebApp) {
+      const tg = window.Telegram.WebApp
+      tg.ready()
+      tg.expand()
+    }
   }, [])
 
   const canonical = url?.split('?')[0]
 
   const lesson = metadata?.lesson
 
-  const isDatadisk = metadata?.isDatadisk
+  // const isDatadisk = metadata?.isDatadisk
 
   const isLesson = metadata?.isLesson && lesson
 
@@ -157,38 +164,80 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           title="Bankless Academy lesson feed"
           href="/rss.xml"
         />
+        {/* Telegram Mini App */}
+        <Script
+          src="https://telegram.org/js/telegram-web-app.js?56"
+          strategy="beforeInteractive"
+        />
         {/* Farcaster Frame */}
-        {/* FC: lesson */}
+        {/* Farcaster Frame v2: home page */}
+        {router.pathname === '/' && (
+          <meta
+            property="fc:frame"
+            content={JSON.stringify({
+              version: 'next',
+              imageUrl: `${DOMAIN_URL_}/images/bankless_academy_v3_frame.jpg`,
+              button: {
+                title: 'Learn and claim your free lesson badge!',
+                action: {
+                  type: 'launch_frame',
+                  name: 'Bankless Academy',
+                  url: `${DOMAIN_URL_}?webapp=true`,
+                  splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
+                  splashBackgroundColor: '#000000',
+                },
+              },
+            })}
+          />
+        )}
+        {/* Farcaster Frame v2: lesson */}
         {isLesson && lesson && (
-          <>
-            <meta property="fc:frame" content="vNext" />
-            <meta
-              property="fc:frame:image"
-              content={
-                isDatadisk
-                  ? // TODO: add back .gif for FC < 10MB + make dynamic
-                    `${DOMAIN_URL_}/images/${lesson.slug}/social-datadisk.jpg`
-                  : image
-              }
-            />
-            <meta
-              property="fc:frame:post_url"
-              content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${
-                lesson.slug
-              }&platform=farcaster&provenance=${
-                isDatadisk ? 'datadisk' : 'lesson'
-              }`}
-            />
-            <meta name="fc:frame:button:1:action" content="post_redirect" />
-            <meta
-              property={`fc:frame:button:1`}
-              content={
-                isDatadisk
-                  ? `Mint a DataDisk, Support Free Education.`
-                  : `Learn and claim your free lesson badge now!`
-              }
-            />
-          </>
+          <meta
+            property="fc:frame"
+            content={JSON.stringify({
+              version: 'next',
+              imageUrl: `${DOMAIN_URL_}/api/og/lesson-frame?image_path=${lesson.socialImageLink}`,
+              button: {
+                title: 'Learn and claim your free lesson badge!',
+                action: {
+                  type: 'launch_frame',
+                  name: 'Bankless Academy',
+                  url: `${DOMAIN_URL_}/lessons/${lesson.slug}?webapp=true`,
+                  splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
+                  splashBackgroundColor: '#000000',
+                },
+              },
+            })}
+          />
+          // <>
+          //   <meta property="fc:frame" content="vNext" />
+          //   <meta
+          //     property="fc:frame:image"
+          //     content={
+          //       isDatadisk
+          //         ? // TODO: add back .gif for FC < 10MB + make dynamic
+          //           `${DOMAIN_URL_}/images/${lesson.slug}/social-datadisk.jpg`
+          //         : image
+          //     }
+          //   />
+          //   <meta
+          //     property="fc:frame:post_url"
+          //     content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${
+          //       lesson.slug
+          //     }&platform=farcaster&provenance=${
+          //       isDatadisk ? 'datadisk' : 'lesson'
+          //     }`}
+          //   />
+          //   <meta name="fc:frame:button:1:action" content="post_redirect" />
+          //   <meta
+          //     property={`fc:frame:button:1`}
+          //     content={
+          //       isDatadisk
+          //         ? `Mint a DataDisk, Support Free Education.`
+          //         : `Learn and claim your free lesson badge now!`
+          //     }
+          //   />
+          // </>
         )}
         {/* FC: article */}
         {lesson?.isArticle && (

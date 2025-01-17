@@ -10,7 +10,7 @@ import LessonBanner from 'components/LessonBanner'
 import { Mixpanel } from 'utils/index'
 import LessonButton from 'components/LessonButton'
 import { LessonType } from 'entities/lesson'
-
+import { useSmallScreen } from 'hooks/index'
 // TODO: move to dedicated component file
 export const StyledLessonCard = styled(Box)`
   position: relative;
@@ -75,6 +75,7 @@ const LessonCard = ({
   const { t } = useTranslation()
   const router = useRouter()
   const { all } = router.query
+  const [isSmallScreen] = useSmallScreen()
 
   const isBadgeMinted = badgesMintedLS?.includes(lesson.badgeId)
   const isNotified =
@@ -101,13 +102,17 @@ const LessonCard = ({
         <Text
           fontSize="xl"
           fontWeight="bold"
-          minH="60px"
+          minH={isSmallScreen ? '45px' : '60px'}
           display="flex"
           alignItems="center"
         >
           {t(lesson.name, { ns: 'lesson' })}
         </Text>
-        <Box display="flex" justifyContent="space-between" my="4">
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          my={isSmallScreen ? '3' : '4'}
+        >
           {isBadgeMinted || isArticleRead || lesson.duration ? (
             <StyledTag
               size="md"
@@ -147,7 +152,13 @@ const LessonCard = ({
             lesson.publicationStatus !== 'planned' && <Box width="auto"></Box>
           )}
         </Box>
-        <Text fontSize="lg" minH="81px" display="flex" alignItems="center">
+        <Text
+          fontSize="lg"
+          minH="81px"
+          display="flex"
+          alignItems="center"
+          color="#9E9E9E"
+        >
           {t(lesson.description, { ns: 'lesson' })}
         </Text>
         {lesson.publicationStatus === 'planned' && all === undefined ? (
@@ -195,7 +206,13 @@ const LessonCard = ({
         <Box
           display="flex"
           flexDirection="row-reverse"
-          mt={lesson.isArticle || lesson.hasCollectible ? '25px' : '16px'}
+          mt={
+            lesson.isArticle || lesson.hasCollectible
+              ? isSmallScreen
+                ? '16px'
+                : '25px'
+              : '16px'
+          }
           justifyContent="space-between"
           alignItems="center"
           maxWidth="calc(100vw - 80px)"

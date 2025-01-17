@@ -32,7 +32,6 @@ import {
   Mixpanel,
 } from 'utils/index'
 import Keyword from 'components/Keyword'
-import LanguageSwitch from 'components/LanguageSwitch'
 import MintNFT from 'components/MintNFT'
 
 // TODO: clean dirty copy/paste style
@@ -495,7 +494,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     ${(props) =>
       props.issmallscreen === 'true'
         ? `
-      max-width: 100vw;
+      width: 100vw;
+      max-width: 720px;
       margin-left: -24px;
       margin-right: -24px;
       `
@@ -530,7 +530,7 @@ const Article = ({
   extraKeywords?: any
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
-  const [isSmallScreen] = useSmallScreen()
+  const [, isSmallScreen] = useSmallScreen()
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
     []
@@ -578,7 +578,11 @@ const Article = ({
     articlesCollectedLS.includes(lesson.mirrorNFTAddress)
 
   return (
-    <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
+    <Container
+      maxW="container.md"
+      p={isSmallScreen ? '0' : 'unset'}
+      mb={isSmallScreen ? '90px' : '0'}
+    >
       <Image
         src={lesson.lessonImageLink}
         w="100%"
@@ -629,7 +633,6 @@ const Article = ({
           </Box>
         </SimpleGrid>
       )}
-      <LanguageSwitch lesson={lesson} />
       {isSmartWalletLesson && <MintNFT />}
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown

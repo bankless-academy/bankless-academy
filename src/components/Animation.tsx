@@ -33,6 +33,33 @@ const StyledBox = styled(Box)`
   }
 `
 
+export const Simulation = styled.div<{ title: string }>`
+  width: 100%;
+  height: 100%;
+  ${({ title }) =>
+    `
+      border: 1px dashed #916ab8;
+      border-width: 1px;
+      border-radius: 10px;
+      position: relative;
+      ::before {
+        content: '${title}';
+        width: 96%;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: transparent;
+        color: #916ab8;
+        padding: 8px 0;
+      }
+    `}
+`
+
 const Tooltip = styled.div`
   width: 120px;
   background-color: #d5d5d5;
@@ -40,10 +67,10 @@ const Tooltip = styled.div`
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  position: absolute;
-  z-index: 1;
+  position: fixed; /* Changed from absolute to fixed */
+  z-index: 1000; /* Increased z-index */
   transition: opacity 0.3s, transform 0.5s ease-in-out;
-  pointer-events: none; /* Ensure the tooltip does not interfere with pointer events */
+  pointer-events: none;
   visibility: hidden;
   opacity: 0;
   animation: floatAnimation 2s infinite;
@@ -124,42 +151,62 @@ const Animation = ({
 
   useEffect(() => {
     const positionTooltip = (tooltip, target) => {
+      if (!tooltip || !target) return
+
       const rect = target.getBoundingClientRect()
-      tooltip.style.left = `${
-        rect.left + window.scrollX + rect.width / 2 - 60
-      }px`
-      tooltip.style.top = `${rect.bottom + window.scrollY + 5}px` // Positioned below the element
+      const tooltipWidth = 120 // Width of tooltip
+
+      // Center horizontally relative to target
+      const left = rect.left + rect.width / 2 - tooltipWidth / 2
+
+      // Position below the target with some padding
+      const top = rect.bottom + 5
+
+      tooltip.style.left = `${left}px`
+      tooltip.style.top = `${top}px`
       tooltip.classList.add('visible')
     }
+
     const hideTooltip = (tooltip) => {
-      tooltip.classList.remove('visible')
+      if (tooltip) {
+        tooltip.classList.remove('visible')
+      }
     }
 
-    const displayTooltip = (retry) => {
+    const displayTooltip = (retry = 1) => {
       const nextElement = document.querySelector('.actionNext')
       const prevElement = document.querySelector('.actionPrev')
 
       if (nextTooltipRef.current && nextElement) {
         positionTooltip(nextTooltipRef.current, nextElement)
-      } else if (retry === 1 && nextTooltipRef.current) {
+      } else if (retry > 0 && nextTooltipRef.current) {
         hideTooltip(nextTooltipRef.current)
         setTimeout(() => {
-          console.log('retry displayTooltip')
-          displayTooltip(0)
-        }, 1000)
-      } else if (nextTooltipRef.current) {
+          displayTooltip(retry - 1)
+        }, 500)
+      } else {
         hideTooltip(nextTooltipRef.current)
       }
+
       if (prevTooltipRef.current && prevElement) {
         positionTooltip(prevTooltipRef.current, prevElement)
-      } else if (prevTooltipRef.current) {
+      } else {
         hideTooltip(prevTooltipRef.current)
       }
     }
 
-    setTimeout(() => {
-      displayTooltip(1)
-    }, 200)
+    // Initial positioning
+    displayTooltip()
+
+    // Update positions on scroll and resize
+    const handleReposition = () => displayTooltip(0)
+    window.addEventListener('scroll', handleReposition)
+    window.addEventListener('resize', handleReposition)
+
+    return () => {
+      window.removeEventListener('scroll', handleReposition)
+      window.removeEventListener('resize', handleReposition)
+    }
   }, [animationStepLS])
 
   useEffect(() => {
@@ -215,55 +262,65 @@ const Animation = ({
   const isLottie = currentStep?.endsWith('.json')
 
   return (
-    <StyledBox
-      // background="blackAlpha.400"
-      background="transparent"
-      maxW="600px"
-      maxH="600px"
-      position="initial"
-      aspectRatio="1"
-      m="auto"
-      ref={containerRef}
-    >
-      {isLottie ? (
-        <Player
-          autoplay={true}
-          loop={false}
-          keepLastFrame={true}
-          controls={false}
-          src={currentStep}
-          style={{ height: '100%', width: '100%' }}
-        />
-      ) : (
-        <Image src={currentStep} style={{ height: '100%', width: '100%' }} />
-      )}
-      {isEmbedded && animationStepLS > 0 && (
-        <Button
-          variant="secondary"
-          onClick={() => clickLeft()}
-          position="absolute"
-          top="calc(50% - 20px)"
-          left="0"
+    <Box m="10px">
+      <StyledBox
+        background="transparent"
+        maxW="600px"
+        maxH="600px"
+        position="initial"
+        aspectRatio="1"
+        m="auto"
+        ref={containerRef}
+      >
+        <Simulation
+          title={`${animation.type}: ${animation.name} - ${
+            animationStepLS + 1
+          } / ${animationLength}`}
         >
-          &lt;
-        </Button>
-      )}
-      {isEmbedded && animationStepLS + 1 < animation.steps.length && (
-        <Button
-          position="absolute"
-          variant="primary"
-          top="calc(50% - 20px)"
-          right="0"
-          onClick={() => clickRight()}
-        >
-          &gt;
-        </Button>
-      )}
-      {animationStepLS === 0 && (
-        <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
-      )}
-      <Tooltip ref={prevTooltipRef}>Click here to go back</Tooltip>
-    </StyledBox>
+          {isLottie ? (
+            <Player
+              autoplay={true}
+              loop={false}
+              keepLastFrame={true}
+              controls={false}
+              src={currentStep}
+              style={{ height: '100%', width: '100%' }}
+            />
+          ) : (
+            <Image
+              src={currentStep}
+              style={{ height: '100%', width: '100%' }}
+            />
+          )}
+          {isEmbedded && animationStepLS > 0 && (
+            <Button
+              variant="secondary"
+              onClick={() => clickLeft()}
+              position="absolute"
+              top="calc(50% - 20px)"
+              left="0"
+            >
+              &lt;
+            </Button>
+          )}
+          {isEmbedded && animationStepLS + 1 < animation.steps.length && (
+            <Button
+              position="absolute"
+              variant="primary"
+              top="calc(50% - 20px)"
+              right="0"
+              onClick={() => clickRight()}
+            >
+              &gt;
+            </Button>
+          )}
+          {animationStepLS >= 0 && (
+            <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
+          )}
+          <Tooltip ref={prevTooltipRef}>Click here to go back</Tooltip>
+        </Simulation>
+      </StyledBox>
+    </Box>
   )
 }
 

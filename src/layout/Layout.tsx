@@ -1,36 +1,44 @@
 /* eslint-disable no-console */
 import { Box, Container, Image, Button } from '@chakra-ui/react'
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import { useAppKit } from '@reown/appkit/react'
 import { Wallet } from '@phosphor-icons/react'
+import { useRouter } from 'next/router'
 
 import { LessonTypeType } from 'entities/lesson'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen, useWindowScrollPositions } from 'hooks/index'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
-import { shortenAddress } from 'utils/index'
+import { scrollTop, shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
+import { LessonIcon, HandbookIcon, GlossaryIcon } from 'components/Icons'
 
-export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | 'INDEX' | ''
+export type PageType =
+  | LessonTypeType
+  | 'LESSON-DETAIL'
+  | 'PROFILE'
+  | 'GLOSSARY'
+  | 'INDEX'
+  | ''
 
 const DesktopButton = ({
   isActive,
   link,
   label,
-  imageSrc,
+  icon: Icon,
 }: {
   isActive: boolean
   link: string
   label: string
-  imageSrc: string
+  icon: React.ComponentType<any>
 }): React.ReactElement => {
   const button = (
     <Box w="100%" h="100%" display="flex" alignItems="center" color="white">
       <Box ml="6" display="flex">
-        <Image src={imageSrc} />
+        <Icon width="46px" height="46px" />
       </Box>
       <Box ml="6" fontSize="xl" fontWeight="semibold" textAlign="center">
         {label}
@@ -58,17 +66,20 @@ const MobileButton = ({
   isActive,
   link,
   label,
-  imageSrc,
+  icon: Icon,
   pwa,
   ...props
 }: {
   isActive: boolean
   link: string
   label: string
+  icon?: React.ComponentType<any>
   imageSrc?: string
   pwa: boolean
   [key: string]: any
-}): React.ReactElement => {
+}): ReactElement => {
+  const iconSize = pwa ? '26px' : '32px'
+
   const button = (
     <Box
       flex="1"
@@ -78,38 +89,66 @@ const MobileButton = ({
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
-      color={isActive ? '#9d72dc' : 'white'}
+      color={isActive ? 'white' : '#959393'}
       {...props}
-      pt={label === 'Profile' ? '8px' : pwa ? '2px' : '0'}
+      pt={pwa ? '6px' : '2px'}
       pb={pwa ? '16px' : '2px'}
     >
-      <Image
-        src={imageSrc}
-        alt={label}
-        title={label}
-        w={label === 'Profile' ? '36px' : pwa ? '50px' : '52px'}
-        h={label === 'Profile' ? '36px' : pwa ? '50px' : '52px'}
-        borderRadius="50%"
-        fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
-        border={label === 'Profile' && isActive ? '2px solid #9d72dc' : ''}
-        mt={label === 'Profile' && pwa ? '4px' : '0'}
-      />
-      <Box
-        mt={
-          label === 'Profile' && pwa
-            ? '4px'
-            : label === 'Profile'
-            ? '6px'
-            : '-3px'
-        }
-      >
+      {Icon ? (
+        <Icon
+          width={iconSize}
+          height={iconSize}
+          color={isActive ? 'white' : '#959393'}
+        />
+      ) : (
+        <Image
+          src={props.imageSrc}
+          alt={label}
+          title={label}
+          w={iconSize}
+          h={iconSize}
+          borderRadius="50%"
+          // fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
+          border={
+            label === 'Profile'
+              ? isActive
+                ? '2px solid white'
+                : '1px solid #959393'
+              : ''
+          }
+          mt={'2px'}
+        />
+      )}
+      <Box mt={pwa ? '2px' : '4px'} fontSize="14px">
         {label}
       </Box>
     </Box>
   )
   return (
     <Box flex="1">
-      {isActive ? button : <InternalLink href={link}>{button}</InternalLink>}
+      {isActive ? (
+        <Box
+          w="100%"
+          h="100%"
+          onClick={() => {
+            scrollTop()
+          }}
+          userSelect="none"
+          cursor="pointer"
+        >
+          {button}
+        </Box>
+      ) : (
+        <InternalLink
+          href={link}
+          userSelect="none"
+          onClick={() => {
+            scrollTop()
+          }}
+        >
+          {button}
+        </InternalLink>
+      )}
     </Box>
   )
 }
@@ -123,10 +162,11 @@ const Layout = ({
 }): React.ReactElement => {
   const { address } = useAccount()
   const { open } = useAppKit()
+  const router = useRouter()
   const [nameCache] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
   const [score] = useLocalStorage(`score`, 0)
-  const [isSmallScreen] = useSmallScreen()
+  const [, isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
   const addressLower = address?.toLowerCase()
   const [pwa] = useLocalStorage('pwa', false)
@@ -152,7 +192,7 @@ const Layout = ({
     await open({ view: 'Connect' })
   }
 
-  if (page === 'INDEX' && !isSmallScreen) {
+  if ((page === 'INDEX' || page === 'LESSON-DETAIL') && !isSmallScreen) {
     return <>{children}</>
   }
 
@@ -182,7 +222,17 @@ const Layout = ({
         {page === 'INDEX' || page === '' ? (
           children
         ) : (
-          <Container maxW="container.xl" pb={isSmallScreen ? '16' : '0'}>
+          <Container
+            maxW="container.xl"
+            px={
+              isSmallScreen
+                ? page === 'LESSON-DETAIL' || page === 'GLOSSARY'
+                  ? '0'
+                  : '4'
+                : '4'
+            }
+            pb={isSmallScreen ? (page === 'LESSON-DETAIL' ? '0' : '16') : '0'}
+          >
             {children}
           </Container>
         )}
@@ -287,19 +337,19 @@ const Layout = ({
                 link="/lessons"
                 label="Lessons"
                 isActive={page === 'LESSON'}
-                imageSrc="/images/lesson-logo.svg"
+                icon={LessonIcon}
               />
               <DesktopButton
                 link="/lessons/handbook"
                 label="Handbooks"
                 isActive={page === 'HANDBOOK'}
-                imageSrc="/images/handbook-logo.svg"
+                icon={HandbookIcon}
               />
               <DesktopButton
                 link="/glossary"
                 label="Glossary"
                 isActive={page === 'GLOSSARY'}
-                imageSrc="/images/glossary-logo.svg"
+                icon={GlossaryIcon}
               />
             </Box>
           </Box>
@@ -310,7 +360,7 @@ const Layout = ({
           w="100vw"
           h="81px"
           bottom="0"
-          background="#3f3253e7"
+          background="#2b2b2bdd"
           backdropFilter="blur(10px)"
           display="flex"
           zIndex="2"
@@ -320,34 +370,22 @@ const Layout = ({
           <MobileButton
             link="/lessons"
             label="Lessons"
-            isActive={page === 'LESSON'}
-            imageSrc={
-              page === 'LESSON'
-                ? '/images/lesson-logo-mobile-active.svg'
-                : '/images/lesson-logo-mobile.svg'
-            }
+            isActive={router.pathname === '/lessons'}
+            icon={LessonIcon}
             pwa={pwa}
           />
           <MobileButton
             link="/lessons/handbook"
             label="Handbooks"
-            isActive={page === 'HANDBOOK'}
-            imageSrc={
-              page === 'HANDBOOK'
-                ? '/images/handbook-logo-mobile-active.svg'
-                : '/images/handbook-logo-mobile.svg'
-            }
+            isActive={router.pathname.startsWith('/lessons/handbook')}
+            icon={HandbookIcon}
             pwa={pwa}
           />
           <MobileButton
             link="/glossary"
             label="Glossary"
-            isActive={page === 'GLOSSARY'}
-            imageSrc={
-              page === 'GLOSSARY'
-                ? '/images/glossary-logo-mobile-active.svg'
-                : '/images/glossary-logo-mobile.svg'
-            }
+            isActive={router.pathname.startsWith('/glossary')}
+            icon={GlossaryIcon}
             pwa={pwa}
           />
           <MobileButton
@@ -357,7 +395,7 @@ const Layout = ({
                 : `explorer/my-profile`
             }
             label="Profile"
-            isActive={page === 'PROFILE'}
+            isActive={router.pathname.startsWith('/explorer')}
             imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
             borderRight={0}
             pwa={pwa}

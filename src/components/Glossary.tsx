@@ -31,7 +31,7 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
       <Box
         position="fixed"
         top="80px"
-        right="18px"
+        right="8px"
         h={isSmallScreen ? 'calc(100% - 160px)' : 'calc(100% - 90px)'}
         display="grid"
         overflowY="scroll"
@@ -76,7 +76,9 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
                 >
                   {term.name}
                 </Box>
-                <Box mb={8}>{term.definition}</Box>
+                <Box mb={8} color="#9E9E9E">
+                  {term.definition}
+                </Box>
               </React.Fragment>
             ))}
           </Box>

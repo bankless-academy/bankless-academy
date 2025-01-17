@@ -296,7 +296,8 @@ const SlideNav = styled(Box)<{ issmallscreen?: string }>`
       bottom: 0;
       width: 100%;
       left: 0;
-      background-color: black;
+      background-color: #2b2b2bdd;
+      backdrop-filter: blur(10px);
       z-index: 10;
       border-top:1px solid #222222;
       `};
@@ -559,7 +560,7 @@ const Lesson = ({
       } else {
         if (IS_WHITELABEL) closeLesson()
         else {
-          // defaut: go back to lessons
+          // default: go back to lessons
           closeLesson()
           // router.push('/lessons')
         }
@@ -1181,7 +1182,9 @@ const Lesson = ({
           )}
         </HStack>
         <HStack>
-          {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
+          {slide.type === 'QUEST' &&
+          !Quest?.isQuestCompleted &&
+          !isSmallScreen ? (
             <Tooltip
               hasArrow
               label={t(

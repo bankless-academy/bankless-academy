@@ -15,6 +15,7 @@ import {
 } from '@reown/appkit/networks'
 
 import { ENABLE_TESTNET } from 'constants/networks'
+import { frameConnector } from './frameConnector'
 
 const testChains = ENABLE_TESTNET ? [
   sepolia,
@@ -48,6 +49,7 @@ export const wagmiAdapter = new WagmiAdapter({
   networks,
   projectId: WALLET_CONNECT_PROJECT_ID,
   ssr: true,
+  connectors: [frameConnector()],
 })
 
 export const wagmiConfig = wagmiAdapter.wagmiConfig

@@ -10,7 +10,6 @@ import { DEFAULT_METADATA, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { markdown } from 'utils/markdown'
-import { useTranslation } from 'react-i18next'
 import LessonContent from 'components/LessonContent'
 import Layout from 'layout/Layout'
 
@@ -229,8 +228,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // TODO: move to /lesson/lesson-name + add redirect
 
 const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
-  const { i18n } = useTranslation()
-  const [isSmallScreen] = useSmallScreen()
+  const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const lesson = pageMeta?.lesson
 
   const lang =
@@ -238,8 +236,6 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
     window.location.pathname.split('/')[2].length === 2
       ? window.location.pathname.split('/')[2]
       : 'en'
-
-  if (lang !== i18n.language) i18n.changeLanguage(lang)
 
   if (!lesson) {
     console.log('redirect to lesson select')
@@ -259,7 +255,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
             <Article lesson={lesson} />
           </Layout>
         ) : (
-          <>
+          <Layout page="LESSON-DETAIL">
             {lesson?.showContent ? (
               <>
                 <Center
@@ -310,11 +306,12 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
               <Container
                 maxW="container.xl"
                 px={isSmallScreen ? '8px' : '16px'}
+                minH={isMediumScreen ? 'calc(100vh - 146px)' : 'default'}
               >
                 <LessonDetail lesson={lesson} />
               </Container>
             )}
-          </>
+          </Layout>
         )}
       </>
     )

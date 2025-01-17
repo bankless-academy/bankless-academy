@@ -1,8 +1,18 @@
 import { useEffect, useState } from 'react'
 import { useMediaQuery } from '@chakra-ui/react'
 
-export function useSmallScreen(): boolean[] {
-  return useMediaQuery(['(max-width: 800px)', '(max-width: 1260px)', '(max-width: 500px)'])
+export function useSmallScreen(): boolean[] | null {
+  return useMediaQuery(
+    [
+      '(max-width: 800px)',
+      '(max-width: 1260px)',
+      '(max-width: 500px)',
+      '(max-width: 389px)',
+    ],
+    {
+      ssr: false,
+    }
+  )
 }
 
 export const useWindowScrollPositions = () => {

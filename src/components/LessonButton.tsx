@@ -6,6 +6,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useState } from 'react'
 import OpenLesson from 'components/OpenLesson'
 import Reward from 'components/Reward'
+import { IS_REWARDS_ACTIVATED } from 'constants/index'
 
 const LessonButton = ({
   lesson,
@@ -26,7 +27,8 @@ const LessonButton = ({
 
   const isLessonStarted = (parseInt(localStorage.getItem(lesson.slug)) || 0) > 0
 
-  const lessonHasReward = lesson.slug === 'ethereum-basics'
+  const lessonHasReward =
+    IS_REWARDS_ACTIVATED && lesson.slug === 'ethereum-basics'
   const lessonHasSponsor =
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
   const completed = isBadgeMintedLS || isArticleRead

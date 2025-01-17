@@ -35,7 +35,6 @@ import {
 import { useEffect } from 'react'
 import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
-import LanguageSwitch from 'components/LanguageSwitch'
 import ShareModal from 'components/ShareModal'
 import { useAccount, useEnsName } from 'wagmi'
 
@@ -211,21 +210,26 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             position="relative"
           >
             <Box m="auto" p={isSmallScreen ? '12px' : 'auto'}>
-              <Box h="0">
-                <InternalLink href="/lessons" alt={`Back to Lesson Selection`}>
-                  <Button
-                    position="relative"
-                    top={isSmallScreen ? '-4px' : '-70px'}
-                    left={isSmallScreen ? '-10px' : '-72px'}
-                    size="lg"
-                    iconSpacing="0"
-                    variant="secondaryBig"
-                    leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
-                    p="0"
-                    _hover={{ p: '0' }}
-                  ></Button>
-                </InternalLink>
-              </Box>
+              {!isSmallScreen && (
+                <Box h="0">
+                  <InternalLink
+                    href="/lessons"
+                    alt={`Back to Lesson Selection`}
+                  >
+                    <Button
+                      position="relative"
+                      top={isSmallScreen ? '-4px' : '-70px'}
+                      left={isSmallScreen ? '-10px' : '-72px'}
+                      size="lg"
+                      iconSpacing="0"
+                      variant="secondaryBig"
+                      leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+                      p="0"
+                      _hover={{ p: '0' }}
+                    ></Button>
+                  </InternalLink>
+                </Box>
+              )}
               <Text
                 as="h1"
                 fontSize="3xl"
@@ -240,14 +244,14 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               >
                 {lesson.name}
               </Text>
-              <LanguageSwitch lesson={lesson} />
+              {/* <LanguageSwitch lesson={lesson} /> */}
               <Box
                 display="flex"
                 mt="4"
                 justifyContent="space-between"
                 maxW="450px"
                 m="auto"
-                mb="8"
+                mb="4"
               >
                 <OpenLesson lesson={lesson} click>
                   <Box py="2">
@@ -270,25 +274,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 gap="4"
               >
                 <LessonButton lesson={lesson} click />
-                <>
-                  <Button
-                    variant="secondaryBig"
-                    size="lg"
-                    leftIcon={<ShareFat width="24px" height="24px" />}
-                    onClick={() => {
-                      onShareOpen()
-                    }}
-                  >
-                    Share & Refer
-                  </Button>
-                  <ShareModal
-                    isOpen={isShareOpen}
-                    onClose={onShareClose}
-                    shareTitle="Share Lesson, Earn Points"
-                    shareMessage={shareMessage}
-                    shareLink={shareLink}
-                  />
-                </>
               </Box>
               <Box>
                 <Text
@@ -303,6 +288,27 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 <Text as="p" fontSize="medium" py="4">
                   {lesson.description}
                 </Text>
+                {badgesMintedLS?.includes(lesson.badgeId) && (
+                  <Box display="flex" justifyContent="center" mt="2" mb="8">
+                    <Button
+                      variant="secondaryBig"
+                      size="lg"
+                      leftIcon={<ShareFat width="24px" height="24px" />}
+                      onClick={() => {
+                        onShareOpen()
+                      }}
+                    >
+                      Share & Refer
+                    </Button>
+                    <ShareModal
+                      isOpen={isShareOpen}
+                      onClose={onShareClose}
+                      shareTitle="Share Lesson, Earn Points"
+                      shareMessage={shareMessage}
+                      shareLink={shareLink}
+                    />
+                  </Box>
+                )}
                 {!IS_PROD &&
                   i18n.language !== 'en' &&
                   lesson.translationDate && (
