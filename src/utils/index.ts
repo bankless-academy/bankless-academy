@@ -495,7 +495,7 @@ export async function api(
   })
 
   if (!response.ok) {
-    const error = `An error occured: ${response.status}`
+    const error = `An error occurred: ${response.status}`
     console.error(error)
     if (response.status !== 500) {
       const d = await response.json()

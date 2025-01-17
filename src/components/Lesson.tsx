@@ -560,7 +560,7 @@ const Lesson = ({
       } else {
         if (IS_WHITELABEL) closeLesson()
         else {
-          // defaut: go back to lessons
+          // default: go back to lessons
           closeLesson()
           // router.push('/lessons')
         }
