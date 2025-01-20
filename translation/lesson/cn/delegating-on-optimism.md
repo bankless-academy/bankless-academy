@@ -113,8 +113,8 @@ Don’t forget to collect this entry if you want to own a copy for easy referenc
 
 **作者**
 
-**[Tetranome](https://twitter.com/Tetranome)** 是 Bankless 学院的项目负责人，主要负责用户体验、界面、设计和内容。
+**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
 
 **Patron**
 
-This article was funded by [Optimism](https://www.optimism.io/).
+This article was funded by **[Optimism](https://www.optimism.io/)**.
