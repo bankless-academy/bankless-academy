@@ -113,8 +113,8 @@ Optimism Agoraの「Proposals」タブの下で投票を追跡することで、
 
 **作者**
 
-**[Tetranome](https://twitter.com/Tetranome)** は、ユーザーエクスペリエンス、インターフェース、デザイン、コンテンツに焦点を当てたBankless Academyのプロジェクトチャンピオンです。
+**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
 
 **Patron**
 
-This article was funded by [Optimism](https://www.optimism.io/).
+This article was funded by **[Optimism](https://www.optimism.io/)**.
