@@ -87,7 +87,7 @@ Optimism 的使命是：通过构建 `Layer 2` 网络来扩展以太坊。 它�
 
 🏕️ **公共产品：** 高度重视资助和建设链上`公共产品`。 公共产品是一种惠及社区内每个人的产品，一个人使用它并不会减少其他人的使用机会。 正是因为 Optimism 对公共产品的支持，您在 Bankless Academy 的免费教育才得以实现！
 
-🧑‍🤝‍🧑 **社区治理：**网络由社区领导。
+🧑‍🤝‍🧑 **Community Governance:** The network is led by its community.
 
 🏠 **自由市场：** 不仅是以太坊 `区块空间`的延伸，也是以太坊原则的延伸。 它旨在扩大以太坊的无准入性、开源、抗审查市场。
 
@@ -182,7 +182,7 @@ Optimism 是如何激励以社区为重点的经济学的？
 
 - [ ] 提供链上自由市场。
 
-> ℹ️ 再试一次！ 单纯使用区块链技术并不会对经济模型造成影响。
+> ℹ️ 再试一次！ Use of blockchain technology alone doesn’t affect economic models.
 
 - [ ] 通过系统地资助商业模型，改善所有网络用户的生活。
 
@@ -285,7 +285,7 @@ Optimism 集体由两个议院组成，在管理网络方面，每个议院都�
 
 # 公民院
 
-公民院在 Optimism 上发展公共基础设施。 它的主要重点是管理追溯性公共产品资金。
+公民院在 Optimism 上发展公共基础设施。 Its primary focus is managing Retroactive Public Goods Funding.
 
 职责包括：
 
