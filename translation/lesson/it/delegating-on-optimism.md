@@ -113,8 +113,8 @@ Note: this also won’t count for the [‘Optimism Governance’](https://app.ba
 
 **Author**
 
-[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
 
 **Patron**
 
-This article was funded by [Optimism](https://www.optimism.io/).
+This article was funded by **[Optimism](https://www.optimism.io/)**.
