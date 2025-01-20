@@ -113,8 +113,8 @@ Remarque : cela ne compte pas non plus pour la quête de la leçon ["Gouvernance
 
 **Auteur**
 
-**[Tetranome](https://twitter.com/Tetranome)** est le Champion du projet Bankless Academy, se concentrant sur l'expérience utilisateur, l'interface, la conception et le contenu.
+**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
 
 **Patron**
 
-This article was funded by [Optimism](https://www.optimism.io/).
+This article was funded by **[Optimism](https://www.optimism.io/)**.
