@@ -5,7 +5,7 @@ import { useAppKit } from '@reown/appkit/react'
 import { Wallet } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 
-import { LessonTypeType } from 'entities/lesson'
+import { LessonType, LessonTypeType } from 'entities/lesson'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen, useWindowScrollPositions } from 'hooks/index'
 import { useAccount } from 'wagmi'
@@ -156,15 +156,18 @@ const MobileButton = ({
 const Layout = ({
   children,
   page,
+  lesson,
 }: {
   children: ReactElement
   page?: PageType
+  lesson?: LessonType
 }): React.ReactElement => {
   const { address } = useAccount()
   const { open } = useAppKit()
   const router = useRouter()
   const [nameCache] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
+  const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
   const [score] = useLocalStorage(`score`, 0)
   const [, isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
@@ -192,7 +195,13 @@ const Layout = ({
     await open({ view: 'Connect' })
   }
 
-  if ((page === 'INDEX' || page === 'LESSON-DETAIL') && !isSmallScreen) {
+  if (
+    (page === 'INDEX' ||
+      (page === 'LESSON-DETAIL' &&
+        lesson?.slug &&
+        JSON.parse(openLessonLS)?.includes(lesson.slug))) &&
+    !isSmallScreen
+  ) {
     return <>{children}</>
   }
 
