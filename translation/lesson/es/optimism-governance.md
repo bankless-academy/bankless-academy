@@ -87,7 +87,7 @@ Optimism tiene una misión: ampliar Ethereum construyendo una red `Capa 2`. Form
 
 🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de `bienes públicos` onchain (en la cadena). Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Tu educación gratuita en la Academia Bankless ha sido posible gracias al apoyo de Optimism a los bienes públicos!
 
-🧑‍🤝‍🧑 **Gobernanza comunitaria:** La red está dirigida por su comunidad.
+🧑‍🤝‍🧑 **Community Governance:** The network is led by its community.
 
 🏠 **Mercado libre:** Lanzado como una extensión no sólo del `espacio de bloque` de Ethereum, sino de los principios de Ethereum. Su objetivo es ampliar el mercado de Ethereum: exento de permisos, con código abierto y resistente a la censura.
 
@@ -182,7 +182,7 @@ _"Es un algoritmo que recompensa a los primeros contribuyentes que crearon las c
 
 - [ ] Proporcionando un mercado libre, pero en la blockchain.
 
-> ℹ️ ¡Inténtalo de nuevo! El uso de la tecnología blockchain por sí sola, no afecta a los modelos económicos.
+> ℹ️ ¡Inténtalo de nuevo! Use of blockchain technology alone doesn’t affect economic models.
 
 - [ ] Financiando sistemáticamente modelos de negocio que mejoren la vida de todos los usuarios de la red.
 
@@ -285,7 +285,7 @@ Revisa el [plan de distribución de OP](https://community.optimism.io/docs/gover
 
 # La Cámara de Ciudadanos
 
-La Cámara de Ciudadanos lleva a cabo el crecimiento de la infraestructura pública en la Red de Optimism. Su principal objetivo es gestionar la Financiación Retroactiva de Bienes Públicos.
+La Cámara de Ciudadanos lleva a cabo el crecimiento de la infraestructura pública en la Red de Optimism. Its primary focus is managing Retroactive Public Goods Funding.
 
 Sus funciones incluyen:
 
