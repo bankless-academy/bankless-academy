@@ -87,7 +87,7 @@ Optimism hat die folgende Mission: die Skalierung von Ethereum durch den Aufbau 
 
 🏕️ **Öffentliche Güter:** Große Wertlegung auf die Finanzierung und den Aufbau von `öffentlichen Gütern`. Ein öffentliches Gut ist etwas, das allen in einer Gemeinschaft zugutekommt, während die Nutzung durch eine einzelne Person nicht dazu führt, dass es für andere weniger verfügbar ist. Deine kostenlose Weiterbildung durch die Bankless Academy wurde durch die Unterstützung von Optimism für öffentliche Güter ermöglicht!
 
-🧑‍🤝‍🧑 **Regierungsführung durch die Gemeinschaft:** Das Netzwerk wird von seiner Gemeinschaft geleitet.
+🧑‍🤝‍🧑 **Community Governance:** The network is led by its community.
 
 🏠 **Freier Mark:** Als Erweiterung nicht nur durch den sogenannten `Blockspace` von Ethereum, sondern mithilfe der Prinzipien von Ethereum gestartet. Es zielt darauf ab, den ohne Zugangsbeschränkungen [permissionless], quelloffenen [open-source] und gegenüber Zensur resistenten [censorship-resistent] Marktplatz von Ethereum zu skalieren.
 
@@ -182,7 +182,7 @@ Wie schafft Optimism Anreize für gemeinschaftsorientiertes Wirtschaften?
 
 - [ ] Durch die Bereitstellung eines freien Marktes, aber auf einer Blockchain.
 
-> Versuchs nochmal! Der Einsatz der Blockchain-Technologie allein hat keine Auswirkungen auf Wirtschaftsmodelle.
+> Versuchs nochmal! Use of blockchain technology alone doesn’t affect economic models.
 
 - [ ] Durch die systematische Finanzierung von Geschäftsmodellen, die das Leben aller Nutzer des Netzwerks verbessern.
 
@@ -285,7 +285,7 @@ Wie schützt das Token-Haus das Netzwerk vor Angriffen?
 
 # Das Bürger-Haus
 
-Das Bürger-Haus leitet das Wachstum der öffentlichen Infrastruktur innerhalb des Optimism-Netzwerks. Ihr Hauptaugenmerk liegt auf der Verwaltung der rückwirkenden Finanzierung öffentlicher Güter [RetroPGF].
+Das Bürger-Haus leitet das Wachstum der öffentlichen Infrastruktur innerhalb des Optimism-Netzwerks. Its primary focus is managing Retroactive Public Goods Funding.
 
 Zu den Aufgaben gehören:
 
