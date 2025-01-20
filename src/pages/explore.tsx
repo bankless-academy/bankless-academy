@@ -33,7 +33,8 @@ const ACTIVITIES = [
   {
     name: 'Zora',
     image: 'https://zora.co/assets/image/og-image.jpg',
-    link: 'https://zora.co/invite/banklessacademy',
+    // link: 'https://zora.co/invite/banklessacademy',
+    link: 'https://zora.co/@banklessacademy?referrer=0xe1887ff140bfa9d3b45d0b2077b7471124acd242',
   },
   {
     name: 'Pods',
@@ -160,7 +161,7 @@ function ExplorePage(): JSX.Element {
           </Text>
         )}
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-          Featured activities
+          Featured Activities
         </StyledHeading>
         <SimpleGrid spacing={4} minChildWidth="300px">
           {ACTIVITIES.map((activity) => (
