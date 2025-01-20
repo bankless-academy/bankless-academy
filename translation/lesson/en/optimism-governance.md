@@ -87,7 +87,7 @@ Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It�
 
 🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. A public good is something that benefits everyone in a community, while one person's use of it doesn't reduce its availability for others. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
 
-🧑‍🤝‍🧑 **Community Governance:** The network is lead by its community.
+🧑‍🤝‍🧑 **Community Governance:** The network is led by its community.
 
 🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
 
@@ -183,7 +183,7 @@ How is Optimism incentivizing community-focused economics?
 
 - [ ] By providing a free market, but on the blockchain.
 
-> ℹ️ Try again! Use of blockchain technology alone doesn’t effect economic models.
+> ℹ️ Try again! Use of blockchain technology alone doesn’t affect economic models.
 
 - [ ] By systemically funding business models that improve the lives of all network users.
 
@@ -286,7 +286,7 @@ How does the Token House protect the network from attack?
 
 # The Citizens’ House
 
-The Citizens’ House conducts the growth of public infrastructure on the Optimism Network. It’s primary focus is managing Retroactive Public Goods Funding.
+The Citizens’ House conducts the growth of public infrastructure on the Optimism Network. Its primary focus is managing Retroactive Public Goods Funding.
 
 Duties include:
 
