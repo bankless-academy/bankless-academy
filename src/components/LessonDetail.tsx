@@ -7,7 +7,7 @@ import {
   useToast,
   useDisclosure,
 } from '@chakra-ui/react'
-import { ArrowUUpLeft, ShareFat } from '@phosphor-icons/react'
+import { ShareFat } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
@@ -28,7 +28,7 @@ import {
   IS_COLLECTIBLE_ACTIVATED,
   IS_PROD,
   IS_WALLET_DISABLED,
-  IS_WHITELABEL,
+  // IS_WHITELABEL,
   TOKEN_GATING_ENABLED,
   TWITTER_ACCOUNT,
 } from 'constants/index'
@@ -43,10 +43,10 @@ const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   }
 `
 
-const StyledBox = styled(Box)`
-  width: -webkit-fill-available;
-  width: -moz-available;
-`
+// const StyledBox = styled(Box)`
+//   width: -webkit-fill-available;
+//   width: -moz-available;
+// `
 
 const closeLesson = (
   openedLesson: string,
@@ -184,7 +184,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         />
       ) : (
         <>
-          {!isSmallScreen && !IS_WHITELABEL && (
+          {/* {!isSmallScreen && !IS_WHITELABEL && (
             <StyledBox
               w="-webkit-fill-available"
               position="absolute"
@@ -201,16 +201,17 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 src="/images/bankless-instructor.png"
               />
             </StyledBox>
-          )}
+          )} */}
           <StyledCard
             p={12}
-            maxW="600px"
+            maxW="800px"
+            mx="auto"
             mt={6}
             display={isSmallScreen ? 'contents' : 'block'}
             position="relative"
           >
             <Box m="auto" p={isSmallScreen ? '12px' : 'auto'}>
-              {!isSmallScreen && (
+              {/* {!isSmallScreen && (
                 <Box h="0">
                   <InternalLink
                     href="/lessons"
@@ -223,13 +224,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                       size="lg"
                       iconSpacing="0"
                       variant="secondaryBig"
-                      leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+                      leftIcon={<X width="24px" height="24px" />}
                       p="0"
                       _hover={{ p: '0' }}
                     ></Button>
                   </InternalLink>
                 </Box>
-              )}
+              )} */}
               <Text
                 as="h1"
                 fontSize="3xl"

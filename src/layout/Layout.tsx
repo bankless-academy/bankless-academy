@@ -5,7 +5,7 @@ import { useAppKit } from '@reown/appkit/react'
 import { Wallet } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 
-import { LessonType, LessonTypeType } from 'entities/lesson'
+import { LessonTypeType } from 'entities/lesson'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen, useWindowScrollPositions } from 'hooks/index'
 import { useAccount } from 'wagmi'
@@ -19,6 +19,7 @@ import { LessonIcon, HandbookIcon, GlossaryIcon } from 'components/Icons'
 export type PageType =
   | LessonTypeType
   | 'LESSON-DETAIL'
+  | 'ARTICLE'
   | 'PROFILE'
   | 'GLOSSARY'
   | 'INDEX'
@@ -156,18 +157,17 @@ const MobileButton = ({
 const Layout = ({
   children,
   page,
-  lesson,
+  isLessonOpen,
 }: {
   children: ReactElement
   page?: PageType
-  lesson?: LessonType
+  isLessonOpen?: boolean
 }): React.ReactElement => {
   const { address } = useAccount()
   const { open } = useAppKit()
   const router = useRouter()
   const [nameCache] = useLocalStorage(`name-cache`, {})
   const [community] = useLocalStorage(`community`, '')
-  const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
   const [score] = useLocalStorage(`score`, 0)
   const [, isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
@@ -195,222 +195,258 @@ const Layout = ({
     await open({ view: 'Connect' })
   }
 
-  if (
+  const shouldShowOnlyChildren =
     (page === 'INDEX' ||
-      (page === 'LESSON-DETAIL' &&
-        lesson?.slug &&
-        JSON.parse(openLessonLS)?.includes(lesson.slug))) &&
+      page === '' ||
+      (page === 'LESSON-DETAIL' && isLessonOpen)) &&
     !isSmallScreen
-  ) {
-    return <>{children}</>
-  }
 
   const menuBarWidth = '280px'
   const profileHeight = community ? '344px' : '298px'
+
   return (
     <Box
       position="relative"
       display="flex"
       flexDirection="column"
-      background={`linear-gradient(
-      107.1deg,
-      rgba(46, 33, 33, 0.3) -3.13%,
-      rgba(80, 73, 84, 0.3) 16.16%,
-      rgba(94, 89, 104, 0.3) 29.38%,
-      rgba(86, 81, 94, 0.3) 41.5%,
-      rgba(23, 21, 21, 0.3) 102.65%
-    )`}
+      background={
+        shouldShowOnlyChildren
+          ? 'default'
+          : `linear-gradient(
+        107.1deg,
+        rgba(46, 33, 33, 0.3) -3.13%,
+        rgba(80, 73, 84, 0.3) 16.16%,
+        rgba(94, 89, 104, 0.3) 29.38%,
+        rgba(86, 81, 94, 0.3) 41.5%,
+        rgba(23, 21, 21, 0.3) 102.65%
+      )`
+      }
     >
       <Box
-        marginLeft={isSmallScreen ? '0' : menuBarWidth}
-        borderLeft={isSmallScreen ? '0' : '2px #3D3838 solid'}
-        display="block"
-        backgroundColor="#161515"
+        position={shouldShowOnlyChildren ? 'relative' : 'absolute'}
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
       >
-        {page !== 'GLOSSARY' && <Announcement />}
-        {page === 'INDEX' || page === '' ? (
-          children
-        ) : (
+        <Box
+          marginLeft={
+            isSmallScreen || shouldShowOnlyChildren ? '0' : menuBarWidth
+          }
+          borderLeft={
+            isSmallScreen || shouldShowOnlyChildren ? '0' : '2px #3D3838 solid'
+          }
+          display={shouldShowOnlyChildren ? 'block' : 'grid'}
+          backgroundColor="#161515"
+        >
+          {page !== 'GLOSSARY' && <Announcement />}
           <Container
-            maxW="container.xl"
+            maxW={
+              shouldShowOnlyChildren
+                ? '100vw'
+                : page === 'PROFILE'
+                ? '100vw'
+                : 'container.xl'
+            }
             px={
-              isSmallScreen
-                ? page === 'LESSON-DETAIL' || page === 'GLOSSARY'
+              shouldShowOnlyChildren
+                ? '0'
+                : isSmallScreen
+                ? page === 'LESSON-DETAIL' ||
+                  page === 'GLOSSARY' ||
+                  page === 'ARTICLE' ||
+                  page === 'INDEX'
                   ? '0'
                   : '4'
                 : '4'
             }
-            pb={isSmallScreen ? (page === 'LESSON-DETAIL' ? '0' : '16') : '0'}
+            pb={
+              isSmallScreen
+                ? page === 'LESSON-DETAIL' && shouldShowOnlyChildren
+                  ? '0'
+                  : '16'
+                : '0'
+            }
           >
             {children}
           </Container>
-        )}
-      </Box>
-      {!isSmallScreen ? (
-        <>
-          {/* Desktop menu */}
-          <Box
-            // w={`calc(${menuBarWidth} + 2px)`}
-            w={menuBarWidth}
-            position={scrollY > 80 ? 'fixed' : 'absolute'}
-            top="0"
-          >
-            {address ? (
-              <Box
-                background={
-                  page === 'PROFILE'
-                    ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
-                    : '#3F3253'
-                }
-                h={profileHeight}
-                borderBottom={page === 'PROFILE' ? '' : '2px solid #574572'}
-              >
-                <InternalLink href={`/explorer/${username}?referral=true`}>
-                  <Box
-                    pt="8"
-                    borderBottom={page === 'PROFILE' ? '2px solid #B85FF1' : ''}
-                    position="relative"
-                  >
-                    <ProfileScore avatar={avatar} score={score} />
+        </Box>
+        {!shouldShowOnlyChildren && (
+          <>
+            {!isSmallScreen ? (
+              <>
+                {/* Desktop menu */}
+                <Box
+                  // w={`calc(${menuBarWidth} + 2px)`}
+                  w={menuBarWidth}
+                  position={scrollY > 80 ? 'fixed' : 'absolute'}
+                  top="0"
+                >
+                  {address ? (
                     <Box
-                      textAlign="center"
-                      mt="8"
-                      color="white"
-                      fontSize="xl"
-                      fontWeight="bold"
-                      textTransform="uppercase"
-                      whiteSpace="nowrap"
+                      background={
+                        page === 'PROFILE'
+                          ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
+                          : '#3F3253'
+                      }
+                      h={profileHeight}
+                      borderBottom={
+                        page === 'PROFILE' ? '' : '2px solid #574572'
+                      }
                     >
-                      {ens.includes('.') ? ens : shortenAddress(username)}
-                    </Box>
-                    <Box
-                      textAlign="center"
-                      color="#ffffff70"
-                      fontSize="xl"
-                      fontWeight="bold"
-                      textTransform="uppercase"
-                      pt={community ? '4' : '0'}
-                      pb="8"
-                    >
-                      {community && (
-                        <Box display="flex" justifyContent="center">
-                          <Box>-[&nbsp;</Box>
-                          <Box mt="1.5px">{community}</Box>
-                          <Box>&nbsp;]-</Box>
+                      <InternalLink
+                        href={`/explorer/${username}?referral=true`}
+                      >
+                        <Box
+                          pt="8"
+                          borderBottom={
+                            page === 'PROFILE' ? '2px solid #B85FF1' : ''
+                          }
+                          position="relative"
+                        >
+                          <ProfileScore avatar={avatar} score={score} />
+                          <Box
+                            textAlign="center"
+                            mt="8"
+                            color="white"
+                            fontSize="xl"
+                            fontWeight="bold"
+                            textTransform="uppercase"
+                            whiteSpace="nowrap"
+                          >
+                            {ens.includes('.') ? ens : shortenAddress(username)}
+                          </Box>
+                          <Box
+                            textAlign="center"
+                            color="#ffffff70"
+                            fontSize="xl"
+                            fontWeight="bold"
+                            textTransform="uppercase"
+                            pt={community ? '4' : '0'}
+                            pb="8"
+                          >
+                            {community && (
+                              <Box display="flex" justifyContent="center">
+                                <Box>-[&nbsp;</Box>
+                                <Box mt="1.5px">{community}</Box>
+                                <Box>&nbsp;]-</Box>
+                              </Box>
+                            )}
+                          </Box>
                         </Box>
-                      )}
+                      </InternalLink>
                     </Box>
-                  </Box>
-                </InternalLink>
-              </Box>
-            ) : (
-              <Box
-                background="transparent"
-                h={profileHeight}
-                borderBottom="2px solid #574572"
-                textAlign="center"
-              >
-                <Box pt="8">
-                  <Box
-                    margin="auto"
-                    pt="10px"
-                    w="170px"
-                    h="170px"
-                    borderRadius="50%"
-                    backgroundImage="linear-gradient(180deg, #A379BD 0%, #5B5198 100%)"
-                  >
-                    <Image
-                      w="150px"
-                      h="150px"
-                      margin="auto"
-                      borderRadius="50%"
-                      backgroundColor="black"
-                      src={DEFAULT_AVATAR}
+                  ) : (
+                    <Box
+                      background="transparent"
+                      h={profileHeight}
+                      borderBottom="2px solid #574572"
+                      textAlign="center"
+                    >
+                      <Box pt="8">
+                        <Box
+                          margin="auto"
+                          pt="10px"
+                          w="170px"
+                          h="170px"
+                          borderRadius="50%"
+                          backgroundImage="linear-gradient(180deg, #A379BD 0%, #5B5198 100%)"
+                        >
+                          <Image
+                            w="150px"
+                            h="150px"
+                            margin="auto"
+                            borderRadius="50%"
+                            backgroundColor="black"
+                            src={DEFAULT_AVATAR}
+                          />
+                        </Box>
+                        <Button
+                          onClick={openModal}
+                          size={isSmallScreen ? 'sm' : 'md'}
+                          leftIcon={<Wallet weight="bold" />}
+                          zIndex={2}
+                          variant="primary"
+                          marginY="27px"
+                        >
+                          Connect Wallet
+                        </Button>
+                      </Box>
+                    </Box>
+                  )}
+                  <Box>
+                    <DesktopButton
+                      link="/lessons"
+                      label="Lessons"
+                      isActive={page === 'LESSON'}
+                      icon={LessonIcon}
+                    />
+                    <DesktopButton
+                      link="/lessons/handbook"
+                      label="Handbooks"
+                      isActive={page === 'HANDBOOK'}
+                      icon={HandbookIcon}
+                    />
+                    <DesktopButton
+                      link="/glossary"
+                      label="Glossary"
+                      isActive={page === 'GLOSSARY'}
+                      icon={GlossaryIcon}
                     />
                   </Box>
-                  <Button
-                    onClick={openModal}
-                    size={isSmallScreen ? 'sm' : 'md'}
-                    leftIcon={<Wallet weight="bold" />}
-                    zIndex={2}
-                    variant="primary"
-                    marginY="27px"
-                  >
-                    Connect Wallet
-                  </Button>
                 </Box>
+              </>
+            ) : (
+              <Box
+                position="fixed"
+                w="100vw"
+                h="81px"
+                bottom="0"
+                background="#2b2b2bdd"
+                backdropFilter="blur(10px)"
+                display="flex"
+                zIndex="2"
+                borderTop="1px solid #222222"
+              >
+                {/* Mobile menu */}
+                <MobileButton
+                  link="/lessons"
+                  label="Lessons"
+                  isActive={router.pathname === '/lessons'}
+                  icon={LessonIcon}
+                  pwa={pwa}
+                />
+                <MobileButton
+                  link="/lessons/handbook"
+                  label="Handbooks"
+                  isActive={router.pathname.startsWith('/lessons/handbook')}
+                  icon={HandbookIcon}
+                  pwa={pwa}
+                />
+                <MobileButton
+                  link="/glossary"
+                  label="Glossary"
+                  isActive={router.pathname.startsWith('/glossary')}
+                  icon={GlossaryIcon}
+                  pwa={pwa}
+                />
+                <MobileButton
+                  link={
+                    username !== ''
+                      ? `/explorer/${username}?referral=true`
+                      : `explorer/my-profile`
+                  }
+                  label="Profile"
+                  isActive={router.pathname.startsWith('/explorer')}
+                  imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
+                  borderRight={0}
+                  pwa={pwa}
+                />
               </Box>
             )}
-            <Box>
-              <DesktopButton
-                link="/lessons"
-                label="Lessons"
-                isActive={page === 'LESSON'}
-                icon={LessonIcon}
-              />
-              <DesktopButton
-                link="/lessons/handbook"
-                label="Handbooks"
-                isActive={page === 'HANDBOOK'}
-                icon={HandbookIcon}
-              />
-              <DesktopButton
-                link="/glossary"
-                label="Glossary"
-                isActive={page === 'GLOSSARY'}
-                icon={GlossaryIcon}
-              />
-            </Box>
-          </Box>
-        </>
-      ) : (
-        <Box
-          position="fixed"
-          w="100vw"
-          h="81px"
-          bottom="0"
-          background="#2b2b2bdd"
-          backdropFilter="blur(10px)"
-          display="flex"
-          zIndex="2"
-          borderTop="1px solid #222222"
-        >
-          {/* Mobile menu */}
-          <MobileButton
-            link="/lessons"
-            label="Lessons"
-            isActive={router.pathname === '/lessons'}
-            icon={LessonIcon}
-            pwa={pwa}
-          />
-          <MobileButton
-            link="/lessons/handbook"
-            label="Handbooks"
-            isActive={router.pathname.startsWith('/lessons/handbook')}
-            icon={HandbookIcon}
-            pwa={pwa}
-          />
-          <MobileButton
-            link="/glossary"
-            label="Glossary"
-            isActive={router.pathname.startsWith('/glossary')}
-            icon={GlossaryIcon}
-            pwa={pwa}
-          />
-          <MobileButton
-            link={
-              username !== ''
-                ? `/explorer/${username}?referral=true`
-                : `explorer/my-profile`
-            }
-            label="Profile"
-            isActive={router.pathname.startsWith('/explorer')}
-            imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
-            borderRight={0}
-            pwa={pwa}
-          />
-        </Box>
-      )}
+          </>
+        )}
+      </Box>
     </Box>
   )
 }

@@ -220,7 +220,7 @@ const HomePage = (): JSX.Element => {
             bgColor="#1F2023"
             p={isSmallScreen ? '2' : '4'}
             overflow="hidden"
-            mb={isMediumScreen ? '81px' : '0'}
+            mb={isMediumScreen ? '17px' : '0'}
           >
             <Container maxW="container.lg">
               <Box mt="12">

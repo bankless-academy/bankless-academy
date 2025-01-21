@@ -24,7 +24,7 @@ const ProfileScore: React.FC<ProfileScoreProps> = ({ avatar, score }) => {
         borderRadius="50%"
         backgroundColor="black"
         src={avatar !== '' ? avatar : DEFAULT_AVATAR}
-        fallbackSrc={DEFAULT_AVATAR}
+        // fallbackSrc={DEFAULT_AVATAR}
       />
       {score > 0 && (
         <Box position="absolute" top="0" right="-26px">
