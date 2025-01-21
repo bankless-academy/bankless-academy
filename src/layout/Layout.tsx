@@ -223,7 +223,9 @@ const Layout = ({
       }
     >
       <Box
-        position={shouldShowOnlyChildren ? 'relative' : 'absolute'}
+        position={
+          shouldShowOnlyChildren || isSmallScreen ? 'relative' : 'absolute'
+        }
         top={0}
         left={0}
         right={0}
