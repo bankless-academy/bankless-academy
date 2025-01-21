@@ -471,7 +471,9 @@ const ConnectWalletButton = ({
                     leftIcon={<UserCircle weight="bold" />}
                     onClick={onClose}
                   >
-                    {t('My Explorer Profile')}
+                    <Box minW={isSmallScreen ? '150px' : '180px'}>
+                      {t('My Explorer Profile')}
+                    </Box>
                   </Button>
                 </InternalLink>
               </Box>
@@ -498,7 +500,9 @@ const ConnectWalletButton = ({
                   leftIcon={<SignOut weight="bold" />}
                   onClick={disconnectWallet}
                 >
-                  {t('Disconnect Wallet')}
+                  <Box minW={isSmallScreen ? '150px' : '180px'}>
+                    {t('Disconnect Wallet')}
+                  </Box>
                 </Button>
               </Box>
             </PopoverBody>

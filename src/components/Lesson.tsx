@@ -16,13 +16,7 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser, { processNodes } from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import {
-  Warning,
-  ArrowUUpLeft,
-  Bug,
-  Square,
-  CheckSquare,
-} from '@phosphor-icons/react'
+import { Warning, X, Bug, Square, CheckSquare } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
@@ -868,17 +862,18 @@ const Lesson = ({
       highlightnumber={isAnimationSlide ? animationStepLS.toString() : null}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
+      position="relative"
     >
       {!lesson?.isPreview && !isSmallScreen && (
-        <Box h="0">
+        <Box h="0" w="100%">
           <Button
-            position="relative"
-            top={isSmallScreen ? '8px' : '-38px'}
-            left={isSmallScreen ? '2px' : '-55px'}
+            position="absolute"
+            top="-24px"
+            right="-24px"
             size="lg"
             iconSpacing="0"
             variant="secondaryBig"
-            leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+            leftIcon={<X width="24px" height="24px" />}
             onClick={() => closeLesson()}
             p="0"
             _hover={{ p: '0' }}
@@ -1106,7 +1101,7 @@ const Lesson = ({
               variant="secondaryBig"
               size="lg"
               onClick={() => closeLesson()}
-              leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+              leftIcon={<X width="24px" height="24px" />}
               ml={longSlide ? '600px' : '0'}
               p="0"
               _hover={{ p: '0' }}

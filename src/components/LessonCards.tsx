@@ -20,7 +20,7 @@ export const StyledHeading = styled(Heading)`
     display: flex;
     flex-basis: 100%;
     align-items: center;
-    margin: 64px 0 24px;
+    margin: 24px 0 24px;
 
     &:before,
     &:after {

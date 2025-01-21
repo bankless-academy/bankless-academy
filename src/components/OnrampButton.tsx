@@ -1,4 +1,4 @@
-import { Button, Image } from '@chakra-ui/react'
+import { Box, Button, Image } from '@chakra-ui/react'
 
 const OnrampButton = ({
   address,
@@ -31,7 +31,17 @@ const OnrampButton = ({
       leftIcon={<Image h="20px" src={'/images/coinbase-logo.svg'} />}
       {...props}
     >
-      Onramp via Coinbase
+      <Box
+        minW={
+          props.w === '100%' && props.size === 'lg'
+            ? '180px'
+            : props.w === '100%'
+            ? '150px'
+            : 'unset'
+        }
+      >
+        Onramp via Coinbase
+      </Box>
     </Button>
   )
 }

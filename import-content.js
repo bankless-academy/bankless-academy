@@ -149,42 +149,44 @@ axios
         lesson.englishName = lesson.name
         lesson.slug = slugify(lesson.name)
         delete lesson.quest
-        await axios({
-          url: 'https://arweave.net/graphql',
-          method: 'post',
-          data: {
-            query: `
-              query GetMirrorTransactions($digest: String!) {
-                transactions(tags:[
-                  {
-                    name:"App-Name",
-                    values:["MirrorXYZ"],
-                  },
-                  {
-                    name:"Original-Content-Digest",
-                    values:[$digest]
-                  }
-                ], sort:HEIGHT_DESC, first: 10){
-                  edges {
-                    node {
-                      id
-                    }
-                  }
-                }
-              }`,
-            variables: { "digest": mirrorId }
-          }
-        }).then(async (result) => {
-          const arweaveTxId = result?.data?.data?.transactions?.edges[0]?.node?.id
-          console.log('Mirror article: ', arweaveTxId)
-          if (arweaveTxId) {
+        // await axios({
+        //   url: 'https://arweave.net/graphql',
+        //   method: 'post',
+        //   data: {
+        //     query: `
+        //       query GetMirrorTransactions($digest: String!) {
+        //         transactions(tags:[
+        //           {
+        //             name:"App-Name",
+        //             values:["MirrorXYZ"],
+        //           },
+        //           {
+        //             name:"Original-Content-Digest",
+        //             values:[$digest]
+        //           }
+        //         ], sort:HEIGHT_DESC, first: 10){
+        //           edges {
+        //             node {
+        //               id
+        //             }
+        //           }
+        //         }
+        //       }`,
+        //     variables: { "digest": mirrorId }
+        //   }
+        // }).then(async (result) => {
+          // const arweaveTxId = result?.data?.data?.transactions?.edges[0]?.node?.id
+          // console.log('Mirror article: ', arweaveTxId)
+          // if (arweaveTxId) {
             return axios
-              .get(`https://arweave.net/${arweaveTxId}`)
+              // .get(`https://arweave.net/${arweaveTxId}`)
+              // HACK: use mirror API to get article content
+              .get(`https://mirror.xyz/_next/data/h4o88ip1ojLhLF1z4T-3l/banklessacademy.eth/${mirrorId}.json`)
               .then(async ({ data }) => {
                 // console.log(data)
                 // console.log(data?.content?.body)
                 // console.log(data?.content?.title)
-                lesson.articleContent = data?.content?.body
+                lesson.articleContent = data?.pageProps?.__APOLLO_STATE__?.[`entry:${mirrorId}`]?.body
                   .replace(/\\\[/g, "[")
                   .replace(/\\\]/g, "]")
                   // manual fix
@@ -314,8 +316,8 @@ axios
                   }
                 }
               })
-          }
-        })
+          // }
+        // })
         return
       }
 
