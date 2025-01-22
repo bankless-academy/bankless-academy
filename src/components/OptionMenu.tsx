@@ -33,7 +33,9 @@ const OptionMenu = ({
   } = useDisclosure()
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
 
-  const twitterLink = `https://x.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
+  const twitterLink = IS_WHITELABEL
+    ? `https://x.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
+    : `https://bankless.ac/twitter`
 
   return (
     <Box zIndex="10">
@@ -101,10 +103,7 @@ const OptionMenu = ({
                   {t('Install Mobile App')} 📱
                 </MenuItem>
               )}
-              <ExternalLink
-                href="https://hey.xyz/u/banklessacademy"
-                color="white"
-              >
+              <ExternalLink href="https://bankless.ac/hey" color="white">
                 <MenuItem>
                   {t('Follow our Lens')}
                   <svg
@@ -122,10 +121,7 @@ const OptionMenu = ({
                   </svg>
                 </MenuItem>
               </ExternalLink>
-              <ExternalLink
-                href="https://warpcast.com/banklessacademy"
-                color="white"
-              >
+              <ExternalLink href="https://bankless.ac/farcaster" color="white">
                 <MenuItem>
                   {t('Follow our Farcaster')}
                   <svg

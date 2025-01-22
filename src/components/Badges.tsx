@@ -55,139 +55,133 @@ const Badges = ({
               spacing={2}
               p={2}
             >
-              {
-                type === 'achievements' && (
-                  <>
-                    {Object.keys(ACHIEVEMENTS).map((a, index) => {
-                      if (a in ACHIEVEMENTS) {
-                        const achievement = ACHIEVEMENTS[a]
-                        const isAchievementDone = (badges as string[]).includes(
-                          a
-                        )
-                        if (isAchievementDone || isMyProfile)
-                          return (
-                            <Box
-                              justifySelf="center"
-                              p={1}
-                              position="relative"
-                              opacity={isAchievementDone ? '1' : '0.3'}
-                              key={`achievement-${index}`}
-                            >
-                              <Box position="absolute" top="9px" right="5px">
-                                <Helper
-                                  title={achievement.description}
-                                  isProfile={true}
-                                  definition={
-                                    <>
-                                      <Box mb="4">
-                                        {achievement.helper
-                                          .split(achievement.label)
-                                          .map((part, i, array) => (
-                                            <React.Fragment key={`helper-${i}`}>
-                                              {part}
-                                              {i < array.length - 1 && (
-                                                <ExternalLink
-                                                  href={achievement.link}
-                                                >
-                                                  {achievement.label}
-                                                </ExternalLink>
-                                              )}
-                                            </React.Fragment>
-                                          ))}
-                                      </Box>
-                                    </>
-                                  }
-                                />
-                              </Box>
-                              <ExternalLink href={achievement.link}>
-                                <Box>
-                                  <Box
-                                    p="2"
-                                    border="1px #433d43 solid"
-                                    borderRadius="8px"
-                                  >
-                                    <Image
-                                      src={achievement.image}
-                                      alt={achievement.description}
-                                      title={achievement.description}
-                                    />
-                                  </Box>
-                                  <Box
-                                    fontWeight="bold"
-                                    fontSize="sm"
-                                    width="100%"
-                                    textAlign="center"
-                                    color="white"
-                                  >
-                                    {achievement.description}
-                                  </Box>
-                                </Box>
-                              </ExternalLink>
-                            </Box>
-                          )
-                      }
-                    })}
-                  </>
-                )
-              }
-              {
-                badges?.map((badge, index) => {
-                  if (!type) {
-                    const lesson = LESSONS.find(
-                      (lesson) => lesson.badgeId === badge
-                    )
-                    if (lesson) {
-                      if (lesson.badgeImageLink.includes('.mp4')) {
+              {type === 'achievements' && (
+                <>
+                  {Object.keys(ACHIEVEMENTS).map((a, index) => {
+                    if (a in ACHIEVEMENTS) {
+                      const achievement = ACHIEVEMENTS[a]
+                      const isAchievementDone = (badges as string[]).includes(a)
+                      if (isAchievementDone || isMyProfile)
                         return (
                           <Box
-                            key={`badge-${index}`}
-                            height="78px"
-                            width="78px"
-                            boxShadow="0px 0px 4px 2px #00000060"
-                            borderRadius="3px"
-                            overflow="hidden"
-                            border="1px solid #4b474b"
-                          >
-                            <video
-                              autoPlay
-                              loop
-                              playsInline
-                              muted
-                              style={{
-                                borderRadius: '3px',
-                                overflow: 'hidden',
-                              }}
-                            >
-                              <source
-                                src={lesson.badgeImageLink}
-                                type="video/mp4"
-                              ></source>
-                            </video>
-                          </Box>
-                        )
-                      }
-                      // OLD badge display
-                      else
-                        return (
-                          <Box
-                            key={`badge-${index}`}
                             justifySelf="center"
-                            boxShadow={'0px 0px 4px 2px #00000060'}
-                            borderRadius="3px"
-                            backgroundColor={'blackAlpha.300'}
                             p={1}
+                            position="relative"
+                            opacity={isAchievementDone ? '1' : '0.3'}
+                            key={`achievement-${index}`}
                           >
-                            <Image
-                              src={lesson.badgeImageLink}
-                              alt={lesson.name}
-                              title={lesson.name}
-                            />
+                            <Box position="absolute" top="9px" right="5px">
+                              <Helper
+                                title={achievement.description}
+                                isProfile={true}
+                                definition={
+                                  <>
+                                    <Box mb="4">
+                                      {achievement.helper
+                                        .split(achievement.label)
+                                        .map((part, i, array) => (
+                                          <React.Fragment key={`helper-${i}`}>
+                                            {part}
+                                            {i < array.length - 1 && (
+                                              <ExternalLink
+                                                href={achievement.link}
+                                              >
+                                                {achievement.label}
+                                              </ExternalLink>
+                                            )}
+                                          </React.Fragment>
+                                        ))}
+                                    </Box>
+                                  </>
+                                }
+                              />
+                            </Box>
+                            <ExternalLink href={achievement.link}>
+                              <Box>
+                                <Box
+                                  p="2"
+                                  border="1px #433d43 solid"
+                                  borderRadius="8px"
+                                >
+                                  <Image
+                                    src={achievement.image}
+                                    alt={achievement.description}
+                                    title={achievement.description}
+                                  />
+                                </Box>
+                                <Box
+                                  fontWeight="bold"
+                                  fontSize="sm"
+                                  width="100%"
+                                  textAlign="center"
+                                  color="white"
+                                >
+                                  {achievement.description}
+                                </Box>
+                              </Box>
+                            </ExternalLink>
                           </Box>
                         )
                     }
+                  })}
+                </>
+              )}
+              {badges?.map((badge, index) => {
+                if (!type) {
+                  const lesson = LESSONS.find(
+                    (lesson) => lesson.badgeId === badge
+                  )
+                  if (lesson) {
+                    if (lesson.badgeImageLink.includes('.mp4')) {
+                      return (
+                        <Box
+                          key={`badge-${index}`}
+                          height="78px"
+                          width="78px"
+                          boxShadow="0px 0px 4px 2px #00000060"
+                          borderRadius="3px"
+                          overflow="hidden"
+                          border="1px solid #4b474b"
+                        >
+                          <video
+                            autoPlay
+                            loop
+                            playsInline
+                            muted
+                            style={{
+                              borderRadius: '3px',
+                              overflow: 'hidden',
+                            }}
+                          >
+                            <source
+                              src={lesson.badgeImageLink}
+                              type="video/mp4"
+                            ></source>
+                          </video>
+                        </Box>
+                      )
+                    }
+                    // OLD badge display
+                    else
+                      return (
+                        <Box
+                          key={`badge-${index}`}
+                          justifySelf="center"
+                          boxShadow={'0px 0px 4px 2px #00000060'}
+                          borderRadius="3px"
+                          backgroundColor={'blackAlpha.300'}
+                          p={1}
+                        >
+                          <Image
+                            src={lesson.badgeImageLink}
+                            alt={lesson.name}
+                            title={lesson.name}
+                          />
+                        </Box>
+                      )
                   }
-                })
-              }
+                }
+              })}
               {type === 'collectibles' && (
                 <>
                   {[
@@ -323,20 +317,6 @@ const Badges = ({
                   })}
                 </>
               )}
-              {/* Ongoing Donation Round */}
-              {/* {isMyProfile && type === 'donations' && (
-                <Box key={`badge-add`} justifySelf="center" p={1}>
-                  <ExternalLink href="https://explorer.gitcoin.co/#/round/424/0x98720dd1925d34a2453ebc1f91c9d48e7e89ec29/0x98720dd1925d34a2453ebc1f91c9d48e7e89ec29-175">
-                    <Image
-                      src={`/images/add-badge.png`}
-                      width={'100px'}
-                      height="auto"
-                      alt={t('Donate on Gitcoin')}
-                      title={t('Donate on Gitcoin')}
-                    />
-                  </ExternalLink>
-                </Box>
-              )} */}
               {type === 'stamps' && (
                 <>
                   {Object.entries(STAMP_PLATFORMS).map(([key, platform]) => {

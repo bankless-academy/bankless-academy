@@ -32,10 +32,7 @@ const Footer: React.FC = () => {
           </>
         ) : (
           <>
-            <ExternalLink
-              display="flex"
-              href="https://x.com/intent/follow?screen_name=BanklessAcademy"
-            >
+            <ExternalLink display="flex" href="https://bankless.ac/twitter">
               {t('Twitter')}
             </ExternalLink>
             <span>&nbsp;|&nbsp;</span>
