@@ -245,7 +245,7 @@ const Layout = ({
           display={shouldShowOnlyChildren ? 'block' : 'grid'}
           backgroundColor="#161515"
         >
-          {page !== 'GLOSSARY' && <Announcement />}
+          {page !== 'GLOSSARY' && !isLessonOpen && <Announcement />}
           <Container
             maxW={
               shouldShowOnlyChildren

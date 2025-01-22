@@ -579,7 +579,7 @@ const HomePage = (): JSX.Element => {
                         {t(`Support Us`)}
                       </Heading>
                       <ExternalLink
-                        href="https://giveth.io/donate/bankless-academy"
+                        href="https://bankless.ac/giveth"
                         alt="Donate via Giveth"
                       >
                         <Image

@@ -5,7 +5,6 @@ import styled from '@emotion/styled'
 import Nav from 'layout/Nav'
 import { useSmallScreen } from 'hooks/index'
 import { useLocalStorage } from 'usehooks-ts'
-import Announcement from 'components/Announcement'
 
 const StyledBackground = styled(Box)<{
   issmallscreen?: string
@@ -47,7 +46,6 @@ const Layout = ({
       overflowX="hidden"
     >
       <Nav />
-      {isLesson && <Announcement />}
       <StyledBackground
         issmallscreen={isSmallScreen?.toString()}
         issmalllesson={isSmallLesson?.toString()}

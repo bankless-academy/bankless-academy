@@ -9,7 +9,8 @@ export const config = {
 export const AUTHORIZED_KV = [
   'bankless-dao-news',
   'announcement',
-  'leaderboard'
+  'leaderboard',
+  'explore',
 ]
 
 export default async function handler(req: NextRequest) {
