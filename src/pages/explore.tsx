@@ -4,13 +4,13 @@ import {
   SimpleGrid,
   Text,
   Image,
+  Center,
   Tabs,
   TabList,
   TabPanels,
   TabPanel,
   Tab,
-  Spinner,
-  Center,
+  Tag,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 
@@ -18,6 +18,7 @@ import { MetaData } from 'components/Head'
 import Layout from 'layout/Layout'
 import { StyledHeading } from 'components/LessonCards'
 import ExternalLink from 'components/ExternalLink'
+import { ExploreType } from 'entities/explore'
 
 export const pageMeta: MetaData = {
   title: 'Explore',
@@ -29,99 +30,104 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const ACTIVITIES = [
-  {
-    name: 'Zora',
-    image: 'https://zora.co/assets/image/og-image.jpg',
-    // link: 'https://zora.co/invite/banklessacademy',
-    link: 'https://zora.co/@banklessacademy?referrer=0xe1887ff140bfa9d3b45d0b2077b7471124acd242',
-  },
-  {
-    name: 'Pods',
-    image: 'https://pods.media/api/carousel',
-    link: 'https://pods.media/?referrer=0xe1887fF140BfA9D3b45D0B2077b7471124acD242',
-  },
-]
-
-interface DApp {
-  id: string
-  category: string
-  content: {
-    title: string
-    short_description: string
-    image_url: string
-    target_url: string
-    cta_text: string
-    creator_name: string
-    creator_image_url: string
-  }
-}
-
-interface TrendingDApps {
-  [category: string]: DApp[]
+interface GroupedExploreItems {
+  [category: string]: ExploreType[]
 }
 
 function ExplorePage(): JSX.Element {
-  const [trendingDApps, setTrendingDApps] = useState<TrendingDApps>({})
+  const [groupedItems, setGroupedItems] = useState<GroupedExploreItems>({})
+  const [featuredItems, setFeaturedItems] = useState<ExploreType[]>([])
   const [error, setError] = useState<string>('')
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const fetchDApps = async () => {
+    const fetchExploreItems = async () => {
       try {
         setIsLoading(true)
-        const response = await fetch('/api/explore')
+        const response = await fetch('/api/get/explore')
         if (!response.ok) {
-          throw new Error('Failed to fetch dApps')
+          throw new Error('Failed to fetch explore items')
         }
         const data = await response.json()
-        setTrendingDApps(data.trending || {})
+        // Only show active items
+        const activeItems = data.filter((item: ExploreType) => item.isActif)
+
+        // Set featured items
+        const featured = activeItems.filter(
+          (item: ExploreType) => item.isFeatured
+        )
+        setFeaturedItems(featured)
+
+        // Group non-featured items by category
+        const nonFeatured = activeItems.filter(
+          (item: ExploreType) => !item.isFeatured
+        )
+        const grouped = nonFeatured.reduce(
+          (acc: GroupedExploreItems, item: ExploreType) => {
+            const category = item.category || 'Other'
+            if (!acc[category]) {
+              acc[category] = []
+            }
+            acc[category].push(item)
+            return acc
+          },
+          {}
+        )
+        setGroupedItems(grouped)
       } catch (error) {
-        console.error('Error fetching dApps:', error)
+        console.error('Error fetching explore items:', error)
         setError('Failed to load activities. Please try again later.')
       } finally {
         setIsLoading(false)
       }
     }
 
-    fetchDApps()
+    fetchExploreItems()
   }, [])
 
   if (isLoading) {
     return (
       <Layout page="EXPLORE">
-        <Center h="50vh">
-          <Spinner size="xl" />
+        <Center h="50vh" minH="100vh">
+          <Image
+            margin="auto"
+            paddingTop="200px"
+            width="250px"
+            src="/loading_purple.svg"
+          />
         </Center>
       </Layout>
     )
   }
 
-  const renderDAppCard = (dapp: DApp) => (
+  const renderExploreCard = (item: ExploreType) => (
     <Box
-      key={dapp.id}
+      key={item.product}
       w="100%"
-      bg="gray.100"
+      bg="transparent"
       borderRadius="lg"
       overflow="hidden"
     >
-      <ExternalLink href={dapp.content.target_url}>
-        <Box position="relative" h="200px">
+      <ExternalLink href={item.link}>
+        <Box position="relative" paddingBottom="100%" overflow="hidden">
           <Image
-            src={dapp.content.image_url}
-            alt={dapp.content.title}
+            src={item.image}
+            alt={item.product}
+            position="absolute"
+            top={0}
+            left={0}
             w="100%"
             h="100%"
             objectFit="cover"
-            bg="white"
+            bg="transparent"
           />
         </Box>
-        <Box bg="#000000" p={4} h="120px">
+        <Box bg="#000000" p={4}>
           <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
-            {dapp.content.title}
+            {item.product}
           </Text>
           <Text
-            fontSize="sm"
+            fontSize="xs"
             mb={2}
             noOfLines={2}
             sx={{
@@ -131,21 +137,15 @@ function ExplorePage(): JSX.Element {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
             }}
-            minH="42px"
+            minH="40px"
             color="#9E9E9E"
           >
-            {dapp.content.short_description}
+            {item.description}
           </Text>
-          <Box display="flex" alignItems="center">
-            <Image
-              src={dapp.content.creator_image_url}
-              alt={dapp.content.creator_name}
-              boxSize="20px"
-              mr={2}
-            />
-            <Text fontSize="sm" noOfLines={1}>
-              {dapp.content.creator_name}
-            </Text>
+          <Box display="flex" alignItems="center" mb={2} gap={2}>
+            <Tag size="sm" colorScheme="purple" variant="outline">
+              {item.category}
+            </Tag>
           </Box>
         </Box>
       </ExternalLink>
@@ -154,7 +154,7 @@ function ExplorePage(): JSX.Element {
 
   return (
     <Layout page="EXPLORE">
-      <Box>
+      <Box minH="100vh">
         {error && (
           <Text color="red.500" textAlign="center" mb={4}>
             {error}
@@ -163,67 +163,120 @@ function ExplorePage(): JSX.Element {
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
           Featured Activities
         </StyledHeading>
-        <SimpleGrid spacing={4} minChildWidth="300px">
-          {ACTIVITIES.map((activity) => (
-            <Box
-              key={activity.name}
-              w="100%"
-              bg="gray.100"
-              borderRadius="lg"
-              overflow="hidden"
-            >
-              <ExternalLink href={activity.link}>
-                <Box position="relative">
-                  <Image
-                    src={activity.image}
-                    alt={activity.name}
-                    w="100%"
-                    h="100%"
-                    objectFit="cover"
-                    bg="white"
-                    aspectRatio="1200/630"
-                  />
-                </Box>
-                <Box bg="#000000" p={4}>
-                  <Text fontWeight="bold" color="white">
-                    {activity.name}
-                  </Text>
-                </Box>
-              </ExternalLink>
-            </Box>
-          ))}
+        <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
+          {featuredItems
+            .sort((a, b) => a.product.localeCompare(b.product))
+            .map((item) => (
+              <Box
+                key={item.product}
+                w="100%"
+                bg="transparent"
+                borderRadius="lg"
+                overflow="hidden"
+              >
+                <ExternalLink href={item.link}>
+                  <Box position="relative">
+                    <Image
+                      src={item.image}
+                      alt={item.product}
+                      w="100%"
+                      h="100%"
+                      objectFit="cover"
+                      bg="transparent"
+                      aspectRatio="1200/630"
+                    />
+                  </Box>
+                  <Box bg="#000000" p={4}>
+                    <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
+                      {item.product}
+                    </Text>
+                    <Text
+                      fontSize="xs"
+                      mb={2}
+                      noOfLines={2}
+                      sx={{
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
+                        WebkitLineClamp: 2,
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                      }}
+                      minH="40px"
+                      color="#9E9E9E"
+                    >
+                      {item.description}
+                    </Text>
+                    <Box display="flex" alignItems="center" mb={2} gap={2}>
+                      <Tag size="sm" colorScheme="purple" variant="outline">
+                        {item.category}
+                      </Tag>
+                    </Box>
+                  </Box>
+                </ExternalLink>
+              </Box>
+            ))}
         </SimpleGrid>
 
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-          Trending Activities
+          Recommended Activities
         </StyledHeading>
-        <Tabs colorScheme="purple">
-          <Box overflowY="auto">
-            <TabList>
-              {Object.keys(trendingDApps).map((category) => (
-                <Tab key={category} mx={2} whiteSpace="nowrap">
-                  {category}
-                </Tab>
-              ))}
+        <Tabs variant="soft-rounded" colorScheme="purple" defaultIndex={0}>
+          <Box mt={8}>
+            <TabList
+              display="flex"
+              flexWrap="wrap"
+              justifyContent="center"
+              gap={2}
+              mb={4}
+            >
+              <Tab color="white">All</Tab>
+              {Object.keys(groupedItems)
+                .sort((a, b) => a.localeCompare(b))
+                .map((category) => (
+                  <Tab color="white" key={category}>
+                    {category}
+                  </Tab>
+                ))}
             </TabList>
           </Box>
           <TabPanels>
-            {Object.entries(trendingDApps).map(([category, dapps]) => (
-              <TabPanel key={category}>
-                <SimpleGrid
-                  spacing={4}
-                  templateColumns={{
-                    base: 'repeat(1, 1fr)',
-                    md: 'repeat(2, 1fr)',
-                    lg: 'repeat(4, 1fr)',
-                  }}
-                  maxW="1400px"
-                  mx="auto"
-                >
-                  {dapps.map(renderDAppCard)}
-                </SimpleGrid>
-              </TabPanel>
-            ))}
+            <TabPanel>
+              <SimpleGrid
+                spacing={4}
+                templateColumns={{
+                  base: 'repeat(2, 1fr)',
+                  md: 'repeat(3, 1fr)',
+                  lg: 'repeat(5, 1fr)',
+                }}
+                maxW="1400px"
+                mx="auto"
+              >
+                {Object.values(groupedItems)
+                  .flat()
+                  .sort((a, b) => a.product.localeCompare(b.product))
+                  .map(renderExploreCard)}
+              </SimpleGrid>
+            </TabPanel>
+            {Object.entries(groupedItems)
+              .sort(([a], [b]) => a.localeCompare(b))
+              .map(([category, items]) => (
+                <TabPanel key={category}>
+                  <SimpleGrid
+                    spacing={4}
+                    templateColumns={{
+                      base: 'repeat(2, 1fr)',
+                      md: 'repeat(3, 1fr)',
+                      lg: 'repeat(5, 1fr)',
+                    }}
+                    maxW="1400px"
+                    mx="auto"
+                  >
+                    {items
+                      .sort((a, b) => a.product.localeCompare(b.product))
+                      .map(renderExploreCard)}
+                  </SimpleGrid>
+                </TabPanel>
+              ))}
           </TabPanels>
         </Tabs>
       </Box>
