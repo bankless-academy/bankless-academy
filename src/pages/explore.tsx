@@ -4,7 +4,6 @@ import {
   SimpleGrid,
   Text,
   Image,
-  Center,
   Tabs,
   TabList,
   TabPanels,
@@ -19,14 +18,52 @@ import Layout from 'layout/Layout'
 import { StyledHeading } from 'components/LessonCards'
 import ExternalLink from 'components/ExternalLink'
 import { ExploreType } from 'entities/explore'
+import { POTION_API } from 'constants/index'
+import { fetchBE } from 'utils/server'
 
 export const pageMeta: MetaData = {
   title: 'Explore',
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: { pageMeta },
+interface ExplorePageProps {
+  pageMeta: MetaData
+  initialData: ExploreType[]
+}
+
+export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
+  try {
+    const explore = await fetchBE(
+      `${POTION_API}/table?id=8f2f600b38a44cbb98f7fd240686c27a`
+    )
+    const initialData = explore
+      .map((e: any) => ({
+        product: e.fields.Product,
+        image: e.fields.Image,
+        isActif: e.fields['Is Actif'],
+        isFeatured: e.fields['Is Featured'],
+        category: e.fields.Category?.[0],
+        description: e.fields.Description,
+        type: e.fields.Type,
+        link: e.fields.Link,
+      }))
+      .filter((item: ExploreType) => item.isActif)
+
+    return {
+      props: {
+        pageMeta,
+        initialData,
+      },
+      revalidate: 60, // Revalidate every minute
+    }
+  } catch (error) {
+    console.error('Error fetching explore data:', error)
+    return {
+      props: {
+        pageMeta,
+        initialData: [],
+      },
+      revalidate: 60,
+    }
   }
 }
 
@@ -38,33 +75,23 @@ interface GroupedByTypeItems {
   [type: string]: ExploreType[]
 }
 
-function ExplorePage(): JSX.Element {
+function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
   const [groupedItems, setGroupedItems] = useState<GroupedExploreItems>({})
   const [groupedByType, setGroupedByType] = useState<GroupedByTypeItems>({})
   const [featuredItems, setFeaturedItems] = useState<ExploreType[]>([])
   const [error, setError] = useState<string>('')
-  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const fetchExploreItems = async () => {
+    const processData = () => {
       try {
-        setIsLoading(true)
-        const response = await fetch('/api/get/explore')
-        if (!response.ok) {
-          throw new Error('Failed to fetch explore items')
-        }
-        const data = await response.json()
-        // Only show active items
-        const activeItems = data.filter((item: ExploreType) => item.isActif)
-
         // Set featured items
-        const featured = activeItems.filter(
+        const featured = initialData.filter(
           (item: ExploreType) => item.isFeatured
         )
         setFeaturedItems(featured)
 
         // Group non-featured items by category for display
-        const nonFeatured = activeItems.filter(
+        const nonFeatured = initialData.filter(
           (item: ExploreType) => !item.isFeatured
         )
         const grouped = nonFeatured.reduce(
@@ -94,30 +121,13 @@ function ExplorePage(): JSX.Element {
         )
         setGroupedByType(groupedByType)
       } catch (error) {
-        console.error('Error fetching explore items:', error)
-        setError('Failed to load activities. Please try again later.')
-      } finally {
-        setIsLoading(false)
+        console.error('Error processing explore data:', error)
+        setError('Failed to process activities. Please try again later.')
       }
     }
 
-    fetchExploreItems()
-  }, [])
-
-  if (isLoading) {
-    return (
-      <Layout page="EXPLORE">
-        <Center h="50vh" minH="100vh">
-          <Image
-            margin="auto"
-            paddingTop="200px"
-            width="250px"
-            src="/loading_purple.svg"
-          />
-        </Center>
-      </Layout>
-    )
-  }
+    processData()
+  }, [initialData])
 
   const renderRecommendedCard = (item: ExploreType) => (
     <Box
