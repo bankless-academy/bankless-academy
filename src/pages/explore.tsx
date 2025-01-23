@@ -275,7 +275,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
             </TabList>
           </Box>
           <TabPanels>
-            <TabPanel>
+            <TabPanel px="0">
               <Box maxW="1400px" mx="auto">
                 <SimpleGrid
                   columns={{ base: 1, lg: 2 }}
@@ -348,7 +348,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
             {Object.entries(groupedByType)
               .sort(([a], [b]) => sortTypes(a, b))
               .map(([type, typeItems]) => (
-                <TabPanel key={type}>
+                <TabPanel key={type} px="0">
                   <Box maxW="1400px" mx="auto">
                     <SimpleGrid
                       columns={{ base: 1, lg: 2 }}
