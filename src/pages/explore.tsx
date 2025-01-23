@@ -34,8 +34,13 @@ interface GroupedExploreItems {
   [category: string]: ExploreType[]
 }
 
+interface GroupedByTypeItems {
+  [type: string]: ExploreType[]
+}
+
 function ExplorePage(): JSX.Element {
   const [groupedItems, setGroupedItems] = useState<GroupedExploreItems>({})
+  const [groupedByType, setGroupedByType] = useState<GroupedByTypeItems>({})
   const [featuredItems, setFeaturedItems] = useState<ExploreType[]>([])
   const [error, setError] = useState<string>('')
   const [isLoading, setIsLoading] = useState(true)
@@ -58,7 +63,7 @@ function ExplorePage(): JSX.Element {
         )
         setFeaturedItems(featured)
 
-        // Group non-featured items by category
+        // Group non-featured items by category for display
         const nonFeatured = activeItems.filter(
           (item: ExploreType) => !item.isFeatured
         )
@@ -74,6 +79,20 @@ function ExplorePage(): JSX.Element {
           {}
         )
         setGroupedItems(grouped)
+
+        // Group by type for tabs
+        const groupedByType = nonFeatured.reduce(
+          (acc: GroupedByTypeItems, item: ExploreType) => {
+            const type = item.type || 'Other'
+            if (!acc[type]) {
+              acc[type] = []
+            }
+            acc[type].push(item)
+            return acc
+          },
+          {}
+        )
+        setGroupedByType(groupedByType)
       } catch (error) {
         console.error('Error fetching explore items:', error)
         setError('Failed to load activities. Please try again later.')
@@ -100,7 +119,7 @@ function ExplorePage(): JSX.Element {
     )
   }
 
-  const renderExploreCard = (item: ExploreType) => (
+  const renderRecommendedCard = (item: ExploreType) => (
     <Box
       key={item.product}
       w="100%"
@@ -109,48 +128,57 @@ function ExplorePage(): JSX.Element {
       overflow="hidden"
     >
       <ExternalLink href={item.link}>
-        <Box position="relative" paddingBottom="100%" overflow="hidden">
-          <Image
-            src={item.image}
-            alt={item.product}
-            position="absolute"
-            top={0}
-            left={0}
-            w="100%"
-            h="100%"
-            objectFit="cover"
-            bg="transparent"
-          />
-        </Box>
-        <Box bg="#000000" p={4}>
-          <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
-            {item.product}
-          </Text>
-          <Text
-            fontSize="xs"
-            mb={2}
-            noOfLines={2}
-            sx={{
-              display: '-webkit-box',
-              WebkitBoxOrient: 'vertical',
-              WebkitLineClamp: 2,
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-            }}
-            minH="40px"
-            color="#9E9E9E"
-          >
-            {item.description}
-          </Text>
-          <Box display="flex" alignItems="center" mb={2} gap={2}>
-            <Tag size="sm" colorScheme="purple" variant="outline">
-              {item.category}
-            </Tag>
+        <Box display="flex" bg="#000000" borderRadius="lg" overflow="hidden">
+          {/* Image container */}
+          <Box position="relative" height="108px" aspectRatio="1">
+            <Image
+              src={item.image}
+              alt={item.product}
+              w="100%"
+              h="100%"
+              objectFit="cover"
+              bg="transparent"
+            />
+          </Box>
+          {/* Content container */}
+          <Box flex="1" p={4}>
+            <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
+              {item.product}
+            </Text>
+            <Text
+              fontSize="xs"
+              mb={2}
+              noOfLines={2}
+              sx={{
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: 2,
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}
+              minH="40px"
+              color="#9E9E9E"
+            >
+              {item.description}
+            </Text>
           </Box>
         </Box>
       </ExternalLink>
     </Box>
   )
+
+  // Helper function to remove emojis from the start of a string
+  const removeLeadingEmojis = (str: string) => {
+    // This regex matches emojis and spaces at the start of the string
+    return str.replace(/^(\p{Emoji}\s*)+/u, '').trim()
+  }
+
+  // Helper function to sort types ignoring leading emojis
+  const sortTypes = (a: string, b: string) => {
+    const cleanA = removeLeadingEmojis(a)
+    const cleanB = removeLeadingEmojis(b)
+    return cleanA.localeCompare(cleanB)
+  }
 
   return (
     <Layout page="EXPLORE">
@@ -230,51 +258,181 @@ function ExplorePage(): JSX.Element {
               mb={4}
             >
               <Tab color="white">All</Tab>
-              {Object.keys(groupedItems)
-                .sort((a, b) => a.localeCompare(b))
-                .map((category) => (
-                  <Tab color="white" key={category}>
-                    {category}
+              {Object.keys(groupedByType)
+                .sort(sortTypes)
+                .map((type) => (
+                  <Tab color="white" key={type}>
+                    {type}
                   </Tab>
                 ))}
             </TabList>
           </Box>
           <TabPanels>
             <TabPanel>
-              <SimpleGrid
-                spacing={4}
-                templateColumns={{
-                  base: 'repeat(2, 1fr)',
-                  md: 'repeat(3, 1fr)',
-                  lg: 'repeat(5, 1fr)',
-                }}
-                maxW="1400px"
-                mx="auto"
-              >
-                {Object.values(groupedItems)
-                  .flat()
-                  .sort((a, b) => a.product.localeCompare(b.product))
-                  .map(renderExploreCard)}
-              </SimpleGrid>
+              <Box maxW="1400px" mx="auto">
+                <SimpleGrid
+                  columns={{ base: 1, lg: 2 }}
+                  spacing={8}
+                  alignItems="flex-start"
+                >
+                  {/* Left Column */}
+                  <Box>
+                    {Object.entries(groupedItems)
+                      .sort(([a], [b]) => a.localeCompare(b))
+                      .filter((_, index) => index % 2 === 0)
+                      .map(([category, items]) => (
+                        <Box key={category} mb={8}>
+                          <Text
+                            fontSize="xl"
+                            fontWeight="bold"
+                            color="white"
+                            mb={4}
+                          >
+                            {category}
+                          </Text>
+                          <SimpleGrid
+                            spacing={4}
+                            templateColumns={{
+                              base: 'repeat(1, 1fr)',
+                            }}
+                          >
+                            {items
+                              .sort((a, b) =>
+                                a.product.localeCompare(b.product)
+                              )
+                              .map(renderRecommendedCard)}
+                          </SimpleGrid>
+                        </Box>
+                      ))}
+                  </Box>
+                  {/* Right Column */}
+                  <Box>
+                    {Object.entries(groupedItems)
+                      .sort(([a], [b]) => a.localeCompare(b))
+                      .filter((_, index) => index % 2 === 1)
+                      .map(([category, items]) => (
+                        <Box key={category} mb={8}>
+                          <Text
+                            fontSize="xl"
+                            fontWeight="bold"
+                            color="white"
+                            mb={4}
+                          >
+                            {category}
+                          </Text>
+                          <SimpleGrid
+                            spacing={4}
+                            templateColumns={{
+                              base: 'repeat(1, 1fr)',
+                            }}
+                          >
+                            {items
+                              .sort((a, b) =>
+                                a.product.localeCompare(b.product)
+                              )
+                              .map(renderRecommendedCard)}
+                          </SimpleGrid>
+                        </Box>
+                      ))}
+                  </Box>
+                </SimpleGrid>
+              </Box>
             </TabPanel>
-            {Object.entries(groupedItems)
-              .sort(([a], [b]) => a.localeCompare(b))
-              .map(([category, items]) => (
-                <TabPanel key={category}>
-                  <SimpleGrid
-                    spacing={4}
-                    templateColumns={{
-                      base: 'repeat(2, 1fr)',
-                      md: 'repeat(3, 1fr)',
-                      lg: 'repeat(5, 1fr)',
-                    }}
-                    maxW="1400px"
-                    mx="auto"
-                  >
-                    {items
-                      .sort((a, b) => a.product.localeCompare(b.product))
-                      .map(renderExploreCard)}
-                  </SimpleGrid>
+            {Object.entries(groupedByType)
+              .sort(([a], [b]) => sortTypes(a, b))
+              .map(([type, typeItems]) => (
+                <TabPanel key={type}>
+                  <Box maxW="1400px" mx="auto">
+                    <SimpleGrid
+                      columns={{ base: 1, lg: 2 }}
+                      spacing={8}
+                      alignItems="flex-start"
+                    >
+                      {/* Group items by category first */}
+                      {(() => {
+                        // Group items by category
+                        const categoryGroups = typeItems.reduce(
+                          (acc: GroupedExploreItems, item: ExploreType) => {
+                            const category = item.category || 'Other'
+                            if (!acc[category]) {
+                              acc[category] = []
+                            }
+                            acc[category].push(item)
+                            return acc
+                          },
+                          {}
+                        )
+
+                        // Split categories into two columns
+                        const categories = Object.entries(categoryGroups).sort(
+                          ([a], [b]) => a.localeCompare(b)
+                        )
+
+                        return (
+                          <>
+                            {/* Left Column */}
+                            <Box>
+                              {categories
+                                .filter((_, index) => index % 2 === 0)
+                                .map(([category, items]) => (
+                                  <Box key={category} mb={8}>
+                                    <Text
+                                      fontSize="xl"
+                                      fontWeight="bold"
+                                      color="white"
+                                      mb={4}
+                                    >
+                                      {category}
+                                    </Text>
+                                    <SimpleGrid
+                                      spacing={4}
+                                      templateColumns={{
+                                        base: 'repeat(1, 1fr)',
+                                      }}
+                                    >
+                                      {items
+                                        .sort((a, b) =>
+                                          a.product.localeCompare(b.product)
+                                        )
+                                        .map(renderRecommendedCard)}
+                                    </SimpleGrid>
+                                  </Box>
+                                ))}
+                            </Box>
+                            {/* Right Column */}
+                            <Box>
+                              {categories
+                                .filter((_, index) => index % 2 === 1)
+                                .map(([category, items]) => (
+                                  <Box key={category} mb={8}>
+                                    <Text
+                                      fontSize="xl"
+                                      fontWeight="bold"
+                                      color="white"
+                                      mb={4}
+                                    >
+                                      {category}
+                                    </Text>
+                                    <SimpleGrid
+                                      spacing={4}
+                                      templateColumns={{
+                                        base: 'repeat(1, 1fr)',
+                                      }}
+                                    >
+                                      {items
+                                        .sort((a, b) =>
+                                          a.product.localeCompare(b.product)
+                                        )
+                                        .map(renderRecommendedCard)}
+                                    </SimpleGrid>
+                                  </Box>
+                                ))}
+                            </Box>
+                          </>
+                        )
+                      })()}
+                    </SimpleGrid>
+                  </Box>
                 </TabPanel>
               ))}
           </TabPanels>

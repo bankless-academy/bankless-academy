@@ -21,6 +21,7 @@ export default async function handler(
         isFeatured: e.fields['Is Featured'],
         category: e.fields.Category?.[0],
         description: e.fields.Description,
+        type: e.fields.Type,
         link: e.fields.Link,
       }
       if (explore.isActif) {

@@ -5,5 +5,6 @@ export interface ExploreType {
   isFeatured: boolean
   category: string
   description: string
+  type: string
   link: string
 }
