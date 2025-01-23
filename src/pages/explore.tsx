@@ -90,11 +90,8 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         )
         setFeaturedItems(featured)
 
-        // Group non-featured items by category for display
-        const nonFeatured = initialData.filter(
-          (item: ExploreType) => !item.isFeatured
-        )
-        const grouped = nonFeatured.reduce(
+        // Group all items by category for display (including featured)
+        const grouped = initialData.reduce(
           (acc: GroupedExploreItems, item: ExploreType) => {
             const category = item.category || 'Other'
             if (!acc[category]) {
@@ -107,8 +104,8 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         )
         setGroupedItems(grouped)
 
-        // Group by type for tabs
-        const groupedByType = nonFeatured.reduce(
+        // Group all items by type for tabs (including featured)
+        const groupedByType = initialData.reduce(
           (acc: GroupedByTypeItems, item: ExploreType) => {
             const type = item.type || 'Other'
             if (!acc[type]) {
@@ -179,15 +176,15 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
 
   // Helper function to remove emojis from the start of a string
   const removeLeadingEmojis = (str: string) => {
-    // This regex matches emojis and spaces at the start of the string
-    return str.replace(/^(\p{Emoji}\s*)+/u, '').trim()
+    // Remove all emojis and variation selectors at the start
+    return str.replace(/^[^\p{L}\p{N}\p{P}\p{Z}]+/gu, '').trim()
   }
 
   // Helper function to sort types ignoring leading emojis
   const sortTypes = (a: string, b: string) => {
     const cleanA = removeLeadingEmojis(a)
     const cleanB = removeLeadingEmojis(b)
-    return cleanA.localeCompare(cleanB)
+    return cleanA.localeCompare(cleanB, undefined, { sensitivity: 'base' })
   }
 
   return (
@@ -199,7 +196,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
           </Text>
         )}
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-          Featured Activities
+          Featured Apps
         </StyledHeading>
         <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
           {featuredItems
@@ -256,7 +253,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         </SimpleGrid>
 
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-          Recommended Activities
+          Recommended Apps
         </StyledHeading>
         <Tabs variant="soft-rounded" colorScheme="purple" defaultIndex={0}>
           <Box mt={8}>
