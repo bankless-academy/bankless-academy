@@ -253,7 +253,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         </SimpleGrid>
 
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-          Recommended Apps
+          Explore Apps
         </StyledHeading>
         <Tabs variant="soft-rounded" colorScheme="purple" defaultIndex={0}>
           <Box mt={8}>
