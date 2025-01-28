@@ -5,6 +5,8 @@
     "3. Your transaction is added to the blockchain “database”...": "3.您的交易将被添加到区块链 \"数据库 \"中...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4.中本聪收到了你的比特币！",
     "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Reset simulation",
     "Recipient": "接收者",
     "Address": "地址",
     "Asset": "资产",
@@ -12,11 +14,16 @@
     "Balance": "余额",
     "Send": "发送"
   },
+  "BlockchainBasics": {
+    "Understand a transaction": "Understand a transaction",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction"
+  },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "授权 OP 并开始您的 Optimism 网络之旅。",
-    "1. Connect your wallet to Bankless Academy": "1. 将钱包连接至 Bankless 学院",
-    "2. Select a Delegate for your OP": "2.为 OP 选择一名代表委员",
-    "See the delegation platform here": "点击此处查看代表团纲领",
+    "Select a ": "Select a ",
+    "Delegate": "Delegate",
+    " for your OP": " for your OP",
+    "or delegate to ": "or delegate to ",
     "Tip": "小贴士",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "请查看探险家手册中的 '{{lesson_title}}' 条目，了解完整的任务攻略。",
     "Refresh": "刷新",
@@ -28,6 +35,11 @@
     "If you already have a wallet, move to step 2.": "如果你已经安装了钱包，请跳到步骤 2。",
     "2. Connect your wallet to Bankless Academy": "2. 将钱包链接至 Bankless 学院",
     "Tip": "小贴士",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "提示：请查看探险家手册中的 '{{lesson_title}}' ，了解完整的任务攻略。"
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "提示：请查看探险家手册中的 '{{lesson_title}}' ，了解完整的任务攻略。",
+    "Read Entry": "Read Entry"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Select all screenshots containing scams 👆",
+    "Hint: 1 screenshot is not a scam": "Hint: 1 screenshot is not a scam"
   }
 }
