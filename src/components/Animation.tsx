@@ -46,9 +46,6 @@ const SimulationTitle = styled.div`
   background-color: transparent;
   color: #916ab8;
   padding: 8px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `
 
 export const Simulation = styled.div`
