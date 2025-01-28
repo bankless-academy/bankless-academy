@@ -94,7 +94,7 @@ Les métaux précieux ont été lentement déconnectés des monnaies du monde en
 
 Le problème de notre système financier actuel est le manque de contrôle que nous avons sur notre argent et le fait que cela réduit notre capacité à décider librement de ce que nous voulons épargner et de ce que nous voulons dépenser.
 
-Les `banques centrales`, la banque gérant la `politique monétaire`, peut introduire n'importe quelle somme d'argent nouvelle. Cette absence de `rareté` fait que notre argent vaut souvent de moins en moins chaque année. L'argent avec une valeur imprévisible et décroissante nous oblige souvent à le dépenser: \*\*“Si mon argent va avoir moins de valeur chaque année, pourquoi économiser ? Autant le dépenser maintenant.
+Les `banques centrales`, la banque gérant la `politique monétaire`, peut introduire n'importe quelle somme d'argent nouvelle. Cette absence de `rareté` fait que notre argent vaut souvent de moins en moins chaque année. L'argent avec une valeur imprévisible et décroissante nous oblige souvent à le dépenser: “Si mon argent va avoir moins de valeur chaque année, pourquoi économiser ? Autant le dépenser maintenant.
 
 Les `banques commerciales`, celles qui sont utilisées pour l'épargne et les dépenses quotidiennes, influencent également nos habitudes de consommation. En tant que `dépositaire`, ils peuvent bloquer les transactions ou confisquer nos fonds. Certaines banques ont empêché leurs clients d'acheter des crypto-monnaies ! Si votre banque peut geler vos économies à tout moment… êtes-vous vraiment propriétaire de votre argent? 💸
 
