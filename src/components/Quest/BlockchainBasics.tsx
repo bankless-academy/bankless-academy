@@ -5,35 +5,25 @@ import {
   InputRightElement,
   Input,
   Box,
+  Text,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 
-const TRANSLATION = [
-  {
-    en: 'Understand a transaction',
-    es: 'Comprender una transacción',
-  },
-  {
-    en: 'To validate this quest, paste the "From" and "To" addresses of this transaction ',
-    es: 'Para validar este desafío, pega las direcciones "From" y "To" de esta transacción: ',
-  },
-]
-
-const tr = (language: string, i: number) => {
-  return TRANSLATION[i][language?.length ? language : 'en']
-}
-
-const BlockchainBasics = (
-  // TODO: replace to object in all quests
-  language: string
-): {
+const BlockchainBasics = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t, i18n } = useTranslation('quests', {
+    keyPrefix: 'BlockchainBasics',
+  })
+  // HACK: or else translation is skipped...
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { t: tl } = useTranslation('lesson')
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null)
   const [from, setFrom] = useState(
     localStorage.getItem('quest-blockchain-fundamentals-from')
@@ -72,10 +62,14 @@ const BlockchainBasics = (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
-            <h2>{tr(language, 0)}</h2>
+            <Text fontSize="xl" fontWeight="bold">
+              {t('Understand a transaction')}
+            </Text>
             <p>
               <>
-                {tr(language, 1)}
+                {t(
+                  `To validate this quest, paste the "From" and "To" addresses of this transaction`
+                )}{' '}
                 <ExternalLink href="https://etherscan.io/tx/0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060">
                   https://etherscan.io/tx/0x5c...2060
                 </ExternalLink>
@@ -134,8 +128,8 @@ const BlockchainBasics = (
           <div className="bloc2">
             <iframe
               src={`https://www.youtube.com/embed/8z2rL99sLGA?rel=0${
-                language !== 'en'
-                  ? `&cc_load_policy=1&cc_lang_pref=${language}&hl=${language}`
+                i18n.language !== 'en'
+                  ? `&cc_load_policy=1&cc_lang_pref=${i18n.language}&hl=${i18n.language}`
                   : ``
               }`}
               allowFullScreen

@@ -1,4 +1,4 @@
-import { Button, Image } from '@chakra-ui/react'
+import { Box, Button, Image } from '@chakra-ui/react'
 import ExternalLink from './ExternalLink'
 
 const BridgeButton = ({
@@ -28,7 +28,17 @@ const BridgeButton = ({
         leftIcon={<Image h="32px" src={'/images/zerion-logo.svg'} />}
         {...props}
       >
-        Bridge via Zerion
+        <Box
+          minW={
+            props.w === '100%' && props.size === 'lg'
+              ? '180px'
+              : props.w === '100%'
+              ? '150px'
+              : 'unset'
+          }
+        >
+          Bridge via Zerion
+        </Box>
       </Button>
     </ExternalLink>
   )

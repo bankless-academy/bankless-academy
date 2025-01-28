@@ -13,7 +13,7 @@ const Announcement = (): React.ReactElement => {
   const announcement = announcements ? announcements[0] : null
   if (announcement)
     return (
-      <Box zIndex={10}>
+      <Box zIndex={9}>
         <Box
           bg="#a379bdf0"
           display="flex"

@@ -134,7 +134,7 @@ const DecentralizedExchanges = (
               </InputRightElement>
             </InputGroup>
             <Box m="4">
-              <b>Ressources:</b>
+              <b>Resources:</b>
               <Box
                 display="flex"
                 flexDirection={{ base: 'column', md: 'row' }}

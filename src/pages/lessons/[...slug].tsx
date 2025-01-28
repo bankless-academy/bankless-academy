@@ -12,6 +12,7 @@ import { useSmallScreen } from 'hooks/index'
 import { markdown } from 'utils/markdown'
 import LessonContent from 'components/LessonContent'
 import Layout from 'layout/Layout'
+import { useLocalStorage } from 'usehooks-ts'
 
 const SPLIT = `\`\`\`
 
@@ -230,12 +231,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const lesson = pageMeta?.lesson
+  const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
 
   const lang =
     typeof window !== 'undefined' &&
     window.location.pathname.split('/')[2].length === 2
       ? window.location.pathname.split('/')[2]
       : 'en'
+
+  const isLessonOpen =
+    lesson?.slug && JSON.parse(openLessonLS)?.includes(lesson.slug)
 
   if (!lesson) {
     console.log('redirect to lesson select')
@@ -251,11 +256,11 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
     return (
       <>
         {lesson.isArticle ? (
-          <Layout page="">
+          <Layout page="ARTICLE">
             <Article lesson={lesson} />
           </Layout>
         ) : (
-          <Layout page="LESSON-DETAIL">
+          <Layout page="LESSON-DETAIL" isLessonOpen={isLessonOpen}>
             {lesson?.showContent ? (
               <>
                 <Center
@@ -296,7 +301,9 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
                   </Box>
                 </Center>
                 <Container
-                  maxW="container.xl"
+                  maxW={
+                    isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'
+                  }
                   px={isSmallScreen ? '8px' : '16px'}
                 >
                   <LessonContent lesson={lesson} />
@@ -304,7 +311,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
               </>
             ) : (
               <Container
-                maxW="container.xl"
+                maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
                 px={isSmallScreen ? '8px' : '16px'}
                 minH={isMediumScreen ? 'calc(100vh - 146px)' : 'default'}
               >

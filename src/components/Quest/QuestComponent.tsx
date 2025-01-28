@@ -71,12 +71,6 @@ const QuestComponent = (lesson: LessonType, badgeId?: number): QuestType => {
       )
     : component === 'BitcoinBasics'
     ? QUEST_COMPONENTS['BitcoinBasics']({ test: false })
-    : component === 'ConceptosBasicosDeBlockchain'
-    ? // HACK: TEMP
-      QUEST_COMPONENTS['BlockchainBasics']('es')
-    : component === 'BlockchainBasics'
-    ? // HACK: TEMP
-      QUEST_COMPONENTS['BlockchainBasics']('en')
     : component in QUEST_COMPONENTS
     ? QUEST_COMPONENTS[component](address)
     : WalletConnect(address)

@@ -133,7 +133,7 @@ What is the benefit of using AMMs to complete trades as compared to a traditiona
 
 - [ ] You can detect and prevent other parties creating one-sided trades.
 
-> ℹ️ The transparent nature of AMMs means that its a lot harder for platforms to hide malicious actions — or for users to be malicious at all!
+> ℹ️ The transparent nature of AMMs means that it is a lot harder for platforms to hide malicious actions — or for users to be malicious at all!
 
 # Token Swaps
 

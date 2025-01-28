@@ -48,7 +48,7 @@ const WalletBasics = (
                     lineHeight="1.5em"
                   >
                     {t('1. Download and install the Zerion wallet from ')}
-                    <ExternalLink href="https://link.zerion.io/referral?code=H9C9AZOTA">
+                    <ExternalLink href="https://bankless.ac/zerion">
                       zerion.io
                     </ExternalLink>
                   </Box>
@@ -112,7 +112,7 @@ const WalletBasics = (
                     alt={tl(lesson.englishName)}
                     target="_blank"
                   >
-                    <Button variant="primary">{'Read Entry'}</Button>
+                    <Button variant="primary">{t('Read Entry')}</Button>
                   </InternalLink>
                 </Box>
               </Box>
