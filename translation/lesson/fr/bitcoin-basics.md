@@ -68,11 +68,11 @@ Au fur et à mesure que les sociétés se développaient, la banque centrale d'u
 # Knowledge Check 1
 
 Vrai ou faux :
-« À mesure que l'on ajoute de la monnaie à un système monétaire, la monnaie existante perd de sa valeur.
+« À mesure que l'on ajoute de la monnaie à un système monétaire, la monnaie existante perd de sa valeur. »
 
 - [ ] Vrai
 
-> Toutes les réponses ci-dessus. Plus il y a d'argent, moins il a de valeur.
+> Correct ! Plus il y a d'argent, moins il a de valeur.
 
 - [ ] Faux
 
@@ -201,7 +201,7 @@ En quoi Bitcoin est-il similaire à l'e-mail ?
 
 - [ ] Les deux sont en ligne 24 heures sur 24 et 7 jours sur 7.
 
-> Didier Krux Mais ce n'est pas la seule réponse correcte.
+> Correct ! Mais ce n'est pas la seule réponse correcte.
 
 - [ ] Tous deux sont des technologies numériques.
 
@@ -275,7 +275,7 @@ Comment le minage protège-t-il le réseau Bitcoin de la fraude ?
 
 - [ ] En récompensant les mineurs qui vérifient les transactions.
 
-> Toutes les deux réponses ci-dessus. Les récompenses en bitcoins attirent les mineurs et les incitent à agir honnêtement.
+> Correct ! Les récompenses en bitcoins attirent les mineurs et les incitent à agir honnêtement.
 
 - [ ] En augmentant l'offre de bitcoins en circulation.
 
