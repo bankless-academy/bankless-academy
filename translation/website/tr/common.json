@@ -1,4 +1,7 @@
 {
+  "Reload animation": "Reload animation",
+  "Click here!": "Click here!",
+  "Click here to go back": "Click here to go back",
   "Entry Collected": "Konu Koleksiyona Eklendi",
   "View on Mirror.xyz": "Mirror.xyz'de görüntüleyin",
   "Receive new entries directly to your inbox.": "Yeni konular doğrudan gelen kutunuza gelsin.",
@@ -117,9 +120,15 @@
   "Wrong network detected": "Yanlış ağ algılandı",
   "Please switch back to Ethereum Mainnet": "Lütfen Ethereum Mainnet'e geri dönün",
   "Select a network": "Bir ağ seçin",
+  "Sending a Bitcoin Transaction": "Sending a Bitcoin Transaction",
+  "Animation": "Animation",
+  "Ethereum Proof-of-Stake consensus": "Ethereum Proof-of-Stake consensus",
+  "Using a dApp": "Using a dApp",
+  "Interactive Simulation": "Interactive Simulation",
+  "Sending a Payment": "Sending a Payment",
+  "How does sending a payment work on Ethereum?": "How does sending a payment work on Ethereum?",
   "powered by": "destekleyen:",
   "Twitter": "Twitter",
   "Community": "Topluluk",
-  "Lessons": "Dersler",
-  "Explore Lessons": "Dersleri Keşfedin"
+  "New app version available!": "New app version available!"
 }
