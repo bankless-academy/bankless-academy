@@ -9,13 +9,14 @@ const StyledDiv = styled(Box)`
   img {
     display: flex;
     border-radius: 5px;
-    width: 420px;
+    width: 400px;
     max-width: 100%;
     cursor: pointer;
     margin-bottom: 8px;
   }
   h2 {
     text-align: center;
+    margin-top: 5px !important;
   }
   span {
     font-weight: normal;
