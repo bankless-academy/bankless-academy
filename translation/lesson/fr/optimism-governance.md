@@ -1,6 +1,6 @@
 ---
 TITLE: Gouvernance d'Optimism
-DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
+DESCRIPTION: Devenez un membre dirigeant d'Optimism et contribuez à décider de l'avenir du réseau.
 LANGUAGE: Français
 WRITERS: Tetranome
 TRANSLATORS: Didier Krux
@@ -87,7 +87,7 @@ Optimism a une mission : faire évoluer Ethereum en construisant un réseau de `
 
 🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction de `biens publics` [public good] sur la blockchain [onchain]. Un bien public est un bien qui profite à tous les membres d'une communauté et dont l'utilisation par une personne ne réduit pas sa disponibilité pour les autres. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
 
-🧑‍🤝‍🧑 **Community Governance:** The network is led by its community.
+🧑‍🤝‍🧑 **Gouvernance de la communauté :** Le réseau est dirigé par sa communauté.
 
 🏠 **Marché Libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
 
@@ -182,7 +182,7 @@ Comment est-ce qu'Optimism favorise-t-il une économie axée sur la collectivit�
 
 - [ ] En offrant un marché libre, mais sur la blockchain.
 
-> ℹ️ Réessayez ! Use of blockchain technology alone doesn’t affect economic models.
+> ℹ️ Réessayez ! L'utilisation de la technologie blockchain seule n'a pas d'effet sur les modèles économiques.
 
 - [ ] En finançant de façon systémique des modèles d'entreprise qui améliorent la vie de tous les utilisateurs du réseau.
 
@@ -285,7 +285,7 @@ Comment la Maison des Jetons protège-t-elle le réseau contre les attaques ?
 
 # La Maison des Citoyens
 
-La Maison des Citoyens gère la croissance des infrastructures publiques sur le Réseau Optimism. Its primary focus is managing Retroactive Public Goods Funding.
+La Maison des Citoyens gère la croissance des infrastructures publiques sur le Réseau Optimism. Son objectif principal est de gérer le financement rétroactif des biens publics.
 
 Les devoirs comprennent :
 
