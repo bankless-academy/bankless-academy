@@ -120,7 +120,7 @@ Dans le web2 comme dans le web3, les escrocs utilisent le `phishing` pour incite
 
 Ils utilisent la `social engineering` pour mettre la pression sur les gens. Exemples :
 
-- « Il ne vous reste plus beaucoup de temps ! » - vous donner l'impression d'être pressé.
+- « Il ne vous reste plus beaucoup de temps ! » - vous donner l'impression d'être pressé.
 - « Félicitations, vous avez gagné notre concours ! » — vous faire croire à un avantage exclusif.
 - « Accédez en avant-première à notre pré-mint ! » — générer du `FOMO` chez la personne ciblée.
 
