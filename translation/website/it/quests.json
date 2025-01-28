@@ -5,6 +5,8 @@
     "3. Your transaction is added to the blockchain “database”...": "3. La tua transazione viene aggiunta al \"database\" della blockchain...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto ha ricevuto il tuo Bitcoin!",
     "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Reset simulation",
     "Recipient": "Destinatario",
     "Address": "Indirizzo",
     "Asset": "Patrimonio",
@@ -12,11 +14,16 @@
     "Balance": "Saldo",
     "Send": "Inviare"
   },
+  "BlockchainBasics": {
+    "Understand a transaction": "Understand a transaction",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction"
+  },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
-    "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
-    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
-    "See the delegation platform here": "See the delegation platform here",
+    "Select a ": "Select a ",
+    "Delegate": "Delegate",
+    " for your OP": " for your OP",
+    "or delegate to ": "or delegate to ",
     "Tip": "Suggerimento",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
     "Refresh": "Refresh",
@@ -28,6 +35,11 @@
     "If you already have a wallet, move to step 2.": "Se si dispone già di un portafoglio, passare al punto 2.",
     "2. Connect your wallet to Bankless Academy": "2. Collega il tuo portafoglio a Bankless Academy",
     "Tip": "Suggerimento",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consulta la voce del nostro Manuale dell'Esploratore su '{{lesson_title}}' per una descrizione passo passo della missione."
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consulta la voce del nostro Manuale dell'Esploratore su '{{lesson_title}}' per una descrizione passo passo della missione.",
+    "Read Entry": "Read Entry"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Select all screenshots containing scams 👆",
+    "Hint: 1 screenshot is not a scam": "Hint: 1 screenshot is not a scam"
   }
 }
