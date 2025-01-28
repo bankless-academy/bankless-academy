@@ -1,4 +1,7 @@
 {
+  "Reload animation": "Reload animation",
+  "Click here!": "Click here!",
+  "Click here to go back": "Click here to go back",
   "Entry Collected": "エントリー収集",
   "View on Mirror.xyz": "Mirror.xyzで表示",
   "Receive new entries directly to your inbox.": "新着エントリーを受信トレイに直接お届けします。",
@@ -117,9 +120,15 @@
   "Wrong network detected": "ネットワークが検出されませんでした",
   "Please switch back to Ethereum Mainnet": "イーサリアムメインネットに切り替えてください",
   "Select a network": "ネットワークを選択",
+  "Sending a Bitcoin Transaction": "Sending a Bitcoin Transaction",
+  "Animation": "Animation",
+  "Ethereum Proof-of-Stake consensus": "Ethereum Proof-of-Stake consensus",
+  "Using a dApp": "Using a dApp",
+  "Interactive Simulation": "Interactive Simulation",
+  "Sending a Payment": "Sending a Payment",
+  "How does sending a payment work on Ethereum?": "How does sending a payment work on Ethereum?",
   "powered by": "powered by",
   "Twitter": "Twitter",
   "Community": "コミュニティ",
-  "Lessons": "Lessons",
-  "Explore Lessons": "Explore Lessons"
+  "New app version available!": "New app version available!"
 }
