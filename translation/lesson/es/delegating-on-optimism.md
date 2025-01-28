@@ -113,7 +113,7 @@ Nota: esto tampoco contará para la Prueba de Conocimientos de ['Gobernanza en O
 
 **Autor**
 
-**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** es el Líder de Proyecto en Bankless Academy, su trabajo se centra en experiencia de usuario, interfaz, diseño y contenido.
 
 **Patron**
 
