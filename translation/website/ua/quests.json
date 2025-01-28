@@ -5,6 +5,8 @@
     "3. Your transaction is added to the blockchain “database”...": "3. Ваша транзакція додана до \"бази даних\" блокчейну...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4. Сатоші Накамото отримав ваш біткоїн!",
     "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Reset simulation",
     "Recipient": "Отримувач",
     "Address": "Адреса",
     "Asset": "Актив",
@@ -12,11 +14,16 @@
     "Balance": "Баланс",
     "Send": "Надіслати"
   },
+  "BlockchainBasics": {
+    "Understand a transaction": "Understand a transaction",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction"
+  },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "Почніть свою подорож до Мережі Optimism з делегування OP.",
-    "1. Connect your wallet to Bankless Academy": "1. Підключіть свій гаманець до Bankless Academy",
-    "2. Select a Delegate for your OP": "2. Оберіть делегата для вашого OP",
-    "See the delegation platform here": "Тут можна побачити платформу делегування",
+    "Select a ": "Select a ",
+    "Delegate": "Delegate",
+    " for your OP": " for your OP",
+    "or delegate to ": "or delegate to ",
     "Tip": "Підказка",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Перегляньте статтю нашого Посібника дослідника на сторінці \"{{lesson_title}}\" для повного проходження квесту.",
     "Refresh": "Оновити",
@@ -28,6 +35,11 @@
     "If you already have a wallet, move to step 2.": "Якщо у вас вже є гаманець, переходьте до кроку 2.",
     "2. Connect your wallet to Bankless Academy": "2. Підключіть свій гаманець до Bankless Academy",
     "Tip": "Підказка",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Покрокове проходження квесту можна знайти у нашому Посібнику дослідника у розділі {{lesson_title}}."
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Покрокове проходження квесту можна знайти у нашому Посібнику дослідника у розділі {{lesson_title}}.",
+    "Read Entry": "Read Entry"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Select all screenshots containing scams 👆",
+    "Hint: 1 screenshot is not a scam": "Hint: 1 screenshot is not a scam"
   }
 }
