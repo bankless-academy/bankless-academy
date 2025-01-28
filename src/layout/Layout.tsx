@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-import { Box, Container, Image, Button } from '@chakra-ui/react'
-import React, { ReactElement } from 'react'
+import { Box, Container, Image, Button, Link } from '@chakra-ui/react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { useAppKit } from '@reown/appkit/react'
-import { Wallet } from '@phosphor-icons/react'
+import { SquaresFour, Wallet } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 
 import { LessonTypeType } from 'entities/lesson'
@@ -15,6 +15,7 @@ import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
 import { LessonIcon, HandbookIcon, GlossaryIcon } from 'components/Icons'
+import { useTranslation } from 'react-i18next'
 
 export type PageType =
   | LessonTypeType
@@ -163,6 +164,7 @@ const Layout = ({
   page?: PageType
   isLessonOpen?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const { address } = useAccount()
   const { open } = useAppKit()
   const router = useRouter()
@@ -190,6 +192,11 @@ const Layout = ({
       ? nameCache[addressLower].avatar
       : ''
     : ''
+  const [appDeploymentId, setAppDeploymentId] = useLocalStorage(
+    'app-deployment-id',
+    ''
+  )
+  const [latestDeploymentId, setLatestDeploymentId] = useState(appDeploymentId)
 
   async function openModal() {
     await open({ view: 'Connect' })
@@ -203,6 +210,52 @@ const Layout = ({
 
   const menuBarWidth = '280px'
   const profileHeight = community ? '344px' : '298px'
+
+  useEffect(() => {
+    const fetchDeploymentId = async (loadType: string) => {
+      try {
+        const res = await fetch('/api/deployment')
+        const data = await res.json()
+        const newDeploymentId = data.deploymentId
+        if (newDeploymentId && newDeploymentId !== appDeploymentId) {
+          // only update the app deployment id on first load
+          if (loadType === 'first-load') {
+            setAppDeploymentId(newDeploymentId)
+          }
+          setLatestDeploymentId(newDeploymentId)
+        }
+      } catch (error) {
+        console.error('Failed to fetch deployment ID:', error)
+      }
+    }
+
+    // call the api to get the deployment id every 1 minute
+    const interval = setInterval(
+      () => fetchDeploymentId('interval-load'),
+      60000
+    )
+
+    // on first load, fetch the deployment id
+    fetchDeploymentId('first-load')
+
+    // Add visibility change listener
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        fetchDeploymentId('interval-load')
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      clearInterval(interval)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
+  }, [appDeploymentId])
+
+  const newVersionAvailable =
+    latestDeploymentId &&
+    latestDeploymentId !== '' &&
+    latestDeploymentId !== appDeploymentId
 
   return (
     <Box
@@ -404,40 +457,66 @@ const Layout = ({
                 zIndex="2"
                 borderTop="1px solid #222222"
               >
-                {/* Mobile menu */}
-                <MobileButton
-                  link="/lessons"
-                  label="Lessons"
-                  isActive={router.pathname === '/lessons'}
-                  icon={LessonIcon}
-                  pwa={pwa}
-                />
-                <MobileButton
-                  link="/lessons/handbook"
-                  label="Handbooks"
-                  isActive={router.pathname.startsWith('/lessons/handbook')}
-                  icon={HandbookIcon}
-                  pwa={pwa}
-                />
-                <MobileButton
-                  link="/glossary"
-                  label="Glossary"
-                  isActive={router.pathname.startsWith('/glossary')}
-                  icon={GlossaryIcon}
-                  pwa={pwa}
-                />
-                <MobileButton
-                  link={
-                    username !== ''
-                      ? `/explorer/${username}?referral=true`
-                      : `explorer/my-profile`
-                  }
-                  label="Profile"
-                  isActive={router.pathname.startsWith('/explorer')}
-                  imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
-                  borderRight={0}
-                  pwa={pwa}
-                />
+                {newVersionAvailable ? (
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    gap={2}
+                    justifyContent="center"
+                    bg="#2b2b2bdd"
+                    color="white"
+                    p={4}
+                    w="100%"
+                    h="100%"
+                  >
+                    <SquaresFour />
+                    {t('New app version available!')}
+                    {' · '}
+                    <Link
+                      onClick={() => window.location.reload()}
+                      color="#C06FDB !important"
+                    >
+                      {t('Refresh')}
+                    </Link>
+                  </Box>
+                ) : (
+                  <>
+                    {/* Mobile menu */}
+                    <MobileButton
+                      link="/lessons"
+                      label="Lessons"
+                      isActive={router.pathname === '/lessons'}
+                      icon={LessonIcon}
+                      pwa={pwa}
+                    />
+                    <MobileButton
+                      link="/lessons/handbook"
+                      label="Handbooks"
+                      isActive={router.pathname.startsWith('/lessons/handbook')}
+                      icon={HandbookIcon}
+                      pwa={pwa}
+                    />
+                    <MobileButton
+                      link="/glossary"
+                      label="Glossary"
+                      isActive={router.pathname.startsWith('/glossary')}
+                      icon={GlossaryIcon}
+                      pwa={pwa}
+                    />
+                    <MobileButton
+                      link={
+                        username !== ''
+                          ? `/explorer/${username}?referral=true`
+                          : `explorer/my-profile`
+                      }
+                      label="Profile"
+                      isActive={router.pathname.startsWith('/explorer')}
+                      imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
+                      borderRight={0}
+                      pwa={pwa}
+                    />
+                  </>
+                )}
               </Box>
             )}
           </>
