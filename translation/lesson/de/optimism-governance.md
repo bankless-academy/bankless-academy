@@ -1,6 +1,6 @@
 ---
 TITLE: Regierungsführung von Optimism
-DESCRIPTION: Sichere dir deinen ersten eigenen Anteil am Netzwerk und beginne damit, auf der Blockchain abzustimmen!
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Deutsch
 WRITERS: Tetranome
 TRANSLATORS: Ruben Silva Otero
@@ -357,7 +357,7 @@ Die Geschichte wurde schon immer von den Optimisten der Menschheit geprägt - de
 
 Indem wir uns in innovativen Gemeinschaften engagieren und faire Systeme zur Regierungsführung nutzen, welche `trustless` [Vertrauenslosigkeit] sind, handeln wir wegweisend für die Zukunft der menschlichen Kooperation. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
 
-Die heutige Aufgabe lautet **, dem Token-Haus beizutreten und unsere OP-Token zu delegieren**.
+Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
 
 Während das Bürger-Haus seine Verfahren zum Onboarding entwickelt, können wir unsere Reise als Bürger mit der Teilnahme an Gesprächen in der [Optimism-Gemeinschaft](https://gov.optimism.io/) beginnen.
 

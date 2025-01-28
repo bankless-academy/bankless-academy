@@ -1,0 +1,77 @@
+{
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2",
+    "definition": "没有区块链基础设施的互联网现状。"
+  },
+  "web3": {
+    "keyword": "web3",
+    "keyword_plural": "web3",
+    "definition": "指区块链互联网，用户可在其中自我托管其资产和数据。"
+  },
+  "cryptocurrency": {
+    "keyword": "加密货币",
+    "keyword_plural": "加密货币",
+    "definition": "由区块链技术而非中央机构托管的数字货币。"
+  },
+  "blockchain apps": {
+    "keyword": "区块链app",
+    "keyword_plural": "区块链app",
+    "definition": "允许您交换加密货币的区块链应用程序，使用 web3 社交媒体，进行慈善捐赠，甚至链上学习，就像在 Bankless Academy 一样。"
+  },
+  "blockchain": {
+    "keyword": "区块链",
+    "keyword_plural": "区块链",
+    "definition": "一种在全球多台计算机上保存加密货币交易记录的系统。"
+  },
+  "wallet app": {
+    "keyword": "钱包app",
+    "keyword_plural": "钱包app",
+    "definition": "电脑或手机上的app，用于连接区块链上的钱包。"
+  },
+  "public key": {
+    "keyword": "公钥",
+    "keyword_plural": "公钥",
+    "definition": "公钥就是你的地址。他人如果要向您发送加密资产，公钥将提供地址定位。"
+  },
+  "private key": {
+    "keyword": "私钥",
+    "keyword_plural": "私钥",
+    "definition": "私钥授权访问您的钱包，允许您将加密资产发送给其他钱包。"
+  },
+  "wallet": {
+    "keyword": "钱包",
+    "keyword_plural": "钱包",
+    "definition": "钱包是用于在区块链上发送和接收加密资产的应用程序或设备。"
+  },
+  "recovery phrase": {
+    "keyword": "恢复助记词",
+    "keyword_plural": "recovery phrases",
+    "definition": "恢复助记词是由 12 到 24 个单词组成的列表，用于生成钱包的公钥和私钥。"
+  },
+  "self-custody wallet": {
+    "keyword": "自我托管钱包",
+    "keyword_plural": "self-custody wallets",
+    "definition": "（AKA：非托管型钱包）您可以独自控制私钥，从而独立控制您的加密资产。"
+  },
+  "custodial wallet": {
+    "keyword": "托管型钱包",
+    "keyword_plural": "custodial wallets",
+    "definition": "托管钱包由第三方控制私钥，由第三方控制对加密资产的访问。"
+  },
+  "hot wallet": {
+    "keyword": "热钱包",
+    "keyword_plural": "热钱包",
+    "definition": "一种永久连接互联网的自我托管钱包。"
+  },
+  "cold wallet": {
+    "keyword": "冷钱包",
+    "keyword_plural": "冷钱包",
+    "definition": "一种存储在离线硬件上的自我托管钱包。"
+  },
+  "self-custody": {
+    "keyword": "自我托管",
+    "keyword_plural": "self-custodys",
+    "definition": "一种将资产存放在只有自己能接触并访问的地方的方法。"
+  }
+}

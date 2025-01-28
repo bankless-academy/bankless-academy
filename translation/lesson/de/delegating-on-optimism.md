@@ -42,7 +42,9 @@ Bei Optimism wird die Regierungsgewalt durch den Besitz von OP-Tokens im Wallet 
 
 Bei Optimism verwenden wir eine Abstimmungs-dApp [dezentralisierte App] namens "Agora", um die infrage kommenden Delegierten zu überprüfen, die Delegationen durchzuführen und Proposals [Vorschläge] zu überwachen. Schauen wir uns das einmal genauer an.
 
-## Delegieren mit Optimism Agora
+## Prerequisites
+
+If you want to hold voting power, you’ll need to purchase OP tokens. You can continue without completing these two steps if you simply want to set up delegation.
 
 **1\. Kaufe ETH auf dem Optimism-Netzwerk.**
 
@@ -52,6 +54,8 @@ Eine Schritt-für-Schritt-Anleitung findest du in unserem Explorer's Handbuch Ei
 
 In unserem Explorer's Handbuch auf ["How to Swap on a Decentralized Exchange"](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) [Wie man an einer dezentralisierten Börse tauscht] findest du eine Schritt-für-Schritt-Anleitung zur Verwendung eines DEX zum Kauf von OP-Tokens.
 
+## Delegieren mit Optimism Agora
+
 **3\. Öffne die Optimism Agora dApp: <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
@@ -60,35 +64,45 @@ In unserem Explorer's Handbuch auf ["How to Swap on a Decentralized Exchange"](h
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. Scroll nach unten und wähle deinen Lieblings-Delegierten aus.**
+**3\. Scroll nach unten und wähle deinen Lieblings-Delegierten aus.**
 
 Wenn du auf einen Delegierten klickst, findest du eine kurze Beschreibung, die Stimmhistorie und eine Messung der Einflussnahme. Nimm dir die Zeit, einen Vertreter zu finden, der mit deiner Vision von Optimism übereinstimmt.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. Klick auf die Schaltfläche "Delegate", und genehmige die Transaktion in deiner Wallet.**
+**4\. Klick auf die Schaltfläche "Delegate", und genehmige die Transaktion in deiner Wallet.**
 
 Während dieses Vorgangs verlassen keine OP-Token deine Wallet. Es wird eine kleine Gebühr [Gas Fees] in ETH berechnet.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
+
+---
+
+It’s time to explore better voting systems. We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Delegating on Optimism’.
+
+Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+
+
+---
+
 ## Häufig gestellte Fragen [FAQ]
 
-* *Wie viele Token muss ich delegieren?*
+### Wie viele Token muss ich delegieren?
 
 Du kannst anfangen, zu delegieren, während du eine beliebige Menge an OP-Token hältst – sogar Null! Wenn du deine OP-Bestände erhöhst oder verringerst, wird dein delegiertes Stimmrecht entsprechend aktualisiert. Du musst nicht jedes Mal neu delegieren, wenn du Änderungen an deinen OP-Beständen vornimmst.
 
-* *Wie wähle ich den richtigen Delegierten aus?*
+### Wie wähle ich den richtigen Delegierten aus?
 
 Es kommt auf deine persönlichen Werte und deine Vision an, je nachdem wie du Optimism wachsen sehen möchtest. Nimm dir etwas Zeit, um durch die Profile der Delegierten zu scrollen und zu sehen, was mit deinen Ansichten übereinstimmt.
 
-* *Kann ich Delegierter werden?*
+### Kann ich Delegierter werden?
 
 Du kannst! Schau dir die Anleitung [‘How to be a delegate’](https://community.optimism.io/docs/governance/delegate/) [Wie wird man Delegierter] an, die auf den Optimismus Docs zu finden ist.
 
 Hinweis: Dies wird dir nicht für die Lektion ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Academy angerechnet.
 
-* *Muss ich delegieren, um abzustimmen?*
+### Muss ich delegieren, um abzustimmen?
 
 Du kannst die Delegation überspringen und dich selbst repräsentieren, indem du Abstimmungen unter der Registerkarte „Proposals“ [Vorschläge] auf Optimism Agora verfolgst.
 
@@ -100,3 +114,7 @@ Hinweis: Dies wird dir ebenfalls nicht für die Lektion ['Optimism Governance'](
 **Autor**
 
 **[Tetranome](https://twitter.com/Tetranome)** ist der Projektmeister der Bankless Academy, der sich auf Benutzererfahrung, Interface, Design und Inhalt konzentriert.
+
+**Patron**
+
+This article was funded by **[Optimism](https://www.optimism.io/)**.

@@ -42,7 +42,9 @@ ________________________________________________________________________________
 
 在 Optimism 上，我们使用名为"Agora（广场）"的投票 dApp 来查看符合条件的代表、执行授权和监控提案。 让我们更仔细地看一看。
 
-## 在 Optimism Agora 授权
+## Prerequisites
+
+If you want to hold voting power, you’ll need to purchase OP tokens. You can continue without completing these two steps if you simply want to set up delegation.
 
 **1\. 在 Optimism 网络上购买 ETH。**
 
@@ -52,43 +54,55 @@ ________________________________________________________________________________
 
 请查看我们的探索者手册 ["如何在去中心化交易所进行交换"条目](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) ，了解使用去中心化交易所购买 OP 代币的分步指南。
 
-**3\. 打开 Optimism Agora dApp： <https://vote.optimism.io/>**
+## 在 Optimism Agora 授权
+
+**1\. 打开 Optimism Agora dApp： <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**4\. 连接你的钱包。**
+**2\. 连接你的钱包。**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. 向下滚动，选择您喜欢的代表。**
+**3\. 向下滚动，选择您喜欢的代表。**
 
 点击代表，您将看到其简短发言、投票历史和影响力测评。 慢慢寻找与您的 Optimism 愿景一致的代表。
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. 点击"授权"按钮，批准钱包中的交易。**
+**4\. 点击"授权"按钮，批准钱包中的交易。**
 
 在整个过程中，不会有 OP 代币离开您的钱包。 需要支付小额 gas 费，以 ETH 计算。
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
+
+---
+
+It’s time to explore better voting systems. We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Delegating on Optimism’.
+
+Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+
+
+---
+
 ## 常见问题
 
-* *我需要授权多少代币？*
+### 我需要授权多少代币？
 
 您可以在持有任意数量 OP 代币（甚至是零代币）的情况下开始授权！ 当您增加或减少 OP 持有时，您的委托投票权也会随之更新。 您不必在每次更改 OP 持有量时都重新授权。
 
-* *如何选择合适的代表？*
+### 如何选择合适的代表？
 
 这取决于您的个人价值观，以及您希望看到 Optimism 如何发展的愿景。 花点时间浏览代表简介，看看哪些内容能引起您的共鸣。
 
-* *我能成为代表吗？*
+### 我能成为代表吗？
 
 您可以！ 查看 ["如何成为一名代表"](https://community.optimism.io/docs/governance/delegate/) 指南，该指南由 Optimism Docs 托管。
 
 注意：这将不计入 ["Optimism 治理"](https://app.banklessacademy.com/lessons/optimism-governance) Bankless 学院的课程任务。
 
-* *我需要授权他人投票吗？*
+### 我需要授权他人投票吗？
 
 您可以跳过代表团，在 Optimism Agora 上的"提案"标签下跟踪投票情况，从而代表自己。
 
@@ -100,3 +114,7 @@ ________________________________________________________________________________
 **作者**
 
 **[Tetranome](https://twitter.com/Tetranome)** 是 Bankless 学院的项目负责人，主要负责用户体验、界面、设计和内容。
+
+**Patron**
+
+This article was funded by **[Optimism](https://www.optimism.io/)**.

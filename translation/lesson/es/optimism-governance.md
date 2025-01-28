@@ -1,6 +1,6 @@
 ---
 TITLE: Gobernanza en Optimism
-DESCRIPTION: Aprende a votar onchain y mintea tu Academy Badge.
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Español
 WRITERS: Tetranome
 TRANSLATORS: OrnellaWeb3
@@ -182,7 +182,7 @@ _"Es un algoritmo que recompensa a los primeros contribuyentes que crearon las c
 
 - [ ] Proporcionando un mercado libre, pero en la blockchain.
 
-> ℹ️ ¡Inténtalo de nuevo! El uso de la tecnología blockchain por sí sola, no afecta a los modelos económicos.
+> ℹ️ ¡Inténtalo de nuevo! ℹ️ ¡Inténtalo de nuevo! El uso de la tecnología blockchain por sí sola, no afecta a los modelos económicos.
 
 - [ ] Financiando sistemáticamente modelos de negocio que mejoren la vida de todos los usuarios de la red.
 

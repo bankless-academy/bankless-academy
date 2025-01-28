@@ -133,7 +133,7 @@ ________________________________________________________________________________
 
 比特币的固定 `货币政策` 使其成为对那些寻求长期保值的人有吸引力的资产，使他们的节奏能跟上（通胀导致的）不断上涨的生活成本。
 
-但由于市场存在高度的投机性，比特币的短期价值仍然不稳定。
+Its short term value remains volatile due to market speculation.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 

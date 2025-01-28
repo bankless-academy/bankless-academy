@@ -42,7 +42,9 @@ Optimism では、ガバナンス力はOPトークンをセルフカストディ
 
 Optimismでは、「Agora」と呼ばれる投票用dAppを使って、適格な代理人を調べ、委任を行い、提案を監視しています。 詳しく見てみましょう。
 
-## Optimism Agoraに基づく委任
+## Prerequisites
+
+If you want to hold voting power, you’ll need to purchase OP tokens. You can continue without completing these two steps if you simply want to set up delegation.
 
 **1\. Optimism NetworkでETHを購入します。**
 
@@ -52,6 +54,8 @@ Explorer’s Handbookのエントリー、 [「How to fund a Wallet on Layer 2�
 
 DEXを使用してOPトークンを購入するためのステップバイステップガイドについては、Explorer’s Handbookのエントリー [「How to Swap on a Decentralized Exchange」](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange)をご確認ください。
 
+## Optimism Agoraに基づく委任
+
 **3\. Optimism Agora dAppを開きます: <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
@@ -60,35 +64,45 @@ DEXを使用してOPトークンを購入するためのステップバイステ
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. 下にスクロールし、お気に入りの代理人を選択します。**
+**3\. 下にスクロールし、お気に入りの代理人を選択します。**
 
 代理人をクリックすると、簡単な声明、投票履歴、影響力の測定値が表示されます。 時間をかけて、オプティミズムのビジョンに沿った代理人を見つけましょう。
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. 「delegate」ボタンを押し、ウォレット内の取引を承認します。**
+**4\. 「delegate」ボタンを押し、ウォレット内の取引を承認します。**
 
 OPトークンはこのプロセスを通してウォレットに残りません。 少額のガス代がETHで請求されます。
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
+
+---
+
+It’s time to explore better voting systems. We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Delegating on Optimism’.
+
+Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+
+
+---
+
 ## FAQ
 
-* *委任するにはトークンがいくつ必要でしょうか？*
+### 委任するにはトークンがいくつ必要でしょうか？
 
 OPトークンをいくら持っていても（ゼロでも）、委任を始めることができます。 保有OPの増減に伴い、委任された議決権も更新されます。 OP保有量がかわるたびに再委任する必要はありません。
 
-* *適切な代理人を選ぶにはどうすればよろしいでしょうか？*
+### 適切な代理人を選ぶにはどうすればよろしいでしょうか？
 
 それは個人的な価値観と、Optimismの成長をどのように見たいかというビジョンによります。 代理人のプロフィールを確認して、心に響くものを見つけてください。
 
-* *代理人になれるのでしょうか？*
+### 代理人になれるのでしょうか？
 
 可能です。 Optimism Docsに掲載されている [「How to be a delegate」](https://community.optimism.io/docs/governance/delegate/)をご確認ください。
 
 注意: これは、Bankless Academyでの [Optimism Governance](https://app.banklessacademy.com/lessons/optimism-governance) レッスンのクエストには当てはまりません。
 
-* *投票を委任する必要がありますか？*
+### 投票を委任する必要がありますか？
 
 Optimism Agoraの「Proposals」タブの下で投票を追跡することで、委任をスキップして自分を代表することができます。
 
@@ -100,3 +114,7 @@ Optimism Agoraの「Proposals」タブの下で投票を追跡することで、
 **作者**
 
 **[Tetranome](https://twitter.com/Tetranome)** は、ユーザーエクスペリエンス、インターフェース、デザイン、コンテンツに焦点を当てたBankless Academyのプロジェクトチャンピオンです。
+
+**Patron**
+
+This article was funded by **[Optimism](https://www.optimism.io/)**.

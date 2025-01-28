@@ -1,0 +1,42 @@
+{
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "keyword_plural": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchains",
+    "definition": "Système dans lequel un enregistrement des transactions en cryptomonnaies est conservé sur de nombreux ordinateurs à travers le monde."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "keyword_plural": "cryptocurrencys",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "wallet app": {
+    "keyword": "wallet app",
+    "keyword_plural": "wallet apps",
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  },
+  "public key": {
+    "keyword": "public key",
+    "keyword_plural": "public keys",
+    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+  },
+  "private key": {
+    "keyword": "private key",
+    "keyword_plural": "private keys",
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+  },
+  "cryptography": {
+    "keyword": "cryptographie",
+    "keyword_plural": "cryptographys",
+    "definition": "Techniques de communication ou de transaction sécurisée, empêchant les interférences externes."
+  },
+  "encryption": {
+    "keyword": "chiffrement",
+    "keyword_plural": "encryptions",
+    "definition": "Le processus de conversion de l'information en un code privé et sécurisé, utilisé pour empêcher tout accès non autorisé."
+  }
+}
