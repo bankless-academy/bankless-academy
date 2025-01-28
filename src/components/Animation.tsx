@@ -4,6 +4,7 @@ import { Box, Button, Image } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { Player } from '@lottiefiles/react-lottie-player'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import { ANIMATIONS, ANIMATION_IDS } from 'constants/animations'
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -108,6 +109,7 @@ const Animation = ({
   animationId: string
   isEmbedded?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationId}`,
     0
@@ -334,16 +336,16 @@ const Animation = ({
               size="sm"
               padding="12px !important"
               border="1px solid transparent"
-              title="Reload animation"
+              title={t('Reload animation')}
               onClick={reloadAnimation}
             >
               ↺
             </Button>
           )}
           {animationStepLS >= 0 && (
-            <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
+            <Tooltip ref={nextTooltipRef}>{t('Click here!')}</Tooltip>
           )}
-          <Tooltip ref={prevTooltipRef}>Click here to go back</Tooltip>
+          <Tooltip ref={prevTooltipRef}>{t('Click here to go back')}</Tooltip>
         </Simulation>
       </StyledBox>
     </Box>
