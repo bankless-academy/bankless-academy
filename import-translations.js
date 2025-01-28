@@ -39,7 +39,7 @@ async function main() {
   const nameSpaces = [
     'keywords',
     'common', // = UI
-    // 'homepage',
+    'homepage',
     'quests',
   ]
   // (also keywords)
