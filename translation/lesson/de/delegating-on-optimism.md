@@ -113,7 +113,7 @@ Hinweis: Dies wird dir ebenfalls nicht für die Lektion ['Optimism Governance'](
 
 **Autor**
 
-**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** ist der Projektmeister der Bankless Academy, der sich auf Benutzererfahrung, Interface, Design und Inhalt konzentriert.
 
 **Patron**
 
