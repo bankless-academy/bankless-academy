@@ -1,5 +1,5 @@
 ---
-TITLE: Notions de base sur la Blockchain
+TITLE: Les bases de la Blockchain
 DESCRIPTION: Découvrez l’architecture fondamentale de la technologie blockchain.
 LANGUAGE: Français
 WRITERS: iSpeakNerd
