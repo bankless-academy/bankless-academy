@@ -133,7 +133,7 @@ Maksimum `BTC` arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni 
 
 Bitcoin'in sabit `para politikası`, uzun vadede değer korumayı tercih edenler için onu cazip bir varlık haline getirerek artan maliyetlere yetişmelerini sağlar.
 
-Its short term value remains volatile due to market speculation.
+Kısa vadeli değeri ise piyasa spekülasyonu nedeniyle dalgalanmayı sürdürür.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
