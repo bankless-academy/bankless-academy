@@ -917,7 +917,8 @@ const LESSONS: LessonType[] = [
     name: 'Blockchain Basics',
     languages: [
       'de',
-      'es'
+      'es',
+      'fr'
     ],
     level: 'Essentials',
     lessonWriters: 'iSpeakNerd',
@@ -1145,7 +1146,9 @@ const LESSONS: LessonType[] = [
     difficulty: 'Easy',
     description: 'Protect yourself and your wallet from the most common scams in web3.',
     name: 'Web3 Security',
-    languages: [],
+    languages: [
+      'fr'
+    ],
     level: 'Essentials',
     tags: [
       'Security'
