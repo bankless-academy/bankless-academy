@@ -1,4 +1,7 @@
 {
+  "Reload animation": "Reload animation",
+  "Click here!": "Click here!",
+  "Click here to go back": "Click here to go back",
   "Entry Collected": "Eintrag gesammelt",
   "View on Mirror.xyz": "Auf Mirror.xyz anzeigen",
   "Receive new entries directly to your inbox.": "Erhalte neue Einträge direkt in deinen Posteingang.",
@@ -117,9 +120,15 @@
   "Wrong network detected": "Falsches Netzwerk erkannt",
   "Please switch back to Ethereum Mainnet": "Bitte wechsel zurück zum Ethereum Mainnet",
   "Select a network": "Netzwerk auswählen",
+  "Sending a Bitcoin Transaction": "Sending a Bitcoin Transaction",
+  "Animation": "Animation",
+  "Ethereum Proof-of-Stake consensus": "Ethereum Proof-of-Stake consensus",
+  "Using a dApp": "Using a dApp",
+  "Interactive Simulation": "Interactive Simulation",
+  "Sending a Payment": "Sending a Payment",
+  "How does sending a payment work on Ethereum?": "How does sending a payment work on Ethereum?",
   "powered by": "unterstützt von",
   "Twitter": "Twitter",
   "Community": "Community",
-  "Lessons": "Lessons",
-  "Explore Lessons": "Explore Lessons"
+  "New app version available!": "New app version available!"
 }
