@@ -112,7 +112,7 @@ const WalletBasics = (
                     alt={tl(lesson.englishName)}
                     target="_blank"
                   >
-                    <Button variant="primary">{'Read Entry'}</Button>
+                    <Button variant="primary">{t('Read Entry')}</Button>
                   </InternalLink>
                 </Box>
               </Box>

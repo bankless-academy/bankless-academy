@@ -72,21 +72,6 @@ const OptimismGovernance = (
                 {t('Begin your Optimism Network journey by delegating OP.')}
               </Text>
               <VStack mt="8" alignItems="start">
-                {/* <Button
-                  cursor="default"
-                  whiteSpace="break-spaces"
-                  height="auto"
-                  p="16px"
-                  rightIcon={
-                    account ? (
-                      <CheckIcon color={theme.colors.correct} />
-                    ) : (
-                      <Spinner size="sm" speed="1s" />
-                    )
-                  }
-                >
-                  {t('1. Connect your wallet to Bankless Academy')}
-                </Button> */}
                 <Button
                   cursor="default"
                   whiteSpace="break-spaces"
@@ -106,13 +91,13 @@ const OptimismGovernance = (
                   }
                 >
                   <Box display="block" textAlign="left">
-                    {`Select a `}
+                    {t('Select a ')}
                     <ExternalLink href="https://vote.optimism.io/delegates">
-                      Delegate
+                      {t('Delegate')}
                     </ExternalLink>
-                    {` for your OP`}
+                    {t(' for your OP')}
                     <Box display="block" mt="6px">
-                      {`or delegate to `}
+                      {t('or delegate to ')}
                       <ExternalLink href="https://vote.optimism.io/delegates/banklessacademy.eth">
                         Bankless Academy
                       </ExternalLink>

@@ -94,9 +94,14 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
       </div>
       <div className="bloc2" style={{ alignSelf: 'center' }}>
         <Simulation
-          title={`Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto ${
-            animationStep ? `(${animationStep}/${animationSteps.length})` : ''
-          }`}
+          title={t(
+            'Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}',
+            {
+              step: animationStep
+                ? `(${animationStep}/${animationSteps.length})`
+                : '',
+            }
+          )}
         >
           <Box
             m="10px"
@@ -136,7 +141,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
                       variant="secondary"
                       fontWeight="bold"
                     >
-                      {'Reset simulation'}
+                      {t('Reset simulation')}
                     </Button>
                   </Box>
                 )}

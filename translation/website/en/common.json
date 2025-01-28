@@ -117,9 +117,13 @@
   "Wrong network detected": "Wrong network detected",
   "Please switch back to Ethereum Mainnet": "Please switch back to Ethereum Mainnet",
   "Select a network": "Select a network",
+  "Sending a Bitcoin Transaction": "Sending a Bitcoin Transaction",
+  "Ethereum Proof-of-Stake consensus": "Ethereum Proof-of-Stake consensus",
+  "Using a dApp": "Using a dApp",
+  "Sending a Payment": "Sending a Payment",
+  "How does sending a payment work on Ethereum?": "How does sending a payment work on Ethereum?",
   "powered by": "powered by",
   "Twitter": "Twitter",
   "Community": "Community",
-  "Lessons": "Lessons",
-  "Explore Lessons": "Explore Lessons"
+  "New app version available!": "New app version available!"
 }

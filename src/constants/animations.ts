@@ -1,7 +1,9 @@
+import i18next from 'i18next'
+
 export const ANIMATIONS = {
   // Bitcoin Basics
   bitcoin: {
-    name: 'Sending a Bitcoin Transaction',
+    name: i18next.t('Sending a Bitcoin Transaction'),
     type: 'Animation',
     description: 'Animation description',
     socialImageLink: null,
@@ -14,7 +16,7 @@ export const ANIMATIONS = {
   },
   // Staking on Ethereum
   'validating-tx-with-ethereum-staking': {
-    name: 'Ethereum Proof-of-Stake consensus',
+    name: i18next.t('Ethereum Proof-of-Stake consensus'),
     type: 'Animation',
     description: 'Validating transactions when staking with Ethereum.',
     socialImageLink: null,
@@ -30,7 +32,7 @@ export const ANIMATIONS = {
   },
   // Ethereum Basics
   swap: {
-    name: 'Using a dApp',
+    name: i18next.t('Using a dApp'),
     type: 'Interactive Simulation',
     description: 'Making a swap on a DEX',
     socialImageLink: null,
@@ -44,7 +46,7 @@ export const ANIMATIONS = {
     ],
   },
   send: {
-    name: 'Sending a Payment',
+    name: i18next.t('Sending a Payment'),
     type: 'Interactive Simulation',
     description: 'Sending a Payment',
     socialImageLink: null,
@@ -58,7 +60,7 @@ export const ANIMATIONS = {
     ],
   },
   ethereum: {
-    name: 'How does sending a payment work on Ethereum?',
+    name: i18next.t('How does sending a payment work on Ethereum?'),
     type: 'Animation',
     description: 'How it Works',
     socialImageLink: null,

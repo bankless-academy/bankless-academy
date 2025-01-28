@@ -33,31 +33,30 @@ const StyledBox = styled(Box)`
   }
 `
 
-export const Simulation = styled.div<{ title: string }>`
+const SimulationTitle = styled.div`
+  width: 96%;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: #916ab8;
+  padding: 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+
+export const Simulation = styled.div`
   width: 100%;
   height: 100%;
-  ${({ title }) =>
-    `
-      border: 1px dashed #916ab8;
-      border-width: 1px;
-      border-radius: 10px;
-      position: relative;
-      ::before {
-        content: '${title}';
-        width: 96%;
-        text-align: center;
-        font-size: 14px;
-        font-weight: bold;
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: transparent;
-        color: #916ab8;
-        padding: 8px 0;
-      }
-    `}
+  border: 1px dashed #916ab8;
+  border-width: 1px;
+  border-radius: 10px;
+  position: relative;
 `
 
 const Tooltip = styled.div`
@@ -282,11 +281,12 @@ const Animation = ({
         m="auto"
         ref={containerRef}
       >
-        <Simulation
-          title={`${animation.type}: ${animation.name} - ${
-            animationStepLS + 1
-          } / ${animationLength}`}
-        >
+        <Simulation>
+          <SimulationTitle>
+            {`${animation.type}: ${animation.name} - ${
+              animationStepLS + 1
+            } / ${animationLength}`}
+          </SimulationTitle>
           {isLottie ? (
             <Player
               ref={playerRef}
