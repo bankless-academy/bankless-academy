@@ -1,4 +1,7 @@
 {
+  "Reload animation": "Reload animation",
+  "Click here!": "Click here!",
+  "Click here to go back": "Click here to go back",
   "Entry Collected": "已收集条目",
   "View on Mirror.xyz": "在 Mirror.xyz 上查看",
   "Receive new entries directly to your inbox.": "直接在收件箱中接收新作品。",
@@ -117,9 +120,15 @@
   "Wrong network detected": "检测到错误网络",
   "Please switch back to Ethereum Mainnet": "请切换回以太坊主网",
   "Select a network": "选择网络",
+  "Sending a Bitcoin Transaction": "Sending a Bitcoin Transaction",
+  "Animation": "Animation",
+  "Ethereum Proof-of-Stake consensus": "Ethereum Proof-of-Stake consensus",
+  "Using a dApp": "Using a dApp",
+  "Interactive Simulation": "Interactive Simulation",
+  "Sending a Payment": "Sending a Payment",
+  "How does sending a payment work on Ethereum?": "How does sending a payment work on Ethereum?",
   "powered by": "技术支持：",
   "Twitter": "推特",
   "Community": "社区",
-  "Lessons": "课程",
-  "Explore Lessons": "探索更多课程"
+  "New app version available!": "New app version available!"
 }
