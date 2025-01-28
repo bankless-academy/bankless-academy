@@ -42,9 +42,9 @@ Sur Optimism, le pouvoir de gouvernance est représenté par la détention de je
 
 Sur Optimism, nous utilisons une dApp de vote appelée 'Agora' pour examiner les délégués éligibles, effectuer des délégations et surveiller les propositions de gouvernance. Voyons cela de plus près.
 
-## Prerequisites
+## Prérequis
 
-If you want to hold voting power, you’ll need to purchase OP tokens. You can continue without completing these two steps if you simply want to set up delegation.
+Si vous souhaitez détenir un droit de vote, vous devez acheter des jetons OP. Vous pouvez continuer sans effectuer ces deux étapes si vous souhaitez simplement mettre en place une délégation.
 
 **1\. Achetez des ETH sur le réseau Optimism Network.**
 
@@ -79,9 +79,9 @@ Aucun jeton OP ne quittera votre portefeuille au cours de ce processus. Il y a u
 
 ---
 
-It’s time to explore better voting systems. We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Delegating on Optimism’.
+Il est temps d'étudier de meilleurs systèmes de vote. Nous espérons que vous avez apprécié cet article du manuel de l'explorateur : "Déléguer sur Optimism".
 
-Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+N'oubliez pas de collecter cette entrée si vous souhaitez en posséder une copie pour vous y référer facilement lors de vos voyages, ou pour soutenir le contenu futur de la Bankless Academy. Bon voyage, Explorateur !
 
 
 ---
@@ -113,8 +113,8 @@ Remarque : cela ne compte pas non plus pour la quête de la leçon ["Gouvernance
 
 **Auteur**
 
-**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** est le Champion du projet Bankless Academy, se concentrant sur l'expérience utilisateur, l'interface, la conception et le contenu.
 
 **Patron**
 
-This article was funded by **[Optimism](https://www.optimism.io/)**.
+Cet article a été financé par **[Optimism](https://www.optimism.io/)**.
