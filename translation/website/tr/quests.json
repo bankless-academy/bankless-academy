@@ -5,6 +5,8 @@
     "3. Your transaction is added to the blockchain “database”...": "3. İşleminiz, blok zinciri \"veri tabanına\" ekleniyor...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto Bitcoin'inizi aldı!",
     "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Reset simulation",
     "Recipient": "Alıcı",
     "Address": "Adres",
     "Asset": "Varlık",
@@ -12,11 +14,16 @@
     "Balance": "Bakiye",
     "Send": "Gönder"
   },
+  "BlockchainBasics": {
+    "Understand a transaction": "Understand a transaction",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction"
+  },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
-    "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
-    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
-    "See the delegation platform here": "See the delegation platform here",
+    "Select a ": "Select a ",
+    "Delegate": "Delegate",
+    " for your OP": " for your OP",
+    "or delegate to ": "or delegate to ",
     "Tip": "İpucu",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
     "Refresh": "Refresh",
@@ -28,6 +35,11 @@
     "If you already have a wallet, move to step 2.": "Zaten bir cüzdanınız varsa 2. adıma geçin.",
     "2. Connect your wallet to Bankless Academy": "2. Cüzdanınızı Bankless Academy'ye bağlayın",
     "Tip": "İpucu",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Görevin adım adım anlatımı için Kaşifin El Kitabı'ndaki '{{lesson_title}}' başlıklı konuya göz atın."
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Görevin adım adım anlatımı için Kaşifin El Kitabı'ndaki '{{lesson_title}}' başlıklı konuya göz atın.",
+    "Read Entry": "Read Entry"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Select all screenshots containing scams 👆",
+    "Hint: 1 screenshot is not a scam": "Hint: 1 screenshot is not a scam"
   }
 }
