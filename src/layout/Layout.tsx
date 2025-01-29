@@ -507,7 +507,7 @@ const Layout = ({
                       link={
                         username !== ''
                           ? `/explorer/${username}?referral=true`
-                          : `explorer/my-profile`
+                          : `/explorer/my-profile`
                       }
                       label="Profile"
                       isActive={router.pathname.startsWith('/explorer')}
