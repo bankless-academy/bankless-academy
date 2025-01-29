@@ -20,7 +20,7 @@ import ExternalLink from 'components/ExternalLink'
 import { ExploreType } from 'entities/explore'
 import { POTION_API } from 'constants/index'
 import { fetchBE } from 'utils/server'
-
+import Card from 'components/Card'
 export const pageMeta: MetaData = {
   title: 'Explore',
 }
@@ -127,15 +127,9 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
   }, [initialData])
 
   const renderRecommendedCard = (item: ExploreType) => (
-    <Box
-      key={item.product}
-      w="100%"
-      bg="transparent"
-      borderRadius="lg"
-      overflow="hidden"
-    >
+    <Card key={item.product} w="100%" overflow="hidden">
       <ExternalLink href={item.link}>
-        <Box display="flex" bg="#000000" borderRadius="lg" overflow="hidden">
+        <Box display="flex" borderRadius="lg" overflow="hidden">
           {/* Image container */}
           <Box position="relative" height="108px" aspectRatio="1">
             <Image
@@ -148,7 +142,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
             />
           </Box>
           {/* Content container */}
-          <Box flex="1" p={4}>
+          <Box flex="1" p={4} bg="transparent" borderLeft="1px solid #524f4f">
             <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
               {item.product}
             </Text>
@@ -171,7 +165,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
           </Box>
         </Box>
       </ExternalLink>
-    </Box>
+    </Card>
   )
 
   // Helper function to remove emojis from the start of a string
@@ -202,13 +196,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
           {featuredItems
             .sort((a, b) => a.product.localeCompare(b.product))
             .map((item) => (
-              <Box
-                key={item.product}
-                w="100%"
-                bg="transparent"
-                borderRadius="lg"
-                overflow="hidden"
-              >
+              <Card key={item.product} w="100%" overflow="hidden">
                 <ExternalLink href={item.link}>
                   <Box position="relative">
                     <Image
@@ -221,7 +209,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                       aspectRatio="1200/630"
                     />
                   </Box>
-                  <Box bg="#000000" p={4}>
+                  <Box bg="transparent" p={4} borderTop="1px solid #524f4f">
                     <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
                       {item.product}
                     </Text>
@@ -248,7 +236,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                     </Box>
                   </Box>
                 </ExternalLink>
-              </Box>
+              </Card>
             ))}
         </SimpleGrid>
 
@@ -264,11 +252,17 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
               gap={2}
               mb={4}
             >
-              <Tab color="white">All</Tab>
+              <Tab _selected={{ bg: '#3f3154' }} color="white !important">
+                All
+              </Tab>
               {Object.keys(groupedByType)
                 .sort(sortTypes)
                 .map((type) => (
-                  <Tab color="white" key={type}>
+                  <Tab
+                    _selected={{ bg: '#3f3154' }}
+                    color="white !important"
+                    key={type}
+                  >
                     {type}
                   </Tab>
                 ))}
