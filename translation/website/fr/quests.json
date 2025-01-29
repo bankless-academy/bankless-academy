@@ -4,7 +4,9 @@
     "2. It's now being verified by network miners...": "2. C'est maintenant en cours de vérification par les mineurs du réseau...",
     "3. Your transaction is added to the blockchain “database”...": "3. Votre transaction est ajoutée à la \"base de données\" de la blockchain...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto a reçu votre Bitcoin !",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "En utilisant notre simulateur Bitcoin, envoyez <strong>0.00000001</strong> BTC à l'adresse de Satoshi Nakamoto",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "En utilisant notre simulateur Bitcoin simplifié, envoyez n'importe quel montant de BTC à l'adresse de Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Simulation interactive : Envoi de bitcoins à Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Réinitialiser la simulation",
     "Recipient": "Destinataire",
     "Address": "Adresse",
     "Asset": "Actif",
@@ -12,13 +14,18 @@
     "Balance": "Solde",
     "Send": "Envoyer"
   },
+  "BlockchainBasics": {
+    "Understand a transaction": "Comprendre une transaction",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Pour valider cette quête, collez les adresses \"From\" et \"To\" de cette transaction"
+  },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "Commencez votre voyage au sein du Réseau Optimism en déléguant vos OP.",
-    "1. Connect your wallet to Bankless Academy": "1. Connectez votre portefeuille à Bankless Academy",
-    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
-    "See the delegation platform here": "See the delegation platform here",
+    "Select a ": "Sélectionner un ",
+    "Delegate": "délégué",
+    " for your OP": " pour vos OP",
+    "or delegate to ": "ou déléguer à ",
     "Tip": "Conseil",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Consultez l'article du Manuel de l'explorateur intitulé \"{{lesson_title}}\" pour une description détaillée de la quête.",
     "Refresh": "Actualiser",
     "Read Entry": "Lire le Manuel"
   },
@@ -28,6 +35,11 @@
     "If you already have a wallet, move to step 2.": "Si vous avez déjà un wallet, passez à l'étape 2.",
     "2. Connect your wallet to Bankless Academy": "2. Connectez votre wallet à Bankless Academy",
     "Tip": "Conseil",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consultez l'article du Manuel de l'explorateur intitulé \"{{lesson_title}}\" pour une description détaillée de la quête."
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consultez l'article du Manuel de l'explorateur intitulé \"{{lesson_title}}\" pour une description détaillée de la quête.",
+    "Read Entry": "Lire le Manuel"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Sélectionnez toutes les captures d'écran contenant des arnaques 👆",
+    "Hint: 1 screenshot is not a scam": "Astuce : 1 capture d'écran n'est pas une arnaque"
   }
 }

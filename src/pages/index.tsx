@@ -144,7 +144,7 @@ const HomePage = (): JSX.Element => {
                       mt={isSmallScreen ? '0' : '-15px'}
                       w="100%"
                     >
-                      Your crypto journey starts here.
+                      {t('Your crypto journey starts here.')}
                     </Text>
                   </Box>
                 )}
@@ -340,85 +340,6 @@ const HomePage = (): JSX.Element => {
               />
               <FeaturedLessons />
               <>
-                {/* <Box mt="16">
-                <Heading as="h2" size="xl" my="16" mb="12">
-                  {t(`More Lessons On the Way`)}
-                </Heading>
-                <Box maxW="800px" display="flex" margin="auto">
-                  <Box width="100%">
-                    <Box
-                      display="flex"
-                      borderBottom="1px solid #72757B"
-                      pb="6"
-                      width="100%"
-                      mb="6"
-                    >
-                      <Box minW="64px" alignSelf="center">
-                        <Image width="64px" src="/images/money.png" />
-                      </Box>
-                      <Box ml="4">
-                        <Heading size="lg" mb="2">
-                          {t(`Dive into DeFi`)}
-                        </Heading>
-                        {t(
-                          `Learn how crypto protocols and tools are helping Explorers go Bankless.`
-                        )}
-                      </Box>
-                    </Box>
-                    <Box
-                      display="flex"
-                      borderBottom="1px solid #72757B"
-                      pb="6"
-                      width="100%"
-                      mb="6"
-                    >
-                      <Box minW="64px" alignSelf="center">
-                        <Image width="64px" src="/images/parrot.png" />
-                      </Box>
-                      <Box ml="4">
-                        <Heading size="lg" mb="2">
-                          {t(`Explore NFTs`)}
-                        </Heading>
-                        {t(
-                          `Explore the onchain property rights movement, and the emerging use-cases for this technology.`
-                        )}
-                      </Box>
-                    </Box>
-                    <Box
-                      display="flex"
-                      borderBottom="1px solid #72757B"
-                      pb="6"
-                      width="100%"
-                      mb="6"
-                    >
-                      <Box minW="64px" alignSelf="center">
-                        <Image width="64px" src="/images/hammer-and-pick.png" />
-                      </Box>
-                      <Box ml="4">
-                        <Heading size="lg" mb="2">
-                          {t(`Join a DAO`)}
-                        </Heading>
-                        {t(
-                          `The future of work is upon us. Learn how you can work in crypto, and how to get started.`
-                        )}
-                      </Box>
-                    </Box>
-                    <Box display="flex" pb="6" width="100%">
-                      <Box minW="64px" alignSelf="center">
-                        <Image width="64px" src="/images/books.png" />
-                      </Box>
-                      <Box ml="4">
-                        <Heading size="lg" mb="2">
-                          {t(`Study Blockchain Architecture & More`)}
-                        </Heading>
-                        {t(
-                          `Let’s explore how blockchain technology makes crypto currencies and tools possible.`
-                        )}
-                      </Box>
-                    </Box>
-                  </Box>
-                </Box>
-              </Box> */}
                 <Box my={isSmallScreen ? '16' : '8'}>
                   <Heading
                     as="h2"
@@ -426,7 +347,7 @@ const HomePage = (): JSX.Element => {
                     mt={isSmallScreen ? '16' : '8'}
                     mb="8"
                   >
-                    Community Collaborations
+                    {t('Community Collaborations')}
                   </Heading>
                   <SimpleGrid
                     columns={{ sm: 1, md: 2, lg: 2 }}

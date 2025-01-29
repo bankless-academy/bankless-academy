@@ -4,6 +4,7 @@ import { Box, Button, Image } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { Player } from '@lottiefiles/react-lottie-player'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import { ANIMATIONS, ANIMATION_IDS } from 'constants/animations'
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -33,31 +34,27 @@ const StyledBox = styled(Box)`
   }
 `
 
-export const Simulation = styled.div<{ title: string }>`
+const SimulationTitle = styled.div`
+  width: 96%;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: #916ab8;
+  padding: 8px 0;
+`
+
+export const Simulation = styled.div`
   width: 100%;
   height: 100%;
-  ${({ title }) =>
-    `
-      border: 1px dashed #916ab8;
-      border-width: 1px;
-      border-radius: 10px;
-      position: relative;
-      ::before {
-        content: '${title}';
-        width: 96%;
-        text-align: center;
-        font-size: 14px;
-        font-weight: bold;
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: transparent;
-        color: #916ab8;
-        padding: 8px 0;
-      }
-    `}
+  border: 1px dashed #916ab8;
+  border-width: 1px;
+  border-radius: 10px;
+  position: relative;
 `
 
 const Tooltip = styled.div`
@@ -109,6 +106,7 @@ const Animation = ({
   animationId: string
   isEmbedded?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationId}`,
     0
@@ -282,11 +280,12 @@ const Animation = ({
         m="auto"
         ref={containerRef}
       >
-        <Simulation
-          title={`${animation.type}: ${animation.name} - ${
-            animationStepLS + 1
-          } / ${animationLength}`}
-        >
+        <Simulation>
+          <SimulationTitle>
+            {`${animation.type}: ${animation.name} - ${
+              animationStepLS + 1
+            } / ${animationLength}`}
+          </SimulationTitle>
           {isLottie ? (
             <Player
               ref={playerRef}
@@ -334,16 +333,16 @@ const Animation = ({
               size="sm"
               padding="12px !important"
               border="1px solid transparent"
-              title="Reload animation"
+              title={t('Reload animation')}
               onClick={reloadAnimation}
             >
               ↺
             </Button>
           )}
           {animationStepLS >= 0 && (
-            <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
+            <Tooltip ref={nextTooltipRef}>{t('Click here!')}</Tooltip>
           )}
-          <Tooltip ref={prevTooltipRef}>Click here to go back</Tooltip>
+          <Tooltip ref={prevTooltipRef}>{t('Click here to go back')}</Tooltip>
         </Simulation>
       </StyledBox>
     </Box>

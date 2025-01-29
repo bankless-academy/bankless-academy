@@ -8,11 +8,10 @@ files:
   - source: /translation/lesson/en/bitcoin-basics.md
     translation: /translation/lesson/%two_letters_code%/%original_file_name%
   - source: /translation/website/en/*.json
-    ignore:
-      - /translation/website/en/homepage.json
     translation: /translation/website/%two_letters_code%/%original_file_name%
   - source: /translation/keywords/en/*.json
     ignore:
+      - /translation/keywords/en/gitcoin-2.0-essentials.json
       - /translation/keywords/en/keywords.json
     translation: /translation/keywords/%two_letters_code%/%original_file_name%
   - source: /translation/lesson/en/wallet-basics.md
@@ -26,4 +25,6 @@ files:
   - source: /translation/lesson/en/delegating-on-optimism.md
     translation: /translation/lesson/%two_letters_code%/%original_file_name%
   - source: /translation/lesson/en/ethereum-basics.md
+    translation: /translation/lesson/%two_letters_code%/%original_file_name%
+  - source: /translation/lesson/en/web3-security.md
     translation: /translation/lesson/%two_letters_code%/%original_file_name%
