@@ -21,6 +21,8 @@ import { ExploreType } from 'entities/explore'
 import { POTION_API } from 'constants/index'
 import { fetchBE } from 'utils/server'
 import Card from 'components/Card'
+import Helper from 'components/Helper'
+
 export const pageMeta: MetaData = {
   title: 'Explore',
 }
@@ -239,7 +241,6 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
               </Card>
             ))}
         </SimpleGrid>
-
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
           Explore Apps
         </StyledHeading>
@@ -266,6 +267,30 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                     {type}
                   </Tab>
                 ))}
+              <Box
+                display="flex"
+                justifyContent="center"
+                w="24px"
+                h="24px"
+                mt="20px"
+                position="relative"
+              >
+                <Helper
+                  title="Disclaimer"
+                  definition={
+                    <>
+                      <Box mb="4">
+                        <Text fontWeight="bold">
+                          Always do your own research.
+                        </Text>
+                        Blockchain is a new technology and most applications are
+                        new. Before depositing any large quantities of money,
+                        make sure you understand the risks.
+                      </Box>
+                    </>
+                  }
+                />
+              </Box>
             </TabList>
           </Box>
           <TabPanels>
