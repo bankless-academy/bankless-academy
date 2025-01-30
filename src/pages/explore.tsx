@@ -16,13 +16,13 @@ import { useEffect, useState } from 'react'
 
 import { MetaData } from 'components/Head'
 import Layout from 'layout/Layout'
-import { StyledHeading } from 'components/LessonCards'
 import ExternalLink from 'components/ExternalLink'
 import { ExploreType } from 'entities/explore'
 import { POTION_API } from 'constants/index'
 import { fetchBE } from 'utils/server'
 import Card from 'components/Card'
 import Helper from 'components/Helper'
+import { useSmallScreen } from 'hooks'
 
 export const pageMeta: MetaData = {
   title: 'Explore',
@@ -82,6 +82,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
   const [groupedItems, setGroupedItems] = useState<GroupedExploreItems>({})
   const [groupedByType, setGroupedByType] = useState<GroupedByTypeItems>({})
   const [featuredItems, setFeaturedItems] = useState<ExploreType[]>([])
+  const [isSmallScreen] = useSmallScreen()
   const [error, setError] = useState<string>('')
 
   useEffect(() => {
@@ -192,9 +193,37 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
             {error}
           </Text>
         )}
-        <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-          Explore Apps
-        </StyledHeading>
+        <Heading
+          as="h1"
+          size="2xl"
+          textAlign="center"
+          pt={isSmallScreen ? '12px' : '16px'}
+        >
+          <Box
+            display="inline-block"
+            justifyContent="center"
+            position="relative"
+          >
+            Explore Apps
+            <Box position="absolute" top="-4px" right="-10px">
+              <Helper
+                title="Disclaimer"
+                definition={
+                  <>
+                    <Box mb="4">
+                      <Text fontWeight="bold">
+                        Always do your own research.
+                      </Text>
+                      Blockchain is a new technology and most applications are
+                      new. Before depositing any large quantities of money, make
+                      sure you understand the risks.
+                    </Box>
+                  </>
+                }
+              />
+            </Box>
+          </Box>
+        </Heading>
         <Heading
           as="h2"
           size="md"
@@ -276,30 +305,6 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                     {type}
                   </Tab>
                 ))}
-              <Box
-                display="flex"
-                justifyContent="center"
-                w="24px"
-                h="24px"
-                mt="20px"
-                position="relative"
-              >
-                <Helper
-                  title="Disclaimer"
-                  definition={
-                    <>
-                      <Box mb="4">
-                        <Text fontWeight="bold">
-                          Always do your own research.
-                        </Text>
-                        Blockchain is a new technology and most applications are
-                        new. Before depositing any large quantities of money,
-                        make sure you understand the risks.
-                      </Box>
-                    </>
-                  }
-                />
-              </Box>
             </TabList>
           </Box>
           <TabPanels>
