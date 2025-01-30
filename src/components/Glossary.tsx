@@ -1,7 +1,7 @@
 import React from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 
-import { StyledHeading } from 'components/LessonCards'
+// import { StyledHeading } from 'components/LessonCards'
 import { useSmallScreen } from 'hooks/index'
 
 interface Term {
@@ -47,10 +47,21 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
           ))}
         </Box>
       </Box>
-      <Box m="10" pr="2" ml={isSmallScreen ? '20px' : '40px'} maxW="1024px">
-        <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
+      <Box
+        m="10"
+        pr="2"
+        ml={isSmallScreen ? '20px' : '40px'}
+        mt="0"
+        maxW="1024px"
+      >
+        <Heading
+          as="h1"
+          size="2xl"
+          textAlign="center"
+          pt={isSmallScreen ? '12px' : '16px'}
+        >
           Glossary
-        </StyledHeading>
+        </Heading>
         {Object.keys(groupedTerms).map((letter) => (
           <Box key={letter} id={`section-${letter}`}>
             <Box
