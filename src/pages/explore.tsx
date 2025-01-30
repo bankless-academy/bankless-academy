@@ -92,7 +92,8 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         const featured = initialData.filter(
           (item: ExploreType) => item.isFeatured
         )
-        setFeaturedItems(featured)
+        // Sort by isFeatured in ascending order
+        setFeaturedItems(featured.sort((a, b) => a.isFeatured - b.isFeatured))
 
         // Group all items by category for display (including featured)
         const grouped = initialData.reduce(
@@ -101,7 +102,9 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
             if (!acc[category]) {
               acc[category] = []
             }
-            acc[category].push(item)
+            if (!item.isFeatured) {
+              acc[category].push(item)
+            }
             return acc
           },
           {}
@@ -236,51 +239,49 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
           Explore the best apps for your crypto journey.
         </Heading>
         <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
-          {featuredItems
-            .sort((a, b) => a.product.localeCompare(b.product))
-            .map((item) => (
-              <Card key={item.product} w="100%" overflow="hidden">
-                <ExternalLink href={item.link}>
-                  <Box position="relative">
-                    <Image
-                      src={item.image}
-                      alt={item.product}
-                      w="100%"
-                      h="100%"
-                      objectFit="cover"
-                      bg="transparent"
-                      aspectRatio="1200/630"
-                    />
+          {featuredItems.map((item) => (
+            <Card key={item.product} w="100%" overflow="hidden">
+              <ExternalLink href={item.link}>
+                <Box position="relative">
+                  <Image
+                    src={item.image}
+                    alt={item.product}
+                    w="100%"
+                    h="100%"
+                    objectFit="cover"
+                    bg="transparent"
+                    aspectRatio="1200/630"
+                  />
+                </Box>
+                <Box bg="transparent" p={4} borderTop="1px solid #524f4f">
+                  <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
+                    {item.product}
+                  </Text>
+                  <Text
+                    fontSize="xs"
+                    mb={2}
+                    noOfLines={2}
+                    sx={{
+                      display: '-webkit-box',
+                      WebkitBoxOrient: 'vertical',
+                      WebkitLineClamp: 2,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                    }}
+                    minH="40px"
+                    color="#9E9E9E"
+                  >
+                    {item.description}
+                  </Text>
+                  <Box display="flex" alignItems="center" mb={2} gap={2}>
+                    <Tag size="sm" colorScheme="purple" variant="outline">
+                      {item.category}
+                    </Tag>
                   </Box>
-                  <Box bg="transparent" p={4} borderTop="1px solid #524f4f">
-                    <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
-                      {item.product}
-                    </Text>
-                    <Text
-                      fontSize="xs"
-                      mb={2}
-                      noOfLines={2}
-                      sx={{
-                        display: '-webkit-box',
-                        WebkitBoxOrient: 'vertical',
-                        WebkitLineClamp: 2,
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                      }}
-                      minH="40px"
-                      color="#9E9E9E"
-                    >
-                      {item.description}
-                    </Text>
-                    <Box display="flex" alignItems="center" mb={2} gap={2}>
-                      <Tag size="sm" colorScheme="purple" variant="outline">
-                        {item.category}
-                      </Tag>
-                    </Box>
-                  </Box>
-                </ExternalLink>
-              </Card>
-            ))}
+                </Box>
+              </ExternalLink>
+            </Card>
+          ))}
         </SimpleGrid>
         <Tabs variant="soft-rounded" colorScheme="purple" defaultIndex={0}>
           <Box mt={12}>
