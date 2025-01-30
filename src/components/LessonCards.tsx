@@ -12,33 +12,33 @@ import { getArticlesCollected, getLessonsCollected } from 'utils/index'
 import InstallAppModal from 'components/InstallAppModal'
 import LessonCard from 'components/LessonCard'
 import { LessonTypeType, LevelType } from 'entities/lesson'
-import styled from '@emotion/styled'
+// import styled from '@emotion/styled'
 import { useSmallScreen } from 'hooks/index'
 
-export const StyledHeading = styled(Heading)`
-  @media only screen and (min-width: 801px) {
-    display: flex;
-    flex-basis: 100%;
-    align-items: center;
-    margin: 24px 0 24px;
+// export const StyledHeading = styled(Heading)`
+//   @media only screen and (min-width: 801px) {
+//     display: flex;
+//     flex-basis: 100%;
+//     align-items: center;
+//     margin: 24px 0 24px;
 
-    &:before,
-    &:after {
-      content: '';
-      flex-grow: 1;
-      background: #989898;
-      height: 1px;
-      font-size: 0;
-      line-height: 0;
-    }
-    &:before {
-      margin: 0 36px 0 0;
-    }
-    &:after {
-      margin: 0 0 0 36px;
-    }
-  }
-`
+//     &:before,
+//     &:after {
+//       content: '';
+//       flex-grow: 1;
+//       background: #989898;
+//       height: 1px;
+//       font-size: 0;
+//       line-height: 0;
+//     }
+//     &:before {
+//       margin: 0 36px 0 0;
+//     }
+//     &:after {
+//       margin: 0 0 0 36px;
+//     }
+//   }
+// `
 
 const LessonCards = ({
   level,
@@ -141,14 +141,14 @@ const LessonCards = ({
 
   return (
     <Box>
-      <StyledHeading
+      <Heading
         as="h1"
         size="2xl"
         textAlign="center"
-        pt={isSmallScreen ? '12px' : '0'}
+        pt={isSmallScreen ? '12px' : '16px'}
       >
         {level || moduleName || "Explorer's Handbook"}
-      </StyledHeading>
+      </Heading>
       {!moduleName ? (
         <Heading
           as="h2"

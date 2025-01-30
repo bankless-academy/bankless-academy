@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetServerSidePropsContext } from 'next'
-import { Box, Center, Image } from '@chakra-ui/react'
+import { Box, Center, Image, Heading } from '@chakra-ui/react'
 import { WagmiProvider, http, createConfig } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
@@ -9,7 +9,7 @@ import MintSmartNFT from 'components/MintSmartNFT'
 import { coinbaseWallet } from 'wagmi/connectors'
 import { Chain, base } from 'wagmi/chains'
 import { useSmallScreen } from 'hooks/index'
-import { StyledHeading } from 'components/LessonCards'
+// import { StyledHeading } from 'components/LessonCards'
 import { DOMAIN_URL_, HOMEPAGE_BACKGROUND } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
 
@@ -101,14 +101,14 @@ const OnchainSummerChallenge = (): JSX.Element => {
             </Box>
           </Center>
           <Box maxW="1080px" m="auto" mt={isSmallScreen ? '16' : '24'}>
-            <StyledHeading
+            <Heading
               as="h1"
               size={isSmallScreen ? 'lg' : '2xl'}
               textAlign="center"
               my={8}
             >
               Onchain Summer Challenge
-            </StyledHeading>
+            </Heading>
             <MintSmartNFT />
           </Box>
         </Box>
