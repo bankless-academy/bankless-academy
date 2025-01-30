@@ -30,6 +30,7 @@ const COMMUNITIES = [
   'Pudgy Penguins',
   'Regens Unite',
   'SheFi',
+  'Web3 DeKUT',
   'Zerion',
 ].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
 
