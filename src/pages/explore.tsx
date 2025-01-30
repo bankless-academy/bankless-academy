@@ -10,6 +10,7 @@ import {
   TabPanel,
   Tab,
   Tag,
+  Heading,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 
@@ -192,8 +193,19 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
           </Text>
         )}
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-          Featured Apps
+          Explore Apps
         </StyledHeading>
+        <Heading
+          as="h2"
+          size="md"
+          color="#9E9E9E"
+          fontWeight="normal"
+          textAlign="center"
+          mt={4}
+          mb={6}
+        >
+          Explore the best apps for your crypto journey.
+        </Heading>
         <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
           {featuredItems
             .sort((a, b) => a.product.localeCompare(b.product))
@@ -241,17 +253,14 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
               </Card>
             ))}
         </SimpleGrid>
-        <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-          Explore Apps
-        </StyledHeading>
         <Tabs variant="soft-rounded" colorScheme="purple" defaultIndex={0}>
-          <Box mt={8}>
+          <Box mt={12}>
             <TabList
               display="flex"
               flexWrap="wrap"
               justifyContent="center"
               gap={2}
-              mb={4}
+              my={4}
             >
               <Tab _selected={{ bg: '#3f3154' }} color="white !important">
                 All
