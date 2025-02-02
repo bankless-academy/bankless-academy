@@ -66,7 +66,7 @@ const ConnectWalletButton = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { open } = useAppKit()
-  const { address, connector, isConnected, chainId } = useAccount()
+  const { address, connector, chainId } = useAccount()
   const { asPath } = useRouter()
   // const { simulate } = query
   // if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
@@ -414,7 +414,7 @@ const ConnectWalletButton = ({
 
   return (
     <>
-      {isConnected && !waitingForSIWE && name ? (
+      {name ? (
         <Popover
           isOpen={isOpen}
           placement="bottom-end"
