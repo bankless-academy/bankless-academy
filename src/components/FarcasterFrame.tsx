@@ -77,10 +77,12 @@ const logMessage = (msg: FrameMessage) => {
 
 export default function FarcasterFrame() {
   const [isInitialized, setIsInitialized] = useState(false)
+  const [showIframe, setShowIframe] = useState(false)
   const iframeRef = useRef<HTMLIFrameElement>(null)
   // const [ethProvider, setEthProvider] = useState<any>(null)
 
   useEffect(() => {
+    if (!showIframe) return
     log('Initializing frame host...')
 
     const initFrame = async () => {
@@ -113,11 +115,6 @@ export default function FarcasterFrame() {
           log('Frame ready called with options:', options)
           setIsInitialized(true)
         },
-        context: {
-          user: {
-            fid: 8709,
-          },
-        },
         eip6963RequestProvider: () => {
           log('Provider requested')
           announceProvider(endpoint)
@@ -149,7 +146,7 @@ export default function FarcasterFrame() {
         iframe: iframeRef.current,
         sdk: frameHost as unknown as FrameHost,
         ethProvider: window.ethereum as any,
-        frameOrigin: window.location.origin,
+        frameOrigin: '*',
         debug: true,
       })
       log('Frame host initialized')
@@ -174,34 +171,57 @@ export default function FarcasterFrame() {
         iframeRef.current.remove()
       }
     }
-  }, [])
+  }, [showIframe])
 
   const handleIframeLoad = () => {
     log('Iframe loaded')
-    setIsInitialized(true)
+  }
+
+  const handleLoadClick = () => {
+    setShowIframe(true)
   }
 
   return (
     <div style={{ position: 'relative', width: '424px', margin: '0 auto' }}>
-      <div style={{ display: isInitialized ? 'none' : 'block' }}>
-        Loading...
-      </div>
-      <iframe
-        ref={iframeRef}
-        id={FRAME_ID}
-        // src="https://app.banklessacademy.com/?webapp=true"
-        src="https://frames-v2.vercel.app/"
-        height={695}
-        width={424}
-        style={{
-          border: 'none',
-          opacity: isInitialized ? 1 : 0.5,
-          transition: 'opacity 0.3s ease',
-        }}
-        allow="microphone; camera; clipboard-write 'src'"
-        sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
-        onLoad={handleIframeLoad}
-      />
+      {!showIframe ? (
+        <button
+          onClick={handleLoadClick}
+          style={{
+            padding: '10px 20px',
+            fontSize: '16px',
+            cursor: 'pointer',
+            backgroundColor: '#0070f3',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            margin: '20px 0',
+          }}
+        >
+          Load Frame
+        </button>
+      ) : (
+        <>
+          <div style={{ display: isInitialized ? 'none' : 'block' }}>
+            Loading...
+          </div>
+          <iframe
+            ref={iframeRef}
+            id={FRAME_ID}
+            // src="https://app.banklessacademy.com/?webapp=true"
+            src="https://frames-v2.vercel.app/"
+            height={695}
+            width={424}
+            style={{
+              border: 'none',
+              opacity: isInitialized ? 1 : 0.5,
+              transition: 'opacity 0.3s ease',
+            }}
+            allow="microphone; camera; clipboard-write 'src'"
+            sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
+            onLoad={handleIframeLoad}
+          />
+        </>
+      )}
     </div>
   )
 }
