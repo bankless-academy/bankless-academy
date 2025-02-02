@@ -87,11 +87,6 @@
         log('Frame ready called with options:', options);
         document.querySelector('#iframe').style.opacity = 1;
       },
-      context: {
-        user: {
-          fid: 8709,
-        }
-      },
       eip6963RequestProvider: () => {
         log('Provider requested');
         announceProvider(endpoint);
@@ -124,7 +119,7 @@
       iframe: document.querySelector('#iframe'),
       sdk: frameHost,
       ethProvider: window.ethereum,
-      frameOrigin: window.origin,
+      frameOrigin: '*',
       debug: true,
     })
     log('Frame host initialized');
@@ -134,7 +129,7 @@
 <body>
   <div id="app">
     <div id="container">
-      <iframe id="iframe" src="https://frames-v2.vercel.app/" height="695" width="424" allow="microphone; camera; clipboard-write 'src'" sandbox="allow-forms allow-scripts allow-same-origin allow-popups"></iframe>
+      <iframe id="iframe" src="https://app.banklessacademy.com/lessons/intro-to-defi?embed=true" height="695" width="424" allow="microphone; camera; clipboard-write 'src'" sandbox="allow-forms allow-scripts allow-same-origin allow-popups"></iframe>
     </div>
   </div>
 </body>
