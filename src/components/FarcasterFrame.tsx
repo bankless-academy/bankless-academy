@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from 'react'
 import type { FrameHost } from '@farcaster/frame-host'
 import { wagmiConfig } from 'utils/wagmi'
 import { getWalletClient } from '@wagmi/core'
+import { useAccount } from 'wagmi'
 
 const FRAME_ID = 'bankless-academy-frame'
 const DEBUG = true
@@ -87,7 +88,9 @@ const logMessage = (msg: FrameMessage) => {
 export default function FarcasterFrame() {
   const [isInitialized, setIsInitialized] = useState(false)
   const [showIframe, setShowIframe] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const iframeRef = useRef<HTMLIFrameElement>(null)
+  const { address } = useAccount()
 
   useEffect(() => {
     if (!showIframe) return
@@ -101,26 +104,38 @@ export default function FarcasterFrame() {
 
       const { exposeToIframe } = await import('@farcaster/frame-host')
 
-      const client = await getWalletClient(wagmiConfig)
-      if (!client) {
-        throw new Error('No wallet client available')
-      }
-
-      const provider = {
-        request: async (args: { method: string; params: any[] }) => {
-          return client.request({ ...args, params: args.params || [] })
-        },
-        on: (_event: string, _listener: any) => {
-          log('Provider event listener added:', _event)
-          return provider
-        },
-        removeListener: (_event: string, _listener: any) => {
-          log('Provider event listener removed:', _event)
-          return provider
-        },
+      let client
+      let provider
+      try {
+        if (wagmiConfig) {
+          client = await getWalletClient(wagmiConfig)
+          if (client) {
+            provider = {
+              request: async (args: { method: string; params: any[] }) => {
+                return client.request({ ...args, params: args.params || [] })
+              },
+              on: (_event: string, _listener: any) => {
+                log('Provider event listener added:', _event)
+                return provider
+              },
+              removeListener: (_event: string, _listener: any) => {
+                log('Provider event listener removed:', _event)
+                return provider
+              },
+            }
+          }
+        }
+      } catch (err: any) {
+        const errorMessage = err?.message || 'Failed to initialize wallet'
+        log('Wallet initialization error:', errorMessage)
+        setError(errorMessage)
       }
 
       const announceProvider = (endpoint: any) => {
+        if (!provider) {
+          log('No provider available to announce')
+          return
+        }
         log('Announcing provider...')
         endpoint.emit({
           event: 'eip6963:announceProvider',
@@ -145,10 +160,23 @@ export default function FarcasterFrame() {
         //   },
         // },
         eip6963RequestProvider: () => {
+          if (!provider) {
+            log('Provider requested but not available')
+            return
+          }
           log('Provider requested')
           announceProvider(endpoint)
         },
         ethProviderRequestV2: async (request: any) => {
+          if (!provider) {
+            return {
+              error: {
+                code: -32603,
+                message: 'Wallet not available',
+              },
+            }
+          }
+
           log('ETH request:', request.value.method, request.value)
           if (!request?.value?.method) {
             return {
@@ -220,7 +248,9 @@ export default function FarcasterFrame() {
 
   return (
     <div style={{ position: 'relative', width: '424px', margin: '0 auto' }}>
-      {!showIframe ? (
+      {!address ? (
+        <div>Please connect your wallet first</div>
+      ) : !showIframe ? (
         <button
           onClick={handleLoadClick}
           style={{
@@ -234,18 +264,20 @@ export default function FarcasterFrame() {
             margin: '20px 0',
           }}
         >
-          Load Frame
+          Load LessonFrame
         </button>
       ) : (
         <>
           <div style={{ display: isInitialized ? 'none' : 'block' }}>
             Loading...
           </div>
+          {error && (
+            <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>
+          )}
           <iframe
             ref={iframeRef}
             id={FRAME_ID}
             src="https://app.banklessacademy.com/lessons/intro-to-defi?embed=true"
-            // src="https://frames-v2.vercel.app/"
             height={695}
             width={424}
             style={{
