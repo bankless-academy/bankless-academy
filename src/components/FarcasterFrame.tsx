@@ -1,11 +1,20 @@
 /* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // https://github.com/farcasterxyz/frames-v2-demo
 // https://github.com/farcasterxyz/frames/tree/main/packages/frame-host
 import { useState, useEffect, useRef } from 'react'
 import type { FrameHost } from '@farcaster/frame-host'
+import { wagmiConfig } from 'utils/wagmi'
+import { getWalletClient } from '@wagmi/core'
 
 const FRAME_ID = 'bankless-academy-frame'
 const DEBUG = true
+
+interface EthereumProvider {
+  request: (args: { method: string; params?: any[] }) => Promise<any>
+  on: (event: string, listener: any) => any
+  removeListener: (event: string, listener: any) => any
+}
 
 interface FrameMessage {
   id: string
@@ -79,7 +88,6 @@ export default function FarcasterFrame() {
   const [isInitialized, setIsInitialized] = useState(false)
   const [showIframe, setShowIframe] = useState(false)
   const iframeRef = useRef<HTMLIFrameElement>(null)
-  // const [ethProvider, setEthProvider] = useState<any>(null)
 
   useEffect(() => {
     if (!showIframe) return
@@ -93,8 +101,24 @@ export default function FarcasterFrame() {
 
       const { exposeToIframe } = await import('@farcaster/frame-host')
 
-      // const provider = await createEthProvider()
-      // setEthProvider(provider)
+      const client = await getWalletClient(wagmiConfig)
+      if (!client) {
+        throw new Error('No wallet client available')
+      }
+
+      const provider = {
+        request: async (args: { method: string; params: any[] }) => {
+          return client.request({ ...args, params: args.params || [] })
+        },
+        on: (_event: string, _listener: any) => {
+          log('Provider event listener added:', _event)
+          return provider
+        },
+        removeListener: (_event: string, _listener: any) => {
+          log('Provider event listener removed:', _event)
+          return provider
+        },
+      }
 
       const announceProvider = (endpoint: any) => {
         log('Announcing provider...')
@@ -115,29 +139,43 @@ export default function FarcasterFrame() {
           log('Frame ready called with options:', options)
           setIsInitialized(true)
         },
+        // context: {
+        //   user: {
+        //     fid: 8709,
+        //   },
+        // },
         eip6963RequestProvider: () => {
           log('Provider requested')
           announceProvider(endpoint)
         },
         ethProviderRequestV2: async (request: any) => {
           log('ETH request:', request.value.method, request.value)
-          if (request.value.method === 'eth_requestAccounts') {
-            if (!window.ethereum) {
-              throw new Error('No Ethereum provider available')
-            }
-            // eslint-disable-next-line no-useless-catch
-            try {
-              const accounts = await (window.ethereum as any).request({
-                method: request.value.method,
-                params: request.value.params,
-              })
-              return accounts
-            } catch (error) {
-              console.error('Error requesting accounts:', error)
-              throw error
+          if (!request?.value?.method) {
+            return {
+              error: {
+                code: -32602,
+                message: 'Invalid request format',
+              },
             }
           }
-          throw new Error('Method not supported')
+
+          try {
+            const response = await provider.request({
+              method: request.value.method,
+              params: request.value.params || [],
+            })
+            log('ETH response:', response)
+            return { result: response }
+          } catch (error: any) {
+            log('ETH error:', error)
+            return {
+              error: {
+                code: error?.code || -32603,
+                message: error?.message || 'Internal error',
+                data: error?.data,
+              },
+            }
+          }
         },
       }
 
@@ -145,13 +183,12 @@ export default function FarcasterFrame() {
       const { endpoint } = exposeToIframe({
         iframe: iframeRef.current,
         sdk: frameHost as unknown as FrameHost,
-        ethProvider: window.ethereum as any,
+        ethProvider: provider as any,
         frameOrigin: '*',
         debug: true,
       })
       log('Frame host initialized')
 
-      // Add message event listener for debugging
       const handleMessage = (event: MessageEvent) => {
         if (event.source === iframeRef.current?.contentWindow) {
           logMessage(event.data as FrameMessage)
@@ -207,8 +244,8 @@ export default function FarcasterFrame() {
           <iframe
             ref={iframeRef}
             id={FRAME_ID}
-            // src="https://app.banklessacademy.com/?webapp=true"
-            src="https://frames-v2.vercel.app/"
+            src="https://app.banklessacademy.com/lessons/intro-to-defi?embed=true"
+            // src="https://frames-v2.vercel.app/"
             height={695}
             width={424}
             style={{
