@@ -37,6 +37,7 @@
     "@davatar/react": "^1.11.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@farcaster/frame-host": "^0.0.24",
     "@farcaster/frame-sdk": "^0.0.24",
     "@gitcoinco/passport-sdk-reader": "^0.1.4",
     "@lottiefiles/react-lottie-player": "^3.5.3",
