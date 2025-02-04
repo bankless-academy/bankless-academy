@@ -34,12 +34,12 @@ interface ExplorePageProps {
 
 export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
   try {
-    const explore = await fetchBE(`${DOMAIN_URL}/api/get/explore`)
+    const explore = await fetchBE(`${DOMAIN_URL}/api/cache/explore`)
 
     return {
       props: {
         pageMeta,
-        initialData: explore,
+        initialData: explore.data,
       },
       revalidate: 60, // Revalidate every minute
     }
