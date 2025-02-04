@@ -22,7 +22,6 @@ import { fetchBE } from 'utils/server'
 import Card from 'components/Card'
 import Helper from 'components/Helper'
 import { useSmallScreen } from 'hooks'
-import { DOMAIN_URL } from 'constants/index'
 export const pageMeta: MetaData = {
   title: 'Explore',
 }
@@ -34,7 +33,9 @@ interface ExplorePageProps {
 
 export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
   try {
-    const explore = await fetchBE(`${DOMAIN_URL}/api/cache/explore`)
+    const explore = await fetchBE(
+      `https://app.banklessacademy.com/api/cache/explore`
+    )
 
     return {
       props: {
@@ -376,6 +377,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                       spacing={8}
                       alignItems="flex-start"
                     >
+                      {/* Group items by category first */}
                       {(() => {
                         // Group items by category
                         const categoryGroups = typeItems.reduce(
