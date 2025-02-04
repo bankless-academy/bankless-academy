@@ -22,7 +22,7 @@ import { fetchBE } from 'utils/server'
 import Card from 'components/Card'
 import Helper from 'components/Helper'
 import { useSmallScreen } from 'hooks'
-import { DOMAIN_URL_ } from 'constants/index'
+import { DOMAIN_URL } from 'constants/index'
 export const pageMeta: MetaData = {
   title: 'Explore',
 }
@@ -34,7 +34,7 @@ interface ExplorePageProps {
 
 export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
   try {
-    const explore = await fetchBE(`${DOMAIN_URL_}/api/get/explore`)
+    const explore = await fetchBE(`${DOMAIN_URL}/api/get/explore`)
 
     return {
       props: {
