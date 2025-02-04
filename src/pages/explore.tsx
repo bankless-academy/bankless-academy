@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
     return {
       props: {
         pageMeta,
-        initialData: explore.data,
+        initialData: explore?.data || [],
       },
       revalidate: 60, // Revalidate every minute
     }
@@ -376,7 +376,6 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                       spacing={8}
                       alignItems="flex-start"
                     >
-                      {/* Group items by category first */}
                       {(() => {
                         // Group items by category
                         const categoryGroups = typeItems.reduce(
