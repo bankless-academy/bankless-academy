@@ -18,12 +18,11 @@ import { MetaData } from 'components/Head'
 import Layout from 'layout/Layout'
 import ExternalLink from 'components/ExternalLink'
 import { ExploreType } from 'entities/explore'
-import { POTION_API } from 'constants/index'
 import { fetchBE } from 'utils/server'
 import Card from 'components/Card'
 import Helper from 'components/Helper'
 import { useSmallScreen } from 'hooks'
-
+import { DOMAIN_URL_ } from 'constants/index'
 export const pageMeta: MetaData = {
   title: 'Explore',
 }
@@ -35,26 +34,12 @@ interface ExplorePageProps {
 
 export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
   try {
-    const explore = await fetchBE(
-      `${POTION_API}/table?id=8f2f600b38a44cbb98f7fd240686c27a`
-    )
-    const initialData = explore
-      .map((e: any) => ({
-        product: e.fields.Product,
-        image: e.fields.Image,
-        isActif: e.fields['Is Actif'],
-        isFeatured: e.fields['Is Featured'],
-        category: e.fields.Category?.[0],
-        description: e.fields.Description,
-        type: e.fields.Type,
-        link: e.fields.Link,
-      }))
-      .filter((item: ExploreType) => item.isActif)
+    const explore = await fetchBE(`${DOMAIN_URL_}/api/get/explore`)
 
     return {
       props: {
         pageMeta,
-        initialData,
+        initialData: explore,
       },
       revalidate: 60, // Revalidate every minute
     }
@@ -95,7 +80,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         // Sort by isFeatured in ascending order
         setFeaturedItems(featured.sort((a, b) => a.isFeatured - b.isFeatured))
 
-        // Group all items by category for display (including featured)
+        // Group all items by category for display
         const grouped = initialData.reduce(
           (acc: GroupedExploreItems, item: ExploreType) => {
             const category = item.category || 'Other'
@@ -111,14 +96,16 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         )
         setGroupedItems(grouped)
 
-        // Group all items by type for tabs (including featured)
+        // Group all items by type for tabs
         const groupedByType = initialData.reduce(
           (acc: GroupedByTypeItems, item: ExploreType) => {
             const type = item.type || 'Other'
             if (!acc[type]) {
               acc[type] = []
             }
-            acc[type].push(item)
+            if (!item.isFeatured) {
+              acc[type].push(item)
+            }
             return acc
           },
           {}
