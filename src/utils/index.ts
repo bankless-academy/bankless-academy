@@ -36,7 +36,7 @@ import { wagmiConfig } from 'utils/wagmi'
 import { NFTAddress } from 'constants/nft'
 import { TABLES, db } from 'utils/db'
 import { ACHIEVEMENTS } from 'constants/achievements'
-import { INDEXER_URL, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
+import { INDEXER_URL, INDEXER_URL_BACKUP, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
 
 declare global {
   interface Window {
@@ -1083,8 +1083,8 @@ export const fetchExplorerData = async (address: string): Promise<{
 }
   `;
 
-  try {
-    const response = await fetch(INDEXER_URL, {
+  const fetchFromUrl = async (url: string) => {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1109,8 +1109,17 @@ export const fetchExplorerData = async (address: string): Promise<{
       baseBadges: OwnerAssets?.baseBadges || [],
       kudosBadges: OwnerAssets?.kudosBadges || []
     }
+  }
+
+  try {
+    try {
+      return await fetchFromUrl(INDEXER_URL)
+    } catch (error) {
+      console.error('Primary indexer failed, trying backup:', error);
+      return await fetchFromUrl(INDEXER_URL_BACKUP)
+    }
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Both indexers failed:', error);
     return { ...OwnerAssets, failed: true }
   }
 };
@@ -1124,8 +1133,8 @@ export const countExplorerBadges = async (badgeId: number): Promise<number | nul
 }
   `;
 
-  try {
-    const response = await fetch(INDEXER_URL, {
+  const fetchFromUrl = async (url: string) => {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1140,10 +1149,18 @@ export const countExplorerBadges = async (badgeId: number): Promise<number | nul
     }
 
     const result = await response.json();
-    // console.log(result.data);
     return result.data?.OwnerAssets?.length || null
+  }
+
+  try {
+    try {
+      return await fetchFromUrl(INDEXER_URL)
+    } catch (error) {
+      console.error('Primary indexer failed, trying backup:', error);
+      return await fetchFromUrl(INDEXER_URL_BACKUP)
+    }
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Both indexers failed:', error);
     return null
   }
 };
