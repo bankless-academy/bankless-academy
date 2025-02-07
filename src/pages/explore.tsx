@@ -11,6 +11,7 @@ import {
   Tab,
   Tag,
   Heading,
+  Button,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 
@@ -22,6 +23,7 @@ import { fetchBE } from 'utils/server'
 import Card from 'components/Card'
 import Helper from 'components/Helper'
 import { useSmallScreen } from 'hooks'
+import { Plus } from '@phosphor-icons/react'
 export const pageMeta: MetaData = {
   title: 'Explore',
 }
@@ -294,6 +296,11 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                     {type}
                   </Tab>
                 ))}
+              <ExternalLink href="/feature-request" ml={2}>
+                <Button leftIcon={<Plus />} variant="secondary">
+                  Submit an App
+                </Button>
+              </ExternalLink>
             </TabList>
           </Box>
           <TabPanels>
