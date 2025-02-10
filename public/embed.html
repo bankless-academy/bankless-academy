@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bankless Academy Frame</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      place-items: center;
+    }
+
+    #app {
+      margin: 0 auto;
+      padding: 50px;
+    }
+
+    #container {
+      position: relative;
+      width: 424px;
+      margin: 0 auto;
+    }
+
+    iframe {
+      border: none;
+      transition: opacity 0.3s ease;
+    }
+  </style>
+  <script type="module">
+    import { exposeToIframe } from 'https://cdn.jsdelivr.net/npm/@farcaster/frame-host@0.0.24/+esm'
+
+    const DEBUG = true;
+    const log = (...args) => {
+      if (DEBUG) console.log('[Frame]', ...args);
+    }
+
+    const logMessage = (msg) => {
+      if (!DEBUG) return;
+
+      const logParts = [`Message Type: ${msg.type}`];
+      if (msg.path?.length) {
+        logParts.push(`Path: ${msg.path.join('.')}`);
+      }
+      if (msg.argumentList?.length) {
+        logParts.push('Arguments:', JSON.stringify(msg.argumentList, null, 2));
+      }
+      log(...logParts);
+
+      if (msg.type === 'APPLY') {
+        switch (msg.path[0]) {
+          case 'eip6963RequestProvider':
+            log('Provider request received');
+            break;
+          case 'ethProviderRequestV2': {
+            const request = msg.argumentList?.[0];
+            if (request?.value?.method) {
+              log('ETH request:', request.value.method, request.value);
+            }
+            break;
+          }
+          default:
+            log('Unknown APPLY path:', msg.path[0]);
+        }
+      } else if (msg.type === 'GET') {
+        log('GET request for:', msg.path[0]);
+      }
+    }
+
+    const announceProvider = (endpoint) => {
+      log('Announcing provider...');
+      endpoint.emit({
+        event: 'eip6963:announceProvider',
+        info: {
+          name: 'Bankless Academy Frame',
+          icon: '/favicon.ico',
+          rdns: 'com.banklessacademy.frame',
+          uuid: '1395b549-854c-48c4-96af-5a58012196e5',
+        },
+      })
+      log('Provider announced');
+    }
+
+    const frameHost = {
+      ready: (options) => {
+        log('Frame ready called with options:', options);
+        document.querySelector('#iframe').style.opacity = 1;
+      },
+      eip6963RequestProvider: () => {
+        log('Provider requested');
+        announceProvider(endpoint);
+      },
+      ethProviderRequestV2: async (request) => {
+        log('ETH request:', request.value.method, request.value);
+        if (request.value.method === 'eth_requestAccounts') {
+          if (!window.ethereum) {
+            throw new Error('No Ethereum provider available');
+          }
+          try {
+            const accounts = await window.ethereum.request(request.value);
+            return accounts;
+          } catch (error) {
+            throw error;
+          }
+        }
+        throw new Error('Method not supported');
+      }
+    }
+
+    window.addEventListener('message', (event) => {
+      if (event.source === document.querySelector('#iframe').contentWindow) {
+        logMessage(event.data);
+      }
+    });
+
+    log('Initializing frame host...');
+    const { endpoint } = exposeToIframe({
+      iframe: document.querySelector('#iframe'),
+      sdk: frameHost,
+      ethProvider: window.ethereum,
+      frameOrigin: '*',
+      debug: true,
+    })
+    log('Frame host initialized');
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <div id="container">
+      <iframe id="iframe" src="https://app.banklessacademy.com/lessons/intro-to-defi?embed=true" height="695" width="424" allow="microphone; camera; clipboard-write 'src'" sandbox="allow-forms allow-scripts allow-same-origin allow-popups"></iframe>
+    </div>
+  </div>
+</body>
+
+</html>

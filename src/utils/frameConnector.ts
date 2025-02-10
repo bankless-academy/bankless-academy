@@ -28,7 +28,7 @@ export function frameConnector() {
 
   return createConnector<any>((config) => ({
     id: 'farcaster',
-    name: 'Farcaster Wallet',
+    name: 'Parent Window Provider / Farcaster',
     type: frameConnector.type,
 
     async setup() {
