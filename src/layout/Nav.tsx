@@ -4,6 +4,7 @@ import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
+import { useRouter } from 'next/router'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
@@ -24,6 +25,7 @@ declare global {
 }
 
 const Nav: React.FC = () => {
+  const router = useRouter()
   const [isSmallScreen, , , isTinyScreen] = useSmallScreen()
   const { isConnected } = useAccount()
   const [, setConnectWalletPopupLS] = useLocalStorage(
@@ -64,6 +66,7 @@ const Nav: React.FC = () => {
     // if onboarding is not done, and it's been more than 3 days since the last popup, show it again, max 3 times
     const threeDays = 60 * 60 * 24 * 3 * 1000
     if (
+      router.pathname !== '/mobile' && // Don't show on mobile install page
       (onboarding === '' ||
         (onboarding !== 'done' &&
           Date.now() - Number(onboarding) > threeDays)) &&
@@ -73,7 +76,7 @@ const Nav: React.FC = () => {
         setIsOnboardingModalOpen(true)
       }, 10000)
     }
-  }, [onboarding])
+  }, [onboarding, router.pathname]) // Add router.pathname to dependencies
 
   useEffect((): void => {
     const embedValue = pwa
