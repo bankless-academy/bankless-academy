@@ -1,4 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { createPublicClient, http, formatEther } from 'viem'
+import { base } from 'viem/chains'
 
 import {
   fetchGitcoinDonations,
@@ -7,6 +9,8 @@ import {
 } from 'utils/index'
 import { fetchPassport, PassportResponseSchema } from 'utils/passport_lib'
 import { PASSPORT_COMMUNITY_ID } from 'constants/passport'
+import { BADGE_MINTER } from 'constants/badges'
+import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 
 // Required explorer data shape
 const REQUIRED_EXPLORER_DATA = {
@@ -34,6 +38,19 @@ const validateExplorerData = (data: any): boolean => {
   }
 
   return true
+}
+
+// Helper function to check ETH balance
+const checkMinterBalance = async (): Promise<number> => {
+  const client = createPublicClient({
+    chain: base,
+    transport: http(
+      `https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
+    ),
+  })
+
+  const balance = await client.getBalance({ address: BADGE_MINTER })
+  return parseFloat(formatEther(balance))
 }
 
 export default async function handler(
@@ -100,6 +117,18 @@ export default async function handler(
           return res.status(400).json({
             success: false,
             error: 'Invalid passport score - must be a number >= 20',
+          })
+        }
+        break
+      }
+      case 'minter-balance': {
+        data = await checkMinterBalance()
+        const minterBalance = 0.001
+        if (typeof data !== 'number' || data < minterBalance) {
+          return res.status(400).json({
+            success: false,
+            error: `Insufficient minter balance - must be >= ${minterBalance} ETH`,
+            balance: data,
           })
         }
         break
