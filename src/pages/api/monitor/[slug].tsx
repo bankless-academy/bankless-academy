@@ -86,6 +86,15 @@ const validateIndexerSync = (
   return result
 }
 
+// Helper function to validate ENS data
+const validateENSData = (data: any): boolean => {
+  return data && 
+    typeof data === 'object' && 
+    typeof data.address === 'string' && 
+    data.address.startsWith('0x') && 
+    data.address.length === 42
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -175,6 +184,25 @@ export default async function handler(
             success: false,
             error: 'Invalid explorer data - missing required values',
             required: REQUIRED_EXPLORER_DATA,
+          })
+        }
+        break
+      }
+      case 'ens-data': {
+        const ensName = 'didierkrux.eth'
+        const response = await fetch(`https://api.ensdata.net/${ensName}`)
+        if (!response.ok) {
+          return res.status(400).json({
+            success: false,
+            error: 'Failed to fetch ENS data',
+          })
+        }
+        data = await response.json()
+        if (!validateENSData(data)) {
+          return res.status(400).json({
+            success: false,
+            error: 'Invalid ENS data format',
+            data,
           })
         }
         break
