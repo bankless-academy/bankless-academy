@@ -16,7 +16,7 @@ export const BADGE_IDS: number[] = badgeIds.filter(
   (item, index) => badgeIds.indexOf(item) === index
 )
 
-export const BADGE_ENV: 'dev' | 'prod' = process.env.NEXT_PUBLIC_BADGE_ENV === 'prod' ? 'prod' : 'dev' || 'dev'
+export const BADGE_ENV: 'dev' | 'prod' = process.env.NEXT_PUBLIC_BADGE_ENV === 'prod' ? 'prod' : 'dev'
 
 // export const IS_BADGE_PROD = BADGE_ENV === 'prod'
 export const IS_BADGE_PROD = true
