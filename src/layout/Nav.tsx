@@ -67,6 +67,7 @@ const Nav: React.FC = () => {
     const threeDays = 60 * 60 * 24 * 3 * 1000
     if (
       router.pathname !== '/mobile' && // Don't show on mobile install page
+      !embed && // Don't show if embedded
       (onboarding === '' ||
         (onboarding !== 'done' &&
           Date.now() - Number(onboarding) > threeDays)) &&
@@ -76,7 +77,7 @@ const Nav: React.FC = () => {
         setIsOnboardingModalOpen(true)
       }, 10000)
     }
-  }, [onboarding, router.pathname]) // Add router.pathname to dependencies
+  }, [onboarding, router.pathname, embed]) // Add embed to dependencies
 
   useEffect((): void => {
     const embedValue = pwa
