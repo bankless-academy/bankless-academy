@@ -6,10 +6,11 @@ import {
   fetchGitcoinDonations,
   fetchGivethDonations,
   fetchExplorerData,
+  fetchFromUrl,
 } from 'utils/index'
 import { fetchPassport, PassportResponseSchema } from 'utils/passport_lib'
 import { PASSPORT_COMMUNITY_ID } from 'constants/passport'
-import { BADGE_MINTER } from 'constants/badges'
+import { BADGE_MINTER, INDEXER_URL } from 'constants/badges'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 
 // Required explorer data shape
@@ -51,6 +52,38 @@ const checkMinterBalance = async (): Promise<number> => {
 
   const balance = await client.getBalance({ address: BADGE_MINTER })
   return parseFloat(formatEther(balance))
+}
+
+// Helper function to validate indexer sync
+const validateIndexerSync = (
+  chainMetadata: any[],
+  maxBlockDiff: number = 10
+): { isValid: boolean; details: any } => {
+  const result = {
+    isValid: true,
+    details: {} as Record<
+      string,
+      {
+        diff: number
+        latest_processed_block: number
+        block_height: number
+      }
+    >,
+  }
+
+  for (const chain of chainMetadata) {
+    const diff = chain.block_height - chain.latest_processed_block
+    result.details[`chain_${chain.chain_id}`] = {
+      diff,
+      latest_processed_block: chain.latest_processed_block,
+      block_height: chain.block_height,
+    }
+    if (diff > maxBlockDiff) {
+      result.isValid = false
+    }
+  }
+
+  return result
 }
 
 export default async function handler(
@@ -144,6 +177,42 @@ export default async function handler(
             required: REQUIRED_EXPLORER_DATA,
           })
         }
+        break
+      }
+      case 'indexer-sync': {
+        const query = `
+          query MyQuery {
+            chain_metadata {
+              block_height
+              chain_id
+              end_block
+              first_event_block_number
+              is_hyper_sync
+              latest_fetched_block_number
+              latest_processed_block
+              num_batches_fetched
+              num_events_processed
+              start_block
+              timestamp_caught_up_to_head_or_endblock
+            }
+          }
+        `
+        const result = await fetchFromUrl(INDEXER_URL, query)
+        const maxBlockDiff = 10
+        const validation = validateIndexerSync(
+          result.chain_metadata,
+          maxBlockDiff
+        )
+
+        if (!validation.isValid) {
+          return res.status(400).json({
+            success: false,
+            error: `Indexer is not in sync - some chains are more than ${maxBlockDiff} blocks behind`,
+            details: validation.details,
+          })
+        }
+
+        data = validation.details
         break
       }
       default:
