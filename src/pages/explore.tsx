@@ -26,7 +26,7 @@ import { useSmallScreen } from 'hooks'
 import { Plus } from '@phosphor-icons/react'
 export const pageMeta: MetaData = {
   title: 'Explore',
-  description: 'Explore the best apps for your crypto journey.',
+  description: 'The best apps for your crypto journey — all in one place.',
 }
 
 interface ExplorePageProps {
