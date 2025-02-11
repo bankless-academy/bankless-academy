@@ -530,7 +530,7 @@ const Article = ({
   extraKeywords?: any
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
-  const [, isSmallScreen] = useSmallScreen()
+  const [, isSmallScreen, isMediumScreen] = useSmallScreen()
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
     []
@@ -579,7 +579,7 @@ const Article = ({
 
   return (
     <Container
-      maxW="container.md"
+      maxW={isMediumScreen ? '100vw' : 'container.md'}
       p={isSmallScreen ? '0' : 'unset'}
       mb={isSmallScreen ? '90px' : '0'}
     >
