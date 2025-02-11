@@ -155,7 +155,7 @@ const OptionMenu = ({
               {t('Twitter')}
             </MenuItem>
           </ExternalLink>
-          <ExternalLink href={twitterLink} color="white">
+          <ExternalLink href="https://bankless.ac/community" color="white">
             <MenuItem>
               <TelegramLogo size={20} style={{ marginRight: '5px' }} />
               {t('Telegram')}
