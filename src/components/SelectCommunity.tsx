@@ -26,10 +26,12 @@ import { verifySignature } from 'utils/SignatureUtil'
 const COMMUNITIES = [
   'Chippi',
   'Gitcoin',
+  'Hi Boat Explorers',
   'Optimism',
   'Pudgy Penguins',
   'Regens Unite',
   'SheFi',
+  'WAA Texas Tech',
   'Web3 DeKUT',
   'Zerion',
 ].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
