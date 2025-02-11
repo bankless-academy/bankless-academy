@@ -7,6 +7,7 @@ import { lessonLink } from "utils"
 import { pageMeta as lessonsPageMeta } from 'pages/lessons/index'
 import { pageMeta as glossaryPageMeta } from 'pages/glossary'
 import { pageMeta as oscPageMeta } from 'pages/onchain-summer-challenge'
+import { pageMeta as explorePageMeta } from 'pages/explore'
 
 const SPLIT = `\`\`\`
 
@@ -146,6 +147,14 @@ export default async function handler(
       description: `${oscPageMeta.description}`,
       date: lastUpdate,
       image: `${DOMAIN_URL}${oscPageMeta.image}`
+    })
+    feed.addItem({
+      title: `${explorePageMeta.title}`,
+      id: `/explore`,
+      link: `${DOMAIN_URL}/explore`,
+      description: `${explorePageMeta.description}`,
+      date: lastUpdate,
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
     })
     for (const lesson of lessons) {
       feed.addItem(lesson)
