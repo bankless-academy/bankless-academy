@@ -11,7 +11,7 @@ export default async function handler(
 ): Promise<void> {
   try {
     const announcements = await fetchBE(`${POTION_API}/table?id=d1088de6c02c457d9986e0d335472063`)
-    console.log(announcements)
+    // console.log(announcements)
     const r = []
     for (const a of announcements) {
       const announcement: AnnouncementType = {
@@ -29,12 +29,12 @@ export default async function handler(
         new Date(announcement.start) < new Date() &&
         new Date(announcement.end) > new Date()
       ) {
-        console.log(announcement)
+        // console.log(announcement)
         r.push(announcement)
         break
       }
     }
-    console.log(r)
+    // console.log(r)
     return res.status(200).send(r)
   } catch (error) {
     console.error(error)

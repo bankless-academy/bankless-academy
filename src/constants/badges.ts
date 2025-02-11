@@ -16,7 +16,7 @@ export const BADGE_IDS: number[] = badgeIds.filter(
   (item, index) => badgeIds.indexOf(item) === index
 )
 
-export const BADGE_ENV: 'dev' | 'prod' = process.env.NEXT_PUBLIC_BADGE_ENV === 'prod' ? 'prod' : 'dev' || 'dev'
+export const BADGE_ENV: 'dev' | 'prod' = process.env.NEXT_PUBLIC_BADGE_ENV === 'prod' ? 'prod' : 'dev'
 
 // export const IS_BADGE_PROD = BADGE_ENV === 'prod'
 export const IS_BADGE_PROD = true
@@ -64,3 +64,5 @@ export const BADGE_TO_KUDOS_IDS = {
 const isLocalIndexer = false
 
 export const INDEXER_URL = isLocalIndexer ? 'http://localhost:8080/v1/graphql' : 'https://indexer.banklessacademy.com/v1/graphql'
+
+export const INDEXER_URL_BACKUP = 'https://indexer.dev.hyperindex.xyz/5123782/v1/graphql'

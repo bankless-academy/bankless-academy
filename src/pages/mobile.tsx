@@ -29,6 +29,7 @@ const Mobile = (): JSX.Element => {
       <InstallAppModal
         isOpen={isAppModalOpen}
         onClose={() => setIsAppModalOpen(false)}
+        yes={true}
       />
       <HomePage />
     </>

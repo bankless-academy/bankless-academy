@@ -36,7 +36,7 @@ import { wagmiConfig } from 'utils/wagmi'
 import { NFTAddress } from 'constants/nft'
 import { TABLES, db } from 'utils/db'
 import { ACHIEVEMENTS } from 'constants/achievements'
-import { INDEXER_URL, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
+import { INDEXER_URL, INDEXER_URL_BACKUP, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
 
 declare global {
   interface Window {
@@ -1052,6 +1052,37 @@ export const fetchGivethDonations = async (address: string): Promise<number> => 
   }
 };
 
+export const fetchFromUrl = async <T = any>(
+  url: string,
+  query?: string,
+  variables?: Record<string, any>
+): Promise<T> => {
+  try {
+    const response = await fetch(url, {
+      method: query ? 'POST' : 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      ...(query && {
+        body: JSON.stringify({
+          query,
+          ...(variables && { variables }),
+        }),
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result.data || result;
+  } catch (error) {
+    console.error(`Failed to fetch from ${url}:`, error);
+    throw error;
+  }
+};
+
 export const fetchExplorerData = async (address: string): Promise<{
   handbooks: string[]
   datadisks: string[]
@@ -1071,80 +1102,70 @@ export const fetchExplorerData = async (address: string): Promise<{
   }
   const query = `
     query MyQuery {
-  OwnerAssets(where: {address: {_ilike: "${address}"}}) {
-    address
-    handbooks
-    datadisks
-    badges
-    polBadges
-    baseBadges
-    kudosBadges
-  }
-}
+      OwnerAssets(where: {address: {_ilike: "${address}"}}) {
+        address
+        handbooks
+        datadisks
+        badges
+        polBadges
+        baseBadges
+        kudosBadges
+      }
+    }
   `;
 
   try {
-    const response = await fetch(INDEXER_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: query,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const result = await response.json();
-    console.log(result.data);
-    const OwnerAssets = result.data?.OwnerAssets[0] || {}
-    return {
-      handbooks: OwnerAssets?.handbooks || [],
-      datadisks: OwnerAssets?.datadisks || [],
-      badges: OwnerAssets?.badges || [],
-      polBadges: OwnerAssets?.polBadges || [],
-      baseBadges: OwnerAssets?.baseBadges || [],
-      kudosBadges: OwnerAssets?.kudosBadges || []
+    try {
+      const result = await fetchFromUrl(INDEXER_URL, query);
+      const ownerAssets = result?.OwnerAssets?.[0] || {};
+      return {
+        handbooks: ownerAssets?.handbooks || [],
+        datadisks: ownerAssets?.datadisks || [],
+        badges: ownerAssets?.badges || [],
+        polBadges: ownerAssets?.polBadges || [],
+        baseBadges: ownerAssets?.baseBadges || [],
+        kudosBadges: ownerAssets?.kudosBadges || []
+      };
+    } catch (error) {
+      console.error('Primary indexer failed, trying backup:', error);
+      const result = await fetchFromUrl(INDEXER_URL_BACKUP, query);
+      const ownerAssets = result?.OwnerAssets?.[0] || {};
+      return {
+        handbooks: ownerAssets?.handbooks || [],
+        datadisks: ownerAssets?.datadisks || [],
+        badges: ownerAssets?.badges || [],
+        polBadges: ownerAssets?.polBadges || [],
+        baseBadges: ownerAssets?.baseBadges || [],
+        kudosBadges: ownerAssets?.kudosBadges || []
+      };
     }
   } catch (error) {
-    console.error('Error fetching data:', error);
-    return { ...OwnerAssets, failed: true }
+    console.error('Both indexers failed:', error);
+    return { ...OwnerAssets, failed: true };
   }
 };
 
 export const countExplorerBadges = async (badgeId: number): Promise<number | null> => {
   const query = `
     query Count {
-  OwnerAssets(where: {badges: {_contains: [${badgeId}]}}) {
-    address
-  }
-}
+      OwnerAssets(where: {badges: {_contains: [${badgeId}]}}) {
+        address
+      }
+    }
   `;
 
   try {
-    const response = await fetch(INDEXER_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: query,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+      const result = await fetchFromUrl(INDEXER_URL, query);
+      return result?.OwnerAssets?.length || null;
+    } catch (error) {
+      console.error('Primary indexer failed, trying backup:', error);
+      const result = await fetchFromUrl(INDEXER_URL_BACKUP, query);
+      return result?.OwnerAssets?.length || null;
     }
-
-    const result = await response.json();
-    // console.log(result.data);
-    return result.data?.OwnerAssets?.length || null
   } catch (error) {
-    console.error('Error fetching data:', error);
-    return null
+    console.error('Both indexers failed:', error);
+    return null;
   }
 };
 

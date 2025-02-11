@@ -37,6 +37,7 @@
     "@davatar/react": "^1.11.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@farcaster/frame-host": "^0.0.24",
     "@farcaster/frame-sdk": "^0.0.24",
     "@gitcoinco/passport-sdk-reader": "^0.1.4",
     "@lottiefiles/react-lottie-player": "^3.5.3",
@@ -108,8 +109,8 @@
     "tls": "^0.0.1",
     "twitter-api-v2": "^1.15.2",
     "usehooks-ts": "^3.1.0",
-    "viem": "^2.21.57",
-    "wagmi": "^2.14.6",
+    "viem": "^2.22.17",
+    "wagmi": "^2.14.9",
     "zod": "^3.22.4"
   },
   "devDependencies": {

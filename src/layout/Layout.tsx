@@ -2,7 +2,7 @@
 import { Box, Container, Image, Button, Link } from '@chakra-ui/react'
 import React, { ReactElement, useEffect, useState } from 'react'
 import { useAppKit } from '@reown/appkit/react'
-import { SquaresFour, Wallet } from '@phosphor-icons/react'
+import { SquaresFour, Wallet, RocketLaunch } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 
 import { LessonTypeType } from 'entities/lesson'
@@ -22,6 +22,7 @@ export type PageType =
   | 'LESSON-DETAIL'
   | 'ARTICLE'
   | 'PROFILE'
+  | 'EXPLORE'
   | 'GLOSSARY'
   | 'INDEX'
   | ''
@@ -40,7 +41,10 @@ const DesktopButton = ({
   const button = (
     <Box w="100%" h="100%" display="flex" alignItems="center" color="white">
       <Box ml="6" display="flex">
-        <Icon width="46px" height="46px" />
+        <Icon
+          width={link === '/explore' ? '46px' : '40px'}
+          height={link === '/explore' ? '46px' : '40px'}
+        />
       </Box>
       <Box ml="6" fontSize="xl" fontWeight="semibold" textAlign="center">
         {label}
@@ -257,6 +261,8 @@ const Layout = ({
     latestDeploymentId !== '' &&
     latestDeploymentId !== appDeploymentId
 
+  const isEmbed = router.query.embed === 'true'
+
   return (
     <Box
       position="relative"
@@ -437,6 +443,12 @@ const Layout = ({
                       icon={HandbookIcon}
                     />
                     <DesktopButton
+                      link="/explore"
+                      label="Explore"
+                      isActive={page === 'EXPLORE'}
+                      icon={RocketLaunch}
+                    />
+                    <DesktopButton
                       link="/glossary"
                       label="Glossary"
                       isActive={page === 'GLOSSARY'}
@@ -446,78 +458,82 @@ const Layout = ({
                 </Box>
               </>
             ) : (
-              <Box
-                position="fixed"
-                w="100vw"
-                h="81px"
-                bottom="0"
-                background="#2b2b2bdd"
-                backdropFilter="blur(10px)"
-                display="flex"
-                zIndex="2"
-                borderTop="1px solid #222222"
-              >
-                {newVersionAvailable ? (
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    gap={2}
-                    justifyContent="center"
-                    bg="#2b2b2bdd"
-                    color="white"
-                    p={4}
-                    w="100%"
-                    h="100%"
-                  >
-                    <SquaresFour />
-                    {t('New app version available!')}
-                    {' · '}
-                    <Link
-                      onClick={() => window.location.reload()}
-                      color="#C06FDB !important"
+              !isEmbed && (
+                <Box
+                  position="fixed"
+                  w="100vw"
+                  h="81px"
+                  bottom="0"
+                  background="#2b2b2bdd"
+                  backdropFilter="blur(10px)"
+                  display="flex"
+                  zIndex="2"
+                  borderTop="1px solid #222222"
+                >
+                  {newVersionAvailable ? (
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      gap={2}
+                      justifyContent="center"
+                      bg="#2b2b2bdd"
+                      color="white"
+                      p={4}
+                      w="100%"
+                      h="100%"
                     >
-                      {t('Refresh')}
-                    </Link>
-                  </Box>
-                ) : (
-                  <>
-                    {/* Mobile menu */}
-                    <MobileButton
-                      link="/lessons"
-                      label="Lessons"
-                      isActive={router.pathname === '/lessons'}
-                      icon={LessonIcon}
-                      pwa={pwa}
-                    />
-                    <MobileButton
-                      link="/lessons/handbook"
-                      label="Handbooks"
-                      isActive={router.pathname.startsWith('/lessons/handbook')}
-                      icon={HandbookIcon}
-                      pwa={pwa}
-                    />
-                    <MobileButton
-                      link="/glossary"
-                      label="Glossary"
-                      isActive={router.pathname.startsWith('/glossary')}
-                      icon={GlossaryIcon}
-                      pwa={pwa}
-                    />
-                    <MobileButton
-                      link={
-                        username !== ''
-                          ? `/explorer/${username}?referral=true`
-                          : `/explorer/my-profile`
-                      }
-                      label="Profile"
-                      isActive={router.pathname.startsWith('/explorer')}
-                      imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
-                      borderRight={0}
-                      pwa={pwa}
-                    />
-                  </>
-                )}
-              </Box>
+                      <SquaresFour />
+                      {t('New app version available!')}
+                      {' · '}
+                      <Link
+                        onClick={() => window.location.reload()}
+                        color="#C06FDB !important"
+                      >
+                        {t('Refresh')}
+                      </Link>
+                    </Box>
+                  ) : (
+                    <>
+                      {/* Mobile menu */}
+                      <MobileButton
+                        link="/lessons"
+                        label="Lessons"
+                        isActive={router.pathname === '/lessons'}
+                        icon={LessonIcon}
+                        pwa={pwa}
+                      />
+                      <MobileButton
+                        link="/lessons/handbook"
+                        label="Handbooks"
+                        isActive={router.pathname.startsWith(
+                          '/lessons/handbook'
+                        )}
+                        icon={HandbookIcon}
+                        pwa={pwa}
+                      />
+                      <MobileButton
+                        link="/explore"
+                        label="Explore"
+                        isActive={router.pathname.startsWith('/explore')}
+                        icon={RocketLaunch}
+                        pwa={pwa}
+                      />
+                      <MobileButton
+                        link={
+                          username !== ''
+                            ? `/explorer/${username}?referral=true`
+                            : `/explorer/my-profile`
+                        }
+                        label="Profile"
+                        isActive={router.pathname.startsWith('/explorer')}
+                        imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
+                        borderRight={0}
+                        pwa={pwa}
+                      />
+                    </>
+                  )}
+                </Box>
+              )
             )}
           </>
         )}

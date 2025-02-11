@@ -11,7 +11,7 @@ export default async function handler(
 ): Promise<void> {
   try {
     const explore = await fetchBE(`${POTION_API}/table?id=8f2f600b38a44cbb98f7fd240686c27a`)
-    console.log(explore)
+    // console.log(explore)
     const r = []
     for (const e of explore) {
       const explore: ExploreType = {
@@ -21,13 +21,14 @@ export default async function handler(
         isFeatured: e.fields['Is Featured'],
         category: e.fields.Category?.[0],
         description: e.fields.Description,
+        type: e.fields.Type,
         link: e.fields.Link,
       }
       if (explore.isActif) {
         r.push(explore)
       }
     }
-    console.log(r)
+    // console.log(r)
     return res.status(200).send(r)
   } catch (error) {
     console.error(error)
