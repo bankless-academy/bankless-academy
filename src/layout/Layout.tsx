@@ -514,7 +514,7 @@ const Layout = ({
                       <MobileButton
                         link="/explore"
                         label="Explore"
-                        isActive={router.pathname.startsWith('/explore')}
+                        isActive={page === 'EXPLORE'}
                         icon={RocketLaunch}
                         pwa={pwa}
                       />
