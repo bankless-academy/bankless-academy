@@ -13,6 +13,16 @@ module.exports = {
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_DATABASE || 'postgres',
     ssl: ssl,
-    pool_size: 25
   },
+  pool: {
+    min: 2,
+    max: 100,
+    acquireTimeoutMillis: 60000, // 60 seconds
+    createTimeoutMillis: 30000, // 30 seconds
+    idleTimeoutMillis: 30000, // 30 seconds
+    reapIntervalMillis: 1000, // 1 second
+    createRetryIntervalMillis: 100, // 0.1 seconds
+    propagateCreateError: false // don't throw on connection errors
+  },
+  acquireConnectionTimeout: 60000,
 }
