@@ -2,7 +2,7 @@
 import { Box, Container, Image, Button, Link } from '@chakra-ui/react'
 import React, { ReactElement, useEffect, useState } from 'react'
 import { useAppKit } from '@reown/appkit/react'
-import { SquaresFour, Wallet, RocketLaunch } from '@phosphor-icons/react'
+import { SquaresFour, Wallet } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 
 import { LessonTypeType } from 'entities/lesson'
@@ -14,7 +14,12 @@ import { scrollTop, shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
-import { LessonIcon, HandbookIcon, GlossaryIcon } from 'components/Icons'
+import {
+  LessonIcon,
+  HandbookIcon,
+  GlossaryIcon,
+  ExploreIcon,
+} from 'components/Icons'
 import { useTranslation } from 'react-i18next'
 
 export type PageType =
@@ -41,10 +46,7 @@ const DesktopButton = ({
   const button = (
     <Box w="100%" h="100%" display="flex" alignItems="center" color="white">
       <Box ml="6" display="flex">
-        <Icon
-          width={link === '/explore' ? '46px' : '40px'}
-          height={link === '/explore' ? '46px' : '40px'}
-        />
+        <Icon width={'38px'} height={'38px'} />
       </Box>
       <Box ml="6" fontSize="xl" fontWeight="semibold" textAlign="center">
         {label}
@@ -446,7 +448,7 @@ const Layout = ({
                       link="/explore"
                       label="Explore"
                       isActive={page === 'EXPLORE'}
-                      icon={RocketLaunch}
+                      icon={ExploreIcon}
                     />
                     <DesktopButton
                       link="/glossary"
@@ -515,7 +517,7 @@ const Layout = ({
                         link="/explore"
                         label="Explore"
                         isActive={page === 'EXPLORE'}
-                        icon={RocketLaunch}
+                        icon={ExploreIcon}
                         pwa={pwa}
                       />
                       <MobileButton
