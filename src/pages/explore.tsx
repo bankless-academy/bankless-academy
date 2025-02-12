@@ -25,7 +25,7 @@ import Helper from 'components/Helper'
 import { useSmallScreen } from 'hooks'
 import { Plus } from '@phosphor-icons/react'
 export const pageMeta: MetaData = {
-  title: 'Explore',
+  title: 'Explore Apps',
   description: 'The best apps for your crypto journey — all in one place.',
 }
 
@@ -227,7 +227,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
           mt={4}
           mb={6}
         >
-          Explore the best apps for your crypto journey.
+          The best apps for your crypto journey — all in one place.
         </Heading>
         <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
           {featuredItems.map((item) => (
