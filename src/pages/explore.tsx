@@ -126,7 +126,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
 
   const renderRecommendedCard = (item: ExploreType) => (
     <Card key={item.product} w="100%" overflow="hidden">
-      <ExternalLink href={item.link}>
+      <ExternalLink href={item.link} alt={item.product}>
         <Box display="flex" borderRadius="lg" overflow="hidden">
           {/* Image container */}
           <Box position="relative" height="108px" aspectRatio="1">
@@ -232,7 +232,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
           {featuredItems.map((item) => (
             <Card key={item.product} w="100%" overflow="hidden">
-              <ExternalLink href={item.link}>
+              <ExternalLink href={item.link} alt={item.product}>
                 <Box position="relative">
                   <Image
                     src={item.image}
