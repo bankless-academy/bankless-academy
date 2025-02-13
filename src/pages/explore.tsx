@@ -129,7 +129,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
       <ExternalLink href={item.link} alt={item.product}>
         <Box display="flex" borderRadius="lg" overflow="hidden">
           {/* Image container */}
-          <Box position="relative" height="108px" aspectRatio="1">
+          <Box position="relative" height="100px" aspectRatio="1">
             <Image
               src={item.image}
               alt={item.product}
@@ -146,7 +146,6 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
             </Text>
             <Text
               fontSize="xs"
-              mb={2}
               noOfLines={2}
               sx={{
                 display: '-webkit-box',
@@ -320,7 +319,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                       .map(([category, items]) => (
                         <Box key={category} mb={4}>
                           <Box
-                            height="110px"
+                            height="102px"
                             display="flex"
                             alignItems="center"
                             justifyContent="center"
@@ -357,7 +356,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                       .map(([category, items]) => (
                         <Box key={category} mb={4}>
                           <Box
-                            height="110px"
+                            height="102px"
                             display="flex"
                             alignItems="center"
                             justifyContent="center"
@@ -396,7 +395,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                       .map(([category, items]) => (
                         <Box key={category} mb={4}>
                           <Box
-                            height="110px"
+                            height="48px"
                             display="flex"
                             alignItems="center"
                             justifyContent="center"
@@ -467,7 +466,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                                 .map(([category, items]) => (
                                   <Box key={category} mb={4}>
                                     <Box
-                                      height="110px"
+                                      height="102px"
                                       display="flex"
                                       alignItems="center"
                                       justifyContent="center"
@@ -503,7 +502,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                                 .map(([category, items]) => (
                                   <Box key={category} mb={4}>
                                     <Box
-                                      height="110px"
+                                      height="102px"
                                       display="flex"
                                       alignItems="center"
                                       justifyContent="center"
@@ -542,7 +541,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                                 .map(([category, items]) => (
                                   <Box key={category} mb={4}>
                                     <Box
-                                      height="110px"
+                                      height="48px"
                                       display="flex"
                                       alignItems="center"
                                       justifyContent="center"
