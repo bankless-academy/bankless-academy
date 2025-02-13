@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Container, Heading, Image, Tooltip } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Heading,
+  Image,
+  Tooltip,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Text,
+} from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import { createColumnHelper } from '@tanstack/react-table'
@@ -47,6 +60,17 @@ type UnitConversion = {
   referrals?: number
 }
 
+type CommunityMember = {
+  address: string
+  ens_name: string | null
+}
+
+type Community = {
+  community: string
+  user_count: number
+  members: CommunityMember[]
+}
+
 const columnHelper = createColumnHelper<UnitConversion>()
 
 const columns = [
@@ -70,7 +94,12 @@ const columns = [
                 info.row.original?.ens_avatar || '/images/explorer_avatar.png'
               }
             />
-            {address}
+            <Text
+              as="span"
+              color={info.row.original?.ens_name ? undefined : 'blue.500'}
+            >
+              {address}
+            </Text>
           </Box>
         </InternalLink>
       )
@@ -169,12 +198,26 @@ const columns = [
 
 const Leaderboard = (): JSX.Element => {
   const [leaderboard, setLeaderboard]: any = useState(null)
+  const [communities, setCommunities]: any = useState(null)
   const [fetchedAt, setFetchedAt]: any = useState(null)
   const router = useRouter()
-  const [isLoadingProfile, setIsLoadingProfile] = useState(false)
-
+  const [isLoadingCommunities, setIsLoadingCommunities] = useState(false)
   const [error, setError]: any = useState('')
+
   useEffect(() => {
+    // Fetch communities data
+    axios
+      .get(`/api/get/top-communities`)
+      .then((res) => {
+        if (!res.data.error) {
+          setCommunities(res.data.communities)
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching communities:', error)
+      })
+
+    // Existing leaderboard fetch
     setError('')
     axios
       .get(`/api/cache/top200_leaderboard`)
@@ -212,11 +255,11 @@ const Leaderboard = (): JSX.Element => {
 
   useEffect(() => {
     const handleStart = (url) =>
-      url !== router.asPath && setIsLoadingProfile(true)
+      url !== router.asPath && setIsLoadingCommunities(true)
     const handleComplete = (url) =>
       url === router.asPath &&
       setTimeout(() => {
-        setIsLoadingProfile(false)
+        setIsLoadingCommunities(false)
       }, 100)
 
     router.events.on('routeChangeStart', handleStart)
@@ -230,17 +273,82 @@ const Leaderboard = (): JSX.Element => {
     }
   })
 
-  if (leaderboard && fetchedAt && !isLoadingProfile)
+  if (leaderboard && communities && fetchedAt && !isLoadingCommunities)
     return (
       <Container maxW="container.xxl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
-          {isLoadingProfile
-            ? 'Loading Explorer Profile'
-            : 'Bankless Explorer Leaderboard'}
+          Explorer Leaderboard
         </Heading>
-        <Heading as="h3" size="md" m="8" textAlign="center">
+
+        <Box mb={10}>
+          <Heading as="h3" size="lg" mb={4} textAlign="center">
+            Top Communities
+          </Heading>
+          <Table variant="simple">
+            <Thead>
+              <Tr>
+                <Th>Rank</Th>
+                <Th>Community</Th>
+                <Th>Total Members</Th>
+                <Th>Members</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {communities.map((community: Community, index: number) => (
+                <Tr key={community.community}>
+                  <Td>#{index + 1}</Td>
+                  <Td>{community.community}</Td>
+                  <Td>{community.user_count}</Td>
+                  <Td>
+                    <Text>
+                      {[
+                        // Display ENS name holders first
+                        ...community.members
+                          .filter((member) => member.ens_name)
+                          .map((member, index) => (
+                            <React.Fragment key={member.address}>
+                              {index > 0 && ', '}
+                              <InternalLink
+                                href={`/explorer/${member.ens_name}`}
+                                display="inline"
+                              >
+                                <Text as="span">{member.ens_name}</Text>
+                              </InternalLink>
+                            </React.Fragment>
+                          )),
+                        // Then display address-only members
+                        ...community.members
+                          .filter((member) => !member.ens_name)
+                          .map((member, index) => (
+                            <React.Fragment key={member.address}>
+                              {(index > 0 ||
+                                community.members.some((m) => m.ens_name)) &&
+                                ', '}
+                              <InternalLink
+                                href={`/explorer/${member.address}`}
+                                display="inline"
+                              >
+                                <Text as="span" color="blue.500">
+                                  {shortenAddress(member.address)}
+                                </Text>
+                              </InternalLink>
+                            </React.Fragment>
+                          )),
+                      ]}
+                    </Text>
+                  </Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+        </Box>
+
+        <Heading as="h3" size="lg" mb={4} textAlign="center">
+          Top Explorers
+        </Heading>
+        <Text size="md" mb={8} textAlign="center">
           Last update: {fetchedAt}
-        </Heading>
+        </Text>
         <DataTable
           columns={columns}
           data={leaderboard}
@@ -257,9 +365,7 @@ const Leaderboard = (): JSX.Element => {
     return (
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
-          {isLoadingProfile
-            ? 'Loading Explorer Profile'
-            : 'Bankless Explorer Leaderboard'}
+          Explorer Leaderboard
         </Heading>
         {error || (
           <Image
