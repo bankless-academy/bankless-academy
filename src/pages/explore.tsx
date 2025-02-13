@@ -313,20 +313,27 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                   alignItems="flex-start"
                 >
                   {/* Left Column */}
-                  <Box>
+                  <Box display={{ base: 'none', lg: 'block' }}>
                     {Object.entries(groupedItems)
                       .sort(([a], [b]) => a.localeCompare(b))
                       .filter((_, index) => index % 2 === 0)
                       .map(([category, items]) => (
-                        <Box key={category} mb={8}>
-                          <Text
-                            fontSize="xl"
-                            fontWeight="bold"
-                            color="white"
+                        <Box key={category} mb={4}>
+                          <Box
+                            height="110px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
                             mb={4}
                           >
-                            {category}
-                          </Text>
+                            <Text
+                              fontSize="2xl"
+                              fontWeight="bold"
+                              color="white"
+                            >
+                              {category}
+                            </Text>
+                          </Box>
                           <SimpleGrid
                             spacing={4}
                             templateColumns={{
@@ -343,20 +350,66 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                       ))}
                   </Box>
                   {/* Right Column */}
-                  <Box>
+                  <Box display={{ base: 'none', lg: 'block' }}>
                     {Object.entries(groupedItems)
                       .sort(([a], [b]) => a.localeCompare(b))
                       .filter((_, index) => index % 2 === 1)
                       .map(([category, items]) => (
-                        <Box key={category} mb={8}>
-                          <Text
-                            fontSize="xl"
-                            fontWeight="bold"
-                            color="white"
+                        <Box key={category} mb={4}>
+                          <Box
+                            height="110px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
                             mb={4}
                           >
-                            {category}
-                          </Text>
+                            <Text
+                              fontSize="2xl"
+                              fontWeight="bold"
+                              color="white"
+                            >
+                              {category}
+                            </Text>
+                          </Box>
+                          <SimpleGrid
+                            spacing={4}
+                            templateColumns={{
+                              base: 'repeat(1, 1fr)',
+                            }}
+                          >
+                            {items
+                              .sort((a, b) =>
+                                a.product.localeCompare(b.product)
+                              )
+                              .map(renderRecommendedCard)}
+                          </SimpleGrid>
+                        </Box>
+                      ))}
+                  </Box>
+                  {/* Single Column for Mobile */}
+                  <Box
+                    display={{ base: 'block', lg: 'none' }}
+                    gridColumn="1/-1"
+                  >
+                    {Object.entries(groupedItems)
+                      .sort(([a], [b]) => a.localeCompare(b))
+                      .map(([category, items]) => (
+                        <Box key={category} mb={4}>
+                          <Box
+                            height="110px"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            mb={4}
+                          >
+                            <Text
+                              fontSize="2xl"
+                              fontWeight="bold"
+                              color="white"
+                            >
+                              {category}
+                            </Text>
+                          </Box>
                           <SimpleGrid
                             spacing={4}
                             templateColumns={{
@@ -408,19 +461,26 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                         return (
                           <>
                             {/* Left Column */}
-                            <Box>
+                            <Box display={{ base: 'none', lg: 'block' }}>
                               {categories
                                 .filter((_, index) => index % 2 === 0)
                                 .map(([category, items]) => (
-                                  <Box key={category} mb={8}>
-                                    <Text
-                                      fontSize="xl"
-                                      fontWeight="bold"
-                                      color="white"
+                                  <Box key={category} mb={4}>
+                                    <Box
+                                      height="110px"
+                                      display="flex"
+                                      alignItems="center"
+                                      justifyContent="center"
                                       mb={4}
                                     >
-                                      {category}
-                                    </Text>
+                                      <Text
+                                        fontSize="2xl"
+                                        fontWeight="bold"
+                                        color="white"
+                                      >
+                                        {category}
+                                      </Text>
+                                    </Box>
                                     <SimpleGrid
                                       spacing={4}
                                       templateColumns={{
@@ -437,19 +497,65 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                                 ))}
                             </Box>
                             {/* Right Column */}
-                            <Box>
+                            <Box display={{ base: 'none', lg: 'block' }}>
                               {categories
                                 .filter((_, index) => index % 2 === 1)
                                 .map(([category, items]) => (
-                                  <Box key={category} mb={8}>
-                                    <Text
-                                      fontSize="xl"
-                                      fontWeight="bold"
-                                      color="white"
+                                  <Box key={category} mb={4}>
+                                    <Box
+                                      height="110px"
+                                      display="flex"
+                                      alignItems="center"
+                                      justifyContent="center"
                                       mb={4}
                                     >
-                                      {category}
-                                    </Text>
+                                      <Text
+                                        fontSize="2xl"
+                                        fontWeight="bold"
+                                        color="white"
+                                      >
+                                        {category}
+                                      </Text>
+                                    </Box>
+                                    <SimpleGrid
+                                      spacing={4}
+                                      templateColumns={{
+                                        base: 'repeat(1, 1fr)',
+                                      }}
+                                    >
+                                      {items
+                                        .sort((a, b) =>
+                                          a.product.localeCompare(b.product)
+                                        )
+                                        .map(renderRecommendedCard)}
+                                    </SimpleGrid>
+                                  </Box>
+                                ))}
+                            </Box>
+                            {/* Single Column for Mobile */}
+                            <Box
+                              display={{ base: 'block', lg: 'none' }}
+                              gridColumn="1/-1"
+                            >
+                              {categories
+                                .sort(([a], [b]) => a.localeCompare(b))
+                                .map(([category, items]) => (
+                                  <Box key={category} mb={4}>
+                                    <Box
+                                      height="110px"
+                                      display="flex"
+                                      alignItems="center"
+                                      justifyContent="center"
+                                      mb={4}
+                                    >
+                                      <Text
+                                        fontSize="2xl"
+                                        fontWeight="bold"
+                                        color="white"
+                                      >
+                                        {category}
+                                      </Text>
+                                    </Box>
                                     <SimpleGrid
                                       spacing={4}
                                       templateColumns={{
