@@ -79,7 +79,7 @@ const columns = [
   }),
   columnHelper.accessor('score', {
     cell: (info) => info.getValue(),
-    header: 'Bankless Score',
+    header: 'Explorer Score',
   }),
   columnHelper.accessor('datadisks_count', {
     cell: (info) => {
@@ -177,7 +177,7 @@ const Leaderboard = (): JSX.Element => {
   useEffect(() => {
     setError('')
     axios
-      .get(`/api/cache/top1000_leaderboard`)
+      .get(`/api/cache/top200_leaderboard`)
       .then(function (res) {
         if (!res.data.error) {
           const data = []

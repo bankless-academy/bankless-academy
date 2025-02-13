@@ -48,10 +48,10 @@ async function update(cron: string) {
     })
     if (cron === 'leaderboard') {
       for (const address in data) {
-        if (data[address]?.rank > 1000)
+        if (data[address]?.rank > 200)
           delete data[address]
       }
-      await kv.set('top1000_leaderboard', {
+      await kv.set('top200_leaderboard', {
         fetchedAt: Date.now(),
         data,
       })
