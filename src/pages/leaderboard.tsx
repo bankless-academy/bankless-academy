@@ -276,12 +276,8 @@ const Leaderboard = (): JSX.Element => {
   if (leaderboard && communities && fetchedAt && !isLoadingCommunities)
     return (
       <Container maxW="container.xxl">
-        <Heading as="h2" size="xl" m="8" textAlign="center">
-          Explorer Leaderboard
-        </Heading>
-
-        <Box mb={10}>
-          <Heading as="h3" size="lg" mb={4} textAlign="center">
+        <Box mb={10} mt={4}>
+          <Heading as="h2" size="lg" mb={4} textAlign="center">
             Top Communities
           </Heading>
           <Table variant="simple">
@@ -343,12 +339,13 @@ const Leaderboard = (): JSX.Element => {
           </Table>
         </Box>
 
-        <Heading as="h3" size="lg" mb={4} textAlign="center">
-          Top Explorers
+        <Heading as="h2" size="lg" mb={4} textAlign="center">
+          <Tooltip label={`Last update: ${fetchedAt}`} hasArrow>
+            <Text as="span" cursor="help">
+              Explorer Leaderboard
+            </Text>
+          </Tooltip>
         </Heading>
-        <Text size="md" mb={8} textAlign="center">
-          Last update: {fetchedAt}
-        </Text>
         <DataTable
           columns={columns}
           data={leaderboard}
@@ -364,8 +361,8 @@ const Leaderboard = (): JSX.Element => {
   else
     return (
       <Container maxW="container.xl">
-        <Heading as="h2" size="xl" m="8" textAlign="center">
-          Explorer Leaderboard
+        <Heading as="h2" size="xl" m="4" textAlign="center">
+          Leaderboard
         </Heading>
         {error || (
           <Image
