@@ -51,7 +51,7 @@ const Overlay = styled(Box)`
   width: 100vw;
   height: 100vh;
   background: var(--chakra-colors-blackAlpha-600);
-  z-index: 1;
+  z-index: 10;
   backdrop-filter: blur(2px);
 `
 
@@ -537,7 +537,7 @@ const ConnectWalletButton = ({
                   ? t('Sign In With Ethereum')
                   : t('Connecting wallet')
               }
-              zIndex={2}
+              zIndex={10}
               variant={isLessonPage || isProfilePage ? 'primary' : 'secondary'}
             >
               {t('Connect Wallet')}

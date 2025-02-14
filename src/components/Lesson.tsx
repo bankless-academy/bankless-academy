@@ -292,7 +292,7 @@ const SlideNav = styled(Box)<{ issmallscreen?: string }>`
       left: 0;
       background-color: #2b2b2bdd;
       backdrop-filter: blur(10px);
-      z-index: 10;
+      z-index: 9;
       border-top:1px solid #222222;
       `};
 `

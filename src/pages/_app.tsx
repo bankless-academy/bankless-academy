@@ -39,7 +39,6 @@ const Overlay = styled(Box)`
   width: 100vw;
   height: 100vh;
   background: var(--chakra-colors-blackAlpha-600);
-  z-index: 2;
   margin: 0;
   backdrop-filter: blur(10px);
 `
@@ -356,7 +355,7 @@ const App = ({
             </QueryClientProvider>
           </WagmiProvider>
 
-          <Overlay hidden={!stateData.open} zIndex="10" />
+          <Overlay hidden={!stateData.open} zIndex="999" />
           {/* don't show if injected wallet is detected */}
           {stateData.open && typeof window !== 'undefined' && !window.ethereum && (
             <Box
