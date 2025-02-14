@@ -137,7 +137,7 @@ const App = ({
     allowUnsupportedChain: true,
     features: {
       analytics: true,
-      onramp: true,
+      onramp: false,
       email: false,
       socials: [],
     },
