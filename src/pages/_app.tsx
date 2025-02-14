@@ -8,7 +8,7 @@ import 'highlight.js/styles/vs.css'
 import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
-import { Box, Container, Heading, Image } from '@chakra-ui/react'
+import { Box, Button, Container, Heading, Image } from '@chakra-ui/react'
 import { createAppKit, useAppKitState } from '@reown/appkit/react'
 import { WagmiProvider } from 'wagmi'
 import Router from 'next/router'
@@ -29,6 +29,7 @@ import {
 } from 'utils/wagmi'
 import { FrameProvider } from 'components/providers/FrameProvider'
 import { LanguageProvider } from 'contexts/LanguageContext'
+import ExternalLink from 'components/ExternalLink'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -144,8 +145,6 @@ const App = ({
     featuredWalletIds: [
       // Zerion
       'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
-      // 1inch
-      'c286eebc742a537cd1d6818363e9dc53b21759a1e8e5d9b263d0c03ec7703576',
       // Rainbow
       '1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369',
       // MetaMask
@@ -358,6 +357,25 @@ const App = ({
           </WagmiProvider>
 
           <Overlay hidden={!stateData.open} />
+          {/* don't show if injected wallet is detected */}
+          {stateData.open && typeof window !== 'undefined' && !window.ethereum && (
+            <Box
+              position="fixed"
+              top="0"
+              left="0"
+              right="0"
+              p="4"
+              zIndex="1000"
+              maxW="380px"
+              margin="auto"
+            >
+              <ExternalLink href="https://bankless.ac/zerion">
+                <Button size="lg" variant="primaryBig" width="100%">
+                  No wallet? 👉 Get Zerion wallet here
+                </Button>
+              </ExternalLink>
+            </Box>
+          )}
         </NonSSRWrapper>
       </ThemeProvider>
     </Sentry.ErrorBoundary>

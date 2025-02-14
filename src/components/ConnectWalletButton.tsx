@@ -550,12 +550,19 @@ const ConnectWalletButton = ({
                 {t('Connect your wallet to proceed.')}
               </Heading>
               <Text textAlign="center">
-                {`Don't know how? `}
+                {/* {`Don't know how? `}
                 <ExternalLink
                   underline="true"
                   href="https://app.banklessacademy.com/lessons/creating-a-crypto-wallet"
                 >
                   {t('Get help here')}
+                </ExternalLink> */}
+                {`No wallet? `}
+                <ExternalLink
+                  underline="true"
+                  href="https://bankless.ac/zerion"
+                >
+                  👉 Get Zerion wallet here
                 </ExternalLink>
               </Text>
             </PopoverBody>
