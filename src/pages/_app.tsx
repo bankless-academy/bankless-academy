@@ -356,7 +356,7 @@ const App = ({
             </QueryClientProvider>
           </WagmiProvider>
 
-          <Overlay hidden={!stateData.open} />
+          <Overlay hidden={!stateData.open} zIndex="10" />
           {/* don't show if injected wallet is detected */}
           {stateData.open && typeof window !== 'undefined' && !window.ethereum && (
             <Box
