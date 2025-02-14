@@ -45,11 +45,19 @@ export const metadata = {
   icons: ['https://app.banklessacademy.com/logo.jpg'],
 }
 
+// Only add Frame connector if in webapp or embed mode
+const isWebappOrEmbed = typeof window !== 'undefined' && (
+  new URLSearchParams(window.location.search).get('webapp') === 'true' ||
+  new URLSearchParams(window.location.search).get('embed') === 'true' ||
+  localStorage.getItem('pwa') === 'true'
+)
+const connectors = isWebappOrEmbed ? [frameConnector()] : []
+
 export const wagmiAdapter = new WagmiAdapter({
   networks,
   projectId: WALLET_CONNECT_PROJECT_ID,
   ssr: true,
-  connectors: [frameConnector()],
+  connectors,
 })
 
 export const wagmiConfig = wagmiAdapter.wagmiConfig
