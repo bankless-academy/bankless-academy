@@ -55,7 +55,7 @@ const DesktopButton = ({
   )
   return (
     <Box
-      h={isActive ? '80px' : '78px'}
+      h={isActive ? '70px' : '68px'}
       background={
         isActive
           ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
@@ -214,7 +214,7 @@ const Layout = ({
       (page === 'LESSON-DETAIL' && isLessonOpen)) &&
     !isSmallScreen
 
-  const menuBarWidth = '280px'
+  const menuBarWidth = '230px'
   const profileHeight = community ? '344px' : '298px'
 
   useEffect(() => {
@@ -361,7 +361,9 @@ const Layout = ({
                           }
                           position="relative"
                         >
-                          <ProfileScore avatar={avatar} score={score} />
+                          <Box transform="scale(0.95)">
+                            <ProfileScore avatar={avatar} score={score} />
+                          </Box>
                           <Box
                             textAlign="center"
                             mt="8"
