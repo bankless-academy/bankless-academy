@@ -5,6 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { DEFAULT_AVATAR, DEFAULT_ENS } from 'constants/index'
 import { TABLE, TABLES, db } from 'utils/db'
+import { getBasename, getBasenameAvatar } from 'utils/basenames'
 
 export const fetchWithTimeout = async (resource, options = {}) => {
   const { timeout = 8000 } = options as any
@@ -101,10 +102,29 @@ export default async function handler(
         .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
     }
 
+    // Check for basename if no ENS
+    let basename = null
+    let basenameAvatar = null
+    if (!ensName) {
+      console.log('get basename')
+      basename = await getBasename(`0x${addressLowerCase.substring(2)}` as `0x${string}`)
+      if (basename) {
+        basenameAvatar = await getBasenameAvatar(basename)
+        // update ens_name + ens_avatar in user DB with basename data
+        console.log('update basename details', { basename, basenameAvatar })
+        await db(TABLES.users)
+          .where(TABLE.users.id, userExist.id)
+          .update({
+            ens_name: basename,
+            ens_avatar: basenameAvatar?.length < 255 && basenameAvatar !== DEFAULT_AVATAR ? basenameAvatar : null
+          })
+      }
+    }
+
     const data: any = {
       address: addressLowerCase,
-      ensName,
-      avatar: avatar || DEFAULT_AVATAR,
+      ensName: ensName || basename || null,
+      avatar: avatar || basenameAvatar || DEFAULT_AVATAR,
     }
 
     return res.status(200).json(data)

@@ -24,6 +24,7 @@ import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 import { useTranslation } from 'react-i18next'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+import { getBasename, getBasenameAvatar } from 'utils/basenames'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -225,23 +226,31 @@ const ConnectWalletButton = ({
       if (ensName === DEFAULT_ENS) replaceAvatar(DEFAULT_AVATAR)
     } else {
       setEns('')
-      const { data: lensProfile } = await api(
-        `/api/lens?address=${address}`,
-        {}
-      )
-      console.log(lensProfile)
-      if (lensProfile.name) {
-        replaceName(lensProfile.name)
-        if (lensProfile.avatar) {
-          replaceAvatar(lensProfile.avatar)
-        }
+      // Check for basename
+      const basename = await getBasename(address)
+      if (basename) {
+        replaceName(basename)
+        const basenameAvatar = await getBasenameAvatar(basename)
+        if (basenameAvatar) replaceAvatar(basenameAvatar)
       } else {
-        const ud = await getUD(address)
-        if (ud?.length) {
-          replaceName(ud)
-          replaceAvatar(
-            `https://api.unstoppabledomains.com/metadata/image-src/${ud}`
-          )
+        const { data: lensProfile } = await api(
+          `/api/lens?address=${address}`,
+          {}
+        )
+        console.log(lensProfile)
+        if (lensProfile.name) {
+          replaceName(lensProfile.name)
+          if (lensProfile.avatar) {
+            replaceAvatar(lensProfile.avatar)
+          }
+        } else {
+          const ud = await getUD(address)
+          if (ud?.length) {
+            replaceName(ud)
+            replaceAvatar(
+              `https://api.unstoppabledomains.com/metadata/image-src/${ud}`
+            )
+          }
         }
       }
     }
