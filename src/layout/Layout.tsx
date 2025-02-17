@@ -48,7 +48,7 @@ const DesktopButton = ({
       <Box ml="6" display="flex">
         <Icon width={'38px'} height={'38px'} />
       </Box>
-      <Box ml="6" fontSize="xl" fontWeight="semibold" textAlign="center">
+      <Box ml="6" fontSize="lg" fontWeight="semibold" textAlign="center">
         {label}
       </Box>
     </Box>
@@ -215,7 +215,7 @@ const Layout = ({
     !isSmallScreen
 
   const menuBarWidth = '230px'
-  const profileHeight = community ? '344px' : '298px'
+  const profileHeight = community ? '309px' : '268px'
 
   useEffect(() => {
     const fetchDeploymentId = async (loadType: string) => {
@@ -355,7 +355,7 @@ const Layout = ({
                         href={`/explorer/${username}?referral=true`}
                       >
                         <Box
-                          pt="8"
+                          pt="6"
                           borderBottom={
                             page === 'PROFILE' ? '2px solid #B85FF1' : ''
                           }
@@ -366,23 +366,26 @@ const Layout = ({
                           </Box>
                           <Box
                             textAlign="center"
-                            mt="8"
+                            mt="6"
                             color="white"
-                            fontSize="xl"
+                            fontSize="md"
                             fontWeight="bold"
                             textTransform="uppercase"
                             whiteSpace="nowrap"
+                            overflow="hidden"
+                            textOverflow="ellipsis"
+                            mx="5px"
                           >
                             {ens.includes('.') ? ens : shortenAddress(username)}
                           </Box>
                           <Box
                             textAlign="center"
                             color="#ffffff70"
-                            fontSize="xl"
+                            fontSize="md"
                             fontWeight="bold"
                             textTransform="uppercase"
                             pt={community ? '4' : '0'}
-                            pb="8"
+                            pb="6"
                           >
                             {community && (
                               <Box display="flex" justifyContent="center">
@@ -402,7 +405,7 @@ const Layout = ({
                       borderBottom="2px solid #574572"
                       textAlign="center"
                     >
-                      <Box pt="8">
+                      <Box pt="6">
                         <Box
                           margin="auto"
                           pt="10px"
@@ -426,7 +429,7 @@ const Layout = ({
                           leftIcon={<Wallet weight="bold" />}
                           zIndex={2}
                           variant="primary"
-                          marginY="27px"
+                          marginY="20px"
                         >
                           Connect Wallet
                         </Button>
