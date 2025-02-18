@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 import { LanguageType, LessonType } from 'entities/lesson'
 import { Mixpanel } from 'utils/index'
 import { LanguageDescription } from 'constants/index'
-import { useLanguage } from 'contexts/LanguageContext'
+import { useApp } from 'contexts/AppContext'
 
 const StyledButton = styled(Button)<{ isselected?: string }>`
   padding: 16px;
@@ -41,7 +41,7 @@ const LanguageSwitch = ({
 }): React.ReactElement => {
   const { i18n } = useTranslation()
   const router = useRouter()
-  const { refreshLanguage } = useLanguage()
+  const { setLanguage } = useApp()
 
   const languages = Object.keys(LanguageDescription).filter((v: LanguageType) =>
     lesson.languages?.includes(v)
@@ -53,7 +53,7 @@ const LanguageSwitch = ({
 
   const handleLanguageChange = (lang: string, path: string) => {
     i18n.changeLanguage(lang)
-    refreshLanguage()
+    setLanguage(lang)
     router.push(path)
 
     Mixpanel.track(lesson.isArticle ? 'open_lesson' : 'lesson_briefing', {

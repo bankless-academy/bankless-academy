@@ -15,7 +15,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useRouter } from 'next/router'
 import { LESSONS } from 'constants/index'
 import { Globe } from '@phosphor-icons/react'
-import { useLanguage } from 'contexts/LanguageContext'
+import { useApp } from 'contexts/AppContext'
 
 const SelectLanguage = ({
   isSmallScreen,
@@ -37,14 +37,15 @@ const SelectLanguage = ({
       ? window.navigator.language.split('-')[0]
       : 'en'
   )
-  const { refreshLanguage } = useLanguage()
+  const { setLanguage } = useApp()
 
   // Set initial language from localStorage
   React.useEffect(() => {
     if (defaultLanguage && i18n.language !== defaultLanguage) {
       i18n.changeLanguage(defaultLanguage)
+      setLanguage(defaultLanguage)
     }
-  }, [defaultLanguage, i18n])
+  }, [defaultLanguage, i18n, setLanguage])
 
   return (
     <Menu autoSelect={false}>
@@ -110,6 +111,7 @@ const SelectLanguage = ({
                   onClick={() => {
                     i18n.changeLanguage(code)
                     setDefaultLanguage(code)
+                    setLanguage(code)
                     if (isLessonPage) {
                       // Update lesson and handbook pages to match the language
                       if (lessonAvailable) {
@@ -118,8 +120,6 @@ const SelectLanguage = ({
                         router.push(`/lessons/${lessonSlug}${content}`)
                       }
                     }
-                    // Refresh internal links without page reload
-                    refreshLanguage()
                   }}
                   backgroundColor={
                     defaultLanguage === code ? 'blackAlpha.300' : 'default'

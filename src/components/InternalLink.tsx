@@ -6,7 +6,7 @@ import {
 
 import { Mixpanel, getNodeText } from 'utils/index'
 import { LESSONS } from 'constants/index'
-import { useLanguage } from 'contexts/LanguageContext'
+import { useApp } from 'contexts/AppContext'
 
 type ChakraLinkAndNextProps = ChakraLinkProps & LinkProps & any
 
@@ -17,7 +17,7 @@ const InternalLink = ({
   ignoreLocale,
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
-  const { currentLanguage } = useLanguage()
+  const { language } = useApp()
 
   const isLessonLink =
     (href?.startsWith('/lessons/') ||
@@ -28,13 +28,13 @@ const InternalLink = ({
 
   const iHref =
     isLessonLink &&
-    currentLanguage !== 'en' &&
+    language !== 'en' &&
     LESSONS.some(
       (lesson) =>
         lesson.slug === lessonSlug &&
-        (lesson.languages as any)?.includes(currentLanguage)
+        (lesson.languages as any)?.includes(language)
     )
-      ? href.replace('/lessons/', `/lessons/${currentLanguage}/`)
+      ? href.replace('/lessons/', `/lessons/${language}/`)
       : href
 
   return (

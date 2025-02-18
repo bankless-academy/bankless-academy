@@ -322,8 +322,8 @@ const Lesson = ({
   Quest?: QuestType
   isLessonOpen?: boolean
 }): React.ReactElement => {
-  const { t, i18n } = useTranslation()
-  const { setHideNavBar } = useApp()
+  const { t } = useTranslation()
+  const { setHideNavBar, language } = useApp()
   const numberOfSlides = lesson.slides?.length
   // HACK: when reducing the number of slides in a lesson
   if (
@@ -510,7 +510,7 @@ const Lesson = ({
   useEffect(() => {
     Mixpanel.track('open_lesson', {
       lesson: lesson?.englishName,
-      language: i18n.language,
+      language: language,
     })
     // preloading all lesson images after 3 seconds for smoother transitions
     setTimeout(() => {
@@ -816,7 +816,7 @@ const Lesson = ({
           keywords[lowerCaseKeyword]?.definition ||
           keywords[lowerCaseKeywordSingular]?.definition
         const definition =
-          i18n.language !== 'en'
+          language !== 'en'
             ? !t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' }).endsWith(
                 '.definition'
               )
@@ -839,7 +839,7 @@ const Lesson = ({
                 definition={definition}
                 keyword={keyword}
                 forceEnglish={
-                  i18n.language !== 'en' && englishDefition === definition
+                  language !== 'en' && englishDefition === definition
                 }
               />
             </span>
@@ -873,7 +873,7 @@ const Lesson = ({
       mt={6}
       issmallscreen={isSmallScreen.toString()}
       ispreview={lesson?.isPreview?.toString()}
-      istranslation={(i18n.language !== 'en').toString()}
+      istranslation={(language !== 'en').toString()}
       highlightnumber={isAnimationSlide ? animationStepLS.toString() : null}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
