@@ -465,8 +465,6 @@ const Lesson = ({
   }, [address, slide])
 
   useEffect(() => {
-    console.log('isLessonOpen', isLessonOpen)
-    console.log('slide.type', slide.type)
     if (isLessonOpen && slide.type !== 'QUEST') setHideNavBar(true)
     else setHideNavBar(false)
 
