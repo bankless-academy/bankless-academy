@@ -53,6 +53,7 @@ import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
 import Animation from 'components/Animation'
 import { ANIMATIONS } from 'constants/animations'
+import { useNavBar } from 'contexts/NavBarContext'
 
 export const Slide = styled(Card)<{
   issmallscreen?: string
@@ -322,6 +323,7 @@ const Lesson = ({
   isLessonOpen?: boolean
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
+  const { setHideNavBar } = useNavBar()
   const numberOfSlides = lesson.slides?.length
   // HACK: when reducing the number of slides in a lesson
   if (
@@ -343,7 +345,6 @@ const Lesson = ({
     `connectWalletPopup`,
     false
   )
-  const [, hideNavBarLS] = useLocalStorage(`hideNavBar`, false)
   const [quizRetryCount, setQuizRetryCount] = useState({})
   const toast = useToast()
   const [isBadgeMintedLS] = useLocalStorage(
@@ -466,13 +467,13 @@ const Lesson = ({
   useEffect(() => {
     console.log('isLessonOpen', isLessonOpen)
     console.log('slide.type', slide.type)
-    if (isLessonOpen && slide.type !== 'QUEST') hideNavBarLS(true)
-    else hideNavBarLS(false)
+    if (isLessonOpen && slide.type !== 'QUEST') setHideNavBar(true)
+    else setHideNavBar(false)
 
     return () => {
-      hideNavBarLS(false)
+      setHideNavBar(false)
     }
-  }, [isLessonOpen, slide])
+  }, [isLessonOpen, slide, setHideNavBar])
 
   useEffect((): void => {
     const checkNFT = async () => {

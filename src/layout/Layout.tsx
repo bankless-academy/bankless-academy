@@ -21,6 +21,7 @@ import {
   ExploreIcon,
 } from 'components/Icons'
 import { useTranslation } from 'react-i18next'
+import { useNavBar } from 'contexts/NavBarContext'
 
 export type PageType =
   | LessonTypeType
@@ -181,6 +182,7 @@ const Layout = ({
   const { scrollY } = useWindowScrollPositions()
   const addressLower = address?.toLowerCase()
   const [pwa] = useLocalStorage('pwa', false)
+  const { hideNavBar } = useNavBar()
   const username = address
     ? addressLower in nameCache &&
       nameCache[addressLower]?.name?.includes('.eth')
@@ -328,7 +330,7 @@ const Layout = ({
             {children}
           </Container>
         </Box>
-        {!shouldShowOnlyChildren && (
+        {!shouldShowOnlyChildren && !hideNavBar && (
           <>
             {!isSmallScreen ? (
               <>
