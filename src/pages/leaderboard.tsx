@@ -12,6 +12,8 @@ import {
   Th,
   Td,
   Text,
+  Select,
+  Button,
 } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
@@ -69,6 +71,12 @@ type Community = {
   community: string
   user_count: number
   members: CommunityMember[]
+}
+
+type MonthlyReferral = {
+  address: string
+  ens_name: string | null
+  referrals: number
 }
 
 const columnHelper = createColumnHelper<UnitConversion>()
@@ -203,6 +211,64 @@ const Leaderboard = (): JSX.Element => {
   const router = useRouter()
   const [isLoadingCommunities, setIsLoadingCommunities] = useState(false)
   const [error, setError]: any = useState('')
+  const [monthlyReferrals, setMonthlyReferrals]: any = useState(null)
+  const [selectedMonth, setSelectedMonth] = useState(() => {
+    const now = new Date()
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
+  })
+
+  // Generate array of months from Feb 2024 to current month
+  const getAvailableMonths = () => {
+    const months = []
+    const startDate = new Date(2024, 1) // February 2024
+    const endDate = new Date()
+
+    const currentDate = new Date(startDate)
+    while (currentDate <= endDate) {
+      months.push(new Date(currentDate))
+      currentDate.setMonth(currentDate.getMonth() + 1)
+    }
+
+    return months.reverse() // Most recent first
+  }
+
+  const handleMonthChange = (direction: 'prev' | 'next') => {
+    const [year, month] = selectedMonth.split('-').map(Number)
+    const date = new Date(year, month - 1) // month is 0-based in JS Date
+
+    if (direction === 'prev') {
+      date.setMonth(date.getMonth() - 1)
+    } else {
+      date.setMonth(date.getMonth() + 1)
+    }
+
+    // Don't allow going beyond current month
+    const now = new Date()
+    if (date > now) return
+
+    // Don't allow going before January 2024
+    const startDate = new Date(2024, 0)
+    if (date < startDate) return
+
+    setSelectedMonth(
+      `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+    )
+  }
+
+  const canGoToPrevMonth = () => {
+    const [year, month] = selectedMonth.split('-').map(Number)
+    const currentDate = new Date(year, month - 1)
+    const startDate = new Date(2024, 1) // February 2024
+    return currentDate > startDate
+  }
+
+  const canGoToNextMonth = () => {
+    const [year, month] = selectedMonth.split('-').map(Number)
+    const currentDate = new Date(year, month - 1)
+    const now = new Date()
+    const firstDayOfCurrentMonth = new Date(now.getFullYear(), now.getMonth())
+    return currentDate < firstDayOfCurrentMonth
+  }
 
   useEffect(() => {
     // Fetch communities data
@@ -215,6 +281,16 @@ const Leaderboard = (): JSX.Element => {
       })
       .catch((error) => {
         console.error('Error fetching communities:', error)
+      })
+
+    // Fetch monthly referrals
+    axios
+      .get(`/api/get/monthly-referrals?monthYear=${selectedMonth}`)
+      .then((res) => {
+        setMonthlyReferrals(res.data.referrals)
+      })
+      .catch((error) => {
+        console.error('Error fetching monthly referrals:', error)
       })
 
     // Existing leaderboard fetch
@@ -231,8 +307,6 @@ const Leaderboard = (): JSX.Element => {
             addressData.datadisks_count = addressData.datadisks?.length || 0
             addressData.handbooks_count = addressData.handbooks?.length || 0
             addressData.referrals = addressData?.referrals || 0
-            // addressData.donations_count =
-            //   Object.keys(addressData.donations || {})?.length || 0
             addressData.achievements_count = calculateExplorerAchievements(
               addressData?.achievements || []
             )
@@ -251,7 +325,7 @@ const Leaderboard = (): JSX.Element => {
         setError('API limit reached, try again in 1 minute. ' + error?.message)
         console.error(error)
       })
-  }, [])
+  }, [selectedMonth])
 
   useEffect(() => {
     const handleStart = (url) =>
@@ -335,6 +409,103 @@ const Leaderboard = (): JSX.Element => {
                   </Td>
                 </Tr>
               ))}
+            </Tbody>
+          </Table>
+        </Box>
+
+        <Box mb={10} mt={4}>
+          <Heading as="h2" size="lg" mb={4} textAlign="center">
+            Monthly Referrals
+          </Heading>
+          <Box
+            mb={4}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            gap={2}
+          >
+            {canGoToPrevMonth() && (
+              <Button
+                variant="outline"
+                onClick={() => handleMonthChange('prev')}
+                cursor="pointer"
+                _hover={{ opacity: 0.7 }}
+                transition="opacity 0.2s"
+              >
+                &lt;
+              </Button>
+            )}
+            <Select
+              value={selectedMonth}
+              onChange={(e) => setSelectedMonth(e.target.value)}
+              maxWidth="200px"
+            >
+              {getAvailableMonths().map((date) => {
+                const value = `${date.getFullYear()}-${String(
+                  date.getMonth() + 1
+                ).padStart(2, '0')}`
+                return (
+                  <option key={value} value={value}>
+                    {date.toLocaleString('default', {
+                      month: 'long',
+                      year: 'numeric',
+                    })}
+                  </option>
+                )
+              })}
+            </Select>
+            {canGoToNextMonth() && (
+              <Button
+                variant="outline"
+                onClick={() => handleMonthChange('next')}
+                cursor="pointer"
+                _hover={{ opacity: 0.7 }}
+                transition="opacity 0.2s"
+              >
+                &gt;
+              </Button>
+            )}
+          </Box>
+          <Table variant="simple">
+            <Thead>
+              <Tr>
+                <Th>Rank</Th>
+                <Th>Explorer Address</Th>
+                <Th>Referrals</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {monthlyReferrals?.length === 0 ? (
+                <Tr>
+                  <Td colSpan={3} textAlign="center" py={8}>
+                    <Text color="gray.500">No referrals for this month</Text>
+                  </Td>
+                </Tr>
+              ) : (
+                monthlyReferrals?.map(
+                  (referral: MonthlyReferral, index: number) => (
+                    <Tr key={referral.address}>
+                      <Td>#{index + 1}</Td>
+                      <Td>
+                        <InternalLink
+                          href={`/explorer/${
+                            referral.ens_name || referral.address
+                          }`}
+                        >
+                          <Text
+                            as="span"
+                            color={referral.ens_name ? undefined : 'blue.500'}
+                          >
+                            {referral.ens_name ||
+                              shortenAddress(referral.address)}
+                          </Text>
+                        </InternalLink>
+                      </Td>
+                      <Td>{referral.referrals}</Td>
+                    </Tr>
+                  )
+                )
+              )}
             </Tbody>
           </Table>
         </Box>
