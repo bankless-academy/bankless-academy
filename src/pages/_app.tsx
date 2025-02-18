@@ -30,7 +30,7 @@ import {
 import { FrameProvider } from 'components/providers/FrameProvider'
 import { LanguageProvider } from 'contexts/LanguageContext'
 import ExternalLink from 'components/ExternalLink'
-import { NavBarProvider } from 'contexts/NavBarContext'
+import { AppProvider } from 'contexts/AppContext'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -177,7 +177,7 @@ const App = ({
             <QueryClientProvider client={queryClient}>
               <FrameProvider>
                 <LanguageProvider>
-                  <NavBarProvider>
+                  <AppProvider>
                     <>
                       <Global
                         styles={css`
@@ -354,7 +354,7 @@ const App = ({
                         )}
                       </Layout>
                     </>
-                  </NavBarProvider>
+                  </AppProvider>
                 </LanguageProvider>
               </FrameProvider>
             </QueryClientProvider>

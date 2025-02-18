@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import Nav from 'layout/Nav'
 import { useSmallScreen } from 'hooks/index'
 import { useLocalStorage } from 'usehooks-ts'
-import { useNavBar } from 'contexts/NavBarContext'
+import { useApp } from 'contexts/AppContext'
 
 const StyledBackground = styled(Box)<{
   issmallscreen?: string
@@ -38,7 +38,7 @@ const Layout = ({
 }): React.ReactElement => {
   const [isSmallScreen, isSmallLesson] = useSmallScreen()
   const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
-  const { hideNavBar: hideNavBarContext } = useNavBar()
+  const { hideNavBar } = useApp()
 
   return (
     <Box
@@ -47,7 +47,7 @@ const Layout = ({
       bgColor="#161515"
       overflowX="hidden"
     >
-      {!hideNavBarContext && <Nav />}
+      {!hideNavBar && <Nav />}
       <StyledBackground
         issmallscreen={isSmallScreen?.toString()}
         issmalllesson={isSmallLesson?.toString()}

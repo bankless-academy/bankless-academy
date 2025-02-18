@@ -21,7 +21,7 @@ import {
   ExploreIcon,
 } from 'components/Icons'
 import { useTranslation } from 'react-i18next'
-import { useNavBar } from 'contexts/NavBarContext'
+import { useApp } from 'contexts/AppContext'
 
 export type PageType =
   | LessonTypeType
@@ -182,7 +182,7 @@ const Layout = ({
   const { scrollY } = useWindowScrollPositions()
   const addressLower = address?.toLowerCase()
   const [pwa] = useLocalStorage('pwa', false)
-  const { hideNavBar } = useNavBar()
+  const { hideNavBar } = useApp()
   const username = address
     ? addressLower in nameCache &&
       nameCache[addressLower]?.name?.includes('.eth')

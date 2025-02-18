@@ -53,7 +53,7 @@ import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
 import Animation from 'components/Animation'
 import { ANIMATIONS } from 'constants/animations'
-import { useNavBar } from 'contexts/NavBarContext'
+import { useApp } from 'contexts/AppContext'
 
 export const Slide = styled(Card)<{
   issmallscreen?: string
@@ -323,7 +323,7 @@ const Lesson = ({
   isLessonOpen?: boolean
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
-  const { setHideNavBar } = useNavBar()
+  const { setHideNavBar } = useApp()
   const numberOfSlides = lesson.slides?.length
   // HACK: when reducing the number of slides in a lesson
   if (
