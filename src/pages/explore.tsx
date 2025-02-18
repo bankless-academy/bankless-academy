@@ -188,7 +188,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
         )}
         <Heading
           as="h1"
-          size="2xl"
+          size="xl"
           textAlign="center"
           pt={isSmallScreen ? '12px' : '16px'}
         >

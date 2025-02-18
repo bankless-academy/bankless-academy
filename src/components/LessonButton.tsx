@@ -11,9 +11,11 @@ import { IS_REWARDS_ACTIVATED } from 'constants/index'
 const LessonButton = ({
   lesson,
   click,
+  size = 'lg',
 }: {
   lesson: LessonType
   click?: boolean
+  size?: 'md' | 'sm' | 'lg'
 }): React.ReactElement => {
   const { t } = useTranslation()
   const [isBadgeMintedLS] = useLocalStorage(
@@ -43,7 +45,7 @@ const LessonButton = ({
           {lessonHasSponsor && (
             <Button
               variant="secondaryBig"
-              size="lg"
+              size={size}
               w="50%"
               background={'transparent !important'}
               border={
@@ -61,7 +63,7 @@ const LessonButton = ({
           {lessonHasReward && (
             <Button
               variant="secondaryBig"
-              size="lg"
+              size={size}
               w="50%"
               background={'transparent !important'}
               border={
@@ -81,7 +83,7 @@ const LessonButton = ({
           )}
           <Button
             variant={completed ? 'secondaryBig' : 'primaryBig'}
-            size="lg"
+            size={size}
             paddingX={
               completed
                 ? '24px !important'

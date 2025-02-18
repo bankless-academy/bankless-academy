@@ -100,9 +100,9 @@ const LessonCard = ({
     <StyledLessonCard p={6} pb={8} borderRadius="3xl" maxW="500px" m="auto">
       <Box position="relative" zIndex="1">
         <Text
-          fontSize="xl"
+          fontSize="lg"
           fontWeight="bold"
-          minH={isSmallScreen ? '45px' : '60px'}
+          minH={isSmallScreen ? '45px' : lesson.isArticle ? '54px' : '34px'}
           display="flex"
           alignItems="center"
         >
@@ -111,11 +111,11 @@ const LessonCard = ({
         <Box
           display="flex"
           justifyContent="space-between"
-          my={isSmallScreen ? '3' : '4'}
+          my={isSmallScreen ? '2' : '3'}
         >
           {isBadgeMinted || isArticleRead || lesson.duration ? (
             <StyledTag
-              size="md"
+              size="sm"
               variant="outline"
               gold={(isBadgeMinted || isArticleRead)?.toString()}
             >
@@ -127,10 +127,10 @@ const LessonCard = ({
               ) : null}
             </StyledTag>
           ) : (
-            <Tag size="md" backgroundColor="transparent"></Tag>
+            <Tag size="sm" backgroundColor="transparent"></Tag>
           )}
           {IS_COLLECTIBLE_ACTIVATED && lesson.hasCollectible && (
-            <StyledTag size="md" variant="outline" color="white" gold="true">
+            <StyledTag size="sm" variant="outline" color="white" gold="true">
               {!isLessonCollected
                 ? t('Collectible Available')
                 : t('Lesson Collected')}
@@ -138,11 +138,11 @@ const LessonCard = ({
           )}
           {lesson.isArticle ? (
             isArticleCollected ? (
-              <StyledTag size="md" variant="outline" gold="true">
+              <StyledTag size="sm" variant="outline" gold="true">
                 Entry Collected
               </StyledTag>
             ) : !lesson.areMirrorNFTAllCollected ? (
-              <StyledTag size="md" variant="outline" gold="true">
+              <StyledTag size="sm" variant="outline" gold="true">
                 Entry Available
               </StyledTag>
             ) : null
@@ -153,11 +153,14 @@ const LessonCard = ({
           )}
         </Box>
         <Text
-          fontSize="lg"
-          minH="81px"
+          fontSize="md"
+          height="72px"
           display="flex"
-          alignItems="center"
+          alignItems="start"
           color="#9E9E9E"
+          overflow="hidden"
+          textOverflow="ellipsis"
+          noOfLines={3}
         >
           {t(lesson.description, { ns: 'lesson' })}
         </Text>
@@ -220,7 +223,7 @@ const LessonCard = ({
           {lesson.publicationStatus === 'planned' && all === undefined ? (
             <Button
               variant={isNotified ? 'secondaryBig' : 'primaryBig'}
-              size="lg"
+              size="md"
               onClick={() => {
                 if (isNotified) return
                 Mixpanel.track('click_internal_link', {
@@ -240,7 +243,7 @@ const LessonCard = ({
               margin={lessonHasSponsor ? 'auto' : ''}
               w={lessonHasSponsor ? '100%' : 'inherit'}
             >
-              <LessonButton lesson={lesson} />
+              <LessonButton lesson={lesson} size="md" />
             </InternalLink>
           )}
         </Box>

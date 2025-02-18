@@ -143,7 +143,7 @@ const LessonCards = ({
     <Box>
       <Heading
         as="h1"
-        size="2xl"
+        size="xl"
         textAlign="center"
         pt={isSmallScreen ? '12px' : '16px'}
       >
@@ -169,7 +169,7 @@ const LessonCards = ({
         </Heading>
       ) : null}
       <SimpleGrid
-        minChildWidth={isSmallScreen ? 'unset' : '400px'}
+        minChildWidth={isSmallScreen ? 'unset' : '320px'}
         spacing={4}
         my={8}
         gap={6}
