@@ -172,7 +172,7 @@ const LessonCards = ({
         minChildWidth={isSmallScreen ? 'unset' : '320px'}
         spacing={4}
         my={8}
-        gap={6}
+        gap={4}
       >
         {Lessons.filter((lesson) => {
           if (level) {
