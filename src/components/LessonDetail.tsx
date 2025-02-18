@@ -29,6 +29,7 @@ import {
   IS_COLLECTIBLE_ACTIVATED,
   IS_PROD,
   IS_WALLET_DISABLED,
+  LESSONS,
   // IS_WHITELABEL,
   TOKEN_GATING_ENABLED,
   TWITTER_ACCOUNT,
@@ -39,7 +40,8 @@ import OpenLesson from 'components/OpenLesson'
 import ShareModal from 'components/ShareModal'
 import { useAccount, useEnsName } from 'wagmi'
 import { PollIcon, RewardsIcon, QuestIcon, QuizIcon } from './Icons'
-import { LearnIcon } from './Icons'
+import { LearnIcon } from 'components/Icons'
+import LessonCard from 'components/LessonCard'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -176,13 +178,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     lesson: LessonType
   }): React.ReactElement => {
     return (
-      <StyledCard
-        p={4}
-        mt={6}
-        mb={2}
-        w="100%"
-        maxW={isSmallScreen ? 'unset' : '400px'}
-      >
+      <StyledCard p={4} mt={6} mb={2} w={isSmallScreen ? 'unset' : '340px'}>
         <Text fontSize="2xl" fontWeight="bold" mb={4} textAlign="center">
           Summary
         </Text>
@@ -214,6 +210,27 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     )
   }
 
+  const NextLesson = (): React.ReactElement => {
+    if (badgesMintedLS?.includes(lesson.badgeId)) {
+      // find the next unminted badge in the order of the lessons
+      const nextLesson = LESSONS.find(
+        (l) => !l.isArticle && !badgesMintedLS?.includes(l.badgeId)
+      )
+      if (!nextLesson) return null
+      return (
+        <Box p={2} mt={2} mb={2} w={isSmallScreen ? '100%' : '600px'}>
+          <Text fontSize="2xl" fontWeight="bold" mb={4} textAlign="center">
+            Next Lesson
+          </Text>
+          <Box w={isSmallScreen ? '100%' : '450px'} maxW="100%" m="auto">
+            <LessonCard lesson={nextLesson} />
+          </Box>
+        </Box>
+      )
+    }
+    return null
+  }
+
   return (
     <>
       {openLessons.includes(lesson.slug) ? (
@@ -227,8 +244,12 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           isLessonOpen={openLessons.includes(lesson.slug)}
         />
       ) : (
-        <Box display="flex" justifyContent="center">
-          <Box display={isSmallScreen ? 'block' : 'flex'} gap={4}>
+        <Box justifyItems="center">
+          <Box
+            display={isSmallScreen ? 'block' : 'flex'}
+            gap={4}
+            justifyContent="center"
+          >
             {/* {!isSmallScreen && !IS_WHITELABEL && (
             <StyledBox
               w="-webkit-fill-available"
@@ -249,7 +270,8 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           )} */}
             <StyledCard
               p={12}
-              maxW="623px"
+              w="100%"
+              maxW="600px"
               mt={6}
               mb={2}
               display={isSmallScreen ? 'contents' : 'block'}
@@ -459,8 +481,14 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 )}
               </Box>
             </StyledCard>
-            <LessonSlides lesson={lesson} />
+            {isSmallScreen && <NextLesson />}
+            {!isSmallScreen && <LessonSlides lesson={lesson} />}
           </Box>
+          {!isSmallScreen && (
+            <Box w="956px" pr="347px" m="auto">
+              <NextLesson />
+            </Box>
+          )}
         </Box>
       )}
     </>
