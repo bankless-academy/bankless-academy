@@ -30,6 +30,7 @@ import {
 import { FrameProvider } from 'components/providers/FrameProvider'
 import { LanguageProvider } from 'contexts/LanguageContext'
 import ExternalLink from 'components/ExternalLink'
+import { useLocalStorage } from 'usehooks-ts'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -51,6 +52,7 @@ const App = ({
   isNotion: boolean
 }>): JSX.Element => {
   const [isTelegramWebApp, setIsTelegramWebApp] = useState(false)
+  const [hideNavBarLS] = useLocalStorage(`hideNavBar`, false)
 
   useEffect(() => {
     // Check if running as Telegram Mini App
@@ -332,7 +334,10 @@ const App = ({
                         }
                       `}
                     />
-                    <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
+                    <Layout
+                      isLesson={pageProps.pageMeta?.isLesson || false}
+                      hideNavBar={hideNavBarLS}
+                    >
                       {isLoadingProfile ? (
                         <Container maxW="container.xl">
                           <Heading as="h2" size="xl" m="8" textAlign="center">

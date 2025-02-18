@@ -31,9 +31,11 @@ const StyledBackground = styled(Box)<{
 const Layout = ({
   children,
   isLesson,
+  hideNavBar = false,
 }: {
   children: JSX.Element
   isLesson: boolean
+  hideNavBar?: boolean
 }): React.ReactElement => {
   const [isSmallScreen, isSmallLesson] = useSmallScreen()
   const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
@@ -45,7 +47,7 @@ const Layout = ({
       bgColor="#161515"
       overflowX="hidden"
     >
-      <Nav />
+      {!hideNavBar && <Nav />}
       <StyledBackground
         issmallscreen={isSmallScreen?.toString()}
         issmalllesson={isSmallLesson?.toString()}

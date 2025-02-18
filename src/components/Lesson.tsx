@@ -313,11 +313,13 @@ const Lesson = ({
   extraKeywords,
   closeLesson,
   Quest,
+  isLessonOpen = false,
 }: {
   lesson: LessonType
   extraKeywords?: any
   closeLesson?: () => void
   Quest?: QuestType
+  isLessonOpen?: boolean
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
   const numberOfSlides = lesson.slides?.length
@@ -341,6 +343,7 @@ const Lesson = ({
     `connectWalletPopup`,
     false
   )
+  const [, hideNavBarLS] = useLocalStorage(`hideNavBar`, false)
   const [quizRetryCount, setQuizRetryCount] = useState({})
   const toast = useToast()
   const [isBadgeMintedLS] = useLocalStorage(
@@ -459,6 +462,17 @@ const Lesson = ({
     )
       setConnectWalletPopupLS(true)
   }, [address, slide])
+
+  useEffect(() => {
+    console.log('isLessonOpen', isLessonOpen)
+    console.log('slide.type', slide.type)
+    if (isLessonOpen && slide.type !== 'QUEST') hideNavBarLS(true)
+    else hideNavBarLS(false)
+
+    return () => {
+      hideNavBarLS(false)
+    }
+  }, [isLessonOpen, slide])
 
   useEffect((): void => {
     const checkNFT = async () => {

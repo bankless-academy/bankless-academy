@@ -232,6 +232,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const lesson = pageMeta?.lesson
   const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
+  const [hideNavBarLS] = useLocalStorage(`hideNavBar`, false)
 
   const lang =
     typeof window !== 'undefined' &&
@@ -313,7 +314,11 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
               <Container
                 maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
                 px={isSmallScreen ? '8px' : '16px'}
-                minH={isMediumScreen ? 'calc(100vh - 146px)' : 'default'}
+                minH={
+                  isMediumScreen
+                    ? `calc(100vh - 146px${hideNavBarLS ? ' + 65px' : ''})`
+                    : 'default'
+                }
               >
                 <LessonDetail lesson={lesson} />
               </Container>

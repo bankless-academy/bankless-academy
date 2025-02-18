@@ -181,6 +181,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
           }
           Quest={Quest}
+          isLessonOpen={JSON.parse(openLessonLS)?.includes(lesson.slug)}
         />
       ) : (
         <>
