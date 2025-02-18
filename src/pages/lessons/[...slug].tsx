@@ -12,7 +12,7 @@ import { useSmallScreen } from 'hooks/index'
 import { markdown } from 'utils/markdown'
 import LessonContent from 'components/LessonContent'
 import Layout from 'layout/Layout'
-import { useLocalStorage } from 'usehooks-ts'
+import { useApp } from 'contexts/AppContext'
 
 const SPLIT = `\`\`\`
 
@@ -231,7 +231,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const lesson = pageMeta?.lesson
-  const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
+  const { openLessons, hideNavBar } = useApp()
 
   const lang =
     typeof window !== 'undefined' &&
@@ -239,8 +239,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
       ? window.location.pathname.split('/')[2]
       : 'en'
 
-  const isLessonOpen =
-    lesson?.slug && JSON.parse(openLessonLS)?.includes(lesson.slug)
+  const isLessonOpen = lesson?.slug && openLessons.includes(lesson.slug)
 
   if (!lesson) {
     console.log('redirect to lesson select')
@@ -252,80 +251,79 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
     // redirect to english lesson if translation is not found
     document.location.href = `/lessons/${lesson.slug}`
     return null
-  } else
-    return (
-      <>
-        {lesson.isArticle ? (
-          <Layout page="ARTICLE">
-            <Article lesson={lesson} />
-          </Layout>
-        ) : (
-          <Layout page="LESSON-DETAIL" isLessonOpen={isLessonOpen}>
-            {lesson?.showContent ? (
-              <>
-                <Center
-                  height="58vh"
-                  bgImage="/images/homepage_background_v4_half.png"
-                  bgSize="cover"
-                  bgPosition="bottom"
-                  pb="16px"
+  }
+
+  return (
+    <>
+      {lesson.isArticle ? (
+        <Layout page="ARTICLE">
+          <Article lesson={lesson} />
+        </Layout>
+      ) : (
+        <Layout page="LESSON-DETAIL" isLessonOpen={isLessonOpen}>
+          {lesson?.showContent ? (
+            <>
+              <Center
+                height="58vh"
+                bgImage="/images/homepage_background_v4_half.png"
+                bgSize="cover"
+                bgPosition="bottom"
+                pb="16px"
+              >
+                <Box
+                  width="100%"
+                  maxW="800px"
+                  textAlign="center"
+                  alignItems="center"
+                  height="100%"
+                  alignContent="end"
                 >
-                  <Box
-                    width="100%"
-                    maxW="800px"
-                    textAlign="center"
-                    alignItems="center"
-                    height="100%"
-                    alignContent="end"
-                  >
-                    <Box w="100%" maxW="90%">
-                      <Image
-                        style={{
-                          filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
-                        }}
-                        maxW="90%"
-                        src="/images/BanklessAcademy.svg"
-                        alt="Bankless Academy"
-                        m="auto"
-                      />
-                      <Box ml="25%" w="73%">
-                        <Text
-                          fontSize={isSmallScreen ? '20px' : '25px'}
-                          mt="-15px"
-                          w="100%"
-                        >
-                          {`Your platform for building digital independence.`}
-                        </Text>
-                      </Box>
+                  <Box w="100%" maxW="90%">
+                    <Image
+                      style={{
+                        filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                      }}
+                      maxW="90%"
+                      src="/images/BanklessAcademy.svg"
+                      alt="Bankless Academy"
+                      m="auto"
+                    />
+                    <Box ml="25%" w="73%">
+                      <Text
+                        fontSize={isSmallScreen ? '20px' : '25px'}
+                        mt="-15px"
+                        w="100%"
+                      >
+                        {`Your platform for building digital independence.`}
+                      </Text>
                     </Box>
                   </Box>
-                </Center>
-                <Container
-                  maxW={
-                    isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'
-                  }
-                  px={isSmallScreen ? '8px' : '16px'}
-                >
-                  <LessonContent lesson={lesson} />
-                </Container>
-              </>
-            ) : (
+                </Box>
+              </Center>
               <Container
                 maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
                 px={isSmallScreen ? '8px' : '16px'}
-                minH={
-                  isMediumScreen
-                    ? `calc(100vh - 146px${isLessonOpen ? ' + 65px' : ''})`
-                    : 'default'
-                }
               >
-                <LessonDetail lesson={lesson} />
+                <LessonContent lesson={lesson} />
               </Container>
-            )}
-          </Layout>
-        )}
-      </>
-    )
+            </>
+          ) : (
+            <Container
+              maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
+              px={isSmallScreen ? '8px' : '16px'}
+              minH={
+                isMediumScreen
+                  ? `calc(100vh - 146px${hideNavBar ? ' + 65px' : ''})`
+                  : 'default'
+              }
+            >
+              <LessonDetail lesson={lesson} />
+            </Container>
+          )}
+        </Layout>
+      )}
+    </>
+  )
 }
 
 export default LessonPage

@@ -1,11 +1,12 @@
 import { Box, useToast } from '@chakra-ui/react'
 import { ReactElement, useState } from 'react'
-import { useLocalStorage } from 'usehooks-ts'
 
 import Disclaimer from 'components/Disclaimer'
 import { LessonType } from 'entities/lesson'
-import { openLesson } from 'utils/index'
 import { useAccount } from 'wagmi'
+import { useApp } from 'contexts/AppContext'
+import { TOKEN_GATING_ENABLED } from 'constants/index'
+import { isHolderOfNFT } from 'utils/index'
 
 const OpenLesson = ({
   children,
@@ -17,12 +18,42 @@ const OpenLesson = ({
   click?: boolean
 }): React.ReactElement => {
   const [showDisclaimer, setShowDisclaimer] = useState(false)
-  const [openLessonLS, setOpenLessonLS] = useLocalStorage(
-    `lessonOpen`,
-    JSON.stringify([])
-  )
   const toast = useToast()
   const { address } = useAccount()
+  const { openLessons, setOpenLessons } = useApp()
+
+  const openLesson = async () => {
+    if (TOKEN_GATING_ENABLED && lesson.nftGating) {
+      if (!address) {
+        toast.closeAll()
+        toast({
+          title: 'This is a token gated lesson',
+          description: 'Connect your wallet to access the lesson.',
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
+        return
+      }
+      const hasNFT = await isHolderOfNFT(address, lesson.nftGating)
+      if (!hasNFT) {
+        toast.closeAll()
+        toast({
+          title: "You don't own the required NFT",
+          description: lesson?.nftGatingRequirements,
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
+        return
+      }
+    }
+
+    // Add lesson to openLessons if not already there
+    if (!openLessons.includes(lesson.slug)) {
+      setOpenLessons([...openLessons, lesson.slug])
+    }
+  }
 
   return (
     <Box
@@ -42,9 +73,7 @@ const OpenLesson = ({
               `disclaimer-${lesson.slug}`,
               currentTimestamp.toString()
             )
-            setOpenLessonLS(
-              await openLesson(openLessonLS, lesson, toast, address)
-            )
+            await openLesson()
             setShowDisclaimer(false)
           }}
           onClose={() => setShowDisclaimer(false)}

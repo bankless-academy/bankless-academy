@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 
 import Nav from 'layout/Nav'
 import { useSmallScreen } from 'hooks/index'
-import { useLocalStorage } from 'usehooks-ts'
 import { useApp } from 'contexts/AppContext'
 
 const StyledBackground = styled(Box)<{
@@ -37,13 +36,15 @@ const Layout = ({
   isLesson: boolean
 }): React.ReactElement => {
   const [isSmallScreen, isSmallLesson] = useSmallScreen()
-  const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
-  const { hideNavBar } = useApp()
+  const { hideNavBar, openLessons } = useApp()
+
+  const currentLessonSlug =
+    typeof window !== 'undefined' ? window.location.href.split('/').pop() : ''
 
   return (
     <Box
       minH="100vh"
-      paddingBottom={isSmallLesson && isLesson && openLessonLS ? '81px' : '0'}
+      paddingBottom={isSmallLesson && isLesson ? '81px' : '0'}
       bgColor="#161515"
       overflowX="hidden"
     >
@@ -52,10 +53,7 @@ const Layout = ({
         issmallscreen={isSmallScreen?.toString()}
         issmalllesson={isSmallLesson?.toString()}
         islesson={(
-          isLesson &&
-          JSON.parse(openLessonLS).includes(
-            document?.location.href.split('/').pop()
-          )
+          isLesson && openLessons.includes(currentLessonSlug)
         )?.toString()}
       >
         <main>{children}</main>

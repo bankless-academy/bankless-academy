@@ -11,6 +11,7 @@ import { ShareFat } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
+import { useApp } from 'contexts/AppContext'
 
 import { LessonType } from 'entities/lesson'
 import Lesson from 'components/Lesson'
@@ -49,12 +50,12 @@ const StyledCard = styled(Card)<{ issmallscreen?: string }>`
 // `
 
 const closeLesson = (
-  openedLesson: string,
+  openLessons: string[],
   lesson: LessonType,
   Quest,
-  toast
-): string => {
-  const openedLessonArray = JSON.parse(openedLesson)
+  toast,
+  setOpenLessons: (lessons: string[]) => void
+): void => {
   toast.closeAll()
   if (
     Quest?.isQuestCompleted &&
@@ -63,9 +64,8 @@ const closeLesson = (
     !(localStorage.getItem(`isBadgeMinted-${lesson.badgeId}`) === 'true')
   )
     scrollDown()
-  return JSON.stringify(
-    [...openedLessonArray, lesson.slug].filter((value) => value !== lesson.slug)
-  )
+
+  setOpenLessons(openLessons.filter((slug) => slug !== lesson.slug))
 }
 
 const quizComplete = (lesson: LessonType): boolean => {
@@ -96,6 +96,7 @@ const LessonDetail = ({
   extraKeywords?: any
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
+  const { openLessons, setOpenLessons } = useApp()
 
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
@@ -110,18 +111,13 @@ const LessonDetail = ({
     onClose: onShareClose,
   } = useDisclosure()
 
-  const [openLessonLS, setOpenLessonLS] = useLocalStorage(
-    `lessonOpen`,
-    JSON.stringify([])
-  )
-
   useEffect((): void => {
     Mixpanel.track('lesson_briefing', {
       lesson: lesson?.englishName,
       language: i18n.language,
     })
     scrollTop()
-    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
+    closeLesson(openLessons, lesson, Quest, toast, setOpenLessons)
   }, [])
 
   useEffect((): void => {
@@ -173,15 +169,15 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
   return (
     <>
-      {JSON.parse(openLessonLS)?.includes(lesson.slug) ? (
+      {openLessons.includes(lesson.slug) ? (
         <Lesson
           lesson={lesson}
           extraKeywords={extraKeywords}
           closeLesson={() =>
-            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
+            closeLesson(openLessons, lesson, Quest, toast, setOpenLessons)
           }
           Quest={Quest}
-          isLessonOpen={JSON.parse(openLessonLS)?.includes(lesson.slug)}
+          isLessonOpen={openLessons.includes(lesson.slug)}
         />
       ) : (
         <>

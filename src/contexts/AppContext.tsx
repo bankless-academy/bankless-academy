@@ -2,19 +2,29 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import i18next from 'i18next'
 
-interface AppContextType {
+export interface AppContextType {
   hideNavBar: boolean
-  setHideNavBar: (hide: boolean) => void
+  setHideNavBar: (value: boolean) => void
   language: string
-  setLanguage: (lang: string) => void
+  setLanguage: (value: string) => void
+  openLessons: string[]
+  setOpenLessons: (value: string[]) => void
   // Add more app-wide states here as needed
 }
 
-const AppContext = createContext<AppContextType | undefined>(undefined)
+export const AppContext = createContext<AppContextType>({
+  hideNavBar: false,
+  setHideNavBar: () => {},
+  language: 'en',
+  setLanguage: () => {},
+  openLessons: [],
+  setOpenLessons: () => {},
+})
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [hideNavBar, setHideNavBar] = useState(false)
   const [language, setLanguage] = useState('en')
+  const [openLessons, setOpenLessons] = useState<string[]>([])
   const router = useRouter()
 
   useEffect(() => {
@@ -33,6 +43,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       setLanguage(lang)
       i18next.changeLanguage(lang)
     },
+    openLessons,
+    setOpenLessons,
   }
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
