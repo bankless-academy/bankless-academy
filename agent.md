@@ -18,6 +18,42 @@ Target Audience:
 - **DAOs & decentralized communities**
 - **Community educators and Web3 advocates**
 
+# Platform Features
+
+Bankless Academy offers a comprehensive set of features designed to enhance the learning experience:
+
+## Learning Experience
+
+- **Interactive Lessons**: Engaging content with quizzes, simulations, and hands-on onchain exercises
+- **Progress Tracking**: Personal dashboard to monitor course completion and achievements - [View Your Profile](https://bankless.ac/profile)
+- **Achievement Badges**: Earn on-chain badges for completing lessons and demonstrating knowledge - [View Collection](https://opensea.io/collection/bankless-academy-badges) | [View Collection](https://dune.com/didierkrux/bankless-academy-badges)
+- **Self-Paced Learning**: Learn at your own speed with no time restrictions
+- **Mobile Optimization**: Access content seamlessly across all devices
+
+## Educational Content
+
+- **Multilingual Support**: Lessons available in multiple languages
+- **Visual Learning**: Rich graphics, animations, and interactive simulations
+- **Real-World Examples**: Practical demonstrations of blockchain concepts
+- **Up-to-Date Content**: Regular updates to reflect the latest developments in Web3
+
+## Community Features
+
+- **Community Discussions**: Join conversations and share experiences on [X (Twitter)](https://bankless.ac/twitter) or in our [Telegram Community](https://bankless.ac/community)
+- **Community Challenges**: Participate in educational activities and competitions
+- **Feedback System**: Provide input to help improve the platform
+- **Social Integration**: Share achievements and progress on social media
+
+## Technical Features
+
+- **Wallet Integration**: Connect your Web3 wallet to track progress and earn badges
+- **Layer 2 Support**: Optimized for cost-effective blockchain interactions
+- **Open Source**: Community-driven development and transparency - [View on GitHub](https://github.com/bankless-academy/bankless-academy)
+- **API Access**: Programmatic access to lesson content
+- **Analytics**: Public dashboard tracking badge distribution and platform metrics - [View on Dune](https://dune.com/didierkrux/bankless-academy-badges)
+
+These features work together to create an engaging, accessible, and effective learning environment for Web3 education.
+
 # Partnerships and Collaborations
 
 Bankless Academy collaborates with various organizations, DAOs, and educational institutions to enhance its offerings and reach. These partnerships help us provide a richer learning experience and expand our community. Some of our notable partners include:
@@ -50,6 +86,7 @@ Bankless Academy thrives on the active participation and contributions of its co
 
 - **Join Discussions**: Participate in our forums and social media channels to share your insights and learn from others.
 - **Contribute Content**: Help us expand our educational resources by contributing articles, tutorials, or lesson ideas.
+- **Contribute Code**: Help improve our platform by contributing to our [open-source codebase](https://github.com/bankless-academy/bankless-academy)
 - **Volunteer**: Offer your skills and expertise to support our projects and initiatives.
 - **Attend Events**: Join our webinars, workshops, and community meetups to connect with like-minded individuals.
 - **Feedback and Suggestions**: Share your thoughts on how we can improve our platform and offerings.
