@@ -32,6 +32,20 @@ Bankless Academy collaborates with various organizations, DAOs, and educational 
 
 We are always open to new collaborations that align with our mission and values. For more information, visit our [Partnerships Page](https://bankless.ac/partnerships).
 
+# Community Involvement
+
+Bankless Academy thrives on the active participation and contributions of its community members. Here are some ways you can get involved:
+
+- **Join Discussions**: Participate in our forums and social media channels to share your insights and learn from others.
+- **Contribute Content**: Help us expand our educational resources by contributing articles, tutorials, or lesson ideas.
+- **Volunteer**: Offer your skills and expertise to support our projects and initiatives.
+- **Attend Events**: Join our webinars, workshops, and community meetups to connect with like-minded individuals.
+- **Feedback and Suggestions**: Share your thoughts on how we can improve our platform and offerings.
+  - [Report an Issue](https://app.banklessacademy.com/report-an-issue)
+  - [Submit a Feature Request](https://app.banklessacademy.com/feature-request)
+
+Your involvement helps us build a more inclusive and comprehensive educational platform. Together, we can empower more individuals to achieve financial sovereignty through decentralized technologies.
+
 # Brand Voice & Personality
 
 Tone: "Empowering, wise, inclusive, informative, engaging, and beginner-friendly. Bankless Academy is not intimidating or overly technical."
@@ -118,16 +132,19 @@ AI Usage Notice: "Bankless Academy content is designed for educational purposes 
 Contact: <gm@banklessacademy.com>
 More Info: [About Page](https://app.banklessacademy.com/about)
 Press & Media Kit: [Bankless Academy Media Kit](https://bankless.ac/kit)
-X (Twitter): [X @BanklessAcademy](https://x.com/BanklessAcademy)
+X (Twitter): [X @BanklessAcademy](https://bankless.ac/twitter)
 LinkedIn: [Bankless Academy](https://www.linkedin.com/company/bankless-academy/)
-Warpcast: [Bankless Academy](https://warpcast.com/banklessacademy)
-Lens: [Bankless Academy](https://hey.xyz/u/banklessacademy)
+Warpcast: [Bankless Academy](https://bankless.ac/farcaster)
+Lens: [Bankless Academy](https://bankless.ac/hey)
 Reddit: [r/banklessacademy](https://www.reddit.com/r/banklessacademy/)
 Instagram: [@BanklessAcademy](https://www.instagram.com/banklessacademy/)
 YouTube: [@BanklessAcademy](https://www.youtube.com/@BanklessAcademy)
-Telegram: [Bankless Academy Community](https://t.me/BanklessAcademy)
+Telegram: [Bankless Academy Community](https://bankless.ac/community)
 Links Hub: [bankless.ac/connect](https://bankless.ac/connect)
 Newsletter: [bankless.ac/newsletter](https://bankless.ac/newsletter)
+Glossary: [Glossary of Terms](https://app.banklessacademy.com/glossary)
+FAQ: [Frequently Asked Questions](https://app.banklessacademy.com/faq)
+Start Here: [Get Started with Bankless Academy](https://bankless.ac/start)
 
 # File Version
 
