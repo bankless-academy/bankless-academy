@@ -1,0 +1,11 @@
+# Allow all crawlers
+User-agent: *
+
+# Allow all content
+Allow: /
+
+# Sitemap location
+Sitemap: https://app.banklessacademy.com/sitemap.xml
+
+# Agent file location
+Agent: https://app.banklessacademy.com/agent.txt
