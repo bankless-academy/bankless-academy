@@ -72,6 +72,10 @@
   ],
   "rewrites": [
     {
+      "source": "/agent.txt",
+      "destination": "/api/agent"
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "/api/sitemap"
     },
