@@ -1,41 +1,11 @@
-# Bankless Academy
+# Bankless Academy Developer Documentation
 
-Bankless Academy is a free, open-source, and multilingual educational platform designed to onboard individuals into the world of Web3, DeFi, DAOs, and decentralized finance through interactive, gamified learning experiences.
-
-## Mission
-
-To empower individuals with the knowledge and tools to achieve financial sovereignty through decentralized technologies.
+This document contains technical information and setup instructions for developers who want to contribute to Bankless Academy. For general information about the platform, please refer to our [README](./README.md).
 
 ## Project Links
 
-- [Press & Media Kit](https://bankless.ac/kit): About Bankless Academy, Brand Assets, Team, Official Links and Press Links.
-- [Whitelabel](https://whitelabel.banklessacademy.com/): Build your own web3 educational platform in no time by leveraging Bankless Academy's infrastructure.
 - [Documentation](https://documentation.banklessacademy.com/): Understand how you can integrate Bankless Academy to your website.
-- [FAQ](https://app.banklessacademy.com/faq): Frequently Asked Questions about Bankless Academy.
-- [Sponsor](https://sponsors.banklessacademy.com/): Sponsor a Bankless Academy lesson.
-- [Gitcoin Grant](https://grants.gitcoin.co/): Donate on Gitcoin Grant to support the project.
 - [Dework](https://app.dework.xyz/bankless-academy-25331): Check for open tasks to help us improve Bankless Academy.
-- [Jobs](https://talent.banklessacademy.com/): Open job positions.
-
-## Platform Features
-
-- **Interactive Lessons**: Engaging content with quizzes, simulations, and hands-on onchain exercises
-- **Progress Tracking**: Personal dashboard to monitor course completion and achievements
-- **Achievement Badges**: Earn on-chain badges for completing lessons
-- **Multilingual Support**: Lessons available in multiple languages
-- **Mobile Optimization**: Access content seamlessly across all devices
-
-## Community & Social
-
-- [X (Twitter)](https://bankless.ac/twitter)
-- [Telegram Community](https://bankless.ac/community)
-- [LinkedIn](https://www.linkedin.com/company/bankless-academy/)
-- [Warpcast](https://bankless.ac/farcaster)
-- [Lens](https://bankless.ac/hey)
-- [Reddit](https://www.reddit.com/r/banklessacademy/)
-- [Instagram](https://www.instagram.com/banklessacademy/)
-- [YouTube](https://www.youtube.com/@BanklessAcademy)
-- [Newsletter](https://bankless.ac/newsletter)
 
 ## Tech Stack
 
@@ -53,10 +23,6 @@ To empower individuals with the knowledge and tools to achieve financial soverei
 - Linting with [ESLint](https://eslint.org/)
 - Formatting with [Prettier](https://prettier.io/)
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-
-### Integrations
-
-- [Human Passport](https://passport.human.tech/) for Sybil protection with proof of personhood verification
 
 ## Local Development
 
@@ -114,61 +80,63 @@ We save the encrypted account username associated with each Passport stamp to de
 Heatmap recording via [hotjar.com](https://hotjar.com)
 This helps us understand how a user interacts with the product in order to improve the user experience.
 
-## How to import content from Notion
+## Content Management
 
-### Where to update the content
+### How to import content from Notion
+
+#### Where to update the content
 
 [https://banklessacademy.notion.site/129141602de240e484356bd85f7c75e0](https://banklessacademy.notion.site/129141602de240e484356bd85f7c75e0)
 
-### Default content import command
+#### Default content import command
 
 ```bash
 yarn import-content
 ```
 
-### Show import command help
+#### Show import command help
 
 ```bash
 yarn import-content -h
 ```
 
-### Import content with a specific Notion ID
+#### Import content with a specific Notion ID
 
 ```bash
 yarn import-content -nid 129141602de240e484356bd85f7c75e0
 ```
 
-### Import all translations for a specific lesson
+#### Import all translations for a specific lesson
 
 ```bash
 yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -lg all
 ```
 
-### Import a translation for a specific lesson
+#### Import a translation for a specific lesson
 
 ```bash
 yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -lg fr
 ```
 
-### How does it work
+#### How does it work
 
 The [import script](https://github.com/bankless-academy/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/bankless-academy/potion](https://github.com/bankless-academy/potion) and transforms the content into [this Object](https://github.com/bankless-academy/bankless-academy/blob/main/src/constants/lessons.ts).
 
-## How to import keywords definitions from Notion
+### How to import keywords definitions from Notion
 
 Note: import keywords before importing content.
 
-### Where to update the keywords
+#### Where to update the keywords
 
 [https://banklessacademy.notion.site/d452559560a447169e10f2d3c6ee5288](https://banklessacademy.notion.site/d452559560a447169e10f2d3c6ee5288)
 
-### Default keywords import command
+#### Default keywords import command
 
 ```bash
 yarn import-keywords
 ```
 
-### Import keywords with a specific Notion ID
+#### Import keywords with a specific Notion ID
 
 ```bash
 yarn import-keywords d452559560a447169e10f2d3c6ee5288
@@ -176,37 +144,7 @@ yarn import-keywords d452559560a447169e10f2d3c6ee5288
 
 ## How to get started for devs
 
-- Get familiar with the project
-- Check [open issues](https://github.com/bankless-academy/bankless-academy/issues) and assign yourself
-- Create and submit a PR
-- Assign [@didierkrux](https://github.com/didierkrux) as reviewers
-
-## Partnerships
-
-Bankless Academy collaborates with leading Web3 organizations including:
-
-- **Optimism**: Layer 2 scaling solutions
-- **Zerion**: Wallet integration
-- **Rocket Pool**: Decentralized staking education
-- **1inch**: DEX aggregation insights
-- **Gitcoin**: Grants support
-- **Human Passport**: Sybil resistance and proof of personhood verification
-- **Glo Dollar**: The stablecoin that funds public goods
-
-## Core Values
-
-- **Decentralization**: Empowering individuals through decentralized technologies
-- **Inclusivity**: Open platform welcoming all experience levels
-- **Open-Source Collaboration**: Encouraging community innovation
-- **Education and Empowerment**: Providing high-quality resources for financial sovereignty
-- **Integrity and Transparency**: Operating with trust and openness
-
-## Support
-
-If you believe in our mission, you can support Bankless Academy by donating to our Ethereum address: banklessacademy.eth (0xe1887fF140BfA9D3b45D0B2077b7471124acD242)
-
-## Contact
-
-- Links Hub: [bankless.ac/connect](https://bankless.ac/connect)
-- Report Issues: [app.banklessacademy.com/report-an-issue](https://app.banklessacademy.com/report-an-issue)
-- Feature Requests: [app.banklessacademy.com/feature-request](https://app.banklessacademy.com/feature-request)
+1. Get familiar with the project by reading the [README](./README.md)
+2. Check [open issues](https://github.com/bankless-academy/bankless-academy/issues) and assign yourself
+3. Create and submit a PR
+4. Assign [@didierkrux](https://github.com/didierkrux) as reviewers
