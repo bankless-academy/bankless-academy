@@ -11,6 +11,8 @@ export interface LessonType {
   englishName: string
   slug: string
   notionId: string
+  lessonLinks?: { [key in LanguageType]?: string }
+  rawContentFiles?: { [key in LanguageType]?: string }
   badgeId?: number
   datadiskVectorMint?: number
   collectibleId?: string
