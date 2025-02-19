@@ -1,15 +1,41 @@
 # Bankless Academy
 
+Bankless Academy is a free, open-source, and multilingual educational platform designed to onboard individuals into the world of Web3, DeFi, DAOs, and decentralized finance through interactive, gamified learning experiences.
+
+## Mission
+
+To empower individuals with the knowledge and tools to achieve financial sovereignty through decentralized technologies.
+
 ## Project Links
 
 - [Press & Media Kit](https://bankless.ac/kit): About Bankless Academy, Brand Assets, Team, Official Links and Press Links.
-- [Whitelabel](https://whitelabel.banklessacademy.com/): Build your own web3 educational platform in no time by leveraging Bankless Academy’s infrastructure.
+- [Whitelabel](https://whitelabel.banklessacademy.com/): Build your own web3 educational platform in no time by leveraging Bankless Academy's infrastructure.
 - [Documentation](https://documentation.banklessacademy.com/): Understand how you can integrate Bankless Academy to your website.
 - [FAQ](https://app.banklessacademy.com/faq): Frequently Asked Questions about Bankless Academy.
 - [Sponsor](https://sponsors.banklessacademy.com/): Sponsor a Bankless Academy lesson.
 - [Gitcoin Grant](https://grants.gitcoin.co/): Donate on Gitcoin Grant to support the project.
 - [Dework](https://app.dework.xyz/bankless-academy-25331): Check for open tasks to help us improve Bankless Academy.
 - [Jobs](https://talent.banklessacademy.com/): Open job positions.
+
+## Platform Features
+
+- **Interactive Lessons**: Engaging content with quizzes, simulations, and hands-on onchain exercises
+- **Progress Tracking**: Personal dashboard to monitor course completion and achievements
+- **Achievement Badges**: Earn on-chain badges for completing lessons
+- **Multilingual Support**: Lessons available in multiple languages
+- **Mobile Optimization**: Access content seamlessly across all devices
+
+## Community & Social
+
+- [X (Twitter)](https://bankless.ac/twitter)
+- [Telegram Community](https://bankless.ac/community)
+- [LinkedIn](https://www.linkedin.com/company/bankless-academy/)
+- [Warpcast](https://bankless.ac/farcaster)
+- [Lens](https://bankless.ac/hey)
+- [Reddit](https://www.reddit.com/r/banklessacademy/)
+- [Instagram](https://www.instagram.com/banklessacademy/)
+- [YouTube](https://www.youtube.com/@BanklessAcademy)
+- [Newsletter](https://bankless.ac/newsletter)
 
 ## Tech Stack
 
@@ -18,8 +44,8 @@
 - [Next.js](https://nextjs.org/docs)
 - [Chakra UI](https://chakra-ui.com/docs/getting-started) (includes [@emotion/styled](https://emotion.sh/docs/styled), which works like [Styled Components](https://styled-components.com/docs/basics))
 - [wagmi](https://github.com/wagmi-dev/wagmi)
-- [Web3Modal](https://github.com/WalletConnect/web3modal)
-- [Ethers](https://www.npmjs.com/package/ethers)
+- [reown](https://reown.eth)
+- [viem](https://viem.sh)
 
 ### Configured with
 
@@ -27,11 +53,10 @@
 - Linting with [ESLint](https://eslint.org/)
 - Formatting with [Prettier](https://prettier.io/)
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-- Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
 
 ### Integrations
 
-- [Gitcoin Passport](https://docs.passport.gitcoin.co/) for Sybil protection for lesson badges
+- [Human Passport](https://passport.human.tech/) for Sybil protection with proof of personhood verification
 
 ## Local Development
 
@@ -82,7 +107,7 @@ User interactions tracked in the app:
 
 ### Gitcoin Passport
 
-We save the encrypted account username associated with each Passport stamp associated with an address to be able to detect Sybils.
+We save the encrypted account username associated with each Passport stamp to detect Sybils. Human Passport provides 35M+ verifiable credentials and helps protect against bots and bad actors.
 
 ### Hotjar
 
@@ -155,3 +180,33 @@ yarn import-keywords d452559560a447169e10f2d3c6ee5288
 - Check [open issues](https://github.com/bankless-academy/bankless-academy/issues) and assign yourself
 - Create and submit a PR
 - Assign [@didierkrux](https://github.com/didierkrux) as reviewers
+
+## Partnerships
+
+Bankless Academy collaborates with leading Web3 organizations including:
+
+- **Optimism**: Layer 2 scaling solutions
+- **Zerion**: Wallet integration
+- **Rocket Pool**: Decentralized staking education
+- **1inch**: DEX aggregation insights
+- **Gitcoin**: Grants support
+- **Human Passport**: Sybil resistance and proof of personhood verification
+- **Glo Dollar**: The stablecoin that funds public goods
+
+## Core Values
+
+- **Decentralization**: Empowering individuals through decentralized technologies
+- **Inclusivity**: Open platform welcoming all experience levels
+- **Open-Source Collaboration**: Encouraging community innovation
+- **Education and Empowerment**: Providing high-quality resources for financial sovereignty
+- **Integrity and Transparency**: Operating with trust and openness
+
+## Support
+
+If you believe in our mission, you can support Bankless Academy by donating to our Ethereum address: banklessacademy.eth (0xe1887fF140BfA9D3b45D0B2077b7471124acD242)
+
+## Contact
+
+- Links Hub: [bankless.ac/connect](https://bankless.ac/connect)
+- Report Issues: [app.banklessacademy.com/report-an-issue](https://app.banklessacademy.com/report-an-issue)
+- Feature Requests: [app.banklessacademy.com/feature-request](https://app.banklessacademy.com/feature-request)

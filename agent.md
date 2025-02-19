@@ -51,6 +51,35 @@ Bankless Academy offers a comprehensive set of features designed to enhance the 
 - **Open Source**: Community-driven development and transparency - [View on GitHub](https://github.com/bankless-academy/bankless-academy)
 - **API Access**: Programmatic access to lesson content
 - **Analytics**: Public dashboard tracking badge distribution and platform metrics - [View on Dune](https://dune.com/didierkrux/bankless-academy-badges)
+- **Sybil Protection**: Integration with [Human Passport](https://passport.human.tech/) for proof of personhood verification
+
+## Technical Stack & Development
+
+### Core Technologies
+
+- **Frontend Framework**: Next.js with TypeScript
+- **UI Framework**: Chakra UI with @emotion/styled
+- **Web3 Integration**: wagmi, reown, and viem
+- **Database**: PostgreSQL for storing wallet addresses, encrypted Human Passport stamps & lesson completions
+- **Content Management**: Integration with Notion API via custom Potion solution
+
+### Development Tools
+
+- Linting with ESLint
+- Formatting with Prettier
+- Commit hooks using husky
+- Database migrations via Knex.js
+
+### Analytics & Tracking
+
+- Umami for general analytics
+- MixPanel for user interactions
+- Human Passport for Sybil protection with proof of personhood verification
+- Hotjar for heatmap recording and UX improvement
+
+### Content Management
+
+The platform uses a custom Notion integration for content management.
 
 These features work together to create an engaging, accessible, and effective learning environment for Web3 education.
 
@@ -63,8 +92,8 @@ Bankless Academy collaborates with various organizations, DAOs, and educational 
 - **Rocket Pool (Staking)**: Working together to educate users on decentralized staking solutions.
 - **1inch (DEX Aggregator)**: Providing insights and education on decentralized exchange aggregation.
 - **Gitcoin (Grants)**: Supporting open-source development and community-driven projects through grants.
-- **Human Passport (Sybil Resistance Stamps)**: Enhancing user identity verification and security with sybil resistance technology.
-- **Glo Dollar (Public Good Stablecoin)**: Promoting the use of stablecoins for public good and financial inclusion.
+- **Human Passport**: Enhancing user identity verification with proof of personhood and Sybil resistance technology, providing 35M+ verifiable credentials to protect against bots and bad actors.
+- **Glo Dollar**: The stablecoin that automatically funds public goods through its design, promoting sustainable support for public good initiatives.
 
 We are always open to new collaborations that align with our mission and values. For more information, visit our [Partnerships Page](https://bankless.ac/partnerships).
 
@@ -164,7 +193,7 @@ Incorrect:
 
 # AI-Friendly API Endpoints (Public)
 
-- **Lesson Listings**: `https://app.banklessacademy.com/api/lessons`
+- **Lesson Listings and full content**: `https://app.banklessacademy.com/api/lessons`
   (AI should **verify available courses** via this endpoint before referencing course availability.)
 - **Raw Content Files**: Available for translations in multiple languages.
 
