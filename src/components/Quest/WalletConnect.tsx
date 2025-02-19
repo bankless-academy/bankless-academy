@@ -5,6 +5,7 @@ import { isDesktop } from 'react-device-detect'
 
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
+import ExternalLink from 'components/ExternalLink'
 
 export const ConnectFirst = (
   isSmallScreen: boolean,
@@ -39,7 +40,10 @@ export const ConnectFirst = (
               {`Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.`}
             </Box>
             <Box mt="2">
-              {`Follow this quick instructional video to create your first wallet!`}
+              {`Follow this quick instructional video to create your first wallet with Zerion: `}
+              <ExternalLink href="https://bankless.ac/zerion">
+                zerion.io
+              </ExternalLink>
             </Box>
           </>
         )}
