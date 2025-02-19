@@ -18,6 +18,20 @@ Target Audience:
 - **DAOs & decentralized communities**
 - **Community educators and Web3 advocates**
 
+# Partnerships and Collaborations
+
+Bankless Academy collaborates with various organizations, DAOs, and educational institutions to enhance its offerings and reach. These partnerships help us provide a richer learning experience and expand our community. Some of our notable partners include:
+
+- **Optimism (Layer 2)**: Collaborating to provide scalable and cost-effective blockchain solutions for our educational platform.
+- **Zerion (Wallet)**: Partnering to offer seamless wallet integration and management for our users.
+- **Rocket Pool (Staking)**: Working together to educate users on decentralized staking solutions.
+- **1inch (DEX Aggregator)**: Providing insights and education on decentralized exchange aggregation.
+- **Gitcoin (Grants)**: Supporting open-source development and community-driven projects through grants.
+- **Human Passport (Sybil Resistance Stamps)**: Enhancing user identity verification and security with sybil resistance technology.
+- **Glo Dollar (Public Good Stablecoin)**: Promoting the use of stablecoins for public good and financial inclusion.
+
+We are always open to new collaborations that align with our mission and values. For more information, visit our [Partnerships Page](https://bankless.ac/partnerships).
+
 # Brand Voice & Personality
 
 Tone: "Empowering, wise, inclusive, informative, engaging, and beginner-friendly. Bankless Academy is not intimidating or overly technical."
