@@ -207,6 +207,7 @@ const columns = [
 const Leaderboard = (): JSX.Element => {
   const [leaderboard, setLeaderboard]: any = useState(null)
   const [communities, setCommunities]: any = useState(null)
+  const [communityReferrals, setCommunityReferrals]: any = useState(null)
   const [fetchedAt, setFetchedAt]: any = useState(null)
   const router = useRouter()
   const [isLoadingCommunities, setIsLoadingCommunities] = useState(false)
@@ -283,6 +284,16 @@ const Leaderboard = (): JSX.Element => {
         console.error('Error fetching communities:', error)
       })
 
+    // Fetch community referrals
+    axios
+      .get(`/api/get/community-referrals`)
+      .then((res) => {
+        setCommunityReferrals(res.data.communityReferrals)
+      })
+      .catch((error) => {
+        console.error('Error fetching community referrals:', error)
+      })
+
     // Fetch monthly referrals
     axios
       .get(`/api/get/monthly-referrals?monthYear=${selectedMonth}`)
@@ -347,7 +358,13 @@ const Leaderboard = (): JSX.Element => {
     }
   })
 
-  if (leaderboard && communities && fetchedAt && !isLoadingCommunities)
+  if (
+    leaderboard &&
+    communities &&
+    communityReferrals &&
+    fetchedAt &&
+    !isLoadingCommunities
+  )
     return (
       <Container maxW="container.xxl">
         <Box mb={10} mt={4}>
@@ -405,6 +422,61 @@ const Leaderboard = (): JSX.Element => {
                             </React.Fragment>
                           )),
                       ]}
+                    </Text>
+                  </Td>
+                </Tr>
+              ))}
+            </Tbody>
+          </Table>
+        </Box>
+
+        <Box mb={10} mt={4}>
+          <Heading as="h2" size="lg" mb={4} textAlign="center">
+            Community Referral Leaderboard
+          </Heading>
+          <Table variant="simple">
+            <Thead>
+              <Tr>
+                <Th>Rank</Th>
+                <Th>Community</Th>
+                <Th>Total Referrals</Th>
+                <Th>Top Referrers</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {communityReferrals.map((community: any, index: number) => (
+                <Tr key={community.community}>
+                  <Td>#{index + 1}</Td>
+                  <Td>{community.community}</Td>
+                  <Td>{community.total_referrals}</Td>
+                  <Td>
+                    <Text>
+                      {community.members
+                        .filter((member: any) => member.referrals > 0)
+                        .sort((a: any, b: any) => b.referrals - a.referrals)
+                        .slice(0, 5)
+                        .map((member: any, index: number) => (
+                          <React.Fragment key={member.address}>
+                            {index > 0 && ', '}
+                            <InternalLink
+                              href={`/explorer/${
+                                member.ens_name || member.address
+                              }`}
+                              display="inline"
+                            >
+                              <Text
+                                as="span"
+                                color={member.ens_name ? undefined : 'blue.500'}
+                              >
+                                {member.ens_name ||
+                                  shortenAddress(member.address)}
+                              </Text>
+                            </InternalLink>
+                            <Text as="span" color="gray.500" fontSize="sm">
+                              {` (${member.referrals})`}
+                            </Text>
+                          </React.Fragment>
+                        ))}
                     </Text>
                   </Td>
                 </Tr>
