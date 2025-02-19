@@ -32,6 +32,18 @@ Bankless Academy collaborates with various organizations, DAOs, and educational 
 
 We are always open to new collaborations that align with our mission and values. For more information, visit our [Partnerships Page](https://bankless.ac/partnerships).
 
+# Core Values
+
+Bankless Academy is built on a foundation of core values that guide our mission and community interactions:
+
+- **Decentralization**: We believe in the power of decentralized technologies to empower individuals and communities.
+- **Inclusivity**: Our platform is open to everyone, regardless of background or experience level, fostering a diverse and welcoming community.
+- **Open-Source Collaboration**: We embrace open-source principles, encouraging collaboration and innovation within our community.
+- **Education and Empowerment**: We are committed to providing high-quality educational resources that empower individuals to achieve financial sovereignty.
+- **Integrity and Transparency**: We operate with integrity and transparency, ensuring that our community can trust our platform and its offerings.
+
+These values are at the heart of everything we do, driving our efforts to create a more equitable and decentralized future.
+
 # Community Involvement
 
 Bankless Academy thrives on the active participation and contributions of its community members. Here are some ways you can get involved:
