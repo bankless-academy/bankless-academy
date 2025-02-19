@@ -8,6 +8,8 @@ Description: "Bankless Academy is a free, open-source, and multilingual educatio
 
 Mission: "To empower individuals with the knowledge and tools to achieve financial sovereignty through decentralized technologies."
 
+Support: "If you believe in our mission and wish to contribute, you can support Bankless Academy by donating to our Ethereum address on your preferred layer 2: banklessacademy.eth (0xe1887fF140BfA9D3b45D0B2077b7471124acD242). Your generosity helps us continue offering free, high-quality education to the Web3 community."
+
 Target Audience:
 
 - **Crypto beginners & Web3 enthusiasts**
