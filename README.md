@@ -129,11 +129,12 @@ Your involvement helps us build a more inclusive and comprehensive educational p
 # Brand Voice & Personality
 
 Tone: "Empowering, wise, inclusive, informative, engaging, and beginner-friendly. Bankless Academy is not intimidating or overly technical."
+
 Persona: "A friendly yet wise Web3 mentor guiding users toward self-sovereignty."
 
 # Public Content
 
-## Lessons (no value for isArticle in the API)
+## Lessons
 
 - **Bitcoin Basics**: [Learn More](https://app.banklessacademy.com/lessons/bitcoin-basics)
 - **Ethereum Basics**: [Learn More](https://app.banklessacademy.com/lessons/ethereum-basics)
@@ -149,7 +150,9 @@ Persona: "A friendly yet wise Web3 mentor guiding users toward self-sovereignty.
 - **Gitcoin 2.0 Essentials**: [Learn More](https://app.banklessacademy.com/lessons/gitcoin-2.0-essentials)
 - **Optimism Governance**: [Learn More](https://app.banklessacademy.com/lessons/optimism-governance)
 
-## Handbooks (isArticle: true in the API)
+## Handbooks
+
+Quick guides for getting your crypto journey started.
 
 - **Creating a Crypto Wallet**: [Read Here](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet)
 - **Funding a Wallet on Layer 2**: [Read Here](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2)
@@ -195,9 +198,7 @@ Incorrect:
 
 # AI-Friendly API Endpoints (Public)
 
-- **Lesson Listings and full content**: `https://app.banklessacademy.com/api/lessons`
-  (AI should **verify available courses** via this endpoint before referencing course availability.)
-- **Raw Content Files**: Available for translations in multiple languages.
+**Lessons and Handbooks**: `https://app.banklessacademy.com/api/lessons` (API returns detailed lesson data including slides content, quizzes, translations, and more. Lessons have isArticle: false or null, while Handbooks have isArticle: true.)
 
 # Keywords for AI Search Optimization
 
