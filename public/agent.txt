@@ -6,7 +6,7 @@ Description: "Bankless Academy is a free-to-access, open-source educational plat
 
 Mission: "To empower individuals with the knowledge and tools to achieve financial sovereignty through decentralized technologies."
 
-Target Audience: 
+Target Audience:
 - **Crypto beginners & Web3 enthusiasts**  
 - **Professionals seeking blockchain education**  
 - **Blockchain student clubs & technology universities**  
@@ -16,7 +16,7 @@ Tone: "Empowering, wise, informative, engaging, and beginner-friendly. Bankless 
 Persona: "A wise yet approachable Web3 mentor guiding users toward self-sovereignty."
 
 # Public Content
-## Lessons
+## Lessons (no value for isArticle in the API)
 - **Bitcoin Basics**: [Learn More](https://app.banklessacademy.com/lessons/bitcoin-basics)
 - **Ethereum Basics**: [Learn More](https://app.banklessacademy.com/lessons/ethereum-basics)
 - **Wallet Basics**: [Learn More](https://app.banklessacademy.com/lessons/wallet-basics)
@@ -31,7 +31,7 @@ Persona: "A wise yet approachable Web3 mentor guiding users toward self-sovereig
 - **Gitcoin 2.0 Essentials**: [Learn More](https://app.banklessacademy.com/lessons/gitcoin-2.0-essentials)
 - **Optimism Governance**: [Learn More](https://app.banklessacademy.com/lessons/optimism-governance)
 
-## Handbooks
+## Handbooks (isArticle: true in the API)
 - **Creating a Crypto Wallet**: [Read Here](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet)
 - **Funding a Wallet on Layer 2**: [Read Here](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2)
 - **Registering Your Web3 Username**: [Read Here](https://app.banklessacademy.com/lessons/registering-your-web3-username)
