@@ -5,16 +5,15 @@ This document contains technical information and setup instructions for develope
 ## Project Links
 
 - [Documentation](https://documentation.banklessacademy.com/): Understand how you can integrate Bankless Academy to your website.
-- [Dework](https://app.dework.xyz/bankless-academy-25331): Check for open tasks to help us improve Bankless Academy.
 
 ## Tech Stack
 
 ### Bootstrapped with
 
 - [Next.js](https://nextjs.org/docs)
-- [Chakra UI](https://chakra-ui.com/docs/getting-started) (includes [@emotion/styled](https://emotion.sh/docs/styled), which works like [Styled Components](https://styled-components.com/docs/basics))
-- [wagmi](https://github.com/wagmi-dev/wagmi)
-- [reown](https://reown.eth)
+- [Chakra UI v2](https://v2.chakra-ui.com/getting-started) (includes [@emotion/styled](https://emotion.sh/docs/styled), which works like [Styled Components](https://styled-components.com/docs/basics))
+- [wagmi](https://wagmi.sh/)
+- [reown](https://docs.reown.com/appkit/overview)
 - [viem](https://viem.sh)
 
 ### Configured with

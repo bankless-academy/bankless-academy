@@ -55,7 +55,7 @@ Bankless Academy offers a comprehensive set of features designed to enhance the 
 
 ## Technical Stack & Development
 
-For developers interested in contributing to Bankless Academy, please refer to our [Developer Documentation](./DEV.md).
+For developers interested in contributing to Bankless Academy, please refer to our [Contributing Guide](./CONTRIBUTING.md).
 
 ### Core Technologies
 
