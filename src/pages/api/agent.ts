@@ -7,7 +7,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const filePath = path.join(process.cwd(), 'agent.md')
+    const filePath = path.join(process.cwd(), 'README.md')
     const fileContent = fs.readFileSync(filePath, 'utf8')
 
     res.setHeader('Content-Type', 'text/plain')

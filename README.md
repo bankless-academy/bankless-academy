@@ -1,6 +1,6 @@
 # Bankless Academy
 
-This [agent.txt](https://app.banklessacademy.com/agent.txt) file provides structured information for AI agents to generate accurate and useful content about Bankless Academy
+This document provides structured information about Bankless Academy, including platform features, technical details, and guidelines for AI agents to generate accurate and useful content.
 
 # Platform Overview
 
@@ -55,6 +55,8 @@ Bankless Academy offers a comprehensive set of features designed to enhance the 
 
 ## Technical Stack & Development
 
+For developers interested in contributing to Bankless Academy, please refer to our [Developer Documentation](./DEV.md).
+
 ### Core Technologies
 
 - **Frontend Framework**: Next.js with TypeScript
@@ -79,7 +81,7 @@ Bankless Academy offers a comprehensive set of features designed to enhance the 
 
 ### Content Management
 
-The platform uses a custom Notion integration for content management.
+The platform uses a custom Notion integration for content management, with content being imported through a custom unofficial Notion API called Potion.
 
 These features work together to create an engaging, accessible, and effective learning environment for Web3 education.
 
@@ -207,22 +209,23 @@ AI Usage Notice: "Bankless Academy content is designed for educational purposes 
 
 # Contact & Further Resources
 
-Contact: <gm@banklessacademy.com>
-More Info: [About Page](https://app.banklessacademy.com/about)
-Press & Media Kit: [Bankless Academy Media Kit](https://bankless.ac/kit)
-X (Twitter): [X @BanklessAcademy](https://bankless.ac/twitter)
-LinkedIn: [Bankless Academy](https://www.linkedin.com/company/bankless-academy/)
-Warpcast: [Bankless Academy](https://bankless.ac/farcaster)
-Lens: [Bankless Academy](https://bankless.ac/hey)
-Reddit: [r/banklessacademy](https://www.reddit.com/r/banklessacademy/)
-Instagram: [@BanklessAcademy](https://www.instagram.com/banklessacademy/)
-YouTube: [@BanklessAcademy](https://www.youtube.com/@BanklessAcademy)
-Telegram: [Bankless Academy Community](https://bankless.ac/community)
-Links Hub: [bankless.ac/connect](https://bankless.ac/connect)
-Newsletter: [bankless.ac/newsletter](https://bankless.ac/newsletter)
-Glossary: [Glossary of Terms](https://app.banklessacademy.com/glossary)
-FAQ: [Frequently Asked Questions](https://app.banklessacademy.com/faq)
-Start Here: [Get Started with Bankless Academy](https://bankless.ac/start)
+- Contact: <gm@banklessacademy.com>
+- More Info: [About Page](https://app.banklessacademy.com/about)
+- Press & Media Kit: [Bankless Academy Media Kit](https://bankless.ac/kit)
+- X (Twitter): [X @BanklessAcademy](https://bankless.ac/twitter)
+- LinkedIn: [Bankless Academy](https://www.linkedin.com/company/bankless-academy/)
+- Warpcast: [Bankless Academy](https://bankless.ac/farcaster)
+- Lens: [Bankless Academy](https://bankless.ac/hey)
+- Reddit: [r/banklessacademy](https://www.reddit.com/r/banklessacademy/)
+- Instagram: [@BanklessAcademy](https://www.instagram.com/banklessacademy/)
+- YouTube: [@BanklessAcademy](https://www.youtube.com/@BanklessAcademy)
+- Telegram: [Bankless Academy Community](https://bankless.ac/community)
+- Links Hub: [bankless.ac/connect](https://bankless.ac/connect)
+- Newsletter: [bankless.ac/newsletter](https://bankless.ac/newsletter)
+- Glossary: [Glossary of Terms](https://app.banklessacademy.com/glossary)
+- Explore Apps: [Explore best apps for your crypto journey](https://app.banklessacademy.com/explore)
+- FAQ: [Frequently Asked Questions](https://app.banklessacademy.com/faq)
+- Start Here: [Get Started with Bankless Academy](https://bankless.ac/start)
 
 # File Version
 
