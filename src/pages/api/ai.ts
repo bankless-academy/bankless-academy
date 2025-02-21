@@ -1,6 +1,25 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next';
 
+// API Configuration
+const GROK_API_URL = "https://api.x.ai/v1/chat/completions";
+const HF_API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2";
+
+type ModelType = 'grok' | 'huggingface';
+
+interface GrokResponse {
+  choices: [{
+    message: {
+      content: string;
+    }
+  }];
+  usage: {
+    prompt_tokens: number;
+    completion_tokens: number;
+    total_tokens: number;
+  };
+}
+
 interface HuggingFaceResponse {
   generated_text: string;
 }
@@ -54,13 +73,12 @@ setInterval(() => {
 
 // API key validation
 const API_KEY = process.env.HUGGINGFACE_API_KEY;
+const GROK_API_KEY = process.env.GROK_API_KEY;
 
 function isValidApiKey(req: NextApiRequest): boolean {
   const apiKey = req.headers['x-api-key'] || req.query.apiKey;
-  return apiKey === API_KEY;
+  return apiKey === API_KEY || apiKey === GROK_API_KEY;
 }
-
-const HF_API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2";
 
 const LESSONS_DATA: Record<string, string> = {
   "Bitcoin Basics": "https://app.banklessacademy.com/lessons/bitcoin-basics",
@@ -232,13 +250,129 @@ async function queryHuggingFace(prompt: string): Promise<FormattedResponse> {
   }
 }
 
+async function queryGrok(prompt: string): Promise<FormattedResponse> {
+  const startTime = Date.now();
+  const normalizedPrompt = prompt.toLowerCase().trim();
+
+  // Check cache first
+  const cachedEntry = responseCache.get(normalizedPrompt);
+  if (cachedEntry && Date.now() - cachedEntry.timestamp <= CACHE_DURATION) {
+    console.log('Cache hit for prompt:', normalizedPrompt);
+    totalCacheHits++;
+    return {
+      ...cachedEntry.response,
+      usage: {
+        ...cachedEntry.response.usage,
+        cached: true,
+        responseTime: Date.now() - startTime
+      }
+    };
+  }
+
+  totalApiCalls++;
+
+  const availableLessons = Object.keys(LESSONS_DATA).join(', ');
+  const systemPrompt = 'You are a helpful assistant for Bankless Academy, focused only on crypto, blockchain, and web3 topics. ' +
+    'For non-crypto related questions, reply with "I can only help with crypto, blockchain, and web3 related topics." ' +
+    'For crypto questions, you MUST follow this format exactly:\n' +
+    '1. First line: A brief explanation\n' +
+    '2. Second line: Empty line\n' +
+    '3. Third line: ONE exact lesson name from the provided list\n' +
+    'IMPORTANT: The lesson name must match EXACTLY with one from the list - no variations allowed.';
+
+  const userPrompt = `Question: ${prompt}\n\n` +
+    `Available lessons names:\n${availableLessons}\n\n` +
+    'Required format:\n' +
+    '<brief explanation>\n\n' +
+    '<lesson name>';
+
+  const promptTokens = countTokens(systemPrompt + userPrompt);
+  console.log('Cache miss, querying Grok for prompt:', normalizedPrompt, '(tokens:', promptTokens, ')');
+
+  try {
+    const response = await fetch(GROK_API_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${GROK_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: "grok-2-latest",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt }
+        ],
+        max_tokens: 80,
+        temperature: 0.3
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Grok API error:', {
+        status: response.status,
+        statusText: response.statusText,
+        error: errorText
+      });
+      throw new Error(`API Error: ${response.status} - ${errorText}`);
+    }
+
+    const data: GrokResponse = await response.json();
+    const aiResponse = data.choices[0].message.content.trim();
+    const completionTokens = data.usage.completion_tokens;
+    const totalTokens = data.usage.total_tokens;
+
+    totalTokensUsed += totalTokens;
+
+    console.log('AI Response:', aiResponse, '(tokens:', completionTokens, ')');
+
+    const parts = aiResponse.split('\n\n');
+
+    const responseTime = Date.now() - startTime;
+    totalResponseTime += responseTime;
+    avgResponseTime = totalResponseTime / (totalApiCalls + totalCacheHits);
+
+    const formattedResponse: FormattedResponse = {
+      answer: parts[0].trim(),
+      usage: {
+        promptTokens,
+        completionTokens,
+        totalTokens,
+        cached: false,
+        responseTime
+      }
+    };
+
+    if (parts.length >= 2) {
+      const lessonName = parts[1].trim();
+      if (lessonName in LESSONS_DATA) {
+        formattedResponse.lessonName = lessonName;
+        formattedResponse.lessonLink = LESSONS_DATA[lessonName];
+      } else {
+        console.warn('Lesson not found in LESSONS_DATA:', lessonName);
+      }
+    }
+
+    // Cache the response
+    responseCache.set(normalizedPrompt, {
+      response: formattedResponse,
+      timestamp: Date.now()
+    });
+
+    return formattedResponse;
+  } catch (error) {
+    console.error('Error in queryGrok:', error);
+    throw error;
+  }
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   // API key validation
   if (!API_KEY) {
-    console.error('HUGGINGFACE_API_KEY environment variable is not set');
+    console.error('API_KEY environment variable is not set');
     return res.status(500).json({ error: 'Server configuration error' });
   }
 
@@ -251,11 +385,14 @@ export default async function handler(
   }
 
   let prompt: string | undefined;
+  let model: ModelType = 'grok'; // Default to Grok
 
   if (req.method === 'POST') {
     prompt = req.body.prompt;
+    model = (req.body.model as ModelType) || 'grok';
   } else {
     prompt = req.query.prompt as string;
+    model = (req.query.model as ModelType) || 'grok';
   }
 
   if (!prompt || typeof prompt !== 'string') {
@@ -263,7 +400,7 @@ export default async function handler(
   }
 
   try {
-    const response = await queryHuggingFace(prompt);
+    const response = await (model === 'huggingface' ? queryHuggingFace(prompt) : queryGrok(prompt));
 
     // Add global stats to response headers
     res.setHeader('X-Total-API-Calls', totalApiCalls);
@@ -271,6 +408,7 @@ export default async function handler(
     res.setHeader('X-Total-Tokens-Used', totalTokensUsed);
     res.setHeader('X-Avg-Response-Time', Math.round(avgResponseTime));
     res.setHeader('X-Total-Response-Time', totalResponseTime);
+    res.setHeader('X-Model-Used', model);
 
     res.status(200).json(response);
   } catch (error) {
@@ -278,7 +416,7 @@ export default async function handler(
     if (error instanceof Error) {
       if (error.message.startsWith('API Error:')) {
         return res.status(500).json({
-          error: 'Hugging Face API error. Please try again later.',
+          error: `${model.toUpperCase()} API error. Please try again later.`,
           details: error.message
         });
       }
