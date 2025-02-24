@@ -206,7 +206,6 @@ const HomePage = (): JSX.Element => {
                     <ExternalLink href={partner.link}>
                       <Image
                         alt={partner.name}
-                        title={partner.name}
                         height={isSmallScreen ? '40px' : '50px'}
                         src={`/images/partners/${partner.image}`}
                       />
@@ -360,7 +359,6 @@ const HomePage = (): JSX.Element => {
                         <ExternalLink href={partner.link}>
                           <Image
                             alt={partner.name}
-                            title={partner.name}
                             maxHeight="70px"
                             src={`/images/partners/${partner.image}`}
                           />

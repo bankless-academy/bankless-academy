@@ -55,77 +55,80 @@ const Badges = ({
               spacing={2}
               p={2}
             >
-              {type === 'achievements' && (
-                <>
-                  {Object.keys(ACHIEVEMENTS).map((a, index) => {
-                    if (a in ACHIEVEMENTS) {
-                      const achievement = ACHIEVEMENTS[a]
-                      const isAchievementDone = (badges as string[]).includes(a)
-                      if (isAchievementDone || isMyProfile)
-                        return (
-                          <Box
-                            justifySelf="center"
-                            p={1}
-                            position="relative"
-                            opacity={isAchievementDone ? '1' : '0.3'}
-                            key={`achievement-${index}`}
-                          >
-                            <Box position="absolute" top="9px" right="5px">
-                              <Helper
-                                title={achievement.description}
-                                isProfile={true}
-                                definition={
-                                  <>
-                                    <Box mb="4">
-                                      {achievement.helper
-                                        .split(achievement.label)
-                                        .map((part, i, array) => (
-                                          <React.Fragment key={`helper-${i}`}>
-                                            {part}
-                                            {i < array.length - 1 && (
-                                              <ExternalLink
-                                                href={achievement.link}
-                                              >
-                                                {achievement.label}
-                                              </ExternalLink>
-                                            )}
-                                          </React.Fragment>
-                                        ))}
-                                    </Box>
-                                  </>
-                                }
-                              />
-                            </Box>
-                            <ExternalLink href={achievement.link}>
-                              <Box>
-                                <Box
-                                  p="2"
-                                  border="1px #433d43 solid"
-                                  borderRadius="8px"
-                                >
-                                  <Image
-                                    src={achievement.image}
-                                    alt={achievement.description}
-                                    title={achievement.description}
-                                  />
-                                </Box>
-                                <Box
-                                  fontWeight="bold"
-                                  fontSize="sm"
-                                  width="100%"
-                                  textAlign="center"
-                                  color="white"
-                                >
-                                  {achievement.description}
-                                </Box>
-                              </Box>
-                            </ExternalLink>
-                          </Box>
+              {
+                type === 'achievements' && (
+                  <>
+                    {Object.keys(ACHIEVEMENTS).map((a, index) => {
+                      if (a in ACHIEVEMENTS) {
+                        const achievement = ACHIEVEMENTS[a]
+                        const isAchievementDone = (badges as string[]).includes(
+                          a
                         )
-                    }
-                  })}
-                </>
-              )}
+                        if (isAchievementDone || isMyProfile)
+                          return (
+                            <Box
+                              justifySelf="center"
+                              p={1}
+                              position="relative"
+                              opacity={isAchievementDone ? '1' : '0.3'}
+                              key={`achievement-${index}`}
+                            >
+                              <Box position="absolute" top="9px" right="5px">
+                                <Helper
+                                  title={achievement.description}
+                                  isProfile={true}
+                                  definition={
+                                    <>
+                                      <Box mb="4">
+                                        {achievement.helper
+                                          .split(achievement.label)
+                                          .map((part, i, array) => (
+                                            <React.Fragment key={`helper-${i}`}>
+                                              {part}
+                                              {i < array.length - 1 && (
+                                                <ExternalLink
+                                                  href={achievement.link}
+                                                >
+                                                  {achievement.label}
+                                                </ExternalLink>
+                                              )}
+                                            </React.Fragment>
+                                          ))}
+                                      </Box>
+                                    </>
+                                  }
+                                />
+                              </Box>
+                              <ExternalLink href={achievement.link}>
+                                <Box>
+                                  <Box
+                                    p="2"
+                                    border="1px #433d43 solid"
+                                    borderRadius="8px"
+                                  >
+                                    <Image
+                                      src={achievement.image}
+                                      alt={achievement.description}
+                                    />
+                                  </Box>
+                                  <Box
+                                    fontWeight="bold"
+                                    fontSize="sm"
+                                    width="100%"
+                                    textAlign="center"
+                                    color="white"
+                                  >
+                                    {achievement.description}
+                                  </Box>
+                                </Box>
+                              </ExternalLink>
+                            </Box>
+                          )
+                      }
+                    })}
+                  </>
+                )
+              }
               {badges?.map((badge, index) => {
                 if (!type) {
                   const lesson = LESSONS.find(
@@ -175,7 +178,6 @@ const Badges = ({
                           <Image
                             src={lesson.badgeImageLink}
                             alt={lesson.name}
-                            title={lesson.name}
                           />
                         </Box>
                       )
@@ -309,7 +311,6 @@ const Badges = ({
                             <Image
                               src={lesson.badgeImageLink}
                               alt={lesson.name}
-                              title={lesson.name}
                             />
                           </Box>
                         </InternalLink>

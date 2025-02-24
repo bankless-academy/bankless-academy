@@ -800,6 +800,12 @@ const Lesson = ({
         </li>
       )
     }
+    // img tag: add alt attribute
+    if (node.type === 'tag' && node.name === 'img') {
+      return (
+        <img src={node.attribs?.src} alt={lesson.name + ' - ' + slide.title} />
+      )
+    }
     if (node.type === 'tag' && node.name === 'code') {
       // Tooltip with definition
       try {

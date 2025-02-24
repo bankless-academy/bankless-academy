@@ -113,7 +113,6 @@ const MobileButton = ({
         <Image
           src={props.imageSrc}
           alt={label}
-          title={label}
           w={iconSize}
           h={iconSize}
           borderRadius="50%"

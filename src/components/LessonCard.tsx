@@ -173,7 +173,7 @@ const LessonCard = ({
             }}
             py="4"
           >
-            <Image src={lesson.lessonImageLink} />
+            <Image src={lesson.lessonImageLink} alt={lesson.englishName} />
             {/* <Image
                     src={
                       lesson.isArticle
@@ -202,6 +202,7 @@ const LessonCard = ({
                     ? lesson.lessonCollectedImageLink
                     : lesson.lessonImageLink
                 }
+                alt={lesson.englishName}
               />
             </LessonBanner>
           </InternalLink>
