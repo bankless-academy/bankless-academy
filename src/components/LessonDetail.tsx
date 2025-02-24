@@ -207,7 +207,9 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             cursor={isSmallScreen ? 'pointer' : 'unset'}
             p={4}
             onClick={() => setShowSlides(!showSlides)}
-            borderBottom="1px solid #989898"
+            borderBottom={
+              isSmallScreen && !showSlides ? 'none' : '1px solid #989898'
+            }
           >
             <Box
               display="flex"
