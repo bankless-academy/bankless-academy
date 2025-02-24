@@ -33,7 +33,7 @@ export const LearnIcon = ({
     color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
@@ -56,7 +56,7 @@ export const QuizIcon = ({
     color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
@@ -75,7 +75,7 @@ export const PollIcon = ({
     color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    // boxShadow="0px 0px 15px 0px #A4A5FF"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
@@ -98,7 +98,7 @@ export const QuestIcon = ({
     color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
@@ -121,7 +121,7 @@ export const RewardsIcon = ({
     color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
