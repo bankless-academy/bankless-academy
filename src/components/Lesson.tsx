@@ -338,6 +338,10 @@ const Lesson = ({
   const slideRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useLocalStorage(`${lesson.slug}`, 0)
+  const [maxSlide, setMaxSlide] = useLocalStorage(
+    `${lesson.slug}-maxSlide`,
+    currentSlide
+  )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   const [longSlide, setLongSlide] = useState<boolean>(false)
   const [, isSmallScreen] = useSmallScreen()
@@ -537,6 +541,7 @@ const Lesson = ({
     toast.closeAll()
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
+      setMaxSlide(Math.max(currentSlide, maxSlide))
       if (!isDesktop) scrollTop()
     }
     setSelectedAnswerNumber(null)
@@ -548,6 +553,9 @@ const Lesson = ({
       console.log('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
+      const newMaxSlide =
+        currentSlide + 1 > maxSlide ? currentSlide + 1 : maxSlide
+      setMaxSlide(newMaxSlide)
       if (!isDesktop) scrollTop()
     } else if (isLastSlide) {
       if (!isDesktop) scrollTop()
@@ -673,6 +681,7 @@ const Lesson = ({
     animationSlideId,
     slide,
     currentSlide,
+    maxSlide,
     isFirstSlide,
     isDesktop,
   ])
@@ -684,6 +693,7 @@ const Lesson = ({
     answerIsCorrect,
     isLastSlide,
     currentSlide,
+    maxSlide,
     lesson,
     isDesktop,
   ])
@@ -887,15 +897,16 @@ const Lesson = ({
         <Box h="0" w="100%">
           <Button
             position="absolute"
-            top="-24px"
-            right="-24px"
-            size="lg"
+            top="-20px"
+            right="-20px"
             iconSpacing="0"
             variant="secondaryBig"
             leftIcon={<X width="24px" height="24px" />}
             onClick={() => closeLesson()}
             p="0"
             _hover={{ p: '0' }}
+            h="40px !important"
+            w="40px !important"
           ></Button>
         </Box>
       )}

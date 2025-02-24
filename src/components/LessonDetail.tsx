@@ -6,12 +6,15 @@ import {
   Box,
   useToast,
   useDisclosure,
+  CircularProgress,
+  CircularProgressLabel,
 } from '@chakra-ui/react'
-import { ShareFat } from '@phosphor-icons/react'
+import { ShareFat, CaretDown, CaretUp } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useApp } from 'contexts/AppContext'
+import { useState } from 'react'
 
 import { LessonType } from 'entities/lesson'
 import Lesson from 'components/Lesson'
@@ -101,12 +104,18 @@ const LessonDetail = ({
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
   const { openLessons, setOpenLessons } = useApp()
+  const [showSlides, setShowSlides] = useState(false)
 
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
   const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
-  const [currentSlide] = useLocalStorage(`${lesson.slug}`, 0)
+  const [, setCurrentSlide] = useLocalStorage(`${lesson.slug}`, 0)
+  const currentSlide = localStorage.getItem(`${lesson.slug}`) || null
+  const [maxSlide, setMaxSlide] = useLocalStorage<number | null>(
+    `${lesson.slug}-maxSlide`,
+    currentSlide ? parseInt(currentSlide) : null
+  )
   const router = useRouter()
   const pageEndsWithDatadisk = router?.query?.slug?.[0]?.endsWith('-datadisk')
   const toast = useToast()
@@ -147,6 +156,12 @@ const LessonDetail = ({
       lesson.lessonCollectibleTokenAddress.toLowerCase()
     )
 
+  useEffect((): void => {
+    if (isLessonCollected) {
+      setMaxSlide(lesson.slides.length - 1)
+    }
+  }, [isLessonCollected])
+
   const tallyId =
     lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
 
@@ -178,34 +193,110 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     lesson: LessonType
   }): React.ReactElement => {
     return (
-      <StyledCard p={4} mt={6} mb={2} w={isSmallScreen ? 'unset' : '340px'}>
-        <Text fontSize="2xl" fontWeight="bold" mb={4} textAlign="center">
-          Summary
-        </Text>
-        {lesson.slides.map((slide, index) => (
-          <Box key={slide.notionId} display="flex" alignItems="center" mb={4}>
-            <Box display="inline-flex" alignItems="center" mr="4">
-              {slide.type === 'LEARN' && (
-                <LearnIcon iconOnly={true} isDone={currentSlide >= index} />
-              )}
-              {slide.type === 'QUIZ' && (
-                <QuizIcon iconOnly={true} isDone={currentSlide >= index} />
-              )}
-              {slide.type === 'POLL' && (
-                <PollIcon iconOnly={true} isDone={currentSlide >= index} />
-              )}
-              {slide.type === 'QUEST' && (
-                <QuestIcon iconOnly={true} isDone={currentSlide >= index} />
-              )}
-              {slide.type === 'END' && (
-                <RewardsIcon iconOnly={true} isDone={currentSlide >= index} />
-              )}
+      <StyledCard
+        p={0}
+        mt={6}
+        mb={isSmallScreen ? 6 : 2}
+        w={isSmallScreen ? 'unset' : '380px'}
+      >
+        <Box>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            cursor={isSmallScreen ? 'pointer' : 'unset'}
+            p={4}
+            onClick={() => setShowSlides(!showSlides)}
+            borderBottom="1px solid #989898"
+          >
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              w="100%"
+              gap={8}
+            >
+              <Text fontSize="2xl" fontWeight="bold" textAlign="center">
+                Progress
+              </Text>
+              <Box display="flex" alignItems="center" gap={4}>
+                <CircularProgress
+                  value={
+                    ((maxSlide === null ? 0 : maxSlide + 1) /
+                      (lesson.slides.length - 1)) *
+                    100
+                  }
+                  color={'#916AB8'}
+                >
+                  <CircularProgressLabel fontSize="8px">
+                    {maxSlide === null ? 0 : maxSlide + 1} /{' '}
+                    {lesson.slides.length}
+                  </CircularProgressLabel>
+                </CircularProgress>
+              </Box>
             </Box>
-            <Text color={currentSlide >= index ? 'white' : 'gray'}>
-              {slide.type === 'QUIZ' ? t('Knowledge Check') : slide.title}
-            </Text>
+            {isSmallScreen && (
+              <>
+                {showSlides ? <CaretUp size={24} /> : <CaretDown size={24} />}
+              </>
+            )}
           </Box>
-        ))}
+          {(!isSmallScreen || showSlides) && (
+            <Box p={0} py={2}>
+              {lesson.slides.map((slide, index) => {
+                const isDone = index === 0 || maxSlide >= index
+                return (
+                  <OpenLesson
+                    lesson={lesson}
+                    click
+                    key={slide.notionId}
+                    onLessonOpen={() => {
+                      if (isDone) setCurrentSlide(index)
+                      if (maxSlide === null) setMaxSlide(0)
+                    }}
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      gap={2}
+                      p={2}
+                      cursor={isDone ? 'pointer' : 'not-allowed'}
+                      onClick={(e) => {
+                        if (!isDone) {
+                          e.stopPropagation()
+                          return
+                        }
+                      }}
+                    >
+                      <Box display="inline-flex" alignItems="center" mx="2">
+                        {slide.type === 'LEARN' && (
+                          <LearnIcon iconOnly={true} isDone={isDone} />
+                        )}
+                        {slide.type === 'QUIZ' && (
+                          <QuizIcon iconOnly={true} isDone={isDone} />
+                        )}
+                        {slide.type === 'POLL' && (
+                          <PollIcon iconOnly={true} isDone={isDone} />
+                        )}
+                        {slide.type === 'QUEST' && (
+                          <QuestIcon iconOnly={true} isDone={isDone} />
+                        )}
+                        {slide.type === 'END' && (
+                          <RewardsIcon iconOnly={true} isDone={isDone} />
+                        )}
+                      </Box>
+                      <Text color={isDone ? 'white' : 'gray'}>
+                        {slide.type === 'QUIZ'
+                          ? t('Knowledge Check')
+                          : slide.title}
+                      </Text>
+                    </Box>
+                  </OpenLesson>
+                )
+              })}
+            </Box>
+          )}
+        </Box>
       </StyledCard>
     )
   }
@@ -269,7 +360,8 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             </StyledBox>
           )} */}
             <StyledCard
-              p={12}
+              py={4}
+              px={12}
               w="100%"
               maxW="600px"
               mt={6}
@@ -321,7 +413,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   m="auto"
                   mb="4"
                 >
-                  <OpenLesson lesson={lesson} click>
+                  <OpenLesson
+                    lesson={lesson}
+                    click
+                    onLessonOpen={() => {
+                      if (maxSlide === null) setMaxSlide(0)
+                    }}
+                  >
                     <Box py="2">
                       <Image
                         src={
@@ -386,6 +484,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                       </Box>
                     )}
                 </Box>
+                {isSmallScreen && <LessonSlides lesson={lesson} />}
                 {hasLessonGating && (
                   <Box my="4">
                     <Text
