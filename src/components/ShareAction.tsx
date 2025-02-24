@@ -60,25 +60,60 @@ const ShareAction = ({
         gap="10px"
       >
         <ExternalLink href={twitterLink}>
-          <Image width="50px" src="/images/share/share-X.png" />
+          <Image
+            width="50px"
+            src="/images/share/share-X.png"
+            alt="Share on X"
+            title="Share on X"
+          />
         </ExternalLink>
         <ExternalLink href={farcasterLink}>
-          <Image width="50px" src="/images/share/share-Farcaster.png" />
+          <Image
+            width="50px"
+            src="/images/share/share-Farcaster.png"
+            alt="Share on Farcaster"
+            title="Share on Farcaster"
+          />
         </ExternalLink>
         <ExternalLink href={heyLink}>
-          <Image width="50px" src="/images/share/share-Lens.png" />
+          <Image
+            width="50px"
+            src="/images/share/share-Lens.png"
+            alt="Share on Lens"
+            title="Share on Lens"
+          />
         </ExternalLink>
         <ExternalLink href={telegramLink}>
-          <Image width="50px" src="/images/share/share-Telegram.png" />
+          <Image
+            width="50px"
+            src="/images/share/share-Telegram.png"
+            alt="Share on Telegram"
+            title="Share on Telegram"
+          />
         </ExternalLink>
         <ExternalLink href={facebookLink}>
-          <Image width="50px" src="/images/share/share-Facebook.png" />
+          <Image
+            width="50px"
+            src="/images/share/share-Facebook.png"
+            alt="Share on Facebook"
+            title="Share on Facebook"
+          />
         </ExternalLink>
         <ExternalLink href={whatsappLink}>
-          <Image width="50px" src="/images/share/share-WhatsApp.png" />
+          <Image
+            width="50px"
+            src="/images/share/share-WhatsApp.png"
+            alt="Share on WhatsApp"
+            title="Share on WhatsApp"
+          />
         </ExternalLink>
         <ExternalLink href={linkedinLink}>
-          <Image width="50px" src="/images/share/share-LinkedIn.png" />
+          <Image
+            width="50px"
+            src="/images/share/share-LinkedIn.png"
+            alt="Share on LinkedIn"
+            title="Share on LinkedIn"
+          />
         </ExternalLink>
       </Box>
       <Box

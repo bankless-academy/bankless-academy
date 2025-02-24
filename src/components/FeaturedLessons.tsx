@@ -48,7 +48,7 @@ const FeaturedLessons: React.FC = () => {
                 href={`/lessons/${lesson.slug}`}
                 alt={lesson.englishName}
               >
-                <Image src={lesson.lessonImageLink} />
+                <Image src={lesson.lessonImageLink} alt={lesson.englishName} />
               </InternalLink>
             </LessonBanner>
           )

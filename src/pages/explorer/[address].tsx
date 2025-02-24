@@ -692,7 +692,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                                 ? ref.profile_address
                                 : shortenAddress(ref.profile_address)}
                             </ExternalLink>
-                            <Box ml="2">{date}</Box>
+                            <Box ml="2">{ref.created_at ? date : '-'}</Box>
                           </Box>
                         )
                       })

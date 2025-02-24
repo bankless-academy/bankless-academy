@@ -142,13 +142,28 @@ export default async function handler(
   }
 
   // referrals
-  const referralsAddresses = await db(TABLES.users)
-    .select(
-      TABLE.users.address, TABLE.users.ens_name, TABLE.users.created_at)
+  interface ReferralAddress {
+    address: string
+    ens_name: string | null
+    first_completion: string | null
+  }
+
+  const referralsAddresses = (await db(TABLES.users)
+    .select([
+      TABLE.users.address,
+      TABLE.users.ens_name,
+      db.raw('(SELECT MIN(transaction_at) FROM completions WHERE user_id = users.id) as first_completion')
+    ])
     .where(TABLE.users.referrer, '=', userExist.id)
     // ignore referrals via smart_nft
-    .whereNull(TABLE.users.smart_nft_start_at)
-  const referrals = referralsAddresses.map(r => { return { profile_address: r.ens_name || r.address, created_at: r.created_at } })
+    .whereNull(TABLE.users.smart_nft_start_at)) as unknown as ReferralAddress[]
+
+  const referrals = referralsAddresses.map(r => {
+    return {
+      profile_address: r.ens_name || r.address,
+      created_at: r.first_completion
+    }
+  })
   console.log('referrals', referrals)
 
   const explorerData = await fetchExplorerData(addressLowerCase)

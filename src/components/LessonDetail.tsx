@@ -329,6 +329,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                             ? lesson.lessonCollectedImageLink
                             : lesson.lessonImageLink
                         }
+                        alt={lesson.englishName}
                       />
                     </Box>
                   </OpenLesson>
