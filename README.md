@@ -136,11 +136,11 @@ Persona: "A friendly yet wise Web3 mentor guiding users toward self-sovereignty.
 
 ## Lessons
 
-- [Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)
-- [Ethereum Basics](https://app.banklessacademy.com/lessons/ethereum-basics)
-- [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics)
-- [Blockchain Basics](https://app.banklessacademy.com/lessons/blockchain-basics)
-- [Web3 Security](https://app.banklessacademy.com/lessons/web3-security)
+- [Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics) [[Español](https://app.banklessacademy.com/lessons/es/bitcoin-basics),[Français](https://app.banklessacademy.com/lessons/fr/bitcoin-basics),[Português (BR)](https://app.banklessacademy.com/lessons/br/bitcoin-basics),[Türkçe](https://app.banklessacademy.com/lessons/tr/bitcoin-basics),[Українська](https://app.banklessacademy.com/lessons/ua/bitcoin-basics),[简体中文](https://app.banklessacademy.com/lessons/cn/bitcoin-basics)]
+- [Ethereum Basics](https://app.banklessacademy.com/lessons/ethereum-basics) [[Français](https://app.banklessacademy.com/lessons/fr/ethereum-basics)]
+- [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) [[Español](https://app.banklessacademy.com/lessons/es/wallet-basics),[Français](https://app.banklessacademy.com/lessons/fr/wallet-basics),[Italiano](https://app.banklessacademy.com/lessons/it/wallet-basics),[Português (BR)](https://app.banklessacademy.com/lessons/br/wallet-basics),[Türkçe](https://app.banklessacademy.com/lessons/tr/wallet-basics),[Українська](https://app.banklessacademy.com/lessons/ua/wallet-basics),[简体中文](https://app.banklessacademy.com/lessons/cn/wallet-basics)]
+- [Blockchain Basics](https://app.banklessacademy.com/lessons/blockchain-basics) [[Deutsch](https://app.banklessacademy.com/lessons/de/blockchain-basics),[Español](https://app.banklessacademy.com/lessons/es/blockchain-basics),[Français](https://app.banklessacademy.com/lessons/fr/blockchain-basics)]
+- [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) [[Français](https://app.banklessacademy.com/lessons/fr/web3-security)]
 - [Layer 1 Blockchains](https://app.banklessacademy.com/lessons/layer-1-blockchains)
 - [Layer 2 Blockchains](https://app.banklessacademy.com/lessons/layer-2-blockchains)
 - [Intro to DeFi](https://app.banklessacademy.com/lessons/intro-to-defi)
@@ -148,13 +148,13 @@ Persona: "A friendly yet wise Web3 mentor guiding users toward self-sovereignty.
 - [Staking on Ethereum](https://app.banklessacademy.com/lessons/staking-on-ethereum)
 - [DEX Aggregators](https://app.banklessacademy.com/lessons/dex-aggregators)
 - [Gitcoin 2.0 Essentials](https://app.banklessacademy.com/lessons/gitcoin-2.0-essentials)
-- [Optimism Governance](https://app.banklessacademy.com/lessons/optimism-governance)
+- [Optimism Governance](https://app.banklessacademy.com/lessons/optimism-governance) [[Deutsch](https://app.banklessacademy.com/lessons/de/optimism-governance),[Español](https://app.banklessacademy.com/lessons/es/optimism-governance),[Français](https://app.banklessacademy.com/lessons/fr/optimism-governance),[简体中文](https://app.banklessacademy.com/lessons/cn/optimism-governance),[英語](https://app.banklessacademy.com/lessons/jp/optimism-governance)]
 
 ## Handbooks
 
 Quick guides for getting your crypto journey started.
 
-- [Creating a Crypto Wallet](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet)
+- [Creating a Crypto Wallet](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet) [[Español](https://app.banklessacademy.com/lessons/es/creating-a-crypto-wallet),[Français](https://app.banklessacademy.com/lessons/fr/creating-a-crypto-wallet),[Italiano](https://app.banklessacademy.com/lessons/it/creating-a-crypto-wallet),[Português (BR)](https://app.banklessacademy.com/lessons/br/creating-a-crypto-wallet),[Türkçe](https://app.banklessacademy.com/lessons/tr/creating-a-crypto-wallet),[Українська](https://app.banklessacademy.com/lessons/ua/creating-a-crypto-wallet),[简体中文](https://app.banklessacademy.com/lessons/cn/creating-a-crypto-wallet)]
 - [Funding a Wallet on Layer 2](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2)
 - [Registering Your Web3 Username](https://app.banklessacademy.com/lessons/registering-your-web3-username)
 - [Understanding Stablecoins](https://app.banklessacademy.com/lessons/understanding-stablecoins)
@@ -162,7 +162,7 @@ Quick guides for getting your crypto journey started.
 - [Staking Ether](https://app.banklessacademy.com/lessons/staking-ether)
 - [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances)
 - [Understanding Ethereum Token Standards](https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards)
-- [Delegating on Optimism](https://app.banklessacademy.com/lessons/delegating-on-optimism)
+- [Delegating on Optimism](https://app.banklessacademy.com/lessons/delegating-on-optimism) [[Deutsch](https://app.banklessacademy.com/lessons/de/delegating-on-optimism),[Español](https://app.banklessacademy.com/lessons/es/delegating-on-optimism),[Français](https://app.banklessacademy.com/lessons/fr/delegating-on-optimism),[简体中文](https://app.banklessacademy.com/lessons/cn/delegating-on-optimism),[英語](https://app.banklessacademy.com/lessons/jp/delegating-on-optimism)]
 
 # AI Content Guidelines
 
