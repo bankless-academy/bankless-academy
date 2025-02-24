@@ -136,33 +136,33 @@ Persona: "A friendly yet wise Web3 mentor guiding users toward self-sovereignty.
 
 ## Lessons
 
-- **Bitcoin Basics**: [Learn More](https://app.banklessacademy.com/lessons/bitcoin-basics)
-- **Ethereum Basics**: [Learn More](https://app.banklessacademy.com/lessons/ethereum-basics)
-- **Wallet Basics**: [Learn More](https://app.banklessacademy.com/lessons/wallet-basics)
-- **Blockchain Basics**: [Learn More](https://app.banklessacademy.com/lessons/blockchain-basics)
-- **Web3 Security**: [Learn More](https://app.banklessacademy.com/lessons/web3-security)
-- **Layer 1 Blockchains**: [Learn More](https://app.banklessacademy.com/lessons/layer-1-blockchains)
-- **Layer 2 Blockchains**: [Learn More](https://app.banklessacademy.com/lessons/layer-2-blockchains)
-- **Intro to DeFi**: [Learn More](https://app.banklessacademy.com/lessons/intro-to-defi)
-- **Decentralized Exchanges**: [Learn More](https://app.banklessacademy.com/lessons/decentralized-exchanges)
-- **Staking on Ethereum**: [Learn More](https://app.banklessacademy.com/lessons/staking-on-ethereum)
-- **DEX Aggregators**: [Learn More](https://app.banklessacademy.com/lessons/dex-aggregators)
-- **Gitcoin 2.0 Essentials**: [Learn More](https://app.banklessacademy.com/lessons/gitcoin-2.0-essentials)
-- **Optimism Governance**: [Learn More](https://app.banklessacademy.com/lessons/optimism-governance)
+- [Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)
+- [Ethereum Basics](https://app.banklessacademy.com/lessons/ethereum-basics)
+- [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics)
+- [Blockchain Basics](https://app.banklessacademy.com/lessons/blockchain-basics)
+- [Web3 Security](https://app.banklessacademy.com/lessons/web3-security)
+- [Layer 1 Blockchains](https://app.banklessacademy.com/lessons/layer-1-blockchains)
+- [Layer 2 Blockchains](https://app.banklessacademy.com/lessons/layer-2-blockchains)
+- [Intro to DeFi](https://app.banklessacademy.com/lessons/intro-to-defi)
+- [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges)
+- [Staking on Ethereum](https://app.banklessacademy.com/lessons/staking-on-ethereum)
+- [DEX Aggregators](https://app.banklessacademy.com/lessons/dex-aggregators)
+- [Gitcoin 2.0 Essentials](https://app.banklessacademy.com/lessons/gitcoin-2.0-essentials)
+- [Optimism Governance](https://app.banklessacademy.com/lessons/optimism-governance)
 
 ## Handbooks
 
 Quick guides for getting your crypto journey started.
 
-- **Creating a Crypto Wallet**: [Read Here](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet)
-- **Funding a Wallet on Layer 2**: [Read Here](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2)
-- **Registering Your Web3 Username**: [Read Here](https://app.banklessacademy.com/lessons/registering-your-web3-username)
-- **Understanding Stablecoins**: [Read Here](https://app.banklessacademy.com/lessons/understanding-stablecoins)
-- **Swapping on a Decentralized Exchange**: [Read Here](https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange)
-- **Staking Ether**: [Read Here](https://app.banklessacademy.com/lessons/staking-ether)
-- **Managing Token Allowances**: [Read Here](https://app.banklessacademy.com/lessons/managing-token-allowances)
-- **Understanding Ethereum Token Standards**: [Read Here](https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards)
-- **Delegating on Optimism**: [Read Here](https://app.banklessacademy.com/lessons/delegating-on-optimism)
+- [Creating a Crypto Wallet](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet)
+- [Funding a Wallet on Layer 2](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2)
+- [Registering Your Web3 Username](https://app.banklessacademy.com/lessons/registering-your-web3-username)
+- [Understanding Stablecoins](https://app.banklessacademy.com/lessons/understanding-stablecoins)
+- [Swapping on a Decentralized Exchange](https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange)
+- [Staking Ether](https://app.banklessacademy.com/lessons/staking-ether)
+- [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances)
+- [Understanding Ethereum Token Standards](https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards)
+- [Delegating on Optimism](https://app.banklessacademy.com/lessons/delegating-on-optimism)
 
 # AI Content Guidelines
 
@@ -232,4 +232,4 @@ AI Usage Notice: "Bankless Academy content is designed for educational purposes 
 
 # File Version
 
-Version: 1.0 (Last Updated: 2025-02-19)
+Version: 1.0 (Last Updated: 2025-02-24)
