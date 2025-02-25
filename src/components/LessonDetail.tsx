@@ -198,7 +198,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         mt={6}
         mb={isSmallScreen ? 6 : 2}
         w={isSmallScreen ? 'unset' : '380px'}
-        minW="380px"
+        minW={isSmallScreen ? 'unset' : '380px'}
       >
         <Box>
           <Box
