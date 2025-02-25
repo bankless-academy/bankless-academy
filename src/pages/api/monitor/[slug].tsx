@@ -100,7 +100,10 @@ export default async function handler(
   res: NextApiResponse
 ) {
   // Get query parameters
-  const { slug, address: addressParam } = req.query
+  const { slug, address: addressParam, monitoringKey } = req.query
+  if (!monitoringKey || typeof monitoringKey !== 'string') {
+    return res.status(400).json({ error: 'Missing or invalid monitoringKey' })
+  }
   const address = (
     typeof addressParam === 'string' ? addressParam : addressParam?.[0]
   )?.toLowerCase()
@@ -236,6 +239,24 @@ export default async function handler(
         }
 
         data = validation.details
+        break
+      }
+      case 'read-x': {
+        const response = await fetch(
+          `https://x.banklessacademy.com/api/tweets/1869099842800365863?apiKey=${process.env.TWITTER_CLIENT_API_KEY}`,
+          {
+            headers: {
+              'X-API-KEY': process.env.TWITTER_CLIENT_API_KEY,
+            },
+          }
+        )
+        if (!response.ok) {
+          return res.status(400).json({
+            success: false,
+            error: 'Failed to fetch data from read-x',
+          })
+        }
+        data = await response.json()
         break
       }
       default:
