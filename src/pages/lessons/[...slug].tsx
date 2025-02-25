@@ -318,7 +318,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
               }
               pb={isSmallScreen ? '0' : isLessonOpen ? '8px' : '0'}
             >
-              <LessonDetail lesson={lesson} />
+              <LessonDetail key={lesson.slug} lesson={lesson} />
             </Container>
           )}
         </Layout>
