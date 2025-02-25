@@ -146,6 +146,10 @@ export const Slide = styled(Card)<{
         props.issmallscreen === 'true' &&
         'margin: 0.8em 0 0 0;'};
     }
+    hr {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
     h2 {
       font-weight: bold;
     }
@@ -881,7 +885,7 @@ const Lesson = ({
 
   return (
     <Slide
-      p={8}
+      p={6}
       pt={4}
       pb={2}
       mt={6}
@@ -912,7 +916,7 @@ const Lesson = ({
       )}
       <Text
         fontSize={isSmallScreen ? 'xl' : '3xl'}
-        my={isSmallScreen ? '2' : '4'}
+        my={isSmallScreen ? '2' : '3'}
         display="inline-flex"
         justifyContent="center"
         alignItems="center"
@@ -974,7 +978,7 @@ const Lesson = ({
           className="content"
           minH="calc(100vh - 360px)"
           pb={isSmallScreen ? '6' : 0}
-          pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 4}
+          pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 0}
         >
           {slide.type === 'LEARN' && (
             <Box ref={slideRef}>
@@ -1125,21 +1129,19 @@ const Lesson = ({
       </Box>
       <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
         <HStack flex="auto">
-          {isSmallScreen && (
-            <Button
-              ref={buttonLeftRef}
-              variant="secondaryBig"
-              size="lg"
-              onClick={() => closeLesson()}
-              leftIcon={<X width="24px" height="24px" />}
-              ml={longSlide ? '600px' : '0'}
-              p="0"
-              _hover={{ p: '0' }}
-              iconSpacing="0"
-            >
-              {isSmallScreen ? '' : 'Prev'}
-            </Button>
-          )}
+          {/* {isSmallScreen && ( */}
+          <Button
+            ref={buttonLeftRef}
+            variant="secondaryBig"
+            size="lg"
+            onClick={() => closeLesson()}
+            leftIcon={<X width="24px" height="24px" />}
+            ml={longSlide ? '600px' : '0'}
+            p="0"
+            _hover={{ p: '0' }}
+            iconSpacing="0"
+          ></Button>
+          {/* )} */}
           {!isFirstSlide && (
             <Button
               ref={buttonLeftRef}

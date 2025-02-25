@@ -310,12 +310,13 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
           ) : (
             <Container
               maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
-              px={isSmallScreen ? '8px' : '0'}
+              px={isSmallScreen ? '8px' : isLessonOpen ? '24px' : '0'}
               minH={
                 isMediumScreen
                   ? `calc(100vh - 146px${hideNavBar ? ' + 65px' : ''})`
                   : 'default'
               }
+              pb={isSmallScreen ? '0' : isLessonOpen ? '8px' : '0'}
             >
               <LessonDetail lesson={lesson} />
             </Container>
