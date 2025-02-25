@@ -273,8 +273,8 @@ const Animation = ({
     <Box m="10px">
       <StyledBox
         background="transparent"
-        maxW="560px"
-        maxH="560px"
+        maxW="520px"
+        maxH="520px"
         position="initial"
         aspectRatio="1"
         m="auto"
