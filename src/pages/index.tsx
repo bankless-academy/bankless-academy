@@ -244,8 +244,13 @@ const HomePage = (): JSX.Element => {
                   mx={isSmallScreen ? '0' : '12'}
                 >
                   <Card>
-                    <LearnIcon />
-                    <Heading size="lg" mt="2">
+                    <Heading
+                      display="flex"
+                      alignItems="center"
+                      gap={4}
+                      fontSize="2xl"
+                    >
+                      <LearnIcon />
                       {t(`Advance Your Knowledge`)}
                     </Heading>
                     <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -255,8 +260,13 @@ const HomePage = (): JSX.Element => {
                     </Text>
                   </Card>
                   <Card>
-                    <QuizIcon />
-                    <Heading size="lg" mt="2">
+                    <Heading
+                      display="flex"
+                      alignItems="center"
+                      gap={4}
+                      fontSize="2xl"
+                    >
+                      <QuizIcon />
                       {t(`Test Your Abilities`)}
                     </Heading>
                     <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -266,8 +276,13 @@ const HomePage = (): JSX.Element => {
                     </Text>
                   </Card>
                   <Card>
-                    <QuestIcon />
-                    <Heading size="lg" mt="2">
+                    <Heading
+                      display="flex"
+                      alignItems="center"
+                      gap={4}
+                      fontSize="2xl"
+                    >
+                      <QuestIcon />
                       {t(`Complete Quests`)}
                     </Heading>
                     <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -277,8 +292,13 @@ const HomePage = (): JSX.Element => {
                     </Text>
                   </Card>
                   <Card>
-                    <RewardsIcon />
-                    <Heading size="lg" mt="2">
+                    <Heading
+                      display="flex"
+                      alignItems="center"
+                      gap={4}
+                      fontSize="2xl"
+                    >
+                      <RewardsIcon />
                       {t(`Earn Rewards`)}
                     </Heading>
                     <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -383,8 +403,13 @@ const HomePage = (): JSX.Element => {
                     mx="0"
                   >
                     <Card>
-                      <PencilIcon />
-                      <Heading size="lg" mt="2">
+                      <Heading
+                        display="flex"
+                        alignItems="center"
+                        gap={4}
+                        fontSize="2xl"
+                      >
+                        <PencilIcon />
                         {t(`Collaborate On A Lesson`)}
                       </Heading>
                       <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -407,8 +432,13 @@ const HomePage = (): JSX.Element => {
                       </Box>
                     </Card>
                     <Card>
-                      <GraduationCapIcon />
-                      <Heading size="lg" mt="2">
+                      <Heading
+                        display="flex"
+                        alignItems="center"
+                        gap={4}
+                        fontSize="2xl"
+                      >
+                        <GraduationCapIcon />
                         {t(`Open Your Own Academy`)}
                       </Heading>
                       <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -431,8 +461,13 @@ const HomePage = (): JSX.Element => {
                       </Box>
                     </Card>
                     <Card>
-                      <HandshakeIcon />
-                      <Heading size="lg" mt="2">
+                      <Heading
+                        display="flex"
+                        alignItems="center"
+                        gap={4}
+                        fontSize="2xl"
+                      >
+                        <HandshakeIcon />
                         {t(`Partner With Us`)}
                       </Heading>
                       <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -456,8 +491,13 @@ const HomePage = (): JSX.Element => {
                       </Box>
                     </Card>
                     <Card>
-                      <EyeIcon />
-                      <Heading size="lg" mt="2">
+                      <Heading
+                        display="flex"
+                        alignItems="center"
+                        gap={4}
+                        fontSize="2xl"
+                      >
+                        <EyeIcon />
                         {t(`Improve Our Lessons`)}
                       </Heading>
                       <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -467,8 +507,13 @@ const HomePage = (): JSX.Element => {
                       </Text>
                     </Card>
                     <Card>
-                      <UsersThreeIcon />
-                      <Heading size="lg" mt="2">
+                      <Heading
+                        display="flex"
+                        alignItems="center"
+                        gap={4}
+                        fontSize="2xl"
+                      >
+                        <UsersThreeIcon />
                         {t(`Join Our Team`)}
                       </Heading>
                       <Text fontSize="lg" mt="2" color="#9E9E9E">
@@ -493,19 +538,26 @@ const HomePage = (): JSX.Element => {
                       </Box>
                     </Card>
                     <Card>
-                      <DonateIcon />
-                      <Heading size="lg" mt="2" mb="2">
+                      <Heading
+                        display="flex"
+                        alignItems="center"
+                        gap={4}
+                        fontSize="2xl"
+                      >
+                        <DonateIcon />
                         {t(`Support Us`)}
                       </Heading>
-                      <ExternalLink
-                        href="https://bankless.ac/giveth"
-                        alt="Donate via Giveth"
-                      >
-                        <Image
-                          width="100%"
-                          src="/images/Donate-via-Giveth.png"
-                        />
-                      </ExternalLink>
+                      <Box mt="2">
+                        <ExternalLink
+                          href="https://bankless.ac/giveth"
+                          alt="Donate via Giveth"
+                        >
+                          <Image
+                            width="100%"
+                            src="/images/Donate-via-Giveth.png"
+                          />
+                        </ExternalLink>
+                      </Box>
                       <Text fontSize="lg" mt="2" color="#9E9E9E">
                         {t(
                           `We rely on our public-goods business model to continue providing a free, Bankless education!`

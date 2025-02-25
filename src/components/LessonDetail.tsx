@@ -6,12 +6,15 @@ import {
   Box,
   useToast,
   useDisclosure,
+  CircularProgress,
+  CircularProgressLabel,
 } from '@chakra-ui/react'
-import { ShareFat } from '@phosphor-icons/react'
+import { ShareFat, CaretDown, CaretUp } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useApp } from 'contexts/AppContext'
+import { useState } from 'react'
 
 import { LessonType } from 'entities/lesson'
 import Lesson from 'components/Lesson'
@@ -29,6 +32,7 @@ import {
   IS_COLLECTIBLE_ACTIVATED,
   IS_PROD,
   IS_WALLET_DISABLED,
+  LESSONS,
   // IS_WHITELABEL,
   TOKEN_GATING_ENABLED,
   TWITTER_ACCOUNT,
@@ -38,6 +42,9 @@ import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
 import ShareModal from 'components/ShareModal'
 import { useAccount, useEnsName } from 'wagmi'
+import { PollIcon, RewardsIcon, QuestIcon, QuizIcon } from './Icons'
+import { LearnIcon } from 'components/Icons'
+import LessonCard from 'components/LessonCard'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -97,11 +104,18 @@ const LessonDetail = ({
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
   const { openLessons, setOpenLessons } = useApp()
+  const [showSlides, setShowSlides] = useState(false)
 
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
   const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
+  const [, setCurrentSlide] = useLocalStorage(`${lesson.slug}`, 0)
+  const currentSlide = localStorage.getItem(`${lesson.slug}`) || null
+  const [maxSlide, setMaxSlide] = useLocalStorage<number | null>(
+    `${lesson.slug}-maxSlide`,
+    currentSlide ? parseInt(currentSlide) : null
+  )
   const router = useRouter()
   const pageEndsWithDatadisk = router?.query?.slug?.[0]?.endsWith('-datadisk')
   const toast = useToast()
@@ -142,6 +156,12 @@ const LessonDetail = ({
       lesson.lessonCollectibleTokenAddress.toLowerCase()
     )
 
+  useEffect((): void => {
+    if (isLessonCollected) {
+      setMaxSlide(lesson.slides.length - 1)
+    }
+  }, [isLessonCollected])
+
   const tallyId =
     lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
 
@@ -167,6 +187,144 @@ const LessonDetail = ({
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
+  const LessonSlides = ({
+    lesson,
+  }: {
+    lesson: LessonType
+  }): React.ReactElement => {
+    return (
+      <StyledCard
+        p={0}
+        mt={6}
+        mb={isSmallScreen ? 6 : 2}
+        w={isSmallScreen ? 'unset' : '380px'}
+        minW="380px"
+      >
+        <Box>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            cursor={isSmallScreen ? 'pointer' : 'unset'}
+            p={4}
+            onClick={() => setShowSlides(!showSlides)}
+            borderBottom={
+              isSmallScreen && !showSlides ? 'none' : '1px solid #989898'
+            }
+          >
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              w="100%"
+              gap={8}
+            >
+              <Text fontSize="2xl" fontWeight="bold" textAlign="center">
+                Progress
+              </Text>
+              <Box display="flex" alignItems="center" gap={4}>
+                <CircularProgress
+                  value={
+                    ((maxSlide === null ? 0 : maxSlide + 1) /
+                      (lesson.slides.length - 1)) *
+                    100
+                  }
+                  color={'#916AB8'}
+                >
+                  <CircularProgressLabel fontSize="8px">
+                    {maxSlide === null ? 0 : maxSlide + 1} /{' '}
+                    {lesson.slides.length}
+                  </CircularProgressLabel>
+                </CircularProgress>
+              </Box>
+            </Box>
+            {isSmallScreen && (
+              <>
+                {showSlides ? <CaretUp size={24} /> : <CaretDown size={24} />}
+              </>
+            )}
+          </Box>
+          {(!isSmallScreen || showSlides) && (
+            <Box p={0} py={2}>
+              {lesson.slides.map((slide, index) => {
+                const isDone = index === 0 || maxSlide >= index
+                return (
+                  <OpenLesson
+                    lesson={lesson}
+                    click
+                    key={slide.notionId}
+                    onLessonOpen={() => {
+                      if (isDone) setCurrentSlide(index)
+                      if (maxSlide === null) setMaxSlide(0)
+                    }}
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      gap={2}
+                      p={2}
+                      cursor={isDone ? 'pointer' : 'not-allowed'}
+                      onClick={(e) => {
+                        if (!isDone) {
+                          e.stopPropagation()
+                          return
+                        }
+                      }}
+                    >
+                      <Box display="inline-flex" alignItems="center" mx="2">
+                        {slide.type === 'LEARN' && (
+                          <LearnIcon iconOnly={true} isDone={isDone} />
+                        )}
+                        {slide.type === 'QUIZ' && (
+                          <QuizIcon iconOnly={true} isDone={isDone} />
+                        )}
+                        {slide.type === 'POLL' && (
+                          <PollIcon iconOnly={true} isDone={isDone} />
+                        )}
+                        {slide.type === 'QUEST' && (
+                          <QuestIcon iconOnly={true} isDone={isDone} />
+                        )}
+                        {slide.type === 'END' && (
+                          <RewardsIcon iconOnly={true} isDone={isDone} />
+                        )}
+                      </Box>
+                      <Text color={isDone ? 'white' : 'gray'}>
+                        {slide.type === 'QUIZ'
+                          ? t('Knowledge Check')
+                          : slide.title}
+                      </Text>
+                    </Box>
+                  </OpenLesson>
+                )
+              })}
+            </Box>
+          )}
+        </Box>
+      </StyledCard>
+    )
+  }
+
+  const NextLesson = (): React.ReactElement => {
+    if (badgesMintedLS?.includes(lesson.badgeId)) {
+      // find the next unminted badge in the order of the lessons
+      const nextLesson = LESSONS.find(
+        (l) => !l.isArticle && !badgesMintedLS?.includes(l.badgeId)
+      )
+      if (!nextLesson) return null
+      return (
+        <Box p={2} mt={2} mb={2} w={isSmallScreen ? '100%' : '600px'}>
+          <Text fontSize="2xl" fontWeight="bold" mb={4} textAlign="center">
+            Next Lesson
+          </Text>
+          <Box w={isSmallScreen ? '100%' : '450px'} maxW="100%" m="auto">
+            <LessonCard lesson={nextLesson} />
+          </Box>
+        </Box>
+      )
+    }
+    return null
+  }
+
   return (
     <>
       {openLessons.includes(lesson.slug) ? (
@@ -180,8 +338,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           isLessonOpen={openLessons.includes(lesson.slug)}
         />
       ) : (
-        <>
-          {/* {!isSmallScreen && !IS_WHITELABEL && (
+        <Box justifyItems="center">
+          <Box
+            display={isSmallScreen ? 'block' : 'flex'}
+            gap={4}
+            justifyContent="center"
+          >
+            {/* {!isSmallScreen && !IS_WHITELABEL && (
             <StyledBox
               w="-webkit-fill-available"
               position="absolute"
@@ -199,16 +362,18 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               />
             </StyledBox>
           )} */}
-          <StyledCard
-            p={12}
-            maxW="800px"
-            mx="auto"
-            mt={6}
-            display={isSmallScreen ? 'contents' : 'block'}
-            position="relative"
-          >
-            <Box m="auto" p={isSmallScreen ? '12px' : 'auto'}>
-              {/* {!isSmallScreen && (
+            <StyledCard
+              py={4}
+              px={12}
+              w="100%"
+              maxW="600px"
+              mt={6}
+              mb={2}
+              display={isSmallScreen ? 'contents' : 'block'}
+              position="relative"
+            >
+              <Box m="auto" p={isSmallScreen ? '12px' : 'auto'}>
+                {/* {!isSmallScreen && (
                 <Box h="0">
                   <InternalLink
                     href="/lessons"
@@ -228,96 +393,59 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   </InternalLink>
                 </Box>
               )} */}
-              <Text
-                as="h1"
-                fontSize="3xl"
-                fontWeight="bold"
-                textAlign="center"
-                m="auto"
-                borderBottom="1px solid #989898"
-                w="fit-content"
-                maxW="calc(100vw - 100px)"
-                mb="8"
-                mt={isSmallScreen ? '-10px' : 'auto'}
-              >
-                {lesson.name}
-              </Text>
-              {/* <LanguageSwitch lesson={lesson} /> */}
-              <Box
-                display="flex"
-                mt="4"
-                justifyContent="space-between"
-                maxW="450px"
-                m="auto"
-                mb="4"
-              >
-                <OpenLesson lesson={lesson} click>
-                  <Box py="2">
-                    <Image
-                      src={
-                        isLessonCollected
-                          ? lesson.lessonCollectedImageLink
-                          : lesson.lessonImageLink
-                      }
-                      alt={lesson.englishName}
-                    />
-                  </Box>
-                </OpenLesson>
-              </Box>
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                mb="8"
-                flexDirection="column"
-                gap="4"
-              >
-                <LessonButton lesson={lesson} click />
-              </Box>
-              <Box>
                 <Text
-                  as="h2"
-                  fontSize="2xl"
+                  as="h1"
+                  fontSize="3xl"
                   fontWeight="bold"
+                  textAlign="center"
+                  m="auto"
                   borderBottom="1px solid #989898"
-                  pb="2"
+                  w="fit-content"
+                  maxW="calc(100vw - 100px)"
+                  mb="8"
+                  mt={isSmallScreen ? '-10px' : 'auto'}
                 >
-                  {t('Lesson Description')}
+                  {lesson.name}
                 </Text>
-                <Text as="p" fontSize="medium" py="4">
-                  {lesson.description}
-                </Text>
-                {badgesMintedLS?.includes(lesson.badgeId) && (
-                  <Box display="flex" justifyContent="center" mt="2" mb="8">
-                    <Button
-                      variant="secondaryBig"
-                      size="lg"
-                      leftIcon={<ShareFat width="24px" height="24px" />}
-                      onClick={() => {
-                        onShareOpen()
-                      }}
-                    >
-                      Share & Refer
-                    </Button>
-                    <ShareModal
-                      isOpen={isShareOpen}
-                      onClose={onShareClose}
-                      shareTitle="Share Lesson, Earn Points"
-                      shareMessage={shareMessage}
-                      shareLink={shareLink}
-                    />
-                  </Box>
-                )}
-                {!IS_PROD &&
-                  i18n.language !== 'en' &&
-                  lesson.translationDate && (
-                    <Box color="orange">
-                      Last translation update: {lesson.translationDate}
+                {/* <LanguageSwitch lesson={lesson} /> */}
+                <Box
+                  display="flex"
+                  mt="4"
+                  justifyContent="space-between"
+                  maxW="450px"
+                  m="auto"
+                  mb="4"
+                >
+                  <OpenLesson
+                    lesson={lesson}
+                    click
+                    onLessonOpen={() => {
+                      if (maxSlide === null) setMaxSlide(0)
+                    }}
+                  >
+                    <Box py="2">
+                      <Image
+                        src={
+                          isLessonCollected
+                            ? lesson.lessonCollectedImageLink
+                            : lesson.lessonImageLink
+                        }
+                        alt={lesson.englishName}
+                      />
                     </Box>
-                  )}
-              </Box>
-              {hasLessonGating && (
-                <Box my="4">
+                  </OpenLesson>
+                </Box>
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  mb="8"
+                  flexDirection="column"
+                  gap="4"
+                >
+                  <LessonButton lesson={lesson} click />
+                </Box>
+                <Box>
                   <Text
                     as="h2"
                     fontSize="2xl"
@@ -325,63 +453,70 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     borderBottom="1px solid #989898"
                     pb="2"
                   >
-                    {t('Lesson Requirements')}
+                    {t('Lesson Description')}
                   </Text>
-                  <Box textAlign="center">
-                    <NFT nftLink={lesson.nftGatingImageLink} />
-                    <Text as="p" fontSize="medium" py="4">
-                      {lesson.nftGatingRequirements}
-                    </Text>
-                    <ExternalLink
-                      href={lesson.nftGatingLink.replace(DOMAIN_URL, '')}
-                    >
-                      <Button size="lg" variant="primaryBig">
-                        {lesson.nftGatingCTA}
+                  <Text as="p" fontSize="medium" py="4">
+                    {lesson.description}
+                  </Text>
+                  {badgesMintedLS?.includes(lesson.badgeId) && (
+                    <Box display="flex" justifyContent="center" mt="2" mb="8">
+                      <Button
+                        variant="secondaryBig"
+                        size="lg"
+                        leftIcon={<ShareFat width="24px" height="24px" />}
+                        onClick={() => {
+                          onShareOpen()
+                        }}
+                      >
+                        Share & Refer
                       </Button>
-                    </ExternalLink>
-                  </Box>
+                      <ShareModal
+                        isOpen={isShareOpen}
+                        onClose={onShareClose}
+                        shareTitle="Share Lesson, Earn Points"
+                        shareMessage={shareMessage}
+                        shareLink={shareLink}
+                      />
+                    </Box>
+                  )}
+                  {!IS_PROD &&
+                    i18n.language !== 'en' &&
+                    lesson.translationDate && (
+                      <Box color="orange">
+                        Last translation update: {lesson.translationDate}
+                      </Box>
+                    )}
                 </Box>
-              )}
-              {lesson?.endOfLessonRedirect &&
-                isQuizComplete &&
-                Quest?.isQuestCompleted && (
-                  <>
-                    <Box pb="8">
-                      <Text
-                        as="h2"
-                        fontSize="2xl"
-                        fontWeight="bold"
-                        borderBottom="1px solid #989898"
-                        pb="2"
-                      >
-                        {t('Feedback')}
-                      </Text>
-                    </Box>
-                    <Box>{lesson?.endOfLessonText}</Box>
+                {isSmallScreen && <LessonSlides lesson={lesson} />}
+                {hasLessonGating && (
+                  <Box my="4">
+                    <Text
+                      as="h2"
+                      fontSize="2xl"
+                      fontWeight="bold"
+                      borderBottom="1px solid #989898"
+                      pb="2"
+                    >
+                      {t('Lesson Requirements')}
+                    </Text>
                     <Box textAlign="center">
-                      <InternalLink
-                        href={`/feedback?tally=${tallyId}`}
-                        alt="Leave feedback"
+                      <NFT nftLink={lesson.nftGatingImageLink} />
+                      <Text as="p" fontSize="medium" py="4">
+                        {lesson.nftGatingRequirements}
+                      </Text>
+                      <ExternalLink
+                        href={lesson.nftGatingLink.replace(DOMAIN_URL, '')}
                       >
-                        <Button variant="primaryBig" size="lg">
-                          {t('Leave feedback')}
+                        <Button size="lg" variant="primaryBig">
+                          {lesson.nftGatingCTA}
                         </Button>
-                      </InternalLink>
+                      </ExternalLink>
                     </Box>
-                  </>
+                  </Box>
                 )}
-              {!IS_WALLET_DISABLED && (
-                <Box
-                  minH={
-                    isSmallScreen &&
-                    Quest?.isQuestCompleted &&
-                    badgesMintedLS?.length === 0
-                      ? // HACK: make mobile height bigger to show popover under button
-                        '570px'
-                      : 'unset'
-                  }
-                >
-                  {lesson.badgeId && (
+                {lesson?.endOfLessonRedirect &&
+                  isQuizComplete &&
+                  Quest?.isQuestCompleted && (
                     <>
                       <Box pb="8">
                         <Text
@@ -391,28 +526,73 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                           borderBottom="1px solid #989898"
                           pb="2"
                         >
-                          Badge
+                          {t('Feedback')}
                         </Text>
                       </Box>
+                      <Box>{lesson?.endOfLessonText}</Box>
                       <Box textAlign="center">
-                        <Badge
-                          lesson={lesson}
-                          isQuestCompleted={
-                            isQuizComplete && Quest?.isQuestCompleted
-                          }
-                        />
+                        <InternalLink
+                          href={`/feedback?tally=${tallyId}`}
+                          alt="Leave feedback"
+                        >
+                          <Button variant="primaryBig" size="lg">
+                            {t('Leave feedback')}
+                          </Button>
+                        </InternalLink>
                       </Box>
                     </>
                   )}
-                  {(IS_COLLECTIBLE_ACTIVATED || pageEndsWithDatadisk) &&
-                  lesson.hasCollectible ? (
-                    <MintDatadiskButton lesson={lesson} />
-                  ) : null}
-                </Box>
-              )}
+                {!IS_WALLET_DISABLED && (
+                  <Box
+                    minH={
+                      isSmallScreen &&
+                      Quest?.isQuestCompleted &&
+                      badgesMintedLS?.length === 0
+                        ? // HACK: make mobile height bigger to show popover under button
+                          '570px'
+                        : 'unset'
+                    }
+                  >
+                    {lesson.badgeId && (
+                      <>
+                        <Box pb="8">
+                          <Text
+                            as="h2"
+                            fontSize="2xl"
+                            fontWeight="bold"
+                            borderBottom="1px solid #989898"
+                            pb="2"
+                          >
+                            Badge
+                          </Text>
+                        </Box>
+                        <Box textAlign="center">
+                          <Badge
+                            lesson={lesson}
+                            isQuestCompleted={
+                              isQuizComplete && Quest?.isQuestCompleted
+                            }
+                          />
+                        </Box>
+                      </>
+                    )}
+                    {(IS_COLLECTIBLE_ACTIVATED || pageEndsWithDatadisk) &&
+                    lesson.hasCollectible ? (
+                      <MintDatadiskButton lesson={lesson} />
+                    ) : null}
+                  </Box>
+                )}
+              </Box>
+            </StyledCard>
+            {isSmallScreen && <NextLesson />}
+            {!isSmallScreen && <LessonSlides lesson={lesson} />}
+          </Box>
+          {!isSmallScreen && (
+            <Box w="956px" pr="347px" m="auto">
+              <NextLesson />
             </Box>
-          </StyledCard>
-        </>
+          )}
+        </Box>
       )}
     </>
   )

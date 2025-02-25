@@ -46,7 +46,7 @@ const Layout = ({
       minH="100vh"
       paddingBottom={isSmallLesson && isLesson ? '81px' : '0'}
       bgColor="#161515"
-      overflowX="hidden"
+      // overflowX="hidden"
     >
       {!hideNavBar && <Nav />}
       <StyledBackground

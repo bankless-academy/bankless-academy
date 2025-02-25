@@ -14,68 +14,114 @@ import {
 } from '@phosphor-icons/react'
 import { SVGProps } from 'react'
 
-export const LearnIcon = (): React.ReactElement => (
+export const LearnIcon = ({
+  iconOnly = false,
+  isDone = false,
+}: {
+  iconOnly?: boolean
+  isDone?: boolean
+}): React.ReactElement => (
   <Icon
     as={BookOpen}
     w={10}
     h={10}
-    bg="linear-gradient(148.06deg, #B8FFB0 7.86%, #84FFE1 90.48%)"
-    color="black"
+    bg={
+      !iconOnly
+        ? 'linear-gradient(148.06deg, #B8FFB0 7.86%, #84FFE1 90.48%)'
+        : 'transparent'
+    }
+    color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
-export const QuizIcon = (): React.ReactElement => (
+export const QuizIcon = ({
+  iconOnly = false,
+  isDone = false,
+}: {
+  iconOnly?: boolean
+  isDone?: boolean
+}): React.ReactElement => (
   <Icon
     as={LightbulbFilament}
     w={10}
     h={10}
-    bg="linear-gradient(148.06deg, #B0FFFA 7.86%, #FFBF84 90.48%)"
-    color="black"
+    bg={
+      !iconOnly
+        ? 'linear-gradient(148.06deg, #B0FFFA 7.86%, #FFBF84 90.48%)'
+        : 'transparent'
+    }
+    color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
-export const PollIcon = (): React.ReactElement => (
+export const PollIcon = ({
+  iconOnly = false,
+  isDone = false,
+}: {
+  iconOnly?: boolean
+  isDone?: boolean
+}): React.ReactElement => (
   <Icon
     as={ChartBar}
     w={10}
     h={10}
-    bg="linear-gradient(148deg, #B3F6FF, #A485FF)"
-    color="black"
+    bg={!iconOnly ? 'linear-gradient(148deg, #B3F6FF, #A485FF)' : 'transparent'}
+    color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px 0px #A4A5FF"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
-export const QuestIcon = (): React.ReactElement => (
+export const QuestIcon = ({
+  iconOnly = false,
+  isDone = false,
+}: {
+  iconOnly?: boolean
+  isDone?: boolean
+}): React.ReactElement => (
   <Icon
     as={RocketLaunch}
     w={10}
     h={10}
-    bg="linear-gradient(148.06deg, #FFDFB0 7.86%, #FF84DC 90.48%)"
-    color="black"
+    bg={
+      !iconOnly
+        ? 'linear-gradient(148.06deg, #FFDFB0 7.86%, #FF84DC 90.48%)'
+        : 'transparent'
+    }
+    color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
-export const RewardsIcon = (): React.ReactElement => (
+export const RewardsIcon = ({
+  iconOnly = false,
+  isDone = false,
+}: {
+  iconOnly?: boolean
+  isDone?: boolean
+}): React.ReactElement => (
   <Icon
     as={Medal}
     w={10}
     h={10}
-    bg="linear-gradient(148.06deg, #FDFF84 7.86%, #B0E3FF 79.72%)"
-    color="black"
+    bg={
+      !iconOnly
+        ? 'linear-gradient(148.06deg, #FDFF84 7.86%, #B0E3FF 79.72%)'
+        : 'transparent'
+    }
+    color={!iconOnly ? 'black' : isDone ? 'white' : 'gray'}
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow={iconOnly ? 'none' : '0px 0px 15px rgba(255, 255, 255, 0.5)'}
   />
 )
 
@@ -88,7 +134,7 @@ export const PencilIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 
@@ -101,7 +147,7 @@ export const GraduationCapIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 
@@ -114,7 +160,7 @@ export const HandshakeIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 
@@ -127,7 +173,7 @@ export const EyeIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 
@@ -140,7 +186,7 @@ export const UsersThreeIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 
@@ -153,7 +199,7 @@ export const DonateIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    // boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 

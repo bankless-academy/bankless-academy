@@ -103,7 +103,7 @@ export const Slide = styled(Card)<{
     margin: 10px;
   }
   .bloc-ab img {
-    width: 100%;
+    width: 90%;
   }
   .bloc-b {
     ${(props) =>
@@ -133,18 +133,22 @@ export const Slide = styled(Card)<{
           max-width: 800px;
         }
       `
-        : 'img {  max-height: 60vh; max-height: 600px; }'};
+        : 'img { max-height: 523px; }'};
   }
   div.content div {
     h2,
     p {
-      font-size: var(--chakra-fontSizes-xl);
+      font-size: var(--chakra-fontSizes-lg);
       ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin: 0.8em;
       ${(props) =>
         (props.slidetype === 'QUIZ' || props.slidetype === 'POLL') &&
         props.issmallscreen === 'true' &&
         'margin: 0.8em 0 0 0;'};
+    }
+    hr {
+      margin-left: 16px;
+      margin-right: 16px;
     }
     h2 {
       font-weight: bold;
@@ -155,7 +159,7 @@ export const Slide = styled(Card)<{
     }
     ul,
     ol {
-      font-size: var(--chakra-fontSizes-xl);
+      font-size: var(--chakra-fontSizes-lg);
       ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin-left: 2em;
     }
@@ -184,8 +188,8 @@ export const Slide = styled(Card)<{
     }
     iframe.animation {
       margin: 0 auto;
-      width: 590px;
-      height: 590px;
+      width: 513px;
+      height: 513px;
     }
     blockquote {
       font-size: var(--chakra-fontSizes-lg);
@@ -338,6 +342,10 @@ const Lesson = ({
   const slideRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useLocalStorage(`${lesson.slug}`, 0)
+  const [maxSlide, setMaxSlide] = useLocalStorage(
+    `${lesson.slug}-maxSlide`,
+    currentSlide
+  )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   const [longSlide, setLongSlide] = useState<boolean>(false)
   const [, isSmallScreen] = useSmallScreen()
@@ -537,7 +545,8 @@ const Lesson = ({
     toast.closeAll()
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
-      if (!isDesktop) scrollTop()
+      setMaxSlide(Math.max(currentSlide, maxSlide))
+      if (isSmallScreen) scrollTop()
     }
     setSelectedAnswerNumber(null)
   }
@@ -548,9 +557,12 @@ const Lesson = ({
       console.log('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
-      if (!isDesktop) scrollTop()
+      const newMaxSlide =
+        currentSlide + 1 > maxSlide ? currentSlide + 1 : maxSlide
+      setMaxSlide(newMaxSlide)
+      if (isSmallScreen) scrollTop()
     } else if (isLastSlide) {
-      if (!isDesktop) scrollTop()
+      if (isSmallScreen) scrollTop()
       if (lesson.endOfLessonRedirect) {
         if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
           closeLesson()
@@ -673,8 +685,10 @@ const Lesson = ({
     animationSlideId,
     slide,
     currentSlide,
+    maxSlide,
     isFirstSlide,
     isDesktop,
+    isSmallScreen,
   ])
   useHotkeys('right', () => clickRight(), [
     isAnimationSlide,
@@ -684,8 +698,10 @@ const Lesson = ({
     answerIsCorrect,
     isLastSlide,
     currentSlide,
+    maxSlide,
     lesson,
     isDesktop,
+    isSmallScreen,
   ])
   useHotkeys('1', () => {
     answerRef?.current[1]?.click()
@@ -871,7 +887,7 @@ const Lesson = ({
 
   return (
     <Slide
-      p={8}
+      p={6}
       pt={4}
       pb={2}
       mt={6}
@@ -887,21 +903,22 @@ const Lesson = ({
         <Box h="0" w="100%">
           <Button
             position="absolute"
-            top="-24px"
-            right="-24px"
-            size="lg"
+            top="-20px"
+            right="-20px"
             iconSpacing="0"
             variant="secondaryBig"
             leftIcon={<X width="24px" height="24px" />}
             onClick={() => closeLesson()}
             p="0"
             _hover={{ p: '0' }}
+            h="40px !important"
+            w="40px !important"
           ></Button>
         </Box>
       )}
       <Text
-        fontSize={isSmallScreen ? 'xl' : '3xl'}
-        my={isSmallScreen ? '2' : '4'}
+        fontSize={isSmallScreen ? 'xl' : '2xl'}
+        my={isSmallScreen ? '2' : '3'}
         display="inline-flex"
         justifyContent="center"
         alignItems="center"
@@ -958,12 +975,12 @@ const Lesson = ({
             : null
         }
       />
-      <Box maxH={isSmallScreen ? 'unset' : '600px'}>
+      <Box maxH={isSmallScreen ? 'unset' : '523px'}>
         <Box
           className="content"
-          minH="calc(100vh - 360px)"
+          minH="480px"
           pb={isSmallScreen ? '6' : 0}
-          pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 4}
+          pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 0}
         >
           {slide.type === 'LEARN' && (
             <Box ref={slideRef}>
@@ -974,7 +991,7 @@ const Lesson = ({
             <>
               <Answers
                 mx={2}
-                minH={isSmallScreen ? '470px' : '590px'}
+                minH={isSmallScreen ? '470px' : '513px'}
                 display="flex"
                 flexDirection="column"
               >
@@ -1114,21 +1131,19 @@ const Lesson = ({
       </Box>
       <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
         <HStack flex="auto">
-          {isSmallScreen && (
-            <Button
-              ref={buttonLeftRef}
-              variant="secondaryBig"
-              size="lg"
-              onClick={() => closeLesson()}
-              leftIcon={<X width="24px" height="24px" />}
-              ml={longSlide ? '600px' : '0'}
-              p="0"
-              _hover={{ p: '0' }}
-              iconSpacing="0"
-            >
-              {isSmallScreen ? '' : 'Prev'}
-            </Button>
-          )}
+          <Button
+            ref={buttonLeftRef}
+            variant="secondaryBig"
+            size="lg"
+            onClick={() => closeLesson()}
+            leftIcon={<X width="24px" height="24px" />}
+            ml={longSlide ? '523px' : '0'}
+            p={isSmallScreen ? '0' : '24px'}
+            _hover={{ px: isSmallScreen ? '0' : '24px' }}
+            iconSpacing={isSmallScreen ? '0' : '8px'}
+          >
+            {isSmallScreen ? '' : 'Close'}
+          </Button>
           {!isFirstSlide && (
             <Button
               ref={buttonLeftRef}
@@ -1136,7 +1151,7 @@ const Lesson = ({
               size="lg"
               onClick={() => clickLeft()}
               leftIcon={<ArrowBackIcon />}
-              ml={longSlide ? '600px' : '0'}
+              ml={longSlide ? '523px' : '0'}
             >
               {isSmallScreen ? '' : 'Prev'}
             </Button>

@@ -12,10 +12,12 @@ const OpenLesson = ({
   children,
   lesson,
   click,
+  onLessonOpen,
 }: {
   children: ReactElement
   lesson: LessonType
   click?: boolean
+  onLessonOpen?: () => void
 }): React.ReactElement => {
   const [showDisclaimer, setShowDisclaimer] = useState(false)
   const toast = useToast()
@@ -53,6 +55,11 @@ const OpenLesson = ({
     if (!openLessons.includes(lesson.slug)) {
       setOpenLessons([...openLessons, lesson.slug])
     }
+
+    // Call onLessonOpen after the lesson is opened
+    if (onLessonOpen) {
+      onLessonOpen()
+    }
   }
 
   return (
@@ -61,7 +68,20 @@ const OpenLesson = ({
         cursor: 'pointer',
       }}
       position="relative"
-      onClick={async () => (click ? setShowDisclaimer(true) : null)}
+      onClick={async () => {
+        if (click) {
+          const disclaimerTimestamp = localStorage.getItem(
+            `disclaimer-${lesson.slug}`
+          )
+          if (disclaimerTimestamp) {
+            // If disclaimer was already accepted, open lesson directly
+            await openLesson()
+          } else {
+            // Show disclaimer if not yet accepted
+            setShowDisclaimer(true)
+          }
+        }
+      }}
     >
       {children}
       {showDisclaimer && (

@@ -9,7 +9,7 @@ const StyledDiv = styled(Box)`
   img {
     display: flex;
     border-radius: 5px;
-    width: 400px;
+    width: 365px;
     max-width: 100%;
     cursor: pointer;
     margin-bottom: 8px;
