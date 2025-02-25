@@ -43,10 +43,12 @@ const Layout = ({
 
   return (
     <Box
+      // minH={isLesson ? '100vh' : 'unset'}
       minH="100vh"
+      // height="100%"
       paddingBottom={isSmallLesson && isLesson ? '81px' : '0'}
       bgColor="#161515"
-      // overflowX="hidden"
+      overflowX={'hidden'}
     >
       {!hideNavBar && <Nav />}
       <StyledBackground

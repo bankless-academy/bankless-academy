@@ -271,23 +271,24 @@ const Layout = ({
       position="relative"
       display="flex"
       flexDirection="column"
-      background={
-        shouldShowOnlyChildren
-          ? 'default'
-          : `linear-gradient(
-        107.1deg,
-        rgba(46, 33, 33, 0.3) -3.13%,
-        rgba(80, 73, 84, 0.3) 16.16%,
-        rgba(94, 89, 104, 0.3) 29.38%,
-        rgba(86, 81, 94, 0.3) 41.5%,
-        rgba(23, 21, 21, 0.3) 102.65%
-      )`
-      }
+      // background={
+      //   shouldShowOnlyChildren
+      //     ? 'default'
+      //     : `linear-gradient(
+      //   107.1deg,
+      //   rgba(46, 33, 33, 0.3) -3.13%,
+      //   rgba(80, 73, 84, 0.3) 16.16%,
+      //   rgba(94, 89, 104, 0.3) 29.38%,
+      //   rgba(86, 81, 94, 0.3) 41.5%,
+      //   rgba(23, 21, 21, 0.3) 102.65%
+      // )`
+      // }
     >
       <Box
-        position={
-          shouldShowOnlyChildren || isSmallScreen ? 'relative' : 'absolute'
-        }
+        // position={
+        //   shouldShowOnlyChildren || isSmallScreen ? 'relative' : 'absolute'
+        // }
+        position="relative"
         top={0}
         left={0}
         right={0}
@@ -302,6 +303,8 @@ const Layout = ({
           }
           display={shouldShowOnlyChildren ? 'block' : 'grid'}
           backgroundColor="#161515"
+          height="100%"
+          position="relative"
         >
           {page === 'INDEX' && <Announcement />}
           <Container
