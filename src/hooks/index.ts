@@ -5,7 +5,7 @@ export function useSmallScreen(): boolean[] | null {
   return useMediaQuery(
     [
       '(max-width: 800px)',
-      '(max-width: 1260px)',
+      '(max-width: 1260px) or (max-height: 719px)',
       '(max-width: 500px)',
       '(max-width: 389px)',
     ],
