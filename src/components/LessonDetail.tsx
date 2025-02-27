@@ -329,6 +329,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     <>
       {openLessons.includes(lesson.slug) ? (
         <Lesson
+          key={lesson.slug}
           lesson={lesson}
           extraKeywords={extraKeywords}
           closeLesson={() =>

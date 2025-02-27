@@ -267,7 +267,11 @@ const Lessons = (): JSX.Element => {
           <Article lesson={lesson} extraKeywords={keywords} />
         ) : (
           <Container maxW="container.xl">
-            <Lesson lesson={lesson} extraKeywords={keywords} />
+            <Lesson
+              key={lesson.slug}
+              lesson={lesson}
+              extraKeywords={keywords}
+            />
           </Container>
         )}
       </>
