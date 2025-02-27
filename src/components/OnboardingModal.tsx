@@ -60,6 +60,7 @@ const OnboardingModal = ({
   const toast = useToast()
   const { address } = useAccount()
   const [ens] = useLocalStorage(`name-cache`, {})
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     const loadUser = async () => {
@@ -94,6 +95,7 @@ const OnboardingModal = ({
       } else setStep('subscribe')
     } else {
       // subscribe
+      setIsLoading(true)
       toast.closeAll()
       if (!email)
         toast({
@@ -153,6 +155,7 @@ const OnboardingModal = ({
           })
         }
       }
+      setIsLoading(false)
     }
   }
 
@@ -189,7 +192,13 @@ const OnboardingModal = ({
             Back
           </Button>
         )}
-        <Button onClick={handleNextStep} variant="primaryWhite" size="lg">
+        <Button
+          onClick={handleNextStep}
+          variant="primaryWhite"
+          size="lg"
+          isLoading={isLoading}
+          loadingText="Signing up..."
+        >
           Sign-up
         </Button>
       </>
