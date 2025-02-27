@@ -4,15 +4,15 @@ import { Box, Checkbox, Stack, Text } from '@chakra-ui/react'
 const BLOCKCHAINS = [
   {
     name: 'Bitcoin',
-    correctAnswers: ['decentralisation', 'security'],
+    correctAnswers: ['decentralization', 'security'],
   },
   {
     name: 'Ethereum',
-    correctAnswers: ['decentralisation', 'security'],
+    correctAnswers: ['decentralization', 'security'],
   },
 ]
 
-const CHARACTERISTICS = ['decentralisation', 'scalability', 'security']
+const CHARACTERISTICS = ['decentralization', 'scalability', 'security']
 
 const isQuestCompleted = (state) => {
   return BLOCKCHAINS.every((blockchain, idx) => {
