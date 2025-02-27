@@ -330,6 +330,21 @@ const App = ({
                           left: 2vh !important;
                           max-width: 30vh !important;
                         }
+                        // HACK: mobile lesson button hover disabled
+                        .css-fhy18r:hover:disabled,
+                        .css-fhy18r[data-hover]:disabled,
+                        .css-fhy18r:hover[disabled],
+                        .css-fhy18r[data-hover][disabled],
+                        .css-fhy18r:hover[aria-disabled='true'],
+                        .css-fhy18r[data-hover][aria-disabled='true'],
+                        .css-fhy18r:hover[data-disabled],
+                        .css-fhy18r[data-hover][data-disabled] {
+                          background: linear-gradient(
+                            135.91deg,
+                            #b06fd8 29.97%,
+                            #597aee 99.26%
+                          ) !important;
+                        }
                       `}
                     />
                     <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
