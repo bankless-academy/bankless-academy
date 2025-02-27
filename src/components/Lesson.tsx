@@ -536,7 +536,7 @@ const Lesson = ({
       if (isSmallScreen) scrollDown()
     } else goToPrevSlide()
     // remove focus
-    buttonLeftRef.current.blur()
+    buttonLeftRef?.current?.blur()
   }
 
   const clickRight = () => {
@@ -545,7 +545,7 @@ const Lesson = ({
       if (isSmallScreen) scrollDown()
     } else if (!(slide.quiz && !answerIsCorrect)) goToNextSlide()
     // remove focus
-    buttonRightRef.current.blur()
+    buttonRightRef?.current?.blur()
   }
 
   const goToPrevSlide = () => {
