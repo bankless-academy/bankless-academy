@@ -109,8 +109,10 @@ const LessonCards = ({
     const mobilePreferences = localStorage.getItem('mobile-preferences')
     if (
       isMobile &&
-      // don't show on embed or webapp
+      // don't show on embed
       !localStorage.getItem('embed')?.length &&
+      // don't show on pwa
+      !localStorage.getItem('pwa')?.length &&
       // user has at least 1 badge
       badgesMintedLS?.length > 0 &&
       // user doesn't want to install the Mobile App
