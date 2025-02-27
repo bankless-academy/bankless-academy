@@ -29,7 +29,7 @@ ________________________________________________________________________________
 
 # Introduction
 
-The desired operational state for any blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that handles all three aspects well has proven to be a challenge, as yet unsolved. This challenge has been given a name: the `Blockchain Trilemma`. 
+The desired operational state for any blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that handles all three aspects well has proven to be a challenge, as yet unsolved. This challenge has been given a name: the `Blockchain Trilemma`.
 
 Bitcoin and Ethereum are both fairly decentralized and secure, but they don’t scale well, as is evident from the high transaction fees and long transaction queues when the network is busy. To circumvent these issues, Explorers can make use of various technologies which drastically reduce transaction costs and increase transaction speed. These are collectively known as Layer 2 (L2) scaling solutions.
 
@@ -103,7 +103,7 @@ Sidechains:
 
 # Rollups
 
-Layer 2 protocols that use Rollup technology maintain closer alignment with the security level of Ethereum Mainnet. 
+Layer 2 protocols that use Rollup technology maintain closer alignment with the security level of Ethereum Mainnet.
 
 Like sidechains, Rollups permit on-chain transactions to execute away from Ethereum Mainnet. These transactions are then ‘rolled up’ into a single transaction before being sent to Ethereum.
 
@@ -177,13 +177,13 @@ Rollups, like sidechains, also validate and process their own transactions, but 
 
 Presently, Optimistic Rollups offer the greatest level of smart contract compatibility with Ethereum Mainnet, enabling dApps from Ethereum Mainnet to easily deploy on their networks. Many believe ZK Rollups will become the scaling solution of the future, thanks to their high levels of privacy and security.
 
-# Start Your Layer 2 Journey With Optimism 🙂
+# Start Your Layer 2 Journey With Optimism or Base 🙂
 
-We believe that Optimism, an EVM-equivalent Optimistic Rollup, is a great L2 for Explorers to begin with. Using dApps on Optimism will feel similar to using L1 dApps, just cheaper and faster — and it uses ETH as gas. Your upcoming quest will serve as the first step in your Optimism journey!
+Optimism and Base, both EVM-equivalent Optimistic Rollups, are great L2s for Explorers to begin with. Using dApps on either chain will feel similar to using L1 dApps, just cheaper and faster — and they both use ETH as gas. Your upcoming quest will serve as the first step in your journey on Optimism or Base!
 
-This improved functionality isn’t the only reason Optimism is a great scaling solution for Bankless Explorers. The ecosystem is highly influenced by Ethereum values, with a portion of its transaction fees used to [retroactively fund public good projects](https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY) adding value to the ecosystem. It’s like a digital country that regularly and transparently funds on-chain infrastructure, such as free education from Bankless Academy, for everyone.
+This improved functionality isn’t the only reason these networks are great scaling solutions for Bankless Explorers. Both ecosystems are deeply influenced by Ethereum values, with Optimism even allocating a portion of its transaction fees to [retroactively fund public goods](https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY) that add value to the ecosystem. It’s like a digital country that regularly and transparently funds on-chain infrastructure, such as free education from Bankless Academy, for everyone.
 
-Optimism is not simply a platform that relies on the Optimistic Rollup. The network is a metaphor for the power of blockchain technology to solve existing problems and to show us new ways of transacting and living together. And that should make us all optimistic. 🙂
+Optimism and Base aren’t just platforms relying on Optimistic Rollups—they represent the power of blockchain technology to solve existing problems and explore new ways of transacting and coordinating together. And that should make us all optimistic. 🙂
 
-![](https://app.banklessacademy.com/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism--54a0f80a.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism-or-base--54a0f80a.svg)
 
