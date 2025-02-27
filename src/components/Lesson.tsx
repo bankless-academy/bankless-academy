@@ -103,7 +103,9 @@ export const Slide = styled(Card)<{
     margin: 10px;
   }
   .bloc-ab img {
-    width: 90%;
+    width: 91%;
+    margin: auto;
+    max-width: 500px;
   }
   .bloc-b {
     ${(props) =>
@@ -115,6 +117,7 @@ export const Slide = styled(Card)<{
   .bloc1,
   .bloc2 {
     flex: 1;
+    min-height: 533px;
   }
   .bloc2 {
     ${(props) => props.istranslation === 'true' && ' flex: 0.8;'};
@@ -133,7 +136,7 @@ export const Slide = styled(Card)<{
           max-width: 800px;
         }
       `
-        : 'img { max-height: 523px; }'};
+        : 'img { max-height: 533px; }'};
   }
   div.content div {
     h2,
@@ -188,8 +191,8 @@ export const Slide = styled(Card)<{
     }
     iframe.animation {
       margin: 0 auto;
-      width: 513px;
-      height: 513px;
+      width: 523px;
+      height: 523px;
     }
     blockquote {
       font-size: var(--chakra-fontSizes-lg);
@@ -532,6 +535,8 @@ const Lesson = ({
       setAnimationStepLS(animationStepLS - 1)
       if (isSmallScreen) scrollDown()
     } else goToPrevSlide()
+    // remove focus
+    buttonLeftRef.current.blur()
   }
 
   const clickRight = () => {
@@ -539,6 +544,8 @@ const Lesson = ({
       setAnimationStepLS(animationStepLS + 1)
       if (isSmallScreen) scrollDown()
     } else if (!(slide.quiz && !answerIsCorrect)) goToNextSlide()
+    // remove focus
+    buttonRightRef.current.blur()
   }
 
   const goToPrevSlide = () => {
@@ -975,7 +982,7 @@ const Lesson = ({
             : null
         }
       />
-      <Box maxH={isSmallScreen ? 'unset' : '523px'}>
+      <Box maxH={isSmallScreen ? 'unset' : '533px'}>
         <Box
           className="content"
           minH="480px"
@@ -991,7 +998,7 @@ const Lesson = ({
             <>
               <Answers
                 mx={2}
-                minH={isSmallScreen ? '470px' : '513px'}
+                minH={isSmallScreen ? '470px' : '533px'}
                 display="flex"
                 flexDirection="column"
               >
@@ -1137,7 +1144,7 @@ const Lesson = ({
             size="lg"
             onClick={() => closeLesson()}
             leftIcon={<X width="24px" height="24px" />}
-            ml={longSlide ? '523px' : '0'}
+            ml={longSlide ? '533px' : '0'}
             p={isSmallScreen ? '0' : '24px'}
             _hover={{ px: isSmallScreen ? '0' : '24px' }}
             iconSpacing={isSmallScreen ? '0' : '8px'}
@@ -1151,7 +1158,7 @@ const Lesson = ({
               size="lg"
               onClick={() => clickLeft()}
               leftIcon={<ArrowBackIcon />}
-              ml={longSlide ? '523px' : '0'}
+              ml={longSlide ? '533px' : '0'}
             >
               {isSmallScreen ? '' : 'Prev'}
             </Button>
