@@ -243,7 +243,7 @@ export default async function handler(
       }
       case 'read-x': {
         const response = await fetch(
-          `https://x.banklessacademy.com/api/tweets/1869099842800365863?apiKey=${process.env.TWITTER_CLIENT_API_KEY}`,
+          `https://x.bankless.ac/api/tweets/1869099842800365863?apiKey=${process.env.TWITTER_CLIENT_API_KEY}`,
           {
             headers: {
               'X-API-KEY': process.env.TWITTER_CLIENT_API_KEY,

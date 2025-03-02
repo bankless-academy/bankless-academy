@@ -172,7 +172,7 @@ export default async function handler(
             console.log('resolvedLink', resolvedLink)
           } else {
             // Twitter verification
-            const twitterResponse = await fetch(`https://x.banklessacademy.com/api/tweets/${messageId}`, {
+            const twitterResponse = await fetch(`https://x.bankless.ac/api/tweets/${messageId}`, {
               headers: {
                 'X-API-KEY': process.env.TWITTER_CLIENT_API_KEY
               }
