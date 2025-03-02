@@ -9,6 +9,7 @@ const fsPromises = require('fs').promises;
 const crc32 = require('js-crc').crc32;
 const { Client } = require("@notionhq/client")
 const { NotionToMarkdown } = require("notion-to-md")
+const cheerio = require('cheerio')
 
 const {
   LESSON_SPLITTER,
@@ -246,6 +247,43 @@ n2m.setCustomTransformer("image", async (b) => {
   return `![](https://www.notion.so/image/${encodeURIComponent(b?.image?.file?.url?.split('?')[0].replace('https://s3.', 'https://s3-'))}?table=block&id=${b?.id})`
 })
 
+async function getBuildIdFromDomain(domain) {
+  try {
+    // Ensure the domain starts with http:// or https://
+    const url = domain.startsWith('http') ? domain : `https://${domain}`;
+
+    // Fetch the HTML content
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+    }
+    const html = await response.text();
+
+    // Parse the HTML with cheerio
+    const $ = cheerio.load(html);
+
+    // Find the __NEXT_DATA__ script tag
+    const nextDataScript = $('#__NEXT_DATA__').html();
+    if (!nextDataScript) {
+      throw new Error('No __NEXT_DATA__ script tag found');
+    }
+
+    // Parse the JSON content inside the script tag
+    const nextData = JSON.parse(nextDataScript);
+
+    // Extract the buildId
+    const buildId = nextData.buildId;
+    if (!buildId) {
+      throw new Error('No buildId found in __NEXT_DATA__');
+    }
+
+    return buildId;
+  } catch (error) {
+    console.error('Error:', error.message);
+    return null;
+  }
+}
+
 module.exports = {
   slugify,
   downloadImage,
@@ -257,4 +295,5 @@ module.exports = {
   mdHeader,
   placeholder,
   n2m,
+  getBuildIdFromDomain,
 };

@@ -28,6 +28,7 @@ const {
   mdHeader,
   placeholder,
   n2m,
+  getBuildIdFromDomain,
 } = require('./utils.js')
 
 const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED || false
@@ -61,6 +62,8 @@ console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then(async (notionRows) => {
+    const mirrorBuildId = await getBuildIdFromDomain('mirror.xyz')
+    console.log('mirrorBuildId', mirrorBuildId)
     console.log('Notion DB link: ', `${POTION_API}/table?id=${NOTION_ID}`)
     const lessons = []
     if (IS_WHITELABEL && !fs.existsSync(`public/${PROJECT_DIR}lesson`)) {
@@ -181,11 +184,17 @@ axios
             return axios
               // .get(`https://arweave.net/${arweaveTxId}`)
               // HACK: use mirror API to get article content
-              .get(`https://mirror.xyz/_next/data/h4o88ip1ojLhLF1z4T-3l/banklessacademy.eth/${mirrorId}.json`)
+              .get(`https://mirror.xyz/_next/data/${mirrorBuildId}/banklessacademy.eth/${mirrorId}.json`)
               .then(async ({ data }) => {
                 // console.log(data)
                 // console.log(data?.content?.body)
                 // console.log(data?.content?.title)
+
+                if (!lesson?.articleContent) {
+                  console.log('!!! problem with mirrorBuildId !!!')
+                  return
+                }
+
                 lesson.articleContent = data?.pageProps?.__APOLLO_STATE__?.[`entry:${mirrorId}`]?.body
                   .replace(/\\\[/g, "[")
                   .replace(/\\\]/g, "]")
