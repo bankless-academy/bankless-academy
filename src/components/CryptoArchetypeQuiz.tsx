@@ -427,6 +427,281 @@ const CryptoArchetypeQuiz = () => {
         },
       ],
     },
+    {
+      text: 'My approach to crypto privacy is:',
+      options: [
+        {
+          text: 'Privacy is a fundamental right that needs protection',
+          archetypes: ['privacyAdvocate', 'whiteHat'],
+          oppositeArchetypes: ['ctInfluencer', 'journalist'],
+        },
+        {
+          text: 'I use privacy tools when needed for specific transactions',
+          archetypes: ['degenerate', 'whale'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Transparency is more important for ecosystem health',
+          archetypes: ['onChainAnalyst', 'journalist', 'educator'],
+          oppositeArchetypes: ['privacyAdvocate'],
+        },
+        {
+          text: 'I focus more on security than privacy',
+          archetypes: ['hodler', 'smartContractWizard'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'When I see a meme coin pumping, I typically:',
+      options: [
+        {
+          text: 'Create or share memes about it to join the fun',
+          archetypes: ['memeLord', 'ctInfluencer'],
+          oppositeArchetypes: ['maximalist', 'tokenomicsArchitect'],
+        },
+        {
+          text: "Analyze if there's a short-term trading opportunity",
+          archetypes: ['pumpDumper', 'degenerate', 'airdropFarmer'],
+          oppositeArchetypes: ['hodler'],
+        },
+        {
+          text: 'Ignore it and focus on fundamentals',
+          archetypes: ['hodler', 'maximalist', 'tokenomicsArchitect'],
+          oppositeArchetypes: ['memeLord', 'pumpDumper'],
+        },
+        {
+          text: 'Study the community dynamics for educational content',
+          archetypes: ['educator', 'journalist', 'onChainAnalyst'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'My ideal contribution to the crypto ecosystem would be:',
+      options: [
+        {
+          text: 'Building tools that enhance security and safety',
+          archetypes: ['whiteHat', 'protocolDev', 'smartContractWizard'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Creating educational content to onboard newcomers',
+          archetypes: ['educator', 'ctInfluencer', 'journalist'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Providing liquidity and supporting promising projects',
+          archetypes: ['whale', 'stakingEnthusiast', 'nftCollector'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Participating actively in governance and community',
+          archetypes: ['daoVoter', 'founder', 'privacyAdvocate'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'When exploring new DeFi protocols, I prioritize:',
+      options: [
+        {
+          text: 'Innovative tokenomics and sustainable yield',
+          archetypes: ['tokenomicsArchitect', 'stakingEnthusiast', 'founder'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Security audits and code quality',
+          archetypes: ['whiteHat', 'smartContractWizard', 'hodler'],
+          oppositeArchetypes: ['degenerate'],
+        },
+        {
+          text: 'APY and potential airdrops',
+          archetypes: ['degenerate', 'airdropFarmer', 'pumpDumper'],
+          oppositeArchetypes: ['whiteHat'],
+        },
+        {
+          text: 'Community strength and governance structure',
+          archetypes: ['daoVoter', 'educator', 'nftCollector'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'My reaction to controversial crypto regulations is:',
+      options: [
+        {
+          text: 'Advocate for privacy and freedom from oversight',
+          archetypes: ['privacyAdvocate', 'maximalist'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Analyze how they affect different projects and markets',
+          archetypes: ['journalist', 'onChainAnalyst', 'whale'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Build solutions that can adapt to regulatory changes',
+          archetypes: ['founder', 'protocolDev', 'tokenomicsArchitect'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Create memes and content about the situation',
+          archetypes: ['memeLord', 'ctInfluencer', 'educator'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'The most exciting aspect of NFTs for me is:',
+      options: [
+        {
+          text: 'Collecting digital art and rare items',
+          archetypes: ['nftCollector', 'whale'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Building new NFT standards and applications',
+          archetypes: ['smartContractWizard', 'protocolDev', 'founder'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'The community and cultural aspects',
+          archetypes: ['memeLord', 'ctInfluencer', 'daoVoter'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'The potential for flipping profitable collections',
+          archetypes: ['degenerate', 'pumpDumper', 'airdropFarmer'],
+          oppositeArchetypes: ['hodler'],
+        },
+      ],
+    },
+    {
+      text: 'When a protocol is exploited, I typically:',
+      options: [
+        {
+          text: 'Analyze the hack and learn from the vulnerabilities',
+          archetypes: ['whiteHat', 'smartContractWizard', 'onChainAnalyst'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Look for buying opportunities if the token dumps',
+          archetypes: ['degenerate', 'whale', 'pumpDumper'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Create educational content explaining what happened',
+          archetypes: ['educator', 'journalist', 'ctInfluencer'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Participate in governance to improve security',
+          archetypes: ['daoVoter', 'founder', 'hodler'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'My favorite crypto conference activity would be:',
+      options: [
+        {
+          text: 'Attending technical workshops and developer sessions',
+          archetypes: ['protocolDev', 'smartContractWizard', 'whiteHat'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Networking with founders and investors',
+          archetypes: ['founder', 'whale', 'tokenomicsArchitect'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Participating in governance discussions',
+          archetypes: ['daoVoter', 'maximalist', 'privacyAdvocate'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Creating content and engaging with the community',
+          archetypes: ['memeLord', 'educator', 'journalist'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'The crypto books/resources I value most focus on:',
+      options: [
+        {
+          text: 'Technical implementation and cryptography',
+          archetypes: ['protocolDev', 'smartContractWizard', 'whiteHat'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Investment strategies and market analysis',
+          archetypes: ['hodler', 'whale', 'onChainAnalyst'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Philosophical aspects of decentralization',
+          archetypes: ['maximalist', 'privacyAdvocate', 'educator'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Community building and project growth',
+          archetypes: ['founder', 'ctInfluencer', 'daoVoter'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'When I receive an airdrop, I typically:',
+      options: [
+        {
+          text: 'Research the project thoroughly before deciding to hold',
+          archetypes: ['hodler', 'educator', 'journalist'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Sell immediately to lock in profits',
+          archetypes: ['pumpDumper', 'airdropFarmer'],
+          oppositeArchetypes: ['hodler', 'maximalist'],
+        },
+        {
+          text: 'Participate in governance to improve the protocol',
+          archetypes: ['daoVoter', 'stakingEnthusiast', 'founder'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Create content about it for my community',
+          archetypes: ['ctInfluencer', 'memeLord', 'educator'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
+    {
+      text: 'My approach to crypto taxes is:',
+      options: [
+        {
+          text: 'Meticulously track everything for compliance',
+          archetypes: ['hodler', 'whale', 'onChainAnalyst'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Use privacy tools to maintain financial sovereignty',
+          archetypes: ['privacyAdvocate', 'maximalist'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Build or use tools that simplify tax reporting',
+          archetypes: ['protocolDev', 'smartContractWizard', 'founder'],
+          oppositeArchetypes: [],
+        },
+        {
+          text: 'Share tax optimization strategies with my community',
+          archetypes: ['educator', 'ctInfluencer', 'stakingEnthusiast'],
+          oppositeArchetypes: [],
+        },
+      ],
+    },
   ]
 
   // Archetype descriptions
