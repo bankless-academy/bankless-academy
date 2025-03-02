@@ -301,12 +301,14 @@ Take the challenge and mint your free NFT on @base now ↓`
   }
 
   useEffect(() => {
-    resizeFont()
+    if (typeof window !== 'undefined') {
+      resizeFont()
 
-    window.addEventListener('resize', resizeFont)
+      window.addEventListener('resize', resizeFont)
 
-    return () => {
-      window.removeEventListener('resize', resizeFont)
+      return () => {
+        window.removeEventListener('resize', resizeFont)
+      }
     }
   }, [])
 

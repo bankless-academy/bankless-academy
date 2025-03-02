@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import { useMediaQuery } from '@chakra-ui/react'
 
 export function useSmallScreen(): boolean[] | null {
+  if (typeof window === 'undefined') {
+    return [false, false, false, false]
+  }
   return useMediaQuery(
     [
       '(max-width: 800px)',
@@ -20,13 +23,17 @@ export const useWindowScrollPositions = () => {
 
   useEffect(() => {
     function updatePosition() {
-      setPosition({ scrollX: window.scrollX, scrollY: window.scrollY })
+      if (typeof window !== 'undefined') {
+        setPosition({ scrollX: window.scrollX, scrollY: window.scrollY })
+      }
     }
 
-    window.addEventListener('scroll', updatePosition)
-    updatePosition()
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', updatePosition)
+      updatePosition()
 
-    return () => window.removeEventListener('scroll', updatePosition)
+      return () => window.removeEventListener('scroll', updatePosition)
+    }
   }, [])
 
   return scrollPosition
