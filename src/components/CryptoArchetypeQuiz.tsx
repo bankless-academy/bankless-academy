@@ -142,10 +142,143 @@ const CryptoArchetypeQuiz = () => {
     educator: 0,
     journalist: 0,
   })
+  const [knowledgeScore, setKnowledgeScore] = useState(0)
   const [showResults, setShowResults] = useState(false)
+  // Add state to track if we're in knowledge assessment phase
+  const [isKnowledgePhase, setIsKnowledgePhase] = useState(true)
+  const [knowledgeQuestionIndex, setKnowledgeQuestionIndex] = useState(0)
+
+  // Dedicated knowledge assessment questions
+  const knowledgeQuestions = [
+    {
+      text: 'What is the primary innovation introduced by Bitcoin?',
+      options: [
+        {
+          text: 'A digital payment system with low fees',
+          knowledgePoints: 1, // Basic understanding
+          isCorrect: false,
+        },
+        {
+          text: 'A decentralized digital currency that prevents double-spending without a trusted third party',
+          knowledgePoints: 3, // Advanced understanding
+          isCorrect: true,
+        },
+        {
+          text: 'A way to anonymously transfer money online',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+        {
+          text: 'A digital gold alternative with a limited supply',
+          knowledgePoints: 2, // Partial understanding
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      text: 'What is a smart contract?',
+      options: [
+        {
+          text: 'A legally binding agreement between cryptocurrency users',
+          knowledgePoints: 1, // Misunderstanding
+          isCorrect: false,
+        },
+        {
+          text: 'Self-executing code that runs on a blockchain and automatically enforces agreements',
+          knowledgePoints: 3, // Correct understanding
+          isCorrect: true,
+        },
+        {
+          text: 'A contract signed using a hardware wallet for extra security',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+        {
+          text: 'An agreement between miners to validate transactions',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      text: 'What does "staking" primarily refer to in crypto?',
+      options: [
+        {
+          text: 'Holding crypto in an exchange to earn interest',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+        {
+          text: 'Locking up tokens as collateral in DeFi protocols',
+          knowledgePoints: 2, // Partial understanding
+          isCorrect: false,
+        },
+        {
+          text: 'Participating in network consensus and validation by locking tokens',
+          knowledgePoints: 3, // Correct understanding
+          isCorrect: true,
+        },
+        {
+          text: 'Setting stop-loss orders when trading',
+          knowledgePoints: 0, // Complete misunderstanding
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      text: 'What is a blockchain fork?',
+      options: [
+        {
+          text: 'When a blockchain splits into two separate chains due to protocol changes or disagreements',
+          knowledgePoints: 3, // Correct understanding
+          isCorrect: true,
+        },
+        {
+          text: 'A tool used to mine cryptocurrencies',
+          knowledgePoints: 0, // Complete misunderstanding
+          isCorrect: false,
+        },
+        {
+          text: 'When a transaction is rejected by the network',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+        {
+          text: 'A malicious attack on a blockchain network',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+      ],
+    },
+    {
+      text: 'What is a private key in cryptocurrency?',
+      options: [
+        {
+          text: 'A password created by an exchange to access your account',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+        {
+          text: 'A secret number that allows you to spend funds from a corresponding wallet address',
+          knowledgePoints: 3, // Correct understanding
+          isCorrect: true,
+        },
+        {
+          text: 'The unique ID assigned to your cryptocurrency transaction',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+        {
+          text: 'A special code that miners use to validate transactions',
+          knowledgePoints: 1, // Basic misunderstanding
+          isCorrect: false,
+        },
+      ],
+    },
+  ]
 
   // Questions that map to different archetypes
-  const questions = [
+  const archetypeQuestions = [
     {
       text: 'During a crypto market crash, I typically:',
       options: [
@@ -748,8 +881,66 @@ const CryptoArchetypeQuiz = () => {
       'The Journalist – You investigate and report on developments in the crypto space, maintaining a critical eye when evaluating projects and trends. You help separate signal from noise in an industry filled with bold claims and hype.',
   }
 
-  // Handle selecting an answer
-  const handleAnswerSelect = (
+  // Knowledge level descriptions
+  const knowledgeLevelDescriptions = {
+    beginner:
+      "You're just starting your crypto journey. You understand the basics of buying and holding cryptocurrencies, but may still be learning about blockchain technology fundamentals and the broader ecosystem.",
+    intermediate:
+      "You have a solid understanding of crypto beyond just trading. You're familiar with different blockchain networks, DeFi concepts, and can navigate the ecosystem with confidence.",
+    advanced:
+      'You have deep knowledge of crypto technologies, economics, and applications. You understand complex topics like protocol design, tokenomics, and technical implementations.',
+    expert:
+      'You possess expert-level understanding across multiple domains in crypto. You can analyze, build, and contribute to the ecosystem at a professional level, with specialized knowledge in specific areas.',
+  }
+
+  // Group archetypes into categories
+  const archetypeCategories: Record<string, string[]> = {
+    'Investors & Speculators': [
+      'hodler',
+      'degenerate',
+      'whale',
+      'pumpDumper',
+      'maximalist',
+    ],
+    'Builders & Innovators': [
+      'protocolDev',
+      'smartContractWizard',
+      'founder',
+      'whiteHat',
+      'tokenomicsArchitect',
+    ],
+    'Users & Enthusiasts': [
+      'nftCollector',
+      'daoVoter',
+      'airdropFarmer',
+      'stakingEnthusiast',
+      'privacyAdvocate',
+    ],
+    'Media & Influence': [
+      'ctInfluencer',
+      'onChainAnalyst',
+      'memeLord',
+      'educator',
+      'journalist',
+    ],
+  }
+
+  // Handle selecting an answer for knowledge questions
+  const handleKnowledgeAnswerSelect = (knowledgePoints: number) => {
+    // Add to knowledge score
+    setKnowledgeScore((prevScore) => prevScore + knowledgePoints)
+
+    // Move to next knowledge question or switch to archetype questions
+    if (knowledgeQuestionIndex < knowledgeQuestions.length - 1) {
+      setKnowledgeQuestionIndex(knowledgeQuestionIndex + 1)
+    } else {
+      // Switch to archetype questions
+      setIsKnowledgePhase(false)
+    }
+  }
+
+  // Handle selecting an answer for archetype questions
+  const handleArchetypeAnswerSelect = (
     archetypes: string[],
     oppositeArchetypes: string[]
   ) => {
@@ -769,11 +960,80 @@ const CryptoArchetypeQuiz = () => {
     setScores(newScores)
 
     // Move to next question or show results
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < archetypeQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1)
     } else {
       setShowResults(true)
     }
+  }
+
+  // Determine knowledge level based on score
+  const determineKnowledgeLevel = () => {
+    // Maximum possible knowledge score is the sum of maximum points per question
+    const maxPossibleScore = knowledgeQuestions.length * 3 // Assuming max 3 points per question
+
+    // Calculate percentage
+    const percentage = (knowledgeScore / maxPossibleScore) * 100
+
+    if (percentage < 40) {
+      return 'beginner'
+    } else if (percentage < 70) {
+      return 'intermediate'
+    } else if (percentage < 90) {
+      return 'advanced'
+    } else {
+      return 'expert'
+    }
+  }
+
+  // Calculate knowledge level percentage
+  const calculateKnowledgePercentage = () => {
+    // Maximum possible knowledge score is the sum of maximum points per question
+    const maxPossibleScore = knowledgeQuestions.length * 3
+    // Convert to percentage and ensure it's between 0-100%
+    const percentage = Math.max(
+      0,
+      Math.min(100, (knowledgeScore / maxPossibleScore) * 100)
+    )
+    // Round to nearest integer
+    return Math.round(percentage)
+  }
+
+  // Get correct knowledge question based on state
+  const currentKnowledgeQuestion = knowledgeQuestions[knowledgeQuestionIndex]
+
+  // Get current archetype question
+  const currentArchetypeQuestion = archetypeQuestions[currentQuestionIndex]
+
+  // Reset the quiz
+  const resetQuiz = () => {
+    setCurrentQuestionIndex(0)
+    setKnowledgeQuestionIndex(0)
+    setIsKnowledgePhase(true)
+    setScores({
+      hodler: 0,
+      degenerate: 0,
+      whale: 0,
+      pumpDumper: 0,
+      maximalist: 0,
+      protocolDev: 0,
+      smartContractWizard: 0,
+      founder: 0,
+      whiteHat: 0,
+      tokenomicsArchitect: 0,
+      nftCollector: 0,
+      daoVoter: 0,
+      airdropFarmer: 0,
+      stakingEnthusiast: 0,
+      privacyAdvocate: 0,
+      ctInfluencer: 0,
+      onChainAnalyst: 0,
+      memeLord: 0,
+      educator: 0,
+      journalist: 0,
+    })
+    setKnowledgeScore(0)
+    setShowResults(false)
   }
 
   // Determine top archetype based on scores
@@ -813,7 +1073,7 @@ const CryptoArchetypeQuiz = () => {
   // Calculate normalized score percentage (ensuring it's between 0-100%)
   const calculateScorePercentage = (score: number) => {
     // Convert score to percentage of total questions
-    const rawPercentage = (score / questions.length) * 100
+    const rawPercentage = (score / archetypeQuestions.length) * 100
     // Ensure the percentage is between 0 and 100
     return Math.max(0, Math.min(100, rawPercentage))
   }
@@ -821,7 +1081,7 @@ const CryptoArchetypeQuiz = () => {
   // Calculate percentage match for an archetype
   const calculateMatchPercentage = (score: number) => {
     // Maximum possible score is 1 point per question
-    const maxPossibleScore = questions.length
+    const maxPossibleScore = archetypeQuestions.length
     // Convert to percentage and ensure it's between 0-100%
     const percentage = Math.max(
       0,
@@ -830,37 +1090,6 @@ const CryptoArchetypeQuiz = () => {
     // Round to nearest integer
     return Math.round(percentage)
   }
-
-  // Reset the quiz
-  const resetQuiz = () => {
-    setCurrentQuestionIndex(0)
-    setScores({
-      hodler: 0,
-      degenerate: 0,
-      whale: 0,
-      pumpDumper: 0,
-      maximalist: 0,
-      protocolDev: 0,
-      smartContractWizard: 0,
-      founder: 0,
-      whiteHat: 0,
-      tokenomicsArchitect: 0,
-      nftCollector: 0,
-      daoVoter: 0,
-      airdropFarmer: 0,
-      stakingEnthusiast: 0,
-      privacyAdvocate: 0,
-      ctInfluencer: 0,
-      onChainAnalyst: 0,
-      memeLord: 0,
-      educator: 0,
-      journalist: 0,
-    })
-    setShowResults(false)
-  }
-
-  // Get current question
-  const currentQuestion = questions[currentQuestionIndex]
 
   // Format archetype name for display
   const formatArchetypeName = (key: string) => {
@@ -890,38 +1119,6 @@ const CryptoArchetypeQuiz = () => {
     return nameMap[key] || key
   }
 
-  // Group archetypes into categories
-  const archetypeCategories: Record<string, string[]> = {
-    'Investors & Speculators': [
-      'hodler',
-      'degenerate',
-      'whale',
-      'pumpDumper',
-      'maximalist',
-    ],
-    'Builders & Innovators': [
-      'protocolDev',
-      'smartContractWizard',
-      'founder',
-      'whiteHat',
-      'tokenomicsArchitect',
-    ],
-    'Users & Enthusiasts': [
-      'nftCollector',
-      'daoVoter',
-      'airdropFarmer',
-      'stakingEnthusiast',
-      'privacyAdvocate',
-    ],
-    'Media & Influence': [
-      'ctInfluencer',
-      'onChainAnalyst',
-      'memeLord',
-      'educator',
-      'journalist',
-    ],
-  }
-
   // Get category for an archetype
   const getCategoryForArchetype = (archetype: string) => {
     for (const [category, archetypes] of Object.entries(archetypeCategories)) {
@@ -941,47 +1138,114 @@ const CryptoArchetypeQuiz = () => {
       {!showResults ? (
         <StyledCard p={6} borderRadius="xl">
           <Box position="relative" zIndex="1">
-            <Text fontSize="sm" color="gray.400" mb={2}>
-              Question {currentQuestionIndex + 1} of {questions.length}
-            </Text>
-            <Progress
-              value={((currentQuestionIndex + 1) / questions.length) * 100}
-              colorScheme="purple"
-              size="sm"
-              borderRadius="full"
-              mb={6}
-            />
-
-            <Heading as="h2" size="md" fontWeight="medium" mb={6} color="white">
-              {currentQuestion.text}
-            </Heading>
-
-            <VStack spacing={4} align="stretch">
-              {currentQuestion.options.map((option, idx) => (
-                <Button
-                  key={idx}
-                  onClick={() =>
-                    handleAnswerSelect(
-                      option.archetypes,
-                      option.oppositeArchetypes || []
-                    )
+            {isKnowledgePhase ? (
+              // Knowledge assessment phase
+              <>
+                <Text fontSize="sm" color="gray.400" mb={2}>
+                  Knowledge Assessment {knowledgeQuestionIndex + 1} of{' '}
+                  {knowledgeQuestions.length}
+                </Text>
+                <Progress
+                  value={
+                    ((knowledgeQuestionIndex + 1) / knowledgeQuestions.length) *
+                    100
                   }
-                  w="full"
-                  p={5}
-                  justifyContent="flex-start"
-                  variant="outline"
-                  borderColor="whiteAlpha.300"
+                  colorScheme="blue"
+                  size="sm"
+                  borderRadius="full"
+                  mb={6}
+                />
+
+                <Heading
+                  as="h2"
+                  size="md"
+                  fontWeight="medium"
+                  mb={6}
                   color="white"
-                  borderRadius="xl"
-                  _hover={{ bg: 'whiteAlpha.100' }}
-                  transition="all 0.2s"
-                  fontWeight="normal"
-                  fontSize="md"
                 >
-                  {option.text}
-                </Button>
-              ))}
-            </VStack>
+                  {currentKnowledgeQuestion.text}
+                </Heading>
+
+                <VStack spacing={4} align="stretch">
+                  {currentKnowledgeQuestion.options.map((option, idx) => (
+                    <Button
+                      key={idx}
+                      onClick={() =>
+                        handleKnowledgeAnswerSelect(option.knowledgePoints)
+                      }
+                      w="full"
+                      p={5}
+                      justifyContent="flex-start"
+                      variant="outline"
+                      borderColor="whiteAlpha.300"
+                      color="white"
+                      borderRadius="xl"
+                      _hover={{ bg: 'whiteAlpha.100' }}
+                      transition="all 0.2s"
+                      fontWeight="normal"
+                      fontSize="md"
+                    >
+                      {option.text}
+                    </Button>
+                  ))}
+                </VStack>
+              </>
+            ) : (
+              // Archetype assessment phase
+              <>
+                <Text fontSize="sm" color="gray.400" mb={2}>
+                  Archetype Question {currentQuestionIndex + 1} of{' '}
+                  {archetypeQuestions.length}
+                </Text>
+                <Progress
+                  value={
+                    ((currentQuestionIndex + 1) / archetypeQuestions.length) *
+                    100
+                  }
+                  colorScheme="purple"
+                  size="sm"
+                  borderRadius="full"
+                  mb={6}
+                />
+
+                <Heading
+                  as="h2"
+                  size="md"
+                  fontWeight="medium"
+                  mb={6}
+                  color="white"
+                >
+                  {currentArchetypeQuestion.text}
+                </Heading>
+
+                <VStack spacing={4} align="stretch">
+                  {currentArchetypeQuestion.options.map((option, idx) => (
+                    <Button
+                      key={idx}
+                      onClick={() =>
+                        handleArchetypeAnswerSelect(
+                          option.archetypes,
+                          option.oppositeArchetypes || []
+                        )
+                      }
+                      w="full"
+                      p={5}
+                      justifyContent="flex-start"
+                      variant="outline"
+                      borderColor="whiteAlpha.300"
+                      color="white"
+                      borderRadius="xl"
+                      _hover={{ bg: 'whiteAlpha.100' }}
+                      transition="all 0.2s"
+                      fontWeight="normal"
+                      fontSize="md"
+                    >
+                      {option.text}
+                    </Button>
+                  ))}
+                </VStack>
+              </>
+            )}
           </Box>
         </StyledCard>
       ) : (
@@ -1036,6 +1300,38 @@ const CryptoArchetypeQuiz = () => {
               <Box mb={8} p={6} borderRadius="lg" bg="whiteAlpha.100">
                 <Text color="gray.100">
                   {archetypeDescriptions[determineTopArchetype()]}
+                </Text>
+              </Box>
+
+              {/* Knowledge Level Section */}
+              <Box mb={8} p={6} borderRadius="lg" bg="rgba(49, 130, 206, 0.15)">
+                <Flex justifyContent="space-between" alignItems="center" mb={3}>
+                  <Heading as="h3" size="md" fontWeight="medium" color="white">
+                    Knowledge Level:{' '}
+                    {determineKnowledgeLevel().charAt(0).toUpperCase() +
+                      determineKnowledgeLevel().slice(1)}
+                  </Heading>
+                  <Badge
+                    px={3}
+                    py={1}
+                    bg="blue.500"
+                    color="white"
+                    borderRadius="full"
+                    fontSize="sm"
+                    fontWeight="bold"
+                  >
+                    {calculateKnowledgePercentage()}%
+                  </Badge>
+                </Flex>
+                <Progress
+                  value={calculateKnowledgePercentage()}
+                  colorScheme="blue"
+                  size="sm"
+                  borderRadius="full"
+                  mb={4}
+                />
+                <Text color="gray.100">
+                  {knowledgeLevelDescriptions[determineKnowledgeLevel()]}
                 </Text>
               </Box>
 
