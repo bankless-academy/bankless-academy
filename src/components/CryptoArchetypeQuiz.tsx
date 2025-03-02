@@ -10,9 +10,11 @@ import {
   Text,
   Badge,
   VStack,
-  Tag,
+  Tooltip,
+  Icon,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { InfoIcon } from '@chakra-ui/icons'
 
 import { archetypeVisuals } from 'components/ArchetypeVisuals'
 
@@ -52,18 +54,6 @@ const StyledCard = styled(Box)`
     -webkit-mask-composite: source-out;
     mask-composite: exclude;
   }
-`
-
-const StyledTag = styled(Tag)<{ isactive?: string }>`
-  height: 30px;
-  ${(props) =>
-    props.isactive === 'true' &&
-    `
-    ::before {
-      background: #F1B15A;
-    }
-    color: #F1B15A;
-  `};
 `
 
 const StyledIconBox = styled(Box)`
@@ -162,18 +152,22 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'Hold tight and maybe buy more if I have cash',
           archetypes: ['hodler', 'maximalist'],
+          oppositeArchetypes: ['degenerate', 'pumpDumper'],
         },
         {
           text: 'See it as an opportunity to find high-risk, high-reward plays',
           archetypes: ['degenerate', 'pumpDumper'],
+          oppositeArchetypes: ['hodler', 'maximalist'],
         },
         {
           text: 'Focus on building/improving projects regardless of price',
           archetypes: ['protocolDev', 'smartContractWizard', 'founder'],
+          oppositeArchetypes: ['pumpDumper', 'degenerate'],
         },
         {
           text: "Analyze on-chain data to understand what's happening",
           archetypes: ['onChainAnalyst', 'journalist'],
+          oppositeArchetypes: [],
         },
       ],
     },
@@ -183,18 +177,27 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'Years to decades',
           archetypes: ['hodler', 'maximalist', 'whale'],
+          oppositeArchetypes: ['degenerate', 'pumpDumper', 'airdropFarmer'],
         },
         {
           text: 'Days to weeks',
           archetypes: ['degenerate', 'pumpDumper', 'airdropFarmer'],
+          oppositeArchetypes: [
+            'hodler',
+            'maximalist',
+            'whale',
+            'tokenomicsArchitect',
+          ],
         },
         {
           text: "I'm not investing, I'm building for the long term",
           archetypes: ['protocolDev', 'founder', 'tokenomicsArchitect'],
+          oppositeArchetypes: ['airdropFarmer', 'pumpDumper'],
         },
         {
           text: 'I care more about participating than timeframes',
           archetypes: ['nftCollector', 'daoVoter', 'stakingEnthusiast'],
+          oppositeArchetypes: [],
         },
       ],
     },
@@ -204,18 +207,29 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'Check the team, roadmap, and tokenomics',
           archetypes: ['hodler', 'whale', 'tokenomicsArchitect'],
+          oppositeArchetypes: ['degenerate', 'pumpDumper'],
         },
         {
           text: 'Ape in before everyone else discovers it',
           archetypes: ['degenerate', 'pumpDumper'],
+          oppositeArchetypes: [
+            'hodler',
+            'whale',
+            'whiteHat',
+            'onChainAnalyst',
+            'educator',
+            'journalist',
+          ],
         },
         {
           text: 'Review the codebase and technical documentation',
           archetypes: ['protocolDev', 'smartContractWizard', 'whiteHat'],
+          oppositeArchetypes: ['memeLord', 'ctInfluencer'],
         },
         {
           text: 'Share it with my followers/community',
           archetypes: ['ctInfluencer', 'educator', 'memeLord'],
+          oppositeArchetypes: ['privacyAdvocate'],
         },
       ],
     },
@@ -225,14 +239,22 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'Trading and managing my portfolio',
           archetypes: ['whale', 'pumpDumper', 'degenerate'],
+          oppositeArchetypes: [
+            'protocolDev',
+            'smartContractWizard',
+            'founder',
+            'stakingEnthusiast',
+          ],
         },
         {
           text: 'Writing code and building products',
           archetypes: ['protocolDev', 'smartContractWizard', 'founder'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Participating in communities and governance',
           archetypes: ['daoVoter', 'stakingEnthusiast', 'nftCollector'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Creating content or analyzing data',
@@ -243,6 +265,7 @@ const CryptoArchetypeQuiz = () => {
             'journalist',
             'memeLord',
           ],
+          oppositeArchetypes: [],
         },
       ],
     },
@@ -252,18 +275,30 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'Centralization and government overreach',
           archetypes: ['maximalist', 'privacyAdvocate'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Missing out on profitable opportunities',
           archetypes: ['degenerate', 'airdropFarmer', 'pumpDumper'],
+          oppositeArchetypes: [
+            'protocolDev',
+            'smartContractWizard',
+            'founder',
+            'whiteHat',
+            'tokenomicsArchitect',
+            'daoVoter',
+            'educator',
+          ],
         },
         {
           text: 'Security vulnerabilities and exploits',
           archetypes: ['whiteHat', 'protocolDev', 'smartContractWizard'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Sustainable ecosystem growth',
           archetypes: ['founder', 'tokenomicsArchitect', 'educator'],
+          oppositeArchetypes: [],
         },
       ],
     },
@@ -273,18 +308,22 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'HODLing quality assets long-term',
           archetypes: ['hodler', 'maximalist', 'whale'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Finding the next 100x gem or airdrop',
           archetypes: ['degenerate', 'airdropFarmer'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Building and launching products',
           archetypes: ['founder', 'protocolDev', 'smartContractWizard'],
+          oppositeArchetypes: ['nftCollector'],
         },
         {
           text: 'Staking, yield farming, and governance rewards',
           archetypes: ['stakingEnthusiast', 'daoVoter'],
+          oppositeArchetypes: [],
         },
       ],
     },
@@ -294,18 +333,22 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'Share market insights and technical analysis',
           archetypes: ['onChainAnalyst', 'whale', 'educator'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Post memes and engage with crypto culture',
           archetypes: ['memeLord', 'ctInfluencer'],
+          oppositeArchetypes: ['onChainAnalyst', 'journalist'],
         },
         {
           text: 'Discuss technical innovations and code',
           archetypes: ['protocolDev', 'smartContractWizard', 'whiteHat'],
+          oppositeArchetypes: ['memeLord', 'ctInfluencer'],
         },
         {
           text: 'Report on news and trends in the space',
           archetypes: ['journalist', 'educator'],
+          oppositeArchetypes: [],
         },
       ],
     },
@@ -315,18 +358,22 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'One chain will rule them all (e.g., Bitcoin or Ethereum)',
           archetypes: ['maximalist', 'hodler'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Different chains for different purposes',
           archetypes: ['founder', 'tokenomicsArchitect', 'smartContractWizard'],
+          oppositeArchetypes: ['maximalist'],
         },
         {
           text: "I'll use whatever has the most profit potential right now",
           archetypes: ['degenerate', 'pumpDumper', 'airdropFarmer'],
+          oppositeArchetypes: ['hodler', 'maximalist'],
         },
         {
           text: 'Privacy-focused chains are most important',
           archetypes: ['privacyAdvocate'],
+          oppositeArchetypes: [],
         },
       ],
     },
@@ -336,18 +383,22 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'Market dynamics and investment strategies',
           archetypes: ['whale', 'hodler', 'pumpDumper'],
+          oppositeArchetypes: ['nftCollector', 'daoVoter'],
         },
         {
           text: 'Technical implementation and development',
           archetypes: ['protocolDev', 'smartContractWizard', 'whiteHat'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Community building and governance',
           archetypes: ['founder', 'daoVoter', 'educator'],
+          oppositeArchetypes: [],
         },
         {
           text: 'On-chain analytics and data interpretation',
           archetypes: ['onChainAnalyst', 'journalist'],
+          oppositeArchetypes: [],
         },
       ],
     },
@@ -357,18 +408,22 @@ const CryptoArchetypeQuiz = () => {
         {
           text: 'Collecting rare NFTs and digital art',
           archetypes: ['nftCollector'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Optimizing yield through staking and DeFi',
           archetypes: ['stakingEnthusiast', 'degenerate'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Contributing to protocol governance',
           archetypes: ['daoVoter', 'whale'],
+          oppositeArchetypes: [],
         },
         {
           text: 'Building new applications and features',
           archetypes: ['protocolDev', 'smartContractWizard', 'founder'],
+          oppositeArchetypes: ['nftCollector'],
         },
       ],
     },
@@ -419,11 +474,23 @@ const CryptoArchetypeQuiz = () => {
   }
 
   // Handle selecting an answer
-  const handleAnswerSelect = (archetypes: string[]) => {
+  const handleAnswerSelect = (
+    archetypes: string[],
+    oppositeArchetypes: string[]
+  ) => {
     const newScores = { ...scores }
+
+    // Award points to matching archetypes
     archetypes.forEach((archetype) => {
       newScores[archetype] += 1
     })
+
+    // Deduct points for opposite archetypes
+    oppositeArchetypes.forEach((archetype) => {
+      // Deduct 0.5 points (less than a full point to avoid excessive penalties)
+      newScores[archetype] -= 0.5
+    })
+
     setScores(newScores)
 
     // Move to next question or show results
@@ -436,10 +503,21 @@ const CryptoArchetypeQuiz = () => {
 
   // Determine top archetype based on scores
   const determineTopArchetype = () => {
-    let topArchetype = Object.keys(scores)[0]
-    let maxScore = scores[topArchetype]
+    // Filter out archetypes with negative scores
+    const positiveScores = Object.entries(scores).filter(
+      ([_, score]) => score > 0
+    )
 
-    Object.entries(scores).forEach(([archetype, score]) => {
+    // If no positive scores, return the least negative one
+    if (positiveScores.length === 0) {
+      return Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0]
+    }
+
+    // Otherwise, find the highest positive score
+    let topArchetype = positiveScores[0][0]
+    let maxScore = positiveScores[0][1]
+
+    positiveScores.forEach(([archetype, score]) => {
       if (score > maxScore) {
         topArchetype = archetype
         maxScore = score
@@ -455,6 +533,27 @@ const CryptoArchetypeQuiz = () => {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 3)
       .map((entry) => ({ name: entry[0], score: entry[1] }))
+  }
+
+  // Calculate normalized score percentage (ensuring it's between 0-100%)
+  const calculateScorePercentage = (score: number) => {
+    // Convert score to percentage of total questions
+    const rawPercentage = (score / questions.length) * 100
+    // Ensure the percentage is between 0 and 100
+    return Math.max(0, Math.min(100, rawPercentage))
+  }
+
+  // Calculate percentage match for an archetype
+  const calculateMatchPercentage = (score: number) => {
+    // Maximum possible score is 1 point per question
+    const maxPossibleScore = questions.length
+    // Convert to percentage and ensure it's between 0-100%
+    const percentage = Math.max(
+      0,
+      Math.min(100, (score / maxPossibleScore) * 100)
+    )
+    // Round to nearest integer
+    return Math.round(percentage)
   }
 
   // Reset the quiz
@@ -586,7 +685,12 @@ const CryptoArchetypeQuiz = () => {
               {currentQuestion.options.map((option, idx) => (
                 <Button
                   key={idx}
-                  onClick={() => handleAnswerSelect(option.archetypes)}
+                  onClick={() =>
+                    handleAnswerSelect(
+                      option.archetypes,
+                      option.oppositeArchetypes || []
+                    )
+                  }
                   w="full"
                   p={5}
                   justifyContent="flex-start"
@@ -639,6 +743,19 @@ const CryptoArchetypeQuiz = () => {
                 >
                   {archetypeVisuals[determineTopArchetype()]}
                 </GoldIconBox>
+                <Badge
+                  px={4}
+                  py={2}
+                  bg="yellow.500"
+                  color="white"
+                  borderRadius="full"
+                  fontSize="md"
+                  fontWeight="bold"
+                  mt={4}
+                >
+                  {calculateMatchPercentage(scores[determineTopArchetype()])}%
+                  Match
+                </Badge>
               </Center>
 
               <Box mb={8} p={6} borderRadius="lg" bg="whiteAlpha.100">
@@ -656,6 +773,13 @@ const CryptoArchetypeQuiz = () => {
                   color="white"
                 >
                   Your Top Matches
+                  <Tooltip
+                    label="Scores reflect both your matching characteristics and contradicting choices. Selecting options that contradict an archetype's core traits will reduce its score."
+                    placement="top"
+                    hasArrow
+                  >
+                    <Icon as={InfoIcon} ml={2} h={4} w={4} color="gray.400" />
+                  </Tooltip>
                 </Heading>
                 <VStack spacing={4} align="stretch">
                   {getTopThreeArchetypes().map((archetype, idx) => (
@@ -694,21 +818,25 @@ const CryptoArchetypeQuiz = () => {
                           <Flex alignItems="center">
                             <Box flex="1" mr={3}>
                               <Progress
-                                value={
-                                  (archetype.score / questions.length) * 100
-                                }
+                                value={calculateScorePercentage(
+                                  archetype.score
+                                )}
                                 colorScheme={idx === 0 ? 'yellow' : 'purple'}
                                 size="sm"
                                 borderRadius="full"
                               />
                             </Box>
-                            <StyledTag
-                              isactive={(idx === 0).toString()}
-                              variant="outline"
-                              size="sm"
+                            <Badge
+                              px={2}
+                              py={1}
+                              bg={idx === 0 ? 'yellow.500' : 'purple.500'}
+                              color="white"
+                              borderRadius="full"
+                              fontSize="sm"
+                              fontWeight="medium"
                             >
-                              {archetype.score} / {questions.length}
-                            </StyledTag>
+                              {calculateMatchPercentage(archetype.score)}%
+                            </Badge>
                           </Flex>
                         </Box>
                       </Flex>
@@ -726,6 +854,13 @@ const CryptoArchetypeQuiz = () => {
                   color="white"
                 >
                   Results by Category
+                  <Tooltip
+                    label="Scores reflect both your matching characteristics and contradicting choices. Selecting options that contradict an archetype's core traits will reduce its score."
+                    placement="top"
+                    hasArrow
+                  >
+                    <Icon as={InfoIcon} ml={2} h={4} w={4} color="gray.400" />
+                  </Tooltip>
                 </Heading>
                 <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
                   {Object.entries(archetypeCategories).map(
@@ -743,16 +878,24 @@ const CryptoArchetypeQuiz = () => {
                           </Heading>
                           <VStack spacing={3} align="stretch">
                             {archetypes.map((archetype) => {
-                              const scorePercentage =
-                                (scores[archetype] / questions.length) * 100
-                              const isHighScore = scorePercentage > 30
+                              const scorePercentage = calculateScorePercentage(
+                                scores[archetype]
+                              )
+
+                              // Find the highest scoring archetype in this category
+                              const highestScoreArchetype = [
+                                ...archetypes,
+                              ].sort((a, b) => scores[b] - scores[a])[0]
+                              const isHighestScore =
+                                archetype === highestScoreArchetype &&
+                                scores[archetype] > 0
 
                               return (
                                 <StyledCard
                                   key={archetype}
                                   p={3}
                                   borderRadius="md"
-                                  opacity={isHighScore ? 1 : 0.8}
+                                  opacity={isHighestScore ? 1 : 0.8}
                                 >
                                   <Flex
                                     position="relative"
@@ -760,28 +903,39 @@ const CryptoArchetypeQuiz = () => {
                                     alignItems="center"
                                     gap={3}
                                   >
-                                    <StyledIconBox
-                                      w={{ base: '36px', md: '40px' }}
-                                      h={{ base: '36px', md: '40px' }}
-                                      minW="30px"
-                                      minH="30px"
-                                      flexShrink={0}
-                                      style={{
-                                        background: isHighScore
-                                          ? 'radial-gradient(circle, rgba(128, 90, 213, 0.15) 0%, rgba(128, 90, 213, 0.08) 100%)'
-                                          : 'radial-gradient(circle, rgba(160, 174, 192, 0.1) 0%, rgba(160, 174, 192, 0.05) 100%)',
-                                      }}
-                                    >
-                                      {archetypeVisuals[archetype]}
-                                    </StyledIconBox>
+                                    {isHighestScore ? (
+                                      <GoldIconBox
+                                        w={{ base: '36px', md: '40px' }}
+                                        h={{ base: '36px', md: '40px' }}
+                                        minW="30px"
+                                        minH="30px"
+                                        flexShrink={0}
+                                      >
+                                        {archetypeVisuals[archetype]}
+                                      </GoldIconBox>
+                                    ) : (
+                                      <StyledIconBox
+                                        w={{ base: '36px', md: '40px' }}
+                                        h={{ base: '36px', md: '40px' }}
+                                        minW="30px"
+                                        minH="30px"
+                                        flexShrink={0}
+                                        style={{
+                                          background:
+                                            'radial-gradient(circle, rgba(160, 174, 192, 0.1) 0%, rgba(160, 174, 192, 0.05) 100%)',
+                                        }}
+                                      >
+                                        {archetypeVisuals[archetype]}
+                                      </StyledIconBox>
+                                    )}
                                     <Box flex="1">
                                       <Text
                                         color={
-                                          isHighScore ? 'white' : 'gray.300'
+                                          isHighestScore ? 'white' : 'gray.300'
                                         }
                                         fontSize="sm"
                                         fontWeight={
-                                          isHighScore ? 'medium' : 'normal'
+                                          isHighestScore ? 'medium' : 'normal'
                                         }
                                       >
                                         {formatArchetypeName(archetype)
@@ -794,7 +948,7 @@ const CryptoArchetypeQuiz = () => {
                                           <Progress
                                             value={scorePercentage}
                                             colorScheme={
-                                              isHighScore ? 'purple' : 'gray'
+                                              isHighestScore ? 'yellow' : 'gray'
                                             }
                                             size="xs"
                                             borderRadius="full"
@@ -804,17 +958,22 @@ const CryptoArchetypeQuiz = () => {
                                           px={2}
                                           py={0.5}
                                           bg={
-                                            isHighScore
-                                              ? 'purple.600'
+                                            isHighestScore
+                                              ? 'yellow.500'
                                               : 'whiteAlpha.200'
                                           }
                                           color={
-                                            isHighScore ? 'white' : 'gray.400'
+                                            isHighestScore
+                                              ? 'white'
+                                              : 'gray.400'
                                           }
                                           borderRadius="full"
                                           fontSize="xs"
                                         >
-                                          {scores[archetype]}
+                                          {calculateMatchPercentage(
+                                            scores[archetype]
+                                          )}
+                                          %
                                         </Badge>
                                       </Flex>
                                     </Box>
