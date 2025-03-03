@@ -189,7 +189,7 @@ const PassportStamps = ({
                             isLoading={loadingStamp === key}
                             onClick={() =>
                               alert(
-                                'You are going to be redirected to the Gitcoin Passport website. Sign-in with your wallet, go to dashboard, and connect with your Bright-ID account. Once you verified, go back to this page and click the refresh button.'
+                                'You are going to be redirected to the Human Passport website. Sign-in with your wallet, go to dashboard, and connect with your Bright-ID account. Once you verified, go back to this page and click the refresh button.'
                               )
                             }
                           >

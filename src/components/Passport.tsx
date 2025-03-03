@@ -56,7 +56,7 @@ const PassportComponent = ({
           toast.closeAll()
           if (result.data?.error.includes('ERR_BAD_RESPONSE')) {
             toast({
-              title: t('Gitcoin Passport stamps not loading'),
+              title: t('Human Passport stamps not loading'),
               description: (
                 <ExternalLink
                   underline="true"
@@ -71,7 +71,7 @@ const PassportComponent = ({
             })
           } else {
             toast({
-              title: t('Gitcoin Passport issue'),
+              title: t('Human Passport issue'),
               description: (
                 <ExternalLink underline="true" href="/report-an-issue">
                   {t('Report an Issue')}
@@ -165,7 +165,7 @@ const PassportComponent = ({
                     {passportLS?.score !== '...' &&
                     Number(passportLS?.score) >= REQUIRED_PASSPORT_SCORE
                       ? t(
-                          'You already have a Gitcoin Passport score > {{required_score}}, so you are not required to connect more accounts.',
+                          'You already have a Human Passport score > {{required_score}}, so you are not required to connect more accounts.',
                           { required_score: REQUIRED_PASSPORT_SCORE }
                         )
                       : t('You have connected enough accounts.')}{' '}

@@ -70,7 +70,7 @@ User interactions tracked in the app:
 - [front-end](https://github.com/bankless-academy/bankless-academy/search?q=Mixpanel.track)
 - [back-end](https://github.com/bankless-academy/bankless-academy/search?q=trackBE)
 
-### Gitcoin Passport
+### Human Passport
 
 We save the encrypted account username associated with each Passport stamp to detect Sybils. Human Passport provides 35M+ verifiable credentials and helps protect against bots and bad actors.
 

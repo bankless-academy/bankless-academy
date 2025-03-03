@@ -2,7 +2,7 @@
 
 Our platform takes a hands-on approach to crypto education, pairing theory with practice. We believe that to understand web3, you must use web3! Our blend of interactive content, knowledge checks, and practical onchain quests make navigating the blockchain multiverse easy. **Bankless Academy is a free-to-use learning platform that guides the web3 curious.** From newcomer to adept #BanklessExplorer - our program will have you ready to navigate the world of web3.
 
-The project continues to pioneer #antisybil efforts as one of the [first education platforms to integrate Gitcoin Passport](https://www.gitcoin.co/blog/bankless-academy-a-gitcoin-passport-case-study) - preserving the legitimacy of your education!
+The project continues to pioneer #antisybil efforts as one of the [first education platforms to integrate Human Passport](https://www.gitcoin.co/blog/bankless-academy-a-gitcoin-passport-case-study) - preserving the legitimacy of your education!
 
 Currently, our learning journey covers [20 crucial topics](https://app.banklessacademy.com/lessons) for any Explorer, including:
 
@@ -23,7 +23,7 @@ With your support, Bankless Academy continues to provide free web3 education for
 [![Bankless Academy Badges](https://hackmd.io/_uploads/rk8Vpy3lC.jpg)](https://opensea.io/collection/bankless-academy-badges)
 
 
-More than [20,000 lesson badges](https://dune.com/didierkrux/bankless-academy-badges) protected by Gitcoin Passport have been minted by Bankless Explorers.
+More than [20,000 lesson badges](https://dune.com/didierkrux/bankless-academy-badges) protected by Human Passport have been minted by Bankless Explorers.
 
 ### [Bankless Academy Workshops](https://twitter.com/BanklessAcademy/status/1676989952587087872)
 

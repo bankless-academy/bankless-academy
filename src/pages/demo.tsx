@@ -97,7 +97,7 @@ const Demo = (): JSX.Element => {
                 <br />
                 Disables live badge detection.
                 <br />
-                Removes Gitcoin Passport stamps.
+                Removes Human Passport stamps.
               </Box>
               <br />
               <br />

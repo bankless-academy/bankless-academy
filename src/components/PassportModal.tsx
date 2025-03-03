@@ -44,7 +44,7 @@ const PassportModal = ({
                     <Box mr="4">
                       <Image
                         src="/images/gitcoin-passport.svg"
-                        alt="Gitcoin Passport"
+                        alt="Human Passport"
                       />
                     </Box>
                     <Box flexDirection="column" alignSelf="center">
@@ -71,7 +71,7 @@ const PassportModal = ({
                     <Box mr="4">
                       <Image
                         src="/images/gitcoin-passport.svg"
-                        alt="Gitcoin Passport"
+                        alt="Human Passport"
                       />
                     </Box>
                     <Box flexDirection="column" alignSelf="center">
@@ -120,7 +120,7 @@ const PassportModal = ({
             {/* {!passportLS?.verified && (
               <Box mt="4" mr="4">
                 {t(
-                  'You haven’t set up Gitcoin Passport, or your stamps are out of date.'
+                  'You haven’t set up Human Passport, or your stamps are out of date.'
                 )}
               </Box>
             )} */}
@@ -141,11 +141,11 @@ const PassportModal = ({
             {t('Powered by')}
             <Image
               src="/images/gitcoin-passport.svg"
-              alt="Gitcoin Passport"
+              alt="Human Passport"
               p="0 4px 0 8px"
               height="32px"
             />
-            Gitcoin Passport
+            Human Passport
           </Box>
           <ExternalLink
             underline="true"

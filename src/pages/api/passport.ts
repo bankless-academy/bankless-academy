@@ -79,7 +79,7 @@ export default async function handler(
   type SybilCheckTypes = 'GITCOIN_PASSPORT' | '35kBANK'
   const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
 
-  const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
+  const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Human Passport stamps`
   let score = 0
   // TEMP: bypass passport check (accounts having issues with Ceramic API)
   // const TEMP_PASSPORT_WHITELIST = [
