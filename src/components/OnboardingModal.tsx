@@ -287,7 +287,12 @@ const OnboardingModal = ({
                           textAlign="center"
                         >
                           <Text fontStyle="italic">You were referred by:</Text>
-                          <Text fontWeight="bold" textTransform="uppercase">
+                          <Text
+                            fontWeight="bold"
+                            textTransform="uppercase"
+                            fontSize="15px"
+                            whiteSpace="nowrap"
+                          >
                             {referrerData.ensName ||
                               shortenAddress(referrerData.address)}
                           </Text>

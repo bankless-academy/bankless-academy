@@ -103,7 +103,12 @@ const ShareModal = ({
                   position="relative"
                 >
                   <Text fontStyle="italic">Referred by:</Text>
-                  <Text fontWeight="bold" textTransform="uppercase">
+                  <Text
+                    fontWeight="bold"
+                    textTransform="uppercase"
+                    fontSize="15px"
+                    whiteSpace="nowrap"
+                  >
                     {ens.includes('.') ? ens : shortenAddress(ens)}
                   </Text>
                   <Box
