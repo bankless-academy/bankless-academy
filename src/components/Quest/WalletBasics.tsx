@@ -38,9 +38,12 @@ const WalletBasics = (
           <div className="bloc1" style={{ alignSelf: 'center' }}>
             <Box m="4">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {t(`Create your first crypto wallet, with Zerion.`)}
+                {t(`Create your first crypto wallet.`)}
               </Text>
               <VStack mt="8" alignItems="start">
+                <Box m="0 0 8px 0">
+                  {t('If you already have a wallet, move to step 2.')}
+                </Box>
                 <Button cursor="default" textAlign="start" height="fit-content">
                   <Box
                     padding="10px 0"
@@ -53,9 +56,6 @@ const WalletBasics = (
                     </ExternalLink>
                   </Box>
                 </Button>
-                <Box m="0 8px 8px 16px">
-                  {t('If you already have a wallet, move to step 2.')}
-                </Box>
                 <Button
                   cursor="default"
                   textAlign="start"
