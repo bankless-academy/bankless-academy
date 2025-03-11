@@ -30,9 +30,9 @@
     "Read Entry": "Read Entry"
   },
   "WalletBasics": {
-    "Create your first crypto wallet, with Zerion.": "Zerion ile ilk kripto cüzdanınızı oluşturun.",
-    "1. Download and install the Zerion wallet from ": "1. Zerion cüzdanını şu adresten indirip yükleyin:",
+    "Create your first crypto wallet.": "Create your first crypto wallet.",
     "If you already have a wallet, move to step 2.": "Zaten bir cüzdanınız varsa 2. adıma geçin.",
+    "1. Download and install the Zerion wallet from ": "1. Zerion cüzdanını şu adresten indirip yükleyin:",
     "2. Connect your wallet to Bankless Academy": "2. Cüzdanınızı Bankless Academy'ye bağlayın",
     "Tip": "İpucu",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Görevin adım adım anlatımı için Kaşifin El Kitabı'ndaki '{{lesson_title}}' başlıklı konuya göz atın.",
