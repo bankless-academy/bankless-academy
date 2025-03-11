@@ -30,9 +30,9 @@
     "Read Entry": "阅读作品"
   },
   "WalletBasics": {
-    "Create your first crypto wallet, with Zerion.": "使用 Zerion 创建您的第一个加密货币钱包。",
-    "1. Download and install the Zerion wallet from ": "1. 从以下网址下载并安装 Zerion 钱包 ",
+    "Create your first crypto wallet.": "Create your first crypto wallet.",
     "If you already have a wallet, move to step 2.": "如果你已经安装了钱包，请跳到步骤 2。",
+    "1. Download and install the Zerion wallet from ": "1. 从以下网址下载并安装 Zerion 钱包 ",
     "2. Connect your wallet to Bankless Academy": "2. 将钱包链接至 Bankless 学院",
     "Tip": "小贴士",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "提示：请查看探险家手册中的 '{{lesson_title}}' ，了解完整的任务攻略。",
