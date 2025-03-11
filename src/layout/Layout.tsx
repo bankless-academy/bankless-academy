@@ -14,6 +14,7 @@ import { scrollTop, shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
+import ChatWidget from 'components/ChatWidget'
 import {
   LessonIcon,
   HandbookIcon,
@@ -549,6 +550,7 @@ const Layout = ({
           </>
         )}
       </Box>
+      {!isLessonOpen && <ChatWidget avatar={avatar} />}
     </Box>
   )
 }
