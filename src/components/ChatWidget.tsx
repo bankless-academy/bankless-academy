@@ -15,19 +15,63 @@ import {
   useDisclosure,
   Avatar,
   Button,
+  useToast,
+  Link,
+  Image,
 } from '@chakra-ui/react'
-import { ChatIcon, ArrowForwardIcon } from '@chakra-ui/icons'
+import { ChatIcon, ArrowUpIcon } from '@chakra-ui/icons'
 import { MacScrollbar } from 'mac-scrollbar'
 import { HeadCircuit } from '@phosphor-icons/react'
+import NextLink from 'next/link'
 
 import { useSmallScreen } from 'hooks'
-import { DEFAULT_AVATAR } from 'constants/index'
+import { DEFAULT_AVATAR, LESSONS } from 'constants/index'
+
+const GM_RESPONSES = [
+  'gm Explorer! 🧑‍🚀',
+  'Good morning, anon! 🌞',
+  'gm, wagmi! 🫡',
+  'gm! Ready to go bankless? 💡',
+  "gm gm! What's on your mind today?",
+  'gm! How can I help you today?',
+  'gm! What do you want to learn today?',
+  'gm! What do you want to know about crypto?',
+  'gm! What do you want to know about DeFi?',
+  'gm! What do you want to know about NFTs?',
+]
 
 interface Message {
   id: string
   text: string
   sender: 'user' | 'ai'
   timestamp: Date
+  isThinking?: boolean
+  lessonName?: string
+  lessonLink?: string
+  lessonImage?: string
+}
+
+interface AIResponse {
+  response: string
+  lessonName?: string
+  lessonLink?: string
+}
+
+const getLessonImage = (lessonLink?: string): string | undefined => {
+  if (!lessonLink) return undefined
+
+  // Extract the slug from the lesson link (e.g., /lessons/web3 -> web3)
+  const slug = lessonLink.split('/').pop()
+
+  // Find the lesson with matching slug
+  const lesson = LESSONS.find((l) => l.slug === slug)
+
+  return lesson?.socialImageLink
+}
+
+const getRandomGmResponse = (): string => {
+  const randomIndex = Math.floor(Math.random() * GM_RESPONSES.length)
+  return GM_RESPONSES[randomIndex]
 }
 
 export const ChatWidget = ({ avatar }: { avatar?: string }) => {
@@ -42,37 +86,112 @@ export const ChatWidget = ({ avatar }: { avatar?: string }) => {
     },
   ])
   const [newMessage, setNewMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const toast = useToast()
 
   const scrollToBottom = () => {
+    // Try scrolling the messages container first
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({
+        top: scrollContainerRef.current.scrollHeight,
+        behavior: 'smooth',
+      })
+    }
+
+    // Also scroll the message end marker into view as backup
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
   useEffect(() => {
-    scrollToBottom()
+    // Add a small delay to ensure content is rendered
+    const timeoutId = setTimeout(() => {
+      scrollToBottom()
+    }, 100)
+
+    return () => clearTimeout(timeoutId)
   }, [messages])
 
-  const handleSendMessage = () => {
-    if (newMessage.trim()) {
+  const handleSendMessage = async () => {
+    if (newMessage.trim() && !isLoading) {
       const userMessage: Message = {
         id: Date.now().toString(),
         text: newMessage,
         sender: 'user',
         timestamp: new Date(),
       }
-      setMessages([...messages, userMessage])
-      setNewMessage('')
 
-      // Simulate support response
-      setTimeout(() => {
-        const supportMessage: Message = {
+      // Check if message is "gm" (case insensitive)
+      if (newMessage.trim().toLowerCase() === 'gm') {
+        const gmResponse: Message = {
           id: (Date.now() + 1).toString(),
-          text: 'Thanks for your message! Our team will get back to you soon.',
+          text: getRandomGmResponse(),
           sender: 'ai',
           timestamp: new Date(),
         }
-        setMessages((prev) => [...prev, supportMessage])
-      }, 1000)
+        setMessages((prev) => [...prev, userMessage, gmResponse])
+        setNewMessage('')
+        return
+      }
+
+      const thinkingMessage: Message = {
+        id: 'thinking',
+        text: '...',
+        sender: 'ai',
+        timestamp: new Date(),
+        isThinking: true,
+      }
+
+      setMessages((prev) => [...prev, userMessage, thinkingMessage])
+      setNewMessage('')
+      setIsLoading(true)
+
+      try {
+        const response = await fetch('/api/ai', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt: newMessage }),
+        })
+
+        const data: AIResponse = await response.json()
+
+        if ('error' in data) {
+          throw new Error(data.error as string)
+        }
+
+        const lessonImage = getLessonImage(data.lessonLink)
+
+        const aiMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          text: data.response,
+          sender: 'ai',
+          timestamp: new Date(),
+          lessonName: data.lessonName,
+          lessonLink: data.lessonLink,
+          lessonImage,
+        }
+
+        // Replace thinking message with actual response
+        setMessages((prev) =>
+          prev.filter((msg) => !msg.isThinking).concat(aiMessage)
+        )
+      } catch (error) {
+        console.error('Error calling AI:', error)
+        // Remove thinking message on error
+        setMessages((prev) => prev.filter((msg) => !msg.isThinking))
+        toast({
+          title: 'Error',
+          description: 'Failed to get AI response. Please try again.',
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        })
+      } finally {
+        setIsLoading(false)
+      }
     }
   }
 
@@ -106,7 +225,13 @@ export const ChatWidget = ({ avatar }: { avatar?: string }) => {
 
           <DrawerBody p={0}>
             <VStack spacing={0} height="full">
-              <Box flex="1" width="full" overflowY="auto" bg="#1A1A1A">
+              <Box
+                flex="1"
+                width="full"
+                overflowY="auto"
+                bg="#1A1A1A"
+                ref={scrollContainerRef}
+              >
                 <MacScrollbar
                   skin="dark"
                   suppressScrollX={true}
@@ -120,6 +245,7 @@ export const ChatWidget = ({ avatar }: { avatar?: string }) => {
                           message.sender === 'user' ? 'flex-end' : 'flex-start'
                         }
                         spacing={2}
+                        opacity={message.isThinking ? 0.7 : 1}
                       >
                         {message.sender === 'ai' && (
                           <Avatar
@@ -138,7 +264,41 @@ export const ChatWidget = ({ avatar }: { avatar?: string }) => {
                           py={2}
                           maxW="80%"
                         >
-                          <Text>{message.text}</Text>
+                          <Text>
+                            {message.isThinking ? (
+                              <Box as="span" animation="pulse 1s infinite">
+                                Thinking...
+                              </Box>
+                            ) : (
+                              message.text
+                            )}
+                          </Text>
+                          {message.lessonName && message.lessonLink && (
+                            <NextLink href={message.lessonLink} passHref>
+                              <Link
+                                display="block"
+                                color="#B85FF1"
+                                mt={2}
+                                _hover={{ textDecoration: 'none' }}
+                              >
+                                <VStack align="start" spacing={2}>
+                                  <Text fontSize="sm">
+                                    📚 Learn more: {message.lessonName}
+                                  </Text>
+                                  {message.lessonImage && (
+                                    <Image
+                                      src={message.lessonImage}
+                                      alt={message.lessonName}
+                                      borderRadius="md"
+                                      width="100%"
+                                      height="auto"
+                                      objectFit="cover"
+                                    />
+                                  )}
+                                </VStack>
+                              </Link>
+                            </NextLink>
+                          )}
                         </Box>
                         {message.sender === 'user' && (
                           <Avatar
@@ -168,14 +328,16 @@ export const ChatWidget = ({ avatar }: { avatar?: string }) => {
                   _focus={{
                     borderColor: '#af6ed7',
                   }}
+                  isDisabled={isLoading}
                 />
                 <Button
                   variant="primary"
                   onClick={handleSendMessage}
-                  rightIcon={<ArrowForwardIcon />}
-                >
-                  Send
-                </Button>
+                  iconSpacing={0}
+                  rightIcon={<ArrowUpIcon />}
+                  isLoading={isLoading}
+                  loadingText=""
+                ></Button>
               </HStack>
             </VStack>
           </DrawerBody>
