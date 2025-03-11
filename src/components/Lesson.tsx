@@ -118,6 +118,7 @@ export const Slide = styled(Card)<{
   .bloc2 {
     flex: 1;
     ${(props) => props.issmallscreen !== 'true' && 'min-height: 533px;'};
+    ${(props) => props.slidetype === 'QUEST' && 'align-content: center;'};
   }
   .bloc2 {
     ${(props) => props.istranslation === 'true' && ' flex: 0.8;'};
