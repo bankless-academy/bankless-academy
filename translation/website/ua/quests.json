@@ -30,9 +30,9 @@
     "Read Entry": "Прочитати вступ"
   },
   "WalletBasics": {
-    "Create your first crypto wallet, with Zerion.": "Створіть свій перший криптогаманець за допомогою Zerion.",
-    "1. Download and install the Zerion wallet from ": "1. Завантажте та встановіть гаманець Zerion з ",
+    "Create your first crypto wallet.": "Create your first crypto wallet.",
     "If you already have a wallet, move to step 2.": "Якщо у вас вже є гаманець, переходьте до кроку 2.",
+    "1. Download and install the Zerion wallet from ": "1. Завантажте та встановіть гаманець Zerion з ",
     "2. Connect your wallet to Bankless Academy": "2. Підключіть свій гаманець до Bankless Academy",
     "Tip": "Підказка",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Покрокове проходження квесту можна знайти у нашому Посібнику дослідника у розділі {{lesson_title}}.",
