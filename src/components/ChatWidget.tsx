@@ -36,9 +36,6 @@ const GM_RESPONSES = [
   "gm gm! What's on your mind today?",
   'gm! How can I help you today?',
   'gm! What do you want to learn today?',
-  'gm! What do you want to know about crypto?',
-  'gm! What do you want to know about DeFi?',
-  'gm! What do you want to know about NFTs?',
 ]
 
 interface Message {
