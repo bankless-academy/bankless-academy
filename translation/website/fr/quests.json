@@ -30,9 +30,9 @@
     "Read Entry": "Lire le Manuel"
   },
   "WalletBasics": {
-    "Create your first crypto wallet, with Zerion.": "Créez votre premier portefeuille de cryptomonnaies, avec Zerion.",
-    "1. Download and install the Zerion wallet from ": "1. Téléchargez et installez le wallet Zerion à partir de ",
+    "Create your first crypto wallet.": "Create your first crypto wallet.",
     "If you already have a wallet, move to step 2.": "Si vous avez déjà un wallet, passez à l'étape 2.",
+    "1. Download and install the Zerion wallet from ": "1. Téléchargez et installez le wallet Zerion à partir de ",
     "2. Connect your wallet to Bankless Academy": "2. Connectez votre wallet à Bankless Academy",
     "Tip": "Conseil",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consultez l'article du Manuel de l'explorateur intitulé \"{{lesson_title}}\" pour une description détaillée de la quête.",
