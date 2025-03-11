@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Box, Image, HStack, Spacer, Flex } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
@@ -52,6 +52,9 @@ const Nav: React.FC = () => {
   const [onboarding] = useLocalStorage('onboarding', '')
 
   const [pwa, setPwa] = useLocalStorage('pwa', false)
+  
+  // Add this ref to track if modal has been shown in current session
+  const hasShownModalThisSession = useRef(false)
 
   useEffect(() => {
     if (
@@ -66,6 +69,7 @@ const Nav: React.FC = () => {
     // if onboarding is not done, and it's been more than 3 days since the last popup, show it again, max 3 times
     const threeDays = 60 * 60 * 24 * 3 * 1000
     if (
+      !hasShownModalThisSession.current && // Only show once per session
       router.pathname !== '/mobile' && // Don't show on mobile install page
       !embed && // Don't show if embedded
       (onboarding === '' ||
@@ -75,9 +79,10 @@ const Nav: React.FC = () => {
     ) {
       setTimeout(() => {
         setIsOnboardingModalOpen(true)
+        hasShownModalThisSession.current = true // Mark as shown for this session
       }, 10000)
     }
-  }, [onboarding, router.pathname, embed]) // Add embed to dependencies
+  }, [onboarding, router.pathname, embed, onboardingRetry])
 
   useEffect((): void => {
     const embedValue = pwa
@@ -170,4 +175,4 @@ const Nav: React.FC = () => {
   )
 }
 
-export default Nav
+export default Nav 
