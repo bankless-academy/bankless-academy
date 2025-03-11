@@ -117,7 +117,7 @@ export const Slide = styled(Card)<{
   .bloc1,
   .bloc2 {
     flex: 1;
-    min-height: 533px;
+    ${(props) => props.issmallscreen !== 'true' && 'min-height: 533px;'};
   }
   .bloc2 {
     ${(props) => props.istranslation === 'true' && ' flex: 0.8;'};
