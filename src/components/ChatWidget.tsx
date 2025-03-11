@@ -19,10 +19,11 @@ import {
   Link,
   Image,
 } from '@chakra-ui/react'
-import { ChatIcon, ArrowUpIcon } from '@chakra-ui/icons'
+import { ChatIcon, ArrowUpIcon, DeleteIcon } from '@chakra-ui/icons'
 import { MacScrollbar } from 'mac-scrollbar'
 import { HeadCircuit } from '@phosphor-icons/react'
 import NextLink from 'next/link'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { useSmallScreen } from 'hooks'
 import { DEFAULT_AVATAR, LESSONS } from 'constants/index'
@@ -75,9 +76,9 @@ const getRandomGmResponse = (): string => {
 }
 
 export const ChatWidget = ({ avatar }: { avatar?: string }) => {
-  const [, isSmallScreen] = useSmallScreen()
+  const [isSmallScreen] = useSmallScreen()
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [messages, setMessages] = useState<Message[]>([
+  const [messages, setMessages] = useLocalStorage<Message[]>('chat-history', [
     {
       id: '1',
       text: `gm! I'm the Bankless Academy assistant. How can I help you today?`,
@@ -90,6 +91,23 @@ export const ChatWidget = ({ avatar }: { avatar?: string }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const toast = useToast()
+
+  const handleClearHistory = () => {
+    setMessages([
+      {
+        id: Date.now().toString(),
+        text: `gm! I'm the Bankless Academy assistant. How can I help you today?`,
+        sender: 'ai',
+        timestamp: new Date(),
+      },
+    ])
+    toast({
+      title: 'Chat history cleared',
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    })
+  }
 
   const scrollToBottom = () => {
     // Try scrolling the messages container first
@@ -218,9 +236,32 @@ export const ChatWidget = ({ avatar }: { avatar?: string }) => {
       <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
         <DrawerOverlay />
         <DrawerContent bg="#161515">
-          <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth="1px">
-            Ask anything about crypto
+          <DrawerHeader
+            borderBottomWidth="1px"
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            pr="12" // Add space for the close button
+            position="relative"
+          >
+            <Text>Ask anything about crypto</Text>
+            <Button
+              size="sm"
+              variant="ghost"
+              color="gray.400"
+              _hover={{ color: 'white', bg: 'whiteAlpha.200' }}
+              onClick={handleClearHistory}
+              leftIcon={<DeleteIcon />}
+              iconSpacing={isSmallScreen ? 0 : 2}
+            >
+              {isSmallScreen ? '' : 'Clear History'}
+            </Button>
+            <DrawerCloseButton
+              position="absolute"
+              right="12px"
+              top="50%"
+              transform="translateY(-50%)"
+            />
           </DrawerHeader>
 
           <DrawerBody p={0}>
