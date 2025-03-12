@@ -4,6 +4,7 @@ const TABLES = {
   poaps: 'poaps',
   credentials: 'credentials',
   completions: 'completions',
+  logs: 'logs',
 }
 
 function addIdAndTimestamps(table) {
