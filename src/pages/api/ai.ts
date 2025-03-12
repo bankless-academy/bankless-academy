@@ -23,16 +23,16 @@ export default async function handler(
   }
 
   try {
-    const { prompt } = req.body
+    const { prompt, address, username } = req.body
 
     if (!prompt) {
       return res.status(400).json({ error: 'Prompt is required' })
     }
 
-    console.log('prompt', prompt);
+    console.log('prompt', prompt, address, username)
 
     const response = await fetch(
-      `https://ai.bankless.ac/api/ai?apiKey=${process.env.HUGGINGFACE_API_KEY}&prompt=${encodeURIComponent(prompt)}`
+      `https://ai.bankless.ac/api/ai?apiKey=${process.env.HUGGINGFACE_API_KEY}&prompt=${encodeURIComponent(prompt)}&address=${address}&username=${username}&platform=Web`
     )
 
     if (!response.ok) {

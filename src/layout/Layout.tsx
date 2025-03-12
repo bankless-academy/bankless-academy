@@ -550,7 +550,9 @@ const Layout = ({
           </>
         )}
       </Box>
-      {!isLessonOpen && <ChatWidget avatar={avatar} />}
+      {!isLessonOpen && (
+        <ChatWidget avatar={avatar} username={ens} address={address} />
+      )}
     </Box>
   )
 }

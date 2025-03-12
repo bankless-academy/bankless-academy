@@ -72,7 +72,15 @@ const getRandomGmResponse = (): string => {
   return GM_RESPONSES[randomIndex]
 }
 
-export const ChatWidget = ({ avatar }: { avatar?: string }) => {
+export const ChatWidget = ({
+  avatar,
+  username,
+  address,
+}: {
+  avatar?: string
+  username?: string
+  address: string
+}) => {
   const [isSmallScreen] = useSmallScreen()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [messages, setMessages] = useLocalStorage<Message[]>('chat-history', [
@@ -168,7 +176,11 @@ export const ChatWidget = ({ avatar }: { avatar?: string }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ prompt: newMessage }),
+          body: JSON.stringify({
+            prompt: newMessage,
+            address: address,
+            username: username,
+          }),
         })
 
         const data: AIResponse = await response.json()
