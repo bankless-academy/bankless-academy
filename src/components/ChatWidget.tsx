@@ -27,6 +27,7 @@ import { useLocalStorage } from 'usehooks-ts'
 
 import { useSmallScreen } from 'hooks'
 import { DEFAULT_AVATAR, LESSONS } from 'constants/index'
+import Helper from './Helper'
 
 const GM_RESPONSES = [
   'gm Explorer! 🧑‍🚀',
@@ -253,7 +254,13 @@ export const ChatWidget = ({
             pr="12" // Add space for the close button
             position="relative"
           >
-            <Text>Ask anything about crypto</Text>
+            <Box position="relative" pr="2">
+              Ask anything about crypto
+              <Helper
+                title="Ask anything about crypto"
+                definition="The Bankless Academy AI assistant is here to help you learn about crypto. You can only ask crypto related questions. This tool is not a financial advisor. Do your own research before investing in crypto."
+              />
+            </Box>
             <Button
               size="sm"
               variant="ghost"
