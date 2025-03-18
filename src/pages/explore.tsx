@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import {
   Box,
   SimpleGrid,
@@ -34,7 +34,9 @@ interface ExplorePageProps {
   initialData: ExploreType[]
 }
 
-export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
+export const getServerSideProps: GetServerSideProps<
+  ExplorePageProps
+> = async () => {
   try {
     const explore = await fetchBE(
       `https://app.banklessacademy.com/api/cache/explore`
@@ -45,7 +47,6 @@ export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
         pageMeta,
         initialData: explore?.data || [],
       },
-      revalidate: 60, // Revalidate every minute
     }
   } catch (error) {
     console.error('Error fetching explore data:', error)
@@ -54,7 +55,6 @@ export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
         pageMeta,
         initialData: [],
       },
-      revalidate: 60,
     }
   }
 }
