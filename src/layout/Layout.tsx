@@ -306,7 +306,11 @@ const Layout = ({
           height="100%"
           position="relative"
         >
-          {page === 'INDEX' && <Announcement />}
+          {(page === 'INDEX' ||
+            page === 'LESSON' ||
+            page === 'EXPLORE' ||
+            page === 'GLOSSARY' ||
+            page === 'HANDBOOK') && <Announcement />}
           <Container
             maxW={
               shouldShowOnlyChildren
