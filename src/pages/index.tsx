@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Image,
   Center,
+  keyframes,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
@@ -55,6 +56,22 @@ const NewsletterButton = styled(Button)`
   :hover {
     padding: 0 23px;
   }
+`
+
+const pulse = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+`
+
+const PulsingButton = styled(Button)`
+  animation: ${pulse} 2s infinite;
 `
 
 const PARTNERS = [
@@ -156,9 +173,9 @@ const HomePage = (): JSX.Element => {
                 alignItems="center"
               >
                 <InternalLink href={`/lessons`} alt="Explore Lessons">
-                  <Button variant="primaryBig" size="lg">
+                  <PulsingButton variant="primaryBig" size="lg">
                     <Box>{t('Start Learning')}</Box>
-                  </Button>
+                  </PulsingButton>
                 </InternalLink>
               </Box>
             </Stack>
