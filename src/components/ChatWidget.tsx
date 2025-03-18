@@ -18,6 +18,7 @@ import {
   useToast,
   Link,
   Image,
+  Tooltip,
 } from '@chakra-ui/react'
 import { ChatIcon, ArrowUpIcon, DeleteIcon } from '@chakra-ui/icons'
 import { MacScrollbar } from 'mac-scrollbar'
@@ -87,7 +88,7 @@ export const ChatWidget = ({
   const [messages, setMessages] = useLocalStorage<Message[]>('chat-history', [
     {
       id: '1',
-      text: `gm! I'm the Bankless Academy assistant. How can I help you today?`,
+      text: `gm! I'm the Bankless Academy AI assistant. How can I help you today?`,
       sender: 'ai',
       timestamp: new Date(),
     },
@@ -102,7 +103,7 @@ export const ChatWidget = ({
     setMessages([
       {
         id: Date.now().toString(),
-        text: `gm! I'm the Bankless Academy assistant. How can I help you today?`,
+        text: `gm! I'm the Bankless Academy AI assistant. How can I help you today?`,
         sender: 'ai',
         timestamp: new Date(),
       },
@@ -225,23 +226,25 @@ export const ChatWidget = ({
 
   return (
     <>
-      <IconButton
-        aria-label="Open chat"
-        icon={<ChatIcon />}
-        position="fixed"
-        bottom={isSmallScreen ? '24' : '4'}
-        right="4"
-        size="lg"
-        bg="linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)"
-        _hover={{
-          bg: 'linear-gradient(132deg, #67407E 0%, #354374 100%)',
-          border: '1px solid #B85FF1',
-        }}
-        borderRadius="full"
-        boxShadow="lg"
-        onClick={onOpen}
-        zIndex="overlay"
-      />
+      <Tooltip label="Bankless Academy AI assistant" hasArrow placement="left">
+        <IconButton
+          aria-label="Open chat"
+          icon={<ChatIcon />}
+          position="fixed"
+          bottom={isSmallScreen ? '24' : '4'}
+          right="4"
+          size="lg"
+          bg="linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)"
+          _hover={{
+            bg: 'linear-gradient(132deg, #67407E 0%, #354374 100%)',
+            border: '1px solid #B85FF1',
+          }}
+          borderRadius="full"
+          boxShadow="lg"
+          onClick={onOpen}
+          zIndex="overlay"
+        />
+      </Tooltip>
 
       <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
         <DrawerOverlay />
