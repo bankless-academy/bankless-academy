@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import {
   Box,
   IconButton,
@@ -83,8 +84,11 @@ export const ChatWidget = ({
   username?: string
   address: string
 }) => {
+  const router = useRouter()
   const [isSmallScreen] = useSmallScreen()
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure({
+    defaultIsOpen: router.pathname === '/ai',
+  })
   const [messages, setMessages] = useLocalStorage<Message[]>('chat-history', [
     {
       id: '1',
