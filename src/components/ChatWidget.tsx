@@ -246,7 +246,13 @@ export const ChatWidget = ({
         />
       </Tooltip>
 
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
+        onClose={onClose}
+        size="md"
+        returnFocusOnClose={false}
+      >
         <DrawerOverlay />
         <DrawerContent bg="#161515">
           <DrawerHeader
