@@ -72,6 +72,12 @@ export const TABLE = {
     quest_completed_at: 'completions.quest_completed_at',
     credential_asked_at: 'completions.credential_asked_at'
   },
+  logs: {
+    id: 'logs.id',
+    prompt: 'logs.prompt',
+    event: 'logs.event',
+    data: 'logs.data',
+  },
 }
 
 export async function getUserId(address: string, embed: string, isBot?: boolean, referral?: boolean): Promise<number> {
