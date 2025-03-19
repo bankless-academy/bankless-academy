@@ -1,12 +1,16 @@
 'use client'
 
+import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 
-// Dynamically import ChatWidget with SSR disabled
-const ChatWidget = dynamic(() => import('./ChatWidget'), {
-  ssr: false,
-  loading: () => null,
-})
+// Dynamically import ChatWidget with SSR disabled and explicit module resolution
+const ChatWidget = dynamic(
+  () => import('./ChatWidget').then((mod) => mod.default),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+)
 
 interface ChatWidgetWrapperProps {
   avatar?: string
@@ -23,5 +27,9 @@ export default function ChatWidgetWrapper({
 }: ChatWidgetWrapperProps) {
   if (isLessonOpen) return null
 
-  return <ChatWidget avatar={avatar} username={username} address={address} />
+  return (
+    <Suspense fallback={null}>
+      <ChatWidget avatar={avatar} username={username} address={address} />
+    </Suspense>
+  )
 } 
