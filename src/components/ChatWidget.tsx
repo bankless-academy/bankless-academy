@@ -24,14 +24,14 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 import { ChatIcon, ArrowUpIcon, DeleteIcon } from '@chakra-ui/icons'
+import { Headset } from '@phosphor-icons/react'
 import { MacScrollbar } from 'mac-scrollbar'
-import { HeadCircuit } from '@phosphor-icons/react'
 import NextLink from 'next/link'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { useSmallScreen } from 'hooks'
 import { DEFAULT_AVATAR, LESSONS } from 'constants/index'
-import Helper from './Helper'
+import Helper from 'components/Helper'
 
 const GM_RESPONSES = [
   'gm Explorer! 🧑‍🚀',
@@ -322,7 +322,7 @@ export const ChatWidget = ({
                         {message.sender === 'ai' && (
                           <Avatar
                             size="sm"
-                            icon={<HeadCircuit size={24} />}
+                            icon={<Headset size={24} />}
                             bg="#916ab8"
                           />
                         )}
