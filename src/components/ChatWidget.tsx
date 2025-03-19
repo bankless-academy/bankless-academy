@@ -37,7 +37,7 @@ const GM_RESPONSES = [
   'gm Explorer! 🧑‍🚀',
   'Good morning, anon! 🌞',
   'gm, wagmi! 🫡',
-  'gm! Ready to go bankless? 💡',
+  'gm! Ready to go bankless?',
   "gm gm! What's on your mind today?",
   'gm! How can I help you today?',
   'gm! What do you want to learn today?',
