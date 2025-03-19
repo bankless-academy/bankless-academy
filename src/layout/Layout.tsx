@@ -14,7 +14,6 @@ import { scrollTop, shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
-import ChatWidget from 'components/ChatWidget'
 import {
   LessonIcon,
   HandbookIcon,
@@ -23,6 +22,7 @@ import {
 } from 'components/Icons'
 import { useTranslation } from 'react-i18next'
 import { useApp } from 'contexts/AppContext'
+import ChatWidgetWrapper from 'components/ChatWidgetWrapper'
 
 export type PageType =
   | LessonTypeType
@@ -554,9 +554,12 @@ const Layout = ({
           </>
         )}
       </Box>
-      {!isLessonOpen && (
-        <ChatWidget avatar={avatar} username={ens} address={address} />
-      )}
+      <ChatWidgetWrapper
+        avatar={avatar}
+        isLessonOpen={isLessonOpen}
+        address={address}
+        username={ens}
+      />
     </Box>
   )
 }
