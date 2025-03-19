@@ -8,9 +8,9 @@ import {
   SimpleGrid,
   Image,
   Center,
-  keyframes,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/react'
 import { useTranslation } from 'react-i18next'
 
 import Footer from 'layout/Footer'
