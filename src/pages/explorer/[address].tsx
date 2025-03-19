@@ -1,5 +1,6 @@
 import { MetaData } from 'components/Head'
 import { shortenAddress } from 'utils/index'
+import { DOMAIN_URL } from 'constants/index'
 import ExplorerProfile from 'components/ExplorerProfile'
 
 export async function getServerSideProps({ query }) {
