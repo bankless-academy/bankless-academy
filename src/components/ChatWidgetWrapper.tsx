@@ -1,6 +1,12 @@
 'use client'
 
-import ChatWidget from 'components/ChatWidget'
+import dynamic from 'next/dynamic'
+
+// Dynamically import ChatWidget with SSR disabled
+const ChatWidget = dynamic(() => import('./ChatWidget'), {
+  ssr: false,
+  loading: () => null,
+})
 
 interface ChatWidgetWrapperProps {
   avatar?: string
@@ -16,5 +22,6 @@ export default function ChatWidgetWrapper({
   username,
 }: ChatWidgetWrapperProps) {
   if (isLessonOpen) return null
+
   return <ChatWidget avatar={avatar} username={username} address={address} />
-}
+} 
