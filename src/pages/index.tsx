@@ -58,20 +58,19 @@ const NewsletterButton = styled(Button)`
   }
 `
 
-const pulse = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-`
-
 const PulsingButton = styled(Button)`
-  animation: ${pulse} 2s infinite;
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  animation: pulse 2s infinite;
 `
 
 const PARTNERS = [
