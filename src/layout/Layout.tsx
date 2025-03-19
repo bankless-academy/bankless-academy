@@ -22,6 +22,7 @@ import {
 } from 'components/Icons'
 import { useTranslation } from 'react-i18next'
 import { useApp } from 'contexts/AppContext'
+import ChatWidget from 'components/ChatWidget'
 
 export type PageType =
   | LessonTypeType
@@ -553,6 +554,9 @@ const Layout = ({
           </>
         )}
       </Box>
+      {!isLessonOpen && (
+        <ChatWidget avatar={avatar} address={address} username={username} />
+      )}
     </Box>
   )
 }
