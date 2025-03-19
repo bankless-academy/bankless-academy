@@ -24,7 +24,7 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 import { ChatIcon, ArrowUpIcon, DeleteIcon } from '@chakra-ui/icons'
-import { Headset } from '@phosphor-icons/react'
+import { RiRobot2Line } from 'react-icons/ri'
 import { MacScrollbar } from 'mac-scrollbar'
 import NextLink from 'next/link'
 import { useLocalStorage } from 'usehooks-ts'
@@ -322,7 +322,7 @@ export const ChatWidget = ({
                         {message.sender === 'ai' && (
                           <Avatar
                             size="sm"
-                            icon={<Headset size={24} />}
+                            icon={<RiRobot2Line size={22} />}
                             bg="#916ab8"
                           />
                         )}
