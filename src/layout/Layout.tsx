@@ -22,8 +22,7 @@ import {
 } from 'components/Icons'
 import { useTranslation } from 'react-i18next'
 import { useApp } from 'contexts/AppContext'
-import ChatWidgetWrapper from 'components/ChatWidgetWrapper'
-
+// import ChatWidgetWrapper from 'components/ChatWidgetWrapper'
 export type PageType =
   | LessonTypeType
   | 'LESSON-DETAIL'
@@ -554,12 +553,12 @@ const Layout = ({
           </>
         )}
       </Box>
-      <ChatWidgetWrapper
+      {/* <ChatWidgetWrapper
         avatar={avatar}
         isLessonOpen={isLessonOpen}
         address={address}
         username={ens}
-      />
+      /> */}
     </Box>
   )
 }
