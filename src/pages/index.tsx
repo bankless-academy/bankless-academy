@@ -8,7 +8,6 @@ import {
   SimpleGrid,
   Image,
   Center,
-  keyframes,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
