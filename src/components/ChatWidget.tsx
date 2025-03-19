@@ -23,7 +23,7 @@ import {
   Image,
   Tooltip,
 } from '@chakra-ui/react'
-import { ChatIcon, ArrowUpIcon, DeleteIcon } from '@chakra-ui/icons'
+import { ArrowUpIcon, DeleteIcon } from '@chakra-ui/icons'
 import { RiRobot2Line } from 'react-icons/ri'
 import { MacScrollbar } from 'mac-scrollbar'
 import NextLink from 'next/link'
@@ -235,7 +235,7 @@ export const ChatWidget = ({
       <Tooltip label="Bankless Academy AI assistant" hasArrow placement="left">
         <IconButton
           aria-label="Open chat"
-          icon={<ChatIcon />}
+          icon={<RiRobot2Line size={26} />}
           position="fixed"
           bottom={isSmallScreen ? '24' : '4'}
           right="4"
@@ -322,7 +322,7 @@ export const ChatWidget = ({
                         {message.sender === 'ai' && (
                           <Avatar
                             size="sm"
-                            icon={<RiRobot2Line size={22} />}
+                            icon={<RiRobot2Line size={20} />}
                             bg="#916ab8"
                           />
                         )}
