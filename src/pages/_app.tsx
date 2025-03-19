@@ -345,6 +345,17 @@ const App = ({
                             #597aee 99.26%
                           ) !important;
                         }
+                        @keyframes pulse {
+                          0% {
+                            opacity: 0.5;
+                          }
+                          50% {
+                            opacity: 1;
+                          }
+                          100% {
+                            opacity: 0.5;
+                          }
+                        }
                       `}
                     />
                     <Layout isLesson={pageProps.pageMeta?.isLesson || false}>

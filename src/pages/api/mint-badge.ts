@@ -131,7 +131,12 @@ export default async function handler(
     if (explorerData.badges.includes(badgeId) || isBadgeAlreadyClaimed) {
       questStatus = 'Badge already minted.'
       console.log(questStatus)
-      return res.status(200).json({ status: questStatus })
+      if (BADGES_ALLOWED_SIGNERS.includes(address.toLowerCase())) {
+        // mint simulation
+        return res.status(200).json({ transactionHash: '0xf97689f54a4606f207913aee9534de6256319d26be39e7d01cde39403c2ac2af', status: 'OK' })
+      } else {
+        return res.status(403).json({ status: questStatus })
+      }
     }
 
     if (IS_BADGE_PROD && questCompleted?.transaction_at) {

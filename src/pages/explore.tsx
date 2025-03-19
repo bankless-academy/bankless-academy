@@ -45,7 +45,6 @@ export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
         pageMeta,
         initialData: explore?.data || [],
       },
-      revalidate: 60, // Revalidate every minute
     }
   } catch (error) {
     console.error('Error fetching explore data:', error)
@@ -54,7 +53,6 @@ export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
         pageMeta,
         initialData: [],
       },
-      revalidate: 60,
     }
   }
 }

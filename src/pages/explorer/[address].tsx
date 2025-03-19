@@ -14,7 +14,6 @@ export async function getServerSideProps({ query }) {
     profileAddress: address,
     badgeToHighlight,
   }
-  // console.log(data)
 
   const random = Math.floor(Math.random() * 100000)
 
@@ -23,7 +22,7 @@ export async function getServerSideProps({ query }) {
     description: `${
       badge ? 'Bankless Explorer Badge' : 'Bankless Explorer Profile'
     }`,
-    image: `${DOMAIN_URL}/api/og/social?address=${address}${
+    image: `/api/og/social?address=${address}${
       badge ? `&badge=${badge}` : ''
     }&r=${random}`,
   }
