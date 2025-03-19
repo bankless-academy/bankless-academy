@@ -14,18 +14,7 @@ const nextConfig = {
       }
     }
 
-    // Add transpilation for Chakra UI packages
-    config.module.rules.push({
-      test: /\.mjs$/,
-      include: /node_modules\/@chakra-ui/,
-      type: 'javascript/auto',
-    })
-
     return config
-  },
-  // Add experimental features for better ESM support
-  experimental: {
-    esmExternals: 'loose',
   },
 }
 
