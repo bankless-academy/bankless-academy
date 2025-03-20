@@ -9,7 +9,8 @@ import { useTranslation } from 'react-i18next'
 import { ANIMATIONS, ANIMATION_IDS } from 'constants/animations'
 import { useHotkeys } from 'react-hotkeys-hook'
 import { useState } from 'react'
-// import { scrollDown } from 'utils/index'
+import { useSmallScreen } from 'hooks'
+import { scrollDown } from 'utils/index'
 
 const StyledBox = styled(Box)`
   #lottie svg {
@@ -118,6 +119,8 @@ const Animation = ({
 
   const nextTooltipRef = useRef()
   const prevTooltipRef = useRef()
+
+  const [, isSmallScreen] = useSmallScreen()
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -228,7 +231,7 @@ const Animation = ({
       setIsDisabled(true)
       if (animationStepLS > 0) {
         setAnimationStepLS(animationStepLS - 1)
-        // scrollDown()
+        if (isSmallScreen) scrollDown()
       }
       setTimeout(() => {
         setIsDisabled(false)
@@ -243,7 +246,7 @@ const Animation = ({
       setIsDisabled(true)
       if (animationStepLS + 1 < animationLength) {
         setAnimationStepLS(animationStepLS + 1)
-        // scrollDown()
+        if (isSmallScreen) scrollDown()
       }
       setTimeout(() => {
         setIsDisabled(false)
