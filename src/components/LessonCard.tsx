@@ -66,11 +66,13 @@ const LessonCard = ({
   articlesCollectedLS,
   badgesMintedLS,
   lessonsCollectedLS,
+  isNextLesson = false,
 }: {
   lesson: LessonType
   articlesCollectedLS?: any[]
   badgesMintedLS?: any[]
   lessonsCollectedLS?: any[]
+  isNextLesson?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
   const router = useRouter()
@@ -95,6 +97,10 @@ const LessonCard = ({
     )
   const lessonHasSponsor =
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
+
+  const lessonTitle = isNextLesson
+    ? `Next: ${lesson.englishName}`
+    : lesson.englishName
 
   return (
     <StyledLessonCard p={6} pb={8} borderRadius="3xl" maxW="500px" m="auto">
@@ -183,10 +189,7 @@ const LessonCard = ({
                   /> */}
           </LessonBanner>
         ) : (
-          <InternalLink
-            href={`/lessons/${lesson.slug}`}
-            alt={lesson.englishName}
-          >
+          <InternalLink href={`/lessons/${lesson.slug}`} alt={lessonTitle}>
             <LessonBanner
               iswhitelabel={IS_WHITELABEL.toString()}
               isarticle={lesson?.isArticle?.toString()}
@@ -240,7 +243,7 @@ const LessonCard = ({
           ) : (
             <InternalLink
               href={`/lessons/${lesson.slug}`}
-              alt={lesson.englishName}
+              alt={lessonTitle}
               margin={lessonHasSponsor ? 'auto' : ''}
               w={lessonHasSponsor ? '100%' : 'inherit'}
             >

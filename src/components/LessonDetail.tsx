@@ -317,7 +317,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             Next Lesson
           </Text>
           <Box w={isSmallScreen ? '100%' : '450px'} maxW="100%" m="auto">
-            <LessonCard lesson={nextLesson} />
+            <LessonCard lesson={nextLesson} isNextLesson={true} />
           </Box>
         </Box>
       )
