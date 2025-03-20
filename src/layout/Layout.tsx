@@ -78,7 +78,7 @@ const MobileButton = ({
   label,
   icon: Icon,
   pwa,
-  ...props
+  imageSrc,
 }: {
   isActive: boolean
   link: string
@@ -100,7 +100,6 @@ const MobileButton = ({
       justifyContent="center"
       flexDirection="column"
       color={isActive ? 'white' : '#959393'}
-      {...props}
       pt={pwa ? '6px' : '2px'}
       pb={pwa ? '16px' : '2px'}
     >
@@ -112,12 +111,11 @@ const MobileButton = ({
         />
       ) : (
         <Image
-          src={props.imageSrc}
+          src={imageSrc}
           alt={label}
           w={iconSize}
           h={iconSize}
           borderRadius="50%"
-          // fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
           border={
             label === 'Profile'
               ? isActive
@@ -517,6 +515,7 @@ const Layout = ({
                         isActive={router.pathname === '/lessons'}
                         icon={LessonIcon}
                         pwa={pwa}
+                        imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
                       />
                       <MobileButton
                         link="/lessons/handbook"
@@ -526,6 +525,7 @@ const Layout = ({
                         )}
                         icon={HandbookIcon}
                         pwa={pwa}
+                        imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
                       />
                       <MobileButton
                         link="/explore"
@@ -533,6 +533,7 @@ const Layout = ({
                         isActive={page === 'EXPLORE'}
                         icon={ExploreIcon}
                         pwa={pwa}
+                        imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
                       />
                       <MobileButton
                         link={

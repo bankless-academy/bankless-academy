@@ -273,19 +273,39 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     >
                       <Box display="inline-flex" alignItems="center" mx="2">
                         {slide.type === 'LEARN' && (
-                          <LearnIcon iconOnly={true} isDone={isDone} />
+                          <LearnIcon
+                            key={`learn-${slide.notionId}`}
+                            iconOnly={true}
+                            isDone={isDone}
+                          />
                         )}
                         {slide.type === 'QUIZ' && (
-                          <QuizIcon iconOnly={true} isDone={isDone} />
+                          <QuizIcon
+                            key={`quiz-${slide.notionId}`}
+                            iconOnly={true}
+                            isDone={isDone}
+                          />
                         )}
                         {slide.type === 'POLL' && (
-                          <PollIcon iconOnly={true} isDone={isDone} />
+                          <PollIcon
+                            key={`poll-${slide.notionId}`}
+                            iconOnly={true}
+                            isDone={isDone}
+                          />
                         )}
                         {slide.type === 'QUEST' && (
-                          <QuestIcon iconOnly={true} isDone={isDone} />
+                          <QuestIcon
+                            key={`quest-${slide.notionId}`}
+                            iconOnly={true}
+                            isDone={isDone}
+                          />
                         )}
                         {slide.type === 'END' && (
-                          <RewardsIcon iconOnly={true} isDone={isDone} />
+                          <RewardsIcon
+                            key={`rewards-${slide.notionId}`}
+                            iconOnly={true}
+                            isDone={isDone}
+                          />
                         )}
                       </Box>
                       <Text color={isDone ? 'white' : 'gray'}>

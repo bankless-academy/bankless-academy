@@ -738,8 +738,10 @@ const Lesson = ({
     const result = []
 
     for (let i = 0; i < parts.length; i++) {
-      // Add the non-emoji part to the result array
-      result.push(parts[i])
+      // Add the non-emoji part to the result array if it's not empty
+      if (parts[i]) {
+        result.push(<span key={`text-${i}`}>{parts[i]}</span>)
+      }
 
       // If there's a corresponding emoji, add the CustomEmojiComponent
       if (emojis && emojis[i]) {
@@ -748,8 +750,7 @@ const Lesson = ({
         if (!unified) {
           console.log(`${emoji} no found !!`)
         } else {
-          const em = <Emoji unified={unified} size={20} />
-          result.push(em)
+          result.push(<Emoji key={`emoji-${i}`} unified={unified} size={20} />)
         }
       }
     }
@@ -765,7 +766,7 @@ const Lesson = ({
       // force links to target _blank
       if (node.attribs?.href?.length)
         return (
-          <ExternalLink href={node.attribs?.href}>
+          <ExternalLink href={node.attribs?.href} key={index}>
             {node.children[0]?.data}
           </ExternalLink>
         )
@@ -777,7 +778,7 @@ const Lesson = ({
       animationSlideId?.length
     ) {
       // HACK: integrate the embed animation iframe as a component
-      return <Animation animationId={animationSlideId} />
+      return <Animation animationId={animationSlideId} key={index} />
     }
     if (isAnimationSlide && node.type === 'tag' && node.name === 'ol') {
       // only show all sibling elements that come after the <ol> element if all animation steps are complete
@@ -787,6 +788,7 @@ const Lesson = ({
           className={
             isAnimationInProgress ? 'animation-in-progress' : 'animation'
           }
+          key={index}
         >
           {processNodes(node.children, transform)}
         </ol>
@@ -798,6 +800,7 @@ const Lesson = ({
 
       return (
         <li
+          key={`animation-step-${index}`}
           onClick={
             animationStepLS === index
               ? () => {}
@@ -818,7 +821,7 @@ const Lesson = ({
       const p = processNodes(node.children, transform)
       p.shift()
       return (
-        <li className="hide-marker">
+        <li key={`emoji-step-${index}`} className="hide-marker">
           {replaceEmojis(node.children[0].data)}
           {p}
         </li>
@@ -827,7 +830,11 @@ const Lesson = ({
     // img tag: add alt attribute
     if (node.type === 'tag' && node.name === 'img') {
       return (
-        <img src={node.attribs?.src} alt={lesson.name + ' - ' + slide.title} />
+        <img
+          src={node.attribs?.src}
+          alt={lesson.name + ' - ' + slide.title}
+          key={index}
+        />
       )
     }
     if (node.type === 'tag' && node.name === 'code') {
@@ -1083,7 +1090,7 @@ const Lesson = ({
                                 lesson.slug !== 'bankless-archetypes') ||
                               slide.type === 'POLL'
                             }
-                            isPoll={slide.type === 'POLL'.toString()}
+                            isPoll={slide.type === 'POLL'}
                           >
                             {slide.quiz.answers[n - 1]}
                           </QuizAnswer>
