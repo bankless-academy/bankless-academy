@@ -232,7 +232,7 @@ export const ChatWidget = ({
 
   return (
     <>
-      <Tooltip label="Bankless Academy AI assistant" hasArrow placement="left">
+      <Tooltip label="Bankless Academy AI" hasArrow placement="left">
         <IconButton
           aria-label="Open chat"
           icon={<RiRobot2Line size={26} />}
