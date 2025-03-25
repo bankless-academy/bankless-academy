@@ -12,6 +12,7 @@ interface AIResponse {
     cached: boolean
     responseTime: number
   }
+  error?: string
 }
 
 export default async function handler(
@@ -35,12 +36,22 @@ export default async function handler(
       `https://ai.bankless.ac/api/ai?apiKey=${process.env.HUGGINGFACE_API_KEY}&prompt=${encodeURIComponent(prompt)}&address=${address}&username=${username}&platform=Web`
     )
 
-    if (!response.ok) {
-      throw new Error(`AI service responded with status: ${response.status}`)
-    }
-
     const data = await response.json() as AIResponse
     console.log('data', data);
+
+    if (response.status !== 500) {
+      if (response.status === 200) {
+        return res.status(200).json({
+          response: data.answer,
+          lessonName: data?.lessonName,
+          lessonLink: data?.lessonLink,
+        })
+      } else {
+        return res.status(200).json({
+          response: data?.error,
+        })
+      }
+    }
 
     if (!data.answer) {
       throw new Error('No answer received from AI service')
