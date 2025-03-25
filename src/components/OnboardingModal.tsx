@@ -235,8 +235,9 @@ const OnboardingModal = ({
         <ModalBody
           padding={isMobileScreen ? '0' : 'default'}
           pb="4"
-          alignContent="center"
-          minH={isMobileScreen ? 'default' : '548px'}
+          alignContent={step === 'learn' ? 'flex-start' : 'center'}
+          minH={isMobileScreen ? 'auto' : '548px'}
+          overflowY="auto"
         >
           {step === 'initial' && (
             <>
