@@ -18,9 +18,10 @@ const nextConfig = {
   },
 }
 
-// Injected content via Sentry wizard below
+// Only apply Sentry configuration if enabled
+const SENTRY_ENABLED = process.env.NEXT_PUBLIC_SENTRY_ENABLED === 'true' || false
 
-module.exports = withSentryConfig(nextConfig, {
+const sentryConfig = {
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options
 
@@ -61,4 +62,6 @@ module.exports = withSentryConfig(nextConfig, {
 
   // Disable server-side options
   // ...
-})
+}
+
+module.exports = SENTRY_ENABLED ? withSentryConfig(nextConfig, sentryConfig) : nextConfig

@@ -155,6 +155,8 @@ export const TOKEN_GATING_ENABLED =
 
 export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
 
+export const SENTRY_ENABLED = process.env.NEXT_PUBLIC_SENTRY_ENABLED === 'true' || false
+
 export const DISCLAIMER_ENABLED =
   process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
 

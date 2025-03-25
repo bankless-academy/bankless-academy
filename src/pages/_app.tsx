@@ -14,6 +14,7 @@ import { WagmiProvider } from 'wagmi'
 import Router from 'next/router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import * as Sentry from '@sentry/nextjs'
+import { SENTRY_ENABLED } from 'constants/index'
 
 import Head, { MetaData } from 'components/Head'
 import Layout from 'layout/index'
@@ -97,13 +98,15 @@ const App = ({
       process.env.NEXT_PUBLIC_MAINTENANCE !== DEBUG) ||
     pageProps.pageMeta?.title === 'Maintenance'
   ) {
-    return (
+    return SENTRY_ENABLED ? (
       <Sentry.ErrorBoundary>Maintenance in progress ...</Sentry.ErrorBoundary>
+    ) : (
+      <div>Maintenance in progress ...</div>
     )
   }
   if (pageProps.pageMeta?.nolayout) {
-    return (
-      <Sentry.ErrorBoundary>
+    const content = (
+      <>
         <Head metadata={pageProps.pageMeta} />
         <ThemeProvider>
           <Global styles={css``} />
@@ -115,7 +118,12 @@ const App = ({
             </NonSSRWrapper>
           )}
         </ThemeProvider>
-      </Sentry.ErrorBoundary>
+      </>
+    )
+    return SENTRY_ENABLED ? (
+      <Sentry.ErrorBoundary>{content}</Sentry.ErrorBoundary>
+    ) : (
+      content
     )
   }
 
@@ -166,8 +174,8 @@ const App = ({
     })
   }, [Router])
 
-  return (
-    <Sentry.ErrorBoundary>
+  const appContent = (
+    <>
       <Head metadata={pageProps.pageMeta} />
       {!isMobile && !isTelegramWebApp && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
@@ -403,7 +411,13 @@ const App = ({
           )}
         </NonSSRWrapper>
       </ThemeProvider>
-    </Sentry.ErrorBoundary>
+    </>
+  )
+
+  return SENTRY_ENABLED ? (
+    <Sentry.ErrorBoundary>{appContent}</Sentry.ErrorBoundary>
+  ) : (
+    appContent
   )
 }
 
