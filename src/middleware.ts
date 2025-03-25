@@ -11,7 +11,18 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
   // Image handling middleware
   if (pathname.match(/^\/images\/.*\.(png|jpg|jpeg|gif|webp)$/)) {
+    // Skip if the request is already going to an API route
+    if (pathname.startsWith('/api/')) {
+      return NextResponse.next();
+    }
+
+    // Skip processing for localhost:3000 during development
+    if (request.url.includes('localhost:3000')) {
+      return NextResponse.next();
+    }
+
     try {
+      console.log('request.url', request.url);
       const response = await fetch(request.url, { method: 'HEAD' });
       if (response.status === 404) {
         console.log('detected 404 for image:', pathname);
