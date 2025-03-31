@@ -71,6 +71,7 @@ const Nav: React.FC = () => {
     if (
       !hasShownModalThisSession.current && // Only show once per session
       router.pathname !== '/mobile' && // Don't show on mobile install page
+      router.pathname !== '/start' && // Don't show on start page
       !embed && // Don't show if embedded
       (onboarding === '' ||
         (onboarding !== 'done' &&
