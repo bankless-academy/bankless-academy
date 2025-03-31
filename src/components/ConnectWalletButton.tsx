@@ -140,8 +140,8 @@ const ConnectWalletButton = ({
       }
     }
 
-    handleReferral()
     if (currentWallet === referrer) setReferrer('')
+    handleReferral()
   }, [asPath, referral, currentWallet, referrer])
 
   const isLessonPage = asPath.includes('/lessons')
