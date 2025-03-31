@@ -186,10 +186,10 @@ export default async function handler(
     return res.status(200).json(data)
   }
 
-  const ensName = userExist?.ens_name
+  let ensName = userExist?.ens_name
   // console.log(ensName)
 
-  const avatar = userExist?.ens_avatar || DEFAULT_AVATAR
+  let avatar = userExist?.ens_avatar || DEFAULT_AVATAR
 
   if (profile === 'true') {
     // async update ENS (available on next call)
@@ -250,6 +250,10 @@ export default async function handler(
   }
   // donations (deprecated)
   // stats.donations = userExist.donations
+  if (addressLowerCase === '0x79240a6403c21d6f1d5aedc17ce1001274bc12d4') {
+    ensName = 'Gautamgg'
+    avatar = 'https://i.postimg.cc/t4gfWSdf/lc-Tmc-UOV-400x400.jpg'
+  }
   if (addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c') {
     stats =
     {
