@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import {
   Box,
   SimpleGrid,
@@ -34,7 +34,9 @@ interface ExplorePageProps {
   initialData: ExploreType[]
 }
 
-export const getStaticProps: GetStaticProps<ExplorePageProps> = async () => {
+export const getServerSideProps: GetServerSideProps<
+  ExplorePageProps
+> = async () => {
   try {
     const explore = await fetchBE(
       `https://app.banklessacademy.com/api/cache/explore`
