@@ -259,6 +259,8 @@ const ExplorerProfile = ({
   }
 
   const shareLink = profileUrl
+    ?.replace('/explorer/', '/start?referral=')
+    ?.replace('?referral=true', '&profile=true')
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
@@ -558,8 +560,8 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   <Box display={isSmallScreen ? 'block' : 'flex'}>
                     <Box m="8" flex="1">
                       <ProfileTitle
-                        title="Share"
-                        description="Share your profile, earn referral points!"
+                        title="Share profile"
+                        description="Onboard your friends, earn referral points!"
                       />
                       <Box justifyContent="center" w="100%" m="32px auto 0">
                         <ShareAction
@@ -675,7 +677,11 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                         flexDirection="column"
                         textAlign="right"
                       >
-                        <Box mb="4">No referrals yet.</Box>
+                        <Box mb="4">
+                          {isMyProfile
+                            ? `Onboard your friends, earn referral points!`
+                            : `No referrals yet.`}
+                        </Box>
                         {isMyProfile && (
                           <ShareAction
                             shareMessage={share}

@@ -179,9 +179,9 @@ const LessonDetail = ({
   }`
   const locationOrigin =
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
-  const shareLink = `${locationOrigin}/lessons/${langURL}${lesson.slug}${
-    referral ? `?referral=${referral}` : ''
-  }`
+  const shareLink = `${locationOrigin}/start?lesson=${lesson.slug}${
+    langURL ? `&lang=${langURL?.replace('/', '')}` : ''
+  }${referral ? `&referral=${referral}` : ''}`
 
   const shareMessage = `Learn about "${lesson.name}" on @${TWITTER_ACCOUNT} 🎉
 

@@ -60,13 +60,16 @@ const Badge = ({
   const lang = langURL ? `&lng=${langURL}` : ''
   const locationOrigin =
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
-  const shareLink = IS_WHITELABEL
-    ? `${locationOrigin}/lessons/${lang}${lesson.slug}`
-    : `${locationOrigin}/explorer/${
-        typeof ensName === 'string' && ensName?.includes('.')
-          ? ensName
-          : address || currentWallet
-      }?badge=${lesson.badgeId}&referral=true${lang}`
+    const referral = `${
+      typeof ensName === 'string' && ensName?.includes('.')
+        ? ensName
+        : address || currentWallet
+    }`
+    const shareLink = IS_WHITELABEL
+      ? `${locationOrigin}/lessons/${lang}${lesson.slug}`
+      : `${locationOrigin}/start?badge=${lesson.badgeId}${
+          langURL ? `&lang=${langURL?.replace('/', '')}` : ''
+        }${referral ? `&referral=${referral}` : ''}`
 
   // TODO: TRANSLATE
   const shareMessage = `I've just claimed my "${lesson.name}" onchain certification at @${TWITTER_ACCOUNT} 🎉

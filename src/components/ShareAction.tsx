@@ -34,7 +34,7 @@ const ShareAction = ({
 
   useEffect(() => {
     if (
-      shareLinkRandom.includes('/explorer/') &&
+      shareLinkRandom.includes('&profile=true') &&
       !shareLinkRandom.includes('&r=')
     ) {
       const random = Math.floor(Math.random() * 100000)
