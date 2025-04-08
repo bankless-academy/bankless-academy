@@ -18,14 +18,10 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   if (lesson) {
     const currentLesson = LESSONS.find((l) => l.slug === lesson)
     // TODO: add support for lang?
-    pageMeta.title = currentLesson?.name
-    pageMeta.description = currentLesson?.description
     pageMeta.image = currentLesson?.socialImageLink
   } else if (badge) {
-    pageMeta.title = 'New Badge Unlocked'
     pageMeta.image = `${DOMAIN_URL_}/api/og/social?badge=${badge}&address=${referral}`
   } else if (referral) {
-    pageMeta.title = 'Check out my Explorer Profile'
     pageMeta.image = `${DOMAIN_URL_}/api/og/social?address=${referral}${
       r ? `&r=${r}` : ''
     }`
