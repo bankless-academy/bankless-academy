@@ -178,7 +178,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
               version: 'next',
               imageUrl: `${DOMAIN_URL_}/images/bankless_academy_v3_frame.jpg`,
               button: {
-                title: 'Learn and claim your free lesson badge!',
+                title: 'Learn & claim your free badge!',
                 action: {
                   type: 'launch_frame',
                   name: 'Bankless Academy',
@@ -198,7 +198,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
               version: 'next',
               imageUrl: `${DOMAIN_URL_}/api/og/lesson-frame?image_path=${lesson.socialImageLink}`,
               button: {
-                title: 'Learn and claim your free lesson badge!',
+                title: 'Learn & claim your free badge!',
                 action: {
                   type: 'launch_frame',
                   name: 'Bankless Academy',
