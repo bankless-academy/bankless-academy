@@ -263,7 +263,7 @@ const ExplorerProfile = ({
     ?.replace('?referral=true', '&profile=true')
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 
-Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
+Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
 
   const referrals = user?.stats?.referrals?.length || 0
 

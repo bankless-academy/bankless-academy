@@ -922,9 +922,9 @@ export const generateTelegramLink = (text: string, link: string) => {
 }
 
 export const generateLinkedinLink = (text: string, link: string) => {
-  // title not supported
-  return `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(link)}&title=${encodeURIComponent(text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin'))}`
+  return `https://www.linkedin.com/feed/?shareActive&mini=true&text=${encodeURIComponent(text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin'))}%0A%0A${encodeURIComponent(link)}`
 }
+
 export const generateFacebookLink = (text: string, link: string) => {
   // quote not supported
   return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}&quote=${encodeURIComponent(text?.replace('@BanklessAcademy', 'Bankless Academy')?.replace('@Gitcoin', 'Gitcoin'))}`
