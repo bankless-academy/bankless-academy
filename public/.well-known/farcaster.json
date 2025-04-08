@@ -1,8 +1,8 @@
 {
   "accountAssociation": {
-    "header": "eyJmaWQiOjg3MDksInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg5ZmI4OTQ3ZmIzMTVkZGQwMjFjYjVjMDEwZTdmMDIwZDQ1ZmU3ZjlmIn0",
+    "header": "eyJmaWQiOjI0MjQ0MCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweGJERGVEOTZlYjUzMzQ0MDZiNEMyMDRDMDJiMDhGOUE5RmIwQTkyZGMifQ",
     "payload": "eyJkb21haW4iOiJhcHAuYmFua2xlc3NhY2FkZW15LmNvbSJ9",
-    "signature": ""
+    "signature": "MHgxZDc5NzI0ZWMyMmY3MGI2ZTYxYTZhZjMzNjI3Njk4ZGExNGJmOTRmMTAzNWE3NzQyZDdhZmQ4MzQyNjk1M2RiMjdlNzQwOGVhYWMxOTdlMzE4NDA5NzU5NGQwYWVlOTc0M2YzMTBkZWIyMTQ5ZjdmZmM2NzAxZTU4NDAzM2I0MTFi"
   },
   "frame": {
     "name": "Bankless Academy",
