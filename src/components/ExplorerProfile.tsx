@@ -118,7 +118,7 @@ const ExplorerProfile = ({
       if (lesson) {
         const redirect = `/lessons/${lng ? `${lng}/` : ''}${
           lesson.slug
-        }?referral=${profileAddress}`
+        }?referrer=${profileAddress}`
         window.location.href = redirect
       }
     }
@@ -259,7 +259,7 @@ const ExplorerProfile = ({
   }
 
   const shareLink = profileUrl
-    ?.replace('/explorer/', '/start?referral=')
+    ?.replace('/explorer/', '/start?referrer=')
     ?.replace('?referral=true', '&profile=true')
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 

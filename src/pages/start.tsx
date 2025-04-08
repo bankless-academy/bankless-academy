@@ -7,7 +7,7 @@ import OnboardingModal from 'components/OnboardingModal'
 import { DOMAIN_URL_, LESSONS } from 'constants/index'
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const { lesson, badge, referral, r } = query
+  const { lesson, badge, referrer, r } = query
 
   const pageMeta: MetaData = {
     title: 'Start Learning',
@@ -20,9 +20,9 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     // TODO: add support for lang?
     pageMeta.image = currentLesson?.socialImageLink
   } else if (badge) {
-    pageMeta.image = `${DOMAIN_URL_}/api/og/social?badge=${badge}&address=${referral}`
-  } else if (referral) {
-    pageMeta.image = `${DOMAIN_URL_}/api/og/social?address=${referral}${
+    pageMeta.image = `${DOMAIN_URL_}/api/og/social?badge=${badge}&address=${referrer}`
+  } else if (referrer) {
+    pageMeta.image = `${DOMAIN_URL_}/api/og/social?address=${referrer}${
       r ? `&r=${r}` : ''
     }`
   }

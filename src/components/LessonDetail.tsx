@@ -172,7 +172,7 @@ const LessonDetail = ({
     chainId: 1,
   })
   const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
-  const referral = `${
+  const referrer = `${
     typeof ensName === 'string' && ensName?.includes('.')
       ? ensName
       : address || currentWallet
@@ -181,7 +181,7 @@ const LessonDetail = ({
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
   const shareLink = `${locationOrigin}/start?lesson=${lesson.slug}${
     langURL ? `&lang=${langURL?.replace('/', '')}` : ''
-  }${referral ? `&referral=${referral}` : ''}`
+  }${referrer ? `&referrer=${referrer}` : ''}`
 
   const shareMessage = `Learn about "${lesson.name}" on @${TWITTER_ACCOUNT} 🎉
 

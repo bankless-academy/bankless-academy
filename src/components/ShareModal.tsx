@@ -33,10 +33,11 @@ const ShareModal = ({
   const [score] = useLocalStorage(`score`, 0)
   const [nameCache] = useLocalStorage(`name-cache`, {})
 
-  const hasReferral = shareLink.includes('referral=')
+  const hasReferral =
+    shareLink.includes('referral=') || shareLink.includes('referrer=')
   const address = shareLink.includes('referral=true')
     ? shareLink?.split('/explorer/')[1]?.split('?')[0]
-    : shareLink.split('referral=')[1] || ''
+    : shareLink.split('referral=')[1] || shareLink.split('referrer=')[1] || ''
   const addressLower = address?.toLowerCase()
 
   const ens = address

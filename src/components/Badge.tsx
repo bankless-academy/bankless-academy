@@ -60,7 +60,7 @@ const Badge = ({
   const lang = langURL ? `&lng=${langURL}` : ''
   const locationOrigin =
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
-    const referral = `${
+    const referrer = `${
       typeof ensName === 'string' && ensName?.includes('.')
         ? ensName
         : address || currentWallet
@@ -69,7 +69,7 @@ const Badge = ({
       ? `${locationOrigin}/lessons/${lang}${lesson.slug}`
       : `${locationOrigin}/start?badge=${lesson.badgeId}${
           langURL ? `&lang=${langURL?.replace('/', '')}` : ''
-        }${referral ? `&referral=${referral}` : ''}`
+        }${referrer ? `&referrer=${referrer}` : ''}`
 
   // TODO: TRANSLATE
   const shareMessage = `I've just claimed my "${lesson.name}" onchain certification at @${TWITTER_ACCOUNT} 🎉

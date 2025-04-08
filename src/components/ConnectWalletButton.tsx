@@ -101,7 +101,7 @@ const ConnectWalletButton = ({
   const [, setCommunity] = useLocalStorage(`community`, '')
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { disconnect } = useDisconnect()
-  const { referral } = router.query
+  const { referral, referrer: referrerQuery } = router.query
   const [email] = useLocalStorage('email', localStorage.getItem('email') || '')
 
   useEffect(() => {
@@ -123,26 +123,39 @@ const ConnectWalletButton = ({
     }
 
     const handleReferral = async () => {
+      // Process referral from URL
       const referralString =
         (referral as string) === 'true' && asPath?.startsWith('/explorer/')
           ? extractAdressFromUrl(asPath)
           : (referral as string)
-      // console.log('referralString', referralString)
+
       if (referralString?.length) {
         const referralAddress = referralString?.includes('.')
           ? await getAddress(referralString)
           : referralString?.toLowerCase()
-        // console.log('referralAddress', referralAddress)
-        // console.log('currentWallet', currentWallet)
 
         if (referrer === '' && currentWallet !== referralAddress)
           setReferrer(referralAddress)
+      }
+
+      // Process referrer from query parameter
+      if (
+        referrerQuery &&
+        typeof referrerQuery === 'string' &&
+        referrerQuery.length > 0
+      ) {
+        const referrerAddress = referrerQuery.includes('.')
+          ? await getAddress(referrerQuery)
+          : referrerQuery.toLowerCase()
+
+        if (referrer === '' && currentWallet !== referrerAddress)
+          setReferrer(referrerAddress)
       }
     }
 
     if (currentWallet === referrer) setReferrer('')
     handleReferral()
-  }, [asPath, referral, currentWallet, referrer])
+  }, [asPath, referral, referrerQuery, currentWallet, referrer, setReferrer])
 
   const isLessonPage = asPath.includes('/lessons')
   const isProfilePage = asPath.includes('/explorer/my-profile')
