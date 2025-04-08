@@ -36,6 +36,11 @@ export function frameConnector() {
 
       try {
         await loadSdk()
+        try {
+          await sdk.actions.addFrame()
+        } catch (error) {
+          console.error('Failed to add frame:', error)
+        }
         await this.connect({ chainId: config.chains[0].id })
       } catch (error) {
         console.error('Failed to setup Frame connector:', error)
