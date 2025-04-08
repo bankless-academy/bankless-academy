@@ -1,0 +1,18 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjg3MDksInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg5ZmI4OTQ3ZmIzMTVkZGQwMjFjYjVjMDEwZTdmMDIwZDQ1ZmU3ZjlmIn0",
+    "payload": "eyJkb21haW4iOiJhcHAuYmFua2xlc3NhY2FkZW15LmNvbSJ9",
+    "signature": ""
+  },
+  "frame": {
+    "name": "Bankless Academy",
+    "version": "1",
+    "iconUrl": "https://app.banklessacademy.com/app-icon.png",
+    "homeUrl": "https://app.banklessacademy.com?webapp=true",
+    "imageUrl": "https://app.banklessacademy.com/images/bankless_academy_v3_frame.jpg",
+    "buttonTitle": "Start Learning",
+    "splashImageUrl": "https://app.banklessacademy.com/app-icon.png",
+    "splashBackgroundColor": "#000000",
+    "webhookUrl": "https://app.banklessacademy.com/api/webhook"
+  }
+}
