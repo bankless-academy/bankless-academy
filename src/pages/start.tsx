@@ -1,17 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 
 import { MetaData } from 'components/Head'
 import HomePage from 'pages/index'
 import OnboardingModal from 'components/OnboardingModal'
+import { DOMAIN_URL_, LESSONS } from 'constants/index'
 
-const pageMeta: MetaData = {
-  title: 'Start Learning',
-  description: 'Your crypto journey starts here.',
-  canonical: '/',
-}
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const { lesson, badge, referral, r } = query
 
-export const getStaticProps: GetStaticProps = async () => {
+  const pageMeta: MetaData = {
+    title: 'Start Learning',
+    description: 'Your crypto journey starts here.',
+    canonical: '/',
+  }
+
+  if (lesson) {
+    const currentLesson = LESSONS.find((l) => l.slug === lesson)
+    // TODO: add support for lang?
+    pageMeta.image = currentLesson?.socialImageLink
+  } else if (badge) {
+    pageMeta.image = `${DOMAIN_URL_}/api/og/social?badge=${badge}&address=${referral}`
+  } else if (referral) {
+    pageMeta.image = `${DOMAIN_URL_}/api/og/social?address=${referral}${
+      r ? `&r=${r}` : ''
+    }`
+  }
+
   return {
     props: { pageMeta },
   }
