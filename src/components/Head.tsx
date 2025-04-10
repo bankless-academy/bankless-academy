@@ -147,7 +147,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     miniAppContent.imageUrl = `${DOMAIN_URL_}/api/og/mini-app?image=${encodeURIComponent(
       metadata.image
     )}`
-    miniAppContent.button.action.url = url
+    miniAppContent.button.action.url = `${url}&webapp=true`
   } else {
     miniAppContent = null
   }
