@@ -102,6 +102,56 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         .slug
     : null
 
+  const isStart = router.asPath?.startsWith('/start')
+
+  type MiniAppContentType = {
+    version: string
+    imageUrl?: string
+    button: {
+      title: string
+      action: {
+        type: string
+        name: string
+        url?: string
+        splashImageUrl: string
+        splashBackgroundColor: string
+      }
+    }
+  }
+
+  let miniAppContent: MiniAppContentType | null = {
+    version: 'next',
+    button: {
+      title: 'Learn & claim your free badge!',
+      action: {
+        type: 'launch_frame',
+        name: PROJECT_NAME,
+        splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
+        splashBackgroundColor: '#000000',
+      },
+    },
+  }
+
+  if (router.pathname === '/') {
+    // Home page
+    miniAppContent.imageUrl = `${DOMAIN_URL_}/images/bankless_academy_v3_frame.jpg`
+    miniAppContent.button.action.url = `${DOMAIN_URL_}?webapp=true`
+  } else if (isLesson && lesson) {
+    // Lesson page
+    miniAppContent.imageUrl = `${DOMAIN_URL_}/api/og/mini-app?image=${encodeURIComponent(
+      `${DOMAIN_URL_}${lesson.socialImageLink}`
+    )}`
+    miniAppContent.button.action.url = `${DOMAIN_URL_}/lessons/${lesson.slug}?webapp=true`
+  } else if (isStart) {
+    // Start page
+    miniAppContent.imageUrl = `${DOMAIN_URL_}/api/og/mini-app?image=${encodeURIComponent(
+      metadata.image
+    )}`
+    miniAppContent.button.action.url = url
+  } else {
+    miniAppContent = null
+  }
+
   return (
     <>
       <NextHead>
@@ -170,45 +220,11 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           strategy="beforeInteractive"
         />
         {/* Farcaster Frame */}
-        {/* Farcaster Frame v2: home page */}
-        {router.pathname === '/' && (
-          <meta
-            property="fc:frame"
-            content={JSON.stringify({
-              version: 'next',
-              imageUrl: `${DOMAIN_URL_}/images/bankless_academy_v3_frame.jpg`,
-              button: {
-                title: 'Learn & claim your free badge!',
-                action: {
-                  type: 'launch_frame',
-                  name: 'Bankless Academy',
-                  url: `${DOMAIN_URL_}?webapp=true`,
-                  splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
-                  splashBackgroundColor: '#000000',
-                },
-              },
-            })}
-          />
+        {/* Farcaster Frame v2 (mini-app) */}
+        {miniAppContent && (
+          <meta property="fc:frame" content={JSON.stringify(miniAppContent)} />
         )}
-        {/* Farcaster Frame v2: lesson */}
-        {isLesson && lesson && (
-          <meta
-            property="fc:frame"
-            content={JSON.stringify({
-              version: 'next',
-              imageUrl: `${DOMAIN_URL_}/api/og/lesson-frame?image_path=${lesson.socialImageLink}`,
-              button: {
-                title: 'Learn & claim your free badge!',
-                action: {
-                  type: 'launch_frame',
-                  name: 'Bankless Academy',
-                  url: `${DOMAIN_URL_}/lessons/${lesson.slug}?webapp=true`,
-                  splashImageUrl: `${DOMAIN_URL_}/app-icon.png`,
-                  splashBackgroundColor: '#000000',
-                },
-              },
-            })}
-          />
+        {
           // <>
           //   <meta property="fc:frame" content="vNext" />
           //   <meta
@@ -238,7 +254,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           //     }
           //   />
           // </>
-        )}
+        }
         {/* FC: article */}
         {lesson?.isArticle && (
           <>

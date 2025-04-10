@@ -1,4 +1,4 @@
-const OGLessonFrame = ({ image }: { image?: string }): React.ReactElement => {
+const OGMiniApp = ({ image }: { image?: string }): React.ReactElement => {
   return (
     <div
       style={{
@@ -25,4 +25,4 @@ const OGLessonFrame = ({ image }: { image?: string }): React.ReactElement => {
   )
 }
 
-export default OGLessonFrame
+export default OGMiniApp

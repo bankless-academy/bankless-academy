@@ -4,14 +4,19 @@ import { GetServerSideProps } from 'next'
 import { MetaData } from 'components/Head'
 import HomePage from 'pages/index'
 import OnboardingModal from 'components/OnboardingModal'
-import { DOMAIN_URL_, LESSONS } from 'constants/index'
+import {
+  DOMAIN_URL_,
+  LESSONS,
+  MINI_APP_TITLE,
+  MINI_APP_DESCRIPTION,
+} from 'constants/index'
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { lesson, badge, referrer, r } = query
 
   const pageMeta: MetaData = {
-    title: 'Start Learning',
-    description: 'Your crypto journey starts here.',
+    title: MINI_APP_TITLE,
+    description: MINI_APP_DESCRIPTION,
     canonical: '/',
   }
 
@@ -19,6 +24,10 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     const currentLesson = LESSONS.find((l) => l.slug === lesson)
     // TODO: add support for lang?
     pageMeta.image = currentLesson?.socialImageLink
+    if (currentLesson) {
+      pageMeta.isLesson = true
+      pageMeta.lesson = currentLesson
+    }
   } else if (badge) {
     pageMeta.image = `${DOMAIN_URL_}/api/og/social?badge=${badge}&address=${referrer}`
   } else if (referrer) {

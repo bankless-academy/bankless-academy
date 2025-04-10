@@ -192,3 +192,6 @@ export const LanguageDescription: LanguageDescriptionType = Object.fromEntries(
 export const IS_COLLECTIBLE_ACTIVATED = false
 
 export const IS_REWARDS_ACTIVATED = false
+
+export const MINI_APP_TITLE = 'Start Learning'
+export const MINI_APP_DESCRIPTION = 'Your crypto journey starts here.'
