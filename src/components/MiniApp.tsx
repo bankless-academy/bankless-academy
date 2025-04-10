@@ -24,6 +24,10 @@ interface FrameMessage {
   argumentList?: any[]
 }
 
+interface FarcasterFrameProps {
+  frameUrl?: string
+}
+
 // declare global {
 //   interface Window {
 //     ethereum: any
@@ -85,15 +89,17 @@ const logMessage = (msg: FrameMessage) => {
 //   }
 // }
 
-export default function FarcasterFrame() {
+export default function MiniApp({ frameUrl = '' }: FarcasterFrameProps) {
   const [isInitialized, setIsInitialized] = useState(false)
-  const [showIframe, setShowIframe] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const iframeRef = useRef<HTMLIFrameElement>(null)
+  const cleanupRef = useRef<(() => void) | null>(null)
   const { address } = useAccount()
 
   useEffect(() => {
-    if (!showIframe) return
+    if (!address || !frameUrl) return
+
+    let isCurrentFrame = true
     log('Initializing frame host...')
 
     const initFrame = async () => {
@@ -112,6 +118,7 @@ export default function FarcasterFrame() {
           if (client) {
             provider = {
               request: async (args: { method: string; params: any[] }) => {
+                if (!isCurrentFrame) return null
                 return client.request({ ...args, params: args.params || [] })
               },
               on: (_event: string, _listener: any) => {
@@ -126,9 +133,19 @@ export default function FarcasterFrame() {
           }
         }
       } catch (err: any) {
+        if (!isCurrentFrame) return
         const errorMessage = err?.message || 'Failed to initialize wallet'
         log('Wallet initialization error:', errorMessage)
         setError(errorMessage)
+      }
+
+      if (!isCurrentFrame) return
+
+      const handleMessage = (event: MessageEvent) => {
+        if (!isCurrentFrame) return
+        if (event.source === iframeRef.current?.contentWindow) {
+          logMessage(event.data as FrameMessage)
+        }
       }
 
       const announceProvider = (endpoint: any) => {
@@ -149,123 +166,93 @@ export default function FarcasterFrame() {
         log('Provider announced')
       }
 
-      const frameHost = {
-        ready: (options: any) => {
-          log('Frame ready called with options:', options)
-          setIsInitialized(true)
-        },
-        // context: {
-        //   user: {
-        //     fid: 8709,
-        //   },
-        // },
-        eip6963RequestProvider: () => {
-          if (!provider) {
-            log('Provider requested but not available')
-            return
-          }
-          log('Provider requested')
-          announceProvider(endpoint)
-        },
-        ethProviderRequestV2: async (request: any) => {
-          if (!provider) {
-            return {
-              error: {
-                code: -32603,
-                message: 'Wallet not available',
-              },
-            }
-          }
+      window.addEventListener('message', handleMessage)
 
-          log('ETH request:', request.value.method, request.value)
-          if (!request?.value?.method) {
-            return {
-              error: {
-                code: -32602,
-                message: 'Invalid request format',
-              },
-            }
-          }
-
-          try {
-            const response = await provider.request({
-              method: request.value.method,
-              params: request.value.params || [],
-            })
-            log('ETH response:', response)
-            return { result: response }
-          } catch (error: any) {
-            log('ETH error:', error)
-            return {
-              error: {
-                code: error?.code || -32603,
-                message: error?.message || 'Internal error',
-                data: error?.data,
-              },
-            }
-          }
-        },
-      }
-
-      log('Creating endpoint...')
       const { endpoint } = exposeToIframe({
         iframe: iframeRef.current,
-        sdk: frameHost as unknown as FrameHost,
+        sdk: {
+          ready: (options: any) => {
+            if (!isCurrentFrame) return
+            log('Frame ready called with options:', options)
+            setIsInitialized(true)
+          },
+          eip6963RequestProvider: () => {
+            if (!isCurrentFrame || !provider) return
+            log('Provider requested')
+            if (endpoint) announceProvider(endpoint)
+          },
+          ethProviderRequestV2: async (request: any) => {
+            if (!isCurrentFrame || !provider) {
+              return {
+                error: {
+                  code: -32603,
+                  message: 'Wallet not available',
+                },
+              }
+            }
+
+            log('ETH request:', request.value.method, request.value)
+            if (!request?.value?.method) {
+              return {
+                error: {
+                  code: -32602,
+                  message: 'Invalid request format',
+                },
+              }
+            }
+
+            try {
+              const response = await provider.request({
+                method: request.value.method,
+                params: request.value.params || [],
+              })
+              log('ETH response:', response)
+              return { result: response }
+            } catch (error: any) {
+              log('ETH error:', error)
+              return {
+                error: {
+                  code: error?.code || -32603,
+                  message: error?.message || 'Internal error',
+                  data: error?.data,
+                },
+              }
+            }
+          },
+        } as unknown as FrameHost,
         ethProvider: provider as any,
         frameOrigin: '*',
         debug: true,
       })
-      log('Frame host initialized')
 
-      const handleMessage = (event: MessageEvent) => {
-        if (event.source === iframeRef.current?.contentWindow) {
-          logMessage(event.data as FrameMessage)
-        }
-      }
-      window.addEventListener('message', handleMessage)
-
-      return () => {
+      cleanupRef.current = () => {
+        isCurrentFrame = false
         window.removeEventListener('message', handleMessage)
+        if (iframeRef.current) {
+          iframeRef.current.remove()
+        }
+        setIsInitialized(false)
+        setError(null)
       }
     }
 
-    const cleanupPromise = initFrame()
+    initFrame()
+
     return () => {
-      cleanupPromise?.then((cleanup) => cleanup?.())
-      if (iframeRef.current) {
-        iframeRef.current.remove()
+      if (cleanupRef.current) {
+        cleanupRef.current()
       }
     }
-  }, [showIframe])
+  }, [address, frameUrl])
 
   const handleIframeLoad = () => {
     log('Iframe loaded')
-  }
-
-  const handleLoadClick = () => {
-    setShowIframe(true)
   }
 
   return (
     <div style={{ position: 'relative', width: '424px', margin: '0 auto' }}>
       {!address ? (
         <div>Please connect your wallet first</div>
-      ) : !showIframe ? (
-        <button
-          onClick={handleLoadClick}
-          style={{
-            padding: '10px 20px',
-            fontSize: '16px',
-            cursor: 'pointer',
-            backgroundColor: '#0070f3',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            margin: '20px 0',
-          }}
-        >
-          Load LessonFrame
-        </button>
       ) : (
         <>
           <div style={{ display: isInitialized ? 'none' : 'block' }}>
@@ -277,7 +264,7 @@ export default function FarcasterFrame() {
           <iframe
             ref={iframeRef}
             id={FRAME_ID}
-            src="https://app.banklessacademy.com/lessons/intro-to-defi?embed=true"
+            src={frameUrl}
             height={695}
             width={424}
             style={{

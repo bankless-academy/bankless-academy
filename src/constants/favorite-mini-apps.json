@@ -1,0 +1,95 @@
+{
+  "result": {
+    "frames": [
+      {
+        "domain": "app.banklessacademy.com",
+        "name": "Bankless Academy",
+        "iconUrl": "https://proxy.wrpcd.net/?url=https%3A%2F%2Fapp.banklessacademy.com%2Fapp-icon.png&s=7b07ece781ff775a6acd534e7fde04282a09b5084ad72bf35d418eddea88b8e6",
+        "homeUrl": "https://app.banklessacademy.com?webapp=true",
+        "imageUrl": "https://proxy.wrpcd.net/?url=https%3A%2F%2Fapp.banklessacademy.com%2Fimages%2Fbankless_academy_v3_frame.jpg&s=c3366d88a2572c61f2b253e60a9b6e3725dab4ccbcb82464c9e29a29eb4c1544",
+        "buttonTitle": "Start Learning",
+        "splashImageUrl": "https://proxy.wrpcd.net/?url=https%3A%2F%2Fapp.banklessacademy.com%2Fapp-icon.png&s=7b07ece781ff775a6acd534e7fde04282a09b5084ad72bf35d418eddea88b8e6",
+        "splashBackgroundColor": "#000000",
+        "author": {
+          "fid": 242440,
+          "username": "banklessacademy",
+          "displayName": "Bankless Academy",
+          "pfp": {
+            "url": "https://i.imgur.com/jVjPisq.jpg",
+            "verified": false
+          },
+          "profile": {
+            "bio": {
+              "text": "Providing Explorers with the tools and knowledge needed to 'go bankless'.\nLearn how to #OwnYourFuture 🧑🏻‍🚀 🚀\nStart today 🎓 /banklessacademy",
+              "mentions": [],
+              "channelMentions": ["banklessacademy"]
+            },
+            "location": {
+              "placeId": "",
+              "description": ""
+            }
+          },
+          "followerCount": 475,
+          "followingCount": 261,
+          "viewerContext": {
+            "following": false,
+            "followedBy": false
+          }
+        },
+        "supportsNotifications": true,
+        "viewerContext": {
+          "favorited": true,
+          "notificationsEnabled": true,
+          "notificationDetails": {
+            "token": "01961764-fd39-c2e2-ae2e-db8d55eeef0a",
+            "url": "https://api.warpcast.com/v1/frame-notifications"
+          }
+        }
+      },
+      {
+        "domain": "pods.media",
+        "name": "Pods",
+        "iconUrl": "https://proxy.wrpcd.net/?url=https%3A%2F%2Fpods.media%2Fassets%2Foutline-fill.png&s=e9a03f6f621eb09a7efdff41231fcf922d27dbd24b6a0d22b9de4c55ee880539",
+        "homeUrl": "https://pods.media",
+        "splashImageUrl": "https://proxy.wrpcd.net/?url=https%3A%2F%2Fpods.media%2Ficon.svg&s=251abf747aadc6fc33e3881a8a843984b9a655a5222153cade5226f1a5ab0a16",
+        "splashBackgroundColor": "#000000",
+        "author": {
+          "fid": 13875,
+          "username": "pods",
+          "displayName": "pods.media",
+          "pfp": {
+            "url": "https://i.imgur.com/9S7gylW.jpg",
+            "verified": false
+          },
+          "profile": {
+            "bio": {
+              "text": "The platform for onchain podcasts | pods.media",
+              "mentions": [],
+              "channelMentions": []
+            },
+            "location": {
+              "placeId": "",
+              "description": ""
+            },
+            "earlyWalletAdopter": true
+          },
+          "followerCount": 16926,
+          "followingCount": 103,
+          "viewerContext": {
+            "following": true,
+            "followedBy": false
+          }
+        },
+        "supportsNotifications": true,
+        "viewerContext": {
+          "favorited": true,
+          "notificationsEnabled": true,
+          "notificationDetails": {
+            "token": "01962066-688e-ff02-2712-c2d38289533d",
+            "url": "https://api.warpcast.com/v1/frame-notifications"
+          }
+        }
+      }
+    ]
+  }
+}

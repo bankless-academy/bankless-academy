@@ -1946,14 +1946,6 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@farcaster/frame-core@0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@farcaster/frame-core/-/frame-core-0.0.24.tgz#35c2403f561a74b6551e3032d6d57a730c3dc413"
-  integrity sha512-iO/Jxz6mZBVUoLIY753Id5Yhn6DHBakQkIBXf0mreAcnjPGCMvKx/0xKEM3ns3M801PqoX7VLYO4q+kKxYzQ0A==
-  dependencies:
-    ox "^0.4.4"
-    zod "^3.24.1"
-
 "@farcaster/frame-core@0.0.31":
   version "0.0.31"
   resolved "https://registry.yarnpkg.com/@farcaster/frame-core/-/frame-core-0.0.31.tgz#d85bd595efe5cfe68981b99a454c1b994fb099d9"
@@ -1962,12 +1954,12 @@
     ox "^0.4.4"
     zod "^3.24.1"
 
-"@farcaster/frame-host@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@farcaster/frame-host/-/frame-host-0.0.24.tgz#8e97b3476443c25b33e8f4cd1948ad912e4deb21"
-  integrity sha512-4l9FS7LjEYRjOmNnGFvYXnnQnsW8VGrQ6ECIYZjxdAglP63B9nCBmH0UhhkeKrQA+z/HmwIqOneh8LRjj4J5Bg==
+"@farcaster/frame-host@^0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@farcaster/frame-host/-/frame-host-0.0.32.tgz#6081112f03a0143cb97bdfa59a5341715a72d834"
+  integrity sha512-zFsirXjHRKoPR6JvB2eFYve5mvxCm8DErr2ax2q6Dr5I/Nc9YhHTa8Tl0nIVYwyFLW2q1Clgy0/BytFdI7IImA==
   dependencies:
-    "@farcaster/frame-core" "0.0.24"
+    "@farcaster/frame-core" "0.0.31"
     ox "^0.4.4"
 
 "@farcaster/frame-sdk@^0.0.34":
