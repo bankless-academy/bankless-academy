@@ -3,7 +3,22 @@ import { GetStaticProps } from 'next'
 import { MetaData } from 'components/Head'
 import MiniApp from 'components/MiniApp'
 import MiniAppsList from 'components/MiniAppsList'
+import MiniLessonsList from 'components/MiniLessonsList'
 import styled from '@emotion/styled'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  useDisclosure,
+  Text,
+  Flex,
+  Heading,
+  Box,
+} from '@chakra-ui/react'
 
 const pageMeta: MetaData = {
   description: 'Bankless Academy Farcaster Frame',
@@ -36,52 +51,126 @@ interface MiniApp {
   }
 }
 
+interface MiniLesson {
+  name: string
+  slug: string
+  lessonImageLink: string
+  description: string
+  level: string
+}
+
 const MiniApps = (): JSX.Element => {
   const [selectedApp, setSelectedApp] = useState<MiniApp | null>(null)
+  const [selectedLesson, setSelectedLesson] = useState<MiniLesson | null>(null)
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [frameUrl, setFrameUrl] = useState<string>('')
 
   const handleSelectApp = (app: MiniApp) => {
+    setSelectedApp(app)
+    setSelectedLesson(null)
+    setFrameUrl(app.homeUrl)
+    onOpen()
+  }
+
+  const handleSelectLesson = (lesson: MiniLesson) => {
+    setSelectedLesson(lesson)
     setSelectedApp(null)
-    setTimeout(() => setSelectedApp(app), 0)
+    setFrameUrl(`https://app.banklessacademy.com/lessons/${lesson.slug}`)
+    onOpen()
   }
 
   const handleRefresh = () => {
     if (selectedApp) {
       setSelectedApp(null)
       setTimeout(() => setSelectedApp(selectedApp), 0)
+    } else if (selectedLesson) {
+      setSelectedLesson(null)
+      setTimeout(() => setSelectedLesson(selectedLesson), 0)
     }
   }
 
   return (
     <Container>
-      <Title>Mini Apps</Title>
       <ContentWrapper>
         <AppsListContainer>
+          <Title>Mini Apps</Title>
           <MiniAppsList onSelectApp={handleSelectApp} />
         </AppsListContainer>
-        <FrameContainer>
-          {selectedApp ? (
-            <>
-              <AppHeader>
-                <HeaderContent>
-                  <div>
-                    <AppName>{selectedApp.name}</AppName>
-                    <AppDomain>{selectedApp.domain}</AppDomain>
-                  </div>
-                  <RefreshButton onClick={handleRefresh}>Refresh</RefreshButton>
-                </HeaderContent>
-              </AppHeader>
-              <MiniApp
-                key={selectedApp.homeUrl}
-                frameUrl={selectedApp.homeUrl}
-              />
-            </>
-          ) : (
-            <Placeholder>
-              <PlaceholderText>Select a mini app to view</PlaceholderText>
-            </Placeholder>
-          )}
-        </FrameContainer>
+        <AppsListContainer>
+          <Title>Mini Lessons</Title>
+          <MiniLessonsList
+            lessonSlugs={[
+              'bitcoin-basics',
+              'ethereum-basics',
+              'intro-to-defi',
+              'gitcoin-2.0-essentials',
+            ]}
+            onSelectLesson={handleSelectLesson}
+          />
+        </AppsListContainer>
       </ContentWrapper>
+
+      <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
+        <ModalOverlay />
+        <ModalContent maxW="500px">
+          {selectedApp && (
+            <>
+              <ModalHeader>
+                <Flex justify="space-between" align="center">
+                  <Box>
+                    <Heading size="md">{selectedApp.name}</Heading>
+                    <Text fontSize="sm" color="gray.500">
+                      {selectedApp.domain}
+                    </Text>
+                  </Box>
+                  <Button
+                    size="sm"
+                    colorScheme="blue"
+                    onClick={handleRefresh}
+                    mr={8}
+                  >
+                    Refresh
+                  </Button>
+                </Flex>
+              </ModalHeader>
+              <ModalCloseButton />
+              <ModalBody pb={6}>
+                <MiniApp
+                  key={selectedApp.homeUrl}
+                  frameUrl={selectedApp.homeUrl}
+                  onClose={onClose}
+                />
+              </ModalBody>
+            </>
+          )}
+          {selectedLesson && (
+            <>
+              <ModalHeader>
+                <Flex justify="space-between" align="center">
+                  <Box>
+                    <Heading size="md">{selectedLesson.name}</Heading>
+                    <Text fontSize="sm" color="gray.500">
+                      {selectedLesson.level}
+                    </Text>
+                  </Box>
+                  <Button
+                    size="sm"
+                    colorScheme="blue"
+                    onClick={handleRefresh}
+                    mr={8}
+                  >
+                    Refresh
+                  </Button>
+                </Flex>
+              </ModalHeader>
+              <ModalCloseButton />
+              <ModalBody pb={6}>
+                <MiniApp key={frameUrl} frameUrl={frameUrl} onClose={onClose} />
+              </ModalBody>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </Container>
   )
 }
@@ -109,71 +198,7 @@ const ContentWrapper = styled.div`
 
 const AppsListContainer = styled.div`
   flex: 1;
-  max-height: 600px;
   overflow-y: auto;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-`
-
-const FrameContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-const AppHeader = styled.div`
-  margin-bottom: 20px;
-  text-align: center;
-`
-
-const AppName = styled.h2`
-  margin: 0;
-  font-size: 24px;
-`
-
-const AppDomain = styled.div`
-  color: #666;
-  font-size: 14px;
-`
-
-const Placeholder = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 695px;
-  width: 424px;
-  background-color: #f5f5f5;
-  border-radius: 12px;
-  border: 2px dashed #ccc;
-`
-
-const PlaceholderText = styled.p`
-  color: #666;
-  font-size: 16px;
-`
-
-const HeaderContent = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-`
-
-const RefreshButton = styled.button`
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: #0051a2;
-  }
 `
 
 export default MiniApps

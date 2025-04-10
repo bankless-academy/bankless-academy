@@ -84,7 +84,7 @@ const MiniAppsList: React.FC<MiniAppsListProps> = ({ onSelectApp }) => {
           <AppInfo>
             <AppName>{app.name}</AppName>
             <AuthorUsername>@{app.author.username}</AuthorUsername>
-            <Button>Open</Button>
+            {/* <Button>Open</Button> */}
           </AppInfo>
         </AppCard>
       ))}
@@ -126,6 +126,7 @@ const AppIcon = styled.div`
 `
 
 const AppInfo = styled.div`
+  margin-left: 16px;
   flex: 1;
 `
 
@@ -139,19 +140,19 @@ const AuthorUsername = styled.span`
   color: #666;
 `
 
-const Button = styled.button`
-  background-color: #4a5568;
-  color: #e2e8f0;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+// const Button = styled.button`
+//   background-color: #4a5568;
+//   color: #e2e8f0;
+//   border: none;
+//   padding: 8px 16px;
+//   border-radius: 4px;
+//   cursor: pointer;
+//   transition: background-color 0.2s;
 
-  &:hover {
-    background-color: #5a6578;
-  }
-`
+//   &:hover {
+//     background-color: #5a6578;
+//   }
+// `
 
 const LoadingContainer = styled.div`
   display: flex;

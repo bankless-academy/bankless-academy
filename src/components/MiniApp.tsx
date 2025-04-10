@@ -7,6 +7,7 @@ import type { FrameHost } from '@farcaster/frame-host'
 import { wagmiConfig } from 'utils/wagmi'
 import { getWalletClient } from '@wagmi/core'
 import { useAccount } from 'wagmi'
+import { Box, Text, Flex, Spinner } from '@chakra-ui/react'
 
 const FRAME_ID = 'bankless-academy-frame'
 const DEBUG = true
@@ -26,6 +27,7 @@ interface FrameMessage {
 
 interface FarcasterFrameProps {
   frameUrl?: string
+  onClose?: () => void
 }
 
 // declare global {
@@ -89,7 +91,10 @@ const logMessage = (msg: FrameMessage) => {
 //   }
 // }
 
-export default function MiniApp({ frameUrl = '' }: FarcasterFrameProps) {
+export default function MiniApp({
+  frameUrl = '',
+  onClose,
+}: FarcasterFrameProps) {
   const [isInitialized, setIsInitialized] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -250,16 +255,20 @@ export default function MiniApp({ frameUrl = '' }: FarcasterFrameProps) {
   }
 
   return (
-    <div style={{ position: 'relative', width: '424px', margin: '0 auto' }}>
+    <Box position="relative" width="424px" margin="0 auto">
       {!address ? (
-        <div>Please connect your wallet first</div>
+        <Text>Please connect your wallet first</Text>
       ) : (
         <>
-          <div style={{ display: isInitialized ? 'none' : 'block' }}>
-            Loading...
-          </div>
+          {!isInitialized && (
+            <Flex justify="center" align="center" height="100px">
+              <Spinner size="md" color="blue.500" />
+            </Flex>
+          )}
           {error && (
-            <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>
+            <Text color="red.500" marginBottom="10px">
+              {error}
+            </Text>
           )}
           <iframe
             ref={iframeRef}
@@ -278,6 +287,6 @@ export default function MiniApp({ frameUrl = '' }: FarcasterFrameProps) {
           />
         </>
       )}
-    </div>
+    </Box>
   )
 }
