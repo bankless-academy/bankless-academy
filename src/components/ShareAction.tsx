@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   Button,
   Box,
@@ -14,12 +15,15 @@ import { useEffect, useState } from 'react'
 import {
   generateFacebookLink,
   generateFarcasterLink,
+  generateFarcasterText,
   generateHeyLink,
   generateLinkedinLink,
   generateTelegramLink,
   generateTwitterLink,
   generateWhatsappLink,
 } from 'utils'
+import { useAccount } from 'wagmi'
+import { useFrameActions } from 'hooks/useFrameActions'
 
 const ShareAction = ({
   shareMessage,
@@ -31,6 +35,10 @@ const ShareAction = ({
   const [shareLinkRandom, setShareLinkRandom] = useState(shareLink)
   const { onCopy, hasCopied } = useClipboard(shareLinkRandom)
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
+  const { connector } = useAccount()
+  const { composeCast } = useFrameActions()
+
+  const isFarcasterConnector = connector?.id === 'farcaster'
 
   useEffect(() => {
     if (
@@ -45,6 +53,7 @@ const ShareAction = ({
 
   const twitterLink = generateTwitterLink(shareMessage, shareLinkRandom)
   const farcasterLink = generateFarcasterLink(shareMessage, shareLinkRandom)
+  const farcasterText = generateFarcasterText(shareMessage)
   const heyLink = generateHeyLink(shareMessage, shareLinkRandom)
   const telegramLink = generateTelegramLink(shareMessage, shareLinkRandom)
   const linkedinLink = generateLinkedinLink(shareMessage, shareLinkRandom)
@@ -67,14 +76,33 @@ const ShareAction = ({
             title="Share on X"
           />
         </ExternalLink>
-        <ExternalLink href={farcasterLink}>
-          <Image
-            width="50px"
-            src="/images/share/share-Farcaster.png"
-            alt="Share on Farcaster"
-            title="Share on Farcaster"
-          />
-        </ExternalLink>
+        {isFarcasterConnector ? (
+          <Box
+            onClick={() => {
+              composeCast(farcasterText, shareLinkRandom)
+            }}
+            cursor="pointer"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Image
+              width="50px"
+              src="/images/share/share-Farcaster.png"
+              alt="Share on Farcaster"
+              title="Share on Farcaster"
+            />
+          </Box>
+        ) : (
+          <ExternalLink href={farcasterLink}>
+            <Image
+              width="50px"
+              src="/images/share/share-Farcaster.png"
+              alt="Share on Farcaster"
+              title="Share on Farcaster"
+            />
+          </ExternalLink>
+        )}
         <ExternalLink href={heyLink}>
           <Image
             width="50px"

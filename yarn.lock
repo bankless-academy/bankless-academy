@@ -1946,18 +1946,18 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@farcaster/frame-core@0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@farcaster/frame-core/-/frame-core-0.0.22.tgz#c5b91f3d7bb27b55873348b1b878472b3e5e5d5d"
-  integrity sha512-VervdgEXn3wfU+CLFsPMiLiOAXmXY4g+CPAcQ7g1771KW2SdfgLpOmHwvHvGRadfvvZxnPV84h1EwjooSvdsUA==
-  dependencies:
-    ox "^0.4.4"
-    zod "^3.24.1"
-
 "@farcaster/frame-core@0.0.24":
   version "0.0.24"
   resolved "https://registry.yarnpkg.com/@farcaster/frame-core/-/frame-core-0.0.24.tgz#35c2403f561a74b6551e3032d6d57a730c3dc413"
   integrity sha512-iO/Jxz6mZBVUoLIY753Id5Yhn6DHBakQkIBXf0mreAcnjPGCMvKx/0xKEM3ns3M801PqoX7VLYO4q+kKxYzQ0A==
+  dependencies:
+    ox "^0.4.4"
+    zod "^3.24.1"
+
+"@farcaster/frame-core@0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@farcaster/frame-core/-/frame-core-0.0.31.tgz#d85bd595efe5cfe68981b99a454c1b994fb099d9"
+  integrity sha512-sZHG4Jt9aXqzdod+WksNtIKGgSuxBxJ2i3Fx1uAzeK29L1W/Osfsp3ZCpilEOjNHB9iRTqtGH7VKp3CPf312hA==
   dependencies:
     ox "^0.4.4"
     zod "^3.24.1"
@@ -1970,12 +1970,12 @@
     "@farcaster/frame-core" "0.0.24"
     ox "^0.4.4"
 
-"@farcaster/frame-sdk@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@farcaster/frame-sdk/-/frame-sdk-0.0.24.tgz#81bc00f4399c7fc61e8974d9abf226cf5ff9f5e2"
-  integrity sha512-5rtvupfIQSk3v5I+gcWEWbp1RVo0trbqF+LJhfQUS5xlfEpm8icy80MjyNkR5dTumd8X3t8lScHz674xkmzuwg==
+"@farcaster/frame-sdk@^0.0.34":
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/@farcaster/frame-sdk/-/frame-sdk-0.0.34.tgz#8ce6cd635fc94d7b07d561963d8932afc4557bb0"
+  integrity sha512-szPyiP3EWyX/CBskDIb4QF+X+lB4vy8mtyWwZfInBw/yXD/k73bFxAtzH88BVsTFI1220T6Erb35sJeme04tMQ==
   dependencies:
-    "@farcaster/frame-core" "0.0.22"
+    "@farcaster/frame-core" "0.0.31"
     comlink "^4.4.2"
     eventemitter3 "^5.0.1"
     ox "^0.4.4"

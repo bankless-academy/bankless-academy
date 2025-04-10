@@ -16,12 +16,19 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 // import { useTranslation } from 'react-i18next'
 
 import { theme } from 'theme/index'
-import { api, generateFarcasterLink, generateTwitterLink } from 'utils/index'
+import {
+  api,
+  generateFarcasterLink,
+  generateFarcasterText,
+  generateTwitterLink,
+} from 'utils/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
 import { LESSONS } from 'constants/index'
 import { EMPTY_PASSPORT, STAMP_PLATFORMS } from 'constants/passport'
 import { useLocalStorage } from 'usehooks-ts'
+import { useAccount } from 'wagmi'
+import { useFrameActions } from 'hooks/useFrameActions'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -68,6 +75,11 @@ const SocialSharing = (
   const platform = STAMP_PLATFORMS['twitter']
   const stamps = passportLS?.stamps ? Object.keys(passportLS.stamps) : []
   const stamp = stamps?.includes('twitterAccountAgeGte#180')
+
+  const { connector } = useAccount()
+  const { composeCast } = useFrameActions()
+
+  const isFarcasterConnector = connector?.id === 'farcaster'
 
   async function checkPassport() {
     // setIsLoading(true)
@@ -159,6 +171,7 @@ const SocialSharing = (
   const twitterLink = generateTwitterLink(share, shareLink)
 
   const farcasterLink = generateFarcasterLink(share, shareLink)
+  const farcasterText = generateFarcasterText(share)
 
   if (!lesson)
     return {
@@ -204,21 +217,34 @@ const SocialSharing = (
                     </ExternalLink>
                   </Box>
                   <Box pb="1">
-                    <ExternalLink href={farcasterLink} mr="2">
+                    {isFarcasterConnector ? (
                       <Button
                         variant="primary"
                         w="100%"
                         borderTopRadius="0"
-                        leftIcon={
-                          <ChakraImage
-                            width="20px"
-                            src="/images/Farcaster.svg"
-                          />
-                        }
+                        onClick={() => {
+                          composeCast(farcasterText, shareLink)
+                        }}
                       >
                         {'Share on Farcaster'}
                       </Button>
-                    </ExternalLink>
+                    ) : (
+                      <ExternalLink href={farcasterLink} mr="2">
+                        <Button
+                          variant="primary"
+                          w="100%"
+                          borderTopRadius="0"
+                          leftIcon={
+                            <ChakraImage
+                              width="20px"
+                              src="/images/Farcaster.svg"
+                            />
+                          }
+                        >
+                          {'Share on Farcaster'}
+                        </Button>
+                      </ExternalLink>
+                    )}
                   </Box>
                 </Box>
                 <Box mt="8">

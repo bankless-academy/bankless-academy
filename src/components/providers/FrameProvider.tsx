@@ -1,10 +1,10 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState } from 'react'
-import type { FrameContext } from '@farcaster/frame-sdk'
 
+// Define the context type based on the SDK version being used
 interface FrameContextValue {
-  context: FrameContext | undefined
+  context: any | undefined
   isSDKLoaded: boolean
   sdk: any
 }
@@ -17,7 +17,7 @@ interface FrameProviderProps {
 
 export function FrameProvider({ children }: FrameProviderProps) {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false)
-  const [context, setContext] = useState<FrameContext>()
+  const [context, setContext] = useState<any>()
   const [sdk, setSdk] = useState<any>(null)
 
   useEffect(() => {
