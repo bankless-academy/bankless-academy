@@ -328,7 +328,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
             </Box>
             <Text
               as="h2"
-              fontSize="4xl"
+              fontSize="3xl"
               fontWeight="bold"
               textAlign="center"
               textTransform="uppercase"
@@ -345,7 +345,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
               <Box mt="0" mb="6" mx="4" display="flex" placeContent="center">
                 <Text
                   as="h2"
-                  fontSize="3xl"
+                  fontSize="2xl"
                   fontWeight="bold"
                   textAlign="center"
                   textTransform="uppercase"
@@ -378,52 +378,93 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                 </ExternalLink>
               </Box>
             )}
-            {/* EFP stats */}
-            {efpStats !== null && isFollowing !== null && (
-              <Box
-                display="flex"
-                placeContent="center"
-                alignItems="center"
-                gap="32px"
-                fontSize="xl"
-                fontWeight="bold"
-                backgroundColor="#161515"
-                borderBottomRadius={isMyProfile ? '0' : '2xl'}
-                padding="16px"
-              >
-                <Box>
-                  <ExternalLink
-                    href={`https://ethfollow.xyz/${profileAddress}`}
-                  >
-                    <Button
-                      variant={isFollowing ? 'secondary' : 'primary'}
-                      leftIcon={
-                        <Image
-                          h="20px"
-                          src={
-                            isFollowing
-                              ? '/images/efp-white.svg'
-                              : '/images/efp.svg'
-                          }
-                        />
-                      }
-                    >
-                      {isFollowing ? 'Following' : 'Follow'}
-                    </Button>
-                  </ExternalLink>
-                </Box>
+            <Box
+              display="flex"
+              flexDirection="column"
+              gap="16px"
+              backgroundColor="#161515"
+              borderBottomRadius={isMyProfile ? '0' : '2xl'}
+            >
+              {/* EFP stats */}
+              {efpStats !== null && isFollowing !== null && (
                 <Box
                   display="flex"
-                  flexDirection={isMobileScreen ? 'column' : 'row'}
-                  gap="16px"
+                  placeContent="center"
+                  alignItems="center"
+                  gap="32px"
+                  fontSize="xl"
+                  fontWeight="bold"
+                  padding="16px"
                 >
-                  <Box>{`${efpStats.followers_count} Follower${
-                    efpStats.followers_count > 1 ? 's' : ''
-                  }`}</Box>
-                  <Box>{`${efpStats.following_count} Following`}</Box>
+                  <Box>
+                    <ExternalLink
+                      href={`https://ethfollow.xyz/${profileAddress}`}
+                    >
+                      <Button
+                        variant={isFollowing ? 'secondary' : 'primary'}
+                        leftIcon={
+                          <Image
+                            h="20px"
+                            src={
+                              isFollowing
+                                ? '/images/efp-white.svg'
+                                : '/images/efp.svg'
+                            }
+                          />
+                        }
+                      >
+                        {isFollowing ? 'Following' : 'Follow'}
+                      </Button>
+                    </ExternalLink>
+                  </Box>
+                  <Box
+                    display="flex"
+                    flexDirection={isMobileScreen ? 'column' : 'row'}
+                    gap="16px"
+                  >
+                    <Box>{`${efpStats.followers_count} Follower${
+                      efpStats.followers_count > 1 ? 's' : ''
+                    }`}</Box>
+                    <Box>{`${efpStats.following_count} Following`}</Box>
+                  </Box>
                 </Box>
-              </Box>
-            )}
+              )}
+              {user?.stats?.referrer && (
+                <Box
+                  display="flex"
+                  placeContent="center"
+                  gap="16px"
+                  fontSize="lg"
+                  fontWeight="bold"
+                  padding="16px"
+                  position="relative"
+                  textTransform="uppercase"
+                  textAlign="center"
+                >
+                  <Box
+                    position="absolute"
+                    top="0"
+                    left="50%"
+                    transform="translateX(-50%)"
+                    width="150px"
+                    height="1px"
+                    backgroundColor="#989898"
+                  />
+                  <Text>
+                    Onboarded by:{' '}
+                    <ExternalLink
+                      href={`/explorer/${
+                        user?.stats?.referrer?.ens_name ||
+                        user?.stats?.referrer?.address
+                      }`}
+                    >
+                      {user?.stats?.referrer?.ens_name ||
+                        shortenAddress(user?.stats?.referrer?.address)}
+                    </ExternalLink>
+                  </Text>
+                </Box>
+              )}
+            </Box>
             {isMyProfile && (
               <Box
                 backgroundColor="#161515"
