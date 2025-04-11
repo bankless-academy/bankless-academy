@@ -124,6 +124,7 @@ export default async function handler(
         TABLE.users.ba_stamps,
         TABLE.users.community,
         TABLE.users.newsletter_email,
+        TABLE.users.referrer,
       )
       .whereILike('address', addressLowerCase)
     console.log('user', userExist)
@@ -165,6 +166,24 @@ export default async function handler(
     }
   })
   console.log('referrals', referrals)
+
+  // Get referrer info if user has a referrer
+  let referrerInfo = null
+  if (userExist?.referrer) {
+    const [referrer] = await db(TABLES.users)
+      .select(
+        TABLE.users.address,
+        TABLE.users.ens_name,
+      )
+      .where(TABLE.users.id, '=', userExist.referrer)
+
+    if (referrer) {
+      referrerInfo = {
+        address: referrer.address,
+        ens_name: referrer.ens_name
+      }
+    }
+  }
 
   const explorerData = await fetchExplorerData(addressLowerCase)
   const badgeTokenIds = [...new Set([
@@ -250,10 +269,6 @@ export default async function handler(
   }
   // donations (deprecated)
   // stats.donations = userExist.donations
-  // if (addressLowerCase === '0x79240a6403c21d6f1d5aedc17ce1001274bc12d4' && !userExist?.ens_name) {
-  //   ensName = 'Gautamgg'
-  //   avatar = 'https://i.postimg.cc/t4gfWSdf/lc-Tmc-UOV-400x400.jpg'
-  // }
   if (addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c') {
     stats =
     {
@@ -328,6 +343,10 @@ export default async function handler(
   }
   if (referrals?.length) {
     stats.referrals = referrals
+  }
+  // Add referrer info to stats if available
+  if (referrerInfo) {
+    stats.referrer = referrerInfo
   }
   stats.score = calculateExplorerScore(stats)
 

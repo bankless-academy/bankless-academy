@@ -11,6 +11,7 @@ export interface UserStatsType {
   rank?: number
   referrals?: { profile_address: string, created_at: string }[]
   community?: string
+  referrer?: { address: string, ens_name: string | null }
 }
 export interface UserType {
   address: string
