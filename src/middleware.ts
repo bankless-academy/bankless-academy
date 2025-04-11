@@ -16,20 +16,27 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
       return NextResponse.next();
     }
 
-    // Skip processing for localhost:3000 during development
-    if (request.url.includes('localhost:3000')) {
+    console.log('request.url', request);
+
+    // Check if this is a middleware check request to avoid infinite loops
+    const url = new URL(request.url);
+    if (url.searchParams.has('middleware_check')) {
       return NextResponse.next();
     }
 
     try {
-      console.log('request.url', request.url);
-      const response = await fetch(request.url, { method: 'HEAD' });
+      // Add a parameter to the URL to mark it as a middleware check
+      const checkUrl = new URL(request.url);
+      checkUrl.searchParams.set('middleware_check', 'true');
+
+      const response = await fetch(checkUrl.toString());
       if (response.status === 404) {
         console.log('detected 404 for image:', pathname);
 
         const slug = pathname.split('/')[2];
         const type = pathname?.split('/')[3]?.split('-')[0];
         const rewriteUrl = new URL(`/api/lesson-image?slug=${slug}&type=${type}`, request.url);
+        console.log('rewriteUrl', rewriteUrl);
         return NextResponse.rewrite(rewriteUrl);
       }
     } catch (error) {
