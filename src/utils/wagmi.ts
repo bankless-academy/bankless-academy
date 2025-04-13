@@ -13,7 +13,6 @@ import {
   arbitrumSepolia,
   type Chain,
 } from '@reown/appkit/networks'
-import { coinbaseWallet } from 'wagmi/connectors'
 
 import { ENABLE_TESTNET } from 'constants/networks'
 import { frameConnector } from './frameConnector'
@@ -53,15 +52,7 @@ const isWebappOrEmbed = typeof window !== 'undefined' && (
   localStorage.getItem('pwa') === 'true'
 )
 
-// Add Coinbase Wallet connector
-const coinbaseWalletConnector = coinbaseWallet({
-  appName: PROJECT_NAME,
-  appLogoUrl: 'https://app.banklessacademy.com/logo.jpg',
-})
-
-const connectors = isWebappOrEmbed
-  ? [frameConnector(), coinbaseWalletConnector]
-  : [coinbaseWalletConnector]
+const connectors = isWebappOrEmbed ? [frameConnector()] : []
 
 export const wagmiAdapter = new WagmiAdapter({
   networks,
