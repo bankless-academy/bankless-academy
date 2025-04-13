@@ -4,6 +4,7 @@ import { MetaData } from 'components/Head'
 import MiniApp from 'components/MiniApp'
 import MiniAppsList from 'components/MiniAppsList'
 import MiniLessonsList from 'components/MiniLessonsList'
+import EthereumShowcaseList from 'components/EthereumShowcaseList'
 import styled from '@emotion/styled'
 import {
   Modal,
@@ -62,9 +63,17 @@ interface MiniLesson {
   level: string
 }
 
+interface EthereumShowcaseItem {
+  name: string
+  url: string
+  iconUrl: string
+}
+
 const MiniApps = (): JSX.Element => {
   const [selectedApp, setSelectedApp] = useState<MiniApp | null>(null)
   const [selectedLesson, setSelectedLesson] = useState<MiniLesson | null>(null)
+  const [selectedShowcaseItem, setSelectedShowcaseItem] =
+    useState<EthereumShowcaseItem | null>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [frameUrl, setFrameUrl] = useState<string>('')
   const [customUrl, setCustomUrl] = useState<string>('')
@@ -72,6 +81,7 @@ const MiniApps = (): JSX.Element => {
   const handleSelectApp = (app: MiniApp) => {
     setSelectedApp(app)
     setSelectedLesson(null)
+    setSelectedShowcaseItem(null)
     setFrameUrl(app.homeUrl)
     onOpen()
   }
@@ -79,7 +89,16 @@ const MiniApps = (): JSX.Element => {
   const handleSelectLesson = (lesson: MiniLesson) => {
     setSelectedLesson(lesson)
     setSelectedApp(null)
+    setSelectedShowcaseItem(null)
     setFrameUrl(`https://app.banklessacademy.com/lessons/${lesson.slug}`)
+    onOpen()
+  }
+
+  const handleSelectShowcaseItem = (item: EthereumShowcaseItem) => {
+    setSelectedShowcaseItem(item)
+    setSelectedApp(null)
+    setSelectedLesson(null)
+    setFrameUrl(item.url)
     onOpen()
   }
 
@@ -90,6 +109,9 @@ const MiniApps = (): JSX.Element => {
     } else if (selectedLesson) {
       setSelectedLesson(null)
       setTimeout(() => setSelectedLesson(selectedLesson), 0)
+    } else if (selectedShowcaseItem) {
+      setSelectedShowcaseItem(null)
+      setTimeout(() => setSelectedShowcaseItem(selectedShowcaseItem), 0)
     }
   }
 
@@ -97,6 +119,7 @@ const MiniApps = (): JSX.Element => {
     if (customUrl.trim()) {
       setSelectedApp(null)
       setSelectedLesson(null)
+      setSelectedShowcaseItem(null)
       setFrameUrl(customUrl)
       onOpen()
     }
@@ -148,6 +171,13 @@ const MiniApps = (): JSX.Element => {
             ]}
             onSelectLesson={handleSelectLesson}
           />
+        </AppsListContainer>
+      </ContentWrapper>
+
+      <ContentWrapper>
+        <AppsListContainer>
+          <Title>Ethereum Showcase</Title>
+          <EthereumShowcaseList onSelectItem={handleSelectShowcaseItem} />
         </AppsListContainer>
       </ContentWrapper>
 
@@ -210,7 +240,33 @@ const MiniApps = (): JSX.Element => {
               </ModalBody>
             </>
           )}
-          {!selectedApp && !selectedLesson && (
+          {selectedShowcaseItem && (
+            <>
+              <ModalHeader>
+                <Flex justify="space-between" align="center">
+                  <Box>
+                    <Heading size="md">{selectedShowcaseItem.name}</Heading>
+                    <Text fontSize="sm" color="gray.500">
+                      Ethereum Showcase
+                    </Text>
+                  </Box>
+                  <Button
+                    size="sm"
+                    colorScheme="blue"
+                    onClick={handleRefresh}
+                    mr={8}
+                  >
+                    Refresh
+                  </Button>
+                </Flex>
+              </ModalHeader>
+              <ModalCloseButton />
+              <ModalBody pb={6}>
+                <MiniApp key={frameUrl} frameUrl={frameUrl} onClose={onClose} />
+              </ModalBody>
+            </>
+          )}
+          {!selectedApp && !selectedLesson && !selectedShowcaseItem && (
             <>
               <ModalHeader>
                 <Flex justify="space-between" align="center">
@@ -254,7 +310,6 @@ const Title = styled.h1`
 `
 
 const CustomUrlContainer = styled.div`
-  margin-bottom: 30px;
   padding: 20px;
   border-radius: 8px;
 `
@@ -270,6 +325,8 @@ const ContentWrapper = styled.div`
 `
 
 const AppsListContainer = styled.div`
+  margin-top: 30px;
+  max-width: 565px;
   flex: 1;
   overflow-y: auto;
 `
