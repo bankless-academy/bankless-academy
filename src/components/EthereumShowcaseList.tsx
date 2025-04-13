@@ -25,7 +25,7 @@ const ethereumShowcaseItems: EthereumShowcaseItem[] = [
   },
   {
     name: 'DeFi',
-    url: 'https://app.uniswap.org/swap',
+    url: 'https://app.uniswap.org/swap?inputCurrency=0x833589fcd6edb6e08f4c7c32d4f71b54bda02913&outputCurrency=ETH&chain=base',
     iconUrl: '/images/mini-apps/icon_3.png',
   },
   {
