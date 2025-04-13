@@ -11,6 +11,7 @@ import { Box, Text, Flex, Spinner } from '@chakra-ui/react'
 
 const FRAME_ID = 'bankless-academy-frame'
 const DEBUG = true
+const LOADING_TIMEOUT_MS = 2000 // 2 seconds timeout for loading state
 
 interface EthereumProvider {
   request: (args: { method: string; params?: any[] }) => Promise<any>
@@ -97,8 +98,10 @@ export default function MiniApp({
 }: FarcasterFrameProps) {
   const [isInitialized, setIsInitialized] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const cleanupRef = useRef<(() => void) | null>(null)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const { address } = useAccount()
 
   useEffect(() => {
@@ -106,6 +109,16 @@ export default function MiniApp({
 
     let isCurrentFrame = true
     log('Initializing frame host...')
+    setIsLoading(true)
+
+    // Set a timeout to force the loading state to end after 3 seconds
+    timeoutRef.current = setTimeout(() => {
+      if (isCurrentFrame) {
+        log('Loading timeout reached, forcing initialization')
+        setIsLoading(false)
+        setIsInitialized(true)
+      }
+    }, LOADING_TIMEOUT_MS)
 
     const initFrame = async () => {
       if (!iframeRef.current) {
@@ -180,6 +193,7 @@ export default function MiniApp({
             if (!isCurrentFrame) return
             log('Frame ready called with options:', options)
             setIsInitialized(true)
+            setIsLoading(false)
           },
           eip6963RequestProvider: () => {
             if (!isCurrentFrame || !provider) return
@@ -237,6 +251,7 @@ export default function MiniApp({
           iframeRef.current.remove()
         }
         setIsInitialized(false)
+        setIsLoading(false)
         setError(null)
       }
     }
@@ -246,6 +261,9 @@ export default function MiniApp({
     return () => {
       if (cleanupRef.current) {
         cleanupRef.current()
+      }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
       }
     }
   }, [address, frameUrl])
@@ -260,8 +278,16 @@ export default function MiniApp({
         <Text>Please connect your wallet first</Text>
       ) : (
         <>
-          {!isInitialized && (
-            <Flex justify="center" align="center" height="100px">
+          {isLoading && (
+            <Flex
+              position="absolute"
+              top="-100px"
+              left="0"
+              right="0"
+              justify="center"
+              align="center"
+              height="100px"
+            >
               <Spinner size="md" color="blue.500" />
             </Flex>
           )}
