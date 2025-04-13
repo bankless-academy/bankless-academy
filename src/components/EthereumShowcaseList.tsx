@@ -92,11 +92,19 @@ const EthereumShowcaseList: React.FC<EthereumShowcaseListProps> = ({
 
 const ShowcaseGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   padding: 16px;
   background-color: #1a202c;
   border-radius: 12px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const ShowcaseCard = styled.div`
@@ -118,9 +126,9 @@ const ShowcaseCard = styled.div`
 const ShowcaseIcon = styled.div`
   width: 48px;
   height: 48px;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 8px;
-  background-color: #1a202c;
+  /* background-color: #1a202c; */
 `
 
 const ShowcaseInfo = styled.div`

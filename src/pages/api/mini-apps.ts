@@ -9,8 +9,8 @@ function cleanUrl(url: string) {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // TEMP: only return 10 first apps
-  const miniApps = [...favoriteMiniAppsData.result.frames, ...miniAppsData.result.frames].slice(0, 10)
+  // TEMP: only return 12 first apps
+  const miniApps = [...favoriteMiniAppsData.result.frames, ...miniAppsData.result.frames].slice(0, 12)
   miniApps.forEach((app) => {
     app.imageUrl = cleanUrl(app.imageUrl)
     app.splashImageUrl = cleanUrl(app.splashImageUrl)

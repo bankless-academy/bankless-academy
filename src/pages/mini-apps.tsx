@@ -160,21 +160,22 @@ const MiniApps = (): JSX.Element => {
           <Title>Mini Apps</Title>
           <MiniAppsList onSelectApp={handleSelectApp} />
         </AppsListContainer>
+
         <AppsListContainer>
           <Title>Mini Lessons</Title>
           <MiniLessonsList
             lessonSlugs={[
               'bitcoin-basics',
               'ethereum-basics',
+              'web3-security',
+              'blockchain-basics',
               'intro-to-defi',
               'gitcoin-2.0-essentials',
             ]}
             onSelectLesson={handleSelectLesson}
           />
         </AppsListContainer>
-      </ContentWrapper>
 
-      <ContentWrapper>
         <AppsListContainer>
           <Title>Ethereum Showcase</Title>
           <EthereumShowcaseList onSelectItem={handleSelectShowcaseItem} />
@@ -299,7 +300,7 @@ const MiniApps = (): JSX.Element => {
 }
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 `
@@ -318,16 +319,11 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
 `
 
 const AppsListContainer = styled.div`
   margin-top: 30px;
-  max-width: 565px;
-  flex: 1;
+  width: 100%;
   overflow-y: auto;
 `
 
