@@ -18,6 +18,9 @@ import {
   Flex,
   Heading,
   Box,
+  Input,
+  InputGroup,
+  InputRightElement,
 } from '@chakra-ui/react'
 
 const pageMeta: MetaData = {
@@ -64,6 +67,7 @@ const MiniApps = (): JSX.Element => {
   const [selectedLesson, setSelectedLesson] = useState<MiniLesson | null>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [frameUrl, setFrameUrl] = useState<string>('')
+  const [customUrl, setCustomUrl] = useState<string>('')
 
   const handleSelectApp = (app: MiniApp) => {
     setSelectedApp(app)
@@ -89,8 +93,45 @@ const MiniApps = (): JSX.Element => {
     }
   }
 
+  const handleLoadCustomUrl = () => {
+    if (customUrl.trim()) {
+      setSelectedApp(null)
+      setSelectedLesson(null)
+      setFrameUrl(customUrl)
+      onOpen()
+    }
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleLoadCustomUrl()
+    }
+  }
+
   return (
     <Container>
+      <CustomUrlContainer>
+        <Title>Load Custom URL</Title>
+        <InputGroup size="md">
+          <Input
+            placeholder="Enter URL to load"
+            value={customUrl}
+            onChange={(e) => setCustomUrl(e.target.value)}
+            onKeyPress={handleKeyPress}
+          />
+          <InputRightElement width="4.5rem">
+            <Button
+              h="1.75rem"
+              size="sm"
+              colorScheme="blue"
+              onClick={handleLoadCustomUrl}
+            >
+              Load
+            </Button>
+          </InputRightElement>
+        </InputGroup>
+      </CustomUrlContainer>
+
       <ContentWrapper>
         <AppsListContainer>
           <Title>Mini Apps</Title>
@@ -169,6 +210,32 @@ const MiniApps = (): JSX.Element => {
               </ModalBody>
             </>
           )}
+          {!selectedApp && !selectedLesson && (
+            <>
+              <ModalHeader>
+                <Flex justify="space-between" align="center">
+                  <Box>
+                    <Heading size="md">Custom URL</Heading>
+                    <Text fontSize="sm" color="gray.500">
+                      {frameUrl}
+                    </Text>
+                  </Box>
+                  <Button
+                    size="sm"
+                    colorScheme="blue"
+                    onClick={handleRefresh}
+                    mr={8}
+                  >
+                    Refresh
+                  </Button>
+                </Flex>
+              </ModalHeader>
+              <ModalCloseButton />
+              <ModalBody pb={6}>
+                <MiniApp key={frameUrl} frameUrl={frameUrl} onClose={onClose} />
+              </ModalBody>
+            </>
+          )}
         </ModalContent>
       </Modal>
     </Container>
@@ -184,6 +251,12 @@ const Container = styled.div`
 const Title = styled.h1`
   text-align: center;
   margin-bottom: 30px;
+`
+
+const CustomUrlContainer = styled.div`
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
 `
 
 const ContentWrapper = styled.div`
