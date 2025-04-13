@@ -12,7 +12,7 @@ import OptionMenu from 'components/OptionMenu'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/index'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
-import ExternalLink from 'components/ExternalLink'
+// import ExternalLink from 'components/ExternalLink'
 import { api } from 'utils/index'
 import { AnnouncementType } from 'entities/announcement'
 import OnboardingModal from 'components/OnboardingModal'
@@ -131,11 +131,11 @@ const Nav: React.FC = () => {
 
   return (
     <header>
-      {isEmbedded && isMobile && typeof window !== 'undefined' ? (
+      {/* {isEmbedded && isMobile && typeof window !== 'undefined' ? (
         <ExternalLink href={`/${window.location.search}`}>
           <Box w="100%" h="100%" position="absolute" zIndex="3" />
         </ExternalLink>
-      ) : null}
+      ) : null} */}
       <Box
         bgColor="black"
         borderBottom="1px solid #222222"
