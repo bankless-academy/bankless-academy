@@ -273,7 +273,7 @@ export default function MiniApp({
   }
 
   return (
-    <Box position="relative" width="424px" margin="0 auto">
+    <Box position="relative" width="424px" maxWidth="100vw" margin="0 auto">
       {!address ? (
         <Text>Please connect your wallet first</Text>
       ) : (
@@ -306,6 +306,7 @@ export default function MiniApp({
               border: 'none',
               opacity: isInitialized ? 1 : 0.5,
               transition: 'opacity 0.3s ease',
+              maxWidth: '100vw',
             }}
             allow="microphone; camera; clipboard-write 'src'"
             sandbox="allow-forms allow-scripts allow-same-origin allow-popups"

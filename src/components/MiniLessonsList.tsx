@@ -106,6 +106,7 @@ const LessonsGrid = styled.div`
 const LessonCard = styled.div`
   grid-template-columns: 48px 1fr auto;
   align-items: center;
+  justify-items: center;
   padding: 16px;
   border-radius: 12px;
   background-color: #2d3748;

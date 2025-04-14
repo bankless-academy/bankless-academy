@@ -22,6 +22,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  useMediaQuery,
 } from '@chakra-ui/react'
 
 const pageMeta: MetaData = {
@@ -77,6 +78,7 @@ const MiniApps = (): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [frameUrl, setFrameUrl] = useState<string>('')
   const [customUrl, setCustomUrl] = useState<string>('')
+  const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
 
   const handleSelectApp = (app: MiniApp) => {
     setSelectedApp(app)
@@ -182,9 +184,14 @@ const MiniApps = (): JSX.Element => {
         </AppsListContainer>
       </ContentWrapper>
 
-      <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        size={isMobileScreen ? 'full' : 'lg'}
+        isCentered
+      >
         <ModalOverlay />
-        <ModalContent maxW="500px">
+        <ModalContent w="424px" maxW="100vw" backdropFilter="blur(10px)">
           {selectedApp && (
             <>
               <ModalHeader>
@@ -206,7 +213,7 @@ const MiniApps = (): JSX.Element => {
                 </Flex>
               </ModalHeader>
               <ModalCloseButton />
-              <ModalBody pb={6}>
+              <ModalBody p={0}>
                 <MiniApp
                   key={selectedApp.homeUrl}
                   frameUrl={selectedApp.homeUrl}
@@ -236,7 +243,7 @@ const MiniApps = (): JSX.Element => {
                 </Flex>
               </ModalHeader>
               <ModalCloseButton />
-              <ModalBody pb={6}>
+              <ModalBody p={0}>
                 <MiniApp key={frameUrl} frameUrl={frameUrl} onClose={onClose} />
               </ModalBody>
             </>
@@ -262,7 +269,7 @@ const MiniApps = (): JSX.Element => {
                 </Flex>
               </ModalHeader>
               <ModalCloseButton />
-              <ModalBody pb={6}>
+              <ModalBody p={0}>
                 <MiniApp key={frameUrl} frameUrl={frameUrl} onClose={onClose} />
               </ModalBody>
             </>
@@ -288,7 +295,7 @@ const MiniApps = (): JSX.Element => {
                 </Flex>
               </ModalHeader>
               <ModalCloseButton />
-              <ModalBody pb={6}>
+              <ModalBody p={0}>
                 <MiniApp key={frameUrl} frameUrl={frameUrl} onClose={onClose} />
               </ModalBody>
             </>
