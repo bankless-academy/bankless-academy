@@ -46,11 +46,7 @@ export function FrameProvider({ children }: FrameProviderProps) {
     return <>{children}</>
   }
 
-  if (!isSDKLoaded || !sdk) {
-    return null
-    // return <div>Loading...</div>
-  }
-
+  // Always render children, even if SDK is not loaded
   return (
     <FrameContext.Provider value={{ context, isSDKLoaded, sdk }}>
       {children}
