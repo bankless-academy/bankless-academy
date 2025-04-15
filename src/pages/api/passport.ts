@@ -175,6 +175,37 @@ export default async function handler(
         console.log('verified:', { validStampsCount, score })
       } else {
         console.log('not verified:', validStampsCount)
+        // check if user has a farcaster account
+        const farcasterUsers = await fetch(`https://api.neynar.com/v2/farcaster/user/bulk-by-address?addresses=${address}`, {
+          headers: {
+            accept: 'application/json',
+            api_key: process.env.NEYNAR_API_KEY
+          }
+        })
+        const farcasterUsersData = await farcasterUsers.json()
+        console.log('farcasterUsersData', farcasterUsersData)
+        if (farcasterUsersData[address.toLowerCase()]?.length) {
+          console.log('user has a farcaster account')
+
+          // Check if the address is in the list of verified_addresses
+          const farcasterUser = farcasterUsersData[address.toLowerCase()][0]
+          const verifiedAddresses = farcasterUser.verified_addresses?.eth_addresses || []
+          const isAddressVerified = verifiedAddresses.includes(address.toLowerCase())
+
+          console.log('isAddressVerified', isAddressVerified)
+          if (isAddressVerified) {
+            return res.status(200).json({
+              version,
+              verified: isAddressVerified,
+              score: 20,
+              requirement,
+              validStampsCount: 1,
+              stamps: {
+                Farcaster: farcasterUser.fid
+              },
+            })
+          }
+        }
       }
       return res.status(200).json({
         version,
