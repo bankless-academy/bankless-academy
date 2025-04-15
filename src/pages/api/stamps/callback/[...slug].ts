@@ -14,8 +14,6 @@ import { RequestPayload } from "utils/stamps/passport-types";
 import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from "constants/passport"
 import { TABLE, TABLES, db } from "utils/db"
 import { trackBE } from "utils/mixpanel"
-import { gql } from "graphql-request"
-import { airstackGraphQLClient } from "utils/gql/airstack"
 import { DEMO_ACCOUNTS_IDS } from "constants/index"
 export const VERSION = "v0.0.0";
 
@@ -200,21 +198,19 @@ export default async function handler(
         }
       } else result = { valid: false, errors: result?.errors }
     } else if (platform === 'farcaster') {
-      const query = gql`
-      query GetWeb3SocialsOfFarcasters {
-        Socials(input: {filter: {identity: {_in: ["${address}"]}, dappName: { _eq: farcaster }}, blockchain: ethereum}) {
-          Social {
-            dappName
-            profileName
-            userId
-          }
-        }
-      }`
       try {
-        const data: any = await airstackGraphQLClient.request(query)
-        console.log(data)
-        if (data?.Socials?.Social?.length) {
-          const fid = data?.Socials?.Social[0].userId
+        const options = {
+          method: 'GET',
+          headers: { accept: 'application/json', api_key: process.env.NEYNAR_API_KEY }
+        }
+        const response = await fetch(`https://api.neynar.com/v2/farcaster/user/bulk-by-address?addresses=${address}`, options)
+        const data = await response.json()
+        console.log('farcaster data', data)
+
+        const farcasterUsers = data[address.toLowerCase()]
+        if (farcasterUsers?.length) {
+          const user = farcasterUsers[0]
+          const fid = user.fid
           console.log('fid', fid)
           socialId[platform] = fid
           record = {
@@ -230,6 +226,7 @@ export default async function handler(
       } catch (e) {
         console.error(e)
         result.valid = false
+        result.errors = ["Error verifying Farcaster account."]
       }
       // } else if (platform === 'brightid') {
       //   const BrightidProvider = new brightid.BrightIdProvider();
