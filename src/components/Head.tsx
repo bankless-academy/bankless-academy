@@ -54,10 +54,12 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   const url = `${DOMAIN_URL_}${router.asPath}`
 
   useEffect(() => {
+    const isEmbedded = typeof window !== 'undefined' && window !== window.parent
     /* Hotjar */
     if (
       typeof window !== 'undefined' &&
-      window.location.hostname === 'app.banklessacademy.com'
+      window.location.hostname === 'app.banklessacademy.com' &&
+      !isEmbedded
     ) {
       import('react-hotjar').then((hotjarLib) => {
         hotjarLib.hotjar.initialize(2568813, 6)
