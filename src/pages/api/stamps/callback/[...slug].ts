@@ -56,7 +56,7 @@ const checkTwitterAccountAge = (numberOfDays: number, createdAt: string): { vali
 
 const key = process.env.IAM_JWK
 
-const generateHash = (record) => base64.encode(
+export const generateHash = (record) => base64.encode(
   createHash("sha256")
     .update(key, "utf-8")
     .update(JSON.stringify(objToSortedArray(record)))
@@ -84,7 +84,7 @@ export default async function handler(
     let result: any = {}
     let isStampValidated = false
     let status = ''
-    const version = "0.0.0"
+    const version = VERSION?.replace('v', '')
 
     if (!ALLOWED_PLATFORMS.includes(platform)) return res.status(200).send(`Unknown platform.`)
 
@@ -304,29 +304,33 @@ export default async function handler(
       sybil = await sybilQuery
       console.log('sybil', sybil)
       if (sybil?.length && !isDemoAccount) {
-        // mark this user as a sybil attacker
-        console.log('fraud detected:', sybil)
-        trackBE(address, 'duplicate_stamps_ba', {
-          sybil_id: sybil[0]?.id,
-          sybil_address: sybil[0]?.address,
-          // embed,
-        })
-        await db(TABLES.users)
-          .where(TABLE.users.id, userId)
-          .update({ sybil_user_id: sybil[0]?.id })
-        isStampValidated = false
-        status = 'Duplicate stamp detected.'
-        const fraud = sybil[0]?.address
-        if (json) {
-          return res.status(200).json({
-            isStampValidated,
-            status,
-            fraud,
-            platform
-          })
+        if (platform === 'farcaster' && sybil.length <= 1) {
+          // allow farcaster users to have up to 2 FC stamps
         } else {
-          res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}&fraud=${fraud}`)
-          return
+          // mark this user as a sybil attacker
+          console.log('fraud detected:', sybil)
+          trackBE(address, 'duplicate_stamps_ba', {
+            sybil_id: sybil[0]?.id,
+            sybil_address: sybil[0]?.address,
+            // embed,
+          })
+          await db(TABLES.users)
+            .where(TABLE.users.id, userId)
+            .update({ sybil_user_id: sybil[0]?.id })
+          isStampValidated = false
+          status = 'Duplicate stamp detected.'
+          const fraud = sybil[0]?.address
+          if (json) {
+            return res.status(200).json({
+              isStampValidated,
+              status,
+              fraud,
+              platform
+            })
+          } else {
+            res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}&fraud=${fraud}`)
+            return
+          }
         }
       }
       // add stamps to ba_stamps

@@ -3,9 +3,10 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { DEMO_ACCOUNTS_IDS, GENERIC_ERROR_MESSAGE } from 'constants/index'
-import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION, REQUIRED_PASSPORT_SCORE } from 'constants/passport'
+import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION, REQUIRED_PASSPORT_SCORE, STAMP_PLATFORMS } from 'constants/passport'
 import { trackBE } from 'utils/mixpanel'
 import { PassportResponseSchema, fetchPassport } from 'utils/passport_lib'
+import { VERSION, generateHash } from 'pages/api/stamps/callback/[...slug]'
 
 export default async function handler(
   req: NextApiRequest,
@@ -198,9 +199,19 @@ export default async function handler(
           if (isAddressVerified) {
             // check if fid is already in the database
             const fid = farcasterUser.fid
+            const type = STAMP_PLATFORMS.farcaster.provider
+            const record: any = {
+              type,
+              version: VERSION?.replace('v', ''),
+              id: fid
+            }
+            const socialId: any = {}
+            socialId.farcaster = fid
+            const hash = `${VERSION}:${generateHash(record)}`
+            console.log('hash', hash)
             const fidExists = await db(TABLES.users)
               .select('id', 'address')
-              .where(db.raw(`(ba_stamps @> ?)`, [{ fid: fid }]))
+              .where(db.raw(`(ba_stamps @> ?)`, [{ [type]: hash }]))
             console.log('fidExists', fidExists)
             const isFidForUserAlreadyInDb = fidExists?.length > 0 && fidExists.find(user => user.id === userId)
             // only allow max 2 addresses per fid
@@ -209,13 +220,13 @@ export default async function handler(
               if (!isFidForUserAlreadyInDb) {
                 // add fid to stamps
                 await db.raw(
-                  `update "users" set "ba_stamps" = ba_stamps || ? where "users"."id" = ?`,
-                  [{ fid: fid }, userId]
+                  `update "users" set "ba_stamps" = ba_stamps || ?, "socials" = socials || ? where "users"."id" = ?`,
+                  [{ [type]: hash }, socialId, userId]
                 )
               }
               const newStamps = {
                 ...stampHashes,
-                Farcaster: farcasterUser.fid,
+                [type]: hash,
               }
               const newValidStampsCount = Object.keys(newStamps).length
               console.log('newStamps', newStamps)
