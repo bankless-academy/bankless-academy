@@ -221,7 +221,7 @@ export default async function handler(
           result.valid = true
         } else {
           result.valid = false
-          result.errors = ["No Farcaster account associated to this address."]
+          result.errors = ["No Farcaster account associated to this address. Make sure to add this address to your Farcaster account as a *verified address*."]
         }
       } catch (e) {
         console.error(e)
