@@ -1,8 +1,10 @@
 // SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/Ens/Providers/EnsProvider.ts
+/* eslint-disable no-console */
 
 // ----- Types
 import { ProviderExternalVerificationError, type Provider, type ProviderOptions } from "../types";
 import type { RequestPayload, VerifiedPayload } from "../passport-types";
+import { getBasename } from "utils/basenames";
 
 // ----- Credential verification
 import { getRPCProvider } from "../signer";
@@ -34,6 +36,7 @@ export class EnsProvider implements Provider {
     try {
       const provider = getRPCProvider(payload);
       reportedName = await provider.lookupAddress(payload.address);
+      console.log('reportedName', reportedName)
 
       if (reportedName) {
         const resolver = await provider.getResolver(reportedName);
@@ -48,7 +51,16 @@ export class EnsProvider implements Provider {
           );
         }
       } else {
-        errors.push("Primary ENS name was not found for given address.");
+        // check basename
+        const basename = await getBasename(`0x${payload.address.substring(2)}` as `0x${string}`)
+        if (basename) {
+          valid = true;
+          record = {
+            ens: basename,
+          };
+        } else {
+          errors.push("Primary ENS name was not found for given address.");
+        }
       }
 
       return {
