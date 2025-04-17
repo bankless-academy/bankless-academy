@@ -129,6 +129,7 @@ export default async function handler(
         .where(TABLE.users.id, userId)
       console.log('stampHashes', stampHashes)
       delete stampHashes?.preloaded
+      delete stampHashes?.fid
       const validStamps = Object.keys(stampHashes).filter(stamp => ALLOWED_PROVIDERS.includes(stamp))
       console.log('validStamps', validStamps)
       const sybilQuery = db(TABLES.users)
@@ -212,16 +213,20 @@ export default async function handler(
                   [{ fid: fid }, userId]
                 )
               }
+              const newStamps = {
+                ...stampHashes,
+                Farcaster: farcasterUser.fid,
+              }
+              const newValidStampsCount = Object.keys(newStamps).length
+              console.log('newStamps', newStamps)
               // allow badge claiming for farcaster user (max 2 addresses per fid)
               return res.status(200).json({
                 version,
                 verified: isAddressVerified,
                 score: 20,
                 requirement,
-                validStampsCount: 1,
-                stamps: {
-                  Farcaster: farcasterUser.fid
-                },
+                validStampsCount: newValidStampsCount,
+                stamps: newStamps,
               })
             }
           }
