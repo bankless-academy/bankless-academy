@@ -184,26 +184,46 @@ export default async function handler(
         })
         const farcasterUsersData = await farcasterUsers.json()
         console.log('farcasterUsersData', farcasterUsersData)
-        if (farcasterUsersData[address.toLowerCase()]?.length) {
+        const addressLower = address?.toLowerCase()
+        if (farcasterUsersData[addressLower]?.length) {
           console.log('user has a farcaster account')
 
           // Check if the address is in the list of verified_addresses
-          const farcasterUser = farcasterUsersData[address.toLowerCase()][0]
+          const farcasterUser = farcasterUsersData[addressLower][0]
           const verifiedAddresses = farcasterUser.verified_addresses?.eth_addresses || []
-          const isAddressVerified = verifiedAddresses.includes(address.toLowerCase())
+          const isAddressVerified = verifiedAddresses.includes(addressLower)
 
           console.log('isAddressVerified', isAddressVerified)
           if (isAddressVerified) {
-            return res.status(200).json({
-              version,
-              verified: isAddressVerified,
-              score: 20,
-              requirement,
-              validStampsCount: 1,
-              stamps: {
-                Farcaster: farcasterUser.fid
-              },
-            })
+            // check if fid is already in the database
+            const fid = farcasterUser.fid
+            const fidExists = await db(TABLES.users)
+              .select('id', 'address')
+              .where(db.raw(`(ba_stamps @> ?)`, [{ fid: fid }]))
+            console.log('fidExists', fidExists)
+            const isFidForUserAlreadyInDb = fidExists?.length > 0 && fidExists.find(user => user.id === userId)
+            // only allow max 2 addresses per fid
+            if (fidExists?.length <= (isFidForUserAlreadyInDb ? 2 : 1)) {
+              console.log('less than 2 fid already in the database')
+              if (!isFidForUserAlreadyInDb) {
+                // add fid to stamps
+                await db.raw(
+                  `update "users" set "ba_stamps" = ba_stamps || ? where "users"."id" = ?`,
+                  [{ fid: fid }, userId]
+                )
+              }
+              // allow badge claiming for farcaster user (max 2 addresses per fid)
+              return res.status(200).json({
+                version,
+                verified: isAddressVerified,
+                score: 20,
+                requirement,
+                validStampsCount: 1,
+                stamps: {
+                  Farcaster: farcasterUser.fid
+                },
+              })
+            }
           }
         }
       }
