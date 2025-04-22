@@ -45,15 +45,15 @@ export default async function handler(
   try {
     if (newsletterId === 'paragraph') {
       const result = await addToNewsletter(email)
-      if (result) {
+      if (result?.msg === 'OK') {
         return res.status(200).json({ result: 'OK' })
       } else {
         // email alert
         trackBE('email_subscribe', 'paragraph_subscribe_error', {
-          error: 'Problem with Paragraph API.',
+          error: result?.msg,
           email,
         })
-        return res.status(403).json({ error: 'Problem with Paragraph API.' })
+        return res.status(403).json({ error: result?.msg })
       }
     }
     else if (newsletterId === '008a9b1f6b') {
