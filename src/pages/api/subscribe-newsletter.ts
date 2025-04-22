@@ -10,10 +10,13 @@ const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY
 
 import { GENERIC_ERROR_MESSAGE, NOTION_IDS } from 'constants/index'
 import { TABLES, db } from 'utils/db'
+import { addToNewsletter } from 'utils/newsletter'
+import { trackBE } from 'utils/mixpanel'
 
 const NEWSLETTER_LIST_IDS = {
   // newsletter: 'd957b2bf-9885-4bab-a4dd-e3736de25838',
-  newsletter: '008a9b1f6b',
+  // newsletter: '008a9b1f6b',
+  newsletter: 'paragraph',
   // Going Bankless
   '89cf10ef71b54fbfa7c3e6b41d55b36f': '8df9b57f-cc2d-4cb4-89d1-8569856dca78',
   // Layer 2 Blockchains
@@ -40,7 +43,20 @@ export default async function handler(
   console.log('newsletterId', newsletterId)
 
   try {
-    if (newsletterId === NEWSLETTER_LIST_IDS['newsletter']) {
+    if (newsletterId === 'paragraph') {
+      const result = await addToNewsletter(email)
+      if (result) {
+        return res.status(200).json({ result: 'OK' })
+      } else {
+        // email alert
+        trackBE('email_subscribe', 'paragraph_subscribe_error', {
+          error: 'Problem with Paragraph API.',
+          email,
+        })
+        return res.status(403).json({ error: 'Problem with Paragraph API.' })
+      }
+    }
+    else if (newsletterId === '008a9b1f6b') {
       // Mailchimp
 
       mailchimpClient.setConfig({
