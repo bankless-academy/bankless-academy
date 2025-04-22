@@ -365,6 +365,33 @@ const HomePage = (): JSX.Element => {
                   </Box>
                 </Box>
               </Box>
+              <Box m="auto" w="100%" minHeight="550px">
+                <Box display="flex" justifyContent="center" position="relative">
+                  <ExternalLink
+                    href="https://www.instagram.com/reel/DIwJC3lvKw8/"
+                    border="1px solid #363636"
+                    borderRadius="10px"
+                    overflow="hidden"
+                  >
+                    <Image
+                      src="/images/insta_video_preview.jpg"
+                      alt="Instagram Video"
+                      height="530px"
+                      maxWidth="100%"
+                    />
+                    <Image
+                      src="/images/insta_play_button.png"
+                      alt="Instagram Video"
+                      width="100px"
+                      height="100px"
+                      position="absolute"
+                      top="50%"
+                      left="50%"
+                      transform="translate(-50%, -50%)"
+                    />
+                  </ExternalLink>
+                </Box>
+              </Box>
               <OnboardingModal
                 isOpen={isOnboardingModalOpen}
                 onClose={() => {
