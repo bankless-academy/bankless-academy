@@ -99,6 +99,7 @@ export const NOTION_PAGES = WHITELABEL?.notion_pages || {
   about: 'a151306a46164a34973ae88e36f7a9d0',
   disclaimer: '360b86a86d50421ba3bc7f55607f064a',
   'privacy-policy': '0c0a262eb63243db97ed235c4512518f',
+  'terms-of-service': '1df12837a13b80d99fe7e67482b57636',
 }
 
 export const MIRROR_WHITELISTED_ACCOUNTS = [

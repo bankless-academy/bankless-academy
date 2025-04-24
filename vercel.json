@@ -117,6 +117,10 @@
       "destination": "/notion/privacy-policy"
     },
     {
+      "source": "/terms-of-service",
+      "destination": "/notion/terms-of-service"
+    },
+    {
       "source": "/mp/lib.min.js",
       "destination": "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
     },
