@@ -16,7 +16,7 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
       return NextResponse.next();
     }
 
-    console.log('request.url', request);
+    // console.log('request.url', request);
 
     // Check if this is a middleware check request to avoid infinite loops
     const url = new URL(request.url);
@@ -29,7 +29,22 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
       const checkUrl = new URL(request.url);
       checkUrl.searchParams.set('middleware_check', 'true');
 
-      const response = await fetch(checkUrl.toString());
+      // Force HTTP protocol for localhost:3000
+      if (checkUrl.host === 'localhost:3000') {
+        checkUrl.protocol = 'http:';
+      } else {
+        // For other hosts, match the request protocol
+        checkUrl.protocol = request.nextUrl.protocol;
+      }
+
+      // console.log('checkUrl', checkUrl.toString());
+
+      // Add error handling for the fetch request
+      const response = await fetch(checkUrl.toString(), {
+        // Add a longer timeout
+        signal: AbortSignal.timeout(5000),
+      });
+
       if (response.status === 404) {
         console.log('detected 404 for image:', pathname);
 
