@@ -48,7 +48,9 @@ export const textRecordsKeysEnabled = [
 
 const baseClient = createPublicClient({
   chain: base,
-  transport: http('https://mainnet.base.org'),
+  transport: http(
+    `https://base-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
+  ),
 })
 
 export async function getBasenameAvatar(basename: Basename) {
