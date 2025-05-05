@@ -43,6 +43,8 @@ const GM_RESPONSES = [
   'gm! What do you want to learn today?',
 ]
 
+const DEFAULT_ANSWER = `I can only help with crypto, blockchain, and web3 related topics.`
+
 interface Message {
   id: string
   text: string
@@ -64,7 +66,7 @@ const getLessonImage = (lessonLink?: string): string | undefined => {
   if (!lessonLink) return undefined
 
   // Extract the slug from the lesson link (e.g., /lessons/web3 -> web3)
-  const slug = lessonLink.split('/').pop()
+  const slug = lessonLink.split('/').pop()?.split('?')[0]
 
   // Find the lesson with matching slug
   const lesson = LESSONS.find((l) => l.slug === slug)
@@ -199,13 +201,19 @@ export const ChatWidget = ({
 
         const lessonImage = getLessonImage(data.lessonLink)
 
+        const isSupportMessage = data.response === DEFAULT_ANSWER
+
+        const supportLink = `/report-an-issue?context=ai`
+
+        const supportMessage = `⁉️ If you need help, contact us here`
+
         const aiMessage: Message = {
           id: (Date.now() + 1).toString(),
           text: data.response,
           sender: 'ai',
           timestamp: new Date(),
-          lessonName: data.lessonName,
-          lessonLink: data.lessonLink,
+          lessonName: isSupportMessage ? supportMessage : data.lessonName,
+          lessonLink: isSupportMessage ? supportLink : data.lessonLink,
           lessonImage,
         }
 
@@ -310,78 +318,91 @@ export const ChatWidget = ({
                   style={{ maxHeight: '100%', paddingRight: '8px' }}
                 >
                   <VStack spacing={4} align="stretch" p={4}>
-                    {messages.map((message) => (
-                      <HStack
-                        key={message.id}
-                        alignSelf={
-                          message.sender === 'user' ? 'flex-end' : 'flex-start'
-                        }
-                        spacing={2}
-                        opacity={message.isThinking ? 0.7 : 1}
-                      >
-                        {message.sender === 'ai' && (
-                          <Avatar
-                            size="sm"
-                            icon={<RiRobot2Line size={20} />}
-                            bg="#916ab8"
-                          />
-                        )}
-                        <Box
-                          bg={
-                            message.sender === 'user' ? '#916ab8' : 'gray.100'
+                    {messages.map((message) => {
+                      const isSupportMessage = message.text === DEFAULT_ANSWER
+                      return (
+                        <HStack
+                          key={message.id}
+                          alignSelf={
+                            message.sender === 'user'
+                              ? 'flex-end'
+                              : 'flex-start'
                           }
-                          color={message.sender === 'user' ? 'white' : 'black'}
-                          borderRadius="lg"
-                          px={4}
-                          py={2}
-                          maxW="80%"
+                          spacing={2}
+                          opacity={message.isThinking ? 0.7 : 1}
                         >
-                          <Text>
-                            {message.isThinking ? (
-                              <Box as="span" animation="pulse 1s infinite">
-                                Thinking...
-                              </Box>
-                            ) : (
-                              message.text
-                            )}
-                          </Text>
-                          {message.lessonName && message.lessonLink && (
-                            <NextLink href={message.lessonLink} passHref>
-                              <Link
-                                display="block"
-                                color="#B85FF1"
-                                mt={2}
-                                _hover={{ textDecoration: 'none' }}
-                              >
-                                <VStack align="start" spacing={2}>
-                                  <Text fontSize="sm">
-                                    📚 Learn more: {message.lessonName}
-                                  </Text>
-                                  {message.lessonImage && (
-                                    <Image
-                                      src={message.lessonImage}
-                                      alt={message.lessonName}
-                                      borderRadius="md"
-                                      width="100%"
-                                      height="auto"
-                                      objectFit="cover"
-                                    />
-                                  )}
-                                </VStack>
-                              </Link>
-                            </NextLink>
+                          {message.sender === 'ai' && (
+                            <Avatar
+                              size="sm"
+                              icon={<RiRobot2Line size={20} />}
+                              bg="#916ab8"
+                            />
                           )}
-                        </Box>
-                        {message.sender === 'user' && (
-                          <Avatar
-                            size="sm"
-                            src={avatar || DEFAULT_AVATAR}
-                            name="You"
-                            bg="gray.500"
-                          />
-                        )}
-                      </HStack>
-                    ))}
+                          <Box
+                            bg={
+                              message.sender === 'user' ? '#916ab8' : 'gray.100'
+                            }
+                            color={
+                              message.sender === 'user' ? 'white' : 'black'
+                            }
+                            borderRadius="lg"
+                            px={4}
+                            py={2}
+                            maxW="80%"
+                          >
+                            <Text>
+                              {message.isThinking ? (
+                                <Box as="span" animation="pulse 1s infinite">
+                                  Thinking...
+                                </Box>
+                              ) : (
+                                message.text
+                              )}
+                            </Text>
+                            {message.lessonName && message.lessonLink && (
+                              <NextLink href={message.lessonLink} passHref>
+                                <Link
+                                  display="block"
+                                  color="#B85FF1"
+                                  mt={2}
+                                  _hover={{ textDecoration: 'none' }}
+                                >
+                                  <VStack align="start" spacing={2}>
+                                    <Text fontSize="sm">
+                                      {isSupportMessage ? (
+                                        <Text>{message.lessonName}</Text>
+                                      ) : (
+                                        <Text>
+                                          📚 Learn more: {message.lessonName}
+                                        </Text>
+                                      )}
+                                    </Text>
+                                    {message.lessonImage && (
+                                      <Image
+                                        src={message.lessonImage}
+                                        alt={message.lessonName}
+                                        borderRadius="md"
+                                        width="100%"
+                                        height="auto"
+                                        objectFit="cover"
+                                      />
+                                    )}
+                                  </VStack>
+                                </Link>
+                              </NextLink>
+                            )}
+                          </Box>
+                          {message.sender === 'user' && (
+                            <Avatar
+                              size="sm"
+                              src={avatar || DEFAULT_AVATAR}
+                              name="You"
+                              bg="gray.500"
+                            />
+                          )}
+                        </HStack>
+                      )
+                    })}
                     <div ref={messagesEndRef} />
                   </VStack>
                 </MacScrollbar>
