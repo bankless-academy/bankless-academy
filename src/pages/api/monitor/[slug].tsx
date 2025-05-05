@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createPublicClient, http, formatEther } from 'viem'
 import { base } from 'viem/chains'
@@ -10,7 +11,11 @@ import {
 } from 'utils/index'
 import { fetchPassport, PassportResponseSchema } from 'utils/passport_lib'
 import { PASSPORT_COMMUNITY_ID } from 'constants/passport'
-import { BADGE_MINTER, INDEXER_URL } from 'constants/badges'
+import {
+  BADGE_MINTER,
+  BASE_BADGE_CONTRACT_ADDRESS,
+  INDEXER_URL,
+} from 'constants/badges'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 
 // Required explorer data shape
@@ -86,13 +91,131 @@ const validateIndexerSync = (
   return result
 }
 
+const getLatestBlockNumber = async (fromBlock: number) => {
+  const url = `https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
+
+  const payload = {
+    jsonrpc: '2.0',
+    id: 1,
+    method: 'eth_getLogs',
+    params: [
+      {
+        address: [BASE_BADGE_CONTRACT_ADDRESS],
+        fromBlock: `0x${fromBlock.toString(16)}`,
+        toBlock: 'latest',
+        topics: [
+          null,
+          '0x000000000000000000000000472a74c4f7e281e590bed861daa66721a6acadbc',
+          null,
+          null,
+        ],
+        order: 'desc',
+      },
+    ],
+  }
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+
+    const data = await response.json()
+    console.log('data', data)
+
+    // data {
+    //   jsonrpc: '2.0',
+    //   id: 1,
+    //   result: [
+    //     {
+    //       address: '0xfc902e91affd9dd02df4c1e57dac7b096512f286',
+    //       blockHash: '0x8b8507f164e3c2f68f62c447d5f566e75db2c5be8f69f932f95047a5ca223e97',
+    //       blockNumber: '0x1c7359f',
+    //       data: '0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001',
+    //       logIndex: '0x18e',
+    //       removed: false,
+    //       topics: [Array],
+    //       transactionHash: '0x23e3bfafe00af57b3b1f1d49eccf64577c1c6c8a07567553f793c690499a5329',
+    //       transactionIndex: '0x7e'
+    //     }
+    //   ]
+    // }
+
+    if (data.error) {
+      console.error('Alchemy API error:', data.error)
+      return undefined
+    }
+
+    if (data.result && data.result.length > 0) {
+      const blockNumber = parseInt(data.result.pop().blockNumber, 16)
+      console.log(`Latest block number from Alchemy: ${blockNumber}`)
+      return blockNumber
+    }
+
+    console.log('No logs found for this address')
+    return undefined
+  } catch (error) {
+    console.error('Error fetching logs:', error)
+    return undefined
+  }
+}
+
+const validateEventSyncState = async (
+  data: any
+): Promise<{ isValid: boolean; details: any }> => {
+  // data [
+  //   {
+  //     block_number: 130648682,
+  //     block_timestamp: 1736896141,
+  //     chain_id: 10
+  //   },
+  //   {
+  //     block_number: 65577816,
+  //     block_timestamp: 1734407400,
+  //     chain_id: 137
+  //   },
+  //   {
+  //     block_number: 29832607,
+  //     block_timestamp: 1746454561,
+  //     chain_id: 8453
+  //   }
+  // ]
+
+  console.log('data', data)
+
+  // get the latest block number for chain_id 8453 (base)
+  const latestBaseBlockNumber = data?.find(
+    (item: any) => item.chain_id === 8453
+  )?.block_number
+  console.log('latestBaseBlockNumber', latestBaseBlockNumber)
+  const latestBaseBlockNumberFromAlchemy = await getLatestBlockNumber(
+    latestBaseBlockNumber
+  )
+  console.log(
+    'latestBaseBlockNumberFromAlchemy',
+    latestBaseBlockNumberFromAlchemy
+  )
+  return {
+    isValid: latestBaseBlockNumber >= latestBaseBlockNumberFromAlchemy,
+    details: {
+      latestBaseBlockNumber,
+      latestBaseBlockNumberFromAlchemy,
+    },
+  }
+}
+
 // Helper function to validate ENS data
 const validateENSData = (data: any): boolean => {
-  return data && 
-    typeof data === 'object' && 
-    typeof data.address === 'string' && 
-    data.address.startsWith('0x') && 
+  return (
+    data &&
+    typeof data === 'object' &&
+    typeof data.address === 'string' &&
+    data.address.startsWith('0x') &&
     data.address.length === 42
+  )
 }
 
 export default async function handler(
@@ -206,8 +329,8 @@ export default async function handler(
         break
       }
       case 'indexer-sync': {
-        const query = `
-          query MyQuery {
+        const queryChainMetadata = `
+          query ChainMetadata {
             chain_metadata {
               block_height
               chain_id
@@ -223,11 +346,30 @@ export default async function handler(
             }
           }
         `
-        const result = await fetchFromUrl(INDEXER_URL, query)
+        const result = await fetchFromUrl(INDEXER_URL, queryChainMetadata)
         const maxBlockDiff = 10
         const validation = validateIndexerSync(
           result.chain_metadata,
           maxBlockDiff
+        )
+
+        const queryEventSyncState = `
+          query EventSyncState {
+            event_sync_state {
+              block_number
+              block_timestamp
+              chain_id
+            }
+          }
+        `
+
+        const resultEventSyncState = await fetchFromUrl(
+          INDEXER_URL,
+          queryEventSyncState
+        )
+
+        const validationEventSyncState = await validateEventSyncState(
+          resultEventSyncState.event_sync_state
         )
 
         if (!validation.isValid) {
@@ -235,6 +377,13 @@ export default async function handler(
             success: false,
             error: `Indexer is not in sync - some chains are more than ${maxBlockDiff} blocks behind`,
             details: validation.details,
+          })
+        }
+        if (!validationEventSyncState.isValid) {
+          return res.status(400).json({
+            success: false,
+            error: `Indexer is not in sync - new events available`,
+            details: validationEventSyncState.details,
           })
         }
 
