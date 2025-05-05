@@ -8,8 +8,8 @@ import * as google from "utils/stamps/platforms/google"
 import * as facebook from "utils/stamps/platforms/facebook"
 import * as linkedin from "utils/stamps/platforms/linkedin"
 import * as discord from "utils/stamps/platforms/discord"
-import * as poh from "utils/stamps/platforms/poh"
 import * as ens from "utils/stamps/platforms/ens"
+import * as tiktok from "utils/stamps/platforms/tiktok"
 import { RequestPayload } from "utils/stamps/passport-types";
 import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from "constants/passport"
 import { TABLE, TABLES, db } from "utils/db"
@@ -245,20 +245,37 @@ export default async function handler(
       //       meets: "true"
       //     }
       //   } else result = {valid:false}
-    } else if (platform === 'poh') {
-      const PohProvider = new poh.PohProvider();
-      result = await PohProvider.verify({
-        address
+    } else if (platform === 'tiktok') {
+      const TikTokProvider = new tiktok.TikTokProvider();
+      result = await TikTokProvider.verify({
+        proofs: {
+          code,
+        },
       } as unknown as RequestPayload)
       console.log(result)
-      if (result?.valid && result.record?.address) {
-        socialId[platform] = result.record.address
+      if (result?.valid && result.record?.id) {
+        socialId[platform] = result.record.id
         record = {
           type,
           version,
-          address: result.record.address
+          "id": result.record.id
         }
       } else result = { valid: false, errors: result?.errors }
+    } else if (platform === 'poh') {
+      // const PohProvider = new poh.PohProvider();
+      // result = await PohProvider.verify({
+      //   address
+      // } as unknown as RequestPayload)
+      // console.log(result)
+      // if (result?.valid && result.record?.address) {
+      //   socialId[platform] = result.record.address
+      //   record = {
+      //     type,
+      //     version,
+      //     address: result.record.address
+      //   }
+      // } else result = { valid: false, errors: result?.errors }
+      result = { valid: false, errors: ["POH stamp is currently deprecated"] }
     } else if (platform === 'ens') {
       const EnsProvider = new ens.EnsProvider();
       result = await EnsProvider.verify({

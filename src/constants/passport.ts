@@ -71,13 +71,21 @@ export const STAMP_PLATFORMS = {
   //   oauth: `https://passport.gitcoin.co`,
   //   provider: 'Brightid'
   // },
-  poh: {
-    icon: '/images/stamp/pohStampIcon.png',
-    name: 'Proof of Humanity',
-    description: 'Proof of Humanity',
-    // transparent JS
-    oauth: `/api/stamps/callback/poh?json=true&address=REPLACE_ADDRESS`,
-    provider: 'Poh'
+  // poh: {
+  //   icon: '/images/stamp/pohStampIcon.png',
+  //   name: 'Proof of Humanity',
+  //   description: 'Proof of Humanity',
+  //   // transparent JS
+  //   oauth: `/api/stamps/callback/poh?json=true&address=REPLACE_ADDRESS`,
+  //   provider: 'Poh'
+  // },
+  tiktok: {
+    icon: '/images/stamp/tiktokStampIcon.png',
+    name: 'TikTok',
+    description: 'TikTok account',
+    // page
+    oauth: `https://www.tiktok.com/v2/auth/authorize/?client_key=${process.env.NEXT_PUBLIC_TIKTOK_CLIENT_ID}&scope=user.info.basic&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/tiktok&state=REPLACE_ADDRESS`,
+    provider: 'TikTok'
   },
 }
 
