@@ -17,6 +17,7 @@ import {
   INDEXER_URL,
 } from 'constants/badges'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
+import { getNewsletterSubscribers } from 'utils/newsletter'
 
 // Required explorer data shape
 const REQUIRED_EXPLORER_DATA = {
@@ -406,6 +407,17 @@ export default async function handler(
           })
         }
         data = await response.json()
+        break
+      }
+      case 'newsletter-subscribers': {
+        data = await getNewsletterSubscribers()
+        if (!data) {
+          return res.status(400).json({
+            success: false,
+            error: 'Invalid newsletter subscribers',
+            data,
+          })
+        }
         break
       }
       default:

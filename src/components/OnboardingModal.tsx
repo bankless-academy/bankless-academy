@@ -145,10 +145,10 @@ const OnboardingModal = ({
           onClose()
         } else {
           toast({
-            title: t(
-              `Something went wrong... we couldn't add your subscription.`
-            ),
-            description: t('Please try again later.'),
+            title: result?.data?.error
+              ? t(result?.data?.error)
+              : t(`Something went wrong... we couldn't add your subscription.`),
+            // description: t('Please try again later.'),
             status: 'warning',
             duration: 5000,
             isClosable: true,
