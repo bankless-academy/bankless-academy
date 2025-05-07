@@ -9,7 +9,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors *; default-src * 'unsafe-inline' 'unsafe-eval' data:; connect-src *;"
+          "value": "frame-ancestors *; default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; connect-src *;"
         },
         {
           "key": "X-Frame-Options",
