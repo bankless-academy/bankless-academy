@@ -128,6 +128,7 @@ const PassportStamps = ({
         >
           {Object.entries(STAMP_PLATFORMS).map(([key, platform]) => {
             const stamp = stamps ? stamps[platform.provider] : null
+            const isFacebookLogin = key === 'facebook' && !stamp
             return (
               <Box
                 key={`stamp-${key}`}
@@ -138,10 +139,16 @@ const PassportStamps = ({
                 alignItems="center"
                 h="80px"
               >
-                <Box width="40px" display="flex" justifyContent="center">
-                  <Image src={platform.icon} minHeight="40px" minWidth="40px" />
-                </Box>
-                <Box m={2}>{`${platform.name}`}</Box>
+                {!isFacebookLogin && (
+                  <Box width="40px" display="flex" justifyContent="center">
+                    <Image
+                      src={platform.icon}
+                      minHeight="40px"
+                      minWidth="40px"
+                    />
+                  </Box>
+                )}
+                {!isFacebookLogin && <Box m={2}>{`${platform.name}`}</Box>}
                 <Box flexGrow={1} textAlign="right">
                   {stamp ? (
                     // OK
@@ -157,16 +164,25 @@ const PassportStamps = ({
                           appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
                           autoLoad={false}
                           scope="public_profile"
-                          textButton={t('Connect')}
-                          cssClass="css-rgn8uq css-1pu4076"
+                          // textButton={t('Connect')}
+                          // cssClass="css-rgn8uq css-1pu4076"
+                          cssClass="css-fb-button"
                           onClick={() => {
                             setLoadingStamp('facebook')
                           }}
+                          isLoading={loadingStamp === 'facebook'}
                           callback={(res) => {
                             console.log(res)
-                            if (res?.accessToken) {
+                            if (res?.status === 'unknown') {
+                              toast({
+                                title: 'Login cancelled.',
+                                status: 'warning',
+                                duration: 10000,
+                                isClosable: true,
+                              })
+                            } else if (res?.accessToken) {
                               apiCall(
-                                `/api/stamps/callback/facebook?code=${res.accessToken}&json=true&address=${address}`
+                                `/api/stamps/callback/facebook?code=${res?.accessToken}&json=true&address=${address}`
                               )
                             }
                           }}

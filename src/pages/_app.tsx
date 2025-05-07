@@ -366,6 +366,45 @@ const App = ({
                             opacity: 0.5;
                           }
                         }
+                        .css-fb-button {
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          justify-self: center;
+                          background-color: #1877f2;
+                          color: #fff;
+                          font-weight: 600;
+                          font-size: 0.9rem;
+                          border: none;
+                          border-radius: 6px;
+                          padding: 0 8px 0 48px;
+                          cursor: pointer;
+                          transition: background 0.2s;
+                          height: 40px;
+                          min-width: 200px;
+                          box-shadow: none;
+                          outline: none;
+                          position: relative;
+                          line-height: 1;
+                          white-space: nowrap;
+                        }
+                        .css-fb-button:hover {
+                          background-color: #166fe5;
+                        }
+                        .css-fb-button::before {
+                          content: '';
+                          position: absolute;
+                          left: 12px;
+                          top: 50%;
+                          transform: translateY(-50%);
+                          width: 28px;
+                          height: 28px;
+                          border-radius: 50%;
+                          background-image: url('/images/stamp/Facebook_Logo_Secondary.png');
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: 28px 28px;
+                        }
                       `}
                     />
                     <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
