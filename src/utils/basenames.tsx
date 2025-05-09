@@ -54,12 +54,24 @@ const baseClient = createPublicClient({
 })
 
 export async function getBasenameAvatar(basename: Basename) {
-  const avatar = await baseClient.getEnsAvatar({
-    name: basename,
-    universalResolverAddress: BASENAME_L2_RESOLVER_ADDRESS,
-  })
+  try {
+    const contractParameters = {
+      abi: L2ResolverAbi,
+      address: BASENAME_L2_RESOLVER_ADDRESS,
+      args: [namehash(basename), BasenameTextRecordKeys.Avatar],
+      functionName: 'text',
+    } as const
+    const avatar = await baseClient.readContract(contractParameters)
 
-  return avatar
+    if (typeof avatar === 'string' && avatar.startsWith('ipfs://')) {
+      return avatar.replace('ipfs://', 'https://ipfs.io/ipfs/')
+    }
+
+    return avatar as string
+  } catch (error) {
+    console.error('Error getting basename avatar:', error)
+    return null
+  }
 }
 
 export function buildBasenameTextRecordContract(
