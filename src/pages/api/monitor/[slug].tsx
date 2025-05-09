@@ -110,7 +110,6 @@ const getLatestBlockNumber = async (fromBlock: number) => {
           null,
           null,
         ],
-        order: 'desc',
       },
     ],
   }
@@ -151,7 +150,10 @@ const getLatestBlockNumber = async (fromBlock: number) => {
     }
 
     if (data.result && data.result.length > 0) {
-      const blockNumber = parseInt(data.result.pop().blockNumber, 16)
+      // get the latest block number from the logs
+      const blockNumber = Math.max(
+        ...data.result.map((log) => parseInt(log.blockNumber, 16))
+      )
       console.log(`Latest block number from Alchemy: ${blockNumber}`)
       return blockNumber
     }
