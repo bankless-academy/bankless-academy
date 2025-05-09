@@ -390,7 +390,10 @@ export default async function handler(
           })
         }
 
-        data = validation.details
+        data = {
+          ...validation.details,
+          ...validationEventSyncState.details,
+        }
         break
       }
       case 'read-x': {
