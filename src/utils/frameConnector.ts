@@ -1,5 +1,16 @@
-import { SwitchChainError, fromHex, getAddress, numberToHex } from 'viem'
-import { ChainNotConfiguredError, createConnector } from 'wagmi'
+import { fromHex, getAddress } from 'viem'
+import { createConnector } from 'wagmi'
+
+type EthereumProvider = {
+  on: (event: string, callback: (chainId: string) => void) => void
+  request: (args: { method: string; params?: any[] }) => Promise<any>
+}
+
+declare global {
+  interface Window {
+    ethereum?: Record<string, unknown>
+  }
+}
 
 frameConnector.type = 'frameConnector' as const
 
@@ -8,11 +19,7 @@ export function frameConnector() {
   let sdk: any = null
 
   const loadSdk = async () => {
-    // Only load SDK on client side
-    if (typeof window === 'undefined') {
-      return null
-    }
-
+    if (typeof window === 'undefined') return null
     if (!sdk) {
       try {
         const frameSdk = await import('@farcaster/frame-sdk')
@@ -36,18 +43,25 @@ export function frameConnector() {
 
       try {
         await loadSdk()
-        try {
-          await sdk.actions.addFrame()
-        } catch (error) {
-          console.error('Failed to add frame:', error)
+        const provider = await this.getProvider()
+
+        provider.on('chainChanged', (chainId: string) => {
+          const newChainId = fromHex(chainId as `0x${string}`, 'number')
+          config.emitter.emit('change', { chainId: newChainId })
+        })
+
+        if (window.ethereum) {
+          (window.ethereum as EthereumProvider).on('chainChanged', (chainId: string) => {
+            const newChainId = fromHex(chainId as `0x${string}`, 'number')
+            config.emitter.emit('change', { chainId: newChainId })
+          })
         }
-        await this.connect({ chainId: config.chains[0].id })
       } catch (error) {
         console.error('Failed to setup Frame connector:', error)
       }
     },
 
-    async connect({ chainId } = {}) {
+    async connect() {
       if (typeof window === 'undefined') {
         throw new Error('Cannot connect on server side')
       }
@@ -63,17 +77,13 @@ export function frameConnector() {
           method: 'eth_requestAccounts',
         })
 
-        let currentChainId = await this.getChainId()
-        if (chainId && currentChainId !== chainId) {
-          const chain = await this.switchChain!({ chainId })
-          currentChainId = chain.id
-        }
+        const hexChainId = await provider.request({ method: 'eth_chainId' })
+        const chainId = fromHex(hexChainId, 'number')
 
         connected = true
-
         return {
           accounts: accounts.map((x) => getAddress(x)),
-          chainId: currentChainId,
+          chainId,
         }
       } catch (error) {
         console.error('Failed to connect Frame wallet:', error)
@@ -103,15 +113,21 @@ export function frameConnector() {
 
     async getChainId() {
       if (typeof window === 'undefined') return config.chains[0].id
+      if (!connected) return config.chains[0].id
 
-      const loadedSdk = await loadSdk()
-      if (!loadedSdk?.wallet?.ethProvider) {
-        throw new Error('Frame SDK wallet provider not available')
+      try {
+        const loadedSdk = await loadSdk()
+        if (!loadedSdk?.wallet?.ethProvider) {
+          throw new Error('Frame SDK wallet provider not available')
+        }
+
+        const provider = loadedSdk.wallet.ethProvider
+        const hexChainId = await provider.request({ method: 'eth_chainId' })
+        return fromHex(hexChainId, 'number')
+      } catch (error) {
+        console.error('Failed to get chain ID:', error)
+        return config.chains[0].id
       }
-
-      const provider = loadedSdk.wallet.ethProvider
-      const hexChainId = await provider.request({ method: 'eth_chainId' })
-      return fromHex(hexChainId, 'number')
     },
 
     async isAuthorized() {
@@ -124,27 +140,6 @@ export function frameConnector() {
       } catch {
         return false
       }
-    },
-
-    async switchChain({ chainId }) {
-      if (typeof window === 'undefined') {
-        throw new Error('Cannot switch chain on server side')
-      }
-
-      const loadedSdk = await loadSdk()
-      if (!loadedSdk?.wallet?.ethProvider) {
-        throw new Error('Frame SDK wallet provider not available')
-      }
-
-      const provider = loadedSdk.wallet.ethProvider
-      const chain = config.chains.find((x) => x.id === chainId)
-      if (!chain) throw new SwitchChainError(new ChainNotConfiguredError())
-
-      await provider.request({
-        method: 'wallet_switchEthereumChain',
-        params: [{ chainId: numberToHex(chainId) }],
-      })
-      return chain
     },
 
     onAccountsChanged(accounts) {
