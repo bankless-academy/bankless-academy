@@ -40,6 +40,7 @@ const switchChainButton = ({
   const [isNetworkUnknown, setIsNetworkUnknown] = useState(false)
   const { isConnected, chain } = useAccount()
   const { data: walletClient } = useWalletClient()
+
   useEffect(() => {
     if (chain?.id) {
       if (!(SUPPORTED_NETWORKS_IDS as number[]).includes(chain?.id)) {
@@ -75,6 +76,48 @@ const switchChainButton = ({
       setIsNetworkUnknown(true)
     }
   }, [chain?.id])
+
+  const handleChainSwitch = async (targetChainId: number) => {
+    if (!isConnected) return
+
+    try {
+      // Try to switch chain
+      if (walletClient?.type === 'walletConnect') {
+        await walletClient.switchChain({
+          id: targetChainId,
+        })
+      } else {
+        await switchChain(wagmiConfig, {
+          chainId: targetChainId,
+        })
+      }
+
+      // Wait a bit for the chain change to be reflected
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      // Verify the chain change
+      const currentChainId = await walletClient?.getChainId()
+      if (currentChainId !== targetChainId) {
+        throw new Error('Chain switch verification failed')
+      }
+    } catch (error) {
+      console.error('Chain switch error:', error)
+      toast.closeAll()
+      toast({
+        title: `Error while trying to change the network.`,
+        description: `Try changing the network to '${
+          NETWORKS[
+            Object.keys(NETWORKS).find(
+              (n) => NETWORKS[n].chainId === targetChainId
+            )
+          ]?.name
+        }' manually from your wallet.`,
+        status: 'warning',
+        duration: 20000,
+        isClosable: true,
+      })
+    }
+  }
 
   if (IS_WALLET_DISABLED) return null
 
@@ -117,9 +160,7 @@ const switchChainButton = ({
                 pt="10px"
                 pl="4"
                 pb="2"
-                bg="var(
-                    --chakra-colors-whiteAlpha-200
-                  )"
+                bg="var(--chakra-colors-whiteAlpha-200)"
                 color="lightgrey"
               >
                 {t('Select a network')}
@@ -128,38 +169,7 @@ const switchChainButton = ({
                 <MenuItem
                   key={index}
                   minH="40px"
-                  onClick={async () => {
-                    if (isConnected) {
-                      try {
-                        if (walletClient?.type === 'walletConnect') {
-                          await walletClient.switchChain({
-                            id: NETWORKS[network].chainId,
-                          })
-                        } else {
-                          await switchChain(wagmiConfig, {
-                            chainId: NETWORKS[network].chainId,
-                          })
-                        }
-                        if (
-                          (await walletClient?.getChainId()) !==
-                          NETWORKS[network].chainId
-                        ) {
-                          throw new Error(
-                            'Error while trying to change the network.'
-                          )
-                        }
-                      } catch (error) {
-                        toast.closeAll()
-                        toast({
-                          title: `Error while trying to change the network.`,
-                          description: `Try changing the network to '${NETWORKS[network].name}' manually from your wallet.`,
-                          status: 'warning',
-                          duration: 20000,
-                          isClosable: true,
-                        })
-                      }
-                    }
-                  }}
+                  onClick={() => handleChainSwitch(NETWORKS[network].chainId)}
                   backgroundColor={
                     currentNetwork.chainId === NETWORKS[network].chainId
                       ? 'blackAlpha.300'

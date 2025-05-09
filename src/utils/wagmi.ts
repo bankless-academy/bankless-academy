@@ -45,20 +45,36 @@ export const metadata = {
   icons: ['https://app.banklessacademy.com/logo.jpg'],
 }
 
-// Only add Frame connector if in webapp or embed mode
+// Check if we're in a Frame context
+const isFrame = typeof window !== 'undefined' && window.self !== window.top
+
+// Check if we're in webapp or embed mode
 const isWebappOrEmbed = typeof window !== 'undefined' && (
   new URLSearchParams(window.location.search).get('webapp') === 'true' ||
   new URLSearchParams(window.location.search).get('embed') === 'true' ||
   localStorage.getItem('pwa') === 'true'
 )
 
-const connectors = isWebappOrEmbed ? [frameConnector()] : []
+// Add Frame connector if we're in a Frame or in webapp/embed mode
+const connectors = (isFrame || isWebappOrEmbed) ? [frameConnector()] : []
 
+// Configure wagmi adapter with Frame-specific settings
 export const wagmiAdapter = new WagmiAdapter({
   networks,
   projectId: WALLET_CONNECT_PROJECT_ID,
   ssr: true,
   connectors,
+  // Add Frame-specific configuration
+  ...(isFrame && {
+    autoConnect: true, // Auto-connect in Frame context
+    pollingInterval: 1000, // Poll more frequently in Frame context
+  }),
+  // Add chain switching configuration
+  batch: {
+    multicall: {
+      batchSize: 1024 * 200,
+    },
+  },
 })
 
 export const wagmiConfig = wagmiAdapter.wagmiConfig
