@@ -13,6 +13,21 @@
     "buttonTitle": "Start Learning",
     "splashImageUrl": "https://app.banklessacademy.com/app-icon.png",
     "splashBackgroundColor": "#000000",
-    "webhookUrl": "https://app.banklessacademy.com/api/webhook"
+    "webhookUrl": "https://app.banklessacademy.com/api/webhook",
+    "subtitle": "Learn Web3 and Crypto",
+    "description": "Kickstart your Web3 journey with free interactive lessons. Learn crypto fundamentals and earn onchain badges as you go.",
+    "screenshotUrls": [
+      "https://app.banklessacademy.com/images/screenshot1.png",
+      "https://app.banklessacademy.com/images/screenshot2.png",
+      "https://app.banklessacademy.com/images/screenshot3.png"
+    ],
+    "primaryCategory": "education",
+    "tags": ["web3", "crypto", "defi", "blockchain", "learning"],
+    "heroImageUrl": "https://app.banklessacademy.com/images/bankless_academy_v3_frame.jpg",
+    "tagline": "Learn Web3 and Crypto",
+    "ogTitle": "Bankless Academy - Web3 Education",
+    "ogDescription": "Kickstart your Web3 journey with free interactive lessons. Learn crypto fundamentals and earn onchain badges as you go.",
+    "ogImageUrl": "https://app.banklessacademy.com/images/bankless_academy_v3_frame.jpg",
+    "noindex": false
   }
 }
