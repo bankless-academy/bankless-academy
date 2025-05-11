@@ -128,7 +128,7 @@ const PassportStamps = ({
         >
           {Object.entries(STAMP_PLATFORMS).map(([key, platform]) => {
             const stamp = stamps ? stamps[platform.provider] : null
-            const isFacebookLogin = key === 'facebook' && !stamp
+            const isFacebookLogin = key === 'deprecated-facebook' && !stamp
             return (
               <Box
                 key={`stamp-${key}`}
@@ -164,9 +164,9 @@ const PassportStamps = ({
                           appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
                           autoLoad={false}
                           scope="public_profile"
-                          // textButton={t('Connect')}
-                          // cssClass="css-rgn8uq css-1pu4076"
-                          cssClass="css-fb-button"
+                          textButton={t('Connect')}
+                          cssClass="css-rgn8uq css-1pu4076"
+                          // cssClass="css-fb-button"
                           onClick={() => {
                             setLoadingStamp('facebook')
                           }}
