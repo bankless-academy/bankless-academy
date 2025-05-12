@@ -94,72 +94,79 @@ const validateIndexerSync = (
 
 const getLatestBlockNumber = async (fromBlock: number) => {
   const url = `https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
-
-  const payload = {
-    jsonrpc: '2.0',
-    id: 1,
-    method: 'eth_getLogs',
-    params: [
-      {
-        address: [BASE_BADGE_CONTRACT_ADDRESS],
-        fromBlock: `0x${fromBlock.toString(16)}`,
-        toBlock: 'latest',
-        topics: [
-          null,
-          '0x000000000000000000000000472a74c4f7e281e590bed861daa66721a6acadbc',
-          null,
-          null,
-        ],
-      },
-    ],
-  }
+  const BLOCK_RANGE = 500 // Alchemy's limit for eth_getLogs
+  let latestBlock = fromBlock
 
   try {
-    const response = await fetch(url, {
+    // Get current block number first
+    const currentBlockResponse = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_blockNumber',
+        params: [],
+      }),
     })
+    const currentBlockData = await currentBlockResponse.json()
+    const currentBlock = parseInt(currentBlockData.result, 16)
 
-    const data = await response.json()
-    console.log('data', data)
+    // Query in chunks of BLOCK_RANGE
+    for (
+      let startBlock = fromBlock;
+      startBlock < currentBlock;
+      startBlock += BLOCK_RANGE
+    ) {
+      const endBlock = Math.min(startBlock + BLOCK_RANGE - 1, currentBlock)
 
-    // data {
-    //   jsonrpc: '2.0',
-    //   id: 1,
-    //   result: [
-    //     {
-    //       address: '0xfc902e91affd9dd02df4c1e57dac7b096512f286',
-    //       blockHash: '0x8b8507f164e3c2f68f62c447d5f566e75db2c5be8f69f932f95047a5ca223e97',
-    //       blockNumber: '0x1c7359f',
-    //       data: '0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001',
-    //       logIndex: '0x18e',
-    //       removed: false,
-    //       topics: [Array],
-    //       transactionHash: '0x23e3bfafe00af57b3b1f1d49eccf64577c1c6c8a07567553f793c690499a5329',
-    //       transactionIndex: '0x7e'
-    //     }
-    //   ]
-    // }
+      const payload = {
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_getLogs',
+        params: [
+          {
+            address: [BASE_BADGE_CONTRACT_ADDRESS],
+            fromBlock: `0x${startBlock.toString(16)}`,
+            toBlock: `0x${endBlock.toString(16)}`,
+            topics: [
+              null,
+              '0x000000000000000000000000472a74c4f7e281e590bed861daa66721a6acadbc',
+              null,
+              null,
+            ],
+          },
+        ],
+      }
 
-    if (data.error) {
-      console.error('Alchemy API error:', data.error)
-      return undefined
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      const data = await response.json()
+      console.log('data', data)
+
+      if (data.error) {
+        console.error('Alchemy API error:', data.error)
+        continue
+      }
+
+      if (data.result && data.result.length > 0) {
+        const blockNumber = Math.max(
+          ...data.result.map((log) => parseInt(log.blockNumber, 16))
+        )
+        latestBlock = Math.max(latestBlock, blockNumber)
+      }
     }
 
-    if (data.result && data.result.length > 0) {
-      // get the latest block number from the logs
-      const blockNumber = Math.max(
-        ...data.result.map((log) => parseInt(log.blockNumber, 16))
-      )
-      console.log(`Latest block number from Alchemy: ${blockNumber}`)
-      return blockNumber
-    }
-
-    console.log('No logs found for this address')
-    return undefined
+    console.log(`Latest block number from Alchemy: ${latestBlock}`)
+    return latestBlock
   } catch (error) {
     console.error('Error fetching logs:', error)
     return undefined
