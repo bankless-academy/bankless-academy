@@ -1147,7 +1147,8 @@ const LESSONS: LessonType[] = [
     description: 'Protect yourself and your wallet from the most common scams in web3.',
     name: 'Web3 Security',
     languages: [
-      'fr'
+      'fr',
+      'ua'
     ],
     level: 'Essentials',
     tags: [
