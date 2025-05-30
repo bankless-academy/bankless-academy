@@ -35,7 +35,7 @@ const ethereumShowcaseItems: EthereumShowcaseItem[] = [
   },
   {
     name: 'Create an ENS',
-    url: 'https://basename-mini.vercel.app/',
+    url: 'https://basenames.apoorv.xyz/',
     iconUrl: '/images/mini-apps/icon_5.png',
   },
   {
