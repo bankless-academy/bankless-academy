@@ -24,7 +24,6 @@ import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 import { useTranslation } from 'react-i18next'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
-import { getBasename, getBasenameAvatar } from 'utils/basenames'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -240,10 +239,14 @@ const ConnectWalletButton = ({
     } else {
       setEns('')
       // Check for basename
-      const basename = await getBasename(address)
+      const { data: baseEns } = await api(
+        `/api/base-ens?address=${address}`,
+        {}
+      )
+      const basename = baseEns?.basename
       if (basename) {
         replaceName(basename)
-        const basenameAvatar = await getBasenameAvatar(basename)
+        const basenameAvatar = baseEns?.basenameAvatar
         if (basenameAvatar) replaceAvatar(basenameAvatar)
       } else {
         const { data: lensProfile } = await api(
