@@ -45,6 +45,8 @@ const GM_RESPONSES = [
 
 const DEFAULT_ANSWER = `I can only help with crypto, blockchain, and web3 related topics.`
 
+const TELEGRAM_CTA = `💬 Join Telegram community`
+
 interface Message {
   id: string
   text: string
@@ -106,6 +108,16 @@ export const ChatWidget = ({
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const toast = useToast()
+  const [userMessageCount, setUserMessageCount] = useState(0)
+  const [lastTelegramMessageId, setLastTelegramMessageId] = useState<
+    string | null
+  >(null)
+
+  // Reset counters when component mounts
+  useEffect(() => {
+    const userMessages = messages.filter((msg) => msg.sender === 'user').length
+    setUserMessageCount(userMessages)
+  }, [])
 
   const handleClearHistory = () => {
     setMessages([
@@ -116,6 +128,8 @@ export const ChatWidget = ({
         timestamp: new Date(),
       },
     ])
+    setUserMessageCount(0)
+    setLastTelegramMessageId(null)
     toast({
       title: 'Chat history cleared',
       status: 'success',
@@ -179,6 +193,7 @@ export const ChatWidget = ({
       setMessages((prev) => [...prev, userMessage, thinkingMessage])
       setNewMessage('')
       setIsLoading(true)
+      setUserMessageCount((prev) => prev + 1)
 
       try {
         const response = await fetch('/api/ai', {
@@ -205,7 +220,7 @@ export const ChatWidget = ({
 
         const supportLink = `/report-an-issue?context=ai`
 
-        const supportMessage = `⁉️ If you need help, contact us here`
+        const supportMessage = `⁉️ If you need help related to the platform, contact us here`
 
         const aiMessage: Message = {
           id: (Date.now() + 1).toString(),
@@ -218,9 +233,33 @@ export const ChatWidget = ({
         }
 
         // Replace thinking message with actual response
-        setMessages((prev) =>
-          prev.filter((msg) => !msg.isThinking).concat(aiMessage)
-        )
+        setMessages((prev) => {
+          const newMessages = prev
+            .filter((msg) => !msg.isThinking)
+            .concat(aiMessage)
+
+          // Add Telegram message after second user question or every 5th message
+          // Only if we haven't shown a Telegram message in the last 5 messages
+          if (
+            (userMessageCount === 1 || userMessageCount % 5 === 0) &&
+            (!lastTelegramMessageId ||
+              !newMessages.some((msg) => msg.id === lastTelegramMessageId))
+          ) {
+            const telegramMessageId = (Date.now() + 2).toString()
+            const telegramMessage: Message = {
+              id: telegramMessageId,
+              text: `Join our Telegram community to ask more questions and connect with other learners:`,
+              sender: 'ai',
+              lessonName: TELEGRAM_CTA,
+              lessonLink: 'https://bankless.ac/community',
+              timestamp: new Date(),
+            }
+            setLastTelegramMessageId(telegramMessageId)
+            return [...newMessages, telegramMessage]
+          }
+
+          return newMessages
+        })
       } catch (error) {
         console.error('Error calling AI:', error)
         // Remove thinking message on error
@@ -319,7 +358,9 @@ export const ChatWidget = ({
                 >
                   <VStack spacing={4} align="stretch" p={4}>
                     {messages.map((message) => {
-                      const isSupportMessage = message.text === DEFAULT_ANSWER
+                      const isSupportMessage =
+                        message.text === DEFAULT_ANSWER ||
+                        message.lessonName === TELEGRAM_CTA
                       return (
                         <HStack
                           key={message.id}
