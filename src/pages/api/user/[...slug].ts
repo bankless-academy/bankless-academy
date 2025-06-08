@@ -231,17 +231,18 @@ export default async function handler(
   stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
   // achievements
   stats.achievements = (userExist && typeof userExist?.achievements === 'object' && userExist?.achievements !== null) ? Object.keys(userExist?.achievements) : []
-  if (!stats.achievements?.includes('gitcoin-donation')) {
-    // async call: result available on next call
-    fetch(`${DOMAIN_URL}/api/achievements/gitcoin-donation`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify({ address: addressLowerCase })
-    })
-      .catch(error => console.log('Error calling gitcoin-donation achievement:', error))
-  }
+  // TEMP: disable gitcoin-donation achievement (API deprecated)
+  // if (!stats.achievements?.includes('gitcoin-donation')) {
+  //   // async call: result available on next call
+  //   fetch(`${DOMAIN_URL}/api/achievements/gitcoin-donation`, {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     method: 'POST',
+  //     body: JSON.stringify({ address: addressLowerCase })
+  //   })
+  //     .catch(error => console.log('Error calling gitcoin-donation achievement:', error))
+  // }
   if (!stats.achievements?.includes('giveth-donation')) {
     // async call: result available on next call
     fetch(`${DOMAIN_URL}/api/achievements/giveth-donation`, {
