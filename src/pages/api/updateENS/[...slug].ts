@@ -68,9 +68,20 @@ export default async function handler(
   try {
     let ensData: any = {}
     try {
-      ensData = await fetch(`https://ensdata.net/${addressLowerCase}`).then(
-        (res) => res.json()
-      )
+      const ensResponse = await fetch(`https://ensdata.net/${addressLowerCase}`)
+      if (ensResponse.status === 404) {
+        // Fallback to ethfollow.xyz API
+        const fallbackResponse = await fetch(`https://api.ethfollow.xyz/api/v1/users/${addressLowerCase}/account`)
+        if (fallbackResponse.ok) {
+          const fallbackData = await fallbackResponse.json()
+          ensData = {
+            ens: fallbackData.ens?.name,
+            avatar_small: fallbackData.ens?.avatar
+          }
+        }
+      } else {
+        ensData = await ensResponse.json()
+      }
     } catch (error) {
       console.log(error)
     }
