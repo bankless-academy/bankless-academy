@@ -58,6 +58,11 @@ const LessonCards = ({
       ? queryString.parse(window.location.search).all
       : undefined
 
+  const debug =
+    typeof window !== 'undefined'
+      ? queryString.parse(window.location.search).debug
+      : undefined
+
   // const [stats, setStats]: any = useState(null)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
@@ -81,7 +86,8 @@ const LessonCards = ({
     module !== undefined && moduleId
       ? LESSONS.filter(
           (lesson) =>
-            lesson.publicationStatus === 'publish' &&
+            (lesson.publicationStatus === 'publish' ||
+              (debug === 'true' && lesson.publicationStatus === 'hidden')) &&
             lesson.moduleId === moduleId
         )
       : all === null
@@ -89,7 +95,8 @@ const LessonCards = ({
       : LESSONS.filter(
           (lesson) =>
             lesson.publicationStatus === 'publish' ||
-            lesson.publicationStatus === 'planned'
+            lesson.publicationStatus === 'planned' ||
+            (debug === 'true' && lesson.publicationStatus === 'hidden')
         )
 
   // useEffect(() => {
