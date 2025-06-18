@@ -62,7 +62,7 @@ Public Nouns is a web3-native attempt to support these goods without middlemen**
 **What’s true about public goods?**
 
 - [ ] They run out when used
-- [ ] The’re invite-only spaces
+- [ ] They’re invite-only spaces
 - [ ] They are free and shared
 - [ ] They’re locked behind a paywall
 
@@ -76,7 +76,7 @@ We’ll cover:
 
 - **NFTs:** non-fungible tokens used for identity and coordination 🖼️
 - **DAOs:** decentralized autonomous organizations with shared treasuries 🌐
-- **Onchain governance: tr**ansparent, code-based systems for collective decisions 🗳️
+- **Onchain governance:** transparent, code-based systems for collective decisions 🗳️
 
 These elements come together in a _unique case study_: **Public Nouns**, a community experiment for public goods funding.
 
@@ -90,7 +90,7 @@ NFTs can represent many things: art, music, identity, status, or access. But in 
 
 Each Public Noun features distinctive artwork that represents a **public goods project**. These visuals act as shared symbols within each community and the Ethereum ecosystem as a whole.
 
-Examples of featured projects include **MolochDAO, Gitcoin, Treegens**, and more. As commmunities emerge and others wind down, Public Nouners can also propose new art/communities to be included 🗳️
+Examples of featured projects include **MolochDAO, Gitcoin, Treegens**, and more. As communities emerge and others wind down, Public Nouners can also propose new art/communities to be included 🗳️
 
 The art draws from **meme culture**, but here, memes do more than make us smile. They define **cultural identity** and help people **coordinate** around a shared mission 🎯
 
@@ -121,7 +121,7 @@ There are many kinds of DAOs. Some manage protocols, others invest capital, and 
 
 Now that you know what a DAO is, let’s look at the one that inspired it all: **Nouns** ⌐◨-◨
 
-Nouns fundbegan as an experiment in **community-owned culture**. Every 24 hours, a pixel-art “Noun” is generated and auctioned onchain. The ETH goes into a shared treasury, and each Noun gives its holder one vote in the DAO.
+Nouns began as an experiment in **community-owned culture**. Every 24 hours, a pixel-art “Noun” is generated and auctioned onchain. The ETH goes into a shared treasury, and each Noun gives its holder one vote in the DAO.
 
 The Nouns movement started with a meme and lets the community **decide what to build**. Projects can go from media to tooling to global events. Its most iconic trait? **The Noggles** ⌐◨-◨, pixelated glasses worn by every Noun.
 
@@ -166,7 +166,7 @@ To understand onchain funding, here’s a brief summary of how it works:
 
 This setup means funds **move only when the community approves.** No shortcuts, no central admin, no backroom decisions.
 
-In simple terms, its a protocol for funding: transparent, automatic, and verifiable by anyone on the Ethereum blockchain. Check out the full contract [here](https://etherscan.io/address/0x2bbebfeca0febde8c70ef8501c991f3ab2095862#code) on Etherscan.
+In simple terms, it’s a protocol for funding: transparent, automatic, and verifiable by anyone on the Ethereum blockchain. Check out the full contract [here](https://etherscan.io/address/0x2bbebfeca0febde8c70ef8501c991f3ab2095862#code) on Etherscan.
 
 ![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/how-onchain-funding-works-a5fa5810.png)
 
@@ -181,7 +181,7 @@ In simple terms, its a protocol for funding: transparent, automatic, and verifia
 
 # Public Nouns’ Impact
 
-Since inception, Public Nouns has funded more than 50 projects through community-approved proposals. These **early-stage experiments**, where designed by web3 contributors with new and disruptive ideas 💡
+Since inception, Public Nouns has funded more than 50 projects through community-approved proposals. These **early-stage experiments**, were designed by web3 contributors with new and disruptive ideas 💡
 
 Here are a few examples of what’s been built so far:
 
@@ -198,7 +198,7 @@ Public Nouns shows the **impact a small internet-native community can have** whe
 
 # Mission accomplished
 
-Public Nouns set out with a **clear mission**: fund experiments in public goods using **onchain tools, community decision-making, and symbolic NFTs.** From protocol development and public education to coordination infrastructure and community-led initiatives, its impact is guidely felt within the **Ethereum ecosystem.**
+Public Nouns set out with a **clear mission**: fund experiments in public goods using **onchain tools, community decision-making, and symbolic NFTs.** From protocol development and public education to coordination infrastructure and community-led initiatives, its impact is widely felt within the **Ethereum ecosystem.**
 
 **How long will this experiment last?** _That’s still being defined._ As more OG members move on, and new members join, the community is now exploring how the mission can evolve ✨
 
@@ -216,7 +216,7 @@ Before we conclude, and if the **Public Nouns mission resonates with you**, here
 
 - Follow [Public Nouns](https://x.com/PublicNouns)
 - Join the Community Spaces 🎙️
-- [Create content ](https://x.com/KokonutNetwork/status/1934021469966635401)about Public Nouns
+- [Create content](https://x.com/KokonutNetwork/status/1934021469966635401) about Public Nouns
 - Become part of the community buying a [Public Noun](https://publicnouns.wtf/)
 
 Getting involved in any of these initiatives, supports the mission and helps it move forward 🚀
@@ -238,7 +238,7 @@ Before claiming your onchain certification:
 
 💡 _You’ll be redirected to the lesson’s landing page where the Claim Badge button will be now be unlocked_ 😉
 
-Thanks for taking the time to learn about Public Nouns, DAOs, NFTs and onchain governance. Don’t forget to[ join the Bankless Academy community ](https://t.me/banklessacademy)and share your achievements with other web3 explorers.
+Thanks for taking the time to learn about Public Nouns, DAOs, NFTs and onchain governance. Don’t forget to [join the Bankless Academy community ](https://t.me/banklessacademy)and share your achievements with other web3 explorers.
 
 Until the next mission, Explorer!
 
