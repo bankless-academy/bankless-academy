@@ -653,11 +653,21 @@ axios
       if (LESSON_NOTION_ID) {
         const existingLessons = require(`./src/constants/${LESSON_FILENAME}.json`)
         const newLesson = lessons.pop()
-        for (const lesson of existingLessons) {
-          if (lesson?.slug) {
-            if (lesson.slug === newLesson.slug)
-              lessons.push(newLesson)
-            else lessons.push(lesson)
+
+        // Check if this is a new lesson
+        const isNewLesson = !existingLessons.some(lesson => lesson.slug === newLesson.slug)
+
+        if (isNewLesson) {
+          lessons.push(...existingLessons, newLesson)
+        } else {
+          for (const lesson of existingLessons) {
+            if (lesson?.slug) {
+              if (lesson.slug === newLesson.slug) {
+                lessons.push(newLesson)
+              } else {
+                lessons.push(lesson)
+              }
+            }
           }
         }
       }
