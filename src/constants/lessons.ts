@@ -3923,6 +3923,189 @@ const LESSONS: LessonType[] = [
       'network governance',
       'DEX'
     ]
+  },
+  {
+    badgeImageLink: '/images/public-nouns-a-public-goods-dao-experiment/badge-da9823bb.png',
+    lessonImageLink: '/images/public-nouns-a-public-goods-dao-experiment/lesson-0a24938a.png',
+    learningActions: '',
+    marketingDescription: 'Learn how web3 communities come together to fund public goods.',
+    badgeId: 15,
+    duration: 10,
+    learnings: '',
+    description: 'Learn how web3 communities come together to fund public goods.',
+    name: 'Public Nouns: A Public Goods DAO Experiment',
+    languages: [],
+    level: 'Community Lessons',
+    community: 'Public Nouns',
+    lessonWriters: 'OrnellaWeb3',
+    quest: 'PublicNounsAPublicGoodsDAOExperiment',
+    questSocialMessage: 'I\'ve just completed the @PublicNouns lesson on @BanklessAcademy 🎓\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀 🚀',
+    publicationStatus: 'hidden',
+    publicationDate: '2025-06-18',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    notionId: '20f12837a13b80fca3f0c312ba7d1fac',
+    englishName: 'Public Nouns: A Public Goods DAO Experiment',
+    slug: 'public-nouns-a-public-goods-dao-experiment',
+    socialImageLink: '/images/public-nouns-a-public-goods-dao-experiment/social-0a24938a.png',
+    imageLinks: [
+      '/images/public-nouns-a-public-goods-dao-experiment/introduction-959fa0fe.png',
+      '/images/public-nouns-a-public-goods-dao-experiment/public-goods-are-good-530a6a5d.svg',
+      '/images/public-nouns-a-public-goods-dao-experiment/using-web3-to-fund-public-goods-31639811.svg',
+      '/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-15babfdc.svg',
+      '/images/public-nouns-a-public-goods-dao-experiment/what-is-a-dao-0d75251d.svg',
+      '/images/public-nouns-a-public-goods-dao-experiment/nouns-and-public-nouns-48245331.svg',
+      '/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-15289f9a.svg',
+      '/images/public-nouns-a-public-goods-dao-experiment/how-onchain-funding-works-a5fa5810.png',
+      '/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-0a9fe04b.svg',
+      '/images/public-nouns-a-public-goods-dao-experiment/mission-accomplished-02e24481.svg',
+      '/images/public-nouns-a-public-goods-dao-experiment/whats-next-an-open-invitation-c5ff00f3.svg'
+    ],
+    keywords: [],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b80638a22c7a5068216d2',
+        title: 'Introduction',
+        content: '<div class="bloc1"><p><strong>Welcome, Explorers, to a new Community Lesson!</strong></p><p>In web3, everything starts with <strong>community</strong>. Thanks to blockchain technology and Ethereum, communities can now do more than just coordinate! They can take <strong>action</strong>, <strong>govern</strong> shared resources, <strong>fund</strong> aligned projects, and <strong>support</strong> the future they want to see 🌱</p><p>In this lesson, you’ll explore how <strong>public goods, DAOs, NFTs</strong>, and <strong>onchain governance</strong> come together in a bold experiment called <strong>Public Nouns</strong>. Think of open-source tools, Ethereum infrastructure, or free educational platforms like Bankless Academy. These are digital public goods. They can benefit everyone, but since they are not profit-driven, they’re generally hard to fund.</p><p>To tackle the challenge, Public Nouns raised a question: <em><strong>What if a decentralized community could fund these goods directly using art, culture, and code? </strong></em><strong>👨🏻‍💻</strong></p><p>Let’s find out what happens when people care enough to build! ⚒️</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/introduction-959fa0fe.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b80b987e4dd01fd21f189',
+        title: 'Public goods are good',
+        content: '<div class="bloc1"><p>To start, let’s learn what public goods are 💡</p><p>Public goods are resources that <strong>everyone can access, and one person’s use doesn’t reduce its availability to others.</strong></p><p>In more economic terms, they are <strong>non-excludable and non-rivalrous.</strong></p><p>It might be a difficult concept to grasp at first, but think of clean air, streetlights, and public spaces like libraries and parks 🌳</p><p>In web3, public goods include things like <strong>open-source code</strong> (such as Ethereum clients), <strong>shared infrastructure</strong>, and <strong>free educational resources</strong> like tutorials and documentation. These are the digital commons that can be used by everyone, and their availability isn’t reduced if used 🌐</p><p>Public Nouns is a web3-native attempt to support these goods without middlemen<strong>, using art, community and culture 🎨</strong></p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/public-goods-are-good-530a6a5d.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '9ae7dfe11c4c476abba3fcd16438d3b5',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: '<strong>What’s true about public goods?</strong>',
+          rightAnswerNumber: 3,
+          answers: [
+            'They run out when used',
+            'The’re invite-only spaces',
+            'They are free and shared',
+            'They’re locked behind a paywall'
+          ],
+          id: 'public-nouns-a-public-goods-dao-experiment-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '21512837a13b800b8b36f7c1f7a04ab1',
+        title: 'Using web3 to fund public goods',
+        content: '<div class="bloc1"><p>To understand how web3 enables funding for public goods, we need to define its <strong>core building blocks 🧱</strong></p><p>If you’re already familiar with them, you’ll be able to engage with the next slides more confidently. If not, do not worry, we encourage you to <em>read carefully</em>, as these are <strong>foundational</strong> ideas that will help everything else make sense.</p><p>We’ll cover:</p><ul><li><strong>NFTs: </strong>non-fungible tokens used for identity and coordination 🖼️</li><li><strong>DAOs: </strong>decentralized autonomous organizations with shared treasuries 🌐</li><li><strong>Onchain governance: tr</strong>ansparent, code-based systems for collective decisions 🗳️</li></ul><p>These elements come together in a <em>unique case study</em>: <strong>Public Nouns</strong>, a community experiment for public goods funding.</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/using-web3-to-fund-public-goods-31639811.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b80dab377cc7952e67a0c',
+        title: 'What is an NFT? The role of meme culture',
+        content: '<div class="bloc1"><p>NFT stands for <em>non-fungible token, </em>a unique digital item that lives on a blockchain. Unlike tokens that are interchangeable (like ETH or USDC), each NFT is distinct 😲</p><p>NFTs can represent many things: art, music, identity, status, or access. But in the case of Public Nouns, they’re <strong>symbols of shared values.</strong></p><p>Each Public Noun features distinctive artwork that represents a <strong>public goods project</strong>. These visuals act as shared symbols within each community and the Ethereum ecosystem as a whole.</p><p>Examples of featured projects include <strong>MolochDAO, Gitcoin, Treegens</strong>, and more. As commmunities emerge and others wind down, Public Nouners can also propose new art/communities to be included 🗳️</p><p>The art draws from <strong>meme culture</strong>, but here, memes do more than make us smile. They define <strong>cultural identity</strong> and help people <strong>coordinate</strong> around a shared mission 🎯</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-15babfdc.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '21512837a13b809a8deaf4ca312a528f',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: '<strong>What does a Public Nouns NFT represent?</strong>',
+          rightAnswerNumber: 3,
+          answers: [
+            'Pets of each community member',
+            'Speculative art with no intrinsic value',
+            'A specific public goods project',
+            'Memecoins'
+          ],
+          id: 'public-nouns-a-public-goods-dao-experiment-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b80a1a5d3c3dfb437c5e9',
+        title: 'What is a DAO?',
+        content: '<div class="bloc1"><p>A <strong>DAO</strong>, or <strong>Decentralized Autonomous Organization</strong>, is a web3-native structure for making collective decisions. It manages a shared treasury and its community members vote on new initiatives and how to fund them, openly and without middlemen ⛓️</p><p>DAOs were born on <strong>Ethereum. Smart contracts</strong>, self-executing programs deployed on the blockchain, have made it possible to automate coordination through code. These programs define the rules: <strong>who</strong> can propose a project, <strong>how</strong> votes are counted, and <strong>when</strong> funds are released 🔓</p><p><strong>Public Nouns is a DAO</strong>. If you hold in your Ethereum wallet a Public Noun NFT, you’re part of the DAO. You can <strong>propose</strong> new projects, <strong>vote</strong> on proposals, and <strong>help decide</strong> which public goods get supported 🗳️</p><p>There are many kinds of DAOs. Some manage protocols, others invest capital, and some, like Public Nouns, exist to support public goods. Its mission is to create impact, not profit.</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/what-is-a-dao-0d75251d.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b80819b8aead7d3f250b8',
+        title: 'Nouns and Public Nouns',
+        content: '<div class="bloc1"><p>Now that you know what a DAO is, let’s look at the one that inspired it all: <strong>Nouns</strong> ⌐◨-◨</p><p>Nouns fundbegan as an experiment in <strong>community-owned culture</strong>. Every 24 hours, a pixel-art “Noun” is generated and auctioned onchain. The ETH goes into a shared treasury, and each Noun gives its holder one vote in the DAO.</p><p>The Nouns movement started with a meme and lets the community <strong>decide what to build</strong>. Projects can go from media to tooling to global events. Its most iconic trait? <strong>The Noggles</strong> ⌐◨-◨, pixelated glasses worn by every Noun.</p><p>This cultural icon has expanded from the <em>digital realm to real-world landmarks</em> and events such as the <a href=\'https://x.com/punk4156/status/1822040547059446040\'>Shibuya Crossing in Tokyo</a>, to a projection on the <a href=\'https://x.com/johnhamon_/status/1761348271421747554\'>Eiffel Tower</a>, and has even been part of a <a href=\'https://www.youtube.com/watch?v=Dbke3F1VnsQ\'>Super Bowl commercial</a>. Noggles are a <strong>cultural symbol of shared Nouns identity</strong> across sub-DAOs like Lil Nouns, Gnars, and of course, Public Nouns.</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/nouns-and-public-nouns-48245331.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '21512837a13b803c8c2af3167489f5e4',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: '<strong>What connects Public Nouns to Nouns?</strong>',
+          rightAnswerNumber: 2,
+          answers: [
+            'They have shared treasury and governance',
+            'Coded fork and shared symbols',
+            'Founded by the same web3 team',
+            'They use pixel art that changes every week'
+          ],
+          id: 'public-nouns-a-public-goods-dao-experiment-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b80568cefdb0005254620',
+        title: 'Forking & Governance Contracts',
+        content: '<div class="bloc1"><p>Public Nouns is a <strong>fork of Nouns.</strong> In web3, <em>forking </em>means copying<strong> open-source code</strong> and adapting it for a new mission. Public Nouns <strong>kept the daily auction model</strong>, but instead of having random characters with different traits, each NFT features symbolic artwork tied to a public good.</p><p>The system relies on three core contracts, each with a specific role:</p><ul><li><strong>Auction</strong>: handles timing and sales of NFTs 🖼️</li><li><strong>Treasury</strong>: holds the ETH and releases it when proposals pass 🗝️</li><li><strong>Governor</strong>: developed by Compound, it manages proposals, voting rules, and quorum 🗳️</li></ul><p>These <strong>smart contracts work together</strong> to define how proposals are made, approved and executed, all automatically and onchain ⚡</p><p>This kind of <strong>modular approach</strong> is one of Web3’s biggest strengths: shared infrastructure becomes a public good of its own, ready to be <em>remixed, repurposed, and reimagined </em>💭</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-15289f9a.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b80faa792fdedc282a630',
+        title: 'How Onchain Funding Works',
+        content: '<div class="bloc1"><p>To understand onchain funding, here’s a brief summary of how it works:</p><p><strong>🎨 Step 1</strong>: the <strong>auction contract</strong> creates a new Public Noun every 12 hours (or when the past auction is settled), and sends the ETH from each auction directly to the treasury.</p><p><strong>🗳️ Step 2</strong>: the <strong>governor contract</strong> manages proposals and voting made by DAO members - only when a proposal passes, meeting quorum and approval thresholds, can it be executed.</p><p><strong>💰 Step 3:</strong> the <strong>treasury contract</strong> holds the funds and is only triggered by the governor contract, often with a built-in time delay.</p><p>This setup means funds <strong>move only when the community approves. </strong>No shortcuts, no central admin, no backroom decisions.</p><p>In simple terms, its a protocol for funding: transparent, automatic, and verifiable by anyone on the Ethereum blockchain. Check out the full contract <a href=\'https://etherscan.io/address/0x2bbebfeca0febde8c70ef8501c991f3ab2095862#code\'>here</a> on Etherscan.</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/how-onchain-funding-works-a5fa5810.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '21512837a13b80029db5ce0c278254d1',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: '<strong>What does </strong><em><strong>forking</strong></em><strong> mean?</strong>',
+          rightAnswerNumber: 3,
+          answers: [
+            'Attending the annual Public Nouns dinner',
+            'Rewritten the governance contract',
+            'Copying code and reusing it',
+            'Delegate the ability to vote on proposals'
+          ],
+          id: 'public-nouns-a-public-goods-dao-experiment-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b807181b7e84610b14bea',
+        title: 'Public Nouns’ Impact',
+        content: '<div class="bloc1"><p>Since inception, Public Nouns has funded more than 50 projects through community-approved proposals. These <strong>early-stage experiments</strong>, where designed by web3 contributors with new and disruptive ideas 💡</p><p>Here are a few examples of what’s been built so far:</p><ul><li><a href=\'https://x.com/ProtocolGuild\'>Protocol Guild</a>: long-term funding for Ethereum core contributors ⛓️</li><li><a href=\'https://x.com/Pizza_DAO\'>PizzaDAO</a>: in-person events promoting Web3 values through pizza 🍕</li><li><a href=\'https://publicnouns.wtf/vote/60\'>Farcastle</a>: experimental social coordination tools 🏰</li><li><a href=\'https://x.com/Giveth\'>Giveth</a>: empowers changemakers to accept crypto donations 💜</li></ul><p>This very lesson, and the onchain certification you’ll receive at the end, is also possible thanks to the support of the community. Check out the full list of projects and proposals supported <a href=\'https://publicnouns.wtf/vote\'>here</a>.</p><p>Public Nouns shows the<strong> impact a small internet-native community can have</strong> when it funds public goods with intent, speed, and shared values.</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-0a9fe04b.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '21412837a13b80ef9583cbf88c3203d4',
+        title: 'Mission accomplished',
+        content: '<div class="bloc1"><p>Public Nouns set out with a <strong>clear mission</strong>: fund experiments in public goods using <strong>onchain tools, community decision-making, and symbolic NFTs.</strong> From protocol development and public education to coordination infrastructure and community-led initiatives, its impact is guidely felt within the <strong>Ethereum ecosystem.</strong></p><p><strong>How long will this experiment last?</strong> <em>That’s still being defined.</em> As more OG members move on, and new members join, the community is now exploring how the mission can evolve ✨</p><p>One of the core strengths of web3 is <strong>building in public</strong>. This supports innovation and cross-collaboration that can shape the next phase of Public Nouns. Whatever the future might hold, it is clear that Public Nouns has helped pioneer the frontier of <strong>mission-driven, onchain funding</strong> - with an impact that will echo for years to come ⏳</p><p>Whether through Public Nouns itself or new forks, the model remains <strong>open, tested, and available</strong>. The tools are onchain. The lessons are public. And the invitation to keep building, is always open ⚒️</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/mission-accomplished-02e24481.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '21412837a13b807b93bbfb1bbe247967',
+        title: 'What’s next? An open invitation',
+        content: '<div class="bloc1"><p>You’re almost there, Explorer! 🧑🏻‍🚀 We’re just one step away from the end of the lesson. Once completed, you will conquer the quest and be eligible to claim your onchain certification 🛡️</p><p>Before we conclude, and if the <strong>Public Nouns mission resonates with you</strong>, here’s a few steps you can take to support the community:</p><ul><li>Follow <a href=\'https://x.com/PublicNouns\'>Public Nouns</a></li><li>Join the Community Spaces 🎙️</li><li><a href=\'https://x.com/KokonutNetwork/status/1934021469966635401\'>Create content </a>about Public Nouns</li><li>Become part of the community buying a <a href=\'https://publicnouns.wtf/\'>Public Noun</a></li></ul><p>Getting involved in any of these initiatives, supports the mission and helps it move forward 🚀</p><p><em>💡 To participate in the first three it\'s important to mention that you do not need to own a Public Nouns. All activities are free to access.</em></p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/whats-next-an-open-invitation-c5ff00f3.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '20f12837a13b80d998bdf8ddb297e7a1',
+        title: 'Quest',
+        content: '<div class="bloc1"><p>🎯 <strong>Congratulations, Explorer! </strong>You\'ve reached the<strong> final step </strong>in your learning journey<strong> 🎓</strong></p><p>Before claiming your onchain certification:</p><ol><li>Spread the word about Public Nouns by sharing this lesson.</li> <ul><li><strong>Share on Twitter / X</strong></li><li><strong>Share on Farcaster</strong></li></ul> <li>Paste the link to your post in the field below and click <strong>Finish ✅</strong></li></ol><p>💡 <em>You’ll be redirected to the lesson’s landing page where the Claim Badge button will be now be unlocked </em>😉</p><p>Thanks for taking the time to learn about Public Nouns, DAOs, NFTs and onchain governance. Don’t forget to<a href=\'https://t.me/banklessacademy\'> join the Bankless Academy community </a>and share your achievements with other web3 explorers.</p><p>Until the next mission, Explorer!</p><p>Over and out 📡</p></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Public Nouns: A Public Goods DAO Experiment Quest',
+        component: 'PublicNounsAPublicGoodsDAOExperiment'
+      }
+    ]
   }
 ]
 
