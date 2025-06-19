@@ -328,7 +328,10 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     if (badgesMintedLS?.includes(lesson.badgeId)) {
       // find the next unminted badge in the order of the lessons
       const nextLesson = LESSONS.find(
-        (l) => !l.isArticle && !badgesMintedLS?.includes(l.badgeId)
+        (l) =>
+          !l.isArticle &&
+          !badgesMintedLS?.includes(l.badgeId) &&
+          l.publicationStatus === 'publish'
       )
       if (!nextLesson) return null
       return (
