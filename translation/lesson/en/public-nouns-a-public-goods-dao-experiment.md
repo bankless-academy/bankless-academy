@@ -80,21 +80,19 @@ We’ll cover:
 
 These elements come together in a _unique case study_: **Public Nouns**, a community experiment for public goods funding.
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/using-web3-to-fund-public-goods-31639811.svg)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/using-web3-to-fund-public-goods-9ee02318.png)
 
 # What is an NFT? The role of meme culture
 
-NFT stands for _non-fungible token,_ a unique digital item that lives on a blockchain. Unlike tokens that are interchangeable (like ETH or USDC), each NFT is distinct 😲
+Ethereum has different types of tokens. **NFT stands for** _**non-fungible**_ aka known as **ERC-1155**. ERC stands for Ethereum Request for Comment, it refers to a set of **technical standards** that govern how tokens are created and function on Ethereum. 
 
-NFTs can represent many things: art, music, identity, status, or access. But in the case of Public Nouns, they’re **symbols of shared values.**
+Unlike interchangeable tokens, like ETH or USDC (ERC-20s), each ERC-1155 is distinct and can represent many things: art, music, identity, status, or access. 
 
-Each Public Noun features distinctive artwork that represents a **public goods project**. These visuals act as shared symbols within each community and the Ethereum ecosystem as a whole.
+In Public Nouns, they’re **symbols of shared values.** Each one features an artwork representing a **public goods project**. These visuals act as shared symbols within each community and the Ethereum ecosystem. Examples include **MolochDAO, Gitcoin, Treegens**, and more. As communities emerge and others wind down, Public Nouners can propose new art/communities to be included 🗳️
 
-Examples of featured projects include **MolochDAO, Gitcoin, Treegens**, and more. As communities emerge and others wind down, Public Nouners can also propose new art/communities to be included 🗳️
+The art draws from **meme culture**, as a way to define **cultural identity** and help people **coordinate** around a shared mission 🎯
 
-The art draws from **meme culture**, but here, memes do more than make us smile. They define **cultural identity** and help people **coordinate** around a shared mission 🎯
-
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-15babfdc.svg)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-1db724d6.png)
 
 # Knowledge Check 2
 
@@ -115,7 +113,7 @@ DAOs were born on **Ethereum. Smart contracts**, self-executing programs deploye
 
 There are many kinds of DAOs. Some manage protocols, others invest capital, and some, like Public Nouns, exist to support public goods. Its mission is to create impact, not profit.
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/what-is-a-dao-0d75251d.svg)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/what-is-a-dao-e9562a03.png)
 
 # Nouns and Public Nouns
 
@@ -126,8 +124,6 @@ Nouns began as an experiment in **community-owned culture**. Every 24 hours, a p
 The Nouns movement started with a meme and lets the community **decide what to build**. Projects can go from media to tooling to global events. Its most iconic trait? **The Noggles** ⌐◨-◨, pixelated glasses worn by every Noun.
 
 This cultural icon has expanded from the _digital realm to real-world landmarks_ and events such as the [Shibuya Crossing in Tokyo](https://x.com/punk4156/status/1822040547059446040), to a projection on the [Eiffel Tower](https://x.com/johnhamon_/status/1761348271421747554), and has even been part of a [Super Bowl commercial](https://www.youtube.com/watch?v=Dbke3F1VnsQ). Noggles are a **cultural symbol of shared Nouns identity** across sub-DAOs like Lil Nouns, Gnars, and of course, Public Nouns.
-
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/nouns-and-public-nouns-48245331.svg)
 
 # Knowledge Check 3
 
@@ -152,7 +148,7 @@ These **smart contracts work together** to define how proposals are made, approv
 
 This kind of **modular approach** is one of Web3’s biggest strengths: shared infrastructure becomes a public good of its own, ready to be _remixed, repurposed, and reimagined_ 💭
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-15289f9a.svg)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-755e28e8.svg)
 
 # How Onchain Funding Works
 
@@ -168,7 +164,7 @@ This setup means funds **move only when the community approves.** No shortcuts, 
 
 In simple terms, it’s a protocol for funding: transparent, automatic, and verifiable by anyone on the Ethereum blockchain. Check out the full contract [here](https://etherscan.io/address/0x2bbebfeca0febde8c70ef8501c991f3ab2095862#code) on Etherscan.
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/how-onchain-funding-works-a5fa5810.png)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/how-onchain-funding-works-5d9d11c8.png)
 
 # Knowledge Check 4
 
@@ -187,14 +183,14 @@ Here are a few examples of what’s been built so far:
 
 - [Protocol Guild](https://x.com/ProtocolGuild): long-term funding for Ethereum core contributors ⛓️
 - [PizzaDAO](https://x.com/Pizza_DAO): in-person events promoting Web3 values through pizza 🍕
-- [Farcastle](https://publicnouns.wtf/vote/60): experimental social coordination tools  🏰
 - [Giveth](https://x.com/Giveth): empowers changemakers to accept crypto donations 💜
+- [Kokonut Network](https://publicnouns.wtf/vote/69): syntropic agroforestry farms using Web3 🌱
 
-This very lesson, and the onchain certification you’ll receive at the end, is also possible thanks to the support of the community. Check out the full list of projects and proposals supported [here](https://publicnouns.wtf/vote).
+This very lesson, content and onchain certification, is also possible thanks to the support of the community. Check out the full list of projects and proposals supported [here](https://publicnouns.wtf/vote).
 
 Public Nouns shows the **impact a small internet-native community can have** when it funds public goods with intent, speed, and shared values.
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-0a9fe04b.svg)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-58d89b36.png)
 
 # Mission accomplished
 
@@ -238,7 +234,9 @@ Before claiming your onchain certification:
 
 💡 _You’ll be redirected to the lesson’s landing page where the Claim Badge button will be now be unlocked_ 😉
 
-Thanks for taking the time to learn about Public Nouns, DAOs, NFTs and onchain governance. Don’t forget to [join the Bankless Academy community ](https://t.me/banklessacademy)and share your achievements with other web3 explorers.
+Thanks for taking the time to learn about Public Nouns. 
+
+Don’t forget to [join the Bankless Academy community ](https://t.me/banklessacademy)and share your achievements with other web3 explorers.
 
 Until the next mission, Explorer!
 
