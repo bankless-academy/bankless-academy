@@ -187,7 +187,7 @@ const SocialSharing = (
           <Box width="100%" maxW="650px">
             <Text mx="0 !important" fontSize="xl" fontWeight="bold">
               {
-                "Congratulations! You've reached the final step in this learning journey 🎓"
+                "🎯 Congratulations, Explorer! You've reached the final step in your learning journey 🎓"
               }
             </Text>
             <Text mx="0 !important" fontSize="xl">
@@ -250,10 +250,10 @@ const SocialSharing = (
                 <Box mt="8">
                   <Text mx="0 !important" fontSize="xl">
                     {
-                      '2. Paste the message link to verify and click Finish 📋 ✅'
+                      '2. Paste the link to your post in the field below and click Finish ✅'
                     }
                   </Text>
-                  <InputGroup maxW="530px">
+                  <InputGroup maxW="530px" height="50px">
                     <InputLeftAddon width="71px">{'Link'}</InputLeftAddon>
                     <Input
                       placeholder="https://..."
@@ -275,6 +275,20 @@ const SocialSharing = (
                       ) : null}
                     </InputRightElement>
                   </InputGroup>
+                  <Box>
+                    <Text mx="0 !important" fontSize="xl">
+                      {'Don’t forget to '}
+                      <ExternalLink href="https://t.me/banklessacademy">
+                        join the Bankless Academy community
+                      </ExternalLink>
+                      {
+                        ' and share your achievements with other web3 explorers. '
+                      }
+                    </Text>
+                    <Text mx="0 !important" mt="4" fontSize="xl">
+                      {'Until the next mission, Explorer! Over and out 📡'}
+                    </Text>
+                  </Box>
                 </Box>
               </>
             ) : (
