@@ -53,13 +53,13 @@ It might be a difficult concept to grasp at first, but think of clean air, stree
 
 In web3, public goods include things like **open-source code** (such as Ethereum clients), **shared infrastructure**, and **free educational resources** like tutorials and documentation. These are the digital commons that can be used by everyone, and their availability isn’t reduced if used 🌐
 
-Public Nouns is a web3-native attempt to support these goods without middlemen**, using art, community and culture 🎨**
+Public Nouns is a web3-native experiment designed to support both **web3 and real-world** public goods without middlemen, using **art, community, and culture** 🎨
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-goods-are-good-530a6a5d.svg)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-goods-are-good-aa712ff1.png)
 
 # Knowledge Check 1
 
-**What’s true about public goods?**
+What’s true about public goods?
 
 - [ ] They run out when used
 - [ ] They’re invite-only spaces
@@ -92,11 +92,11 @@ In Public Nouns, they’re **symbols of shared values.** Each one features an ar
 
 The art draws from **meme culture**, as a way to define **cultural identity** and help people **coordinate** around a shared mission 🎯
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-1db724d6.png)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-71cedc1a.png)
 
 # Knowledge Check 2
 
-**What does a Public Nouns NFT represent?**
+What does a Public Nouns NFT represent?
 
 - [ ] Pets of each community member
 - [ ] Speculative art with no intrinsic value
@@ -127,7 +127,7 @@ This cultural icon has expanded from the _digital realm to real-world landmarks_
 
 # Knowledge Check 3
 
-**What connects Public Nouns to Nouns?**
+What connects Public Nouns to Nouns?
 
 - [ ] They have shared treasury and governance
 - [ ] Coded fork and shared symbols
@@ -148,7 +148,7 @@ These **smart contracts work together** to define how proposals are made, approv
 
 This kind of **modular approach** is one of Web3’s biggest strengths: shared infrastructure becomes a public good of its own, ready to be _remixed, repurposed, and reimagined_ 💭
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-755e28e8.svg)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-4909e454.png)
 
 # How Onchain Funding Works
 
@@ -168,29 +168,46 @@ In simple terms, it’s a protocol for funding: transparent, automatic, and veri
 
 # Knowledge Check 4
 
-**What does** _**forking**_ **mean?**
+What does forking mean?
 
 - [ ] Attending the annual Public Nouns dinner
 - [ ] Rewritten the governance contract
 - [ ] Copying code and reusing it
 - [ ] Delegate the ability to vote on proposals
 
-# Public Nouns’ Impact
+# Public Nouns’ Impact - Part I
 
-Since inception, Public Nouns has funded more than 50 projects through community-approved proposals. These **early-stage experiments**, were designed by web3 contributors with new and disruptive ideas 💡
+Since inception, Public Nouns has funded more than 50 projects through community-approved proposals. These **early-stage experiments,** which can be web3 or non-web3 related, were designed by community members with new and disruptive ideas 💡
 
-Here are a few examples of what’s been built so far:
+**Web3 Public Goods**
 
 - [Protocol Guild](https://x.com/ProtocolGuild): long-term funding for Ethereum core contributors ⛓️
-- [PizzaDAO](https://x.com/Pizza_DAO): in-person events promoting Web3 values through pizza 🍕
+- [PizzaDAO](https://x.com/Pizza_DAO): in-person events promoting web3 values through pizza 🍕
 - [Giveth](https://x.com/Giveth): empowers changemakers to accept crypto donations 💜
-- [Kokonut Network](https://publicnouns.wtf/vote/69): syntropic agroforestry farms using Web3 🌱
+- [Gardens Conviction Voting](https://publicnouns.wtf/vote/50): bottom-up web3 governance framework 🌱
 
-This very lesson, content and onchain certification, is also possible thanks to the support of the community. Check out the full list of projects and proposals supported [here](https://publicnouns.wtf/vote).
+This very lesson, content and onchain certification, is also possible thanks to the support of the community. Check out the full list of projects and proposals supported [here](https://publicnouns.wtf/vote). Public Nouns shows the **impact a small internet-native community can have** when it funds public goods with intent, speed, and shared values.
 
-Public Nouns shows the **impact a small internet-native community can have** when it funds public goods with intent, speed, and shared values.
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-i-7b7c8535.png)
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-58d89b36.png)
+# Public Nouns’ Impact - Part II
+
+Public Nouns doesn’t just support web3 public goods, its mission extends into real-world public goods too. The community has backed projects focused on climate action, education, local food systems, and regeneration 🌍
+
+Recent examples include:
+
+- [Kokonut Network](https://publicnouns.wtf/vote/69): syntropic agroforestry farms using web3 🌱
+- [Solar Foundation:](https://publicnouns.wtf/vote/71) expanding access to solar power in Tanzania
+- [Tree Planting Guinness World Record Sponsorship](https://publicnouns.wtf/vote/38) in Thailand
+- [Ayowecca Uganda:](https://publicnouns.wtf/vote/63) transforming lifestyle of indigenous and marginalized communities
+
+Each project followed a _three-step process_:
+
+1. The proposal was **posted** in the [Public Nouns Discord ](/20f12837a13b80fca3f0c312ba7d1fac)🗨️
+2. A 7-day (suggested) community **discussion** period took place 🧠
+3. The proposal advanced to **onchain voting** at [publicnouns.wtf ](http://publicnouns.wtf/)🗳️
+
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-ii-5de36323.png)
 
 # Mission accomplished
 
@@ -202,7 +219,7 @@ One of the core strengths of web3 is **building in public**. This supports innov
 
 Whether through Public Nouns itself or new forks, the model remains **open, tested, and available**. The tools are onchain. The lessons are public. And the invitation to keep building, is always open ⚒️
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/mission-accomplished-02e24481.svg)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/mission-accomplished-a808dbc2.png)
 
 # What’s next? An open invitation
 
@@ -213,32 +230,11 @@ Before we conclude, and if the **Public Nouns mission resonates with you**, here
 - Follow [Public Nouns](https://x.com/PublicNouns)
 - Join the Community Spaces 🎙️
 - [Create content](https://x.com/KokonutNetwork/status/1934021469966635401) about Public Nouns
-- Become part of the community buying a [Public Noun](https://publicnouns.wtf/)
+- Become part of the community by buying a [Public Noun](https://publicnouns.wtf/)
 
 Getting involved in any of these initiatives, supports the mission and helps it move forward 🚀
 
 _💡 To participate in the first three it's important to mention that you do not need to own a Public Nouns. All activities are free to access._
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/whats-next-an-open-invitation-c5ff00f3.svg)
-
-# Quest
-
-🎯 **Congratulations, Explorer!** You've reached the **final step** in your learning journey **🎓**
-
-Before claiming your onchain certification:
-
-1. Spread the word about Public Nouns by sharing this lesson.
-	- **Share on Twitter / X**
-	- **Share on Farcaster**
-2. Paste the link to your post in the field below and click **Finish ✅**
-
-💡 _You’ll be redirected to the lesson’s landing page where the Claim Badge button will be now be unlocked_ 😉
-
-Thanks for taking the time to learn about Public Nouns. 
-
-Don’t forget to [join the Bankless Academy community ](https://t.me/banklessacademy)and share your achievements with other web3 explorers.
-
-Until the next mission, Explorer!
-
-Over and out  📡
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/whats-next-an-open-invitation-5efe6f41.png)
 
