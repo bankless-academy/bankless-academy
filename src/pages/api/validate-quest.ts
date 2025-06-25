@@ -157,7 +157,7 @@ export default async function handler(
           const messageId = messageLink.split('/').pop()
           let message = ""
           let resolvedLink = ""
-          if (messageLink.includes('warpcast')) {
+          if (messageLink.includes('warpcast') || messageLink.includes('farcaster')) {
             // Farcaster verification
             const options = {
               method: 'GET',
