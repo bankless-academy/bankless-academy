@@ -904,7 +904,7 @@ export const generateTwitterLink = (text: string, link: string) => {
 }
 
 export const generateFarcasterText = (text: string) => {
-  return text?.replace('@BanklessAcademy', '@banklessacademy')?.replace('@Gitcoin', '@gitcoin')
+  return text?.replace('@BanklessAcademy', '@banklessacademy')?.replace('@Gitcoin', '@gitcoin')?.replace('@PublicNouns', '@publicnouns')
 }
 
 export const generateFarcasterLink = (text: string, link: string) => {
