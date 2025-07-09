@@ -184,7 +184,7 @@ const SocialSharing = (
     questComponent: (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
-          <Box width="100%" maxW="650px">
+          <Box width="100%" maxW="780px" px="2">
             <Text mx="0 !important" fontSize="xl" fontWeight="bold">
               {
                 "🎯 Congratulations, Explorer! You've reached the final step in your learning journey 🎓"
@@ -277,16 +277,20 @@ const SocialSharing = (
                   </InputGroup>
                   <Box>
                     <Text mx="0 !important" fontSize="xl">
-                      {'Don’t forget to '}
+                      {`${
+                        lesson.community
+                          ? `Thanks for learning about ${lesson.community}. `
+                          : ''
+                      }Don’t forget to `}
                       <ExternalLink href="https://t.me/banklessacademy">
                         join the Bankless Academy community
                       </ExternalLink>
                       {
-                        ' and share your achievements with other web3 explorers. '
+                        ' and share your achievements with other web3 explorers.'
                       }
                     </Text>
-                    <Text mx="0 !important" mt="4" fontSize="xl">
-                      {'Until the next mission, Explorer! Over and out 📡'}
+                    <Text mx="0 !important" fontSize="xl">
+                      {'See you there! Over and out 📡'}
                     </Text>
                   </Box>
                 </Box>
