@@ -3946,6 +3946,8 @@ const LESSONS: LessonType[] = [
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
+    sponsorName: 'Public Nouns',
+    sponsorLogo: '/images/public-nouns-a-public-goods-dao-experiment/sponsor-912e55e6.png',
     notionId: '20f12837a13b80fca3f0c312ba7d1fac',
     englishName: 'Public Nouns: A Public Goods DAO Experiment',
     slug: 'public-nouns-a-public-goods-dao-experiment',
