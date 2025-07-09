@@ -196,7 +196,9 @@ const SocialSharing = (
             {socialSharingQuestType === 'TWEET' ? (
               <>
                 <Text mx="0 !important" fontSize="xl">
-                  {`1. Spread the word about ${lesson.name} by sharing this lesson.`}
+                  {`1. Spread the word about ${
+                    lesson?.community || lesson.name
+                  } by sharing this lesson.`}
                 </Text>
                 <Box w="250px" m="auto">
                   <Box pb="1">
@@ -278,7 +280,7 @@ const SocialSharing = (
                   <Box>
                     <Text mx="0 !important" fontSize="xl">
                       {`${
-                        lesson.community
+                        lesson?.community
                           ? `Thanks for learning about ${lesson.community}. `
                           : ''
                       }Don’t forget to `}
