@@ -148,7 +148,7 @@ These **smart contracts work together** to define how proposals are made, approv
 
 This kind of **modular approach** is one of Web3’s biggest strengths: shared infrastructure becomes a public good of its own, ready to be _remixed, repurposed, and reimagined_ 💭
 
-![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-4909e454.png)
+![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-07be6c71.svg)
 
 # How Onchain Funding Works
 

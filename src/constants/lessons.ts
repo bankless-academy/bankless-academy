@@ -3957,7 +3957,7 @@ const LESSONS: LessonType[] = [
       '/images/public-nouns-a-public-goods-dao-experiment/using-web3-to-fund-public-goods-9ee02318.png',
       '/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-71cedc1a.png',
       '/images/public-nouns-a-public-goods-dao-experiment/what-is-a-dao-e9562a03.png',
-      '/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-4909e454.png',
+      '/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-07be6c71.svg',
       '/images/public-nouns-a-public-goods-dao-experiment/how-onchain-funding-works-5d9d11c8.png',
       '/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-i-7b7c8535.png',
       '/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-ii-5de36323.png',
@@ -4054,7 +4054,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '20f12837a13b80568cefdb0005254620',
         title: 'Forking & Governance Contracts',
-        content: '<div class="bloc1"><p>Public Nouns is a <strong>fork of Nouns.</strong> In web3, <em>forking </em>means copying<strong> open-source code</strong> and adapting it for a new mission. Public Nouns <strong>kept the daily auction model</strong>, but instead of having random characters with different traits, each NFT features symbolic artwork tied to a public good.</p><p>The system relies on three core contracts, each with a specific role:</p><ul><li><strong>Auction</strong>: handles timing and sales of NFTs 🖼️</li><li><strong>Treasury</strong>: holds the ETH and releases it when proposals pass 🗝️</li><li><strong>Governor</strong>: developed by Compound, it manages proposals, voting rules, and quorum 🗳️</li></ul><p>These <strong>smart contracts work together</strong> to define how proposals are made, approved and executed, all automatically and onchain ⚡</p><p>This kind of <strong>modular approach</strong> is one of Web3’s biggest strengths: shared infrastructure becomes a public good of its own, ready to be <em>remixed, repurposed, and reimagined </em>💭</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-4909e454.png\'></div>'
+        content: '<div class="bloc1"><p>Public Nouns is a <strong>fork of Nouns.</strong> In web3, <em>forking </em>means copying<strong> open-source code</strong> and adapting it for a new mission. Public Nouns <strong>kept the daily auction model</strong>, but instead of having random characters with different traits, each NFT features symbolic artwork tied to a public good.</p><p>The system relies on three core contracts, each with a specific role:</p><ul><li><strong>Auction</strong>: handles timing and sales of NFTs 🖼️</li><li><strong>Treasury</strong>: holds the ETH and releases it when proposals pass 🗝️</li><li><strong>Governor</strong>: developed by Compound, it manages proposals, voting rules, and quorum 🗳️</li></ul><p>These <strong>smart contracts work together</strong> to define how proposals are made, approved and executed, all automatically and onchain ⚡</p><p>This kind of <strong>modular approach</strong> is one of Web3’s biggest strengths: shared infrastructure becomes a public good of its own, ready to be <em>remixed, repurposed, and reimagined </em>💭</p></div><div class="bloc2"><img src=\'/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-07be6c71.svg\'></div>'
       },
       {
         type: 'LEARN',
