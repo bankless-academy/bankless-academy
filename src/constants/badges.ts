@@ -65,4 +65,4 @@ const isLocalIndexer = false
 
 export const INDEXER_URL = isLocalIndexer ? 'http://localhost:8080/v1/graphql' : 'https://indexer.banklessacademy.com/v1/graphql'
 
-export const INDEXER_URL_BACKUP = 'https://indexer.dev.hyperindex.xyz/5123782/v1/graphql'
+export const INDEXER_URL_BACKUP = 'https://indexer.dev.hyperindex.xyz/63440d9/v1/graphql'
