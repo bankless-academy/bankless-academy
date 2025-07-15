@@ -21,6 +21,7 @@ import { useAccount } from 'wagmi'
 import { t } from 'i18next'
 import { useLocalStorage } from 'usehooks-ts'
 import router from 'next/router'
+import { FollowersYouKnow } from 'ethereum-identity-kit'
 
 import Badges from 'components/Badges'
 import Card from 'components/Card'
@@ -397,9 +398,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                   padding="16px"
                 >
                   <Box>
-                    <ExternalLink
-                      href={`https://ethfollow.xyz/${profileAddress}`}
-                    >
+                    <ExternalLink href={`https://efp.app/${profileAddress}`}>
                       <Button
                         variant={isFollowing ? 'secondary' : 'primary'}
                         leftIcon={
@@ -429,6 +428,19 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                   </Box>
                 </Box>
               )}
+              <Box
+                mb="4"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                alignSelf="center"
+              >
+                <FollowersYouKnow
+                  connectedAddress={address}
+                  lookupAddressOrName={profileAddress}
+                  darkMode={true}
+                />
+              </Box>
               {user?.stats?.referrer && (
                 <Box
                   display="flex"

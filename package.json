@@ -65,6 +65,7 @@
     "emoji-picker-react": "^4.7.12",
     "emoji-regex": "^10.3.0",
     "ethereum-blockies-base64": "^1.0.2",
+    "ethereum-identity-kit": "^0.2.49",
     "ethereumjs-util": "^7.1.5",
     "ethers": "^5.7",
     "feed": "^4.2.2",

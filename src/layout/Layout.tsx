@@ -4,6 +4,7 @@ import React, { ReactElement, useEffect, useState } from 'react'
 import { useAppKit } from '@reown/appkit/react'
 import { SquaresFour, Wallet } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
+import 'ethereum-identity-kit/css'
 
 import { LessonTypeType } from 'entities/lesson'
 import InternalLink from 'components/InternalLink'
