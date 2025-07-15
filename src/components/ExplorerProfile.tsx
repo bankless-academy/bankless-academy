@@ -428,19 +428,27 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                   </Box>
                 </Box>
               )}
-              <Box
-                mb="4"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                alignSelf="center"
-              >
-                <FollowersYouKnow
-                  connectedAddress={address}
-                  lookupAddressOrName={profileAddress}
-                  darkMode={true}
-                />
-              </Box>
+              {address &&
+                user?.address &&
+                address.toLowerCase() !== user.address.toLowerCase() && (
+                  <Box
+                    mb="4"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    alignSelf="center"
+                    mx="2"
+                  >
+                    <FollowersYouKnow
+                      connectedAddress={address}
+                      lookupAddressOrName={user.address}
+                      darkMode={true}
+                      onProfileClick={(address) => {
+                        window.open(`/explorer/${address}`, '_blank')
+                      }}
+                    />
+                  </Box>
+                )}
               {user?.stats?.referrer && (
                 <Box
                   display="flex"
