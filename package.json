@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "bankless-academy",
   "author": "@didierkrux",
   "license": "MIT",

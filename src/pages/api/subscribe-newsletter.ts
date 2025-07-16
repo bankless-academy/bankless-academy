@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
-const sendGridClient = require('@sendgrid/client')
+// const sendGridClient = require('@sendgrid/client') // SendGrid not used ATM
 import mailchimpClient from "@mailchimp/mailchimp_marketing"
 import md5 from 'md5'
 
-sendGridClient.setApiKey(process.env.SENDGRID_API_KEY)
+// sendGridClient.setApiKey(process.env.SENDGRID_API_KEY) // SendGrid not used ATM
 
 const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY
 
@@ -92,34 +92,32 @@ export default async function handler(
       }
       else
         return res.status(403).json({ error: 'Problem with Mailchimp API.' })
-    } else {
-      // Sendgrid
-
-      const data = {
-        list_ids: [newsletterId],
-        contacts: [
-          {
-            email,
-          },
-        ],
-      }
-
-      const request = {
-        url: `/v3/marketing/contacts`,
-        method: 'PUT',
-        body: data,
-      }
-
-      sendGridClient.request(request).then(([response, body]) => {
-        console.log(response?.statusCode)
-        console.log(body)
-        if (response?.statusCode === 202) {
-          return res.status(200).json({ result: 'OK' })
-        } else {
-          return res.status(403).json({ error: body })
-        }
-      })
     }
+    // else {
+    //   // Sendgrid (not used ATM)
+    //   const data = {
+    //     list_ids: [newsletterId],
+    //     contacts: [
+    //       {
+    //         email,
+    //       },
+    //     ],
+    //   }
+    //   const request = {
+    //     url: `/v3/marketing/contacts`,
+    //     method: 'PUT',
+    //     body: data,
+    //   }
+    //   sendGridClient.request(request).then(([response, body]) => {
+    //     console.log(response?.statusCode)
+    //     console.log(body)
+    //     if (response?.statusCode === 202) {
+    //       return res.status(200).json({ result: 'OK' })
+    //     } else {
+    //       return res.status(403).json({ error: body })
+    //     }
+    //   })
+    // }
   } catch (error) {
     console.error(error)
     return res.status(500).json({

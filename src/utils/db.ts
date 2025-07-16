@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 import knex from 'knex'
 
-const config = require('../../knexfile.js')
+// const config = require('../../knexfile.js')
+import config from '../../knexfile.mjs'
 import { trackBE } from 'utils/mixpanel'
 
 export const db = knex(config)

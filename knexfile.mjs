@@ -1,10 +1,10 @@
-require('dotenv').config()
+import 'dotenv/config'
 
 const DB_HOST = process.env.DB_HOST || 'localhost'
 
 const ssl = DB_HOST !== 'localhost' ? { rejectUnauthorized: false } : null
 
-module.exports = {
+export default {
   client: 'pg',
   connection: {
     host: DB_HOST,
