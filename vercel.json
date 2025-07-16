@@ -101,6 +101,10 @@
   ],
   "rewrites": [
     {
+      "source": "/llms.txt",
+      "destination": "/api/agent"
+    },
+    {
       "source": "/agent.txt",
       "destination": "/api/agent"
     },
