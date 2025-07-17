@@ -69,7 +69,8 @@ export default async function handler(
     let ensData: any = {}
     try {
       const ensResponse = await fetch(`https://ensdata.net/${addressLowerCase}`)
-      if (ensResponse.status === 404) {
+      // console.log('ensResponse', ensResponse)
+      if (ensResponse?.status !== 200) {
         // Fallback to ethfollow.xyz API
         const fallbackResponse = await fetch(`https://api.ethfollow.xyz/api/v1/users/${addressLowerCase}/account`)
         if (fallbackResponse.ok) {
@@ -81,6 +82,7 @@ export default async function handler(
         }
       } else {
         ensData = await ensResponse.json()
+        // console.log('ensData', ensData)
       }
     } catch (error) {
       console.log(error)
@@ -91,8 +93,11 @@ export default async function handler(
     let avatar = null
     if (ensData?.avatar_small?.length > 0) {
       const avatar_small = `${ensData.avatar_small}?cache=ba`
+      const avatar_big = `${ensData.avatar}?cache=ba`
       if (await fileIsLoading(avatar_small) === true) {
         avatar = avatar_small
+      } else if (await fileIsLoading(avatar_big) === true) {
+        avatar = avatar_big
       } else if (userExist.ens_avatar?.length > 0 && await fileIsLoading(userExist.ens_avatar) === false) {
         console.log('check if old link is loading')
         avatar = DEFAULT_AVATAR

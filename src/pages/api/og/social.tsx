@@ -121,14 +121,21 @@ export default async function handler(req: NextApiRequest) {
   console.log(ensData)
   if (ensData?.avatar_small?.length > 0) {
     // convert to v1 to return png instead of webp
-    const avatar = `${ensData.avatar_small}?cache=ba`
+    const avatar_small = `${ensData.avatar_small}?cache=ba`
+    const avatar_big = `${ensData.avatar}?cache=ba`
     // .replace('api.center.dev/v2/', 'api.center.dev/v1/')
     // .replace('/nft/', '/')
     // .replace('/render/', '/')
     // .replace('render/medium', 'render/small.png')
     // .split('?')
-    console.log('avatar', avatar)
-    user.avatar = avatar
+    if ((await fileIsLoading(avatar_small)) === true) {
+      user.avatar = avatar_small
+    } else if ((await fileIsLoading(avatar_big)) === true) {
+      user.avatar = avatar_big
+    } else {
+      user.avatar = DEFAULT_AVATAR
+    }
+    // user.avatar = avatar
     //HACK: manually upload broken avatars
     // if (ensData.address === '0xd1ffda9c225ddee34f0837bf4d4a441bdd54c473') {
     //   user.avatar =
@@ -138,11 +145,11 @@ export default async function handler(req: NextApiRequest) {
     //   user.avatar = 'https://app.banklessacademy.com/images/avatars/doubleb.png'
     // }
   }
-  if (user?.avatar) {
-    if ((await fileIsLoading(user.avatar)) === false) {
-      user.avatar = DEFAULT_AVATAR
-    }
-  }
+  // if (user?.avatar) {
+  //   if ((await fileIsLoading(user.avatar)) === false) {
+  //     user.avatar = DEFAULT_AVATAR
+  //   }
+  // }
 
   const explorerName =
     user.ensName || (address?.includes('.') ? address : shortenAddress(address))
