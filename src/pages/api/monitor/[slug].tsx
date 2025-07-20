@@ -319,6 +319,20 @@ export default async function handler(
         }
         break
       }
+      case 'explorer-indexer-backup': {
+        data = await fetchExplorerData(
+          address || '0xe1887fF140BfA9D3b45D0B2077b7471124acD242'.toLowerCase(),
+          true
+        )
+        if (!validateExplorerData(data)) {
+          return res.status(400).json({
+            success: false,
+            error: 'Invalid explorer data - missing required values',
+            required: REQUIRED_EXPLORER_DATA,
+          })
+        }
+        break
+      }
       case 'ens-data': {
         const ensName = 'didierkrux.eth'
         const response = await fetch(`https://api.ensdata.net/${ensName}`)

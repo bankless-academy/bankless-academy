@@ -1087,7 +1087,7 @@ export const fetchFromUrl = async <T = any>(
   }
 };
 
-export const fetchExplorerData = async (address: string): Promise<{
+export const fetchExplorerData = async (address: string, isBackup: boolean = false): Promise<{
   handbooks: string[]
   datadisks: string[]
   badges: number[]
@@ -1120,7 +1120,7 @@ export const fetchExplorerData = async (address: string): Promise<{
 
   try {
     try {
-      const result = await fetchFromUrl(INDEXER_URL, query);
+      const result = await fetchFromUrl(isBackup ? INDEXER_URL_BACKUP : INDEXER_URL, query);
       const ownerAssets = result?.OwnerAssets?.[0] || {};
       return {
         handbooks: ownerAssets?.handbooks || [],
