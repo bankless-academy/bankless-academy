@@ -28,6 +28,7 @@ import { RiRobot2Line } from 'react-icons/ri'
 import { MacScrollbar } from 'mac-scrollbar'
 import NextLink from 'next/link'
 import { useLocalStorage } from 'usehooks-ts'
+import NonSSRWrapper from 'components/NonSSRWrapper'
 
 import { useSmallScreen } from 'hooks'
 import { DEFAULT_AVATAR, LESSONS } from 'constants/index'
@@ -351,102 +352,106 @@ export const ChatWidget = ({
                 bg="#1A1A1A"
                 ref={scrollContainerRef}
               >
-                <MacScrollbar
-                  skin="dark"
-                  suppressScrollX={true}
-                  style={{ maxHeight: '100%', paddingRight: '8px' }}
-                >
-                  <VStack spacing={4} align="stretch" p={4}>
-                    {messages.map((message) => {
-                      const isSupportMessage =
-                        message.text === DEFAULT_ANSWER ||
-                        message.lessonName === TELEGRAM_CTA
-                      return (
-                        <HStack
-                          key={message.id}
-                          alignSelf={
-                            message.sender === 'user'
-                              ? 'flex-end'
-                              : 'flex-start'
-                          }
-                          spacing={2}
-                          opacity={message.isThinking ? 0.7 : 1}
-                        >
-                          {message.sender === 'ai' && (
-                            <Avatar
-                              size="sm"
-                              icon={<RiRobot2Line size={20} />}
-                              bg="#916ab8"
-                            />
-                          )}
-                          <Box
-                            bg={
-                              message.sender === 'user' ? '#916ab8' : 'gray.100'
+                <NonSSRWrapper>
+                  <MacScrollbar
+                    skin="dark"
+                    suppressScrollX={true}
+                    style={{ maxHeight: '100%', paddingRight: '8px' }}
+                  >
+                    <VStack spacing={4} align="stretch" p={4}>
+                      {messages.map((message) => {
+                        const isSupportMessage =
+                          message.text === DEFAULT_ANSWER ||
+                          message.lessonName === TELEGRAM_CTA
+                        return (
+                          <HStack
+                            key={message.id}
+                            alignSelf={
+                              message.sender === 'user'
+                                ? 'flex-end'
+                                : 'flex-start'
                             }
-                            color={
-                              message.sender === 'user' ? 'white' : 'black'
-                            }
-                            borderRadius="lg"
-                            px={4}
-                            py={2}
-                            maxW="80%"
+                            spacing={2}
+                            opacity={message.isThinking ? 0.7 : 1}
                           >
-                            <Text>
-                              {message.isThinking ? (
-                                <Box as="span" animation="pulse 1s infinite">
-                                  Thinking...
-                                </Box>
-                              ) : (
-                                message.text
-                              )}
-                            </Text>
-                            {message.lessonName && message.lessonLink && (
-                              <NextLink href={message.lessonLink} passHref>
-                                <Link
-                                  display="block"
-                                  color="#B85FF1"
-                                  mt={2}
-                                  _hover={{ textDecoration: 'none' }}
-                                >
-                                  <VStack align="start" spacing={2}>
-                                    <Text fontSize="sm">
-                                      {isSupportMessage ? (
-                                        <Text>{message.lessonName}</Text>
-                                      ) : (
-                                        <Text>
-                                          📚 Learn more: {message.lessonName}
-                                        </Text>
-                                      )}
-                                    </Text>
-                                    {message.lessonImage && (
-                                      <Image
-                                        src={message.lessonImage}
-                                        alt={message.lessonName}
-                                        borderRadius="md"
-                                        width="100%"
-                                        height="auto"
-                                        objectFit="cover"
-                                      />
-                                    )}
-                                  </VStack>
-                                </Link>
-                              </NextLink>
+                            {message.sender === 'ai' && (
+                              <Avatar
+                                size="sm"
+                                icon={<RiRobot2Line size={20} />}
+                                bg="#916ab8"
+                              />
                             )}
-                          </Box>
-                          {message.sender === 'user' && (
-                            <Avatar
-                              size="sm"
-                              src={avatar || DEFAULT_AVATAR}
-                              name="You"
-                              bg="gray.500"
-                            />
-                          )}
-                        </HStack>
-                      )
-                    })}
-                    <div ref={messagesEndRef} />
-                  </VStack>
-                </MacScrollbar>
+                            <Box
+                              bg={
+                                message.sender === 'user'
+                                  ? '#916ab8'
+                                  : 'gray.100'
+                              }
+                              color={
+                                message.sender === 'user' ? 'white' : 'black'
+                              }
+                              borderRadius="lg"
+                              px={4}
+                              py={2}
+                              maxW="80%"
+                            >
+                              <Text>
+                                {message.isThinking ? (
+                                  <Box as="span" animation="pulse 1s infinite">
+                                    Thinking...
+                                  </Box>
+                                ) : (
+                                  message.text
+                                )}
+                              </Text>
+                              {message.lessonName && message.lessonLink && (
+                                <NextLink href={message.lessonLink} passHref>
+                                  <Link
+                                    display="block"
+                                    color="#B85FF1"
+                                    mt={2}
+                                    _hover={{ textDecoration: 'none' }}
+                                  >
+                                    <VStack align="start" spacing={2}>
+                                      <Text fontSize="sm">
+                                        {isSupportMessage ? (
+                                          <Text>{message.lessonName}</Text>
+                                        ) : (
+                                          <Text>
+                                            📚 Learn more: {message.lessonName}
+                                          </Text>
+                                        )}
+                                      </Text>
+                                      {message.lessonImage && (
+                                        <Image
+                                          src={message.lessonImage}
+                                          alt={message.lessonName}
+                                          borderRadius="md"
+                                          width="100%"
+                                          height="auto"
+                                          objectFit="cover"
+                                        />
+                                      )}
+                                    </VStack>
+                                  </Link>
+                                </NextLink>
+                              )}
+                            </Box>
+                            {message.sender === 'user' && (
+                              <Avatar
+                                size="sm"
+                                src={avatar || DEFAULT_AVATAR}
+                                name="You"
+                                bg="gray.500"
+                              />
+                            )}
+                          </HStack>
+                        )
+                      })}
+                      <div ref={messagesEndRef} />
+                    </VStack>
+                  </MacScrollbar>
+                </NonSSRWrapper>
               </Box>
 
               <HStack width="full" spacing={2} p={4}>

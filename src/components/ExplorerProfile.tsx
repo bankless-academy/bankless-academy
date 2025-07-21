@@ -46,6 +46,7 @@ import { MAX_ACHIEVEMENT } from 'constants/achievements'
 import { MacScrollbar } from 'mac-scrollbar'
 import ShareAction from 'components/ShareAction'
 import LESSONS from 'constants/lessons'
+import NonSSRWrapper from 'components/NonSSRWrapper'
 
 export const ProfileTitle = ({
   title,
@@ -703,55 +704,57 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                     }
                   />
 
-                  <MacScrollbar
-                    skin="dark"
-                    suppressScrollX={true}
-                    style={{ maxHeight: '445px', paddingRight: '18px' }}
-                  >
-                    {referrals > 0 ? (
-                      user?.stats?.referrals?.map((ref, index) => {
-                        const date = new Date(ref.created_at)
-                          .toLocaleDateString('en-GB')
-                          .replace(/\//g, '/')
-                        return (
-                          <Box
-                            key={`ref-${index}`}
-                            mt="2"
-                            display="flex"
-                            placeContent="end"
-                          >
-                            <ExternalLink
-                              href={`/explorer/${ref.profile_address}`}
+                  <NonSSRWrapper>
+                    <MacScrollbar
+                      skin="dark"
+                      suppressScrollX={true}
+                      style={{ maxHeight: '445px', paddingRight: '18px' }}
+                    >
+                      {referrals > 0 ? (
+                        user?.stats?.referrals?.map((ref, index) => {
+                          const date = new Date(ref.created_at)
+                            .toLocaleDateString('en-GB')
+                            .replace(/\//g, '/')
+                          return (
+                            <Box
+                              key={`ref-${index}`}
+                              mt="2"
+                              display="flex"
+                              placeContent="end"
                             >
-                              {ref.profile_address?.includes('.')
-                                ? ref.profile_address
-                                : shortenAddress(ref.profile_address)}
-                            </ExternalLink>
-                            <Box ml="2">{ref.created_at ? date : '-'}</Box>
+                              <ExternalLink
+                                href={`/explorer/${ref.profile_address}`}
+                              >
+                                {ref.profile_address?.includes('.')
+                                  ? ref.profile_address
+                                  : shortenAddress(ref.profile_address)}
+                              </ExternalLink>
+                              <Box ml="2">{ref.created_at ? date : '-'}</Box>
+                            </Box>
+                          )
+                        })
+                      ) : (
+                        <Box
+                          mt="2"
+                          display="flex"
+                          flexDirection="column"
+                          textAlign="right"
+                        >
+                          <Box mb="4">
+                            {isMyProfile
+                              ? `Onboard your friends, earn referral points!`
+                              : `No referrals yet.`}
                           </Box>
-                        )
-                      })
-                    ) : (
-                      <Box
-                        mt="2"
-                        display="flex"
-                        flexDirection="column"
-                        textAlign="right"
-                      >
-                        <Box mb="4">
-                          {isMyProfile
-                            ? `Onboard your friends, earn referral points!`
-                            : `No referrals yet.`}
+                          {isMyProfile && (
+                            <ShareAction
+                              shareMessage={share}
+                              shareLink={shareLink}
+                            />
+                          )}
                         </Box>
-                        {isMyProfile && (
-                          <ShareAction
-                            shareMessage={share}
-                            shareLink={shareLink}
-                          />
-                        )}
-                      </Box>
-                    )}
-                  </MacScrollbar>
+                      )}
+                    </MacScrollbar>
+                  </NonSSRWrapper>
                 </Box>
               </Box>
               <Box

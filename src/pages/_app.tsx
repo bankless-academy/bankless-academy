@@ -179,8 +179,10 @@ const App = ({
   const appContent = (
     <>
       <Head metadata={pageProps.pageMeta} />
-      {!isMobile && !isTelegramWebApp && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
+        <NonSSRWrapper>
+          {!isMobile && !isTelegramWebApp && <GlobalScrollbar skin="dark" />}
+        </NonSSRWrapper>
         <NonSSRWrapper>
           <WagmiProvider config={wagmiAdapter.wagmiConfig}>
             <QueryClientProvider client={queryClient}>
