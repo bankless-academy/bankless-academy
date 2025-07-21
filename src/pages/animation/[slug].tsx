@@ -3,7 +3,11 @@ import { useRouter } from 'next/router'
 
 import { MetaData } from 'components/Head'
 import { ANIMATIONS, ANIMATION_IDS } from 'constants/animations'
-import Animation from 'components/Animation'
+import dynamic from 'next/dynamic'
+
+const Animation = dynamic(() => import('components/Animation'), {
+  ssr: false,
+})
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const animation = ANIMATIONS[params.slug as string]

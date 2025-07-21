@@ -9,7 +9,7 @@ import {
   Image,
   InputLeftAddon,
 } from '@chakra-ui/react'
-import { Player } from '@lottiefiles/react-lottie-player'
+import dynamic from 'next/dynamic'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { useTranslation } from 'react-i18next'
 
@@ -18,10 +18,18 @@ import { useSmallScreen } from 'hooks/index'
 import { StyledLessonCard } from 'components/LessonCard'
 import { Simulation } from 'components/Animation'
 
+const Player = dynamic(
+  () =>
+    import('@lottiefiles/react-lottie-player').then((mod) => ({
+      default: mod.Player,
+    })),
+  { ssr: false }
+)
+
 const DEFAULT_ANSWERS = ['1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3', '0']
 const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.02']
 
-const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
+const BitcoinBasics = () => {
   const { t } = useTranslation('quests', { keyPrefix: 'BitcoinBasics' })
   // HACK: or else translation is skipped...
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -54,7 +62,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
   const animationSteps = [
     t('1. Your Bitcoin is on its way to Satoshi Nakamoto.'),
     t("2. It's now being verified by network miners..."),
-    t('3. Your transaction is added to the blockchain “database”...'),
+    t('3. Your transaction is added to the blockchain "database"...'),
     t('4. Satoshi Nakamoto has received your Bitcoin!'),
   ]
 
@@ -84,7 +92,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
             <div
               dangerouslySetInnerHTML={{
                 __html: `${t(
-                  'Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address'
+                  "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto's address"
                 )}: `,
               }}
             />
@@ -248,11 +256,25 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
       </div>
     </Box>
   )
-  if (test === true) return quesComponent
+
+  return quesComponent
+}
+
+// Factory function for quest system
+export const getBitcoinBasicsQuest = () => {
+  const storedAnswers = JSON.parse(
+    localStorage.getItem('quest-bitcoin-basics') || 'null'
+  )
+  const selected = storedAnswers || DEFAULT_ANSWERS
+  const numericAmount = parseFloat(selected[1]?.replace(',', '.') || 5)
+  const areAnswersCorrect =
+    selected[0]?.toLowerCase() === CORRECT_ANSWERS[0]?.toLowerCase() &&
+    numericAmount > 0 &&
+    numericAmount <= parseFloat(CORRECT_ANSWERS[1])
 
   return {
     isQuestCompleted: areAnswersCorrect,
-    questComponent: quesComponent,
+    questComponent: <BitcoinBasics />,
   }
 }
 

@@ -2,9 +2,20 @@
 import React, { useRef, useEffect } from 'react'
 import { Box, Button, Image } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
-import { Player } from '@lottiefiles/react-lottie-player'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
+import NonSSRWrapper from 'components/NonSSRWrapper'
+import dynamic from 'next/dynamic'
+
+const Player = dynamic(
+  () =>
+    import('@lottiefiles/react-lottie-player').then((mod) => ({
+      default: mod.Player,
+    })),
+  {
+    ssr: false,
+  }
+) as any
 
 import { ANIMATIONS, ANIMATION_IDS } from 'constants/animations'
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -115,7 +126,7 @@ const Animation = ({
   const [isDisabled, setIsDisabled] = useState(false)
 
   const containerRef = useRef<HTMLDivElement>(null)
-  const playerRef = useRef<Player>(null)
+  const playerRef = useRef<any>(null)
 
   const nextTooltipRef = useRef()
   const prevTooltipRef = useRef()
@@ -259,7 +270,7 @@ const Animation = ({
   const reloadAnimation = () => {
     if (playerRef.current) {
       // Cast playerRef.current to Player type to access setSeeker method
-      const player = playerRef.current as Player
+      const player = playerRef.current as any
       player.stop() // Stop the animation first
       player.play() // Then restart it from beginning
     }
@@ -290,15 +301,17 @@ const Animation = ({
             } / ${animationLength}`}
           </SimulationTitle>
           {isLottie ? (
-            <Player
-              ref={playerRef}
-              autoplay={true}
-              loop={false}
-              keepLastFrame={true}
-              controls={false}
-              src={currentStep}
-              style={{ height: '100%', width: '100%' }}
-            />
+            <NonSSRWrapper>
+              <Player
+                ref={playerRef}
+                autoplay={true}
+                loop={false}
+                keepLastFrame={true}
+                controls={false}
+                src={currentStep}
+                style={{ height: '100%', width: '100%' }}
+              />
+            </NonSSRWrapper>
           ) : (
             <Image
               src={currentStep}

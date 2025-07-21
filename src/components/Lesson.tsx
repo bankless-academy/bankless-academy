@@ -51,9 +51,13 @@ import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
-import Animation from 'components/Animation'
 import { ANIMATIONS } from 'constants/animations'
 import { useApp } from 'contexts/AppContext'
+import dynamic from 'next/dynamic'
+
+const Animation = dynamic(() => import('components/Animation'), {
+  ssr: false,
+})
 
 export const Slide = styled(Card)<{
   issmallscreen?: string

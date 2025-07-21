@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next'
 import FacebookLogin from 'react-facebook-login'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
+import NonSSRWrapper from 'components/NonSSRWrapper'
 
 import { STAMP_PLATFORMS } from 'constants/passport'
 import { theme } from 'theme/index'
@@ -160,44 +161,46 @@ const PassportStamps = ({
                   ) : (
                     <>
                       {key === 'facebook' ? (
-                        <FacebookLogin
-                          appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
-                          autoLoad={false}
-                          scope="public_profile"
-                          textButton={t('Connect')}
-                          cssClass="css-rgn8uq css-1pu4076"
-                          // cssClass="css-fb-button"
-                          onClick={() => {
-                            setLoadingStamp('facebook')
-                          }}
-                          isLoading={loadingStamp === 'facebook'}
-                          callback={(res) => {
-                            console.log(res)
-                            if (res?.status === 'unknown') {
-                              toast({
-                                title: 'Login cancelled.',
-                                status: 'warning',
-                                duration: 10000,
-                                isClosable: true,
-                              })
-                            } else if (res?.accessToken) {
-                              apiCall(
-                                `/api/stamps/callback/facebook?code=${res?.accessToken}&json=true&address=${address}`
-                              )
-                            }
-                          }}
-                          // HACK: force login via browser
-                          isMobile={false}
-                          render={(renderProps) => (
-                            <Button
-                              variant="primaryWhite"
-                              onClick={renderProps.onClick}
-                              isLoading={loadingStamp === key}
-                            >
-                              {t('Connect')}
-                            </Button>
-                          )}
-                        />
+                        <NonSSRWrapper>
+                          <FacebookLogin
+                            appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
+                            autoLoad={false}
+                            scope="public_profile"
+                            textButton={t('Connect')}
+                            cssClass="css-rgn8uq css-1pu4076"
+                            // cssClass="css-fb-button"
+                            onClick={() => {
+                              setLoadingStamp('facebook')
+                            }}
+                            isLoading={loadingStamp === 'facebook'}
+                            callback={(res) => {
+                              console.log(res)
+                              if (res?.status === 'unknown') {
+                                toast({
+                                  title: 'Login cancelled.',
+                                  status: 'warning',
+                                  duration: 10000,
+                                  isClosable: true,
+                                })
+                              } else if (res?.accessToken) {
+                                apiCall(
+                                  `/api/stamps/callback/facebook?code=${res?.accessToken}&json=true&address=${address}`
+                                )
+                              }
+                            }}
+                            // HACK: force login via browser
+                            isMobile={false}
+                            render={(renderProps) => (
+                              <Button
+                                variant="primaryWhite"
+                                onClick={renderProps.onClick}
+                                isLoading={loadingStamp === key}
+                              >
+                                {t('Connect')}
+                              </Button>
+                            )}
+                          />
+                        </NonSSRWrapper>
                       ) : key === 'brightid' ? (
                         <ExternalLink href={STAMP_PLATFORMS[key].oauth}>
                           <Button

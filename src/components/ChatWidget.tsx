@@ -25,10 +25,15 @@ import {
 } from '@chakra-ui/react'
 import { ArrowUpIcon, DeleteIcon } from '@chakra-ui/icons'
 import { RiRobot2Line } from 'react-icons/ri'
-import { MacScrollbar } from 'mac-scrollbar'
 import NextLink from 'next/link'
 import { useLocalStorage } from 'usehooks-ts'
 import NonSSRWrapper from 'components/NonSSRWrapper'
+import dynamic from 'next/dynamic'
+
+const MacScrollbar = dynamic(
+  () => import('mac-scrollbar').then((mod) => ({ default: mod.MacScrollbar })),
+  { ssr: false }
+)
 
 import { useSmallScreen } from 'hooks'
 import { DEFAULT_AVATAR, LESSONS } from 'constants/index'

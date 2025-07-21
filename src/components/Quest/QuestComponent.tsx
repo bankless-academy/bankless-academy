@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import WalletConnect from 'components/Quest/WalletConnect'
 import SocialSharing from 'components/Quest/SocialSharing'
-import BitcoinBasics from 'components/Quest/BitcoinBasics'
 import WalletBasics from 'components/Quest/WalletBasics'
+import { getBitcoinBasicsQuest } from 'components/Quest/BitcoinBasics'
 import IntroToDeFi from 'components/Quest/IntroToDeFi'
 import BlockchainBasics from 'components/Quest/BlockchainBasics'
 import AcademyCommunity from 'components/Quest/AcademyCommunity'
@@ -44,7 +44,6 @@ const QuestComponent = (lesson: LessonType, badgeId?: number): QuestType => {
   const QUEST_COMPONENTS = {
     WalletConnect: WalletConnect,
     SocialSharing: SocialSharing,
-    BitcoinBasics: BitcoinBasics,
     WalletBasics: WalletBasics,
     IntroToDeFi: IntroToDeFi,
     BlockchainBasics: BlockchainBasics,
@@ -58,7 +57,12 @@ const QuestComponent = (lesson: LessonType, badgeId?: number): QuestType => {
     BanklessArchetypes: BanklessArchetypes,
     OptimismGovernance: OptimismGovernance,
   }
-  if (!component || !QUESTS.includes(component)) return null
+  if (!component || !QUESTS.includes(component)) {
+    return {
+      isQuestCompleted: false,
+      questComponent: <></>,
+    }
+  }
 
   const { address } = useAccount()
   const [isSmallScreen] = useSmallScreen()
@@ -70,7 +74,7 @@ const QuestComponent = (lesson: LessonType, badgeId?: number): QuestType => {
         lesson.questSocialMessage
       )
     : component === 'BitcoinBasics'
-    ? QUEST_COMPONENTS['BitcoinBasics']({ test: false })
+    ? getBitcoinBasicsQuest()
     : component in QUEST_COMPONENTS
     ? QUEST_COMPONENTS[component](address)
     : WalletConnect(address)

@@ -43,10 +43,15 @@ import SelectCommunity from 'components/SelectCommunity'
 import Helper from 'components/Helper'
 import { maxReferrals } from 'components/OgSocial'
 import { MAX_ACHIEVEMENT } from 'constants/achievements'
-import { MacScrollbar } from 'mac-scrollbar'
 import ShareAction from 'components/ShareAction'
 import LESSONS from 'constants/lessons'
 import NonSSRWrapper from 'components/NonSSRWrapper'
+import dynamic from 'next/dynamic'
+
+const MacScrollbar = dynamic(
+  () => import('mac-scrollbar').then((mod) => ({ default: mod.MacScrollbar })),
+  { ssr: false }
+)
 
 export const ProfileTitle = ({
   title,
