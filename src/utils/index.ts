@@ -301,14 +301,18 @@ export async function validateOnchainQuest(
           // Velodrome Universal Router 2
           const velodromeUR2 =
             '0x4bF3E32de155359D1D75e8B474b66848221142fc'.toLowerCase()
+          // Velodrome Universal Router superswap
+          const velodromeURSuperswap =
+            '0x01D40099fCD87C018969B0e8D4aB1633Fb34763C'.toLowerCase()
           if (
-            [velodromeRouterV1, velodromeRouterV2, velodromeUR1, velodromeUR2].includes(
+            [velodromeRouterV1, velodromeRouterV2, velodromeUR1, velodromeUR2, velodromeURSuperswap].includes(
               txDetails.to.toLowerCase()
             ) ||
             txDetails.data.includes(velodromeRouterV1.substring(2)) ||
             txDetails.data.includes(velodromeRouterV2.substring(2)) ||
             txDetails.data.includes(velodromeUR1.substring(2)) ||
-            txDetails.data.includes(velodromeUR2.substring(2))
+            txDetails.data.includes(velodromeUR2.substring(2)) ||
+            txDetails.data.includes(velodromeURSuperswap.substring(2))
           ) {
             const isTokenApproval = txDetails.data?.startsWith('0x095ea7b3')
             if (!isTokenApproval) {
