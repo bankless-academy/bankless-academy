@@ -3,17 +3,18 @@
 
 // utils.js
 
-const axios = require('axios');
-const fs = require('fs');
-const fsPromises = require('fs').promises;
-const crc32 = require('js-crc').crc32;
-const { Client } = require("@notionhq/client")
-const { NotionToMarkdown } = require("notion-to-md")
-const cheerio = require('cheerio')
+import axios from 'axios';
+import fs from 'fs';
+import fsPromises from 'fs/promises';
+import pkg from 'js-crc';
+const { crc32 } = pkg;
+import { Client } from "@notionhq/client"
+import { NotionToMarkdown } from "notion-to-md"
+import * as cheerio from 'cheerio'
 
-const {
+import {
   LESSON_SPLITTER,
-} = require('./config.js')
+} from './config.js'
 
 /**
  * Slugify a string
@@ -284,7 +285,7 @@ async function getBuildIdFromDomain(domain) {
   }
 }
 
-module.exports = {
+export {
   slugify,
   downloadImage,
   getImagePath,

@@ -48,7 +48,7 @@ const LESSON_SPLITTER = `\`\`\`
 
 ---`
 
-module.exports = {
+export {
   KEY_MATCHING,
   LESSON_SPLITTER,
 };

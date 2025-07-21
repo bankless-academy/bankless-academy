@@ -21,7 +21,7 @@ EXECUTE PROCEDURE on_update_timestamp();
 `
 }
 
-module.exports = {
+export {
   TABLES,
   addIdAndTimestamps,
   onUpdateTrigger,

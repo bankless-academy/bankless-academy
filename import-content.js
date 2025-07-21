@@ -1,23 +1,25 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable no-unreachable */
 /* eslint-disable no-console */
-const { Command } = require('commander')
-require('dotenv').config()
-const jsdom = require('jsdom')
-const { JSDOM } = jsdom
-const axios = require('axios')
-const knex = require('knex')
-const fs = require('fs')
-const crc32 = require('js-crc').crc32
-const stringifyObject = require('stringify-object')
+import { Command } from 'commander'
+import dotenv from 'dotenv'
+import { JSDOM } from 'jsdom'
+import axios from 'axios'
+import knex from 'knex'
+import fs from 'fs'
+import pkg from 'js-crc'
+const { crc32 } = pkg
+import stringifyObject from 'stringify-object'
 
-const config = require('./knexfile.js')
-const db = knex(config)
-const { TABLES } = require('./db.js')
+dotenv.config()
+
+const config = await import('./knexfile.mjs')
+const db = knex(config.default)
+const { TABLES } = await import('./db.js')
 const {
   KEY_MATCHING,
   LESSON_SPLITTER,
-} = require('./config.js')
+} = await import('./config.js')
 const {
   slugify,
   downloadImage,
@@ -29,7 +31,7 @@ const {
   placeholder,
   n2m,
   getBuildIdFromDomain,
-} = require('./utils.js')
+} = await import('./utils.js')
 
 const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED || false
 
@@ -38,28 +40,29 @@ const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
 const LESSON_FILENAME = IS_WHITELABEL ? 'whitelabel_lessons' : 'lessons'
 const KEYWORDS_FILE = IS_WHITELABEL ? './whitelabel-keywords.json' : './translation/keywords/en/keywords.json'
-const ALL_ENGLISH_KEYWORDS = require(KEYWORDS_FILE)
+async function main() {
+  const ALL_ENGLISH_KEYWORDS = (await import(KEYWORDS_FILE, { with: { type: 'json' } })).default
 
-const DEFAULT_NOTION_ID = '129141602de240e484356bd85f7c75e0'
-const POTION_API = 'https://potion.banklessacademy.com'
+  const DEFAULT_NOTION_ID = '129141602de240e484356bd85f7c75e0'
+  const POTION_API = 'https://potion.banklessacademy.com'
 
-const program = new Command()
-program
-  .option('-d, --debug', 'output extra debugging (not implemented ATM)')
-  .option('-nid, --notionID <type>', 'specify Notion ID of the database', process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID)
-  .option('-lid, --lessonID <type>', 'specify Lesson Notion ID')
-  .option('-lg, --translate <type>', 'specific language to translate (fr, es, ...) or all')
-  .option('-gk, --generateKeywords', 'generate keyword translation files for each language')
+  const program = new Command()
+  program
+    .option('-d, --debug', 'output extra debugging (not implemented ATM)')
+    .option('-nid, --notionID <type>', 'specify Notion ID of the database', process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID)
+    .option('-lid, --lessonID <type>', 'specify Lesson Notion ID')
+    .option('-lg, --translate <type>', 'specific language to translate (fr, es, ...) or all')
+    .option('-gk, --generateKeywords', 'generate keyword translation files for each language')
 
-program.parse(process.argv)
-const NOTION_ID = program.opts().notionID
-console.log('NOTION_ID', NOTION_ID)
-const LESSON_NOTION_ID = program.opts().lessonID
-console.log('LESSON_NOTION_ID', LESSON_NOTION_ID)
-const TRANSLATION_LANGUAGE = program.opts().translate
-console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
+  program.parse(process.argv)
+  const NOTION_ID = program.opts().notionID
+  console.log('NOTION_ID', NOTION_ID)
+  const LESSON_NOTION_ID = program.opts().lessonID
+  console.log('LESSON_NOTION_ID', LESSON_NOTION_ID)
+  const TRANSLATION_LANGUAGE = program.opts().translate
+  console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
 
-axios
+  return axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then(async (notionRows) => {
     const mirrorBuildId = await getBuildIdFromDomain('mirror.xyz')
@@ -651,7 +654,7 @@ axios
     })
     await axios.all(promiseArray).then(async () => {
       if (LESSON_NOTION_ID) {
-        const existingLessons = require(`./src/constants/${LESSON_FILENAME}.json`)
+        const existingLessons = (await import(`./src/constants/${LESSON_FILENAME}.json`, { with: { type: 'json' } })).default
         const newLesson = lessons.pop()
 
         // Check if this is a new lesson
@@ -697,3 +700,7 @@ export default LESSONS
   .catch((error) => {
     console.error(error)
   })
+}
+
+// Call the main function
+main().catch(console.error)
