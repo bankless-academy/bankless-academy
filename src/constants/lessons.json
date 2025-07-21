@@ -3961,7 +3961,12 @@
       "/images/public-nouns-a-public-goods-dao-experiment/mission-accomplished-a808dbc2.png",
       "/images/public-nouns-a-public-goods-dao-experiment/whats-next-an-open-invitation-5efe6f41.png"
     ],
-    "keywords": [],
+    "keywords": [
+      "nft",
+      "erc-721",
+      "erc-1155",
+      "erc-20"
+    ],
     "slides": [
       {
         "type": "LEARN",
@@ -4001,7 +4006,7 @@
         "type": "LEARN",
         "notionId": "20f12837a13b80dab377cc7952e67a0c",
         "title": "What is an NFT? The role of meme culture",
-        "content": "<div class=\"bloc1\"><p>Ethereum has different types of tokens. <strong>NFT stands for </strong><em><strong>non-fungible </strong></em>aka known as <strong>ERC-1155</strong>. ERC stands for Ethereum Request for Comment, it refers to a set of <strong>technical standards</strong> that govern how tokens are created and function on Ethereum. </p><p>Unlike interchangeable tokens, like ETH or USDC (ERC-20s), each ERC-1155 is distinct and can represent many things: art, music, identity, status, or access. </p><p>In Public Nouns, they’re <strong>symbols of shared values. </strong>Each one features an artwork representing a <strong>public goods project</strong>. These visuals act as shared symbols within each community and the Ethereum ecosystem. Examples include <strong>MolochDAO, Gitcoin, Treegens</strong>, and more. As communities emerge and others wind down, Public Nouners can propose new art/communities to be included 🗳️</p><p>The art draws from <strong>meme culture</strong>, as a way to define <strong>cultural identity</strong> and help people <strong>coordinate</strong> around a shared mission 🎯</p></div><div class=\"bloc2\"><img src='/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-71cedc1a.png'></div>"
+        "content": "<div class=\"bloc1\"><p>Ethereum has different types of tokens. <code>NFT</code> stands for <em>non-fungible token</em>, most commonly implemented as <code>ERC-721</code> or <code>ERC-1155</code>. ERC stands for Ethereum Request for Comment, it refers to a set of <strong>technical standards</strong> that govern how tokens are created and function on Ethereum.</p><p>Unlike interchangeable tokens, like ETH or tokens like USDC (<code>ERC-20</code>), each NFT is distinct and can represent many things: art, music, identity, status, or access.</p><p>In Public Nouns, they’re <strong>symbols of shared values. </strong>Each one features an artwork representing a <strong>public goods project</strong>. These visuals act as shared symbols within each community and the Ethereum ecosystem. Examples include <strong>MolochDAO, Gitcoin, Treegens</strong>, and more. As communities emerge and others wind down, Public Nouners can propose new art/communities to be included 🗳️</p><p>The art draws from <strong>meme culture</strong>, as a way to define <strong>cultural identity</strong> and help people <strong>coordinate</strong> around a shared mission 🎯</p></div><div class=\"bloc2\"><img src='/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-71cedc1a.png'></div>"
       },
       {
         "type": "QUIZ",
@@ -4085,7 +4090,7 @@
         "type": "LEARN",
         "notionId": "20f12837a13b807181b7e84610b14bea",
         "title": "Public Nouns’ Impact - Part II",
-        "content": "<div class=\"bloc1\"><p>Public Nouns doesn’t just support web3 public goods, its mission extends into real-world public goods too. The community has backed projects focused on climate action, education, local food systems, and regeneration 🌍</p><p>Recent examples include:</p><ul><li><a href='https://publicnouns.wtf/vote/69'>Kokonut Network</a>: syntropic agroforestry farms using web3 🌱</li><li><a href='https://publicnouns.wtf/vote/71'>Solar Foundation:</a> expanding access to solar power in Tanzania</li><li><a href='https://publicnouns.wtf/vote/38'>Tree Planting Guinness World Record Sponsorship</a> in Thailand</li><li><a href='https://publicnouns.wtf/vote/63'>Ayowecca Uganda:</a> transforming lifestyle of indigenous and marginalized communities</li></ul><p>Each project followed a <em>three-step process</em>:</p><ol><li>The proposal was <strong>posted</strong> in the <a href='/20f12837a13b80fca3f0c312ba7d1fac?pvs=25'>Public Nouns Discord </a>🗨️</li><li>A 7-day (suggested) community <strong>discussion</strong> period took place 🧠</li><li>The proposal advanced to <strong>onchain voting</strong> at <a href='http://publicnouns.wtf'>publicnouns.wtf </a>🗳️</li></ol></div><div class=\"bloc2\"><img src='/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-ii-5de36323.png'></div>"
+        "content": "<div class=\"bloc1\"><p>Public Nouns doesn’t just support web3 public goods, its mission extends into real-world public goods too. The community has backed projects focused on climate action, education, local food systems, and regeneration 🌍</p><p>Recent examples include:</p><ul><li><a href='https://publicnouns.wtf/vote/69'>Kokonut Network</a>: syntropic agroforestry farms using web3 🌱</li><li><a href='https://publicnouns.wtf/vote/71'>Solar Foundation:</a> expanding access to solar power in Tanzania</li><li><a href='https://publicnouns.wtf/vote/38'>Tree Planting Guinness World Record Sponsorship</a> in Thailand</li><li><a href='https://publicnouns.wtf/vote/63'>Ayowecca Uganda:</a> transforming lifestyle of indigenous and marginalized communities</li></ul><p>Each project followed a <em>three-step process</em>:</p><ol><li>The proposal was <strong>posted</strong> in the <a href='/20f12837a13b80fca3f0c312ba7d1fac?pvs=25'>Public Nouns Discord</a> 🗨️</li><li>A 7-day (suggested) community <strong>discussion</strong> period took place 🧠</li><li>The proposal advanced to <strong>onchain voting</strong> at <a href='http://publicnouns.wtf'>publicnouns.wtf</a> 🗳️</li></ol></div><div class=\"bloc2\"><img src='/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-ii-5de36323.png'></div>"
       },
       {
         "type": "LEARN",

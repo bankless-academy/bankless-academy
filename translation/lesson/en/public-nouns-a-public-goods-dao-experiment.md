@@ -84,9 +84,9 @@ These elements come together in a _unique case study_: **Public Nouns**, a commu
 
 # What is an NFT? The role of meme culture
 
-Ethereum has different types of tokens. **NFT stands for** _**non-fungible**_ aka known as **ERC-1155**. ERC stands for Ethereum Request for Comment, it refers to a set of **technical standards** that govern how tokens are created and function on Ethereum. 
+Ethereum has different types of tokens. `NFT` stands for _non-fungible token_, most commonly implemented as `ERC-721` or `ERC-1155`. ERC stands for Ethereum Request for Comment, it refers to a set of **technical standards** that govern how tokens are created and function on Ethereum.
 
-Unlike interchangeable tokens, like ETH or USDC (ERC-20s), each ERC-1155 is distinct and can represent many things: art, music, identity, status, or access. 
+Unlike interchangeable tokens, like ETH or tokens like USDC (`ERC-20`), each NFT is distinct and can represent many things: art, music, identity, status, or access.
 
 In Public Nouns, they’re **symbols of shared values.** Each one features an artwork representing a **public goods project**. These visuals act as shared symbols within each community and the Ethereum ecosystem. Examples include **MolochDAO, Gitcoin, Treegens**, and more. As communities emerge and others wind down, Public Nouners can propose new art/communities to be included 🗳️
 
@@ -203,9 +203,9 @@ Recent examples include:
 
 Each project followed a _three-step process_:
 
-1. The proposal was **posted** in the [Public Nouns Discord ](/20f12837a13b80fca3f0c312ba7d1fac)🗨️
+1. The proposal was **posted** in the [Public Nouns Discord](/20f12837a13b80fca3f0c312ba7d1fac) 🗨️
 2. A 7-day (suggested) community **discussion** period took place 🧠
-3. The proposal advanced to **onchain voting** at [publicnouns.wtf ](http://publicnouns.wtf/)🗳️
+3. The proposal advanced to **onchain voting** at [publicnouns.wtf](http://publicnouns.wtf/) 🗳️
 
 ![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-ii-5de36323.png)
 
