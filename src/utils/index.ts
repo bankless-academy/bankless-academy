@@ -13,6 +13,7 @@ import { readContract } from '@wagmi/core'
 import axios from 'axios'
 import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
 import { mainnet, polygon } from 'viem/chains'
+import { BigQuery } from '@google-cloud/bigquery'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -993,37 +994,23 @@ export const formatTime = (ms: number) => {
 }
 
 export const fetchGitcoinDonations = async (address: string): Promise<number> => {
-  const query = `
-    query MyQuery {
-      donations(
-        condition: {donorAddress: "${address}"}
-      ) {
-        id
-      }
-    }
-  `;
-
   try {
-    const response = await fetch('https://grants-stack-indexer-v2.gitcoin.co/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: query,
-      }),
+    const bigquery = new BigQuery({
+      credentials: JSON.parse(process.env.GOOGLE_CLOUD_CREDENTIALS),
+      projectId: 'civic-nation-467912-q1',
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    // Define a simple query
+    const query = `SELECT count(*) FROM \`civic-nation-467912-q1.gitcoin.all_donations\` where donor_address ="${address}"`;
 
-    const result = await response.json();
-    // console.log(result.data);
-    return result.data?.donations?.length || 0
+    // Execute the query
+    const [rows] = await bigquery.query(query);
+
+    // Return the count from the first row
+    return rows[0]?.f0_ || 0;
   } catch (error) {
-    console.error('Error fetching data:', error);
-    return 0
+    console.error('Error executing BigQuery:', error);
+    return 0;
   }
 };
 
