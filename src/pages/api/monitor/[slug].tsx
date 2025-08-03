@@ -4,11 +4,11 @@ import { createPublicClient, http, formatEther } from 'viem'
 import { base } from 'viem/chains'
 
 import {
-  fetchGitcoinDonations,
   fetchGivethDonations,
   fetchExplorerData,
   fetchFromUrl,
 } from 'utils/index'
+import { fetchGitcoinDonations } from 'utils/server'
 import { fetchPassport, PassportResponseSchema } from 'utils/passport_lib'
 import { PASSPORT_COMMUNITY_ID } from 'constants/passport'
 import {

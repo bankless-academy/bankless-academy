@@ -13,7 +13,6 @@ import { readContract } from '@wagmi/core'
 import axios from 'axios'
 import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
 import { mainnet, polygon } from 'viem/chains'
-import { BigQuery } from '@google-cloud/bigquery'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -992,27 +991,6 @@ export const formatTime = (ms: number) => {
     .toString()
     .padStart(2, '0')},${milliseconds.toString().padStart(3, '0').substring(0, 2)}`
 }
-
-export const fetchGitcoinDonations = async (address: string): Promise<number> => {
-  try {
-    const bigquery = new BigQuery({
-      credentials: JSON.parse(process.env.GOOGLE_CLOUD_CREDENTIALS),
-      projectId: 'civic-nation-467912-q1',
-    });
-
-    // Define a simple query
-    const query = `SELECT count(*) FROM \`civic-nation-467912-q1.gitcoin.all_donations\` where donor_address ="${address}"`;
-
-    // Execute the query
-    const [rows] = await bigquery.query(query);
-
-    // Return the count from the first row
-    return rows[0]?.f0_ || 0;
-  } catch (error) {
-    console.error('Error executing BigQuery:', error);
-    return 0;
-  }
-};
 
 export const fetchGivethDonations = async (address: string): Promise<number> => {
   const query = `

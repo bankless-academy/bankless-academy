@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { TABLES, db } from 'utils/db'
-import { fetchGitcoinDonations } from 'utils/index'
+import { fetchGitcoinDonations } from 'utils/server'
 
 export default async function handler(
   req: NextApiRequest,
