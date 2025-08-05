@@ -29,7 +29,10 @@ const Player = dynamic(
 const DEFAULT_ANSWERS = ['1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3', '0']
 const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.02']
 
-const BitcoinBasics = () => {
+const BitcoinBasics = (): {
+  isQuestCompleted: boolean
+  questComponent: React.ReactElement
+} => {
   const { t } = useTranslation('quests', { keyPrefix: 'BitcoinBasics' })
   // HACK: or else translation is skipped...
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -257,25 +260,15 @@ const BitcoinBasics = () => {
     </Box>
   )
 
-  return quesComponent
+  return {
+    isQuestCompleted: areAnswersCorrect,
+    questComponent: quesComponent,
+  }
 }
 
 // Factory function for quest system
 export const getBitcoinBasicsQuest = () => {
-  const storedAnswers = JSON.parse(
-    localStorage.getItem('quest-bitcoin-basics') || 'null'
-  )
-  const selected = storedAnswers || DEFAULT_ANSWERS
-  const numericAmount = parseFloat(selected[1]?.replace(',', '.') || 5)
-  const areAnswersCorrect =
-    selected[0]?.toLowerCase() === CORRECT_ANSWERS[0]?.toLowerCase() &&
-    numericAmount > 0 &&
-    numericAmount <= parseFloat(CORRECT_ANSWERS[1])
-
-  return {
-    isQuestCompleted: areAnswersCorrect,
-    questComponent: <BitcoinBasics />,
-  }
+  return BitcoinBasics()
 }
 
 export default BitcoinBasics
