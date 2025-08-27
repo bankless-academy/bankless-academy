@@ -381,6 +381,7 @@ export default async function handler(
           lesson: lessonName,
           badgeId,
           address,
+          referrer,
           gas: options
         })
         return res.status(200).json({
