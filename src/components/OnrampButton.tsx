@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Box, Button, Image } from '@chakra-ui/react'
 import { useState } from 'react'
 import {
