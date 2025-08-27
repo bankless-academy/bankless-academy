@@ -1,19 +1,71 @@
 import { Box, Button, Image } from '@chakra-ui/react'
+import { useState } from 'react'
+import {
+  generateSessionToken,
+  formatAddressesForToken,
+} from '../utils/coinbase'
+
+interface OnrampButtonProps {
+  address: string
+  defaultNetwork?: string
+  defaultExperience?: 'send' | 'buy'
+  [key: string]: any
+}
 
 const OnrampButton = ({
   address,
+  defaultNetwork = 'base',
+  defaultExperience = 'send',
   ...props
-}: {
-  address: string
-  [key: string]: any
-}) => {
-  const handleOnClick = () => {
-    // https://docs.cdp.coinbase.com/onramp/docs/api-onramp-initializing
-    window.open(
-      `https://pay.coinbase.com/buy/select-asset?appId=bf18c88d-495a-463b-b249-0b9d3656cf5e&destinationWallets=%5B%7B%22address%22%3A%22${address}%22%2C%22blockchains%22%3A%5B%22optimism%22%2C%22base%22%5D%2C%22assets%22%3A%5B%22ETH%22%5D%7D%5D&defaultNetwork=base&defaultExperience=send`,
-      '_blank',
-      'width=470,height=750'
-    )
+}: OnrampButtonProps) => {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleOnClick = async () => {
+    setIsLoading(true)
+
+    try {
+      // Generate session token using utility function
+      const sessionToken = await generateSessionToken({
+        addresses: formatAddressesForToken(address, [
+          defaultNetwork,
+          'ethereum',
+          'optimism',
+        ]),
+        assets: ['ETH', 'USDC'],
+      })
+
+      if (!sessionToken) {
+        throw new Error('Failed to generate session token')
+      }
+
+      // Build URL with latest Coinbase Onramp API parameters
+      // https://docs.cdp.coinbase.com/onramp-&-offramp/onramp-apis/generating-onramp-url
+      const baseUrl = 'https://pay.coinbase.com/buy/select-asset'
+
+      const params = new URLSearchParams()
+
+      // Required parameters
+      params.append('sessionToken', sessionToken)
+
+      // Optional parameters
+      if (defaultNetwork) {
+        params.append('defaultNetwork', defaultNetwork)
+      }
+
+      if (defaultExperience) {
+        params.append('defaultExperience', defaultExperience)
+      }
+
+      const url = `${baseUrl}?${params.toString()}`
+
+      console.log('url', url)
+      window.open(url, '_blank', 'width=470,height=750')
+    } catch (error) {
+      console.error('Failed to open Coinbase Onramp:', error)
+      // You might want to show an error message to the user here
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -21,6 +73,8 @@ const OnrampButton = ({
       as="a"
       cursor="pointer"
       onClick={handleOnClick}
+      isLoading={isLoading}
+      loadingText="Loading..."
       borderRadius="3xl"
       bg="#0052FF"
       _hover={{

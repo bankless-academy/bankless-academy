@@ -35,6 +35,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^2.8.0",
+    "@coinbase/cdp-sdk": "^1.36.0",
     "@davatar/react": "^1.11.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
