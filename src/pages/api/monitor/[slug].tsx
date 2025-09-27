@@ -371,7 +371,7 @@ export default async function handler(
           }
         `
         const result = await fetchFromUrl(INDEXER_URL, queryChainMetadata)
-        const maxBlockDiff = 10
+        const maxBlockDiff = 100
         const validation = validateIndexerSync(
           result.chain_metadata,
           maxBlockDiff
