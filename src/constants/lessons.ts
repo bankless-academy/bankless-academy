@@ -3107,7 +3107,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     sponsorName: '1inch',
-    sponsorLogo: '/images/dex-aggregators/sponsor-4ead7b48.png',
+    sponsorLogo: '/images/dex-aggregators/sponsor-dc2a05af.svg',
     notionId: '48b3a9d48fe34d5593c125d5811b1273',
     englishName: 'DEX Aggregators',
     slug: 'dex-aggregators',

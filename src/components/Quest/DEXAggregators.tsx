@@ -77,7 +77,7 @@ const DEXAggregators = (
           <div className="bloc1">
             <p>
               {'1. Load '}
-              <ExternalLink href="https://app.1inch.io/#/8453/simple/swap/8453:ETH">
+              <ExternalLink href="https://1inch.com/swap?src=8453:USDC">
                 1inch
               </ExternalLink>
               {' on the '}
@@ -129,10 +129,6 @@ const DEXAggregators = (
                 <b>approval</b> transaction hash.
               </Box>
             )}
-            <Box mt="4">
-              <b>Disclaimer:</b> Unfortunately, this quest is not available for
-              US residents at the moment due to geographic restrictions.
-            </Box>
           </div>
           <div className="bloc2" style={{ alignSelf: 'center' }}>
             <StyledLessonCard
@@ -147,7 +143,7 @@ const DEXAggregators = (
                     {helperTitle}
                   </Text>
                   <ExternalLink
-                    href={`https://help.1inch.io/en/articles/4585153-how-to-swap-tokens-with-classic-mode-on-1inch`}
+                    href={`https://help.1inch.com/en/articles/4585153-how-to-use-the-market-swap-on-1inch-pro-interface#h_3c9d315f17`}
                     alt={helperTitle}
                   >
                     <Image src="/images/1inch-swap-preview.jpg" />
@@ -155,7 +151,7 @@ const DEXAggregators = (
                 </Box>
                 <Box pb="8">
                   <ExternalLink
-                    href={`https://help.1inch.io/en/articles/4585153-how-to-swap-tokens-with-classic-mode-on-1inch`}
+                    href={`https://help.1inch.com/en/articles/4585153-how-to-use-the-market-swap-on-1inch-pro-interface#h_3c9d315f17`}
                     alt={helperTitle}
                   >
                     <Button leftIcon={<ArrowSquareOut />} variant="primary">

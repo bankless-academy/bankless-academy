@@ -86,7 +86,7 @@ const PARTNERS = [
   {
     name: '1inch',
     image: '1inch.svg',
-    link: 'https://1inch.io/',
+    link: 'https://1inch.com/',
   },
   {
     name: 'Zerion',
