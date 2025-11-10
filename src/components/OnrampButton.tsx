@@ -1,6 +1,10 @@
 /* eslint-disable no-console */
-import { Box, Button, Image } from '@chakra-ui/react'
+import { Box, Button, Image, useToast } from '@chakra-ui/react'
 import { useState } from 'react'
+import { useAccount } from 'wagmi'
+import { signMessage } from '@wagmi/core'
+import { wagmiConfig } from 'utils/wagmi'
+import { verifySignature } from 'utils/SignatureUtil'
 import {
   generateSessionToken,
   formatAddressesForToken,
@@ -20,73 +24,166 @@ const OnrampButton = ({
   ...props
 }: OnrampButtonProps) => {
   const [isLoading, setIsLoading] = useState(false)
+  const toast = useToast()
+  const { chain } = useAccount()
 
-  const handleOnClick = () => {
+  const handleOnClick = async () => {
     setIsLoading(true)
 
-    // Call window.open immediately to avoid mobile popup blocking
-    const popup = window.open('', '_blank', 'width=470,height=750')
+    try {
+      // Create unique message with wallet address and timestamp
+      // This prevents replay attacks and proves wallet ownership
+      const timestamp = new Date().toISOString()
+      const uniqueMessage = `Coinbase Onramp Authentication
 
-    if (!popup) {
-      console.error('Popup blocked by browser')
-      setIsLoading(false)
-      return
-    }
+I am verifying ownership of this wallet to access Coinbase Onramp.
 
-    // Show loading message in popup
-    popup.document.write(
-      '<html><body><div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;">Loading...</div></body></html>'
-    )
+Wallet Address: ${address}
+Timestamp: ${timestamp}
 
-    // Generate session token asynchronously
-    generateSessionToken({
-      addresses: formatAddressesForToken(address, [
-        defaultNetwork,
-        'ethereum',
-        'optimism',
-      ]),
-      assets: ['ETH', 'USDC'],
-    })
-      .then((sessionToken) => {
-        if (!sessionToken) {
-          throw new Error('Failed to generate session token')
-        }
+This signature proves I own this wallet without exposing my private key.`
 
-        // Build URL with latest Coinbase Onramp API parameters
-        // https://docs.cdp.coinbase.com/onramp-&-offramp/onramp-apis/generating-onramp-url
-        const baseUrl = 'https://pay.coinbase.com/buy/select-asset'
-
-        const params = new URLSearchParams()
-
-        // Required parameters
-        params.append('sessionToken', sessionToken)
-
-        // Optional parameters
-        if (defaultNetwork) {
-          params.append('defaultNetwork', defaultNetwork)
-        }
-
-        if (defaultExperience) {
-          params.append('defaultExperience', defaultExperience)
-        }
-
-        const url = `${baseUrl}?${params.toString()}`
-
-        console.log('url', url)
-
-        // Navigate the popup to the final URL
-        popup.location.href = url
+      // Request wallet signature
+      toast.closeAll()
+      toast({
+        title: 'Coinbase Onramp',
+        description: 'Open your wallet to sign a message.',
+        status: 'warning',
+        duration: null,
       })
-      .catch((error) => {
-        console.error('Failed to open Coinbase Onramp:', error)
-        // Show error message in popup
-        popup.document.write(
-          '<html><body><div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;color:red;">Error loading Coinbase Onramp. Please try again.</div></body></html>'
-        )
+
+      const signature = await signMessage(wagmiConfig, {
+        account: address as `0x${string}`,
+        message: uniqueMessage,
+      }).catch((error) => {
+        console.error(error)
+        toast.closeAll()
+        let errorMessage = error?.message?.split('\n')[0]
+        if (errorMessage.includes('switch chain'))
+          errorMessage +=
+            ' Try changing the network to Ethereum manually from your wallet.'
+        toast({
+          title: 'Coinbase Onramp error',
+          description: `Error while signing the message: ${errorMessage}`,
+          status: 'error',
+          duration: 20000,
+          isClosable: true,
+        })
+        return null
       })
-      .finally(() => {
+
+      if (!signature) {
         setIsLoading(false)
+        return
+      }
+
+      // Verify signature cryptographically
+      const verified = await verifySignature({
+        address,
+        message: uniqueMessage,
+        signature,
+        chainId: chain?.id,
       })
+
+      if (!verified) {
+        toast.closeAll()
+        toast({
+          title: 'Coinbase Onramp error',
+          description: 'Signature verification failed. Please try again.',
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        })
+        setIsLoading(false)
+        return
+      }
+
+      console.log('Wallet signature verified successfully at:', timestamp)
+      toast.closeAll()
+
+      // Call window.open immediately to avoid mobile popup blocking
+      const popup = window.open('', '_blank', 'width=470,height=750')
+
+      if (!popup) {
+        console.error('Popup blocked by browser')
+        toast({
+          title: 'Popup blocked',
+          description:
+            'Please allow popups for this site to use Coinbase Onramp.',
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        })
+        setIsLoading(false)
+        return
+      }
+
+      // Show loading message in popup
+      popup.document.write(
+        '<html><body><div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;">Loading...</div></body></html>'
+      )
+
+      // Generate session token asynchronously
+      generateSessionToken({
+        addresses: formatAddressesForToken(address, [
+          defaultNetwork,
+          'ethereum',
+          'optimism',
+        ]),
+        assets: ['ETH', 'USDC'],
+      })
+        .then((sessionToken) => {
+          if (!sessionToken) {
+            throw new Error('Failed to generate session token')
+          }
+
+          // Build URL with latest Coinbase Onramp API parameters
+          // https://docs.cdp.coinbase.com/onramp-&-offramp/onramp-apis/generating-onramp-url
+          const baseUrl = 'https://pay.coinbase.com/buy/select-asset'
+
+          const params = new URLSearchParams()
+
+          // Required parameters
+          params.append('sessionToken', sessionToken)
+
+          // Optional parameters
+          if (defaultNetwork) {
+            params.append('defaultNetwork', defaultNetwork)
+          }
+
+          if (defaultExperience) {
+            params.append('defaultExperience', defaultExperience)
+          }
+
+          const url = `${baseUrl}?${params.toString()}`
+
+          console.log('url', url)
+
+          // Navigate the popup to the final URL
+          popup.location.href = url
+        })
+        .catch((error) => {
+          console.error('Failed to open Coinbase Onramp:', error)
+          // Show error message in popup
+          popup.document.write(
+            '<html><body><div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;color:red;">Error loading Coinbase Onramp. Please try again.</div></body></html>'
+          )
+        })
+        .finally(() => {
+          setIsLoading(false)
+        })
+    } catch (error) {
+      console.error('Unexpected error:', error)
+      toast.closeAll()
+      toast({
+        title: 'Coinbase Onramp error',
+        description: 'An unexpected error occurred. Please try again.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
+      setIsLoading(false)
+    }
   }
 
   return (
