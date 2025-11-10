@@ -30,6 +30,28 @@ const OnrampButton = ({
   const handleOnClick = async () => {
     setIsLoading(true)
 
+    // Open popup immediately on click event to avoid browser popup blocking
+    const popup = window.open('', '_blank', 'width=470,height=750')
+
+    if (!popup) {
+      console.error('Popup blocked by browser')
+      toast({
+        title: 'Popup blocked',
+        description:
+          'Please allow popups for this site to use Coinbase Onramp.',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
+      setIsLoading(false)
+      return
+    }
+
+    // Show loading message in popup while waiting for signature
+    popup.document.write(
+      '<html><body><div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;">Please sign the message in your wallet...</div></body></html>'
+    )
+
     try {
       // Create unique message with wallet address and timestamp
       // This prevents replay attacks and proves wallet ownership
@@ -73,6 +95,7 @@ This signature proves I own this wallet without exposing my private key.`
       })
 
       if (!signature) {
+        popup.close()
         setIsLoading(false)
         return
       }
@@ -86,6 +109,7 @@ This signature proves I own this wallet without exposing my private key.`
       })
 
       if (!verified) {
+        popup.close()
         toast.closeAll()
         toast({
           title: 'Coinbase Onramp error',
@@ -101,26 +125,9 @@ This signature proves I own this wallet without exposing my private key.`
       console.log('Wallet signature verified successfully at:', timestamp)
       toast.closeAll()
 
-      // Call window.open immediately to avoid mobile popup blocking
-      const popup = window.open('', '_blank', 'width=470,height=750')
-
-      if (!popup) {
-        console.error('Popup blocked by browser')
-        toast({
-          title: 'Popup blocked',
-          description:
-            'Please allow popups for this site to use Coinbase Onramp.',
-          status: 'error',
-          duration: 5000,
-          isClosable: true,
-        })
-        setIsLoading(false)
-        return
-      }
-
-      // Show loading message in popup
+      // Update popup with loading state for session token generation
       popup.document.write(
-        '<html><body><div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;">Loading...</div></body></html>'
+        '<html><body><div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;">Loading Coinbase Onramp...</div></body></html>'
       )
 
       // Generate session token asynchronously
@@ -168,12 +175,14 @@ This signature proves I own this wallet without exposing my private key.`
           popup.document.write(
             '<html><body><div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;color:red;">Error loading Coinbase Onramp. Please try again.</div></body></html>'
           )
+          setTimeout(() => popup.close(), 3000)
         })
         .finally(() => {
           setIsLoading(false)
         })
     } catch (error) {
       console.error('Unexpected error:', error)
+      popup.close()
       toast.closeAll()
       toast({
         title: 'Coinbase Onramp error',
