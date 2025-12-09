@@ -4,6 +4,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Empty turbopack config to acknowledge Turbopack (Next.js 16+)
+  turbopack: {},
+  // Webpack configuration (fallback for --webpack flag)
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
