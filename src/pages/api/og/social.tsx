@@ -103,10 +103,7 @@ export default async function handler(req: NextApiRequest) {
     )
 
   const fontData = await fetch(
-    new URL(
-      `${DOMAIN_URL}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`,
-      import.meta.url
-    )
+    `${DOMAIN_URL}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`
   ).then((res) => res.arrayBuffer())
 
   let ensData: any = {}

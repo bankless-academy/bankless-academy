@@ -15,10 +15,7 @@ export default async function handler(req: NextApiRequest) {
   console.log(time)
 
   const fontData = await fetch(
-    new URL(
-      `${DOMAIN_URL_}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`,
-      import.meta.url
-    )
+    `${DOMAIN_URL_}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`
   ).then((res) => res.arrayBuffer())
 
   return new ImageResponse(<OgOnchainSummerChallenge time={time} />, {
