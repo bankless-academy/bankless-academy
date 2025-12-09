@@ -83,7 +83,7 @@ const LessonCards = ({
   const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
 
   const Lessons =
-    module !== undefined && moduleId
+    moduleId
       ? LESSONS.filter(
           (lesson) =>
             (lesson.publicationStatus === 'publish' ||

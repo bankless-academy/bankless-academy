@@ -1,9 +1,13 @@
 /* eslint-disable no-console */
 import knex from 'knex'
+import { ethers } from 'ethers'
 
 // const config = require('../../knexfile.js')
 import config from '../../knexfile.mjs'
 import { trackBE } from 'utils/mixpanel'
+import { INFURA_KEY } from 'constants/index'
+import { NFTAddress } from 'constants/nft'
+import { formatTime } from 'utils/index'
 
 export const db = knex(config)
 
@@ -117,5 +121,82 @@ export async function getUserId(address: string, embed: string, isBot?: boolean,
       .select('id')
       .where('address', 'ilike', `%${address}%`)
     return user?.id
+  }
+}
+
+// getNFTInfo from either tokenId or address
+export async function getNFTInfo(
+  address: string,
+  tokenId: string
+): Promise<{ time?: string, tokenIds?: number[] }> {
+  const res = {
+    time: '--:--,--',
+    tokenIds: []
+  }
+  const ERC721_ABI = [
+    {
+      "inputs": [
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      ],
+      "name": "ownerOf",
+      "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "address", "name": "owner", "type": "address" }
+      ],
+      "name": "tokensOfOwner",
+      "outputs": [
+        { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)"
+  ];
+  const provider = new ethers.providers.JsonRpcProvider(`https://base-mainnet.infura.io/v3/${INFURA_KEY}`);
+
+  const contract = new ethers.Contract(NFTAddress, ERC721_ABI, provider);
+
+  try {
+    const owner = tokenId ? await contract.ownerOf(tokenId) : address
+    res.tokenIds = address ? (await contract.tokensOfOwner(address)).map(bigNum => bigNum.toNumber()) : [tokenId]
+    console.log(res.tokenIds)
+    const latestTokenId = res.tokenIds.at(-1)
+
+    console.log('latestTokenId', latestTokenId)
+
+    if (latestTokenId) {
+      // Get the Transfer event for the mint
+      const filter = contract.filters.Transfer(null, null, latestTokenId);
+      const events = await contract.queryFilter(filter, 0, 'latest');
+
+      // The first Transfer event for this token ID should be the mint
+      const mintEvent = events[0];
+      const mintBlock = await provider.getBlock(mintEvent.blockNumber);
+      const mintTimestamp = new Date(mintBlock.timestamp * 1000).toISOString();
+
+      console.log(`Owner: ${owner}`);
+      console.log(`Mint Timestamp: ${mintTimestamp}`);
+      console.log(`tokenIds: ${res.tokenIds}`);
+
+      const smart_nft_mint_at = new Date(mintTimestamp).getTime()
+      const [user] = await db(TABLES.users)
+        .select('smart_nft_start_at')
+        .where('address', 'ilike', `%${owner}%`)
+      if (user?.smart_nft_start_at) {
+        const smart_nft_start_at = user.smart_nft_start_at.getTime();
+        console.log('smart_nft_start_at', smart_nft_start_at)
+        if (smart_nft_mint_at > smart_nft_start_at)
+          res.time = formatTime(smart_nft_mint_at - smart_nft_start_at)
+      }
+    }
+    return res
+
+  } catch (error) {
+    console.error('Error fetching NFT data:', error);
+    return res
   }
 }

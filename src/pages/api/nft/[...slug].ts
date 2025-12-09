@@ -2,8 +2,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { template } from 'pages/api/nft/templates/smart-wallet-template';
-import { TABLE, TABLES, db, getUserId } from 'utils/db';
-import { getNFTInfo } from 'utils/index';
+import { TABLE, TABLES, db, getUserId, getNFTInfo } from 'utils/db';
 
 export default async function handler(
   req: NextApiRequest,
