@@ -25,7 +25,7 @@ const BridgeButton = ({
           color: 'white !important',
         }}
         color="white !important"
-        leftIcon={<Image h="32px" src={'/images/zerion-logo.svg'} />}
+        leftIcon={<Image h="24px" src={'/images/bridge.svg'} />}
         {...props}
       >
         <Box
@@ -37,7 +37,7 @@ const BridgeButton = ({
               : 'unset'
           }
         >
-          Bridge via Zerion
+          Bridge Token
         </Box>
       </Button>
     </ExternalLink>

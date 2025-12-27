@@ -131,10 +131,10 @@ const Layer2Blockchains = (
                   {'Options to fund your wallet:'}
                 </Text>
                 1. <OnrampButton address={account} />
-                <br />
+                {/* <br />
                 <Box mt="2" ml="5">
                   {'👆 free withdrawal to Base recommended'}
-                </Box>
+                </Box> */}
                 <Box mt="4">
                   2.{' '}
                   <ExternalLink href={`/lessons/${lesson.slug}`}>

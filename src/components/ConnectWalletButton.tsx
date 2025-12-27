@@ -493,7 +493,9 @@ const ConnectWalletButton = ({
                     w="100%"
                     size={isSmallScreen ? 'md' : 'lg'}
                     variant="primaryWhite"
-                    leftIcon={<UserCircle weight="bold" />}
+                    leftIcon={
+                      <UserCircle height="24px" width="24px" weight="bold" />
+                    }
                     onClick={onClose}
                   >
                     <Box minW={isSmallScreen ? '150px' : '180px'}>
@@ -522,7 +524,9 @@ const ConnectWalletButton = ({
                   w="100%"
                   size={isSmallScreen ? 'md' : 'lg'}
                   variant="secondaryWhite"
-                  leftIcon={<SignOut weight="bold" />}
+                  leftIcon={
+                    <SignOut height="24px" width="24px" weight="bold" />
+                  }
                   onClick={disconnectWallet}
                 >
                   <Box minW={isSmallScreen ? '150px' : '180px'}>
