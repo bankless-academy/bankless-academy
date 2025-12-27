@@ -833,7 +833,7 @@ export const generateFarcasterText = (text: string) => {
 }
 
 export const generateFarcasterLink = (text: string, link: string) => {
-  return `https://warpcast.com/~/compose?text=${encodeURIComponent(
+  return `https://farcaster.xyz/~/compose?text=${encodeURIComponent(
     generateFarcasterText(text)
   )}&embeds%5B%5D=${encodeURIComponent(link)}`
 }
