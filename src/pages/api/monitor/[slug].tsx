@@ -373,8 +373,18 @@ export default async function handler(
         `
         const result = await fetchFromUrl(INDEXER_URL, queryChainMetadata)
         const maxBlockDiff = 100
-        const validation = validateIndexerSync(
-          result.chain_metadata,
+        // Get details for all chains (for display)
+        const allChainsValidation = validateIndexerSync(
+          result.chain_metadata || [],
+          maxBlockDiff
+        )
+        // Only check base chain (chain_id 8453) for validation failure
+        const baseChainMetadata =
+          result.chain_metadata?.filter(
+            (chain: any) => chain.chain_id === 8453
+          ) || []
+        const baseChainValidation = validateIndexerSync(
+          baseChainMetadata,
           maxBlockDiff
         )
 
@@ -397,11 +407,11 @@ export default async function handler(
           resultEventSyncState.event_sync_state
         )
 
-        if (!validation.isValid) {
+        if (!baseChainValidation.isValid) {
           return res.status(400).json({
             success: false,
-            error: `Indexer is not in sync - some chains are more than ${maxBlockDiff} blocks behind`,
-            details: validation.details,
+            error: `Indexer is not in sync - base chain is more than ${maxBlockDiff} blocks behind`,
+            details: allChainsValidation.details,
           })
         }
         if (!validationEventSyncState.isValid) {
@@ -413,7 +423,7 @@ export default async function handler(
         }
 
         data = {
-          ...validation.details,
+          ...allChainsValidation.details,
           ...validationEventSyncState.details,
         }
         break
