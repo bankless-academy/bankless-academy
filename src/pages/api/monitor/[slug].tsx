@@ -38,8 +38,9 @@ const validateExplorerData = (data: any): boolean => {
     if (!data[key] || !Array.isArray(data[key])) return false
 
     // Check if all required values are present
+    // Handle both string and number types (indexer may return strings)
     const hasAllRequired = REQUIRED_EXPLORER_DATA[key].every((value) =>
-      data[key].includes(value)
+      data[key].includes(value) || data[key].includes(String(value))
     )
     if (!hasAllRequired) return false
   }
