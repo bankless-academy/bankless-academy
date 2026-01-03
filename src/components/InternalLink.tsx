@@ -41,7 +41,11 @@ const InternalLink = ({
     <NextLink href={iHref} passHref legacyBehavior>
       <ChakraLink
         {...props}
-        onClick={() => {
+        onClick={(e) => {
+          // Call the passed onClick handler if it exists
+          if (props.onClick) {
+            props.onClick(e)
+          }
           const link = iHref || 'NO_LINK'
           const name = alt || getNodeText(children) || 'NO_NAME'
           Mixpanel.track('click_internal_link', { link, name })
