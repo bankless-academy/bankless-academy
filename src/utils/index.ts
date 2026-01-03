@@ -35,6 +35,7 @@ import { lensGraphQLClient } from 'utils/gql/lens'
 import { wagmiConfig } from 'utils/wagmi'
 import { ACHIEVEMENTS } from 'constants/achievements'
 import { INDEXER_URL, INDEXER_URL_BACKUP, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
+import { triggerHaptic as tactusTriggerHaptic } from 'tactus'
 
 declare global {
   interface Window {
@@ -769,8 +770,8 @@ export const scrollDown = () => {
 }
 
 export const triggerHaptic = (duration: number) => {
-  if (typeof window !== 'undefined' && 'vibrate' in navigator) {
-    navigator.vibrate(duration)
+  if (typeof window !== 'undefined') {
+    tactusTriggerHaptic(duration)
   }
 }
 
