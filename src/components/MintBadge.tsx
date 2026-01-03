@@ -15,7 +15,7 @@ import ExternalLink from 'components/ExternalLink'
 import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
 import { BADGE_EXPLORER, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
 import { EMPTY_PASSPORT } from 'constants/passport'
-import { api } from 'utils/index'
+import { api, triggerHaptic } from 'utils/index'
 import PassportModal from 'components/PassportModal'
 import Confetti from 'components/Confetti'
 
@@ -159,6 +159,7 @@ const MintBadge = ({
 
   const mintBadge = async () => {
     if (status !== '') return
+    triggerHaptic(200)
     setStatus(t('Minting in progress ...'))
     // TODO: add 1 min timeout
 

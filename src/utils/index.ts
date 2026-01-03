@@ -768,6 +768,12 @@ export const scrollDown = () => {
   }, 300)
 }
 
+export const triggerHaptic = (duration: number) => {
+  if (typeof window !== 'undefined' && 'vibrate' in navigator) {
+    navigator.vibrate(duration)
+  }
+}
+
 export const lessonLink = (lesson: LessonType) => {
   return `${DOMAIN_URL}/lessons/${lesson.slug}`
 }

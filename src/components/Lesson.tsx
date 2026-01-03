@@ -31,7 +31,13 @@ import Card from 'components/Card'
 import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils/index'
+import {
+  isHolderOfNFT,
+  Mixpanel,
+  scrollDown,
+  scrollTop,
+  triggerHaptic,
+} from 'utils/index'
 import {
   IS_PROD,
   IS_WHITELABEL,
@@ -1253,7 +1259,15 @@ const Lesson = ({
                 (slide.quiz && !answerIsCorrect) ||
                 (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
               }
-              onClick={() => clickRight()}
+              onClick={() => {
+                if (
+                  !(slide.quiz && !answerIsCorrect) &&
+                  !(slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                ) {
+                  triggerHaptic(200)
+                }
+                clickRight()
+              }}
               rightIcon={<ArrowForwardIcon />}
             >
               Next
@@ -1267,7 +1281,18 @@ const Lesson = ({
                   !Quest?.isQuestCompleted &&
                   lesson.slug !== 'ethereum-basics'
                 }
-                onClick={() => closeLesson()}
+                onClick={() => {
+                  if (
+                    !(
+                      lesson.badgeId &&
+                      !Quest?.isQuestCompleted &&
+                      lesson.slug !== 'ethereum-basics'
+                    )
+                  ) {
+                    triggerHaptic(200)
+                  }
+                  closeLesson()
+                }}
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}
               >

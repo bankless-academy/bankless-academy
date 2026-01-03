@@ -29,7 +29,7 @@ import {
   DonateIcon,
 } from 'components/Icons'
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
-import { Mixpanel } from 'utils/index'
+import { Mixpanel, triggerHaptic } from 'utils/index'
 import { useSmallScreen } from 'hooks/index'
 import { useState } from 'react'
 import OnboardingModal from 'components/OnboardingModal'
@@ -171,7 +171,11 @@ const HomePage = (): JSX.Element => {
                 alignItems="center"
               >
                 <InternalLink href={`/lessons`} alt="Explore Lessons">
-                  <PulsingButton variant="primaryBig" size="lg">
+                  <PulsingButton
+                    variant="primaryBig"
+                    size="lg"
+                    onClick={() => triggerHaptic(200)}
+                  >
                     <Box>{t('Start Learning')}</Box>
                   </PulsingButton>
                 </InternalLink>

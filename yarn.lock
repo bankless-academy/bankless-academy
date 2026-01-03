@@ -14544,6 +14544,11 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
+tactus@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/tactus/-/tactus-0.0.3.tgz#c447280891ac09d7306c8bc50add7a7084f11875"
+  integrity sha512-P7sEp/QcdNwJh8QIZoCc86rFDWRWATn7eySNdoSqjR4MR+fqlVDd8uCJqHi26OvZKdAUkjYwJ/M6+ZzZ83I6rw==
+
 tarn@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/tarn/-/tarn-3.0.2.tgz#73b6140fbb881b71559c4f8bfde3d9a4b3d27693"

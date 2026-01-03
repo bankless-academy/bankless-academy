@@ -11,7 +11,7 @@ import InternalLink from 'components/InternalLink'
 import { useSmallScreen, useWindowScrollPositions } from 'hooks/index'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
-import { scrollTop, shortenAddress } from 'utils/index'
+import { scrollTop, shortenAddress, triggerHaptic } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 import ProfileScore from 'components/ProfileScore'
 import Announcement from 'components/Announcement'
@@ -139,6 +139,7 @@ const MobileButton = ({
           w="100%"
           h="100%"
           onClick={() => {
+            triggerHaptic(200)
             scrollTop()
           }}
           userSelect="none"
@@ -151,6 +152,7 @@ const MobileButton = ({
           href={link}
           userSelect="none"
           onClick={() => {
+            triggerHaptic(200)
             scrollTop()
           }}
         >
