@@ -320,3 +320,4 @@ Tüm ayrıntıların doğru olduğundan emin olun.
 Bir Bitcoin işlemi onaylandıktan sonra bunu geri alamazsınız.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+
