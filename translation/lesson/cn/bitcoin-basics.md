@@ -320,3 +320,4 @@ Its short term value remains volatile due to market speculation.
 比特币交易一经确认，就不能撤销。
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+
