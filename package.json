@@ -84,7 +84,7 @@
     "knex": "^2.4.0",
     "luxon": "^3.4.4",
     "mac-scrollbar": "^0.10.3",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^14.1.1",
     "md5": "^2.3.0",
     "mixpanel": "^0.17.0",
     "mixpanel-browser": "^2.45.0",
