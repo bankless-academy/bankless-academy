@@ -320,3 +320,4 @@ N'oubliez pas de vous assurer que tous les détails sont exacts.
 Une fois qu'une transaction en bitcoins est confirmée, il est impossible de l'annuler.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+
