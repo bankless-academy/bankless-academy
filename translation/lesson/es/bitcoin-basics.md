@@ -320,3 +320,4 @@ Asegúrate de que todos los datos sean correctos.
 Una vez confirmada la transacción de Bitcoin, no puedes revertirla.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+
