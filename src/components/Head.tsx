@@ -308,7 +308,8 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
             />
           </>
         )}
-        {/* Lens Portals */}
+        {/* Base Build */}
+        <meta name="base:app_id" content="698f0e007ca07f5750bbd81e" />
         {/* noscript */}
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>
