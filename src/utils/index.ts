@@ -303,15 +303,19 @@ export async function validateOnchainQuest(
           // Velodrome Universal Router superswap
           const velodromeURSuperswap =
             '0x01D40099fCD87C018969B0e8D4aB1633Fb34763C'.toLowerCase()
+          // Velodrome Universal Router 2 superswap
+          const velodromeUR2Superswap =
+            '0xdC3dF64448fA5D6F005cd3f0f3Fce7Afe7682b0E'.toLowerCase()
           if (
-            [velodromeRouterV1, velodromeRouterV2, velodromeUR1, velodromeUR2, velodromeURSuperswap].includes(
+            [velodromeRouterV1, velodromeRouterV2, velodromeUR1, velodromeUR2, velodromeURSuperswap, velodromeUR2Superswap].includes(
               txDetails.to.toLowerCase()
             ) ||
             txDetails.data.includes(velodromeRouterV1.substring(2)) ||
             txDetails.data.includes(velodromeRouterV2.substring(2)) ||
             txDetails.data.includes(velodromeUR1.substring(2)) ||
             txDetails.data.includes(velodromeUR2.substring(2)) ||
-            txDetails.data.includes(velodromeURSuperswap.substring(2))
+            txDetails.data.includes(velodromeURSuperswap.substring(2)) ||
+            txDetails.data.includes(velodromeUR2Superswap.substring(2))
           ) {
             const isTokenApproval = txDetails.data?.startsWith('0x095ea7b3')
             if (!isTokenApproval) {
