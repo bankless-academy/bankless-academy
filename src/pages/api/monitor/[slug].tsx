@@ -11,11 +11,7 @@ import {
 import { fetchGitcoinDonations } from 'utils/server'
 import { fetchPassport, PassportResponseSchema } from 'utils/passport_lib'
 import { PASSPORT_COMMUNITY_ID } from 'constants/passport'
-import {
-  BADGE_MINTER,
-  BASE_BADGE_CONTRACT_ADDRESS,
-  INDEXER_URL,
-} from 'constants/badges'
+import { BADGE_MINTER, INDEXER_URL } from 'constants/badges'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 import { getNewsletterSubscribers } from 'utils/newsletter'
 
@@ -93,18 +89,23 @@ const validateIndexerSync = (
   return result
 }
 
-const getLatestBlockNumber = async (fromBlock: number) => {
-  const url = `https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
-  const BLOCK_RANGE = 500 // Alchemy's limit for eth_getLogs
-  let latestBlock = fromBlock
+/** Alchemy JSON-RPC host segment per chain (same API key as elsewhere in this app). */
+const ALCHEMY_NETWORK_BY_CHAIN_ID: Record<number, string> = {
+  8453: 'base-mainnet',
+  10: 'opt-mainnet',
+  137: 'polygon-mainnet',
+}
 
+const fetchAlchemyBlockNumber = async (
+  chainId: number
+): Promise<number | undefined> => {
+  const network = ALCHEMY_NETWORK_BY_CHAIN_ID[chainId]
+  if (!network) return undefined
+  const url = `https://${network}.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
   try {
-    // Get current block number first
-    const currentBlockResponse = await fetch(url, {
+    const response = await fetch(url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         jsonrpc: '2.0',
         id: 1,
@@ -112,109 +113,15 @@ const getLatestBlockNumber = async (fromBlock: number) => {
         params: [],
       }),
     })
-    const currentBlockData = await currentBlockResponse.json()
-    const currentBlock = parseInt(currentBlockData.result, 16)
-
-    // Query in chunks of BLOCK_RANGE
-    for (
-      let startBlock = fromBlock;
-      startBlock < currentBlock;
-      startBlock += BLOCK_RANGE
-    ) {
-      const endBlock = Math.min(startBlock + BLOCK_RANGE - 1, currentBlock)
-
-      const payload = {
-        jsonrpc: '2.0',
-        id: 1,
-        method: 'eth_getLogs',
-        params: [
-          {
-            address: [BASE_BADGE_CONTRACT_ADDRESS],
-            fromBlock: `0x${startBlock.toString(16)}`,
-            toBlock: `0x${endBlock.toString(16)}`,
-            topics: [
-              null,
-              '0x000000000000000000000000472a74c4f7e281e590bed861daa66721a6acadbc',
-              null,
-              null,
-            ],
-          },
-        ],
-      }
-
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      })
-
-      const data = await response.json()
-      console.log('data', data)
-
-      if (data.error) {
-        console.error('Alchemy API error:', data.error)
-        continue
-      }
-
-      if (data.result && data.result.length > 0) {
-        const blockNumber = Math.max(
-          ...data.result.map((log) => parseInt(log.blockNumber, 16))
-        )
-        latestBlock = Math.max(latestBlock, blockNumber)
-      }
+    const data = await response.json()
+    if (data.error || data.result == null) {
+      console.error('Alchemy eth_blockNumber error:', data.error)
+      return undefined
     }
-
-    console.log(`Latest block number from Alchemy: ${latestBlock}`)
-    return latestBlock
-  } catch (error) {
-    console.error('Error fetching logs:', error)
+    return parseInt(data.result, 16)
+  } catch (err) {
+    console.error('Alchemy eth_blockNumber fetch failed:', err)
     return undefined
-  }
-}
-
-const validateEventSyncState = async (
-  data: any
-): Promise<{ isValid: boolean; details: any }> => {
-  // data [
-  //   {
-  //     block_number: 130648682,
-  //     block_timestamp: 1736896141,
-  //     chain_id: 10
-  //   },
-  //   {
-  //     block_number: 65577816,
-  //     block_timestamp: 1734407400,
-  //     chain_id: 137
-  //   },
-  //   {
-  //     block_number: 29832607,
-  //     block_timestamp: 1746454561,
-  //     chain_id: 8453
-  //   }
-  // ]
-
-  console.log('data', data)
-
-  // get the latest block number for chain_id 8453 (base)
-  const latestBaseBlockNumber = data?.find(
-    (item: any) => item.chain_id === 8453
-  )?.block_number
-  console.log('latestBaseBlockNumber', latestBaseBlockNumber)
-  const latestBaseBlockNumberFromAlchemy = await getLatestBlockNumber(
-    latestBaseBlockNumber
-  )
-  console.log(
-    'latestBaseBlockNumberFromAlchemy',
-    latestBaseBlockNumberFromAlchemy
-  )
-  return {
-    isValid: latestBaseBlockNumber >= latestBaseBlockNumberFromAlchemy,
-    details: {
-      latestBaseBlockNumber,
-      latestBaseBlockNumberFromAlchemy,
-    },
   }
 }
 
@@ -355,7 +262,7 @@ export default async function handler(
       }
       case 'indexer-sync': {
         const queryChainMetadata = `
-          query ChainMetadata {
+          query IndexerSyncHealth {
             chain_metadata {
               block_height
               chain_id
@@ -371,40 +278,25 @@ export default async function handler(
             }
           }
         `
-        const result = await fetchFromUrl(INDEXER_URL, queryChainMetadata)
         const maxBlockDiff = 100
+
+        const [result, alchemyBaseLatest] = await Promise.all([
+          fetchFromUrl(INDEXER_URL, queryChainMetadata),
+          fetchAlchemyBlockNumber(8453),
+        ])
+
+        const chainMetadata = result.chain_metadata || []
         // Get details for all chains (for display)
         const allChainsValidation = validateIndexerSync(
-          result.chain_metadata || [],
+          chainMetadata,
           maxBlockDiff
         )
         // Only check base chain (chain_id 8453) for validation failure
         const baseChainMetadata =
-          result.chain_metadata?.filter(
-            (chain: any) => chain.chain_id === 8453
-          ) || []
+          chainMetadata.filter((chain: any) => chain.chain_id === 8453) || []
         const baseChainValidation = validateIndexerSync(
           baseChainMetadata,
           maxBlockDiff
-        )
-
-        const queryEventSyncState = `
-          query EventSyncState {
-            event_sync_state {
-              block_number
-              block_timestamp
-              chain_id
-            }
-          }
-        `
-
-        const resultEventSyncState = await fetchFromUrl(
-          INDEXER_URL,
-          queryEventSyncState
-        )
-
-        const validationEventSyncState = await validateEventSyncState(
-          resultEventSyncState.event_sync_state
         )
 
         if (!baseChainValidation.isValid) {
@@ -414,18 +306,43 @@ export default async function handler(
             details: allChainsValidation.details,
           })
         }
-        if (!validationEventSyncState.isValid) {
-          return res.status(400).json({
-            success: false,
-            error: `Indexer is not in sync - new events available`,
-            details: validationEventSyncState.details,
-          })
+
+        const baseMeta = chainMetadata.find((c: any) => c.chain_id === 8453)
+        const latestProcessed = Number(baseMeta?.latest_processed_block)
+        const indexerHead = Number(baseMeta?.block_height)
+
+        const alchemyDetails: Record<string, unknown> = {
+          baseAlchemyBlockNumber: alchemyBaseLatest ?? null,
         }
 
-        data = {
-          ...allChainsValidation.details,
-          ...validationEventSyncState.details,
+        if (alchemyBaseLatest != null && Number.isFinite(latestProcessed)) {
+          const processingLagVsAlchemy = alchemyBaseLatest - latestProcessed
+          alchemyDetails.baseProcessingLagVsAlchemy = processingLagVsAlchemy
+
+          if (processingLagVsAlchemy > maxBlockDiff) {
+            return res.status(400).json({
+              success: false,
+              error: `Indexer is not in sync - Base processed block lags Alchemy chain tip by more than ${maxBlockDiff} blocks`,
+              details: { ...allChainsValidation.details, ...alchemyDetails },
+            })
+          }
+
+          if (Number.isFinite(indexerHead)) {
+            const headSkewVsAlchemy = Math.abs(indexerHead - alchemyBaseLatest)
+            alchemyDetails.baseHeadSkewVsAlchemy = headSkewVsAlchemy
+            if (headSkewVsAlchemy > maxBlockDiff) {
+              return res.status(400).json({
+                success: false,
+                error: `Indexer chain head disagrees with Alchemy by more than ${maxBlockDiff} blocks`,
+                details: { ...allChainsValidation.details, ...alchemyDetails },
+              })
+            }
+          }
+        } else if (alchemyBaseLatest == null) {
+          alchemyDetails.alchemyBaseCrossCheck = 'unavailable'
         }
+
+        data = { ...allChainsValidation.details, ...alchemyDetails }
         break
       }
       case 'read-x': {
