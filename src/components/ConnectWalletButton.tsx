@@ -249,25 +249,26 @@ const ConnectWalletButton = ({
         const basenameAvatar = baseEns?.basenameAvatar
         if (basenameAvatar) replaceAvatar(basenameAvatar)
       } else {
-        const { data: lensProfile } = await api(
-          `/api/lens?address=${address}`,
-          {}
-        )
-        console.log(lensProfile)
-        if (lensProfile.name) {
-          replaceName(lensProfile.name)
-          if (lensProfile.avatar) {
-            replaceAvatar(lensProfile.avatar)
-          }
-        } else {
-          const ud = await getUD(address)
-          if (ud?.length) {
-            replaceName(ud)
-            replaceAvatar(
-              `https://api.unstoppabledomains.com/metadata/image-src/${ud}`
-            )
-          }
+        // Lens support temporarily disabled
+        // const { data: lensProfile } = await api(
+        //   `/api/lens?address=${address}`,
+        //   {}
+        // )
+        // console.log(lensProfile)
+        // if (lensProfile.name) {
+        //   replaceName(lensProfile.name)
+        //   if (lensProfile.avatar) {
+        //     replaceAvatar(lensProfile.avatar)
+        //   }
+        // } else {
+        const ud = await getUD(address)
+        if (ud?.length) {
+          replaceName(ud)
+          replaceAvatar(
+            `https://api.unstoppabledomains.com/metadata/image-src/${ud}`
+          )
         }
+        // }
       }
     }
     const newNameCache = JSON.parse(JSON.stringify(nameCache))
