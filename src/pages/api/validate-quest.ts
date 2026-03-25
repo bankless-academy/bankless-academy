@@ -36,7 +36,17 @@ export default async function handler(
   const DEV_SECRET = process.env.DEV_SECRET
   const param =
     DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
-  const { address, quest, tx, embed, messageLink } = param
+  const address =
+    typeof param.address === 'string' ? param.address.trim() : param.address
+  const quest =
+    typeof param.quest === 'string' ? param.quest.trim() : param.quest
+  const tx = typeof param.tx === 'string' ? param.tx.trim() : param.tx
+  const embed =
+    typeof param.embed === 'string' ? param.embed.trim() : param.embed
+  const messageLink =
+    typeof param.messageLink === 'string'
+      ? param.messageLink.trim()
+      : param.messageLink
   if (
     !address ||
     // TODO: replace quest with notionId?
