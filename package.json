@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "import-content": "node import-content.js",
     "import-translations": "node import-translations.js",
