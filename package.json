@@ -144,5 +144,8 @@
   },
   "browser": {
     "bufferutil": false
+  },
+  "resolutions": {
+    "@wagmi/connectors": "6.2.0"
   }
 }
