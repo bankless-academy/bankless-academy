@@ -1,6 +1,6 @@
 import { Box, Text, Tag, Image, TagRightIcon, Button } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { CircleWavyCheck } from '@phosphor-icons/react'
+import { CircleWavyCheckIcon as CircleWavyCheck } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 
