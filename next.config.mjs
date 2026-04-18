@@ -18,7 +18,7 @@ const nextConfig = {
     }
     return config
   },
-  transpilePackages: ['ethereum-identity-kit', '@walletconnect/logger'],
+  transpilePackages: ['ethereum-identity-kit'],
 }
 
 const SENTRY_ENABLED = process.env.NEXT_PUBLIC_SENTRY_ENABLED === 'true' || false
