@@ -5,6 +5,7 @@
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
+    "preinstall": "rm -rf node_modules/viem/node_modules/@noble/hashes node_modules/@reown/appkit-adapter-wagmi/node_modules/@wagmi/connectors 2>/dev/null || true",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
