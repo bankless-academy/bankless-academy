@@ -18,7 +18,18 @@ const nextConfig = {
     }
     return config
   },
-  transpilePackages: ['ethereum-identity-kit'],
+  transpilePackages: [
+    'ethereum-identity-kit',
+    '@walletconnect/logger',
+    '@reown/appkit',
+    '@reown/appkit-adapter-wagmi',
+    '@reown/appkit-common',
+    '@reown/appkit-controllers',
+    '@reown/appkit-polyfills',
+    '@reown/appkit-scaffold-ui',
+    '@reown/appkit-utils',
+    '@reown/appkit-wallet',
+  ],
 }
 
 const SENTRY_ENABLED = process.env.NEXT_PUBLIC_SENTRY_ENABLED === 'true' || false
