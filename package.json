@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build",
     "start": "next start",
     "import-content": "node import-content.js",
     "import-translations": "node import-translations.js",
@@ -89,7 +89,7 @@
     "mixpanel": "^0.17.0",
     "mixpanel-browser": "^2.78.0",
     "net": "^1.0.2",
-    "next": "^16.2.4",
+    "next": "16.1.7",
     "notion-client": "^6.13.8",
     "notion-to-md": "^3.1.9",
     "permissionless": "^0.1.35",
