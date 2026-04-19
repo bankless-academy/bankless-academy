@@ -10,7 +10,7 @@ import { ACTIVATE_MIXPANEL, DOMAIN_PROD } from 'constants/index'
 
 const mixpanel = ACTIVATE_MIXPANEL
   ? Mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID, {
-      api_host: 'https://api-eu.mixpanel.com',
+      host: 'api-eu.mixpanel.com',
       debug: true,
     })
   : null
