@@ -19,6 +19,7 @@ import { STAMP_PLATFORMS } from 'constants/passport'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
+import SelfStampModal from 'components/SelfStampModal'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -47,6 +48,7 @@ const PassportStamps = ({
   const { address } = useAccount()
   const [isSmallScreen] = useSmallScreen()
   const [loadingStamp, setLoadingStamp] = useState('')
+  const [isSelfModalOpen, setIsSelfModalOpen] = useState(false)
   const [refreshPassportLS, setRefreshPassportLS] = useLocalStorage(
     'refreshPassport',
     false
@@ -58,6 +60,11 @@ const PassportStamps = ({
   }, [refreshPassportLS])
 
   const linkPlatform = (platform) => {
+    if (platform === 'self') {
+      setLoadingStamp(platform)
+      setIsSelfModalOpen(true)
+      return
+    }
     setLoadingStamp(platform)
     const width = 600
     const height = 800
@@ -235,6 +242,23 @@ const PassportStamps = ({
           })}
         </GitcoinGrid>
       )}
+      <SelfStampModal
+        isOpen={isSelfModalOpen}
+        onClose={() => {
+          setIsSelfModalOpen(false)
+          setLoadingStamp('')
+        }}
+        address={address}
+        onSuccess={() => {
+          toast({
+            title: 'Your Self verification has been added to your Explorer Profile.',
+            status: 'success',
+            duration: 10000,
+            isClosable: true,
+          })
+          setRefreshPassportLS(true)
+        }}
+      />
     </>
   )
 }

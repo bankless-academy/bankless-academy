@@ -79,13 +79,21 @@ export const STAMP_PLATFORMS = {
   //   oauth: `/api/stamps/callback/poh?json=true&address=REPLACE_ADDRESS`,
   //   provider: 'Poh'
   // },
-  tiktok: {
-    icon: '/images/stamp/tiktokStampIcon.png',
-    name: 'TikTok',
-    description: 'TikTok account',
-    // page
-    oauth: `https://www.tiktok.com/v2/auth/authorize/?client_key=${process.env.NEXT_PUBLIC_TIKTOK_CLIENT_ID}&scope=user.info.basic&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/tiktok&state=REPLACE_ADDRESS`,
-    provider: 'TikTok'
+  // tiktok: {
+  //   icon: '/images/stamp/tiktokStampIcon.png',
+  //   name: 'TikTok',
+  //   description: 'TikTok account',
+  //   // page
+  //   oauth: `https://www.tiktok.com/v2/auth/authorize/?client_key=${process.env.NEXT_PUBLIC_TIKTOK_CLIENT_ID}&scope=user.info.basic&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/tiktok&state=REPLACE_ADDRESS`,
+  //   provider: 'TikTok'
+  // },
+  self: {
+    icon: '/images/stamp/selfStampIcon.svg',
+    name: 'Self',
+    description: 'Self.xyz unique ID',
+    // opens a modal client-side; PassportStamps.tsx handles this case
+    oauth: `self://modal`,
+    provider: 'Self'
   },
 }
 

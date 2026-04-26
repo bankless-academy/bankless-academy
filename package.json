@@ -50,6 +50,8 @@
     "@phosphor-icons/react": "^2.1.10",
     "@reown/appkit": "~1.7.19",
     "@reown/appkit-adapter-wagmi": "~1.7.19",
+    "@selfxyz/core": "1.2.0-beta.1",
+    "@selfxyz/qrcode": "^1.0.22",
     "@sendgrid/client": "^7.7.0",
     "@sentry/nextjs": "^8.55.1",
     "@spruceid/didkit-wasm-node": "^0.2.1",
