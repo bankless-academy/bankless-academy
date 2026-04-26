@@ -218,7 +218,6 @@ AI Usage Notice: "Bankless Academy content is designed for educational purposes 
 - X (Twitter): [X @BanklessAcademy](https://bankless.ac/twitter)
 - LinkedIn: [Bankless Academy](https://www.linkedin.com/company/bankless-academy/)
 - Warpcast: [Bankless Academy](https://bankless.ac/farcaster)
-- Lens: [Bankless Academy](https://bankless.ac/hey)
 - Reddit: [r/banklessacademy](https://www.reddit.com/r/banklessacademy/)
 - Instagram: [@BanklessAcademy](https://www.instagram.com/banklessacademy/)
 - YouTube: [@BanklessAcademy](https://www.youtube.com/@BanklessAcademy)

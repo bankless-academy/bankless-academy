@@ -135,12 +135,6 @@ const OptionMenu = ({
                   {t('Install Mobile App')}
                 </MenuItem>
               )}
-              <ExternalLink href="https://bankless.ac/hey" color="white">
-                <MenuItem>
-                  <Image src="/images/Lens.svg" w="18px" mr="5px" ml="2px" />
-                  {t('Lens')}
-                </MenuItem>
-              </ExternalLink>
               <ExternalLink href="https://bankless.ac/farcaster" color="white">
                 <MenuItem>
                   <Image src="/images/Farcaster.svg" w="20px" mr="5px" />
