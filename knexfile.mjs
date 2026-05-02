@@ -4,11 +4,6 @@ const DB_HOST = process.env.DB_HOST || 'localhost'
 
 const ssl = DB_HOST !== 'localhost' ? { rejectUnauthorized: false } : null
 
-// Supabase's transaction-mode pooler (port 6543) shares server connections,
-// so each app instance should only hold a small handful and prepared
-// statements must be disabled. Detect it from the port.
-const isTransactionPooler = String(process.env.DB_PORT) === '6543'
-
 export default {
   client: 'pg',
   connection: {
@@ -20,14 +15,9 @@ export default {
     ssl: ssl,
   },
   pool: {
-    min: 2,
-    max: isTransactionPooler ? 10 : 100,
-    acquireTimeoutMillis: 60000, // 60 seconds
-    createTimeoutMillis: 30000, // 30 seconds
-    idleTimeoutMillis: 30000, // 30 seconds
-    reapIntervalMillis: 1000, // 1 second
-    createRetryIntervalMillis: 100, // 0.1 seconds
-    propagateCreateError: false // don't throw on connection errors
+    // Retry transient connection-creation failures instead of failing the
+    // queued query (e.g. Postgres "53300: remaining connection slots are
+    // reserved"). Everything else uses Knex defaults.
+    propagateCreateError: false,
   },
-  acquireConnectionTimeout: 60000,
 }
