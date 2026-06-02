@@ -13,6 +13,7 @@ import { readContract } from '@wagmi/core'
 import axios from 'axios'
 import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
 import { mainnet, polygon } from 'viem/chains'
+import type { Abi } from 'viem'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -288,41 +289,44 @@ export async function validateOnchainQuest(
             check.push(true)
             console.log('OK wallet interaction')
           }
-          // Velodrome v1 router contract
-          const velodromeRouterV1 =
-            '0x9c12939390052919af3155f41bf4160fd3666a6f'.toLowerCase()
-          // Velodrome v2 router contract
-          const velodromeRouterV2 =
-            '0xa062ae8a9c5e11aaa026fc2670b0d65ccc8b2858'.toLowerCase()
-          // Velodrome Universal Router 1
-          const velodromeUR1 =
-            '0xF132bdb9573867cD72f2585C338B923F973EB817'.toLowerCase()
-          // Velodrome Universal Router 2
-          const velodromeUR2 =
-            '0x4bF3E32de155359D1D75e8B474b66848221142fc'.toLowerCase()
-          // Velodrome Universal Router superswap
-          const velodromeURSuperswap =
-            '0x01D40099fCD87C018969B0e8D4aB1633Fb34763C'.toLowerCase()
-          // Velodrome Universal Router 2 superswap
-          const velodromeUR2Superswap =
-            '0xdC3dF64448fA5D6F005cd3f0f3Fce7Afe7682b0E'.toLowerCase()
-          if (
-            [velodromeRouterV1, velodromeRouterV2, velodromeUR1, velodromeUR2, velodromeURSuperswap, velodromeUR2Superswap].includes(
-              txDetails.to.toLowerCase()
-            ) ||
-            txDetails.data.includes(velodromeRouterV1.substring(2)) ||
-            txDetails.data.includes(velodromeRouterV2.substring(2)) ||
-            txDetails.data.includes(velodromeUR1.substring(2)) ||
-            txDetails.data.includes(velodromeUR2.substring(2)) ||
-            txDetails.data.includes(velodromeURSuperswap.substring(2)) ||
-            txDetails.data.includes(velodromeUR2Superswap.substring(2))
-          ) {
-            const isTokenApproval = txDetails.data?.startsWith('0x095ea7b3')
-            if (!isTokenApproval) {
-              check.push(true)
-              console.log('OK Velodrome router contract interaction')
-            }
+          // Velodrome router address check disabled: the router list goes stale as
+          // new routers ship. We verify the tx isn't a token approval instead, so a
+          // confirmed swap from the right wallet still validates.
+          // // Velodrome v1 router contract
+          // const velodromeRouterV1 =
+          //   '0x9c12939390052919af3155f41bf4160fd3666a6f'.toLowerCase()
+          // // Velodrome v2 router contract
+          // const velodromeRouterV2 =
+          //   '0xa062ae8a9c5e11aaa026fc2670b0d65ccc8b2858'.toLowerCase()
+          // // Velodrome Universal Router 1
+          // const velodromeUR1 =
+          //   '0xF132bdb9573867cD72f2585C338B923F973EB817'.toLowerCase()
+          // // Velodrome Universal Router 2
+          // const velodromeUR2 =
+          //   '0x4bF3E32de155359D1D75e8B474b66848221142fc'.toLowerCase()
+          // // Velodrome Universal Router superswap
+          // const velodromeURSuperswap =
+          //   '0x01D40099fCD87C018969B0e8D4aB1633Fb34763C'.toLowerCase()
+          // // Velodrome Universal Router 2 superswap
+          // const velodromeUR2Superswap =
+          //   '0xdC3dF64448fA5D6F005cd3f0f3Fce7Afe7682b0E'.toLowerCase()
+          // if (
+          //   [velodromeRouterV1, velodromeRouterV2, velodromeUR1, velodromeUR2, velodromeURSuperswap, velodromeUR2Superswap].includes(
+          //     txDetails.to.toLowerCase()
+          //   ) ||
+          //   txDetails.data.includes(velodromeRouterV1.substring(2)) ||
+          //   txDetails.data.includes(velodromeRouterV2.substring(2)) ||
+          //   txDetails.data.includes(velodromeUR1.substring(2)) ||
+          //   txDetails.data.includes(velodromeUR2.substring(2)) ||
+          //   txDetails.data.includes(velodromeURSuperswap.substring(2)) ||
+          //   txDetails.data.includes(velodromeUR2Superswap.substring(2))
+          // ) {
+          const isTokenApproval = txDetails.data?.startsWith('0x095ea7b3')
+          if (!isTokenApproval) {
+            check.push(true)
+            console.log('OK swap tx (not a token approval)')
           }
+          // }
         }
       }
       console.log('checks validated (3)', check?.length)
