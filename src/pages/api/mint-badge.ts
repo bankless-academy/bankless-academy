@@ -16,7 +16,6 @@ import { api, fetchExplorerData, isHolderOfBadge } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
 import { verifySignature } from 'utils/SignatureUtil'
-import { base } from 'viem/chains'
 import { JsonRpcProvider } from '@ethersproject/providers'
 
 export default async function handler(
@@ -234,26 +233,43 @@ export default async function handler(
           status: questStatus,
         })
       }
-      // Cancel tx if gas > 0.05 gwei
+      // Cancel tx if gas > 0.2 gwei
       const GWEI_LIMIT = 0.2
-      // estimate gas fees
-      const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=${base.id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': process.env.BLOCKNATIVE_API_KEY
-        },
-      })).json()
-      console.log('estimation.blockPrices', JSON.stringify(estimation.blockPrices, null, 2))
-      // select confidence: 90% confidence [2]
-      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[2].maxFeePerGas || 0.2
-      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[2].maxPriorityFeePerGas || 0.001
+      // estimate gas fees via the Alchemy RPC (eth_feeHistory)
+      // TODO: add alternate provider + handle timeout
+      const provider = new JsonRpcProvider(`https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
+      // last 5 blocks, priority fee sampled at the 10/50/90th percentiles (90% confidence = index [2])
+      const feeHistory = await provider.send('eth_feeHistory', [
+        ethers.utils.hexValue(5),
+        'latest',
+        [10, 50, 90],
+      ])
+      // predicted base fee for the next block (last entry of baseFeePerGas)
+      const baseFeePerGasWei = ethers.BigNumber.from(
+        feeHistory.baseFeePerGas[feeHistory.baseFeePerGas.length - 1]
+      )
+      // average the 90% confidence priority fee across the returned blocks
+      const priorityFeesWei = (feeHistory.reward || []).map((reward: string[]) =>
+        ethers.BigNumber.from(reward[2])
+      )
+      const maxPriorityFeePerGasWei = priorityFeesWei.length
+        ? priorityFeesWei
+            .reduce((acc, fee) => acc.add(fee), ethers.BigNumber.from(0))
+            .div(priorityFeesWei.length)
+        : ethers.BigNumber.from(0)
+      const maxFeePerGasWei = baseFeePerGasWei.add(maxPriorityFeePerGasWei)
+      console.log('feeHistory', JSON.stringify(feeHistory, null, 2))
+      const baseFeePerGasInGwei = Number(ethers.utils.formatUnits(baseFeePerGasWei, 'gwei'))
+      const maxFeePerGasInGwei = Number(ethers.utils.formatUnits(maxFeePerGasWei, 'gwei')) || 0.2
+      const maxPriorityFeePerGasInGwei = Number(ethers.utils.formatUnits(maxPriorityFeePerGasWei, 'gwei')) || 0.001
+      // give the actual tx 30% base-fee headroom to ride out spikes between estimation and inclusion
+      const bufferedMaxFeePerGasInGwei = baseFeePerGasInGwei * 1.3 + maxPriorityFeePerGasInGwei || 0.2
       const options: any = {}
       // 160k gas limit
       // options.gasLimit = ethers.utils.hexlify(160000)
       if (IS_BADGE_PROD) {
         options.maxFeePerGas = ethers.utils.parseUnits(
-          maxFeePerGasInGwei.toFixed(9),
+          bufferedMaxFeePerGasInGwei.toFixed(9),
           'gwei'
         )
         options.maxPriorityFeePerGas = ethers.utils.parseUnits(
@@ -275,8 +291,6 @@ export default async function handler(
       console.log('mint !!!!!!!!!')
       // send email alert if balance < 1 MATIC
       // TODO: check of Base balance is enough
-      // TODO: add alternate provider + handle timeout
-      const provider = new JsonRpcProvider(`https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
       // const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
       // console.log('balance: ', balance)
       // if (parseInt(balance) < 1) {
