@@ -11,9 +11,9 @@ FORMAT: LESSON
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -45,7 +45,7 @@ And there is no institution in the middle deciding who gets in: no one can turn 
 
 # Knowledge Check 1
 
-What does DeFi stand for? 
+What does DeFi stand for?
 
 - [ ] Digital finance
 
@@ -93,7 +93,7 @@ How can you earn yield with crypto?
 
 # What You Can Do With DeFi
 
-`DeFi` transactions are `permissionless`. This refers to a public `blockchain` that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. 
+`DeFi` transactions are `permissionless`. This refers to a public `blockchain` that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps.
 
 `DApps` and DeFi platforms operate 24/7, all over the world. Many run on stablecoins, tokens designed to hold a steady dollar value (see our [Understanding Stablecoins](https://app.banklessacademy.com/lessons/understanding-stablecoins) lesson). We will introduce four of the most common activities in DeFi: investing, trading, lending and borrowing, and staking.
 
@@ -151,7 +151,7 @@ What does HODL mean?
 
 # Trading
 
-A decentralized exchange (DEX) shows current exchange rates between different crypto tokens and coins and serves as a digital marketplace that facilitates trading one currency for another by bringing together buyers and sellers. 
+A decentralized exchange (DEX) shows current exchange rates between different crypto tokens and coins and serves as a digital marketplace that facilitates trading one currency for another by bringing together buyers and sellers.
 
 The parties involved in a DEX trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, the DEX creates `liquidity pools` that facilitate the trade between two traders’ `wallets` in a `permissionless` fashion.
 

@@ -82,6 +82,39 @@ for (const file of files) {
     if (!fs.existsSync(path.join('public', rel))) err(`missing image file: public${rel}`)
   }
 
+  // LEARN slides must fit the fixed-height desktop lesson UI (rule 2/14).
+  // Estimated rendered lines: image slides have a ~58-char text column,
+  // imageless slides ~116; <details> render collapsed. Threshold calibrated
+  // against a known-overflowing slide (~26 est. lines).
+  const MAX_SLIDE_LINES = 24
+  if (meta[slug]?.slideMeta && slugs.has(slug) && meta[slug].publicationStatus !== 'deprecated') {
+    const stripped = md.replace(/```[\s\S]*?```/g, '')
+    for (const section of stripped.split(/^# /m).slice(1)) {
+      const [title] = section.split('\n')
+      if (/Knowledge Check/i.test(title)) continue
+      let text = section.replace(title, '')
+      const hasImage = /!\[\]\([^)]*\)/.test(text)
+      const cpl = hasImage ? 58 : 116
+      text = text
+        .replace(/<details>[\s\S]*?<\/details>/g, (m) =>
+          (m.match(/<summary>/g) || []).map(() => '~S~').join('\n\n')
+        )
+        .replace(/!\[\]\([^)]*\)/g, '')
+        .trim()
+      let lines = 0
+      for (const block of text.split(/\n\s*\n/).filter(Boolean)) {
+        for (const ln of block.split('\n')) {
+          const t = ln.trim()
+          if (!t) continue
+          lines += t === '---' || t === '~S~' ? 1.2 : Math.ceil(t.length / cpl)
+        }
+        lines += 0.6
+      }
+      if (lines > MAX_SLIDE_LINES)
+        err(`slide "${title.trim()}" likely overflows the UI (~${Math.round(lines)} est. lines, max ${MAX_SLIDE_LINES}) — trim the text`)
+    }
+  }
+
   // every backticked `term` must resolve to a glossary keyword (rule 9);
   // fenced code blocks (the ASCII banner) are excluded
   const prose = md.replace(/```[\s\S]*?```/g, '')

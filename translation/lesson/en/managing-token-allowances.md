@@ -11,9 +11,9 @@ FORMAT: HANDBOOK
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -134,7 +134,7 @@ A proactive approach to token allowances includes:
 
 * staying informed about dApps’ security updates.
 
-Consider using third-party tools like the Revoke.cash [browser extension](https://revoke.cash) — it acts as a proactive measure against potential threats. The extension warns you if you are about to sign something potentially harmful, protecting you from phishing scams or other malicious activities.
+Consider using third-party tools like the Revoke.cash [browser extension](https://revoke.cash): it acts as a proactive measure against potential threats. The extension warns you if you are about to sign something potentially harmful, protecting you from phishing scams or other malicious activities.
 
 ### Can I recover funds with Revoke.cash?
 

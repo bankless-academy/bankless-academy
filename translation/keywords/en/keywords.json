@@ -965,7 +965,7 @@
   "public key": {
     "keyword": "public key",
     "keyword_plural": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you.",
+    "definition": "A code created from your private key that is safe to share. Your wallet address is derived from your public key.",
     "glossary": true
   },
   "quadratic funding": {

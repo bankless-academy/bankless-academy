@@ -11,9 +11,9 @@ FORMAT: HANDBOOK
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -88,7 +88,7 @@ The high degree of centralization in the fiat-backed stablecoin sector leaves gr
 
 ### 2\. Crypto-collateralized Stablecoins
 
-Crypto-collateralized stablecoins are a more transparent, decentralized option — and these qualities help eliminate certain risks. They maintain a fiat peg through crypto asset reserves. As crypto market volatility influences the total value of these reserves, these stablecoins are overcollateralized — sometimes up to 200%! All collateralized assets are viewable on chain, giving users 24/7 access to the real composition of their stablecoins.
+Crypto-collateralized stablecoins are a more transparent, decentralized option, and these qualities help eliminate certain risks. They maintain a fiat peg through crypto asset reserves. As crypto market volatility influences the total value of these reserves, these stablecoins are overcollateralized, sometimes up to 200%! All collateralized assets are viewable on chain, giving users 24/7 access to the real composition of their stablecoins.
 
 The most notable example in this category is Sky’s USDS, the successor to MakerDAO’s Dai (DAI), the original crypto-collateralized stablecoin, after MakerDAO rebranded to Sky in 2024. For a purer take on decentralization, Liquity’s LUSD is backed exclusively by overcollateralized ETH deposits.
 
@@ -128,7 +128,7 @@ What is the best stablecoin to hold? As with everything DeFi, the answer to that
 
 Here’s a quick refresher on each category:
 
-* 💵 **Fiat-backed:** The traditional approach — the closest you’ll come to holding fiat on chain.
+* 💵 **Fiat-backed:** The traditional approach, the closest you’ll come to holding fiat on chain.
 
   * Values: Conventionality, institutional trust.
 
@@ -178,7 +178,7 @@ Visit a Decentralized Exchange (DEX), or use a direct wallet on-ramp service lik
 
 Some CEXs offer yield by just holding stablecoins on their platform, funded by a share of platform profits to incentivize platform use. Note for US readers: under the GENIUS Act, regulated stablecoin issuers themselves may not pay interest to holders: yield comes only from third-party platforms, and availability varies by jurisdiction.
 
-You can also earn interest in DeFi, with trustless lending and borrowing platforms. These platforms connect lenders and borrowers, managing risk through onchain collateral and smart contracts. Stablecoin lenders can earn annual returns far higher than available in the traditional banking sector — but where there’s reward, there’s risk!
+You can also earn interest in DeFi, with trustless lending and borrowing platforms. These platforms connect lenders and borrowers, managing risk through onchain collateral and smart contracts. Stablecoin lenders can earn annual returns far higher than available in the traditional banking sector, but where there’s reward, there’s risk!
 
 The lending and borrowing topic deserves its own Bankless Academy entry. If you’re already interested in learning more you can research platforms like [Aave.com](https://aave.com/) and [Curve.fi](https://curve.fi/).
 
@@ -186,7 +186,7 @@ The lending and borrowing topic deserves its own Bankless Academy entry. If you�
 
 The market price of any stablecoin drifts slightly with the ebb and flow of trading. For major stablecoins, this is usually just a few hundredths of a cent above or below $1. These tiny deviations are quickly closed by traders taking advantage of arbitrage opportunities.
 
-However, there are cases where a stablecoin loses its peg beyond safe, temporary ranges. This effect isn’t necessarily permanent (USDC, March 2023) — but it can be (Terra, May 2022).
+However, there are cases where a stablecoin loses its peg beyond safe, temporary ranges. This effect isn’t necessarily permanent (USDC, March 2023), but it can be (Terra, May 2022).
 
 Some fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their stablecoin to regular fiat through their website. Whether this remains true during times of crisis is another story.
 

@@ -2,7 +2,7 @@
 TITLE: Gitcoin 2.0 Essentials
 DESCRIPTION: Explore Gitcoin's whitepaper for insights into democratic capital allocation and Ethereum ecosystem growth.
 LANGUAGE: English
-WRITERS: 
+WRITERS:
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/gitcoin-2.0-essentials
 FORMAT: LESSON
@@ -11,9 +11,9 @@ FORMAT: LESSON
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -185,4 +185,3 @@ Allo is the ______  layer for distribution of capital allocation, while Grants S
 6. Gitcoin **delivers decentralization** by layers. First, at the protocol layer with Grants Stack and at the app layer with Allo Protocol, providing a modular framework for effective capital allocation.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png)
-

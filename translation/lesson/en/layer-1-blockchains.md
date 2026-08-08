@@ -11,9 +11,9 @@ FORMAT: LESSON
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -37,7 +37,7 @@ This lesson explores why Ethereum and other blockchains are subject to the `Bloc
 
 # Blockchain Trilemma
 
-As implied by the word _**tri**_lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once. 
+As implied by the word _**tri**_lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once.
 
 These are: `Security`, `Scalability`, and `Decentralization`.
 
@@ -69,7 +69,7 @@ The Blockchain Trilemma describes the relationship between:
 
 Security is the most foundational requirement for a public blockchain. Computers within a network (such as a blockchain network) must agree on what transactions have truly happened to work together; this agreement is called `consensus`. A blockchain is secure if attackers cannot disrupt the network from agreeing on that truth. Consensus algorithms are designed to resist these attacks.
 
-Chains like Bitcoin that use `Proof of Work` consensus protect this agreement by making block production highly competitive; each block producer races to solve a math problem. The first to do so wins the right to create the next block and receives the monetary `block reward` that comes with it. Rewriting the chain’s recent history would require massive investments in computing power and energy, so an attacker would likely spend more than they’d gain. 
+Chains like Bitcoin that use `Proof of Work` consensus protect this agreement by making block production highly competitive; each block producer races to solve a math problem. The first to do so wins the right to create the next block and receives the monetary `block reward` that comes with it. Rewriting the chain’s recent history would require massive investments in computing power and energy, so an attacker would likely spend more than they’d gain.
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/security-and-consensus-4e857c50.svg)
 
@@ -97,7 +97,7 @@ Blockchain consensus for cryptocurrencies is:
 
 One potential form of attack on blockchain consensus is a `51% attack`; an attacker controlling the majority of a network’s consensus power can reverse recent transactions to spend the same coins twice, or censor new ones. They cannot fake signatures or spend anyone else’s funds. This majority means 51% of the computing power in Proof of Work consensus and 51% of the `stake` in Proof of Stake consensus, a massive capital investment. And in Proof of Stake, provable cheating such as signing two conflicting blocks gets that stake destroyed (called slashing); an attacker would likely lose more than they’d gain.
 
-In `Proof of Stake` consensus, the block producer isn’t chosen through competition but is randomly assigned instead. Like with Proof of Work, the consensus algorithm ensures that any single entity cannot regularly “win” the right to create a new `block`. 
+In `Proof of Stake` consensus, the block producer isn’t chosen through competition but is randomly assigned instead. Like with Proof of Work, the consensus algorithm ensures that any single entity cannot regularly “win” the right to create a new `block`.
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/security-and-attacks-a73febc0.svg)
 
@@ -157,7 +157,7 @@ The second aspect of blockchain scalability is:
 
 2) `Finality`: When can we be reasonably sure a transaction won’t get changed or reversed?
 
-In Proof of Work chains like Bitcoin, finality is measured in blocks: the more blocks added to the chain after your transaction, the more sure you can be it won’t get reverted. Remember, a secure consensus algorithm makes it very expensive to change past blocks, and the expense grows the farther back someone tries to change. Bitcoin produces a new `block` roughly every 10 minutes, so waiting for several confirmations takes about an hour. Ethereum’s Proof of Stake takes a different route: validators vote to finalize blocks, and after about 13 minutes (two `epochs` of votes) a transaction is final. 
+In Proof of Work chains like Bitcoin, finality is measured in blocks: the more blocks added to the chain after your transaction, the more sure you can be it won’t get reverted. Remember, a secure consensus algorithm makes it very expensive to change past blocks, and the expense grows the farther back someone tries to change. Bitcoin produces a new `block` roughly every 10 minutes, so waiting for several confirmations takes about an hour. Ethereum’s Proof of Stake takes a different route: validators vote to finalize blocks, and after about 13 minutes (two `epochs` of votes) a transaction is final.
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/scalability-finality-73177220.svg)
 
@@ -173,7 +173,7 @@ Centralized platforms like Facebook and Twitter can deactivate anyone’s accoun
 
 Which of these statements is NOT true for decentralization?
 
-- [ ] Decentralization makes blockchains censorship-resistant 
+- [ ] Decentralization makes blockchains censorship-resistant
 
 > ℹ️ Try again! This statement is true: with no single controlling entity, no one can censor the network.
 
@@ -185,7 +185,7 @@ Which of these statements is NOT true for decentralization?
 
 > ℹ️ Correct! This is NOT true: decentralization does the opposite by distributing control away from any single entity.
 
-- [ ] Anyone anywhere can use permissionless systems 
+- [ ] Anyone anywhere can use permissionless systems
 
 > ℹ️ Try again! This statement is true: permissionless means no one can be denied access.
 
@@ -199,7 +199,7 @@ So we can say something is “more or less decentralized than something else” 
 
 # Knowledge Check 6
 
-Different blockchains use different amounts of decentralization. 
+Different blockchains use different amounts of decentralization.
 
 - [x] True
 
@@ -280,4 +280,3 @@ Ethereum upgrades include:
 Users need low fees to learn and explore the technology with low barriers to entry and low costs from mistakes, even more so at the beginning of their journey. The Ethereum blockchain is not ideal yet, but its values make it one of the best candidates for fulfilling the dream of a global financial computing system. Explorers can learn to interact and use Ethereum without paying massive fees; using Layer 2s allows Explorers to have the security and decentralization benefits of Ethereum combined with the higher scalability.
 
 The next lesson will explain `Layer 2` solutions and how to get started. Onward explorers!
-

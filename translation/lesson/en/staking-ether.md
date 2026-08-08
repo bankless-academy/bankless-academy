@@ -11,9 +11,9 @@ FORMAT: HANDBOOK
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -46,7 +46,7 @@ Put simply, staking on Ethereum is an action that allows anyone to help secure t
 
 Staking is an essential part of Ethereum’s `consensus mechanism`: the separation of legitimate transaction and blocks from the fraudulent ones, in a `decentralized` way. This sorting is integral for maintaining a fair economy across the network.
 
-This might sound familiar — because it has the same goal as mining does on the Bitcoin network. Yet there’s a crucial difference between mining and staking: On Ethereum, staking can be accessed by anyone. You don’t need a powerful computer to process transactions, like you would for mining on Bitcoin.
+This might sound familiar, because it has the same goal as mining does on the Bitcoin network. Yet there’s a crucial difference between mining and staking: On Ethereum, staking can be accessed by anyone. You don’t need a powerful computer to process transactions, like you would for mining on Bitcoin.
 
 So by simply buying Ether and locking it in a network `smart contract`, you can become a staker. In doing so, you’ll help keep Ethereum running smoothly, and earn rewards in return!
 
@@ -54,7 +54,7 @@ So by simply buying Ether and locking it in a network `smart contract`, you can 
 
 Now, the best way to get involved in securing Ethereum is to run a `validator node`. It grants the most rewards, and has the biggest impact on network decentralization. The problem is… it requires 32 ETH, some technical knowledge, and a dedicated computer with 24/7 power and internet access. That’s a tall order for most Explorers. Fortunately, innovators within the Ethereum community have created an easy entry point that anyone can use to get involved: `staking pools` and `liquid staking tokens` (LSTs).
 
-Rocket Pool is a leader in this category, with an approach granting high positive network impact. By locking Ether in one of their staking pools, you’ll `mint` rETH. While minting rETH directly from the Rocket Pool smart contract has the largest impact on network decentralization, you can also buy it on a `decentralized exchange`. In holding this token, you’ll begin earning staking rewards, generating annual returns between 3% and 16%.
+Rocket Pool is one of the best-known decentralized staking protocols, with an approach granting high positive network impact. By locking Ether in one of their staking pools, you’ll `mint` rETH. While minting rETH directly from the Rocket Pool smart contract has the largest impact on network decentralization, you can also buy it on a `decentralized exchange`. In holding this token, you’ll begin earning staking rewards. Returns vary with network activity, historically a few percent per year.
 
 With rETH, staking rewards are added straight to the value of the token: If you hold 1 rETH today, you will still own 1 rETH in a year. It will just be worth more.
 
@@ -86,6 +86,8 @@ No minimum balance requirements, and works on all networks listed above.
 
 We’re swapping on the Optimism `layer 2` network, because gas fees are a lot lower than on Ethereum mainnet. Learn how to bridge to Optimism, [in our “How to Fund Your Wallet on L2” article](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2).
 
+Before swapping on a smaller network, check the quoted price and `liquidity`: rETH pools there can be shallow, giving you a worse rate.
+
 ![](https://app.banklessacademy.com/images/staking-ether/image-8d944152.png)
 
 **2\. Enter the amount you’d like to hold, hit ‘Swap’, and then in your wallet hit ‘Confirm’.**
@@ -114,7 +116,9 @@ Other risks include:
 
 * `Solo Staking`: A bug in the validator node’s chosen `validator client` software.
 
-* `Staking Pools`: A bug in the staking pool’s smart contracts, or the validator client software.
+* `Staking Pools`: A bug in the staking pool’s smart contracts, or the validator client software. Audits reduce this risk but never fully remove it.
+
+* `Liquid Staking Tokens`: The market price of an LST like rETH can trade slightly above or below the value of the Ether it represents.
 
 * `Centralized Exchange Staking`: Sudden bankruptcy of the exchange, and loss of any stake in it.
 
@@ -122,11 +126,11 @@ The potential impact of each risk is really difficult to predict, but it’s saf
 
 ### Does all staking benefit Ethereum?
 
-Benefit comes in the form of `decentralization` — you want as many independent `node operators` as possible.
+Benefit comes in the form of `decentralization`: you want as many independent `node operators` as possible.
 
 * `Solo Staking`: Maximum decentralization, as this typically means just a few nodes under one person.
 
-* `Staking Pools`: It depends on the platform. Some staking providers only allow specific people to act as validator nodes within their pools. That means many nodes under a few people — a centralizing force. Rocket Pool is one of the few providers that allow anyone to become the node operator of a staking pool. This makes their platform one of the best staking options for citizens of Ethereum.
+* `Staking Pools`: It depends on the platform. Some staking providers only allow specific people to act as validator nodes within their pools. That means many nodes under a few people, a centralizing force. Rocket Pool is one of the few providers that allow anyone to become the node operator of a staking pool. This makes their platform one of the best staking options for citizens of Ethereum.
 
 * `Centralized Exchange Staking`: Much like the centralizing forces within staking pools, many nodes under one entity is bad for Ethereum.
 
@@ -144,7 +148,7 @@ Rewards also change based on the staking method chosen. Check out our [“Staki
 
 If you want to become a `solo staker`, you’ll need the full 32 ETH, as well as your validator hardware. Check out [this great guide by CoinCashew](https://docs.coincashew.com/guides/mainnet).
 
-You can get started with just 16 ETH by running a `staking pool` with Rocket Pool, where other participants will help you reach the 32 ETH required. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started!
+You can also run a node through a `staking pool` like Rocket Pool with a fraction of that (4 ETH per validator as of 2026), where other participants supply the remaining Ether. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started! And no hardware is needed to simply hold rETH: anyone can join with any amount of Ether.
 
 ---
 

@@ -11,9 +11,9 @@ FORMAT: LESSON
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -31,7 +31,7 @@ ________________________________________________________________________________
 
 Welcome, Explorer, to your next lesson!
 
-Today, we’ll look at the process of “staking” — one simple way to build digital wealth.
+Today, we’ll look at the process of “staking”: one simple way to build digital wealth.
 
 `Staking` is similar to `mining` on the Bitcoin network: they’re both systems for letting participants process transactions on the blockchain in exchange for rewards. They keep our networks `decentralized`.
 
@@ -59,9 +59,9 @@ Grab your gear, let’s go!
 
 `Validator nodes` are key to a secure and legitimate economy on Ethereum. They protect the blockchain from `fraud`.
 
-Fraud in the blockchain world looks like a user manipulating balances or creating non-existent crypto. Ethereum’s way of curbing it is ensuring that every transaction is valid and no participant has power over others. This fairness, known as `credible neutrality`, is vital. Why? Nobody wants to be a part of an economy where there's deceit and distrust — it will eventually collapse.
+Fraud in the blockchain world looks like a user manipulating balances or creating non-existent crypto. Ethereum’s way of curbing it is ensuring that every transaction is valid and no participant has power over others. This fairness, known as `credible neutrality`, is vital. Why? Nobody wants to be a part of an economy where there's deceit and distrust; it will eventually collapse.
 
-In a healthy blockchain, validator nodes share one goal: **to** **reach decentralized agreement—across the network—on the state of the blockchain.** Nodes scan transactions, check them against the blockchain’s history, and vote on their validity. Transactions that pass node `consensus` as valid are added to the blockchain.
+In a healthy blockchain, validator nodes share one goal: **to** **reach decentralized agreement, across the network, on the state of the blockchain.** Nodes scan transactions, check them against the blockchain’s history, and vote on their validity. Transactions that pass node `consensus` as valid are added to the blockchain.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/blockchain-security-7f2149fe.svg)
 
@@ -83,7 +83,7 @@ How do validator nodes prevent fraud on Ethereum?
 
 # Proof-of-Stake
 
-Users who want to run a `validator node` on their computer must gather and lock 32 ETH — that’s a lot of money. In exchange for taking a large financial “stake” in the network, the `node operator` is allowed to propose and review blocks of transactions on Ethereum — and earn rewards. Think of blocks as groups of transactions submitted to the network.
+Users who want to run a `validator node` must lock at least 32 ETH, and that’s a lot of money. (Since 2025 a single validator can also hold a larger balance, and stakers can exit anytime through a queue.) In exchange for taking a large financial “stake” in the network, the `node operator` is allowed to propose and review blocks of transactions on Ethereum, and earn rewards. Think of blocks as groups of transactions submitted to the network.
 
 The network’s `consensus mechanism` randomly selects a validator node to propose the next block and its decision is double-checked by other nodes to ensure honesty. When a node successfully proposes a block, its `stake` grows.
 
@@ -91,7 +91,7 @@ The network’s `consensus mechanism` randomly selects a validator node to propo
 
 # Slashing
 
-When a node is too slow or tries to approve fraud, its stake is `slashed`: it gets a penalty charge. This way, staked Ether becomes a form of insurance where nodes are incentivized to be honest and keep Ethereum running smoothly.
+When a node provably cheats, like signing two conflicting blocks, its stake is `slashed`: it loses a chunk of its Ether. Being slow or offline is not slashing; that only costs a small penalty. This way, staked Ether becomes a security deposit where nodes are incentivized to be honest and keep Ethereum running smoothly.
 
 For an attacker to approve fraud on Ethereum, they must have control over majority of the validator nodes and thus, staked Ether. Fortunately this can't happen if everyday users are involved in staking. `Decentralized` ownership of the network divides the power to make decisions.
 
@@ -99,15 +99,15 @@ For an attacker to approve fraud on Ethereum, they must have control over majori
 
 # Knowledge Check 2
 
-True or False: Validator nodes caught processing fraudulent blocks will receive penalty charges.
+True or False: Validator nodes caught cheating, like signing two conflicting blocks, lose part of their stake.
 
 - [x] True
 
-> ℹ️ Correct! This “slashing” incentivizes nodes to stay honest!
+> ℹ️ Correct! This “slashing” punishes provable cheating. Being offline only costs a small penalty.
 
 - [ ] False
 
-> ℹ️ Try again! Nodes must receive some sort of punishment for dishonest actions.
+> ℹ️ Try again! Provable cheating is punished with slashing. Only being slow or offline is not.
 
 # Validating Transactions
 
@@ -117,7 +117,7 @@ Let's get into the step-by-step process of how nodes come to agreement using `Pr
 2. **Block Building:** Users submit transactions ordered into `blocks` by `block builders`.
 3. **Proposer Selection:** An algorithm selects a validator node to propose the next block to be added to the blockchain.
 4. **Block Proposal:** The `block proposer` reviews potential blocks and selects one, granting their `attestation` if valid.
-5. **Cross-Verification:** Other validators double-check the block and grant attestation if valid. Invalid blocks are discarded and the proposer is `slashed`.
+5. **Cross-Verification:** Other validators double-check the block and grant attestation if valid. Invalid blocks are simply ignored and never join the chain.
 6. **Block Addition:** The valid block is added to the Ethereum blockchain.
 7. **Rewards:** The block proposer earns a `block reward` and transaction tips. The other validators are also rewarded.
 
@@ -145,7 +145,7 @@ For providing Ether to a validator node, stakers earn a portion of its rewards.
 
 Rewards received by nodes are based on various ecosystem factors and can change. Simply put, the rewards are a portion of transaction fees and a small amount of newly issued Ether added to new blocks.
 
-Annual yield can look like anything between a 3% to 16% return on staked Ether. The exact amount is based on two key factors:
+Annual yield varies over time, historically a few percent on staked Ether. The exact amount is based on two key factors:
 
 - 📈 **Network Activity:** Generally speaking, if traffic is low rewards are lower. If traffic is high, they’re higher.
 - 👥 **Number of Validator Nodes:** Rewards get further divided with more participants.
@@ -166,7 +166,7 @@ So, there are three ways to protect Ethereum:
 
 Each method requires varying levels of technical knowledge to get set up, along with its own associated risks.
 
-If you’re comfortable holding your `private keys` but don’t have 32 ETH, then consider joining others in a staking pool. 
+If you’re comfortable holding your `private keys` but don’t have 32 ETH, then consider joining others in a staking pool.
 
 If you’re not yet okay with taking `self-custody` of your crypto, check out Centralized Exchange staking. In the mean time, take our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson and boldly take ownership of your crypto!
 
@@ -177,36 +177,30 @@ If you’re not yet okay with taking `self-custody` of your crypto, check out Ce
 **Solo Staking**
 
 🟡 Requires 32 ETH
-
 🟡 Technical Setup
-
 🟢 Decentralizes Ethereum
 
-**Risks:** You may lose your private keys, get `slashed`, or receive minor penalties for an offline node.
+**Risks:** Lost keys, `slashed` stake, offline penalties.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-part-2-96f11caf.svg)
 
 **Staking Pools**
 
 🟢 Any amount of ETH
-
 🟢 Easy Setup
-
 🟡 Decentralized Options
 
-**Risks:** There could be a bug in the staking pool’s smart contract or you may lose your private keys.
+**Risks:** Pool smart contract bugs, or lost keys.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-part-2-27091ef5.svg)
 
 **Centralized Exchange Staking**
 
 🟢 Any amount of ETH
-
 🟢 Easy Setup
-
 🔴 Centralizes Ethereum
 
-**Risks:** Your exchange could declare bankruptcy — this may lead to loss of your holdings.
+**Risks:** Exchange bankruptcy could take your funds.
 
 # Network Centralization
 
@@ -246,11 +240,11 @@ What would happen if a single entity controlled a majority of validator nodes?
 
 The best part about `staking pools` is that they’re entirely run by `smart contracts`. You don’t have to meet the other stakers in person and you don’t have to trust them. You do however have to trust the smart contract.
 
-Staking pools are organized by `staking providers`, digital platforms connecting stakers across the world! In staking pools, a `node operator` stakes at least 16 ETH and runs the node, while other participants supply the remaining Ether. The node operator earns extra yield for their service.
+Staking pools are organized by `staking providers`, digital platforms connecting stakers across the world! In staking pools, a `node operator` stakes a fraction of the full 32 ETH and runs the node, while other participants supply the remaining Ether. The node operator earns extra yield for their service.
 
 The remaining staking participants are given “Liquid Staking Tokens” (LSTs) representing their membership to the pool. These `tokens` stand for a share of a pool’s staked Ether. The holder earns a portion of rewards equal to the represented stake, and can use them to redeem their stake at any time.
 
-By simply holding an LST—like Rocket Pool’s rETH—you own a share of a staking pool. Yep, your Ether is decentralizing Ethereum and earning staking rewards!
+By simply holding an LST (like Rocket Pool’s rETH), you own a share of a staking pool. Yep, your Ether is decentralizing Ethereum and earning staking rewards!
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-pools-46c96251.svg)
 
@@ -274,11 +268,11 @@ Which entity hosts the staking pool?
 
 The best thing about `LSTs` is that even while your Ether is staked and gathering yield, it maintains a `liquid` form.
 
-“Liquid” in this case means that it can still flow throughout the ecosystem. Think of holding a share of a staking pool… but you can use it as money! LSTs can be swapped, used as collateral for loans, or even deposited on `restaking` platforms for bonus yield.
+“Liquid” in this case means that it can still flow throughout the ecosystem. Think of holding a share of a staking pool… but you can use it as money! LSTs can be swapped, used as collateral for loans, or even deposited on `restaking` platforms, an optional strategy that adds extra risk for extra yield.
 
 LSTs are great because they open access to staked Ether. Staking pools often have minimum deposit amounts for adding Ether to the pool (around 0.01 ETH). However, using LSTs, you can buy even smaller increments of staked Ether on your favorite `decentralized exchange`.
 
-# Network Centralization — Again!
+# Network Centralization, Again!
 
 Staking pools and LSTs have the same catch as the different staking methods: **they function in different degrees of centralization and decentralization.**
 
@@ -286,7 +280,7 @@ Staking providers like Rocket Pool have made sure that anyone, anywhere can be t
 
 If any entity gains over 33% control of all staked Ether, they could cause problems on the network. At 50%, they seriously threaten Ethereum’s `credible neutrality`.
 
-Staking provider Lido (as of early 2024) already hovers around the problematic 33% mark.
+Some large staking providers have come close to that 33% mark. Spreading stake across many providers keeps the network safe.
 
 To guard Ethereum, we need to do our research. Even with `staking pools` we need to make choices that support decentralization.
 
@@ -306,7 +300,7 @@ True or False: Supporting new node operators helps to decentralize Ethereum.
 
 # rETH - Your Path to Decentralized Staking
 
-It’s time to become a staker — a guardian of Ethereum.
+It’s time to become a staker: a guardian of Ethereum.
 For today’s quest, we’re taking ownership of a `staking pool` at Rocket Pool.
 
 🪙 It’s simple: Mint or buy Rocket Pool’s `liquid staking token`, **rETH**.
@@ -318,4 +312,3 @@ As the first step on your staking journey, you’ll be funding a `validator node
 Good luck on your quest, Explorer! May your commitment to Ethereum’s decentralized future be greatly rewarded.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-a5172608.svg)
-

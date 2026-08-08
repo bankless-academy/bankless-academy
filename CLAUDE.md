@@ -42,7 +42,10 @@ quizzes in the md but have no `[x]`; their type is pinned in `slideMeta`.
    their answer numbers saved in localStorage — the `[x]` must stay on the same
    option index. Rewrite question/option texts around the fixed position instead.
 2. **Don't make slide/section text much longer than it was** — long text breaks
-   the lesson UI. When adding content, trim elsewhere in the same slide.
+   the lesson UI (fixed-height slides on desktop; text runs under the Close
+   button). `validate-content.js` enforces an estimated-line ceiling per LEARN
+   slide (~24 rendered lines, image-aware) — but stay well under it; the
+   estimate is approximate and mobile binds sooner.
 3. **Keep text consistent with the slide's image** (`![](...)`). If the new text
    no longer matches the image, adjust the text (or drop the image reference) —
    never reference an image file that doesn't exist in `public/`.
@@ -116,7 +119,8 @@ render a warning banner on the intro slide.
 - [x] `validate-content.js` (frontmatter, quiz option/`[x]` shape, internal lesson slugs, local image existence, TODO markers) — chained with `test-content.js` into `yarn build`, so Vercel gates every deploy
 - [x] Glossary migrated to repo source of truth (2026-08-08): `import-keywords.js` removed, plurals fixed, missing definitions added, backtick↔glossary validation in `validate-content.js`. ETHGlossary API (`ethglossary.visual-20-hoists.workers.dev`, MPL-2.0, 532 terms × 24 langs with per-context variants) is the reference for canonical term translations — vendor its data before using it in `translate-content`.
 - [x] ETHGlossary vendored to `translation/ethglossary/` (2026-08-08, MPL-2.0 snapshot: 532 terms × 24 langs + style guide) — terminology backbone for translate-content
-- [ ] Glossary review pass — audit all 245 en definitions against the editing rules (ELI5, evergreen, length, no em dashes). **Do this once, as the LAST step of the content freeze** (lesson rewrites keep adding terms; reviewing earlier means reviewing twice). Gates translation start together with the lesson freeze.
+- [ ] Glossary review pass — audit all 245+ en definitions against the editing rules (ELI5, evergreen, length, no em dashes) and adjudicate the candidates queued in `docs/content-todos.md`. **Do this once, as the LAST step of the content freeze** (lesson rewrites keep adding terms; reviewing earlier means reviewing twice). Gates translation start together with the lesson freeze. Note: translated keyword files still carry the old (pre-fix) `public key` definition until the translation pass regenerates them.
+- [ ] Lesson metadata review (freeze checklist): audit `name`, `description`, `marketingDescription`, `learnings`/`learningActions`, and Quest component UI strings in lesson-meta.json / `src/components/Quest/*` against the rewritten lesson content — descriptions must still match what each lesson teaches. Do together with the glossary pass, before declaring the freeze.
 - [ ] Glossary page upgrades (localize the page, per-term anchors + cross-links, audit which entries have `glossary: true`) — bundle with the i18n Phase B selector/UI work; independent of lesson content
 - [ ] `translate-content` AI translation script (after content cleanup; see `docs/i18n-25-languages-plan.md` — translations start only after ALL lessons are finalized, existing 10 languages first)
 - [ ] Remove Crowdin (`crowdin.yml`, `import-translations.js`) and Notion lesson import (`import-content.js`, `src/pages/lessons/preview.tsx`)

@@ -11,9 +11,9 @@ FORMAT: LESSON
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -100,11 +100,11 @@ The technology is very complex, but from the end user perspective this process i
 
 # Sidechains
 
-A `sidechain` is a separate blockchain that runs independently to Ethereum, but is connected to Ethereum Mainnet by a `bridge`. To migrate tokens to the sidechain, you lock them in a bridge contract on Ethereum Mainnet, and equivalent tokens are minted on the sidechain. Importantly, this does NOT extend Ethereum’s security to your funds: the bridge and the sidechain are secured by the sidechain’s own validators. If those validators or the bridge contract are compromised (as in the $625M Ronin bridge hack of 2022), the locked funds can be stolen, no matter how secure Ethereum itself remains.
+A `sidechain` is a separate blockchain that runs independently to Ethereum, but is connected to Ethereum Mainnet by a `bridge`. To migrate tokens, you lock them in a bridge contract on Mainnet, and equivalent tokens are minted on the sidechain. Importantly, this does NOT give your funds Ethereum’s security: the bridge and sidechain rely on the sidechain’s own validators. If either is compromised (like the $625M Ronin bridge hack of 2022), the locked funds can be stolen.
 
-Sidechains are still subject to the Blockchain Trilemma. Their lower `gas` fees and increased transaction speed can be attributed to a smaller but more powerful validator set — meaning they trade some decentralization and security for scalability.
+Sidechains are still subject to the Blockchain Trilemma. Their lower `gas` fees and faster transactions come from a smaller but more powerful validator set, trading some decentralization and security for scalability.
 
-Sidechains, like Polygon PoS, regularly publish snapshots (“checkpoints”) to the L1, saving a moment-in-time status of their ledger. Checkpoints give the sidechain’s history a form of finality and let users prove their balances when exiting through the bridge, but they don’t allow the chain to be rolled back, and they don’t make sidechain funds as secure as funds on Mainnet.
+Sidechains like Polygon PoS regularly publish snapshots (“checkpoints”) to Ethereum. These give their history a form of finality and let users prove balances when exiting the bridge, but they don’t make sidechain funds as secure as Mainnet.
 
 ![](https://app.banklessacademy.com/images/layer-2-blockchains/sidechains-464f0191.svg)
 
@@ -142,7 +142,7 @@ There are currently two Rollup methods that can provide this evidence: `Optimist
 
 # Optimistic Rollups
 
-L2 protocols like Optimism, Base and Arbitrum, all use `Optimistic Rollups` as their scaling solution architecture. Optimistic Rollups are so-called because the information in the Rollup batch is considered to be valid unless proven otherwise — an optimistic assumption is made.
+L2 protocols like Optimism, Base and Arbitrum, all use `Optimistic Rollups` as their scaling solution architecture. Optimistic Rollups are so-called because the information in the Rollup batch is considered to be valid unless proven otherwise: an optimistic assumption is made.
 
 To mitigate against any abuse of this technique, there is typically a multi-day delay once a user requests to move funds off of the L2 back to Mainnet. During this time, bridge validators can publish a `fraud proof` seeking to cancel the withdrawal. This fraud-proof mechanism is similar to the banking industry’s clearance processes, but is decentralized.
 
@@ -224,11 +224,10 @@ Presently, both Optimistic Rollups and modern ZK Rollups offer a high level of s
 
 # Start Your Layer 2 Journey With Optimism or Base 🙂
 
-Optimism and Base, both EVM-equivalent Optimistic Rollups, are great L2s for Explorers to begin with. Using dApps on either chain will feel similar to using L1 dApps, just cheaper and faster — and they both use ETH as gas. Your upcoming quest will serve as the first step in your journey on Optimism or Base!
+Optimism and Base, both EVM-equivalent Optimistic Rollups, are great L2s for Explorers to begin with. Using dApps on either chain will feel similar to using L1 dApps, just cheaper and faster, and they both use ETH as gas. Your upcoming quest will serve as the first step in your journey on Optimism or Base!
 
 This improved functionality isn’t the only reason these networks are great scaling solutions for Bankless Explorers. Both ecosystems are deeply influenced by Ethereum values, with Optimism even allocating a portion of its transaction fees to [retroactively fund public goods](https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY) that add value to the ecosystem. It’s like a digital country that regularly and transparently funds on-chain infrastructure, such as free education from Bankless Academy, for everyone.
 
-Optimism and Base aren’t just platforms relying on Optimistic Rollups—they represent the power of blockchain technology to solve existing problems and explore new ways of transacting and coordinating together. And that should make us all optimistic. 🙂
+Optimism and Base aren’t just platforms relying on Optimistic Rollups: they represent the power of blockchain technology to solve existing problems and explore new ways of transacting and coordinating together. And that should make us all optimistic. 🙂
 
 ![](https://app.banklessacademy.com/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism-or-base--54a0f80a.svg)
-

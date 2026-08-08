@@ -11,9 +11,9 @@ FORMAT: HANDBOOK
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -34,7 +34,7 @@ ________________________________________________________________________________
 >
 > * We can use block explorers to inspect our on-chain transactions.
 
-The Decentralized Exchange (DEX) is the most commonly used application in the world of `Decentralized Finance` (DeFi) — and for good reason! DEXs enable automated swapping of one cryptocurrency token for another, without need for a mediator. Unlike Centralized Exchanges (CEXs), this type of swap also enables users to swap while retaining full ownership of their assets.
+The Decentralized Exchange (DEX) is the most commonly used application in the world of `Decentralized Finance` (DeFi), and for good reason! DEXs enable automated swapping of one cryptocurrency token for another, without need for a mediator. Unlike Centralized Exchanges (CEXs), this type of swap also enables users to swap while retaining full ownership of their assets.
 
 Autonomy, and permissionless protocols, are backbone features of DeFi. They empower DeFi users with true ownership over their digital assets, and open access to fundamental blockchain services 24/7. Anyone with an internet connection can access DeFi, regardless of their personal background, beliefs, or geographical location.
 
@@ -42,7 +42,7 @@ In this handbook entry, we will cover how to use your self-custody wallet to int
 
 ## Choosing a DEX
 
-Selecting an affordable and safe platform is the first step in performing a token swap. In this walkthrough we will be using Velodrome, the most popular DEX on the Optimism network (at time of writing). As you become more confident in blockchain navigation, you’ll learn how to evaluate other exchanges and find the best fit for your needs. Our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson includes a comprehensive list of qualities to look out for.
+Selecting an affordable and safe platform is the first step in performing a token swap. In this walkthrough we will be using Velodrome, a well-established DEX on the Optimism network. As you become more confident in blockchain navigation, you’ll learn how to evaluate other exchanges and find the best fit for your needs. Our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson includes a comprehensive list of qualities to look out for.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-a5b39b1d.png)
 
@@ -62,7 +62,7 @@ Use the standard ‘Connect’ button typically located in the top right corner 
 
 If you are on desktop, connect with your browser wallet.
 
-If you are on mobile, you will be prompted to use WalletConnect — the web3 standard for connecting mobile wallets to dApps.
+If you are on mobile, a wallet-connection prompt will let you link your mobile wallet to the dApp.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-1d7c44d3.png)
 
@@ -86,13 +86,13 @@ For this walkthrough, make sure your wallet is set to the Optimism network.
 
 **6\. Customize your swap:**
 
-It’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP — but you can swap whatever tokens you like!
+It’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP, but you can swap whatever tokens you like!
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-7b117655.png)
 
-**7\. Approve token permissions:**
+**7\. Approve token permissions (token swaps only):**
 
-You will be prompted to set and approve permission for Velodrome to access your wallet funds. We recommend limiting this to your trade size to limit future interactions with your tokens. (Stay tuned for future content on token permissions!)
+If you are swapping a token like USDC, your wallet will first ask you to approve permission for Velodrome to access that token. We recommend limiting the approval to your trade size. ETH is the network’s native currency and needs no approval, so in our example the wallet goes straight to the swap confirmation.
 
 **8\. Confirm the transaction:**
 
@@ -110,7 +110,7 @@ Your transaction should take a few seconds to confirm, after which you will see 
 
 **10\. Fetch your transaction hash:**
 
-To complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the ***transaction hash of the swap*** (not to be confused with the hash from your token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details.. If you missed it, or it’s missing, you’ll find another link in your wallet activity log — tied directly to your trade.
+To complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the ***transaction hash of the swap*** (not to be confused with the hash from a token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details. If you missed it, or it’s missing, you’ll find another link in your wallet activity log, tied directly to your trade.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-bcfdf0ee.png)
 
@@ -134,7 +134,7 @@ The answer depends on a variety of factors, primarily the block speed of the blo
 
 ### Why did my transaction fail?
 
-There are a number of reasons why a transaction could fail: insufficient funds to pay gas, gas limit set too low, or slippage set too low. The best way to begin troubleshooting is to look for User Interface error messages. You can also view your transaction on a block explorer, like [Etherscan](https://optimistic.etherscan.io/), to check if there are any on-chain error messages. We’ll cover more troubleshooting specifics in future content!
+There are a number of reasons why a transaction could fail: insufficient funds to pay gas, gas limit set too low, or slippage set too low. The best way to begin troubleshooting is to look for User Interface error messages. You can also view your transaction on a block explorer, like [Etherscan](https://optimistic.etherscan.io/), to check if there are any on-chain error messages. You can raise your `slippage tolerance` in the DEX swap settings if prices are moving faster than your trade. Many wallets and DEXs also offer protected transaction routing, which shields your swap from `MEV` bots trying to profit from pending trades.
 
 ### Can I change or remove token permissions?
 

@@ -11,9 +11,9 @@ FORMAT: LESSON
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -197,14 +197,12 @@ How does self-custody enable true ownership?
 Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
 
 - ⚡ Send money globally, 24/7. No paperwork, no bank approval, no downtime.
-- ⚙️ Confirmation takes minutes to an hour, and fees rise and fall with network demand.
+- ⚙️ Confirmation takes minutes to an hour; a fast-payments layer, the Lightning Network, handles instant everyday payments.
 - 📡 Access Bitcoin from anywhere with an internet connection.
 
-For instant, low-fee everyday payments, Bitcoin also has a fast-payments layer called the Lightning Network.
+Like an email address, a Bitcoin address is all you need to receive bitcoin. It looks like this: _bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4_
 
-In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4_
-
-You’ll manage your account using `cryptocurrency wallet` software on your phone or computer. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
+You’ll manage your funds with `cryptocurrency wallet` software on your phone or computer. No appointment or ID required!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -230,7 +228,7 @@ How is Bitcoin similar to email?
 
 # The Bitcoin Network
 
-Let’s switch gears and look at the engine behind Bitcoin: 
+Let’s switch gears and look at the engine behind Bitcoin:
 **The Bitcoin Network**.
 
 Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.
@@ -333,4 +331,3 @@ Remember to make sure all details are accurate.
 Once a Bitcoin transaction is confirmed, you cannot reverse it.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
-

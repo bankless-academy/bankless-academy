@@ -2,7 +2,7 @@
 TITLE: Understanding Ethereum Token Standards
 DESCRIPTION: Learn how Ethereum’s asset templates support both traditional and emerging asset classes.
 LANGUAGE: English
-WRITERS: Musharef, Tetranome
+WRITERS: Musharraf, Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards
 FORMAT: HANDBOOK
@@ -11,9 +11,9 @@ FORMAT: HANDBOOK
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 ## What are Ethereum Token Standards?
 
-Ethereum hosts tens of thousands of different crypto tokens, each with different properties and use cases. How can the network ensure seamless token support across its dApp ecosystem, without developers having to spend hours integrating each token? How can users of these tokens understand their key properties without scrolling through hours of documentation?
+Millions of different crypto tokens live across Ethereum and its `Layer 2` networks, each with different properties and use cases. How can the network ensure seamless token support across its dApp ecosystem, without developers having to spend hours integrating each token? How can users of these tokens understand their key properties without scrolling through hours of documentation?
 
 Enter token standards!
 
@@ -48,21 +48,21 @@ Token standards dictate:
 
 * How a token’s smart contract should be coded.
 
-* The use cases a token can have within the Ethereum ecosystem.
+* The shared set of functions every token of that type must support, so any dApp knows how to work with it.
 
 Currently, Ethereum has three commonly used token standards:
 
 ![](https://app.banklessacademy.com/images/understanding-ethereum-token-standards/image-eb8638eb.png)
 
-1. **ERC-20** — A standard for easily exchangeable (or fungible) tokens.
+1. **ERC-20**: A standard for easily exchangeable (or fungible) tokens.
 
    e.g. USDC and UNI tokens.
 
-2. **ERC-721** — A standard for unique (or non-fungible) tokens, known as `NFTs`.
+2. **ERC-721**: A standard for unique (or non-fungible) tokens, known as `NFTs`.
 
-   e.g. CryptoPunk and Bored Ape NFTs.
+   e.g. Bored Ape Yacht Club NFTs.
 
-3. **ERC-1155** — A standard used for both fungible and non-fungible tokens in the same contract.
+3. **ERC-1155**: A standard used for both fungible and non-fungible tokens in the same contract.
 
    e.g. Items inside a web3 video game.
 
@@ -102,11 +102,11 @@ Some examples of non-fungible assets are real estate, artwork, digital identitie
 
 If you’re ever confused about fungibility, just ask yourself: “How easy is it to exchange and divide?” If it’s difficult, it’s likely non-fungible!
 
-Ethereum aims to become “the settlement layer for the world economy”. Fungible and non-fungible asset functionality opens opportunities for traditional asset classes to be represented onchain — and for new ones to be created!
+Ethereum aims to become “the settlement layer for the world economy”. Fungible and non-fungible asset functionality opens opportunities for traditional asset classes to be represented onchain, and for new ones to be created!
 
 ## Standards & Token Functions
 
-When deploying a new token contract on Ethereum, the asset creator will select from one of the existing token standards. This grants it initial properties — called functions — such as the total supply of the asset, whether or not it can be transferred to another wallet, and what information it can hold.
+When deploying a new token contract on Ethereum, the asset creator will select from one of the existing token standards. This grants it initial properties (called functions) such as the total supply of the asset, whether or not it can be transferred to another wallet, and what information it can hold.
 
 ![](https://app.banklessacademy.com/images/understanding-ethereum-token-standards/image-242de5f5.png)
 
@@ -148,7 +148,7 @@ ERC-20 tokens can be anything from a `memecoin` to a mode of payment in a decent
 
 **1\. Utility token:** Serves a specific use case within an app/platform ecosystem.
 
-Example: Filecoin (FIL) is used to reward storage providers who validate and add new blocks to their data storage network.
+Example: Chainlink (LINK) is used to pay the operators who deliver real-world data, like market prices, to smart contracts.
 
 **2\. Governance token:** Offers holders voting rights in governance decisions of a platform.
 
@@ -156,11 +156,11 @@ Example: Ethereum Name Service (ENS) holders can vote in proposals to update the
 
 **3\. Stablecoin:** Designed to maintain a stable value, usually equal to the U.S. dollar.
 
-Examples: Tether (USDT), USD Coin (USDC), DAI (DAI).
+Examples: Tether (USDT), USD Coin (USDC), and newer entrants like Sky's USDS.
 
 **4\. Security token:** Represents ownership in an underlying asset, like stocks of a company.
 
-Examples: Blockchain Capital (BCAP)
+Example: tokenized investment funds, like the money-market funds that major asset managers began issuing onchain in 2024.
 
 A single token could fall into more than one category. For example, a governance token can also have certain utility within a platform.
 
@@ -174,7 +174,7 @@ You can easily [buy ERC-20 tokens on a DEX](https://app.banklessacademy.com/less
 
 What are some use cases of ERC-721 tokens?
 
-**1\. Ownership of assets:** ERC-721 tokens are widely used to represent the ownership of unique digital and real-world assets. For example, this Explorer’s Handbook entry has 100 individually numbered versions available — not just to read, but to own — like a book on your digital bookshelf. (You can `mint` and own it by hitting the gold ‘Collect Entry’ button at the top). Bankless Academy’s ‘Datadisk Collectibles’ work in the same way.
+**1\. Ownership of assets:** ERC-721 tokens are widely used to represent the ownership of unique digital and real-world assets. For example, this Explorer’s Handbook entry has 100 individually numbered versions available (not just to read, but to own), like a book on your digital bookshelf. (You can `mint` and own it by hitting the gold ‘Collect Entry’ button at the top). Bankless Academy’s ‘Datadisk Collectibles’ work in the same way.
 
 **2\. Subscriptions and memberships:** Creators, artists, clubs, and companies are already using NFTs for subscriptions, event tickets, and memberships. The provable uniqueness of NFTs ensures that each of the fixed supply is tied to an individual user.
 
@@ -182,7 +182,7 @@ What are some use cases of ERC-721 tokens?
 
 **4\. Identity and Certifications:** ERC-721 tokens can be used to create tamper-proof identities and certifications. When your digital identity or certificates are ERC-721 tokens, it is easy for you to prove your ownership and nearly impossible for anyone to forge your documents and misuse them.
 
-To get an ERC-721 token, create an account on an NFT marketplace like [OpenSea](https://opensea.io/) or [Blur](https://blur.io/) and purchase any listed NFT. Make sure you take our [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) lesson to protect yourself from marketplace scams.
+To get an ERC-721 token, create an account on an NFT marketplace like [OpenSea](https://opensea.io/) and purchase any listed NFT. Make sure you take our [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) lesson to protect yourself from marketplace scams.
 
 ### ERC-1155: Fungible & Non-fungible Tokens
 
@@ -190,7 +190,7 @@ To get an ERC-721 token, create an account on an NFT marketplace like [OpenSea](
 
 Often referred to as a `multi-token standard`, [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) merges the concepts of ERC-20 and ERC-721 and lets builders write contracts that can support both fungible and non-fungible tokens. This doesn’t make a major difference to the user experience but can help to optimize platform features. An example would be deploying both a fungible in-game currency and non-fungible in-game assets under a single contract.
 
-This standard also allows the creation of semi-fungible tokens — tokens that are fungible and non-fungible in specific circumstances. For example, in a trading card collection, all cards that have the same rarity might be fungible (interchangeable) whereas cards with differing rarity levels might be non-fungible (non-interchangeable).
+This standard also allows the creation of semi-fungible tokens: tokens that are fungible and non-fungible in specific circumstances. For example, in a trading card collection, all cards that have the same rarity might be fungible (interchangeable) whereas cards with differing rarity levels might be non-fungible (non-interchangeable).
 
 ERC-1155 also enables batch transactions to send multiple token types at once, potentially reducing the `gas` cost for users.
 
@@ -206,7 +206,7 @@ Don’t forget to collect this entry if you want to own a copy for easy referenc
 
 ### How are Ethereum token standards created?
 
-Token standards are proposed and published on Ethereum through a proposal process called Ethereum Improvement Proposals (EIPs). Once a proposal is passed, it becomes a standard and is called an Ethereum Request for Comment (ERC). The serial number of the EIP is then appended to complete the standard name, e.g. ERC-20 or ERC-721.
+Token standards are proposed and published on Ethereum through a proposal process called Ethereum Improvement Proposals (EIPs). There is no vote: a proposal is refined in public discussion, and once the community broadly agrees it works, editors finalize it as a standard called an Ethereum Request for Comment (ERC). The serial number of the EIP is then appended to complete the standard name, e.g. ERC-20 or ERC-721.
 
 ### Does ether (ETH) follow a token standard?
 
@@ -222,7 +222,7 @@ To identify the original token, you should check the contract address that’s u
 
 ### Are there other token standards on Ethereum apart from ERC-20, 721, and 1155?
 
-Yes, there are other token standards on Ethereum that are not in use or have very niche use cases. Some examples include [ERC-223](https://eips.ethereum.org/EIPS/eip-223), [ERC-1462](https://eips.ethereum.org/EIPS/eip-1462), [ERC-1948](https://eips.ethereum.org/EIPS/eip-1948), and [ERC-4626](https://eips.ethereum.org/EIPS/eip-4626).
+Yes. Some are widely used, like [ERC-4626](https://eips.ethereum.org/EIPS/eip-4626), a shared standard for "vault" tokens that represent deposits earning yield in DeFi. Newer standards also cover smart accounts, letting a wallet run its own code. Others, like [ERC-223](https://eips.ethereum.org/EIPS/eip-223), [ERC-1462](https://eips.ethereum.org/EIPS/eip-1462), and [ERC-1948](https://eips.ethereum.org/EIPS/eip-1948), never caught on or serve very niche use cases.
 
 ---
 
