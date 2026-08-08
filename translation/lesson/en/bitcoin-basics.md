@@ -3,6 +3,7 @@ TITLE: Bitcoin Basics
 DESCRIPTION: What is Bitcoin? Explore the first successful cryptocurrency and rethink money.
 LANGUAGE: English
 WRITERS: Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/bitcoin-basics
 FORMAT: LESSON
@@ -128,13 +129,11 @@ For its qualities, Bitcoin has earned the nickname “digital gold”.
 
 📉 Do you find it difficult to keep up with rising costs?
 
----
-
 Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist: a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare, much like gold.
 
-While the max supply of `BTC` can’t exceed 21 million, new currency is still added to the `circulating supply`. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. Roughly every four years, this new issuance is cut in half (the “halving”), shrinking toward zero as the cap approaches. Over time, miners rely more on transaction fees than on new coins.
+New currency still enters the `circulating supply` through a laborious process called `cryptocurrency mining`. Roughly every four years, this new issuance is cut in half (the `halving`), shrinking toward zero as the cap approaches, so miners rely more on transaction fees over time.
 
-Bitcoin's fixed `monetary policy` makes it attractive for preserving value in the long term. Since 2024, regulated funds (spot ETFs) have let traditional investors hold Bitcoin, strengthening its “digital gold” role.
+Bitcoin's fixed `monetary policy` makes it attractive for preserving value in the long term. Since 2024, regulated funds (`spot ETFs`) have let traditional investors hold Bitcoin, strengthening its “digital gold” role.
 
 Its short term value remains volatile due to market speculation.
 
@@ -192,12 +191,10 @@ How does self-custody enable true ownership?
 
 ⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?
 
----
-
 Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
 
 - ⚡ Send money globally, 24/7. No paperwork, no bank approval, no downtime.
-- ⚙️ Confirmation takes minutes to an hour; a fast-payments layer, the Lightning Network, handles instant everyday payments.
+- ⚙️ Confirmation takes minutes to an hour; a fast-payments layer, the `Lightning Network`, handles instant everyday payments.
 - 📡 Access Bitcoin from anywhere with an internet connection.
 
 Like an email address, a Bitcoin address is all you need to receive bitcoin. It looks like this: _bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4_

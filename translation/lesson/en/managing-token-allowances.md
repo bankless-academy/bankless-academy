@@ -3,6 +3,7 @@ TITLE: Managing Token Allowances
 DESCRIPTION: Protect your wallet from unwanted smart contract interactions.
 LANGUAGE: English
 WRITERS: estmcmxci, Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/managing-token-allowances
 FORMAT: HANDBOOK
@@ -70,7 +71,7 @@ By proactively managing token allowances, users can ensure that no contract with
 
 **1\. Connect your wallet**:
 
-To begin the process of revoking your token allowances, head to [Revoke.cash](http://revoke.cash/) and click on “Connect Wallet” located in the top-right corner. Alternatively, you can manually enter your wallet public address in the search bar. Once the loading is complete, you’ll see a list of all your token approvals on that network.
+To begin the process of revoking your token allowances, head to [Revoke.cash](http://revoke.cash/) and click on “Connect Wallet” located in the top-right corner. Alternatively, you can manually enter your wallet public address in the search bar. Once the loading is complete, you’ll see a list of all your `token approvals` on that network.
 
 ![](https://app.banklessacademy.com/images/managing-token-allowances/image-f95ea594.png)
 
@@ -100,7 +101,7 @@ It might be in your best interest to revoke or adjust a token allowance if:
 
 Since Ethereum’s Pectra upgrade (May 2025), allowances aren’t the only permission worth reviewing. A newer wallet feature (EIP-7702) lets your wallet delegate to extra code, enabling conveniences like transaction batching, but also a new drainer trick: a single malicious signature can install “sweeper” code that instantly forwards anything you deposit to an attacker, without your seed phrase ever being exposed. In 2025, researchers at Wintermute found that over 97% of early wallet delegations pointed to identical sweeper code.
 
-Revoke.cash shows your active delegations under the “Delegations” tab, but because delegations are controlled by your wallet rather than by dApps, you revoke an unwanted delegation from inside your wallet itself. In MetaMask, open the account details and switch the account back to a standard account. If you never chose to upgrade to a smart account, treat any delegation you find as hostile.
+Revoke.cash shows your active delegations under the “Delegations” tab, but because delegations are controlled by your wallet rather than by dApps, you revoke an unwanted delegation from inside your wallet itself. In MetaMask, open the account details and switch the account back to a standard account. If you never chose to upgrade to a `smart account`, treat any delegation you find as hostile.
 
 ---
 

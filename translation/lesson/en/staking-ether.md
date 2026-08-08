@@ -3,6 +3,7 @@ TITLE: Staking Ether
 DESCRIPTION: Generate yield on your Ether by protecting Ethereum.
 LANGUAGE: English
 WRITERS: Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/staking-ether
 FORMAT: HANDBOOK

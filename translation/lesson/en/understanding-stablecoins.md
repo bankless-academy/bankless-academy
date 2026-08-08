@@ -3,6 +3,7 @@ TITLE: Understanding Stablecoins
 DESCRIPTION: Use dollars, euros, and more on the blockchain.
 LANGUAGE: English
 WRITERS: Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/understanding-stablecoins
 FORMAT: HANDBOOK
@@ -66,7 +67,7 @@ There are three common strategies for a stablecoin to maintain its price peg:
 
 ### 1\. Fiat-backed Stablecoins
 
-Fiat-backed stablecoins maintain value by issuing a fixed token supply matched by real-world currency reserves. Their on-chain price is maintained via supply/demand economics: few people want to pay more than one real-world dollar for a dollar of on-chain value, so they simply take their trade elsewhere. To meet increased demand, the stablecoin issuer locks up additional fiat and increases the token supply by the same amount.
+Fiat-backed stablecoins maintain value by issuing a fixed token supply matched by real-world currency reserves. Their on-chain price is maintained via supply/demand economics: few people want to pay more than one real-world dollar for a dollar of on-chain value, so they simply take their trade elsewhere. To meet increased demand, the `stablecoin issuer` locks up additional fiat and increases the token supply by the same amount.
 
 Notable fiat-backed stablecoins include Tether’s USDT and Circle’s USD Coin (USDC). Circle also issues a euro-pegged equivalent, EURC.
 
@@ -106,7 +107,7 @@ Considerations:
 
 These tokens attempt to maintain their peg by automatically balancing their own supply instead of holding full collateral: an onchain algorithm removes tokens from circulation when the market price falls below the peg, and mints new ones when it rises above. On paper, this promises a stablecoin free of banks and collateral. In practice, the pure version of this design has failed, catastrophically.
 
-The defining example is Terra’s UST, whose algorithm let holders always swap 1 UST for $1 worth of Terra’s volatile LUNA token. In May 2022, mass UST selling forced the algorithm to mint enormous amounts of LUNA, crashing its price and triggering yet more selling: a “death spiral” that erased around $40 billion in a matter of days. UST never recovered its peg.
+The defining example is Terra’s UST, whose algorithm let holders always swap 1 UST for $1 worth of Terra’s volatile LUNA token. In May 2022, mass UST selling forced the algorithm to mint enormous amounts of LUNA, crashing its price and triggering yet more selling: a `death spiral` that erased around $40 billion in a matter of days. UST never recovered its peg.
 
 Surviving projects have abandoned the pure model. Frax, once partly algorithmic, moved to 100% collateralization in 2023; its current stablecoin, frxUSD, is backed by reserves including tokenized US Treasury funds, while FRAX now serves as the protocol’s governance token.
 

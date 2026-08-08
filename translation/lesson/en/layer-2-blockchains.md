@@ -3,6 +3,7 @@ TITLE: Layer 2 Blockchains
 DESCRIPTION: Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.
 LANGUAGE: English
 WRITERS: HiroKennelly, Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/layer-2-blockchains
 FORMAT: LESSON
@@ -33,7 +34,7 @@ The desired operational state for any blockchain is to be as decentralized, secu
 
 Bitcoin and Ethereum are both fairly decentralized and secure, but they don’t scale well, as is evident from the high transaction fees and long transaction queues when the network is busy. To circumvent these issues, Explorers can make use of various technologies which drastically reduce transaction costs and increase transaction speed. These are collectively known as Layer 2 (L2) scaling solutions.
 
-The Lightning Network is Bitcoin’s best-known scaling solution, and it relies on a technology called `payment channels` to scale payments between parties. Ethereum eases the Blockchain Trilemma by relying on various L2 solutions to handle transactions, supported by cheap, temporary “blob” storage added to Mainnet in 2024 (a light form of the “sharding” once planned).
+The `Lightning Network` is Bitcoin’s best-known scaling solution, and it relies on a technology called `payment channels` to scale payments between parties. Ethereum eases the Blockchain Trilemma by relying on various L2 solutions to handle transactions, supported by cheap, temporary `blob` storage added to Mainnet in 2024 (a light form of the “sharding” once planned).
 
 ![](https://app.banklessacademy.com/images/layer-2-blockchains/introduction-c1f2c88f.svg)
 
@@ -132,7 +133,7 @@ Sidechains:
 
 Layer 2 protocols that use Rollup technology maintain closer alignment with the security level of Ethereum Mainnet.
 
-Like sidechains, Rollups permit on-chain transactions to execute away from Ethereum Mainnet. These transactions are then ‘rolled up’ into a single batch, and the batch data is posted to Ethereum in cheap, temporary data packets called “blobs”, introduced in the Dencun upgrade of March 2024. Blobs are the main reason typical L2 fees have dropped to a few cents or less.
+Like sidechains, Rollups permit on-chain transactions to execute away from Ethereum Mainnet. These transactions are then ‘rolled up’ into a single batch, and the batch data is posted to Ethereum in cheap, temporary data packets called `blobs`, introduced in the Dencun upgrade of March 2024. Blobs are the main reason typical L2 fees have dropped to a few cents or less.
 
 In order for the Rollup to prove itself secure enough to process transactions on behalf of Mainnet, it must provide “convincing evidence” that the transactions in each submitted batch are secure and valid. This evidence is included in the transaction rollup and verified by the bridge contract on Ethereum Mainnet.
 
@@ -164,7 +165,7 @@ With Optimistic Rollups, transactions are considered valid until proven otherwis
 
 # ZK Rollups
 
-`ZK Rollups` are a type of Rollup that relies on Zero-Knowledge technology. Unlike `Optimistic Rollups`, ZK Rollups confirm the legitimacy of the batched transactions without reliance on certain users to look for evidence of fraud. Instead, these Rollups submit a mathematical proof, known as a “validity proof”, that lets Ethereum check an entire batch is correct without redoing the work.
+`ZK Rollups` are a type of Rollup that relies on Zero-Knowledge technology. Unlike `Optimistic Rollups`, ZK Rollups confirm the legitimacy of the batched transactions without reliance on certain users to look for evidence of fraud. Instead, these Rollups submit a mathematical proof, known as a `validity proof`, that lets Ethereum check an entire batch is correct without redoing the work.
 
 The major upside to ZK Rollups is the `settlement time`, also known as `transaction finality`. Rather than a multi-day challenge period, ZK Rollups enable users to access their funds on Mainnet typically within a few hours, as soon as the next validity proof is submitted. Despite the name, Zero-Knowledge technology isn’t used here for privacy: transactions on major ZK Rollups are just as public as on Ethereum Mainnet.
 
@@ -224,10 +225,10 @@ Presently, both Optimistic Rollups and modern ZK Rollups offer a high level of s
 
 # Start Your Layer 2 Journey With Optimism or Base 🙂
 
-Optimism and Base, both EVM-equivalent Optimistic Rollups, are great L2s for Explorers to begin with. Using dApps on either chain will feel similar to using L1 dApps, just cheaper and faster, and they both use ETH as gas. Your upcoming quest will serve as the first step in your journey on Optimism or Base!
+Optimism and Base, both EVM-equivalent Optimistic Rollups, are great L2s for Explorers to begin with. Using dApps on either chain feels similar to L1, just cheaper and faster, and both use ETH as gas. Your upcoming quest is the first step of your journey on Optimism or Base!
 
-This improved functionality isn’t the only reason these networks are great scaling solutions for Bankless Explorers. Both ecosystems are deeply influenced by Ethereum values, with Optimism even allocating a portion of its transaction fees to [retroactively fund public goods](https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY) that add value to the ecosystem. It’s like a digital country that regularly and transparently funds on-chain infrastructure, such as free education from Bankless Academy, for everyone.
+Both ecosystems are deeply influenced by Ethereum values, with Optimism known for [funding public goods](https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY) that add value to the ecosystem, such as free education from Bankless Academy.
 
-Optimism and Base aren’t just platforms relying on Optimistic Rollups: they represent the power of blockchain technology to solve existing problems and explore new ways of transacting and coordinating together. And that should make us all optimistic. 🙂
+Optimism and Base aren’t just platforms relying on Optimistic Rollups: they show how blockchains can solve real problems and open new ways of transacting and coordinating together. And that should make us all optimistic. 🙂
 
 ![](https://app.banklessacademy.com/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism-or-base--54a0f80a.svg)

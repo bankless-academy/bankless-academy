@@ -3,6 +3,7 @@ TITLE: Blockchain Basics
 DESCRIPTION: Learn about the fundamental architecture of blockchain technology.
 LANGUAGE: English
 WRITERS: iSpeakNerd
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 FORMAT: LESSON

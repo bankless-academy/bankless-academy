@@ -3,6 +3,7 @@ TITLE: Intro to DeFi
 DESCRIPTION: Understand the basics of decentralized finance.
 LANGUAGE: English
 WRITERS: Ap0ll0
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/intro-to-defi
 FORMAT: LESSON
@@ -95,7 +96,7 @@ How can you earn yield with crypto?
 
 `DeFi` transactions are `permissionless`. This refers to a public `blockchain` that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps.
 
-`DApps` and DeFi platforms operate 24/7, all over the world. Many run on stablecoins, tokens designed to hold a steady dollar value (see our [Understanding Stablecoins](https://app.banklessacademy.com/lessons/understanding-stablecoins) lesson). We will introduce four of the most common activities in DeFi: investing, trading, lending and borrowing, and staking.
+`DApps` and DeFi platforms operate 24/7, all over the world. Many run on `stablecoins`, tokens designed to hold a steady dollar value (see our [Understanding Stablecoins](https://app.banklessacademy.com/lessons/understanding-stablecoins) lesson). We will introduce four of the most common activities in DeFi: investing, trading, lending and borrowing, and staking.
 
 ![](https://app.banklessacademy.com/images/intro-to-defi/what-you-can-do-with-defi-e1e865b5.svg)
 
@@ -185,7 +186,7 @@ What is a DEX?
 
 DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a `peer-to-peer` level: `DApps` connect lenders and borrowers directly. The lender earns interest, and the borrower pays back the loan plus interest.
 
-To borrow, you first deposit crypto worth more than the loan as `collateral`. If your collateral's value falls too far, it is automatically sold to repay the loan. This is called liquidation, and it is how DeFi loans stay safe without credit checks.
+To borrow, you first deposit crypto worth more than the loan as `collateral`. If your collateral's value falls too far, it is automatically sold to repay the loan. This is called `liquidation`, and it is how DeFi loans stay safe without credit checks.
 
 ![](https://app.banklessacademy.com/images/intro-to-defi/lending-borrowing-b7d58dfa.svg)
 
@@ -213,7 +214,7 @@ Fill in the blank: DeFi lending is done on a _____ level.
 
 `Staking` is often grouped with lending, but it is different: there is no borrower. You lock your `ether` to help keep the Ethereum network secure, and the network pays you rewards in return.
 
-Staked funds can be locked for a period of time, and validators who misbehave lose part of their stake, so honesty pays. Centralized exchanges offer staking too, but DeFi gives you more options while you stay in control of your assets. Learn more in our [Staking on Ethereum](https://app.banklessacademy.com/lessons/staking-on-ethereum) lesson.
+Staked funds can be locked for a period of time, and `validators` who misbehave lose part of their stake, so honesty pays. Centralized exchanges offer staking too, but DeFi gives you more options while you stay in control of your assets. Learn more in our [Staking on Ethereum](https://app.banklessacademy.com/lessons/staking-on-ethereum) lesson.
 
 ![](https://app.banklessacademy.com/images/intro-to-defi/staking-8dbafcb8.svg)
 
@@ -249,7 +250,7 @@ Where there is money and technology, there are people looking for ways to hack t
 
 **Risk**
 
-DeFi runs on code: `smart contracts`. An error or loophole in that code can be exploited to drain funds. Markets bring risk too: loans can be liquidated when prices fall, and stablecoins can lose their steady value.
+DeFi runs on code: `smart contracts`. An error or loophole in that code can be exploited to drain funds. Markets bring risk too: loans can be liquidated when prices fall, and `stablecoins` can lose their steady value.
 
 ![](https://app.banklessacademy.com/images/intro-to-defi/defi-downsides-0070f0e1.svg)
 

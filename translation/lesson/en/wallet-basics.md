@@ -1,8 +1,9 @@
 ---
 TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your “Ethereum account” today!
+DESCRIPTION: What is a crypto wallet? Learn how wallets work and create your first one today!
 LANGUAGE: English
 WRITERS: Ap0ll0517, Jordy, Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
@@ -188,7 +189,7 @@ There are two styles of `self-custody wallet`:
 - 🔥 **Hot wallets:** software on your desktop or phone.
 - 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
 
-You may also hear about “smart wallets”: an emerging type that runs code, enabling extras like passkey logins and account recovery.
+You may also hear about `smart wallets`: an emerging type that runs code, enabling extras like passkey logins and account recovery.
 
 Each wallet serves a different use-case. Don’t worry, we’ll only be creating one wallet today.
 
@@ -288,11 +289,11 @@ Which of the following wallet types is considered the most secure?
 
 Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ Record your `recovery phrase` on durable physical material (laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **It’s more than just a password.**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 Double-check the details whenever you send funds or sign, even for small amounts: mistakes cannot be undone.
 
-🔭 Spend time researching and gathering info on any `blockchain apps` you plan to interact with before connecting your wallet to it or signing its transactions.
+🔭 Research any `blockchain apps` you plan to use before connecting your wallet or signing their transactions.
 
 💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts.
 

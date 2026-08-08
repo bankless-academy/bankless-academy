@@ -17,27 +17,40 @@ Updated 2026-08-08 during the content review/rewrite phase.
 | registering-your-web3-username | all walkthrough captures | Previous ENS Manager UI generation; steps still correct |
 | staking-ether | rocketpool stake UI ×2, Uniswap swap UI ×2 | Pre-Saturn / redesigned UIs; flows unchanged, recapture eventually |
 
-## Glossary candidates (feed the end-of-freeze glossary review pass)
+## Glossary candidates — ADJUDICATED (glossary review pass, 2026-08-08)
 
-Terms lessons wanted to backtick but no `keywords.json` entry exists (suggested
-definitions in the wave agents' reports; adjudicate + dedupe at review time):
+All candidates resolved; keywords.json updated and newly-covered terms
+backticked in lessons (first occurrence per slide only).
 
-- validator (wanted by ethereum-basics, layer-1-blockchains, intro-to-defi — only "validator node" exists)
-- stablecoin (intro-to-defi; only used unbackticked)
-- liquidation (intro-to-defi)
-- Lightning Network, halving, spot ETF (bitcoin-basics)
-- slashing, blob, double-spend (layer-1-blockchains)
-- ETF, staking service, stablecoin issuer (ethereum-basics)
-- onramp / fiat onramp, Mainnet / Ethereum Mainnet, yield farm, know-your-customer (funding-a-wallet-on-layer-2)
-- validity proof, death spiral (phase 1 rewrites; currently in quotes, not backticks)
-- fingerprint (blockchain-basics; optional, analogy word)
-- vault, smart account, oracle (understanding-ethereum-token-standards)
-- order book, intent-based trading, signature approval (decentralized-exchanges)
-- intent, solver, batch auction, private transaction routing (dex-aggregators)
-- token approval / token permission (swapping walkthrough)
-- slashing (noun; only "slashed" exists), inactivity penalty, exit queue (staking pair)
-- smart wallet (wallet-basics)
-- Basenames (registering-your-web3-username)
+**Added, glossary:true** (25): validator, stablecoin, stablecoin issuer,
+liquidation, Lightning Network, halving, spot ETF, ETF, slashing (noun; the
+"slashed" entry kept but flipped to glossary:false as its variant), blob,
+double-spend, onramp, Mainnet, oracle, smart wallet, order book, intent,
+solver, validity proof, death spiral, batch auction, private transaction
+routing, yield farm, vault, Basenames.
+
+**Added, glossary:false aliases** (4): Ethereum Mainnet (→ Mainnet),
+know-your-customer (→ KYC), smart account (→ smart wallet), token approval
+(→ token allowance).
+
+**Skipped** (with reason):
+- fingerprint — analogy word; "hash" is already defined as a digital fingerprint.
+- staking service — redundant with existing "staking providers" entry.
+- exit queue, inactivity penalty — staking lessons no longer use the exact
+  terms after the rewrites (only paraphrases: "a queue", "small penalty");
+  revisit if the terms return.
+- intent-based trading — redundant with the new "intent" entry (left
+  unbackticked in dex-aggregators/decentralized-exchanges).
+- signature approval — niche; covered by "digital signature" + "token approval".
+- fiat onramp / token permission — phrasings not used in lessons; covered by
+  "onramp" / "token approval".
+- filler (dex-aggregators quiz feedback) — protocol-specific synonym of "solver".
+
+Also settled: `transaction finality` flipped to glossary:false ("finality" is
+the canonical glossary entry; both keys remain for tooltips). Plural-variant
+keys "validator nodes", "stakers", "intermediaries" flipped to glossary:false
+(singular entries already carry keyword_plural, so the glossary page showed
+duplicates).
 
 Non-issue verified: `liquidity pools` resolves via the trailing-s fallback to
 "liquidity pool" — no entry needed.

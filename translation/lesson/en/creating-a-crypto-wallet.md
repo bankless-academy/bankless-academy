@@ -3,6 +3,7 @@ TITLE: Creating a Crypto Wallet
 DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
 LANGUAGE: English
 WRITERS: Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK

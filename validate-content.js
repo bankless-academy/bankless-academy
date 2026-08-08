@@ -86,7 +86,7 @@ for (const file of files) {
   // Estimated rendered lines: image slides have a ~58-char text column,
   // imageless slides ~116; <details> render collapsed. Threshold calibrated
   // against a known-overflowing slide (~26 est. lines).
-  const MAX_SLIDE_LINES = 24
+  const MAX_SLIDE_LINES = 22
   if (meta[slug]?.slideMeta && slugs.has(slug) && meta[slug].publicationStatus !== 'deprecated') {
     const stripped = md.replace(/```[\s\S]*?```/g, '')
     for (const section of stripped.split(/^# /m).slice(1)) {

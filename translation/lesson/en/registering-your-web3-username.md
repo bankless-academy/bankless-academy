@@ -3,6 +3,7 @@ TITLE: Registering Your Web3 Username
 DESCRIPTION: Customize your wallet address with ENS, start building your digital identity.
 LANGUAGE: English
 WRITERS: estmcmxci, Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/registering-your-web3-username
 FORMAT: HANDBOOK

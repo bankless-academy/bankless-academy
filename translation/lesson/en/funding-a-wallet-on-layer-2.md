@@ -3,6 +3,7 @@ TITLE: Funding a Wallet on Layer 2
 DESCRIPTION: Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.
 LANGUAGE: English
 WRITERS: HiroKennelly
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2
 FORMAT: HANDBOOK
@@ -30,11 +31,11 @@ ________________________________________________________________________________
 
 > * There are a number of ways to fund your wallet on an Ethereum scaling solution like Base, Optimism, or Arbitrum.
 >
-> * Centralized exchanges often provide a direct Layer 2 onramp.
+> * Centralized exchanges often provide a direct Layer 2 `onramp`.
 >
 > * Third-party payment apps enable users to fund a wallet on Layer 2 from a bank account or a debit or credit card.
 >
-> * Protocol bridges let users send funds from Ethereum Mainnet to Layer 2.
+> * Protocol bridges let users send funds from `Ethereum Mainnet` to Layer 2.
 
 If you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Base](https://www.base.org/), those are Layer 2 scaling solutions. [Polygon](https://polygon.technology/) is often grouped with them too (it’s really a `sidechain`, but let’s not worry about that here).
 
@@ -80,7 +81,7 @@ Most major exchanges offer users the ability to send their crypto directly to an
 
 Another simple way to fund your L2 wallet is to take advantage of direct-to-L2 services offered by many third-party crypto payment companies. [MoonPay](https://www.moonpay.com/), [Ramp](https://ramp.network/buy/), and [Transak](https://global.transak.com/) are three of the most popular options to fund crypto wallets without having to use a centralized exchange.
 
-Like most exchanges, these third-party onramps will require you to provide Know-Your-Customer information. However, once you get past those basic hurdles, these payment options are an easy way to buy crypto across the ecosystem and transfer it to Layer 2.
+Like most exchanges, these third-party `onramps` will require you to provide `Know-Your-Customer` information. However, once you get past those basic hurdles, these payment options are an easy way to buy crypto across the ecosystem and transfer it to Layer 2.
 
 For MoonPay, the steps are:
 
@@ -112,7 +113,7 @@ As with CEXs, most major third-party payment onramps provide direct-to-L2 functi
 
 ## Funding Via Bridges
 
-If you already have funds on Ethereum Mainnet, by far the easiest way to get your crypto on to L2 is to use a bridging protocol. Bridges are the name we’ve given to protocols designed to help us move our funds around the cryptoverse, and there are a number of bridges designed to move crypto from Ethereum Mainnet to Layer 2s.
+If you already have funds on `Ethereum Mainnet`, by far the easiest way to get your crypto on to L2 is to use a bridging protocol. Bridges are the name we’ve given to protocols designed to help us move our funds around the cryptoverse, and there are a number of bridges designed to move crypto from Ethereum Mainnet to Layer 2s.
 
 ### Native Bridges
 
@@ -144,7 +145,7 @@ Moving funds from Mainnet to L2 is really that simple, and nearly all bridges wo
 
 ## The Road to L2
 
-Layer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://www.growthepie.com/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or yield farms.
+Layer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://www.growthepie.com/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or `yield farms`.
 
 Using a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can look up your address on a `block explorer` like [Blockscan](https://blockscan.com/), which searches many networks at once, or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.
 

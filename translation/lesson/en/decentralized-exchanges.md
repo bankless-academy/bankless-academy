@@ -3,6 +3,7 @@ TITLE: Decentralized Exchanges
 DESCRIPTION: Discover how smart-contract exchanges enable permissionless token swaps!
 LANGUAGE: English
 WRITERS: Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/decentralized-exchanges
 FORMAT: LESSON
@@ -111,7 +112,7 @@ Which properties are needed for a dApp to be considered decentralized?
 
 # Automated Market Makers
 
-In traditional markets and `CEXs`, your custodian uses an order book: a database filled with buy and sell offers. The CEX connects your trade offer with another person’s. You are usually charged a base/scaling commission on your trade, and you’re also left wondering if the undisclosed matching method found you the best possible deal.
+In traditional markets and `CEXs`, your custodian uses an `order book`: a database filled with buy and sell offers. The CEX connects your trade offer with another person’s. You are usually charged a base/scaling commission on your trade, and you’re also left wondering if the undisclosed matching method found you the best possible deal.
 
 Most `DEXs` use ‘Automated Market Maker’ (`AMM`) technology, the most common design for token swaps: a system that prices your trade using a public algorithm. Some newer DEXs use order books or intent-based systems instead. As the AMM algorithm is open-source, anyone can understand, clone, and improve it, leading to healthy competition and constant innovation.
 
@@ -137,9 +138,9 @@ What is a benefit of using AMMs compared to a traditional order book?
 
 # Token Swaps
 
-Cryptocurrency trades on the blockchain are called `token swaps`. These smart contract interactions are the conversion from one cryptocurrency to another, using AMM `liquidity pools`. By forming a `trade route`, a pathway through the appropriate liquidity pools, a DEX smart contract exchanges your input token for your desired output token. As liquidity pools often consist of only two tokens, and because there aren’t always liquidity pools for every `token pair`, trade routes may run through more than one liquidity pool to fulfil your swap.
+Cryptocurrency trades on the blockchain are called `token swaps`. These smart contract interactions convert one cryptocurrency to another using AMM `liquidity pools`. By forming a `trade route`, a pathway through the appropriate liquidity pools, a DEX smart contract exchanges your input token for your desired output token. Since pools usually hold only two tokens, and not every `token pair` has a pool, a route may pass through several pools to fulfil your swap.
 
-In order for a smart contract to access our wallet, we grant it permission to withdraw funds up to a specified (or unlimited) amount. These `token allowances` enable trusted smart contracts to carry out our transactions without sharing our wallet private key. Granting permissions has a gas fee, so the permission is left open for future interactions with your wallet. This is one of the reasons why it is safer to use one wallet for trading, while reserving a separate wallet for holding. We monitor and revoke token allowances in our [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances) lesson!
+To let a smart contract access our wallet, we grant it permission to withdraw funds up to a specified (or unlimited) amount. These `token allowances` let trusted contracts carry out transactions without our private key. Granting costs gas, so permissions stay open for future use: one reason to trade from one wallet and hold in another. We monitor and revoke allowances in our [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances) lesson!
 
 ![](https://app.banklessacademy.com/images/decentralized-exchanges/token-swaps-41ceb8e1.svg)
 
@@ -226,7 +227,7 @@ How do DEXs incentivize users to provide liquidity?
 
 # Platform Fees
 
-Both CEXs and DEXs usually charge fees for the services they provide. While the automation of DEX and AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain is not free of charge. Let’s take a look at five common costs to consider when deciding which platform to use.
+Both CEXs and DEXs charge fees for their services, and interacting with the blockchain is not free either. Here are five common costs to consider when choosing a platform.
 
 🏷️ **Platform fees:** CEXs set their own trading commissions, while DEX pool fees vary by pool (commonly a fraction of a percent). The key difference: DEX fees are visible on-chain for anyone to check.
 
@@ -236,9 +237,9 @@ Both CEXs and DEXs usually charge fees for the services they provide. While the 
 
 💹 **Exchange rates:** When buying cryptocurrency directly with fiat on a CEX or DEX, be wary of exchange rates that don’t reflect the market rate.
 
-🧊 **Slippage:** As prices change so quickly in this space, DEXs leave room for fluctuations on a swap: this is called `slippage`. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage range is too low the trade might be rejected.
+🧊 **Slippage:** Prices move fast, so DEXs leave room for fluctuation on a swap: this is called `slippage` (customizable, usually 0.5-2%). You may lose up to that value on a trade, but too low a setting can get your trade rejected.
 
-As you can see, there are many factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform's advantages and disadvantages are understood.
+Always do your own research before trading, so you understand a platform’s costs and trade-offs.
 
 # DEX Advantages
 
@@ -314,11 +315,11 @@ Notable names that score highly in these areas include Uniswap, Curve, Velodrome
 
 Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:
 
-👩‍💻 Always verify the link to a dApp by checking the official project X (Twitter) account (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link, even on popular search engines.
+👩‍💻 Verify a dApp’s link via the official project X (Twitter) account (gold check mark) or a trusted third party, then bookmark it. Many DeFi scams begin with a fake link, even on popular search engines.
 
-🔓 When granting on-chain `token allowances`, limit the allowance to your trade amount. Many DEXs now use signature-based approvals covering just your trade. Learn more in our [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances) lesson.
+🔓 When granting on-chain `token allowances`, limit the allowance to your trade amount. Many DEXs now use signature-based approvals covering just your trade: see [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances).
 
-♟️ Don’t interact with dApps via your HODL wallet. It’s better to use a separate wallet just for dApps in case anything goes wrong. Check out our [Web3 Security lesson](https://app.banklessacademy.com/lessons/web3-security) for more information on wallet strategies, and how to stay safe in web3.
+♟️ Don’t interact with dApps from your HODL wallet; use a separate wallet just for dApps. Our [Web3 Security lesson](https://app.banklessacademy.com/lessons/web3-security) covers wallet strategies.
 
 Now you’re ready to interact with a Decentralized Exchange!
 

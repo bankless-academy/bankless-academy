@@ -2,6 +2,7 @@
 TITLE: Web3 Security
 DESCRIPTION: Protect yourself and your wallet from the most common scams in web3.
 LANGUAGE: English
+EDITORS: Claude (Anthropic AI, 2026 review)
 WRITERS:
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/web3-security

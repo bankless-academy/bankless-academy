@@ -3,6 +3,7 @@ TITLE: DEX Aggregators
 DESCRIPTION: Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.
 LANGUAGE: English
 WRITERS: iSpeakNerd
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/dex-aggregators
 FORMAT: LESSON
@@ -201,7 +202,7 @@ Meta-aggregators cross-reference multiple DEX aggregators to find the best price
 
 # Avoiding Sandwich Attacks
 
-Users swapping directly through `DEXs` can lose value up to the limit of their `slippage tolerance` when bots place trades right before and after theirs to move the price. These losses are called `sandwich attacks`; in 2021 alone, they cost users around $235,000,000. Today, protections like private transaction routing and intent-based trading shield most everyday trades, but it still pays to keep a low slippage tolerance when swapping tokens.
+Users swapping directly through `DEXs` can lose value up to the limit of their `slippage tolerance` when bots place trades right before and after theirs to move the price. These losses are called `sandwich attacks`; in 2021 alone, they cost users around $235,000,000. Today, protections like `private transaction routing` and intent-based trading shield most everyday trades, but it still pays to keep a low slippage tolerance when swapping tokens.
 
 Fortunately, because of the recombined liquidity offered by DEX aggregators, the price impact of a trade is reduced. Explorers can keep their slippage tolerance low while saving more with DEX aggregators, as opposed to trading directly on a DEX.
 
@@ -223,7 +224,7 @@ To protect yourself, you should keep your slippage tolerance:
 
 Some aggregators like 1inch even offer specialized `OTC` (`Over The Counter`) services that provide total protection against sandwich attacks. These optional services enable direct trading with other users, rather than routing through DeFi `liquidity pools`, giving Explorers another great way to save.
 
-CoW Swap takes a different approach: users sign a trade request (an intent), and professional solvers compete in batch auctions to fill it at the best price. Solvers can even match two users directly, so trades are protected from sandwich attacks by default.
+CoW Swap takes a different approach: users sign a trade request (an `intent`), and professional `solvers` compete in `batch auctions` to fill it at the best price. Solvers can even match two users directly, so trades are protected from sandwich attacks by default.
 
 ![](https://app.banklessacademy.com/images/dex-aggregators/more-protection-from-sandwiches-otc-trades-3da1b5df.svg)
 

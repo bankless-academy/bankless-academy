@@ -3,6 +3,7 @@ TITLE: Understanding Ethereum Token Standards
 DESCRIPTION: Learn how Ethereum’s asset templates support both traditional and emerging asset classes.
 LANGUAGE: English
 WRITERS: Musharraf, Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards
 FORMAT: HANDBOOK
@@ -222,7 +223,7 @@ To identify the original token, you should check the contract address that’s u
 
 ### Are there other token standards on Ethereum apart from ERC-20, 721, and 1155?
 
-Yes. Some are widely used, like [ERC-4626](https://eips.ethereum.org/EIPS/eip-4626), a shared standard for "vault" tokens that represent deposits earning yield in DeFi. Newer standards also cover smart accounts, letting a wallet run its own code. Others, like [ERC-223](https://eips.ethereum.org/EIPS/eip-223), [ERC-1462](https://eips.ethereum.org/EIPS/eip-1462), and [ERC-1948](https://eips.ethereum.org/EIPS/eip-1948), never caught on or serve very niche use cases.
+Yes. Some are widely used, like [ERC-4626](https://eips.ethereum.org/EIPS/eip-4626), a shared standard for `vault` tokens that represent deposits earning yield in DeFi. Newer standards also cover `smart accounts`, letting a wallet run its own code. Others, like [ERC-223](https://eips.ethereum.org/EIPS/eip-223), [ERC-1462](https://eips.ethereum.org/EIPS/eip-1462), and [ERC-1948](https://eips.ethereum.org/EIPS/eip-1948), never caught on or serve very niche use cases.
 
 ---
 

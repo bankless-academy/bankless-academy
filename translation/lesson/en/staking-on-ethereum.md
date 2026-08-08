@@ -3,6 +3,7 @@ TITLE: Staking on Ethereum
 DESCRIPTION: Become a guardian of Ethereum: Secure the network, earn Ether rewards.
 LANGUAGE: English
 WRITERS: Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/staking-on-ethereum
 FORMAT: LESSON
@@ -91,7 +92,7 @@ The network’s `consensus mechanism` randomly selects a validator node to propo
 
 # Slashing
 
-When a node provably cheats, like signing two conflicting blocks, its stake is `slashed`: it loses a chunk of its Ether. Being slow or offline is not slashing; that only costs a small penalty. This way, staked Ether becomes a security deposit where nodes are incentivized to be honest and keep Ethereum running smoothly.
+When a node provably cheats, like signing two conflicting blocks, its stake is `slashed`: it loses a chunk of its Ether. Being slow or offline is not `slashing`; that only costs a small penalty. This way, staked Ether becomes a security deposit where nodes are incentivized to be honest and keep Ethereum running smoothly.
 
 For an attacker to approve fraud on Ethereum, they must have control over majority of the validator nodes and thus, staked Ether. Fortunately this can't happen if everyday users are involved in staking. `Decentralized` ownership of the network divides the power to make decisions.
 

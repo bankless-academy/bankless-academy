@@ -1,8 +1,9 @@
 ---
 TITLE: Layer 1 Blockchains
-DESCRIPTION: Understand how Layer 1 blockchains work - and learn their limitations!
+DESCRIPTION: Understand how Layer 1 blockchains work and learn their limitations!
 LANGUAGE: English
 WRITERS: iSpeakNerd
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/layer-1-blockchains
 FORMAT: LESSON
@@ -95,7 +96,7 @@ Blockchain consensus for cryptocurrencies is:
 
 # Security and Attacks
 
-One potential form of attack on blockchain consensus is a `51% attack`; an attacker controlling the majority of a network’s consensus power can reverse recent transactions to spend the same coins twice, or censor new ones. They cannot fake signatures or spend anyone else’s funds. This majority means 51% of the computing power in Proof of Work consensus and 51% of the `stake` in Proof of Stake consensus, a massive capital investment. And in Proof of Stake, provable cheating such as signing two conflicting blocks gets that stake destroyed (called slashing); an attacker would likely lose more than they’d gain.
+One potential form of attack on blockchain consensus is a `51% attack`; an attacker controlling the majority of a network’s consensus power can reverse recent transactions to spend the same coins twice, or censor new ones. They cannot fake signatures or spend anyone else’s funds. This majority means 51% of the computing power in Proof of Work consensus and 51% of the `stake` in Proof of Stake consensus, a massive capital investment. And in Proof of Stake, provable cheating such as signing two conflicting blocks gets that stake destroyed (called `slashing`); an attacker would likely lose more than they’d gain.
 
 In `Proof of Stake` consensus, the block producer isn’t chosen through competition but is randomly assigned instead. Like with Proof of Work, the consensus algorithm ensures that any single entity cannot regularly “win” the right to create a new `block`.
 
@@ -157,7 +158,7 @@ The second aspect of blockchain scalability is:
 
 2) `Finality`: When can we be reasonably sure a transaction won’t get changed or reversed?
 
-In Proof of Work chains like Bitcoin, finality is measured in blocks: the more blocks added to the chain after your transaction, the more sure you can be it won’t get reverted. Remember, a secure consensus algorithm makes it very expensive to change past blocks, and the expense grows the farther back someone tries to change. Bitcoin produces a new `block` roughly every 10 minutes, so waiting for several confirmations takes about an hour. Ethereum’s Proof of Stake takes a different route: validators vote to finalize blocks, and after about 13 minutes (two `epochs` of votes) a transaction is final.
+In Proof of Work chains like Bitcoin, finality is measured in blocks: the more blocks added to the chain after your transaction, the more sure you can be it won’t get reverted. Remember, a secure consensus algorithm makes it very expensive to change past blocks, and the expense grows the farther back someone tries to change. Bitcoin produces a new `block` roughly every 10 minutes, so waiting for several confirmations takes about an hour. Ethereum’s Proof of Stake takes a different route: `validators` vote to finalize blocks, and after about 13 minutes (two `epochs` of votes) a transaction is final.
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/scalability-finality-73177220.svg)
 

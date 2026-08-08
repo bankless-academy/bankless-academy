@@ -3,6 +3,7 @@ TITLE: Ethereum Basics
 DESCRIPTION: What is Ethereum? Unlock the “new internet” and your digital freedom.
 LANGUAGE: English
 WRITERS: Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/ethereum-basics
 FORMAT: LESSON
@@ -109,15 +110,15 @@ We need a fairer, more reliable internet, beyond intermediaries and their walled
 
 The solution starts with changing how the internet is connected.
 
-In traditional internet services, information or money from one `peer` goes through an `intermediary` checkpoint before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.
+In traditional internet services, information or money from one `peer` goes through an `intermediary` checkpoint before arriving at its destination. In theory, intermediaries can do whatever they want before the trade completes.
 
 **Peer → Intermediary → Peer**
 
-But there’s a second model of computer interaction, called `peer-to-peer` networking. It replaces intermediary services with automated, transparent processes, using computer code.
+But there’s a second model, called `peer-to-peer` networking. It replaces intermediary services with automated, transparent computer code.
 
 **Peer → Automation → Peer**
 
-It’s like replacing your intermediary with a self-service kiosk. Here, nobody is above the rules; “Code, not kings.” Services become more predictable, fees go down, and users regain control over their interactions.
+It’s like replacing your intermediary with a self-service kiosk. Services become more predictable, fees go down, and users regain control.
 
 As we’ll see, a peer-to-peer internet changes everything.
 
@@ -139,15 +140,13 @@ How can automation improve your online experiences?
 
 ⚖️ **Wouldn’t the internet be a better place if the same rules applied to everyone?**
 
----
-
-Think of Ethereum as a digital city, where everything (from businesses to public services) is run by self-service, transparent systems. There are no intermediaries. With public-facing programming, users can easily review their trade terms and even inspect how the system works.
+Think of Ethereum as a digital city, where everything (from businesses to public services) is run by self-service, transparent systems. There are no intermediaries, and anyone can inspect how each system works.
 
 Transactions in the city are noted on a public record called the `Ethereum blockchain`. The blockchain tracks and stores digital property in the city, removing the need for another classic intermediary: the bank!
 
-Every transaction pays a small fee. Most of that fee is destroyed, which can make the city’s currency, `ether`, scarcer as the city gets busier. A small tip rewards the computer that processes your transaction. And the city’s rules aren’t set by any company: changes are agreed on openly by the builders, researchers, and users who care for it.
+Every transaction pays a small fee. Most of that fee is destroyed, which can make the city’s currency, `ether`, scarcer as the city gets busier. A small tip rewards the computer that processes your transaction.
 
-On Ethereum, transparent code has replaced kings. Nobody is above the rules.
+The city’s rules aren’t set by any company: changes are agreed on openly by builders, researchers, and users. Transparent code has replaced kings, and nobody is above the rules.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg)
 
@@ -254,7 +253,7 @@ As a `peer-to-peer` network, Ethereum is made up of thousands of computers, call
 The transaction you submitted earlier was processed by these Ethereum network `validator nodes`.
 
 1. Your ETH transaction was submitted to the Ethereum Network.
-2. A validator checked your transaction for errors. Other validators double-checked their results.
+2. A `validator` checked your transaction for errors. Other validators double-checked their results.
 3. Your transaction was added to the network’s public ledger, the `Ethereum blockchain`.
 4. We received your transferred ETH in our account.
 
