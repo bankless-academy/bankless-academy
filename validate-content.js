@@ -12,6 +12,20 @@ const meta = JSON.parse(fs.readFileSync('src/constants/lesson-meta.json', 'utf8'
 const slugs = new Set(Object.keys(meta))
 const errors = []
 
+// glossary keys (lowercase) for backticked-term validation; matches the
+// runtime lookup in Lesson.tsx/Article.tsx: exact key, else trailing-s singular
+const keywordKeys = new Set(
+  Object.keys(
+    JSON.parse(fs.readFileSync('translation/keywords/en/keywords.json', 'utf8'))
+  ).map((k) => k.toLowerCase())
+)
+const resolvesToKeyword = (term) => {
+  const t = term.toLowerCase()
+  return (
+    keywordKeys.has(t) || (t.endsWith('s') && keywordKeys.has(t.slice(0, -1)))
+  )
+}
+
 const files = fs.readdirSync(EN_DIR).filter((f) => f.endsWith('.md'))
 const fileSlugs = new Set(files.map((f) => f.replace(/\.md$/, '')))
 
@@ -66,6 +80,17 @@ for (const file of files) {
   for (const m of md.matchAll(/https:\/\/app\.banklessacademy\.com(\/images\/[^\s)"']+)/g)) {
     const rel = decodeURI(m[1].split('?')[0])
     if (!fs.existsSync(path.join('public', rel))) err(`missing image file: public${rel}`)
+  }
+
+  // every backticked `term` must resolve to a glossary keyword (rule 9);
+  // fenced code blocks (the ASCII banner) are excluded
+  const prose = md.replace(/```[\s\S]*?```/g, '')
+  const seen = new Set()
+  for (const m of prose.matchAll(/`([^`\n]+)`/g)) {
+    const term = m[1]
+    if (seen.has(term)) continue
+    seen.add(term)
+    if (!resolvesToKeyword(term)) err(`backticked term without glossary entry: \`${term}\``)
   }
 }
 

@@ -12,7 +12,6 @@
     "build-content": "node build-content.js",
     "test-content": "node test-content.js",
     "import-translations": "node import-translations.js",
-    "import-keywords": "node import-keywords.js",
     "import-modules": "node import-modules.js",
     "import-config": "node import-config.js",
     "import-poaps": "node import-poaps.js",

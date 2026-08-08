@@ -1,4 +1,7 @@
 /* eslint-disable no-console */
+// DEPRECATED (2026-08-08): keywords are no longer imported from Notion.
+// translation/keywords/en/keywords.json is now the hand-edited source of truth
+// (see CLAUDE.md). Kept for reference only — do not run.
 require('dotenv').config()
 const axios = require('axios')
 const FileSystem = require('fs')

@@ -15,17 +15,9 @@
     "keyword": "AMMs",
     "definition": "（自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
   },
-  "blockchain appss": {
-    "keyword": "blockchain appss",
-    "definition": "允许您交换加密货币的区块链应用程序，使用 web3 社交媒体，进行慈善捐赠，甚至链上学习，就像在 Bankless Academy 一样。"
-  },
   "blockchains": {
     "keyword": "blockchains",
     "definition": "一种在全球多台计算机上保存加密货币交易记录的系统。"
-  },
-  "btcs": {
-    "keyword": "BTCs",
-    "definition": "比特币的市场符号。"
   },
   "cex": {
     "keyword": "CEX",
@@ -87,36 +79,16 @@
     "keyword": "ether",
     "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
   },
-  "ethers": {
-    "keyword": "ethers",
-    "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
-  },
-  "eths": {
-    "keyword": "ETHs",
-    "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network."
-  },
   "fomo": {
     "keyword": "FOMO",
-    "definition": "（Fear Of Missing Out）担心或忧虑自己无法参与某事。"
-  },
-  "fomos": {
-    "keyword": "FOMOs",
     "definition": "（Fear Of Missing Out）担心或忧虑自己无法参与某事。"
   },
   "fraud": {
     "keyword": "fraud",
     "definition": "In blockchain economies: Unfair or fake transactions, used to change amounts of cryptocurrency held."
   },
-  "frauds": {
-    "keyword": "frauds",
-    "definition": "In blockchain economies: Unfair or fake transactions, used to change amounts of cryptocurrency held."
-  },
   "gas": {
     "keyword": "gas",
-    "definition": "区块链网络的交易费用。"
-  },
-  "gass": {
-    "keyword": "gass",
     "definition": "区块链网络的交易费用。"
   },
   "gold standards": {
@@ -133,10 +105,6 @@
   },
   "inflation": {
     "keyword": "inflation",
-    "definition": "A general increase in prices and fall in the purchasing power of money."
-  },
-  "inflations": {
-    "keyword": "inflations",
     "definition": "A general increase in prices and fall in the purchasing power of money."
   },
   "kyc": {
@@ -179,10 +147,6 @@
     "keyword": "liquid staking tokens",
     "definition": "代表已质押的以太币的代币。持有代币的人可以获得与质押金额成正比的部分质押奖励。"
   },
-  "liquids": {
-    "keyword": "liquids",
-    "definition": "In blockchain economies: The ability to easily use a digital asset in trading, or use in smart contracts."
-  },
   "lp": {
     "keyword": "LP",
     "definition": "（流动性提供者）将其代币借给协议以换取费用分成的区块链用户。"
@@ -199,10 +163,6 @@
     "keyword": "MEV",
     "definition": "最大可提取价值--通过对区块内的交易排序提取的价值。"
   },
-  "mevs": {
-    "keyword": "MEVs",
-    "definition": "最大可提取价值--通过对区块内的交易排序提取的价值。"
-  },
   "nft": {
     "keyword": "NFT",
     "definition": "（非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
@@ -217,10 +177,6 @@
   },
   "otc": {
     "keyword": "OTC",
-    "definition": "（柜台交易) 直接与私人实体进行的交易。"
-  },
-  "otcs": {
-    "keyword": "OTCs",
     "definition": "（柜台交易) 直接与私人实体进行的交易。"
   },
   "peg": {
@@ -243,10 +199,6 @@
     "keyword": "PoS (Proof-of-Stake 权益证明)",
     "definition": "一种区块链共识方法，根据节点锁定的质押金额来选择验证器节点。"
   },
-  "poss": {
-    "keyword": "PoSs",
-    "definition": "权益质押证明共识"
-  },
   "private keys": {
     "keyword": "private keys",
     "definition": "私钥授权访问您的钱包，允许您将加密资产发送给其他钱包。"
@@ -263,24 +215,12 @@
     "keyword": "RetroPGF",
     "definition": "（追溯性公益资助）根据项目的历史影响资助项目的机制。"
   },
-  "retropgfs": {
-    "keyword": "RetroPGFs",
-    "definition": "（追溯性公益资助）根据项目的历史影响资助项目的机制。"
-  },
   "self-custody wallets": {
     "keyword": "self-custody wallets",
     "definition": "（AKA：非托管型钱包）您可以独自控制私钥，从而独立控制您的加密资产。"
   },
-  "self-custodys": {
-    "keyword": "self-custodys",
-    "definition": "一种将资产存放在只有自己能接触并访问的地方的方法。"
-  },
   "solo staking": {
     "keyword": "solo staking",
-    "definition": "Directly running a validator node, granting the ability to directly process transactions in Proof-Of-Stake systems."
-  },
-  "solo stakings": {
-    "keyword": "solo stakings",
     "definition": "Directly running a validator node, granting the ability to directly process transactions in Proof-Of-Stake systems."
   },
   "staker": {
@@ -289,10 +229,6 @@
   },
   "stakers": {
     "keyword": "stakers",
-    "definition": "Members of the Ethereum community, providing Ether to validator nodes, in exchange for rewards."
-  },
-  "stakerss": {
-    "keyword": "stakerss",
     "definition": "Members of the Ethereum community, providing Ether to validator nodes, in exchange for rewards."
   },
   "staking pool": {
@@ -307,24 +243,12 @@
     "keyword": "staking providers",
     "definition": "A digital platform providing staking services, usually through staking pools."
   },
-  "staking providerss": {
-    "keyword": "staking providerss",
-    "definition": "A digital platform providing staking services, usually through staking pools."
-  },
   "tps": {
     "keyword": "TPS",
     "definition": "TPS 是衡量区块链可扩展性的一个指标，是区块链每秒处理的交易数量。"
   },
-  "tpss": {
-    "keyword": "TPSs",
-    "definition": "TPS 是衡量区块链可扩展性的一个指标，是区块链每秒处理的交易数量。"
-  },
   "tvl": {
     "keyword": "TVL",
-    "definition": "（锁定总值）存储在特定位置的资产总值。"
-  },
-  "tvls": {
-    "keyword": "TVLs",
     "definition": "（锁定总值）存储在特定位置的资产总值。"
   },
   "validator node": {
@@ -333,10 +257,6 @@
   },
   "validator nodes": {
     "keyword": "validator nodes",
-    "definition": "Computer devices run by members of the Ethereum community. As the original method of staking, they process transactions on the network."
-  },
-  "validator nodess": {
-    "keyword": "validator nodess",
     "definition": "Computer devices run by members of the Ethereum community. As the original method of staking, they process transactions on the network."
   },
   "wallet apps": {
@@ -351,16 +271,8 @@
     "keyword": "web2",
     "definition": "没有区块链基础设施的互联网现状。"
   },
-  "web2s": {
-    "keyword": "web2s",
-    "definition": "没有区块链基础设施的互联网现状。"
-  },
   "web3": {
     "keyword": "web3",
-    "definition": "指区块链互联网，用户可在其中自我托管其资产和数据。"
-  },
-  "web3s": {
-    "keyword": "web3s",
     "definition": "指区块链互联网，用户可在其中自我托管其资产和数据。"
   },
   "zk 卷积": {

@@ -16,6 +16,7 @@ and announcements — see "Still on Notion" below.)
 | `translation/lesson/en/<slug>.md` | Canonical lesson content: frontmatter (TITLE, DESCRIPTION, WRITERS…), slides as `#` sections, quizzes as `- [ ]` options with the correct one marked `- [x]`, optional per-option `> ℹ️` feedback blockquotes (translatable). POLL sections have no `[x]`. |
 | `src/constants/lesson-meta.json` | Everything that isn't slide prose: badge/image links, quest binding, publicationStatus, duration, sponsor fields, per-slide skeleton (`slideMeta`: type/notionId/title), mirror links for articles. |
 | _(no separate answer file)_ | Quiz keys live in the md `[x]` marks. Accepted trade-off: answers are readable in the repo — they always were via the compiled `lessons.json`/`lessons.ts`. |
+| `translation/keywords/en/keywords.json` | Canonical glossary (hand-edited; Notion import retired). Entry: `{ keyword, keyword_plural?, definition, glossary }`, lowercase keys. Every backticked `term` in lesson md must resolve here (exact key or trailing-s singular) — enforced by `validate-content.js`. Translated files (`<lang>/keywords.json`) are flat: plural forms are separate keys. |
 
 ### Generated files (never hand-edit)
 
@@ -113,7 +114,11 @@ render a warning banner on the intro slide.
 - [x] `deprecated` status support in app: `publicationStatus: 'deprecated'` in lesson-meta.json → excluded from listings/sitemap/rss automatically (they filter on 'publish'), direct URL still builds, warning banner on the intro slide (`Lesson.tsx`) and on articles (`Article.tsx`)
 - [x] `/lessons/<slug>/content` view hides quiz keys and feedback (`LessonContent.tsx` neutralizes `[x]` and strips `> ` lines); `processMD` in `lessons/[...slug].tsx` accepts `- [x]` options
 - [x] `validate-content.js` (frontmatter, quiz option/`[x]` shape, internal lesson slugs, local image existence, TODO markers) — chained with `test-content.js` into `yarn build`, so Vercel gates every deploy
-- [ ] `translate-content` AI translation script (after content cleanup)
+- [x] Glossary migrated to repo source of truth (2026-08-08): `import-keywords.js` removed, plurals fixed, missing definitions added, backtick↔glossary validation in `validate-content.js`. ETHGlossary API (`ethglossary.visual-20-hoists.workers.dev`, MPL-2.0, 532 terms × 24 langs with per-context variants) is the reference for canonical term translations — vendor its data before using it in `translate-content`.
+- [x] ETHGlossary vendored to `translation/ethglossary/` (2026-08-08, MPL-2.0 snapshot: 532 terms × 24 langs + style guide) — terminology backbone for translate-content
+- [ ] Glossary review pass — audit all 245 en definitions against the editing rules (ELI5, evergreen, length, no em dashes). **Do this once, as the LAST step of the content freeze** (lesson rewrites keep adding terms; reviewing earlier means reviewing twice). Gates translation start together with the lesson freeze.
+- [ ] Glossary page upgrades (localize the page, per-term anchors + cross-links, audit which entries have `glossary: true`) — bundle with the i18n Phase B selector/UI work; independent of lesson content
+- [ ] `translate-content` AI translation script (after content cleanup; see `docs/i18n-25-languages-plan.md` — translations start only after ALL lessons are finalized, existing 10 languages first)
 - [ ] Remove Crowdin (`crowdin.yml`, `import-translations.js`) and Notion lesson import (`import-content.js`, `src/pages/lessons/preview.tsx`)
 
 ## Still on Notion (via Potion API `https://potion.banklessacademy.com`)

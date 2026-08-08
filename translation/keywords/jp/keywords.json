@@ -15,17 +15,9 @@
     "keyword": "blockchain apps",
     "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
   },
-  "blockchain appss": {
-    "keyword": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
-  },
   "blockchains": {
     "keyword": "blockchains",
     "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
-  },
-  "blockspaces": {
-    "keyword": "blockspaces",
-    "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
   },
   "cex": {
     "keyword": "CEX",
@@ -51,16 +43,12 @@
     "keyword": "cryptocurrency",
     "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
   },
-  "cryptocurrencys": {
-    "keyword": "cryptocurrencys",
+  "cryptocurrencies": {
+    "keyword": "cryptocurrencies",
     "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
   },
   "cryptography": {
     "keyword": "cryptography",
-    "definition": "Techniques for secure communication or transaction, preventing external interference."
-  },
-  "cryptographys": {
-    "keyword": "cryptographys",
     "definition": "Techniques for secure communication or transaction, preventing external interference."
   },
   "custodial wallet": {
@@ -103,16 +91,8 @@
     "keyword": "digital assets",
     "definition": "Anything, with value, stored digitally."
   },
-  "digital assetss": {
-    "keyword": "digital assetss",
-    "definition": "Anything, with value, stored digitally."
-  },
   "encryption": {
     "keyword": "encryption",
-    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
-  },
-  "encryptions": {
-    "keyword": "encryptions",
     "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
   },
   "erc-20": {
@@ -231,10 +211,6 @@
     "keyword": "self-custody wallets",
     "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
-  "self-custodys": {
-    "keyword": "self-custodys",
-    "definition": "A means of holding your assets where only you have access to them."
-  },
   "tps": {
     "keyword": "TPS",
     "definition": "ブロックチェーンのスケーラビリティの指標であるTPS、ブロックチェーンが処理する1秒あたりのトランザクション数"
@@ -263,16 +239,8 @@
     "keyword": "web2",
     "definition": "The current state of the internet, without blockchain infrastructure."
   },
-  "web2s": {
-    "keyword": "web2s",
-    "definition": "The current state of the internet, without blockchain infrastructure."
-  },
   "web3": {
     "keyword": "web3",
-    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
-  },
-  "web3s": {
-    "keyword": "web3s",
     "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "zk rollup": {
