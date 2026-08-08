@@ -6,6 +6,7 @@ import {
 
 import { Mixpanel, getNodeText } from 'utils/index'
 import { LESSONS } from 'constants/index'
+import { normalizeLangCode } from 'constants/languages'
 
 type ChakraLinkAndNextProps = ChakraLinkProps & LinkProps & any
 
@@ -15,8 +16,9 @@ const ExternalLink = ({
   alt,
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
-  const i18nextLng =
+  const i18nextLng = normalizeLangCode(
     typeof window !== 'undefined' ? localStorage.getItem('i18nextLng') : 'en'
+  )
   const isLessonLink =
     href?.startsWith('/lessons/') ||
     href?.startsWith('https://app.banklessacademy.com/lessons/')

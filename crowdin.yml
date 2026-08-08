@@ -1,3 +1,8 @@
+# DEPRECATED: Crowdin is being retired in favor of the in-repo
+# translate-content pipeline (see CLAUDE.md). Kept for reference only.
+# Note: translation dirs were renamed to ISO codes (pt-br, zh, ja, uk) on
+# 2026-08-08; the %two_letters_code% placeholders below still target the old
+# Crowdin code layout and were intentionally left untouched.
 targets:
   - name: lessons
     sources:

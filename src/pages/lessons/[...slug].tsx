@@ -13,6 +13,7 @@ import { markdown } from 'utils/markdown'
 import LessonContent from 'components/LessonContent'
 import Layout from 'layout/Layout'
 import { useApp } from 'contexts/AppContext'
+import { isLanguage, parseLangFromPath } from 'constants/languages'
 
 const SPLIT = `\`\`\`
 
@@ -122,11 +123,16 @@ const processMD = async (md, lang, englishLesson, updatedAt) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   console.log('params', params)
-  const slug = (
-    params.slug[0].length === 2 ? params.slug[1] : params.slug[0]
-  )?.replace('-datadisk', '')
+  // /lessons/<lang>/<slug> when the first segment is a registry language code
+  // (multi-char codes like pt-br included); otherwise the segment is the slug
+  const hasLangSegment =
+    params.slug.length > 1 && isLanguage(params.slug[0] as string)
+  const slug = (hasLangSegment ? params.slug[1] : params.slug[0])?.replace(
+    '-datadisk',
+    ''
+  )
   console.log('slug', slug)
-  const language: any = params.slug[0].length === 2 ? params.slug[0] : 'en'
+  const language: any = hasLangSegment ? params.slug[0] : 'en'
   console.log('language', language)
   let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
   if (!currentLesson) {
@@ -239,9 +245,8 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   const { openLessons, hideNavBar } = useApp()
 
   const lang =
-    typeof window !== 'undefined' &&
-    window.location.pathname.split('/')[2].length === 2
-      ? window.location.pathname.split('/')[2]
+    typeof window !== 'undefined'
+      ? parseLangFromPath(window.location.pathname)
       : 'en'
 
   const isLessonOpen = lesson?.slug && openLessons.includes(lesson.slug)

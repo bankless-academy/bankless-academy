@@ -16,7 +16,7 @@ import { useSmallScreen } from 'hooks/index'
 import { api } from 'utils/index'
 import { AnnouncementType } from 'entities/announcement'
 import OnboardingModal from 'components/OnboardingModal'
-import SelectLanguage from 'components/SelectLanguage'
+import LanguageSelector from 'components/LanguageSelector'
 
 declare global {
   interface Navigator {
@@ -157,7 +157,7 @@ const Nav: React.FC = () => {
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">
-            <SelectLanguage isSmallScreen={isSmallScreen} />
+            <LanguageSelector isSmallScreen={isSmallScreen} />
             {isConnected ? (
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             ) : null}

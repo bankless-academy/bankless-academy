@@ -21,12 +21,12 @@ const LESSONS: LessonType[] = [
     description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
     languages: [
-      'br',
-      'cn',
       'es',
       'fr',
+      'pt-br',
       'tr',
-      'ua'
+      'uk',
+      'zh'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -553,13 +553,13 @@ const LESSONS: LessonType[] = [
     description: 'Set up your first crypto wallet with our step-by-step walkthrough.',
     name: 'Creating a Crypto Wallet',
     languages: [
-      'br',
-      'cn',
       'es',
       'fr',
       'it',
+      'pt-br',
       'tr',
-      'ua'
+      'uk',
+      'zh'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -603,13 +603,13 @@ const LESSONS: LessonType[] = [
     description: 'What is a crypto wallet? Learn how wallets work and create your first one today!',
     name: 'Wallet Basics',
     languages: [
-      'br',
-      'cn',
       'es',
       'fr',
       'it',
+      'pt-br',
       'tr',
-      'ua'
+      'uk',
+      'zh'
     ],
     level: 'Essentials',
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
@@ -1196,7 +1196,7 @@ const LESSONS: LessonType[] = [
     name: 'Web3 Security',
     languages: [
       'fr',
-      'ua'
+      'uk'
     ],
     level: 'Essentials',
     tags: [
@@ -3799,11 +3799,11 @@ const LESSONS: LessonType[] = [
     description: 'Become a governing member of Optimism and help decide the network\'s future.',
     name: 'Optimism Governance',
     languages: [
-      'cn',
       'de',
       'es',
       'fr',
-      'jp'
+      'ja',
+      'zh'
     ],
     level: 'Community Lessons',
     tags: [
@@ -4132,11 +4132,11 @@ const LESSONS: LessonType[] = [
     description: 'Grant your OP voting power to people closely following governance.',
     name: 'Delegating on Optimism',
     languages: [
-      'cn',
       'de',
       'es',
       'fr',
-      'jp'
+      'ja',
+      'zh'
     ],
     level: 'Level 1',
     tags: [

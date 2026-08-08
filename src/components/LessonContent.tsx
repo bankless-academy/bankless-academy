@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 
 import { LessonType } from 'entities/lesson'
-import LanguageSwitch from 'components/LanguageSwitch'
+import { parseLangFromPath } from 'constants/languages'
+import LanguageSelector from 'components/LanguageSelector'
 import LessonCard from 'components/LessonCard'
 import { useSmallScreen } from 'hooks/index'
 
@@ -94,9 +95,8 @@ const LessonContent = ({
   }).value
 
   const lang =
-    typeof window !== 'undefined' &&
-    window.location.pathname.split('/')[2].length === 2
-      ? window.location.pathname.split('/')[2]
+    typeof window !== 'undefined'
+      ? parseLangFromPath(window.location.pathname)
       : 'en'
 
   useEffect(() => {
@@ -152,8 +152,8 @@ const LessonContent = ({
           )}
         </Box>
       </Box>
-      <Box maxW="860px" m="auto" my={8}>
-        <LanguageSwitch lesson={lesson} />
+      <Box maxW="860px" m="auto" my={8} display="flex" justifyContent="center">
+        <LanguageSelector lesson={lesson} />
       </Box>
       <StyledMarkdown>
         <Box fontSize="2xl">Lesson Content:</Box>

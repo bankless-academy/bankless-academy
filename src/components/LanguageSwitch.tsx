@@ -1,3 +1,6 @@
+// DEPRECATED (i18n Phase B, 2026-08): replaced by components/LanguageSelector.tsx
+// (single selector with search, % translated badges, and browser-language
+// suggestion). No longer imported anywhere; kept for reference only.
 import React from 'react'
 import { Box, Button } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'

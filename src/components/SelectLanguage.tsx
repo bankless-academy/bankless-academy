@@ -1,3 +1,6 @@
+// DEPRECATED (i18n Phase B, 2026-08): replaced by components/LanguageSelector.tsx
+// (single selector with search, % translated badges, and browser-language
+// suggestion). No longer imported anywhere; kept for reference only.
 import React from 'react'
 import {
   Button,
@@ -11,6 +14,7 @@ import {
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { useTranslation } from 'react-i18next'
 import { LanguageDescription } from 'constants/index'
+import { isLanguage, normalizeLangCode } from 'constants/languages'
 import { useLocalStorage } from 'usehooks-ts'
 import { useRouter } from 'next/router'
 import { LESSONS } from 'constants/index'
@@ -29,18 +33,25 @@ const SelectLanguage = ({
     router.pathname !== '/lessons/handbook'
   const lessonSlugs = isLessonPage ? (router.query.slug as string[]) : []
   const selectedLanguage = lessonSlugs?.length > 1 ? lessonSlugs[0] : null
-  const [defaultLanguage, setDefaultLanguage] = useLocalStorage(
+  const [defaultLanguage, setDefaultLanguage] = useLocalStorage<string>(
     'default-language',
-    selectedLanguage && selectedLanguage.length === 2
+    selectedLanguage && isLanguage(selectedLanguage)
       ? selectedLanguage
       : typeof window !== 'undefined'
-      ? window.navigator.language.split('-')[0]
+      ? // browser tags (pt-BR, zh-TW, ja-JP...) -> registry codes
+        normalizeLangCode(window.navigator.language)
       : 'en'
   )
   const { setLanguage } = useApp()
 
   // Set initial language from localStorage
   React.useEffect(() => {
+    // migrate legacy stored codes (br/cn/jp/ua) to their ISO replacements
+    const normalizedLanguage = normalizeLangCode(defaultLanguage)
+    if (normalizedLanguage !== defaultLanguage) {
+      setDefaultLanguage(normalizedLanguage)
+      return
+    }
     if (defaultLanguage && i18n.language !== defaultLanguage) {
       i18n.changeLanguage(defaultLanguage)
       setLanguage(defaultLanguage)

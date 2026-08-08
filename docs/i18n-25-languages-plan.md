@@ -1,7 +1,7 @@
 # Plan: 25 languages + searchable language selector
 
 Goal: offer 25 languages with a modern selector UI (searchable menu, native +
-English names, % translated badge), powered by the AI `translate-content`
+English names), powered by the AI `translate-content`
 pipeline.
 
 **Hard prerequisite: no translation runs until ALL English lessons are
@@ -42,7 +42,7 @@ vs today's 10: en, br, cn, de, es, fr, it, jp, tr, ua — 4 of which use
 ## Phase A — Foundations (before any new language)
 
 1. **Single language registry**: `src/constants/languages.ts` exporting
-   `[{ code, name, localName, dir, translatedRatio? }]` — the ONLY place
+   `[{ code, name, localName, dir }]` — the ONLY place
    languages are declared. `LanguageType`, `LanguageDescription`, i18next
    resources, selector, validators all derive from it.
 2. **ISO code migration** (br→pt-br, cn→zh, jp→ja, ua→uk):
@@ -64,8 +64,6 @@ vs today's 10: en, br, cn, de, es, fr, it, jp, tr, ua — 4 of which use
 One component replacing SelectLanguage + LanguageSwitch:
 - Menu from the nav globe: search/filter box, each row = localName (native
   script) + English name, current language highlighted.
-- "% translated" badge per language (computed at build: translated
-  lessons/slides ÷ total; stored in the registry).
 - Browser-language suggestion row on top when detected ≠ current.
 - On lesson pages: switching routes to `/lessons/<code>/<slug>` when the
   translation exists, else stays on en with a small "not yet translated" note
@@ -85,7 +83,7 @@ Scope per language (all AI-generated, committed to git, reviewable):
 3. `translation/keywords/<lang>/keywords.json` — glossary; also feeds tooltip
    fallback logic.
 Script updates `languages[]` in lesson-meta.json automatically when a lesson's
-translation lands, and recomputes translatedRatio for the selector.
+translation lands.
 Per-language glossary/style prompt (formal vs informal address, terms to keep
 in English) checked into `translation/style/<lang>.md`.
 
@@ -111,8 +109,7 @@ in English) checked into `translation/style/<lang>.md`.
 3. Wave 2: +8 highest-impact new languages (suggest: hi, id, ru, vi, ko, pl,
    zh-tw, ar — first RTL).
 4. Wave 3: remaining 7 (bn, cs, mr, sw, ta, te, ur).
-Each wave: generate → validate → native-speaker spot check if available →
-ship; selector shows % translated so partial languages are honest.
+Each wave: generate → validate → native-speaker spot check if available → ship.
 
 ## Decisions needed
 

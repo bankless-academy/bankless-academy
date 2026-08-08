@@ -1,7 +1,9 @@
 import { QuestComponentType } from 'components/Quest/QuestComponent'
+import { LanguageCode } from 'constants/languages'
 
 export type SlideType = 'LEARN' | 'QUIZ' | 'POLL' | 'QUEST' | 'END'
-export type LanguageType = 'en' | 'br' | 'cn' | 'de' | 'es' | 'fr' | 'it' | 'jp' | 'tr' | 'ua'
+// derived from the language registry (src/constants/languages.ts)
+export type LanguageType = LanguageCode
 export type LanguageDescriptionType = { [Key in LanguageType as string]?: string }
 export type LevelType = 'Essentials' | 'Level 1' | 'Level 2' | 'Community Lessons'
 export type LessonTypeType = 'LESSON' | 'HANDBOOK'

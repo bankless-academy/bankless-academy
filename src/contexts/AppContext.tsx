@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import i18next from 'i18next'
 
+import { parseLangFromPath } from 'constants/languages'
+
 export interface AppContextType {
   hideNavBar: boolean
   setHideNavBar: (value: boolean) => void
@@ -28,11 +30,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter()
 
   useEffect(() => {
-    // Set initial language based on URL
-    const pathSegments = router.asPath.split('/')
-    const langFromUrl = pathSegments[1]?.length === 2 ? pathSegments[1] : 'en'
-    setLanguage(langFromUrl)
-    i18next.changeLanguage(langFromUrl)
+    // Set language from translated lesson URLs (/lessons/<lang>/<slug>);
+    // leave the user's selected language untouched everywhere else.
+    const langFromUrl = parseLangFromPath(router.asPath)
+    if (langFromUrl !== 'en') {
+      setLanguage(langFromUrl)
+      i18next.changeLanguage(langFromUrl)
+    }
   }, [router.asPath])
 
   const value = {

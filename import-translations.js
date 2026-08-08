@@ -1,4 +1,10 @@
 /* eslint-disable no-console */
+// DEPRECATED: Crowdin import flow, retired in favor of the in-repo
+// translate-content pipeline (see CLAUDE.md). Kept for reference only —
+// do not run. Language dirs were migrated to ISO codes on 2026-08-08
+// (br -> pt-br, cn -> zh, jp -> ja, ua -> uk); the list below was updated
+// to match, but the Crowdin source branch (l10n_main) still uses the old
+// layout, so this script would need more work if ever revived.
 const { Command } = require('commander')
 const axios = require('axios')
 const fs = require('fs')
@@ -25,15 +31,15 @@ async function main() {
   const lessonSlug = program.opts().lessonSlug || 'keywords'
 
   const languages = [
-    'br',
-    'cn',
+    'pt-br',
+    'zh',
     // 'de',
     'es',
     'fr',
     'it',
-    // 'jp',
+    // 'ja',
     'tr',
-    'ua'
+    'uk'
 
   ].filter(lg => languageSelected === 'all' || languageSelected === lg)
   const nameSpaces = [
