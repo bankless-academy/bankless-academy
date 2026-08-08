@@ -28,7 +28,7 @@ ________________________________________________________________________________
 ---
 ## Key Takeaways
 
-> * There are a number of ways to fund your wallet on an Ethereum scaling solution like Optimism, Arbitrum, or Polygon.
+> * There are a number of ways to fund your wallet on an Ethereum scaling solution like Base, Optimism, or Arbitrum.
 >
 > * Centralized exchanges often provide a direct Layer 2 onramp.
 >
@@ -36,15 +36,15 @@ ________________________________________________________________________________
 >
 > * Protocol bridges let users send funds from Ethereum Mainnet to Layer 2.
 
-If you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Polygon](https://polygon.technology/) (which is really a side chain, but let’s not worry about that here), those are Layer 2 scaling solutions.
+If you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Base](https://www.base.org/), those are Layer 2 scaling solutions. [Polygon](https://polygon.technology/) is often grouped with them too (it’s really a `sidechain`, but let’s not worry about that here).
 
-When the Ethereum network is busy, it can cost the equivalent of 80 USD in transaction fees — known as `gwei` or gas — to swap tokens, and much more to mint NFTs or provide `liquidity` to a `decentralized exchange` (DEX) on Mainnet. When network activity is low, most transactions on Ethereum Mainnet still cost a few dollars, and it takes an [FTX-level debacle](https://www.investopedia.com/ftx-exchange-5200842) or a [beyond-hyped NFT drop](https://dappradar.com/blog/yuga-labs-600m-otherside-nft-land-sale-records-highest-gas-fees-ever-on-ethereum) to really spike transaction fees.
+Every Ethereum transaction pays a fee, known as `gas`. Gas is priced in `gwei`, a tiny unit of ETH. Fees rise and fall with demand: at peak demand in 2021, a simple `token swap` on Mainnet could cost tens of dollars, and hyped NFT mints pushed fees far higher. Today, a typical Mainnet transaction costs well under a dollar, and the same action on a Layer 2 costs cents or less.
 
 Because transactions on Layer 2 confirm quickly and are inexpensive to execute, many of the most innovative protocols are building on L2s. Unless you’ve been in the ecosystem for a while, however, it’s not intuitive to know how to start using Layer 2s. But there is a clear place to begin your journey into Ethereum scaling solutions: funding your `wallet` on Layer 2.
 
 There are three main ways to fund an L2 wallet: moving your crypto from a `centralized exchange` straight to a Layer 2 network, using a third-party crypto payment service to fund an L2 wallet, or sending your digital assets from Mainnet to L2 via a bridging protocol.
 
-> Please note, you’ll need to have a cryptocurrency wallet, like [MetaMask](https://metamask.io/) or [Taho](https://taho.xyz/), and an Ethereum wallet `address` to proceed. If you haven’t yet created a `non-custodial wallet`, please [take this lesson first](https://app.banklessacademy.com/lessons/wallet-basics)!
+> Please note, you’ll need to have a cryptocurrency wallet, like [Zerion](https://zerion.io/), [MetaMask](https://metamask.io/), or [Taho](https://taho.xyz/), and an Ethereum wallet `address` to proceed. If you haven’t yet created a `non-custodial wallet`, please [take this lesson first](https://app.banklessacademy.com/lessons/wallet-basics)!
 >
 > After you have a non-custodial Ethereum wallet address, you’ll be ready to continue on your crypto journey.
 
@@ -52,7 +52,7 @@ There are three main ways to fund an L2 wallet: moving your crypto from a `centr
 
 Funding your wallet directly from a centralized exchange (CEX) is perhaps the simplest way to move digital assets to an L2, particularly if you already hold cryptocurrency on the exchange. Most major CEXs offer users this option, although it isn’t always clear to the user.
 
-On [Coinbase](https://www.coinbase.com/), for example, users can send their funds directly to Optimism or Polygon in just a few steps:
+On [Coinbase](https://www.coinbase.com/), for example, users can send their funds directly to networks like Optimism, Polygon, or Base (Coinbase’s own Layer 2) in just a few steps:
 
 1\. Go to [Coinbase](https://www.coinbase.com/).
 
@@ -66,7 +66,7 @@ On [Coinbase](https://www.coinbase.com/), for example, users can send their fund
 
 ![](https://app.banklessacademy.com/images/funding-a-wallet-on-layer-2/image-11e1d7f9.png)
 
-5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism.
+5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism (the list also includes other Layer 2s, like Base).
 
 ![](https://app.banklessacademy.com/images/funding-a-wallet-on-layer-2/image-c8d4dd72.png)
 
@@ -74,7 +74,7 @@ On [Coinbase](https://www.coinbase.com/), for example, users can send their fund
 
 ![](https://app.banklessacademy.com/images/funding-a-wallet-on-layer-2/image-9598ee73.png)
 
-Most major exchanges offer users the ability to send their crypto directly to an L2. [Binance](https://www.binance.com/) supports Optimism and Arbitrum, for example. On whatever centralized exchange you convert fiat to crypto, check to see whether it offers support for direct-to-L2 services. Pro Tip: Check your exchange’s website to see which L2 networks it supports for withdrawals.
+Most major exchanges offer users the ability to send their crypto directly to an L2. [Coinbase](https://www.coinbase.com/), [Binance](https://www.binance.com/), and [Kraken](https://www.kraken.com/) all support withdrawals to major Layer 2s such as Base, Optimism, and Arbitrum. Pro Tip: Always check the withdrawal network list on your exchange to see which L2s it supports before you send.
 
 ## Third-Party Onramps
 
@@ -94,7 +94,7 @@ For MoonPay, the steps are:
 
 ![](https://app.banklessacademy.com/images/funding-a-wallet-on-layer-2/image-386958ca.png)
 
-4\. Select a digital asset, in this case ETH. Type in “ETH'“ and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.
+4\. Select a digital asset, in this case ETH. Type in “ETH” and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.
 
 ![](https://app.banklessacademy.com/images/funding-a-wallet-on-layer-2/image-fe6487dc.png)
 
@@ -116,11 +116,11 @@ If you already have funds on Ethereum Mainnet, by far the easiest way to get you
 
 ### Native Bridges
 
-Native bridges are those designed by the Layer 2 protocols themselves. For true Layer 2 scaling solutions like Arbitrum and Optimism, it takes about 30 minutes to move funds onto L2, but one week to move that crypto back over to Mainnet. The [Arbitrum Bridge](https://bridge.arbitrum.io/) and the [Optimism Bridge](https://app.optimism.io/bridge/) both take longer to transfer assets and settle transactions because of the way the scaling solution is designed.
+Native bridges are those designed by the Layer 2 protocols themselves. On an `optimistic rollup` like Arbitrum, Optimism, or Base, deposits usually arrive on L2 within a few minutes, but moving crypto back to Mainnet takes about one week. The [Arbitrum Bridge](https://bridge.arbitrum.io/) and the [Optimism Bridge](https://app.optimism.io/bridge/) both work this way: the waiting period gives the network time to catch invalid withdrawals before they settle.
 
 ### Third-Party Bridges
 
-Because no one likes to wait, a number of third-party bridging services exist to help us move our funds instantly to and from L2s. Among the most popular options are [Hop Protocol](https://app.hop.exchange/) and [Across Protocol](https://across.to/bridge), but you can use [Bungee](https://bungee.exchange/) to compare bridging fees across a number of protocols. To use Across, for example, all you need to do is:
+Because no one likes to wait, a number of third-party bridging services exist to help us move our funds instantly to and from L2s. Among the most popular options are [Across Protocol](https://across.to/bridge) and [Relay](https://relay.link/bridge), but you can use [Bungee](https://bungee.exchange/) to compare bridging fees across a number of protocols. To use Across, for example, all you need to do is:
 
 1\. Go to the [Across Protocol](https://across.to/bridge) bridge and connect your wallet.
 
@@ -140,13 +140,13 @@ Because no one likes to wait, a number of third-party bridging services exist to
 
 ![](https://app.banklessacademy.com/images/funding-a-wallet-on-layer-2/image-8d84ca0b.png)
 
-Moving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from and your destination, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [L2BEAT](https://l2beat.com/bridges/summary) to find a compatible bridge for your L2 destination.
+Moving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from, choose a destination like Base or Optimism, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [L2BEAT](https://l2beat.com/bridges/summary) to find a compatible bridge for your L2 destination.
 
 ## The Road to L2
 
 Layer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://www.growthepie.com/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or yield farms.
 
-Using a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can also check Etherscan (click on the ‘b’ for ‘Blockscan’ to the right of your wallet address to see L2 transactions) or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.
+Using a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can look up your address on a `block explorer` like [Blockscan](https://blockscan.com/), which searches many networks at once, or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.
 
 As you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.
 

@@ -31,19 +31,19 @@ ________________________________________________________________________________
 
 `Blockchain` technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain `ledger`.
 
-After examining the layers of a blockchain, we will be using a blockchain tool called a `block explorer` to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction.
+After examining the layers of a blockchain, you will understand the structure that a blockchain tool called a `block explorer` displays: the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction. To see it in action, try [Etherscan](https://etherscan.io/), a popular block explorer for Ethereum.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/introduction-1e34f31e.svg)
 
 # Blockchain Structure
 
-The term blockchain can be used as a noun — the Bitcoin blockchain — or as an adjective — blockchain technology. Either way, `blockchain` refers to the entire structure cryptocurrencies are built on.
+The term blockchain can be used as a noun (the Bitcoin blockchain) or as an adjective (blockchain technology). Either way, `blockchain` refers to the entire structure cryptocurrencies are built on.
 
 Zooming in from the outside, there are 3 levels of structure in a blockchain:
 
 1. The overall `blockchain` is made up of blocks that are linked together in order
 2. `Blocks` are made up of groups of transactions put together
-3. `Transactions` are amounts of money sent between two `addresses` on the network
+3. `Transactions` are transfers of value, or instructions to programs, between `addresses` on the network
 
 This three-tiered structure comes together to create a cryptographic ledger - an unalterable history of all transactions performed on the network.
 
@@ -57,9 +57,9 @@ What is a blockchain?
 
 > ℹ️ Try again! Blocks are part of the structure, but they aren’t the only correct answer.
 
-- [ ] A list of amounts of money sent between two addresses
+- [ ] A shared record anyone can view but no one can edit
 
-> ℹ️ Try again! Transactions are part of the structure, but they aren’t the only correct answer.
+> ℹ️ Try again! This is true, but it isn’t the only correct answer.
 
 - [ ] Blocks linked together in sequence
 
@@ -67,7 +67,7 @@ What is a blockchain?
 
 - [x] All of the above
 
-> ℹ️ Correct! A blockchain combines all three levels: transactions grouped into blocks, linked together in sequence.
+> ℹ️ Correct! All three are true: a blockchain is a shared, uneditable record of transactions grouped into blocks, linked in sequence.
 
 # Examining the Ledger
 
@@ -75,7 +75,7 @@ In typical money systems, we trust third parties like banks to keep track of how
 
 The `ledger` is the list of ALL transactions ever made on a blockchain, and anyone can see it for `public` blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.
 
-When new transactions are added to the ledger, balances stored at each `address` get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. 
+When new transactions are added to the ledger, balances stored at each `address` get updated; past transactions cannot be altered. It’s like letting anyone look at everyone’s all-time bank account transaction history, at any time.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-838ca24f.svg)
 
@@ -120,11 +120,11 @@ Which of the following is true for public blockchain ledgers?
 
 # Decentralization
 
-Not only are transactions included on a `blockchain` ledger unchangeable, they are also shared and distributed amongst a large network of computers. To make sure that no single entity has the power to change the data, the blockchain ledger is stored on every device, called a `node`, on the network.
+Not only are transactions included on a `blockchain` ledger unchangeable, they are also shared and distributed amongst a large network of computers. To make sure that no single entity has the power to change the data, copies of the blockchain ledger are stored on many computers, called `nodes`, across the network.
 
 This shared data is what makes the blockchain ledger `decentralized`. No single authority or entity controls the data. Blockchains like Ethereum are also `public` because the ledger can be viewed by anyone. 
 
-For this lesson, just remember that the ledger data is shared by every computer running on the Ethereum network.
+For this lesson, just remember that the ledger data is shared across the many computers running the Ethereum network.
 
 # Knowledge Check 3
 
@@ -140,17 +140,17 @@ What makes a blockchain decentralized?
 
 - [x] No single entity controls the ledger, stored on many computers
 
-> ℹ️ Correct! Storing the ledger on every node in the network means no single entity has the power to control or change the data.
+> ℹ️ Correct! Storing copies of the ledger on many nodes means no single entity has the power to control or change the data.
 
 - [ ] The ledger is stored on a single secure server
 
-> ℹ️ Try again! A single server would be a central point of control. The ledger is stored on every node in the network.
+> ℹ️ Try again! A single server would be a central point of control. Copies of the ledger are stored on many nodes.
 
 # Block Anatomy
 
 An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique `block hash`, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and the fingerprint of EVERY block that follows it because each fingerprint depends on the previous one.
 
-So each `block` is simply a group of transactions put together in one file along with that block’s `block hash`. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block_**chain**_. 
+So each `block` is simply a group of transactions, plus a unique fingerprint (its `block hash`) computed from the block’s contents. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block_**chain**_. 
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
 

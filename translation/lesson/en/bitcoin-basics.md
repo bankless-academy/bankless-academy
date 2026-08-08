@@ -35,7 +35,7 @@ At Bankless Academy, our mission is to provide Explorers such as yourself with t
 
 Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
 
-Bitcoin is a new type of money. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.
+Bitcoin is a new type of money, designed to resist `inflation`: its supply is fixed in code, so no one can print more of it. Its price still swings in the short term, but its rules never change.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
@@ -67,16 +67,19 @@ As societies grew, a government’s central bank would issue standardized coins 
 
 # Knowledge Check 1
 
-True or False:
-”As more money is added to a monetary system, the existing money becomes worth less.”
+What happens to existing money when lots of new money is added to a monetary system?
 
-- [x] True
+- [x] It becomes worth less.
 
-> ℹ️ Correct! The more money there is, the less value it has.
+> ℹ️ Correct! The more money there is, the less each unit is worth.
 
-- [ ] False
+- [ ] It becomes worth more.
 
-> ℹ️ Try again.
+> ℹ️ Try again! A bigger supply makes each unit worth less, not more.
+
+- [ ] Its value stays the same.
+
+> ℹ️ Try again! New money dilutes the value of the money people already hold.
 
 # A Brief History of Money (Part 2)
 
@@ -84,7 +87,7 @@ With the introduction of paper money, currencies shifted to being 'backed' by go
 
 Then, in the 20th century, came the fall of this “`Gold Standard`”.
 
-Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
+Precious metals were slowly disconnected from currencies worldwide, an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
 
 Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
 
@@ -115,7 +118,7 @@ Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional b
 
 - ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.
 - 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
-- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
+- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. The network records who owns what, and your `private keys` prove it: only the key holder can move the coins.
 
 For its qualities, Bitcoin has earned the nickname “digital gold”.
 
@@ -127,11 +130,11 @@ For its qualities, Bitcoin has earned the nickname “digital gold”.
 
 ---
 
-Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare and potentially valuable. This puts it in a good position as a long term store of value, much like gold.
+Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist: a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare, much like gold.
 
-While the max supply of `BTC` can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
+While the max supply of `BTC` can’t exceed 21 million, new currency is still added to the `circulating supply`. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. Roughly every four years, this new issuance is cut in half (the “halving”), shrinking toward zero as the cap approaches. Over time, miners rely more on transaction fees than on new coins.
 
-Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
+Bitcoin's fixed `monetary policy` makes it attractive for preserving value in the long term. Since 2024, regulated funds (spot ETFs) have let traditional investors hold Bitcoin, strengthening its “digital gold” role.
 
 Its short term value remains volatile due to market speculation.
 
@@ -149,19 +152,27 @@ How does Bitcoin promote value preservation in the long term?
 
 > ℹ️ Try again! Custody relates to ownership, rather than value.
 
+- [ ] By keeping its price stable.
+
+> ℹ️ Try again! Bitcoin’s price is volatile in the short term; its fixed supply supports long-term value.
+
+- [ ] By letting a central bank manage supply.
+
+> ℹ️ Try again! Bitcoin has no central bank; its supply rules are fixed in code.
+
 # Digital Gold: Self-Custody
 
 🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
 
 ---
 
-In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional — judged by businesses or institutions.
+In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional, judged by businesses or institutions.
 
 As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
 
-Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
+Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. Your coins aren’t stored in an app or website: the network records your ownership, and your `private keys` prove it. Keep those keys to yourself, and you alone hold the key to your vault of digital gold.
 
-This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.
+This system of ownership gives you total control of your digital wealth: anywhere in the world, any time.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg)
 
@@ -185,13 +196,15 @@ How does self-custody enable true ownership?
 
 Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
 
-- ⚡ Transfer Bitcoin globally for a reasonable fee.
-- ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
+- ⚡ Send money globally, 24/7. No paperwork, no bank approval, no downtime.
+- ⚙️ Confirmation takes minutes to an hour, and fees rise and fall with network demand.
 - 📡 Access Bitcoin from anywhere with an internet connection.
+
+For instant, low-fee everyday payments, Bitcoin also has a fast-payments layer called the Lightning Network.
 
 In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4_
 
-You’ll manage your account using `cryptocurrency wallet` software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
+You’ll manage your account using `cryptocurrency wallet` software on your phone or computer. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -201,15 +214,15 @@ How is Bitcoin similar to email?
 
 - [ ] Both are online 24/7.
 
-> ℹ️ Right! But this isn’t the only correct answer.
+> ℹ️ True, but so are the other options. Pick the answer that covers them all.
 
 - [ ] Both are digital technologies.
 
-> ℹ️ Right! But this isn’t the only correct answer.
+> ℹ️ True, but so are the other options. Pick the answer that covers them all.
 
 - [ ] Both can be accessed with a phone.
 
-> ℹ️ Right! But this isn’t the only correct answer.
+> ℹ️ True, but so are the other options. Pick the answer that covers them all.
 
 - [x] All of the above.
 
@@ -230,13 +243,13 @@ This defense strategy is called `decentralization`: the shifting of control from
 
 # Bitcoin Mining
 
-With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database” — the `blockchain`.
+With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database”: the `blockchain`.
 
 It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
 
 These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
 
-It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the `central bank`.
+It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code (“rules with no rulers”) and decentralized participants, rather than small groups of people at the `central bank`.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
@@ -300,7 +313,7 @@ By decentralizing money and removing `custodians` we can:
 - ⚖️ Build `equality of opportunity` into monetary systems.
 - 🌐 Establish true ownership for the digital age.
 
-The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.
+The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe. And you’re invited.
 
 ”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.
 

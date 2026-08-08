@@ -29,7 +29,7 @@ ________________________________________________________________________________
 
 # Introduction
 
-Problems emerge when more users want to use a `blockchain` network than it can handle. Large demand for `blockspace` can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In times of high demand, Ethereum users can pay skyrocketing fees to still have their transactions processed quickly— ultimately pricing out users with less capital.
+Problems emerge when more users want to use a `blockchain` network than it can handle. Large demand for `blockspace` can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In times of high demand, users bid against each other to have their transactions processed quickly, and fees rise, pricing out users with less capital.
 
 This lesson explores why Ethereum and other blockchains are subject to the `Blockchain Trilemma`, how the Trilemma is the root cause of the problems described above, and how the Trilemma affects Ethereum’s plans for serving the needs of all its users. We will look at the tradeoffs several blockchains have made concerning the Blockchain Trilemma, and what those tradeoffs mean for Academy Explorers.
 
@@ -69,7 +69,7 @@ The Blockchain Trilemma describes the relationship between:
 
 Security is the most foundational requirement for a public blockchain. Computers within a network (such as a blockchain network) must agree on what transactions have truly happened to work together; this agreement is called `consensus`. A blockchain is secure if attackers cannot disrupt the network from agreeing on that truth. Consensus algorithms are designed to resist these attacks.
 
-Chains like Bitcoin that use `Proof of Work` consensus prevent fraud by making their consensus algorithm highly competitive; each block producer races to solve a math problem. The first to do so wins the right to create the next block and receives the monetary `block reward` that comes with it. Fraud would require massive investments in computing power and energy, so an attacker would likely spend more than they’d gain. 
+Chains like Bitcoin that use `Proof of Work` consensus protect this agreement by making block production highly competitive; each block producer races to solve a math problem. The first to do so wins the right to create the next block and receives the monetary `block reward` that comes with it. Rewriting the chain’s recent history would require massive investments in computing power and energy, so an attacker would likely spend more than they’d gain. 
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/security-and-consensus-4e857c50.svg)
 
@@ -95,7 +95,7 @@ Blockchain consensus for cryptocurrencies is:
 
 # Security and Attacks
 
-One potential form of attack on blockchain consensus is a `51% attack`; an attacker needs to have 51% or more of the consensus power on a network to commit fraud by creating falsified transactions. This means 51% of the computing power solving math problems in Proof of Work consensus and 51% of the `stake` in Proof of Stake consensus. Again, fraud would require a massive capital investment to acquire a stake in the network, which will be destroyed if found to be creating false transactions; an attacker would likely spend more than they’d gain.
+One potential form of attack on blockchain consensus is a `51% attack`; an attacker controlling the majority of a network’s consensus power can reverse recent transactions to spend the same coins twice, or censor new ones. They cannot fake signatures or spend anyone else’s funds. This majority means 51% of the computing power in Proof of Work consensus and 51% of the `stake` in Proof of Stake consensus, a massive capital investment. And in Proof of Stake, provable cheating such as signing two conflicting blocks gets that stake destroyed (called slashing); an attacker would likely lose more than they’d gain.
 
 In `Proof of Stake` consensus, the block producer isn’t chosen through competition but is randomly assigned instead. Like with Proof of Work, the consensus algorithm ensures that any single entity cannot regularly “win” the right to create a new `block`. 
 
@@ -107,11 +107,11 @@ The end-goal of a 51% attack is to:
 
 - [ ] Disrupt mining operations
 
-> ℹ️ Try again! The attack targets consensus itself: the goal is creating falsified transactions, not disrupting miners.
+> ℹ️ Try again! The attack targets consensus itself: reversing or censoring transactions, not disrupting miners.
 
-- [x] Commit fraud in blockchain systems
+- [x] Double-spend coins or censor transactions
 
-> ℹ️ Correct! With 51% or more of the consensus power, an attacker could create falsified transactions.
+> ℹ️ Correct! Majority consensus power lets an attacker reverse recent transactions to spend coins twice, or block new ones.
 
 - [ ] Create a new cryptocurrency
 
@@ -119,7 +119,7 @@ The end-goal of a 51% attack is to:
 
 - [ ] Eliminate the other 49%
 
-> ℹ️ Try again! The other participants aren’t removed. Majority consensus power is used to commit fraud.
+> ℹ️ Try again! The other participants aren’t removed. Majority power is used to reverse or censor transactions.
 
 # Scalability - Throughput
 
@@ -127,7 +127,7 @@ The end-goal of a 51% attack is to:
 
 1) `Transaction throughput`: How many transactions a blockchain can process at once, usually measured in transactions per second (`TPS`).
 
-Imagine many people waiting at a bus stop with more arriving every minute, they all want to travel. But there are only so many people that can travel by bus. To clear the bus stop of people faster, you’d have to use bigger busses (more people) or make the busses run more often (less time). It works the same way with trying to fit many transactions into the small amount of `block space` available for each block. You can see this visualization with live data at [https://txstreet.com/v/eth-btc](https://txstreet.com/v/eth-btc).
+Imagine many people waiting at a bus stop with more arriving every minute, they all want to travel. But there are only so many people that can travel by bus. To clear the bus stop of people faster, you’d have to use bigger buses (more people) or make the buses run more often (less time). It works the same way with trying to fit many transactions into the small amount of `block space` available for each block. You can see this visualization with live data at [https://txstreet.com/v/eth-btc](https://txstreet.com/v/eth-btc).
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/scalability-throughput-d36672c5.svg)
 
@@ -157,15 +157,15 @@ The second aspect of blockchain scalability is:
 
 2) `Finality`: When can we be reasonably sure a transaction won’t get changed or reversed?
 
-Finality is typically measured in blocks — how many blocks have passed since the transaction was included in a block? The more blocks that get added to the chain afterward, the more sure we can be that the transaction is finalized and won’t get reverted. Remember, a secure blockchain consensus algorithm makes it very expensive to change past blocks, and the expense increases the farther back someone changes. We convert this block number to a finality time by multiplying the expected number of block confirmations by the blockchain’s TPS. For Ethereum, eight block confirmations times 15 `TPS` gives 2 minutes of finality time after confirmation. 
+In Proof of Work chains like Bitcoin, finality is measured in blocks: the more blocks added to the chain after your transaction, the more sure you can be it won’t get reverted. Remember, a secure consensus algorithm makes it very expensive to change past blocks, and the expense grows the farther back someone tries to change. Bitcoin produces a new `block` roughly every 10 minutes, so waiting for several confirmations takes about an hour. Ethereum’s Proof of Stake takes a different route: validators vote to finalize blocks, and after about 13 minutes (two `epochs` of votes) a transaction is final. 
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/scalability-finality-73177220.svg)
 
 # Decentralization distributes power
 
-`Decentralization` is the final basis of the blockchain trilemma — the process of transferring control and decision-making from a single entity to a distributed network of many. Decentralization is the fundamental principle that enables blockchains to be `permissionless` and `censorship-resistant`; anyone can use decentralized blockchains, and anyone can build software using them.
+`Decentralization` is the final basis of the blockchain trilemma: the process of transferring control and decision-making from a single entity to a distributed network of many. Decentralization is the fundamental principle that enables blockchains to be `permissionless` and `censorship-resistant`; anyone can use decentralized blockchains, and anyone can build software using them.
 
-Centralized platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many influential streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can reinstate their accounts, it can be long and painful process. Without decentralization, a blockchain `ledger` is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them. A `permissionless` network means authority is sufficiently decentralized; there is no way to remove a person or entity’s access.
+Centralized platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many influential streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can reinstate their accounts, it can be a long and painful process. Without decentralization, a blockchain `ledger` is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them. A `permissionless` network means authority is sufficiently decentralized; there is no way to remove a person or entity’s access.
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/decentralization-distributes-power-feafb05a.svg)
 
@@ -211,19 +211,19 @@ Different blockchains use different amounts of decentralization.
 
 # Some Examples
 
-Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction `finality time` for Bitcoin and sky-high transaction fees for Ethereum. The demand to use `smart contracts` as a “decentralized world-finance computer”, especially for DeFi, has meant that many users making small transactions cannot afford Ethereum.
+Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction `finality time` for Bitcoin and limited `block space` on Ethereum. When demand to use `smart contracts` spikes, especially for DeFi, Ethereum fees rise; during peak demand in 2021, a single transaction could cost tens of dollars.
 
-This high cost to use has provided an opening for `alternative Layer 1`’s like the Binance chain. Binance prioritized scalability over decentralization for higher `transaction throughput` and cheaper fees. Third-generation chains like Solana use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.
+Rising fees provided an opening for `alternative Layer 1`’s like BNB Chain, which prioritized scalability over decentralization for higher `transaction throughput` and cheaper fees. Third-generation chains like Solana use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/some-examples-30020a8d.svg)
 
 # So what can be done?
 
-So if Ethereum has prioritized high security and decentralization, how can it scale to serve the needs of all users as the global financial network it aims to become? This is where the Ethereum roadmap can provide some answers: `Layer 2`s and blockchain `sharding`.
+So if Ethereum has prioritized high security and decentralization, how can it scale to serve the needs of all users as the global financial network it aims to become? The Ethereum roadmap explored two answers: `Layer 2`s and blockchain `sharding`.
 
-`Layer 2`s are an early solution to increasing Ethereum scalability without compromising on the other two parts of the blockchain trilemma. They are an additional layer sitting on top of the main blockchain, relying on the main chain for security but allowing users to benefit from reduced fees and faster transactions. We will explore them in more detail in our Layer 2 lesson.
+`Layer 2`s increase Ethereum scalability without compromising on the other two parts of the blockchain trilemma. They are an additional layer sitting on top of the main blockchain, relying on the main chain for security but allowing users to benefit from reduced fees and faster transactions. We will explore them in more detail in our Layer 2 lesson.
 
-`Sharding` splits the single blockchain into multiple chains that all run together in parallel, like adding more lanes to a road. It enables more transactions to be processed at once without sacrificing security or decentralization.
+`Sharding` would have split the blockchain into multiple parallel chains, like adding more lanes to a road. Ethereum set that plan aside for a simpler one: making block data cheaper for Layer 2s to use (added in 2024) and raising capacity step by step, without sacrificing security or decentralization.
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/so-what-can-be-done-043c43fb.svg)
 
@@ -249,9 +249,9 @@ Layer 2s:
 
 # The future of Ethereum
 
-Previously known as the Ethereum 2.0 upgrade, the Ethereum network is evolving its scalability without sacrificing the other aspects of the trilemma. These changes include the merge to `Proof of Stake` consensus, Layer 2s going live, `sharding` of the main chain, and an overall reduction of energy usage. **All of these changes together will mean a faster, more environmentally-friendly, and cheaper Ethereum while still maintaining security and decentralization as core tenets.** The Ethereum Foundation has an excellent webpage on coming [upgrades to Ethereum](https://ethereum.org/en/upgrades/).
+The Ethereum network keeps evolving its scalability without sacrificing the other aspects of the trilemma. The Merge to `Proof of Stake` consensus (2022) cut the network’s energy use by over 99%, and cheap block data for Layer 2s arrived in 2024. **Scaling is continuous work: each upgrade makes Ethereum faster and cheaper to use while maintaining security and decentralization as core tenets.** The Ethereum Foundation has an excellent webpage on the [Ethereum roadmap](https://ethereum.org/roadmap/).
 
-These things take time; meanwhile, many `Layer 2` protocols are building on top of Ethereum to help meet user demand in the short term without requiring updates to the Ethereum protocol itself. These Layer 2 protocols rely on Layer 1 Ethereum to provide decentralized security while they provide scalability; the diversity of Layer 2s makes a decentralized ecosystem! Ethereum scaling projects include protocols like Optimistic Ethereum, Polygon, and others.
+Meanwhile, many `Layer 2` protocols build on top of Ethereum to help meet user demand without requiring updates to the Ethereum protocol itself. These Layer 2 protocols rely on Layer 1 Ethereum to provide decentralized security while they provide scalability; the diversity of Layer 2s makes a decentralized ecosystem! Leading `rollup`s include Arbitrum, OP Mainnet, and Base; Polygon PoS is a popular `sidechain` with its own separate security.
 
 ![](https://app.banklessacademy.com/images/layer-1-blockchains/the-future-of-ethereum-1f05c338.svg)
 
@@ -259,7 +259,7 @@ These things take time; meanwhile, many `Layer 2` protocols are building on top 
 
 Ethereum upgrades include:
 
-- [ ] Using Layer 2s and sharding to increase scalability
+- [ ] Using Layer 2s and cheaper block data to increase scalability
 
 > ℹ️ Try again! This is part of the upgrades, but it isn’t the only one.
 
@@ -273,7 +273,7 @@ Ethereum upgrades include:
 
 - [x] All of the above
 
-> ℹ️ Correct! Ethereum is scaling with Layer 2s and sharding, cutting energy use with Proof of Stake, all while keeping security and decentralization as core tenets.
+> ℹ️ Correct! Layer 2s and cheaper block data add scale, Proof of Stake cut energy use, and security and decentralization stay core tenets.
 
 # What does it mean for Explorers?
 
