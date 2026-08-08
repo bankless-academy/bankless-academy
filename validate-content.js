@@ -29,6 +29,21 @@ const resolvesToKeyword = (term) => {
 const files = fs.readdirSync(EN_DIR).filter((f) => f.endsWith('.md'))
 const fileSlugs = new Set(files.map((f) => f.replace(/\.md$/, '')))
 
+// translation files on disk must match each lesson's languages[] registration
+const langDirs = fs
+  .readdirSync('translation/lesson')
+  .filter((d) => d !== 'en' && fs.statSync(path.join('translation/lesson', d)).isDirectory())
+for (const [slug, m] of Object.entries(meta)) {
+  const listed = new Set(m.languages || [])
+  for (const lang of langDirs) {
+    const exists = fs.existsSync(`translation/lesson/${lang}/${slug}.md`)
+    if (exists && !listed.has(lang))
+      errors.push(`${slug}: translation file exists for "${lang}" but the language is not listed in lesson-meta.json`)
+    if (!exists && listed.has(lang))
+      errors.push(`${slug}: language "${lang}" is listed in lesson-meta.json but translation/lesson/${lang}/${slug}.md is missing`)
+  }
+}
+
 for (const slug of slugs) {
   if (!fileSlugs.has(slug)) errors.push(`${slug}: in lesson-meta.json but ${EN_DIR}/${slug}.md is missing`)
 }
