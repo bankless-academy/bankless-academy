@@ -344,5 +344,5 @@ Is Zerion a custodial wallet app?
 
 - [x] No
 
-> ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
+> ℹ️ Correct! Zerion wallets are self-custody wallets, controlled by you, and you alone.
 

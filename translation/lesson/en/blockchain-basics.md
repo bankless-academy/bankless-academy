@@ -54,9 +54,20 @@ This three-tiered structure comes together to create a cryptographic ledger - an
 What is a blockchain?
 
 - [ ] Organized groups of transactions called blocks
+
+> ℹ️ Try again! Blocks are part of the structure, but they aren’t the only correct answer.
+
 - [ ] A list of amounts of money sent between two addresses
+
+> ℹ️ Try again! Transactions are part of the structure, but they aren’t the only correct answer.
+
 - [ ] Blocks linked together in sequence
+
+> ℹ️ Try again! This describes the chain of blocks, but it isn’t the only correct answer.
+
 - [x] All of the above
+
+> ℹ️ Correct! A blockchain combines all three levels: transactions grouped into blocks, linked together in sequence.
 
 # Examining the Ledger
 
@@ -89,12 +100,23 @@ Individual transactions show the _change_ in the amount of cryptocurrency for ea
 
 # Knowledge Check 2
 
-Which of the following statement(s) is/are true for public blockchain ledgers?
+Which of the following is true for public blockchain ledgers?
 
 - [ ] All transactions are public and past transactions are unchangeable
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [ ] The ledger tracks how much cryptocurrency each address currently has
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [ ] The ledger grows as new transactions are added to it
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [x] All of the above
+
+> ℹ️ Correct! The ledger is public, unchangeable, keeps address balances up to date, and grows with every new transaction.
 
 # Decentralization
 
@@ -109,9 +131,20 @@ For this lesson, just remember that the ledger data is shared by every computer 
 What makes a blockchain decentralized?
 
 - [ ] Only one entity can write to the blockchain
+
+> ℹ️ Try again! A single entity in control is the opposite of decentralization.
+
 - [ ] It meets decentralization requirements set by the government
-- [x] No single authority or entity controls the ledger or access to the ledger data because it is distributed on a large network of computers
+
+> ℹ️ Try again! Decentralization comes from the network’s design, not from government approval.
+
+- [x] No single entity controls the ledger, stored on many computers
+
+> ℹ️ Correct! Storing the ledger on every node in the network means no single entity has the power to control or change the data.
+
 - [ ] The ledger is stored on a single secure server
+
+> ℹ️ Try again! A single server would be a central point of control. The ledger is stored on every node in the network.
 
 # Block Anatomy
 
@@ -126,9 +159,20 @@ So each `block` is simply a group of transactions put together in one file along
 What is the purpose of a block hash?
 
 - [ ] To encrypt block data so no one can read it
-- [x] To link each block to the previous one and ensure past transaction data doesn’t change
+
+> ℹ️ Try again! Block data stays publicly readable. The hash is a fingerprint, not encryption.
+
+- [x] To link blocks together and keep past transaction data unchangeable
+
+> ℹ️ Correct! Each block references the previous block’s fingerprint, so changing past data would break every block that follows.
+
 - [ ] To ensure transactions are sent to the correct address
+
+> ℹ️ Try again! Addresses handle where funds go. The block hash links blocks together.
+
 - [ ] To ensure the blockchain stays decentralized
+
+> ℹ️ Try again! Decentralization comes from distributing the ledger across many nodes, not from the block hash.
 
 # Inside a Block
 
@@ -145,12 +189,23 @@ Recall that each block must also reference the past block’s `block hash` to li
 
 # Knowledge Check 5
 
-The following information is contained in a block:
+What information is contained in a block?
 
-- [ ] All information contained in previous blocks, so the blockchain is always current
+- [ ] All the information contained in previous blocks
+
+> ℹ️ Try again! A block only references the previous block’s hash. It doesn’t copy all past data.
+
 - [ ] Anything relevant to the blockchain as block size is unlimited
+
+> ℹ️ Try again! A block is a discrete group of transactions, not an unlimited container.
+
 - [x] Transaction data and a reference to the previous block
+
+> ℹ️ Correct! A block is a group of transactions plus the previous block’s hash, which chains the blocks together.
+
 - [ ] All transaction data generated within a fixed timeframe
+
+> ℹ️ Try again! Transactions can be grouped into one block or spread across multiple blocks over time.
 
 # Individual Transactions
 
@@ -169,9 +224,20 @@ Finally, each transaction has a unique digital identifier, called its `transacti
 Data on a blockchain is simply a list of transactions grouped into blocks. Examples of such transactions might include:
 
 - [x] Sending or receiving crypto assets
+
+> ℹ️ Correct! Transactions record currency moving between users, from simple transfers to smart contract interactions.
+
 - [ ] Changing the size of the block
+
+> ℹ️ Try again! Block size isn’t something a transaction can change.
+
 - [ ] Editing past blockchain data
+
+> ℹ️ Try again! Past blockchain data cannot be changed. That’s a core feature of blockchains.
+
 - [ ] All of the above
+
+> ℹ️ Try again! Only one of the above is a valid blockchain transaction.
 
 # User Addresses
 
@@ -188,6 +254,17 @@ When looking at a single transaction in a block explorer, we can see the From: a
 What is true about blockchain addresses?
 
 - [ ] They are the public identifiers of different entities on a blockchain
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [ ] They always start with _0x_ on Ethereum
-- [ ] Whoever controls the private key for an address can use the funds at that address
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
+- [ ] Whoever controls the private key can use the funds at that address
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [x] All of the above
+
+> ℹ️ Correct! Addresses are public identifiers, start with 0x on Ethereum, and their funds are unlocked by the private key.

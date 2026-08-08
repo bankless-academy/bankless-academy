@@ -59,7 +59,7 @@ Which of the following is true regarding cryptocurrency exchanges?
 
 > ℹ️ Even CEXs have their risks. In 2022, the FTX exchange collapsed, with almost all users losing their deposits.
 
-- [x] DEXs allow you to trade while maintaining self-custody, while CEXs do not.
+- [x] DEXs let you trade in self-custody, while CEXs do not.
 
 > ℹ️ Unless explicitly stated otherwise, a CEX owns your private keys.
 
@@ -91,7 +91,7 @@ Smart contracts are accounts on Ethereum — they have an address and balance, p
 
 # Knowledge Check 2
 
-Which of the below properties are needed for a smart contract to be considered decentralized?
+Which properties are needed for a dApp to be considered decentralized?
 
 - [ ] Permissionless: open access to all users.
 
@@ -121,7 +121,7 @@ AMMs route user trades through `liquidity pools`, rather than directly matching 
 
 # Knowledge Check 3
 
-What is the benefit of using AMMs to complete trades as compared to a traditional order book?
+What is a benefit of using AMMs compared to a traditional order book?
 
 - [ ] The AMM trade is faster than an order book trade.
 
@@ -133,7 +133,7 @@ What is the benefit of using AMMs to complete trades as compared to a traditiona
 
 - [x] You can detect and prevent other parties creating one-sided trades.
 
-> ℹ️ The transparent nature of AMMs means that it is a lot harder for platforms to hide malicious actions — or for users to be malicious at all!
+> ℹ️ The transparent nature of AMMs means that it is a lot harder for platforms to hide malicious actions, or for users to be malicious at all!
 
 # Token Swaps
 
@@ -214,7 +214,7 @@ How do DEXs incentivize users to provide liquidity?
 
 - [x] A share of platform fees and/or bonus tokens.
 
-> ℹ️ The fees charged to use the DEX are often split across various platform stakeholders — including LPs. Some platforms even grant additional bonuses.
+> ℹ️ The fees charged to use the DEX are often split across various platform stakeholders, including LPs. Some platforms even grant additional bonuses.
 
 - [ ] Access to private liquidity pools.
 
@@ -286,7 +286,7 @@ Why would you use a Decentralized Exchange over a Centralized Exchange?
 
 > ℹ️ This is a quality of a DEX, but it isn’t the only one.
 
-- [ ] You’d like to access tools and opportunities not traditionally available to you.
+- [ ] You want access to tools and opportunities not usually available.
 
 > ℹ️ This is a quality of a DEX, but it isn’t the only one.
 
@@ -328,11 +328,11 @@ Now you’re ready to interact with a Decentralized Exchange!
 
 How can you be sure you’ve chosen a reputable DEX?
 
-- [x] By independently checking its online reputation and only following URLs provided by a trusted party.
+- [x] By checking its reputation and only using URLs from trusted sources.
 
-> ℹ️ Right, only interacting with trustworthy URLs is a good layer of protection.
+> ℹ️ Right! Independently verify the DEX’s online reputation, and only follow URLs provided by a trusted party.
 
-- [ ] By performing a small test interaction when using the platform for the first time.
+- [ ] By performing a small test interaction on your first use.
 
 > ℹ️ A single interaction with a bad smart contract can drain your entire wallet.
 

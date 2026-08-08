@@ -50,9 +50,20 @@ For a blockchain to serve as an unbiased foundation for a monetary system at a g
 The Blockchain Trilemma describes the relationship between:
 
 - [ ] ethereum, bitcoin, and altcoins
+
+> ℹ️ Try again! The Trilemma is about competing qualities within a blockchain, not competing blockchains.
+
 - [ ] security, censorship, and fraud
-- [x] decentralization, scalabilty, and security
-- [ ] money, humans, and blockchains
+
+> ℹ️ Try again! Security is one of the three, but censorship and fraud are threats blockchains defend against, not Trilemma qualities.
+
+- [x] decentralization, scalability, and security
+
+> ℹ️ Correct! These three qualities compete with each other, preventing a blockchain from optimizing all three at once.
+
+- [ ] security, speed, and low fees
+
+> ℹ️ Try again! Speed and fees relate to scalability, which is just one of the three qualities: security, scalability, and decentralization.
 
 # Security and Consensus
 
@@ -66,10 +77,21 @@ Chains like Bitcoin that use `Proof of Work` consensus prevent fraud by making t
 
 Blockchain consensus for cryptocurrencies is:
 
-- [ ] The process where all blockchain nodes agree on what has happened on-chain
+- [ ] The process where nodes agree on what has happened on-chain
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [ ] Important for everyone in that chain’s ecosystem to prevent fraud
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [ ] Secured through economic incentives
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [x] All of the above
+
+> ℹ️ Correct! Consensus is how nodes agree on the truth, and economic incentives make attacking that agreement cost more than it would gain.
 
 # Security and Attacks
 
@@ -84,9 +106,20 @@ In `Proof of Stake` consensus, the block producer isn’t chosen through competi
 The end-goal of a 51% attack is to:
 
 - [ ] Disrupt mining operations
+
+> ℹ️ Try again! The attack targets consensus itself: the goal is creating falsified transactions, not disrupting miners.
+
 - [x] Commit fraud in blockchain systems
+
+> ℹ️ Correct! With 51% or more of the consensus power, an attacker could create falsified transactions.
+
 - [ ] Create a new cryptocurrency
+
+> ℹ️ Try again! Anyone can create a new cryptocurrency without attacking an existing network.
+
 - [ ] Eliminate the other 49%
+
+> ℹ️ Try again! The other participants aren’t removed. Majority consensus power is used to commit fraud.
 
 # Scalability - Throughput
 
@@ -103,9 +136,20 @@ Imagine many people waiting at a bus stop with more arriving every minute, they 
 Which of the following is true for the bus stop analogy for blockchain transactions?
 
 - [ ] People (transactions) are grouped together into buses (blocks)
-- [ ] There is a maximum limit on how many people (transactions) can fit into each bus (block)
-- [ ] To process more people (transactions) you need faster, larger, and/or more buses (blocks)
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
+- [ ] Each bus (block) fits a limited number of people (transactions)
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
+- [ ] Moving more people (transactions) needs bigger or more buses (blocks)
+
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
+
 - [x] All of the above
+
+> ℹ️ Correct! Transactions fill limited block space just like passengers fill buses. Clearing the queue faster needs bigger or more frequent blocks.
 
 # Scalability - Finality
 
@@ -130,9 +174,20 @@ Centralized platforms like Facebook and Twitter can deactivate anyone’s accoun
 Which of these statements is NOT true for decentralization?
 
 - [ ] Decentralization makes blockchains censorship-resistant 
+
+> ℹ️ Try again! This statement is true: with no single controlling entity, no one can censor the network.
+
 - [ ] Decentralization makes blockchains permissionless
+
+> ℹ️ Try again! This statement is true: decentralized authority means no one can remove a person’s access.
+
 - [x] Decentralization helps authoritarian powers to maintain control
+
+> ℹ️ Correct! This is NOT true: decentralization does the opposite by distributing control away from any single entity.
+
 - [ ] Anyone anywhere can use permissionless systems 
+
+> ℹ️ Try again! This statement is true: permissionless means no one can be denied access.
 
 # Is it decentralized?
 
@@ -147,7 +202,12 @@ So we can say something is “more or less decentralized than something else” 
 Different blockchains use different amounts of decentralization. 
 
 - [x] True
+
+> ℹ️ Correct! Decentralization is a spectrum: each blockchain chooses how much to trade for scalability or other goals.
+
 - [ ] False
+
+> ℹ️ Try again! Decentralization is a spectrum, and each blockchain makes its own tradeoff along it.
 
 # Some Examples
 
@@ -172,9 +232,20 @@ So if Ethereum has prioritized high security and decentralization, how can it sc
 Layer 2s:
 
 - [ ] Provide their own security
+
+> ℹ️ Try again! Layer 2s rely on the main blockchain for their security.
+
 - [x] Increase scalability for the main blockchain
+
+> ℹ️ Correct! Layer 2s sit on top of the main chain, adding scalability without compromising security or decentralization.
+
 - [ ] Increase fees for users
+
+> ℹ️ Try again! Layer 2s do the opposite: users benefit from reduced fees.
+
 - [ ] Increase finality time for users
+
+> ℹ️ Try again! Layer 2s offer faster transactions, not slower ones.
 
 # The future of Ethereum
 
@@ -189,9 +260,20 @@ These things take time; meanwhile, many `Layer 2` protocols are building on top 
 Ethereum upgrades include:
 
 - [ ] Using Layer 2s and sharding to increase scalability
+
+> ℹ️ Try again! This is part of the upgrades, but it isn’t the only one.
+
 - [ ] Maintaining decentralization and security as core principles
-- [ ] Reducing energy consumption of the blockchain using Proof of Stake consensus
+
+> ℹ️ Try again! This is part of the upgrades, but it isn’t the only one.
+
+- [ ] Reducing energy consumption with Proof of Stake consensus
+
+> ℹ️ Try again! This is part of the upgrades, but it isn’t the only one.
+
 - [x] All of the above
+
+> ℹ️ Correct! Ethereum is scaling with Layer 2s and sharding, cutting energy use with Proof of Stake, all while keeping security and decentralization as core tenets.
 
 # What does it mean for Explorers?
 

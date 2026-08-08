@@ -62,9 +62,20 @@ If an Explorer was to purchase 10,000 BANK from each pool, they would find that 
 Fill in the blanks: To find the best price, people will want to trade in markets with ________ liquidity to have ________ price impact on their trades.
 
 - [ ] good, maximum
+
+> ℹ️ Try again! A maximum price impact means the trade costs more, not less.
+
 - [x] high, low
+
+> ℹ️ Correct! More liquidity means a smaller price impact, like a bigger pool of water changing less when someone jumps in.
+
 - [ ] low, good
+
+> ℹ️ Try again! Low liquidity increases price impact and makes trades more expensive.
+
 - [ ] thin, large
+
+> ℹ️ Try again! Thin liquidity causes a large price impact, which is exactly what traders want to avoid.
 
 # Shortcomings of Traditional DEXs: Thin Liquidity
 
@@ -83,9 +94,20 @@ Thus, any trade has a larger `price impact` than when Uniswap held most of the e
 Which two factors determine the price impact of a DEX trade?
 
 - [ ] The choice of DEX used to make the trade and size of the trade
+
+> ℹ️ Try again! The DEX itself doesn’t matter. It’s the liquidity available in the pool that counts.
+
 - [ ] Which token is chosen to trade and which DEX is used to make the trade
+
+> ℹ️ Try again! Neither the token nor the DEX brand determines price impact. Liquidity and trade size do.
+
 - [x] The size of the trade and amount of liquidity available
+
+> ℹ️ Correct! Like a swimming pool, the size of the splash depends on how big the jumper is and how much water is in the pool.
+
 - [ ] The amount of liquidity available and which token is chosen to trade
+
+> ℹ️ Try again! Liquidity is one factor, but the other is the size of the trade, not the token chosen.
 
 # Recombining Liquidity With DEX Aggregators
 
@@ -99,10 +121,21 @@ DEX aggregators can even route trades through an `intermediary token` , or more 
 
 Trade routing in DEX aggregators means:
 
-- [ ] Trades are routed according to liquidity arrangements with specific DEXs
+- [ ] Trades are routed via special arrangements with specific DEXs
+
+> ℹ️ Try again! Aggregators search all available DEXs algorithmically, not through special arrangements.
+
 - [ ] Trades are always routed through multiple DEXs
+
+> ℹ️ Try again! Aggregators split trades only when it gets a better result. A single DEX may sometimes offer the best route.
+
 - [ ] Trades are routed through a user’s favorite DEX only
+
+> ℹ️ Try again! Sticking to one DEX would defeat the purpose. Aggregators search across many DEXs for the best price.
+
 - [x] Trades can be routed through multiple DEXs and intermediary tokens
+
+> ℹ️ Correct! Algorithms search all possible paths, including extra “stops” through intermediary tokens, to find the cheapest trade route.
 
 # How Gas Cost Is Calculated on Ethereum
 
@@ -131,9 +164,20 @@ Some aggregators go even further: they may refund some of the network transactio
 Which of the following is NOT a way DEX aggregators try to reduce transaction costs for users?
 
 - [ ] Simulate transactions off-chain prior to trade execution
+
+> ℹ️ Try again! Aggregators do simulate trades off-chain, including gas costs, to find the best route.
+
 - [x] Ask DEXs to lower network fees for their users
+
+> ℹ️ Correct! Network fees are set by the blockchain, not by DEXs. No one can simply ask for them to be lowered.
+
 - [ ] Account for gas cost in trade routing
+
+> ℹ️ Try again! Advanced aggregators do include transaction fees in their trade route calculations.
+
 - [ ] Token rebates on gas costs
+
+> ℹ️ Try again! Some aggregators do refund a portion of gas costs in their own token.
 
 # Meta-Aggregators
 
@@ -148,7 +192,12 @@ Note: While convenient, `meta-aggregator` services can add extra costs on top of
 Meta-aggregators cross-reference multiple DEX aggregators to find the best prices for their users.
 
 - [x] True
+
+> ℹ️ Correct! Meta-aggregators search through competing DEX aggregators and serve the best price quotes to users.
+
 - [ ] False
+
+> ℹ️ Try again! Searching across multiple DEX aggregators is exactly what meta-aggregators do.
 
 # Avoiding Sandwich Attacks
 
@@ -163,7 +212,12 @@ Fortunately, because of the recombined liquidity offered by DEX aggregators, the
 To protect yourself, you should keep your slippage tolerance:
 
 - [x] low
+
+> ℹ️ Correct! A low slippage tolerance limits how much value a sandwich attack can extract from your trade.
+
 - [ ] high
+
+> ℹ️ Try again! A high slippage tolerance lets sandwich attacks take more value from your trade.
 
 # More Protection From Sandwiches: OTC Trades
 
@@ -177,7 +231,18 @@ CoWSwap is a Meta-Aggregator that also offers sandwich-resistant services, enabl
 
 Many DEX aggregators offer which tool(s) to save their users money?
 
-- [ ] Routing trades through aggregated liquidity from multiple DEXs to reduce price impact.
+- [ ] Routing trades through liquidity from multiple DEXs.
+
+> ℹ️ Try again! Aggregated liquidity reduces price impact, but it isn’t the only way aggregators save users money.
+
 - [ ] OTC trades that fully protect against sandwich attacks.
+
+> ℹ️ Try again! This is one way aggregators save users money, but it isn’t the only one.
+
 - [ ] Account for gas cost when building the best trade routes.
+
+> ℹ️ Try again! This is one way aggregators save users money, but it isn’t the only one.
+
 - [x] All of the above
+
+> ℹ️ Correct! Aggregators combine liquidity, factor in gas costs, and can offer OTC trades, all to leave users with more value.

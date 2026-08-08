@@ -33,8 +33,71 @@ and announcements — see "Still on Notion" below.)
 
 Lesson formats: `FORMAT: LESSON` (slides + knowledge checks + optional quest) and
 `FORMAT: HANDBOOK` (article, `isArticle: true`, no slides). POLL slides look like
-quizzes in the md but have no entry in `quiz-answers.json`; their type is pinned
-in `slideMeta`.
+quizzes in the md but have no `[x]`; their type is pinned in `slideMeta`.
+
+### Rules when editing lesson content (ALWAYS follow)
+
+1. **Never move the correct answer to a different option position.** Users have
+   their answer numbers saved in localStorage — the `[x]` must stay on the same
+   option index. Rewrite question/option texts around the fixed position instead.
+2. **Don't make slide/section text much longer than it was** — long text breaks
+   the lesson UI. When adding content, trim elsewhere in the same slide.
+3. **Keep text consistent with the slide's image** (`![](...)`). If the new text
+   no longer matches the image, adjust the text (or drop the image reference) —
+   never reference an image file that doesn't exist in `public/`.
+4. **Write evergreen.** Prefer durable mechanisms and principles over
+   point-in-time facts ("as of 2026", current TVL/supply numbers, "the largest X
+   is currently…"). When a dated fact is unavoidable, anchor it to its year
+   ("in 2025, …") so it ages as history instead of going stale.
+5. **Every quiz option should have feedback** (`> ℹ️ Correct! …` / `> ℹ️ Try
+   again! …` blockquote under the option). When touching a quiz that lacks
+   feedback, add it — one short, educational sentence per option (two sentences
+   / ~150 chars is the ceiling: feedback shows as a toast overlay, which has no
+   hard limit but gets intrusive on mobile, and translations run longer).
+6. **Keep quiz option text short** — long options overflow the answer box in
+   the UI. Aim for ≤ ~70 characters; shorten any option that runs longer (move
+   the nuance into the feedback line instead).
+7. **Quizzes must be easy to read and answer, and test the preceding slides.**
+   Simple wording, one clear idea per question, no trick phrasing or nested
+   negations — a learner who just read the slides should recognize the answer.
+   Each Knowledge Check should test material from the slides right before it.
+8. **Don't add, remove, or reorder slides unless unavoidable.** Users' resume
+   position is a slide *index* in localStorage, and quiz ids are positional
+   (`<slug>-<n>`) — changing slide count/order breaks resumes and saved
+   answers. Rework content within the existing slide structure (merge/split in
+   place only when truly necessary, and say so in the PR).
+9. **Backticked `terms` must exist in the glossary** (keywords file). They
+   render as Keyword tooltips: backticking an undefined term gives a dead
+   tooltip; removing backticks from a defined term loses the tooltip. Check
+   both directions when editing.
+10. **Distractors must be plausible, never jokes.** Wrong options should be
+    things a confused learner might genuinely believe — joke options make the
+    quiz guessable without reading.
+11. **Verify external links resolve (HTTP 200) at edit time.** Prefer official
+    docs over blogs, and prefer linking our own lessons/glossary over external
+    sites. The CI validator cannot gate external URLs — checking is on the
+    editor.
+12. **Write for translatability.** English is the source for 9 AI-generated
+    translations: declarative sentences, no English-only idioms or wordplay
+    (established brand terms like HODL are fine, they're taught). Batch
+    related edits to a lesson, since any en change invalidates that slide's
+    translations.
+13. **Avoid em dashes (—).** They read as AI-generated and translate poorly.
+    Use a comma, colon, parentheses, or a separate sentence instead. Applies
+    to all new/edited lesson text and quiz feedback.
+14. **Always consider the mobile view.** Most length/layout limits bind on
+    small screens first: slide text, quiz options, feedback toasts, banners.
+    When judging "too long" or changing lesson-related UI, assume a narrow
+    viewport (~375px), not desktop.
+15. **Keep every lesson beginner-friendly and easy to understand.** The reader
+    is new to crypto: short sentences, familiar analogies, one concept at a
+    time. If a slide needs prior knowledge the curriculum hasn't taught yet,
+    link the lesson that teaches it.
+16. **Avoid jargon and overly technical wording — prefer ELI5.** Explain like
+    the reader is smart but new: plain words first, the technical term after
+    (backticked if it's a glossary keyword). Don't say "EOA delegation via
+    EIP-7702" when "letting your wallet run extra code" teaches the same idea;
+    cite the spec name once, in passing, at most.
 
 ### Deprecation policy
 

@@ -47,10 +47,21 @@ There are no middlemen to intermediate or take a cut of your transactions.
 
 What does DeFi stand for? 
 
-- [ ] Derivative fiction
+- [ ] Digital finance
+
+> ℹ️ Try again! DeFi is digital, but the “De” stands for decentralized.
+
 - [x] Decentralized finance
+
+> ℹ️ Correct! DeFi is the ecosystem of financial products and applications running on public blockchains.
+
 - [ ] Deregulation field
-- [ ] Degenerate fishermen
+
+> ℹ️ Try again! DeFi is about removing middlemen through decentralization, not about deregulation.
+
+- [ ] Decentralized funding
+
+> ℹ️ Try again! Close, but the “Fi” stands for finance, not funding.
 
 # Earning Yield
 
@@ -65,9 +76,20 @@ By removing the middleman, you also remove any service fees, dues, and commissio
 How can you earn yield with crypto?
 
 - [ ] Earning interest by depositing into a DeFi protocol
+
+> ℹ️ Try again! This is one way to earn yield, but it isn’t the only one.
+
 - [ ] Earning rewards by depositing into a DeFi protocol
+
+> ℹ️ Try again! This is one way to earn yield, but it isn’t the only one.
+
 - [x] Both of the above
+
+> ℹ️ Correct! DeFi protocols let you earn both interest and other rewards on your crypto assets, with no middleman taking a cut.
+
 - [ ] You can’t earn yield on crypto
+
+> ℹ️ Try again! Earning yield on crypto assets is one of the main reasons DeFi is popular.
 
 # What You Can Do With DeFi
 
@@ -82,9 +104,20 @@ How can you earn yield with crypto?
 Fill in the blank: DeFi transactions are ____.
 
 - [ ] Free
+
+> ℹ️ Try again! DeFi transactions still cost network fees. What makes them special is that no one can block them.
+
 - [ ] Controlled
+
+> ℹ️ Try again! No third party controls or oversees DeFi activity.
+
 - [x] Permissionless
+
+> ℹ️ Correct! Anyone can buy, sell, or trade on a public blockchain without needing approval from a third party.
+
 - [ ] Centralized
+
+> ℹ️ Try again! DeFi is the opposite: it runs on decentralized applications with no central authority.
 
 # Investing
 
@@ -101,9 +134,20 @@ DeFi allows early access to coins and tokens to find and invest in, before they 
 What does HODL mean?
 
 - [ ] It’s a misspelling of HOLD
+
+> ℹ️ Try again! This is one origin story, but it isn’t the only correct answer.
+
 - [ ] Hold On for Dear Life
+
+> ℹ️ Try again! This is one meaning, but it isn’t the only correct answer.
+
 - [ ] Keeping crypto for a long time
+
+> ℹ️ Try again! This is what HODLing means in practice, but it isn’t the only correct answer.
+
 - [x] All of the above
+
+> ℹ️ Correct! HODL started as a typo of HOLD, doubles as “Hold On for Dear Life”, and means keeping crypto assets for a long time.
 
 # Trading
 
@@ -122,9 +166,20 @@ Anyone can trade and participate in markets regardless of your net asset worth. 
 What is a DEX?
 
 - [x] A decentralized exchange
-- [ ] A digital electric xylophone
+
+> ℹ️ Correct! A DEX is a digital marketplace that brings buyers and sellers together to trade tokens without a middleman.
+
+- [ ] A derivatives exchange
+
+> ℹ️ Try again! The “D” stands for decentralized, not derivatives: a DEX is a decentralized exchange.
+
 - [ ] A crypto index fund
+
+> ℹ️ Try again! A DEX is a marketplace for trading tokens, not an investment fund.
+
 - [ ] None of the above
+
+> ℹ️ Try again! One of the above is exactly what a DEX is.
 
 # Lending & Borrowing
 
@@ -139,9 +194,20 @@ There are `DApps` that enable anyone to lend and borrow crypto assets. Similar t
 Fill in the blank: DeFi lending is done on a _____ level.
 
 - [ ] income to debt
+
+> ℹ️ Try again! Income-to-debt ratios belong to traditional loan approvals. DeFi lending works differently.
+
 - [x] peer-to-peer
+
+> ℹ️ Correct! DeFi lending happens directly between two parties, with no bank or middleman in between.
+
 - [ ] banks to customers
+
+> ℹ️ Try again! DeFi removes the bank entirely: lending happens directly between users.
+
 - [ ] income to interest
+
+> ℹ️ Try again! Lenders do earn interest, but the lending itself happens directly between peers.
 
 # Staking
 
@@ -156,9 +222,20 @@ Centralized exchanges also offer staking. However, like their trading pairs, the
 Lending your crypto to a protocol is an example of?
 
 - [ ] Trading
+
+> ℹ️ Try again! Trading is exchanging one token for another, not lending to a protocol.
+
 - [x] Staking
+
+> ℹ️ Correct! Staking means lending your crypto to a network or protocol and earning rewards for helping secure it.
+
 - [ ] Borrowing
+
+> ℹ️ Try again! Borrowing is taking a loan. Lending your crypto to a protocol is the opposite side of the deal.
+
 - [ ] HODLing
+
+> ℹ️ Try again! HODLing is simply keeping your crypto for a long time, not putting it to work in a protocol.
 
 # DeFi Downsides
 
@@ -185,6 +262,17 @@ Being decentralized also means there are no companies or government agencies tha
 What is a risk in DeFi?
 
 - [ ] There are no risks
+
+> ℹ️ Try again! DeFi has real risks, like hackers and code exploits, and no one to appeal to if something goes wrong.
+
 - [ ] The bank might turn down your loan
-- [ ] Bad weather could shut down the exchange
+
+> ℹ️ Try again! There are no banks in DeFi: lending is peer-to-peer and permissionless.
+
+- [ ] A central authority could freeze your funds
+
+> ℹ️ Try again! DeFi has no central authority that can freeze your funds. The real risks lie elsewhere, like errors in code.
+
 - [x] There may be an error in the code
+
+> ℹ️ Correct! DeFi runs on code, and an error or loophole in that code can be exploited.

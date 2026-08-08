@@ -891,7 +891,7 @@ const LESSONS: LessonType[] = [
           ],
           feedback: [
             'Try again! Your Zerion wallet isn’t controlled by a custodian.',
-            'Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.'
+            'Correct! Zerion wallets are self-custody wallets, controlled by you, and you alone.'
           ],
           id: 'wallet-basics-8'
         }
@@ -986,6 +986,12 @@ const LESSONS: LessonType[] = [
             'Blocks linked together in sequence',
             'All of the above'
           ],
+          feedback: [
+            'Try again! Blocks are part of the structure, but they aren’t the only correct answer.',
+            'Try again! Transactions are part of the structure, but they aren’t the only correct answer.',
+            'Try again! This describes the chain of blocks, but it isn’t the only correct answer.',
+            'Correct! A blockchain combines all three levels: transactions grouped into blocks, linked together in sequence.'
+          ],
           id: 'blockchain-basics-1'
         }
       },
@@ -1006,13 +1012,19 @@ const LESSONS: LessonType[] = [
         notionId: 'c9136a9caf6f4c5aacc85fac90725cae',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'Which of the following statement(s) is/are true for public blockchain ledgers?',
+          question: 'Which of the following is true for public blockchain ledgers?',
           rightAnswerNumber: 4,
           answers: [
             'All transactions are public and past transactions are unchangeable',
             'The ledger tracks how much cryptocurrency each address currently has',
             'The ledger grows as new transactions are added to it',
             'All of the above'
+          ],
+          feedback: [
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Correct! The ledger is public, unchangeable, keeps address balances up to date, and grows with every new transaction.'
           ],
           id: 'blockchain-basics-2'
         }
@@ -1033,8 +1045,14 @@ const LESSONS: LessonType[] = [
           answers: [
             'Only one entity can write to the blockchain',
             'It meets decentralization requirements set by the government',
-            'No single authority or entity controls the ledger or access to the ledger data because it is distributed on a large network of computers',
+            'No single entity controls the ledger, stored on many computers',
             'The ledger is stored on a single secure server'
+          ],
+          feedback: [
+            'Try again! A single entity in control is the opposite of decentralization.',
+            'Try again! Decentralization comes from the network’s design, not from government approval.',
+            'Correct! Storing the ledger on every node in the network means no single entity has the power to control or change the data.',
+            'Try again! A single server would be a central point of control. The ledger is stored on every node in the network.'
           ],
           id: 'blockchain-basics-3'
         }
@@ -1054,9 +1072,15 @@ const LESSONS: LessonType[] = [
           rightAnswerNumber: 2,
           answers: [
             'To encrypt block data so no one can read it',
-            'To link each block to the previous one and ensure past transaction data doesn’t change',
+            'To link blocks together and keep past transaction data unchangeable',
             'To ensure transactions are sent to the correct address',
             'To ensure the blockchain stays decentralized'
+          ],
+          feedback: [
+            'Try again! Block data stays publicly readable. The hash is a fingerprint, not encryption.',
+            'Correct! Each block references the previous block’s fingerprint, so changing past data would break every block that follows.',
+            'Try again! Addresses handle where funds go. The block hash links blocks together.',
+            'Try again! Decentralization comes from distributing the ledger across many nodes, not from the block hash.'
           ],
           id: 'blockchain-basics-4'
         }
@@ -1072,13 +1096,19 @@ const LESSONS: LessonType[] = [
         notionId: 'c8eb8024363341b89a56a3b106d63d85',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'The following information is contained in a block:',
+          question: 'What information is contained in a block?',
           rightAnswerNumber: 3,
           answers: [
-            'All information contained in previous blocks, so the blockchain is always current',
+            'All the information contained in previous blocks',
             'Anything relevant to the blockchain as block size is unlimited',
             'Transaction data and a reference to the previous block',
             'All transaction data generated within a fixed timeframe'
+          ],
+          feedback: [
+            'Try again! A block only references the previous block’s hash. It doesn’t copy all past data.',
+            'Try again! A block is a discrete group of transactions, not an unlimited container.',
+            'Correct! A block is a group of transactions plus the previous block’s hash, which chains the blocks together.',
+            'Try again! Transactions can be grouped into one block or spread across multiple blocks over time.'
           ],
           id: 'blockchain-basics-5'
         }
@@ -1102,6 +1132,12 @@ const LESSONS: LessonType[] = [
             'Editing past blockchain data',
             'All of the above'
           ],
+          feedback: [
+            'Correct! Transactions record currency moving between users, from simple transfers to smart contract interactions.',
+            'Try again! Block size isn’t something a transaction can change.',
+            'Try again! Past blockchain data cannot be changed. That’s a core feature of blockchains.',
+            'Try again! Only one of the above is a valid blockchain transaction.'
+          ],
           id: 'blockchain-basics-6'
         }
       },
@@ -1121,8 +1157,14 @@ const LESSONS: LessonType[] = [
           answers: [
             'They are the public identifiers of different entities on a blockchain',
             'They always start with 0x on Ethereum',
-            'Whoever controls the private key for an address can use the funds at that address',
+            'Whoever controls the private key can use the funds at that address',
             'All of the above'
+          ],
+          feedback: [
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Correct! Addresses are public identifiers, start with 0x on Ethereum, and their funds are unlocked by the private key.'
           ],
           id: 'blockchain-basics-7'
         }
@@ -1212,18 +1254,22 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '545e9e774eb24c6f9a045b856dd9490a',
         title: 'Money in Web3',
-        content: '<div class="bloc1"><p>In web3, money works differently. It’s more like a locked cash wallet; once money is spent, it’s gone. Only private keys control access to the wallet. So for a scammer to gain access they need the <code>seed phrase</code>, that special set of secret words, to access someone’s <code>private keys</code> and steal from their wallet. </p><p>It’s very important to protect seed phrases; people should <em><strong>never</strong></em> give their seed phrase to anyone for any reason. Also, never enter seed phrases digitally; digital photos, notes applications, and text files on your computer can all get compromised.</p></div><div class="bloc2"><img src=\'/images/web3-security/money-in-web3-f575b0f6.svg\'></div>'
+        content: '<div class="bloc1"><p>In web3, money works differently. It’s more like a locked cash wallet; once money is spent, it’s gone. Your <code>seed phrase</code> (that special set of secret words) unlocks your <code>private keys</code>, so anyone who obtains it controls your wallet. <em><strong>Never</strong></em> give it to anyone, and never store it digitally; photos and notes apps can get compromised.</p><p>But your seed phrase isn’t the only target: one malicious signature (a transaction or message you approve) can let a scammer drain your tokens without ever seeing your seed phrase. Protect your <strong>seed phrase</strong> <em>and</em> your <strong>signature</strong>.</p></div><div class="bloc2"><img src=\'/images/web3-security/money-in-web3-f575b0f6.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '04726706edaf48c4a232f30b7bcd95ca',
         title: '✅ quiz',
         quiz: {
-          question: 'Unlike in web2, in web3, scammers only need the seed phrase to steal everything in a wallet, including tokens and NFTs.',
+          question: 'True or false? Scammers can drain tokens from your wallet by tricking you into signing a malicious transaction or approval, without ever knowing your seed phrase.',
           rightAnswerNumber: 1,
           answers: [
             'True',
             'False'
+          ],
+          feedback: [
+            'Correct! A malicious signature or token approval can hand over your funds on its own. Protect what you sign as carefully as your seed phrase.',
+            'Try again! Your seed phrase isn’t the only target; a single malicious approval or signature can drain your tokens too.'
           ],
           id: 'web3-security-1'
         }
@@ -1253,6 +1299,12 @@ const LESSONS: LessonType[] = [
             'They encrypt passwords to keep them secure.',
             'All of the above'
           ],
+          feedback: [
+            'Try again! This is true, but it isn’t the only benefit.',
+            'Try again! This is true, but it isn’t the only benefit.',
+            'Try again! This is true, but it isn’t the only benefit.',
+            'Correct! Password managers generate, encrypt, and store unique passwords for every account. You only remember the master password.'
+          ],
           id: 'web3-security-2'
         }
       },
@@ -1260,7 +1312,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '3944e76cc9f14e9bb0e45f8a135ceb01',
         title: 'Two Factor Authentication',
-        content: '<div class="bloc1"><p><code>Two Factor Authentication</code>, also known as 2FA, is a secondary layer of web2 security.</p><p>Many people have had their web2 accounts hacked, or have had their money and credentials stolen despite having strong passwords. Web2 websites (and even <code>password managers</code>) often use a second layer of security 2FA as well. 2FA generates single-use codes sent to another device, in addition to the normal password, to enable website log-in. The other device could be a phone, a desktop computer, or even a small device you can attach to your keychain.</p><p>Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers also. They can use <code>social engineering</code> to impersonate the account owner, bypass the company’s security checks, and gain access to the owner’s account - all without the real owner knowing. Authentication applications like Authy or Google Authenticator are more secure 2FA solutions.</p></div><div class="bloc2"><img src=\'/images/web3-security/two-factor-authentication-7fa9bfdf.svg\'></div>'
+        content: '<div class="bloc1"><p><code>Two Factor Authentication</code>, also known as 2FA, is a secondary layer of web2 security.</p><p>Many people have had their accounts hacked or credentials stolen despite strong passwords. Web2 websites (and even <code>password managers</code>) often support 2FA as a second layer: proof from another device or app, in addition to your normal password.</p><p>Not all 2FA is equal:</p><p>🥉 <strong>SMS codes</strong> are the weakest option: scammers use <code>social engineering</code> to “SIM-swap” your phone number onto their own device and receive your codes. Still, SMS beats having no 2FA.</p><p>🥈 <strong>Authenticator apps</strong> (like Google Authenticator, 2FAS, or Aegis) generate codes on your device, a solid choice for most accounts.</p><p>🥇 <strong>Passkeys and hardware security keys</strong> (like a YubiKey) are the phishing-resistant gold standard: tied to the real website, they simply won’t log in on a fake look-alike.</p></div><div class="bloc2"><img src=\'/images/web3-security/two-factor-authentication-7fa9bfdf.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1275,6 +1327,12 @@ const LESSONS: LessonType[] = [
             'It makes passwords stronger.',
             'All of the above'
           ],
+          feedback: [
+            'Try again! 2FA greatly improves security, but no method makes an account impossible to hack. SIM-swaps can defeat SMS codes, for example.',
+            'Correct! 2FA requires proof from another device or app on top of your password, so a stolen password alone isn’t enough.',
+            'Try again! 2FA doesn’t change your password. It adds a second layer of proof on top of it.',
+            'Try again! Only one of these statements is true.'
+          ],
           id: 'web3-security-3'
         }
       },
@@ -1282,7 +1340,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '99d8745f48194765927c1f5719083771',
         title: 'Social Engineering Scams',
-        content: '<div class="bloc1"><p>In both web2 and web3, scammers use <code>phishing</code> tactics to trick people into giving up their passwords and seed phrases. Often they’ll pretend to be product support staff offering help, “Hello this is Metamask support”, or pretend to be an admin of a community, “New NFT mint, exclusive for our community”.</p><p>They use <code>social engineering</code> to pressure people. Examples include:</p><ul><li>“Time is running out!” - making you feel rushed.</li><li>“Congratulations you won our giveaway!” - making things feel exclusive.</li><li>”Get early access to our pre-mint!” - generating <code>FOMO</code> in the person being scammed.</li></ul></div><div class="bloc2"><img src=\'/images/web3-security/social-engineering-scams-73c69132.svg\'></div>'
+        content: '<div class="bloc1"><p>In both web2 and web3, scammers use <code>phishing</code> tactics to trick people into giving up their passwords and seed phrases, or signing a malicious transaction. Often they’ll pretend to be product support staff offering help, “Hello this is Metamask support”, or pretend to be an admin of a community, “New NFT mint, exclusive for our community”.</p><p>They use <code>social engineering</code> to pressure people. Examples include:</p><ul><li>“Time is running out!” - making you feel rushed.</li><li>“Congratulations you won our giveaway!” - making things feel exclusive.</li><li>”Get early access to our pre-mint!” - generating <code>FOMO</code> in the person being scammed.</li></ul></div><div class="bloc2"><img src=\'/images/web3-security/social-engineering-scams-73c69132.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -1303,6 +1361,12 @@ const LESSONS: LessonType[] = [
             'Offering giveaways or free NFTs to generate FOMO.',
             'All of the above'
           ],
+          feedback: [
+            'Try again! This is one tactic, but it isn’t the only one.',
+            'Try again! This is one tactic, but it isn’t the only one.',
+            'Try again! This is one tactic, but it isn’t the only one.',
+            'Correct! Scammers impersonate authority figures, create time pressure, and generate FOMO, all to stop you from thinking clearly.'
+          ],
           id: 'web3-security-4'
         }
       },
@@ -1310,38 +1374,44 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '3ba4ffe0ce7649649cd3ad768b857449',
         title: 'Social Media Safety',
-        content: '<div class="bloc1"><p>Scammers love to engage with users in social media environments like Twitter and the Discord servers of cryptocurrency projects. They will typically try to move to or even start conversations via direct messaging to avoid being spotted by experienced community members. It’s generally safer to talk in public areas, until you’ve gained more experience in crypto-culture.</p><p>However, no matter where you are talking to others, you should <em><strong>never</strong></em> give your <code>seed phrase</code> to anyone for <strong>any reason</strong>. If anyone asks for your seed phrase or private key, they are a scammer. It’s that simple.</p></div>'
+        content: '<div class="bloc1"><p>Scammers love to engage on social media and in the Discord servers of crypto projects, typically moving conversations into direct messages to avoid being spotted by experienced members. Talk in public areas, and <em><strong>never</strong></em> give your <code>seed phrase</code> to anyone, or sign anything from a link sent in a DM.</p><p>Social media <code>red flags</code>:</p><p>🚩 <strong>Language and grammar errors:</strong> They’re/their/there, etc.</p><p>🚩 <strong>FOMO:</strong> “Don’t miss out!”</p><p>🚩 <strong>Impersonation:</strong> an admin, support desk, Vitalik Buterin, Elon Musk, etc.</p><p>🚩 <strong>Guaranteed returns:</strong> Nothing is guaranteed in crypto.</p><p>🚩 <strong>Unrequested links and offers,</strong> <em>especially in direct messages</em>.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-safety-a76a39f4.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '7126cf46eb4d499da75db201458a04a9',
-        title: 'Social Media Safety',
-        content: '<div class="bloc1"><p>Social media <code>red flags</code>:</p><p>🚩 <strong>Language and grammar errors:</strong> They’re/their/there, etc.</p><p>🚩 <strong>FOMO:</strong> “Don’t miss out!”</p><p>🚩 <strong>Impersonation:</strong> an admin, support desk, Vitalik Buterin, Elon Musk, etc.</p><p>🚩 <strong>Guaranteed returns:</strong> Nothing is guaranteed in crypto.</p><p>🚩 <strong>Unrequested links and offers,</strong> <em>especially in direct messages</em>.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-safety-a76a39f4.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'ed9bce57432f473982482dbd98e33ae5',
         title: 'Social Media Best Practices',
         content: '<div class="bloc1"><p>Practices for staying safe:</p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a large community you trust - and ask in public.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-best-practices-48ad350f.svg\'></div>'
       },
       {
         type: 'LEARN',
+        notionId: 'ed9bce57432f473982482dbd98e33ae5',
+        title: 'Scam-Tokens & Address Poisoning',
+        content: '<div class="bloc1"><p>Random tokens or NFTs appearing in your wallet? <code>Scam-tokens</code> are transferred to thousands of wallets at once, hoping someone tries to move or sell them, triggering malicious code hidden in the token’s smart contract, or luring victims to a <code>phishing</code> website that asks for a <code>seed phrase</code> or a malicious signature. The best response: don’t interact with them at all; leave them alone or hide them in your wallet.</p><p>A related trick is <strong>address poisoning</strong>: scammers send tiny transfers from an address crafted to look almost identical to one you use, matching its first and last characters. Copy an address from your transaction history later, and you may grab the scammer’s look-alike instead.</p><p>Protect yourself:</p><ul><li>Don’t copy addresses from your transaction history.</li><li>Verify more than the first and last few characters.</li><li>Send a small test amount before large transfers.</li></ul></div><div class="bloc2"><img src=\'/images/web3-security/scam-tokens-761d5f63.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
         notionId: '311f5ebd0a414a2b8f1f627691f4cfdc',
-        title: 'Scam-tokens',
-        content: '<div class="bloc1"><p>Besides social engineering, the second most common web3 attack is having <code>scam-tokens</code> sent to your web3 wallet. Scam-tokens are crypto tokens that scammers transfer to many wallets at once, in the hopes that someone will try to move or sell the tokens and trigger the malicious code hiding in the token’s smart contract.</p><p>Malicious contracts often require people to spend far more on a transaction than is necessary in order to sell these scam-tokens, and others can completely drain wallets; these scam-tokens could even be NFTs! If the problem isn’t with the smart contract itself, scam-tokens will often lure victims back to phishing websites where scammers try to trick victims into entering their <code>seed phrase</code> or other credentials.</p><p>The best thing to do when you receive random tokens is to not interact with them at all; leave them in your wallet and never transfer/sell them.</p></div><div class="bloc2"><img src=\'/images/web3-security/scam-tokens-761d5f63.svg\'></div>'
+        title: 'Malicious Approvals & Blind Signing',
+        content: '<div class="bloc1"><p>Today, most funds are lost not to stolen seed phrases but to signatures given away. “Wallet drainer” phishing kits present a transaction or message that looks routine, but isn’t:</p><ul><li><strong>Malicious approvals:</strong> a single approval transaction can give a scammer’s contract unlimited <code>token allowance</code> to spend your tokens or NFTs.</li><li><strong>Signature phishing:</strong> gasless signature approvals (like Permit2) can authorize token transfers, no transaction required.</li><li><strong>Delegation drains:</strong> a newer wallet feature (EIP-7702) lets one signature install code on your account; drainers abuse this to auto-sweep wallets.</li></ul><p>Signing what you don’t understand is called <strong>blind signing</strong>, and even professionals get burned: in February 2025, the Bybit exchange lost roughly $1.5 billion approving a transaction whose display had been tampered with.</p><p>Your defenses: slow down, read every signature request, treat “verify your wallet” prompts as hostile, and use a wallet that simulates transactions before you sign.</p></div>'
       },
       {
         type: 'QUIZ',
         notionId: 'b08a84ce7f04456aa3e472606b855648',
         title: '✅ quiz',
         quiz: {
-          question: 'Why is interacting with scam-tokens dangerous?',
+          question: 'You receive a DM: “Your wallet needs migrating: connect at metamask-upgrade.app and sign to verify your assets.” The site asks you to sign a gasless approval. What’s wrong here?',
           rightAnswerNumber: 4,
           answers: [
-            'They could steal all of your ETH.',
-            'They could steal other tokens from your wallet.',
-            'They could lead to a phishing website where a scammer will try to get your seed phrase.',
-            'All of the above'
+            'Nothing: signatures are free and can’t move funds.',
+            'It’s only dangerous if you also type in your seed phrase.',
+            'It’s safe because support teams contact users by direct message.',
+            'It’s signature phishing: the signature could drain your tokens.'
+          ],
+          feedback: [
+            'Try again! Gasless approval signatures can authorize token transfers all by themselves.',
+            'Try again! No seed phrase is needed. The signature itself can grant spending power over your tokens.',
+            'Try again! Legitimate support will never DM you first. That’s a classic red flag.',
+            'Correct! An unrequested DM, urgency, a look-alike URL, and a signature request: this is a wallet drainer.'
           ],
           id: 'web3-security-5'
         }
@@ -1350,18 +1420,22 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c01a9870f18c437483ede3c209b06064',
         title: 'Hardware Wallets',
-        content: '<div class="bloc1"><p>If you remember from our <a href=\'https://app.banklessacademy.com/lessons/wallet-basics\'>Wallet Basics</a> lesson, a <code>hardware wallet</code> is only connected to the internet when you physically connect it to a computer or device that is connected to the internet. This makes your funds much safer as someone would have to physically steal your device and hack into it in order to find your <code>seed phrase</code>.</p><p>It is even possible to use your hardware wallet through many browser extension wallets, like MetaMask. By using this setup, you receive the convenience of a single wallet interface with the security of using a hardware wallet.</p><p>Ledger has <a href=\'https://www.ledger.com/academy/security/the-safest-way-to-use-metamask\'>written their own guide</a> on how to setup MetaMask for use with their hardware wallet device.</p></div><div class="bloc2"><img src=\'/images/web3-security/hardware-wallets-22a096d4.svg\'></div>'
+        content: '<div class="bloc1"><p>If you remember from our <a href=\'https://app.banklessacademy.com/lessons/wallet-basics\'>Wallet Basics</a> lesson, a <code>hardware wallet</code> keeps your <code>private keys</code> on a dedicated device, away from your internet-connected computer. This makes your funds much safer: malware can’t read your keys, and a thief would have to physically steal the device and break into it. Popular options include Ledger, Trezor, and Keystone. Always buy directly from the manufacturer.</p><p>You can even use a hardware wallet through browser extension wallets like MetaMask, combining convenience with hardware security. Ledger has <a href=\'https://www.ledger.com/academy/security/the-safest-way-to-use-metamask\'>written their own guide</a> on setting this up.</p><p>One limit: a hardware wallet signs whatever you approve, so blind-signing a malicious transaction still loses your funds. Always verify the details on the device’s own screen before confirming.</p></div><div class="bloc2"><img src=\'/images/web3-security/hardware-wallets-22a096d4.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '0c0c40b078d443a5b1ba0d2aefc7e65f',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'Is a hardware wallet more secure than a hot wallet?',
+          question: 'True or false? A hardware wallet only keeps your funds safe if you verify each transaction before approving it.',
           rightAnswerNumber: 1,
           answers: [
-            'Yes',
-            'No'
+            'True',
+            'False'
+          ],
+          feedback: [
+            'Correct! A hardware wallet protects your keys, but only verifying what you sign protects your funds.',
+            'Try again! A hardware wallet signs whatever you approve. Blind signing can still drain it.'
           ],
           id: 'web3-security-6'
         }
@@ -1370,7 +1444,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '1d5edee94a824d729f90878f4346a548',
         title: 'Wallet Strategies',
-        content: '<div class="bloc1"><p>After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple <code>wallets</code>. Here is a compartmentalized strategy using three separate wallets:</p><ol><li><strong>Social Wallet:</strong> A wallet that serves as your web3 identity for logins —  like for web3 social media — use a <code>hardware wallet</code> for extra security.</li><li><strong>Trading Wallet:</strong> A <code>hot wallet</code> for trading and other activities involving funds that may need to be moved on short notice.</li><li><strong>HODL Wallet:</strong> A <code>hardware wallet</code> for the long-term <code>HODL</code> — these are funds intended to hold for a long time. It’s recommended to <em><strong>not</strong></em> use this wallet for interacting with smart contracts.</li></ol><p>👍 <strong>PROs:</strong> Separation ensures that scams only threaten funds in <em>that particular wallet</em> rather than <em>everything</em>.</p><p>👎 <strong>CONs:</strong> It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.</p></div><div class="bloc2"><img src=\'/images/web3-security/wallet-strategies-2b743061.svg\'></div>'
+        content: '<div class="bloc1"><p>After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple <code>wallets</code>. Here is a compartmentalized strategy using three separate wallets:</p><ol><li><strong>Social Wallet:</strong> A <code>hot wallet</code> holding little to no funds, used for logins, minting, and trying out new dapps. Assume anything in it could be lost.</li><li><strong>Trading Wallet:</strong> A <code>hot wallet</code> for trading and other activities involving funds that may need to be moved on short notice.</li><li><strong>HODL Wallet:</strong> A <code>hardware wallet</code> for the long-term <code>HODL</code>: these are funds intended to hold for a long time. <em><strong>Never</strong></em> use this wallet to interact with smart contracts or unfamiliar websites.</li></ol><p>👍 <strong>PROs:</strong> Separation ensures that scams only threaten funds in <em>that particular wallet</em> rather than <em>everything</em>.</p><p>👎 <strong>CONs:</strong> It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.</p></div><div class="bloc2"><img src=\'/images/web3-security/wallet-strategies-2b743061.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1385,6 +1459,12 @@ const LESSONS: LessonType[] = [
             'separated in multiple wallets',
             'liquid in multiple addresses'
           ],
+          feedback: [
+            'Try again! Airdrops are token giveaways, not a place to store funds.',
+            'Try again! NFTs are assets themselves, not a security strategy for your funds.',
+            'Correct! Compartmentalizing funds across separate wallets means a scam only threatens the funds in that particular wallet.',
+            'Try again! It’s not about liquidity. Separating funds between distinct wallets is what limits the damage a scam can do.'
+          ],
           id: 'web3-security-7'
         }
       },
@@ -1392,13 +1472,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f2c958c42a36433ab935c70a2d072e1f',
         title: 'Recovering from Web2 Scams',
-        content: '<div class="bloc1"><p>Hopefully you have not already fallen victim to a scammer. If you have, there are some steps you should take to secure your accounts once more.</p><p>For a scam involving a web2 service, like Gmail or Discord, you should:</p><ul><li>Change your password on the affected account.</li><li>Where it’s available, use the “sign out everywhere else” button to kick the scammers off your account.</li><li>Enable <code>2FA</code> with an authenticator app.</li><li>Report the scam to the service involved.</li><li>Ensure your email account is also secure.</li><li>Discuss the scam with friends or trusted community members.</li></ul></div>'
+        content: '<div class="bloc1"><p>Hopefully you have not already fallen victim to a scammer. If you have, there are some steps you should take to secure your accounts once more.</p><p>For a scam involving a web2 service, like Gmail or Discord, you should:</p><ul><li>Change your password on the affected account.</li><li>Where it’s available, use the “sign out everywhere else” button to kick the scammers off your account.</li><li>Enable <code>2FA</code>: ideally a passkey or hardware security key, otherwise an authenticator app.</li><li>Report the scam to the service involved.</li><li>Ensure your email account is also secure.</li><li>Discuss the scam with friends or trusted community members.</li></ul></div>'
       },
       {
         type: 'LEARN',
         notionId: 'f87bb8a18f764190a9be5e2e763a5607',
         title: 'Recovering from Web3 Scams',
-        content: '<div class="bloc1"><p>Contracts must be given explicit permission to spend tokens on Ethereum. The token <code>allowance</code> is how much of that token you’ve given permission to be spent by a specific contract. Keeping allowances low reduces the risk to your assets by a potentially malicious application or hacker.</p><p>Web3 doesn’t have anyone in charge of protocols to report scammers to, but you can still take action:</p><ul><li>Immediately move any funds still in the compromised wallet to a different wallet address, <strong>make sure the new address has a different seed phrase.</strong></li><li>Review and revoke the token <code>allowances</code> you have given on your wallet with tools like <a href=\'https://etherscan.io/tokenapprovalchecker\'>etherscan.io/tokenapprovalchecker</a>, or <a href=\'https://revoke.cash\'>revoke.cash</a> for multiple networks. Note that revoking allowances will cost gas. Revoke.cash has a <a href=\'https://revoke.cash/learn/approvals/how-to-revoke-token-approvals\'>walkthrough guide</a>.</li><li>Use a <code>hardware wallet</code> in the future.</li><li>Warn others by reporting the scam to the affected community.</li><li>Discuss the scam process with friends or trusted community members to see how you can protect yourself and others in the future.</li></ul></div>'
+        content: '<div class="bloc1"><p>Contracts must be given explicit permission to spend tokens on Ethereum. The token <code>allowance</code> is how much you’ve allowed a specific contract to spend. Keeping allowances low reduces the risk to your assets.</p><p>Web3 doesn’t have anyone in charge of protocols to report scammers to, but you can still take action:</p><ul><li>Immediately move any funds still in the compromised wallet to a different wallet address, <strong>make sure the new address has a different seed phrase.</strong></li><li>Review and revoke your token <code>allowances</code> with <a href=\'https://revoke.cash\'>revoke.cash</a> (works across many networks) or <a href=\'https://etherscan.io/tokenapprovalchecker\'>etherscan.io/tokenapprovalchecker</a>. Revoking costs gas; revoke.cash has a <a href=\'https://revoke.cash/learn/approvals/how-to-revoke-token-approvals\'>walkthrough guide</a>.</li><li>Also check revoke.cash’s “Delegations” tab for any wallet delegation you don’t recognize, and remove it from inside your wallet app.</li><li>Use a <code>hardware wallet</code> in the future, and verify everything you sign.</li><li>Warn others by reporting the scam to the affected community.</li><li>Discuss the scam process with friends or trusted community members to see how you can protect yourself and others in the future.</li></ul></div>'
       },
       {
         type: 'QUEST',
@@ -1493,8 +1573,14 @@ const LESSONS: LessonType[] = [
           answers: [
             'ethereum, bitcoin, and altcoins',
             'security, censorship, and fraud',
-            'decentralization, scalabilty, and security',
-            'money, humans, and blockchains'
+            'decentralization, scalability, and security',
+            'security, speed, and low fees'
+          ],
+          feedback: [
+            'Try again! The Trilemma is about competing qualities within a blockchain, not competing blockchains.',
+            'Try again! Security is one of the three, but censorship and fraud are threats blockchains defend against, not Trilemma qualities.',
+            'Correct! These three qualities compete with each other, preventing a blockchain from optimizing all three at once.',
+            'Try again! Speed and fees relate to scalability, which is just one of the three qualities: security, scalability, and decentralization.'
           ],
           id: 'layer-1-blockchains-1'
         }
@@ -1513,10 +1599,16 @@ const LESSONS: LessonType[] = [
           question: 'Blockchain consensus for cryptocurrencies is:',
           rightAnswerNumber: 4,
           answers: [
-            'The process where all blockchain nodes agree on what has happened on-chain',
+            'The process where nodes agree on what has happened on-chain',
             'Important for everyone in that chain’s ecosystem to prevent fraud',
             'Secured through economic incentives',
             'All of the above'
+          ],
+          feedback: [
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Correct! Consensus is how nodes agree on the truth, and economic incentives make attacking that agreement cost more than it would gain.'
           ],
           id: 'layer-1-blockchains-2'
         }
@@ -1540,6 +1632,12 @@ const LESSONS: LessonType[] = [
             'Create a new cryptocurrency',
             'Eliminate the other 49%'
           ],
+          feedback: [
+            'Try again! The attack targets consensus itself: the goal is creating falsified transactions, not disrupting miners.',
+            'Correct! With 51% or more of the consensus power, an attacker could create falsified transactions.',
+            'Try again! Anyone can create a new cryptocurrency without attacking an existing network.',
+            'Try again! The other participants aren’t removed. Majority consensus power is used to commit fraud.'
+          ],
           id: 'layer-1-blockchains-3'
         }
       },
@@ -1558,9 +1656,15 @@ const LESSONS: LessonType[] = [
           rightAnswerNumber: 4,
           answers: [
             'People (transactions) are grouped together into buses (blocks)',
-            'There is a maximum limit on how many people (transactions) can fit into each bus (block)',
-            'To process more people (transactions) you need faster, larger, and/or more buses (blocks)',
+            'Each bus (block) fits a limited number of people (transactions)',
+            'Moving more people (transactions) needs bigger or more buses (blocks)',
             'All of the above'
+          ],
+          feedback: [
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Correct! Transactions fill limited block space just like passengers fill buses. Clearing the queue faster needs bigger or more frequent blocks.'
           ],
           id: 'layer-1-blockchains-4'
         }
@@ -1590,6 +1694,12 @@ const LESSONS: LessonType[] = [
             'Decentralization helps authoritarian powers to maintain control',
             'Anyone anywhere can use permissionless systems'
           ],
+          feedback: [
+            'Try again! This statement is true: with no single controlling entity, no one can censor the network.',
+            'Try again! This statement is true: decentralized authority means no one can remove a person’s access.',
+            'Correct! This is NOT true: decentralization does the opposite by distributing control away from any single entity.',
+            'Try again! This statement is true: permissionless means no one can be denied access.'
+          ],
           id: 'layer-1-blockchains-5'
         }
       },
@@ -1609,6 +1719,10 @@ const LESSONS: LessonType[] = [
           answers: [
             'True',
             'False'
+          ],
+          feedback: [
+            'Correct! Decentralization is a spectrum: each blockchain chooses how much to trade for scalability or other goals.',
+            'Try again! Decentralization is a spectrum, and each blockchain makes its own tradeoff along it.'
           ],
           id: 'layer-1-blockchains-6'
         }
@@ -1638,6 +1752,12 @@ const LESSONS: LessonType[] = [
             'Increase fees for users',
             'Increase finality time for users'
           ],
+          feedback: [
+            'Try again! Layer 2s rely on the main blockchain for their security.',
+            'Correct! Layer 2s sit on top of the main chain, adding scalability without compromising security or decentralization.',
+            'Try again! Layer 2s do the opposite: users benefit from reduced fees.',
+            'Try again! Layer 2s offer faster transactions, not slower ones.'
+          ],
           id: 'layer-1-blockchains-7'
         }
       },
@@ -1657,8 +1777,14 @@ const LESSONS: LessonType[] = [
           answers: [
             'Using Layer 2s and sharding to increase scalability',
             'Maintaining decentralization and security as core principles',
-            'Reducing energy consumption of the blockchain using Proof of Stake consensus',
+            'Reducing energy consumption with Proof of Stake consensus',
             'All of the above'
+          ],
+          feedback: [
+            'Try again! This is part of the upgrades, but it isn’t the only one.',
+            'Try again! This is part of the upgrades, but it isn’t the only one.',
+            'Try again! This is part of the upgrades, but it isn’t the only one.',
+            'Correct! Ethereum is scaling with Layer 2s and sharding, cutting energy use with Proof of Stake, all while keeping security and decentralization as core tenets.'
           ],
           id: 'layer-1-blockchains-8'
         }
@@ -1752,13 +1878,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '0143a0be1b15443abf30d91bafb9f5cd',
         title: 'Introduction',
-        content: '<div class="bloc1"><p>The desired operational state for any blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that handles all three aspects well has proven to be a challenge, as yet unsolved. This challenge has been given a name: the <code>Blockchain Trilemma</code>.</p><p>Bitcoin and Ethereum are both fairly decentralized and secure, but they don’t scale well, as is evident from the high transaction fees and long transaction queues when the network is busy. To circumvent these issues, Explorers can make use of various technologies which drastically reduce transaction costs and increase transaction speed. These are collectively known as Layer 2 (L2) scaling solutions.</p><p>The Lightning Network is Bitcoin’s best-known scaling solution, and it relies on a technology called <code>payment channels</code> to scale payments between parties. Ethereum has plans to eventually ease the Blockchain Trilemma through the use of sharding technology, but for the immediate future the network is relying on various L2 solutions to improve scalability.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/introduction-c1f2c88f.svg\'></div>'
+        content: '<div class="bloc1"><p>The desired operational state for any blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that handles all three aspects well has proven to be a challenge, as yet unsolved. This challenge has been given a name: the <code>Blockchain Trilemma</code>.</p><p>Bitcoin and Ethereum are both fairly decentralized and secure, but they don’t scale well, as is evident from the high transaction fees and long transaction queues when the network is busy. To circumvent these issues, Explorers can make use of various technologies which drastically reduce transaction costs and increase transaction speed. These are collectively known as Layer 2 (L2) scaling solutions.</p><p>The Lightning Network is Bitcoin’s best-known scaling solution, and it relies on a technology called <code>payment channels</code> to scale payments between parties. Ethereum eases the Blockchain Trilemma by relying on various L2 solutions to handle transactions, supported by cheap, temporary “blob” storage added to Mainnet in 2024 (a light form of the “sharding” once planned).</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/introduction-c1f2c88f.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '26a2591e6a8a4481afc39156d828c9a7',
         title: 'Payment Channels',
-        content: '<div class="bloc1"><p>On the Bitcoin blockchain, the Lightning Network relies on bidirectional payment channels, which enables multiple parties to exchange BTC without transacting on the main chain.</p><p>The architecture enables parties to open payment channels amongst two or more users. Between the opening and closing of a channel, parties can shift funds among themselves. Each participant’s micro-ledger entry is updated after both users sign for the transaction — which requires both users to be online.<br>A channel can be closed at any time by either party broadcasting the most recent version of the micro-ledger to the blockchain.</p><p>Payment channels don’t support advanced <code>smart contract</code> interactions, only basic peer-to-peer transactions.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/payment-channels-31677af9.svg\'></div>'
+        content: '<div class="bloc1"><p>On the Bitcoin blockchain, the Lightning Network relies on bidirectional payment channels, which enables multiple parties to exchange BTC without transacting on the main chain.</p><p>The architecture enables two users to open a payment channel between themselves. Each channel is strictly two-party, though payments can be routed across a network of connected channels to reach users further away. Between the opening and closing of a channel, parties can shift funds among themselves. Each participant’s micro-ledger entry is updated after both users sign for the transaction, which generally requires both parties’ nodes to be reachable.<br>A channel can be closed at any time by either party broadcasting the most recent version of the micro-ledger to the blockchain.</p><p>Payment channels don’t support advanced <code>smart contract</code> interactions, only basic peer-to-peer transactions.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/payment-channels-31677af9.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1770,6 +1896,10 @@ const LESSONS: LessonType[] = [
           answers: [
             'True',
             'False'
+          ],
+          feedback: [
+            'Correct! Updating a payment channel requires both users to sign, which generally means both parties’ nodes must be reachable.',
+            'Try again! Channel updates need signatures from both parties, so their nodes generally need to be online.'
           ],
           id: 'layer-2-blockchains-1'
         }
@@ -1790,8 +1920,14 @@ const LESSONS: LessonType[] = [
           answers: [
             'use payment channels to scale the network.',
             'can’t support smart contract interactions.',
-            'should increase scalability without compromising on other trilemma attributes.',
+            'should boost scalability without weakening other trilemma qualities.',
             'allow faster transaction speeds at the cost of higher gas.'
+          ],
+          feedback: [
+            'Try again! Payment channels are Bitcoin’s Lightning Network approach. Ethereum scales through solutions like Rollups.',
+            'Try again! Smart contract support is essential. Users need access to their favorite dApps from a Layer 2.',
+            'Correct! A true Ethereum scaling solution addresses scalability without sacrificing security or decentralization.',
+            'Try again! Scaling solutions aim for both faster transactions AND cheaper gas than Ethereum Mainnet.'
           ],
           id: 'layer-2-blockchains-2'
         }
@@ -1806,7 +1942,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '6873415e4cce4efa8c2ca83d9779c385',
         title: 'Sidechains',
-        content: '<div class="bloc1"><p>A <code>sidechain</code> is a separate blockchain that runs independently to Ethereum — but is connected to Ethereum Mainnet by a <code>bridge</code> that maintains a two-way peg. This means that to migrate native tokens to the sidechain, you have to lock them in a bridge contract on Ethereum Mainnet, so that the balance on the sidechain never exceeds the collateral locked on Mainnet. Such bridges extend the security of Ethereum to capital on the sidechain, while allowing them to validate and process their own transactions.</p><p>Sidechains are still subject to the Blockchain Trilemma. Their lower <code>gas</code> fees and increased transaction speed can be attributed to a smaller but more powerful validator set — meaning they trade some decentralization and security for scalability.</p><p>Sidechains, like Polygon PoS, regularly publish snapshots to the L1, saving a moment-in-time status of their ledger. Snapshots enable sidechains to roll the chain state back to a previous snapshot in the case of on-chain fraud or error.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/sidechains-464f0191.svg\'></div>'
+        content: '<div class="bloc1"><p>A <code>sidechain</code> is a separate blockchain that runs independently to Ethereum, but is connected to Ethereum Mainnet by a <code>bridge</code>. To migrate tokens to the sidechain, you lock them in a bridge contract on Ethereum Mainnet, and equivalent tokens are minted on the sidechain. Importantly, this does NOT extend Ethereum’s security to your funds: the bridge and the sidechain are secured by the sidechain’s own validators. If those validators or the bridge contract are compromised (as in the $625M Ronin bridge hack of 2022), the locked funds can be stolen, no matter how secure Ethereum itself remains.</p><p>Sidechains are still subject to the Blockchain Trilemma. Their lower <code>gas</code> fees and increased transaction speed can be attributed to a smaller but more powerful validator set — meaning they trade some decentralization and security for scalability.</p><p>Sidechains, like Polygon PoS, regularly publish snapshots (“checkpoints”) to the L1, saving a moment-in-time status of their ledger. Checkpoints give the sidechain’s history a form of finality and let users prove their balances when exiting through the bridge, but they don’t allow the chain to be rolled back, and they don’t make sidechain funds as secure as funds on Mainnet.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/sidechains-464f0191.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1816,10 +1952,16 @@ const LESSONS: LessonType[] = [
           question: 'Sidechains:',
           rightAnswerNumber: 4,
           answers: [
-            'hold collateral on Mainnet.',
+            'lock bridged tokens in a contract on Mainnet.',
             'have cheaper gas fees than Mainnet.',
             'have greater centralization risks than Mainnet.',
             'All the above.'
+          ],
+          feedback: [
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Try again! This is true, but it isn’t the only true statement.',
+            'Correct! Sidechains lock bridged tokens on Mainnet and offer cheaper fees, but their smaller validator set trades decentralization for that speed.'
           ],
           id: 'layer-2-blockchains-3'
         }
@@ -1828,13 +1970,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'e09a6e2fc9fc4f60aef2e3f6671c1c22',
         title: 'Rollups',
-        content: '<div class="bloc1"><p>Layer 2 protocols that use Rollup technology maintain closer alignment with the security level of Ethereum Mainnet.</p><p>Like sidechains, Rollups permit on-chain transactions to execute away from Ethereum Mainnet. These transactions are then ‘rolled up’ into a single transaction before being sent to Ethereum.</p><p>In order for the Rollup to prove itself secure enough to process transactions on behalf of Mainnet, it must provide “convincing evidence” that the transactions in each submitted batch are secure and valid. This evidence is included in the transaction rollup and verified by the bridge contract on Ethereum Mainnet.</p><p>There are currently two Rollup methods that can provide this evidence: <code>Optimistic Rollups</code>, and <code>ZK Rollups</code>. Let’s take a closer look at these two processes.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/rollups-308dc6c9.svg\'></div>'
+        content: '<div class="bloc1"><p>Layer 2 protocols that use Rollup technology maintain closer alignment with the security level of Ethereum Mainnet.</p><p>Like sidechains, Rollups permit on-chain transactions to execute away from Ethereum Mainnet. These transactions are then ‘rolled up’ into a single batch, and the batch data is posted to Ethereum in cheap, temporary data packets called “blobs”, introduced in the Dencun upgrade of March 2024. Blobs are the main reason typical L2 fees have dropped to a few cents or less.</p><p>In order for the Rollup to prove itself secure enough to process transactions on behalf of Mainnet, it must provide “convincing evidence” that the transactions in each submitted batch are secure and valid. This evidence is included in the transaction rollup and verified by the bridge contract on Ethereum Mainnet.</p><p>There are currently two Rollup methods that can provide this evidence: <code>Optimistic Rollups</code>, and <code>ZK Rollups</code>. Let’s take a closer look at these two processes.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/rollups-308dc6c9.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '8ff690da2f2e4a45877b1c00df18bb5b',
         title: 'Optimistic Rollups',
-        content: '<div class="bloc1"><p>L2 protocols like Optimism, Base and Arbitrum, all use <code>Optimistic Rollups</code> as their scaling solution architecture. Optimistic Rollups are so-called because the information in the Rollup batch is considered to be valid unless proven otherwise — an optimistic assumption is made.</p><p>To mitigate against any abuse of this technique, there is typically a multi-day delay once a user requests to move funds off of the L2 back to Mainnet. During this time, bridge validators can publish a <code>fraud proof</code> seeking to cancel the withdrawal. This fraud-proof mechanism is similar to the banking industry’s clearance processes, but is decentralized.</p><p>Note: Third-party bridging services, like Across and Hop, help users bridge funds in mere minutes rather than days, but these solutions come with an increased risk of attack compared to protocol-native bridges due to differing fraud-proof processes.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/optimistic-rollups-846aad61.svg\'></div>'
+        content: '<div class="bloc1"><p>L2 protocols like Optimism, Base and Arbitrum, all use <code>Optimistic Rollups</code> as their scaling solution architecture. Optimistic Rollups are so-called because the information in the Rollup batch is considered to be valid unless proven otherwise — an optimistic assumption is made.</p><p>To mitigate against any abuse of this technique, there is typically a multi-day delay once a user requests to move funds off of the L2 back to Mainnet. During this time, bridge validators can publish a <code>fraud proof</code> seeking to cancel the withdrawal. This fraud-proof mechanism is similar to the banking industry’s clearance processes, but is decentralized.</p><p>Note: Third-party bridging services, like Across and Relay, help users bridge funds in mere minutes rather than days. These fast bridges front you the money from their own pool of funds, so you take on the risk of the bridge’s smart contracts and its fund providers, an added layer of trust compared to the rollup’s own bridge.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/optimistic-rollups-846aad61.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1847,6 +1989,10 @@ const LESSONS: LessonType[] = [
             'True',
             'False'
           ],
+          feedback: [
+            'Correct! The optimistic assumption is that batches are valid, with a challenge period during which fraud proofs can cancel bad withdrawals.',
+            'Try again! That optimistic assumption is exactly where these Rollups get their name.'
+          ],
           id: 'layer-2-blockchains-4'
         }
       },
@@ -1854,7 +2000,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '1f0986b36f304ea79035b2f9c6a7fc52',
         title: 'ZK Rollups',
-        content: '<div class="bloc1"><p><code>ZK Rollups</code> are a type of Rollup that relies on Zero-Knowledge technology. Unlike <code>Optimistic Rollups</code>, ZK Rollups confirm the legitimacy of the batched transactions almost immediately, without reliance on certain users to look for evidence of fraud. Instead, these Rollups confirm transactions using complex, computation-heavy mathematical models.</p><p>The major upside to ZK Rollups is the <code>settlement time</code>, also known as <code>transaction finality</code>. Rather than a multi-day settlement period, ZK Rollups enable users to access their funds in under an hour. User privacy is also improved because only the mathematical proof is stored on Mainnet.</p><p>There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including ZKsync, Starknet, and Aztec. It’s still early in terms of development, but has great future potential.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/zk-rollups-9d65de85.svg\'></div>'
+        content: '<div class="bloc1"><p><code>ZK Rollups</code> are a type of Rollup that relies on Zero-Knowledge technology. Unlike <code>Optimistic Rollups</code>, ZK Rollups confirm the legitimacy of the batched transactions without reliance on certain users to look for evidence of fraud. Instead, these Rollups submit a mathematical proof, known as a “validity proof”, that lets Ethereum check an entire batch is correct without redoing the work.</p><p>The major upside to ZK Rollups is the <code>settlement time</code>, also known as <code>transaction finality</code>. Rather than a multi-day challenge period, ZK Rollups enable users to access their funds on Mainnet typically within a few hours, as soon as the next validity proof is submitted. Despite the name, Zero-Knowledge technology isn’t used here for privacy: transactions on major ZK Rollups are just as public as on Ethereum Mainnet.</p><p>There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including ZKsync, Starknet, and Linea. It’s still early in terms of development, but has great future potential.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/zk-rollups-9d65de85.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1864,9 +2010,14 @@ const LESSONS: LessonType[] = [
           question: 'Compared to Optimistic Rollups, ZK Rollups:',
           rightAnswerNumber: 2,
           answers: [
-            'post more user data to Mainnet.',
-            'offer greater privacy and enable faster transaction finality on Mainnet.',
-            'perform fewer computations to finalize a transaction.'
+            'keep user transactions private on Mainnet.',
+            'use validity proofs, avoiding a multi-day challenge period.',
+            'rely on watchers to submit fraud proofs during a challenge window.'
+          ],
+          feedback: [
+            'Despite the “Zero-Knowledge” name, major ZK Rollups are just as transparent as Ethereum Mainnet: the proofs are used for validity, not privacy.',
+            'Correct! A mathematical validity proof confirms each batch, so finality on Mainnet doesn’t require waiting out a fraud-proof window.',
+            'That’s how Optimistic Rollups work. ZK Rollups prove validity up front instead.'
           ],
           id: 'layer-2-blockchains-5'
         }
@@ -1875,7 +2026,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '236d6e4ed8264dc5af08c7b88434bf92',
         title: 'Cross-chain dApp Compatibility',
-        content: '<div class="bloc1"><p>When comparing <code>Optimistic Rollups</code> and <code>ZK Rollups</code>, the main focus for most users is withdrawal times. However, since these withdrawal-lag issues can be resolved by third-party bridges, it shouldn’t be a major consideration when deciding which scaling solution to explore.</p><p>Many Optimistic Rollups are “EVM equivalent”, meaning the L2 natively supports any dApp that can run on the <code>Ethereum Virtual Machine</code> (EVM). EVM equivalence enables deployment of any smart contracts previously deployed on Mainnet - thus allowing L2 users to access their favorite dApps.</p><p>Sidechains and ZK Rollups are not yet fully EVM equivalent. For now this limits the dApp ecosystems of such networks, but also allows for greater experimentation and discovery of new ways to layer dApp experiences on top of Ethereum.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/cross-chain-dapp-compatibility-8a372647.svg\'></div>'
+        content: '<div class="bloc1"><p>When comparing <code>Optimistic Rollups</code> and <code>ZK Rollups</code>, the main focus for most users is withdrawal times. However, since these withdrawal-lag issues can be resolved by third-party bridges, it shouldn’t be a major consideration when deciding which scaling solution to explore.</p><p>Many Optimistic Rollups are “EVM equivalent”, meaning the L2 natively supports any dApp that can run on the <code>Ethereum Virtual Machine</code> (EVM). EVM equivalence enables deployment of any smart contracts previously deployed on Mainnet - thus allowing L2 users to access their favorite dApps.</p><p>Sidechains like Polygon PoS also run the EVM natively, and most modern ZK Rollups (such as ZKsync, Linea, and Scroll) are also EVM equivalent or very close to it. As a result, your favorite Ethereum dApps are available across most of the L2 ecosystem.</p></div><div class="bloc2"><img src=\'/images/layer-2-blockchains/cross-chain-dapp-compatibility-8a372647.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1888,6 +2039,10 @@ const LESSONS: LessonType[] = [
             'True',
             'False'
           ],
+          feedback: [
+            'Correct! EVM equivalence means any smart contract that runs on Mainnet can be deployed on the L2, bringing familiar dApps along.',
+            'Try again! Reusing Mainnet smart contracts is the whole point of EVM equivalence.'
+          ],
           id: 'layer-2-blockchains-6'
         }
       },
@@ -1895,7 +2050,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'ae3457f983c9455e9534798226d5bda6',
         title: 'Lesson Recap',
-        content: '<div class="bloc1"><p>L1 blockchains like Bitcoin and Ethereum are currently constrained by the <code>Blockchain Trilemma</code>. <code>Payment channels</code> on the Bitcoin network, or sidechains and Rollups on Ethereum, help these networks to scale and ease the Trilemma.</p><p><code>Bridges</code> connect L1 blockchains with <code>sidechains</code> and <code>Rollups</code>, and the way in which the bridge contract functions influences the properties of the connected network.</p><p>Sidechain funds inherit the <code>security</code> of Ethereum via a two-way peg, but the network validates and processes its own transactions. These chains have a small but powerful validator set that allows them to increase transaction speed and lower gas fees, at the cost of decentralization.</p><p>Rollups, like sidechains, also validate and process their own transactions, but their bridge contract requires them to provide “convincing evidence” of transaction validity before the data is considered valid. This allows them to uphold a level of <code>security</code> and <code>decentralization</code> in alignment with Ethereum values. There are two methods for providing this “convincing evidence”: Optimistic Rollups and ZK Rollups. <code>Optimistic Rollups</code> maintain a multi-day delay before settling their transaction rollups on Mainnet, during which time bridge validators detect and report fraud. <code>ZK Rollups</code> provide mathematical assurance of transaction legitimacy, thanks to <code>Zero-Knowledge</code> technology.</p><p>Presently, Optimistic Rollups offer the greatest level of smart contract compatibility with Ethereum Mainnet, enabling dApps from Ethereum Mainnet to easily deploy on their networks. Many believe ZK Rollups will become the scaling solution of the future, thanks to their high levels of privacy and security.</p></div>'
+        content: '<div class="bloc1"><p>L1 blockchains like Bitcoin and Ethereum are currently constrained by the <code>Blockchain Trilemma</code>. <code>Payment channels</code> on the Bitcoin network, or sidechains and Rollups on Ethereum, help these networks to scale and ease the Trilemma.</p><p><code>Bridges</code> connect L1 blockchains with <code>sidechains</code> and <code>Rollups</code>, and the way in which the bridge contract functions influences the properties of the connected network.</p><p>Sidechain funds do not inherit the <code>security</code> of Ethereum: bridged tokens are locked in a contract on Mainnet, but their safety depends on the sidechain’s own validators and bridge contract. These chains have a small but powerful validator set that allows them to increase transaction speed and lower gas fees, at the cost of decentralization and security.</p><p>Rollups, like sidechains, also validate and process their own transactions, but their bridge contract requires them to provide “convincing evidence” of transaction validity before the data is considered valid. This allows them to uphold a level of <code>security</code> and <code>decentralization</code> in alignment with Ethereum values. There are two methods for providing this “convincing evidence”: Optimistic Rollups and ZK Rollups. <code>Optimistic Rollups</code> maintain a multi-day delay before settling their transaction rollups on Mainnet, during which time bridge validators detect and report fraud. <code>ZK Rollups</code> provide mathematical assurance of transaction legitimacy, thanks to <code>Zero-Knowledge</code> technology.</p><p>Presently, both Optimistic Rollups and modern ZK Rollups offer a high level of smart contract compatibility with Ethereum Mainnet, enabling dApps from Ethereum Mainnet to easily deploy on their networks. Many believe ZK Rollups will become the scaling solution of the future, thanks to their fast finality and strong validity guarantees.</p></div>'
       },
       {
         type: 'LEARN',
@@ -2108,10 +2263,16 @@ const LESSONS: LessonType[] = [
           question: 'What does DeFi stand for?',
           rightAnswerNumber: 2,
           answers: [
-            'Derivative fiction',
+            'Digital finance',
             'Decentralized finance',
             'Deregulation field',
-            'Degenerate fishermen'
+            'Decentralized funding'
+          ],
+          feedback: [
+            'Try again! DeFi is digital, but the “De” stands for decentralized.',
+            'Correct! DeFi is the ecosystem of financial products and applications running on public blockchains.',
+            'Try again! DeFi is about removing middlemen through decentralization, not about deregulation.',
+            'Try again! Close, but the “Fi” stands for finance, not funding.'
           ],
           id: 'intro-to-defi-1'
         }
@@ -2135,6 +2296,12 @@ const LESSONS: LessonType[] = [
             'Both of the above',
             'You can’t earn yield on crypto'
           ],
+          feedback: [
+            'Try again! This is one way to earn yield, but it isn’t the only one.',
+            'Try again! This is one way to earn yield, but it isn’t the only one.',
+            'Correct! DeFi protocols let you earn both interest and other rewards on your crypto assets, with no middleman taking a cut.',
+            'Try again! Earning yield on crypto assets is one of the main reasons DeFi is popular.'
+          ],
           id: 'intro-to-defi-2'
         }
       },
@@ -2157,6 +2324,12 @@ const LESSONS: LessonType[] = [
             'Permissionless',
             'Centralized'
           ],
+          feedback: [
+            'Try again! DeFi transactions still cost network fees. What makes them special is that no one can block them.',
+            'Try again! No third party controls or oversees DeFi activity.',
+            'Correct! Anyone can buy, sell, or trade on a public blockchain without needing approval from a third party.',
+            'Try again! DeFi is the opposite: it runs on decentralized applications with no central authority.'
+          ],
           id: 'intro-to-defi-3'
         }
       },
@@ -2178,6 +2351,12 @@ const LESSONS: LessonType[] = [
             'Hold On for Dear Life',
             'Keeping crypto for a long time',
             'All of the above'
+          ],
+          feedback: [
+            'Try again! This is one origin story, but it isn’t the only correct answer.',
+            'Try again! This is one meaning, but it isn’t the only correct answer.',
+            'Try again! This is what HODLing means in practice, but it isn’t the only correct answer.',
+            'Correct! HODL started as a typo of HOLD, doubles as “Hold On for Dear Life”, and means keeping crypto assets for a long time.'
           ],
           id: 'intro-to-defi-4'
         }
@@ -2203,9 +2382,15 @@ const LESSONS: LessonType[] = [
           rightAnswerNumber: 1,
           answers: [
             'A decentralized exchange',
-            'A digital electric xylophone',
+            'A derivatives exchange',
             'A crypto index fund',
             'None of the above'
+          ],
+          feedback: [
+            'Correct! A DEX is a digital marketplace that brings buyers and sellers together to trade tokens without a middleman.',
+            'Try again! The “D” stands for decentralized, not derivatives: a DEX is a decentralized exchange.',
+            'Try again! A DEX is a marketplace for trading tokens, not an investment fund.',
+            'Try again! One of the above is exactly what a DEX is.'
           ],
           id: 'intro-to-defi-5'
         }
@@ -2229,6 +2414,12 @@ const LESSONS: LessonType[] = [
             'banks to customers',
             'income to interest'
           ],
+          feedback: [
+            'Try again! Income-to-debt ratios belong to traditional loan approvals. DeFi lending works differently.',
+            'Correct! DeFi lending happens directly between two parties, with no bank or middleman in between.',
+            'Try again! DeFi removes the bank entirely: lending happens directly between users.',
+            'Try again! Lenders do earn interest, but the lending itself happens directly between peers.'
+          ],
           id: 'intro-to-defi-6'
         }
       },
@@ -2251,6 +2442,12 @@ const LESSONS: LessonType[] = [
             'Borrowing',
             'HODLing'
           ],
+          feedback: [
+            'Try again! Trading is exchanging one token for another, not lending to a protocol.',
+            'Correct! Staking means lending your crypto to a network or protocol and earning rewards for helping secure it.',
+            'Try again! Borrowing is taking a loan. Lending your crypto to a protocol is the opposite side of the deal.',
+            'Try again! HODLing is simply keeping your crypto for a long time, not putting it to work in a protocol.'
+          ],
           id: 'intro-to-defi-7'
         }
       },
@@ -2270,8 +2467,14 @@ const LESSONS: LessonType[] = [
           answers: [
             'There are no risks',
             'The bank might turn down your loan',
-            'Bad weather could shut down the exchange',
+            'A central authority could freeze your funds',
             'There may be an error in the code'
+          ],
+          feedback: [
+            'Try again! DeFi has real risks, like hackers and code exploits, and no one to appeal to if something goes wrong.',
+            'Try again! There are no banks in DeFi: lending is peer-to-peer and permissionless.',
+            'Try again! DeFi has no central authority that can freeze your funds. The real risks lie elsewhere, like errors in code.',
+            'Correct! DeFi runs on code, and an error or loophole in that code can be exploited.'
           ],
           id: 'intro-to-defi-8'
         }
@@ -2312,7 +2515,7 @@ const LESSONS: LessonType[] = [
     notionId: '1181627a73fb463a814043d53f44559e',
     englishName: 'Understanding Stablecoins',
     slug: 'understanding-stablecoins',
-    articleContent: '## Key Takeaways\n\n> * Stablecoins are the blockchain equivalent of fiat currency, like the dollar or euro.\n>\n> * Stablecoins are `ERC-20` tokens: they allow DeFi users to quickly move between fiat value, and crypto value, while staying on the blockchain.\n>\n> * There are several categories of stablecoin, each with their own trade-offs and risk profile.\n>\n> * Stablecoins can generate more annual interest than holding fiat in a traditional bank.\n\n## Why Hold Stablecoins?\n\nStablecoins have become a cornerstone of the DeFi ecosystem, reaching over $140 billion USD in supply value at their 2022 peak. Stablecoins settled over $7 trillion in transaction value that year — that’s \~0.3% of global USD settlement in 2022.\n\n![](/images/understanding-stablecoins/image-0c080b13.png)\n\nHere’s why they’re in demand:\n\n* **Stability:** Holding stablecoins in your self-custody wallet is like holding fiat currency, but on the blockchain. When holding a stablecoin like Circle’s U.S. dollar (USDC), you can expect it to maintain 1:1 value with the U.S. dollar while the prices of assets like ether and bitcoin fluctuate.\n\n* **Flexibility:** Because this pegged value exists as an ERC-20 token on the blockchain, it’s easy to move between fiat value and crypto value.\n\n* **Access:** Stablecoins provide access to a range of decentralized financial services, like permissionless borrowing or lending to earn interest.\n\n* **Security:** Cryptography makes it extremely difficult for attackers to capture or forge transactions.\n\nThe way a stablecoin maintains a 1:1 equivalence, or `peg`, to its fiat counterpart is its most important property. Just as fiat currency is only worth the fundamentals that underlie it, a stablecoin peg mechanism dictates the value of your holdings.\n\n## Stablecoin Categories\n\nThere are three common strategies for a stablecoin to maintain its price peg:\n\n* 💵 **Fiat-backed:** 1:1 collateralized by real-world fiat reserves.\n\n* 🔗 **Crypto-collateralized:** overcollateralized by crypto deposits into DeFi protocols.\n\n* 🔃 **Algorithmic:** fixed supply/demand algorithms that maintain price stability.\n\n### 1\. Fiat-backed Stablecoins\n\nFiat-backed stablecoins maintain value by issuing a fixed token supply matched by real-world currency reserves. Their on-chain price is maintained via supply/demand economics: few people want to pay more than one real-world dollar for a dollar of on-chain value, so they simply take their trade elsewhere. To meet increased demand, the stablecoin issuer locks up additional fiat and increases the token supply by the same amount.\n\nNotable fiat-backed stablecoins include Tether (USDT) and Circle (USDC).\n\nStablecoin issuers generate revenue through various methods. These methods include investing a portion of their fiat reserves in short-term US Treasuries and cash equivalents, as well as employing a mixed revenue model that involves collecting transaction fees and offering lending services.\n\n> **Innovation & Philanthropy through Fiat-Backed Stablecoins: Glo Dollar**\n>\n> The Glo Foundation has introduced an innovative approach when it comes to revenue generation through the creation of [Glo Dollar](https://www.glodollar.org/) (USDGLO), its US dollar-backed stablecoin. Glo Dollar sets itself apart from other stablecoins by directing the interest earned from its reserves towards basic income programs for people in extreme poverty.\n>\n> Holders of USDGLO contribute to this mission by practicing embedded philanthropy. Learn more about Glo Dollar and how it works, [here](https://www.glodollar.org/articles/how-glo-works).\n\nConsiderations when using fiat-backed stablecoins:\n\n* **Collateral Audits:** Holders need assurance that their stablecoin tokens are matched one-to-one by fiat reserves. Ideally the provider is open to regular audits by independent parties. USDT has historically made it difficult to know the total value of their locked assets. USDC regularly undergoes independent audits, increasing certainty that their reserves equal their token issuance.\n\n* **Censorship Risk:** With both USDC and USDT subject to government investigation, these tokens’ `smart contracts` include a freeze function whereby a user’s on-chain holdings can be locked in cases of disagreeable activity. This freeze function also applies to tokens held in `non-custodial wallets`.\n\nThe high degree of centralization in the fiat-backed stablecoin sector leaves great room for improvement in holding fiat-pegged value in a crypto-native way.\n\n### 2\. Crypto-collateralized Stablecoins\n\nCrypto-collateralized stablecoins are a more transparent, decentralized option — and these qualities help eliminate certain risks. They maintain a fiat peg through crypto asset reserves. As crypto market volatility influences the total value of these reserves, these stablecoins are overcollateralized — sometimes up to 200%! All collateralized assets are viewable on chain, giving users 24/7 access to the real composition of their stablecoins.\n\nThe most notable example in this category is MakerDAO’s Dai (DAI).\n\n![DAI collateralization breakdown (June 2023) Source: https://makerburn.com/#/rundown](/images/understanding-stablecoins/image-573e657a.png)\n\nConsiderations:\n\n* **Collateral Valuation:** A stablecoin’s reserves typically consist of crypto, other stablecoins, and even other asset classes. For example, DAI is backed by BTC, ETH, stablecoins, real world assets, and several other minor components. To mitigate the risks of this diverse range of assets, DAI is overcollateralized (at the time of writing). Even if the ETH price was to crash by 20%, DAI would still have [enough collateral](https://daistats.com/) to cover their token. However, further price volatility across its range of assets could begin to erode the peg.\n\n* `Counterparty Risk`: Reliance on multiple asset classes means there’s a higher chance one of the assets will experience difficulty and affect the value of your holdings. However, you only have fractional exposure to the impact of each individual risk.\n\n* **Governance Risk:** This type of stablecoin and its treasury are managed by a decentralized group of governance voters. This means there are risks of human error, or possible governance capture.\n\n### 3\. Algorithmic Stablecoins\n\nThese tokens maintain their peg by automatically balancing their own supply. An onchain algorithm reduces the number of tokens in circulation when the market price falls below the peg, and injects new tokens when the market price surpasses the peg. Both the balancing algorithm and the stablecoin\'s smart contracts are public, meaning anyone can clone and improve, or audit the existing system.\n\nAs algorithmic stablecoins have the fewest external dependencies, and no administration or governance demands, they almost entirely eliminate counterparty risk. This makes them the most decentralized and self-custody-ready stablecoin option.\n\nNotable examples include Liquity (LUSD) and Frax (FRAX).\n\n![](/images/understanding-stablecoins/image-4f6e4c7f.png)\n\nConsiderations:\n\n* **Dynamic Holdings:** With the balancing algorithm adjusting token supply, your number of tokens held will fluctuate with supply adjustments. The total value of your token holdings remains constant — you aren’t losing or gaining any value — but this aspect can be confusing for new users.\n\n* **Highly Technical:** You need to understand the technology to build confidence and risk/reward awareness.\n\n* **Emergent Tech Risk:** With algorithmic stablecoins being so new, unknown smart contract risks could be present. Only use algorithmic stablecoins with several smart contract audits, performed by top-level auditors.\n\n## Choosing a Stablecoin\n\nWhat is the best stablecoin to hold? As with everything DeFi, the answer to that question depends on your **needs**, **values**, and **risk tolerance**.\n\nHere’s a quick refresher on each category:\n\n* 💵 **Fiat-backed:** The traditional approach — the closest you’ll come to holding fiat on chain.\n\n  * Values: Conventionality, institutional trust.\n\n  * Risks: Opaque collateral backing, ability for provider to freeze funds.\n\n* 🔗 **Crypto-collateralized:** A balanced, crypto-native approach, spreading collateral risk across multiple asset classes.\n\n  * Values: Diversification, transparency, progression.\n\n  * Risks: Crypto market volatility, dependence on other assets.\n\n* 🔃 **Algorithmic:** The decentralized — but experimental — option that minimizes counterparty risk.\n\n  * Values: Self-sovereignty, transparency, progression.\n\n  * Higher risk of smart contract bugs.\n\nAs always, the best way to learn about something is to try it. You might even decide to hold a variety of stablecoins.\n\nAnd remember, not all stablecoins in each category are created equal! Do your own research before interacting with any new token.\n\n---\n\nWe hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Understanding Stablecoins’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n---\n\n## Frequently Asked Questions\n\n### What are the most popular stablecoins?\n\nLooking at the leading stablecoins by `market cap` gives an idea of the current market preference, but this isn’t guidance on how you should position yourself, or how safe that position would be.\n\nHere’s a realtime list of top stablecoins by market cap: <https://defillama.com/stablecoins>\n\nCryptocurrency users often refer to the ‘Lindy Effect’ when choosing investment options. This concept says that the longer something has existed, the more we can expect it will continue to exist. Ten years of cryptocurrency history have shown this to only be true on occasion.\n\n### Where can I buy stablecoins?\n\nCentralized Exchanges (CEXs) offer popular fiat-backed stablecoins (and typically their own branded stablecoin), other types of stablecoin are often missing.\n\nVisit a Decentralized Exchange (DEX), or use a direct wallet on-ramp service like ‘MetaMask Buy’, to acquire crypto-collateralized and algorithmic tokens. Check out our lesson on [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) to learn more about peer-2-peer marketplaces.\n\n### How can I earn interest on stablecoins?\n\nSome CEXs offer yield by just holding stablecoins on their platform, funded by a share of platform profits to incentivize platform use.\n\nYou can also earn interest in DeFi, with trustless lending and borrowing platforms. These platforms connect lenders and borrowers, managing risk through onchain collateral and smart contracts. Stablecoin lenders can earn annual returns far higher than available in the traditional banking sector — but where there’s reward, there’s risk!\n\nThe lending and borrowing topic deserves its own Bankless Academy entry. If you’re already interested in learning more you can research platforms like [Aave.com](https://aave.com/) and [Curve.fi](https://curve.fi/).\n\n### What happens if a stablecoin loses its peg?\n\nThe price of any stablecoin can shift slightly (usually around the +/- 2% mark) in peak network hours. This effect is usually temporary, with prices quickly stabilized by traders taking advantage of arbitrage opportunities.\n\nHowever, there are cases where a stablecoin loses its peg beyond safe, temporary ranges. This effect isn’t necessarily permanent (USDC, March 2023) — but it can be (Terra, May 2022).\n\nSome fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their stablecoin to regular fiat through their website. Whether this remains true during times of crisis is another story.\n\n---\n\n**Author**\n\n**[Tetranome](https://twitter.com/tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, UI, design, and platform curriculum.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Patron**\n\nThis unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!',
+    articleContent: '## Key Takeaways\n\n> * Stablecoins are the blockchain equivalent of fiat currency, like the dollar or euro.\n>\n> * Stablecoins are typically issued as tokens (for example, `ERC-20` tokens on Ethereum) and now circulate across many blockchains. They allow DeFi users to quickly move between fiat value, and crypto value, while staying on the blockchain.\n>\n> * There are several categories of stablecoin, each with their own trade-offs and risk profile.\n>\n> * Stablecoins can generate more annual interest than holding fiat in a traditional bank, though regulation now shapes who is allowed to offer that yield, and how.\n\n## Why Hold Stablecoins?\n\nStablecoins have become a cornerstone of the DeFi ecosystem. After reaching roughly $140 billion USD in supply at their 2022 peak (pictured below), total supply passed $300 billion in 2026, and stablecoins settled over $30 trillion in transaction value in 2025, more than Visa processed that year.\n\n![](/images/understanding-stablecoins/image-0c080b13.png)\n\nHere’s why they’re in demand:\n\n* **Stability:** Holding stablecoins in your self-custody wallet is like holding fiat currency, but on the blockchain. When holding a stablecoin like USD Coin (USDC), issued by Circle, you can expect it to maintain 1:1 value with the U.S. dollar while the prices of assets like ether and bitcoin fluctuate.\n\n* **Flexibility:** Because this pegged value exists as a token on the blockchain, it’s easy to move between fiat value and crypto value.\n\n* **Access:** Stablecoins provide access to a range of decentralized financial services, like permissionless borrowing or lending to earn interest.\n\n* **Security:** Cryptography makes it extremely difficult for attackers to capture or forge transactions.\n\nThe way a stablecoin maintains a 1:1 equivalence, or `peg`, to its fiat counterpart is its most important property. Just as fiat currency is only worth the fundamentals that underlie it, a stablecoin peg mechanism dictates the value of your holdings.\n\n## Stablecoin Categories\n\nThere are three common strategies for a stablecoin to maintain its price peg:\n\n* 💵 **Fiat-backed:** 1:1 collateralized by real-world fiat reserves.\n\n* 🔗 **Crypto-collateralized:** overcollateralized by crypto deposits into DeFi protocols.\n\n* 🔃 **Algorithmic:** supply-balancing algorithms in place of full collateral, a design with a troubled history.\n\n### 1\. Fiat-backed Stablecoins\n\nFiat-backed stablecoins maintain value by issuing a fixed token supply matched by real-world currency reserves. Their on-chain price is maintained via supply/demand economics: few people want to pay more than one real-world dollar for a dollar of on-chain value, so they simply take their trade elsewhere. To meet increased demand, the stablecoin issuer locks up additional fiat and increases the token supply by the same amount.\n\nNotable fiat-backed stablecoins include Tether’s USDT and Circle’s USD Coin (USDC). Circle also issues a euro-pegged equivalent, EURC.\n\nStablecoin issuers generate revenue through various methods. These methods include investing a portion of their fiat reserves in short-term US Treasuries and cash equivalents, as well as employing a mixed revenue model that involves collecting transaction fees and offering lending services.\n\n> **Innovation & Philanthropy through Fiat-Backed Stablecoins: Glo Dollar**\n>\n> The Glo Foundation takes an innovative approach to reserve revenue with [Glo Dollar](https://www.glodollar.org/) (USDGLO), its US dollar-backed stablecoin: the interest earned on its reserves funds basic income programs for people in extreme poverty. Simply by holding USDGLO, users practice embedded philanthropy. Learn how Glo Dollar works, [here](https://www.glodollar.org/articles/how-glo-works).\n\nConsiderations when using fiat-backed stablecoins:\n\n* **Reserve Reporting:** Holders need assurance that their stablecoin tokens are matched one-to-one by fiat reserves. Most issuers publish `attestations` (an independent accountant confirms the reserves existed on a given date), which is weaker than a full audit of the issuer’s finances; no major issuer currently publishes one. Circle releases monthly USDC attestations (by Deloitte), and Tether, historically opaque about its backing, now publishes quarterly attestations (by BDO).\n\n* **Regulation:** In the US, the GENIUS Act (signed July 2025) requires payment stablecoin issuers to hold 1:1 reserves in cash and short-term US Treasuries, and prohibits them from paying interest to holders. In the EU, the MiCA framework led major exchanges to delist non-compliant stablecoins like USDT for European users.\n\n* **Censorship Risk:** With both USDC and USDT subject to government investigation, these tokens’ `smart contracts` include a freeze function whereby a user’s on-chain holdings can be locked in cases of disagreeable activity. This freeze function also applies to tokens held in `non-custodial wallets`.\n\nThe high degree of centralization in the fiat-backed stablecoin sector leaves great room for improvement in holding fiat-pegged value in a crypto-native way.\n\n### 2\. Crypto-collateralized Stablecoins\n\nCrypto-collateralized stablecoins are a more transparent, decentralized option — and these qualities help eliminate certain risks. They maintain a fiat peg through crypto asset reserves. As crypto market volatility influences the total value of these reserves, these stablecoins are overcollateralized — sometimes up to 200%! All collateralized assets are viewable on chain, giving users 24/7 access to the real composition of their stablecoins.\n\nThe most notable example in this category is Sky’s USDS, the successor to MakerDAO’s Dai (DAI), the original crypto-collateralized stablecoin, after MakerDAO rebranded to Sky in 2024. For a purer take on decentralization, Liquity’s LUSD is backed exclusively by overcollateralized ETH deposits.\n\n![Collateral breakdown of DAI, the predecessor of USDS (June 2023)](/images/understanding-stablecoins/image-573e657a.png)\n\nConsiderations:\n\n* **Collateral Valuation:** A stablecoin’s reserves typically consist of crypto, other stablecoins, and even other asset classes. For example, USDS is backed by ETH, stablecoins, real-world assets like US Treasuries, and several other minor components. To mitigate the risks of this diverse range of assets, USDS is overcollateralized (at the time of writing). Even if the ETH price was to crash by 20%, USDS would still have [enough collateral](https://defillama.com/stablecoins) to cover its tokens. However, further price volatility across its range of assets could begin to erode the peg.\n\n* `Counterparty Risk`: Reliance on multiple asset classes means there’s a higher chance one of the assets will experience difficulty and affect the value of your holdings. However, you only have fractional exposure to the impact of each individual risk.\n\n* **Governance Risk:** This type of stablecoin and its treasury are managed by a decentralized group of governance voters. This means there are risks of human error, or possible governance capture.\n\n### 3\. Algorithmic Stablecoins\n\nThese tokens attempt to maintain their peg by automatically balancing their own supply instead of holding full collateral: an onchain algorithm removes tokens from circulation when the market price falls below the peg, and mints new ones when it rises above. On paper, this promises a stablecoin free of banks and collateral. In practice, the pure version of this design has failed, catastrophically.\n\nThe defining example is Terra’s UST, whose algorithm let holders always swap 1 UST for $1 worth of Terra’s volatile LUNA token. In May 2022, mass UST selling forced the algorithm to mint enormous amounts of LUNA, crashing its price and triggering yet more selling: a “death spiral” that erased around $40 billion in a matter of days. UST never recovered its peg.\n\nSurviving projects have abandoned the pure model. Frax, once partly algorithmic, moved to 100% collateralization in 2023; its current stablecoin, frxUSD, is backed by reserves including tokenized US Treasury funds, while FRAX now serves as the protocol’s governance token.\n\n![](/images/understanding-stablecoins/image-4f6e4c7f.png)\n\nA distinct modern category has emerged from the rubble: hybrid or ‘synthetic dollar’ designs like Ethena’s USDe, which holds crypto collateral plus offsetting trading positions that cancel out price moves (a ‘delta-neutral’ hedge). These are collateralized, but in a novel way, with their own risks, such as reliance on the exchanges holding those positions, and on market conditions that keep the hedge profitable.\n\nConsiderations:\n\n* **Death Spiral Risk:** A pure algorithmic peg depends on continued market confidence. When confidence breaks, the supply mechanism can amplify the crash instead of stopping it, with no collateral left to redeem.\n\n* **Highly Technical:** You need to understand what actually backs the token (and under what conditions that backing could fail) to build confidence and risk/reward awareness.\n\n* **Emergent Tech Risk:** Hybrid and synthetic designs are largely untested through a full market cycle. Only use tokens with several smart contract audits by top-level auditors, and remember that audits can’t protect against a flawed economic design.\n\n## Choosing a Stablecoin\n\nWhat is the best stablecoin to hold? As with everything DeFi, the answer to that question depends on your **needs**, **values**, and **risk tolerance**.\n\nHere’s a quick refresher on each category:\n\n* 💵 **Fiat-backed:** The traditional approach — the closest you’ll come to holding fiat on chain.\n\n  * Values: Conventionality, institutional trust.\n\n  * Risks: Opaque collateral backing, ability for provider to freeze funds.\n\n* 🔗 **Crypto-collateralized:** A balanced, crypto-native approach, spreading collateral risk across multiple asset classes.\n\n  * Values: Diversification, transparency, progression.\n\n  * Risks: Crypto market volatility, dependence on other assets.\n\n* 🔃 **Algorithmic:** The experimental frontier: pure designs have failed catastrophically, and modern hybrids are still unproven.\n\n  * Values: Innovation, capital efficiency, progression.\n\n  * Risks: Death spirals, flawed economic designs, smart contract bugs.\n\nAs always, the best way to learn about something is to try it. You might even decide to hold a variety of stablecoins.\n\nAnd remember, not all stablecoins in each category are created equal! Do your own research before interacting with any new token.\n\n---\n\nWe hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Understanding Stablecoins’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n---\n\n## Frequently Asked Questions\n\n### What are the most popular stablecoins?\n\nLooking at the leading stablecoins by `market cap` gives an idea of the current market preference, but this isn’t guidance on how you should position yourself, or how safe that position would be.\n\nHere’s a realtime list of top stablecoins by market cap: <https://defillama.com/stablecoins>\n\nCryptocurrency users often refer to the ‘Lindy Effect’ when choosing investment options. This concept says that the longer something has existed, the more we can expect it will continue to exist. Seventeen years of cryptocurrency history have shown this to only be true on occasion.\n\n### Where can I buy stablecoins?\n\nCentralized Exchanges (CEXs) offer popular fiat-backed stablecoins (and typically their own branded stablecoin), other types of stablecoin are often missing.\n\nVisit a Decentralized Exchange (DEX), or use a direct wallet on-ramp service like ‘MetaMask Buy’, to acquire crypto-collateralized and algorithmic tokens. Check out our lesson on [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) to learn more about peer-2-peer marketplaces.\n\n### How can I earn interest on stablecoins?\n\nSome CEXs offer yield by just holding stablecoins on their platform, funded by a share of platform profits to incentivize platform use. Note for US readers: under the GENIUS Act, regulated stablecoin issuers themselves may not pay interest to holders: yield comes only from third-party platforms, and availability varies by jurisdiction.\n\nYou can also earn interest in DeFi, with trustless lending and borrowing platforms. These platforms connect lenders and borrowers, managing risk through onchain collateral and smart contracts. Stablecoin lenders can earn annual returns far higher than available in the traditional banking sector — but where there’s reward, there’s risk!\n\nThe lending and borrowing topic deserves its own Bankless Academy entry. If you’re already interested in learning more you can research platforms like [Aave.com](https://aave.com/) and [Curve.fi](https://curve.fi/).\n\n### What happens if a stablecoin loses its peg?\n\nThe market price of any stablecoin drifts slightly with the ebb and flow of trading. For major stablecoins, this is usually just a few hundredths of a cent above or below $1. These tiny deviations are quickly closed by traders taking advantage of arbitrage opportunities.\n\nHowever, there are cases where a stablecoin loses its peg beyond safe, temporary ranges. This effect isn’t necessarily permanent (USDC, March 2023) — but it can be (Terra, May 2022).\n\nSome fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their stablecoin to regular fiat through their website. Whether this remains true during times of crisis is another story.\n\n---\n\n**Author**\n\n**[Tetranome](https://twitter.com/tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, UI, design, and platform curriculum.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Patron**\n\nThis unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!',
     imageLinks: [
       '/images/understanding-stablecoins/image-0c080b13.png',
       '/images/understanding-stablecoins/image-573e657a.png',
@@ -2413,7 +2616,7 @@ const LESSONS: LessonType[] = [
           answers: [
             'There is no team behind a DEX.',
             'The only way you can lose funds on a CEX is due to a bad trade.',
-            'DEXs allow you to trade while maintaining self-custody, while CEXs do not.'
+            'DEXs let you trade in self-custody, while CEXs do not.'
           ],
           feedback: [
             'DEXs still have development teams, but their influence on the project is limited.',
@@ -2440,7 +2643,7 @@ const LESSONS: LessonType[] = [
         notionId: '1e7748d105bb4374a8dab96e40481502',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'Which of the below properties are needed for a smart contract to be considered decentralized?',
+          question: 'Which properties are needed for a dApp to be considered decentralized?',
           rightAnswerNumber: 4,
           answers: [
             'Permissionless: open access to all users.',
@@ -2468,7 +2671,7 @@ const LESSONS: LessonType[] = [
         notionId: '7ff7469e00154f15ac6d0f149a378590',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'What is the benefit of using AMMs to complete trades as compared to a traditional order book?',
+          question: 'What is a benefit of using AMMs compared to a traditional order book?',
           rightAnswerNumber: 3,
           answers: [
             'The AMM trade is faster than an order book trade.',
@@ -2478,7 +2681,7 @@ const LESSONS: LessonType[] = [
           feedback: [
             'When we include network confirmation time, this isn’t necessarily true.',
             'AMMs route user trades through communal token vaults, called liquidity pools, rather than directly between users.',
-            'The transparent nature of AMMs means that it is a lot harder for platforms to hide malicious actions — or for users to be malicious at all!'
+            'The transparent nature of AMMs means that it is a lot harder for platforms to hide malicious actions, or for users to be malicious at all!'
           ],
           id: 'decentralized-exchanges-3'
         }
@@ -2560,7 +2763,7 @@ const LESSONS: LessonType[] = [
           ],
           feedback: [
             'Neither CEXs or DEXs protect you from losses on a bad investment.',
-            'The fees charged to use the DEX are often split across various platform stakeholders — including LPs. Some platforms even grant additional bonuses.',
+            'The fees charged to use the DEX are often split across various platform stakeholders, including LPs. Some platforms even grant additional bonuses.',
             'There are no private liquidity pools, low traffic would likely not provide adequate returns.',
             'There’s only one correct answer here, can you figure out which one it is?'
           ],
@@ -2595,7 +2798,7 @@ const LESSONS: LessonType[] = [
           answers: [
             'You want to access tokens not listed on a Centralized Exchange.',
             'You want to retain full custody over the exchanged funds.',
-            'You’d like to access tools and opportunities not traditionally available to you.',
+            'You want access to tools and opportunities not usually available.',
             'All of the above.'
           ],
           feedback: [
@@ -2627,12 +2830,12 @@ const LESSONS: LessonType[] = [
           question: 'How can you be sure you’ve chosen a reputable DEX?',
           rightAnswerNumber: 1,
           answers: [
-            'By independently checking its online reputation and only following URLs provided by a trusted party.',
-            'By performing a small test interaction when using the platform for the first time.',
+            'By checking its reputation and only using URLs from trusted sources.',
+            'By performing a small test interaction on your first use.',
             'Both of the above.'
           ],
           feedback: [
-            'Right, only interacting with trustworthy URLs is a good layer of protection.',
+            'Right! Independently verify the DEX’s online reputation, and only follow URLs provided by a trusted party.',
             'A single interaction with a bad smart contract can drain your entire wallet.',
             'Incorrect. A single interaction with a bad smart contract can drain your entire wallet.'
           ],
@@ -3067,7 +3270,7 @@ const LESSONS: LessonType[] = [
     notionId: '7e849598acb245fea60fca7162b937c3',
     englishName: 'Managing Token Allowances',
     slug: 'managing-token-allowances',
-    articleContent: '## Key Takeaways\n\n> * Token allowances refer to permissions granted to `smart contracts` to spend tokens from a wallet without further approval.\n>\n> * They can be exploited by malicious actors if the user is not aware permissions are in place.\n>\n> * Tools like Revoke.cash allow users to easily inspect and revoke token allowances.\n\n## Introduction\n\nDeFi grants users control over their assets, including their `private keys`, offering unprecedented sovereignty and authority over their funds. However, with great power comes greater responsibility, requiring users to take full charge of the safety and management of their assets.\n\nThere are four common categories of scams that DeFi users should be aware of:\n\n* **Seed Phrase Compromise:** Attackers attempt to deceive users into revealing their seed phrases, which would give them unauthorized access to funds. With your seed phrase, an attacker can drain all your funds and continue doing so if you deposit additional funds into the wallet. Unfortunately, there is no way to recover from this situation, and the only solution is to create a completely new wallet with a new `seed phrase`.\n\n* **Direct ETH Transfers:** Scammers can conceal ETH transfers by either requesting an “eth_sign” signature or disguising it as a function call, such as “Security Update.” Falling for this scam means you won’t be able to recover your funds, but you can still safely use your wallet for other transactions.\n\n* **NFT Marketplace Listings:** Be cautious of fake listings and malicious contracts that exploit the allowances you grant to marketplaces like OpenSea. Scammers may trick you into signing an `offchain` message that lists your approved `NFTs` for sale, with no actual token transaction taking place.\n\n* **Token Allowances:** Attackers may manipulate permissions to gain access to more funds than initially approved. “Approvals” are on-chain transactions that grant access to your tokens or NFTs. “Permits” offer the same access but only require an off-chain signature.\n\n  As smart contracts gain popularity, `token allowances` become necessary to enable trusted contracts to execute transactions without exposing private keys. Token allowances allow dApps to automatically move tokens in your wallet on your behalf. While this convenience boosts efficiency, it also exposes users to potential attack vectors through scams and unauthorized access.\n\nIn this article, we’ll discuss ‘Token Allowances’ and introduce a community tool built to help manage your permissions.\n\n## Token Allowances: Understanding, Managing, and Ensuring Safety\n\nToken allowances are permissions given in advance to smart contracts to spend tokens from a wallet. They serve a crucial role in facilitating transactions without requiring explicit permission every time for direct asset transfers from the wallet. When misused, however, token allowances can become an attack vector for the unsuspecting. To address this risk, it’s important that DeFi users exercise caution, educate themselves on the security landscape, and understand how token allowances actually work.\n\nThere are two steps involved when granting permissions to a third-party contract:\n\n1. Wallet permission: When connecting your wallet to a dApp, you grant its smart contract permission to access your wallet’s `public key`, view your balances, and monitor your wallet activity.\n\n2. Token approval: Once you’ve granted this access to your wallet, you then approve your tokens to be moved on your behalf in order to complete transactions.\n\nBy proactively managing token allowances, users can ensure that no contract withdraws more than the initially specified amount from their wallet. Luckily, there are community tools built to help give DeFi users confidence and peace of mind.\n\n## Walkthrough: Using Revoke.cash\n\n[Revoke.cash](https://revoke.cash/) empowers users to easily manage their token allowances through a simple website that helps inspect and monitor allowances given to different dApps. Let’s walkthrough how you can use this powerful community tool to help you safeguard your assets and take back control of your wallet.\n\n**1\. Connect your wallet**:\n\nTo begin the process of revoking your token allowances, head to [Revoke.cash](http://revoke.cash/) and click on “Connect Wallet” located in the top-right corner. Alternatively, you can manually enter your wallet public address in the search bar. Once the loading is complete, you’ll see a list of all your token approvals on that network.\n\n![](/images/managing-token-allowances/image-f95ea594.png)\n\n**2\. Inspect your allowances**:\n\nOnce you have connected your wallet, you can inspect your existing approvals. You can sort, filter, or search for specific approvals based on the authorized spender address. Sorting by “Newest to Oldest” is particularly useful if you suspect a malicious approval recently. Use the network selection, sorting, and filtering options provided to gain an overview of token allowances you have granted across various networks.\n\n![](/images/managing-token-allowances/image-f3b00f4a.png)\n\n**3\. Revoke undesired allowances:**\n\nOnce you identify the approvals you want to revoke, simply click the “Revoke” button next to each of them. Optionally, you can update the approval to a different amount by clicking the pencil icon next to the approved amount if you still require the approval in the future but wish to reduce your risk.\n\n![](/images/managing-token-allowances/image-138cb12e.png)\n\nIt might be in your best interest to revoke or adjust a token allowance if:\n\n1. A recently deployed smart contract is exploited and creates a vulnerability in a `decentralized exchange` you regularly use.\n\n   In April 2023, popular `DEX` SushiSwap suffered a similar exploit, when \~$3.5M was stolen from users. Affected users remained at risk if they hadn’t revoked their token allowance.\n\n2. A malicious governance proposal updates several contracts with the intent of draining users’ funds.\n\n   More than $2.5M in assets were compromised when Atlantis Loans, a `DeFi` protocol on a BNB chain, executed a governance proposal that targeted several contracts. Users who managed their approval limit mitigated the risk of their wallets being fully drained by the malicious proposal.\n\n---\n\nIt’s time to strengthen our wallet defenses! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Managing Token Allowances’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n---\n\n## FAQ\n\n### When should I use Revoke.cash?\n\nUse Revoke.cash periodically, especially during periods when you are not actively using a dApp, particularly for NFT marketplaces. Limiting approvals lessens the risk of funds loss due to hacks, exploits, or phishing scams. By sorting your approvals to show the most recent, you can identify the suspicious approvals and revoke them promptly, mitigating further damage.\n\n### Does disconnecting my wallet protect me from approval exploits?\n\nDisconnecting your wallet from a dApp does not protect you from exploits, approvals or otherwise. The token approvals you previously granted remain active even after disconnecting, because they are stored onchain.\n\n### How can I avoid token allowance exploits and similar risks?\n\nA proactive approach to token allowances includes:\n\n* granting allowances only to trusted dApps.\n\n* periodically reviewing token allowances.\n\n* removing unnecessary or suspicious allowances.\n\n* staying informed about dApps’ security updates.\n\nConsider using third-party tools like the Revoke.cash [browser extension](https://revoke.cash) — it acts as a proactive measure against potential threats. The extension warns you if you are about to sign something potentially harmful, protecting you from phishing scams or other malicious activities.\n\n### Can I recover funds with Revoke.cash?\n\nUnfortunately, Revoke.cash cannot recover stolen funds. It serves as a preventive tool to reduce the likelihood of becoming a victim of approval exploits. However, revoking the approvals used to steal your funds can prevent further theft.\n\n### Why does my wallet keep getting drained each time I top it up?\n\nYour wallet may contain a “sweeper bot,” a script that monitors and acts on transactions from a compromised wallet. When it detects such transactions, the bot initiates a new transaction before the original one completes, allowing it to rapidly transfer any new deposits out. If your wallet has such a “sweeper bot” stealing incoming ETH, it means your seed phrase is compromised. Revoking approvals won’t improve your wallet’s security. The best course of action is to abandon the compromised wallet and create a new one.\n\n---\n\n**Author**\n\n**[Marcus](https://twitter.com/estmcmxci)** publishes the ENS DAO Newsletter. He researches how surplus revenue generated from protocol fees can subsidize application layer development and other open source infrastructure.\n\n**Editors**\n\n**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Patron**\n\nThis unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!',
+    articleContent: '## Key Takeaways\n\n> * Token allowances refer to permissions granted to `smart contracts` to spend tokens from a wallet without further approval.\n>\n> * They can be exploited by malicious actors if the user is not aware permissions are in place.\n>\n> * Tools like Revoke.cash allow users to easily inspect and revoke token allowances.\n\n## Introduction\n\nDeFi grants users control over their assets, including their `private keys`, offering unprecedented sovereignty and authority over their funds. However, with great power comes greater responsibility, requiring users to take full charge of the safety and management of their assets.\n\nThere are four common categories of scams that DeFi users should be aware of:\n\n* **Seed Phrase Compromise:** Attackers attempt to deceive users into revealing their seed phrases, which would give them unauthorized access to funds. With your seed phrase, an attacker can drain all your funds and continue doing so if you deposit additional funds into the wallet. Unfortunately, there is no way to recover from this situation, and the only solution is to create a completely new wallet with a new `seed phrase`.\n\n* **Direct ETH Transfers:** Scammers can conceal ETH transfers by disguising them as a function call, such as “Security Update.” The raw signature method behind older versions of this scam has been removed from MetaMask; modern phishing kits instead abuse ordinary-looking signature requests, counting on you to sign without reading what your wallet displays. Falling for this scam means you won’t be able to recover your funds, but you can still safely use your wallet for other transactions.\n\n* **NFT Marketplace Listings:** Be cautious of fake listings and malicious contracts that exploit the allowances you grant to marketplaces like OpenSea. Scammers may trick you into signing an `offchain` message that lists your approved `NFTs` for sale, with no actual token transaction taking place.\n\n* **Token Allowances:** Attackers may manipulate permissions to gain access to more funds than initially approved. “Approvals” are on-chain transactions that grant access to your tokens or NFTs. “Permits” offer the same access but only require a gasless offchain signature. Uniswap and most modern trading apps use this system (called Permit2). Permit signatures don’t appear as onchain approvals until they are used, and can carry expiration dates; Revoke.cash’s “Signatures” view lets you check and cancel them.\n\n  As smart contracts gain popularity, `token allowances` become necessary to enable trusted contracts to execute transactions without exposing private keys. Token allowances allow dApps to automatically move tokens in your wallet on your behalf. While this convenience boosts efficiency, it also exposes users to potential attack vectors through scams and unauthorized access.\n\nIn this article, we’ll discuss ‘Token Allowances’ and introduce a community tool built to help manage your permissions.\n\n## Token Allowances: Understanding, Managing, and Ensuring Safety\n\nToken allowances are permissions given in advance to smart contracts to spend tokens from a wallet. They serve a crucial role in facilitating transactions without requiring explicit permission every time for direct asset transfers from the wallet. When misused, however, token allowances can become an attack vector for the unsuspecting. To address this risk, it’s important that DeFi users exercise caution, educate themselves on the security landscape, and understand how token allowances actually work.\n\nThere are two steps involved when granting permissions to a third-party contract:\n\n1. Wallet connection: When connecting your wallet to a dApp, you simply share your wallet `address` with its front-end, letting it display your balances and activity. Connecting grants no onchain permissions by itself.\n\n2. Token approval: To transact with the dApp, you then approve its smart contract to move specific tokens on your behalf. This is the step that grants real spending power.\n\nBy proactively managing token allowances, users can ensure that no contract withdraws more than the initially specified amount from their wallet. Luckily, there are community tools built to help give DeFi users confidence and peace of mind.\n\n## Walkthrough: Using Revoke.cash\n\n[Revoke.cash](https://revoke.cash/) empowers users to easily manage their token allowances through a simple website that helps inspect and monitor allowances given to different dApps. Let’s walkthrough how you can use this powerful community tool to help you safeguard your assets and take back control of your wallet.\n\n**1\. Connect your wallet**:\n\nTo begin the process of revoking your token allowances, head to [Revoke.cash](http://revoke.cash/) and click on “Connect Wallet” located in the top-right corner. Alternatively, you can manually enter your wallet public address in the search bar. Once the loading is complete, you’ll see a list of all your token approvals on that network.\n\n![](/images/managing-token-allowances/image-f95ea594.png)\n\n**2\. Inspect your allowances**:\n\nOnce you have connected your wallet, you can inspect your existing approvals. You can sort, filter, or search for specific approvals based on the authorized spender address. Sorting by “Newest to Oldest” is particularly useful if you suspect a malicious approval recently. Use the sorting and filtering options provided to gain an overview of the token allowances you have granted. Allowances are granted per chain, so use the network selection to repeat the review on each network you use.\n\n![](/images/managing-token-allowances/image-f3b00f4a.png)\n\n**3\. Revoke undesired allowances:**\n\nOnce you identify the approvals you want to revoke, simply click the “Revoke” button next to each of them. Optionally, you can update the approval to a different amount by clicking the pencil icon next to the approved amount if you still require the approval in the future but wish to reduce your risk.\n\n![](/images/managing-token-allowances/image-138cb12e.png)\n\nIt might be in your best interest to revoke or adjust a token allowance if:\n\n1. A recently deployed smart contract is exploited and creates a vulnerability in a `decentralized exchange` you regularly use.\n\n   In April 2023, popular `DEX` SushiSwap suffered a similar exploit, when \~$3.5M was stolen from users. Affected users remained at risk if they hadn’t revoked their token allowance.\n\n2. A malicious governance proposal updates several contracts with the intent of draining users’ funds.\n\n   More than $2.5M in assets were compromised when Atlantis Loans, a `DeFi` protocol on a BNB chain, executed a governance proposal that targeted several contracts. Users who managed their approval limit mitigated the risk of their wallets being fully drained by the malicious proposal.\n\n## Don’t Forget Delegations\n\nSince Ethereum’s Pectra upgrade (May 2025), allowances aren’t the only permission worth reviewing. A newer wallet feature (EIP-7702) lets your wallet delegate to extra code, enabling conveniences like transaction batching, but also a new drainer trick: a single malicious signature can install “sweeper” code that instantly forwards anything you deposit to an attacker, without your seed phrase ever being exposed. In 2025, researchers at Wintermute found that over 97% of early wallet delegations pointed to identical sweeper code.\n\nRevoke.cash shows your active delegations under the “Delegations” tab, but because delegations are controlled by your wallet rather than by dApps, you revoke an unwanted delegation from inside your wallet itself. In MetaMask, open the account details and switch the account back to a standard account. If you never chose to upgrade to a smart account, treat any delegation you find as hostile.\n\n---\n\nIt’s time to strengthen our wallet defenses! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Managing Token Allowances’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n---\n\n## FAQ\n\n### When should I use Revoke.cash?\n\nUse Revoke.cash periodically, especially during periods when you are not actively using a dApp, particularly for NFT marketplaces. Limiting approvals lessens the risk of funds loss due to hacks, exploits, or phishing scams. By sorting your approvals to show the most recent, you can identify the suspicious approvals and revoke them promptly, mitigating further damage.\n\n### Does disconnecting my wallet protect me from approval exploits?\n\nDisconnecting your wallet from a dApp does not protect you from exploits, approvals or otherwise. The token approvals you previously granted remain active even after disconnecting, because they are stored onchain.\n\n### How can I avoid token allowance exploits and similar risks?\n\nA proactive approach to token allowances includes:\n\n* granting allowances only to trusted dApps.\n\n* periodically reviewing token allowances.\n\n* removing unnecessary or suspicious allowances.\n\n* checking for wallet delegations you don’t recognize.\n\n* staying informed about dApps’ security updates.\n\nConsider using third-party tools like the Revoke.cash [browser extension](https://revoke.cash) — it acts as a proactive measure against potential threats. The extension warns you if you are about to sign something potentially harmful, protecting you from phishing scams or other malicious activities.\n\n### Can I recover funds with Revoke.cash?\n\nUnfortunately, Revoke.cash cannot recover stolen funds. It serves as a preventive tool to reduce the likelihood of becoming a victim of approval exploits. However, revoking the approvals used to steal your funds can prevent further theft.\n\n### Why does my wallet keep getting drained each time I top it up?\n\nYour wallet may contain a “sweeper bot,” a script that watches a compromised wallet and rapidly transfers any new deposits out before you can act. One cause is a compromised seed phrase. In that case, revoking approvals won’t help; abandon the wallet and create a new one. But a malicious wallet delegation is an equally likely cause: sweeper code installed through a signature you were tricked into providing, without your seed phrase leaking. Check the “Delegations” tab on Revoke.cash. If you find a delegation you don’t recognize, revoke it from inside your wallet (e.g. via MetaMask’s account details). If there is no delegation and the draining continues, assume your seed phrase is compromised and move to a fresh wallet.\n\n---\n\n**Author**\n\n**[Marcus](https://twitter.com/estmcmxci)** publishes the ENS DAO Newsletter. He researches how surplus revenue generated from protocol fees can subsidize application layer development and other open source infrastructure.\n\n**Editors**\n\n**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Patron**\n\nThis unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!',
     imageLinks: [
       '/images/managing-token-allowances/image-f95ea594.png',
       '/images/managing-token-allowances/image-f3b00f4a.png',
@@ -3174,6 +3377,12 @@ const LESSONS: LessonType[] = [
             'low, good',
             'thin, large'
           ],
+          feedback: [
+            'Try again! A maximum price impact means the trade costs more, not less.',
+            'Correct! More liquidity means a smaller price impact, like a bigger pool of water changing less when someone jumps in.',
+            'Try again! Low liquidity increases price impact and makes trades more expensive.',
+            'Try again! Thin liquidity causes a large price impact, which is exactly what traders want to avoid.'
+          ],
           id: 'dex-aggregators-1'
         }
       },
@@ -3196,6 +3405,12 @@ const LESSONS: LessonType[] = [
             'The size of the trade and amount of liquidity available',
             'The amount of liquidity available and which token is chosen to trade'
           ],
+          feedback: [
+            'Try again! The DEX itself doesn’t matter. It’s the liquidity available in the pool that counts.',
+            'Try again! Neither the token nor the DEX brand determines price impact. Liquidity and trade size do.',
+            'Correct! Like a swimming pool, the size of the splash depends on how big the jumper is and how much water is in the pool.',
+            'Try again! Liquidity is one factor, but the other is the size of the trade, not the token chosen.'
+          ],
           id: 'dex-aggregators-2'
         }
       },
@@ -3213,10 +3428,16 @@ const LESSONS: LessonType[] = [
           question: 'Trade routing in DEX aggregators means:',
           rightAnswerNumber: 4,
           answers: [
-            'Trades are routed according to liquidity arrangements with specific DEXs',
+            'Trades are routed via special arrangements with specific DEXs',
             'Trades are always routed through multiple DEXs',
             'Trades are routed through a user’s favorite DEX only',
             'Trades can be routed through multiple DEXs and intermediary tokens'
+          ],
+          feedback: [
+            'Try again! Aggregators search all available DEXs algorithmically, not through special arrangements.',
+            'Try again! Aggregators split trades only when it gets a better result. A single DEX may sometimes offer the best route.',
+            'Try again! Sticking to one DEX would defeat the purpose. Aggregators search across many DEXs for the best price.',
+            'Correct! Algorithms search all possible paths, including extra “stops” through intermediary tokens, to find the cheapest trade route.'
           ],
           id: 'dex-aggregators-3'
         }
@@ -3246,6 +3467,12 @@ const LESSONS: LessonType[] = [
             'Account for gas cost in trade routing',
             'Token rebates on gas costs'
           ],
+          feedback: [
+            'Try again! Aggregators do simulate trades off-chain, including gas costs, to find the best route.',
+            'Correct! Network fees are set by the blockchain, not by DEXs. No one can simply ask for them to be lowered.',
+            'Try again! Advanced aggregators do include transaction fees in their trade route calculations.',
+            'Try again! Some aggregators do refund a portion of gas costs in their own token.'
+          ],
           id: 'dex-aggregators-4'
         }
       },
@@ -3265,6 +3492,10 @@ const LESSONS: LessonType[] = [
           answers: [
             'True',
             'False'
+          ],
+          feedback: [
+            'Correct! Meta-aggregators search through competing DEX aggregators and serve the best price quotes to users.',
+            'Try again! Searching across multiple DEX aggregators is exactly what meta-aggregators do.'
           ],
           id: 'dex-aggregators-5'
         }
@@ -3286,6 +3517,10 @@ const LESSONS: LessonType[] = [
             'low',
             'high'
           ],
+          feedback: [
+            'Correct! A low slippage tolerance limits how much value a sandwich attack can extract from your trade.',
+            'Try again! A high slippage tolerance lets sandwich attacks take more value from your trade.'
+          ],
           id: 'dex-aggregators-6'
         }
       },
@@ -3303,10 +3538,16 @@ const LESSONS: LessonType[] = [
           question: 'Many DEX aggregators offer which tool(s) to save their users money?',
           rightAnswerNumber: 4,
           answers: [
-            'Routing trades through aggregated liquidity from multiple DEXs to reduce price impact.',
+            'Routing trades through liquidity from multiple DEXs.',
             'OTC trades that fully protect against sandwich attacks.',
             'Account for gas cost when building the best trade routes.',
             'All of the above'
+          ],
+          feedback: [
+            'Try again! Aggregated liquidity reduces price impact, but it isn’t the only way aggregators save users money.',
+            'Try again! This is one way aggregators save users money, but it isn’t the only one.',
+            'Try again! This is one way aggregators save users money, but it isn’t the only one.',
+            'Correct! Aggregators combine liquidity, factor in gas costs, and can offer OTC trades, all to leave users with more value.'
           ],
           id: 'dex-aggregators-7'
         }
