@@ -1007,26 +1007,6 @@ const Lesson = ({
           pb={isSmallScreen ? '6' : 0}
           pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 0}
         >
-          {isFirstSlide && lesson.publicationStatus === 'deprecated' && (
-            <Box
-              display="flex"
-              alignItems="center"
-              gap="12px"
-              m="0 auto 16px"
-              maxW="800px"
-              p="12px 16px"
-              borderRadius="8px"
-              border="1px solid orange"
-              background="rgba(255, 165, 0, 0.1)"
-            >
-              <Warning size={28} color="orange" />
-              <Box>
-                {t(
-                  'This lesson is no longer maintained and is kept for historical reference. Some of its content may be outdated.'
-                )}
-              </Box>
-            </Box>
-          )}
           {slide.type === 'LEARN' && (
             <Box ref={slideRef}>
               {ReactHtmlParser(slide.content, { transform })}

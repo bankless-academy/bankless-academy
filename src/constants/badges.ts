@@ -6,9 +6,14 @@ const badgeIds = LESSONS.filter((lesson) => lesson.badgeId).map(
   (lesson) => lesson.badgeId
 )
 
-export const badgePublishedIds = LESSONS.filter((lesson) => lesson.badgeId && lesson.publicationStatus === 'publish').map(
-  (lesson) => lesson.badgeId
-)
+// deprecated lessons are unlisted but their badges still count for
+// explorers who earned them
+export const badgePublishedIds = LESSONS.filter(
+  (lesson) =>
+    lesson.badgeId &&
+    (lesson.publicationStatus === 'publish' ||
+      lesson.publicationStatus === 'deprecated')
+).map((lesson) => lesson.badgeId)
 
 export const MAX_BADGES = badgePublishedIds?.length
 

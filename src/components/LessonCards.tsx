@@ -172,8 +172,6 @@ const LessonCards = ({
             ? `Begin your crypto journey with these entry-level lessons.`
             : level === 'Level 1'
             ? `Level up your knowledge and abilities with more specific topics and quests.`
-            : level === 'Community Lessons'
-            ? `Get involved with our ecosystem partners.`
             : `Quick guides for getting your crypto journey started.`}
         </Heading>
       ) : null}
@@ -200,8 +198,6 @@ const LessonCards = ({
             />
           )
         })}
-        {/* HACK: Add fake empty card for community lessons */}
-        {level === 'Community Lessons' && <Box />}
       </SimpleGrid>
       {level === 'Essentials' && (
         <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />

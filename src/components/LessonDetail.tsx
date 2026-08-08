@@ -431,6 +431,21 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 >
                   {lesson.name}
                 </Text>
+                {lesson.publicationStatus === 'deprecated' && (
+                  <Box
+                    m="0 auto 16px"
+                    maxW="450px"
+                    p="12px 16px"
+                    borderRadius="8px"
+                    border="1px solid orange"
+                    background="rgba(255, 165, 0, 0.1)"
+                    textAlign="center"
+                  >
+                    {t(
+                      'This lesson is no longer maintained and is kept for historical reference. Some of its content may be outdated.'
+                    )}
+                  </Box>
+                )}
                 {/* <LanguageSwitch lesson={lesson} /> */}
                 <Box
                   display="flex"
