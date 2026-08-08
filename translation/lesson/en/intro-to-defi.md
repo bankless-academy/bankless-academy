@@ -64,10 +64,10 @@ By removing the middleman, you also remove any service fees, dues, and commissio
 
 How can you earn yield with crypto?
 
-- [ ] [A] Earning interest by depositing into a DeFi protocol
-- [ ] [B] Earning rewards by depositing into a DeFi protocol
-- [x] [C] Both A and B
-- [ ] [D] You can’t earn yield on crypto
+- [ ] Earning interest by depositing into a DeFi protocol
+- [ ] Earning rewards by depositing into a DeFi protocol
+- [x] Both of the above
+- [ ] You can’t earn yield on crypto
 
 # What You Can Do With DeFi
 

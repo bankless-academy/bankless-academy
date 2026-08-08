@@ -265,7 +265,7 @@ You might be wondering why these validators don’t just run off with your funds
 # Common Questions
 
 <details>
-  <summary>How was Ethereum created?,m,e70a5a72-9432-4033-896c-2ee3137dc68a</summary>
+  <summary>How was Ethereum created?</summary>
 
 Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through `decentralized` governance. This distribution of power strengthens the network’s founding vision of an open internet.
 
@@ -277,7 +277,7 @@ Your digital property on Ethereum can't be stolen directly. However, scammers ca
 
 </details>
 <details>
-  <summary>Is Ethereum widely used?,m,bb1ea7ca-85b1-4308-930b-b047f723f9f8</summary>
+  <summary>Is Ethereum widely used?</summary>
 
 Yes. Today, Ethereum's legality and adoption are so strong that [big businesses are investing in it](https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/). Businesses, such as [Sony](https://www.bankless.com/sony-introduces-soneium-its-ethereum-l2-network) and [Visa](https://caribbean.visa.com/about-visa/newsroom/press-releases/visa-network-to-settle-transactions-in-usd-coin-usdc.html), are even building on it.
 

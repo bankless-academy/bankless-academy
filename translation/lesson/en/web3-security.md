@@ -82,7 +82,7 @@ Healthy password usage and management is an important piece of everyday internet
 
 Passwords should be different for each and every web2 service used online. This includes services like email, centralized exchanges, and other service accounts. It’s problematic if someone manages to get the ID + password for one account, but it’s far worse if that combination unlocks all of your accounts!
 
-`Password manager` applications like 1password, LastPass, and BitWarden securely store and encrypt multiple passwords; they can even generate new high-security passwords and store them automatically. The user just has to remember a single master password. 
+`Password manager` applications like 1Password, Bitwarden, and KeePass securely store and encrypt multiple passwords; they can even generate new high-security passwords and store them automatically. The user just has to remember a single master password. 
 
 Do **not** store a web3 `seed phrase` in a password manager; it takes just one password breach to obtain all of your web3 assets and there is no one to recover your assets for you.
 
@@ -256,7 +256,7 @@ Contracts must be given explicit permission to spend tokens on Ethereum. The tok
 Web3 doesn’t have anyone in charge of protocols to report scammers to, but you can still take action:
 
 - Immediately move any funds still in the compromised wallet to a different wallet address, **make sure the new address has a different seed phrase.**
-- Review and revoke the token `allowances` you have given on your wallet with tools like [etherscan.io/tokenapprovalchecker](https://etherscan.io/tokenapprovalchecker). Note that revoking allowances will cost gas. OpenSea has a [support article](https://support.opensea.io/hc/en-us/articles/4416083190291-How-can-I-revoke-token-allowance-permissions-) walkthrough.
+- Review and revoke the token `allowances` you have given on your wallet with tools like [etherscan.io/tokenapprovalchecker](https://etherscan.io/tokenapprovalchecker), or [revoke.cash](https://revoke.cash) for multiple networks. Note that revoking allowances will cost gas. Revoke.cash has a [walkthrough guide](https://revoke.cash/learn/approvals/how-to-revoke-token-approvals).
 - Use a `hardware wallet` in the future.
 - Warn others by reporting the scam to the affected community.
 - Discuss the scam process with friends or trusted community members to see how you can protect yourself and others in the future.

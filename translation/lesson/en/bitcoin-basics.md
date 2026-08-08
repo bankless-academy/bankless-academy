@@ -109,7 +109,7 @@ Only these qualities can restore our ability to freely save and spend our money.
 
 # Enter Bitcoin
 
-`Satoshi Nakamoto` thought that money was too important to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.
+`Satoshi Nakamoto` thought that money was too important to be controlled by just a few people. They wanted to create a type of money that could be fair and reliable for everyone.
 
 Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
 
@@ -189,7 +189,7 @@ Email simplified sending letters by removing the need for a post office. In a si
 - ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
 - 📡 Access Bitcoin from anywhere with an internet connection.
 
-In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (we’ll show you how to customize this later!)
+In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4_
 
 You’ll manage your account using `cryptocurrency wallet` software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
 

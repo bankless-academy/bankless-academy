@@ -314,7 +314,7 @@ Notable names that score highly in these areas include Uniswap, Curve, Velodrome
 
 Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:
 
-👩‍💻 Always verify the link to a dApp by checking the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.
+👩‍💻 Always verify the link to a dApp by checking the official project X (Twitter) account (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.
 
 🔓 When prompted to grant on-chain `token allowances` to a smart contract, limit the allowance to your trade amount to prevent future access to your funds.
 

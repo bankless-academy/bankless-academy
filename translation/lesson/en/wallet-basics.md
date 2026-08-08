@@ -114,7 +114,7 @@ It is perfectly safe to share your wallet’s **public key**.
 
 If the public key is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
 
-Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092a4c72b53e69cf74d215_
 
 **It’s never safe to share this key — you could lose your wallet and everything in it.**
 

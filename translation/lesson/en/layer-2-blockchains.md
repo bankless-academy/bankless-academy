@@ -136,7 +136,7 @@ With Optimistic Rollups, transactions are considered valid until proven otherwis
 
 The major upside to ZK Rollups is the `settlement time`, also known as `transaction finality`. Rather than a multi-day settlement period, ZK Rollups enable users to access their funds in under an hour. User privacy is also improved because only the mathematical proof is stored on Mainnet.
 
-There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including zkSync, StarkNet, and Aztec. It’s still early in terms of development, but has great future potential.
+There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including ZKsync, Starknet, and Aztec. It’s still early in terms of development, but has great future potential.
 
 ![](https://app.banklessacademy.com/images/layer-2-blockchains/zk-rollups-9d65de85.svg)
 

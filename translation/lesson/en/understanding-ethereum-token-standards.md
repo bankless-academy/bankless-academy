@@ -156,7 +156,7 @@ Example: Ethereum Name Service (ENS) holders can vote in proposals to update the
 
 **3\. Stablecoin:** Designed to maintain a stable value, usually equal to the U.S. dollar.
 
-Examples: Tether (USDT), USDCoin (USDC), DAI (DAI).
+Examples: Tether (USDT), USD Coin (USDC), DAI (DAI).
 
 **4\. Security token:** Represents ownership in an underlying asset, like stocks of a company.
 
@@ -178,7 +178,7 @@ What are some use cases of ERC-721 tokens?
 
 **2\. Subscriptions and memberships:** Creators, artists, clubs, and companies are already using NFTs for subscriptions, event tickets, and memberships. The provable uniqueness of NFTs ensures that each of the fixed supply is tied to an individual user.
 
-**3\. Loyalty rewards:** Starbucks launched a loyalty program called Odyssey where its members can complete quests to obtain NFTs that they can redeem for digital and real-world rewards. Many other brands are offering NFTs as a loyalty reward that users can choose to redeem or sell whenever they want.
+**3\. Loyalty rewards:** Starbucks ran a loyalty program called Odyssey until March 2024, where its members could complete quests to obtain NFTs that they could redeem for digital and real-world rewards. Many other brands are offering NFTs as a loyalty reward that users can choose to redeem or sell whenever they want.
 
 **4\. Identity and Certifications:** ERC-721 tokens can be used to create tamper-proof identities and certifications. When your digital identity or certificates are ERC-721 tokens, it is easy for you to prove your ownership and nearly impossible for anyone to forge your documents and misuse them.
 

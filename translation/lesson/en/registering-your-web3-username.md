@@ -40,7 +40,7 @@ ________________________________________________________________________________
 
 Imagine having a single username for the entire internet. One account for your entire online presence — an account that you own and plug into other apps across the internet. This username would serve as your digital personality, allowing you to be recognized across the internet, making you a unique, memorable member of the online community.
 
-Projects like the [Ethereum Name Service (ENS)](https://ens.domains) are building this single username reality, leveraging the powers of cryptocurrency wallets. Using ENS, your `custodial wallet` address can be transformed into a personalized address of your choosing, with a `.eth` extension.
+Projects like the [Ethereum Name Service (ENS)](https://ens.domains) are building this single username reality, leveraging the powers of cryptocurrency wallets. Using ENS, your `non-custodial wallet` address can be transformed into a personalized address of your choosing, with a `.eth` extension.
 
 *0xB00e26E79352882391604E24b371A3F3c8658e8c* → *web3explorer.eth*
 
@@ -58,7 +58,7 @@ And this is just the beginning.
 >
 > *— Jefflau.eth, Core Developer at ENS Labs*
 
-By linking your wallet address to a unique .eth username, you’ve actually created a web3 personality with the ownership powers of a custodial wallet. ENS names can support wallets across multiple networks. One universal name is now linked to your digital property across blockchains, your blockchain history, and more. This includes any special credentials you may have unlocked — **like your Bankless Academy badges.**
+By linking your wallet address to a unique .eth username, you’ve actually created a web3 personality with the ownership powers of a non-custodial wallet. ENS names can support wallets across multiple networks. One universal name is now linked to your digital property across blockchains, your blockchain history, and more. This includes any special credentials you may have unlocked — **like your Bankless Academy badges.**
 
 ![](https://app.banklessacademy.com/images/registering-your-web3-username/image-c55c7950.png)
 
@@ -72,7 +72,7 @@ Picture ENS as **your onchain passport**. A physical passport contains your name
 
 Here’s the key difference: You own and control all aspects of this onchain passport.
 
-ENS names are represented as NFT tokens (`ERC-721` tokens) on the Ethereum blockchain, which are owned by and managed through your custodial wallet — **just like cryptocurrency.** In web3, you can truly own your online identity and carry it with you around the internet. Your account — its data, content, followers etc. — can’t be erased by the platforms you use. We’re moving beyond the control of YouTube, Instagram, and the other web2 giants managing the internet community.
+ENS names are represented as NFT tokens (`ERC-721` tokens) on the Ethereum blockchain, which are owned by and managed through your non-custodial wallet — **just like cryptocurrency.** In web3, you can truly own your online identity and carry it with you around the internet. Your account — its data, content, followers etc. — can’t be erased by the platforms you use. We’re moving beyond the control of YouTube, Instagram, and the other web2 giants managing the internet community.
 
 ![](https://app.banklessacademy.com/images/registering-your-web3-username/image-073b8d76.png)
 
@@ -86,7 +86,7 @@ Another example is Farcaster, a decentralized social network. Instead of requiri
 
 It's time to become an onchain citizen and shape our decentralized future. It’s time to register your ENS name. We'll guide you through the process, helping you to unlock its key features, including assigning your profile picture for visibility across numerous onchain apps like Bankless Academy.
 
-The process is very similar to registering a .com website address on a platform like GoDaddy or Google Domains. It’s as simple as choosing a unique name and submitting two blockchain transactions.
+The process is very similar to registering a .com website address on a platform like GoDaddy or Namecheap. It’s as simple as choosing a unique name and submitting two blockchain transactions.
 
 ## Prerequisites
 
@@ -132,7 +132,7 @@ This first transaction prevents others from `front-running` your registration pr
 
 ![](https://app.banklessacademy.com/images/registering-your-web3-username/image-a8bece69.png)
 
-![](https://images.mirror-media.xyz/publication-images/Gz4ZTiKop-ncbvPL3yjXz.png?height=1127&width=1440)
+![](https://app.banklessacademy.com/images/registering-your-web3-username/ens-first-transaction-confirmation.png)
 
 **7\. Wait for the timer to finish.**
 
@@ -200,13 +200,13 @@ This doesn’t include transaction `gas fees` for interacting with the Ethereum 
 
 Absolutely! Your ENS name can either map several wallet addresses to a single ENS name, like 'yourname.eth', or you can sort your addresses into separate subnames to identify the type of cryptocurrency associated with each, like 'ethereum.yourname.eth' or 'bitcoin.yourname.eth'.
 
-You can set up either option using the [ENS Manager App](https://ens.app). For more details, [refer to this guide for step-by-step instructions](https://support.ens.domains/en/articles/7900302-ens-use-cases)
+You can set up either option using the [ENS Manager App](https://app.ens.domains). For more details, [refer to this guide for step-by-step instructions](https://support.ens.domains/en/articles/7900302-ens-use-cases)
 
 ### Can I use my existing website address as my ENS name?
 
 Yes, if you own a website like [web3explorer.com](http://web3explorer.com), you can use this instead of web3explorer.eth. This is thanks to infrastructure co-built by ENS and GoDaddy.
 
-To learn more, check out ENS Labs’ [blog post](https://blog.ens.domains/post/godaddy-partners-with-ens).
+To learn more, check out ENS Labs’ [blog post](https://ens.domains/blog/post/godaddy-partners-with-ens).
 
 ---
 

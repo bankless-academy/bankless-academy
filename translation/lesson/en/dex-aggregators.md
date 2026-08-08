@@ -82,7 +82,7 @@ Thus, any trade has a larger `price impact` than when Uniswap held most of the e
 
 Which two factors determine the price impact of a DEX trade?
 
-- [ ] The choice of  DEX is used to make the trade and size of the trade
+- [ ] The choice of DEX used to make the trade and size of the trade
 - [ ] Which token is chosen to trade and which DEX is used to make the trade
 - [x] The size of the trade and amount of liquidity available
 - [ ] The amount of liquidity available and which token is chosen to trade
@@ -108,7 +108,7 @@ Trade routing in DEX aggregators means:
 
 Let’s refresh how gas is calculated before we go on to see how the optimizations DEX aggregators make can reduce network fees for users.
 
-Just like gas for a car, `gas` is the fuel for running blockchain code on Ethereum. The farther you travel, the more gas your car uses. Likewise, the more computations you do, the more gas your code requires. Gas price is measured in very small amounts of Ether called `gwei`, like cents to a dollar. 1 gwei is 1 billionth of an ether (1 gwei = 0.00000001 ETH). 
+Just like gas for a car, `gas` is the fuel for running blockchain code on Ethereum. The farther you travel, the more gas your car uses. Likewise, the more computations you do, the more gas your code requires. Gas price is measured in very small amounts of Ether called `gwei`, like cents to a dollar. 1 gwei is 1 billionth of an ether (1 gwei = 0.000000001 ETH). 
 
 Total gas cost is based on how much gas your transaction uses and the unit price of gas at the time of use. The formula for calculating the price of a transaction is as follows:
 _Amount of gas used * Gas price = Total gas cost_

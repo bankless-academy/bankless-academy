@@ -102,7 +102,7 @@ Not only are transactions included on a `blockchain` ledger unchangeable, they a
 
 This shared data is what makes the blockchain ledger `decentralized`. No single authority or entity controls the data. Blockchains like Ethereum are also `public` because the ledger can be viewed by anyone. 
 
-We will see specifics of how new data is added and how we ensure everyone has a copy of the same data all the time in our upcoming Blockchain Theory lesson. For this lesson, just remember that the ledger data is shared by every computer running on the Ethereum network.
+For this lesson, just remember that the ledger data is shared by every computer running on the Ethereum network.
 
 # Knowledge Check 3
 

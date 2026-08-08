@@ -90,7 +90,7 @@ It might be in your best interest to revoke or adjust a token allowance if:
 
 1. A recently deployed smart contract is exploited and creates a vulnerability in a `decentralized exchange` you regularly use.
 
-   Earlier this year, popular `DEX` SushiSwap suffered a similar exploit, when \~$3.5M was stolen from users. Affected users remained at risk if they hadn’t revoked their token allowance.
+   In April 2023, popular `DEX` SushiSwap suffered a similar exploit, when \~$3.5M was stolen from users. Affected users remained at risk if they hadn’t revoked their token allowance.
 
 2. A malicious governance proposal updates several contracts with the intent of draining users’ funds.
 
@@ -126,7 +126,7 @@ A proactive approach to token allowances includes:
 
 * staying informed about dApps’ security updates.
 
-Consider using third-party tools like the Revoke.cash [browser extension](https://revoke.cash/extension) — it acts as a proactive measure against potential threats. The extension warns you if you are about to sign something potentially harmful, protecting you from phishing scams or other malicious activities.
+Consider using third-party tools like the Revoke.cash [browser extension](https://revoke.cash) — it acts as a proactive measure against potential threats. The extension warns you if you are about to sign something potentially harmful, protecting you from phishing scams or other malicious activities.
 
 ### Can I recover funds with Revoke.cash?
 

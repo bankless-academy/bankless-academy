@@ -102,7 +102,7 @@ Once you’re happy with your swap quote and settings, you can begin the swap. T
 
 **9\. Check your balance:**
 
-Your transaction should take around 40 seconds to confirm, after which you will see your new token balance in your wallet. If your token type is not displayed, make sure you’ve imported the token addresses.
+Your transaction should take a few seconds to confirm, after which you will see your new token balance in your wallet. If your token type is not displayed, make sure you’ve imported the token addresses.
 
 *Optimism token contract address: 0x4200000000000000000000000000000000000042*
 
@@ -130,7 +130,7 @@ Price quotes are typically calculated at the time you enter your desired swap in
 
 ### How long does it take for a token swap to execute?
 
-The answer depends on a variety of factors, primarily the block speed of the blockchain and how much you underpay or overpay the gas fee. DEX transactions submitted to Ethereum Mainnet typically take between 15 seconds and a couple of minutes to be confirmed. Layer 2 transactions are usually faster!
+The answer depends on a variety of factors, primarily the block speed of the blockchain and how much you underpay or overpay the gas fee. DEX transactions submitted to Ethereum Mainnet typically take between 12 seconds and a couple of minutes to be confirmed. Layer 2 transactions are usually faster!
 
 ### Why did my transaction fail?
 
@@ -144,7 +144,7 @@ Granting token permissions to a smart contract can leave our wallet vulnerable t
 
 If your token isn’t listed by default, you’ll have to paste the token contract address into the list. To find the token contract address, check <https://www.coingecko.com/> or the official project website.
 
-**Note:** Token addresses can change for a given token on different networks. For example the [USDC contract on Mainnet](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) is different than the [USDC contract on Optimism](https://optimistic.etherscan.io/token/0x7f5c764cbc14f9669b88837ca1490cca17c31607). Always verify token addresses before swapping!
+**Note:** Token addresses can change for a given token on different networks. For example the [USDC contract on Mainnet](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) is different than the [USDC contract on Optimism](https://optimistic.etherscan.io/token/0x0b2c639c533813f4aa9d7837caf62653d097ff85). Always verify token addresses before swapping!
 
 ---
 
