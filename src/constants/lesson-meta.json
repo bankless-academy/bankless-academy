@@ -1,0 +1,2585 @@
+{
+  "bitcoin-basics": {
+    "badgeImageLink": "/images/bitcoin-basics/badge-89138e57.png",
+    "lessonImageLink": "/images/bitcoin-basics/lesson-cb12b11e.png",
+    "lessonCollectedImageLink": "/images/bitcoin-basics/datadisk-collected-15700488.png",
+    "lessonCollectibleGif": "/images/bitcoin-basics/datadisk-gif-ba7bb13b.gif",
+    "lessonCollectibleVideo": "/images/bitcoin-basics/datadisk-video-c4e04385.webm",
+    "lessonCollectibleMintID": "65e62382de00ef68ee5d7454",
+    "lessonCollectibleTokenAddress": "0x92B55D5254bC93A4f282224A9C3bD2b7e0eF37fc",
+    "socialImageLink": "/images/bitcoin-basics/social-e4b40d40.jpg",
+    "learningActions": "",
+    "marketingDescription": "What is Bitcoin? Explore the first successful cryptocurrency and rethink money.",
+    "badgeId": 12,
+    "datadiskVectorMint": 124,
+    "collectibleId": "D002",
+    "duration": 15,
+    "learnings": "",
+    "description": "What is Bitcoin? Explore the first successful cryptocurrency and rethink money.",
+    "name": "Bitcoin Basics",
+    "languages": [
+      "br",
+      "cn",
+      "es",
+      "fr",
+      "tr",
+      "ua"
+    ],
+    "level": "Essentials",
+    "lessonWriters": "Tetranome",
+    "quest": "BitcoinBasics",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-03-07",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "hasCollectible": true,
+    "notionId": "6a440f5dd00a4179811178943bf89e1d",
+    "englishName": "Bitcoin Basics",
+    "slug": "bitcoin-basics",
+    "imageLinks": [
+      "/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png",
+      "/images/bitcoin-basics/bitcoins-story-98b007a5.png",
+      "/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg",
+      "/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg",
+      "/images/bitcoin-basics/enter-bitcoin-b108517c.svg",
+      "/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg",
+      "/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg",
+      "/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg",
+      "/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg",
+      "/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg",
+      "/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png"
+    ],
+    "keywords": [
+      "cryptocurrency",
+      "satoshi nakamoto",
+      "scarcity",
+      "gold standard",
+      "central banks",
+      "monetary policy",
+      "commercial banks",
+      "custodian",
+      "btc",
+      "peer-to-peer",
+      "blockchain technology",
+      "scarce",
+      "self-custodial",
+      "max supply",
+      "cryptocurrency mining",
+      "circulating supply",
+      "self-custody",
+      "custodians",
+      "cryptocurrency wallet",
+      "decentralization",
+      "decentralized",
+      "miners",
+      "blockchain",
+      "central bank",
+      "decentralized money",
+      "equality of opportunity"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "be804c6aecad43af911a5b34026fe79a"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "e1ba1d31d16b4430afa774522ff13fb2"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "30cb635e7580485793f2935d39b1f007"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "eecfb3374fc640c980096e5ed654c70c",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "71abd63b1fa8418e96ad038bbc51cb34"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "459a1518417540c99dc0a0f68ac9cef5"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "e1f43554c7964a0ea655c2b299d42844"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8462f7e2e0694a82a0e6dc126c81b907"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "626fb6d4b2b047db837057cfbb3992e0",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "52422fece4f34f158bfea69822ee1815"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "f8d8e8d58e984f1097f0b17a6d805df8",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "2e71f5c2c4364496bf982a6d093fc5f5"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "4fbf3369fdda41cfacc47b91a55cb428",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "77a68343994b4aad9aa1c99f35961204"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8a1ec1c7e35649bb9b26e4a1c1ce5fe1"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9062ca20dd5541a6ae3a25f5831ee4e2"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "66a30c6163b1406da931e7b62ba76222",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "59609434869c42b99a54a538d8faa2d5",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "e2a5684df9734013afdc8e42a1bb494c"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9920715e06094e39bf34a5a63891a909"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "ethereum-basics": {
+    "badgeImageLink": "/images/ethereum-basics/badge-3baf577f.png",
+    "lessonImageLink": "/images/ethereum-basics/lesson-69c1f3d5.png",
+    "socialImageLink": "/images/ethereum-basics/social-307d7f60.jpg",
+    "learningActions": "",
+    "marketingDescription": "What is Ethereum? Unlock the “new internet” and your digital freedom.",
+    "badgeId": 14,
+    "duration": 15,
+    "learnings": "",
+    "description": "What is Ethereum? Unlock the “new internet” and your digital freedom.",
+    "name": "Ethereum Basics",
+    "languages": [
+      "fr"
+    ],
+    "level": "Essentials",
+    "lessonWriters": "Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-09-10",
+    "featuredOrderOnHomepage": 1,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "notionId": "2a957f2be160403ebdd7c89a4f0fa01d",
+    "englishName": "Ethereum Basics",
+    "slug": "ethereum-basics",
+    "imageLinks": [
+      "/images/ethereum-basics/ethereum-basics-b2e09ce5.png",
+      "/images/ethereum-basics/a-global-town-square-fcb47024.svg",
+      "/images/ethereum-basics/centralized-services-adf5be05.svg",
+      "/images/ethereum-basics/one-sided-trades-8d68270f.svg",
+      "/images/ethereum-basics/an-open-internet-31819e5b.svg",
+      "/images/ethereum-basics/peer-to-peer-trades-f043c3c0.svg",
+      "/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg",
+      "/images/ethereum-basics/a-global-banking-system-5a241dfc.svg",
+      "/images/ethereum-basics/how-it-works-08c71cad.svg",
+      "/images/ethereum-basics/joining-the-movement-44086b0b.png"
+    ],
+    "keywords": [
+      "apps",
+      "app store",
+      "cryptocurrency",
+      "fiat",
+      "centralized services",
+      "intermediaries",
+      "value-extractive",
+      "peer",
+      "intermediary",
+      "peer-to-peer",
+      "ethereum blockchain",
+      "crypto wallet",
+      "dapps",
+      "decentralized",
+      "dapp",
+      "crypto",
+      "onchain",
+      "eth",
+      "validator nodes",
+      "ether",
+      "centralized exchange",
+      "value-extraction",
+      "value-creation"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "020b00dc30e4460583a7fe08be2bbd15"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "4fc7e20ce1964eb59bcc420eabf565be"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9dc478de7dd64901a3c0b38cf67f500b"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "e4260ebbeda44a4596fb1d1d73e3375b"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "f01c3458feb644e1a4850a233dd9e4ab",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "4f1d06ddc7e34a839ce93eb065df9da9"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "1016c615bacc4cc6aa8b3e13746db366"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "7d1e5e16e9c04f44a60d705eb6ad7701",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8c42e105a4224552bd29aa64c2842047"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "1b86dffae9cc4577929e0107a0a2f30b"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b148c5eff8a24e6fbe27c9423305c698"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "e06f37809a984334a46b55126b01e060",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8b317a82a13047f0972d6d6ed44e347c"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "befa989e445846e0bd0ac488740154fb"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "7e8729f592ad4836a1d7c1fd5b6f560d",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "260be70be7dd44c7ae2edbe322a33aae"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c112d4f50c8c488f88950a3e732f6148"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "e7766b4ed5d94c05962984e11ad62bc1"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "04662fd3b840472ab6c20aec0dab7a12"
+      },
+      {
+        "type": "POLL",
+        "notionId": "9fffc9eec113419cab34b9919fa9a5cc",
+        "title": "📊 Poll"
+      }
+    ]
+  },
+  "creating-a-crypto-wallet": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/creating-a-crypto-wallet/lesson-6b7566f5.png",
+    "socialImageLink": "/images/creating-a-crypto-wallet/social-45c701eb.png",
+    "learningActions": "",
+    "marketingDescription": "Set up your first crypto wallet with our step-by-step walkthrough.",
+    "badgeId": null,
+    "collectibleId": "H008",
+    "duration": 5,
+    "learnings": "",
+    "description": "Set up your first crypto wallet with our step-by-step walkthrough.",
+    "name": "Creating a Crypto Wallet",
+    "languages": [
+      "br",
+      "cn",
+      "es",
+      "fr",
+      "it",
+      "tr",
+      "ua"
+    ],
+    "level": "Essentials",
+    "lessonWriters": "Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-03-20",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/Mznhl0ZMjw-5KdjB2o8GJ9ylRPLN-Loeihfevk7J6gU",
+    "mirrorNFTAddress": "0x8C21eABd632B41f840690C56D9dda70C9FD6E55e",
+    "areMirrorNFTAllCollected": false,
+    "sponsorName": "Zerion",
+    "sponsorLogo": "/images/creating-a-crypto-wallet/sponsor-f64ba262.png",
+    "isArticle": true,
+    "notionId": "5f63090deb2b4800b699442a04e08314",
+    "englishName": "Creating a Crypto Wallet",
+    "slug": "creating-a-crypto-wallet",
+    "imageLinks": [],
+    "keywords": [
+      "crypto wallet",
+      "blockchain",
+      "cryptocurrency",
+      "wallet app",
+      "public key",
+      "private key",
+      "cryptography",
+      "encryption"
+    ]
+  },
+  "wallet-basics": {
+    "badgeImageLink": "/images/wallet-basics/badge-d89b2df3.png",
+    "lessonImageLink": "/images/wallet-basics/lesson-5aa84b59.png",
+    "socialImageLink": "/images/wallet-basics/social-c3ee6a4c.jpg",
+    "learningActions": "Create and manage your own wallet\nConnect your wallet to a web3 website",
+    "marketingDescription": "A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.",
+    "badgeId": 1,
+    "duration": 15,
+    "learnings": "",
+    "difficulty": "Easy",
+    "description": "What is a crypto wallet? Learn more and create your “Ethereum account” today!",
+    "name": "Wallet Basics",
+    "languages": [
+      "br",
+      "cn",
+      "es",
+      "fr",
+      "it",
+      "tr",
+      "ua"
+    ],
+    "level": "Essentials",
+    "lessonWriters": "Ap0ll0517, Jordy, Tetranome",
+    "quest": "WalletBasics",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-03-20",
+    "featuredOrderOnHomepage": 2,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "sponsorName": "Zerion",
+    "sponsorLogo": "/images/wallet-basics/sponsor-5c941aef.png",
+    "notionId": "c2e79569863a4f5bbfdc9e86be5ae64f",
+    "englishName": "Wallet Basics",
+    "slug": "wallet-basics",
+    "imageLinks": [
+      "/images/wallet-basics/wallet-intro-b6d4487a.png",
+      "/images/wallet-basics/wallet-definition-d2912914.svg",
+      "/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg",
+      "/images/wallet-basics/your-wallets-public-key-87828c3e.svg",
+      "/images/wallet-basics/your-wallets-private-key-0d84ad39.svg",
+      "/images/wallet-basics/recovery-phrase-c614c36c.svg",
+      "/images/wallet-basics/types-of-wallet-094f0eb1.png",
+      "/images/wallet-basics/custodial-wallets-4eede755.svg",
+      "/images/wallet-basics/non-custodial-wallet-833c3d6b.svg",
+      "/images/wallet-basics/hot-wallets-9356886d.svg",
+      "/images/wallet-basics/cold-wallets-0e3183d1.svg",
+      "/images/wallet-basics/wallet-security-3a185d90.png",
+      "/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg"
+    ],
+    "keywords": [
+      "web2",
+      "web3",
+      "cryptocurrency",
+      "blockchain apps",
+      "blockchain",
+      "wallet app",
+      "public key",
+      "private key",
+      "wallet",
+      "recovery phrase",
+      "self-custody wallet",
+      "custodial wallet",
+      "hot wallet",
+      "cold wallets",
+      "hot wallets",
+      "self-custody"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "96133dee20584842a4b297d2946f6eae"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "f6b567bdfb59479cbacf047dbb1a9878"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9e07253ff3334fb59f20fdda4a2e03c6"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "c28d3aa7e8b34f7a944645eab08ba3ad",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "fdd6285759b04ebbaf5d87ef05a02725"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "fc8b92080fd14c938e419ca401e15634"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "5f1d4d9b65f740c4af2dc65510c417ef"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "28e8eeb6ea36443faba81c65d049e874",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "7d74c06b71154434bc5f11673a26c5c6"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "aca3c7b9435445d292815700f9b24e4c",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "4764dfa090134af4b6d237b6c2986ce1"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "15cb2a53c3ce4b2abb7d7b293accc50b"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "e8953595b16e4482a4ad5e76b4421dd5",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "6ea36d21aff4480d806b93acba0677bf"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "a87cd8104504449e8fe7859b7a55853e",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "146c8f827b874b029a48a1155331b552"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "29050c8f640248eb84149dd09b119301"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "d969a34bf65647b492f20ef28c97f22d",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c4161519db714ac4871c66ba56549c25"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "4074ea94f6f647379d6981bae7969b68",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "0e8457196b6a40578ba16a783590dab6"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "087e6162d56d4d06a72d0449b15abd7d",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "blockchain-basics": {
+    "badgeImageLink": "/images/blockchain-basics/badge-e715f0fc.png",
+    "lessonImageLink": "/images/blockchain-basics/lesson-1c75f4be.png",
+    "socialImageLink": "/images/blockchain-basics/social-21c13a4a.jpg",
+    "learningActions": "",
+    "marketingDescription": "Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.",
+    "badgeId": 3,
+    "duration": 15,
+    "learnings": "",
+    "difficulty": "Easy",
+    "description": "Learn about the fundamental architecture of blockchain technology.",
+    "name": "Blockchain Basics",
+    "languages": [
+      "de",
+      "es",
+      "fr"
+    ],
+    "level": "Essentials",
+    "lessonWriters": "iSpeakNerd",
+    "quest": "BlockchainBasics",
+    "publicationStatus": "publish",
+    "publicationDate": "2022-06-30",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "notionId": "1887f283a1b846008bcbd7fa1736bf49",
+    "englishName": "Blockchain Basics",
+    "slug": "blockchain-basics",
+    "imageLinks": [
+      "/images/blockchain-basics/introduction-1e34f31e.svg",
+      "/images/blockchain-basics/blockchain-structure-1c9a9ed4.svg",
+      "/images/blockchain-basics/examining-the-ledger-838ca24f.svg",
+      "/images/blockchain-basics/transactions-on-the-ledger-6b86493d.svg",
+      "/images/blockchain-basics/block-anatomy-5c22845b.svg",
+      "/images/blockchain-basics/inside-a-block-b0c2dd11.svg",
+      "/images/blockchain-basics/individual-transactions-de83e15c.svg",
+      "/images/blockchain-basics/user-addresses-57e130d9.svg"
+    ],
+    "keywords": [
+      "blockchain",
+      "ledger",
+      "block explorer",
+      "blocks",
+      "transactions",
+      "addresses",
+      "public",
+      "address",
+      "node",
+      "decentralized",
+      "block hash",
+      "block",
+      "digital signature",
+      "smart contracts",
+      "transaction hash",
+      "private key",
+      "public key"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "1e3f909f907141c1af09d29e910fdbdf"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "6b25ee1411ef46c49ef878c5953ae079"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "dea57bbfc2494226b459d86fc87b46b9",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "e79c9ceb9f33424385e5427015461275"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "719560cd2fc048e282250b23be846443"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "c9136a9caf6f4c5aacc85fac90725cae",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "821afba1083a4e8aa2ed0d88e5a0e335"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "4a9d8f07650a4711a1d477298c8ed0cc",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9b35ad0ec12f4b8b91bb55b8bd95817d"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "a64c7bd22dad465d858a458e637f13a2",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "450fd9484ede4536b12c064b6efcebc8"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "c8eb8024363341b89a56a3b106d63d85",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b4a57b943b714c72afdc919b3b73a947"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "61840623d81245cdac32c81e208cc37c",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9ab48a4f7b4b47c7bcaa3af14a21bf69"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "df8eff6a23fe48a0b60ac92124e3ddb2",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "web3-security": {
+    "badgeImageLink": "/images/web3-security/badge-699013d5.png",
+    "lessonImageLink": "/images/web3-security/lesson-947e450d.png",
+    "socialImageLink": "/images/web3-security/social-c3497283.jpg",
+    "learningActions": "Avoid the scams in web3 and keep your assets safe.",
+    "marketingDescription": "Protect yourself and your wallet from the most common scams in web3.",
+    "badgeId": 5,
+    "duration": 15,
+    "learnings": "",
+    "difficulty": "Easy",
+    "description": "Protect yourself and your wallet from the most common scams in web3.",
+    "name": "Web3 Security",
+    "languages": [
+      "fr",
+      "ua"
+    ],
+    "level": "Essentials",
+    "tags": [
+      "Security"
+    ],
+    "quest": "Web3Security",
+    "publicationStatus": "publish",
+    "publicationDate": "2022-07-29",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "notionId": "519c86d503954a629a2035eb1b401628",
+    "englishName": "Web3 Security",
+    "slug": "web3-security",
+    "imageLinks": [
+      "/images/web3-security/money-in-web2-7e1a5fd1.svg",
+      "/images/web3-security/money-in-web3-f575b0f6.svg",
+      "/images/web3-security/two-factor-authentication-7fa9bfdf.svg",
+      "/images/web3-security/social-engineering-scams-73c69132.svg",
+      "/images/web3-security/social-media-safety-a76a39f4.svg",
+      "/images/web3-security/social-media-best-practices-48ad350f.svg",
+      "/images/web3-security/scam-tokens-761d5f63.svg",
+      "/images/web3-security/hardware-wallets-22a096d4.svg",
+      "/images/web3-security/wallet-strategies-2b743061.svg"
+    ],
+    "keywords": [
+      "web3",
+      "centralized exchange",
+      "seed phrase",
+      "private keys",
+      "password manager",
+      "two factor authentication",
+      "password managers",
+      "social engineering",
+      "phishing",
+      "fomo",
+      "red flags",
+      "scam-tokens",
+      "hardware wallet",
+      "wallets",
+      "hot wallet",
+      "hodl",
+      "2fa",
+      "allowance",
+      "allowances"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "08d72b0e6d8244cfbeef69c042791936"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "d4fe1d65fdf244feb67846d6c7f385d9"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "545e9e774eb24c6f9a045b856dd9490a"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "04726706edaf48c4a232f30b7bcd95ca",
+        "title": "✅ quiz"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "56bb5f6cb8ba4b5e8da7dc1821c2ae1e"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "7be1ee4b401a487f8a0e23e8ba1d1f2e"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "8c7e79fea4484fef915ba9c100e3f1d0",
+        "title": "✅ quiz"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "3944e76cc9f14e9bb0e45f8a135ceb01"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "2f0f524e5c6c489db675c2420cb5df24",
+        "title": "✅ quiz"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "99d8745f48194765927c1f5719083771"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "f5751ef8dc3d44099efb83a8c587a15a"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "65f3e534d9bd4dad96049307d210af06",
+        "title": "✅ quiz"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "3ba4ffe0ce7649649cd3ad768b857449"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "7126cf46eb4d499da75db201458a04a9"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "ed9bce57432f473982482dbd98e33ae5"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "311f5ebd0a414a2b8f1f627691f4cfdc"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "b08a84ce7f04456aa3e472606b855648",
+        "title": "✅ quiz"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c01a9870f18c437483ede3c209b06064"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "0c0c40b078d443a5b1ba0d2aefc7e65f",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "1d5edee94a824d729f90878f4346a548"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "71cc17a7d8664e70afd5ff1f108c1d4e",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "f2c958c42a36433ab935c70a2d072e1f"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "f87bb8a18f764190a9be5e2e763a5607"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "layer-1-blockchains": {
+    "badgeImageLink": "/images/layer-1-blockchains/badge-53d2b389.png",
+    "lessonImageLink": "/images/layer-1-blockchains/lesson-c945beaa.png",
+    "socialImageLink": "/images/layer-1-blockchains/social-36173b14.jpg",
+    "learningActions": "",
+    "marketingDescription": "Understand how Layer 1 blockchains work - and learn their limitations!",
+    "badgeId": 7,
+    "duration": 15,
+    "learnings": "",
+    "description": "Understand how Layer 1 blockchains work - and learn their limitations!",
+    "name": "Layer 1 Blockchains",
+    "languages": [],
+    "level": "Level 1",
+    "lessonWriters": "iSpeakNerd",
+    "quest": "Layer1Blockchains",
+    "publicationStatus": "publish",
+    "publicationDate": "2022-12-14",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "notionId": "7aeb05250dbc4d55a474fb817ff089d8",
+    "englishName": "Layer 1 Blockchains",
+    "slug": "layer-1-blockchains",
+    "imageLinks": [
+      "/images/layer-1-blockchains/introduction-feee7790.svg",
+      "/images/layer-1-blockchains/blockchain-trilemma-9bd1b1e4.svg",
+      "/images/layer-1-blockchains/security-and-consensus-4e857c50.svg",
+      "/images/layer-1-blockchains/security-and-attacks-a73febc0.svg",
+      "/images/layer-1-blockchains/scalability-throughput-d36672c5.svg",
+      "/images/layer-1-blockchains/scalability-finality-73177220.svg",
+      "/images/layer-1-blockchains/decentralization-distributes-power-feafb05a.svg",
+      "/images/layer-1-blockchains/is-it-decentralized-9cd381fb.svg",
+      "/images/layer-1-blockchains/some-examples-30020a8d.svg",
+      "/images/layer-1-blockchains/so-what-can-be-done-043c43fb.svg",
+      "/images/layer-1-blockchains/the-future-of-ethereum-1f05c338.svg"
+    ],
+    "keywords": [
+      "blockchain",
+      "blockspace",
+      "blockchain trilemma",
+      "security",
+      "scalability",
+      "decentralization",
+      "consensus",
+      "proof of work",
+      "block reward",
+      "51% attack",
+      "stake",
+      "proof of stake",
+      "block",
+      "transaction throughput",
+      "tps",
+      "block space",
+      "finality",
+      "permissionless",
+      "censorship-resistant",
+      "ledger",
+      "finality time",
+      "smart contracts",
+      "alternative layer 1",
+      "layer 2",
+      "sharding"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "ffd0f4706fe84588b17130293d5df33f"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "2933158cd04448dbab8d9d0ba7a97ce8"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "6881d9f6b2ab40aea5ac74b5a4956559",
+        "title": "✅ TODO"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "bbb0dabe345e44b090e2fe87a5e30cc1"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "4582b0e22520444a85d8fc1668575e5c",
+        "title": "✅ Consensus"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "21c7f132000f4d7d8fa4bd5d80e1374b"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "a0c08d3d1ce34356852e3ef0b7e8a38d",
+        "title": "✅ 51% attacks"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b48ad9f24cf64fec938f939f3f99e118"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "5510ec0e6e8740ca9a8abbd882066b0c",
+        "title": "✅ Transactions Per Second"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b53a3a02eae94e99a877ec31812d09f5"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "bbdce38d6f824d9aa0bb921f60a3a0e5"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "655bb01b00294875867c3b8cacf654b3",
+        "title": "✅ Why decentralization?"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "02ce0a483cf74c818e7178e42f62c61a"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "aeb2bd652b5e4cc88613d8323425ef10",
+        "title": "✅ But is it Decentralized?"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "2e6f523d8a05406986b7be9b0d6647e5"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9381df55e11a40d182dbe4272d6fc5e0"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "85eea665d8de47e0b27e9d99d00020f8",
+        "title": "✅ Layer 2s"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "80c59f6cba234479aaab8b3ef94dbcac"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "5279c579e15e4a9fae2aa66a1a50f523",
+        "title": "✅ Ethereum Future"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "ec0d0d5198e143879f7b4ac3bd1c7a74"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "layer-2-blockchains": {
+    "badgeImageLink": "/images/layer-2-blockchains/badge-4336366c.png",
+    "lessonImageLink": "/images/layer-2-blockchains/lesson-473d7974.png",
+    "lessonCollectedImageLink": "/images/layer-2-blockchains/datadisk-collected-3073d815.png",
+    "lessonCollectibleGif": "/images/layer-2-blockchains/datadisk-gif-2a93bd15.gif",
+    "lessonCollectibleVideo": "/images/layer-2-blockchains/datadisk-video-bfdfdef9.webm",
+    "lessonCollectibleMintID": "64b810dda23ab034b49a1340",
+    "lessonCollectibleTokenAddress": "0x5ce61b80931Ea67565f0532965DDe5be2d41331d",
+    "socialImageLink": "/images/layer-2-blockchains/social-d2363565.jpg",
+    "learningActions": "",
+    "marketingDescription": "The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.",
+    "badgeId": 8,
+    "datadiskVectorMint": 123,
+    "collectibleId": "D001",
+    "duration": 15,
+    "learnings": "",
+    "description": "Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.",
+    "name": "Layer 2 Blockchains",
+    "languages": [],
+    "level": "Level 1",
+    "tags": [
+      "Optimism"
+    ],
+    "lessonWriters": "HiroKennelly, Tetranome",
+    "quest": "Layer2Blockchains",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-02-22",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "sponsorName": "Optimism",
+    "sponsorLogo": "/images/layer-2-blockchains/sponsor-e17c33fc.png",
+    "hasCollectible": true,
+    "notionId": "5308fd17fcdb461b937bbc8717917ea2",
+    "englishName": "Layer 2 Blockchains",
+    "slug": "layer-2-blockchains",
+    "imageLinks": [
+      "/images/layer-2-blockchains/introduction-c1f2c88f.svg",
+      "/images/layer-2-blockchains/payment-channels-31677af9.svg",
+      "/images/layer-2-blockchains/bridging-layer-1-and-layer-2-c219a748.svg",
+      "/images/layer-2-blockchains/sidechains-464f0191.svg",
+      "/images/layer-2-blockchains/rollups-308dc6c9.svg",
+      "/images/layer-2-blockchains/optimistic-rollups-846aad61.svg",
+      "/images/layer-2-blockchains/zk-rollups-9d65de85.svg",
+      "/images/layer-2-blockchains/cross-chain-dapp-compatibility-8a372647.svg",
+      "/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism-or-base--54a0f80a.svg"
+    ],
+    "keywords": [
+      "blockchain trilemma",
+      "payment channels",
+      "smart contract",
+      "scalability",
+      "security",
+      "decentralization",
+      "gas",
+      "dapps",
+      "ledgers",
+      "bridges",
+      "l1",
+      "sidechain",
+      "bridge",
+      "optimistic rollups",
+      "zk rollups",
+      "fraud proof",
+      "settlement time",
+      "transaction finality",
+      "ethereum virtual machine",
+      "sidechains",
+      "rollups",
+      "zero-knowledge"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "0143a0be1b15443abf30d91bafb9f5cd"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "26a2591e6a8a4481afc39156d828c9a7"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "f160a4c558db4165a604915b0fcfa0f2",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8b3c3d53ff85422bb046dbd9d9babcf2"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "afaf7811b1ca47daa52316c6b4816f18",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "125052ee19a149ef87a37ca41fae236e"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "6873415e4cce4efa8c2ca83d9779c385"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "ff79af059f9d49f4a74a4b0c4635e558",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "e09a6e2fc9fc4f60aef2e3f6671c1c22"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8ff690da2f2e4a45877b1c00df18bb5b"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "e5e6e3c66842487aa0c7ad0014dfa893",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "1f0986b36f304ea79035b2f9c6a7fc52"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "2594cf6d735f43f0a092f0eb25e7bc47",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "236d6e4ed8264dc5af08c7b88434bf92"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "e77e5c9faacc4b4cbb884c4ae595bcc1",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "ae3457f983c9455e9534798226d5bda6"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "166635f09eb1405b8b226734b89116d0"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "funding-a-wallet-on-layer-2": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/funding-a-wallet-on-layer-2/lesson-dcf41ef6.png",
+    "socialImageLink": "/images/funding-a-wallet-on-layer-2/social-4bb4ca84.png",
+    "learningActions": "",
+    "marketingDescription": "Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.",
+    "badgeId": null,
+    "collectibleId": "H001",
+    "duration": 5,
+    "learnings": "",
+    "description": "Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.",
+    "name": "Funding a Wallet on Layer 2",
+    "languages": [],
+    "level": "Level 1",
+    "tags": [
+      "Optimism"
+    ],
+    "lessonWriters": "HiroKennelly",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-02-22",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/zLajMWXQC44H4uQOXK5j9ROZhuC3xwgoddLtAQQo0k0",
+    "mirrorNFTAddress": "0x235f3dfe5106f137d8b137c1b7fa115076e8b476",
+    "areMirrorNFTAllCollected": true,
+    "sponsorName": "Optimism",
+    "sponsorLogo": "/images/funding-a-wallet-on-layer-2/sponsor-6ad00b37.png",
+    "isArticle": true,
+    "notionId": "111a71126d5a4092b79a7c6981e05270",
+    "englishName": "Funding a Wallet on Layer 2",
+    "slug": "funding-a-wallet-on-layer-2",
+    "imageLinks": [
+      "/images/funding-a-wallet-on-layer-2/image-06c6d84b.png",
+      "/images/funding-a-wallet-on-layer-2/image-11e1d7f9.png",
+      "/images/funding-a-wallet-on-layer-2/image-c8d4dd72.png",
+      "/images/funding-a-wallet-on-layer-2/image-9598ee73.png",
+      "/images/funding-a-wallet-on-layer-2/image-4f0d6a11.png",
+      "/images/funding-a-wallet-on-layer-2/image-386958ca.png",
+      "/images/funding-a-wallet-on-layer-2/image-fe6487dc.png",
+      "/images/funding-a-wallet-on-layer-2/image-138ee98b.png",
+      "/images/funding-a-wallet-on-layer-2/image-99952ff9.png",
+      "/images/funding-a-wallet-on-layer-2/image-0f4e1bde.png",
+      "/images/funding-a-wallet-on-layer-2/image-659f509f.png",
+      "/images/funding-a-wallet-on-layer-2/image-8d84ca0b.png"
+    ],
+    "keywords": [
+      "Layer 2",
+      "block",
+      "gwei",
+      "liquidity",
+      "decentralized exchange",
+      "wallet",
+      "centralized exchange",
+      "address",
+      "non-custodial wallet",
+      "blockchain",
+      "coin",
+      "liquidity pools"
+    ]
+  },
+  "registering-your-web3-username": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/registering-your-web3-username/lesson-817f2737.png",
+    "socialImageLink": "/images/registering-your-web3-username/social-8ce7fa9d.png",
+    "learningActions": "",
+    "marketingDescription": "Customize your wallet address with ENS, start building your digital identity.",
+    "badgeId": null,
+    "collectibleId": "H009",
+    "duration": 5,
+    "learnings": "",
+    "description": "Customize your wallet address with ENS, start building your digital identity.",
+    "name": "Registering Your Web3 Username",
+    "languages": [],
+    "level": "Level 1",
+    "tags": [
+      "ENS"
+    ],
+    "lessonWriters": "estmcmxci, Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-04-08",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/2C31DMdOv4dGL1-bkM3nXn8pjc8X9jTGiTVRhMoPizE",
+    "mirrorNFTAddress": "0xd94ecc2f45d7346975f2437c789b3e2e32c397ca",
+    "areMirrorNFTAllCollected": false,
+    "isArticle": true,
+    "notionId": "d862b38d9f104039b84a67c4f51399dd",
+    "englishName": "Registering Your Web3 Username",
+    "slug": "registering-your-web3-username",
+    "imageLinks": [
+      "/images/registering-your-web3-username/image-c7baff43.png",
+      "/images/registering-your-web3-username/image-c55c7950.png",
+      "/images/registering-your-web3-username/image-7086002e.png",
+      "/images/registering-your-web3-username/image-073b8d76.png",
+      "/images/registering-your-web3-username/image-09c3d858.png",
+      "/images/registering-your-web3-username/image-2297867c.png",
+      "/images/registering-your-web3-username/image-4d71d393.png",
+      "/images/registering-your-web3-username/image-0e183437.png",
+      "/images/registering-your-web3-username/image-91795816.png",
+      "/images/registering-your-web3-username/image-d312b342.png",
+      "/images/registering-your-web3-username/image-a8bece69.png",
+      "/images/registering-your-web3-username/image-0f779c34.png",
+      "/images/registering-your-web3-username/image-b83971f6.png",
+      "/images/registering-your-web3-username/image-ea2d6d2a.png"
+    ],
+    "keywords": [
+      "cryptocurrency",
+      "onchain identity",
+      "cryptocurrency wallet",
+      "custodial wallet",
+      ".eth",
+      "smart contract",
+      "web2",
+      "yourname.eth",
+      "onchain",
+      "offchain",
+      "ERC-721",
+      "primary name",
+      "front-running",
+      "standard records",
+      "gas fees",
+      "custom records"
+    ]
+  },
+  "intro-to-defi": {
+    "badgeImageLink": "/images/intro-to-defi/badge-b4dab2d4.png",
+    "lessonImageLink": "/images/intro-to-defi/lesson-97291c9d.png",
+    "socialImageLink": "/images/intro-to-defi/social-ee8d95a4.jpg",
+    "learningActions": "Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later",
+    "marketingDescription": "Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.",
+    "badgeId": 2,
+    "duration": 10,
+    "learnings": "",
+    "difficulty": "Easy",
+    "description": "Understand the basics of decentralized finance.",
+    "name": "Intro to DeFi",
+    "languages": [],
+    "level": "Level 1",
+    "tags": [
+      "DeFi"
+    ],
+    "lessonWriters": "Ap0ll0",
+    "quest": "IntroToDeFi",
+    "publicationStatus": "publish",
+    "publicationDate": "2022-02-11",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "notionId": "409cd6ada1bd4ba7aa30f86239c98753",
+    "englishName": "Intro to DeFi",
+    "slug": "intro-to-defi",
+    "imageLinks": [
+      "/images/intro-to-defi/defi-defined-759c5922.svg",
+      "/images/intro-to-defi/earning-yield-bc952747.svg",
+      "/images/intro-to-defi/what-you-can-do-with-defi-e1e865b5.svg",
+      "/images/intro-to-defi/investing-7c8b44ed.svg",
+      "/images/intro-to-defi/trading-67935721.svg",
+      "/images/intro-to-defi/lending-borrowing-b7d58dfa.svg",
+      "/images/intro-to-defi/staking-8dbafcb8.svg",
+      "/images/intro-to-defi/defi-downsides-da1fdb68.svg",
+      "/images/intro-to-defi/defi-downsides-d533aeef.svg",
+      "/images/intro-to-defi/defi-downsides-0070f0e1.svg"
+    ],
+    "keywords": [
+      "decentralized",
+      "blockchain",
+      "defi",
+      "permissionless",
+      "dapps",
+      "liquidity pools",
+      "wallets",
+      "peer-to-peer"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "a83bc134efdc45d99f84ea134bd73f05"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "cced9d9d29ca4c6bb30b299e0752f9f5"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "38047b3853c042e7a533087ba0f144cb",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "fd76b66007fd453495cb9b74ebd729ed"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "3a3c104d035b47deaa096f522d99a610",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b6bca63d7f73486eacb60d6123cb2876"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "889ab319653d48ba9e926cd52cefa4c8",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "5a2d7fb95b7248d38a6bf1fd4053fe45"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "262ad86832024af0ad8c4551b90bfe3e",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "80542f305eba491a9708c26e3c589208"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "cd076f09d9cb49d8a4aea8ab8aa83a34"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "57033e0ecc71486bb00d00537b13a7a6",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "2c2ea5e9dd49405a9281d06303b3d709"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "7b23f53bcb0b452b8a57ae31dbbe0e04",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "a2fd7286556c442e9ba63aecd83a2f0a"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "f866ee130ec84dfe8aa2b2d17b70d14e",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b58bcae51ef24191a284b20a65a1081a"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "2e8d46830695493d8d03ac75a6c7e67d",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "understanding-stablecoins": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/understanding-stablecoins/lesson-dcf41ef6.png",
+    "socialImageLink": "/images/understanding-stablecoins/social-32059ac7.png",
+    "learningActions": "",
+    "marketingDescription": "Use dollars, euros, and more on the blockchain.",
+    "badgeId": null,
+    "collectibleId": "H003",
+    "duration": 5,
+    "learnings": "",
+    "description": "Use dollars, euros, and more on the blockchain.",
+    "name": "Understanding Stablecoins",
+    "languages": [],
+    "level": "Level 1",
+    "lessonWriters": "Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-08-16",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/qc15y-_wur6as8ZRuPOwzpuvZ7NNV7EF2cI3Yb6Jy1w",
+    "mirrorNFTAddress": "0x58da595fec45ca61cc68883869885e378caf0231",
+    "areMirrorNFTAllCollected": false,
+    "sponsorName": "Glo Dollar",
+    "sponsorLogo": "/images/understanding-stablecoins/sponsor-d3df6afb.png",
+    "isArticle": true,
+    "notionId": "1181627a73fb463a814043d53f44559e",
+    "englishName": "Understanding Stablecoins",
+    "slug": "understanding-stablecoins",
+    "imageLinks": [
+      "/images/understanding-stablecoins/image-0c080b13.png",
+      "/images/understanding-stablecoins/image-573e657a.png",
+      "/images/understanding-stablecoins/image-4f6e4c7f.png"
+    ],
+    "keywords": [
+      "ERC-20",
+      "peg",
+      "smart contracts",
+      "non-custodial wallets",
+      "Counterparty Risk",
+      "market cap"
+    ]
+  },
+  "decentralized-exchanges": {
+    "badgeImageLink": "/images/decentralized-exchanges/badge-bbe90ffe.png",
+    "lessonImageLink": "/images/decentralized-exchanges/lesson-17a45657.png",
+    "socialImageLink": "/images/decentralized-exchanges/social-f7845e3f.jpg",
+    "learningActions": "",
+    "marketingDescription": "DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.",
+    "badgeId": 9,
+    "duration": 15,
+    "learnings": "",
+    "description": "Discover how smart-contract exchanges enable permissionless token swaps!",
+    "name": "Decentralized Exchanges",
+    "languages": [],
+    "level": "Level 1",
+    "lessonWriters": "Tetranome",
+    "quest": "DecentralizedExchanges",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-06-22",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "sponsorName": "Velodrome",
+    "sponsorLogo": "/images/decentralized-exchanges/sponsor-2982259a.png",
+    "nftGating": "https://opensea.io/assets/matic/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6/15463",
+    "nftGatingRequirements": "Complete and claim your ‘Layer 2 Blockchains’ lesson badge first.",
+    "nftGatingImageLink": "/images/decentralized-exchanges/nft-2d2147b0.png",
+    "nftGatingLink": "https://app.banklessacademy.com/lessons/layer-2-blockchains",
+    "nftGatingCTA": "View Lesson",
+    "notionId": "41209248612042d2b279261ee60e3a66",
+    "englishName": "Decentralized Exchanges",
+    "slug": "decentralized-exchanges",
+    "imageLinks": [
+      "/images/decentralized-exchanges/what-is-a-decentralized-exchange-7eed6afb.svg",
+      "/images/decentralized-exchanges/centralized-and-decentralized-exchanges-f6f6324c.svg",
+      "/images/decentralized-exchanges/decentralized-applications-99447b26.svg",
+      "/images/decentralized-exchanges/decentralized-applications-continued-728cfade.svg",
+      "/images/decentralized-exchanges/automated-market-makers-78ad7439.svg",
+      "/images/decentralized-exchanges/token-swaps-41ceb8e1.svg",
+      "/images/decentralized-exchanges/token-swaps-continued-bad45a9b.svg",
+      "/images/decentralized-exchanges/what-is-liquidity-a88af170.svg",
+      "/images/decentralized-exchanges/liquidity-providers-4f46eebb.svg",
+      "/images/decentralized-exchanges/dex-best-practices-62cbc83b.svg"
+    ],
+    "keywords": [
+      "liquidity pools",
+      "defi",
+      "cexs",
+      "dexs",
+      "dapp",
+      "liquidity",
+      "dapps",
+      "amm",
+      "token swaps",
+      "trade route",
+      "token pair",
+      "token allowances",
+      "liquidity pool",
+      "price impact",
+      "lp",
+      "slippage",
+      "kyc",
+      "sandwich attacks",
+      "tvl"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "6ed40b9725024a57800c91229c3826f6"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "0ac18b1bb72840f2ad144e1ef7e84b7d"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "41802b1b9f7d4b7aa6f33341369fed76",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "5ee6556050014f1797cb863b3fe99d41"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "4927e55652c3476a9dca1e39329c0887"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "1e7748d105bb4374a8dab96e40481502",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "abef1f4a718a483d9d45b38cc7d6c3c1"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "7ff7469e00154f15ac6d0f149a378590",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "33632c90e3b74bd7a4309b9ad3ea5643"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "7d48626abaf74a2ba362a3093c7888b5"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "086408da71d64987bea8e712a03db00a",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9af40685c4e8494d9a2cba27f103d6fd"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "498a9f4d407b416c84b16152aa350bcf"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "b93c97acd19847aaaa7867734bade95a",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "5a390d00dff4454e948ba9e54c569ae4",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "f76ae7add46f44518f4368f4f6814830"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9c61a52109294180b8135a6c3da255c5"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "5c02e781464d4be884b95bcb1170080e"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "c630efe1a4c14ffa995b6edbd9a1fe94",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8a161e97222a49c98cd73197535ac711"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "786352ac183a48e78eb74519e0b87117"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "0eae7cec3bd140f79b75dbfbff51d7b9",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "swapping-on-a-decentralized-exchange": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/swapping-on-a-decentralized-exchange/lesson-7ca41657.png",
+    "socialImageLink": "/images/swapping-on-a-decentralized-exchange/social-523f352a.png",
+    "learningActions": "",
+    "marketingDescription": "Begin your journey into DeFi with this Decentralized Exchange walkthrough.",
+    "badgeId": null,
+    "collectibleId": "H002",
+    "duration": 5,
+    "learnings": "",
+    "description": "Begin your journey into DeFi with this Decentralized Exchange walkthrough.",
+    "name": "Swapping on a Decentralized Exchange",
+    "languages": [],
+    "level": "Level 1",
+    "tags": [
+      "DeFi"
+    ],
+    "lessonWriters": "Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-06-22",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/g6Z7yuteSaJmhxVeVWwKtcZ2zttC33_9Enw23MbxKyk",
+    "mirrorNFTAddress": "0xdedebfc6893d5e7e87db8a1a88667d2bb746c231",
+    "areMirrorNFTAllCollected": false,
+    "sponsorName": "Velodrome",
+    "sponsorLogo": "/images/swapping-on-a-decentralized-exchange/sponsor-a48cb5ef.png",
+    "isArticle": true,
+    "notionId": "fe0ab896f8d74031bedf683510261b05",
+    "englishName": "Swapping on a Decentralized Exchange",
+    "slug": "swapping-on-a-decentralized-exchange",
+    "imageLinks": [
+      "/images/swapping-on-a-decentralized-exchange/image-a5b39b1d.png",
+      "/images/swapping-on-a-decentralized-exchange/image-1d7c44d3.png",
+      "/images/swapping-on-a-decentralized-exchange/image-6ecdef56.png",
+      "/images/swapping-on-a-decentralized-exchange/image-e3f7c7e8.png",
+      "/images/swapping-on-a-decentralized-exchange/image-8d15c6f6.png",
+      "/images/swapping-on-a-decentralized-exchange/image-7b117655.png",
+      "/images/swapping-on-a-decentralized-exchange/image-89f87156.png",
+      "/images/swapping-on-a-decentralized-exchange/image-c8b8abcc.png",
+      "/images/swapping-on-a-decentralized-exchange/image-bcfdf0ee.png"
+    ],
+    "keywords": [
+      "Decentralized Finance"
+    ]
+  },
+  "staking-on-ethereum": {
+    "badgeImageLink": "/images/staking-on-ethereum/badge-2714ad22.png",
+    "lessonImageLink": "/images/staking-on-ethereum/lesson-0274132a.png",
+    "socialImageLink": "/images/staking-on-ethereum/social-11fcfa74.jpg",
+    "learningActions": "",
+    "marketingDescription": "Become a guardian of Ethereum: Secure the network, earn Ether rewards.",
+    "badgeId": 11,
+    "duration": 15,
+    "learnings": "",
+    "description": "Become a guardian of Ethereum: Secure the network, earn Ether rewards.",
+    "name": "Staking on Ethereum",
+    "languages": [],
+    "level": "Level 1",
+    "lessonWriters": "Tetranome",
+    "quest": "StakingOnEthereum",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-02-21",
+    "featuredOrderOnHomepage": 3,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "sponsorName": "Rocket Pool",
+    "sponsorLogo": "/images/staking-on-ethereum/sponsor-3c0f08c6.png",
+    "notionId": "e90059604739465ea99b9a2c8af5eb75",
+    "englishName": "Staking on Ethereum",
+    "slug": "staking-on-ethereum",
+    "imageLinks": [
+      "/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png",
+      "/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png",
+      "/images/staking-on-ethereum/blockchain-security-7f2149fe.svg",
+      "/images/staking-on-ethereum/proof-of-stake-49c358ed.svg",
+      "/images/staking-on-ethereum/slashing-ccabe137.svg",
+      "/images/staking-on-ethereum/ethernomics-33407ddc.svg",
+      "/images/staking-on-ethereum/types-of-staking-part-2-9de268fd.svg",
+      "/images/staking-on-ethereum/types-of-staking-part-2-96f11caf.svg",
+      "/images/staking-on-ethereum/types-of-staking-part-2-27091ef5.svg",
+      "/images/staking-on-ethereum/network-centralization-0622ba07.svg",
+      "/images/staking-on-ethereum/staking-pools-46c96251.svg",
+      "/images/staking-on-ethereum/network-centralization-again-43bfd55b.svg",
+      "/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-a5172608.svg"
+    ],
+    "keywords": [
+      "staking",
+      "mining",
+      "decentralized",
+      "smart contract",
+      "validator node",
+      "staker",
+      "validator nodes",
+      "fraud",
+      "credible neutrality",
+      "consensus",
+      "node operator",
+      "consensus mechanism",
+      "stake",
+      "slashed",
+      "proof-of-stake",
+      "blocks",
+      "block builders",
+      "block proposer",
+      "attestation",
+      "block reward",
+      "private keys",
+      "self-custody",
+      "staking pools",
+      "smart contracts",
+      "staking providers",
+      "tokens",
+      "lsts",
+      "liquid",
+      "restaking",
+      "decentralized exchange",
+      "staking pool",
+      "liquid staking token"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "f6e6503183354fcdbc74fb3dd303f626"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c53e50f57c1c4cf299aeb9971d739b6d"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "fcf9351332874288b5a7bf2b5b9f6d12"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "9a6352929e6e494ab3b165039598794c",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8c558399c3624e3bbc8bea263dd62324"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b103503df12146dd9852717fc17bb02a"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "3e7bf2b7a80b4d58adb59c9fe47fb7af",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b9fbae598d8f489a8cdacb40144815de"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "802bd3e3ac71461fa38ab668e9873b00",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "5ac23eb478224f14a8dda33b59a2bf43"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "7e977dd7c1544b2db6810289a13d2947"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "20dbf51d28cc48c48868ddbba29b34ac"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "1bdf5971c3c94e5ca3323c7af00fed38"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "e9cad4dd12fa472ba02b101739921dd7",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "561e1079d9874ee3976977a90426bb5d"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "3222f2f41d574a28ba4ce99dc7ecbce2",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "2664f39b79d2408a9b3de46c76cac42c"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "4942d5247e6b41899c4f1bf1e6b66a31"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "4abc237a56fb4c1c863c0190b17b52f3",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "a0934d6558514f63bff55fa3207a871a"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "staking-ether": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/staking-ether/lesson-c9e39d73.png",
+    "socialImageLink": "/images/staking-ether/social-040aeea7.png",
+    "learningActions": "",
+    "marketingDescription": "Generate yield on your Ether by protecting Ethereum.",
+    "badgeId": null,
+    "collectibleId": "H007",
+    "duration": 5,
+    "learnings": "",
+    "description": "Generate yield on your Ether by protecting Ethereum.",
+    "name": "Staking Ether",
+    "languages": [],
+    "level": "Level 1",
+    "lessonWriters": "Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-02-21",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/rnxCnDuopoauSu61vG-ldteB7sw5WfAeurWmcGN5pps",
+    "mirrorNFTAddress": "0xe2dd5eb9841920937833c094874ba33d26becb4f",
+    "areMirrorNFTAllCollected": false,
+    "sponsorName": "Rocket Pool",
+    "sponsorLogo": "/images/staking-ether/sponsor-c94516e2.png",
+    "isArticle": true,
+    "notionId": "fef542e5e6a8431b95081ba714c551cc",
+    "englishName": "Staking Ether",
+    "slug": "staking-ether",
+    "imageLinks": [
+      "/images/staking-ether/image-80cf7889.png",
+      "/images/staking-ether/image-255e1bf8.png",
+      "/images/staking-ether/image-8d944152.png",
+      "/images/staking-ether/image-5d667f3c.png"
+    ],
+    "keywords": [
+      "validator node",
+      "token",
+      "consensus mechanism",
+      "decentralized",
+      "smart contract",
+      "staking pools",
+      "liquid staking tokens",
+      "mint",
+      "decentralized exchange",
+      "layer 2",
+      "Solo Staking",
+      "validator client",
+      "Staking Pools",
+      "Centralized Exchange Staking",
+      "decentralization",
+      "node operators",
+      "solo staker",
+      "staking pool"
+    ]
+  },
+  "managing-token-allowances": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/managing-token-allowances/lesson-dcf41ef6.png",
+    "socialImageLink": "/images/managing-token-allowances/social-6f251351.png",
+    "learningActions": "",
+    "marketingDescription": "Protect your wallet from unwanted smart contract interactions.",
+    "badgeId": null,
+    "collectibleId": "H004",
+    "duration": 5,
+    "learnings": "",
+    "description": "Protect your wallet from unwanted smart contract interactions.",
+    "name": "Managing Token Allowances",
+    "languages": [],
+    "level": "Level 1",
+    "tags": [
+      "Security"
+    ],
+    "lessonWriters": "estmcmxci, Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-08-30",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/25cFAg4NR8wImRBa4hsYM8cHrzdD5oGa27EYbwRIw2U",
+    "mirrorNFTAddress": "0x0ae1cfd5f84bde987b255e822463a17705ad9ba9",
+    "areMirrorNFTAllCollected": false,
+    "sponsorName": "Revoke.cash",
+    "sponsorLogo": "/images/managing-token-allowances/sponsor-20e8598f.png",
+    "isArticle": true,
+    "notionId": "7e849598acb245fea60fca7162b937c3",
+    "englishName": "Managing Token Allowances",
+    "slug": "managing-token-allowances",
+    "imageLinks": [
+      "/images/managing-token-allowances/image-f95ea594.png",
+      "/images/managing-token-allowances/image-f3b00f4a.png",
+      "/images/managing-token-allowances/image-138cb12e.png"
+    ],
+    "keywords": [
+      "smart contracts",
+      "private keys",
+      "seed phrase",
+      "offchain",
+      "NFTs",
+      "token allowances",
+      "public key",
+      "decentralized exchange",
+      "DEX",
+      "DeFi"
+    ]
+  },
+  "dex-aggregators": {
+    "badgeImageLink": "/images/dex-aggregators/badge-70fa5c0e.png",
+    "lessonImageLink": "/images/dex-aggregators/lesson-cfab26b7.png",
+    "socialImageLink": "/images/dex-aggregators/social-8eedc35a.jpg",
+    "learningActions": "",
+    "marketingDescription": "Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.",
+    "badgeId": 6,
+    "duration": 15,
+    "learnings": "",
+    "description": "Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.",
+    "name": "DEX Aggregators",
+    "languages": [],
+    "level": "Level 1",
+    "lessonWriters": "iSpeakNerd",
+    "quest": "DEXAggregators",
+    "publicationStatus": "publish",
+    "publicationDate": "2022-10-13",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "sponsorName": "1inch",
+    "sponsorLogo": "/images/dex-aggregators/sponsor-dc2a05af.svg",
+    "notionId": "48b3a9d48fe34d5593c125d5811b1273",
+    "englishName": "DEX Aggregators",
+    "slug": "dex-aggregators",
+    "imageLinks": [
+      "/images/dex-aggregators/introduction-1f25c90b.svg",
+      "/images/dex-aggregators/an-example-of-how-liquidity-impacts-prices-24eb7dd7.svg",
+      "/images/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-384b90b6.svg",
+      "/images/dex-aggregators/recombining-liquidity-with-dex-aggregators-c12c49a1.svg",
+      "/images/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c7d692cd.svg",
+      "/images/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-aea20eff.svg",
+      "/images/dex-aggregators/meta-aggregators-7609a2ce.svg",
+      "/images/dex-aggregators/avoiding-sandwich-attacks-d4114147.svg",
+      "/images/dex-aggregators/more-protection-from-sandwiches-otc-trades-3da1b5df.svg"
+    ],
+    "keywords": [
+      "decentralized exchanges",
+      "dex aggregators",
+      "swap",
+      "liquidity",
+      "price impact",
+      "intermediary token",
+      "trade route",
+      "gas",
+      "gwei",
+      "trade routes",
+      "dapp",
+      "meta-aggregator",
+      "dexs",
+      "slippage tolerance",
+      "sandwich attacks",
+      "otc",
+      "over the counter",
+      "liquidity pools"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "33abf72cd0994182bbaac36125da3788"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c81a4b2290d84ac28917f44a266ace23"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "137fbe05adb943f99cafdfd6bd2ef057"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "e24b2cfca49f40468c373d4a3f0347ee",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "4922a47975374caeba12fcbe32e9def9"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "05a725c789fb423e85536358b0f724ce",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c8766682ea9d4d44bdb04dac10c9dfb6"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "79f6a27daa9d428a91366ea4932338fd",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "7d25338ca0b546d29710dd957a80ca45"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "1bc1fa133e754e48ac16ce4d858011fc"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "0c869bfcb0f14f70a197753de548bc99",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "be3c24ff77a143c5a091f5dc7f8c8f7b"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "cb73faf4adf34a0194b99dde75f11939",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "8c67c8032ffd4b4da795711d16845856"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "478990740cb14d7094308c60bed96833",
+        "title": "✅ Question"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "d8992c13da474896a0aa9846b298a7f1"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "d33b2d65a645400da530ee2fb114b79e",
+        "title": "✅ Question"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "understanding-ethereum-token-standards": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/understanding-ethereum-token-standards/lesson-dcf41ef6.png",
+    "socialImageLink": "/images/understanding-ethereum-token-standards/social-45b8b003.png",
+    "learningActions": "",
+    "marketingDescription": "Learn how Ethereum’s asset templates support both traditional and emerging asset classes.",
+    "badgeId": null,
+    "collectibleId": "H006",
+    "duration": 10,
+    "learnings": "",
+    "description": "Learn how Ethereum’s asset templates support both traditional and emerging asset classes.",
+    "name": "Understanding Ethereum Token Standards",
+    "languages": [],
+    "level": "Level 1",
+    "lessonWriters": "Musharef, Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-11-08",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/qxBzms3mPBCZ8XCk2HMmyTm7IWe70wiFFn5J0BSvYiM",
+    "mirrorNFTAddress": "0xb9Eef5b84D862e45e6C425574BE23b11CA9211f3",
+    "areMirrorNFTAllCollected": false,
+    "isArticle": true,
+    "notionId": "c3d069346f984d6599f5190b04cffc11",
+    "englishName": "Understanding Ethereum Token Standards",
+    "slug": "understanding-ethereum-token-standards",
+    "imageLinks": [
+      "/images/understanding-ethereum-token-standards/image-eb8638eb.png",
+      "/images/understanding-ethereum-token-standards/image-8e5e9468.png",
+      "/images/understanding-ethereum-token-standards/image-ebe8683a.png",
+      "/images/understanding-ethereum-token-standards/image-242de5f5.png",
+      "/images/understanding-ethereum-token-standards/image-4708764e.png",
+      "/images/understanding-ethereum-token-standards/image-aa1af1d5.png",
+      "/images/understanding-ethereum-token-standards/image-d804ad2f.png"
+    ],
+    "keywords": [
+      "token",
+      "ERC-20",
+      "ERC-721",
+      "ERC-1155",
+      "fungibility",
+      "interoperability",
+      "NFTs",
+      "composability",
+      "memecoin",
+      "centralized exchange",
+      "mint",
+      "multi-token standard",
+      "gas"
+    ]
+  },
+  "gitcoin-2.0-essentials": {
+    "badgeImageLink": "/images/gitcoin-2.0-essentials/badge-62565097.png",
+    "lessonImageLink": "/images/gitcoin-2.0-essentials/lesson-e0f45ad7.jpg",
+    "socialImageLink": "/images/gitcoin-2.0-essentials/social-6df25a97.jpg",
+    "learningActions": "",
+    "marketingDescription": "Decoding Gitcoin 2.0",
+    "badgeId": 13,
+    "duration": 15,
+    "learnings": "",
+    "description": "Explore Gitcoin's whitepaper for insights into democratic capital allocation and Ethereum ecosystem growth.",
+    "name": "Gitcoin 2.0 Essentials",
+    "languages": [],
+    "level": "Community Lessons",
+    "community": "Gitcoin",
+    "quest": "Gitcoin20Essentials",
+    "questSocialMessage": "I've just completed the @Gitcoin 2.0 Essentials lesson on @BanklessAcademy 🎓\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀 🚀",
+    "publicationStatus": "publish",
+    "publicationDate": "2024-07-25",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "notionId": "6b05b52eae8a41e0ab27222ac27fca12",
+    "englishName": "Gitcoin 2.0 Essentials",
+    "slug": "gitcoin-2.0-essentials",
+    "imageLinks": [
+      "/images/gitcoin-2.0-essentials/welcome-to-gitcoin-2.0-gitcoin-grants-growth-3e78d2ef.png",
+      "/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png",
+      "/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-b699b9ea.png",
+      "/images/gitcoin-2.0-essentials/and-theres-more-99247fc7.png",
+      "/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png",
+      "/images/gitcoin-2.0-essentials/evolutionary-development-092753e6.png",
+      "/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png",
+      "/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png",
+      "/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-7334384f.png",
+      "/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png",
+      "/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png"
+    ],
+    "keywords": [
+      "allo protocol",
+      "quadratic funding"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "163809eabca84850b37afe1857173353"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "55e43442defe411b9109132581333a42"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "060ee68d743d4850942271999566a5df"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c71d220061584a79a004d40bee450bb9"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "6419b66630ba4d5d9f7879a903269624",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "98415667c1b34062b8ab3ff55497925e"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "2ca8f1e045b64f30ace263934335d963"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "64916dce80644ad7878cb730144d36c1",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "058259e6f2724af1b207c36b26abfe5f"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "5dcd6311a0574b36a5fc756f7fd57a49"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "fa9d497779c245cd93d677f5f8efcb36"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "3640f02a78634c73b931223fc4d3b08e"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "89e00897b74d4c99a6379db89c2a09f8",
+        "title": "Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "dc9d8509dafc4372bd6e1683119eb033"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "optimism-governance": {
+    "badgeImageLink": "/images/optimism-governance/badge-f0aaca7d.png",
+    "lessonImageLink": "/images/optimism-governance/lesson-2c666ee5.png",
+    "socialImageLink": "/images/optimism-governance/social-687d7386.jpg",
+    "learningActions": "",
+    "marketingDescription": "Become a governing member of Optimism and help decide the network's future.",
+    "badgeId": 10,
+    "duration": 20,
+    "learnings": "",
+    "description": "Become a governing member of Optimism and help decide the network's future.",
+    "name": "Optimism Governance",
+    "languages": [
+      "cn",
+      "de",
+      "es",
+      "fr",
+      "jp"
+    ],
+    "level": "Community Lessons",
+    "tags": [
+      "DAO",
+      "Optimism"
+    ],
+    "lessonWriters": "Tetranome",
+    "quest": "OptimismGovernance",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-09-07",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "sponsorName": "Optimism",
+    "sponsorLogo": "/images/optimism-governance/sponsor-e765f09a.png",
+    "notionId": "7f53656c75b343d4b94c5b6a78fd0332",
+    "englishName": "Optimism Governance",
+    "slug": "optimism-governance",
+    "imageLinks": [
+      "/images/optimism-governance/old-problems-new-tools-fea84c8f.svg",
+      "/images/optimism-governance/network-governance-45b77eb1.svg",
+      "/images/optimism-governance/the-optimism-network-af6d1031.svg",
+      "/images/optimism-governance/progressive-decentralization-aaa9b55d.svg",
+      "/images/optimism-governance/a-new-economy-fd6cac83.svg",
+      "/images/optimism-governance/incentivizing-public-goods-b764ca38.svg",
+      "/images/optimism-governance/ethers-phoenix-2b7210df.svg",
+      "/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg",
+      "/images/optimism-governance/the-token-house-39ac02b5.svg",
+      "/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg",
+      "/images/optimism-governance/the-citizens-house-4c2b3821.svg",
+      "/images/optimism-governance/governance-seasons-a79f33e7.svg",
+      "/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg"
+    ],
+    "keywords": [
+      "dao",
+      "delegation",
+      "veto",
+      "asynchronous",
+      "onchain governance",
+      "daos",
+      "layer 2",
+      "public goods",
+      "blockspace",
+      "l2",
+      "dapps",
+      "retropgf",
+      "block producers",
+      "erc-20",
+      "cexs",
+      "dexs",
+      "delegate",
+      "token distribution",
+      "fork",
+      "cex",
+      "open source",
+      "trustless"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "8defbb8a1a4d432c9a1296ec85ef07cd"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9be7bd6326454cb682ff333f4738d11c"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "1f06055418574f5a8c4ea95009b8a22c",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "d8f110c9a56b40d5a76dbc8cb2c198c9"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "a900b00eb24242d292a90f20ae97d0f9"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "cab4301328734bd89b9b43a9c4b4dc21",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "56113ce78bef4e478c9958f01515b8b5"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "0ca331a53a8d4890a2dbd4ebbce4f761",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "400c326115274c778b9b6c7fbef050a0"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "7e75e6c1c7ae463fa2b5dc3e2263f52f"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "6ffa8e5eea9241b78933d4b5817519e9"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "a9d7f617e364444589bf293de34be208",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "ce8f6cb56a9c458ab1882f5fe00f441a"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "1e4f756aa4d544ae8c9227f5d952ecf7",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "0949bf58f8ae4bdbb2d8442b126e89ab"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "fd028bd1ef4e427495a13d809576d0fc"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "fc178589352542e5841061f5a22ee0b8"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "fffcd5559d6b47e2b6d5149ec9d28d22",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "9521963b9c4d4307b7966bab816c14da"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "d4769b75171e4850b0b5768a68a9a31a"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "7ddf83811003407487d15711a764ca5e",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "83fb66652fd14e3a90d4c0c13c086a84"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "b1a6643529c946d4804f4b5887b88e67"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c07816442cd44d56ad4522f713b959c1"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  },
+  "delegating-on-optimism": {
+    "badgeImageLink": null,
+    "lessonImageLink": "/images/delegating-on-optimism/lesson-9ce41ea1.png",
+    "socialImageLink": "/images/delegating-on-optimism/social-2cbfa86f.png",
+    "learningActions": "",
+    "marketingDescription": "Grant your OP voting power to people closely following governance.",
+    "badgeId": null,
+    "collectibleId": "H005",
+    "duration": 5,
+    "learnings": "",
+    "description": "Grant your OP voting power to people closely following governance.",
+    "name": "Delegating on Optimism",
+    "languages": [
+      "cn",
+      "de",
+      "es",
+      "fr",
+      "jp"
+    ],
+    "level": "Level 1",
+    "tags": [
+      "DAO",
+      "Optimism"
+    ],
+    "lessonWriters": "Tetranome",
+    "publicationStatus": "publish",
+    "publicationDate": "2023-09-07",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "mirrorLink": "https://mirror.xyz/banklessacademy.eth/INead5MxCJbHMVb9lDDSzs3VA1DCAU9SCc4AIdhC58k",
+    "mirrorNFTAddress": "0xa22ed08b4ed3a34ce5c1802748ed8b294f3ec926",
+    "areMirrorNFTAllCollected": false,
+    "sponsorName": "Optimism",
+    "sponsorLogo": "/images/delegating-on-optimism/sponsor-29773262.png",
+    "isArticle": true,
+    "notionId": "a46f91a728e340f1a6bc66dd4367394d",
+    "englishName": "Delegating on Optimism",
+    "slug": "delegating-on-optimism",
+    "imageLinks": [
+      "/images/delegating-on-optimism/image-ce643a81.png",
+      "/images/delegating-on-optimism/image-9ec06fe9.png",
+      "/images/delegating-on-optimism/image-6443ae02.png",
+      "/images/delegating-on-optimism/image-245809cd.png"
+    ],
+    "keywords": [
+      "dApp",
+      "network governance",
+      "DEX"
+    ]
+  },
+  "public-nouns-a-public-goods-dao-experiment": {
+    "badgeImageLink": "/images/public-nouns-a-public-goods-dao-experiment/badge-a642c71c.png",
+    "lessonImageLink": "/images/public-nouns-a-public-goods-dao-experiment/lesson-9b436d64.png",
+    "socialImageLink": "/images/public-nouns-a-public-goods-dao-experiment/social-aa1b4d45.png",
+    "learningActions": "",
+    "marketingDescription": "Learn how web3 communities come together to fund public goods.",
+    "badgeId": 15,
+    "duration": 10,
+    "learnings": "",
+    "description": "Learn how web3 communities come together to fund public goods.",
+    "name": "Public Nouns: A Public Goods DAO Experiment",
+    "languages": [],
+    "level": "Community Lessons",
+    "community": "Public Nouns",
+    "lessonWriters": "OrnellaWeb3",
+    "quest": "PublicNounsAPublicGoodsDAOExperiment",
+    "questSocialMessage": "I've just completed the @PublicNouns lesson on @BanklessAcademy 🎓\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀 🚀",
+    "publicationStatus": "publish",
+    "publicationDate": "2025-06-18",
+    "featuredOrderOnHomepage": null,
+    "isCommentsEnabled": false,
+    "endOfLessonRedirect": null,
+    "sponsorName": "Public Nouns",
+    "sponsorLogo": "/images/public-nouns-a-public-goods-dao-experiment/sponsor-912e55e6.png",
+    "notionId": "20f12837a13b80fca3f0c312ba7d1fac",
+    "englishName": "Public Nouns: A Public Goods DAO Experiment",
+    "slug": "public-nouns-a-public-goods-dao-experiment",
+    "imageLinks": [
+      "/images/public-nouns-a-public-goods-dao-experiment/introduction-959fa0fe.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/public-goods-are-good-aa712ff1.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/using-web3-to-fund-public-goods-9ee02318.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-71cedc1a.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/what-is-a-dao-e9562a03.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-07be6c71.svg",
+      "/images/public-nouns-a-public-goods-dao-experiment/how-onchain-funding-works-5d9d11c8.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-i-7b7c8535.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-ii-5de36323.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/mission-accomplished-a808dbc2.png",
+      "/images/public-nouns-a-public-goods-dao-experiment/whats-next-an-open-invitation-5efe6f41.png"
+    ],
+    "keywords": [
+      "nft",
+      "erc-721",
+      "erc-1155",
+      "erc-20"
+    ],
+    "slideMeta": [
+      {
+        "type": "LEARN",
+        "notionId": "20f12837a13b80638a22c7a5068216d2"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "20f12837a13b80b987e4dd01fd21f189"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "9ae7dfe11c4c476abba3fcd16438d3b5",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "21512837a13b800b8b36f7c1f7a04ab1"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "20f12837a13b80dab377cc7952e67a0c"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "21512837a13b809a8deaf4ca312a528f",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "20f12837a13b80a1a5d3c3dfb437c5e9"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "20f12837a13b80819b8aead7d3f250b8"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "21512837a13b803c8c2af3167489f5e4",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "20f12837a13b80568cefdb0005254620"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "20f12837a13b80faa792fdedc282a630"
+      },
+      {
+        "type": "QUIZ",
+        "notionId": "21512837a13b80029db5ce0c278254d1",
+        "title": "✅ Knowledge Check"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "21b12837a13b8087bbb4f604a2b406b4"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "20f12837a13b807181b7e84610b14bea"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "21412837a13b80ef9583cbf88c3203d4"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "21412837a13b807b93bbfb1bbe247967"
+      },
+      {
+        "type": "QUEST"
+      }
+    ]
+  }
+}
