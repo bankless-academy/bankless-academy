@@ -51,7 +51,7 @@ The Blockchain Trilemma describes the relationship between:
 
 - [ ] ethereum, bitcoin, and altcoins
 - [ ] security, censorship, and fraud
-- [ ] decentralization, scalabilty, and security
+- [x] decentralization, scalabilty, and security
 - [ ] money, humans, and blockchains
 
 # Security and Consensus
@@ -69,7 +69,7 @@ Blockchain consensus for cryptocurrencies is:
 - [ ] The process where all blockchain nodes agree on what has happened on-chain
 - [ ] Important for everyone in that chain’s ecosystem to prevent fraud
 - [ ] Secured through economic incentives
-- [ ] All of the above
+- [x] All of the above
 
 # Security and Attacks
 
@@ -84,7 +84,7 @@ In `Proof of Stake` consensus, the block producer isn’t chosen through competi
 The end-goal of a 51% attack is to:
 
 - [ ] Disrupt mining operations
-- [ ] Commit fraud in blockchain systems
+- [x] Commit fraud in blockchain systems
 - [ ] Create a new cryptocurrency
 - [ ] Eliminate the other 49%
 
@@ -105,7 +105,7 @@ Which of the following is true for the bus stop analogy for blockchain transacti
 - [ ] People (transactions) are grouped together into buses (blocks)
 - [ ] There is a maximum limit on how many people (transactions) can fit into each bus (block)
 - [ ] To process more people (transactions) you need faster, larger, and/or more buses (blocks)
-- [ ] All of the above
+- [x] All of the above
 
 # Scalability - Finality
 
@@ -131,7 +131,7 @@ Which of these statements is NOT true for decentralization?
 
 - [ ] Decentralization makes blockchains censorship-resistant 
 - [ ] Decentralization makes blockchains permissionless
-- [ ] Decentralization helps authoritarian powers to maintain control
+- [x] Decentralization helps authoritarian powers to maintain control
 - [ ] Anyone anywhere can use permissionless systems 
 
 # Is it decentralized?
@@ -146,7 +146,7 @@ So we can say something is “more or less decentralized than something else” 
 
 Different blockchains use different amounts of decentralization. 
 
-- [ ] True
+- [x] True
 - [ ] False
 
 # Some Examples
@@ -172,7 +172,7 @@ So if Ethereum has prioritized high security and decentralization, how can it sc
 Layer 2s:
 
 - [ ] Provide their own security
-- [ ] Increase scalability for the main blockchain
+- [x] Increase scalability for the main blockchain
 - [ ] Increase fees for users
 - [ ] Increase finality time for users
 
@@ -191,7 +191,7 @@ Ethereum upgrades include:
 - [ ] Using Layer 2s and sharding to increase scalability
 - [ ] Maintaining decentralization and security as core principles
 - [ ] Reducing energy consumption of the blockchain using Proof of Stake consensus
-- [ ] All of the above
+- [x] All of the above
 
 # What does it mean for Explorers?
 

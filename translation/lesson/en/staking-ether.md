@@ -28,7 +28,6 @@ ________________________________________________________________________________
 ---
 This is a summary and walkthrough for our [’Staking on Ethereum’](https://app.banklessacademy.com/lessons/staking-on-ethereum) lesson and quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/staking-on-ethereum) to **level up your knowledge and claim your badge!**
 
-
 ---
 
 ## Key Takeaways
@@ -95,7 +94,6 @@ Your rETH will land in your wallet once your transaction has been processed. It�
 
 ![](https://app.banklessacademy.com/images/staking-ether/image-5d667f3c.png)
 
-
 ---
 
 **It’s time to become a guardian of Ethereum!** We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘’Staking Ether”.
@@ -103,7 +101,6 @@ Your rETH will land in your wallet once your transaction has been processed. It�
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, and to support future content at Bankless Academy.
 
 Safe travels, Explorer!
-
 
 ---
 
@@ -148,7 +145,6 @@ Rewards also change based on the staking method chosen. Check out our [“Staki
 If you want to become a `solo staker`, you’ll need the full 32 ETH, as well as your validator hardware. Check out [this great guide by CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet).
 
 You can get started with just 16 ETH by running a `staking pool` with Rocket Pool, where other participants will help you reach the 32 ETH required. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started!
-
 
 ---
 

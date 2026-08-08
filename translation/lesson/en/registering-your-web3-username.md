@@ -154,7 +154,6 @@ You can verify that your ENS name redirects to your wallet address by visiting <
 
 For more ways to utilize your new ENS name, don't forget to check out the ‘Frequently Asked Questions’ section below!
 
-
 ---
 
 ## Conclusion
@@ -163,13 +162,11 @@ By registering your web3 username, you are embracing self-sovereignty on the dec
 
 Your onchain identity, once established, is solely under your custody, and it is your responsibility to ensure its renewal. The adoption of ENS is key in shaping a user-empowered internet, free from abuses of authority. With ENS, each interaction on the decentralized web is a testament to your unique onchain persona.
 
-
 ---
 
 It’s time to take control of your onchain identity, with ENS. We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Registering Your Web3 Username’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
-
 
 ---
 
@@ -210,7 +207,6 @@ You can set up either option using the [ENS Manager App](https://ens.app). For m
 Yes, if you own a website like [web3explorer.com](http://web3explorer.com), you can use this instead of web3explorer.eth. This is thanks to infrastructure co-built by ENS and GoDaddy.
 
 To learn more, check out ENS Labs’ [blog post](https://blog.ens.domains/post/godaddy-partners-with-ens).
-
 
 ---
 

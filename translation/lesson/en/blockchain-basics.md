@@ -56,7 +56,7 @@ What is a blockchain?
 - [ ] Organized groups of transactions called blocks
 - [ ] A list of amounts of money sent between two addresses
 - [ ] Blocks linked together in sequence
-- [ ] All of the above
+- [x] All of the above
 
 # Examining the Ledger
 
@@ -94,7 +94,7 @@ Which of the following statement(s) is/are true for public blockchain ledgers?
 - [ ] All transactions are public and past transactions are unchangeable
 - [ ] The ledger tracks how much cryptocurrency each address currently has
 - [ ] The ledger grows as new transactions are added to it
-- [ ] All of the above
+- [x] All of the above
 
 # Decentralization
 
@@ -110,7 +110,7 @@ What makes a blockchain decentralized?
 
 - [ ] Only one entity can write to the blockchain
 - [ ] It meets decentralization requirements set by the government
-- [ ] No single authority or entity controls the ledger or access to the ledger data because it is distributed on a large network of computers
+- [x] No single authority or entity controls the ledger or access to the ledger data because it is distributed on a large network of computers
 - [ ] The ledger is stored on a single secure server
 
 # Block Anatomy
@@ -126,7 +126,7 @@ So each `block` is simply a group of transactions put together in one file along
 What is the purpose of a block hash?
 
 - [ ] To encrypt block data so no one can read it
-- [ ] To link each block to the previous one and ensure past transaction data doesn’t change
+- [x] To link each block to the previous one and ensure past transaction data doesn’t change
 - [ ] To ensure transactions are sent to the correct address
 - [ ] To ensure the blockchain stays decentralized
 
@@ -149,7 +149,7 @@ The following information is contained in a block:
 
 - [ ] All information contained in previous blocks, so the blockchain is always current
 - [ ] Anything relevant to the blockchain as block size is unlimited
-- [ ] Transaction data and a reference to the previous block
+- [x] Transaction data and a reference to the previous block
 - [ ] All transaction data generated within a fixed timeframe
 
 # Individual Transactions
@@ -168,7 +168,7 @@ Finally, each transaction has a unique digital identifier, called its `transacti
 
 Data on a blockchain is simply a list of transactions grouped into blocks. Examples of such transactions might include:
 
-- [ ] Sending or receiving crypto assets
+- [x] Sending or receiving crypto assets
 - [ ] Changing the size of the block
 - [ ] Editing past blockchain data
 - [ ] All of the above
@@ -190,4 +190,4 @@ What is true about blockchain addresses?
 - [ ] They are the public identifiers of different entities on a blockchain
 - [ ] They always start with _0x_ on Ethereum
 - [ ] Whoever controls the private key for an address can use the funds at that address
-- [ ] All of the above
+- [x] All of the above

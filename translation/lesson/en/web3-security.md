@@ -60,7 +60,7 @@ It’s very important to protect seed phrases; people should _**never**_ give th
 
 Unlike in web2, in web3, scammers only need the seed phrase to steal everything in a wallet, including tokens and NFTs.
 
-- [ ] True
+- [x] True
 - [ ] False
 
 # Secure Seed Storage
@@ -93,7 +93,7 @@ Why are password managers helpful?
 - [ ] People only have to remember their master password to use them.
 - [ ] They generate and store strong, unique passwords.
 - [ ] They encrypt passwords to keep them secure.
-- [ ] All of the above
+- [x] All of the above
 
 # Two Factor Authentication
 
@@ -110,7 +110,7 @@ Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to sca
 Why is two-factor authentication strongly recommended?
 
 - [ ] It’s impossible to hack an account when the user has 2FA enabled.
-- [ ] It adds another layer of security to web2 accounts.
+- [x] It adds another layer of security to web2 accounts.
 - [ ] It makes passwords stronger.
 - [ ] All of the above
 
@@ -139,7 +139,7 @@ How do scammers use social engineering?
 - [ ] Pretending to be an authority in a community.
 - [ ] Pressuring people with short amounts of time.
 - [ ] Offering giveaways or free NFTs to generate FOMO.
-- [ ] All of the above
+- [x] All of the above
 
 # Social Media Safety
 
@@ -194,7 +194,7 @@ Why is interacting with scam-tokens dangerous?
 - [ ] They could steal all of your ETH.
 - [ ] They could steal other tokens from your wallet.
 - [ ] They could lead to a phishing website where a scammer will try to get your seed phrase.
-- [ ] All of the above
+- [x] All of the above
 
 # Hardware Wallets
 
@@ -210,7 +210,7 @@ Ledger has [written their own guide](https://www.ledger.com/academy/security/the
 
 Is a hardware wallet more secure than a hot wallet?
 
-- [ ] Yes
+- [x] Yes
 - [ ] No
 
 # Wallet Strategies
@@ -233,7 +233,7 @@ We recommend keeping your funds _______________ for higher security.
 
 - [ ] stored in multiple airdrops
 - [ ] locked in multiple NFTs
-- [ ] separated in multiple wallets
+- [x] separated in multiple wallets
 - [ ] liquid in multiple addresses
 
 # Recovering from Web2 Scams

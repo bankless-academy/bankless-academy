@@ -83,13 +83,13 @@ These shady rules and fees are often hidden away in the ‘Terms & Conditions’
 
 True or False: Centralized services have unnecessary control over your online activity.
 
-- [ ] True
+- [x] True
 
-> Correct!
+> ℹ️ Correct!
 
 - [ ] False
 
-> Try again.
+> ℹ️ Try again.
 
 # An Open Internet
 
@@ -129,11 +129,11 @@ How can automation improve your online experiences?
 
 - [ ] By increasing the reach of intermediaries.
 
-> Try again.
+> ℹ️ Try again.
 
-- [ ] By giving participants more control.
+- [x] By giving participants more control.
 
-> Correct!
+> ℹ️ Correct!
 
 # Ethereum: The Open Internet
 
@@ -188,15 +188,15 @@ On Ethereum, services get better and better because…
 
 - [ ] Business practices are more transparent.
 
-> Try again.
+> ℹ️ Try again.
 
 - [ ] You can easily change service providers.
 
-> Try again.
+> ℹ️ Try again.
 
-- [ ] Both of the above.
+- [x] Both of the above.
 
-> Correct!
+> ℹ️ Correct!
 
 # A Global Banking System
 
@@ -233,13 +233,13 @@ With Ethereum wallets, you can own and send more than just cryptocurrency. Trans
 
 True or False: On Ethereum, you can be your own bank.
 
-- [ ] True
+- [x] True
 
-> Correct. On Ethereum you can go “Bankless”! Lower fees, more control over your money.
+> ℹ️ Correct. On Ethereum you can go “Bankless”! Lower fees, more control over your money.
 
 - [ ] False
 
-> Try again.
+> ℹ️ Try again.
 
 # How it Works
 
@@ -265,7 +265,7 @@ You might be wondering why these validators don’t just run off with your funds
 # Common Questions
 
 <details>
-  <summary>How was Ethereum created?</summary>
+  <summary>How was Ethereum created?,m,e70a5a72-9432-4033-896c-2ee3137dc68a</summary>
 
 Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through `decentralized` governance. This distribution of power strengthens the network’s founding vision of an open internet.
 
@@ -277,7 +277,7 @@ Your digital property on Ethereum can't be stolen directly. However, scammers ca
 
 </details>
 <details>
-  <summary>Is Ethereum widely used?</summary>
+  <summary>Is Ethereum widely used?,m,bb1ea7ca-85b1-4308-930b-b047f723f9f8</summary>
 
 Yes. Today, Ethereum's legality and adoption are so strong that [big businesses are investing in it](https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/). Businesses, such as [Sony](https://www.bankless.com/sony-introduces-soneium-its-ethereum-l2-network) and [Visa](https://caribbean.visa.com/about-visa/newsroom/press-releases/visa-network-to-settle-transactions-in-usd-coin-usdc.html), are even building on it.
 
@@ -291,7 +291,7 @@ Yes. Today, Ethereum's legality and adoption are so strong that [big businesses 
 <details>
   <summary>Is Ethereum energy efficient?</summary>
 
-As Ethereum’s daily usage grew the community identified a growing environmental impact. A major network upgrade, called "The Merge", [reduced Ethereum's energy consumption by 99.9%](https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/). This achievement showcases Ethereum's adaptability to the needs of its users!
+As Ethereum’s daily usage grew the community identified a growing environmental impact. A major network upgrade, called 'The Merge', [reduced Ethereum's energy consumption by 99.9%](https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/). This achievement showcases Ethereum's adaptability to the needs of its users!
 
 </details>
 <details>

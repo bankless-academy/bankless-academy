@@ -79,7 +79,7 @@ What funding mechanism is designed to democratically allocate funds by amplifyin
 
 - [ ] Direct Grants
 - [ ] Allo Protocol
-- [ ] Quadratic Funding
+- [x] Quadratic Funding
 - [ ] Matching Funds
 
 # Carving a Path
@@ -108,19 +108,19 @@ What was Gitcoin focused on before 2.0?
 
 - [ ] Hackathon platform
 
-> Right! But this isn’t the only correct answer.
+> ℹ️ Right! But this isn’t the only correct answer.
 
 - [ ] Bounty platform
 
-> Right! But this isn’t the only correct answer.
+> ℹ️ Right! But this isn’t the only correct answer.
 
 - [ ] Quadratic Funding
 
-> Right! But this isn’t the only correct answer.
+> ℹ️ Right! But this isn’t the only correct answer.
 
-- [ ] All of the above
+- [x] All of the above
 
-> Correct! Gitcoin technically focused on bounties, hackathons and QF before the 2.0 launch.
+> ℹ️ Correct! Gitcoin technically focused on bounties, hackathons and QF before the 2.0 launch.
 
 # The Impact of Capital Allocation
 
@@ -171,7 +171,7 @@ Complementary applications such as reporting and discovery tools may follow suit
 Allo is the ______  layer for distribution of capital allocation, while Grants Stack is a _____ for running ______ programs.
 
 - [ ] community - application - funding
-- [ ] protocol - tool - grants
+- [x] protocol - tool - grants
 - [ ] program - product - builder
 - [ ] None of the above
 

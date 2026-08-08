@@ -150,13 +150,11 @@ Using a CEX or a bridge to move funds to L2 is a necessary step in your journey 
 
 As you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.
 
-
 ---
 
 Let’s get moving, Layer 2 Ethereum awaits! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Funding a Wallet on Layer 2’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
-
 
 ***
 

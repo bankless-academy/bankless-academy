@@ -28,7 +28,6 @@ ________________________________________________________________________________
 ---
 This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
 
-
 ---
 
 ## Key Takeaways
@@ -71,7 +70,6 @@ Set up your first wallet on your computer, using the walkthrough below, or keep 
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
-
 ---
 
 **It’s time to join the blockchain multiverse!**
@@ -79,7 +77,6 @@ Set up your first wallet on your computer, using the walkthrough below, or keep 
 Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
 
 Safe travels, Explorer!
-
 
 ---
 
@@ -106,7 +103,6 @@ Your recovery phrase, also known as a “secret phrase” or “seed phrase”, 
 ### Can Ethereum wallets hold Bitcoin?
 
 Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
-
 
 ---
 

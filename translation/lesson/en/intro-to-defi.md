@@ -48,7 +48,7 @@ There are no middlemen to intermediate or take a cut of your transactions.
 What does DeFi stand for? 
 
 - [ ] Derivative fiction
-- [ ] Decentralized finance
+- [x] Decentralized finance
 - [ ] Deregulation field
 - [ ] Degenerate fishermen
 
@@ -66,7 +66,7 @@ How can you earn yield with crypto?
 
 - [ ] [A] Earning interest by depositing into a DeFi protocol
 - [ ] [B] Earning rewards by depositing into a DeFi protocol
-- [ ] [C] Both A and B
+- [x] [C] Both A and B
 - [ ] [D] You can’t earn yield on crypto
 
 # What You Can Do With DeFi
@@ -83,7 +83,7 @@ Fill in the blank: DeFi transactions are ____.
 
 - [ ] Free
 - [ ] Controlled
-- [ ] Permissionless
+- [x] Permissionless
 - [ ] Centralized
 
 # Investing
@@ -103,7 +103,7 @@ What does HODL mean?
 - [ ] It’s a misspelling of HOLD
 - [ ] Hold On for Dear Life
 - [ ] Keeping crypto for a long time
-- [ ] All of the above
+- [x] All of the above
 
 # Trading
 
@@ -121,7 +121,7 @@ Anyone can trade and participate in markets regardless of your net asset worth. 
 
 What is a DEX?
 
-- [ ] A decentralized exchange
+- [x] A decentralized exchange
 - [ ] A digital electric xylophone
 - [ ] A crypto index fund
 - [ ] None of the above
@@ -139,7 +139,7 @@ There are `DApps` that enable anyone to lend and borrow crypto assets. Similar t
 Fill in the blank: DeFi lending is done on a _____ level.
 
 - [ ] income to debt
-- [ ] peer-to-peer
+- [x] peer-to-peer
 - [ ] banks to customers
 - [ ] income to interest
 
@@ -156,7 +156,7 @@ Centralized exchanges also offer staking. However, like their trading pairs, the
 Lending your crypto to a protocol is an example of?
 
 - [ ] Trading
-- [ ] Staking
+- [x] Staking
 - [ ] Borrowing
 - [ ] HODLing
 
@@ -187,4 +187,4 @@ What is a risk in DeFi?
 - [ ] There are no risks
 - [ ] The bank might turn down your loan
 - [ ] Bad weather could shut down the exchange
-- [ ] There may be an error in the code
+- [x] There may be an error in the code

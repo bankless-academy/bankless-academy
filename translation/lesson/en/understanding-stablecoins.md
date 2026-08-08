@@ -148,13 +148,11 @@ As always, the best way to learn about something is to try it. You might even de
 
 And remember, not all stablecoins in each category are created equal! Do your own research before interacting with any new token.
 
-
 ---
 
 We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Understanding Stablecoins’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
-
 
 ---
 
@@ -189,7 +187,6 @@ The price of any stablecoin can shift slightly (usually around the +/- 2% mark) 
 However, there are cases where a stablecoin loses its peg beyond safe, temporary ranges. This effect isn’t necessarily permanent (USDC, March 2023) — but it can be (Terra, May 2022).
 
 Some fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their stablecoin to regular fiat through their website. Whether this remains true during times of crisis is another story.
-
 
 ---
 

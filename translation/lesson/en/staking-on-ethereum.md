@@ -71,15 +71,15 @@ How do validator nodes prevent fraud on Ethereum?
 
 - [ ] By overpowering each other.
 
-> Try again! Nodes have no influence over each other. They work together to influence the blockchain.
+> ℹ️ Try again! Nodes have no influence over each other. They work together to influence the blockchain.
 
 - [ ] By creating non-existent crypto for certain people.
 
-> Try again! This would be committing fraud.
+> ℹ️ Try again! This would be committing fraud.
 
-- [ ] By reaching decentralized agreement on valid transactions.
+- [x] By reaching decentralized agreement on valid transactions.
 
-> Correct! Nodes agree on the state of the blockchain.
+> ℹ️ Correct! Nodes agree on the state of the blockchain.
 
 # Proof-of-Stake
 
@@ -101,13 +101,13 @@ For an attacker to approve fraud on Ethereum, they must have control over majori
 
 True or False: Validator nodes caught processing fraudulent blocks will receive penalty charges.
 
-- [ ] True
+- [x] True
 
-> Correct! This “slashing” incentivizes nodes to stay honest!
+> ℹ️ Correct! This “slashing” incentivizes nodes to stay honest!
 
 - [ ] False
 
-> Try again! Nodes must receive some sort of punishment for dishonest actions.
+> ℹ️ Try again! Nodes must receive some sort of punishment for dishonest actions.
 
 # Validating Transactions
 
@@ -129,15 +129,15 @@ What is the name of the validator node selecting the next block to be added to E
 
 - [ ] Staker
 
-> Try again! Stakers support validator nodes, but don’t run the node themselves.
+> ℹ️ Try again! Stakers support validator nodes, but don’t run the node themselves.
 
 - [ ] Block builder
 
-> Try again! Block builders order incoming transactions into potential blocks, but don’t add them to the blockchain.
+> ℹ️ Try again! Block builders order incoming transactions into potential blocks, but don’t add them to the blockchain.
 
-- [ ] Block proposer
+- [x] Block proposer
 
-> Correct! Block proposers, looking at blocks from block builders, choose one to add to the blockchain.
+> ℹ️ Correct! Block proposers, looking at blocks from block builders, choose one to add to the blockchain.
 
 # Ethernomics
 
@@ -226,21 +226,21 @@ You may face many barriers with running your own validator node as a beginner. I
 
 What would happen if a single entity controlled a majority of validator nodes?
 
-- [ ] They could approve blocks including fraudulent transactions.
+- [x] They could approve blocks including fraudulent transactions.
 
-> Correct! Ethereum would lose its credible neutrality.
+> ℹ️ Correct! Ethereum would lose its credible neutrality.
 
 - [ ] They would gain control of all validator nodes.
 
-> Try again! Other nodes cannot be controlled, but their voice can be overpowered.
+> ℹ️ Try again! Other nodes cannot be controlled, but their voice can be overpowered.
 
 - [ ] Ethereum would stop processing transactions altogether.
 
-> Try again! Ethereum wouldn’t stop running during such an attack, but its credible neutrality would be lost.
+> ℹ️ Try again! Ethereum wouldn’t stop running during such an attack, but its credible neutrality would be lost.
 
 - [ ] All of the above.
 
-> Try again! Only one of the above answers is correct.
+> ℹ️ Try again! Only one of the above answers is correct.
 
 # Staking Pools
 
@@ -260,15 +260,15 @@ Which entity hosts the staking pool?
 
 - [ ] The node operator.
 
-> Try again! Node operators run the validator node, but not the pool itself.
+> ℹ️ Try again! Node operators run the validator node, but not the pool itself.
 
 - [ ] The remaining staking participants.
 
-> Try again! Stakers provide Ether, but don’t run the pool.
+> ℹ️ Try again! Stakers provide Ether, but don’t run the pool.
 
-- [ ] The staking provider.
+- [x] The staking provider.
 
-> Correct! The pool is hosted through the provider’s smart contracts.
+> ℹ️ Correct! The pool is hosted through the provider’s smart contracts.
 
 # Liquid Staking Tokens
 
@@ -296,13 +296,13 @@ To guard Ethereum, we need to do our research. Even with `staking pools` we need
 
 True or False: Supporting new node operators helps to decentralize Ethereum.
 
-- [ ] True
+- [x] True
 
-> Correct! More node operators means more independent validator nodes detecting fraud.
+> ℹ️ Correct! More node operators means more independent validator nodes detecting fraud.
 
 - [ ] False
 
-> Try again! The more independent nodes, the better.
+> ℹ️ Try again! The more independent nodes, the better.
 
 # rETH - Your Path to Decentralized Staking
 

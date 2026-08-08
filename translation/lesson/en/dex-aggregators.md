@@ -62,7 +62,7 @@ If an Explorer was to purchase 10,000 BANK from each pool, they would find that 
 Fill in the blanks: To find the best price, people will want to trade in markets with ________ liquidity to have ________ price impact on their trades.
 
 - [ ] good, maximum
-- [ ] high, low
+- [x] high, low
 - [ ] low, good
 - [ ] thin, large
 
@@ -84,7 +84,7 @@ Which two factors determine the price impact of a DEX trade?
 
 - [ ] The choice of  DEX is used to make the trade and size of the trade
 - [ ] Which token is chosen to trade and which DEX is used to make the trade
-- [ ] The size of the trade and amount of liquidity available
+- [x] The size of the trade and amount of liquidity available
 - [ ] The amount of liquidity available and which token is chosen to trade
 
 # Recombining Liquidity With DEX Aggregators
@@ -102,7 +102,7 @@ Trade routing in DEX aggregators means:
 - [ ] Trades are routed according to liquidity arrangements with specific DEXs
 - [ ] Trades are always routed through multiple DEXs
 - [ ] Trades are routed through a user’s favorite DEX only
-- [ ] Trades can be routed through multiple DEXs and intermediary tokens
+- [x] Trades can be routed through multiple DEXs and intermediary tokens
 
 # How Gas Cost Is Calculated on Ethereum
 
@@ -131,7 +131,7 @@ Some aggregators go even further: they may refund some of the network transactio
 Which of the following is NOT a way DEX aggregators try to reduce transaction costs for users?
 
 - [ ] Simulate transactions off-chain prior to trade execution
-- [ ] Ask DEXs to lower network fees for their users
+- [x] Ask DEXs to lower network fees for their users
 - [ ] Account for gas cost in trade routing
 - [ ] Token rebates on gas costs
 
@@ -147,7 +147,7 @@ Note: While convenient, `meta-aggregator` services can add extra costs on top of
 
 Meta-aggregators cross-reference multiple DEX aggregators to find the best prices for their users.
 
-- [ ] True
+- [x] True
 - [ ] False
 
 # Avoiding Sandwich Attacks
@@ -162,7 +162,7 @@ Fortunately, because of the recombined liquidity offered by DEX aggregators, the
 
 To protect yourself, you should keep your slippage tolerance:
 
-- [ ] low
+- [x] low
 - [ ] high
 
 # More Protection From Sandwiches: OTC Trades
@@ -180,4 +180,4 @@ Many DEX aggregators offer which tool(s) to save their users money?
 - [ ] Routing trades through aggregated liquidity from multiple DEXs to reduce price impact.
 - [ ] OTC trades that fully protect against sandwich attacks.
 - [ ] Account for gas cost when building the best trade routes.
-- [ ] All of the above
+- [x] All of the above

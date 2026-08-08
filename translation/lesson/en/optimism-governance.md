@@ -67,7 +67,7 @@ How can onchain governance help to solve interhuman debate?
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] All of the above
+- [x] All of the above
 
 > ℹ️ Correct! Onchain governance protects the voting process through multiple means.
 
@@ -109,7 +109,7 @@ Which of the following is NOT a public good?
 
 > ℹ️ Ethereum can benefit everyone, and — with Layer 2s — one person’s use doesn’t reduce its availability.
 
-- [ ] A Centralized Exchange
+- [x] A Centralized Exchange
 
 > ℹ️ Correct. While CEXs provide community benefits, they are private businesses.
 
@@ -133,7 +133,7 @@ True or false? The Optimism Foundation will continue to guide the Optimism Colle
 
 > ℹ️ Try again!
 
-- [ ] False
+- [x] False
 
 > ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
 
@@ -185,13 +185,13 @@ How is Optimism incentivizing community-focused economics?
 
 > ℹ️ Try again! Use of blockchain technology alone doesn’t affect economic models.
 
-- [ ] By systemically funding business models that improve the lives of all network users.
+- [x] By systemically funding business models that improve the lives of all network users.
 
 > ℹ️ Correct! The network allocates a portion of transaction fees towards funding public goods.
 
 - [ ] All of the above.
 
-> ℹ️  Try again! Only one of these is true.
+> ℹ️ Try again! Only one of these is true.
 
 # Introducing the Governing Houses
 
@@ -213,17 +213,17 @@ How does the Citizens’ House differ from the Token House?
 
 > ℹ️ Try again! Both houses have veto powers.
 
-- [ ] The Citizens’ House allocates RetroPGF rewards.
+- [x] The Citizens’ House allocates RetroPGF rewards.
 
 > ℹ️ Correct! The Citizens’ House allocates public goods funding.
 
 - [ ] The Citizens’ House leads network decentralization.
 
-> ℹ️  Try again! Both houses maintain decentralization.
+> ℹ️ Try again! Both houses maintain decentralization.
 
 - [ ] All of the above.
 
-> ℹ️  Try again!
+> ℹ️ Try again!
 
 # The Token House
 
@@ -280,9 +280,9 @@ How does the Token House protect the network from attack?
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] All of the above.
+- [x] All of the above.
 
-> ℹ️  Correct! The Token House has a diverse set of responsibilities in protecting the network.
+> ℹ️ Correct! The Token House has a diverse set of responsibilities in protecting the network.
 
 # The Citizens’ House
 
@@ -326,9 +326,9 @@ How does the Citizens’ House protect the network from attack?
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] Both of the above.
+- [x] Both of the above.
 
-> ℹ️  Correct! This house diversifies its own perspective, and balances Token House perspective.
+> ℹ️ Correct! This house diversifies its own perspective, and balances Token House perspective.
 
 # Governance Seasons
 

@@ -59,9 +59,9 @@ Which of the following is true regarding cryptocurrency exchanges?
 
 > ℹ️ Even CEXs have their risks. In 2022, the FTX exchange collapsed, with almost all users losing their deposits.
 
-- [ ] DEXs allow you to trade while maintaining self-custody, while CEXs do not.
+- [x] DEXs allow you to trade while maintaining self-custody, while CEXs do not.
 
-> ℹ️  Unless explicitly stated otherwise, a CEX owns your private keys.
+> ℹ️ Unless explicitly stated otherwise, a CEX owns your private keys.
 
 # Decentralized Applications
 
@@ -105,7 +105,7 @@ Which of the below properties are needed for a smart contract to be considered d
 
 > ℹ️ This is a quality of a dApp, but it isn’t the only one.
 
-- [ ] All of the above.
+- [x] All of the above.
 
 > ℹ️ Ethereum dApps are respected for their capacity to be permissionless, autonomous, and transparent.
 
@@ -131,7 +131,7 @@ What is the benefit of using AMMs to complete trades as compared to a traditiona
 
 > ℹ️ AMMs route user trades through communal token vaults, called liquidity pools, rather than directly between users.
 
-- [ ] You can detect and prevent other parties creating one-sided trades.
+- [x] You can detect and prevent other parties creating one-sided trades.
 
 > ℹ️ The transparent nature of AMMs means that it is a lot harder for platforms to hide malicious actions — or for users to be malicious at all!
 
@@ -159,7 +159,7 @@ The swap transaction is complete. Your USDC tokens have been swapped for OP, via
 
 AMMs can route a trade through multiple liquidity pools, all in a single transaction.
 
-- [ ] True
+- [x] True
 
 > ℹ️ Correct! You might pay a higher network fee, but the actions are bundled into one transaction.
 
@@ -200,7 +200,7 @@ Finish the statement: “When liquidity is __________.”
 
 > ℹ️ Incorrect, try again.
 
-- [ ] low, volatility is high.
+- [x] low, volatility is high.
 
 > ℹ️ Right! Liquidity and volatility are generally inversely-correlated.
 
@@ -212,7 +212,7 @@ How do DEXs incentivize users to provide liquidity?
 
 > ℹ️ Neither CEXs or DEXs protect you from losses on a bad investment.
 
-- [ ] A share of platform fees and/or bonus tokens.
+- [x] A share of platform fees and/or bonus tokens.
 
 > ℹ️ The fees charged to use the DEX are often split across various platform stakeholders — including LPs. Some platforms even grant additional bonuses.
 
@@ -290,7 +290,7 @@ Why would you use a Decentralized Exchange over a Centralized Exchange?
 
 > ℹ️ This is a quality of a DEX, but it isn’t the only one.
 
-- [ ] All of the above.
+- [x] All of the above.
 
 > ℹ️ Right! DEXs offer all of these benefits over CEXs.
 
@@ -328,7 +328,7 @@ Now you’re ready to interact with a Decentralized Exchange!
 
 How can you be sure you’ve chosen a reputable DEX?
 
-- [ ] By independently checking its online reputation and only following URLs provided by a trusted party.
+- [x] By independently checking its online reputation and only following URLs provided by a trusted party.
 
 > ℹ️ Right, only interacting with trustworthy URLs is a good layer of protection.
 

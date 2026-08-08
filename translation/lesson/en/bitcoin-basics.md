@@ -70,13 +70,13 @@ As societies grew, a government’s central bank would issue standardized coins 
 True or False:
 ”As more money is added to a monetary system, the existing money becomes worth less.”
 
-- [ ] True
+- [x] True
 
-> Correct! The more money there is, the less value it has.
+> ℹ️ Correct! The more money there is, the less value it has.
 
 - [ ] False
 
-> Try again.
+> ℹ️ Try again.
 
 # A Brief History of Money (Part 2)
 
@@ -141,13 +141,13 @@ Its short term value remains volatile due to market speculation.
 
 How does Bitcoin promote value preservation in the long term?
 
-- [ ] Using a max supply cap.
+- [x] Using a max supply cap.
 
-> Correct! Bitcoin's fixed supply creates scarcity similar to precious metals. This aids value retention.
+> ℹ️ Correct! Bitcoin's fixed supply creates scarcity similar to precious metals. This aids value retention.
 
 - [ ] By removing custodians.
 
-> Try again! Custody relates to ownership, rather than value.
+> ℹ️ Try again! Custody relates to ownership, rather than value.
 
 # Digital Gold: Self-Custody
 
@@ -169,13 +169,13 @@ This system of ownership gives you total control of your digital wealth — anyw
 
 How does self-custody enable true ownership?
 
-- [ ] By giving you sole access to your assets.
+- [x] By giving you sole access to your assets.
 
-> Correct! Anyone with access to our assets has the ability to confiscate them.
+> ℹ️ Correct! Anyone with access to our assets has the ability to confiscate them.
 
 - [ ] By allowing custodians to access to your assets.
 
-> Try again! Self-custody means there is no custodian (third party) that can access our assets.
+> ℹ️ Try again! Self-custody means there is no custodian (third party) that can access our assets.
 
 # Bitcoin: It’s like Emailing Money!
 
@@ -201,19 +201,19 @@ How is Bitcoin similar to email?
 
 - [ ] Both are online 24/7.
 
-> Right! But this isn’t the only correct answer.
+> ℹ️ Right! But this isn’t the only correct answer.
 
 - [ ] Both are digital technologies.
 
-> Right! But this isn’t the only correct answer.
+> ℹ️ Right! But this isn’t the only correct answer.
 
 - [ ] Both can be accessed with a phone.
 
-> Right! But this isn’t the only correct answer.
+> ℹ️ Right! But this isn’t the only correct answer.
 
-- [ ] All of the above.
+- [x] All of the above.
 
-> Correct! Both Bitcoin and email innovate on the services that came before them.
+> ℹ️ Correct! Both Bitcoin and email innovate on the services that came before them.
 
 # The Bitcoin Network
 
@@ -259,31 +259,31 @@ What is decentralization?
 
 - [ ] Increased scarcity.
 
-> Try again! Scarcity means an asset is in low supply.
+> ℹ️ Try again! Scarcity means an asset is in low supply.
 
-- [ ] Distribution of control across multiple participants.
+- [x] Distribution of control across multiple participants.
 
-> Correct! This distribution protects the network and its users.
+> ℹ️ Correct! This distribution protects the network and its users.
 
 - [ ] The rewards earned by miners.
 
-> Try again! Miners are rewarded with transaction fees and block rewards.
+> ℹ️ Try again! Miners are rewarded with transaction fees and block rewards.
 
 # Knowledge Check 6
 
 How does mining protect the Bitcoin Network from fraud?
 
-- [ ] By rewarding miners for checking transactions.
+- [x] By rewarding miners for checking transactions.
 
-> Correct! Bitcoin rewards attract miners and incentivize them to act honestly.
+> ℹ️ Correct! Bitcoin rewards attract miners and incentivize them to act honestly.
 
 - [ ] By increasing the circulating supply of Bitcoin.
 
-> Try again! Supply increases don’t help to prevent fraud.
+> ℹ️ Try again! Supply increases don’t help to prevent fraud.
 
 - [ ] Both of the above.
 
-> Try again! Only one of the above helps to prevent fraud.
+> ℹ️ Try again! Only one of the above helps to prevent fraud.
 
 # The Innovation of Money
 

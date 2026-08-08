@@ -79,7 +79,7 @@ What is a wallet?
 
 > ℹ️ Try again! Digital collectibles are something you hold in your wallet.
 
-- [ ] A blockchain account
+- [x] A blockchain account
 
 > ℹ️ Correct! Wallets are accounts used to interact with blockchains.
 
@@ -138,7 +138,7 @@ Your public key is like your _____ and your private key is like your _____ .
 
 > ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.
 
-- [ ] House address / House key
+- [x] House address / House key
 
 > ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.
 
@@ -172,7 +172,7 @@ Can you access your wallet with a recovery phrase if your device gets damaged or
 
 > ℹ️ Try again!
 
-- [ ] Yes
+- [x] Yes
 
 > ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.
 
@@ -212,7 +212,7 @@ Do you control your private key with a custodial wallet?
 
 > ℹ️ Try again!
 
-- [ ] No
+- [x] No
 
 > ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
 
@@ -232,7 +232,7 @@ Whichever route you choose, it pays to be familiar and comfortable with wallet s
 
 Are you responsible for your private key with a self-custody wallet?
 
-- [ ] Yes
+- [x] Yes
 
 > ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
 
@@ -280,7 +280,7 @@ Which of the following wallet types is considered the most secure?
 
 > ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
 
-- [ ] A cold wallet
+- [x] A cold wallet
 
 > ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
 
@@ -302,7 +302,7 @@ Regardless if your `self-custody wallet` is hot or cold, there are many smart se
 
 What is the safest way to protect your recovery phrase?
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [x] Write it on a durable material and store it in a safe place.
 
 > ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.
 
@@ -342,7 +342,7 @@ Is Zerion a custodial wallet app?
 
 > ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.
 
-- [ ] No
+- [x] No
 
 > ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
 

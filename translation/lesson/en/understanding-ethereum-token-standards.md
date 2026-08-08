@@ -164,7 +164,7 @@ Examples: Blockchain Capital (BCAP)
 
 A single token could fall into more than one category. For example, a governance token can also have certain utility within a platform.
 
-You can easily [buy ERC-20 tokens on a DEX](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) like Uniswap or a `centralized exchange` like Binance or Coinbase.
+You can easily [buy ERC-20 tokens on a DEX](https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange) like Uniswap or a `centralized exchange` like Binance or Coinbase.
 
 ### ERC-721: Non-fungible Tokens
 
@@ -194,13 +194,11 @@ This standard also allows the creation of semi-fungible tokens — tokens that a
 
 ERC-1155 also enables batch transactions to send multiple token types at once, potentially reducing the `gas` cost for users.
 
-
 ---
 
 We commend you for making it through this lengthy entry in the Explorer’s Handbook: ‘Understanding Token Standards’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
-
 
 ---
 
@@ -225,7 +223,6 @@ To identify the original token, you should check the contract address that’s u
 ### Are there other token standards on Ethereum apart from ERC-20, 721, and 1155?
 
 Yes, there are other token standards on Ethereum that are not in use or have very niche use cases. Some examples include [ERC-223](https://eips.ethereum.org/EIPS/eip-223), [ERC-1462](https://eips.ethereum.org/EIPS/eip-1462), [ERC-1948](https://eips.ethereum.org/EIPS/eip-1948), and [ERC-4626](https://eips.ethereum.org/EIPS/eip-4626).
-
 
 ---
 

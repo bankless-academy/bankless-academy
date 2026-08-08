@@ -52,7 +52,7 @@ Payment channels don’t support advanced `smart contract` interactions, only ba
 
 You must be online to transact using the Bitcoin Lightning Network.
 
-- [ ] True
+- [x] True
 - [ ] False
 
 # Ethereum Scaling Solutions
@@ -69,7 +69,7 @@ Ethereum scaling solutions:
 
 - [ ] use payment channels to scale the network.
 - [ ] can’t support smart contract interactions.
-- [ ] should increase scalability without compromising on other trilemma attributes.
+- [x] should increase scalability without compromising on other trilemma attributes.
 - [ ] allow faster transaction speeds at the cost of higher gas.
 
 # Bridging Layer 1 and Layer 2
@@ -99,7 +99,7 @@ Sidechains:
 - [ ] hold collateral on Mainnet.
 - [ ] have cheaper gas fees than Mainnet.
 - [ ] have greater centralization risks than Mainnet.
-- [ ] All the above.
+- [x] All the above.
 
 # Rollups
 
@@ -127,7 +127,7 @@ Note: Third-party bridging services, like Across and Hop, help users bridge fund
 
 With Optimistic Rollups, transactions are considered valid until proven otherwise.
 
-- [ ] True
+- [x] True
 - [ ] False
 
 # ZK Rollups
@@ -145,7 +145,7 @@ There are some major protocols using ZK Rollup technology to build their Ethereu
 Compared to Optimistic Rollups, ZK Rollups:
 
 - [ ] post more user data to Mainnet.
-- [ ] offer greater privacy and enable faster transaction finality on Mainnet.
+- [x] offer greater privacy and enable faster transaction finality on Mainnet.
 - [ ] perform fewer computations to finalize a transaction.
 
 # Cross-chain dApp Compatibility
@@ -162,7 +162,7 @@ Sidechains and ZK Rollups are not yet fully EVM equivalent. For now this limits 
 
 EVM equivalent scaling solutions are able to easily reuse smart contracts deployed on Mainnet.
 
-- [ ] True
+- [x] True
 - [ ] False
 
 # Lesson Recap
