@@ -34,8 +34,14 @@ function removeQuizAnswers(text) {
     // hide line with quiz answers (starts with `> `)
     (line) => !line.trim().startsWith('<span class="hljs-quote">&gt; ')
   )
-  // remove empty line after quiz
-  return filteredLines.join('\n')?.replaceAll('\n\n\n', '\n\n')
+  return (
+    filteredLines
+      .join('\n')
+      // hide which quiz option is the correct one
+      .replaceAll('[x] ', '[ ] ')
+      // remove empty line after quiz
+      ?.replaceAll('\n\n\n', '\n\n')
+  )
 }
 
 function replaceImagesInMarkdown(markdownString) {

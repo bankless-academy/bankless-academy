@@ -92,9 +92,14 @@ const processMD = async (md, lang, englishLesson, updatedAt) => {
           let j = 0
           answers.split('\n').map((quiz) => {
             // console.log(quiz)
-            if (quiz?.length && quiz.startsWith('- [ ] ')) {
+            // the correct option is marked `- [x]` in the md source
+            if (
+              quiz?.length &&
+              (quiz.startsWith('- [ ] ') || quiz.startsWith('- [x] '))
+            ) {
               newLesson.slides[i].quiz.answers[j] = quiz
                 .replace('- [ ] ', '')
+                .replace('- [x] ', '')
                 .trim()
               j++
             } else if (quiz?.length && quiz.startsWith('> ')) {

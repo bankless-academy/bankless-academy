@@ -591,6 +591,19 @@ const Article = ({
         mt={isSmallScreen ? '0' : '24px'}
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
+      {lesson.publicationStatus === 'deprecated' && (
+        <Box
+          m="16px 24px"
+          p="12px 16px"
+          borderRadius="8px"
+          border="1px solid orange"
+          background="rgba(255, 165, 0, 0.1)"
+        >
+          {t(
+            'This lesson is no longer maintained and is kept for historical reference. Some of its content may be outdated.'
+          )}
+        </Box>
+      )}
       {!IS_WALLET_DISABLED && (
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
           <Box

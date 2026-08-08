@@ -41,7 +41,9 @@ export interface LessonType {
   quest?: QuestComponentType
   questSocialMessage?: string
   imageLinks?: string[]
-  publicationStatus: 'publish' | 'planned' | 'hidden'
+  // 'deprecated': hidden from all listings but still reachable by direct URL,
+  // with a warning banner on the intro slide
+  publicationStatus: 'publish' | 'planned' | 'hidden' | 'deprecated'
   publicationDate?: string
   translationDate?: string
   featuredOrderOnHomepage?: number
