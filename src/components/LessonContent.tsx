@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 
 import { LessonType } from 'entities/lesson'
-import { parseLangFromPath } from 'constants/languages'
 import LanguageSelector from 'components/LanguageSelector'
 import LessonCard from 'components/LessonCard'
 import { useSmallScreen } from 'hooks/index'
+import { t } from 'i18next'
 
 const SPLIT = `\`\`\`
 
@@ -94,31 +94,17 @@ const LessonContent = ({
     language: 'markdown',
   }).value
 
-  const lang =
-    typeof window !== 'undefined'
-      ? parseLangFromPath(window.location.pathname)
-      : 'en'
-
+  // The markdown arrives through props (read from disk in getStaticProps).
+  // It used to be fetched from raw.githubusercontent at runtime, which meant
+  // the page depended on GitHub and showed stale content until a translation
+  // reached main.
   useEffect(() => {
-    if (lesson?.slug) {
-      try {
-        fetch(
-          `https://raw.githubusercontent.com/bankless-academy/bankless-academy/main/translation/lesson/${lang}/${lesson.slug}.md`
-        )
-          .then((response) => response.text())
-          .then((md) => {
-            // console.log('md', md)
-            if (md[0] !== '<') {
-              // eslint-disable-next-line no-unsafe-optional-chaining
-              const [intro, content] = md?.split(SPLIT)
-              setIntro(intro + SPLIT)
-              setContent(content)
-            }
-          })
-      } catch (error) {
-        console.error(error)
-      }
-    }
+    const md = lesson?.rawMd
+    if (!md || md[0] === '<') return
+    // eslint-disable-next-line no-unsafe-optional-chaining
+    const [intro, content] = md.split(SPLIT)
+    setIntro(intro + SPLIT)
+    setContent(content)
   }, [lesson])
   return (
     <Box>
@@ -156,7 +142,7 @@ const LessonContent = ({
         <LanguageSelector lesson={lesson} />
       </Box>
       <StyledMarkdown>
-        <Box fontSize="2xl">Lesson Content:</Box>
+        <Box fontSize="2xl">{t('Lesson Content:')}</Box>
         <Box
           dangerouslySetInnerHTML={{
             __html: intro,

@@ -7,6 +7,7 @@ import Helper from 'components/Helper'
 import ExternalLink from './ExternalLink'
 import { countExplorerBadges } from 'utils'
 import { IS_REWARDS_ACTIVATED } from 'constants/index'
+import { t } from 'i18next'
 
 const Reward = ({
   lesson,
@@ -74,7 +75,7 @@ const Reward = ({
                         underline="true"
                         href="https://x.com/BanklessAcademy/status/1869412319819956491"
                       >
-                        Learn more
+                        {t('Learn more')}
                       </ExternalLink>
                     </Box>
                   </>

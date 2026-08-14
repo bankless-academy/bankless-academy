@@ -449,25 +449,25 @@ const Layout = ({
                   <Box>
                     <DesktopButton
                       link="/lessons"
-                      label="Lessons"
+                      label={t('Lessons')}
                       isActive={page === 'LESSON'}
                       icon={LessonIcon}
                     />
                     <DesktopButton
                       link="/lessons/handbook"
-                      label="Handbooks"
+                      label={t('Handbooks')}
                       isActive={page === 'HANDBOOK'}
                       icon={HandbookIcon}
                     />
                     <DesktopButton
                       link="/explore"
-                      label="Explore"
+                      label={t('Explore')}
                       isActive={page === 'EXPLORE'}
                       icon={ExploreIcon}
                     />
                     <DesktopButton
                       link="/glossary"
-                      label="Glossary"
+                      label={t('Glossary')}
                       isActive={page === 'GLOSSARY'}
                       icon={GlossaryIcon}
                     />
@@ -514,7 +514,7 @@ const Layout = ({
                       {/* Mobile menu */}
                       <MobileButton
                         link="/lessons"
-                        label="Lessons"
+                        label={t('Lessons')}
                         isActive={router.pathname === '/lessons'}
                         icon={LessonIcon}
                         pwa={pwa}
@@ -522,7 +522,7 @@ const Layout = ({
                       />
                       <MobileButton
                         link="/lessons/handbook"
-                        label="Handbooks"
+                        label={t('Handbooks')}
                         isActive={router.pathname.startsWith(
                           '/lessons/handbook'
                         )}
@@ -532,7 +532,7 @@ const Layout = ({
                       />
                       <MobileButton
                         link="/explore"
-                        label="Explore"
+                        label={t('Explore')}
                         isActive={page === 'EXPLORE'}
                         icon={ExploreIcon}
                         pwa={pwa}
@@ -544,7 +544,7 @@ const Layout = ({
                             ? `/explorer/${username}?referral=true`
                             : `/explorer/my-profile`
                         }
-                        label="Profile"
+                        label={t('Profile')}
                         isActive={router.pathname.startsWith('/explorer')}
                         imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
                         borderRight={0}

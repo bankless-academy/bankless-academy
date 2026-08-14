@@ -101,7 +101,7 @@ const DEXAggregators = (
                 ),
               }}
             />
-            <InputGroup maxW="530px">
+            <InputGroup maxW="530px" ml="14.4px">
               <Input
                 placeholder="0x..."
                 value={tx}

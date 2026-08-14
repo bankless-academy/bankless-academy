@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import {
   Box,
   Container,
@@ -33,6 +33,7 @@ import {
 } from 'utils/index'
 import Keyword from 'components/Keyword'
 import MintNFT from 'components/MintNFT'
+import i18next from 'i18next'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -573,6 +574,28 @@ const Article = ({
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
 
+  // Same keyword index as Lesson.tsx: translated glossary files are keyed by
+  // the English term, while the markdown carries the translated one.
+  const { keywordIndex, keywordDefs } = useMemo(() => {
+    const bundle = i18next.getResourceBundle(i18n.language, 'keywords') || {}
+    const index: { [form: string]: string } = {}
+    const defs: { [englishKey: string]: string } = {}
+    for (const [englishKey, entry] of Object.entries<any>(bundle)) {
+      if (typeof entry?.definition === 'string')
+        defs[englishKey] = entry.definition
+      for (const form of [
+        englishKey,
+        entry?.keyword,
+        entry?.keyword_plural,
+        ...(entry?.keyword_forms || []),
+      ]) {
+        if (typeof form === 'string' && form)
+          index[form.toLowerCase()] = englishKey
+      }
+    }
+    return { keywordIndex: index, keywordDefs: defs }
+  }, [i18n.language])
+
   const isArticleCollected =
     lesson.mirrorNFTAddress?.length &&
     articlesCollectedLS.includes(lesson.mirrorNFTAddress)
@@ -662,19 +685,14 @@ const Article = ({
               const englishDefition =
                 keywords[lowerCaseKeyword]?.definition ||
                 keywords[lowerCaseKeywordSingular]?.definition
+              const translationKey =
+                keywordIndex[lowerCaseKeyword] ||
+                keywordIndex[lowerCaseKeywordSingular] ||
+                lowerCaseKeyword
+              const translated = keywordDefs[translationKey]
               const definition =
-                i18n.language !== 'en'
-                  ? !t(`${lowerCaseKeyword}.definition`, {
-                      ns: 'keywords',
-                    }).endsWith('.definition')
-                    ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
-                    : !t(`${lowerCaseKeywordSingular}.definition`, {
-                        ns: 'keywords',
-                      }).endsWith('.definition')
-                    ? t(`${lowerCaseKeywordSingular}.definition`, {
-                        ns: 'keywords',
-                      })
-                    : englishDefition
+                i18n.language !== 'en' && translated?.length
+                  ? translated
                   : englishDefition
               return definition?.length ? (
                 <Keyword

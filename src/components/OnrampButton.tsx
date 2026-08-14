@@ -10,6 +10,7 @@ import {
   generateSessionToken,
   formatAddressesForToken,
 } from '../utils/coinbase'
+import { t } from 'i18next'
 
 interface OnrampButtonProps {
   address: string
@@ -223,8 +224,9 @@ const OnrampButton = ({
             ? '150px'
             : 'unset'
         }
+        whiteSpace="nowrap"
       >
-        Fund Wallet
+        {t('Add funds')}
         {/* via Coinbase */}
       </Box>
     </Button>

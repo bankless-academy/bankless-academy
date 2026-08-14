@@ -137,6 +137,14 @@ How it works:
 - **Per-language style guide** at `translation/style/<lang>.md` (register,
   terms to keep in English, typography). Optional but strongly recommended
   before a language's first run.
+- **Glossary files are keyed by the ENGLISH term.** `translation/keywords/<lang>/
+  keywords.json` uses the English term as a stable id, with the translated term
+  in `keyword`. The app maps display term -> English key at runtime (the keyword
+  index in `Lesson.tsx`), which is how a tooltip resolves from the translated
+  word in the markdown. Pre-pipeline files are keyed by the translated term
+  instead; the index handles both, so languages convert one wave at a time.
+  `--keywords` rebuilds a language's glossary from scratch and REPLACES the
+  file: nothing from the old Crowdin-era data survives.
 - **Structural verification with retry.** Every generated unit is checked
   against its English source: identical image references, identical link URLs,
   same quiz option count, `[x]` on the same option, same `> ℹ️` feedback count,
@@ -180,9 +188,11 @@ render a warning banner on the intro slide.
 - [x] 8 structurally broken translations unregistered (2026-08-14): `bitcoin-basics` es/fr/pt-br/tr/uk/zh, `wallet-basics` uk, `optimism-governance` fr — files kept in git under `staleTranslations`, pages now serve English instead of mis-grading learners.
 - [x] `translate-content.js` built (2026-08-14): per-unit hash gating, ETHGlossary + style-guide terminology pinning, structural + length verification with retry, glossary sync, offline `--verify-only` / `--terms` / `--keywords` modes. French `bitcoin-basics` regenerated as the pilot. **The API path is still unrun** (no `ANTHROPIC_API_KEY` yet) — the pilot content was authored directly against the same contract.
 - [x] Slide overflow fixed in the UI (2026-08-14): the fixed-height slide container had `maxH: 533px` and no overflow rule, so long text was painted over by the nav bar. Now `overflowY: auto` on desktop + bottom padding clearing the fixed mobile nav. Overflow scrolls instead of vanishing, which matters most for languages that run longer than English.
-- [ ] **Remaining before `translate-content`** (see the audit doc): generate `website/en/lesson.json`, make the 9 English-only quest components translatable, serve translated md locally instead of GitHub raw, add `GITHUB_TOKEN` to Vercel + refresh `.env.example`
-- [ ] Repair the pre-pipeline glossary files with `--keywords` (156/342 French entries still hold English definitions; every language is similar) — needs an API key
-- [ ] 17 legacy translated slides still exceed the ceiling (fr 10, it 2, es 2, tr 1, pt-br 1, de 1) — they now scroll rather than clip, and clear as each wave regenerates
+- [x] **Pre-translation gate cleared (2026-08-15):** quest components translatable, translated md served from disk (`/api/lesson-content/[...slug]`) instead of raw.githubusercontent, `.env.example` refreshed, `GITHUB_TOKEN` on Vercel
+- [x] **`nsSeparator: false`** (2026-08-15) — the single highest-impact i18n bug. Our keys ARE English sentences, and i18next reads a `:` in a key as a namespace prefix, so **every key ending in `:` resolved to an empty string**: "Resources:", "Answer selected:", "3. Paste the successful swap transaction hash below:" simply vanished from the UI in all languages, English included. Fixed in `src/utils/translation.ts`. `keySeparator` stays ON: `keyPrefix` joins with `.` regardless of the setting (i18next `getFixedT`), the quests bundle is nested, and i18next's `deepFind` already resolves keys containing dots. Glossary definitions no longer go through `t('<term>.definition')` — `Lesson.tsx`/`Article.tsx` read the resource bundle directly.
+- [x] **French complete (2026-08-15):** all 19 active lessons translated and structurally verified, `common` 266/266, `quests` 116/116, `homepage` 37/37, `lesson` 38/38, glossary 274/274 (80 French plurals added so plural display forms resolve to a tooltip). Site sweep closed the last hardcoded strings (`_app`, `explore`, `my-profile`, `mini-apps`, Mini* lists, `Reward`, `Badge`, `ShareModal`, `LessonContent`, `MintDatadisk*`, `confirmation`, `maintenance`). Out of scope by request: `leaderboard.tsx`, social share text, Notion pages, `onchain-summer-challenge`, `CryptoArchetypeQuiz.tsx`.
+- [ ] Repair the remaining pre-pipeline glossary files with `--keywords` (de/es/it/ja/pt-br/tr/uk/zh still hold Crowdin-era definitions; French is done) — needs an API key
+- [ ] 17 legacy translated slides still exceed the ceiling (it 2, es 2, tr 1, pt-br 1, de 1 + older waves) — they now scroll rather than clip, and clear as each wave regenerates
 - [ ] `translate-content` AI translation script (see `docs/i18n-25-languages-plan.md` — existing 9 languages to full coverage first; must also emit `website/<lang>/*.json` and `keywords/<lang>/keywords.json`, not just lesson md)
 - [ ] **After**: lazy-load i18next namespaces, `fallback: 'blocking'` + ISR for translated lesson paths, localize `/glossary` (+ per-term anchors, `glossary: true` audit), RTL audit before the first ar/ur wave, hreflang in the sitemap
 - [ ] Remove Crowdin (`crowdin.yml`, `import-translations.js`) and Notion lesson import (`import-content.js`, `src/pages/lessons/preview.tsx`)
@@ -348,17 +358,26 @@ Understand all five before touching translations — they fail independently.
   slides do, and the stale `title` field was dropped from all 90 QUIZ/POLL
   `slideMeta` entries. **Keep every quiz heading as `Knowledge Check <n>`** in
   the md, numbered sequentially per lesson.
-- `LessonContent.tsx` (`/lessons/**/content`) and `/api/sitemap` fetch
-  translated md from `raw.githubusercontent.com/.../main/` **at runtime**. The
-  sitemap does one fetch per lesson × language and has no cache header — it is
-  ~40 fetches today and would be ~475 at 25 languages.
-- The glossary page (`/glossary`) reads the English `KEYWORDS` object directly
-  and is not localized or routable per language.
-- Quest components hold hardcoded English: 9 of 16 never call `useTranslation`
-  (`AcademyCommunity`, `BanklessArchetypes`, `DecentralizedExchanges`,
-  `DEXAggregators`, `IntroToDeFi`, `Layer1Blockchains`, `Layer2Blockchains`,
-  `StakingOnEthereum`, `WalletConnect`). Several components also carry explicit
-  `// TODO: TRANSLATE` markers (`Badge.tsx`, `MintDatadiskButton/Modal`).
+- **A `:` in a key used to eat the whole string.** i18next's default
+  `nsSeparator` is `':'`, and our keys are English sentences, so
+  `t('Resources:')` was parsed as namespace `Resources` + empty key and
+  rendered as **nothing at all** — in English too. Fixed 2026-08-15 with
+  `nsSeparator: false`. Do NOT also turn off `keySeparator`: `keyPrefix` joins
+  with `.` no matter what (i18next `getFixedT` hardcodes `keySeparator || '.'`),
+  the quests bundle is nested one level under the component name, and
+  `deepFind` already handles keys containing dots. Turning it off makes every
+  `keyPrefix`ed quest string fall back to the raw key.
+- Glossary definitions are read straight off the resource bundle
+  (`i18next.getResourceBundle(lang, 'keywords')`) in `Lesson.tsx` and
+  `Article.tsx`, not via `t('<term>.definition')` — same `useMemo` that builds
+  the display-form -> English-key index.
+- Fixed 2026-08-15: `LessonContent.tsx` and `/api/sitemap` now read translated
+  md from disk through `/api/lesson-content/[...slug]` (path-traversal guarded)
+  instead of `raw.githubusercontent.com` at runtime; the glossary is localized
+  and routable at `/glossary/<lang>` (`GlossaryPage.tsx`), sorted with
+  `localeCompare` in the active language; all 16 quest components call
+  `useTranslation`. The only remaining `// TODO: TRANSLATE` is the DataDisk
+  share text, deliberately kept in English.
 
 See `docs/pre-translation-audit.md` for the measured coverage numbers and the
 ordered list of what to fix before vs. after the translation run.

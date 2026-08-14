@@ -481,7 +481,14 @@ const ConnectWalletButton = ({
               </Box>
             </Button>
           </PopoverTrigger>
-          <PopoverContent width={isSmallScreen ? '260px' : '300px'}>
+          {/* Width follows the labels: translated strings ("Déconnecter le
+              portefeuille") run well past the English ones and used to be
+              clipped by the fixed width. */}
+          <PopoverContent
+            w="auto"
+            minW={isSmallScreen ? '260px' : '300px'}
+            maxW="calc(100vw - 32px)"
+          >
             <PopoverArrow />
             <PopoverBody>
               <Box textAlign="center" m="2">
@@ -499,7 +506,10 @@ const ConnectWalletButton = ({
                     }
                     onClick={onClose}
                   >
-                    <Box minW={isSmallScreen ? '150px' : '180px'}>
+                    <Box
+                      minW={isSmallScreen ? '150px' : '180px'}
+                      whiteSpace="nowrap"
+                    >
                       {t('My Explorer Profile')}
                     </Box>
                   </Button>
@@ -530,7 +540,10 @@ const ConnectWalletButton = ({
                   }
                   onClick={disconnectWallet}
                 >
-                  <Box minW={isSmallScreen ? '150px' : '180px'}>
+                  <Box
+                    minW={isSmallScreen ? '150px' : '180px'}
+                    whiteSpace="nowrap"
+                  >
                     {t('Disconnect Wallet')}
                   </Box>
                 </Button>

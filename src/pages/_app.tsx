@@ -31,6 +31,7 @@ import {
 import { FrameProvider } from 'components/providers/FrameProvider'
 import ExternalLink from 'components/ExternalLink'
 import { AppProvider } from 'contexts/AppContext'
+import { t } from 'i18next'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -99,9 +100,11 @@ const App = ({
     pageProps.pageMeta?.title === 'Maintenance'
   ) {
     return SENTRY_ENABLED ? (
-      <Sentry.ErrorBoundary>Maintenance in progress ...</Sentry.ErrorBoundary>
+      <Sentry.ErrorBoundary>
+        {t('Maintenance in progress ...')}
+      </Sentry.ErrorBoundary>
     ) : (
-      <div>Maintenance in progress ...</div>
+      <div>{t('Maintenance in progress ...')}</div>
     )
   }
   if (pageProps.pageMeta?.nolayout) {
@@ -413,7 +416,7 @@ const App = ({
                       {isLoadingProfile ? (
                         <Container maxW="container.xl">
                           <Heading as="h2" size="xl" m="8" textAlign="center">
-                            Loading Explorer Profile
+                            {t('Loading Explorer Profile')}
                           </Heading>
                           <Image
                             margin="auto"
@@ -434,24 +437,26 @@ const App = ({
 
           <Overlay hidden={!stateData.open} zIndex="999" />
           {/* don't show if injected wallet is detected */}
-          {stateData.open && typeof window !== 'undefined' && !window.ethereum && (
-            <Box
-              position="fixed"
-              top="0"
-              left="0"
-              right="0"
-              p="4"
-              zIndex="1000"
-              maxW="380px"
-              margin="auto"
-            >
-              <ExternalLink href="https://bankless.ac/zerion">
-                <Button size="lg" variant="primaryBig" width="100%">
-                  No wallet? 👉 Get Zerion wallet here
-                </Button>
-              </ExternalLink>
-            </Box>
-          )}
+          {stateData.open &&
+            typeof window !== 'undefined' &&
+            !window.ethereum && (
+              <Box
+                position="fixed"
+                top="0"
+                left="0"
+                right="0"
+                p="4"
+                zIndex="1000"
+                maxW="380px"
+                margin="auto"
+              >
+                <ExternalLink href="https://bankless.ac/zerion">
+                  <Button size="lg" variant="primaryBig" width="100%">
+                    {t('No wallet? 👉 Get Zerion wallet here')}
+                  </Button>
+                </ExternalLink>
+              </Box>
+            )}
         </NonSSRWrapper>
       </ThemeProvider>
     </>

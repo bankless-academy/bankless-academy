@@ -113,50 +113,63 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
 
   const farcasterLink = generateFarcasterLink(share, shareLink)
 
-  // TODO: TRANSLATE
   const CollectiblesHelper = (
     <Helper
-      title="Lesson Collectible"
+      title={t('Lesson Collectible')}
       fullscreen
       definition={
         <Box>
           <Box mb="4">
-            Lesson collectibles are tradable NFTs containing lesson content from
-            Bankless Academy.
+            {t(
+              'Lesson collectibles are tradable NFTs containing lesson content from Bankless Academy.'
+            )}
           </Box>
           <Box mb="4">
-            Built for 100 passionate Bankless Explorers, owning a lesson
-            DataDisk grants its Guardian the following perks:
+            {t(
+              'Built for 100 passionate Bankless Explorers, owning a lesson DataDisk grants its Guardian the following perks:'
+            )}
             <br />
             <UnorderedList>
               <ListItem>
-                Upgrading of normal lesson card to golden DataDisk artwork.
+                {t(
+                  'Upgrading of normal lesson card to golden DataDisk artwork.'
+                )}
               </ListItem>
               <ListItem>
-                Early invitation to the official ‘Bankless Academy’{' '}
+                {t('Early invitation to the official ‘Bankless Academy’')}{' '}
                 <ExternalLink
                   underline="true"
                   href="https://guild.xyz/bankless-academy"
                 >
-                  Discord server
+                  {t('Discord server')}
                 </ExternalLink>
-                , and the dedicated ‘Guardian’ channel.
+                {t(', and the dedicated ‘Guardian’ channel.')}
               </ListItem>
               <ListItem>
-                Onchain display of your support for Bankless Academy and funding
-                of education public goods.
+                {t(
+                  'Onchain display of your support for Bankless Academy and funding of education public goods.'
+                )}
               </ListItem>
             </UnorderedList>
           </Box>
-          <Box mb="4">
-            There are only 100 versions available for each collectible lesson.
-            If the original batch sells out, try the secondary market. Join us
-            and <b>become a Guardian of Bankless Academy</b> today!
-          </Box>
-          <Box mb="4" fontSize="sm" fontStyle="italic">
-            <b>Note:</b> Maximum of two collectibles per wallet. 10% creator fee
-            on secondary trades.
-          </Box>
+          <Box
+            mb="4"
+            dangerouslySetInnerHTML={{
+              __html: t(
+                'There are only 100 versions available for each collectible lesson. If the original batch sells out, try the secondary market. Join us and <b>become a Guardian of Bankless Academy</b> today!'
+              ),
+            }}
+          />
+          <Box
+            mb="4"
+            fontSize="sm"
+            fontStyle="italic"
+            dangerouslySetInnerHTML={{
+              __html: t(
+                '<b>Note:</b> Maximum of two collectibles per wallet. 10% creator fee on secondary trades.'
+              ),
+            }}
+          />
         </Box>
       }
     />
@@ -172,7 +185,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
           borderBottom="1px solid #989898"
           pb="2"
         >
-          Donate
+          {t('Donate')}
         </Text>
       </Box>
       <StyledCard w="100%" position="relative">

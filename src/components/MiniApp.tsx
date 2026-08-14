@@ -8,6 +8,7 @@ import { wagmiConfig } from 'utils/wagmi'
 import { getWalletClient } from '@wagmi/core'
 import { useAccount } from 'wagmi'
 import { Box, Text, Flex, Spinner } from '@chakra-ui/react'
+import { t } from 'i18next'
 
 const FRAME_ID = 'bankless-academy-frame'
 const DEBUG = true
@@ -275,7 +276,7 @@ export default function MiniApp({
   return (
     <Box position="relative" width="424px" maxWidth="100vw" margin="0 auto">
       {!address ? (
-        <Text>Please connect your wallet first</Text>
+        <Text>{t('Please connect your wallet first')}</Text>
       ) : (
         <>
           {isLoading && (

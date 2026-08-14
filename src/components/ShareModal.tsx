@@ -161,7 +161,7 @@ const ShareModal = ({
                   fontWeight="500"
                   ml="30px"
                 >
-                  Connect your wallet and earn referral rewards!
+                  {t('Connect your wallet and earn referral rewards!')}
                 </Box>
               </Box>
             </Box>

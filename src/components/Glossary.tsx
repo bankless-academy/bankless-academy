@@ -18,8 +18,14 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
   const [isSmallScreen] = useSmallScreen()
   const groupedTerms: { [key: string]: Term[] } = {}
   terms.forEach((term) => {
-    let firstLetter = term.name.charAt(0).toUpperCase()
-    if (parseInt(firstLetter)) firstLetter = 'number'
+    // strip accents so É groups under E, and match digits properly (the old
+    // parseInt test missed terms starting with "0")
+    let firstLetter = term.name
+      .charAt(0)
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .toUpperCase()
+    if (/[0-9]/.test(firstLetter)) firstLetter = 'number'
     if (!groupedTerms[firstLetter]) {
       groupedTerms[firstLetter] = []
     }

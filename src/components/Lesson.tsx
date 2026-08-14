@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useMemo } from 'react'
 import {
   Box,
   Text,
@@ -28,6 +28,7 @@ import {
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
 import { isMobile, isDesktop } from 'react-device-detect'
 import { Emoji } from 'emoji-picker-react'
 import emojiRegex from 'emoji-regex'
@@ -162,8 +163,21 @@ export const Slide = styled(Card)<{
   .bloc2 {
     flex: 1;
     ${(props) =>
-      props.issmallscreen !== 'true' && `min-height: ${BLOC_MIN_H}px;`};
-    ${(props) => props.slidetype === 'QUEST' && 'align-content: center;'};
+      props.issmallscreen !== 'true' &&
+      props.slidetype !== 'QUEST' &&
+      `min-height: ${BLOC_MIN_H}px;`};
+    /* Quest columns hold a form on the left and a help card on the right, of
+       very different heights. align-content does nothing on a block box, so
+       the old rule left the short column pinned to the top of a 533px well
+       with all the slack below it. Center each column's own content instead
+       and let the row size to its tallest member. */
+    ${(props) =>
+      props.slidetype === 'QUEST' &&
+      `
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    `};
   }
   .bloc2 {
     ${(props) => props.istranslation === 'true' && ' flex: 0.8;'};
@@ -465,6 +479,36 @@ const Lesson = ({
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
 
+  // Translated glossary files are keyed by the ENGLISH term (a stable id the
+  // translation pipeline can diff against), but the markdown contains the
+  // TRANSLATED term. Map every display form back to its English key so a
+  // tooltip can be resolved from what the reader actually sees.
+  // Pre-pipeline files are keyed by the translated term instead; indexing the
+  // key itself as a form makes those resolve too, so both shapes work while
+  // languages are regenerated one wave at a time.
+  // Definitions are read straight off the bundle rather than through t():
+  // keys are English terms and often contain '.', which no longer resolves as
+  // a path now that keySeparator is off.
+  const { keywordIndex, keywordDefs } = useMemo(() => {
+    const bundle = i18next.getResourceBundle(language, 'keywords') || {}
+    const index: { [form: string]: string } = {}
+    const defs: { [englishKey: string]: string } = {}
+    for (const [englishKey, entry] of Object.entries<any>(bundle)) {
+      if (typeof entry?.definition === 'string')
+        defs[englishKey] = entry.definition
+      for (const form of [
+        englishKey,
+        entry?.keyword,
+        entry?.keyword_plural,
+        ...(entry?.keyword_forms || []),
+      ]) {
+        if (typeof form === 'string' && form)
+          index[form.toLowerCase()] = englishKey
+      }
+    }
+    return { keywordIndex: index, keywordDefs: defs }
+  }, [language])
+
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
 
@@ -717,6 +761,17 @@ const Lesson = ({
         slide.quiz.rightAnswerNumber) ||
     (slide.type === 'POLL' && quizSlide?.length)
 
+  // Suggest Changes is available on content slides once the reader has earned
+  // it; where it renders depends on whether the bottom bar already exists.
+  const canSuggestChanges =
+    !isMobile &&
+    !lesson?.isPreview &&
+    !IS_WHITELABEL &&
+    !!address &&
+    (slide.type === 'LEARN' ||
+      slide.type === 'QUEST' ||
+      ((slide.type === 'QUIZ' || slide.type === 'POLL') && answerIsCorrect))
+
   // shortcuts
   // TODO: add modal with all the shortcuts
   useHotkeys('?,shift+/', () => setIsShortcutsOpen((open) => !open))
@@ -883,18 +938,15 @@ const Lesson = ({
         const englishDefition =
           keywords[lowerCaseKeyword]?.definition ||
           keywords[lowerCaseKeywordSingular]?.definition
+        // resolve the displayed term back to its English key before asking
+        // i18next, which is keyed by that id
+        const translationKey =
+          keywordIndex[lowerCaseKeyword] ||
+          keywordIndex[lowerCaseKeywordSingular] ||
+          lowerCaseKeyword
+        const translated = keywordDefs[translationKey]
         const definition =
-          language !== 'en'
-            ? !t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' }).endsWith(
-                '.definition'
-              )
-              ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
-              : !t(`${lowerCaseKeywordSingular}.definition`, {
-                  ns: 'keywords',
-                }).endsWith('.definition')
-              ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
-              : englishDefition
-            : englishDefition
+          language !== 'en' && translated?.length ? translated : englishDefition
         const nextHasPunctuation =
           node.next?.data && ['.', ',', ':'].includes(node.next?.data)
         const extra = nextHasPunctuation ? node.next?.data : ''
@@ -985,6 +1037,18 @@ const Lesson = ({
         as="h2"
         position="relative"
       >
+        {/* Suggest Changes lives in the header on every slide but the first,
+            where the intro still has a bottom bar with room to spell it out. */}
+        {canSuggestChanges && !isFirstSlide && (
+          <Box
+            position="absolute"
+            right="34px"
+            top="50%"
+            transform="translateY(-50%)"
+          >
+            <EditContentModal lesson={lesson} slide={slide} iconOnly />
+          </Box>
+        )}
         {/* `?` is a power-user convention nobody guesses, so the overlay gets a
             quiet permanent affordance. Sits inside the header row, well clear
             of the close button hanging off the top-right corner. */}
@@ -1079,6 +1143,8 @@ const Lesson = ({
         <Box
           flex="1"
           minH="0"
+          display="flex"
+          flexDirection="column"
           // last-resort safety net: this should never engage now that the height
           // budget matches the validator ceiling, but content silently
           // disappearing under the nav is worse than a scrollbar on one slide
@@ -1096,10 +1162,15 @@ const Lesson = ({
           <Box
             className="content"
             minH="480px"
+            // fills the scroll area so slides that centre their own content
+            // (quest, end of lesson) sit in the middle of the card instead of
+            // riding the top edge with all the slack underneath
+            flex="1"
+            display="flex"
+            flexDirection="column"
             // mobile SlideNav is position:fixed (~80px tall), so the last lines
             // sat under it at full scroll; desktop just needs to clear the edge
             pb={isSmallScreen ? '20' : 2}
-            pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 0}
           >
             {slide.type === 'LEARN' && (
               <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
@@ -1122,7 +1193,15 @@ const Lesson = ({
                   <ButtonGroup size="lg" w="100%">
                     <SimpleGrid
                       columns={[null, null, 1]}
-                      spacing="40px"
+                      // tighten as options multiply: 6 answers at 40px
+                      // gaps overflow the fixed-height slide
+                      spacing={
+                        (slide.quiz?.answers?.length || 0) > 4
+                          ? '12px'
+                          : (slide.quiz?.answers?.length || 0) === 4
+                          ? '24px'
+                          : '40px'
+                      }
                       w="100%"
                       justifyItems="center"
                     >
@@ -1144,7 +1223,11 @@ const Lesson = ({
                               key={`answer-${n}`}
                               w="100%"
                               maxW="500px"
-                              p="4"
+                              p={
+                                (slide.quiz?.answers?.length || 0) > 4
+                                  ? '3'
+                                  : '4'
+                              }
                               h="auto"
                               className={
                                 slide.type === 'POLL'
@@ -1204,7 +1287,7 @@ const Lesson = ({
               </>
             )}
             {slide.type === 'QUEST' && (
-              <VStack flex="auto" minH="520px" justifyContent="center">
+              <VStack flex="auto" justifyContent="center" w="100%">
                 {Quest?.questComponent}
               </VStack>
             )}
@@ -1316,20 +1399,9 @@ const Lesson = ({
                 {isSmallScreen ? '' : 'Prev'}
               </Button>
             )}
-            {
-              /* lesson.isCommentsEnabled && */
-              !isMobile &&
-                !lesson?.isPreview &&
-                !IS_WHITELABEL &&
-                (slide.type === 'LEARN' ||
-                  ((slide.type === 'QUIZ' || slide.type === 'POLL') &&
-                    answerIsCorrect)) &&
-                address && (
-                  <>
-                    <EditContentModal lesson={lesson} slide={slide} />
-                  </>
-                )
-            }
+            {canSuggestChanges && isFirstSlide && (
+              <EditContentModal lesson={lesson} slide={slide} />
+            )}
             {lesson?.isPreview && (
               <Box position="relative">
                 DEBUG

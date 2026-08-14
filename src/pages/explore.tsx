@@ -198,7 +198,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
             justifyContent="center"
             position="relative"
           >
-            Explore Apps
+            {t('Explore Apps')}
             <Box position="absolute" top="-4px" right="-10px">
               <Helper
                 title={t('Disclaimer')}
@@ -227,7 +227,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
           mt={4}
           mb={6}
         >
-          The best apps for your crypto journey — all in one place.
+          {t('The best apps for your crypto journey — all in one place.')}
         </Heading>
         <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
           {featuredItems.map((item) => (

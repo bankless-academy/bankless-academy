@@ -196,6 +196,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
+  // The /content view renders the raw markdown. Read it here rather than
+  // fetching raw.githubusercontent at runtime: the content is in this repo, so
+  // the fetch only added latency, a third-party dependency, and a window where
+  // a translation existed locally but not yet on main (invisible on previews).
+  if (showContent) {
+    const localizedPath = `translation/lesson/${language}/${slug}.md`
+    const englishPath = `translation/lesson/en/${slug}.md`
+    const mdPath = fs.existsSync(localizedPath) ? localizedPath : englishPath
+    currentLesson.rawMd = fs.existsSync(mdPath)
+      ? fs.readFileSync(mdPath, 'utf8')
+      : null
+  }
+
   const isDatadisk = (params.slug as any).join('/').includes('-datadisk')
 
   const pageMeta: MetaData = {

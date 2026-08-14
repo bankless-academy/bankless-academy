@@ -59,6 +59,9 @@ const LanguageSelector = ({
   const isLessonPage =
     router.pathname.startsWith('/lessons/') &&
     router.pathname !== '/lessons/handbook'
+  // the glossary has one indexable URL per language too, so switching language
+  // there should move the user to that URL rather than only swapping strings
+  const isGlossaryPage = router.pathname.startsWith('/glossary')
   const lessonSlugs = isLessonPage ? (router.query.slug as string[]) : []
   const selectedLanguage = lessonSlugs?.length > 1 ? lessonSlugs[0] : null
   const isContentPage = router.asPath.endsWith('/content')
@@ -131,15 +134,17 @@ const LanguageSelector = ({
   ]
 
   const isLessonTranslated = (code: string): boolean =>
-    code === 'en' ||
-    !!currentLesson?.languages?.includes(code as LanguageType)
+    code === 'en' || !!currentLesson?.languages?.includes(code as LanguageType)
 
   const selectLanguage = (code: LanguageCode): void => {
     i18n.changeLanguage(code)
     setDefaultLanguage(code)
     setLanguage(code)
     let path: string | null = null
-    if (isLessonPage && lessonSlug) {
+    if (isGlossaryPage) {
+      path = code === 'en' ? '/glossary' : `/glossary/${code}`
+      router.push(path)
+    } else if (isLessonPage && lessonSlug) {
       // route to the translated lesson URL when it exists, else keep the
       // user on the English lesson URL (UI language still switches)
       path =
@@ -314,7 +319,11 @@ const LanguageSelector = ({
                   {t('Suggested')}
                 </Text>
                 {renderRow(suggested, 0, true)}
-                <Box borderBottom="1px solid" borderColor="whiteAlpha.300" my="1" />
+                <Box
+                  borderBottom="1px solid"
+                  borderColor="whiteAlpha.300"
+                  my="1"
+                />
               </>
             )}
             {filtered.map((def, i) =>

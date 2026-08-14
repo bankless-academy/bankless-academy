@@ -1,9 +1,19 @@
 /* eslint-disable no-console */
-import { Feed } from "feed"
+import { Feed } from 'feed'
+import fs from 'fs'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { DEFAULT_METADATA, DOMAIN_URL, GENERIC_ERROR_MESSAGE, LESSONS, PROJECT_DESCRIPTION, PROJECT_NAME, imageMeta } from 'constants/index'
-import { lessonLink } from "utils"
+import {
+  DEFAULT_METADATA,
+  DOMAIN_URL,
+  GENERIC_ERROR_MESSAGE,
+  LESSONS,
+  PROJECT_DESCRIPTION,
+  PROJECT_NAME,
+  imageMeta,
+} from 'constants/index'
+import { lessonLink } from 'utils'
+import { LANGUAGES } from 'constants/languages'
 import { pageMeta as lessonsPageMeta } from 'pages/lessons/index'
 import { pageMeta as glossaryPageMeta } from 'pages/glossary'
 import { pageMeta as oscPageMeta } from 'pages/onchain-summer-challenge'
@@ -43,14 +53,16 @@ export default async function handler(
       description: PROJECT_DESCRIPTION,
       id: DOMAIN_URL,
       link: DOMAIN_URL,
-      language: "en",
+      language: 'en',
       image: `${DOMAIN_URL}${imageMeta}`,
       favicon: `${DOMAIN_URL}/favicon.png`,
       copyright: 'Bankless Academy',
     })
 
     const lessons = []
-    const fetchPromises = LESSONS.sort((a, b) => a.publicationDate > b.publicationDate ? -1 : 1).map(async (lesson) => {
+    const fetchPromises = LESSONS.sort((a, b) =>
+      a.publicationDate > b.publicationDate ? -1 : 1
+    ).map(async (lesson) => {
       if (lesson.publicationStatus === 'publish') {
         lessons.push({
           title: `${lesson.englishName}`,
@@ -58,7 +70,7 @@ export default async function handler(
           link: lessonLink(lesson),
           description: lesson.description,
           date: new Date(lesson.publicationDate),
-          image: `${DOMAIN_URL}${lesson.socialImageLink}`
+          image: `${DOMAIN_URL}${lesson.socialImageLink}`,
         })
         if (!lesson?.isArticle) {
           // content page
@@ -68,35 +80,46 @@ export default async function handler(
             link: `${lessonLink(lesson)}/content`,
             description: lesson.description,
             date: new Date(lesson.publicationDate),
-            image: `${DOMAIN_URL}${lesson.socialImageLink}`
+            image: `${DOMAIN_URL}${lesson.socialImageLink}`,
           })
         }
 
+        // Read the translated markdown from disk rather than fetching it from
+        // raw.githubusercontent/main: the content lives in this repo, so the
+        // fetch added latency, made the sitemap depend on a third party, and
+        // 500'd whenever a translation was registered but not yet pushed to
+        // main (also why translations were invisible on preview deploys).
         const languagePromises = lesson.languages.map(async (language) => {
-          const md = await fetch(
-            `https://raw.githubusercontent.com/bankless-academy/bankless-academy/main/translation/lesson/${language}/${lesson.slug}.md`
-          ).then((res) => res.text())
+          const path = `translation/lesson/${language}/${lesson.slug}.md`
+          if (!fs.existsSync(path)) return
+          const md = fs.readFileSync(path, 'utf8')
 
           const translatedLesson = await processMD(md, language)
-          console.log(translatedLesson)
+          if (!translatedLesson) return
 
           lessons.push({
             title: `${translatedLesson.name}`,
             id: `/lessons/${language}/${lesson.slug}`,
-            link: lessonLink(lesson).replace('/lessons/', `/lessons/${language}/`),
+            link: lessonLink(lesson).replace(
+              '/lessons/',
+              `/lessons/${language}/`
+            ),
             description: translatedLesson.description,
             date: new Date(lesson.publicationDate),
-            image: `${DOMAIN_URL}${lesson.socialImageLink}`
+            image: `${DOMAIN_URL}${lesson.socialImageLink}`,
           })
           if (!lesson?.isArticle) {
             // content page
             lessons.push({
               title: `${translatedLesson.name}`,
               id: `/lessons/${language}/${lesson.slug}/content`,
-              link: `${lessonLink(lesson).replace('/lessons/', `/lessons/${language}/`)}/content`,
+              link: `${lessonLink(lesson).replace(
+                '/lessons/',
+                `/lessons/${language}/`
+              )}/content`,
               description: translatedLesson.description,
               date: new Date(lesson.publicationDate),
-              image: `${DOMAIN_URL}${lesson.socialImageLink}`
+              image: `${DOMAIN_URL}${lesson.socialImageLink}`,
             })
           }
         })
@@ -114,7 +137,7 @@ export default async function handler(
       link: `${DOMAIN_URL}/`,
       description: PROJECT_DESCRIPTION,
       date: lastUpdate,
-      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`,
     })
     feed.addItem({
       title: lessonsPageMeta.title,
@@ -122,7 +145,7 @@ export default async function handler(
       link: `${DOMAIN_URL}/lessons`,
       description: PROJECT_DESCRIPTION,
       date: lastUpdate,
-      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`,
     })
     feed.addItem({
       title: `FAQ`,
@@ -130,7 +153,7 @@ export default async function handler(
       link: `${DOMAIN_URL}/faq`,
       description: PROJECT_DESCRIPTION,
       date: lastUpdate,
-      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`,
     })
     feed.addItem({
       title: `${glossaryPageMeta.title}`,
@@ -138,15 +161,26 @@ export default async function handler(
       link: `${DOMAIN_URL}/glossary`,
       description: PROJECT_DESCRIPTION,
       date: lastUpdate,
-      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`,
     })
+    // one entry per localized glossary URL, so each translation is crawlable
+    for (const language of LANGUAGES.filter((l) => l.code !== 'en')) {
+      feed.addItem({
+        title: `${glossaryPageMeta.title} (${language.localName})`,
+        id: `/glossary/${language.code}`,
+        link: `${DOMAIN_URL}/glossary/${language.code}`,
+        description: PROJECT_DESCRIPTION,
+        date: lastUpdate,
+        image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`,
+      })
+    }
     feed.addItem({
       title: `${oscPageMeta.title}`,
       id: `/onchain-summer-challenge`,
       link: `${DOMAIN_URL}/onchain-summer-challenge`,
       description: `${oscPageMeta.description}`,
       date: lastUpdate,
-      image: `${DOMAIN_URL}${oscPageMeta.image}`
+      image: `${DOMAIN_URL}${oscPageMeta.image}`,
     })
     feed.addItem({
       title: `${explorePageMeta.title}`,
@@ -154,7 +188,7 @@ export default async function handler(
       link: `${DOMAIN_URL}/explore`,
       description: `${explorePageMeta.description}`,
       date: lastUpdate,
-      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`,
     })
     for (const lesson of lessons) {
       feed.addItem(lesson)

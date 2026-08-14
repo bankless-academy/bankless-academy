@@ -16,7 +16,9 @@
   },
   "BlockchainBasics": {
     "Understand a transaction": "Understand a transaction",
-    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction"
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction",
+    "From": "From",
+    "To": "To"
   },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
@@ -122,5 +124,25 @@
     "Our onchain quests and rewards only work with a wallet connected.": "Our onchain quests and rewards only work with a wallet connected.",
     "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.",
     "Follow this quick instructional video to create your first wallet with Zerion: ": "Follow this quick instructional video to create your first wallet with Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Tick the characteristics that Bitcoin and Ethereum initially prioritized."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Begin your L2 journey.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Hold a balance of at least 0.0002 ETH on Base or Optimism",
+    "Options to fund your wallet:": "Options to fund your wallet:",
+    "Explore other options": "Explore other options",
+    "Check Quest": "Check Quest"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Before claiming your onchain certification:",
+    "Share on Twitter / X": "Share on Twitter / X",
+    "Share on Farcaster": "Share on Farcaster",
+    "See you there! Over and out 📡": "See you there! Over and out 📡",
+    "Connect": "Connect",
+    "Repost on Twitter / X": "Repost on Twitter / X",
+    "Validate": "Validate"
   }
 }

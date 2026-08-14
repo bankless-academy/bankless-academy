@@ -83,6 +83,13 @@ i18next
     supportedLngs: [...LANGUAGE_CODES],
     lowerCaseLng: true,
     debug: false,
+    // Our keys ARE the English sentences, so many of them end in ':'. i18next
+    // reads that as a namespace prefix by default, so `t('Answer selected:')`
+    // resolved to an EMPTY string and the line silently disappeared from the
+    // UI. Namespaces are always passed explicitly here, so the separator has
+    // no job to do. (keySeparator stays on: keyPrefix joins with '.' whatever
+    // we set, and i18next's deepFind already resolves keys containing dots.)
+    nsSeparator: false,
     detection: {
       // Map whatever the browser/localStorage reports onto a registry code:
       // pt-BR -> pt-br, zh-CN/zh-TW -> zh, ja-JP -> ja, and legacy stored

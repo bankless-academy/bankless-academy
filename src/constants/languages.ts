@@ -62,19 +62,20 @@ export const normalizeLangCode = (code?: string | null): LanguageCode => {
   return 'en'
 }
 
-// Extract the language from a lesson URL path: /lessons/<code>/<slug>[/content]
-// returns a valid non-en registry code, else 'en'. Handles multi-char codes
+// Extract the language from a localized URL path. Two shapes carry a language:
+//   /lessons/<code>/<slug>[/content]
+//   /glossary/<code>
+// Returns a valid non-en registry code, else 'en'. Handles multi-char codes
 // ('pt-br') and never mistakes a lesson slug for a language.
 export const parseLangFromPath = (pathname: string): LanguageCode => {
   if (!pathname) return 'en'
   const segments = pathname.split(/[?#]/)[0].split('/').filter(Boolean)
-  if (
-    segments[0] === 'lessons' &&
-    segments.length > 2 &&
-    isLanguage(segments[1]) &&
-    segments[1] !== 'en'
-  ) {
-    return segments[1]
-  }
+  const candidate =
+    segments[0] === 'lessons' && segments.length > 2
+      ? segments[1]
+      : segments[0] === 'glossary' && segments.length > 1
+      ? segments[1]
+      : undefined
+  if (candidate && isLanguage(candidate) && candidate !== 'en') return candidate
   return 'en'
 }

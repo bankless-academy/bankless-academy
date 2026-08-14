@@ -4,8 +4,14 @@ import { LanguageCode } from 'constants/languages'
 export type SlideType = 'LEARN' | 'QUIZ' | 'POLL' | 'QUEST' | 'END'
 // derived from the language registry (src/constants/languages.ts)
 export type LanguageType = LanguageCode
-export type LanguageDescriptionType = { [Key in LanguageType as string]?: string }
-export type LevelType = 'Essentials' | 'Level 1' | 'Level 2' | 'Community Lessons'
+export type LanguageDescriptionType = {
+  [Key in LanguageType as string]?: string
+}
+export type LevelType =
+  | 'Essentials'
+  | 'Level 1'
+  | 'Level 2'
+  | 'Community Lessons'
 export type LessonTypeType = 'LESSON' | 'HANDBOOK'
 
 export interface LessonType {
@@ -69,6 +75,8 @@ export interface LessonType {
   lang?: LanguageType
   keywords?: string[]
   showContent?: boolean
+  // raw markdown for the /content view, read from disk in getStaticProps
+  rawMd?: string
   slides?: {
     type: SlideType
     title: string

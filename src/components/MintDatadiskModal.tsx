@@ -305,7 +305,9 @@ const MintDatadiskModal = ({
                           toast({
                             title: 'Switch your network to Optimism.',
                             description: (
-                              <>Click Mint again after switching network.</>
+                              <>
+                                {t('Click Mint again after switching network.')}
+                              </>
                             ),
                             status: 'error',
                             duration: 10000,
@@ -315,7 +317,7 @@ const MintDatadiskModal = ({
                         setIsMinting(false)
                         toast({
                           title: 'The network has been switched to Optimism.',
-                          description: <>Click Mint again.</>,
+                          description: <>{t('Click Mint again.')}</>,
                           status: 'warning',
                           duration: 10000,
                           isClosable: true,

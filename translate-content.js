@@ -24,7 +24,7 @@
 //   node translate-content.js --lang fr --all
 //   node translate-content.js --lang fr --slug bitcoin-basics --dry-run
 //   node translate-content.js --lang fr --all --force        # ignore hashes
-//   node translate-content.js --lang fr --keywords            # repair the glossary
+//   node translate-content.js --lang fr --keywords            # rebuild the glossary
 //
 // Requires ANTHROPIC_API_KEY in .env.
 import fs from 'fs'
@@ -162,7 +162,7 @@ const options = (s) => s.split('\n').filter((l) => /^- \[[ x]\] /.test(l))
 const feedback = (s) => s.split('\n').filter((l) => l.trim().startsWith('> '))
 const details = (s) => (s.match(/<\/?(details|summary)>/g) || []).length
 
-const verify = (en, tr) => {
+const verify = (en, tr, isArticle) => {
   const problems = []
   const enImg = images(en)
   const trImg = images(tr)
@@ -198,12 +198,19 @@ const verify = (en, tr) => {
     problems.push(`expected ${enFb} "> ℹ️ " feedback line(s), found ${trFb}`)
   if (details(en) !== details(tr))
     problems.push(`<details>/<summary> tags must be preserved exactly`)
-  if (!/^# /.test(tr))
-    problems.push(`the section must start with the "# " heading line`)
+  // heading level must match: lessons use `# `, articles `## `/`### `, and an
+  // article's preamble has no heading at all
+  const marker = (x) => (x.match(/^#{1,6} /) || [''])[0]
+  if (marker(en) !== marker(tr))
+    problems.push(
+      marker(en)
+        ? `the section must start with "${marker(en)}" like the English source`
+        : `the section must not start with a heading (the English source has none)`
+    )
   // Slides are fixed-height: a translation that runs longer than English gets
   // cut off. Only enforced on prose slides (quizzes lay out differently) and
   // only when the translation is both over the ceiling and longer than English.
-  if (!enOpt.length) {
+  if (!enOpt.length && !isArticle) {
     const enLines = estimateSlideLines(en)
     const trLines = estimateSlideLines(tr)
     if (trLines > MAX_SLIDE_LINES && trLines > enLines)
@@ -400,7 +407,7 @@ const translateSection = async (ctx, en) => {
     ctx.tokens.in += usage?.input_tokens || 0
     ctx.tokens.out += usage?.output_tokens || 0
     const out = applyTypography(unfence(text), ctx.lang)
-    const problems = verify(en, out)
+    const problems = verify(en, out, ctx.isArticle)
     if (!problems.length) return { text: out, attempts: attempt }
     lastProblems = problems
     console.warn(
@@ -505,6 +512,7 @@ const translateLesson = async ({
 
   const ctx = {
     lang,
+    isArticle,
     model,
     apiKey,
     keywords,
@@ -617,8 +625,12 @@ DESCRIPTION: ${ctx.lessonDescription}`,
 const syncKeywords = async ({ terms, langDef, keywords, model, apiKey, tokens }) => {
   const p = path.join('translation/keywords', langDef.code, 'keywords.json')
   const existing = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {}
+  // Keyed by the ENGLISH term: a stable id the pipeline can diff against, so
+  // coverage is answerable and a changed translation never orphans an entry.
+  // The translated term lives in `keyword`, which the app indexes back to this
+  // key at runtime (see the keyword index in Lesson.tsx).
   const missing = terms.filter(
-    (t) => t.canonical && !(t.canonical.toLowerCase() in existing)
+    (t) => t.canonical && !(t.term.toLowerCase() in existing)
   )
   if (!missing.length) return { added: 0 }
 
@@ -645,7 +657,7 @@ ${list}`,
     if (!m) continue
     const t = missing[Number(m[1]) - 1]
     if (!t) continue
-    existing[t.canonical.toLowerCase()] = {
+    existing[t.term.toLowerCase()] = {
       keyword: t.canonical,
       definition: m[2].trim(),
     }
@@ -667,9 +679,17 @@ ${list}`,
 const deadTooltips = (md, lang) => {
   const p = path.join('translation/keywords', lang, 'keywords.json')
   if (!fs.existsSync(p)) return []
-  const keys = new Set(
-    Object.keys(JSON.parse(fs.readFileSync(p, 'utf8'))).map((k) => k.toLowerCase())
-  )
+  // same reverse index as the app: display term (or plural) -> English key
+  const bundle = JSON.parse(fs.readFileSync(p, 'utf8'))
+  const keys = new Set()
+  for (const [englishKey, entry] of Object.entries(bundle))
+    for (const form of [
+      englishKey,
+      entry?.keyword,
+      entry?.keyword_plural,
+      ...(entry?.keyword_forms || []),
+    ])
+      if (typeof form === 'string' && form) keys.add(form.toLowerCase())
   const prose = md.replace(/```[\s\S]*?```/g, '')
   const seen = new Set()
   const out = []
@@ -682,52 +702,86 @@ const deadTooltips = (md, lang) => {
   return out
 }
 
-// Entries whose definition is still the English one, inherited from the old
-// Crowdin import: the term is translated but the tooltip text is not. Roughly
-// half of every pre-pipeline keywords file is in this state.
-const repairKeywords = async ({ langDef, keywords, model, apiKey }) => {
+// Rebuild a language's glossary from scratch off the English source: every
+// term translated fresh, keyed by the English term, and the previous file
+// REPLACED rather than merged. Merging is what let stale Crowdin-era entries
+// survive (roughly half of each pre-pipeline file still holds the English
+// definition), and the goal is that nothing carries over from the past.
+const rebuildKeywords = async ({
+  langDef,
+  keywords,
+  ethGlossary,
+  scriptRules,
+  overrides,
+  model,
+  apiKey,
+}) => {
   const p = path.join('translation/keywords', langDef.code, 'keywords.json')
-  if (!fs.existsSync(p)) throw new Error(`no keywords file at ${p}`)
-  const target = JSON.parse(fs.readFileSync(p, 'utf8'))
-  const englishDefs = new Set(Object.values(keywords).map((v) => v.definition))
-  const stale = Object.entries(target).filter(([, v]) => englishDefs.has(v.definition))
+  const entries = Object.entries(keywords)
   console.log(
-    `${langDef.name}: ${stale.length}/${Object.keys(target).length} entries still hold the English definition`
+    `${langDef.name}: rebuilding ${entries.length} glossary entries from scratch` +
+      (fs.existsSync(p) ? ` (replacing ${p})` : '')
   )
-  if (!stale.length) return
 
   const tokens = { in: 0, out: 0 }
-  const BATCH = 25
-  let fixed = 0
-  for (let i = 0; i < stale.length; i += BATCH) {
-    const batch = stale.slice(i, i + BATCH)
+  const BATCH = 20
+  const out = {}
+  for (let i = 0; i < entries.length; i += BATCH) {
+    const batch = entries.slice(i, i + BATCH)
+    // pin the term itself where we have a canonical translation for it
+    const pinned = batch.map(([k]) => {
+      const rule = scriptRules[k]
+      const override = overrides[k]
+      return override ?? (rule ? k : ethGlossary[k]) ?? null
+    })
     const { text, usage } = await callClaude({
       model,
       apiKey,
-      system: `You translate short glossary definitions for a beginner web3 course into ${langDef.name}. One plain sentence each, no jargon, no em dashes.`,
-      user: `Translate each definition into ${langDef.name}. Keep the numbering and reply with one line per entry in exactly this form, nothing else:
+      system: `You translate glossary entries for a beginner web3 course into ${langDef.name}. Keep definitions to one plain sentence, no jargon, no em dashes.`,
+      user: `For each entry, give the ${langDef.name} term and its translated definition.
+Reply with one line per entry in exactly this form, nothing else:
 
-<number>. <translated definition>
+<number>. <translated term> | <translated plural form of the term> :: <translated definition>
 
-${batch.map(([k, v], n) => `${n + 1}. [${v.keyword || k}] ${v.definition}`).join('\n')}`,
+The plural matters: in many languages the whole phrase inflects, so a naive
+"add an s" fallback fails and the glossary tooltip goes dead. If the language
+has no distinct plural, repeat the term.
+
+${batch
+  .map(
+    ([k, v], n) =>
+      `${n + 1}. ${v.keyword || k}${pinned[n] ? ` (use the term "${pinned[n]}")` : ''} :: ${v.definition}`
+  )
+  .join('\n')}`,
     })
     tokens.in += usage?.input_tokens || 0
     tokens.out += usage?.output_tokens || 0
     for (const line of text.split('\n')) {
-      const m = line.match(/^\s*(\d+)\.\s*(.+)$/)
+      const m = line.match(/^\s*(\d+)\.\s*(.+?)\s*::\s*(.+)$/)
       if (!m) continue
       const entry = batch[Number(m[1]) - 1]
       if (!entry) continue
-      target[entry[0]].definition = m[2].trim()
-      fixed++
+      const [term, plural] = m[2].split('|').map((x) => x.trim())
+      out[entry[0]] = {
+        keyword: applyTypography(term, langDef.code),
+        ...(plural && plural !== term
+          ? { keyword_plural: applyTypography(plural, langDef.code) }
+          : {}),
+        definition: applyTypography(m[3].trim(), langDef.code),
+      }
     }
-    process.stdout.write(`  ${Math.min(i + BATCH, stale.length)}/${stale.length}\r`)
+    process.stdout.write(`  ${Math.min(i + BATCH, entries.length)}/${entries.length}\r`)
   }
-  const sorted = Object.fromEntries(
-    Object.entries(target).sort(([a], [b]) => a.localeCompare(b))
+
+  const missing = entries.filter(([k]) => !(k in out)).map(([k]) => k)
+  if (missing.length)
+    console.warn(`\n  ${missing.length} entr(ies) came back unparseable: ${missing.slice(0, 5).join(', ')}`)
+
+  fs.mkdirSync(path.dirname(p), { recursive: true })
+  fs.writeFileSync(p, `${JSON.stringify(out, null, 2)}\n`)
+  console.log(
+    `\nwrote ${Object.keys(out).length} entries -> ${p} (${tokens.in} in / ${tokens.out} out tokens)`
   )
-  fs.writeFileSync(p, `${JSON.stringify(sorted, null, 2)}\n`)
-  console.log(`\nrepaired ${fixed} definition(s) -> ${p} (${tokens.in} in / ${tokens.out} out tokens)`)
 }
 
 // ---------------------------------------------------------------------------
@@ -765,7 +819,7 @@ const verifyOnly = ({ slugs, meta, langDef }) => {
     }
     let bad = 0
     en.units.forEach((u, i) => {
-      for (const problem of verify(u, tr.units[i])) {
+      for (const problem of verify(u, tr.units[i], isArticle)) {
         failures.push(`${lang}/${slug} [${i + 1}] "${unitTitle(u)}": ${problem}`)
         bad++
       }
@@ -841,7 +895,15 @@ const main = async () => {
 
   if (args.verifyOnly) return verifyOnly({ slugs, meta, langDef })
   if (args.keywords)
-    return repairKeywords({ langDef, keywords, model: args.model, apiKey })
+    return rebuildKeywords({
+      langDef,
+      keywords,
+      ethGlossary,
+      scriptRules,
+      overrides,
+      model: args.model,
+      apiKey,
+    })
   if (args.terms)
     return dumpTerms({
       slugs,

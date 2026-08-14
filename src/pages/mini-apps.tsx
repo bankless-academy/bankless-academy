@@ -160,7 +160,7 @@ const MiniApps = (): JSX.Element => {
 
       <ContentWrapper>
         <AppsListContainer>
-          <Title>Mini Apps</Title>
+          <Title>{t('Mini Apps')}</Title>
           <MiniAppsList onSelectApp={handleSelectApp} />
         </AppsListContainer>
 
@@ -256,7 +256,7 @@ const MiniApps = (): JSX.Element => {
                   <Box>
                     <Heading size="md">{selectedShowcaseItem.name}</Heading>
                     <Text fontSize="sm" color="gray.500">
-                      Ethereum Showcase
+                      {t('Ethereum Showcase')}
                     </Text>
                   </Box>
                   <Button
@@ -280,7 +280,7 @@ const MiniApps = (): JSX.Element => {
               <ModalHeader>
                 <Flex justify="space-between" align="center">
                   <Box>
-                    <Heading size="md">Custom URL</Heading>
+                    <Heading size="md">{t('Custom URL')}</Heading>
                     <Text fontSize="sm" color="gray.500">
                       {frameUrl}
                     </Text>

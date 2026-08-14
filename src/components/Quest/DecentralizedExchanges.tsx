@@ -114,7 +114,7 @@ const DecentralizedExchanges = (
                 ),
               }}
             />
-            <InputGroup maxW="530px">
+            <InputGroup maxW="530px" ml="14.4px">
               <Input
                 placeholder="0x..."
                 value={tx}
@@ -141,15 +141,17 @@ const DecentralizedExchanges = (
                 )}
               </InputRightElement>
             </InputGroup>
-            <Box m="4">
+            <Box ml="14.4px" mt="2" mb="4">
               <b>{t('Resources:')}</b>
+              {/* left-aligned with the numbered steps and the hash input above;
+                  centering these read as a detached second block */}
               <Box
                 display="flex"
                 flexDirection={{ base: 'column', md: 'row' }}
                 gap="4"
                 mt="4"
-                justifyContent="center"
-                alignItems="center"
+                justifyContent="flex-start"
+                alignItems={{ base: 'stretch', md: 'center' }}
               >
                 <BridgeButton border="2px solid white" address={account} />
                 <OnrampButton border="2px solid white" address={account} />

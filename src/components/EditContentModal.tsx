@@ -26,8 +26,10 @@ import { useAccount } from 'wagmi'
 const EditContentModal = ({
   lesson,
   slide,
+  iconOnly,
 }: {
   lesson: LessonType
+  iconOnly?: boolean
   slide: {
     type: SlideType
     title: string
@@ -115,11 +117,23 @@ const EditContentModal = ({
         label={t('Help us improve the content by suggesting changes')}
       >
         <Button
-          leftIcon={<NotePencil width="24px" height="24px" />}
-          variant="outline"
+          aria-label={t(`Suggest Changes`)}
+          leftIcon={
+            <NotePencil
+              width={iconOnly ? '20px' : '24px'}
+              height={iconOnly ? '20px' : '24px'}
+            />
+          }
+          iconSpacing={iconOnly ? 0 : undefined}
+          variant={iconOnly ? 'ghost' : 'outline'}
+          size={iconOnly ? 'sm' : undefined}
+          opacity={iconOnly ? 0.5 : 1}
+          _hover={iconOnly ? { opacity: 1, bg: 'whiteAlpha.200' } : undefined}
+          p={iconOnly ? '0' : undefined}
+          minW={iconOnly ? '32px' : undefined}
           onClick={onOpenModal}
         >
-          {isSmallScreen ? '' : t(`Suggest Changes`)}
+          {iconOnly || isSmallScreen ? '' : t(`Suggest Changes`)}
         </Button>
       </Tooltip>
       <Modal
