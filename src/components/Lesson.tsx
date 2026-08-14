@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
-import React, { useRef, useState, useEffect, useLayoutEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import {
   Box,
   Text,
   ButtonGroup,
   Button,
+  IconButton,
   HStack,
   VStack,
   SimpleGrid,
@@ -16,7 +17,14 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser, { processNodes } from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning, X, Bug, Square, CheckSquare } from '@phosphor-icons/react'
+import {
+  Warning,
+  X,
+  Bug,
+  Square,
+  CheckSquare,
+  Question,
+} from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
@@ -56,6 +64,7 @@ import { QuestType } from 'components/Quest/QuestComponent'
 import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
+import KeyboardShortcutsModal from 'components/KeyboardShortcutsModal'
 import Helper from 'components/Helper'
 import { ANIMATIONS } from 'constants/animations'
 import { useApp } from 'contexts/AppContext'
@@ -64,6 +73,31 @@ import dynamic from 'next/dynamic'
 const Animation = dynamic(() => import('components/Animation'), {
   ssr: false,
 })
+
+// Desktop slide content height. Every slide is exactly this tall so the card
+// never changes size between slides — 533px historically, plus the 80px
+// reclaimed from the old bottom nav bar.
+export const SLIDE_H = 613
+
+// Floor for the side-by-side text/image columns; unchanged from before so
+// image slides lay out exactly as they always did.
+const BLOC_MIN_H = 533
+
+// The `*Big` button variants add 23px of horizontal padding on hover, which is
+// fine for a text button but makes a circular IconButton jump to a wide pill
+// mid-hover. Pin the box the same way the top-right close button does.
+const edgeNavButtonProps = {
+  size: 'lg',
+  position: 'absolute' as const,
+  top: '50%',
+  transform: 'translateY(-50%)',
+  zIndex: 2,
+  p: '0',
+  _hover: { p: '0' },
+  h: '48px !important',
+  w: '48px !important',
+  minW: '48px !important',
+}
 
 export const Slide = styled(Card)<{
   issmallscreen?: string
@@ -127,7 +161,8 @@ export const Slide = styled(Card)<{
   .bloc1,
   .bloc2 {
     flex: 1;
-    ${(props) => props.issmallscreen !== 'true' && 'min-height: 533px;'};
+    ${(props) =>
+      props.issmallscreen !== 'true' && `min-height: ${BLOC_MIN_H}px;`};
     ${(props) => props.slidetype === 'QUEST' && 'align-content: center;'};
   }
   .bloc2 {
@@ -147,7 +182,7 @@ export const Slide = styled(Card)<{
           max-width: 800px;
         }
       `
-        : 'img { max-height: 533px; }'};
+        : `img { max-height: ${BLOC_MIN_H}px; }`};
   }
   div.content div {
     h2,
@@ -353,7 +388,6 @@ const Lesson = ({
 
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
-  const slideRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useLocalStorage(`${lesson.slug}`, 0)
   const [maxSlide, setMaxSlide] = useLocalStorage(
@@ -361,7 +395,6 @@ const Lesson = ({
     currentSlide
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
-  const [longSlide, setLongSlide] = useState<boolean>(false)
   const [, isSmallScreen] = useSmallScreen()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
@@ -382,9 +415,14 @@ const Lesson = ({
     `quiz-${slide?.quiz?.id}`,
     []
   )
+  const [isShortcutsOpen, setIsShortcutsOpen] = useState(false)
   const isQuizSlideArray = Array.isArray(quizSlide)
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
+
+  // Desktop navigates with chevrons in the card margins, which frees the whole
+  // bottom band for content; mobile keeps its thumb-friendly bottom bar.
+  const edgeNav = !isSmallScreen
 
   const isAnimationSlide = slide.content?.includes('/animation/')
   slide.content = slide.content?.replace(
@@ -426,17 +464,6 @@ const Lesson = ({
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
-
-  useLayoutEffect(() => {
-    if (
-      slideRef?.current?.offsetHeight > 615 &&
-      !isSmallScreen &&
-      slide.type === 'LEARN' &&
-      slide.content.includes('bloc2')
-    )
-      setLongSlide(true)
-    else setLongSlide(false)
-  }, [slide, isSmallScreen])
 
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
@@ -692,11 +719,7 @@ const Lesson = ({
 
   // shortcuts
   // TODO: add modal with all the shortcuts
-  useHotkeys('?,shift+/', () =>
-    alert(
-      'TODO: add a modal with all the shortcuts 👉 previous slide ⬅️ | next slide ➡️ | select quiz answer 1️⃣ / 2️⃣ / 3️⃣ / 4️⃣'
-    )
-  )
+  useHotkeys('?,shift+/', () => setIsShortcutsOpen((open) => !open))
   useHotkeys('left', () => clickLeft(), [
     isAnimationSlide,
     animationStepLS,
@@ -926,19 +949,29 @@ const Lesson = ({
     >
       {!lesson?.isPreview && !isSmallScreen && (
         <Box h="0" w="100%">
-          <Button
-            position="absolute"
-            top="-20px"
-            right="-20px"
-            iconSpacing="0"
-            variant="secondaryBig"
-            leftIcon={<X width="24px" height="24px" />}
-            onClick={() => closeLesson()}
-            p="0"
-            _hover={{ p: '0' }}
-            h="40px !important"
-            w="40px !important"
-          ></Button>
+          {/* Only way out of a lesson on desktop now that the bottom Close is
+              gone, so it says what it does rather than relying on the icon. */}
+          <Tooltip
+            hasArrow
+            label={`${t('Close')} (Esc)`}
+            placement="left"
+            openDelay={400}
+          >
+            <Button
+              aria-label={t('Close')}
+              position="absolute"
+              top="-20px"
+              right="-20px"
+              iconSpacing="0"
+              variant="secondaryBig"
+              leftIcon={<X width="24px" height="24px" />}
+              onClick={() => closeLesson()}
+              p="0"
+              _hover={{ p: '0' }}
+              h="40px !important"
+              w="40px !important"
+            ></Button>
+          </Tooltip>
         </Box>
       )}
       <Text
@@ -950,7 +983,33 @@ const Lesson = ({
         width="100%"
         fontWeight="bold"
         as="h2"
+        position="relative"
       >
+        {/* `?` is a power-user convention nobody guesses, so the overlay gets a
+            quiet permanent affordance. Sits inside the header row, well clear
+            of the close button hanging off the top-right corner. */}
+        {!isSmallScreen && (
+          <Tooltip
+            hasArrow
+            label={`${t('Keyboard shortcuts')} (?)`}
+            openDelay={400}
+          >
+            <IconButton
+              aria-label={t('Keyboard shortcuts')}
+              icon={<Question width="20px" height="20px" />}
+              onClick={() => setIsShortcutsOpen(true)}
+              variant="ghost"
+              size="sm"
+              isRound
+              position="absolute"
+              right="0"
+              top="50%"
+              transform="translateY(-50%)"
+              opacity={0.5}
+              _hover={{ opacity: 1, bg: 'whiteAlpha.200' }}
+            />
+          </Tooltip>
+        )}
         <Box display="inline-flex" alignItems="center" mr="4">
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
@@ -1000,313 +1059,401 @@ const Lesson = ({
             : null
         }
       />
-      <Box maxH={isSmallScreen ? 'unset' : '533px'}>
+      {/* Desktop slides are a fixed 533px tall. Without an overflow rule,
+          anything taller simply spilled out and was painted over by SlideNav,
+          so the last lines disappeared under the Close/Next buttons. Text
+          length is not something we can fully control: translations run 15-20%
+          longer than English (more for German), so scroll instead of clip.
+          `auto` means slides that fit look exactly as before.
+          Keyword tooltips are unaffected: Chakra renders them in a portal. */}
+      {/* Body = content + nav, pinned to a constant height so the card is the
+          same size on every slide. The content area flexes into whatever the
+          nav leaves: the full SLIDE_H when the nav is empty (most slides now
+          that Prev/Next moved to the edges), or the old 533px when the nav
+          carries quest / end-of-lesson actions. */}
+      <Box
+        display="flex"
+        flexDirection="column"
+        h={isSmallScreen ? 'auto' : `${SLIDE_H}px`}
+      >
         <Box
-          className="content"
-          minH="480px"
-          pb={isSmallScreen ? '6' : 0}
-          pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 0}
+          flex="1"
+          minH="0"
+          // last-resort safety net: this should never engage now that the height
+          // budget matches the validator ceiling, but content silently
+          // disappearing under the nav is worse than a scrollbar on one slide
+          overflowY={isSmallScreen ? 'visible' : 'auto'}
+          sx={{
+            '&::-webkit-scrollbar': { width: '6px' },
+            '&::-webkit-scrollbar-thumb': {
+              background: '#584a705e',
+              borderRadius: '3px',
+            },
+            '&:hover::-webkit-scrollbar-thumb': { background: '#8b6cae' },
+            scrollbarWidth: 'thin',
+          }}
         >
-          {slide.type === 'LEARN' && (
-            <Box ref={slideRef}>
-              {ReactHtmlParser(slide.content, { transform })}
-            </Box>
-          )}
-          {(slide.type === 'QUIZ' || slide.type === 'POLL') && (
-            <>
-              <Answers
-                mx={2}
-                minH={isSmallScreen ? '470px' : '533px'}
-                display="flex"
-                flexDirection="column"
-              >
-                {slide.quiz?.question && (
-                  <Box maxW="750px" margin="0 auto 32px">
-                    <h2>
-                      {ReactHtmlParser(slide?.quiz?.question, { transform })}
-                    </h2>
-                  </Box>
-                )}
-                <ButtonGroup size="lg" w="100%">
-                  <SimpleGrid
-                    columns={[null, null, 1]}
-                    spacing="40px"
-                    w="100%"
-                    justifyItems="center"
-                  >
-                    {[1, 2, 3, 4, 5].map((n) => {
-                      const answerState = answerIsCorrect
-                        ? slide.quiz.rightAnswerNumber === n ||
-                          (slide.type === 'POLL' &&
-                            isQuizSlideArray &&
-                            quizSlide?.includes(n.toString()))
-                          ? 'CORRECT'
-                          : 'UNSELECTED'
-                        : selectedAnswerNumber === n && slide.type === 'QUIZ'
-                        ? 'WRONG'
-                        : 'UNSELECTED'
-                      if (slide.quiz.answers?.length >= n)
-                        return (
-                          <QuizAnswer
-                            ref={(el) => (answerRef.current[n] = el)}
-                            key={`answer-${n}`}
-                            w="100%"
-                            maxW="500px"
-                            p="4"
-                            h="auto"
-                            className={
-                              slide.type === 'POLL'
-                                ? isQuizSlideArray &&
-                                  quizSlide?.includes(n.toString())
-                                  ? 'poll checked'
-                                  : 'poll'
-                                : 'quiz'
-                            }
-                            border={
-                              answerState === 'UNSELECTED'
-                                ? '1px solid #646587'
-                                : '1px solid #64658700'
-                            }
-                            fontWeight="normal"
-                            whiteSpace="break-spaces"
-                            onClick={(e) => {
-                              if (
-                                answerState !== 'CORRECT' ||
-                                slide.type === 'POLL'
-                              )
-                                selectAnswer(e, n)
-                            }}
-                            answerstate={answerState}
-                            justifyContent="space-between"
-                            textAlign="left"
-                            rightIcon={
-                              answerState === 'UNSELECTED' &&
-                              slide.type === 'POLL' ? (
-                                <Square color="white" size={26} />
-                              ) : answerState === 'CORRECT' ? (
-                                slide.type === 'POLL' ? (
-                                  <CheckSquare color="white" size={26} />
-                                ) : (
-                                  <CheckIcon color="white" />
-                                )
-                              ) : (
-                                answerState === 'WRONG' && (
-                                  <Warning weight="bold" color="white" />
-                                )
-                              )
-                            }
-                            isActive={
-                              (answerIsCorrect &&
-                                lesson.slug !== 'bankless-archetypes') ||
-                              slide.type === 'POLL'
-                            }
-                            isPoll={slide.type === 'POLL'}
-                          >
-                            {slide.quiz.answers[n - 1]}
-                          </QuizAnswer>
-                        )
-                    })}
-                  </SimpleGrid>
-                </ButtonGroup>
-              </Answers>
-            </>
-          )}
-          {slide.type === 'QUEST' && (
-            <VStack flex="auto" minH="520px" justifyContent="center">
-              {Quest?.questComponent}
-            </VStack>
-          )}
-          {slide.type === 'END' && (
-            <VStack flex="auto" minH="420px" justifyContent="center">
-              {IS_WHITELABEL && !walletAddress ? (
-                <>{Quest?.questComponent}</>
-              ) : (
-                <>
-                  {lesson.badgeImageLink && (
-                    <Box w="290px" h="290px">
-                      <NFT nftLink={lesson.badgeImageLink} />
+          <Box
+            className="content"
+            minH="480px"
+            // mobile SlideNav is position:fixed (~80px tall), so the last lines
+            // sat under it at full scroll; desktop just needs to clear the edge
+            pb={isSmallScreen ? '20' : 2}
+            pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 0}
+          >
+            {slide.type === 'LEARN' && (
+              <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
+            )}
+            {(slide.type === 'QUIZ' || slide.type === 'POLL') && (
+              <>
+                <Answers
+                  mx={2}
+                  minH={isSmallScreen ? '470px' : '533px'}
+                  display="flex"
+                  flexDirection="column"
+                >
+                  {slide.quiz?.question && (
+                    <Box maxW="750px" margin="0 auto 32px">
+                      <h2>
+                        {ReactHtmlParser(slide?.quiz?.question, { transform })}
+                      </h2>
                     </Box>
                   )}
-                  {lesson.badgeId ? (
-                    <MintBadge
-                      badgeId={lesson.badgeId}
-                      isQuestCompleted={Quest.isQuestCompleted}
-                    />
-                  ) : (
-                    <h2>
-                      {t(
-                        `Congrats on finishing our "{{lesson_title}}" lesson! 🥳`,
-                        {
-                          lesson_title: lesson.name,
-                          interpolation: { escapeValue: false },
-                        }
-                      )}
-                    </h2>
-                  )}
-                  <p>
-                    {!embed &&
-                      lesson?.endOfLessonText &&
-                      lesson?.endOfLessonText}
-                  </p>
-                </>
-              )}
-            </VStack>
-          )}
+                  <ButtonGroup size="lg" w="100%">
+                    <SimpleGrid
+                      columns={[null, null, 1]}
+                      spacing="40px"
+                      w="100%"
+                      justifyItems="center"
+                    >
+                      {[1, 2, 3, 4, 5].map((n) => {
+                        const answerState = answerIsCorrect
+                          ? slide.quiz.rightAnswerNumber === n ||
+                            (slide.type === 'POLL' &&
+                              isQuizSlideArray &&
+                              quizSlide?.includes(n.toString()))
+                            ? 'CORRECT'
+                            : 'UNSELECTED'
+                          : selectedAnswerNumber === n && slide.type === 'QUIZ'
+                          ? 'WRONG'
+                          : 'UNSELECTED'
+                        if (slide.quiz.answers?.length >= n)
+                          return (
+                            <QuizAnswer
+                              ref={(el) => (answerRef.current[n] = el)}
+                              key={`answer-${n}`}
+                              w="100%"
+                              maxW="500px"
+                              p="4"
+                              h="auto"
+                              className={
+                                slide.type === 'POLL'
+                                  ? isQuizSlideArray &&
+                                    quizSlide?.includes(n.toString())
+                                    ? 'poll checked'
+                                    : 'poll'
+                                  : 'quiz'
+                              }
+                              border={
+                                answerState === 'UNSELECTED'
+                                  ? '1px solid #646587'
+                                  : '1px solid #64658700'
+                              }
+                              fontWeight="normal"
+                              whiteSpace="break-spaces"
+                              onClick={(e) => {
+                                if (
+                                  answerState !== 'CORRECT' ||
+                                  slide.type === 'POLL'
+                                )
+                                  selectAnswer(e, n)
+                              }}
+                              answerstate={answerState}
+                              justifyContent="space-between"
+                              textAlign="left"
+                              rightIcon={
+                                answerState === 'UNSELECTED' &&
+                                slide.type === 'POLL' ? (
+                                  <Square color="white" size={26} />
+                                ) : answerState === 'CORRECT' ? (
+                                  slide.type === 'POLL' ? (
+                                    <CheckSquare color="white" size={26} />
+                                  ) : (
+                                    <CheckIcon color="white" />
+                                  )
+                                ) : (
+                                  answerState === 'WRONG' && (
+                                    <Warning weight="bold" color="white" />
+                                  )
+                                )
+                              }
+                              isActive={
+                                (answerIsCorrect &&
+                                  lesson.slug !== 'bankless-archetypes') ||
+                                slide.type === 'POLL'
+                              }
+                              isPoll={slide.type === 'POLL'}
+                            >
+                              {slide.quiz.answers[n - 1]}
+                            </QuizAnswer>
+                          )
+                      })}
+                    </SimpleGrid>
+                  </ButtonGroup>
+                </Answers>
+              </>
+            )}
+            {slide.type === 'QUEST' && (
+              <VStack flex="auto" minH="520px" justifyContent="center">
+                {Quest?.questComponent}
+              </VStack>
+            )}
+            {slide.type === 'END' && (
+              <VStack flex="auto" minH="420px" justifyContent="center">
+                {IS_WHITELABEL && !walletAddress ? (
+                  <>{Quest?.questComponent}</>
+                ) : (
+                  <>
+                    {lesson.badgeImageLink && (
+                      <Box w="290px" h="290px">
+                        <NFT nftLink={lesson.badgeImageLink} />
+                      </Box>
+                    )}
+                    {lesson.badgeId ? (
+                      <MintBadge
+                        badgeId={lesson.badgeId}
+                        isQuestCompleted={Quest.isQuestCompleted}
+                      />
+                    ) : (
+                      <h2>
+                        {t(
+                          `Congrats on finishing our "{{lesson_title}}" lesson! 🥳`,
+                          {
+                            lesson_title: lesson.name,
+                            interpolation: { escapeValue: false },
+                          }
+                        )}
+                      </h2>
+                    )}
+                    <p>
+                      {!embed &&
+                        lesson?.endOfLessonText &&
+                        lesson?.endOfLessonText}
+                    </p>
+                  </>
+                )}
+              </VStack>
+            )}
+          </Box>
         </Box>
-      </Box>
-      <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
-        <HStack flex="auto">
-          <Button
-            ref={buttonLeftRef}
+        {/* edge layout: Prev/Next float in the card margins, vertically centred,
+          so the bottom band belongs to the content. The lesson is closed with
+          the X at the top right, which already exists. */}
+        {/* No hover tooltip on these: an arrow icon already says what it does,
+            and a tooltip anchored to an edge button either covers the sentence
+            being read or gets flipped over it on a narrow window. The keyboard
+            shortcuts they used to advertise live in the `?` overlay instead. */}
+        {edgeNav && !isFirstSlide && (
+          <IconButton
+            aria-label={t('Prev')}
+            icon={<ArrowBackIcon boxSize="24px" />}
+            onClick={() => clickLeft()}
             variant="secondaryBig"
-            size="lg"
-            onClick={() => closeLesson()}
-            leftIcon={<X width="24px" height="24px" />}
-            ml={longSlide ? '533px' : '0'}
-            p={isSmallScreen ? '0' : '24px'}
-            _hover={{ px: isSmallScreen ? '0' : '24px' }}
-            iconSpacing={isSmallScreen ? '0' : '8px'}
-          >
-            {isSmallScreen ? '' : 'Close'}
-          </Button>
-          {!isFirstSlide && (
-            <Button
-              ref={buttonLeftRef}
-              variant="secondaryBig"
-              size="lg"
-              onClick={() => clickLeft()}
-              leftIcon={<ArrowBackIcon />}
-              ml={longSlide ? '533px' : '0'}
-            >
-              {isSmallScreen ? '' : 'Prev'}
-            </Button>
-          )}
-          {
-            /* lesson.isCommentsEnabled && */
-            !isMobile &&
-              !lesson?.isPreview &&
-              !IS_WHITELABEL &&
-              (slide.type === 'LEARN' ||
-                ((slide.type === 'QUIZ' || slide.type === 'POLL') &&
-                  answerIsCorrect)) &&
-              address && (
-                <>
-                  <EditContentModal lesson={lesson} slide={slide} />
-                </>
-              )
-          }
-          {lesson?.isPreview && (
-            <Box position="relative">
-              DEBUG
-              <Helper
-                fullscreen
-                title="DEBUG"
-                definition={
-                  <Box>
-                    <StyledKeywords>
-                      Keyword list:{' '}
-                      {ReactHtmlParser(
-                        lesson.keywords
-                          .map((keyword) => `<code>${keyword}</code>`)
-                          .join(', '),
-                        { transform }
-                      )}
-                    </StyledKeywords>
-                    Number of words:{' '}
-                    {lesson.slides
-                      .map((slide) => countWords(slide.content))
-                      .reduce((a, b) => {
-                        return a + b
-                      }, 0)}
-                  </Box>
-                }
-              />
-            </Box>
-          )}
-          {slide.type === 'QUEST' && address && (
-            <ExternalLink href={'/report-an-issue'} alt={t('Report an Issue')}>
-              <Button
-                leftIcon={<Bug width="24px" height="24px" />}
-                iconSpacing={isSmallScreen ? 0 : '8px'}
-                variant="outline"
-              >
-                {isSmallScreen ? '' : t('Report an Issue')}
-              </Button>
-            </ExternalLink>
-          )}
-        </HStack>
-        <HStack>
-          {slide.type === 'QUEST' &&
-          !Quest?.isQuestCompleted &&
-          !isSmallScreen ? (
-            <Tooltip
-              hasArrow
-              label={t(
-                "By skipping this quest you won't be able to claim the lesson badge"
-              )}
-            >
-              <Button variant="outline" onClick={() => closeLesson()}>
-                {t('Skip Quest')}
-              </Button>
-            </Tooltip>
-          ) : null}
-          {!isLastSlide || (lesson?.endOfLessonText && !embed) ? (
-            <Button
-              ref={buttonRightRef}
-              variant="primaryBig"
-              size="lg"
-              isDisabled={
-                (slide.quiz && !answerIsCorrect) ||
-                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-              }
+            isRound
+            {...edgeNavButtonProps}
+            left="-24px"
+          />
+        )}
+        {edgeNav &&
+          !isFirstSlide &&
+          (!isLastSlide || (lesson?.endOfLessonText && !embed)) && (
+            <IconButton
+              aria-label={t('Next')}
+              icon={<ArrowForwardIcon boxSize="24px" />}
               onClick={() => {
                 if (
                   !(slide.quiz && !answerIsCorrect) &&
                   !(slide.type === 'QUEST' && !Quest?.isQuestCompleted)
                 ) {
                   triggerHaptic(200)
+                  clickRight()
                 }
-                clickRight()
               }}
-              rightIcon={<ArrowForwardIcon />}
-            >
-              Next
-            </Button>
-          ) : (
-            <>
-              <Button
-                size="lg"
-                isDisabled={
-                  lesson.badgeId &&
-                  !Quest?.isQuestCompleted &&
-                  lesson.slug !== 'ethereum-basics'
-                }
-                onClick={() => {
-                  if (
-                    !(
-                      lesson.badgeId &&
-                      !Quest?.isQuestCompleted &&
-                      lesson.slug !== 'ethereum-basics'
-                    )
-                  ) {
-                    triggerHaptic(200)
-                  }
-                  closeLesson()
-                }}
-                variant="primaryBigLast"
-                rightIcon={<ArrowForwardIcon />}
-              >
-                {lesson.badgeId &&
-                isBadgeMintedLS === false &&
-                Quest?.isQuestCompleted
-                  ? // ? t('Mint Badge')
-                    t('Finish')
-                  : t('Finish')}
-              </Button>
-            </>
+              isDisabled={
+                (slide.quiz && !answerIsCorrect) ||
+                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+              }
+              variant="primaryBig"
+              isRound
+              {...edgeNavButtonProps}
+              right="-24px"
+            />
           )}
-        </HStack>
-      </SlideNav>
+        <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
+          <HStack flex="auto">
+            {!edgeNav && (
+              <Button
+                ref={buttonLeftRef}
+                variant="secondaryBig"
+                size="lg"
+                onClick={() => closeLesson()}
+                leftIcon={<X width="24px" height="24px" />}
+                p={isSmallScreen ? '0' : '24px'}
+                _hover={{ px: isSmallScreen ? '0' : '24px' }}
+                iconSpacing={isSmallScreen ? '0' : '8px'}
+              >
+                {isSmallScreen ? '' : 'Close'}
+              </Button>
+            )}
+            {!edgeNav && !isFirstSlide && (
+              <Button
+                ref={buttonLeftRef}
+                variant="secondaryBig"
+                size="lg"
+                onClick={() => clickLeft()}
+                leftIcon={<ArrowBackIcon />}
+              >
+                {isSmallScreen ? '' : 'Prev'}
+              </Button>
+            )}
+            {
+              /* lesson.isCommentsEnabled && */
+              !isMobile &&
+                !lesson?.isPreview &&
+                !IS_WHITELABEL &&
+                (slide.type === 'LEARN' ||
+                  ((slide.type === 'QUIZ' || slide.type === 'POLL') &&
+                    answerIsCorrect)) &&
+                address && (
+                  <>
+                    <EditContentModal lesson={lesson} slide={slide} />
+                  </>
+                )
+            }
+            {lesson?.isPreview && (
+              <Box position="relative">
+                DEBUG
+                <Helper
+                  fullscreen
+                  title="DEBUG"
+                  definition={
+                    <Box>
+                      <StyledKeywords>
+                        Keyword list:{' '}
+                        {ReactHtmlParser(
+                          lesson.keywords
+                            .map((keyword) => `<code>${keyword}</code>`)
+                            .join(', '),
+                          { transform }
+                        )}
+                      </StyledKeywords>
+                      Number of words:{' '}
+                      {lesson.slides
+                        .map((slide) => countWords(slide.content))
+                        .reduce((a, b) => {
+                          return a + b
+                        }, 0)}
+                    </Box>
+                  }
+                />
+              </Box>
+            )}
+            {slide.type === 'QUEST' && address && (
+              <ExternalLink
+                href={'/report-an-issue'}
+                alt={t('Report an Issue')}
+              >
+                <Button
+                  leftIcon={<Bug width="24px" height="24px" />}
+                  iconSpacing={isSmallScreen ? 0 : '8px'}
+                  variant="outline"
+                >
+                  {isSmallScreen ? '' : t('Report an Issue')}
+                </Button>
+              </ExternalLink>
+            )}
+          </HStack>
+          <HStack>
+            {slide.type === 'QUEST' &&
+            !Quest?.isQuestCompleted &&
+            !isSmallScreen ? (
+              <Tooltip
+                hasArrow
+                label={t(
+                  "By skipping this quest you won't be able to claim the lesson badge"
+                )}
+              >
+                <Button variant="outline" onClick={() => closeLesson()}>
+                  {t('Skip Quest')}
+                </Button>
+              </Tooltip>
+            ) : null}
+            {!isLastSlide || (lesson?.endOfLessonText && !embed) ? (
+              // plain "Next" only: the end-of-lesson branch below (Finish /
+              // Mint) must always render, it has no edge-chevron equivalent
+              edgeNav && !isFirstSlide ? null : (
+                <Button
+                  ref={buttonRightRef}
+                  variant="primaryBig"
+                  size="lg"
+                  isDisabled={
+                    (slide.quiz && !answerIsCorrect) ||
+                    (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                  }
+                  onClick={() => {
+                    if (
+                      !(slide.quiz && !answerIsCorrect) &&
+                      !(slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                    ) {
+                      triggerHaptic(200)
+                    }
+                    clickRight()
+                  }}
+                  rightIcon={<ArrowForwardIcon />}
+                >
+                  Next
+                </Button>
+              )
+            ) : (
+              <>
+                <Button
+                  size="lg"
+                  isDisabled={
+                    lesson.badgeId &&
+                    !Quest?.isQuestCompleted &&
+                    lesson.slug !== 'ethereum-basics'
+                  }
+                  onClick={() => {
+                    if (
+                      !(
+                        lesson.badgeId &&
+                        !Quest?.isQuestCompleted &&
+                        lesson.slug !== 'ethereum-basics'
+                      )
+                    ) {
+                      triggerHaptic(200)
+                    }
+                    closeLesson()
+                  }}
+                  variant="primaryBigLast"
+                  rightIcon={<ArrowForwardIcon />}
+                >
+                  {lesson.badgeId &&
+                  isBadgeMintedLS === false &&
+                  Quest?.isQuestCompleted
+                    ? // ? t('Mint Badge')
+                      t('Finish')
+                    : t('Finish')}
+                </Button>
+              </>
+            )}
+          </HStack>
+        </SlideNav>
+      </Box>
+      <KeyboardShortcutsModal
+        isOpen={isShortcutsOpen}
+        onClose={() => setIsShortcutsOpen(false)}
+      />
     </Slide>
   )
 }

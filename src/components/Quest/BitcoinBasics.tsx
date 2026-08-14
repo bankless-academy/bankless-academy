@@ -40,38 +40,57 @@ const BitcoinBasics = (): {
   const [isSmallScreen] = useSmallScreen()
   const [hasSimulationRun, setHasSimulationRun] = useState(false)
   const [animationStep, setAnimationStep] = useState(null)
-  const initalAnswers = JSON.parse(
-    localStorage.getItem('quest-bitcoin-basics')
-  ) || ['', '']
+  // Reset used to persist `[]`, and a bare `JSON.parse('[]') || [...]` keeps the
+  // empty array (it is truthy). The inputs then initialised to `undefined`,
+  // which flips them from controlled to uncontrolled and makes React warn.
+  const readStored = (): [string, string] => {
+    try {
+      const raw = JSON.parse(localStorage.getItem('quest-bitcoin-basics'))
+      if (Array.isArray(raw) && raw.length === 2)
+        return [raw[0] ?? '', raw[1] ?? '']
+    } catch {
+      // corrupt value: fall through to the defaults
+    }
+    return null
+  }
+  const stored = readStored()
+  const initalAnswers = stored || ['', '']
   const [toAddress, setToAddress] = useState(
     initalAnswers[0] === DEFAULT_ANSWERS[0] ? '' : initalAnswers[0]
   )
   const [amount, setAmount] = useState(
     initalAnswers[1] === DEFAULT_ANSWERS[1] ? '' : initalAnswers[1]
   )
-  const [selected, setSelected] = useState(
-    localStorage.getItem('quest-bitcoin-basics') !== null
-      ? JSON.parse(localStorage.getItem('quest-bitcoin-basics'))
-      : DEFAULT_ANSWERS
+  const [selected, setSelected] = useState<[string, string]>(
+    stored || (DEFAULT_ANSWERS as [string, string])
   )
 
-  const numericAmount = parseFloat(selected[1]?.replace(',', '.') || 5)
+  // An empty amount parses to NaN, and every comparison below is false, so it
+  // reads as incorrect. (This used to fall back to a literal 5, which happened
+  // to be above the balance and so gave the same answer by accident.)
+  const numericAmount = parseFloat((selected[1] || '').replace(',', '.'))
   const areAnswersCorrect =
     selected[0]?.toLowerCase() === CORRECT_ANSWERS[0]?.toLowerCase() &&
     numericAmount > 0 &&
     numericAmount <= parseFloat(CORRECT_ANSWERS[1])
-  localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
+
+  useEffect(() => {
+    localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
+  }, [selected])
 
   const animationSteps = [
     t('1. Your Bitcoin is on its way to Satoshi Nakamoto.'),
     t("2. It's now being verified by network miners..."),
-    t('3. Your transaction is added to the blockchain "database"...'),
+    t('3. Your transaction is added to the blockchain “database”...'),
     t('4. Satoshi Nakamoto has received your Bitcoin!'),
   ]
 
   const validateQuest = () => {
     setHasSimulationRun(true)
-    localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
+
+    useEffect(() => {
+      localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
+    }, [selected])
     setSelected([toAddress, amount])
   }
 
@@ -95,7 +114,7 @@ const BitcoinBasics = (): {
             <div
               dangerouslySetInnerHTML={{
                 __html: `${t(
-                  "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto's address"
+                  'Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address'
                 )}: `,
               }}
             />
@@ -144,7 +163,7 @@ const BitcoinBasics = (): {
                     <Button
                       onClick={() => {
                         setHasSimulationRun(false)
-                        setSelected([])
+                        setSelected(['', ''])
                         setToAddress('')
                         setAmount('')
                         setAnimationStep(null)
