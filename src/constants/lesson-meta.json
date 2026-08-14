@@ -17,14 +17,18 @@
     "learnings": "",
     "description": "What is Bitcoin? Explore the first successful cryptocurrency and rethink money.",
     "name": "Bitcoin Basics",
-    "languages": [
-      "es",
-      "fr",
-      "pt-br",
-      "tr",
-      "uk",
-      "zh"
-    ],
+    "languages": [],
+    "staleTranslations": {
+      "languages": [
+        "es",
+        "fr",
+        "pt-br",
+        "tr",
+        "uk",
+        "zh"
+      ],
+      "reason": "pre-2026-08 rewrite: KC1/KC2 translate the old True/False quizzes (2 options vs 3-4 in en), so the en answer key points at options that are not on screen"
+    },
     "level": "Essentials",
     "lessonWriters": "Tetranome",
     "quest": "BitcoinBasics",
@@ -93,8 +97,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "eecfb3374fc640c980096e5ed654c70c",
-        "title": "✅ Knowledge Check"
+        "notionId": "eecfb3374fc640c980096e5ed654c70c"
       },
       {
         "type": "LEARN",
@@ -114,8 +117,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "626fb6d4b2b047db837057cfbb3992e0",
-        "title": "✅ Knowledge Check"
+        "notionId": "626fb6d4b2b047db837057cfbb3992e0"
       },
       {
         "type": "LEARN",
@@ -123,8 +125,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "f8d8e8d58e984f1097f0b17a6d805df8",
-        "title": "✅ Knowledge Check"
+        "notionId": "f8d8e8d58e984f1097f0b17a6d805df8"
       },
       {
         "type": "LEARN",
@@ -132,8 +133,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "4fbf3369fdda41cfacc47b91a55cb428",
-        "title": "✅ Knowledge Check"
+        "notionId": "4fbf3369fdda41cfacc47b91a55cb428"
       },
       {
         "type": "LEARN",
@@ -149,13 +149,11 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "66a30c6163b1406da931e7b62ba76222",
-        "title": "✅ Knowledge Check"
+        "notionId": "66a30c6163b1406da931e7b62ba76222"
       },
       {
         "type": "QUIZ",
-        "notionId": "59609434869c42b99a54a538d8faa2d5",
-        "title": "✅ Knowledge Check"
+        "notionId": "59609434869c42b99a54a538d8faa2d5"
       },
       {
         "type": "LEARN",
@@ -250,8 +248,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "f01c3458feb644e1a4850a233dd9e4ab",
-        "title": "✅ Knowledge Check"
+        "notionId": "f01c3458feb644e1a4850a233dd9e4ab"
       },
       {
         "type": "LEARN",
@@ -263,8 +260,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "7d1e5e16e9c04f44a60d705eb6ad7701",
-        "title": "✅ Knowledge Check"
+        "notionId": "7d1e5e16e9c04f44a60d705eb6ad7701"
       },
       {
         "type": "LEARN",
@@ -280,8 +276,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "e06f37809a984334a46b55126b01e060",
-        "title": "✅ Knowledge Check"
+        "notionId": "e06f37809a984334a46b55126b01e060"
       },
       {
         "type": "LEARN",
@@ -293,8 +288,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "7e8729f592ad4836a1d7c1fd5b6f560d",
-        "title": "✅ Knowledge Check"
+        "notionId": "7e8729f592ad4836a1d7c1fd5b6f560d"
       },
       {
         "type": "LEARN",
@@ -314,8 +308,7 @@
       },
       {
         "type": "POLL",
-        "notionId": "9fffc9eec113419cab34b9919fa9a5cc",
-        "title": "📊 Poll"
+        "notionId": "9fffc9eec113419cab34b9919fa9a5cc"
       }
     ]
   },
@@ -388,9 +381,14 @@
       "ja",
       "pt-br",
       "tr",
-      "uk",
       "zh"
     ],
+    "staleTranslations": {
+      "languages": [
+        "uk"
+      ],
+      "reason": "pre-2026-08 rewrite: 4 quizzes vs 8 in en"
+    },
     "level": "Essentials",
     "lessonWriters": "Ap0ll0517, Jordy, Tetranome",
     "quest": "WalletBasics",
@@ -452,8 +450,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "c28d3aa7e8b34f7a944645eab08ba3ad",
-        "title": "Knowledge Check"
+        "notionId": "c28d3aa7e8b34f7a944645eab08ba3ad"
       },
       {
         "type": "LEARN",
@@ -469,8 +466,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "28e8eeb6ea36443faba81c65d049e874",
-        "title": "Knowledge Check"
+        "notionId": "28e8eeb6ea36443faba81c65d049e874"
       },
       {
         "type": "LEARN",
@@ -478,8 +474,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "aca3c7b9435445d292815700f9b24e4c",
-        "title": "Knowledge Check"
+        "notionId": "aca3c7b9435445d292815700f9b24e4c"
       },
       {
         "type": "LEARN",
@@ -491,8 +486,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "e8953595b16e4482a4ad5e76b4421dd5",
-        "title": "Knowledge Check"
+        "notionId": "e8953595b16e4482a4ad5e76b4421dd5"
       },
       {
         "type": "LEARN",
@@ -500,8 +494,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "a87cd8104504449e8fe7859b7a55853e",
-        "title": "Knowledge Check"
+        "notionId": "a87cd8104504449e8fe7859b7a55853e"
       },
       {
         "type": "LEARN",
@@ -513,8 +506,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "d969a34bf65647b492f20ef28c97f22d",
-        "title": "Knowledge Check"
+        "notionId": "d969a34bf65647b492f20ef28c97f22d"
       },
       {
         "type": "LEARN",
@@ -522,8 +514,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "4074ea94f6f647379d6981bae7969b68",
-        "title": "Knowledge Check"
+        "notionId": "4074ea94f6f647379d6981bae7969b68"
       },
       {
         "type": "LEARN",
@@ -531,8 +522,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "087e6162d56d4d06a72d0449b15abd7d",
-        "title": "Knowledge Check"
+        "notionId": "087e6162d56d4d06a72d0449b15abd7d"
       },
       {
         "type": "QUEST"
@@ -607,8 +597,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "dea57bbfc2494226b459d86fc87b46b9",
-        "title": "✅ Knowledge Check"
+        "notionId": "dea57bbfc2494226b459d86fc87b46b9"
       },
       {
         "type": "LEARN",
@@ -620,8 +609,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "c9136a9caf6f4c5aacc85fac90725cae",
-        "title": "✅ Knowledge Check"
+        "notionId": "c9136a9caf6f4c5aacc85fac90725cae"
       },
       {
         "type": "LEARN",
@@ -629,8 +617,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "4a9d8f07650a4711a1d477298c8ed0cc",
-        "title": "✅ Knowledge Check"
+        "notionId": "4a9d8f07650a4711a1d477298c8ed0cc"
       },
       {
         "type": "LEARN",
@@ -638,8 +625,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "a64c7bd22dad465d858a458e637f13a2",
-        "title": "✅ Knowledge Check"
+        "notionId": "a64c7bd22dad465d858a458e637f13a2"
       },
       {
         "type": "LEARN",
@@ -647,8 +633,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "c8eb8024363341b89a56a3b106d63d85",
-        "title": "✅ Knowledge Check"
+        "notionId": "c8eb8024363341b89a56a3b106d63d85"
       },
       {
         "type": "LEARN",
@@ -656,8 +641,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "61840623d81245cdac32c81e208cc37c",
-        "title": "✅ Knowledge Check"
+        "notionId": "61840623d81245cdac32c81e208cc37c"
       },
       {
         "type": "LEARN",
@@ -665,8 +649,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "df8eff6a23fe48a0b60ac92124e3ddb2",
-        "title": "✅ Knowledge Check"
+        "notionId": "df8eff6a23fe48a0b60ac92124e3ddb2"
       },
       {
         "type": "QUEST"
@@ -749,8 +732,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "04726706edaf48c4a232f30b7bcd95ca",
-        "title": "✅ quiz"
+        "notionId": "04726706edaf48c4a232f30b7bcd95ca"
       },
       {
         "type": "LEARN",
@@ -762,8 +744,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "8c7e79fea4484fef915ba9c100e3f1d0",
-        "title": "✅ quiz"
+        "notionId": "8c7e79fea4484fef915ba9c100e3f1d0"
       },
       {
         "type": "LEARN",
@@ -771,8 +752,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "2f0f524e5c6c489db675c2420cb5df24",
-        "title": "✅ quiz"
+        "notionId": "2f0f524e5c6c489db675c2420cb5df24"
       },
       {
         "type": "LEARN",
@@ -784,8 +764,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "65f3e534d9bd4dad96049307d210af06",
-        "title": "✅ quiz"
+        "notionId": "65f3e534d9bd4dad96049307d210af06"
       },
       {
         "type": "LEARN",
@@ -805,8 +784,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "b08a84ce7f04456aa3e472606b855648",
-        "title": "✅ quiz"
+        "notionId": "b08a84ce7f04456aa3e472606b855648"
       },
       {
         "type": "LEARN",
@@ -814,8 +792,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "0c0c40b078d443a5b1ba0d2aefc7e65f",
-        "title": "✅ Knowledge Check"
+        "notionId": "0c0c40b078d443a5b1ba0d2aefc7e65f"
       },
       {
         "type": "LEARN",
@@ -823,8 +800,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "71cc17a7d8664e70afd5ff1f108c1d4e",
-        "title": "✅ Knowledge Check"
+        "notionId": "71cc17a7d8664e70afd5ff1f108c1d4e"
       },
       {
         "type": "LEARN",
@@ -913,8 +889,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "6881d9f6b2ab40aea5ac74b5a4956559",
-        "title": "✅ TODO"
+        "notionId": "6881d9f6b2ab40aea5ac74b5a4956559"
       },
       {
         "type": "LEARN",
@@ -922,8 +897,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "4582b0e22520444a85d8fc1668575e5c",
-        "title": "✅ Consensus"
+        "notionId": "4582b0e22520444a85d8fc1668575e5c"
       },
       {
         "type": "LEARN",
@@ -931,8 +905,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "a0c08d3d1ce34356852e3ef0b7e8a38d",
-        "title": "✅ 51% attacks"
+        "notionId": "a0c08d3d1ce34356852e3ef0b7e8a38d"
       },
       {
         "type": "LEARN",
@@ -940,8 +913,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "5510ec0e6e8740ca9a8abbd882066b0c",
-        "title": "✅ Transactions Per Second"
+        "notionId": "5510ec0e6e8740ca9a8abbd882066b0c"
       },
       {
         "type": "LEARN",
@@ -953,8 +925,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "655bb01b00294875867c3b8cacf654b3",
-        "title": "✅ Why decentralization?"
+        "notionId": "655bb01b00294875867c3b8cacf654b3"
       },
       {
         "type": "LEARN",
@@ -962,8 +933,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "aeb2bd652b5e4cc88613d8323425ef10",
-        "title": "✅ But is it Decentralized?"
+        "notionId": "aeb2bd652b5e4cc88613d8323425ef10"
       },
       {
         "type": "LEARN",
@@ -975,8 +945,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "85eea665d8de47e0b27e9d99d00020f8",
-        "title": "✅ Layer 2s"
+        "notionId": "85eea665d8de47e0b27e9d99d00020f8"
       },
       {
         "type": "LEARN",
@@ -984,8 +953,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "5279c579e15e4a9fae2aa66a1a50f523",
-        "title": "✅ Ethereum Future"
+        "notionId": "5279c579e15e4a9fae2aa66a1a50f523"
       },
       {
         "type": "LEARN",
@@ -1078,8 +1046,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "f160a4c558db4165a604915b0fcfa0f2",
-        "title": "✅ Question"
+        "notionId": "f160a4c558db4165a604915b0fcfa0f2"
       },
       {
         "type": "LEARN",
@@ -1087,8 +1054,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "afaf7811b1ca47daa52316c6b4816f18",
-        "title": "✅ Question"
+        "notionId": "afaf7811b1ca47daa52316c6b4816f18"
       },
       {
         "type": "LEARN",
@@ -1100,8 +1066,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "ff79af059f9d49f4a74a4b0c4635e558",
-        "title": "✅ Question"
+        "notionId": "ff79af059f9d49f4a74a4b0c4635e558"
       },
       {
         "type": "LEARN",
@@ -1113,8 +1078,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "e5e6e3c66842487aa0c7ad0014dfa893",
-        "title": "✅ Question"
+        "notionId": "e5e6e3c66842487aa0c7ad0014dfa893"
       },
       {
         "type": "LEARN",
@@ -1122,8 +1086,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "2594cf6d735f43f0a092f0eb25e7bc47",
-        "title": "✅ Question"
+        "notionId": "2594cf6d735f43f0a092f0eb25e7bc47"
       },
       {
         "type": "LEARN",
@@ -1131,8 +1094,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "e77e5c9faacc4b4cbb884c4ae595bcc1",
-        "title": "✅ Question"
+        "notionId": "e77e5c9faacc4b4cbb884c4ae595bcc1"
       },
       {
         "type": "LEARN",
@@ -1333,8 +1295,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "38047b3853c042e7a533087ba0f144cb",
-        "title": "Knowledge Check"
+        "notionId": "38047b3853c042e7a533087ba0f144cb"
       },
       {
         "type": "LEARN",
@@ -1342,8 +1303,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "3a3c104d035b47deaa096f522d99a610",
-        "title": "Knowledge Check"
+        "notionId": "3a3c104d035b47deaa096f522d99a610"
       },
       {
         "type": "LEARN",
@@ -1351,8 +1311,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "889ab319653d48ba9e926cd52cefa4c8",
-        "title": "Knowledge Check"
+        "notionId": "889ab319653d48ba9e926cd52cefa4c8"
       },
       {
         "type": "LEARN",
@@ -1360,8 +1319,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "262ad86832024af0ad8c4551b90bfe3e",
-        "title": "Knowledge Check"
+        "notionId": "262ad86832024af0ad8c4551b90bfe3e"
       },
       {
         "type": "LEARN",
@@ -1373,8 +1331,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "57033e0ecc71486bb00d00537b13a7a6",
-        "title": "Knowledge Check"
+        "notionId": "57033e0ecc71486bb00d00537b13a7a6"
       },
       {
         "type": "LEARN",
@@ -1382,8 +1339,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "7b23f53bcb0b452b8a57ae31dbbe0e04",
-        "title": "Knowledge Check"
+        "notionId": "7b23f53bcb0b452b8a57ae31dbbe0e04"
       },
       {
         "type": "LEARN",
@@ -1391,8 +1347,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "f866ee130ec84dfe8aa2b2d17b70d14e",
-        "title": "Knowledge Check"
+        "notionId": "f866ee130ec84dfe8aa2b2d17b70d14e"
       },
       {
         "type": "LEARN",
@@ -1400,8 +1355,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "2e8d46830695493d8d03ac75a6c7e67d",
-        "title": "Knowledge Check"
+        "notionId": "2e8d46830695493d8d03ac75a6c7e67d"
       },
       {
         "type": "QUEST"
@@ -1525,8 +1479,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "41802b1b9f7d4b7aa6f33341369fed76",
-        "title": "✅ Knowledge Check"
+        "notionId": "41802b1b9f7d4b7aa6f33341369fed76"
       },
       {
         "type": "LEARN",
@@ -1538,8 +1491,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "1e7748d105bb4374a8dab96e40481502",
-        "title": "✅ Knowledge Check"
+        "notionId": "1e7748d105bb4374a8dab96e40481502"
       },
       {
         "type": "LEARN",
@@ -1547,8 +1499,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "7ff7469e00154f15ac6d0f149a378590",
-        "title": "✅ Knowledge Check"
+        "notionId": "7ff7469e00154f15ac6d0f149a378590"
       },
       {
         "type": "LEARN",
@@ -1560,8 +1511,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "086408da71d64987bea8e712a03db00a",
-        "title": "✅ Knowledge Check"
+        "notionId": "086408da71d64987bea8e712a03db00a"
       },
       {
         "type": "LEARN",
@@ -1573,13 +1523,11 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "b93c97acd19847aaaa7867734bade95a",
-        "title": "✅ Knowledge Check"
+        "notionId": "b93c97acd19847aaaa7867734bade95a"
       },
       {
         "type": "QUIZ",
-        "notionId": "5a390d00dff4454e948ba9e54c569ae4",
-        "title": "✅ Knowledge Check"
+        "notionId": "5a390d00dff4454e948ba9e54c569ae4"
       },
       {
         "type": "LEARN",
@@ -1595,8 +1543,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "c630efe1a4c14ffa995b6edbd9a1fe94",
-        "title": "✅ Knowledge Check"
+        "notionId": "c630efe1a4c14ffa995b6edbd9a1fe94"
       },
       {
         "type": "LEARN",
@@ -1608,8 +1555,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "0eae7cec3bd140f79b75dbfbff51d7b9",
-        "title": "✅ Knowledge Check"
+        "notionId": "0eae7cec3bd140f79b75dbfbff51d7b9"
       },
       {
         "type": "QUEST"
@@ -1752,8 +1698,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "9a6352929e6e494ab3b165039598794c",
-        "title": "✅ Knowledge Check"
+        "notionId": "9a6352929e6e494ab3b165039598794c"
       },
       {
         "type": "LEARN",
@@ -1765,8 +1710,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "3e7bf2b7a80b4d58adb59c9fe47fb7af",
-        "title": "✅ Knowledge Check"
+        "notionId": "3e7bf2b7a80b4d58adb59c9fe47fb7af"
       },
       {
         "type": "LEARN",
@@ -1774,8 +1718,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "802bd3e3ac71461fa38ab668e9873b00",
-        "title": "✅ Knowledge Check"
+        "notionId": "802bd3e3ac71461fa38ab668e9873b00"
       },
       {
         "type": "LEARN",
@@ -1795,8 +1738,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "e9cad4dd12fa472ba02b101739921dd7",
-        "title": "✅ Knowledge Check"
+        "notionId": "e9cad4dd12fa472ba02b101739921dd7"
       },
       {
         "type": "LEARN",
@@ -1804,8 +1746,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "3222f2f41d574a28ba4ce99dc7ecbce2",
-        "title": "✅ Knowledge Check"
+        "notionId": "3222f2f41d574a28ba4ce99dc7ecbce2"
       },
       {
         "type": "LEARN",
@@ -1817,8 +1758,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "4abc237a56fb4c1c863c0190b17b52f3",
-        "title": "✅ Knowledge Check"
+        "notionId": "4abc237a56fb4c1c863c0190b17b52f3"
       },
       {
         "type": "LEARN",
@@ -2006,8 +1946,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "e24b2cfca49f40468c373d4a3f0347ee",
-        "title": "✅ Question"
+        "notionId": "e24b2cfca49f40468c373d4a3f0347ee"
       },
       {
         "type": "LEARN",
@@ -2015,8 +1954,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "05a725c789fb423e85536358b0f724ce",
-        "title": "✅ Question"
+        "notionId": "05a725c789fb423e85536358b0f724ce"
       },
       {
         "type": "LEARN",
@@ -2024,8 +1962,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "79f6a27daa9d428a91366ea4932338fd",
-        "title": "✅ Question"
+        "notionId": "79f6a27daa9d428a91366ea4932338fd"
       },
       {
         "type": "LEARN",
@@ -2037,8 +1974,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "0c869bfcb0f14f70a197753de548bc99",
-        "title": "✅ Question"
+        "notionId": "0c869bfcb0f14f70a197753de548bc99"
       },
       {
         "type": "LEARN",
@@ -2046,8 +1982,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "cb73faf4adf34a0194b99dde75f11939",
-        "title": "✅ Question"
+        "notionId": "cb73faf4adf34a0194b99dde75f11939"
       },
       {
         "type": "LEARN",
@@ -2055,8 +1990,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "478990740cb14d7094308c60bed96833",
-        "title": "✅ Question"
+        "notionId": "478990740cb14d7094308c60bed96833"
       },
       {
         "type": "LEARN",
@@ -2064,8 +1998,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "d33b2d65a645400da530ee2fb114b79e",
-        "title": "✅ Question"
+        "notionId": "d33b2d65a645400da530ee2fb114b79e"
       },
       {
         "type": "QUEST"
@@ -2184,8 +2117,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "6419b66630ba4d5d9f7879a903269624",
-        "title": "Knowledge Check"
+        "notionId": "6419b66630ba4d5d9f7879a903269624"
       },
       {
         "type": "LEARN",
@@ -2197,8 +2129,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "64916dce80644ad7878cb730144d36c1",
-        "title": "Knowledge Check"
+        "notionId": "64916dce80644ad7878cb730144d36c1"
       },
       {
         "type": "LEARN",
@@ -2218,8 +2149,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "89e00897b74d4c99a6379db89c2a09f8",
-        "title": "Knowledge Check"
+        "notionId": "89e00897b74d4c99a6379db89c2a09f8"
       },
       {
         "type": "LEARN",
@@ -2244,10 +2174,15 @@
     "languages": [
       "de",
       "es",
-      "fr",
       "ja",
       "zh"
     ],
+    "staleTranslations": {
+      "languages": [
+        "fr"
+      ],
+      "reason": "pre-2026-08 rewrite: quiz 5 has 2 options vs 4 in en"
+    },
     "level": "Community Lessons",
     "tags": [
       "DAO",
@@ -2315,8 +2250,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "1f06055418574f5a8c4ea95009b8a22c",
-        "title": "✅ Knowledge Check"
+        "notionId": "1f06055418574f5a8c4ea95009b8a22c"
       },
       {
         "type": "LEARN",
@@ -2328,8 +2262,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "cab4301328734bd89b9b43a9c4b4dc21",
-        "title": "✅ Knowledge Check"
+        "notionId": "cab4301328734bd89b9b43a9c4b4dc21"
       },
       {
         "type": "LEARN",
@@ -2337,8 +2270,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "0ca331a53a8d4890a2dbd4ebbce4f761",
-        "title": "✅ Knowledge Check"
+        "notionId": "0ca331a53a8d4890a2dbd4ebbce4f761"
       },
       {
         "type": "LEARN",
@@ -2354,8 +2286,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "a9d7f617e364444589bf293de34be208",
-        "title": "✅ Knowledge Check"
+        "notionId": "a9d7f617e364444589bf293de34be208"
       },
       {
         "type": "LEARN",
@@ -2363,8 +2294,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "1e4f756aa4d544ae8c9227f5d952ecf7",
-        "title": "✅ Knowledge Check"
+        "notionId": "1e4f756aa4d544ae8c9227f5d952ecf7"
       },
       {
         "type": "LEARN",
@@ -2380,8 +2310,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "fffcd5559d6b47e2b6d5149ec9d28d22",
-        "title": "✅ Knowledge Check"
+        "notionId": "fffcd5559d6b47e2b6d5149ec9d28d22"
       },
       {
         "type": "LEARN",
@@ -2393,8 +2322,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "7ddf83811003407487d15711a764ca5e",
-        "title": "✅ Knowledge Check"
+        "notionId": "7ddf83811003407487d15711a764ca5e"
       },
       {
         "type": "LEARN",
@@ -2521,8 +2449,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "9ae7dfe11c4c476abba3fcd16438d3b5",
-        "title": "✅ Knowledge Check"
+        "notionId": "9ae7dfe11c4c476abba3fcd16438d3b5"
       },
       {
         "type": "LEARN",
@@ -2534,8 +2461,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "21512837a13b809a8deaf4ca312a528f",
-        "title": "✅ Knowledge Check"
+        "notionId": "21512837a13b809a8deaf4ca312a528f"
       },
       {
         "type": "LEARN",
@@ -2547,8 +2473,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "21512837a13b803c8c2af3167489f5e4",
-        "title": "✅ Knowledge Check"
+        "notionId": "21512837a13b803c8c2af3167489f5e4"
       },
       {
         "type": "LEARN",
@@ -2560,8 +2485,7 @@
       },
       {
         "type": "QUIZ",
-        "notionId": "21512837a13b80029db5ce0c278254d1",
-        "title": "✅ Knowledge Check"
+        "notionId": "21512837a13b80029db5ce0c278254d1"
       },
       {
         "type": "LEARN",

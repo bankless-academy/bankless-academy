@@ -386,7 +386,9 @@ const splitSections = (body) => {
 const buildLesson = (slug, meta) => {
   const md = fs.readFileSync(`${MD_DIR}/${slug}.md`, 'utf8')
   const body = extractBody(md)
-  const { slideMeta, ...fields } = meta
+  // `staleTranslations` is build-time bookkeeping (translations kept in git but
+  // deliberately unregistered until regenerated) — it never reaches the app.
+  const { slideMeta, staleTranslations: _stale, ...fields } = meta
 
   if (!slideMeta) {
     // HANDBOOK: articleContent is the markdown body itself (images relativized)
@@ -445,7 +447,11 @@ const buildLesson = (slug, meta) => {
       quiz.answers = answers
       if (feedback) quiz.feedback = feedback
       quiz.id = `${slug}-${quizCounter}`
-      slides.push({ type: sm.type, notionId: sm.notionId, title: sm.title, quiz })
+      // title comes from the md heading (`Knowledge Check <n>`), same as LEARN
+      // slides — slideMeta.title used to carry stale Notion labels. The UI
+      // renders a hardcoded, translated `Knowledge Check` label for quiz
+      // slides, so this only affects the compiled payload.
+      slides.push({ type: sm.type, notionId: sm.notionId, title: section.title, quiz })
     } else {
       throw new Error(`${slug}: unknown slide type ${sm.type}`)
     }

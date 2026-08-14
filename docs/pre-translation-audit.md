@@ -102,29 +102,43 @@ Many entries also still carry English definitions under a translated key.
 Ordered. Everything here either changes the English source (so translating
 first means paying twice) or is needed to validate the output.
 
-1. **Fix the stale quiz slide titles in `lesson-meta.json`.** 13 distinct
-   values across 89 quiz slides, including a literal `✅ TODO` rendering live on
-   `layer-1-blockchains` KC1. Decide the target: make `build-content.js` take
-   quiz titles from the md `#` heading (as translated pages already do), which
-   makes them translatable for free and fixes the en/translated divergence.
-   This changes visible English text, so it needs a call.
-2. **Extend `validate-content.js` to translated md** — section count, per-quiz
-   option count, `[x]` position vs English, URLs and `{{placeholders}}` intact,
-   backticked terms resolving in that language's keyword file. Without this the
-   translation run has no gate, and it would have caught today's
-   `bitcoin-basics` breakage.
-3. **Decide what happens to the 25 stale translated files.** Leaving them live
-   means shipping known-wrong quizzes until their language's wave lands. Either
-   delete them (drop the language from `languages[]`, page falls back to
-   English) or fast-track those lessons in wave 1.
+### Done 2026-08-14
+
+1. ~~**Fix the stale quiz slide titles in `lesson-meta.json`.**~~ **Correction
+   to the original finding:** these titles never render. `Lesson.tsx:971` shows
+   a hardcoded `t('Knowledge Check')` for QUIZ slides and a hardcoded `'Poll'`
+   for POLL slides, so the `✅ TODO` was payload cruft, not a live string.
+   Resolved anyway: `build-content.js` now takes quiz titles from the md
+   `Knowledge Check <n>` heading (like LEARN slides), and the stale `title` was
+   removed from all 90 QUIZ/POLL `slideMeta` entries. All 90 compiled titles now
+   follow the standard. Zero UI change.
+   *(Loose end: the `'Poll'` label is not wrapped in `t()`.)*
+2. ~~**Extend `validate-content.js` to translated md.**~~ Done: frontmatter,
+   section count vs non-QUEST slides, quiz count, per-quiz option count, `[x]`
+   position vs English, and image presence by hash-stripped stem (so localized
+   SVG variants are allowed). Dropped internal cross-links are reported as
+   **warnings**, not errors — a missing link costs a link, not a wrong answer,
+   and every older translation predates links added in the rewrite.
+   The new checks immediately surfaced an 8th broken file the manual pass had
+   under-reported: `fr/optimism-governance` quiz 5 has 2 options vs 4.
+3. ~~**Decide what happens to the stale translated files.**~~ The 8
+   structurally broken ones are unregistered via a new `staleTranslations`
+   field: `bitcoin-basics` (es, fr, pt-br, tr, uk, zh — all six, so the lesson
+   is now English-only), `wallet-basics` (uk), `optimism-governance` (fr). Files
+   stay in git for the translation pass to diff against; the validator accepts
+   them; `build-content.js` strips the field from the payload. The remaining
+   ~30 files are outdated prose but structurally sound, so they keep serving.
+
+### Still to do
+
 4. **Generate `translation/website/en/lesson.json`** (or drop the `lesson`
    namespace and read names from `lessons.json`). Right now the en side of layer
    4 works only by falling through to the key, and nothing produces the
    translated files.
 5. **Make the quest components translatable** — 9 of 16 never call
    `useTranslation`, plus the `// TODO: TRANSLATE` markers in `Badge.tsx` and
-   the DataDisk components. New English strings landing after the translation
-   run means re-running it.
+   the DataDisk components, plus the hardcoded `'Poll'` in `Lesson.tsx`. New
+   English strings landing after the translation run means re-running it.
 6. **Serve translated md locally** in `LessonContent.tsx` and `/api/sitemap`
    instead of `raw.githubusercontent.com/main`. At 25 languages the sitemap does
    ~475 uncached cross-origin fetches per request; it is also why a translation

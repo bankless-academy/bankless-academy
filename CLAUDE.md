@@ -14,7 +14,7 @@ and announcements — see "Still on Notion" below.)
 | File | Contains |
 |---|---|
 | `translation/lesson/en/<slug>.md` | Canonical lesson content: frontmatter (TITLE, DESCRIPTION, WRITERS…), slides as `#` sections, quizzes as `- [ ]` options with the correct one marked `- [x]`, optional per-option `> ℹ️` feedback blockquotes (translatable). POLL sections have no `[x]`. |
-| `src/constants/lesson-meta.json` | Everything that isn't slide prose: badge/image links, quest binding, publicationStatus, duration, sponsor fields, per-slide skeleton (`slideMeta`: type/notionId/title), mirror links for articles. |
+| `src/constants/lesson-meta.json` | Everything that isn't slide prose: badge/image links, quest binding, publicationStatus, duration, sponsor fields, per-slide skeleton (`slideMeta`: type + notionId; LEARN entries also carry `title`, QUIZ/POLL take theirs from the md heading), `languages[]`, optional `staleTranslations`, mirror links for articles. |
 | _(no separate answer file)_ | Quiz keys live in the md `[x]` marks. Accepted trade-off: answers are readable in the repo — they always were via the compiled `lessons.json`/`lessons.ts`. |
 | `translation/keywords/en/keywords.json` | Canonical glossary (hand-edited; Notion import retired). Entry: `{ keyword, keyword_plural?, definition, glossary }`, lowercase keys. Every backticked `term` in lesson md must resolve here (exact key or trailing-s singular) — enforced by `validate-content.js`. Translated files (`<lang>/keywords.json`) are flat: plural forms are separate keys. |
 
@@ -124,7 +124,10 @@ render a warning banner on the intro slide.
 - [x] **English content freeze reached (2026-08-08):** all 19 active lessons rewritten for accuracy + quality, glossary and metadata audited, `EDITORS:` credit in frontmatter. Lesson content changes after this point invalidate translations — batch them.
 - [x] i18n Phase A + B (2026-08-08): language registry, ISO code migration with permanent redirects, `parseLangFromPath`/`AppContext` fixes, searchable `LanguageSelector` replacing `SelectLanguage` + `LanguageSwitch`
 - [x] Full-repo audit (2026-08-14) → `docs/pre-translation-audit.md`: coverage numbers per layer, 25 of 38 translated lesson files structurally stale (6 with live quiz-option bugs), ordered before/after list for the translation phase
-- [ ] **Before `translate-content`** (see the audit doc): fix stale quiz slide titles in `slideMeta` (incl. a live `✅ TODO`), extend `validate-content.js` to translated md, decide the fate of the 25 stale translated files, generate `website/en/lesson.json`, make the 9 English-only quest components translatable, serve translated md locally instead of GitHub raw, add `GITHUB_TOKEN` to Vercel + refresh `.env.example`
+- [x] Quiz slide titles standardized (2026-08-14): `build-content.js` reads them from the md `Knowledge Check <n>` heading; the stale Notion `title` dropped from all 90 QUIZ/POLL `slideMeta` entries. No UI change — the frontend renders a hardcoded translated label.
+- [x] `validate-content.js` extended to translated md (2026-08-14): section count, quiz count, per-quiz option count, `[x]` position vs English, image stems (localized variants allowed), frontmatter; dropped cross-links warn instead of failing. Plus `staleTranslations` support.
+- [x] 8 structurally broken translations unregistered (2026-08-14): `bitcoin-basics` es/fr/pt-br/tr/uk/zh, `wallet-basics` uk, `optimism-governance` fr — files kept in git under `staleTranslations`, pages now serve English instead of mis-grading learners.
+- [ ] **Remaining before `translate-content`** (see the audit doc): generate `website/en/lesson.json`, make the 9 English-only quest components translatable, serve translated md locally instead of GitHub raw, add `GITHUB_TOKEN` to Vercel + refresh `.env.example`
 - [ ] `translate-content` AI translation script (see `docs/i18n-25-languages-plan.md` — existing 9 languages to full coverage first; must also emit `website/<lang>/*.json` and `keywords/<lang>/keywords.json`, not just lesson md)
 - [ ] **After**: lazy-load i18next namespaces, `fallback: 'blocking'` + ISR for translated lesson paths, localize `/glossary` (+ per-term anchors, `glossary: true` audit), RTL audit before the first ar/ur wave, hreflang in the sitemap
 - [ ] Remove Crowdin (`crowdin.yml`, `import-translations.js`) and Notion lesson import (`import-content.js`, `src/pages/lessons/preview.tsx`)
@@ -257,18 +260,26 @@ Understand all five before touching translations — they fail independently.
 - `processMD` overwrites a translated lesson's question/answers/feedback but
   **keeps `rightAnswerNumber` from the compiled English lesson**. If a
   translation has a different number of options, or lists them in a different
-  order, the quiz is silently wrong for that language. Nothing validates this
-  today.
+  order, the quiz is silently wrong for that language. Gated since 2026-08-14
+  by the translated-md checks in `validate-content.js`.
 - If a translated md has fewer `#` sections than the lesson has non-QUEST
   slides, `processMD` throws; `getStaticProps` catches it and silently serves
   the English lesson — so a broken translation looks like "the translation
-  didn't load" rather than an error.
-- Quiz **slide titles** are inconsistent between languages: English pages take
-  the title from `slideMeta.title` in `lesson-meta.json` (Notion leftovers:
-  `✅ Knowledge Check`, `✅ quiz`, `✅ Question`, and one literal `✅ TODO`),
-  while translated pages take it from the md `#` heading. The md headings
-  (`Knowledge Check 1…N`) are the clean source; `slideMeta.title` is not
-  translatable where it currently lives.
+  didn't load" rather than an error. Also gated now.
+- **Unregistering a translation**: drop the language from `languages[]` and add
+  it to `staleTranslations: { languages: [...], reason: "..." }` on the same
+  lesson. The md file stays in git (so the translation pass can diff against
+  it) but is not served, and the validator stops demanding a `languages[]`
+  entry for it. `staleTranslations` is stripped by `build-content.js` and never
+  reaches the app.
+- Quiz **slide titles never render**: `Lesson.tsx` shows a hardcoded
+  `t('Knowledge Check')` for QUIZ slides and a hardcoded `'Poll'` for POLL
+  slides (the latter is not wrapped in `t()` — small i18n bug). Slide titles
+  only reach the compiled payload and `/api/lessons`. Fixed 2026-08-14:
+  `build-content.js` now takes quiz titles from the md `#` heading like LEARN
+  slides do, and the stale `title` field was dropped from all 90 QUIZ/POLL
+  `slideMeta` entries. **Keep every quiz heading as `Knowledge Check <n>`** in
+  the md, numbered sequentially per lesson.
 - `LessonContent.tsx` (`/lessons/**/content`) and `/api/sitemap` fetch
   translated md from `raw.githubusercontent.com/.../main/` **at runtime**. The
   sitemap does one fetch per lesson × language and has no cache header — it is

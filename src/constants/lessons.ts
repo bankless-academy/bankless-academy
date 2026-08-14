@@ -20,14 +20,7 @@ const LESSONS: LessonType[] = [
     learnings: '',
     description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
-    languages: [
-      'es',
-      'fr',
-      'pt-br',
-      'tr',
-      'uk',
-      'zh'
-    ],
+    languages: [],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
     quest: 'BitcoinBasics',
@@ -103,7 +96,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'eecfb3374fc640c980096e5ed654c70c',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'What happens to existing money when lots of new money is added to a monetary system?',
           rightAnswerNumber: 1,
@@ -147,7 +140,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '626fb6d4b2b047db837057cfbb3992e0',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'How does Bitcoin promote value preservation in the long term?',
           rightAnswerNumber: 1,
@@ -175,7 +168,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'f8d8e8d58e984f1097f0b17a6d805df8',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'How does self-custody enable true ownership?',
           rightAnswerNumber: 1,
@@ -199,7 +192,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '4fbf3369fdda41cfacc47b91a55cb428',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'How is Bitcoin similar to email?',
           rightAnswerNumber: 4,
@@ -239,7 +232,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '66a30c6163b1406da931e7b62ba76222',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'What is decentralization?',
           rightAnswerNumber: 2,
@@ -259,7 +252,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '59609434869c42b99a54a538d8faa2d5',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'How does mining protect the Bitcoin Network from fraud?',
           rightAnswerNumber: 1,
@@ -384,7 +377,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'f01c3458feb644e1a4850a233dd9e4ab',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'True or False: Most online services place an intermediary between you and the people you interact with.',
           rightAnswerNumber: 1,
@@ -414,7 +407,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '7d1e5e16e9c04f44a60d705eb6ad7701',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'How can automation improve your online experiences?',
           rightAnswerNumber: 2,
@@ -450,7 +443,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'e06f37809a984334a46b55126b01e060',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'On Ethereum, services get better and better because…',
           rightAnswerNumber: 3,
@@ -482,7 +475,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '7e8729f592ad4836a1d7c1fd5b6f560d',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'True or False: On Ethereum, your funds are stored in your own crypto wallet, not held by an intermediary.',
           rightAnswerNumber: 1,
@@ -524,7 +517,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'POLL',
         notionId: '9fffc9eec113419cab34b9919fa9a5cc',
-        title: '📊 Poll',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'How do you imagine yourself using Ethereum? (Check all that apply)',
           answers: [
@@ -610,7 +603,6 @@ const LESSONS: LessonType[] = [
       'ja',
       'pt-br',
       'tr',
-      'uk',
       'zh'
     ],
     level: 'Essentials',
@@ -681,7 +673,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'c28d3aa7e8b34f7a944645eab08ba3ad',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'What is a wallet?',
           rightAnswerNumber: 4,
@@ -721,7 +713,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '28e8eeb6ea36443faba81c65d049e874',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'Your wallet address is like your _____ and your private key is like your _____ .',
           rightAnswerNumber: 3,
@@ -749,7 +741,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'aca3c7b9435445d292815700f9b24e4c',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'Can you access your wallet with a recovery phrase if your device gets damaged or lost?',
           rightAnswerNumber: 2,
@@ -779,7 +771,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'e8953595b16e4482a4ad5e76b4421dd5',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'Do you control your private key with a custodial wallet?',
           rightAnswerNumber: 2,
@@ -803,7 +795,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'a87cd8104504449e8fe7859b7a55853e',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'Are you responsible for your private key with a self-custody wallet?',
           rightAnswerNumber: 1,
@@ -833,7 +825,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'd969a34bf65647b492f20ef28c97f22d',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'Which of the following wallet types is considered the most secure?',
           rightAnswerNumber: 4,
@@ -861,7 +853,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '4074ea94f6f647379d6981bae7969b68',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 7',
         quiz: {
           question: 'What is the safest way to protect your recovery phrase?',
           rightAnswerNumber: 1,
@@ -889,7 +881,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '087e6162d56d4d06a72d0449b15abd7d',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 8',
         quiz: {
           question: 'Is Zerion a custodial wallet app?',
           rightAnswerNumber: 2,
@@ -984,7 +976,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'dea57bbfc2494226b459d86fc87b46b9',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'What is a blockchain?',
           rightAnswerNumber: 4,
@@ -1018,7 +1010,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'c9136a9caf6f4c5aacc85fac90725cae',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'Which of the following is true for public blockchain ledgers?',
           rightAnswerNumber: 4,
@@ -1046,7 +1038,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '4a9d8f07650a4711a1d477298c8ed0cc',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'What makes a blockchain decentralized?',
           rightAnswerNumber: 3,
@@ -1074,7 +1066,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'a64c7bd22dad465d858a458e637f13a2',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'What is the purpose of a block hash?',
           rightAnswerNumber: 2,
@@ -1102,7 +1094,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'c8eb8024363341b89a56a3b106d63d85',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'What information is contained in a block?',
           rightAnswerNumber: 3,
@@ -1130,7 +1122,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '61840623d81245cdac32c81e208cc37c',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'Data on a blockchain is simply a list of transactions grouped into blocks. Examples of such transactions might include:',
           rightAnswerNumber: 1,
@@ -1158,7 +1150,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'df8eff6a23fe48a0b60ac92124e3ddb2',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 7',
         quiz: {
           question: 'What is true about blockchain addresses?',
           rightAnswerNumber: 4,
@@ -1267,7 +1259,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '04726706edaf48c4a232f30b7bcd95ca',
-        title: '✅ quiz',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'True or false? Scammers can drain tokens from your wallet by tricking you into signing a malicious transaction or approval, without ever knowing your seed phrase.',
           rightAnswerNumber: 1,
@@ -1297,7 +1289,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '8c7e79fea4484fef915ba9c100e3f1d0',
-        title: '✅ quiz',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'Why are password managers helpful?',
           rightAnswerNumber: 4,
@@ -1325,7 +1317,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '2f0f524e5c6c489db675c2420cb5df24',
-        title: '✅ quiz',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'Why is two-factor authentication strongly recommended?',
           rightAnswerNumber: 2,
@@ -1359,7 +1351,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '65f3e534d9bd4dad96049307d210af06',
-        title: '✅ quiz',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'How do scammers use social engineering?',
           rightAnswerNumber: 4,
@@ -1405,7 +1397,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'b08a84ce7f04456aa3e472606b855648',
-        title: '✅ quiz',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'You receive a DM: “Your wallet needs migrating: connect at metamask-upgrade.app and sign to verify your assets.” The site asks you to sign a gasless approval. What’s wrong here?',
           rightAnswerNumber: 4,
@@ -1433,7 +1425,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '0c0c40b078d443a5b1ba0d2aefc7e65f',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'True or false? A hardware wallet only keeps your funds safe if you verify each transaction before approving it.',
           rightAnswerNumber: 1,
@@ -1457,7 +1449,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '71cc17a7d8664e70afd5ff1f108c1d4e',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 7',
         quiz: {
           question: 'We recommend keeping your funds _______________ for higher security.',
           rightAnswerNumber: 3,
@@ -1574,7 +1566,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '6881d9f6b2ab40aea5ac74b5a4956559',
-        title: '✅ TODO',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'The Blockchain Trilemma describes the relationship between:',
           rightAnswerNumber: 3,
@@ -1602,7 +1594,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '4582b0e22520444a85d8fc1668575e5c',
-        title: '✅ Consensus',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'Blockchain consensus for cryptocurrencies is:',
           rightAnswerNumber: 4,
@@ -1630,7 +1622,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'a0c08d3d1ce34356852e3ef0b7e8a38d',
-        title: '✅ 51% attacks',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'The end-goal of a 51% attack is to:',
           rightAnswerNumber: 2,
@@ -1658,7 +1650,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '5510ec0e6e8740ca9a8abbd882066b0c',
-        title: '✅ Transactions Per Second',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'Which of the following is true for the bus stop analogy for blockchain transactions?',
           rightAnswerNumber: 4,
@@ -1692,7 +1684,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '655bb01b00294875867c3b8cacf654b3',
-        title: '✅ Why decentralization?',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'Which of these statements is NOT true for decentralization?',
           rightAnswerNumber: 3,
@@ -1720,7 +1712,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'aeb2bd652b5e4cc88613d8323425ef10',
-        title: '✅ But is it Decentralized?',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'Different blockchains use different amounts of decentralization.',
           rightAnswerNumber: 1,
@@ -1750,7 +1742,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '85eea665d8de47e0b27e9d99d00020f8',
-        title: '✅ Layer 2s',
+        title: 'Knowledge Check 7',
         quiz: {
           question: 'Layer 2s:',
           rightAnswerNumber: 2,
@@ -1778,7 +1770,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '5279c579e15e4a9fae2aa66a1a50f523',
-        title: '✅ Ethereum Future',
+        title: 'Knowledge Check 8',
         quiz: {
           question: 'Ethereum upgrades include:',
           rightAnswerNumber: 4,
@@ -1897,7 +1889,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'f160a4c558db4165a604915b0fcfa0f2',
-        title: '✅ Question',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'You must be online to transact using the Bitcoin Lightning Network.',
           rightAnswerNumber: 1,
@@ -1921,7 +1913,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'afaf7811b1ca47daa52316c6b4816f18',
-        title: '✅ Question',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'Ethereum scaling solutions:',
           rightAnswerNumber: 3,
@@ -1955,7 +1947,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'ff79af059f9d49f4a74a4b0c4635e558',
-        title: '✅ Question',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'Sidechains:',
           rightAnswerNumber: 4,
@@ -1989,7 +1981,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'e5e6e3c66842487aa0c7ad0014dfa893',
-        title: '✅ Question',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'With Optimistic Rollups, transactions are considered valid until proven otherwise.',
           rightAnswerNumber: 1,
@@ -2013,7 +2005,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '2594cf6d735f43f0a092f0eb25e7bc47',
-        title: '✅ Question',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'Compared to Optimistic Rollups, ZK Rollups:',
           rightAnswerNumber: 2,
@@ -2039,7 +2031,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'e77e5c9faacc4b4cbb884c4ae595bcc1',
-        title: '✅ Question',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'EVM equivalent scaling solutions are able to easily reuse smart contracts deployed on Mainnet.',
           rightAnswerNumber: 1,
@@ -2266,7 +2258,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '38047b3853c042e7a533087ba0f144cb',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'What does DeFi stand for?',
           rightAnswerNumber: 2,
@@ -2294,7 +2286,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '3a3c104d035b47deaa096f522d99a610',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'How can you earn yield with crypto?',
           rightAnswerNumber: 3,
@@ -2322,7 +2314,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '889ab319653d48ba9e926cd52cefa4c8',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'Fill in the blank: DeFi transactions are ____.',
           rightAnswerNumber: 3,
@@ -2350,7 +2342,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '262ad86832024af0ad8c4551b90bfe3e',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'What does HODL mean?',
           rightAnswerNumber: 4,
@@ -2384,7 +2376,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '57033e0ecc71486bb00d00537b13a7a6',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'What is a DEX?',
           rightAnswerNumber: 1,
@@ -2412,7 +2404,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '7b23f53bcb0b452b8a57ae31dbbe0e04',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'Fill in the blank: DeFi lending is done on a _____ level.',
           rightAnswerNumber: 2,
@@ -2440,7 +2432,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'f866ee130ec84dfe8aa2b2d17b70d14e',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 7',
         quiz: {
           question: 'Locking your crypto to help secure a network, in exchange for rewards, is an example of?',
           rightAnswerNumber: 2,
@@ -2468,7 +2460,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '2e8d46830695493d8d03ac75a6c7e67d',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 8',
         quiz: {
           question: 'What is a risk in DeFi?',
           rightAnswerNumber: 4,
@@ -2617,7 +2609,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '41802b1b9f7d4b7aa6f33341369fed76',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'Which of the following is true regarding cryptocurrency exchanges?',
           rightAnswerNumber: 3,
@@ -2649,7 +2641,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '1e7748d105bb4374a8dab96e40481502',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'Which properties are needed for a dApp to be considered decentralized?',
           rightAnswerNumber: 4,
@@ -2677,7 +2669,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '7ff7469e00154f15ac6d0f149a378590',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'What is a benefit of using AMMs compared to a traditional order book?',
           rightAnswerNumber: 3,
@@ -2709,7 +2701,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '086408da71d64987bea8e712a03db00a',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'AMMs can route a trade through multiple liquidity pools, all in a single transaction.',
           rightAnswerNumber: 1,
@@ -2739,7 +2731,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'b93c97acd19847aaaa7867734bade95a',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'Finish the statement: “When liquidity is __________.”',
           rightAnswerNumber: 3,
@@ -2759,7 +2751,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '5a390d00dff4454e948ba9e54c569ae4',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'How do DEXs incentivize users to provide liquidity?',
           rightAnswerNumber: 2,
@@ -2799,7 +2791,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'c630efe1a4c14ffa995b6edbd9a1fe94',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 7',
         quiz: {
           question: 'Why would you use a Decentralized Exchange over a Centralized Exchange?',
           rightAnswerNumber: 4,
@@ -2833,7 +2825,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '0eae7cec3bd140f79b75dbfbff51d7b9',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 8',
         quiz: {
           question: 'How can you be sure you’ve chosen a reputable DEX?',
           rightAnswerNumber: 1,
@@ -3001,7 +2993,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '9a6352929e6e494ab3b165039598794c',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'How do validator nodes prevent fraud on Ethereum?',
           rightAnswerNumber: 3,
@@ -3033,7 +3025,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '3e7bf2b7a80b4d58adb59c9fe47fb7af',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'True or False: Validator nodes caught cheating, like signing two conflicting blocks, lose part of their stake.',
           rightAnswerNumber: 1,
@@ -3057,7 +3049,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '802bd3e3ac71461fa38ab668e9873b00',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'What is the name of the validator node selecting the next block to be added to Ethereum?',
           rightAnswerNumber: 3,
@@ -3101,7 +3093,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'e9cad4dd12fa472ba02b101739921dd7',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'What would happen if a single entity controlled a majority of validator nodes?',
           rightAnswerNumber: 1,
@@ -3129,7 +3121,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '3222f2f41d574a28ba4ce99dc7ecbce2',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'Which entity hosts the staking pool?',
           rightAnswerNumber: 3,
@@ -3161,7 +3153,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '4abc237a56fb4c1c863c0190b17b52f3',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'True or False: Supporting new node operators helps to decentralize Ethereum.',
           rightAnswerNumber: 1,
@@ -3375,7 +3367,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'e24b2cfca49f40468c373d4a3f0347ee',
-        title: '✅ Question',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'Fill in the blanks: To find the best price, people will want to trade in markets with ________ liquidity to have ________ price impact on their trades.',
           rightAnswerNumber: 2,
@@ -3403,7 +3395,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '05a725c789fb423e85536358b0f724ce',
-        title: '✅ Question',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'Which two factors determine the price impact of a DEX trade?',
           rightAnswerNumber: 3,
@@ -3431,7 +3423,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '79f6a27daa9d428a91366ea4932338fd',
-        title: '✅ Question',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'Trade routing in DEX aggregators means:',
           rightAnswerNumber: 4,
@@ -3465,7 +3457,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '0c869bfcb0f14f70a197753de548bc99',
-        title: '✅ Question',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'Which of the following is NOT a way DEX aggregators try to reduce transaction costs for users?',
           rightAnswerNumber: 2,
@@ -3493,7 +3485,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'cb73faf4adf34a0194b99dde75f11939',
-        title: '✅ Question',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'Meta-aggregators cross-reference multiple DEX aggregators to find the best prices for their users.',
           rightAnswerNumber: 1,
@@ -3517,7 +3509,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '478990740cb14d7094308c60bed96833',
-        title: '✅ Question',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'To protect yourself, you should keep your slippage tolerance:',
           rightAnswerNumber: 1,
@@ -3541,7 +3533,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'd33b2d65a645400da530ee2fb114b79e',
-        title: '✅ Question',
+        title: 'Knowledge Check 7',
         quiz: {
           question: 'Many DEX aggregators offer which tool(s) to save their users money?',
           rightAnswerNumber: 4,
@@ -3689,7 +3681,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '6419b66630ba4d5d9f7879a903269624',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'What funding mechanism is designed to democratically allocate funds by amplifying the impact of individual contributions?',
           rightAnswerNumber: 3,
@@ -3717,7 +3709,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '64916dce80644ad7878cb730144d36c1',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'What was Gitcoin focused on before 2.0?',
           rightAnswerNumber: 4,
@@ -3763,7 +3755,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '89e00897b74d4c99a6379db89c2a09f8',
-        title: 'Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'Allo is the ______  layer for distribution of capital allocation, while Grants Stack is a _____ for running ______ programs.',
           rightAnswerNumber: 2,
@@ -3803,7 +3795,6 @@ const LESSONS: LessonType[] = [
     languages: [
       'de',
       'es',
-      'fr',
       'ja',
       'zh'
     ],
@@ -3879,7 +3870,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '1f06055418574f5a8c4ea95009b8a22c',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'How can onchain governance help to solve interhuman debate?',
           rightAnswerNumber: 4,
@@ -3913,7 +3904,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'cab4301328734bd89b9b43a9c4b4dc21',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'Which of the following is NOT a public good?',
           rightAnswerNumber: 4,
@@ -3941,7 +3932,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '0ca331a53a8d4890a2dbd4ebbce4f761',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'True or false? The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.',
           rightAnswerNumber: 2,
@@ -3977,7 +3968,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'a9d7f617e364444589bf293de34be208',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'How is Optimism incentivizing community-focused economics?',
           rightAnswerNumber: 3,
@@ -4005,7 +3996,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '1e4f756aa4d544ae8c9227f5d952ecf7',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 5',
         quiz: {
           question: 'How does the Citizens’ House differ from the Token House?',
           rightAnswerNumber: 2,
@@ -4045,7 +4036,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'fffcd5559d6b47e2b6d5149ec9d28d22',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 6',
         quiz: {
           question: 'How does the Token House protect the network from attack?',
           rightAnswerNumber: 4,
@@ -4079,7 +4070,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '7ddf83811003407487d15711a764ca5e',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 7',
         quiz: {
           question: 'How does the Citizens’ House protect the network from attack?',
           rightAnswerNumber: 3,
@@ -4235,7 +4226,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '9ae7dfe11c4c476abba3fcd16438d3b5',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 1',
         quiz: {
           question: 'What’s true about public goods?',
           rightAnswerNumber: 3,
@@ -4263,7 +4254,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '21512837a13b809a8deaf4ca312a528f',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 2',
         quiz: {
           question: 'What does a Public Nouns NFT represent?',
           rightAnswerNumber: 3,
@@ -4291,7 +4282,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '21512837a13b803c8c2af3167489f5e4',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 3',
         quiz: {
           question: 'What connects Public Nouns to Nouns?',
           rightAnswerNumber: 2,
@@ -4319,7 +4310,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '21512837a13b80029db5ce0c278254d1',
-        title: '✅ Knowledge Check',
+        title: 'Knowledge Check 4',
         quiz: {
           question: 'What does forking mean?',
           rightAnswerNumber: 3,
