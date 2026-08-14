@@ -311,21 +311,25 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
               {isMyProfile && (
                 <Box position="absolute" top="25px" right="25px">
                   <Helper
-                    title={`Profile username & avatar`}
+                    title={t('Profile username & avatar')}
                     isProfile={true}
                     definition={
                       <>
                         <Box mb="4">
-                          {`Check out `}
+                          {t('Check out ')}
                           <ExternalLink
                             underline="true"
                             href="/lessons/registering-your-web3-username"
                           >
                             this article
                           </ExternalLink>
-                          {` to register your web3 username and avatar with the Ethereum Name Service (ENS).`}
+                          {t(
+                            ' to register your web3 username and avatar with the Ethereum Name Service (ENS).'
+                          )}
                           <br />
-                          {`Your ENS user info will be displayed here, and on other web3 sites you visit.`}
+                          {t(
+                            'Your ENS user info will be displayed here, and on other web3 sites you visit.'
+                          )}
                         </Box>
                       </>
                     }
@@ -380,7 +384,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                     variant="secondary"
                     leftIcon={<Image h="20px" src="/images/ens.svg" />}
                   >
-                    Edit profile
+                    {t('Edit profile')}
                   </Button>
                 </ExternalLink>
               </Box>
@@ -524,7 +528,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                           </InputLeftElement>
                           <Input
                             value={email}
-                            placeholder={'Enter your email address...'}
+                            placeholder={t('Enter your email address...')}
                             type="email"
                             onChange={(e): void => {
                               setEmail(e.target.value)
@@ -613,7 +617,9 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                         </InputGroup>
                       </Box>
                       <Box mt="4" color="#ffffff70">
-                        * Your email is not displayed in your public profile.
+                        {t(
+                          '* Your email is not displayed in your public profile.'
+                        )}
                       </Box>
                     </Box>
                     <Box m="8" flex="1">
@@ -660,11 +666,15 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                 </Box>
                 <Box position="absolute" top="38px" right="109px">
                   <Helper
-                    title={`Explorer Score`}
+                    title={t('Explorer Score')}
                     isProfile={true}
                     definition={
                       <>
-                        <Box mb="4">{`Your Explorer Score measures progress along your Bankless journey. Score calculation may evolve in the future.`}</Box>
+                        <Box mb="4">
+                          {t(
+                            'Your Explorer Score measures progress along your Bankless journey. Score calculation may evolve in the future.'
+                          )}
+                        </Box>
                       </>
                     }
                   />
@@ -682,9 +692,11 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                     max={MAX_BADGES}
                     definition={
                       <>
-                        {`Explorers study their surroundings.`}
+                        {t('Explorers study their surroundings.')}
                         <br />
-                        {`Each lesson badge increases your score by 1 point.`}
+                        {t(
+                          'Each lesson badge increases your score by 1 point.'
+                        )}
                       </>
                     }
                   />
@@ -702,9 +714,11 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                     max={maxReferrals(referrals)}
                     definition={
                       <>
-                        {`Explorers share knowledge with others.`}
+                        {t('Explorers share knowledge with others.')}
                         <br />
-                        {`Each friend referred (after claiming their first badge) increases your score by 1 point.`}
+                        {t(
+                          'Each friend referred (after claiming their first badge) increases your score by 1 point.'
+                        )}
                       </>
                     }
                   />
@@ -781,9 +795,11 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                     max={MAX_COLLECTIBLES}
                     definition={
                       <>
-                        {`Explorers own digital items.`}
+                        {t('Explorers own digital items.')}
                         <br />
-                        {`Each Handbook increases your score by 1 point, and each DataDisk increases it by 3 points.`}
+                        {t(
+                          'Each Handbook increases your score by 1 point, and each DataDisk increases it by 3 points.'
+                        )}
                       </>
                     }
                   />
@@ -802,7 +818,9 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                       <>
                         {`Explorers can prove they aren't bots.`}
                         <br />
-                        {`Each account you connect increases your score by 1 point.`}
+                        {t(
+                          'Each account you connect increases your score by 1 point.'
+                        )}
                       </>
                     }
                   />
@@ -831,7 +849,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                     max={MAX_ACHIEVEMENT}
                     definition={
                       <>
-                        {`Explorers go above and beyond.`}
+                        {t('Explorers go above and beyond.')}
                         <br />
                         {`Each achievement grants a unique amount of points.`}
                       </>
@@ -855,7 +873,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
       <Layout page="PROFILE">
         <Container maxW="container.xl" minH="calc(100vh - 73px)">
           <Heading as="h2" size="xl" m="8" textAlign="center">
-            Loading Explorer Profile
+            {t('Loading Explorer Profile')}
           </Heading>
           {error || (
             <Image

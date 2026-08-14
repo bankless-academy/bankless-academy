@@ -292,7 +292,9 @@ const OnboardingModal = ({
                           w={isMobileScreen ? 'auto' : '200px'}
                           textAlign="center"
                         >
-                          <Text fontStyle="italic">You were referred by:</Text>
+                          <Text fontStyle="italic">
+                            {t('You were referred by:')}
+                          </Text>
                           <Text
                             fontWeight="bold"
                             textTransform="uppercase"
@@ -309,10 +311,11 @@ const OnboardingModal = ({
                     <Box h="24px" />
                   )}
                   <Box mt="24px">
-                    <Text>Your digital transformation begins here.</Text>
+                    <Text>{t('Your digital transformation begins here.')}</Text>
                     <Text mt="8px">
-                      {`It's time to start your crypto journey and change your
-                      digital life forever.`}
+                      {t(
+                        `It's time to start your crypto journey and change your digital life forever.`
+                      )}
                     </Text>
                   </Box>
                 </Box>
@@ -328,7 +331,7 @@ const OnboardingModal = ({
                   textAlign="center"
                   mt="24px"
                 >
-                  Start your crypto journey!
+                  {t('Start your crypto journey!')}
                 </Box>
                 <Box maxW="480px" m="auto" my={isMobileScreen ? '0' : '32px'}>
                   <Box
@@ -358,10 +361,16 @@ const OnboardingModal = ({
                         w={isMobileScreen ? 'auto' : '176px'}
                       >
                         <Text fontSize="lg" fontWeight="bold">
-                          1. Take Lessons
+                          {t('1. Take Lessons')}
                         </Text>
                         <Text pl="17px">
-                          Gain new skills and complete <u>Quests</u>.
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: t(
+                                'Gain new skills and complete <u>Quests</u>.'
+                              ),
+                            }}
+                          />
                         </Text>
                       </Box>
                     </Box>
@@ -391,11 +400,16 @@ const OnboardingModal = ({
                     >
                       <Box w={isMobileScreen ? 'auto' : '270px'}>
                         <Text fontSize="lg" fontWeight="bold">
-                          2. Claim Badges
+                          {t('2. Claim Badges')}
                         </Text>
                         <Text pl="20px">
-                          Showcase your expertise with{' '}
-                          <u>Onchain Certifications</u>.
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: t(
+                                'Showcase your expertise with <u>Onchain Certifications</u>.'
+                              ),
+                            }}
+                          />
                         </Text>
                       </Box>
                     </Box>
@@ -428,11 +442,16 @@ const OnboardingModal = ({
                         w={isMobileScreen ? 'auto' : '257px'}
                       >
                         <Text fontSize="lg" fontWeight="bold">
-                          3. Level Up
+                          {t('3. Level Up')}
                         </Text>
                         <Text pl="20px">
-                          Build your digital identity through your{' '}
-                          <u>Explorer Profile</u>.
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: t(
+                                'Build your digital identity through your <u>Explorer Profile</u>.'
+                              ),
+                            }}
+                          />
                         </Text>
                       </Box>
                     </Box>
@@ -453,10 +472,12 @@ const OnboardingModal = ({
                 <Image src="/images/emailKey.png" alt="Email" maxW="250px" />
                 <Box textAlign="center">
                   <Text fontWeight="bold" fontSize="2xl">
-                    Sign up, unlock your power!
+                    {t('Sign up, unlock your power!')}
                   </Text>
                   <Text mt="18px">
-                    Enter your email to receive expert guidance and key updates.
+                    {t(
+                      'Enter your email to receive expert guidance and key updates.'
+                    )}
                   </Text>
                 </Box>
                 <InputGroup size="lg" maxW="350px" mt="24px">

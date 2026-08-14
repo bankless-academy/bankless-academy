@@ -145,11 +145,11 @@ const LessonCard = ({
           {lesson.isArticle ? (
             isArticleCollected ? (
               <StyledTag size="sm" variant="outline" gold="true">
-                Entry Collected
+                {t('Entry Collected')}
               </StyledTag>
             ) : !lesson.areMirrorNFTAllCollected ? (
               <StyledTag size="sm" variant="outline" gold="true">
-                Entry Available
+                {t('Entry Available')}
               </StyledTag>
             ) : null
           ) : (

@@ -15,6 +15,7 @@ import ProfileScore from 'components/ProfileScore'
 import { useLocalStorage } from 'usehooks-ts'
 import Helper from 'components/Helper'
 import ShareAction from './ShareAction'
+import { useTranslation } from 'react-i18next'
 
 const ShareModal = ({
   isOpen,
@@ -30,6 +31,7 @@ const ShareModal = ({
   shareLink: string
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
+  const { t } = useTranslation()
   const [score] = useLocalStorage(`score`, 0)
   const [nameCache] = useLocalStorage(`name-cache`, {})
 
@@ -103,7 +105,7 @@ const ShareModal = ({
                   textAlign="center"
                   position="relative"
                 >
-                  <Text fontStyle="italic">Referred by:</Text>
+                  <Text fontStyle="italic">{t('Referred by:')}</Text>
                   <Text
                     fontWeight="bold"
                     textTransform="uppercase"
@@ -118,12 +120,14 @@ const ShareModal = ({
                     right={isMobileScreen ? '-22px' : '-32px'}
                   >
                     <Helper
-                      title="Earn referral points"
+                      title={t('Earn referral points')}
                       definition={
                         <>
-                          {`Explorers share knowledge with others.`}
+                          {t(`Explorers share knowledge with others.`)}
                           <br />
-                          {`Each friend referred (after claiming their first badge) increases your score by 1 point.`}
+                          {t(
+                            `Each friend referred (after claiming their first badge) increases your score by 1 point.`
+                          )}
                         </>
                       }
                     />

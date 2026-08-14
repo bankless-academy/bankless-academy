@@ -24,6 +24,7 @@ import {
   InputRightElement,
   useMediaQuery,
 } from '@chakra-ui/react'
+import { t } from 'i18next'
 
 const pageMeta: MetaData = {
   description: 'Bankless Academy Farcaster Frame',
@@ -136,10 +137,10 @@ const MiniApps = (): JSX.Element => {
   return (
     <Container>
       <CustomUrlContainer>
-        <Title>Load Custom URL</Title>
+        <Title>{t('Load Custom URL')}</Title>
         <InputGroup size="md">
           <Input
-            placeholder="Enter URL to load"
+            placeholder={t('Enter URL to load')}
             value={customUrl}
             onChange={(e) => setCustomUrl(e.target.value)}
             onKeyPress={handleKeyPress}
@@ -164,7 +165,7 @@ const MiniApps = (): JSX.Element => {
         </AppsListContainer>
 
         <AppsListContainer>
-          <Title>Mini Lessons</Title>
+          <Title>{t('Mini Lessons')}</Title>
           <MiniLessonsList
             lessonSlugs={[
               'bitcoin-basics',
@@ -179,7 +180,7 @@ const MiniApps = (): JSX.Element => {
         </AppsListContainer>
 
         <AppsListContainer>
-          <Title>Ethereum Showcase</Title>
+          <Title>{t('Ethereum Showcase')}</Title>
           <EthereumShowcaseList onSelectItem={handleSelectShowcaseItem} />
         </AppsListContainer>
       </ContentWrapper>
