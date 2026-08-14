@@ -95,6 +95,10 @@
     "keyword": "attestations",
     "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
   },
+  "auto-conservation": {
+    "keyword": "auto-conservation",
+    "definition": "Le fait de détenir vous-même vos actifs numériques, sans confier vos clés à un tiers."
+  },
   "auto-garde": {
     "keyword": "auto-garde",
     "definition": "Il s'agit d'un moyen de conserver vos actifs à un endroit où vous êtes seul à y avoir accès."
@@ -339,6 +343,10 @@
     "keyword": "crypto wallets",
     "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
   },
+  "cryptocurrencies": {
+    "keyword": "cryptocurrencies",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
   "cryptocurrency": {
     "keyword": "cryptocurrency",
     "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
@@ -346,10 +354,6 @@
   "cryptocurrency wallets": {
     "keyword": "cryptocurrency wallets",
     "definition": "Une application qui vous permet de stocker vos crypto-monnaies et de les envoyer/recevoir ou de les dépenser."
-  },
-  "cryptocurrencies": {
-    "keyword": "cryptocurrencies",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
   },
   "cryptographie": {
     "keyword": "cryptographie",
@@ -395,6 +399,14 @@
     "keyword": "dApps",
     "definition": "Une application décentralisée qui se connecte à des réseaux et protocoles décentralisés."
   },
+  "décentralisation": {
+    "keyword": "Décentralisation",
+    "definition": "Le transfert du contrôle à de nombreuses personnes plutôt qu'à une autorité unique."
+  },
+  "décentralisé": {
+    "keyword": "décentralisé",
+    "definition": "Aucune autorité ou entité unique ne contrôle le système."
+  },
   "decentralized finance": {
     "keyword": "Decentralized Finance",
     "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
@@ -407,17 +419,33 @@
     "keyword": "delegates",
     "definition": "Donner une responsabilité spécifique à une autre personne, par exemple la délégation d'un pouvoir de vote."
   },
+  "délégation": {
+    "keyword": "délégation",
+    "definition": "Donner une responsabilité spécifique à une autre personne, par exemple la délégation d'un pouvoir de vote."
+  },
   "delegations": {
     "keyword": "delegations",
     "definition": "Donner une responsabilité spécifique à une autre personne, par exemple la délégation d'un pouvoir de vote."
+  },
+  "déléguer": {
+    "keyword": "déléguer",
+    "definition": "Donner une responsabilité spécifique à une autre personne, par exemple la délégation d'un pouvoir de vote."
+  },
+  "democracies": {
+    "keyword": "democracies",
+    "definition": "A system of government where citizens exercise power by playing a key role in decision-making."
   },
   "democracy": {
     "keyword": "democracy",
     "definition": "A system of government where citizens exercise power by playing a key role in decision-making."
   },
-  "democracies": {
-    "keyword": "democracies",
-    "definition": "A system of government where citizens exercise power by playing a key role in decision-making."
+  "dépositaire": {
+    "keyword": "dépositaire",
+    "definition": "Une institution financière chargée de sécuriser vos avoirs."
+  },
+  "dépositaires": {
+    "keyword": "dépositaires",
+    "definition": "Une institution financière chargée de sécuriser vos avoirs."
   },
   "dex": {
     "keyword": "DEX",
@@ -447,33 +475,33 @@
     "keyword": "distribution de jetons",
     "definition": "La manière dont les jetons sont répartis entre les différents groupes de parties prenantes."
   },
-  "décentralisation": {
-    "keyword": "Décentralisation",
-    "definition": "Le transfert du contrôle à de nombreuses personnes plutôt qu'à une autorité unique."
-  },
-  "décentralisé": {
-    "keyword": "décentralisé",
-    "definition": "Aucune autorité ou entité unique ne contrôle le système."
-  },
-  "délégation": {
-    "keyword": "délégation",
-    "definition": "Donner une responsabilité spécifique à une autre personne, par exemple la délégation d'un pouvoir de vote."
-  },
-  "déléguer": {
-    "keyword": "déléguer",
-    "definition": "Donner une responsabilité spécifique à une autre personne, par exemple la délégation d'un pouvoir de vote."
-  },
-  "dépositaire": {
-    "keyword": "dépositaire",
-    "definition": "Une institution financière chargée de sécuriser vos avoirs."
-  },
-  "dépositaires": {
-    "keyword": "dépositaires",
-    "definition": "Une institution financière chargée de sécuriser vos avoirs."
-  },
   "earn": {
     "keyword": "earn",
     "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
+  },
+  "échange centralisé": {
+    "keyword": "échange centralisé",
+    "definition": "(Échange Centralisé) Plateforme qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
+  },
+  "èchange décentralisé": {
+    "keyword": "èchange décentralisé",
+    "definition": "(Échange Décentralisé) Un protocole qui facilite les échanges sans nécessiter d'intermédiaires de confiance."
+  },
+  "échanges centralisés": {
+    "keyword": "échanges centralisés",
+    "definition": "(Échange Centralisé) Plateforme qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
+  },
+  "échanges décentralisés": {
+    "keyword": "échanges décentralisés",
+    "definition": "(Échange Décentralisé) Un protocole qui facilite les échanges sans nécessiter d'intermédiaires de confiance."
+  },
+  "égalité des chances": {
+    "keyword": "égalité des chances",
+    "definition": "Le principe selon lequel chacun accède aux mêmes règles et aux mêmes possibilités, quel que soit son point de départ."
+  },
+  "égalité des opportunités": {
+    "keyword": "égalité des opportunités",
+    "definition": "Un principe d'équité, selon lequel chacun a les mêmes chances de réussir, quelles que soient ses origines ou sa situation."
   },
   "epoch": {
     "keyword": "Epoch",
@@ -514,6 +542,14 @@
   "espace de blocs": {
     "keyword": "espace de blocs",
     "definition": "La quantité d'espace sur une blockchain qui peut être utilisée pour stocker des informations et exécuter du code. La quantité d'\"espace\" à l'intérieur d'un (ou d'une série de) bloc(s)."
+  },
+  "étalon-or": {
+    "keyword": "étalon-or",
+    "definition": "Système monétaire dans lequel la monnaie d'un pays a une valeur directement liée à l'or."
+  },
+  "etf au comptant": {
+    "keyword": "ETF au comptant",
+    "definition": "Un fonds régulé qui détient directement un actif comme le Bitcoin, permettant d'y investir via un compte-titres classique."
   },
   "eth": {
     "keyword": "ETH",
@@ -583,6 +619,10 @@
     "keyword": "gwei",
     "definition": "A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices."
   },
+  "halving": {
+    "keyword": "halving",
+    "definition": "La division par deux de la récompense versée aux mineurs de Bitcoin, qui survient environ tous les quatre ans."
+  },
   "hardware wallet": {
     "keyword": "hardware wallet",
     "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
@@ -595,6 +635,10 @@
     "keyword": "hash",
     "definition": "A digital fingerprint for information."
   },
+  "hashes": {
+    "keyword": "hashes",
+    "definition": "A digital fingerprint for information."
+  },
   "hashing function": {
     "keyword": "hashing function",
     "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
@@ -602,10 +646,6 @@
   "hashing functions": {
     "keyword": "hashing functions",
     "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
-  },
-  "hashes": {
-    "keyword": "hashes",
-    "definition": "A digital fingerprint for information."
   },
   "hodl": {
     "keyword": "HODL",
@@ -621,7 +661,7 @@
   },
   "inflation": {
     "keyword": "inflation",
-    "definition": "A general increase in prices and fall in the purchasing power of money."
+    "definition": "Une hausse générale des prix qui réduit le pouvoir d'achat de la monnaie."
   },
   "intermediary token": {
     "keyword": "intermediary token",
@@ -682,6 +722,10 @@
   "lenders": {
     "keyword": "lenders",
     "definition": "Deposits assets to earn interest."
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "definition": "Une couche de paiement construite au-dessus de Bitcoin, qui rend les petits paiements du quotidien instantanés et peu coûteux."
   },
   "liquid": {
     "keyword": "liquid",
@@ -750,6 +794,10 @@
   "mev": {
     "keyword": "MEV",
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
+  },
+  "minage de cryptomonnaie": {
+    "keyword": "minage de cryptomonnaie",
+    "definition": "Le processus par lequel des participants vérifient les transactions et ajoutent de nouveaux blocs à la blockchain, en échange d'une récompense."
   },
   "minage de cryptomonnaies": {
     "keyword": "minage de cryptomonnaies",
@@ -835,6 +883,10 @@
     "keyword": "pair à pair",
     "definition": "Une transaction entre deux parties qui ne nécessite pas d'intermédiaire ou d'entité de contrôle."
   },
+  "pair-à-pair": {
+    "keyword": "pair-à-pair",
+    "definition": "Un échange direct entre deux personnes, sans intermédiaire pour le faciliter."
+  },
   "payment channel": {
     "keyword": "payment channel",
     "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
@@ -878,6 +930,10 @@
   "portefeuille d'autodétention": {
     "keyword": "portefeuille d'autodétention",
     "definition": "(AKA : wallet non-custodial) Avec un wallet à auto-garde, vous avez le contrôle exclusif de vos clés privées, qui à leur tour contrôlent vos crypto-actifs."
+  },
+  "portefeuille de cryptomonnaie": {
+    "keyword": "portefeuille de cryptomonnaie",
+    "definition": "Un logiciel qui conserve vos clés et vous permet de recevoir, détenir et envoyer des cryptomonnaies."
   },
   "portefeuille de cryptomonnaies": {
     "keyword": "portefeuille de cryptomonnaies",
@@ -1235,12 +1291,12 @@
     "keyword": "validator nodes",
     "definition": "Computer devices run by members of the Ethereum community. As the original method of staking, they process transactions on the network."
   },
-  "vetoes": {
-    "keyword": "vetoes",
-    "definition": "Un vote de rejet d'une proposition de gouvernance."
-  },
   "véto": {
     "keyword": "véto",
+    "definition": "Un vote de rejet d'une proposition de gouvernance."
+  },
+  "vetoes": {
+    "keyword": "vetoes",
     "definition": "Un vote de rejet d'une proposition de gouvernance."
   },
   "wallet": {
@@ -1310,29 +1366,5 @@
   "zk rollups": {
     "keyword": "zk rollups",
     "definition": "A layer-2 rollup scaling solution that uses zero-knowledge proofs to guarantee the validity of “rolled up” transactions while maintaining security and privacy on the layer 1 blockchain."
-  },
-  "èchange décentralisé": {
-    "keyword": "èchange décentralisé",
-    "definition": "(Échange Décentralisé) Un protocole qui facilite les échanges sans nécessiter d'intermédiaires de confiance."
-  },
-  "échange centralisé": {
-    "keyword": "échange centralisé",
-    "definition": "(Échange Centralisé) Plateforme qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
-  },
-  "échanges centralisés": {
-    "keyword": "échanges centralisés",
-    "definition": "(Échange Centralisé) Plateforme qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
-  },
-  "échanges décentralisés": {
-    "keyword": "échanges décentralisés",
-    "definition": "(Échange Décentralisé) Un protocole qui facilite les échanges sans nécessiter d'intermédiaires de confiance."
-  },
-  "égalité des opportunités": {
-    "keyword": "égalité des opportunités",
-    "definition": "Un principe d'équité, selon lequel chacun a les mêmes chances de réussir, quelles que soient ses origines ou sa situation."
-  },
-  "étalon-or": {
-    "keyword": "étalon-or",
-    "definition": "Système monétaire dans lequel la monnaie d'un pays a une valeur directement liée à l'or."
   }
 }

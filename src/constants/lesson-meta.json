@@ -17,11 +17,12 @@
     "learnings": "",
     "description": "What is Bitcoin? Explore the first successful cryptocurrency and rethink money.",
     "name": "Bitcoin Basics",
-    "languages": [],
+    "languages": [
+      "fr"
+    ],
     "staleTranslations": {
       "languages": [
         "es",
-        "fr",
         "pt-br",
         "tr",
         "uk",
