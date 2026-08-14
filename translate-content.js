@@ -24,12 +24,18 @@
 //   node translate-content.js --lang fr --all
 //   node translate-content.js --lang fr --slug bitcoin-basics --dry-run
 //   node translate-content.js --lang fr --all --force        # ignore hashes
+//   node translate-content.js --lang fr --keywords            # repair the glossary
 //
 // Requires ANTHROPIC_API_KEY in .env.
 import fs from 'fs'
 import path from 'path'
 import crypto from 'crypto'
 import 'dotenv/config'
+import {
+  MAX_SLIDE_LINES,
+  estimateSlideLines,
+  applyTypography,
+} from './content-lib.js'
 
 const EN_DIR = 'translation/lesson/en'
 const LESSON_DIR = 'translation/lesson'
@@ -62,6 +68,9 @@ const parseArgs = () => {
     else if (a === '--all') out.all = true
     else if (a === '--force') out.force = true
     else if (a === '--dry-run') out.dryRun = true
+    else if (a === '--verify-only') out.verifyOnly = true
+    else if (a === '--terms') out.terms = true
+    else if (a === '--keywords') out.keywords = true
     else throw new Error(`unknown argument: ${a}`)
   }
   if (!out.lang) throw new Error('--lang is required')
@@ -178,7 +187,9 @@ const verify = (en, tr) => {
     const trPos = trOpt.findIndex((o) => o.startsWith('- [x] '))
     if (enPos !== trPos)
       problems.push(
-        `the [x] must stay on option ${enPos + 1} (found it on option ${trPos + 1}). Never move the correct answer.`
+        trPos === -1
+          ? `no "- [x] " option: option ${enPos + 1} is the correct one and must keep its [x]`
+          : `the [x] must stay on option ${enPos + 1} (found it on option ${trPos + 1}). Never move the correct answer.`
       )
   }
   const enFb = feedback(en).length
@@ -189,6 +200,17 @@ const verify = (en, tr) => {
     problems.push(`<details>/<summary> tags must be preserved exactly`)
   if (!/^# /.test(tr))
     problems.push(`the section must start with the "# " heading line`)
+  // Slides are fixed-height: a translation that runs longer than English gets
+  // cut off. Only enforced on prose slides (quizzes lay out differently) and
+  // only when the translation is both over the ceiling and longer than English.
+  if (!enOpt.length) {
+    const enLines = estimateSlideLines(en)
+    const trLines = estimateSlideLines(tr)
+    if (trLines > MAX_SLIDE_LINES && trLines > enLines)
+      problems.push(
+        `too long for the slide: ~${Math.round(trLines)} estimated rendered lines (English is ~${Math.round(enLines)}, the limit is ${MAX_SLIDE_LINES}). Say the same thing more concisely; do not drop information.`
+      )
+  }
   return problems
 }
 
@@ -222,7 +244,26 @@ const loadScriptRules = () => {
   return out
 }
 
-const terminologyFor = (text, keywords, ethGlossary, scriptRules) => {
+// A language's style guide may override ETHGlossary for terms where the
+// formally-correct translation is not what speakers actually use (French says
+// "blockchain", not ETHGlossary's "chaîne de blocs"). Declared in
+// translation/style/<lang>.md as a ```terms fenced block of `english = target`
+// lines; `english = english` pins a term to its English form.
+const parseTermOverrides = (style) => {
+  const out = {}
+  for (const m of style.matchAll(/```terms\n([\s\S]*?)```/g)) {
+    for (const line of m[1].split('\n')) {
+      const t = line.trim()
+      if (!t || t.startsWith('#')) continue
+      const i = t.indexOf('=')
+      if (i === -1) continue
+      out[t.slice(0, i).trim().toLowerCase()] = t.slice(i + 1).trim()
+    }
+  }
+  return out
+}
+
+const terminologyFor = (text, keywords, ethGlossary, scriptRules, overrides = {}) => {
   const rows = []
   const seen = new Set()
   for (const m of text.matchAll(/`([^`\n]+)`/g)) {
@@ -232,11 +273,13 @@ const terminologyFor = (text, keywords, ethGlossary, scriptRules) => {
     seen.add(key)
     const singular = key.endsWith('s') ? key.slice(0, -1) : key
     const rule = scriptRules[key] || scriptRules[singular]
+    const override = overrides[key] ?? overrides[singular]
     rows.push({
       term,
-      // a Latin-only term keeps its English form regardless of the glossary
-      canonical: rule ? undefined : ethGlossary[key] || ethGlossary[singular],
-      keepLatin: !!rule,
+      // style-guide override wins, then ETHGlossary; a Latin-only term keeps
+      // its English form regardless
+      canonical: override ?? (rule ? undefined : ethGlossary[key] || ethGlossary[singular]),
+      keepLatin: !!rule && override === undefined,
       definition: (keywords[key] || keywords[singular])?.definition,
     })
   }
@@ -337,7 +380,13 @@ const unfence = (s) => {
 // ---------------------------------------------------------------------------
 
 const translateSection = async (ctx, en) => {
-  const terms = terminologyFor(en, ctx.keywords, ctx.ethGlossary, ctx.scriptRules)
+  const terms = terminologyFor(
+    en,
+    ctx.keywords,
+    ctx.ethGlossary,
+    ctx.scriptRules,
+    ctx.overrides
+  )
   const base = userPrompt({ ...ctx, section: en, terms })
   let user = base
   let lastProblems = []
@@ -350,7 +399,7 @@ const translateSection = async (ctx, en) => {
     })
     ctx.tokens.in += usage?.input_tokens || 0
     ctx.tokens.out += usage?.output_tokens || 0
-    const out = unfence(text)
+    const out = applyTypography(unfence(text), ctx.lang)
     const problems = verify(en, out)
     if (!problems.length) return { text: out, attempts: attempt }
     lastProblems = problems
@@ -402,6 +451,7 @@ const translateLesson = async ({
   keywords,
   ethGlossary,
   scriptRules,
+  overrides,
   style,
   model,
   apiKey,
@@ -454,11 +504,13 @@ const translateLesson = async ({
   if (dryRun) return { dryRun: true }
 
   const ctx = {
+    lang,
     model,
     apiKey,
     keywords,
     ethGlossary,
     scriptRules,
+    overrides,
     system: systemPrompt(langDef, style),
     lessonTitle: en.frontmatter.find(([k]) => k === 'TITLE')?.[1] || slug,
     lessonDescription: en.frontmatter.find(([k]) => k === 'DESCRIPTION')?.[1] || '',
@@ -485,8 +537,11 @@ DESCRIPTION: ${ctx.lessonDescription}`,
     })
     ctx.tokens.in += usage?.input_tokens || 0
     ctx.tokens.out += usage?.output_tokens || 0
-    title = text.match(/^TITLE:\s*(.+)$/m)?.[1]?.trim()
-    description = text.match(/^DESCRIPTION:\s*(.+)$/m)?.[1]?.trim()
+    title = applyTypography(text.match(/^TITLE:\s*(.+)$/m)?.[1]?.trim(), lang)
+    description = applyTypography(
+      text.match(/^DESCRIPTION:\s*(.+)$/m)?.[1]?.trim(),
+      lang
+    )
     if (!title || !description)
       throw new Error(`could not parse the translated title/description:\n${text}`)
   }
@@ -518,6 +573,27 @@ DESCRIPTION: ${ctx.lessonDescription}`,
     renderMd({ frontmatter, banner: en.banner, gap: en.gap, units: outUnits })
   )
 
+  // keep the translated glossary in step with the terms this lesson uses
+  const allTerms = new Map()
+  for (const u of en.units)
+    for (const t of terminologyFor(u, keywords, ethGlossary, scriptRules, overrides))
+      if (!allTerms.has(t.term.toLowerCase())) allTerms.set(t.term.toLowerCase(), t)
+  const kw = await syncKeywords({
+    terms: [...allTerms.values()],
+    langDef,
+    keywords,
+    model,
+    apiKey,
+    tokens: ctx.tokens,
+  })
+  if (kw.added) console.log(`      +${kw.added} glossary entr(ies) -> ${kw.path}`)
+
+  const dead = deadTooltips(fs.readFileSync(outPath, 'utf8'), lang)
+  if (dead.length)
+    console.warn(
+      `      ${dead.length} term(s) with no ${lang} glossary entry (dead tooltips): ${dead.join(', ')}`
+    )
+
   state[lang] = state[lang] || {}
   state[lang][slug] = {
     frontmatter: fmHash,
@@ -530,13 +606,212 @@ DESCRIPTION: ${ctx.lessonDescription}`,
 }
 
 // ---------------------------------------------------------------------------
+// glossary sync
+// ---------------------------------------------------------------------------
+
+// Tooltips in a translated lesson resolve through translation/keywords/<lang>/
+// keywords.json, keyed by the TRANSLATED term (Lesson.tsx lowercases whatever
+// sits between the backticks and looks it up in the `keywords` i18next
+// namespace). So translating a lesson without adding its terms to that file
+// leaves every new term as a dead tooltip. This keeps the two in step.
+const syncKeywords = async ({ terms, langDef, keywords, model, apiKey, tokens }) => {
+  const p = path.join('translation/keywords', langDef.code, 'keywords.json')
+  const existing = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {}
+  const missing = terms.filter(
+    (t) => t.canonical && !(t.canonical.toLowerCase() in existing)
+  )
+  if (!missing.length) return { added: 0 }
+
+  // one call for the whole batch: definitions are short and share context
+  const list = missing
+    .map((t, i) => `${i + 1}. ${t.canonical} — ${t.definition || keywords[t.term.toLowerCase()]?.definition || t.term}`)
+    .join('\n')
+  const { text, usage } = await callClaude({
+    model,
+    apiKey,
+    system: `You translate short glossary definitions for a beginner web3 course into ${langDef.name}. One plain sentence each, no jargon, no em dashes.`,
+    user: `Translate each definition into ${langDef.name}. Keep the numbering and reply with one line per entry in exactly this form, nothing else:
+
+<number>. <translated definition>
+
+${list}`,
+  })
+  tokens.in += usage?.input_tokens || 0
+  tokens.out += usage?.output_tokens || 0
+
+  let added = 0
+  for (const line of text.split('\n')) {
+    const m = line.match(/^\s*(\d+)\.\s*(.+)$/)
+    if (!m) continue
+    const t = missing[Number(m[1]) - 1]
+    if (!t) continue
+    existing[t.canonical.toLowerCase()] = {
+      keyword: t.canonical,
+      definition: m[2].trim(),
+    }
+    added++
+  }
+  if (added) {
+    fs.mkdirSync(path.dirname(p), { recursive: true })
+    // keep the file sorted so diffs stay readable across runs
+    const sorted = Object.fromEntries(
+      Object.entries(existing).sort(([a], [b]) => a.localeCompare(b))
+    )
+    fs.writeFileSync(p, `${JSON.stringify(sorted, null, 2)}\n`)
+  }
+  return { added, path: p }
+}
+
+// Backticked terms in a translated lesson that have no entry in that language's
+// keywords file: each one renders as a dead tooltip.
+const deadTooltips = (md, lang) => {
+  const p = path.join('translation/keywords', lang, 'keywords.json')
+  if (!fs.existsSync(p)) return []
+  const keys = new Set(
+    Object.keys(JSON.parse(fs.readFileSync(p, 'utf8'))).map((k) => k.toLowerCase())
+  )
+  const prose = md.replace(/```[\s\S]*?```/g, '')
+  const seen = new Set()
+  const out = []
+  for (const m of prose.matchAll(/`([^`\n]+)`/g)) {
+    const t = m[1].toLowerCase()
+    if (seen.has(t)) continue
+    seen.add(t)
+    if (!keys.has(t) && !(t.endsWith('s') && keys.has(t.slice(0, -1)))) out.push(m[1])
+  }
+  return out
+}
+
+// Entries whose definition is still the English one, inherited from the old
+// Crowdin import: the term is translated but the tooltip text is not. Roughly
+// half of every pre-pipeline keywords file is in this state.
+const repairKeywords = async ({ langDef, keywords, model, apiKey }) => {
+  const p = path.join('translation/keywords', langDef.code, 'keywords.json')
+  if (!fs.existsSync(p)) throw new Error(`no keywords file at ${p}`)
+  const target = JSON.parse(fs.readFileSync(p, 'utf8'))
+  const englishDefs = new Set(Object.values(keywords).map((v) => v.definition))
+  const stale = Object.entries(target).filter(([, v]) => englishDefs.has(v.definition))
+  console.log(
+    `${langDef.name}: ${stale.length}/${Object.keys(target).length} entries still hold the English definition`
+  )
+  if (!stale.length) return
+
+  const tokens = { in: 0, out: 0 }
+  const BATCH = 25
+  let fixed = 0
+  for (let i = 0; i < stale.length; i += BATCH) {
+    const batch = stale.slice(i, i + BATCH)
+    const { text, usage } = await callClaude({
+      model,
+      apiKey,
+      system: `You translate short glossary definitions for a beginner web3 course into ${langDef.name}. One plain sentence each, no jargon, no em dashes.`,
+      user: `Translate each definition into ${langDef.name}. Keep the numbering and reply with one line per entry in exactly this form, nothing else:
+
+<number>. <translated definition>
+
+${batch.map(([k, v], n) => `${n + 1}. [${v.keyword || k}] ${v.definition}`).join('\n')}`,
+    })
+    tokens.in += usage?.input_tokens || 0
+    tokens.out += usage?.output_tokens || 0
+    for (const line of text.split('\n')) {
+      const m = line.match(/^\s*(\d+)\.\s*(.+)$/)
+      if (!m) continue
+      const entry = batch[Number(m[1]) - 1]
+      if (!entry) continue
+      target[entry[0]].definition = m[2].trim()
+      fixed++
+    }
+    process.stdout.write(`  ${Math.min(i + BATCH, stale.length)}/${stale.length}\r`)
+  }
+  const sorted = Object.fromEntries(
+    Object.entries(target).sort(([a], [b]) => a.localeCompare(b))
+  )
+  fs.writeFileSync(p, `${JSON.stringify(sorted, null, 2)}\n`)
+  console.log(`\nrepaired ${fixed} definition(s) -> ${p} (${tokens.in} in / ${tokens.out} out tokens)`)
+}
+
+// ---------------------------------------------------------------------------
+// offline commands (no API key needed)
+// ---------------------------------------------------------------------------
+
+// Re-check an existing translation against its English source with the exact
+// same per-unit contract the generator enforces. Use it on any translation the
+// generator did not produce (hand-written, contributed, or model-authored
+// outside this script).
+const verifyOnly = ({ slugs, meta, langDef }) => {
+  const lang = langDef.code
+  let checked = 0
+  const failures = []
+  for (const slug of slugs) {
+    const p = path.join(LESSON_DIR, lang, `${slug}.md`)
+    if (!fs.existsSync(p)) {
+      console.log(`  ${lang}/${slug}: no translation file, skipped`)
+      continue
+    }
+    const isArticle = !meta[slug].slideMeta
+    const en = parseMd(fs.readFileSync(path.join(EN_DIR, `${slug}.md`), 'utf8'), isArticle)
+    let tr
+    try {
+      tr = parseMd(fs.readFileSync(p, 'utf8'), isArticle)
+    } catch (e) {
+      failures.push(`${lang}/${slug}: unparseable — ${e.message}`)
+      continue
+    }
+    if (tr.units.length !== en.units.length) {
+      failures.push(
+        `${lang}/${slug}: ${tr.units.length} units but English has ${en.units.length}`
+      )
+      continue
+    }
+    let bad = 0
+    en.units.forEach((u, i) => {
+      for (const problem of verify(u, tr.units[i])) {
+        failures.push(`${lang}/${slug} [${i + 1}] "${unitTitle(u)}": ${problem}`)
+        bad++
+      }
+    })
+    const dead = deadTooltips(fs.readFileSync(p, 'utf8'), lang)
+    checked++
+    console.log(
+      `  ${lang}/${slug}: ${en.units.length} units, ${bad ? `${bad} problem(s)` : 'OK'}` +
+        (dead.length ? `, ${dead.length} dead tooltip(s): ${dead.join(', ')}` : '')
+    )
+  }
+  if (failures.length) {
+    console.error(`\n${failures.length} problem(s):`)
+    for (const f of failures) console.error(`  - ${f}`)
+    process.exit(1)
+  }
+  console.log(`\n${checked} translation(s) match the English structure.`)
+}
+
+// Print the terminology table the generator would inject, per unit.
+const dumpTerms = ({ slugs, meta, keywords, ethGlossary, scriptRules, overrides, langDef }) => {
+  for (const slug of slugs) {
+    const isArticle = !meta[slug].slideMeta
+    const en = parseMd(fs.readFileSync(path.join(EN_DIR, `${slug}.md`), 'utf8'), isArticle)
+    const all = new Map()
+    en.units.forEach((u) => {
+      for (const t of terminologyFor(u, keywords, ethGlossary, scriptRules, overrides))
+        if (!all.has(t.term.toLowerCase())) all.set(t.term.toLowerCase(), t)
+    })
+    console.log(`\n${slug} — ${all.size} glossary term(s) for ${langDef.name}:`)
+    for (const t of all.values())
+      console.log(
+        `  \`${t.term}\` -> ${t.keepLatin ? '(keep Latin script)' : t.canonical || '(no ETHGlossary entry)'}`
+      )
+  }
+}
+
+// ---------------------------------------------------------------------------
 // main
 // ---------------------------------------------------------------------------
 
 const main = async () => {
   const args = parseArgs()
   const apiKey = process.env.ANTHROPIC_API_KEY
-  if (!apiKey && !args.dryRun)
+  const offline = args.dryRun || args.verifyOnly || args.terms
+  if (!apiKey && !offline)
     throw new Error('ANTHROPIC_API_KEY is not set (add it to .env)')
 
   const languages = loadLanguages()
@@ -552,6 +827,7 @@ const main = async () => {
   const scriptRules = loadScriptRules()
   const stylePath = path.join(STYLE_DIR, `${langDef.code}.md`)
   const style = fs.existsSync(stylePath) ? fs.readFileSync(stylePath, 'utf8').trim() : ''
+  const overrides = parseTermOverrides(style)
   const state = fs.existsSync(STATE_FILE)
     ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'))
     : {}
@@ -563,12 +839,27 @@ const main = async () => {
     if (!meta[slug]) throw new Error(`unknown lesson slug: ${slug}`)
   }
 
+  if (args.verifyOnly) return verifyOnly({ slugs, meta, langDef })
+  if (args.keywords)
+    return repairKeywords({ langDef, keywords, model: args.model, apiKey })
+  if (args.terms)
+    return dumpTerms({
+      slugs,
+      meta,
+      keywords,
+      ethGlossary,
+      scriptRules,
+      overrides,
+      langDef,
+    })
+
   console.log(
     `translate-content -> ${langDef.name} (${langDef.code}), model ${args.model}` +
       `${args.force ? ', force' : ''}${args.dryRun ? ', dry run' : ''}`
   )
   console.log(
     `  glossary: ${Object.keys(ethGlossary).length} ETHGlossary terms, ` +
+      `${Object.keys(overrides).length} style overrides, ` +
       `style guide: ${style ? stylePath : 'none'}`
   )
 
@@ -583,6 +874,7 @@ const main = async () => {
         keywords,
         ethGlossary,
         scriptRules,
+        overrides,
         style,
         model: args.model,
         apiKey,

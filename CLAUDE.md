@@ -42,11 +42,15 @@ quizzes in the md but have no `[x]`; their type is pinned in `slideMeta`.
 1. **Never move the correct answer to a different option position.** Users have
    their answer numbers saved in localStorage — the `[x]` must stay on the same
    option index. Rewrite question/option texts around the fixed position instead.
-2. **Don't make slide/section text much longer than it was** — long text breaks
-   the lesson UI (fixed-height slides on desktop; text runs under the Close
-   button). `validate-content.js` enforces an estimated-line ceiling per LEARN
-   slide (~24 rendered lines, image-aware) — but stay well under it; the
-   estimate is approximate and mobile binds sooner.
+2. **Don't make slide/section text much longer than it was.** Desktop slides
+   are a fixed 533px tall. Since 2026-08-14 overflow **scrolls** instead of
+   being clipped under the Close button (`Lesson.tsx`, `overflowY: auto`), so
+   long text no longer loses content, but a slide the reader has to scroll is
+   still a worse slide. `validate-content.js` enforces an estimated-line
+   ceiling (`MAX_SLIDE_LINES` in `content-lib.js`, image-aware) on English and
+   on generated translations — treat it as a quality bar, not a safety net,
+   and stay well under it since the estimate is approximate and mobile binds
+   sooner.
 3. **Keep text consistent with the slide's image** (`![](...)`). If the new text
    no longer matches the image, adjust the text (or drop the image reference) —
    never reference an image file that doesn't exist in `public/`.
@@ -147,6 +151,9 @@ After a run: add the language to that lesson's `languages[]` in
 `lesson-meta.json` (and clear it from `staleTranslations` if it was there), then
 `yarn validate-content`, which re-checks the same invariants from the outside.
 
+Full walkthrough (unit splitting, hash gating, terminology precedence, the
+verification contract, offline modes): `docs/translation-pipeline.md`.
+
 ### Deprecation policy
 
 Deprecated lessons get `publicationStatus: "deprecated"` in `lesson-meta.json`:
@@ -171,7 +178,11 @@ render a warning banner on the intro slide.
 - [x] Quiz slide titles standardized (2026-08-14): `build-content.js` reads them from the md `Knowledge Check <n>` heading; the stale Notion `title` dropped from all 90 QUIZ/POLL `slideMeta` entries. No UI change — the frontend renders a hardcoded translated label.
 - [x] `validate-content.js` extended to translated md (2026-08-14): section count, quiz count, per-quiz option count, `[x]` position vs English, image stems (localized variants allowed), frontmatter; dropped cross-links warn instead of failing. Plus `staleTranslations` support.
 - [x] 8 structurally broken translations unregistered (2026-08-14): `bitcoin-basics` es/fr/pt-br/tr/uk/zh, `wallet-basics` uk, `optimism-governance` fr — files kept in git under `staleTranslations`, pages now serve English instead of mis-grading learners.
+- [x] `translate-content.js` built (2026-08-14): per-unit hash gating, ETHGlossary + style-guide terminology pinning, structural + length verification with retry, glossary sync, offline `--verify-only` / `--terms` / `--keywords` modes. French `bitcoin-basics` regenerated as the pilot. **The API path is still unrun** (no `ANTHROPIC_API_KEY` yet) — the pilot content was authored directly against the same contract.
+- [x] Slide overflow fixed in the UI (2026-08-14): the fixed-height slide container had `maxH: 533px` and no overflow rule, so long text was painted over by the nav bar. Now `overflowY: auto` on desktop + bottom padding clearing the fixed mobile nav. Overflow scrolls instead of vanishing, which matters most for languages that run longer than English.
 - [ ] **Remaining before `translate-content`** (see the audit doc): generate `website/en/lesson.json`, make the 9 English-only quest components translatable, serve translated md locally instead of GitHub raw, add `GITHUB_TOKEN` to Vercel + refresh `.env.example`
+- [ ] Repair the pre-pipeline glossary files with `--keywords` (156/342 French entries still hold English definitions; every language is similar) — needs an API key
+- [ ] 17 legacy translated slides still exceed the ceiling (fr 10, it 2, es 2, tr 1, pt-br 1, de 1) — they now scroll rather than clip, and clear as each wave regenerates
 - [ ] `translate-content` AI translation script (see `docs/i18n-25-languages-plan.md` — existing 9 languages to full coverage first; must also emit `website/<lang>/*.json` and `keywords/<lang>/keywords.json`, not just lesson md)
 - [ ] **After**: lazy-load i18next namespaces, `fallback: 'blocking'` + ISR for translated lesson paths, localize `/glossary` (+ per-term anchors, `glossary: true` audit), RTL audit before the first ar/ur wave, hreflang in the sitemap
 - [ ] Remove Crowdin (`crowdin.yml`, `import-translations.js`) and Notion lesson import (`import-content.js`, `src/pages/lessons/preview.tsx`)
