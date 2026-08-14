@@ -1027,7 +1027,7 @@ const Lesson = ({
               ) : (
                 ''
               )}
-              {slide.type === 'QUIZ' ? t('Knowledge Check') : 'Poll'}
+              {slide.type === 'QUIZ' ? t('Knowledge Check') : t('Poll')}
             </>
           ) : slide.type === 'QUEST' ? (
             <>

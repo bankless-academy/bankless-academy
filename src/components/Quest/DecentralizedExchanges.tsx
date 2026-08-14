@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Input,
   Box,
@@ -27,6 +28,9 @@ const DecentralizedExchanges = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', {
+    keyPrefix: 'DecentralizedExchanges',
+  })
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-decentralized-exchanges')
   )
@@ -87,11 +91,11 @@ const DecentralizedExchanges = (
         <Box display={isSmallScreen ? 'block' : 'flex'} w="100%">
           <div className="bloc1">
             <p>
-              {'1. Load '}
+              {t('1. Load ')}
               <ExternalLink href="https://velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042">
                 Velodrome
               </ExternalLink>
-              {' on the '}
+              {t(' on the ')}
               <Image
                 alt="Optimism"
                 src="/images/op.svg"
@@ -99,13 +103,17 @@ const DecentralizedExchanges = (
                 height="24px"
                 m="0px 5px -5px 0"
               />
-              <b>Optimism network</b>
+              <b>{t('Optimism network')}</b>
               {'.'}
             </p>
-            <p>{'2. Swap any token.'}</p>
-            <p>
-              3. Paste the successful <b>swap</b> transaction hash below:
-            </p>
+            <p>{t('2. Swap any token.')}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t(
+                  '3. Paste the successful <b>swap</b> transaction hash below:'
+                ),
+              }}
+            />
             <InputGroup maxW="530px">
               <Input
                 placeholder="0x..."
@@ -134,7 +142,7 @@ const DecentralizedExchanges = (
               </InputRightElement>
             </InputGroup>
             <Box m="4">
-              <b>Resources:</b>
+              <b>{t('Resources:')}</b>
               <Box
                 display="flex"
                 flexDirection={{ base: 'column', md: 'row' }}
@@ -148,12 +156,14 @@ const DecentralizedExchanges = (
               </Box>
             </Box>
             {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
-              <Box mb="4">
-                <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
-                done on <b>Optimism network</b> and not the token approval
-                transaction hash. Read the explorer handbook article for more
-                information.
-              </Box>
+              <Box
+                mb="4"
+                dangerouslySetInnerHTML={{
+                  __html: t(
+                    '<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.'
+                  ),
+                }}
+              />
             )}
           </div>
           <div className="bloc2">
@@ -182,7 +192,7 @@ const DecentralizedExchanges = (
                     alt={lesson.englishName}
                     target="_blank"
                   >
-                    <Button variant="primary">Read Entry</Button>
+                    <Button variant="primary">{t('Read Entry')}</Button>
                   </InternalLink>
                 </Box>
               </Box>

@@ -2,10 +2,18 @@ import React from 'react'
 import { Box, Button, Spinner } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import { isDesktop } from 'react-device-detect'
+import i18next from 'i18next'
 
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
+
+// ConnectFirst is called conditionally by QuestComponent (`if (!address) return
+// ConnectFirst(...)`), so it cannot own a hook without breaking hook order.
+// It reads from the i18next instance directly instead; the surrounding tree
+// re-renders on a language change, so the strings still update.
+const tc = (key: string) =>
+  i18next.t(key, { ns: 'quests', keyPrefix: 'ConnectFirst' })
 
 export const ConnectFirst = (
   isSmallScreen: boolean,
@@ -14,7 +22,7 @@ export const ConnectFirst = (
   <Box display={isSmallScreen ? 'block' : 'flex'}>
     <div className="bloc1" style={{ alignSelf: 'center' }}>
       <Box fontSize="20px" fontWeight="bold" m="4">
-        {`You'll need a crypto wallet for this quest.`}
+        {tc(`You'll need a crypto wallet for this quest.`)}
       </Box>
       <Box display="flex" justifyContent="normal" mt="4">
         <Button
@@ -24,23 +32,31 @@ export const ConnectFirst = (
           cursor="default"
           boxShadow="none !important"
         >
-          {address ? 'Wallet connected!' : 'Waiting to detect your wallet ...'}
+          {address
+            ? tc('Wallet connected!')
+            : tc('Waiting to detect your wallet ...')}
         </Button>
       </Box>
       <Box m="4">
         {address ? null : (
           <>
             <Box fontSize="20px" fontWeight="bold">
-              {`If you don't have one, let's set one up!`}
+              {tc(`If you don't have one, let's set one up!`)}
             </Box>
             <Box mt="2">
-              {`Our onchain quests and rewards only work with a wallet connected.`}
+              {tc(
+                `Our onchain quests and rewards only work with a wallet connected.`
+              )}
             </Box>
             <Box mt="2">
-              {`Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.`}
+              {tc(
+                `Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.`
+              )}
             </Box>
             <Box mt="2">
-              {`Follow this quick instructional video to create your first wallet with Zerion: `}
+              {tc(
+                `Follow this quick instructional video to create your first wallet with Zerion: `
+              )}
               <ExternalLink href="https://bankless.ac/zerion">
                 zerion.io
               </ExternalLink>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Input,
   Box,
@@ -24,6 +25,7 @@ const DEXAggregators = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'DEXAggregators' })
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-dex-aggregators')
   )
@@ -67,7 +69,7 @@ const DEXAggregators = (
     if (account) validateQuest(tx)
   }, [account])
 
-  const helperTitle = 'How to swap tokens with 1inch'
+  const helperTitle = t('How to swap tokens with 1inch')
 
   return {
     isQuestCompleted: isTransactionVerified === 'true',
@@ -76,11 +78,11 @@ const DEXAggregators = (
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
             <p>
-              {'1. Load '}
+              {t('1. Load ')}
               <ExternalLink href="https://1inch.com/swap?src=8453:USDC">
                 1inch
               </ExternalLink>
-              {' on the '}
+              {t(' on the ')}
               <Image
                 alt="Base"
                 src="/images/base.svg"
@@ -88,13 +90,17 @@ const DEXAggregators = (
                 height="24px"
                 m="0px 5px -5px 0"
               />
-              <b>Base network</b>
+              <b>{t('Base network')}</b>
               {'.'}
             </p>
-            <p>{'2. Swap any token.'}</p>
-            <p>
-              3. Paste the successful <b>swap</b> transaction hash below:
-            </p>
+            <p>{t('2. Swap any token.')}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t(
+                  '3. Paste the successful <b>swap</b> transaction hash below:'
+                ),
+              }}
+            />
             <InputGroup maxW="530px">
               <Input
                 placeholder="0x..."
@@ -123,11 +129,14 @@ const DEXAggregators = (
               </InputRightElement>
             </InputGroup>
             {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
-              <Box mb="4">
-                <b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction
-                hash done on <b>Base network</b> and not the token{' '}
-                <b>approval</b> transaction hash.
-              </Box>
+              <Box
+                mb="4"
+                dangerouslySetInnerHTML={{
+                  __html: t(
+                    '<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.'
+                  ),
+                }}
+              />
             )}
           </div>
           <div className="bloc2" style={{ alignSelf: 'center' }}>
@@ -155,7 +164,7 @@ const DEXAggregators = (
                     alt={helperTitle}
                   >
                     <Button leftIcon={<ArrowSquareOut />} variant="primary">
-                      Read documentation
+                      {t('Read documentation')}
                     </Button>
                   </ExternalLink>
                 </Box>
