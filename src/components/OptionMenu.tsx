@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Button,
   Menu,
@@ -27,7 +27,7 @@ import {
 import InstallAppModal from 'components/InstallAppModal'
 import ExternalLink from 'components/ExternalLink'
 import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
-import OnboardingModal from 'components/OnboardingModal'
+import { useApp } from 'contexts/AppContext'
 import InternalLink from './InternalLink'
 
 const OptionMenu = ({
@@ -43,7 +43,7 @@ const OptionMenu = ({
     onOpen: onOpenAppModal,
     onClose: onCloseAppModal,
   } = useDisclosure()
-  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const { openOnboardingModal } = useApp()
 
   const twitterLink = IS_WHITELABEL
     ? `https://x.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
@@ -108,7 +108,7 @@ const OptionMenu = ({
             <>
               <MenuItem
                 onClick={() => {
-                  setIsOnboardingModalOpen(true)
+                  openOnboardingModal({ newsletterOnly: true })
                   Mixpanel.track('click_internal_link', {
                     link: 'modal',
                     name: 'Newsletter signup',
@@ -157,13 +157,6 @@ const OptionMenu = ({
           </ExternalLink>
         </MenuList>
       </Menu>
-      <OnboardingModal
-        isOpen={isOnboardingModalOpen}
-        onClose={() => {
-          setIsOnboardingModalOpen(false)
-        }}
-        newsletterOnly={true}
-      />
       <InstallAppModal
         isOpen={isOpenAppModal}
         onClose={onCloseAppModal}

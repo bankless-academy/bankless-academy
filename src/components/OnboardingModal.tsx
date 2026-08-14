@@ -27,6 +27,9 @@ import { emailRegex, api, Mixpanel, shortenAddress } from 'utils/index'
 import ProfileScore from 'components/ProfileScore'
 import { UserType } from 'entities/user'
 
+// Rendered exactly once, by `layout/index`, and driven by AppContext. Do not
+// mount a second instance: two open at the same time stack two overlays.
+// To show it from anywhere: const { openOnboardingModal } = useApp()
 const OnboardingModal = ({
   isOpen,
   onClose,
@@ -82,7 +85,9 @@ const OnboardingModal = ({
     if (isOpen) {
       setStep(newsletterOnly ? 'subscribe' : 'initial')
       setOnboarding(Date.now().toString())
-      setOnboardingRetry(onboardingRetry + 1)
+      // functional update: the value read at render time can be stale by the
+      // time this runs, which silently under-counts against the retry limit
+      setOnboardingRetry((retry) => retry + 1)
     }
   }, [isOpen])
 

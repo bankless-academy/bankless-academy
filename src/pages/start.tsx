@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { GetServerSideProps } from 'next'
 
 import { MetaData } from 'components/Head'
 import HomePage from 'pages/index'
-import OnboardingModal from 'components/OnboardingModal'
+import { useApp } from 'contexts/AppContext'
 import {
   DOMAIN_URL_,
   LESSONS,
@@ -42,24 +42,13 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 }
 
 const Start = (): JSX.Element => {
-  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const { openOnboardingModal } = useApp()
 
   useEffect(() => {
-    setIsOnboardingModalOpen(true)
-  }, [])
+    openOnboardingModal({ forceOnboarding: true })
+  }, [openOnboardingModal])
 
-  return (
-    <>
-      <OnboardingModal
-        isOpen={isOnboardingModalOpen}
-        onClose={() => {
-          setIsOnboardingModalOpen(false)
-        }}
-        forceOnboarding={true}
-      />
-      <HomePage />
-    </>
-  )
+  return <HomePage />
 }
 
 export default Start

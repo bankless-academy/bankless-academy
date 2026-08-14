@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Box, Image, HStack, Spacer, Flex } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
@@ -14,9 +14,13 @@ import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 // import ExternalLink from 'components/ExternalLink'
 import { api } from 'utils/index'
+import {
+  ONBOARDING_POPUP_DELAY,
+  shouldAutoOpenOnboarding,
+} from 'utils/onboarding'
 import { AnnouncementType } from 'entities/announcement'
-import OnboardingModal from 'components/OnboardingModal'
 import LanguageSelector from 'components/LanguageSelector'
+import { useApp } from 'contexts/AppContext'
 
 declare global {
   interface Navigator {
@@ -48,13 +52,14 @@ const Nav: React.FC = () => {
       : undefined
   const isEmbedded = typeof window !== 'undefined' && window !== window.parent
 
-  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const { openOnboardingModal } = useApp()
   const [onboarding] = useLocalStorage('onboarding', '')
 
   const [pwa, setPwa] = useLocalStorage('pwa', false)
-  
+
   // Add this ref to track if modal has been shown in current session
   const hasShownModalThisSession = useRef(false)
+  const onboardingTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     if (
@@ -66,24 +71,41 @@ const Nav: React.FC = () => {
   }, [setPwa])
 
   useEffect(() => {
-    // if onboarding is not done, and it's been more than 3 days since the last popup, show it again, max 3 times
-    const threeDays = 60 * 60 * 24 * 3 * 1000
     if (
-      !hasShownModalThisSession.current && // Only show once per session
-      router.pathname !== '/mobile' && // Don't show on mobile install page
-      router.pathname !== '/start' && // Don't show on start page
-      !embed && // Don't show if embedded
-      (onboarding === '' ||
-        (onboarding !== 'done' &&
-          Date.now() - Number(onboarding) > threeDays)) &&
-      onboardingRetry < 3
+      !shouldAutoOpenOnboarding({
+        pathname: router.pathname,
+        onboarding,
+        onboardingRetry,
+        embed,
+        alreadyShownThisSession: hasShownModalThisSession.current,
+      })
     ) {
-      setTimeout(() => {
-        setIsOnboardingModalOpen(true)
-        hasShownModalThisSession.current = true // Mark as shown for this session
-      }, 10000)
+      // conditions no longer hold (onboarding started elsewhere, retry limit
+      // reached, navigated to a page that opens its own modal): drop the
+      // pending popup instead of letting a stale timer fire later
+      if (onboardingTimer.current) clearTimeout(onboardingTimer.current)
+      onboardingTimer.current = null
+      return
     }
-  }, [onboarding, router.pathname, embed, onboardingRetry])
+    // at most one pending timer, ever - this effect re-runs on every route
+    // change and on every `onboarding`/`onboarding-retry` write (usehooks-ts
+    // broadcasts localStorage writes to all hook instances in the tab)
+    if (onboardingTimer.current) return
+
+    onboardingTimer.current = setTimeout(() => {
+      onboardingTimer.current = null
+      hasShownModalThisSession.current = true // Mark as shown for this session
+      openOnboardingModal()
+    }, ONBOARDING_POPUP_DELAY)
+  }, [onboarding, router.pathname, embed, onboardingRetry, openOnboardingModal])
+
+  useEffect(
+    () => () => {
+      if (onboardingTimer.current) clearTimeout(onboardingTimer.current)
+      onboardingTimer.current = null
+    },
+    []
+  )
 
   useEffect((): void => {
     const embedValue = pwa
@@ -166,12 +188,6 @@ const Nav: React.FC = () => {
           </HStack>
         </Flex>
       </Box>
-      <OnboardingModal
-        isOpen={isOnboardingModalOpen}
-        onClose={() => {
-          setIsOnboardingModalOpen(false)
-        }}
-      />
     </header>
   )
 }

@@ -1,8 +1,19 @@
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+  useEffect,
+} from 'react'
 import { useRouter } from 'next/router'
 import i18next from 'i18next'
 
 import { parseLangFromPath } from 'constants/languages'
+
+export interface OnboardingModalOptions {
+  newsletterOnly?: boolean
+  forceOnboarding?: boolean
+}
 
 export interface AppContextType {
   hideNavBar: boolean
@@ -11,6 +22,13 @@ export interface AppContextType {
   setLanguage: (value: string) => void
   openLessons: string[]
   setOpenLessons: (value: string[]) => void
+  // There is exactly ONE OnboardingModal in the app, rendered by `layout/index`
+  // and driven from here. Never mount another one: two instances open at the
+  // same time stack two overlays on top of each other.
+  isOnboardingModalOpen: boolean
+  onboardingModalOptions: OnboardingModalOptions
+  openOnboardingModal: (options?: OnboardingModalOptions) => void
+  closeOnboardingModal: () => void
   // Add more app-wide states here as needed
 }
 
@@ -21,13 +39,34 @@ export const AppContext = createContext<AppContextType>({
   setLanguage: () => {},
   openLessons: [],
   setOpenLessons: () => {},
+  isOnboardingModalOpen: false,
+  onboardingModalOptions: {},
+  openOnboardingModal: () => {},
+  closeOnboardingModal: () => {},
 })
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [hideNavBar, setHideNavBar] = useState(false)
   const [language, setLanguage] = useState('en')
   const [openLessons, setOpenLessons] = useState<string[]>([])
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const [onboardingModalOptions, setOnboardingModalOptions] =
+    useState<OnboardingModalOptions>({})
   const router = useRouter()
+
+  const openOnboardingModal = useCallback(
+    (options: OnboardingModalOptions = {}) => {
+      setOnboardingModalOptions(options)
+      setIsOnboardingModalOpen(true)
+    },
+    []
+  )
+
+  // keep the options while closing so the content doesn't flip mid-animation
+  const closeOnboardingModal = useCallback(
+    () => setIsOnboardingModalOpen(false),
+    []
+  )
 
   useEffect(() => {
     // Set language from translated lesson URLs (/lessons/<lang>/<slug>);
@@ -49,6 +88,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     },
     openLessons,
     setOpenLessons,
+    isOnboardingModalOpen,
+    onboardingModalOptions,
+    openOnboardingModal,
+    closeOnboardingModal,
   }
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
