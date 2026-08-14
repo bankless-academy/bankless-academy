@@ -67,6 +67,10 @@
     "keyword": "application blockchain",
     "definition": "Des applications blockchain qui vous permettent d'échanger des crypto-monnaies, d'utiliser les médias sociaux web3, de faire des dons caritatifs ou même d'apprendre sur la blockchain - comme à la Bankless Academy."
   },
+  "application de portefeuille": {
+    "keyword": "application de portefeuille",
+    "definition": "Le logiciel que vous installez sur votre appareil pour accéder à votre portefeuille sur la blockchain."
+  },
   "application portefeuille": {
     "keyword": "application portefeuille",
     "definition": "Une application sur votre ordinateur ou votre téléphone, utilisée pour se connecter à votre portefeuille sur la blockchain."
@@ -927,6 +931,18 @@
     "keyword": "politique monétaire",
     "definition": "La façon dont une banque centrale gère la quantité de monnaie circulant dans une économie."
   },
+  "portefeuille": {
+    "keyword": "portefeuille",
+    "definition": "Un compte sur une blockchain, utilisé pour conserver des actifs numériques et se connecter aux applications blockchain."
+  },
+  "portefeuille à chaud": {
+    "keyword": "portefeuille à chaud",
+    "definition": "Un portefeuille accessible via une application connectée à internet, pratique pour un usage quotidien."
+  },
+  "portefeuille avec dépositaire": {
+    "keyword": "portefeuille avec dépositaire",
+    "definition": "Un portefeuille dont les clés privées sont détenues et gérées par un tiers."
+  },
   "portefeuille d'autodétention": {
     "keyword": "portefeuille d'autodétention",
     "definition": "(AKA : wallet non-custodial) Avec un wallet à auto-garde, vous avez le contrôle exclusif de vos clés privées, qui à leur tour contrôlent vos crypto-actifs."
@@ -939,9 +955,25 @@
     "keyword": "portefeuille de cryptomonnaies",
     "definition": "Une application qui vous permet de stocker vos crypto-monnaies et de les envoyer/recevoir ou de les dépenser."
   },
+  "portefeuille en auto-conservation": {
+    "keyword": "portefeuille en auto-conservation",
+    "definition": "Un portefeuille dont vous contrôlez seul les clés privées, sans dépositaire."
+  },
+  "portefeuilles à chaud": {
+    "keyword": "portefeuilles à chaud",
+    "definition": "Un portefeuille accessible via une application connectée à internet, pratique pour un usage quotidien."
+  },
+  "portefeuilles à froid": {
+    "keyword": "portefeuilles à froid",
+    "definition": "Un portefeuille dont la clé privée est conservée sur un appareil dédié, hors ligne."
+  },
   "portefeuilles d'autodétention": {
     "keyword": "portefeuilles d'autodétention",
     "definition": "(AKA : wallet non-custodial) Avec un wallet à auto-garde, vous avez le contrôle exclusif de vos clés privées, qui à leur tour contrôlent vos crypto-actifs."
+  },
+  "portefeuilles intelligents": {
+    "keyword": "portefeuilles intelligents",
+    "definition": "Un portefeuille qui exécute du code, ce qui permet des fonctions comme la connexion par passkey ou la récupération de compte."
   },
   "pos": {
     "keyword": "PoS",
