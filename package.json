@@ -10,6 +10,7 @@
     "start": "next start",
     "import-content": "node import-content.js",
     "build-content": "node build-content.js",
+    "translate-content": "node translate-content.js",
     "test-content": "node test-content.js",
     "import-translations": "node import-translations.js",
     "import-modules": "node import-modules.js",
