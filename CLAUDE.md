@@ -122,9 +122,167 @@ render a warning banner on the intro slide.
 - [x] Glossary review pass (2026-08-08): all en definitions audited against the editing rules (51 fixed), 29 entries added, candidates adjudicated in `docs/content-todos.md`. Note: translated keyword files still carry old definitions until the translation pass regenerates them.
 - [x] Lesson metadata review (2026-08-08): `name`/`description`/`marketingDescription`/`learningActions` + Quest component UI strings audited against the rewritten lessons (3 fixed, durations corrected); quest strings in 6 components are hardcoded English — fix during i18n work.
 - [x] **English content freeze reached (2026-08-08):** all 19 active lessons rewritten for accuracy + quality, glossary and metadata audited, `EDITORS:` credit in frontmatter. Lesson content changes after this point invalidate translations — batch them.
-- [ ] Glossary page upgrades (localize the page, per-term anchors + cross-links, audit which entries have `glossary: true`) — bundle with the i18n Phase B selector/UI work; independent of lesson content
-- [ ] `translate-content` AI translation script (after content cleanup; see `docs/i18n-25-languages-plan.md` — translations start only after ALL lessons are finalized, existing 10 languages first)
+- [x] i18n Phase A + B (2026-08-08): language registry, ISO code migration with permanent redirects, `parseLangFromPath`/`AppContext` fixes, searchable `LanguageSelector` replacing `SelectLanguage` + `LanguageSwitch`
+- [x] Full-repo audit (2026-08-14) → `docs/pre-translation-audit.md`: coverage numbers per layer, 25 of 38 translated lesson files structurally stale (6 with live quiz-option bugs), ordered before/after list for the translation phase
+- [ ] **Before `translate-content`** (see the audit doc): fix stale quiz slide titles in `slideMeta` (incl. a live `✅ TODO`), extend `validate-content.js` to translated md, decide the fate of the 25 stale translated files, generate `website/en/lesson.json`, make the 9 English-only quest components translatable, serve translated md locally instead of GitHub raw, add `GITHUB_TOKEN` to Vercel + refresh `.env.example`
+- [ ] `translate-content` AI translation script (see `docs/i18n-25-languages-plan.md` — existing 9 languages to full coverage first; must also emit `website/<lang>/*.json` and `keywords/<lang>/keywords.json`, not just lesson md)
+- [ ] **After**: lazy-load i18next namespaces, `fallback: 'blocking'` + ISR for translated lesson paths, localize `/glossary` (+ per-term anchors, `glossary: true` audit), RTL audit before the first ar/ur wave, hreflang in the sitemap
 - [ ] Remove Crowdin (`crowdin.yml`, `import-translations.js`) and Notion lesson import (`import-content.js`, `src/pages/lessons/preview.tsx`)
+
+## Website structure
+
+Full-repo audit 2026-08-14. Update this section when the app's shape changes.
+
+### Stack & conventions
+
+Next.js **pages router** + React 18, Chakra UI v2 with emotion, TypeScript
+(`strict: false`, and `next.config.mjs` sets `typescript.ignoreBuildErrors: true`
+— **type errors do NOT fail the build**, run `yarn type-check` yourself).
+`baseUrl: src`, so imports are absolute-ish: `components/X`, `constants/index`,
+`utils/index`, `entities/lesson`, `hooks/index`, `layout/Layout`,
+`contexts/AppContext`. Sentry is wired but only active when
+`NEXT_PUBLIC_SENTRY_ENABLED=true`. Jest is configured but there are **zero test
+files** — `yarn test` passes vacuously; the real gates are `validate-content.js`
+and `test-content.js`.
+
+### Routing map (`src/pages`)
+
+- **Lessons**: `/lessons` (index), `/lessons/handbook`, and the catch-all
+  `/lessons/[...slug].tsx` which resolves four shapes:
+  `/lessons/<slug>`, `/lessons/<slug>/content`, `/lessons/<lang>/<slug>`,
+  `/lessons/<lang>/<slug>/content`, plus `/lessons/<slug>-datadisk`.
+  The first segment is treated as a language only if `isLanguage()` says so.
+  `getStaticPaths` currently emits **102 paths** with `fallback: true`.
+- **Other pages**: `/` (homepage), `/glossary`, `/explore`, `/explorer/[address]`,
+  `/explorer/my-profile`, `/leaderboard`, `/stats`, `/quest`, `/quiz`,
+  `/quiz/[id]`, `/module/[slug]`, `/animation/[slug]`, `/passport`, `/mini-apps`,
+  `/newsletter`, `/start`, `/mobile`, `/onchain-summer-challenge`,
+  `/report-an-issue`, `/feedback`, `/feature-request`, `/maintenance`, `/og`,
+  `/debug`, `/demo`, `/ai`, `/whitelabel_homepage`.
+- **Notion-backed static pages**: `/notion/[slug]` (SSR, `react-notion-x`),
+  surfaced as `/faq`, `/about`, `/disclaimer`, `/privacy-policy`,
+  `/terms-of-service` via `vercel.json` rewrites. Page IDs in
+  `NOTION_PAGES` (`constants/index.ts`).
+- **vercel.json** also rewrites `/sitemap.xml`→`/api/sitemap`,
+  `/rss.xml`→`/api/rss`, `/llms.txt` + `/agent.txt`→`/api/agent` (which just
+  serves `README.md`), and proxies Mixpanel under `/mp/*`. Redirects cover the
+  legacy language codes (`/lessons/br|cn|jp|ua/*` → `pt-br|zh|ja|uk`) and three
+  renamed lesson slugs.
+- **Rendering**: almost everything is SSG via `getStaticProps` with **no
+  `revalidate` anywhere** — content changes require a redeploy. Only
+  `/explore`, `/explorer/[address]`, `/notion/[slug]`,
+  `/onchain-summer-challenge`, `/quiz/[id]` and `/start` are SSR.
+
+### Client state (no store — context + localStorage)
+
+`AppContext` holds `hideNavBar`, `language`, `openLessons`. Everything else is
+`localStorage` via `usehooks-ts`. Lesson-critical keys (this is *why* editing
+rules 1 and 8 exist):
+
+| Key | Meaning |
+|---|---|
+| `<lesson-slug>` | current slide **index** (resume position) |
+| `maxSlide-<slug>` | furthest slide reached |
+| `quiz-<slug>-<n>` | the answer **number** the user picked |
+| `isBadgeMinted-<badgeId>`, `badgesMinted`, `lessonsCollected` | badge/collectible state |
+| `i18nextLng` | selected language (legacy codes normalized on load) |
+| `current_wallet`, `embed`, `onboarding`, `announcements` | session/UI state |
+
+### Web3 layer
+
+wagmi + viem; WalletConnect, Coinbase Smart Wallet (+ paymaster), Farcaster
+frame connector. SIWE auth with `iron-session` (`/api/siwe/*`). Badges are NFTs
+on **Base** (`src/constants/badges.ts`: contract, minter, allowed signers,
+`badgePublishedIds` includes `deprecated` so earned badges still count).
+DataDisk collectibles, Gitcoin Passport stamps (`src/utils/stamps/`), ENS +
+Basenames resolution, and a hosted Envio indexer at
+`indexer.banklessacademy.com/v1/graphql`.
+
+### Backend & data
+
+- **Postgres via Knex** (`knexfile.mjs`, `db.js`, `migrations/`, 17 migrations).
+  Tables: `users`, `quests`, `poaps`, `credentials`, `completions`, `logs`.
+- **Vercel KV** as the cache tier: `/api/cache/[cache]` reads,
+  `/api/cron/[cron]` writes. Whitelist (`AUTHORIZED_KV`): `bankless-dao-news`,
+  `announcement`, `leaderboard`, `explore` (+ derived `top200_leaderboard`).
+  Only `leaderboard` has a scheduled Vercel cron (every 12h); **`explore` is
+  refreshed manually** by hitting `/api/cron/explore`.
+- **~55 API routes**, grouped: content (`lessons`, `lesson-image`, `sitemap`,
+  `rss`, `agent`), auth (`siwe/*`, `user/[...slug]`), quests & badges
+  (`validate-quest`, `mint-badge`, `achievements/*`), NFT/metadata
+  (`nft/*`, `metadata/*`), OG images (`og/*`, `frame-og/*`), passport/stamps,
+  integrations (`lens`, `ud`, `base-ens`, `coinbase/session-token`,
+  `paymaster`, `subscribe-newsletter`, `suggest-content`), infra (`cache`,
+  `cron`, `deployment`, `monitor`, `stats`).
+- **Analytics**: Mixpanel (proxied through `/mp/*`) + Umami; Sentry optional.
+- `.env.example` is **stale** (still lists MintKudos vars; missing
+  `NOTION_SECRET`, `GITHUB_TOKEN`, Alchemy/KV/iron-session keys). ~75 env vars
+  are referenced in code.
+
+### Whitelabel mode
+
+`IS_WHITELABEL` comes from `src/constants/whitelabel.ts` (`project_name`). When
+set it swaps `LESSONS`, `KEYWORDS`, logo/branding/metadata and disables crons.
+The whitelabel constant files are stubs in this repo.
+
+## How i18n works (five layers)
+
+Understand all five before touching translations — they fail independently.
+
+1. **Registry** — `src/constants/languages.ts` is the single declaration point
+   (`LANGUAGES`, `LANGUAGE_CODES`, `isLanguage`, `LEGACY_CODE_MAP`,
+   `normalizeLangCode`, `parseLangFromPath`). `LanguageType`,
+   `LanguageDescription`, the selector and the validators all derive from it.
+2. **UI strings** — i18next, initialized in `src/utils/translation.ts` with
+   **static imports for every language** (won't scale past ~10; Phase D lazy-loads).
+   Namespaces: `common` (133 en keys), `quests` (5), `homepage` (37, **en + fr
+   only**), `keywords`, `lesson`. Only 38 of 72 components call `useTranslation`.
+3. **Lesson prose** — `translation/lesson/<lang>/<slug>.md`, gated per lesson by
+   `languages[]` in `lesson-meta.json`, parsed at build time by `processMD` in
+   `lessons/[...slug].tsx`. `validate-content.js` enforces that the file on disk
+   and the `languages[]` entry agree in both directions.
+4. **Lesson names/descriptions in listings** — `translation/website/<lang>/lesson.json`,
+   keyed by the **English string** (`t(lesson.name, { ns: 'lesson' })` in
+   `LessonCard`/`FeaturedLessons`). There is deliberately **no `en/lesson.json`**:
+   English falls through to the key. Nothing generates this file today — the old
+   Crowdin flow did. `translate-content` must produce it.
+5. **Glossary tooltips** — `Lesson.tsx`/`Article.tsx` lowercase the backticked
+   term and look up `t('<term>.definition', { ns: 'keywords' })`, falling back to
+   the English `KEYWORDS` object. Because the term comes from the *translated*
+   md, **translated `keywords.json` files must be keyed by the translated term**,
+   with plural forms as separate keys.
+
+### i18n gotchas found in the audit
+
+- `processMD` overwrites a translated lesson's question/answers/feedback but
+  **keeps `rightAnswerNumber` from the compiled English lesson**. If a
+  translation has a different number of options, or lists them in a different
+  order, the quiz is silently wrong for that language. Nothing validates this
+  today.
+- If a translated md has fewer `#` sections than the lesson has non-QUEST
+  slides, `processMD` throws; `getStaticProps` catches it and silently serves
+  the English lesson — so a broken translation looks like "the translation
+  didn't load" rather than an error.
+- Quiz **slide titles** are inconsistent between languages: English pages take
+  the title from `slideMeta.title` in `lesson-meta.json` (Notion leftovers:
+  `✅ Knowledge Check`, `✅ quiz`, `✅ Question`, and one literal `✅ TODO`),
+  while translated pages take it from the md `#` heading. The md headings
+  (`Knowledge Check 1…N`) are the clean source; `slideMeta.title` is not
+  translatable where it currently lives.
+- `LessonContent.tsx` (`/lessons/**/content`) and `/api/sitemap` fetch
+  translated md from `raw.githubusercontent.com/.../main/` **at runtime**. The
+  sitemap does one fetch per lesson × language and has no cache header — it is
+  ~40 fetches today and would be ~475 at 25 languages.
+- The glossary page (`/glossary`) reads the English `KEYWORDS` object directly
+  and is not localized or routable per language.
+- Quest components hold hardcoded English: 9 of 16 never call `useTranslation`
+  (`AcademyCommunity`, `BanklessArchetypes`, `DecentralizedExchanges`,
+  `DEXAggregators`, `IntroToDeFi`, `Layer1Blockchains`, `Layer2Blockchains`,
+  `StakingOnEthereum`, `WalletConnect`). Several components also carry explicit
+  `// TODO: TRANSLATE` markers (`Badge.tsx`, `MintDatadiskButton/Modal`).
+
+See `docs/pre-translation-audit.md` for the measured coverage numbers and the
+ordered list of what to fix before vs. after the translation run.
 
 ## Still on Notion (via Potion API `https://potion.banklessacademy.com`)
 
