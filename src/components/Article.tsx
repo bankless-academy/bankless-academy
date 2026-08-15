@@ -36,6 +36,7 @@ import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
 import MintNFT from 'components/MintNFT'
 import i18next from 'i18next'
+import { normalizeKeyword } from 'constants/languages'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -592,7 +593,7 @@ const Article = ({
         ...(entry?.keyword_forms || []),
       ]) {
         if (typeof form === 'string' && form)
-          index[form.toLowerCase()] = englishKey
+          index[normalizeKeyword(form)] = englishKey
       }
     }
     return { keywordIndex: index, keywordDefs: defs }
@@ -702,7 +703,9 @@ const Article = ({
             // Tooltip with definition
             code: ({ node }: any) => {
               const keyword = node.children[0]?.value
-              const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
+              const lowerCaseKeyword = node.children[0]?.value
+                ? normalizeKeyword(node.children[0].value)
+                : undefined
               const lowerCaseKeywordSingular =
                 lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
                   ? lowerCaseKeyword.slice(0, -1)

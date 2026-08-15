@@ -244,7 +244,7 @@ Les données d'une blockchain sont simplement une liste de transactions groupée
 
 Une `adresse` est un identifiant public que chacun peut consulter sur la blockchain. Comme une adresse e-mail, tout le monde peut y envoyer des fonds, mais seule la personne qui détient la `clé privée` peut débloquer et utiliser les fonds qui s'y trouvent.
 
-Sur Ethereum, une adresse commence toujours par _0x__________ et compte 42 caractères, chiffres et lettres, dérivés de la `clé publique` de cette adresse.
+Sur Ethereum, une adresse commence toujours par \_0x\_\_\_\_\_\_\_\_\_\_ et compte 42 caractères, chiffres et lettres, dérivés de la `clé publique` de cette adresse.
 
 En consultant une transaction dans un explorateur de blocs, on voit les adresses De : et Vers :. Cela ne dit pas qui sont les _personnes_ derrière ces adresses, mais permet à chacun de suivre les mouvements de cryptomonnaie dans le registre.
 

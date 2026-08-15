@@ -1,9 +1,10 @@
 ---
 TITLE: ウォレットの基礎
-DESCRIPTION: 仮想通貨ウォレットとは 詳細については、今すぐ最初の財布を作成してください！
-LANGUAGE: 英語
+DESCRIPTION: 暗号資産ウォレットとは何でしょうか。仕組みを学んで、今日はじめての 1 つを作りましょう。
+LANGUAGE: 日本語
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: X
+EDITORS: Claude (Anthropic AI, 2026 review)
+TRANSLATORS: Claude (Anthropic AI)
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -27,320 +28,323 @@ ________________________________________________________________________________
 
 ---
 
-# 財布の紹介
+# ウォレットの紹介
 
-**バンクレス・エクスプローラーの皆様、こんにちは！**
+**Bankless エクスプローラーの皆さん、ようこそ。**
 
-ブロックチェーン・マルチバースへの旅をさらに深くする時が来た。 この分野のエクスプローラーは、最終的に暗号ウォレットを作成する必要がある。
+ブロックチェーンの多元宇宙への旅を、さらに深めていきましょう。この分野を進むエクスプローラーは、いずれ暗号資産ウォレットを作ることになります。
 
-お財布は、みなさんが慣れ親しんでいる`ウェブ2`インターネットの口座のようなものです。 `暗号通貨を`使用したり、`ブロックチェーンアプリに`接続したりすることができる！
+ウォレットは、使い慣れた `Web2` のインターネットのアカウントに似ています。ウォレットでブロックチェーンのエコシステム、つまり `Web3` にログインし、`暗号資産`を使ったり、`ブロックチェーンアプリ`に接続したりできます。
 
-このレッスンでは、ウォレットとその仕組み、そして暗号通貨を安全に保管する方法を紹介します。 最後に、**バンクレス・アカデミーの本拠地であるイーサリアム・ブロックチェーンへの**アクセス方法とセットアップ方法をご紹介します。
+このレッスンでは、ウォレットとは何か、どう動くのか、暗号資産を安全に守る方法を紹介します。最後に、ウォレットの作り方と、**Bankless Academy の本拠地である Ethereum ブロックチェーン**への入り方を案内します。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# 財布の定義
+# ウォレットの定義
 
-仮想通貨ウォレットとは
+暗号資産ウォレットとは、正確には何でしょうか。
 
-簡単に定義すると、`ブロックチェーン`上のアカウントで、デジタル資産を保管したり、ブロックチェーンアプリにログインしたりするために使用される。
+短く言えば、デジタル資産を保管し、ブロックチェーンアプリにログインするために使う、`ブロックチェーン`上のアカウントです。
 
-インターネット上に自分専用の金庫があるようなもので、その鍵を開けるのは自分しかいない。 同時に、この金庫は通常のウェブサイトのアカウントに似ている。 購入や`暗号通貨の`送受信、ブロックチェーンとのやりとりに利用できる。
+インターネット上に自分専用の金庫があり、その鍵を自分だけが持っているようなものです。同時に、この金庫は普通のウェブサイトのアカウントにも似ています。買い物をしたり、`暗号資産`を送受信したり、ブロックチェーンとやり取りしたりできます。
 
-しかし、皆さんが慣れ親しんでいる`ウェブ2`アカウントとは異なり、1つのウォレットでブロックチェーン全体、そして多数のブロックチェーンアプリにアクセスすることができる。 インターネット全体に1つのアカウントを持っているようなものだ。
+ただし、使い慣れた `Web2` のアカウントと違い、1 つのウォレットでブロックチェーン全体と、数多くのブロックチェーンアプリにアクセスできます。インターネット全体に 1 つのアカウントを持つようなものです。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# 財布を作るのは難しいですか？
+# ウォレットを作るのは難しい？
 
-以前は難しかったが、最近では誰でも簡単に財布を作ることができる。
+以前は難しいことでしたが、今では誰でも簡単にウォレットを作れます。
 
-コンピューター（または携帯電話のアプリ）のソフトウェアのダウンロードとインストールに慣れているのであれば、最初の財布の作成に問題はないだろう。
+パソコンにソフトウェアを入れたり、スマートフォンにアプリを入れたりできる方なら、はじめてのウォレット作成で困ることはありません。
 
-財布の管理で難しいのは、財布の安全性を保つことだ！
+やや難しいのは、ウォレットを安全に管理することです。この点はこの後すぐ見ていきます。
 
-`お財布アプリを`選ぶのもおっくうに感じるかもしれない。 これは、ブロックチェーン上のウォレットにアクセスするためにデバイスにインストールするアプリです。 Zerionウォレット・アプリから始めることをお勧めする：使い勝手が良く、多くの人気ブロックチェーンにアクセスできる。 `web3`スペースに慣れてくると、他のプロバイダーを探したり、複数のウォレットを作成したりすることになるでしょう。
+`ウォレットアプリ`選びも、最初は迷うかもしれません。これは、ブロックチェーン上のウォレットにアクセスするために端末へ入れるアプリです。まずは Zerion のウォレットアプリをおすすめします。使いやすく、人気のブロックチェーンの多くに対応しています。`Web3` に慣れてくれば、他の提供元も試し、複数のウォレットを持つようになるでしょう。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
 # Knowledge Check 1
 
-What is a wallet?
+ウォレットとは何でしょうか。
 
-- [ ] A blockchain
+- [ ] ブロックチェーン
 
-> ℹ️ Try again! Your wallet is hosted on a blockchain.
+> ℹ️ もう一度お試しください。ウォレットはブロックチェーン上に置かれています。
 
-- [ ] A cryptocurrency
+- [ ] 暗号資産
 
-> ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.
+> ℹ️ もう一度お試しください。暗号資産はウォレットの中に保有するものです。
 
-- [ ] A digital collectible
+- [ ] デジタルコレクティブル
 
-> ℹ️ Try again! Digital collectibles are something you hold in your wallet.
+> ℹ️ もう一度お試しください。デジタルコレクティブルはウォレットの中に保有するものです。
 
-- [ ] A blockchain account
+- [x] ブロックチェーンのアカウント
 
-> ℹ️ Correct! Wallets are accounts used to interact with blockchains.
+> ℹ️ 正解です。ウォレットは、ブロックチェーンとやり取りするためのアカウントです。
 
-# Wallets & Password Recovery
+# ウォレットとパスワードの復旧
 
-Here is one of the most important things to understand about `web3` wallets: **There are no “password resets” or “password changes”.**
+`Web3` のウォレットについて、もっとも重要なことの 1 つがこれです。
+**「パスワードの再設定」も「パスワードの変更」もありません。**
 
-Most of us are used to these features. If we forget a password, we click a button, do a few things, and get a new password. Easy.
+多くの人はこうした機能に慣れています。パスワードを忘れたら、ボタンを押して少し手続きをすれば、新しいパスワードが手に入ります。簡単です。
 
-Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created — and you do not choose these.
+暗号資産ウォレットはそうではありません。ブロックチェーンの仕組み上、ウォレットは作られるときに「アドレス」と複雑な「パスワード」を割り当てられ、これらを自分で選ぶことはできません。
 
-This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
+このアドレスとパスワードの組み合わせは変更できません。ただし、必要ならいつでも新しいウォレットを作れます。一部の新しいウォレットには復旧機能もありますが、それに頼りきってはいけません。この特別なアドレスとパスワードについて、もう少し学んで、自信を持って使えるようになりましょう。
 
-# Your wallet’s public key
+# ウォレットの公開鍵
 
-A `public key` is basically your wallet’s address. Often, this looks like a random series of letters and numbers.
+ウォレットの`アドレス`は、その`公開鍵`から作られます。アドレスはユーザー名のようなもので、多くの場合ランダムな英数字の並びに見えます。
 
-Example: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
+例: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-It is possible to create easier to remember versions of this with some `web3` services, but that’s a lesson for another time.
+`Web3` のサービスを使えば、もっと覚えやすい形にすることもできますが、それはまた別のレッスンで扱います。
 
-You can also think of a public key like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+アドレスは家の住所のようなものだとも考えられます。公開されていて誰でも見られ、暗号資産の送り先を相手に伝えますが、個人情報は一切明かしません。
 
-It is perfectly safe to share your wallet’s **public key**.
+ウォレットの**アドレス**は、共有してもまったく問題ありません。
 
-**Note:** A single wallet app can hold multiple public/`private key` pairs.
+**注:** 1 つのウォレットアプリで、複数の公開鍵と`秘密鍵`のペアを保有できます。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
-# Your wallet’s private key
+# ウォレットの秘密鍵
 
-If the public key is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
+アドレスが家の住所なら、`秘密鍵`は玄関の鍵にあたります。資金や資産を開く「パスワード」です。
 
-Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+例: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092a4c72b53e69cf74d215_
 
-**It’s never safe to share this key — you could lose your wallet and everything in it.**
+**この鍵は決して共有してはいけません。ウォレットと、その中身すべてを失う可能性があります。**
 
-Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the `wallet`.
+デジタルの形で保存することさえ避けるべきだ、と多くの人が勧めています。秘密鍵を手にした人は、その`ウォレット`の中身すべてにアクセスできます。
 
-This is more than just a password. You cannot reset it if you lose access to it.
+これは単なるパスワード以上のものです。失っても再設定はできません。
 
-Luckily, most `blockchain apps` do not require you to type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
+幸い、ほとんどの`ブロックチェーンアプリ`では、送金やトランザクションの署名のたびに長い文字列を入力する必要はありません。秘密鍵はふだん、裏側で静かに働いています。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-Your public key is like your _____ and your private key is like your _____ .
+ウォレットのアドレスは _____ のようなもので、秘密鍵は _____ のようなものです。
 
-- [ ] Routing Number / Account Number
+- [ ] 銀行の支店番号 / 口座番号
 
-> ℹ️ Try again! Unlike a bank account number, your private key shouldn’t be shared with others.
+> ℹ️ もう一度お試しください。銀行の口座番号と違い、秘密鍵は他人と共有してはいけません。
 
-- [ ] Address / Zip code
+- [ ] メールアドレス / 郵便番号
 
-> ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.
+> ℹ️ もう一度お試しください。郵便番号と違い、秘密鍵は他人と共有してはいけません。
 
-- [ ] House address / House key
+- [x] 家の住所 / 家の鍵
 
-> ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.
+> ℹ️ 正解です。アドレスは相手が見つけるためのもので、中に入れるのは秘密鍵だけです。
 
-- [ ] Phone Number / Passport Number
+- [ ] 電話番号 / パスポート番号
 
-> ℹ️ Try again! These are examples of public & private information, but they’re unrelated.
+> ℹ️ もう一度お試しください。公開情報と非公開情報の例ではありますが、たがいに関係はありません。
 
-# Recovery Phrase
+# リカバリーフレーズ
 
-When you set up a new wallet, your wallet app will provide you with a `recovery phrase`.
+新しいウォレットを作ると、`ウォレットアプリ`が`リカバリーフレーズ`を教えてくれます。
 
-Also called a “seed phrase” or “secret phrase”, this string of words can be used to access your wallet and crypto assets if:
+「`シードフレーズ`」や「秘密のフレーズ」とも呼ばれ、次のような場合にウォレットと暗号資産へアクセスするために使えます。
 
-- Your `wallet app` or device fails unexpectedly or is damaged.
-- Your device has been lost or stolen.
-- You want to access your wallet on multiple devices.
+- `ウォレットアプリ`や端末が突然動かなくなったり、壊れたりしたとき。
+- 端末を紛失したり、盗まれたりしたとき。
+- 複数の端末でウォレットを使いたいとき。
 
-Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. This data is used to generate both the `public key` and `private key` for your wallet.
+ほとんどのリカバリーフレーズは 12 から 24 語の単語で、固有のデータを表しています。このデータから、ウォレットの`公開鍵`と`秘密鍵`の両方が生成されます。
 
-Wallet recovery does **not** change or reset the keys.
+ウォレットの復旧で鍵が変わったり、再設定されたりすることは**ありません**。
 
-Your recovery phrase is essentially an easier to read version of your public/private key pair. **Never share your recovery phrase.**
+リカバリーフレーズはマスターキーのようなもので、ウォレット内のすべての鍵ペアを再生成できます。**リカバリーフレーズは決して共有しないでください。**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Can you access your wallet with a recovery phrase if your device gets damaged or lost?
+端末が壊れたり紛失したりしても、リカバリーフレーズがあればウォレットにアクセスできますか。
 
-- [ ] No
+- [ ] いいえ
 
-> ℹ️ Try again!
+> ℹ️ もう一度お試しください。
 
-- [ ] Yes
+- [x] はい
 
-> ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.
+> ℹ️ 正解です。リカバリーフレーズがあれば、複数の端末からでもウォレットにアクセスできます。
 
-# Types of Wallet
+# ウォレットの種類
 
-Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:
+ソフトウェアに多くの種類があるように、ウォレットにも多くの種類があります。主な 4 つを見てみましょう。
 
-- 🏦 **Custodial wallets:** where a third party is responsible for your private keys.
-- 👤 **Self-custody (non-custodial) wallets:** where you are responsible for your private keys.
+- 🏦 **カストディアルウォレット:** 第三者が秘密鍵を管理します。
+- 👤 **自己保管（ノンカストディアル）ウォレット:** 自分で秘密鍵を管理します。
 
-There are two styles of `self-custody wallet`:
+`自己保管ウォレット`には 2 つのタイプがあります。
 
-- 🔥 **Hot wallets:** software on your desktop or phone.
-- 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
+- 🔥 **ホットウォレット:** パソコンやスマートフォンのソフトウェア。
+- 🧊 **コールドウォレット:** 安全な場所に保管する機器（USB メモリのようなもの）。
 
-Each wallet solution serves a different use-case. Many advanced users have one of each!
+`スマートウォレット`という言葉も耳にするかもしれません。コードを実行する新しいタイプで、パスキーでのログインやアカウントの復旧などが可能になります。
 
-Don’t worry, we’ll only be creating one wallet today.
+種類ごとに用途が違います。心配は要りません。今日作るウォレットは 1 つだけです。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Custodial Wallets
+# カストディアルウォレット
 
-Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
+`秘密鍵`は`ウォレット`を開く鍵なので、安全に守ることがとても大切です。
 
-`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. **They are your wallet custodian** — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
+`カストディアルウォレット`のサービスには、Coinbase や Kraken などの暗号資産取引所があります。**これらはウォレットの保管者（カストディアン）です**。秘密鍵を代わりに預かってくれます。利用のしかたは他のウェブサイトと同じで、メールアドレスと再設定できるパスワードでログインします。
 
-This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some `blockchain apps` may be limited.
+これで十分という人もいますが、暗号資産の保護と、取引や送金をしたいときのアクセスを、第三者に信頼して任せることになります。また、一部の`ブロックチェーンアプリ`は使えないことがあります。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-Do you control your private key with a custodial wallet?
+カストディアルウォレットでは、秘密鍵を自分で管理しますか。
 
-- [ ] Yes
+- [ ] はい
 
-> ℹ️ Try again!
+> ℹ️ もう一度お試しください。
 
-- [ ] No
+- [x] いいえ
 
-> ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
+> ℹ️ 正解です。カストディアルウォレットでは、秘密鍵を管理する第三者（保管者）を信頼する必要があります。
 
-# Non-custodial Wallet
+# 自己保管ウォレット
 
-A `self-custody wallet` (like Zerion or Trezor) is when you fully control your `private key`. You have **no custodian**, and you alone are responsible for keeping your private key safe.
+`自己保管ウォレット`（Zerion や Trezor など）では、`秘密鍵`を完全に自分で管理します。**保管者はいません**。鍵を安全に守る責任は自分だけにあります。
 
-These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
+このタイプのウォレットは、`Web3` の世界でもっとも広いアクセスと自由をもたらします。第三者に資金を凍結されたり、乱暴に扱われたりする心配もありません。
 
-The trade-off is in risk: if you lose access to your `recovery phrase`, or your private key is compromised, there is often very little you can do to restore access to the wallet.
+その代わりリスクを負います。`リカバリーフレーズ`にアクセスできなくなったり、秘密鍵が漏れたりすると、ウォレットを取り戻す手立てはほとんどありません。
 
-Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
+どちらを選ぶにしても、ウォレットのセキュリティに慣れておくと役に立ちます。このレッスンの終わりに、いくつかのコツを紹介します。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-Are you responsible for your private key with a self-custody wallet?
+自己保管ウォレットでは、秘密鍵の管理は自分の責任ですか。
 
-- [ ] Yes
+- [x] はい
 
-> ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
+> ℹ️ 正解です。自己保管ウォレットでは、秘密鍵を守る責任はすべて自分にあります。
 
-- [ ] No
+- [ ] いいえ
 
-> ℹ️ Try again!
+> ℹ️ もう一度お試しください。
 
-# Hot Wallets
+# ホットウォレット
 
-You will hear the terms “hot” and “cold wallet” quite a bit in `web3`.
+`Web3` では「ホットウォレット」「コールドウォレット」という言葉をよく耳にします。
 
-A `hot wallet` is a wallet accessed via an app on your device — the Zerion app for example. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
+`ホットウォレット`は、端末のアプリから使うウォレットです。たとえば Zerion のアプリがそうです。多くの `Web2` アプリと同じように、ウォレットアプリは常にインターネットにつながっています。
 
-Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. These wallets are named ‘hot wallets’ for this “hot” connection between the internet and your private key.
+`秘密鍵`は暗号化されてウォレットアプリの中に保存され、ブロックチェーンとやり取りするときだけ使われます。インターネットと秘密鍵がこのように「熱く」つながっていることから、この名前が付いています。
 
-Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. We’ll be creating a hot wallet today!
+ホットウォレットは、ポケットに入れる財布のように、日々の少額のやり取りに便利です。今日はこのホットウォレットを作ります。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Cold Wallets
+# コールドウォレット
 
-As you dive deeper into your `web3` journey, you will come to know a landscape full of interesting tech trade-offs.
+`Web3` の旅を進めると、興味深い技術のトレードオフに満ちた世界が見えてきます。
 
-`Cold wallets` grant higher security at the cost of convenience. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
+`コールドウォレット`は、便利さと引き換えに高い安全性をもたらします。`秘密鍵`を専用のハードウェア機器（USB メモリや外付けドライブのようなもの）に保存する方式です。ブロックチェーン上のウォレットを使うには、その機器をパソコンに物理的につなぐ必要があります。秘密鍵がインターネットに直接つながることはなく、この「冷たい」接続が名前の由来です。
 
-They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
+`秘密鍵`がオフラインで保管され、デジタルの攻撃者の手が届かないため、`ホットウォレット`より安全だと広く考えられています。
 
-Ledger and Trezor are examples of `cold wallets`.
+Ledger と Trezor は`コールドウォレット`の例です。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Which of the following wallet types is considered the most secure?
+次のうち、もっとも安全とされるウォレットはどれでしょうか。
 
-- [ ] All wallets are about the same
+- [ ] どれも同じくらい
 
-> ℹ️ Try again! There are various trade-offs for each wallet type, with level of security being one of them.
+> ℹ️ もう一度お試しください。ウォレットの種類ごとにトレードオフがあり、安全性もその 1 つです。
 
-- [ ] A hot wallet
+- [ ] ホットウォレット
 
-> ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.
+> ℹ️ もう一度お試しください。ホットウォレットは常にインターネットにつながっているため、攻撃を受けやすくなります。
 
-- [ ] A custodial wallet
+- [ ] カストディアルウォレット
 
-> ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
+> ℹ️ もう一度お試しください。秘密鍵を預かる第三者が、ハッキングされたり破綻したりすることがあります。
 
-- [ ] A cold wallet
+- [x] コールドウォレット
 
-> ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
+> ℹ️ 正解です。コールドウォレットは常時インターネットにつながっていないため、攻撃に強くなります。
 
-# Wallet Security
+# ウォレットのセキュリティ
 
-Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
+`自己保管ウォレット`がホットでもコールドでも、身につけておきたい習慣がいくつもあります。
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ `リカバリーフレーズ`は、丈夫な素材（ラミネート加工した紙や金属板）に書き、とても安全な場所に保管しましょう。フレーズも`秘密鍵`も、誰にも教えてはいけません。**単なるパスワードではありません。**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 送金や署名のときは、少額でも必ず内容を確認しましょう。まちがいは取り消せません。
 
-🔭 Spend time researching and gathering info on any `blockchain apps` you plan to interact with before connecting your wallet to it or signing its transactions.
+🔭 使う予定の`ブロックチェーンアプリ`は、ウォレットを接続したり署名したりする前に調べましょう。
 
-💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+💰 新しいことを試すときは少額のウォレットを使い、価値の高い資産は複数のウォレットに分けて保管することも検討しましょう。
+
+🛡️ 有害なトランザクションや承認に署名させる詐欺に注意しましょう。見分け方は [Web3 のセキュリティ](https://app.banklessacademy.com/lessons/web3-security) のレッスンで学べます。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-What is the safest way to protect your recovery phrase?
+リカバリーフレーズを守る、もっとも安全な方法はどれでしょうか。
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [x] 丈夫な素材に書いて、安全な場所に保管する。
 
-> ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.
+> ℹ️ 正解です。デジタルの痕跡を残さない物理的なバックアップを安全に保管するのが、もっとも安全です。
 
-- [ ] Save it on your computer and print it out.
+- [ ] パソコンに保存して、印刷しておく。
 
-> ℹ️ Try again! If your computer is hacked, your recovery phrase could be found. Printing also opens many attack opportunities.
+> ℹ️ もう一度お試しください。パソコンが乗っ取られると見つかる恐れがあります。印刷にも多くのリスクがあります。
 
-- [ ] Take a screenshot and save it on your phone.
+- [ ] スクリーンショットを撮って、スマートフォンに保存する。
 
-> ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.
+> ℹ️ もう一度お試しください。スマートフォンが乗っ取られると、ウォレットの資産をすべて失う可能性があります。
 
-- [ ] Save it in your password manager.
+- [ ] パスワード管理アプリに保存する。
 
-> ℹ️ Try again! If your password manager is hacked, your recovery phrase could be leaked.
+> ℹ️ もう一度お試しください。管理アプリが一度でも侵害されれば漏れます。フレーズはオフラインで保管しましょう。
 
-# You’re ready to create your first wallet!
+# はじめてのウォレットを作る準備ができました
 
-In fact, you’ll need one if you want to claim proof of completing this quest!
+このクエストの完了証明を受け取るにも、ウォレットが必要です。
 
-There are several `self-custody`, `hot wallet` apps available today. We will explore the Zerion wallet for the rest of this lesson as:
+今日使える`自己保管`の`ホットウォレット`アプリはいくつもあります。このレッスンの残りでは Zerion を見ていきます。理由は次のとおりです。
 
-- ⚙️ It’s compatible with most `blockchain apps`.
-- ⚡ The interface is incredibly smooth and easy to use.
-- 💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.
-- 📱 It is also available as a mobile app for Android and iOS users.
-- 🗣️ Zerion supports a variety of languages.
+- ⚙️ ほとんどの`ブロックチェーンアプリ`に対応しています。
+- ⚡ 操作がとてもなめらかで、使いやすいです。
+- 💻 Chrome、Brave、Edge、Opera、Firefox のブラウザ拡張機能があります。
+- 📱 Android と iOS のモバイルアプリもあります。
+- 🗣️ Zerion は多くの言語に対応しています。
 
-The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
+レッスンはもうすぐ終わりです。最後に、Zerion でウォレットを作る手順をお伝えします。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-Is Zerion a custodial wallet app?
+Zerion はカストディアルウォレットのアプリですか。
 
-- [ ] Yes
+- [ ] はい
 
-> ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.
+> ℹ️ もう一度お試しください。Zerion のウォレットは、保管者に管理されていません。
 
-- [ ] No
+- [x] いいえ
 
-> ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
+> ℹ️ 正解です。Zerion のウォレットは自己保管型で、管理するのは自分だけです。

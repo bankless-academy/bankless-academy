@@ -1,5 +1,5 @@
 ---
-TITLE: Comprendre les normes de token d'Ethereum
+TITLE: Comprendre les normes de tokens Ethereum
 DESCRIPTION: Découvrez comment les modèles d'actifs d'Ethereum accueillent les classes d'actifs traditionnelles comme émergentes.
 LANGUAGE: Français
 WRITERS: Musharraf, Tetranome

@@ -1,5 +1,5 @@
 ---
-TITLE: Registra tu nombre de usuario web3
+TITLE: Registra tu nombre web3
 DESCRIPTION: Personaliza la dirección de tu billetera con ENS y empieza a construir tu identidad digital.
 LANGUAGE: Español
 WRITERS: estmcmxci, Tetranome

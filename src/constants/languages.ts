@@ -141,3 +141,15 @@ export const parseLangFromPath = (pathname: string): LanguageCode => {
   if (candidate && isLanguage(candidate) && candidate !== 'en') return candidate
   return 'en'
 }
+
+// Glossary lookups are case-folded, and case folding is not script-neutral.
+// JS lowercases Turkish İ (U+0130) to "i" + U+0307 (COMBINING DOT ABOVE), a
+// two-codepoint sequence that can never equal the single "i" in a glossary
+// key. The effect is that ANY Turkish term backticked at the start of a
+// sentence or list item ("`İşlemler` ...") is a dead tooltip, which is why the
+// Turkish wave had to reword clauses to keep such terms mid-sentence.
+// Stripping the combining dot after folding makes both sides comparable.
+// Keep in sync with `normalizeKeyword` in content-lib.js, which the content
+// validators use to reach the same verdict offline.
+export const normalizeKeyword = (s: string): string =>
+  s.toLowerCase().replace(/̇/g, '')

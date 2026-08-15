@@ -70,6 +70,7 @@ import Helper from 'components/Helper'
 import { ANIMATIONS } from 'constants/animations'
 import { useApp } from 'contexts/AppContext'
 import dynamic from 'next/dynamic'
+import { normalizeKeyword } from 'constants/languages'
 
 const Animation = dynamic(() => import('components/Animation'), {
   ssr: false,
@@ -503,7 +504,7 @@ const Lesson = ({
         ...(entry?.keyword_forms || []),
       ]) {
         if (typeof form === 'string' && form)
-          index[form.toLowerCase()] = englishKey
+          index[normalizeKeyword(form)] = englishKey
       }
     }
     return { keywordIndex: index, keywordDefs: defs }
@@ -933,7 +934,9 @@ const Lesson = ({
       // Tooltip with definition
       try {
         const keyword = node.children[0]?.data
-        const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
+        const lowerCaseKeyword = node.children[0]?.data
+          ? normalizeKeyword(node.children[0].data)
+          : undefined
         const lowerCaseKeywordSingular =
           lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
             ? lowerCaseKeyword.slice(0, -1)

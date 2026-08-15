@@ -1,9 +1,10 @@
 ---
-TITLE: Creating a Crypto Wallet
-DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
-LANGUAGE: English
+TITLE: 暗号資産ウォレットを作る
+DESCRIPTION: 手順に沿って、はじめての暗号資産ウォレットを作りましょう。
+LANGUAGE: 日本語
 WRITERS: Tetranome
-TRANSLATORS: X
+EDITORS: Claude (Anthropic AI, 2026 review)
+TRANSLATORS: Claude (Anthropic AI)
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -26,91 +27,91 @@ ________________________________________________________________________________
 ```
 
 ---
-
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
+---
+これは[ウォレットの基礎](https://app.banklessacademy.com/lessons/wallet-basics)レッスンの要約と、クエストの手順です。**知識を深めてバッジを獲得する**には、[レッスン全体](https://app.banklessacademy.com/lessons/wallet-basics)をご覧ください。
 
 ---
 
-## Key Takeaways
+## 要点
 
-> - You’ll need a `crypto wallet` to access the world of blockchains!
+> * ブロックチェーンの世界に入るには`暗号資産ウォレット`が必要です。
 >
-> - A wallet is like a `blockchain` account.
+> * ウォレットは`ブロックチェーン`のアカウントのようなものです。
 >
-> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
+> * ウォレットは`暗号資産`の保管や、ブロックチェーンアプリへのログインなどに使います。
 >
-> - These wallets work on both computers and phones.
+> * パソコンでもスマートフォンでも使えます。
 >
-> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
+> * ウォレットの作成は簡単で、5 分ほどで終わります。下の動画で手順を紹介します。
 
-## What is a Crypto Wallet?
+## 暗号資産ウォレットとは
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
+暗号資産ウォレットは Web3 に欠かせない道具で、パソコンやスマートフォンで`暗号資産`を使えるようにします。ウォレットには`ウォレットアプリ`というソフトウェアからアクセスします。パソコンならブラウザーの拡張機能、スマートフォンならアプリです。
 
-It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+それだけではありません。ウォレットは暗号資産を保管するアカウント以上のもので、ブロックチェーンへの接続口です。ほかの人と暗号資産を交換したり、ブロックチェーンのアプリにログインしたり、**Bankless Academy のバッジのようなデジタルアイテムを集めたりもできます。** 探索を進めるほどウォレットの役割は広がり、デジタルアイデンティティの出発点と見る人もいます。
 
-Wallets come with two core pieces of account information:
+ウォレットには、2 つの中心的なアカウント情報があります。
 
-- A `public key`, that you can think of as your _username_. You’ll share it publicly to receive cryptocurrency.
+* `公開鍵`。ここからウォレットの`アドレス`が作られます。アドレスは*ユーザー名*のようなもので、暗号資産を受け取るために公開して共有します。
 
-- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
+* `秘密鍵`。*パスワード*にあたります。常に他人に知られないようにする必要があり、変更はできません。
 
-Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
+秘密鍵はウォレットへの即時のアクセスを与えるため、守ることが決定的に重要です。秘密鍵は決して他人に教えないでください。詳しくは[レッスン全体](https://app.banklessacademy.com/lessons/wallet-basics)で学べます。
 
-Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
+今日は、おすすめの暗号資産ウォレットである Zerion を使って、はじめてのウォレットを用意します。
 
-## Walkthrough
+## 手順
 
-Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
+下の手順に沿って、パソコンではじめてのウォレットを用意しましょう。スマートフォン向けの手順は、さらに下にあります。
 
-### Computer Wallet
+### パソコンのウォレット
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
-### Phone Wallet
+### スマートフォンのウォレット
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
-**It’s time to join the blockchain multiverse!**
+**ブロックチェーンの多元宇宙へ飛び込む時です。**
 
-Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
+旅の途中ですぐ見返せるように、そして Bankless Academy を応援するために、このハンドブックの項目を忘れずに集めてください。
 
-Safe travels, Explorer!
-
----
-
-## FAQ
-
-### What is a cryptocurrency?
-
-Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
-
-Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
-
-### What are public and private keys?
-
-Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
-
-You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
-
-Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
-
-### What happens if I lose my recovery phrase?
-
-Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
-
-### Can Ethereum wallets hold Bitcoin?
-
-Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
+よい旅を、エクスプローラー。
 
 ---
 
-**Author**
+## よくある質問
 
-[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
+### 暗号資産とは何ですか。
 
-**Patron**
+暗号資産は`暗号技術`で守られたデジタルのお金です。中央の当局や銀行を必要とせずに動くため、不正の余地を減らし、持つ人の経済的な自由を広げます。
 
-This walkthrough is powered by Zerion.
+暗号資産についてもっと知るには、[**Bitcoin の基礎**](https://app.banklessacademy.com/lessons/bitcoin-basics)のレッスンをご覧ください。デジタル通貨が金融の世界をどう変えているのかがわかります。
+
+### 公開鍵と秘密鍵とは何ですか。
+
+公開鍵と秘密鍵による`暗号化`のおかげで、ウォレットは一部の情報を公開できます。暗号資産を受け取るアドレスなどです。その一方で、資産へのアクセスは秘密のまま保てます。公開鍵から作られるウォレットのアドレスは家の住所のようなもので、秘密鍵が玄関の鍵を開けます。
+
+アドレスは、暗号資産を送ってもらう相手になら誰にでも伝えて構いません。しかし秘密鍵はウォレット内のすべての資産へのアクセスを与えるので、自分だけのものにしてください。相手が Bankless Academy や Zerion を名乗っても、決して教えないでください。
+
+[ウォレットの基礎](https://app.banklessacademy.com/lessons/wallet-basics)のレッスンでは、さらに詳しく学べて、はじめてのウォレット作成で報酬も受け取れます。
+
+### リカバリーフレーズをなくしたらどうなりますか。
+
+リカバリーフレーズは「シークレットフレーズ」や「シードフレーズ」とも呼ばれ、端末上のウォレットにアクセスできなくなったときの唯一のバックアップです。これをなくすと、ウォレットの中身は永久に失われます。だからこそ、盗難や紛失だけでなく、火災や水濡れからも守れる場所に保管することが大切です。
+
+### Ethereum のウォレットで Bitcoin を持てますか。
+
+Ethereum のウォレットでも Bitcoin を持てますが、Coinbase の cbBTC トークンのように「ラップされた」形になります。本来の Bitcoin を持ちたい場合は、[Exodus](https://www.exodus.com/) や [BlueWallet](https://bluewallet.io/) のように Bitcoin ネットワークで動くウォレットを作る必要があります。
+
+---
+
+**著者**
+
+[Tetranome](https://twitter.com/Tetranome) は Bankless Academy のコンテンツ＆デザイン責任者で、学習の道のり、ユーザーインターフェースと体験、プラットフォームのアートワークを担当しています。
+
+**提供**
+
+この手順は Zerion の提供でお届けします。

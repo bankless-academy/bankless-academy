@@ -1,1 +1,1249 @@
-{}
+{
+  ".eth": {
+    "keyword": ".eth",
+    "definition": "Ethereum Name Service (ENS) で使われる web3 のドメイン末尾です。yourname.eth のような形になります。"
+  },
+  "2 factor authentication": {
+    "keyword": "2要素認証",
+    "definition": "オンラインアカウントにアクセスしようとしている人が本人かどうかを確かめる、追加のセキュリティ対策です。"
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "オンラインアカウントにアクセスしようとしている人が本人かどうかを確かめる、追加のセキュリティ対策です。"
+  },
+  "51% attack": {
+    "keyword": "51%攻撃",
+    "keyword_plural": "51%攻撃",
+    "definition": "ネットワークのブロック生成能力の過半数を握って、ブロックチェーンのコンセンサスを攻撃することです。"
+  },
+  "address": {
+    "keyword": "アドレス",
+    "keyword_plural": "アドレス",
+    "definition": "ブロックチェーン上で、ある存在を一意に示す公開の識別子です。"
+  },
+  "addresses": {
+    "keyword": "アドレス",
+    "definition": "ブロックチェーン上で、それぞれの存在を一意に示す公開の識別子です。"
+  },
+  "aggregator": {
+    "keyword": "アグリゲーター",
+    "keyword_plural": "アグリゲーター",
+    "definition": "複数の提供元をまとめて、最も条件の良い選択肢を提示するツールです。"
+  },
+  "airdrop": {
+    "keyword": "エアドロップ",
+    "keyword_plural": "エアドロップ",
+    "definition": "暗号資産をユーザーに無料で配ることです。"
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "definition": "Capital Allocation Protocol の略です。集めた資金をグループが効率よく、透明に配分できるようにするオープンソースのプロトコルです。"
+  },
+  "allowance": {
+    "keyword": "許可枠",
+    "keyword_plural": "許可枠",
+    "definition": "スマートコントラクトなどに対して、保有するトークンを取引で使ってよい上限を与える仕組みです。"
+  },
+  "alternative layer 1": {
+    "keyword": "代替 Layer 1",
+    "keyword_plural": "代替 Layer 1",
+    "definition": "Ethereum と Bitcoin 以外の Layer 1 ブロックチェーンのことです。"
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM",
+    "definition": "(Automated Market Maker) 公開されたアルゴリズムにもとづいて、取引の相手を自動で組み合わせる仕組みです。"
+  },
+  "app": {
+    "keyword": "アプリ",
+    "keyword_plural": "アプリ",
+    "definition": "パソコンやスマートフォンで動くアプリケーションです。"
+  },
+  "app store": {
+    "keyword": "アプリストア",
+    "keyword_plural": "アプリストア",
+    "definition": "パソコンやスマートフォン向けのアプリをダウンロードできるデジタルの店舗です。"
+  },
+  "asynchronous": {
+    "keyword": "非同期",
+    "definition": "複数の人が協力するときに、全員が同じ時間にその場にいなくても成り立つやり取りのことです。"
+  },
+  "attestation": {
+    "keyword": "アテステーション",
+    "keyword_plural": "アテステーション",
+    "definition": "何かが正しいと署名で確認することです。Ethereum では、バリデーターがブロックの有効性に投票するために発行します。"
+  },
+  "autonomy": {
+    "keyword": "自律性",
+    "definition": "他人の決めた枠組みに従うのではなく、自分の行動を自分で決められる状態のことです。"
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "definition": "Base ネットワークの名前サービスです。ウォレットに .base.eth で終わる読みやすい名前を付けられます。"
+  },
+  "batch auction": {
+    "keyword": "バッチオークション",
+    "keyword_plural": "バッチオークション",
+    "definition": "短い時間に集まった多くの注文をまとめて、ひとつの公正な価格で同時に成立させる取引方式です。"
+  },
+  "bet": {
+    "keyword": "賭け",
+    "keyword_plural": "賭け",
+    "definition": "より大きな見返りと引き換えに、お金を失う危険を負うことです。"
+  },
+  "blob": {
+    "keyword": "ブロブ",
+    "keyword_plural": "ブロブ",
+    "definition": "Ethereum のブロックにある、安くて一時的なデータ領域です。Layer 2 がまとめた取引を書き込むために使います。"
+  },
+  "block": {
+    "keyword": "ブロック",
+    "keyword_plural": "ブロック",
+    "definition": "ブロックチェーン上の取引のまとまりです。"
+  },
+  "block builder": {
+    "keyword": "ブロックビルダー",
+    "keyword_plural": "ブロックビルダー",
+    "definition": "取引を集めて新しいブロックを組み立てる専門の担い手です。組み立てたブロックは、ブロックプロポーザーがネットワークに公開します。"
+  },
+  "block explorer": {
+    "keyword": "ブロックエクスプローラー",
+    "keyword_plural": "ブロックエクスプローラー",
+    "definition": "ブロックチェーンのデータを検索して調べるためのツールです。"
+  },
+  "block hash": {
+    "keyword": "ブロックハッシュ",
+    "keyword_plural": "ブロックハッシュ",
+    "definition": "それぞれのブロックを一意に示す識別子です。新しいブロックは直前のブロックのブロックハッシュを参照し、一本につながったブロックチェーンを作ります。"
+  },
+  "block producer": {
+    "keyword": "ブロック生成者",
+    "keyword_plural": "ブロック生成者",
+    "definition": "新しい取引のブロックを作る役割に選ばれたネットワーク参加者です。マイナーやバリデーターがこれにあたります。"
+  },
+  "block proposer": {
+    "keyword": "ブロックプロポーザー",
+    "keyword_plural": "ブロックプロポーザー",
+    "definition": "ネットワークのアルゴリズムに選ばれ、次にブロックチェーンへ追加するブロックを決めるバリデーターノードです。"
+  },
+  "block reward": {
+    "keyword": "ブロック報酬",
+    "keyword_plural": "ブロック報酬",
+    "definition": "新しく有効なブロックを提案した人に与えられる、そのチェーンのネイティブコインです。"
+  },
+  "block space": {
+    "keyword": "ブロックスペース",
+    "definition": "それぞれのブロックの中で、取引やデータを保存できる容量のことです。"
+  },
+  "blockchain": {
+    "keyword": "ブロックチェーン",
+    "keyword_plural": "ブロックチェーン",
+    "definition": "暗号資産の取引記録を、世界中の多数のコンピューターで共有しながら保つ仕組みです。"
+  },
+  "blockchain apps": {
+    "keyword": "ブロックチェーンアプリ",
+    "definition": "ブロックチェーンにつながるアプリです。暗号資産の交換、Web3 のソーシャルメディア、寄付、そして Bankless Academy のようにオンチェーンで学ぶこともできます。"
+  },
+  "blockchain architecture": {
+    "keyword": "ブロックチェーンアーキテクチャ",
+    "keyword_plural": "ブロックチェーンアーキテクチャ",
+    "definition": "ブロックチェーン技術の中で、データをどう保存するかを決める構造のことです。"
+  },
+  "blockchain technology": {
+    "keyword": "ブロックチェーン技術",
+    "keyword_plural": "ブロックチェーン技術",
+    "definition": "多数のコンピューターに分かれて動く、新しい種類のネットワークです。インターネットにデジタル所有権という層を加えています。"
+  },
+  "blockchain trilemma": {
+    "keyword": "ブロックチェーンのトリレンマ",
+    "keyword_plural": "ブロックチェーンのトリレンマ",
+    "definition": "セキュリティ、スケーラビリティ、分散化という3つの性質を同時に満たす必要があるという難題です。"
+  },
+  "blockspace": {
+    "keyword": "ブロックスペース",
+    "definition": "それぞれのブロックの中で、取引やデータを保存できる容量のことです。"
+  },
+  "borrower": {
+    "keyword": "借り手",
+    "keyword_plural": "借り手",
+    "definition": "資産を借りるために、貸し手へ利息を払う人のことです。"
+  },
+  "bridge": {
+    "keyword": "ブリッジ",
+    "keyword_plural": "ブリッジ",
+    "definition": "異なる2つのブロックチェーンネットワークがやり取りし、資産を交換できるようにするつなぎ役です。"
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "Bitcoin の市場シンボルです。"
+  },
+  "censorship-resistant": {
+    "keyword": "検閲耐性のある",
+    "definition": "何が許されて何が許されないかを、政府や企業が決められない性質のことです。"
+  },
+  "central bank": {
+    "keyword": "中央銀行",
+    "keyword_plural": "中央銀行",
+    "definition": "国のお金や銀行、通貨を管理する機関です。"
+  },
+  "centralization": {
+    "keyword": "中央集権化",
+    "definition": "システム全体を動かす権限が、ひとつの主体に集中することです。"
+  },
+  "centralized": {
+    "keyword": "中央集権型",
+    "definition": "ひとつの主体がシステム全体を管理している状態です。"
+  },
+  "centralized exchange": {
+    "keyword": "中央集権型取引所",
+    "keyword_plural": "中央集権型取引所",
+    "definition": "(CEX) 手数料を取って暗号資産の取引を仲介する、中央集権型のプラットフォームです。証券取引所に似ています。"
+  },
+  "centralized exchange staking": {
+    "keyword": "中央集権型取引所でのステーキング",
+    "definition": "中央集権型取引所を通じてトークンを預け、報酬を得ることです。"
+  },
+  "centralized services": {
+    "keyword": "中央集権型サービス",
+    "definition": "オンラインの活動を管理する企業や団体です。ルールや手数料を決め、ユーザーより自社の利益を優先してデータやコンテンツを扱うこともよくあります。"
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX",
+    "definition": "(Centralized Exchange) 手数料を取って暗号資産の取引を仲介するプラットフォームです。証券取引所に似ています。"
+  },
+  "chain": {
+    "keyword": "チェーン",
+    "keyword_plural": "チェーン",
+    "definition": "データのブロックをつなぎ合わせて、あとから書き換えられないデータベースを作ります。"
+  },
+  "circulating supply": {
+    "keyword": "流通供給量",
+    "keyword_plural": "流通供給量",
+    "definition": "ある暗号資産のうち、市場で取引できる状態にあるコインやトークンの数量です。"
+  },
+  "coin": {
+    "keyword": "コイン",
+    "keyword_plural": "コイン",
+    "definition": "ブロックチェーンのネイティブ資産です。主に、ネットワーク上の取引を支える通貨として使われます。"
+  },
+  "cold wallet": {
+    "keyword": "コールドウォレット",
+    "keyword_plural": "コールドウォレット",
+    "definition": "オフラインの機器に保管する自己保管ウォレットの一種です。"
+  },
+  "collateral": {
+    "keyword": "担保",
+    "definition": "ローンの返済を保証するために、借り手が貸し手へ差し入れる資産です。"
+  },
+  "commercial bank": {
+    "keyword": "商業銀行",
+    "keyword_plural": "商業銀行",
+    "definition": "個人や企業のお金を預かって管理する銀行です。"
+  },
+  "composability": {
+    "keyword": "コンポーザビリティ",
+    "definition": "既存のスマートコントラクトやアプリを積み木のように組み合わせて、新しいサービスを作れる性質です。"
+  },
+  "consensus": {
+    "keyword": "コンセンサス",
+    "definition": "ブロックチェーンのような分散型のコンピューターネットワーク全体で成り立つ合意と信頼、そして安全性のことです。"
+  },
+  "consensus mechanism": {
+    "keyword": "コンセンサスメカニズム",
+    "keyword_plural": "コンセンサスメカニズム",
+    "definition": "どの取引が正当で、どれが不正かをブロックチェーンネットワークが判断する方法です。"
+  },
+  "consensus mechanisms": {
+    "keyword": "コンセンサスメカニズム",
+    "definition": "どの取引が正当で、どれが不正かをブロックチェーンネットワークが判断する方法のことです。"
+  },
+  "counterparty risk": {
+    "keyword": "カウンターパーティリスク",
+    "keyword_plural": "カウンターパーティリスク",
+    "definition": "取引の相手が約束を果たさないかもしれない、というリスクです。"
+  },
+  "credible neutrality": {
+    "keyword": "信頼できる中立性",
+    "definition": "特定の人を有利にも不利にも扱わない仕組みのことです。"
+  },
+  "crypto": {
+    "keyword": "暗号資産",
+    "definition": "(Cryptocurrency) 特定の国ではなく、インターネットを基盤とする通貨です。中央銀行ではなく、利用者自身が運営に関わることがよくあります。"
+  },
+  "crypto wallet": {
+    "keyword": "暗号資産ウォレット",
+    "keyword_plural": "暗号資産ウォレット",
+    "definition": "暗号資産を保管し、送金や受け取り、支払いに使えるアプリです。"
+  },
+  "cryptocurrencies": {
+    "keyword": "暗号資産",
+    "definition": "特定の国ではなく、インターネットを基盤とする通貨です。中央銀行ではなく、利用者自身が運営に関わることがよくあります。"
+  },
+  "cryptocurrency": {
+    "keyword": "暗号資産",
+    "keyword_plural": "暗号資産",
+    "definition": "特定の国ではなく、インターネットを基盤とする通貨です。中央銀行ではなく、利用者自身が運営に関わることがよくあります。"
+  },
+  "cryptocurrency mining": {
+    "keyword": "暗号資産のマイニング",
+    "definition": "ブロックチェーンの取引を検証し、その見返りに暗号資産の報酬を受け取ることです。Bitcoin のような Proof of Work のネットワークで使われます。"
+  },
+  "cryptocurrency wallet": {
+    "keyword": "暗号資産ウォレット",
+    "keyword_plural": "暗号資産ウォレット",
+    "definition": "暗号資産を保管し、送金や受け取り、支払いに使えるアプリです。"
+  },
+  "cryptography": {
+    "keyword": "暗号技術",
+    "definition": "外部からの妨害を防ぎ、安全に通信や取引を行うための技術です。"
+  },
+  "custodial wallet": {
+    "keyword": "カストディアルウォレット",
+    "keyword_plural": "カストディアルウォレット",
+    "definition": "秘密鍵を第三者が管理するウォレットです。そのため、暗号資産を使えるかどうかもその第三者が握ります。"
+  },
+  "custodian": {
+    "keyword": "カストディアン",
+    "keyword_plural": "カストディアン",
+    "definition": "資産を安全に預かる責任を任された金融機関です。"
+  },
+  "custom record": {
+    "keyword": "カスタムレコード",
+    "keyword_plural": "カスタムレコード",
+    "definition": "ENS ドメインに紐づけるユーザー定義のデータです。アドレスのほかに、ウェブサイトや SNS のリンクなどを追加できます。"
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO",
+    "definition": "(Decentralized Autonomous Organization) ブロックチェーン技術を使って投票や運営を自動化する組織の形です。"
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApp",
+    "definition": "ブロックチェーンや分散型ネットワークに接続する「分散型アプリケーション」のことです。"
+  },
+  "death spiral": {
+    "keyword": "デススパイラル",
+    "keyword_plural": "デススパイラル",
+    "definition": "価格の下落がさらに価格を押し下げる動きを招き、連鎖的に崩れていく現象です。一部のアルゴリズム型ステーブルコインで起きました。"
+  },
+  "decentralization": {
+    "keyword": "分散化",
+    "definition": "ひとつの権威ではなく、多数の個人へ権限を移すことです。"
+  },
+  "decentralized": {
+    "keyword": "分散型",
+    "definition": "ひとつの権威や主体がシステムを支配していない状態です。"
+  },
+  "decentralized exchange": {
+    "keyword": "分散型取引所",
+    "keyword_plural": "分散型取引所",
+    "definition": "(DEX) 信頼できる仲介者を必要とせずに交換ができるプロトコルです。"
+  },
+  "decentralized finance": {
+    "keyword": "分散型金融",
+    "definition": "(DeFi) ブロックチェーン上で動く、自己保管型の金融ツールのまとまりです。"
+  },
+  "decentralized money": {
+    "keyword": "分散型のお金",
+    "definition": "性質を機関が決めるのではなく、コミュニティの合意で決めるお金です。"
+  },
+  "decentralized services": {
+    "keyword": "分散型サービス",
+    "definition": "(dApps) 自動化によって手数料を下げ、使い勝手を高めたオンラインサービスです。"
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "(Decentralized Finance) ブロックチェーン上で動く、自己保管型の金融ツールのまとまりです。"
+  },
+  "delegate": {
+    "keyword": "デリゲート",
+    "keyword_plural": "デリゲート",
+    "definition": "特定の役割を別の人に任せることです。たとえば、トークンの投票権を任せます。"
+  },
+  "delegation": {
+    "keyword": "委任",
+    "keyword_plural": "委任",
+    "definition": "特定の役割を別の人に任せることです。たとえば、トークンの投票権を任せます。"
+  },
+  "democracy": {
+    "keyword": "民主主義",
+    "keyword_plural": "民主主義",
+    "definition": "市民が意思決定に深く関わることで権力を行使する、政治の仕組みです。"
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX",
+    "definition": "(Decentralized Exchange) 信頼できる仲介者を必要とせずに交換ができるプロトコルです。"
+  },
+  "dex aggregator": {
+    "keyword": "DEX アグリゲーター",
+    "keyword_plural": "DEX アグリゲーター",
+    "definition": "複数の DEX の流動性を、ひとつの画面にまとめるプロトコルです。"
+  },
+  "digital assets": {
+    "keyword": "デジタル資産",
+    "definition": "デジタルの形で保管される、価値のあるもの全般です。"
+  },
+  "digital signature": {
+    "keyword": "デジタル署名",
+    "keyword_plural": "デジタル署名",
+    "definition": "秘密鍵で作る、メッセージや取引を承認したという証明です。手書きの署名に似ていますが、偽造はできません。"
+  },
+  "double-spend": {
+    "keyword": "二重支払い",
+    "keyword_plural": "二重支払い",
+    "definition": "同じデジタルのお金を2回使うことです。ブロックチェーンのコンセンサスは、中央の管理者なしでこれを防ぐためにあります。"
+  },
+  "earn": {
+    "keyword": "稼ぐ",
+    "definition": "価値を提供して、その見返りに報酬を得ることです。スキルキューブにあるお金の動詞のひとつです。"
+  },
+  "encryption": {
+    "keyword": "暗号化",
+    "definition": "情報を秘密の安全な符号に変換し、許可のない相手に読まれないようにすることです。"
+  },
+  "epoch": {
+    "keyword": "エポック",
+    "keyword_plural": "エポック",
+    "definition": "あるブロックチェーンで、決められた数のブロックが追加されるまでにかかる期間です。"
+  },
+  "equality of opportunity": {
+    "keyword": "機会の平等",
+    "definition": "生まれや境遇にかかわらず、誰もが同じだけ成功の機会を持てるという公平さの原則です。"
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20",
+    "definition": "Ethereum 上の代替可能トークンの規格です。細かく分割でき、1つ1つに固有の違いはありません。"
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721",
+    "definition": "Ethereum 上の非代替性トークンの規格です。固有のデジタル識別子を持ち、複製も分割もできません。"
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155",
+    "definition": "代替可能トークンと非代替性トークンの両方を、ひとつの効率的なコントラクトで発行できる Ethereum の規格です。"
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF",
+    "definition": "(Exchange-Traded Fund) 株式市場で売買される投資ファンドです。株式や金、Bitcoin などの資産を保有します。"
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "(Ether) Ethereum のネイティブ暗号資産です。ネットワーク上の取引や、バリデーターノードの運用などに使います。"
+  },
+  "ether": {
+    "keyword": "イーサ",
+    "definition": "(ETH) Ethereum のネイティブ暗号資産です。ネットワーク上の取引や、バリデーターノードの運用などに使います。"
+  },
+  "ethereum blockchain": {
+    "keyword": "Ethereum ブロックチェーン",
+    "definition": "Ethereum ネットワーク上の取引と所有権を記録する、公開の台帳です。"
+  },
+  "ethereum mainnet": {
+    "keyword": "Ethereum メインネット",
+    "definition": "Ethereum の中心となる Layer 1 ネットワークです。実際の価値を持つ取引が行われ、Layer 2 の決済層にもなります。"
+  },
+  "ethereum virtual machine": {
+    "keyword": "Ethereum Virtual Machine",
+    "definition": "Ethereum Virtual Machine (EVM) は、スマートコントラクトを実行し、Ethereum ネットワークの状態を計算するソフトウェアです。"
+  },
+  "fiat": {
+    "keyword": "法定通貨",
+    "definition": "金のような商品に裏付けられるのではなく、発行者への信頼から価値が生まれる国の通貨です。"
+  },
+  "finality": {
+    "keyword": "ファイナリティ",
+    "definition": "確定したブロックチェーンの取引が永続的で、取り消しも変更もできないという保証です。"
+  },
+  "finality time": {
+    "keyword": "ファイナリティ時間",
+    "definition": "取引が有効に確定した、つまり取り消されたり変更されたりしないと確信できるまでにかかる時間です。"
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) 自分だけ乗り遅れるのではないか、という不安のことです。"
+  },
+  "fork": {
+    "keyword": "フォーク",
+    "keyword_plural": "フォーク",
+    "definition": "ブロックチェーンネットワークの大きな変更によって、従来のルールに従う枝と新しいルールに従う枝の2つに分かれることです。"
+  },
+  "fraud": {
+    "keyword": "不正",
+    "definition": "ブロックチェーン経済では、保有する暗号資産の量を書き換えようとする不公正な取引や偽の取引を指します。"
+  },
+  "fraud proof": {
+    "keyword": "不正証明",
+    "keyword_plural": "不正証明",
+    "definition": "取引が無効であり、不正が起きたことを示す証拠です。"
+  },
+  "front-running": {
+    "keyword": "フロントランニング",
+    "definition": "他人の処理待ちの取引を見つけ、お金を払って自分の取引を先に通し、その人の損で利益を得ることです。"
+  },
+  "fungibility": {
+    "keyword": "代替可能性",
+    "definition": "互いに置き換えられる性質です。どの1単位も同じ価値を持ち、1ドル札どうしのように交換できます。"
+  },
+  "gas": {
+    "keyword": "ガス",
+    "definition": "ブロックチェーンネットワークの取引手数料です。"
+  },
+  "gas fee": {
+    "keyword": "ガス代",
+    "keyword_plural": "ガス代",
+    "definition": "ブロックチェーンネットワークを使うために払う取引手数料です。"
+  },
+  "gasless transactions": {
+    "keyword": "ガスレストランザクション",
+    "definition": "ガス代を、ネットワークのネイティブコインではなく取引するトークンで払ったり、スポンサーに肩代わりしてもらったりする取引です。"
+  },
+  "gold standard": {
+    "keyword": "金本位制",
+    "keyword_plural": "金本位制",
+    "definition": "国の通貨の価値が、金と直接結びついている通貨制度です。"
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "definition": "Ethereum ブロックチェーンで使う単位です。0.000000001 ETH (10億分の1) にあたり、ガス価格を表すときによく使われます。"
+  },
+  "halving": {
+    "keyword": "半減期",
+    "keyword_plural": "半減期",
+    "definition": "およそ4年ごとに訪れる予定された出来事で、新しい Bitcoin をマイニングする報酬が半分になります。"
+  },
+  "hardware wallet": {
+    "keyword": "ハードウェアウォレット",
+    "keyword_plural": "ハードウェアウォレット",
+    "definition": "秘密鍵を物理的な機器の中にオフラインで保管する、自己保管ウォレットの一種です。"
+  },
+  "hash": {
+    "keyword": "ハッシュ",
+    "keyword_plural": "ハッシュ",
+    "definition": "情報のデジタル指紋です。"
+  },
+  "hashing function": {
+    "keyword": "ハッシュ関数",
+    "keyword_plural": "ハッシュ関数",
+    "definition": "どんな入力でも、決まった長さの固有の指紋 (ハッシュ) に変換する関数です。計算するのは簡単ですが、逆算はほぼ不可能です。"
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) 相場がどうなっても暗号資産を売らないことを表す、暗号資産界隈のスラングです。"
+  },
+  "hot wallet": {
+    "keyword": "ホットウォレット",
+    "keyword_plural": "ホットウォレット",
+    "definition": "常にインターネットにつながっている自己保管ウォレットの一種です。"
+  },
+  "inflation": {
+    "keyword": "インフレ",
+    "definition": "物価が全体的に上がり、お金の購買力が下がることです。"
+  },
+  "intent": {
+    "keyword": "インテント",
+    "keyword_plural": "インテント",
+    "definition": "「X を Y 以上と交換したい」のように、望む結果を書いて署名する取引の依頼です。最適な経路さがしは専門の担い手に任せます。"
+  },
+  "intermediaries": {
+    "keyword": "仲介者",
+    "definition": "価値や情報のやり取りを仲立ちして、人と人をつなぐ組織やサービスです。"
+  },
+  "intermediary": {
+    "keyword": "仲介者",
+    "keyword_plural": "仲介者",
+    "definition": "価値や情報のやり取りを仲立ちして、人と人をつなぐ組織やサービスです。"
+  },
+  "intermediary token": {
+    "keyword": "中継トークン",
+    "keyword_plural": "中継トークン",
+    "definition": "取引経路の途中で使われるトークンです。出発点でも到着点でもありません。"
+  },
+  "interoperability": {
+    "keyword": "相互運用性",
+    "definition": "異なるアプリやトークン、ブロックチェーンが連携して情報をやり取りできる性質です。"
+  },
+  "invest": {
+    "keyword": "投資する",
+    "definition": "価値が上がることを期待して、コインやトークンなどの資産にお金を入れることです。"
+  },
+  "know-your-customer": {
+    "keyword": "本人確認",
+    "definition": "(KYC) 政府が定めた、利用者の身元を確かめる手続きです。"
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know-Your-Customer) 政府が定めた、利用者の身元を確かめる手続きです。"
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "definition": "Layer 1 は、Bitcoin や Ethereum のような基盤となるネットワークを指します。"
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "definition": "Ethereum のセキュリティを受け継ぎながら、処理能力を広げるブロックチェーンです。"
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1",
+    "definition": "Layer 1 は、Bitcoin や Ethereum のような基盤となるネットワークを指します。"
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2",
+    "definition": "Ethereum のセキュリティを受け継ぎながら、処理能力を広げるブロックチェーンです。"
+  },
+  "ledger": {
+    "keyword": "台帳",
+    "keyword_plural": "台帳",
+    "definition": "これまでに行われたすべての取引の記録です。"
+  },
+  "lender": {
+    "keyword": "貸し手",
+    "keyword_plural": "貸し手",
+    "definition": "資産を預けて利息を得る人のことです。"
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "definition": "Bitcoin の上に作られた決済ネットワークです。ペイメントチャネルを使い、日常の支払いを即時かつ安く行えます。"
+  },
+  "liquid": {
+    "keyword": "流動性が高い",
+    "definition": "ブロックチェーン経済では、デジタル資産を取引やスマートコントラクトで手軽に使える状態を指します。"
+  },
+  "liquid staking token": {
+    "keyword": "リキッドステーキングトークン",
+    "keyword_plural": "リキッドステーキングトークン",
+    "definition": "ステーキング中のイーサを表すトークンです。保有者は、預けた量に応じてステーキング報酬の一部を受け取ります。"
+  },
+  "liquidation": {
+    "keyword": "清算",
+    "keyword_plural": "清算",
+    "definition": "担保の価値がローンを安全に支えられないほど下がったときに、その担保が自動で売られることです。"
+  },
+  "liquidity": {
+    "keyword": "流動性",
+    "definition": "取引に使えるトークンの量のことです。"
+  },
+  "liquidity pool": {
+    "keyword": "流動性プール",
+    "keyword_plural": "流動性プール",
+    "definition": "誰でも自由にトークンを交換できるようにする、共有のトークン保管庫です。"
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP",
+    "definition": "(Liquidity Provider) 手数料の分け前と引き換えに、自分のトークンをプロトコルへ貸し出すブロックチェーン利用者です。"
+  },
+  "lsts": {
+    "keyword": "LST",
+    "definition": "ステーキング中のイーサを表すトークンです。保有者は、預けた量に応じてステーキング報酬の一部を受け取ります。"
+  },
+  "mainnet": {
+    "keyword": "メインネット",
+    "definition": "トランザクションが実際の価値を持つ、稼働中のメインのブロックチェーンネットワークです。テストネットとは異なり、多くの場合 Ethereum の Layer 1 を指します。"
+  },
+  "market cap": {
+    "keyword": "時価総額",
+    "keyword_plural": "時価総額",
+    "definition": "特定のトークン、または市場セクター全体の総額です。"
+  },
+  "max supply": {
+    "keyword": "最大供給量",
+    "keyword_plural": "最大供給量",
+    "definition": "ある暗号資産について、将来にわたって存在しうるコインやトークンの最大数です。"
+  },
+  "memecoin": {
+    "keyword": "ミームコイン",
+    "keyword_plural": "ミームコイン",
+    "definition": "インターネットのミームをテーマにした暗号資産トークンです。目的や実用性がないことも多くあります。"
+  },
+  "meta-aggregator": {
+    "keyword": "メタアグリゲーター",
+    "keyword_plural": "メタアグリゲーター",
+    "definition": "複数のアグリゲーターをまとめ、さらに上の階層から全体を見渡せるようにするツールです。"
+  },
+  "mev": {
+    "keyword": "MEV",
+    "definition": "(Maximal Extractable Value) ブロック生成者が、ブロック内のトランザクションの順序を入れ替えたり、差し込んだり、除外したりして得られる利益です。"
+  },
+  "miner": {
+    "keyword": "マイナー",
+    "keyword_plural": "マイナー",
+    "definition": "Bitcoin のようなプルーフオブワークのネットワークに参加し、報酬と引き換えに新しいブロックの提案を競う人です。"
+  },
+  "mining": {
+    "keyword": "マイニング",
+    "definition": "プルーフオブワークにおいて、報酬と引き換えにトランザクションを検証し、ブロックチェーンに新しいブロックを追加する処理です。"
+  },
+  "mint": {
+    "keyword": "ミント",
+    "definition": "あるブロックチェーン上で、代替可能または代替不可能な暗号資産トークンを新しく発行することです。"
+  },
+  "monetary policy": {
+    "keyword": "金融政策",
+    "keyword_plural": "金融政策",
+    "definition": "中央銀行が、経済に出回るお金の量を管理する方法です。"
+  },
+  "money": {
+    "keyword": "お金",
+    "definition": "交換の手段、価値の尺度、価値の保存手段として使われ、モノやサービスの取引を円滑にするものです。"
+  },
+  "multi-token standard": {
+    "keyword": "マルチトークン規格",
+    "definition": "ERC-1155 のように、1つのスマートコントラクトで代替可能なトークンと代替不可能なトークンの両方を扱えるトークン規格です。"
+  },
+  "network governance": {
+    "keyword": "ネットワークガバナンス",
+    "definition": "分散型のコミュニティが、ネットワークの機能やアップグレードについて合意に至るまでの過程です。"
+  },
+  "neutrality": {
+    "keyword": "中立性",
+    "definition": "特定の利用者やグループをひいきせず、すべての参加者を平等に扱うという原則です。"
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT",
+    "definition": "(Non-fungible Token) 固有の ID を持ち、複製できないトークンです。固有の識別子を持たない Ether のような代替可能なトークンとは対照的です。"
+  },
+  "node": {
+    "keyword": "ノード",
+    "keyword_plural": "ノード",
+    "definition": "ブロックチェーンのソフトウェアを動かすコンピューターです。台帳のコピーを保存し、ネットワークの検証を助けます。"
+  },
+  "node operator": {
+    "keyword": "ノードオペレーター",
+    "keyword_plural": "ノードオペレーター",
+    "definition": "Ethereum コミュニティの一員で、バリデーターノードを運用してネットワーク上のトランザクションを処理する人です。"
+  },
+  "non-custodial wallet": {
+    "keyword": "ノンカストディアルウォレット",
+    "keyword_plural": "ノンカストディアルウォレット",
+    "definition": "（別名：自己保管ウォレット）ノンカストディアルウォレットでは、秘密鍵を単独で管理します。その秘密鍵が暗号資産を管理します。"
+  },
+  "offchain": {
+    "keyword": "オフチェーン",
+    "definition": "通常のサーバー上や署名メッセージなど、ブロックチェーンの外側で行われる動作やデータのことです。"
+  },
+  "onchain": {
+    "keyword": "オンチェーン",
+    "definition": "ブロックチェーンのネットワーク上に記録されることです。Ethereum のような暗号資産ネットワークで行う操作を指します。"
+  },
+  "onchain governance": {
+    "keyword": "オンチェーンガバナンス",
+    "definition": "ブロックチェーンの構造の変更を自動的に取りまとめる仕組みです。"
+  },
+  "onchain identity": {
+    "keyword": "オンチェーンアイデンティティ",
+    "keyword_plural": "オンチェーンアイデンティティ",
+    "definition": "ブロックチェーン上の活動や記録から作られる、公開された身元情報です。ウォレットアドレスに紐づいた ENS 名などがあります。"
+  },
+  "onramp": {
+    "keyword": "オンランプ",
+    "keyword_plural": "オンランプ",
+    "definition": "ドルなどの通常のお金を暗号資産に交換するサービスです。逆方向はオフランプと呼びます。"
+  },
+  "open internet": {
+    "keyword": "オープンインターネット",
+    "definition": "情報やサービス、コミュニケーションが、中央集権的な組織に支配されることなく、すべての利用者に開かれているデジタル空間です。"
+  },
+  "open source": {
+    "keyword": "オープンソース",
+    "definition": "誰でもソースコードを見て、修正し、改良できるソフトウェアです。"
+  },
+  "optimistic rollup": {
+    "keyword": "オプティミスティックロールアップ",
+    "keyword_plural": "オプティミスティックロールアップ",
+    "definition": "バッチに含まれるトランザクションはすべて有効だと仮定する Layer 2 のロールアップです。異議申し立て期間中に不正証明で誤りが示されない限り、有効とみなされます。"
+  },
+  "oracle": {
+    "keyword": "オラクル",
+    "keyword_plural": "オラクル",
+    "definition": "市場価格などの外部の情報をブロックチェーンに取り込み、スマートコントラクトが使えるようにするサービスです。"
+  },
+  "order book": {
+    "keyword": "オーダーブック",
+    "keyword_plural": "オーダーブック",
+    "definition": "さまざまな価格の買い注文と売り注文の一覧です。従来の取引所は、この一覧をもとに取引を成立させます。"
+  },
+  "otc": {
+    "keyword": "OTC",
+    "definition": "(Over the Counter) 取引所を介さず、民間の相手と直接行う取引です。"
+  },
+  "over the counter": {
+    "keyword": "店頭取引",
+    "definition": "(OTC) 取引所を介さず、民間の相手と直接行う取引です。"
+  },
+  "password manager": {
+    "keyword": "パスワードマネージャー",
+    "keyword_plural": "パスワードマネージャー",
+    "definition": "パスワードを安全に保管し、アカウントごとに強力で固有のパスワードを作れるアプリです。"
+  },
+  "payment channel": {
+    "keyword": "ペイメントチャネル",
+    "keyword_plural": "ペイメントチャネル",
+    "definition": "2者が何度も取引しても、その1つ1つをブロックチェーンに記録せずに済む仕組みです。"
+  },
+  "peer": {
+    "keyword": "ピア",
+    "keyword_plural": "ピア",
+    "definition": "対等な立場として扱われる人や組織のことです。"
+  },
+  "peer-to-peer": {
+    "keyword": "ピアツーピア",
+    "definition": "仲介者を必要とせずに、複数の当事者が直接つながることです。"
+  },
+  "peg": {
+    "keyword": "ペッグ",
+    "keyword_plural": "ペッグ",
+    "definition": "2つ以上の資産の価値を等しく保つための仕組みです。"
+  },
+  "permissionless": {
+    "keyword": "パーミッションレス",
+    "definition": "どの組織の許可も必要としないことです。"
+  },
+  "phishing": {
+    "keyword": "フィッシング",
+    "definition": "信頼できる人物や組織になりすまし、大事な情報を聞き出したりお金を送らせたりする、ソーシャルエンジニアリング攻撃の一種です。"
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAP",
+    "definition": "POAP (Proof of Attendance Protocol) は、レッスンの修了などの経験を、ウォレットの中に確かな記録として残すバッジです。"
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "(Proof of Stake) バリデーターがステークをロックしてネットワークを守るコンセンサス方式です。"
+  },
+  "price impact": {
+    "keyword": "価格インパクト",
+    "keyword_plural": "価格インパクト",
+    "definition": "自分の取引の大きさによって、DEX 上の価格がどれだけ動くかを示すものです。"
+  },
+  "primary name": {
+    "keyword": "プライマリネーム",
+    "keyword_plural": "プライマリネーム",
+    "definition": "ウォレットアドレスに紐づけた ENS 名です。アプリが長いアドレスの代わりに、その名前を表示できます。"
+  },
+  "private key": {
+    "keyword": "秘密鍵",
+    "keyword_plural": "秘密鍵",
+    "definition": "秘密鍵はウォレットへのアクセス権を与えるもので、他のウォレットに暗号資産を送ることができます。"
+  },
+  "private transaction routing": {
+    "keyword": "プライベートトランザクションルーティング",
+    "definition": "トランザクションを公開の待ち行列ではなく、ブロックビルダーに直接送る方法です。フロントランニングのボットから隠すことができます。"
+  },
+  "proof of stake": {
+    "keyword": "プルーフオブステーク",
+    "definition": "各参加者がプロトコルにロックしたステークの量に応じて、ブロック生成者をランダムに選ぶコンセンサス方式です。"
+  },
+  "proof of work": {
+    "keyword": "プルーフオブワーク",
+    "definition": "マイナーが計算能力、つまり「仕事」を使い、有効なブロックの提案を競うコンセンサス方式です。"
+  },
+  "proof-of-stake": {
+    "keyword": "プルーフオブステーク",
+    "definition": "ノードがロックしたステークの量に応じてバリデーターノードを選ぶ、ブロックチェーンのコンセンサス方式です。"
+  },
+  "pseudonymous": {
+    "keyword": "擬似匿名",
+    "definition": "本名を明かさず、自分で選んだ名前で活動することです。"
+  },
+  "public": {
+    "keyword": "公開",
+    "definition": "公開ブロックチェーンでは、誰でもブロックチェーンの台帳を見ることができます。"
+  },
+  "public good": {
+    "keyword": "公共財",
+    "keyword_plural": "公共財",
+    "definition": "公共財とは、社会のすべての構成員が利用できる財やサービスのことです。"
+  },
+  "public key": {
+    "keyword": "公開鍵",
+    "keyword_plural": "公開鍵",
+    "definition": "秘密鍵から作られる、共有しても安全なコードです。ウォレットアドレスは公開鍵から導き出されます。"
+  },
+  "quadratic funding": {
+    "keyword": "クアドラティックファンディング",
+    "definition": "金額の大小にかかわらず個人の寄付が投票として働き、使える資金を増幅させるクラウドファンディングの仕組みです。支持が広がるほど効果が大きくなります。"
+  },
+  "recovery phrase": {
+    "keyword": "リカバリーフレーズ",
+    "keyword_plural": "リカバリーフレーズ",
+    "definition": "リカバリーフレーズは12語から24語の単語の並びで、ウォレットの公開鍵と秘密鍵を生成するために使われます。"
+  },
+  "red flag": {
+    "keyword": "危険信号",
+    "keyword_plural": "危険信号",
+    "definition": "危険を知らせるサインのことです。"
+  },
+  "restaking": {
+    "keyword": "リステーキング",
+    "definition": "ステーキング済みの Ether トークンを再利用して、報酬と引き換えに他のプロトコルの安全性と検証を助けることです。"
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "definition": "(Retroactive Public Goods Funding) これまでの実績にもとづいてプロジェクトに資金を提供する仕組みです。"
+  },
+  "rollup": {
+    "keyword": "ロールアップ",
+    "keyword_plural": "ロールアップ",
+    "definition": "多くのトランザクションをメインチェーンの外で処理し、まとめて1つのバッチとして書き込む Layer 2 のスケーリング手段です。処理量が増え、コストが下がります。"
+  },
+  "sandwich attack": {
+    "keyword": "サンドイッチ攻撃",
+    "keyword_plural": "サンドイッチ攻撃",
+    "definition": "利用者の取引の直前と直後にボットが注文を出して価格を動かし、その利用者の損で利益を得る攻撃です。"
+  },
+  "satoshi nakamoto": {
+    "keyword": "サトシ・ナカモト",
+    "definition": "Bitcoin を生み出した擬似匿名の人物です。今も本当の正体は誰も知りません。"
+  },
+  "scalability": {
+    "keyword": "スケーラビリティ",
+    "definition": "ブロックチェーンが、増え続ける処理やトランザクション、利用に対して、利用者への影響を最小限に抑えながら対応できる能力です。"
+  },
+  "scam-token": {
+    "keyword": "詐欺トークン",
+    "keyword_plural": "詐欺トークン",
+    "definition": "投資家の資金を盗むことだけを目的に発行される暗号資産トークンです。"
+  },
+  "scarce": {
+    "keyword": "希少",
+    "definition": "供給が限られている状態のことです。"
+  },
+  "scarcity": {
+    "keyword": "希少性",
+    "definition": "供給が限られていることです。"
+  },
+  "security": {
+    "keyword": "セキュリティ",
+    "definition": "ブロックチェーンが、ハッキングやコードの悪用、経済的な攻撃などに耐えて、通常どおり動き続ける力のことです。"
+  },
+  "seed phrase": {
+    "keyword": "シードフレーズ",
+    "keyword_plural": "シードフレーズ",
+    "definition": "ウォレットの初期設定時に生成されるランダムな単語の並びで、そのウォレットが管理するすべてのアカウントのマスターキーとして働きます。シードフレーズは、どんな理由があっても絶対に誰にも教えないでください。"
+  },
+  "self-custodial": {
+    "keyword": "自己保管型",
+    "definition": "資産を自分だけがアクセスできる形で持つ方法です。"
+  },
+  "self-custody": {
+    "keyword": "自己保管",
+    "definition": "資産を自分だけがアクセスできる形で持つ方法です。"
+  },
+  "self-custody wallet": {
+    "keyword": "自己保管ウォレット",
+    "keyword_plural": "自己保管ウォレット",
+    "definition": "（別名：ノンカストディアルウォレット）自己保管ウォレットでは、秘密鍵を単独で管理します。その秘密鍵が暗号資産を管理します。"
+  },
+  "settlement layer": {
+    "keyword": "決済レイヤー",
+    "keyword_plural": "決済レイヤー",
+    "definition": "確定したトランザクションの資産のやり取りを記録する、ブロックチェーンのもっとも「下」の階層です。Ethereum のメインネットは、Ethereum の Layer 2 スケーリング手段にとっての決済レイヤーです。"
+  },
+  "settlement time": {
+    "keyword": "決済時間",
+    "keyword_plural": "決済時間",
+    "definition": "トランザクションが確定するまでにかかる時間です。"
+  },
+  "sharding": {
+    "keyword": "シャーディング",
+    "definition": "1つのブロックチェーンを複数のチェーンに分け、並行して動かすことでスケーラビリティを高める方法です。"
+  },
+  "sidechain": {
+    "keyword": "サイドチェーン",
+    "keyword_plural": "サイドチェーン",
+    "definition": "メインのブロックチェーンと並行して動く別のブロックチェーンです。ブリッジでつながり、独自のバリデーターとセキュリティを持ちます。"
+  },
+  "slashed": {
+    "keyword": "スラッシュ済み",
+    "definition": "プルーフオブステークのブロックチェーンで不正が証明されたバリデーターが、ステークの一部を失う罰則です。"
+  },
+  "slashing": {
+    "keyword": "スラッシング",
+    "definition": "プルーフオブステークのネットワークで、矛盾する2つのブロックへの署名など不正が証明された場合に、バリデーターのステークの一部を消滅させる罰則です。"
+  },
+  "slippage": {
+    "keyword": "スリッページ",
+    "definition": "取引が成立したときの価格と、想定していた価格との差のことです。"
+  },
+  "slippage tolerance": {
+    "keyword": "スリッページ許容度",
+    "keyword_plural": "スリッページ許容度",
+    "definition": "取引で受け入れる価格変動の上限です。これを超えて価格が動くと、取引は取り消されます。"
+  },
+  "smart account": {
+    "keyword": "スマートアカウント",
+    "keyword_plural": "スマートアカウント",
+    "definition": "スマートコントラクトで動くウォレットのアカウントです。スマートウォレットの別の呼び方です。"
+  },
+  "smart contract": {
+    "keyword": "スマートコントラクト",
+    "keyword_plural": "スマートコントラクト",
+    "definition": "契約の条件を自動的に実行するコンピューターのコードです。"
+  },
+  "smart wallet": {
+    "keyword": "スマートウォレット",
+    "keyword_plural": "スマートウォレット",
+    "definition": "1つの秘密鍵ではなくスマートコントラクトで動くウォレットです。アカウントの復旧やパスキーによるログインなどが使えます。"
+  },
+  "social engineering": {
+    "keyword": "ソーシャルエンジニアリング",
+    "definition": "パスワードやシードフレーズなど、大事な情報や秘密の情報を人に話させるように仕向けることです。"
+  },
+  "solo staker": {
+    "keyword": "ソロステーカー",
+    "keyword_plural": "ソロステーカー",
+    "definition": "独立したバリデーターノードを運用するノードオペレーターです。"
+  },
+  "solo staking": {
+    "keyword": "ソロステーキング",
+    "definition": "プルーフオブステークの仕組みで、自分のバリデーターノードを運用してトランザクションを処理することです。"
+  },
+  "solver": {
+    "keyword": "ソルバー",
+    "keyword_plural": "ソルバー",
+    "definition": "利用者の意図をできるだけ有利な価格で実行しようと、他の相手と競い合う専門の担い手です。"
+  },
+  "spend": {
+    "keyword": "使う",
+    "definition": "暗号資産を使って、モノやサービスの代金を支払うことです。"
+  },
+  "spot etf": {
+    "keyword": "現物 ETF",
+    "keyword_plural": "現物 ETF",
+    "definition": "bitcoin などの資産そのものを保有する ETF です。従来の株式市場を通じて、その資産に投資できます。"
+  },
+  "stablecoin": {
+    "keyword": "ステーブルコイン",
+    "keyword_plural": "ステーブルコイン",
+    "definition": "価値が安定するように設計されたトークンです。通常は米ドルなどの通貨に1対1でペッグされています。"
+  },
+  "stablecoin issuer": {
+    "keyword": "ステーブルコイン発行体",
+    "keyword_plural": "ステーブルコイン発行体",
+    "definition": "ステーブルコインを発行し、その価値を裏づける準備資産を管理する企業や組織です。"
+  },
+  "stake": {
+    "keyword": "ステーク",
+    "keyword_plural": "ステーク",
+    "definition": "暗号資産のプロトコルにロックされた資産の量です。そのプロトコルへの金銭的な関与、いわば「身銭を切る」ことを表します。"
+  },
+  "staked": {
+    "keyword": "ステーク済み",
+    "definition": "報酬（利息）を得る代わりに、暗号資産の一部を決められた期間だけスマートコントラクトに預けることです。"
+  },
+  "staker": {
+    "keyword": "ステーカー",
+    "keyword_plural": "ステーカー",
+    "definition": "Ethereum コミュニティの一員で、報酬と引き換えにバリデーターノードへ Ether を提供する人です。"
+  },
+  "stakers": {
+    "keyword": "ステーカー",
+    "definition": "Ethereum コミュニティのメンバーで、報酬と引き換えにバリデーターノードへ Ether を提供する人たちです。"
+  },
+  "staking": {
+    "keyword": "ステーキング",
+    "definition": "報酬（利息）を得る代わりに、暗号資産の一部を決められた期間だけスマートコントラクトに預けることです。"
+  },
+  "staking pool": {
+    "keyword": "ステーキングプール",
+    "keyword_plural": "ステーキングプール",
+    "definition": "Ethereum では、ステーカーが他のステーカーのバリデーターノードへ Ether を提供するためのスマートコントラクトです。"
+  },
+  "staking providers": {
+    "keyword": "ステーキングプロバイダー",
+    "definition": "主にステーキングプールを通じて、ステーキングのサービスを提供するデジタルプラットフォームです。"
+  },
+  "standard record": {
+    "keyword": "標準レコード",
+    "keyword_plural": "標準レコード",
+    "definition": "ウォレットアドレスやアバター、メールアドレスなど、ENS ドメインに紐づけられる一般的なデータ項目です。"
+  },
+  "swap": {
+    "keyword": "スワップ",
+    "keyword_plural": "スワップ",
+    "definition": "あるトークンから別のトークンへの交換です。"
+  },
+  "token": {
+    "keyword": "トークン",
+    "keyword_plural": "トークン",
+    "definition": "既存のブロックチェーン上に作られ、資産や権利を表すことができる単位です。"
+  },
+  "token allowance": {
+    "keyword": "トークン許可",
+    "keyword_plural": "トークン許可",
+    "definition": "ウォレットとスマートコントラクトの間の取り決めで、特定のトークンへの限定的または無制限のアクセスを認めるものです。"
+  },
+  "token approval": {
+    "keyword": "トークン承認",
+    "keyword_plural": "トークン承認",
+    "definition": "特定のトークンをウォレットから動かす権限を、スマートコントラクトに与えることです。トークン許可とも呼ばれます。"
+  },
+  "token distribution": {
+    "keyword": "トークン配分",
+    "keyword_plural": "トークン配分",
+    "definition": "トークンが、さまざまな関係者のグループにどのように割り当てられるかを示すものです。"
+  },
+  "token pair": {
+    "keyword": "トークンペア",
+    "keyword_plural": "トークンペア",
+    "definition": "流動性プールを構成する、対になった2つの暗号資産です。"
+  },
+  "token swap": {
+    "keyword": "トークンスワップ",
+    "keyword_plural": "トークンスワップ",
+    "definition": "あるトークンから別のトークンへの交換です。"
+  },
+  "tps": {
+    "keyword": "TPS",
+    "definition": "(Transactions Per Second) ブロックチェーンのスケーラビリティを測る指標で、1秒あたりに処理できるトランザクションの数です。"
+  },
+  "trade": {
+    "keyword": "取引する",
+    "keyword_plural": "取引する",
+    "definition": "資産やお金を、価値のあるものと交換することです。"
+  },
+  "trade route": {
+    "keyword": "取引ルート",
+    "keyword_plural": "取引ルート",
+    "definition": "取引で、最初のトークンから最後のトークンまでにたどる経路のことです。"
+  },
+  "trade routing": {
+    "keyword": "取引ルーティング",
+    "definition": "取引で、最初のトークンから最後のトークンまでの経路を組み立てることです。"
+  },
+  "transaction": {
+    "keyword": "トランザクション",
+    "keyword_plural": "トランザクション",
+    "definition": "ブロックチェーン上に残る、お金やそれ以外の移転の記録です。"
+  },
+  "transaction finality": {
+    "keyword": "トランザクションファイナリティ",
+    "definition": "トランザクションが有効で確定したこと、つまり取り消されたり変更されたりしないと確信できるまでにかかる時間です。"
+  },
+  "transaction hash": {
+    "keyword": "トランザクションハッシュ",
+    "keyword_plural": "トランザクションハッシュ",
+    "definition": "トランザクションごとの固有の識別子です。トランザクションのデータ、送信者の電子署名、そして重複を防ぐための使い捨ての数値から作られます。"
+  },
+  "transaction throughput": {
+    "keyword": "トランザクション処理量",
+    "definition": "ブロックチェーンが一度にどれだけのトランザクションを処理できるかを示すもので、通常は1秒あたりの件数 (TPS) で測ります。"
+  },
+  "trustless": {
+    "keyword": "トラストレス",
+    "definition": "人や組織を信頼しなくても成り立つ性質のことです。自動的に動き、特定の誰かが所有するものではありません。"
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "definition": "(Total Value Locked) 特定の場所に預けられている資産の総額です。"
+  },
+  "two factor authentication": {
+    "keyword": "二要素認証",
+    "definition": "オンラインのアカウントにアクセスしようとしている人が本人かどうかを確かめるための、追加のセキュリティの仕組みです。"
+  },
+  "validating bridge": {
+    "keyword": "検証型ブリッジ",
+    "keyword_plural": "検証型ブリッジ",
+    "definition": "引き出しを自分自身で検証するブリッジのコントラクトです。外部の権威を信頼する必要がなくなります。"
+  },
+  "validator": {
+    "keyword": "バリデーター",
+    "keyword_plural": "バリデーター",
+    "definition": "プルーフオブステークのネットワークの参加者で、ステークをロックしてトランザクションを確認し、ブロックを提案します。正直に働くことで報酬を得ます。"
+  },
+  "validator client": {
+    "keyword": "バリデータークライアント",
+    "keyword_plural": "バリデータークライアント",
+    "definition": "プルーフオブステークのネットワークで、新しいブロックを提案し確認するためにバリデーターノードが動かすソフトウェアです。"
+  },
+  "validator node": {
+    "keyword": "バリデーターノード",
+    "keyword_plural": "バリデーターノード",
+    "definition": "Ethereum コミュニティの一員が運用するコンピューター機器です。報酬と引き換えに、ネットワーク上のトランザクションを処理します。"
+  },
+  "validator nodes": {
+    "keyword": "バリデーターノード",
+    "definition": "Ethereum コミュニティのメンバーが運用するコンピューター機器です。報酬と引き換えに、ネットワーク上のトランザクションを処理します。"
+  },
+  "validity proof": {
+    "keyword": "有効性証明",
+    "keyword_plural": "有効性証明",
+    "definition": "まとめられたトランザクションが正しいことを示す数学的な証明です。ブロックチェーンは処理をやり直さずに検証できます。"
+  },
+  "value-creation": {
+    "keyword": "価値創造",
+    "definition": "利用者と経済のために、革新的で質の高い製品やサービスを生み出すことに重きを置いた事業のあり方です。"
+  },
+  "value-extraction": {
+    "keyword": "価値搾取",
+    "definition": "高い手数料やデータの収集、不公正な条件によって、利用者から利益を吸い上げる事業のあり方です。"
+  },
+  "value-extractive": {
+    "keyword": "価値搾取型",
+    "definition": "高い手数料やデータの収集、不公正な条件によって、利用者から利益を吸い上げる事業のあり方です。"
+  },
+  "vault": {
+    "keyword": "ボールト",
+    "keyword_plural": "ボールト",
+    "definition": "預けられたトークンを保管して運用し、預けた人に持ち分を表すトークンを渡すスマートコントラクトです。"
+  },
+  "veto": {
+    "keyword": "拒否権",
+    "keyword_plural": "拒否権",
+    "definition": "ガバナンス提案に反対する投票です。"
+  },
+  "wallet": {
+    "keyword": "ウォレット",
+    "keyword_plural": "ウォレット",
+    "definition": "ウォレットは、ブロックチェーン上で暗号資産を送受信するために使うアプリまたは機器です。"
+  },
+  "wallet app": {
+    "keyword": "ウォレットアプリ",
+    "keyword_plural": "ウォレットアプリ",
+    "definition": "ブロックチェーン上のウォレットに接続するために使う、パソコンやスマートフォンのアプリです。"
+  },
+  "wallet provider": {
+    "keyword": "ウォレットプロバイダー",
+    "keyword_plural": "ウォレットプロバイダー",
+    "definition": "ウォレットにアクセスするためのソフトウェアを作る事業者です。ウォレットを所有するのではなく、ブロックチェーン上のアカウントにつなぐ橋渡しをします。"
+  },
+  "web2": {
+    "keyword": "Web2",
+    "definition": "ブロックチェーンの仕組みを持たない、中央集権的なプラットフォームとアカウントによるインターネットです。"
+  },
+  "web3": {
+    "keyword": "Web3",
+    "definition": "ブロックチェーンによるインターネットのことです。利用者は自分の資産やデータを自己保管できます。"
+  },
+  "yield farm": {
+    "keyword": "イールドファーム",
+    "keyword_plural": "イールドファーム",
+    "definition": "報酬を得るためにトークンを預ける DeFi のプロトコルです。イールドファーミングとは、こうした報酬のうち有利なものを探し回ることを指します。"
+  },
+  "yourname.eth": {
+    "keyword": "yourname.eth",
+    "definition": "ENS 名の例です。ウォレットアドレスを指し示す、人が読める Web3 のユーザー名です。"
+  },
+  "zero-knowledge": {
+    "keyword": "ゼロ知識",
+    "definition": "ある主張が正しいことを、それ以外の情報をいっさい明かさずに証明できる数学的な方法です。"
+  },
+  "zk rollup": {
+    "keyword": "ZKロールアップ",
+    "keyword_plural": "ZKロールアップ",
+    "definition": "ゼロ知識証明を使い、まとめたトランザクションが有効であることを Layer 1 のブロックチェーン上で数学的に証明する Layer 2 のロールアップです。"
+  }
+}

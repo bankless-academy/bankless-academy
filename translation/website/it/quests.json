@@ -1,33 +1,148 @@
 {
   "BitcoinBasics": {
     "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Il tuo Bitcoin è in viaggio verso Satoshi Nakamoto.",
-    "2. It's now being verified by network miners...": "2. Ora viene verificato dai minatori della rete...",
-    "3. Your transaction is added to the blockchain “database”...": "3. La tua transazione viene aggiunta al \"database\" della blockchain...",
+    "2. It's now being verified by network miners...": "2. Ora viene verificato dai miner della rete...",
+    "3. Your transaction is added to the blockchain “database”...": "3. La tua transazione viene aggiunta al “database” della blockchain...",
     "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto ha ricevuto il tuo Bitcoin!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Utilizzando il nostro simulatore di Bitcoin, invia <strong>0,00000001</strong> BTC all'indirizzo di Satoshi Nakamoto",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Con il nostro simulatore Bitcoin semplificato, invia la quantità di BTC che vuoi all'indirizzo di Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Simulazione interattiva: inviare Bitcoin a Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Reimposta simulazione",
     "Recipient": "Destinatario",
     "Address": "Indirizzo",
-    "Asset": "Patrimonio",
+    "Asset": "Asset",
     "Amount": "Importo",
     "Balance": "Saldo",
-    "Send": "Inviare"
+    "Send": "Invia"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Capire una transazione",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Per convalidare questa missione, incolla gli indirizzi “From” (Da) e “To” (A) di questa transazione",
+    "From": "Da",
+    "To": "A"
   },
   "OptimismGovernance": {
-    "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
-    "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
-    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
-    "See the delegation platform here": "See the delegation platform here",
-    "Tip": "Suggerimento",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
-    "Refresh": "Refresh",
-    "Read Entry": "Read Entry"
+    "Begin your Optimism Network journey by delegating OP.": "Inizia il tuo percorso su Optimism Network delegando i tuoi OP.",
+    "Select a ": "Scegli un ",
+    "Delegate": "Delegato",
+    " for your OP": " per i tuoi OP",
+    "or delegate to ": "oppure delega a ",
+    "Tip": "Consiglio",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Consulta “{{lesson_title}}” nel Manuale dell'Esploratore per la guida completa alla missione.",
+    "Refresh": "Aggiorna",
+    "Read Entry": "Leggi articolo"
   },
   "WalletBasics": {
-    "Create your first crypto wallet, with Zerion.": "Crea il tuo primo portafoglio di criptovalute con Zerion.",
-    "1. Download and install the Zerion wallet from ": "1. Scarica e installa il portafoglio Zerion da ",
-    "If you already have a wallet, move to step 2.": "Se si dispone già di un portafoglio, passare al punto 2.",
-    "2. Connect your wallet to Bankless Academy": "2. Collega il tuo portafoglio a Bankless Academy",
-    "Tip": "Suggerimento",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consulta la voce del nostro Manuale dell'Esploratore su '{{lesson_title}}' per una descrizione passo passo della missione."
+    "Create your first crypto wallet.": "Crea il tuo primo crypto wallet.",
+    "If you already have a wallet, move to step 2.": "Se hai già un wallet, passa al punto 2.",
+    "1. Download and install the Zerion wallet from ": "1. Scarica e installa il wallet Zerion da ",
+    "2. Connect your wallet to Bankless Academy": "2. Collega il tuo wallet a Bankless Academy",
+    "Tip": "Consiglio",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consulta “{{lesson_title}}” nel Manuale dell'Esploratore per la guida passo passo alla missione.",
+    "Read Entry": "Leggi articolo"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Seleziona tutti gli screenshot con delle truffe 👆",
+    "Hint: 1 screenshot is not a scam": "Indizio: 1 screenshot non è una truffa"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Collega il tuo wallet a Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Iscriviti a gm.xyz con questo ",
+    "invite link": "link di invito",
+    " or register with a phone number": " oppure registrati con un numero di telefono",
+    "3. Join ": "3. Entra in ",
+    "Validate quest": "Convalida missione"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Risposta scelta:",
+    "Bankless Archetype results:": "Risultati del tuo archetipo Bankless:",
+    "Risk": "Rischio",
+    "Self sovereignty": "Autosovranità",
+    "DEX": "DEX",
+    "Trads": "TradFi",
+    "LP": "LP",
+    "Long term": "Lungo termine",
+    "Works in a DAO": "Lavora in una DAO",
+    "Crypto knowledge": "Conoscenze cripto",
+    "Crypto donation": "Donazioni in cripto",
+    "Buys stuff in crypto": "Compra in cripto",
+    "Deployed smart contracts": "Ha creato smart contract",
+    "Anon": "Anonimo",
+    "Works in web3": "Lavora nel web3",
+    "Creates digital art": "Crea arte digitale",
+    "Owns Bitcoin": "Possiede Bitcoin",
+    "Owns NFTs": "Possiede NFT",
+    "Aping into something new": "Si butta sulle novità",
+    "Owns shitcoin": "Possiede shitcoin"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Come scambiare token con 1inch",
+    "1. Load ": "1. Apri ",
+    " on the ": " sulla ",
+    "Base network": "rete Base",
+    "2. Swap any token.": "2. Scambia un token.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Incolla qui sotto l'hash della transazione di <b>scambio</b> riuscita:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Consiglio:</b> 🚨 Assicurati di incollare l'hash della transazione di <b>scambio</b> fatta sulla <b>rete Base</b>, non quello della transazione di <b>approvazione</b> del token.",
+    "Read documentation": "Leggi la documentazione"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Apri ",
+    " on the ": " sulla ",
+    "Optimism network": "rete Optimism",
+    "2. Swap any token.": "2. Scambia un token.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Incolla qui sotto l'hash della transazione di <b>scambio</b> riuscita:",
+    "Resources:": "Risorse:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Consiglio:</b> assicurati di incollare l'hash della transazione di <b>scambio</b> fatta sulla <b>rete Optimism</b>, non quello della transazione di approvazione del token. Leggi l'articolo del Manuale dell'Esploratore per saperne di più.",
+    "Read Entry": "Leggi articolo"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Cosa ti interessa di più imparare a fare con la DeFi?",
+    "Signature verified": "Firma verificata",
+    "Sign your answer": "Firma la tua risposta",
+    "Select your answer": "Scegli la tua risposta",
+    "Investing": "Investire",
+    "Trading": "Trading",
+    "Lending & Borrowing": "Prestare e chiedere prestiti",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Inizia il tuo percorso nello staking con Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "Ottieni 0,0002 rETH su una delle reti supportate*.",
+    "a) Visit a ": "a) Vai su un ",
+    "Decentralized Exchange": "exchange decentralizzato",
+    " to swap for rETH (Optimism or Base recommended)": " per ottenere rETH (consigliati Optimism o Base)",
+    "b) Or mint rETH on Mainnet via ": "b) Oppure conia rETH su Mainnet tramite ",
+    " (0.01 ETH minimum)": " (minimo 0,01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Consiglio: consulta “{{lesson_title}}” nel Manuale dell'Esploratore per trovare il modo migliore di aggiungere fondi.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Reti supportate: Ethereum, Optimism, Base, Arbitrum e Polygon (POS)",
+    "Check Quest": "Verifica missione"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Per questa missione ti serve un crypto wallet.",
+    "Wallet connected!": "Wallet collegato!",
+    "Waiting to detect your wallet ...": "In attesa di rilevare il tuo wallet...",
+    "If you don't have one, let's set one up!": "Se non ne hai uno, creiamolo insieme!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Le nostre missioni e ricompense onchain funzionano solo con un wallet collegato.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "I wallet sono come account sulla blockchain. Te ne serve uno per usare le app blockchain o per comprare, conservare e inviare criptovalute.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Guarda questo breve video per creare il tuo primo wallet con Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Allo stato attuale della tecnologia blockchain, una blockchain può ottimizzare al massimo due delle tre caratteristiche.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Seleziona le caratteristiche che Bitcoin ed Ethereum hanno privilegiato all'inizio."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Inizia il tuo percorso sui L2.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Detieni un saldo di almeno 0,0002 ETH su Base o Optimism",
+    "Options to fund your wallet:": "Come aggiungere fondi al wallet:",
+    "Explore other options": "Vedi altre opzioni",
+    "Check Quest": "Verifica missione"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Prima di ottenere la tua certificazione onchain:",
+    "Share on Twitter / X": "Condividi su Twitter / X",
+    "Share on Farcaster": "Condividi su Farcaster",
+    "See you there! Over and out 📡": "Ci vediamo lì! Passo e chiudo 📡",
+    "Connect": "Collega",
+    "Repost on Twitter / X": "Ripubblica su Twitter / X",
+    "Validate": "Convalida"
   }
 }

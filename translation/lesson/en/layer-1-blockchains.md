@@ -38,7 +38,7 @@ This lesson explores why Ethereum and other blockchains are subject to the `Bloc
 
 # Blockchain Trilemma
 
-As implied by the word _**tri**_lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once.
+As implied by the word **tri**lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once.
 
 These are: `Security`, `Scalability`, and `Decentralization`.
 

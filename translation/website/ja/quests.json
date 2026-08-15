@@ -1,33 +1,148 @@
 {
   "BitcoinBasics": {
-    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Your Bitcoin is on its way to Satoshi Nakamoto.",
-    "2. It's now being verified by network miners...": "2. It's now being verified by network miners...",
-    "3. Your transaction is added to the blockchain “database”...": "3. Your transaction is added to the blockchain “database”...",
-    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto has received your Bitcoin!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address",
-    "Recipient": "Recipient",
-    "Address": "Address",
-    "Asset": "Asset",
-    "Amount": "Amount",
-    "Balance": "Balance",
-    "Send": "Send"
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Bitcoin が Satoshi Nakamoto に向かっています。",
+    "2. It's now being verified by network miners...": "2. ネットワークのマイナーが検証しています...",
+    "3. Your transaction is added to the blockchain “database”...": "3. トランザクションがブロックチェーンという「データベース」に追加されます...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto が Bitcoin を受け取りました！",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "簡易版の Bitcoin シミュレーターで、好きな量の BTC を Satoshi Nakamoto のアドレスに送ってみましょう",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "インタラクティブシミュレーション：Satoshi Nakamoto に Bitcoin を送る {{step}}",
+    "Reset simulation": "シミュレーションをリセット",
+    "Recipient": "受取人",
+    "Address": "アドレス",
+    "Asset": "資産",
+    "Amount": "数量",
+    "Balance": "残高",
+    "Send": "送信"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "トランザクションを理解する",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "このクエストを達成するには、このトランザクションの「送信元」と「送信先」のアドレスを貼り付けてください",
+    "From": "送信元",
+    "To": "送信先"
   },
   "OptimismGovernance": {
-    "Begin your Optimism Network journey by delegating OP.": "OPを委任して、Optimismネットワークを始めましょう。",
-    "1. Connect your wallet to Bankless Academy": "1. Bankless Academyにウォレットを接続する",
-    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
-    "See the delegation platform here": "See the delegation platform here",
-    "Tip": "Tip",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
+    "Begin your Optimism Network journey by delegating OP.": "OP を委任して、Optimism ネットワークの旅を始めましょう。",
+    "Select a ": "OP の",
+    "Delegate": "委任先（Delegate）",
+    " for your OP": "を選びます",
+    "or delegate to ": "または次に委任します： ",
+    "Tip": "ヒント",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "クエストの詳しい手順は、エクスプローラーハンドブックの「{{lesson_title}}」をご覧ください。",
     "Refresh": "更新",
     "Read Entry": "エントリーを読む"
   },
   "WalletBasics": {
-    "Create your first crypto wallet, with Zerion.": "Create your first crypto wallet, with Zerion.",
-    "1. Download and install the Zerion wallet from ": "1. Download and install the Zerion wallet from ",
-    "If you already have a wallet, move to step 2.": "If you already have a wallet, move to step 2.",
-    "2. Connect your wallet to Bankless Academy": "2. Connect your wallet to Bankless Academy",
-    "Tip": "Tip",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest."
+    "Create your first crypto wallet.": "はじめての暗号資産ウォレットを作りましょう。",
+    "If you already have a wallet, move to step 2.": "すでにウォレットをお持ちの場合は、ステップ 2 に進んでください。",
+    "1. Download and install the Zerion wallet from ": "1. Zerion ウォレットを次からダウンロードしてインストールします： ",
+    "2. Connect your wallet to Bankless Academy": "2. ウォレットを Bankless Academy に接続します",
+    "Tip": "ヒント",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "クエストの手順は、エクスプローラーハンドブックの「{{lesson_title}}」で 1 つずつ確認できます。",
+    "Read Entry": "エントリーを読む"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "詐欺が写っているスクリーンショットをすべて選んでください 👆",
+    "Hint: 1 screenshot is not a scam": "ヒント：詐欺ではないスクリーンショットが 1 枚あります"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. ウォレットを Bankless Academy に接続します",
+    "2. Join gm.xyz using this ": "2. この",
+    "invite link": "招待リンク",
+    " or register with a phone number": "から gm.xyz に参加するか、電話番号で登録します",
+    "3. Join ": "3. 次に参加します：",
+    "Validate quest": "クエストを検証"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "選択した回答：",
+    "Bankless Archetype results:": "Bankless アーキタイプの結果：",
+    "Risk": "リスク",
+    "Self sovereignty": "自己主権",
+    "DEX": "DEX",
+    "Trads": "伝統的金融",
+    "LP": "LP",
+    "Long term": "長期保有",
+    "Works in a DAO": "DAO で働いている",
+    "Crypto knowledge": "暗号資産の知識",
+    "Crypto donation": "暗号資産で寄付",
+    "Buys stuff in crypto": "暗号資産で買い物",
+    "Deployed smart contracts": "スマートコントラクトを公開した",
+    "Anon": "匿名",
+    "Works in web3": "Web3 で働いている",
+    "Creates digital art": "デジタルアートを制作",
+    "Owns Bitcoin": "Bitcoin を保有",
+    "Owns NFTs": "NFT を保有",
+    "Aping into something new": "新しいものに飛び込む",
+    "Owns shitcoin": "シットコインを保有"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "1inch でトークンをスワップする方法",
+    "1. Load ": "1. ",
+    " on the ": " を次で開きます： ",
+    "Base network": "Base ネットワーク",
+    "2. Swap any token.": "2. 好きなトークンをスワップします。",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. 成功した<b>スワップ</b>トランザクションのハッシュを、下に貼り付けてください：",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>ヒント：</b> 🚨 <b>Base ネットワーク</b>で行った<b>スワップ</b>トランザクションのハッシュを貼り付けてください。トークンの<b>承認（approval）</b>トランザクションのハッシュではありません。",
+    "Read documentation": "ドキュメントを読む"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. ",
+    " on the ": " を次で開きます： ",
+    "Optimism network": "Optimism ネットワーク",
+    "2. Swap any token.": "2. 好きなトークンをスワップします。",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. 成功した<b>スワップ</b>トランザクションのハッシュを、下に貼り付けてください：",
+    "Resources:": "参考リンク：",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>ヒント：</b> <b>Optimism ネットワーク</b>で行った<b>スワップ</b>トランザクションのハッシュを貼り付けてください。トークンの承認トランザクションのハッシュではありません。詳しくはエクスプローラーハンドブックの記事をご覧ください。",
+    "Read Entry": "エントリーを読む"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "DeFi で最もやってみたいことはどれですか。",
+    "Signature verified": "署名を確認しました",
+    "Sign your answer": "回答に署名する",
+    "Select your answer": "回答を選択",
+    "Investing": "投資",
+    "Trading": "トレード",
+    "Lending & Borrowing": "貸し借り",
+    "Staking": "ステーキング"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Rocket Pool でステーキングの旅を始めましょう。",
+    "Obtain 0.0002 rETH on any supported network*.": "いずれかの対応ネットワーク* で 0.0002 rETH を入手します。",
+    "a) Visit a ": "a) ",
+    "Decentralized Exchange": "分散型取引所",
+    " to swap for rETH (Optimism or Base recommended)": " にアクセスして rETH にスワップします（Optimism または Base を推奨）",
+    "b) Or mint rETH on Mainnet via ": "b) または、Mainnet で ",
+    " (0.01 ETH minimum)": " を使って rETH をミントします（0.01 ETH 以上）",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "ヒント：最適な入金方法は、エクスプローラーハンドブックの「{{lesson_title}}」で確認できます。",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* 対応ネットワーク：Ethereum、Optimism、Base、Arbitrum、Polygon (POS)",
+    "Check Quest": "クエストを確認"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "このクエストには暗号資産ウォレットが必要です。",
+    "Wallet connected!": "ウォレットを接続しました！",
+    "Waiting to detect your wallet ...": "ウォレットの検出を待っています...",
+    "If you don't have one, let's set one up!": "まだお持ちでない場合は、作ってみましょう！",
+    "Our onchain quests and rewards only work with a wallet connected.": "オンチェーンのクエストと報酬は、ウォレットを接続しないと利用できません。",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "ウォレットはブロックチェーンのアカウントのようなものです。ブロックチェーンのアプリを使ったり、暗号資産を買う、保有する、送るには、ウォレットが必要です。",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "この短い動画を見ながら、Zerion ではじめてのウォレットを作りましょう： "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "現在のブロックチェーン技術では、3 つの特性のうち最大 2 つまでしか最適化できません。",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin と Ethereum が当初優先した特性にチェックを入れてください。"
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "L2 の旅を始めましょう。",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Base または Optimism で 0.0002 ETH 以上を保有します",
+    "Options to fund your wallet:": "ウォレットへの入金方法：",
+    "Explore other options": "他の方法を見る",
+    "Check Quest": "クエストを確認"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "オンチェーン証明書を獲得する前に：",
+    "Share on Twitter / X": "Twitter / X でシェア",
+    "Share on Farcaster": "Farcaster でシェア",
+    "See you there! Over and out 📡": "現地でお会いしましょう！以上、通信終わり 📡",
+    "Connect": "接続",
+    "Repost on Twitter / X": "Twitter / X でリポスト",
+    "Validate": "検証する"
   }
 }

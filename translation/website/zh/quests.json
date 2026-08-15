@@ -1,33 +1,148 @@
 {
   "BitcoinBasics": {
-    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. 你的比特币正在发送中。",
-    "2. It's now being verified by network miners...": "2. 网络矿工正在对其进行验证...",
-    "3. Your transaction is added to the blockchain “database”...": "3.您的交易将被添加到区块链 \"数据库 \"中...",
-    "4. Satoshi Nakamoto has received your Bitcoin!": "4.中本聪收到了你的比特币！",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "使用我们的比特币模拟器，发送<strong>0.00000001</strong>BTC 到中本聪的地址",
-    "Recipient": "接收者",
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. 你的比特币正在发往 Satoshi Nakamoto。",
+    "2. It's now being verified by network miners...": "2. 网络矿工正在验证这笔交易...",
+    "3. Your transaction is added to the blockchain “database”...": "3. 你的交易被写入区块链「数据库」...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto 已经收到你的比特币！",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "用我们的简化版比特币模拟器，向 Satoshi Nakamoto 的地址发送任意数量的 BTC",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "互动模拟：向 Satoshi Nakamoto 发送比特币 {{step}}",
+    "Reset simulation": "重置模拟",
+    "Recipient": "收款人",
     "Address": "地址",
     "Asset": "资产",
     "Amount": "数量",
     "Balance": "余额",
     "Send": "发送"
   },
+  "BlockchainBasics": {
+    "Understand a transaction": "读懂一笔交易",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "要完成此任务，请复制这笔交易的「From」(发送方) 和「To」(接收方) 地址并粘贴到下方",
+    "From": "发送方",
+    "To": "接收方"
+  },
   "OptimismGovernance": {
-    "Begin your Optimism Network journey by delegating OP.": "授权 OP 并开始您的 Optimism 网络之旅。",
-    "1. Connect your wallet to Bankless Academy": "1. 将钱包连接至 Bankless 学院",
-    "2. Select a Delegate for your OP": "2.为 OP 选择一名代表委员",
-    "See the delegation platform here": "点击此处查看代表团纲领",
-    "Tip": "小贴士",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "请查看探险家手册中的 '{{lesson_title}}' 条目，了解完整的任务攻略。",
+    "Begin your Optimism Network journey by delegating OP.": "从委托 OP 开始你的 Optimism 网络之旅。",
+    "Select a ": "选择一位",
+    "Delegate": "Delegate（代表）",
+    " for your OP": "来行使你的 OP 投票权",
+    "or delegate to ": "或直接委托给 ",
+    "Tip": "提示",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "查看探索者手册中的「{{lesson_title}}」条目，获取完整的任务攻略。",
     "Refresh": "刷新",
-    "Read Entry": "阅读作品"
+    "Read Entry": "阅读条目"
   },
   "WalletBasics": {
-    "Create your first crypto wallet, with Zerion.": "使用 Zerion 创建您的第一个加密货币钱包。",
-    "1. Download and install the Zerion wallet from ": "1. 从以下网址下载并安装 Zerion 钱包 ",
-    "If you already have a wallet, move to step 2.": "如果你已经安装了钱包，请跳到步骤 2。",
-    "2. Connect your wallet to Bankless Academy": "2. 将钱包链接至 Bankless 学院",
-    "Tip": "小贴士",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "提示：请查看探险家手册中的 '{{lesson_title}}' ，了解完整的任务攻略。"
+    "Create your first crypto wallet.": "创建你的第一个加密钱包。",
+    "If you already have a wallet, move to step 2.": "如果你已经有钱包，请直接进入第 2 步。",
+    "1. Download and install the Zerion wallet from ": "1. 下载并安装 Zerion 钱包：",
+    "2. Connect your wallet to Bankless Academy": "2. 将钱包连接到 Bankless Academy",
+    "Tip": "提示",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "查看探索者手册中的「{{lesson_title}}」条目，获取任务的分步教程。",
+    "Read Entry": "阅读条目"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "选出所有包含骗局的截图 👆",
+    "Hint: 1 screenshot is not a scam": "提示：有 1 张截图不是骗局"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. 将钱包连接到 Bankless Academy",
+    "2. Join gm.xyz using this ": "2. 通过这个",
+    "invite link": "邀请链接",
+    " or register with a phone number": "加入 gm.xyz，或用手机号注册",
+    "3. Join ": "3. 加入",
+    "Validate quest": "验证任务"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "已选择的答案：",
+    "Bankless Archetype results:": "Bankless 原型测试结果：",
+    "Risk": "风险偏好",
+    "Self sovereignty": "自我主权",
+    "DEX": "DEX",
+    "Trads": "传统金融",
+    "LP": "LP",
+    "Long term": "长期持有",
+    "Works in a DAO": "在 DAO 工作",
+    "Crypto knowledge": "加密知识",
+    "Crypto donation": "加密捐赠",
+    "Buys stuff in crypto": "用加密货币消费",
+    "Deployed smart contracts": "部署过智能合约",
+    "Anon": "匿名",
+    "Works in web3": "在 web3 工作",
+    "Creates digital art": "创作数字艺术",
+    "Owns Bitcoin": "持有比特币",
+    "Owns NFTs": "持有 NFT",
+    "Aping into something new": "热衷追逐新事物",
+    "Owns shitcoin": "持有垃圾币"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "如何用 1inch 兑换代币",
+    "1. Load ": "1. 打开 ",
+    " on the ": "，切换到 ",
+    "Base network": "Base 网络",
+    "2. Swap any token.": "2. 兑换任意一种代币。",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. 把成功的<b>兑换</b>交易哈希粘贴到下方：",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>提示：</b>🚨 请确认你粘贴的是<b>兑换</b>交易的哈希，且这笔交易在 <b>Base 网络</b>上完成，而不是代币<b>授权</b>交易的哈希。",
+    "Read documentation": "阅读文档"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. 打开 ",
+    " on the ": "，切换到 ",
+    "Optimism network": "Optimism 网络",
+    "2. Swap any token.": "2. 兑换任意一种代币。",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. 把成功的<b>兑换</b>交易哈希粘贴到下方：",
+    "Resources:": "参考资料：",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>提示：</b>请确认你粘贴的是<b>兑换</b>交易的哈希，且这笔交易在 <b>Optimism 网络</b>上完成，而不是代币授权交易的哈希。更多信息请阅读探索者手册中的文章。",
+    "Read Entry": "阅读条目"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "你最想学会用 DeFi 做什么？",
+    "Signature verified": "签名已验证",
+    "Sign your answer": "为你的答案签名",
+    "Select your answer": "选择你的答案",
+    "Investing": "投资",
+    "Trading": "交易",
+    "Lending & Borrowing": "借贷",
+    "Staking": "质押"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "用 Rocket Pool 开启你的质押之旅。",
+    "Obtain 0.0002 rETH on any supported network*.": "在任意一个受支持的网络上获得 0.0002 rETH*。",
+    "a) Visit a ": "a) 前往一个",
+    "Decentralized Exchange": "去中心化交易所",
+    " to swap for rETH (Optimism or Base recommended)": "兑换 rETH（推荐 Optimism 或 Base）",
+    "b) Or mint rETH on Mainnet via ": "b) 或者通过 ",
+    " (0.01 ETH minimum)": " 在以太坊主网铸造 rETH（最低 0.01 ETH）",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "提示：查看探索者手册中的「{{lesson_title}}」条目，找到最适合你的充值方式。",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* 受支持的网络：以太坊、Optimism、Base、Arbitrum 和 Polygon (POS)",
+    "Check Quest": "检查任务"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "完成这个任务需要一个加密钱包。",
+    "Wallet connected!": "钱包已连接！",
+    "Waiting to detect your wallet ...": "正在等待检测你的钱包...",
+    "If you don't have one, let's set one up!": "如果你还没有，我们一起来创建一个！",
+    "Our onchain quests and rewards only work with a wallet connected.": "我们的链上任务和奖励需要连接钱包才能使用。",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "钱包就像区块链上的账户。你需要它来使用区块链应用，或者买入、保管和发送加密货币。",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "跟着这个简短的教学视频，用 Zerion 创建你的第一个钱包："
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "以目前的区块链技术水平，一条区块链最多只能同时优化三项特性中的两项。",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "勾选比特币和以太坊最初优先选择的特性。"
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "开启你的 L2 之旅。",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "在 Base 或 Optimism 上持有至少 0.0002 ETH",
+    "Options to fund your wallet:": "给钱包充值的方式：",
+    "Explore other options": "查看其他方式",
+    "Check Quest": "检查任务"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "领取链上认证之前：",
+    "Share on Twitter / X": "分享到 Twitter / X",
+    "Share on Farcaster": "分享到 Farcaster",
+    "See you there! Over and out 📡": "我们那里见！通话完毕 📡",
+    "Connect": "连接",
+    "Repost on Twitter / X": "在 Twitter / X 上转发",
+    "Validate": "验证"
   }
 }

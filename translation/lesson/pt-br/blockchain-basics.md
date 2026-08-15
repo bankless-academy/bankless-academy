@@ -151,7 +151,7 @@ O que torna uma blockchain descentralizada?
 
 Uma característica importante das blockchains é que os dados de transações passadas não podem ser mudados depois de entrarem em um bloco. Isso porque cada bloco tem um `hash de bloco` único, como uma impressão digital, usado para ligar os blocos um após o outro. Ninguém consegue mudar transações passadas sem mudar essa impressão e a de TODOS os blocos seguintes, porque cada uma depende da anterior.
 
-Assim, cada `bloco` é apenas um grupo de transações mais uma impressão única (seu `hash de bloco`) calculada a partir do conteúdo dele. Os blocos ficam encadeados porque cada um faz referência à impressão do bloco anterior, formando uma única block_**chain**_ conectada.
+Assim, cada `bloco` é apenas um grupo de transações mais uma impressão única (seu `hash de bloco`) calculada a partir do conteúdo dele. Os blocos ficam encadeados porque cada um faz referência à impressão do bloco anterior, formando uma única block**chain** conectada.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
 
@@ -244,7 +244,7 @@ Os dados de uma blockchain são só uma lista de transações agrupadas em bloco
 
 Um `endereço` é um identificador público que qualquer pessoa pode consultar na blockchain. Como um endereço de e-mail, qualquer um pode enviar fundos para ele, mas só quem controla a `chave privada` consegue destravar e usar os fundos daquele endereço.
 
-No Ethereum, um endereço sempre começa com _0x__________ e tem 42 caracteres entre números e letras, derivados da `chave pública` daquele endereço.
+No Ethereum, um endereço sempre começa com \_0x\_\_\_\_\_\_\_\_\_\_ e tem 42 caracteres entre números e letras, derivados da `chave pública` daquele endereço.
 
 Ao olhar uma transação em um explorador de blocos, vemos os endereços From: (de) e To: (para). Isso não diz quem são as _pessoas_ que controlam esses endereços, mas permite acompanhar o movimento da criptomoeda pelo livro-razão.
 

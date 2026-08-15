@@ -38,7 +38,7 @@ Diese Lektion zeigt, warum Ethereum und andere Blockchains dem `Blockchain-Trile
 
 # Das Blockchain-Trilemma
 
-Wie das Wort _**Tri**_lemma andeutet, konkurrieren drei Eigenschaften einer Blockchain miteinander. Alle drei zugleich zu optimieren, geht nicht.
+Wie das Wort **Tri**lemma andeutet, konkurrieren drei Eigenschaften einer Blockchain miteinander. Alle drei zugleich zu optimieren, geht nicht.
 
 Es sind: `Sicherheit`, `Skalierbarkeit` und `Dezentralisierung`.
 

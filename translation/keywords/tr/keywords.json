@@ -1,1 +1,4890 @@
-{}
+{
+  ".eth": {
+    "keyword": ".eth",
+    "keyword_forms": [
+      ".eth'i",
+      ".eth'e",
+      ".eth'te",
+      ".eth'in",
+      ".eth uzantısı"
+    ],
+    "definition": "Ethereum Name Service (ENS) tarafından kullanılan web3 alan adı uzantısı, adin.eth gibi."
+  },
+  "2 factor authentication": {
+    "keyword": "iki faktörlü kimlik doğrulama",
+    "keyword_forms": [
+      "iki faktörlü kimlik doğrulamayı",
+      "iki faktörlü kimlik doğrulamaya",
+      "iki faktörlü kimlik doğrulamanın",
+      "iki faktörlü kimlik doğrulamada",
+      "iki faktörlü kimlik doğrulamadan",
+      "iki faktörlü doğrulama",
+      "iki faktörlü kimlik doğrulaması",
+      "iki faktörlü kimlik doğrulamasını",
+      "iki faktörlü kimlik doğrulamasında"
+    ],
+    "definition": "Bir çevrimiçi hesaba girmeye çalışan kişilerin gerçekten o kişi olduğunu doğrulayan ek bir güvenlik katmanı."
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "keyword_forms": [
+      "2FA'yı",
+      "2FA'ya",
+      "2FA'da",
+      "2FA'nın",
+      "2FA'dan"
+    ],
+    "definition": "Bir çevrimiçi hesaba girmeye çalışan kişilerin gerçekten o kişi olduğunu doğrulayan ek bir güvenlik katmanı."
+  },
+  "51% attack": {
+    "keyword": "%51 saldırısı",
+    "keyword_plural": "%51 saldırıları",
+    "keyword_forms": [
+      "%51 saldırısını",
+      "%51 saldırısına",
+      "%51 saldırısında",
+      "%51 saldırısından",
+      "%51 saldırısının",
+      "%51 saldırılarını",
+      "%51 saldırılarına",
+      "%51 saldırılarında",
+      "%51 saldırılarından",
+      "%51 saldırılarının",
+      "51% saldırısı"
+    ],
+    "definition": "Ağdaki blok üretim gücünün yarısından fazlasını ele geçirerek blokzincir mutabakatına yapılan saldırı."
+  },
+  "address": {
+    "keyword": "adres",
+    "keyword_plural": "adresler",
+    "keyword_forms": [
+      "adresi",
+      "adrese",
+      "adresin",
+      "adreste",
+      "adresten",
+      "adresleri",
+      "adreslere",
+      "adreslerde",
+      "adreslerden",
+      "adreslerin"
+    ],
+    "definition": "Blokzincirde bir hesabın ya da kişinin benzersiz genel kimliği."
+  },
+  "addresses": {
+    "keyword": "adresler",
+    "keyword_forms": [
+      "adresleri",
+      "adreslere",
+      "adreslerde",
+      "adreslerin",
+      "adreslerden"
+    ],
+    "definition": "Blokzincirde hesapların ve kişilerin benzersiz genel kimlikleri."
+  },
+  "aggregator": {
+    "keyword": "toplayıcı",
+    "keyword_plural": "toplayıcılar",
+    "keyword_forms": [
+      "toplayıcıyı",
+      "toplayıcıya",
+      "toplayıcının",
+      "toplayıcıda",
+      "toplayıcıdan",
+      "toplayıcıları",
+      "toplayıcılara",
+      "toplayıcılarda",
+      "toplayıcılardan",
+      "toplayıcıların",
+      "agregatör",
+      "agregatörü",
+      "agregatöre",
+      "agregatörde",
+      "agregatörün",
+      "agregatörler"
+    ],
+    "definition": "Birden fazla kaynağı birleştirerek en rekabetçi seçenekleri sunan araç."
+  },
+  "airdrop": {
+    "keyword": "airdrop",
+    "keyword_plural": "airdroplar",
+    "keyword_forms": [
+      "airdropu",
+      "airdropa",
+      "airdropun",
+      "airdropta",
+      "airdroptan",
+      "airdropları",
+      "airdroplara",
+      "airdroplarda",
+      "airdroplardan",
+      "airdropların",
+      "airdrop'u",
+      "airdrop'a",
+      "airdrop'ta",
+      "airdrop'un",
+      "airdrop'lar",
+      "airdrop'ları"
+    ],
+    "definition": "Kripto varlıkların kullanıcılara ücretsiz dağıtılması."
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "keyword_forms": [
+      "Allo Protocol'ü",
+      "Allo Protocol'e",
+      "Allo Protocol'de",
+      "Allo Protocol'ün",
+      "Allo Protokolü"
+    ],
+    "definition": "Capital Allocation Protocol'ün kısaltması. Grupların ortak havuzdaki fonları verimli ve şeffaf şekilde dağıtmasını sağlayan açık kaynaklı bir protokol."
+  },
+  "allowance": {
+    "keyword": "harcama izni",
+    "keyword_plural": "harcama izinleri",
+    "keyword_forms": [
+      "harcama iznini",
+      "harcama iznine",
+      "harcama izninde",
+      "harcama izninden",
+      "harcama izninin",
+      "harcama izinlerini",
+      "harcama izinlerine",
+      "harcama izinlerinde",
+      "harcama izinlerinden",
+      "harcama izinlerinin",
+      "izin",
+      "izni",
+      "izne",
+      "izinde",
+      "iznin"
+    ],
+    "definition": "Bir tarafa, genellikle bir akıllı sözleşmeye, bir işlemde tokenlarının belirli bir miktarını kullanma hakkı verir."
+  },
+  "alternative layer 1": {
+    "keyword": "alternatif Layer 1",
+    "keyword_plural": "alternatif Layer 1'ler",
+    "keyword_forms": [
+      "alternatif Layer 1'leri",
+      "alternatif Layer 1'lere",
+      "alternatif Layer 1'lerde",
+      "alternatif Layer 1'lerden",
+      "alternatif Layer 1'lerin",
+      "alternatif Layer 1'i",
+      "alternatif Layer 1'e",
+      "alternatif Layer 1'de",
+      "alternatif Layer 1'in",
+      "alternatif L1'ler"
+    ],
+    "definition": "Ethereum ve Bitcoin dışındaki Layer 1 blokzincirler."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM'ler",
+    "keyword_forms": [
+      "AMM'leri",
+      "AMM'lere",
+      "AMM'lerde",
+      "AMM'lerden",
+      "AMM'lerin",
+      "AMM'yi",
+      "AMM'ye",
+      "AMM'de",
+      "AMM'nin"
+    ],
+    "definition": "(Otomatik Piyasa Yapıcı) Herkese açık bir algoritmaya dayanan takas eşleştirme sistemi."
+  },
+  "app": {
+    "keyword": "uygulama",
+    "keyword_plural": "uygulamalar",
+    "keyword_forms": [
+      "uygulamayı",
+      "uygulamaya",
+      "uygulamanın",
+      "uygulamada",
+      "uygulamadan",
+      "uygulamaları",
+      "uygulamalara",
+      "uygulamalarda",
+      "uygulamalardan",
+      "uygulamaların"
+    ],
+    "definition": "Bilgisayarda ya da mobil cihazda çalışan program."
+  },
+  "app store": {
+    "keyword": "uygulama mağazası",
+    "keyword_plural": "uygulama mağazaları",
+    "keyword_forms": [
+      "uygulama mağazasını",
+      "uygulama mağazasına",
+      "uygulama mağazasında",
+      "uygulama mağazasından",
+      "uygulama mağazasının",
+      "uygulama mağazalarını",
+      "uygulama mağazalarına",
+      "uygulama mağazalarında",
+      "uygulama mağazalarından",
+      "uygulama mağazalarının"
+    ],
+    "definition": "Bilgisayar ya da mobil cihaz uygulamalarını indirebileceğin dijital dükkan."
+  },
+  "asynchronous": {
+    "keyword": "asenkron",
+    "keyword_forms": [
+      "asenkronu",
+      "asenkrona",
+      "asenkronda",
+      "asenkronun",
+      "asenkron olarak",
+      "asenkron iletişim"
+    ],
+    "definition": "Katılımcıların aynı anda hazır bulunmasını gerektirmeyen, birden çok kişi arasındaki iletişim."
+  },
+  "attestation": {
+    "keyword": "onay",
+    "keyword_plural": "onaylar",
+    "keyword_forms": [
+      "onayı",
+      "onaya",
+      "onayın",
+      "onayda",
+      "onaydan",
+      "onayları",
+      "onaylara",
+      "onaylarda",
+      "onaylardan",
+      "onayların",
+      "tasdik",
+      "attestation",
+      "attestation'ı"
+    ],
+    "definition": "Bir şeyin doğru olduğunu belirten imzalı teyit. Ethereum'da doğrulayıcılar, blokların geçerli olduğuna oy veren onaylar yayınlar."
+  },
+  "autonomy": {
+    "keyword": "özerklik",
+    "keyword_forms": [
+      "özerkliği",
+      "özerkliğe",
+      "özerkliğin",
+      "özerklikte",
+      "özerklikten",
+      "otonomi",
+      "özerkliğini",
+      "özerklikler"
+    ],
+    "definition": "Başkalarının koyduğu kurallara uymak yerine kendi davranışlarını kendin yönetme niteliği."
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "keyword_forms": [
+      "Basenames'i",
+      "Basenames'e",
+      "Basenames'te",
+      "Basenames'in",
+      "Basename",
+      "Basename'i"
+    ],
+    "definition": "Base ağında cüzdanlara .base.eth ile biten, okunabilir isimler veren isim servisi."
+  },
+  "batch auction": {
+    "keyword": "toplu açık artırma",
+    "keyword_plural": "toplu açık artırmalar",
+    "keyword_forms": [
+      "toplu açık artırmayı",
+      "toplu açık artırmaya",
+      "toplu açık artırmanın",
+      "toplu açık artırmada",
+      "toplu açık artırmadan",
+      "toplu açık artırmaları",
+      "toplu açık artırmalara",
+      "toplu açık artırmalarda",
+      "toplu açık artırmalardan",
+      "toplu açık artırmaların",
+      "toplu ihale"
+    ],
+    "definition": "Kısa bir süre boyunca birçok emri toplayıp hepsini aynı anda tek ve adil bir fiyattan gerçekleştiren işlem yöntemi."
+  },
+  "bet": {
+    "keyword": "bahis",
+    "keyword_plural": "bahisler",
+    "keyword_forms": [
+      "bahsi",
+      "bahse",
+      "bahsin",
+      "bahiste",
+      "bahisten",
+      "bahisleri",
+      "bahislere",
+      "bahislerde",
+      "bahislerden",
+      "bahislerin",
+      "bahis oynamak",
+      "bahse girmek"
+    ],
+    "definition": "Daha büyük ödüller karşılığında parayı riske atmak."
+  },
+  "blob": {
+    "keyword": "blob",
+    "keyword_plural": "bloblar",
+    "keyword_forms": [
+      "blobu",
+      "bloba",
+      "blobun",
+      "blobda",
+      "blobdan",
+      "blobları",
+      "bloblara",
+      "bloblarda",
+      "bloblardan",
+      "blobların",
+      "blob'u",
+      "blob'a",
+      "blob'ta",
+      "blob'un",
+      "blob'lar",
+      "blob'ları"
+    ],
+    "definition": "Ethereum bloklarında yer alan ucuz ve geçici veri alanı. Layer 2'ler işlem paketlerini buraya yazar."
+  },
+  "block": {
+    "keyword": "blok",
+    "keyword_plural": "bloklar",
+    "keyword_forms": [
+      "bloku",
+      "bloka",
+      "blokun",
+      "blokta",
+      "bloktan",
+      "blokları",
+      "bloklara",
+      "bloklarda",
+      "bloklardan",
+      "blokların",
+      "bloğu",
+      "bloğa",
+      "bloğun"
+    ],
+    "definition": "Blokzincirdeki bir işlem grubu."
+  },
+  "block builder": {
+    "keyword": "blok oluşturucu",
+    "keyword_plural": "blok oluşturucular",
+    "keyword_forms": [
+      "blok oluşturucuyu",
+      "blok oluşturucuya",
+      "blok oluşturucunun",
+      "blok oluşturucuda",
+      "blok oluşturucudan",
+      "blok oluşturucuları",
+      "blok oluşturuculara",
+      "blok oluşturucularda",
+      "blok oluşturuculardan",
+      "blok oluşturucuların",
+      "blok oluşturucusu",
+      "blok oluşturucusunu",
+      "blok inşacısı"
+    ],
+    "definition": "İşlemleri yeni bloklara dizen uzman operatör. Blok önericileri bu blokları ağa yayınlar."
+  },
+  "block explorer": {
+    "keyword": "blok gezgini",
+    "keyword_plural": "blok gezginleri",
+    "keyword_forms": [
+      "blok gezginini",
+      "blok gezginine",
+      "blok gezgininde",
+      "blok gezgininden",
+      "blok gezgininin",
+      "blok gezginlerini",
+      "blok gezginlerine",
+      "blok gezginlerinde",
+      "blok gezginlerinden",
+      "blok gezginlerinin",
+      "blok tarayıcısı",
+      "blok tarayıcısını",
+      "blok tarayıcı"
+    ],
+    "definition": "Blokzincir verilerini aramak ve incelemek için kullanılan araç."
+  },
+  "block hash": {
+    "keyword": "blok hash'i",
+    "keyword_plural": "blok hash'leri",
+    "keyword_forms": [
+      "blok hash'ini",
+      "blok hash'ine",
+      "blok hash'inde",
+      "blok hash'inden",
+      "blok hash'inin",
+      "blok hash'lerini",
+      "blok hash'lerine",
+      "blok hash'lerinde",
+      "blok hash'lerinden",
+      "blok hash'lerinin",
+      "blok hashi",
+      "blok hashini",
+      "blok hash"
+    ],
+    "definition": "Her blok dosyasının benzersiz kimliği. Her yeni blok, bir önceki bloğun blok hash'ine atıfta bulunur ve zincir böyle tek parça olur."
+  },
+  "block producer": {
+    "keyword": "blok üreticisi",
+    "keyword_plural": "blok üreticileri",
+    "keyword_forms": [
+      "blok üreticisini",
+      "blok üreticisine",
+      "blok üreticisinde",
+      "blok üreticisinden",
+      "blok üreticisinin",
+      "blok üreticilerini",
+      "blok üreticilerine",
+      "blok üreticilerinde",
+      "blok üreticilerinden",
+      "blok üreticilerinin",
+      "blok üretici",
+      "blok üreticiler"
+    ],
+    "definition": "Yeni işlem blokları oluşturmak üzere ağ tarafından seçilen katılımcı, örneğin bir madenci ya da doğrulayıcı."
+  },
+  "block proposer": {
+    "keyword": "blok önericisi",
+    "keyword_plural": "blok önericileri",
+    "keyword_forms": [
+      "blok önericisini",
+      "blok önericisine",
+      "blok önericisinde",
+      "blok önericisinden",
+      "blok önericisinin",
+      "blok önericilerini",
+      "blok önericilerine",
+      "blok önericilerinde",
+      "blok önericilerinden",
+      "blok önericilerinin",
+      "blok önerici",
+      "blok öneren",
+      "blok teklif edici"
+    ],
+    "definition": "Blokzincire eklenecek bir sonraki bloğu seçmek üzere ağ algoritması tarafından belirlenen doğrulayıcı düğüm."
+  },
+  "block reward": {
+    "keyword": "blok ödülü",
+    "keyword_plural": "blok ödülleri",
+    "keyword_forms": [
+      "blok ödülünü",
+      "blok ödülüne",
+      "blok ödülünde",
+      "blok ödülünden",
+      "blok ödülünün",
+      "blok ödüllerini",
+      "blok ödüllerine",
+      "blok ödüllerinde",
+      "blok ödüllerinden",
+      "blok ödüllerinin"
+    ],
+    "definition": "Geçerli yeni bir blok öneren katılımcıya verilen yerel coin miktarı."
+  },
+  "block space": {
+    "keyword": "blok alanı",
+    "keyword_forms": [
+      "blok alanını",
+      "blok alanına",
+      "blok alanında",
+      "blok alanından",
+      "blok alanının",
+      "blok alanları",
+      "blok alanlarını"
+    ],
+    "definition": "Her blokta işlemleri ve verileri saklamak için ayrılan alan."
+  },
+  "blockchain": {
+    "keyword": "blokzincir",
+    "keyword_plural": "blokzincirler",
+    "keyword_forms": [
+      "blokzinciri",
+      "blokzincire",
+      "blokzincirin",
+      "blokzincirde",
+      "blokzincirden",
+      "blokzincirleri",
+      "blokzincirlere",
+      "blokzincirlerde",
+      "blokzincirlerden",
+      "blokzincirlerin",
+      "blokzincirine",
+      "blokzincirinde",
+      "blokzincirini",
+      "blockchain",
+      "blockchain'i",
+      "blockchain'e",
+      "blockchain'de",
+      "blockchain'in",
+      "blok zinciri",
+      "blok zincirini",
+      "blok zincirine",
+      "blok zincirinde",
+      "blok zincirinin",
+      "blok zincirleri"
+    ],
+    "definition": "Kripto para işlemlerinin kaydının dünyanın dört bir yanındaki birçok bilgisayarda birlikte tutulduğu sistem."
+  },
+  "blockchain apps": {
+    "keyword": "blokzincir uygulamaları",
+    "keyword_forms": [
+      "blokzincir uygulamalarını",
+      "blokzincir uygulamalarına",
+      "blokzincir uygulamalarında",
+      "blokzincir uygulamalarından",
+      "blokzincir uygulamalarının",
+      "blokzincir uygulaması",
+      "blokzincir uygulamasını",
+      "blok zinciri uygulamaları"
+    ],
+    "definition": "Kripto para takas etmene, web3 sosyal medya kullanmana, bağış yapmana, hatta Bankless Academy'deki gibi zincir üstünde öğrenmene imkan veren uygulamalar."
+  },
+  "blockchain architecture": {
+    "keyword": "blokzincir mimarisi",
+    "keyword_plural": "blokzincir mimarileri",
+    "keyword_forms": [
+      "blokzincir mimarisini",
+      "blokzincir mimarisine",
+      "blokzincir mimarisinde",
+      "blokzincir mimarisinden",
+      "blokzincir mimarisinin",
+      "blokzincir mimarilerini",
+      "blokzincir mimarilerine",
+      "blokzincir mimarilerinde",
+      "blokzincir mimarilerinden",
+      "blokzincir mimarilerinin",
+      "blok zinciri mimarisi"
+    ],
+    "definition": "Blokzincir teknolojisinde verilerin nasıl saklandığını belirleyen yapılar."
+  },
+  "blockchain technology": {
+    "keyword": "blokzincir teknolojisi",
+    "keyword_plural": "blokzincir teknolojileri",
+    "keyword_forms": [
+      "blokzincir teknolojisini",
+      "blokzincir teknolojisine",
+      "blokzincir teknolojisinde",
+      "blokzincir teknolojisinden",
+      "blokzincir teknolojisinin",
+      "blokzincir teknolojilerini",
+      "blokzincir teknolojilerine",
+      "blokzincir teknolojilerinde",
+      "blokzincir teknolojilerinden",
+      "blokzincir teknolojilerinin",
+      "blok zinciri teknolojisi",
+      "blok zinciri teknolojisini"
+    ],
+    "definition": "Birçok bilgisayarda birlikte barındırılan yeni tür bir ağ. İnternete dijital sahiplik katmanı ekliyor."
+  },
+  "blockchain trilemma": {
+    "keyword": "blokzincir trilemması",
+    "keyword_plural": "blokzincir trilemmaları",
+    "keyword_forms": [
+      "blokzincir trilemmasını",
+      "blokzincir trilemmasına",
+      "blokzincir trilemmasında",
+      "blokzincir trilemmasından",
+      "blokzincir trilemmasının",
+      "blokzincir trilemmalarını",
+      "blokzincir trilemmalarına",
+      "blokzincir trilemmalarında",
+      "blokzincir trilemmalarından",
+      "blokzincir trilemmalarının",
+      "blokzincir üçlemi",
+      "blok zinciri trilemması"
+    ],
+    "definition": "Bir blokzincirin aynı anda üç niteliğe birden ihtiyaç duymasını anlatan sorun: güvenlik, ölçeklenebilirlik ve merkeziyetsizlik."
+  },
+  "blockspace": {
+    "keyword": "blok alanı",
+    "keyword_forms": [
+      "blok alanını",
+      "blok alanına",
+      "blok alanında",
+      "blok alanından",
+      "blok alanının",
+      "blok alanları",
+      "blok alanlarını",
+      "blokalanı"
+    ],
+    "definition": "Her blokta işlemleri ve verileri saklamak için ayrılan alan."
+  },
+  "borrower": {
+    "keyword": "borç alan",
+    "keyword_plural": "borç alanlar",
+    "keyword_forms": [
+      "borç alanı",
+      "borç alana",
+      "borç alanın",
+      "borç alanda",
+      "borç alandan",
+      "borç alanları",
+      "borç alanlara",
+      "borç alanlarda",
+      "borç alanlardan",
+      "borç alanların",
+      "borçlu",
+      "borçluyu",
+      "borçluya",
+      "borçlunun",
+      "borçlular"
+    ],
+    "definition": "Varlık ödünç alabilmek için borç verenlere faiz ödemeye razı olan taraf."
+  },
+  "bridge": {
+    "keyword": "köprü",
+    "keyword_plural": "köprüler",
+    "keyword_forms": [
+      "köprüyü",
+      "köprüye",
+      "köprünün",
+      "köprüde",
+      "köprüden",
+      "köprüleri",
+      "köprülere",
+      "köprülerde",
+      "köprülerden",
+      "köprülerin",
+      "köprüsü",
+      "köprüsünü",
+      "bridge",
+      "bridge'i",
+      "bridge'e",
+      "bridge'de",
+      "bridge'in",
+      "bridge'ler"
+    ],
+    "definition": "İki farklı blokzincir ağının birbiriyle iletişim kurmasını ve varlık aktarmasını sağlayan bağlantı."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "keyword_forms": [
+      "BTC'yi",
+      "BTC'ye",
+      "BTC'de",
+      "BTC'nin",
+      "BTC'den"
+    ],
+    "definition": "Bitcoin'in piyasa sembolü."
+  },
+  "censorship-resistant": {
+    "keyword": "sansüre dayanıklı",
+    "keyword_forms": [
+      "sansüre dirençli",
+      "sansür direnci",
+      "sansüre dayanıklılık",
+      "sansüre dayanıklıdır",
+      "sansüre karşı dayanıklı"
+    ],
+    "definition": "Neyin izinli olup neyin olmadığını hiçbir devletin ya da şirketin belirleyememesi."
+  },
+  "central bank": {
+    "keyword": "merkez bankası",
+    "keyword_plural": "merkez bankaları",
+    "keyword_forms": [
+      "merkez bankasını",
+      "merkez bankasına",
+      "merkez bankasında",
+      "merkez bankasından",
+      "merkez bankasının",
+      "merkez bankalarını",
+      "merkez bankalarına",
+      "merkez bankalarında",
+      "merkez bankalarından",
+      "merkez bankalarının"
+    ],
+    "definition": "Bir ülkede parayı, bankaları ve para birimini düzenleyen kurum."
+  },
+  "centralization": {
+    "keyword": "merkezileşme",
+    "keyword_forms": [
+      "merkezileşmeyi",
+      "merkezileşmeye",
+      "merkezileşmenin",
+      "merkezileşmede",
+      "merkezileşmeden",
+      "merkeziyetçilik",
+      "merkeziyetçiliği",
+      "merkeziyet",
+      "merkezileştirme"
+    ],
+    "definition": "Bir sistemin tamamı üzerindeki gücün tek bir otoritede ya da kuruluşta toplanması."
+  },
+  "centralized": {
+    "keyword": "merkezi",
+    "keyword_forms": [
+      "merkeziyi",
+      "merkeziye",
+      "merkezide",
+      "merkezinin",
+      "merkeziyetçi",
+      "merkezileşmiş",
+      "merkezidir"
+    ],
+    "definition": "Tüm sistemi tek bir otoritenin ya da kuruluşun kontrol etmesi."
+  },
+  "centralized exchange": {
+    "keyword": "merkezi borsa",
+    "keyword_plural": "merkezi borsalar",
+    "keyword_forms": [
+      "merkezi borsayı",
+      "merkezi borsaya",
+      "merkezi borsanın",
+      "merkezi borsada",
+      "merkezi borsadan",
+      "merkezi borsaları",
+      "merkezi borsalara",
+      "merkezi borsalarda",
+      "merkezi borsalardan",
+      "merkezi borsaların",
+      "merkezi borsası",
+      "merkezi borsasında"
+    ],
+    "definition": "(CEX) Kripto para alım satımını bir ücret karşılığında yöneten merkezi platform. Hisse senedi borsasına benzer."
+  },
+  "centralized exchange staking": {
+    "keyword": "merkezi borsada staking",
+    "keyword_forms": [
+      "merkezi borsa staking'i",
+      "merkezi borsada staking yapmak",
+      "merkezi borsa üzerinden staking"
+    ],
+    "definition": "Ödül kazanmak için tokenları bir merkezi borsa üzerinden kilitlemek."
+  },
+  "centralized services": {
+    "keyword": "merkezi hizmetler",
+    "keyword_forms": [
+      "merkezi hizmetleri",
+      "merkezi hizmetlere",
+      "merkezi hizmetlerde",
+      "merkezi hizmetlerin",
+      "merkezi hizmet"
+    ],
+    "definition": "Çevrimiçi faaliyetleri kontrol eden, kuralları ve ücretleri belirleyen, veriyi ve içeriği çoğu zaman kullanıcı ihtiyaçlarından çok kendi çıkarlarına göre yöneten şirketler."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX'ler",
+    "keyword_forms": [
+      "CEX'leri",
+      "CEX'lere",
+      "CEX'lerde",
+      "CEX'lerden",
+      "CEX'lerin",
+      "CEX'i",
+      "CEX'e",
+      "CEX'te",
+      "CEX'in"
+    ],
+    "definition": "(Merkezi Borsa) Kripto para alım satımını bir ücret karşılığında yöneten platform. Hisse senedi borsasına benzer."
+  },
+  "chain": {
+    "keyword": "zincir",
+    "keyword_plural": "zincirler",
+    "keyword_forms": [
+      "zinciri",
+      "zincire",
+      "zincirin",
+      "zincirde",
+      "zincirden",
+      "zincirleri",
+      "zincirlere",
+      "zincirlerde",
+      "zincirlerden",
+      "zincirlerin",
+      "zincirini",
+      "zincirinde"
+    ],
+    "definition": "Veri bloklarını birbirine bağlayarak sonradan değiştirilemeyen bir veritabanı oluşturur."
+  },
+  "circulating supply": {
+    "keyword": "dolaşımdaki arz",
+    "keyword_plural": "dolaşımdaki arzlar",
+    "keyword_forms": [
+      "dolaşımdaki arzı",
+      "dolaşımdaki arza",
+      "dolaşımdaki arzın",
+      "dolaşımdaki arzda",
+      "dolaşımdaki arzdan",
+      "dolaşımdaki arzları",
+      "dolaşımdaki arzlara",
+      "dolaşımdaki arzlarda",
+      "dolaşımdaki arzlardan",
+      "dolaşımdaki arzların"
+    ],
+    "definition": "Belirli bir kripto paranın piyasada alınıp satılabilen coin ya da token sayısı."
+  },
+  "coin": {
+    "keyword": "coin",
+    "keyword_plural": "coinler",
+    "keyword_forms": [
+      "coini",
+      "coine",
+      "coinin",
+      "coinde",
+      "coinden",
+      "coinleri",
+      "coinlere",
+      "coinlerde",
+      "coinlerden",
+      "coinlerin",
+      "coin'i",
+      "coin'e",
+      "coin'de",
+      "coin'in",
+      "coin'ler",
+      "coin'leri"
+    ],
+    "definition": "Bir blokzincirin, çoğunlukla ağdaki işlemleri gerçekleştirmek için para gibi kullanılan yerel varlığı."
+  },
+  "cold wallet": {
+    "keyword": "soğuk cüzdan",
+    "keyword_plural": "soğuk cüzdanlar",
+    "keyword_forms": [
+      "soğuk cüzdanı",
+      "soğuk cüzdana",
+      "soğuk cüzdanın",
+      "soğuk cüzdanda",
+      "soğuk cüzdandan",
+      "soğuk cüzdanları",
+      "soğuk cüzdanlara",
+      "soğuk cüzdanlarda",
+      "soğuk cüzdanlardan",
+      "soğuk cüzdanların",
+      "soğuk cüzdanını"
+    ],
+    "definition": "Çevrimdışı bir donanımda saklanan öz saklama cüzdanı türü."
+  },
+  "collateral": {
+    "keyword": "teminat",
+    "keyword_forms": [
+      "teminatı",
+      "teminata",
+      "teminatın",
+      "teminatta",
+      "teminattan",
+      "teminatlar",
+      "teminatları",
+      "teminatlara",
+      "teminatların"
+    ],
+    "definition": "Bir kredinin geri ödenmesini güvence altına almak için borç alanın borç verene rehin verdiği varlık."
+  },
+  "commercial bank": {
+    "keyword": "ticari banka",
+    "keyword_plural": "ticari bankalar",
+    "keyword_forms": [
+      "ticari bankayı",
+      "ticari bankaya",
+      "ticari bankanın",
+      "ticari bankada",
+      "ticari bankadan",
+      "ticari bankaları",
+      "ticari bankalara",
+      "ticari bankalarda",
+      "ticari bankalardan",
+      "ticari bankaların",
+      "ticari bankası"
+    ],
+    "definition": "İnsanlar ve işletmeler için para yöneten banka."
+  },
+  "composability": {
+    "keyword": "birleştirilebilirlik",
+    "keyword_forms": [
+      "birleştirilebilirliği",
+      "birleştirilebilirliğe",
+      "birleştirilebilirliğin",
+      "birleştirilebilirlikte",
+      "birleştirilebilirlikten",
+      "kompozabilite"
+    ],
+    "definition": "Mevcut akıllı sözleşmeleri ve uygulamaları yapı taşı gibi birleştirip yeni ürünler oluşturabilme özelliği."
+  },
+  "consensus": {
+    "keyword": "mutabakat",
+    "keyword_forms": [
+      "mutabakatı",
+      "mutabakata",
+      "mutabakatın",
+      "mutabakatta",
+      "mutabakattan",
+      "uzlaşı",
+      "uzlaşıyı",
+      "uzlaşıya",
+      "konsensüs",
+      "mutabakatlar"
+    ],
+    "definition": "Blokzincirler gibi merkeziyetsiz bilgisayar ağlarında anlaşmanın, güvenin ve güvenliğin sağlanması."
+  },
+  "consensus mechanism": {
+    "keyword": "mutabakat mekanizması",
+    "keyword_plural": "mutabakat mekanizmaları",
+    "keyword_forms": [
+      "mutabakat mekanizmasını",
+      "mutabakat mekanizmasına",
+      "mutabakat mekanizmasında",
+      "mutabakat mekanizmasından",
+      "mutabakat mekanizmasının",
+      "mutabakat mekanizmalarını",
+      "mutabakat mekanizmalarına",
+      "mutabakat mekanizmalarında",
+      "mutabakat mekanizmalarından",
+      "mutabakat mekanizmalarının",
+      "uzlaşı mekanizması",
+      "uzlaşı mekanizmasını"
+    ],
+    "definition": "Bir blokzincir ağının hangi işlemlerin geçerli, hangilerinin sahte olduğuna karar verme yöntemi."
+  },
+  "consensus mechanisms": {
+    "keyword": "mutabakat mekanizmaları",
+    "keyword_forms": [
+      "mutabakat mekanizmalarını",
+      "mutabakat mekanizmalarına",
+      "mutabakat mekanizmalarında",
+      "mutabakat mekanizmalarından",
+      "mutabakat mekanizmalarının",
+      "uzlaşı mekanizmaları"
+    ],
+    "definition": "Blokzincir ağlarının hangi işlemlerin geçerli, hangilerinin sahte olduğuna karar verme yöntemleri."
+  },
+  "counterparty risk": {
+    "keyword": "karşı taraf riski",
+    "keyword_plural": "karşı taraf riskleri",
+    "keyword_forms": [
+      "karşı taraf riskini",
+      "karşı taraf riskine",
+      "karşı taraf riskinde",
+      "karşı taraf riskinden",
+      "karşı taraf riskinin",
+      "karşı taraf risklerini",
+      "karşı taraf risklerine",
+      "karşı taraf risklerinde",
+      "karşı taraf risklerinden",
+      "karşı taraf risklerinin"
+    ],
+    "definition": "Bir anlaşmada karşı tarafın üzerine düşeni yerine getirmeme riski."
+  },
+  "credible neutrality": {
+    "keyword": "güvenilir tarafsızlık",
+    "keyword_forms": [
+      "güvenilir tarafsızlığı",
+      "güvenilir tarafsızlığa",
+      "güvenilir tarafsızlığın",
+      "güvenilir tarafsızlıkta",
+      "güvenilir tarafsızlıktan"
+    ],
+    "definition": "Belirli kişilerin lehine ya da aleyhine ayrım yapmayan mekanizma."
+  },
+  "crypto": {
+    "keyword": "kripto",
+    "keyword_forms": [
+      "kriptoyu",
+      "kriptoya",
+      "kriptonun",
+      "kriptoda",
+      "kriptodan",
+      "kriptolar",
+      "kriptoları"
+    ],
+    "definition": "(Kripto para) Tek bir ülkeye değil, internete ait para birimleri. Bir merkez bankası yerine çoğunlukla kullanıcıları tarafından yönetilirler."
+  },
+  "crypto wallet": {
+    "keyword": "kripto cüzdan",
+    "keyword_plural": "kripto cüzdanlar",
+    "keyword_forms": [
+      "kripto cüzdanı",
+      "kripto cüzdana",
+      "kripto cüzdanın",
+      "kripto cüzdanda",
+      "kripto cüzdandan",
+      "kripto cüzdanları",
+      "kripto cüzdanlara",
+      "kripto cüzdanlarda",
+      "kripto cüzdanlardan",
+      "kripto cüzdanların",
+      "kripto cüzdanını",
+      "kripto cüzdanına",
+      "kripto cüzdanında"
+    ],
+    "definition": "Kripto paranı saklamanı, gönderip almanı ve harcamanı sağlayan uygulama."
+  },
+  "cryptocurrencies": {
+    "keyword": "kripto paralar",
+    "keyword_forms": [
+      "kripto paraları",
+      "kripto paralara",
+      "kripto paralarda",
+      "kripto paraların"
+    ],
+    "definition": "Tek tek ülkelere değil, internete ait para birimleri. Bir merkez bankası yerine çoğunlukla kullanıcıları tarafından yönetilirler."
+  },
+  "cryptocurrency": {
+    "keyword": "kripto para",
+    "keyword_plural": "kripto paralar",
+    "keyword_forms": [
+      "kripto parayı",
+      "kripto paraya",
+      "kripto paranın",
+      "kripto parada",
+      "kripto paradan",
+      "kripto paraları",
+      "kripto paralara",
+      "kripto paralarda",
+      "kripto paralardan",
+      "kripto paraların",
+      "kripto parası",
+      "kripto parasını",
+      "kripto parasında",
+      "kripto parasının"
+    ],
+    "definition": "Tek bir ülkeye değil, internete ait para birimi. Bir merkez bankası yerine çoğunlukla kullanıcıları tarafından yönetilir."
+  },
+  "cryptocurrency mining": {
+    "keyword": "kripto para madenciliği",
+    "keyword_forms": [
+      "kripto para madenciliğini",
+      "kripto para madenciliğine",
+      "kripto para madenciliğinde",
+      "kripto para madenciliğinden",
+      "kripto para madenciliğinin",
+      "kripto madenciliği"
+    ],
+    "definition": "Bitcoin gibi Proof-of-Work ağlarında kullanılan, kripto para ödülü karşılığında blokzincir işlemlerini doğrulama işi."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "kripto para cüzdanı",
+    "keyword_plural": "kripto para cüzdanları",
+    "keyword_forms": [
+      "kripto para cüzdanını",
+      "kripto para cüzdanına",
+      "kripto para cüzdanında",
+      "kripto para cüzdanından",
+      "kripto para cüzdanının",
+      "kripto para cüzdanlarını",
+      "kripto para cüzdanlarına",
+      "kripto para cüzdanlarında",
+      "kripto para cüzdanlarından",
+      "kripto para cüzdanlarının"
+    ],
+    "definition": "Kripto paranı saklamanı, gönderip almanı ve harcamanı sağlayan uygulama."
+  },
+  "cryptography": {
+    "keyword": "kriptografi",
+    "keyword_forms": [
+      "kriptografiyi",
+      "kriptografiye",
+      "kriptografinin",
+      "kriptografide",
+      "kriptografiden",
+      "şifreleme bilimi",
+      "kriptografiler"
+    ],
+    "definition": "Dışarıdan müdahaleyi engelleyerek güvenli iletişim ve işlem sağlayan teknikler."
+  },
+  "custodial wallet": {
+    "keyword": "emanet cüzdan",
+    "keyword_plural": "emanet cüzdanlar",
+    "keyword_forms": [
+      "emanet cüzdanı",
+      "emanet cüzdana",
+      "emanet cüzdanın",
+      "emanet cüzdanda",
+      "emanet cüzdandan",
+      "emanet cüzdanları",
+      "emanet cüzdanlara",
+      "emanet cüzdanlarda",
+      "emanet cüzdanlardan",
+      "emanet cüzdanların",
+      "emanetçi cüzdan",
+      "gözetimli cüzdan",
+      "gözetimli cüzdanı",
+      "gözetimli cüzdanlar",
+      "custodial cüzdan"
+    ],
+    "definition": "Emanet cüzdanda özel anahtarları başka bir taraf kontrol eder, yani kripto varlıklarına erişimi o taraf elinde tutar."
+  },
+  "custodian": {
+    "keyword": "emanetçi",
+    "keyword_plural": "emanetçiler",
+    "keyword_forms": [
+      "emanetçiyi",
+      "emanetçiye",
+      "emanetçinin",
+      "emanetçide",
+      "emanetçiden",
+      "emanetçileri",
+      "emanetçilere",
+      "emanetçilerde",
+      "emanetçilerden",
+      "emanetçilerin",
+      "saklamacı",
+      "saklamacıyı",
+      "saklamacıya",
+      "saklamacının",
+      "saklamacılar",
+      "saklamacıları"
+    ],
+    "definition": "Varlıklarını güvende tutma sorumluluğu verilen finans kurumu."
+  },
+  "custom record": {
+    "keyword": "özel kayıt",
+    "keyword_plural": "özel kayıtlar",
+    "keyword_forms": [
+      "özel kaydı",
+      "özel kayda",
+      "özel kaydın",
+      "özel kayıtta",
+      "özel kayıttan",
+      "özel kayıtları",
+      "özel kayıtlara",
+      "özel kayıtlarda",
+      "özel kayıtlardan",
+      "özel kayıtların"
+    ],
+    "definition": "Bir ENS alan adına bağlanan, kullanıcı tanımlı veri girdisi. Standart adreslerin ötesinde web sitesi ya da sosyal medya bağlantısı gibi bilgiler eklemeni sağlar."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO'lar",
+    "keyword_forms": [
+      "DAO'ları",
+      "DAO'lara",
+      "DAO'larda",
+      "DAO'lardan",
+      "DAO'ların",
+      "DAO'yu",
+      "DAO'ya",
+      "DAO'da",
+      "DAO'nun"
+    ],
+    "definition": "(Merkeziyetsiz Otonom Organizasyon) Oylamayı ve yönetimi otomatikleştirmek için blokzincir teknolojisini kullanan organizasyon yapısı."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApp'ler",
+    "keyword_forms": [
+      "dApp'leri",
+      "dApp'lere",
+      "dApp'lerde",
+      "dApp'lerden",
+      "dApp'lerin",
+      "dApp'i",
+      "dApp'e",
+      "dApp'te",
+      "dApp'in"
+    ],
+    "definition": "Blokzincirlere ve merkeziyetsiz ağlara bağlanan “merkeziyetsiz uygulama”."
+  },
+  "death spiral": {
+    "keyword": "ölüm sarmalı",
+    "keyword_plural": "ölüm sarmalları",
+    "keyword_forms": [
+      "ölüm sarmalını",
+      "ölüm sarmalına",
+      "ölüm sarmalında",
+      "ölüm sarmalından",
+      "ölüm sarmalının",
+      "ölüm sarmallarını",
+      "ölüm sarmallarına",
+      "ölüm sarmallarında",
+      "ölüm sarmallarından",
+      "ölüm sarmallarının"
+    ],
+    "definition": "Düşen fiyatın, fiyatı daha da aşağı iten davranışları tetiklediği kendi kendini besleyen çöküş. Bazı algoritmik stablecoinlerde görülür."
+  },
+  "decentralization": {
+    "keyword": "merkeziyetsizlik",
+    "keyword_forms": [
+      "merkeziyetsizliği",
+      "merkeziyetsizliğe",
+      "merkeziyetsizliğin",
+      "merkeziyetsizlikte",
+      "merkeziyetsizlikten"
+    ],
+    "definition": "Kontrolün tek bir otorite yerine birçok kişiye dağıtılması."
+  },
+  "decentralized": {
+    "keyword": "merkeziyetsiz",
+    "keyword_forms": [
+      "merkeziyetsizi",
+      "merkeziyetsize",
+      "merkeziyetsizin",
+      "merkeziyetsizdir",
+      "merkeziyetsiz olarak"
+    ],
+    "definition": "Sistemi tek bir otoritenin ya da kuruluşun kontrol etmemesi."
+  },
+  "decentralized exchange": {
+    "keyword": "merkeziyetsiz borsa",
+    "keyword_plural": "merkeziyetsiz borsalar",
+    "keyword_forms": [
+      "merkeziyetsiz borsayı",
+      "merkeziyetsiz borsaya",
+      "merkeziyetsiz borsanın",
+      "merkeziyetsiz borsada",
+      "merkeziyetsiz borsadan",
+      "merkeziyetsiz borsaları",
+      "merkeziyetsiz borsalara",
+      "merkeziyetsiz borsalarda",
+      "merkeziyetsiz borsalardan",
+      "merkeziyetsiz borsaların",
+      "merkeziyetsiz borsası",
+      "merkeziyetsiz borsasında"
+    ],
+    "definition": "(DEX) Güvenilir aracılara ihtiyaç duymadan takas yapılmasını sağlayan protokol."
+  },
+  "decentralized finance": {
+    "keyword": "Merkeziyetsiz Finans",
+    "keyword_forms": [
+      "Merkeziyetsiz Finans'ı",
+      "Merkeziyetsiz Finans'a",
+      "Merkeziyetsiz Finans'ta",
+      "Merkeziyetsiz Finans'ın"
+    ],
+    "definition": "(DeFi) Blokzincir üzerinde çalışan, öz saklamaya dayalı finans araçları."
+  },
+  "decentralized money": {
+    "keyword": "merkeziyetsiz para",
+    "keyword_forms": [
+      "merkeziyetsiz parayı",
+      "merkeziyetsiz paraya",
+      "merkeziyetsiz paranın",
+      "merkeziyetsiz parada",
+      "merkeziyetsiz paradan",
+      "merkeziyetsiz paralar",
+      "merkeziyetsiz parası"
+    ],
+    "definition": "Özellikleri bir kurum tarafından belirlenmek yerine toplulukça kararlaştırılan para."
+  },
+  "decentralized services": {
+    "keyword": "merkeziyetsiz hizmetler",
+    "keyword_forms": [
+      "merkeziyetsiz hizmetleri",
+      "merkeziyetsiz hizmetlere",
+      "merkeziyetsiz hizmetlerde",
+      "merkeziyetsiz hizmetlerin",
+      "merkeziyetsiz hizmet"
+    ],
+    "definition": "(dApp'ler) Ücretleri azaltmak ve kullanıcı deneyimini iyileştirmek için otomasyondan yararlanan çevrimiçi hizmetler."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "keyword_forms": [
+      "DeFi'yi",
+      "DeFi'ye",
+      "DeFi'de",
+      "DeFi'nin",
+      "DeFi'den"
+    ],
+    "definition": "(Merkeziyetsiz Finans) Blokzincir üzerinde çalışan, öz saklamaya dayalı finans araçları."
+  },
+  "delegate": {
+    "keyword": "delege",
+    "keyword_plural": "delegeler",
+    "keyword_forms": [
+      "delegeyi",
+      "delegeye",
+      "delegenin",
+      "delegede",
+      "delegeden",
+      "delegeleri",
+      "delegelere",
+      "delegelerde",
+      "delegelerden",
+      "delegelerin",
+      "delege etmek",
+      "delege etme",
+      "yetki vermek"
+    ],
+    "definition": "Belirli bir sorumluluğu başka birine vermek, örneğin token oy gücünü devretmek."
+  },
+  "delegation": {
+    "keyword": "yetki devri",
+    "keyword_plural": "yetki devirleri",
+    "keyword_forms": [
+      "yetki devrini",
+      "yetki devrine",
+      "yetki devrinde",
+      "yetki devrinden",
+      "yetki devrinin",
+      "yetki devirlerini",
+      "yetki devirlerine",
+      "yetki devirlerinde",
+      "yetki devirlerinden",
+      "yetki devirlerinin",
+      "delegasyon",
+      "yetki devretme"
+    ],
+    "definition": "Belirli bir sorumluluğu başka birine vermek, örneğin token oy gücünü devretmek."
+  },
+  "democracy": {
+    "keyword": "demokrasi",
+    "keyword_plural": "demokrasiler",
+    "keyword_forms": [
+      "demokrasiyi",
+      "demokrasiye",
+      "demokrasinin",
+      "demokraside",
+      "demokrasiden",
+      "demokrasileri",
+      "demokrasilere",
+      "demokrasilerde",
+      "demokrasilerden",
+      "demokrasilerin"
+    ],
+    "definition": "Vatandaşların karar alma sürecinde başrol oynayarak gücü kullandığı yönetim biçimi."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX'ler",
+    "keyword_forms": [
+      "DEX'leri",
+      "DEX'lere",
+      "DEX'lerde",
+      "DEX'lerden",
+      "DEX'lerin",
+      "DEX'i",
+      "DEX'e",
+      "DEX'te",
+      "DEX'in"
+    ],
+    "definition": "(Merkeziyetsiz Borsa) Güvenilir aracılara ihtiyaç duymadan takas yapılmasını sağlayan protokol."
+  },
+  "dex aggregator": {
+    "keyword": "DEX toplayıcısı",
+    "keyword_plural": "DEX toplayıcıları",
+    "keyword_forms": [
+      "DEX toplayıcısını",
+      "DEX toplayıcısına",
+      "DEX toplayıcısında",
+      "DEX toplayıcısından",
+      "DEX toplayıcısının",
+      "DEX toplayıcılarını",
+      "DEX toplayıcılarına",
+      "DEX toplayıcılarında",
+      "DEX toplayıcılarından",
+      "DEX toplayıcılarının",
+      "DEX agregatörü",
+      "DEX toplayıcı",
+      "DEX toplayıcılar"
+    ],
+    "definition": "Birden fazla kaynaktaki DEX likiditesini tek bir arayüzde birleştiren protokol."
+  },
+  "digital assets": {
+    "keyword": "dijital varlıklar",
+    "keyword_forms": [
+      "dijital varlıkları",
+      "dijital varlıklara",
+      "dijital varlıklarda",
+      "dijital varlıkların",
+      "dijital varlık"
+    ],
+    "definition": "Dijital olarak saklanan, değeri olan her şey."
+  },
+  "digital signature": {
+    "keyword": "dijital imza",
+    "keyword_plural": "dijital imzalar",
+    "keyword_forms": [
+      "dijital imzayı",
+      "dijital imzaya",
+      "dijital imzanın",
+      "dijital imzada",
+      "dijital imzadan",
+      "dijital imzaları",
+      "dijital imzalara",
+      "dijital imzalarda",
+      "dijital imzalardan",
+      "dijital imzaların",
+      "dijital imzası",
+      "dijital imzasını"
+    ],
+    "definition": "Bir mesajı ya da işlemi onayladığını gösteren, özel anahtarınla oluşturulan kanıt. El yazısı imza gibi çalışır ama taklit edilemez."
+  },
+  "double-spend": {
+    "keyword": "çifte harcama",
+    "keyword_plural": "çifte harcamalar",
+    "keyword_forms": [
+      "çifte harcamayı",
+      "çifte harcamaya",
+      "çifte harcamanın",
+      "çifte harcamada",
+      "çifte harcamadan",
+      "çifte harcamaları",
+      "çifte harcamalara",
+      "çifte harcamalarda",
+      "çifte harcamalardan",
+      "çifte harcamaların",
+      "çift harcama"
+    ],
+    "definition": "Aynı dijital parayı iki kez harcamak. Blokzincir mutabakatı, merkezi bir otorite olmadan bunu engellemek için vardır."
+  },
+  "earn": {
+    "keyword": "kazanmak",
+    "keyword_forms": [
+      "kazan",
+      "kazanma",
+      "kazanmayı",
+      "kazanç",
+      "kazanır"
+    ],
+    "definition": "Ödüller karşılığında değer üretmek; beceri küpündeki para fiili."
+  },
+  "encryption": {
+    "keyword": "şifreleme",
+    "keyword_forms": [
+      "şifrelemeyi",
+      "şifrelemeye",
+      "şifrelemenin",
+      "şifrelemede",
+      "şifrelemeden",
+      "şifrelemeler",
+      "şifreleme yöntemi"
+    ],
+    "definition": "Bilgiyi, izinsiz erişimi önlemek için gizli ve güvenli bir koda dönüştürme işlemi."
+  },
+  "epoch": {
+    "keyword": "dönem",
+    "keyword_plural": "dönemler",
+    "keyword_forms": [
+      "dönemi",
+      "döneme",
+      "dönemin",
+      "dönemde",
+      "dönemden",
+      "dönemleri",
+      "dönemlere",
+      "dönemlerde",
+      "dönemlerden",
+      "dönemlerin",
+      "epoch",
+      "epoch'u",
+      "epoch'a",
+      "epoch'ta",
+      "epoch'un",
+      "epochlar"
+    ],
+    "definition": "Herhangi bir blokzincirde belirli sayıda blok eklenmesi için geçen süre."
+  },
+  "equality of opportunity": {
+    "keyword": "fırsat eşitliği",
+    "keyword_forms": [
+      "fırsat eşitliğini",
+      "fırsat eşitliğine",
+      "fırsat eşitliğinde",
+      "fırsat eşitliğinden",
+      "fırsat eşitliğinin",
+      "fırsat eşitlikleri"
+    ],
+    "definition": "Herkesin geçmişinden ya da koşullarından bağımsız olarak aynı başarı şansına sahip olduğu adalet ilkesi."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20'ler",
+    "keyword_forms": [
+      "ERC-20'leri",
+      "ERC-20'lere",
+      "ERC-20'lerde",
+      "ERC-20'lerden",
+      "ERC-20'lerin",
+      "ERC-20'yi",
+      "ERC-20'ye",
+      "ERC-20'de",
+      "ERC-20'nin"
+    ],
+    "definition": "Ethereum'da birbirinin yerine geçebilen tokenlar için standart. Bu tokenlar bölünebilir ve benzersiz değildir."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721'ler",
+    "keyword_forms": [
+      "ERC-721'leri",
+      "ERC-721'lere",
+      "ERC-721'lerde",
+      "ERC-721'lerden",
+      "ERC-721'lerin",
+      "ERC-721'i",
+      "ERC-721'e",
+      "ERC-721'de",
+      "ERC-721'in"
+    ],
+    "definition": "Ethereum'da benzersiz tokenlar için standart. Bu tokenların eşsiz bir dijital kimliği vardır, kopyalanamaz ve bölünemez."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155'ler",
+    "keyword_forms": [
+      "ERC-1155'leri",
+      "ERC-1155'lere",
+      "ERC-1155'lerde",
+      "ERC-1155'lerden",
+      "ERC-1155'lerin",
+      "ERC-1155'i",
+      "ERC-1155'e",
+      "ERC-1155'de",
+      "ERC-1155'in"
+    ],
+    "definition": "Ethereum'da hem birbirinin yerine geçebilen hem de benzersiz tokenları tek ve optimize bir sözleşme altında oluşturmak için kullanılan standart."
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF'ler",
+    "keyword_forms": [
+      "ETF'leri",
+      "ETF'lere",
+      "ETF'lerde",
+      "ETF'lerden",
+      "ETF'lerin",
+      "ETF'yi",
+      "ETF'ye",
+      "ETF'de",
+      "ETF'nin",
+      "ETF'si"
+    ],
+    "definition": "(Borsa Yatırım Fonu) Hisse senedi, altın ya da bitcoin gibi varlıkları tutan, borsada işlem gören yatırım fonu."
+  },
+  "eth": {
+    "keyword": "ETH",
+    "keyword_forms": [
+      "ETH'yi",
+      "ETH'ye",
+      "ETH'de",
+      "ETH'nin",
+      "ETH'den",
+      "ETH'i",
+      "ETH'e"
+    ],
+    "definition": "(Ether) Ethereum'un yerel kripto parası. Ağda işlem yapmak, doğrulayıcı düğüm çalıştırmak ve daha fazlası için kullanılır."
+  },
+  "ether": {
+    "keyword": "ether",
+    "keyword_forms": [
+      "etheri",
+      "ethere",
+      "etherin",
+      "etherde",
+      "etherden",
+      "ether'i",
+      "ether'e",
+      "ether'de",
+      "ether'in"
+    ],
+    "definition": "(ETH) Ethereum'un yerel kripto parası. Ağda işlem yapmak, doğrulayıcı düğüm çalıştırmak ve daha fazlası için kullanılır."
+  },
+  "ethereum blockchain": {
+    "keyword": "Ethereum Blokzinciri",
+    "keyword_forms": [
+      "Ethereum Blokzincirini",
+      "Ethereum Blokzincirine",
+      "Ethereum Blokzincirinde",
+      "Ethereum Blokzincirinden",
+      "Ethereum Blokzincirinin",
+      "Ethereum blok zinciri"
+    ],
+    "definition": "Ethereum ağındaki işlemleri ve sahiplik kayıtlarını tutan, herkese açık defter."
+  },
+  "ethereum mainnet": {
+    "keyword": "Ethereum Mainnet",
+    "keyword_forms": [
+      "Ethereum Mainnet'i",
+      "Ethereum Mainnet'e",
+      "Ethereum Mainnet'te",
+      "Ethereum Mainnet'in",
+      "Ethereum ana ağı",
+      "Ethereum ana ağında"
+    ],
+    "definition": "Ethereum'un, işlemlerin gerçek değer taşıdığı ana Layer 1 ağı. Ethereum'un Layer 2'leri için mutabakat katmanıdır."
+  },
+  "ethereum virtual machine": {
+    "keyword": "Ethereum Sanal Makinesi",
+    "keyword_forms": [
+      "Ethereum Sanal Makinesini",
+      "Ethereum Sanal Makinesine",
+      "Ethereum Sanal Makinesinde",
+      "Ethereum Sanal Makinesinden",
+      "Ethereum Sanal Makinesinin",
+      "EVM",
+      "EVM'yi",
+      "EVM'ye",
+      "EVM'de",
+      "EVM'nin"
+    ],
+    "definition": "Ethereum Sanal Makinesi ya da EVM, akıllı sözleşmeleri çalıştıran ve Ethereum ağının durumunu hesaplayan bir yazılımdır."
+  },
+  "fiat": {
+    "keyword": "fiat",
+    "keyword_forms": [
+      "fiatı",
+      "fiata",
+      "fiatın",
+      "fiatta",
+      "fiattan",
+      "fiat'ı",
+      "fiat'a",
+      "fiat'ta",
+      "fiat'ın",
+      "fiat para",
+      "fiat parayı",
+      "itibari para"
+    ],
+    "definition": "Altın gibi bir varlığa dayanmayan, değerini ihraç edene duyulan güvenden alan ulusal para birimi."
+  },
+  "finality": {
+    "keyword": "kesinlik",
+    "keyword_forms": [
+      "kesinliği",
+      "kesinliğe",
+      "kesinliğin",
+      "kesinlikte",
+      "kesinlikten",
+      "kesinleşme",
+      "nihailik",
+      "kesinliğini"
+    ],
+    "definition": "Onaylanmış bir blokzincir işleminin kalıcı olduğu, geri alınamayacağı ve değiştirilemeyeceği garantisi."
+  },
+  "finality time": {
+    "keyword": "kesinleşme süresi",
+    "keyword_forms": [
+      "kesinleşme süresini",
+      "kesinleşme süresine",
+      "kesinleşme süresinde",
+      "kesinleşme süresinden",
+      "kesinleşme süresinin",
+      "kesinlik süresi",
+      "kesinleşme süreleri"
+    ],
+    "definition": "Bir işlemin geçerli ve kesin olduğundan, yani geri alınmayacağından emin olmak için geçen süre."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "keyword_forms": [
+      "FOMO'yu",
+      "FOMO'ya",
+      "FOMO'da",
+      "FOMO'nun",
+      "kaçırma korkusu"
+    ],
+    "definition": "(Fear Of Missing Out) Bir şeyin dışında kalma kaygısı, yani kaçırma korkusu."
+  },
+  "fork": {
+    "keyword": "çatallanma",
+    "keyword_plural": "çatallanmalar",
+    "keyword_forms": [
+      "çatallanmayı",
+      "çatallanmaya",
+      "çatallanmanın",
+      "çatallanmada",
+      "çatallanmadan",
+      "çatallanmaları",
+      "çatallanmalara",
+      "çatallanmalarda",
+      "çatallanmalardan",
+      "çatallanmaların",
+      "fork",
+      "fork'u",
+      "fork'a",
+      "fork'ta",
+      "fork'un",
+      "forklar"
+    ],
+    "definition": "Bir blokzincir ağındaki köklü değişiklik. Ağ ikiye ayrılır: biri eski protokolü, diğeri yenisini izler."
+  },
+  "fraud": {
+    "keyword": "sahtekarlık",
+    "keyword_forms": [
+      "sahtekarlığı",
+      "sahtekarlığa",
+      "sahtekarlığın",
+      "sahtekarlıkta",
+      "sahtekarlıktan",
+      "dolandırıcılık",
+      "dolandırıcılığı",
+      "sahtekârlık",
+      "sahtekarlıklar"
+    ],
+    "definition": "Blokzincir ekonomilerinde: Elde tutulan kripto para miktarlarını değiştirmek için kullanılan haksız ya da sahte işlemler."
+  },
+  "fraud proof": {
+    "keyword": "sahtekarlık kanıtı",
+    "keyword_plural": "sahtekarlık kanıtları",
+    "keyword_forms": [
+      "sahtekarlık kanıtını",
+      "sahtekarlık kanıtına",
+      "sahtekarlık kanıtında",
+      "sahtekarlık kanıtından",
+      "sahtekarlık kanıtının",
+      "sahtekarlık kanıtlarını",
+      "sahtekarlık kanıtlarına",
+      "sahtekarlık kanıtlarında",
+      "sahtekarlık kanıtlarından",
+      "sahtekarlık kanıtlarının",
+      "dolandırıcılık kanıtı",
+      "sahtekârlık kanıtı"
+    ],
+    "definition": "Bir işlemin geçersiz olduğunu ve sahtekarlık yapıldığını gösteren delil."
+  },
+  "front-running": {
+    "keyword": "önden koşma",
+    "keyword_forms": [
+      "önden koşmayı",
+      "önden koşmaya",
+      "önden koşmanın",
+      "önden koşmada",
+      "önden koşmadan",
+      "front-running",
+      "önden geçme"
+    ],
+    "definition": "Birinin bekleyen işlemini görüp ücret ödeyerek kendi işlemini önce işletmek ve o kişinin zararına kazanç sağlamak."
+  },
+  "fungibility": {
+    "keyword": "değiştirilebilirlik",
+    "keyword_forms": [
+      "değiştirilebilirliği",
+      "değiştirilebilirliğe",
+      "değiştirilebilirliğin",
+      "değiştirilebilirlikte",
+      "değiştirilebilirlikten",
+      "birbirinin yerine geçebilirlik",
+      "misli olma"
+    ],
+    "definition": "Birbirinin yerine geçebilme özelliği: her birim aynı değere sahiptir ve bir diğerinin yerini alabilir, tıpkı bir banknotun bir başkasıyla değişmesi gibi."
+  },
+  "gas": {
+    "keyword": "gas",
+    "keyword_forms": [
+      "gası",
+      "gasa",
+      "gasın",
+      "gasta",
+      "gastan",
+      "gas'ı",
+      "gas'a",
+      "gas'ta",
+      "gas'ın",
+      "gaz",
+      "gazı",
+      "gaza",
+      "gazda",
+      "gazın"
+    ],
+    "definition": "Blokzincir ağlarındaki işlem ücretleri."
+  },
+  "gas fee": {
+    "keyword": "gas ücreti",
+    "keyword_plural": "gas ücretleri",
+    "keyword_forms": [
+      "gas ücretini",
+      "gas ücretine",
+      "gas ücretinde",
+      "gas ücretinden",
+      "gas ücretinin",
+      "gas ücretlerini",
+      "gas ücretlerine",
+      "gas ücretlerinde",
+      "gas ücretlerinden",
+      "gas ücretlerinin",
+      "gaz ücreti",
+      "gaz ücretleri"
+    ],
+    "definition": "Bir blokzincir ağını kullanmak için ödenen işlem ücreti."
+  },
+  "gasless transactions": {
+    "keyword": "gassız işlemler",
+    "keyword_forms": [
+      "gassız işlemleri",
+      "gassız işlemlere",
+      "gassız işlemlerde",
+      "gassız işlemlerin",
+      "gassız işlem",
+      "gas ücretsiz işlemler"
+    ],
+    "definition": "Gas ücretinin, ağın yerel coini yerine takas edilen tokenla ödendiği ya da bir sponsor tarafından karşılandığı işlemler."
+  },
+  "gold standard": {
+    "keyword": "altın standardı",
+    "keyword_plural": "altın standartları",
+    "keyword_forms": [
+      "altın standardını",
+      "altın standardına",
+      "altın standardında",
+      "altın standardından",
+      "altın standardının",
+      "altın standartlarını",
+      "altın standartlarına",
+      "altın standartlarında",
+      "altın standartlarından",
+      "altın standartlarının"
+    ],
+    "definition": "Bir ülkenin para biriminin değerinin doğrudan altına bağlandığı parasal sistem."
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "keyword_forms": [
+      "gwei'yi",
+      "gwei'ye",
+      "gwei'de",
+      "gwei'nin",
+      "gwei'den"
+    ],
+    "definition": "Ethereum blokzincirinde kullanılan, 0,000000001 ETH'ye (milyarda bire) eşit birim. Genellikle gas fiyatlarını belirtmek için kullanılır."
+  },
+  "halving": {
+    "keyword": "halving",
+    "keyword_plural": "halvingler",
+    "keyword_forms": [
+      "halvingi",
+      "halvinge",
+      "halvingin",
+      "halvingde",
+      "halvingden",
+      "halvingleri",
+      "halvinglere",
+      "halvinglerde",
+      "halvinglerden",
+      "halvinglerin",
+      "halving'i",
+      "halving'e",
+      "halving'de",
+      "halving'in",
+      "halving'ler",
+      "yarılanma"
+    ],
+    "definition": "Yaklaşık dört yılda bir gerçekleşen ve yeni Bitcoin madenciliği ödülünü yarıya indiren planlı olay."
+  },
+  "hardware wallet": {
+    "keyword": "donanım cüzdanı",
+    "keyword_plural": "donanım cüzdanları",
+    "keyword_forms": [
+      "donanım cüzdanını",
+      "donanım cüzdanına",
+      "donanım cüzdanında",
+      "donanım cüzdanından",
+      "donanım cüzdanının",
+      "donanım cüzdanlarını",
+      "donanım cüzdanlarına",
+      "donanım cüzdanlarında",
+      "donanım cüzdanlarından",
+      "donanım cüzdanlarının"
+    ],
+    "definition": "Özel anahtarları fiziksel bir donanım cihazında çevrimdışı saklayan öz saklama cüzdanı türü."
+  },
+  "hash": {
+    "keyword": "hash",
+    "keyword_plural": "hash'ler",
+    "keyword_forms": [
+      "hash'leri",
+      "hash'lere",
+      "hash'lerde",
+      "hash'lerden",
+      "hash'lerin",
+      "hash'i",
+      "hash'e",
+      "hash'te",
+      "hash'in",
+      "hashi",
+      "hashler",
+      "özet"
+    ],
+    "definition": "Bilginin dijital parmak izi."
+  },
+  "hashing function": {
+    "keyword": "hash fonksiyonu",
+    "keyword_plural": "hash fonksiyonları",
+    "keyword_forms": [
+      "hash fonksiyonunu",
+      "hash fonksiyonuna",
+      "hash fonksiyonunda",
+      "hash fonksiyonundan",
+      "hash fonksiyonunun",
+      "hash fonksiyonlarını",
+      "hash fonksiyonlarına",
+      "hash fonksiyonlarında",
+      "hash fonksiyonlarından",
+      "hash fonksiyonlarının",
+      "özet fonksiyonu"
+    ],
+    "definition": "Herhangi bir girdiyi benzersiz ve sabit uzunlukta bir parmak izine (hash) dönüştüren fonksiyon. Tek yönde hesaplaması kolaydır ama tersine çevirmek neredeyse imkansızdır."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "keyword_forms": [
+      "HODL'u",
+      "HODL'a",
+      "HODL'da",
+      "HODL'un",
+      "HODL'lamak"
+    ],
+    "definition": "(Hold On for Dear Life) Piyasa ne olursa olsun kriptoyu satmamayı anlatan kripto argosu."
+  },
+  "hot wallet": {
+    "keyword": "sıcak cüzdan",
+    "keyword_plural": "sıcak cüzdanlar",
+    "keyword_forms": [
+      "sıcak cüzdanı",
+      "sıcak cüzdana",
+      "sıcak cüzdanın",
+      "sıcak cüzdanda",
+      "sıcak cüzdandan",
+      "sıcak cüzdanları",
+      "sıcak cüzdanlara",
+      "sıcak cüzdanlarda",
+      "sıcak cüzdanlardan",
+      "sıcak cüzdanların",
+      "sıcak cüzdanını"
+    ],
+    "definition": "Sürekli internete bağlı olan öz saklama cüzdanı türü."
+  },
+  "inflation": {
+    "keyword": "enflasyon",
+    "keyword_forms": [
+      "enflasyonu",
+      "enflasyona",
+      "enflasyonun",
+      "enflasyonda",
+      "enflasyondan",
+      "enflasyonlar"
+    ],
+    "definition": "Fiyatların genel olarak yükselmesi ve paranın alım gücünün düşmesi."
+  },
+  "intent": {
+    "keyword": "niyet",
+    "keyword_plural": "niyetler",
+    "keyword_forms": [
+      "niyeti",
+      "niyete",
+      "niyetin",
+      "niyette",
+      "niyetten",
+      "niyetleri",
+      "niyetlere",
+      "niyetlerde",
+      "niyetlerden",
+      "niyetlerin",
+      "intent",
+      "intent'i",
+      "intent'ler"
+    ],
+    "definition": "İstediğin sonucu tarif eden imzalı takas talebi, örneğin “X'i en az Y karşılığında takas et”. En iyi rotayı bulmayı uzmanlara bırakır."
+  },
+  "intermediaries": {
+    "keyword": "aracılar",
+    "keyword_forms": [
+      "aracıları",
+      "aracılara",
+      "aracılarda",
+      "aracıların"
+    ],
+    "definition": "Değer ya da bilgi alışverişini kolaylaştırmak için insanları birbirine bağlayan kuruluşlar veya hizmetler."
+  },
+  "intermediary": {
+    "keyword": "aracı",
+    "keyword_plural": "aracılar",
+    "keyword_forms": [
+      "aracıyı",
+      "aracıya",
+      "aracının",
+      "aracıda",
+      "aracıdan",
+      "aracıları",
+      "aracılara",
+      "aracılarda",
+      "aracılardan",
+      "aracıların",
+      "aracısı",
+      "aracısını"
+    ],
+    "definition": "Değer ya da bilgi alışverişini kolaylaştırmak için insanları birbirine bağlayan kuruluş veya hizmet."
+  },
+  "intermediary token": {
+    "keyword": "aracı token",
+    "keyword_plural": "aracı tokenlar",
+    "keyword_forms": [
+      "aracı tokeni",
+      "aracı tokene",
+      "aracı tokenin",
+      "aracı tokende",
+      "aracı tokenden",
+      "aracı tokenları",
+      "aracı tokenlara",
+      "aracı tokenlarda",
+      "aracı tokenlardan",
+      "aracı tokenların",
+      "aracı tokenı",
+      "aracı tokena",
+      "aracı tokenda",
+      "aracı tokenın",
+      "aracı tokenler"
+    ],
+    "definition": "Bir takas rotasının ortasında yer alan, başlangıç ya da bitiş tokenı olmayan token."
+  },
+  "interoperability": {
+    "keyword": "birlikte çalışabilirlik",
+    "keyword_forms": [
+      "birlikte çalışabilirliği",
+      "birlikte çalışabilirliğe",
+      "birlikte çalışabilirliğin",
+      "birlikte çalışabilirlikte",
+      "birlikte çalışabilirlikten",
+      "birlikte çalışabilme"
+    ],
+    "definition": "Farklı uygulamaların, tokenların ve blokzincirlerin birlikte çalışabilmesi ve bilgi paylaşabilmesi."
+  },
+  "invest": {
+    "keyword": "yatırım yapmak",
+    "keyword_forms": [
+      "yatırım yap",
+      "yatırım yapma",
+      "yatırım yapmayı",
+      "yatırım",
+      "yatırımı"
+    ],
+    "definition": "Değerinin artmasını umarak coin ya da token gibi bir varlığa para koymak."
+  },
+  "know-your-customer": {
+    "keyword": "Müşterini Tanı",
+    "keyword_forms": [
+      "müşteriyi tanı",
+      "Müşterini Tanı süreci",
+      "Müşterini Tanı'yı",
+      "Müşterini Tanı'nın",
+      "KYC süreci"
+    ],
+    "definition": "(KYC) Devlet onaylı kullanıcı kimlik doğrulama süreci."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "keyword_forms": [
+      "KYC'yi",
+      "KYC'ye",
+      "KYC'de",
+      "KYC'nin",
+      "KYC'den"
+    ],
+    "definition": "(Müşterini Tanı) Devlet onaylı kullanıcı kimlik doğrulama süreci."
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1'ler",
+    "keyword_forms": [
+      "L1'leri",
+      "L1'lere",
+      "L1'lerde",
+      "L1'lerden",
+      "L1'lerin",
+      "L1'i",
+      "L1'e",
+      "L1'de",
+      "L1'in"
+    ],
+    "definition": "Layer 1, Bitcoin ya da Ethereum gibi temel ağları ifade eder."
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2'ler",
+    "keyword_forms": [
+      "L2'leri",
+      "L2'lere",
+      "L2'lerde",
+      "L2'lerden",
+      "L2'lerin",
+      "L2'yi",
+      "L2'ye",
+      "L2'de",
+      "L2'nin"
+    ],
+    "definition": "Ethereum'un güvenliğini devralırken ölçeklenebilirliğini artıran blokzincir."
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1'ler",
+    "keyword_forms": [
+      "Layer 1'leri",
+      "Layer 1'lere",
+      "Layer 1'lerde",
+      "Layer 1'lerden",
+      "Layer 1'lerin",
+      "Layer 1'i",
+      "Layer 1'e",
+      "Layer 1'de",
+      "Layer 1'in",
+      "Katman 1"
+    ],
+    "definition": "Layer 1, Bitcoin ya da Ethereum gibi temel ağları ifade eder."
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2'ler",
+    "keyword_forms": [
+      "Layer 2'leri",
+      "Layer 2'lere",
+      "Layer 2'lerde",
+      "Layer 2'lerden",
+      "Layer 2'lerin",
+      "Layer 2'yi",
+      "Layer 2'ye",
+      "Layer 2'de",
+      "Layer 2'nin",
+      "Katman 2"
+    ],
+    "definition": "Ethereum'un güvenliğini devralırken ölçeklenebilirliğini artıran blokzincir."
+  },
+  "ledger": {
+    "keyword": "defter",
+    "keyword_plural": "defterler",
+    "keyword_forms": [
+      "defteri",
+      "deftere",
+      "defterin",
+      "defterde",
+      "defterden",
+      "defterleri",
+      "defterlere",
+      "defterlerde",
+      "defterlerden",
+      "defterlerin",
+      "kayıt defteri",
+      "kayıt defterini"
+    ],
+    "definition": "Bugüne kadar gerçekleşmiş tüm işlemlerin kaydı."
+  },
+  "lender": {
+    "keyword": "borç veren",
+    "keyword_plural": "borç verenler",
+    "keyword_forms": [
+      "borç vereni",
+      "borç verene",
+      "borç verenin",
+      "borç verende",
+      "borç verenden",
+      "borç verenleri",
+      "borç verenlere",
+      "borç verenlerde",
+      "borç verenlerden",
+      "borç verenlerin",
+      "kredi veren"
+    ],
+    "definition": "Faiz kazanmak için varlık yatıran taraf."
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "keyword_forms": [
+      "Lightning Network'ü",
+      "Lightning Network'e",
+      "Lightning Network'te",
+      "Lightning Network'ün",
+      "Lightning ağı"
+    ],
+    "definition": "Bitcoin üzerine kurulu bir ödeme ağı. Ödeme kanalları sayesinde günlük ödemeleri anlık ve ucuz kılar."
+  },
+  "liquid": {
+    "keyword": "likit",
+    "keyword_forms": [
+      "likidi",
+      "likide",
+      "likidin",
+      "likitte",
+      "likitten",
+      "likiti",
+      "likite",
+      "likit varlık",
+      "likitlik"
+    ],
+    "definition": "Blokzincir ekonomilerinde: Bir dijital varlığın kolayca alınıp satılabilmesi ya da akıllı sözleşmelerde kullanılabilmesi."
+  },
+  "liquid staking token": {
+    "keyword": "likit staking tokenı",
+    "keyword_plural": "likit staking tokenları",
+    "keyword_forms": [
+      "likit staking tokenını",
+      "likit staking tokenına",
+      "likit staking tokenında",
+      "likit staking tokenından",
+      "likit staking tokenının",
+      "likit staking tokenlarını",
+      "likit staking tokenlarına",
+      "likit staking tokenlarında",
+      "likit staking tokenlarından",
+      "likit staking tokenlarının",
+      "likit staking token",
+      "likit staking tokeni",
+      "likit staking tokenleri"
+    ],
+    "definition": "Stake edilmiş Ether'i temsil eden tokenlar. Sahipleri, stake edilen miktarla orantılı olarak staking ödüllerinden pay alır."
+  },
+  "liquidation": {
+    "keyword": "tasfiye",
+    "keyword_plural": "tasfiyeler",
+    "keyword_forms": [
+      "tasfiyeyi",
+      "tasfiyeye",
+      "tasfiyenin",
+      "tasfiyede",
+      "tasfiyeden",
+      "tasfiyeleri",
+      "tasfiyelere",
+      "tasfiyelerde",
+      "tasfiyelerden",
+      "tasfiyelerin",
+      "likidasyon",
+      "likidasyonu",
+      "likidasyonlar"
+    ],
+    "definition": "Borç alanın teminatının değeri krediyi güvenle karşılayamayacak kadar düştüğünde otomatik olarak satılması."
+  },
+  "liquidity": {
+    "keyword": "likidite",
+    "keyword_forms": [
+      "likiditeyi",
+      "likiditeye",
+      "likiditenin",
+      "likiditede",
+      "likiditeden",
+      "likiditeler",
+      "likiditesi",
+      "likiditesini"
+    ],
+    "definition": "Bir tokenın alım satım için mevcut olan miktarı."
+  },
+  "liquidity pool": {
+    "keyword": "likidite havuzu",
+    "keyword_plural": "likidite havuzları",
+    "keyword_forms": [
+      "likidite havuzunu",
+      "likidite havuzuna",
+      "likidite havuzunda",
+      "likidite havuzundan",
+      "likidite havuzunun",
+      "likidite havuzlarını",
+      "likidite havuzlarına",
+      "likidite havuzlarında",
+      "likidite havuzlarından",
+      "likidite havuzlarının"
+    ],
+    "definition": "İzinsiz token takaslarını mümkün kılan ortak token kasası."
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP'ler",
+    "keyword_forms": [
+      "LP'leri",
+      "LP'lere",
+      "LP'lerde",
+      "LP'lerden",
+      "LP'lerin",
+      "LP'yi",
+      "LP'ye",
+      "LP'de",
+      "LP'nin"
+    ],
+    "definition": "(Likidite Sağlayıcı) Ücretlerden pay almak karşılığında tokenlarını protokollere ödünç veren blokzincir kullanıcıları."
+  },
+  "lsts": {
+    "keyword": "LST'ler",
+    "keyword_forms": [
+      "LST",
+      "LST'yi",
+      "LST'ye",
+      "LST'de",
+      "LST'nin",
+      "LST'leri",
+      "LST'lere",
+      "LST'lerin"
+    ],
+    "definition": "Stake edilmiş Ether'i temsil eden tokenlar. Sahipleri, stake edilen miktarla orantılı olarak staking ödüllerinden pay alır."
+  },
+  "mainnet": {
+    "keyword": "ana ağ",
+    "keyword_forms": [
+      "ana ağı",
+      "ana ağa",
+      "ana ağda",
+      "ana ağdan",
+      "ana ağın",
+      "ana ağını",
+      "ana ağına",
+      "ana ağında",
+      "ana ağından",
+      "ana ağının",
+      "mainnet",
+      "mainnet'i",
+      "mainnet'e",
+      "mainnet'te",
+      "mainnet'in",
+      "ana ağlar"
+    ],
+    "definition": "Test ağlarının aksine, işlemlerin gerçek değer taşıdığı ana ve canlı blokzincir ağı. Genellikle Ethereum’un Layer 1 ağını anlatır."
+  },
+  "market cap": {
+    "keyword": "piyasa değeri",
+    "keyword_plural": "piyasa değerleri",
+    "keyword_forms": [
+      "piyasa değerini",
+      "piyasa değerine",
+      "piyasa değerinde",
+      "piyasa değerinden",
+      "piyasa değerinin",
+      "piyasa değerlerini",
+      "piyasa değerlerine",
+      "piyasa değerlerinde",
+      "piyasa değerlerinden",
+      "piyasa değerlerinin",
+      "piyasa kapitalizasyonu"
+    ],
+    "definition": "Belirli bir tokenın ya da bir piyasa kesiminin toplam değeri."
+  },
+  "max supply": {
+    "keyword": "maksimum arz",
+    "keyword_plural": "maksimum arzlar",
+    "keyword_forms": [
+      "maksimum arzı",
+      "maksimum arza",
+      "maksimum arzda",
+      "maksimum arzdan",
+      "maksimum arzın",
+      "maksimum arzını",
+      "maksimum arzına",
+      "maksimum arzında",
+      "maksimum arzından",
+      "maksimum arzının",
+      "maksimum arzları",
+      "maksimum arzlara",
+      "maksimum arzlarda",
+      "maksimum arzlardan",
+      "maksimum arzların",
+      "maksimum arzlarını",
+      "maksimum arzlarına",
+      "maksimum arzlarında",
+      "maksimum arzlarının",
+      "maksimum token arzı",
+      "toplam arz sınırı"
+    ],
+    "definition": "Bir kripto para için var olabilecek en yüksek coin veya token sayısı."
+  },
+  "memecoin": {
+    "keyword": "memecoin",
+    "keyword_plural": "memecoinler",
+    "keyword_forms": [
+      "memecoini",
+      "memecoine",
+      "memecoinde",
+      "memecoinden",
+      "memecoinin",
+      "memecoinini",
+      "memecoinine",
+      "memecoininde",
+      "memecoininden",
+      "memecoininin",
+      "memecoinleri",
+      "memecoinlere",
+      "memecoinlerde",
+      "memecoinlerden",
+      "memecoinlerin",
+      "memecoinlerini",
+      "memecoinlerine",
+      "memecoinlerinde",
+      "memecoinlerinin",
+      "memecoin'i",
+      "memecoin'e",
+      "memecoin'de",
+      "memecoin'in",
+      "memecoin'ler",
+      "meme coin"
+    ],
+    "definition": "Bir internet şakasına dayanan, çoğu zaman bir amacı ya da işlevi olmayan kripto para tokenı."
+  },
+  "meta-aggregator": {
+    "keyword": "meta-toplayıcı",
+    "keyword_plural": "meta-toplayıcılar",
+    "keyword_forms": [
+      "meta-toplayıcıyı",
+      "meta-toplayıcıya",
+      "meta-toplayıcıda",
+      "meta-toplayıcıdan",
+      "meta-toplayıcının",
+      "meta-toplayıcısını",
+      "meta-toplayıcısına",
+      "meta-toplayıcısında",
+      "meta-toplayıcısından",
+      "meta-toplayıcısının",
+      "meta-toplayıcın",
+      "meta-toplayıcını",
+      "meta-toplayıcına",
+      "meta-toplayıcında",
+      "meta-toplayıcıları",
+      "meta-toplayıcılara",
+      "meta-toplayıcılarda",
+      "meta-toplayıcılardan",
+      "meta-toplayıcıların",
+      "meta-toplayıcılarını",
+      "meta-toplayıcılarına",
+      "meta-toplayıcılarında",
+      "meta-toplayıcılarının",
+      "meta toplayıcı",
+      "meta-agregatör",
+      "meta agregatör"
+    ],
+    "definition": "Başka toplayıcıları tek bir üst katmanda bir araya getiren araç."
+  },
+  "mev": {
+    "keyword": "MEV",
+    "keyword_forms": [
+      "MEV'i",
+      "MEV'e",
+      "MEV'de",
+      "MEV'den",
+      "MEV'in",
+      "MEV'le"
+    ],
+    "definition": "(Maksimum Çıkarılabilir Değer) Blok üreticilerinin blok içindeki işlemleri yeniden sıralayarak, araya işlem ekleyerek veya sansürleyerek elde ettiği kâr."
+  },
+  "miner": {
+    "keyword": "madenci",
+    "keyword_plural": "madenciler",
+    "keyword_forms": [
+      "madenciyi",
+      "madenciye",
+      "madencide",
+      "madenciden",
+      "madencinin",
+      "madencisini",
+      "madencisine",
+      "madencisinde",
+      "madencisinden",
+      "madencisinin",
+      "madencin",
+      "madencini",
+      "madencine",
+      "madencinde",
+      "madencileri",
+      "madencilere",
+      "madencilerde",
+      "madencilerden",
+      "madencilerin",
+      "madencilerini",
+      "madencilerine",
+      "madencilerinde",
+      "madencilerinin"
+    ],
+    "definition": "Bitcoin gibi Proof of Work ağlarında, ödül karşılığında yeni blok önermek için yarışan katılımcı."
+  },
+  "mining": {
+    "keyword": "madencilik",
+    "keyword_forms": [
+      "madenciliği",
+      "madenciliğe",
+      "madencilikte",
+      "madencilikten",
+      "madenciliğin",
+      "madenciliğini",
+      "madenciliğine",
+      "madenciliğinde",
+      "madenciliğinden",
+      "madenciliğinin",
+      "madencilik yapmak",
+      "madencilik yapan"
+    ],
+    "definition": "İşlemleri doğrulayıp blokzincire yeni bloklar ekleyen, ödül karşılığında yapılan Proof of Work süreci."
+  },
+  "mint": {
+    "keyword": "mint etmek",
+    "keyword_forms": [
+      "mint",
+      "mint et",
+      "mint etme",
+      "mint etmeyi",
+      "mint edilir",
+      "mint edilen",
+      "mintlemek",
+      "mintle",
+      "basmak",
+      "basım",
+      "token basımı"
+    ],
+    "definition": "Bir blokzincir üzerinde yeni token üretmek. Tokenlar değiştirilebilir olabilir ya da NFT gibi benzersiz olabilir."
+  },
+  "monetary policy": {
+    "keyword": "para politikası",
+    "keyword_plural": "para politikaları",
+    "keyword_forms": [
+      "para politikasını",
+      "para politikasına",
+      "para politikasında",
+      "para politikasından",
+      "para politikasının",
+      "para politikalarını",
+      "para politikalarına",
+      "para politikalarında",
+      "para politikalarından",
+      "para politikalarının"
+    ],
+    "definition": "Bir merkez bankasının ekonomide dolaşan para miktarını nasıl yönettiği."
+  },
+  "money": {
+    "keyword": "para",
+    "keyword_forms": [
+      "parayı",
+      "paraya",
+      "parada",
+      "paradan",
+      "paranın",
+      "parasını",
+      "parasına",
+      "parasında",
+      "parasından",
+      "parasının",
+      "paran",
+      "paranı",
+      "parana",
+      "paranda",
+      "paralar",
+      "paraları"
+    ],
+    "definition": "Mal ve hizmet alışverişini kolaylaştıran değişim aracı, hesap birimi ve değer saklama aracı."
+  },
+  "multi-token standard": {
+    "keyword": "çoklu token standardı",
+    "keyword_forms": [
+      "çoklu token standartları",
+      "çoklu token standardını",
+      "çoklu token standardına",
+      "çoklu token standardında",
+      "çoklu token standardından",
+      "çoklu token standardının",
+      "çoklu token standartlarını",
+      "çoklu token standartlarına",
+      "çoklu token standartlarında",
+      "çoklu token standartlarından",
+      "çoklu token standartlarının",
+      "ERC-1155 standardı"
+    ],
+    "definition": "ERC-1155 gibi, tek bir akıllı sözleşmede hem değiştirilebilir hem benzersiz tokenları destekleyen token standardı."
+  },
+  "network governance": {
+    "keyword": "ağ yönetişimi",
+    "keyword_forms": [
+      "ağ yönetişimini",
+      "ağ yönetişimine",
+      "ağ yönetişiminde",
+      "ağ yönetişiminden",
+      "ağ yönetişiminin",
+      "ağ yönetimi"
+    ],
+    "definition": "Merkeziyetsiz bir topluluğun ağ özellikleri ve güncellemeleri üzerinde anlaşmaya varma süreci."
+  },
+  "neutrality": {
+    "keyword": "tarafsızlık",
+    "keyword_forms": [
+      "tarafsızlığı",
+      "tarafsızlığa",
+      "tarafsızlıkta",
+      "tarafsızlıktan",
+      "tarafsızlığın",
+      "tarafsızlığını",
+      "tarafsızlığına",
+      "tarafsızlığında",
+      "tarafsızlığından",
+      "tarafsızlığının",
+      "tarafsız olma",
+      "nötrlük"
+    ],
+    "definition": "Hiçbir kullanıcıyı ya da grubu kayırmadan tüm katılımcılara eşit davranma ilkesi."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT'ler",
+    "keyword_forms": [
+      "NFT'yi",
+      "NFT'ye",
+      "NFT'de",
+      "NFT'den",
+      "NFT'nin",
+      "NFT'si",
+      "NFT'ni",
+      "NFT'leri",
+      "NFT'lere",
+      "NFT'lerde",
+      "NFT'lerin",
+      "NFTler",
+      "NFTleri"
+    ],
+    "definition": "(Değiştirilemez Token) Kopyalanamayan, benzersiz kimliğe sahip token. Ether gibi değiştirilebilir tokenların böyle bir kimliği yoktur."
+  },
+  "node": {
+    "keyword": "düğüm",
+    "keyword_plural": "düğümler",
+    "keyword_forms": [
+      "düğümü",
+      "düğüme",
+      "düğümde",
+      "düğümden",
+      "düğümün",
+      "düğümünü",
+      "düğümüne",
+      "düğümünde",
+      "düğümünden",
+      "düğümünün",
+      "düğümleri",
+      "düğümlere",
+      "düğümlerde",
+      "düğümlerden",
+      "düğümlerin",
+      "düğümlerini",
+      "düğümlerine",
+      "düğümlerinde",
+      "düğümlerinin",
+      "node",
+      "node'u",
+      "node'lar",
+      "düğüm yazılımı"
+    ],
+    "definition": "Blokzincir yazılımı çalıştıran, defterin bir kopyasını tutan ve ağı doğrulamaya yardım eden bilgisayar."
+  },
+  "node operator": {
+    "keyword": "düğüm operatörü",
+    "keyword_plural": "düğüm operatörleri",
+    "keyword_forms": [
+      "düğüm operatörünü",
+      "düğüm operatörüne",
+      "düğüm operatöründe",
+      "düğüm operatöründen",
+      "düğüm operatörünün",
+      "düğüm operatörlerini",
+      "düğüm operatörlerine",
+      "düğüm operatörlerinde",
+      "düğüm operatörlerinden",
+      "düğüm operatörlerinin",
+      "düğüm işletmecisi",
+      "node operatörü"
+    ],
+    "definition": "Ağdaki işlemleri işlemek için doğrulayıcı düğüm çalıştıran Ethereum topluluğu üyesi."
+  },
+  "non-custodial wallet": {
+    "keyword": "saklayıcısız cüzdan",
+    "keyword_plural": "saklayıcısız cüzdanlar",
+    "keyword_forms": [
+      "saklayıcısız cüzdanı",
+      "saklayıcısız cüzdana",
+      "saklayıcısız cüzdanda",
+      "saklayıcısız cüzdandan",
+      "saklayıcısız cüzdanın",
+      "saklayıcısız cüzdanını",
+      "saklayıcısız cüzdanına",
+      "saklayıcısız cüzdanında",
+      "saklayıcısız cüzdanından",
+      "saklayıcısız cüzdanının",
+      "saklayıcısız cüzdanları",
+      "saklayıcısız cüzdanlara",
+      "saklayıcısız cüzdanlarda",
+      "saklayıcısız cüzdanlardan",
+      "saklayıcısız cüzdanların",
+      "saklayıcısız cüzdanlarını",
+      "saklayıcısız cüzdanlarına",
+      "saklayıcısız cüzdanlarında",
+      "saklayıcısız cüzdanlarının",
+      "emanetçisiz cüzdan",
+      "öz saklamalı cüzdan",
+      "gözetimsiz cüzdan",
+      "gözetimsiz cüzdanı",
+      "gözetimsiz cüzdana",
+      "gözetimsiz cüzdanda",
+      "gözetimsiz"
+    ],
+    "definition": "(Diğer adı: öz saklama cüzdanı) Saklayıcısız cüzdanda özel anahtarların tek kontrolü sendedir, o anahtarlar da kripto varlıklarını kontrol eder."
+  },
+  "offchain": {
+    "keyword": "zincir dışı",
+    "keyword_forms": [
+      "zincir dışında",
+      "zincir dışına",
+      "zincir dışından",
+      "zincir dışındaki",
+      "zincir dışı işlem",
+      "zincir dışı veri",
+      "offchain"
+    ],
+    "definition": "Blokzincirin dışında gerçekleşen her eylem veya veri; örneğin sıradan sunucularda ya da imzalı mesajlarda."
+  },
+  "onchain": {
+    "keyword": "zincir üstü",
+    "keyword_forms": [
+      "zincir üstünde",
+      "zincir üstüne",
+      "zincir üstünden",
+      "zincir üstündeki",
+      "zincir üzerinde",
+      "zincir içi",
+      "onchain"
+    ],
+    "definition": "Bir blokzincir ağına kaydedilmiş. Ethereum gibi kripto para ağlarında yapılan eylemleri anlatır."
+  },
+  "onchain governance": {
+    "keyword": "zincir üstü yönetişim",
+    "keyword_forms": [
+      "zincir üstü yönetişimi",
+      "zincir üstü yönetişime",
+      "zincir üstü yönetişimde",
+      "zincir üstü yönetişimden",
+      "zincir üstü yönetişimin",
+      "zincir üstü yönetişimini",
+      "zincir üstü yönetişimine",
+      "zincir üstü yönetişiminde",
+      "zincir üstü yönetişiminden",
+      "zincir üstü yönetişiminin",
+      "zincir üstü yönetim"
+    ],
+    "definition": "Bir blokzincirin yapısındaki değişiklikleri yöneten otomatik sistem."
+  },
+  "onchain identity": {
+    "keyword": "zincir üstü kimlik",
+    "keyword_plural": "zincir üstü kimlikler",
+    "keyword_forms": [
+      "zincir üstü kimliği",
+      "zincir üstü kimliğe",
+      "zincir üstü kimlikte",
+      "zincir üstü kimlikten",
+      "zincir üstü kimliğin",
+      "zincir üstü kimliğini",
+      "zincir üstü kimliğine",
+      "zincir üstü kimliğinde",
+      "zincir üstü kimliğinden",
+      "zincir üstü kimliğinin",
+      "zincir üstü kimlikleri",
+      "zincir üstü kimliklere",
+      "zincir üstü kimliklerde",
+      "zincir üstü kimliklerden",
+      "zincir üstü kimliklerin",
+      "zincir üstü kimliklerini",
+      "zincir üstü kimliklerine",
+      "zincir üstü kimliklerinde",
+      "zincir üstü kimliklerinin"
+    ],
+    "definition": "Blokzincir etkinliğinden ve kayıtlarından oluşan herkese açık kimlik; örneğin cüzdan adresine bağlı bir ENS adı."
+  },
+  "onramp": {
+    "keyword": "giriş rampası",
+    "keyword_plural": "giriş rampaları",
+    "keyword_forms": [
+      "giriş rampasını",
+      "giriş rampasına",
+      "giriş rampasında",
+      "giriş rampasından",
+      "giriş rampasının",
+      "giriş rampalarını",
+      "giriş rampalarına",
+      "giriş rampalarında",
+      "giriş rampalarından",
+      "giriş rampalarının",
+      "onramp",
+      "onramp'ler",
+      "çıkış rampası",
+      "fiat giriş rampası"
+    ],
+    "definition": "Dolar gibi sıradan parayı kripto paraya çeviren hizmet. Çıkış rampaları tersini yapar."
+  },
+  "open internet": {
+    "keyword": "açık internet",
+    "keyword_forms": [
+      "açık interneti",
+      "açık internete",
+      "açık internette",
+      "açık internetten",
+      "açık internetin",
+      "açık internetini",
+      "açık internetine",
+      "açık internetinde",
+      "açık internetinden",
+      "açık internetinin",
+      "herkese açık internet"
+    ],
+    "definition": "Bilginin, hizmetlerin ve iletişimin merkezi şirketlerin denetimi olmadan herkese açık olduğu dijital alan."
+  },
+  "open source": {
+    "keyword": "açık kaynak",
+    "keyword_forms": [
+      "açık kaynağı",
+      "açık kaynağa",
+      "açık kaynakta",
+      "açık kaynaktan",
+      "açık kaynağın",
+      "açık kaynağını",
+      "açık kaynağına",
+      "açık kaynağında",
+      "açık kaynağından",
+      "açık kaynağının",
+      "açık kaynaklı",
+      "açık kaynak kodlu",
+      "açık kaynak yazılım"
+    ],
+    "definition": "Kaynak kodunu herkesin inceleyebildiği, değiştirebildiği ve geliştirebildiği yazılım."
+  },
+  "optimistic rollup": {
+    "keyword": "iyimser rollup",
+    "keyword_plural": "iyimser rolluplar",
+    "keyword_forms": [
+      "iyimser rollupu",
+      "iyimser rollupa",
+      "iyimser rollupta",
+      "iyimser rolluptan",
+      "iyimser rollupun",
+      "iyimser rollupunu",
+      "iyimser rollupuna",
+      "iyimser rollupunda",
+      "iyimser rollupundan",
+      "iyimser rollupunun",
+      "iyimser rollupları",
+      "iyimser rolluplara",
+      "iyimser rolluplarda",
+      "iyimser rolluplardan",
+      "iyimser rollupların",
+      "iyimser rolluplarını",
+      "iyimser rolluplarına",
+      "iyimser rolluplarında",
+      "iyimser rolluplarının",
+      "iyimser rollup'u",
+      "iyimser rollup'a",
+      "iyimser rollup'ta",
+      "iyimser rollup'un",
+      "iyimser rollup'lar",
+      "optimistic rollup"
+    ],
+    "definition": "Toplu gönderdiği işlemleri geçerli varsayan bir Layer 2 rollup. İtiraz süresi içinde bir hile kanıtı aksini göstermezse işlemler kesinleşir."
+  },
+  "oracle": {
+    "keyword": "oracle",
+    "keyword_plural": "oracle'lar",
+    "keyword_forms": [
+      "oracle'ı",
+      "oracle'a",
+      "oracle'da",
+      "oracle'ın",
+      "oracle'ları",
+      "oracle'lara",
+      "oracleları",
+      "kâhin",
+      "kahin",
+      "kâhinler",
+      "veri kaynağı"
+    ],
+    "definition": "Piyasa fiyatı gibi dış dünya bilgilerini, akıllı sözleşmelerin kullanması için blokzincire taşıyan hizmet."
+  },
+  "order book": {
+    "keyword": "emir defteri",
+    "keyword_plural": "emir defterleri",
+    "keyword_forms": [
+      "emir defterini",
+      "emir defterine",
+      "emir defterinde",
+      "emir defterinden",
+      "emir defterinin",
+      "emir defterlerini",
+      "emir defterlerine",
+      "emir defterlerinde",
+      "emir defterlerinden",
+      "emir defterlerinin",
+      "order book"
+    ],
+    "definition": "Farklı fiyatlardaki alım ve satım tekliflerinin listesi. Geleneksel borsalar işlemleri bu listeden eşleştirir."
+  },
+  "otc": {
+    "keyword": "OTC",
+    "keyword_forms": [
+      "OTC'yi",
+      "OTC'ye",
+      "OTC'de",
+      "OTC'den",
+      "OTC'nin",
+      "tezgah üstü",
+      "OTC işlemi"
+    ],
+    "definition": "(Tezgah Üstü) Doğrudan özel taraflarla yapılan alım satımlar."
+  },
+  "over the counter": {
+    "keyword": "tezgah üstü",
+    "keyword_forms": [
+      "tezgâh üstü",
+      "tezgah üstünde",
+      "tezgah üstü işlem",
+      "tezgah üstü işlemler",
+      "OTC"
+    ],
+    "definition": "(OTC) Doğrudan özel taraflarla yapılan alım satımlar."
+  },
+  "password manager": {
+    "keyword": "parola yöneticisi",
+    "keyword_plural": "parola yöneticileri",
+    "keyword_forms": [
+      "parola yöneticisini",
+      "parola yöneticisine",
+      "parola yöneticisinde",
+      "parola yöneticisinden",
+      "parola yöneticisinin",
+      "parola yöneticilerini",
+      "parola yöneticilerine",
+      "parola yöneticilerinde",
+      "parola yöneticilerinden",
+      "parola yöneticilerinin",
+      "şifre yöneticisi",
+      "şifre yöneticileri"
+    ],
+    "definition": "Parolalarını güvenle saklayan ve her hesap için güçlü, benzersiz parolalar üretebilen uygulama."
+  },
+  "payment channel": {
+    "keyword": "ödeme kanalı",
+    "keyword_plural": "ödeme kanalları",
+    "keyword_forms": [
+      "ödeme kanalını",
+      "ödeme kanalına",
+      "ödeme kanalında",
+      "ödeme kanalından",
+      "ödeme kanalının",
+      "ödeme kanallarını",
+      "ödeme kanallarına",
+      "ödeme kanallarında",
+      "ödeme kanallarından",
+      "ödeme kanallarının"
+    ],
+    "definition": "İki tarafın, her işlemi blokzincire kaydetmeden defalarca işlem yapmasını sağlar."
+  },
+  "peer": {
+    "keyword": "eş",
+    "keyword_plural": "eşler",
+    "keyword_forms": [
+      "eşi",
+      "eşe",
+      "eşte",
+      "eşten",
+      "eşin",
+      "eşini",
+      "eşine",
+      "eşinde",
+      "eşinden",
+      "eşinin",
+      "eşleri",
+      "eşlere",
+      "eşlerde",
+      "eşlerden",
+      "eşlerin",
+      "eşlerini",
+      "eşlerine",
+      "eşlerinde",
+      "eşlerinin",
+      "eşit taraf",
+      "eşit katılımcı"
+    ],
+    "definition": "Eşit kabul edilen kişi ya da kurum."
+  },
+  "peer-to-peer": {
+    "keyword": "eşler arası",
+    "keyword_forms": [
+      "eşler arasında",
+      "eşler arasındaki",
+      "eşten eşe",
+      "eşler arası ağ",
+      "P2P",
+      "uçtan uca"
+    ],
+    "definition": "Aracıya ihtiyaç duymayan, taraflar arasındaki doğrudan bağlantılar."
+  },
+  "peg": {
+    "keyword": "fiyat çapası",
+    "keyword_plural": "fiyat çapaları",
+    "keyword_forms": [
+      "fiyat çapasını",
+      "fiyat çapasına",
+      "fiyat çapasında",
+      "fiyat çapasından",
+      "fiyat çapasının",
+      "fiyat çapalarını",
+      "fiyat çapalarına",
+      "fiyat çapalarında",
+      "fiyat çapalarından",
+      "fiyat çapalarının",
+      "sabitleme",
+      "sabitlemeyi",
+      "fiyat sabitlemesi",
+      "peg",
+      "sabitlenmiş"
+    ],
+    "definition": "İki ya da daha fazla varlık arasında değer eşitliğini koruma yöntemi."
+  },
+  "permissionless": {
+    "keyword": "izinsiz",
+    "keyword_forms": [
+      "izinsizdir",
+      "izinsizce",
+      "izin gerektirmeyen",
+      "izin gerektirmez",
+      "izin almadan"
+    ],
+    "definition": "Hiçbir kurumdan izin almayı gerektirmeyen."
+  },
+  "phishing": {
+    "keyword": "oltalama",
+    "keyword_forms": [
+      "oltalamayı",
+      "oltalamaya",
+      "oltalamada",
+      "oltalamadan",
+      "oltalamanın",
+      "oltalamasını",
+      "oltalamasına",
+      "oltalamasında",
+      "oltalamasından",
+      "oltalamasının",
+      "oltalaman",
+      "oltalamanı",
+      "oltalamana",
+      "oltalamanda",
+      "phishing",
+      "oltalama saldırısı",
+      "oltalama saldırısına",
+      "oltalama saldırıları"
+    ],
+    "definition": "Saldırganın güvenilir bir kişi ya da kurum gibi davranıp kurbanları hassas bilgilerini paylaşmaya veya para göndermeye kandırdığı bir sosyal mühendislik saldırısı."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAP'lar",
+    "keyword_forms": [
+      "POAP'ı",
+      "POAP'a",
+      "POAP'ta",
+      "POAP'tan",
+      "POAP'ın",
+      "POAP'ını",
+      "POAP'ları",
+      "POAP'lara",
+      "POAP'larda",
+      "POAP'ların",
+      "POAPlar"
+    ],
+    "definition": "POAP (Katılım Kanıtı Protokolü), bir dersi tamamlamak gibi yaşam deneyimlerinin güvenilir kaydını cüzdanında tutan rozettir."
+  },
+  "pos": {
+    "keyword": "PoS",
+    "keyword_forms": [
+      "PoS'u",
+      "PoS'a",
+      "PoS'ta",
+      "PoS'un",
+      "PoS ağı",
+      "Proof of Stake"
+    ],
+    "definition": "(Proof of Stake) Doğrulayıcıların, ağı güvende tutmak için stake kilitlediği uzlaşma yöntemi."
+  },
+  "price impact": {
+    "keyword": "fiyat etkisi",
+    "keyword_plural": "fiyat etkileri",
+    "keyword_forms": [
+      "fiyat etkisini",
+      "fiyat etkisine",
+      "fiyat etkisinde",
+      "fiyat etkisinden",
+      "fiyat etkisinin",
+      "fiyat etkilerini",
+      "fiyat etkilerine",
+      "fiyat etkilerinde",
+      "fiyat etkilerinden",
+      "fiyat etkilerinin",
+      "fiyata etkisi"
+    ],
+    "definition": "Kendi işleminin bir DEX’te fiyatı ne kadar hareket ettirdiği; işlemin büyüklüğüne bağlıdır."
+  },
+  "primary name": {
+    "keyword": "birincil isim",
+    "keyword_plural": "birincil isimler",
+    "keyword_forms": [
+      "birincil ismi",
+      "birincil isme",
+      "birincil isimde",
+      "birincil isimden",
+      "birincil ismin",
+      "birincil ismini",
+      "birincil ismine",
+      "birincil isminde",
+      "birincil isminden",
+      "birincil isminin",
+      "birincil isimleri",
+      "birincil isimlere",
+      "birincil isimlerde",
+      "birincil isimlerden",
+      "birincil isimlerin",
+      "birincil isimlerini",
+      "birincil isimlerine",
+      "birincil isimlerinde",
+      "birincil isimlerinin",
+      "birincil ad",
+      "birincil adı",
+      "ana isim"
+    ],
+    "definition": "Cüzdan adresine bağlı ENS adı. Uygulamalar uzun adres yerine bu ismi gösterir."
+  },
+  "private key": {
+    "keyword": "özel anahtar",
+    "keyword_plural": "özel anahtarlar",
+    "keyword_forms": [
+      "özel anahtarı",
+      "özel anahtara",
+      "özel anahtarda",
+      "özel anahtardan",
+      "özel anahtarın",
+      "özel anahtarını",
+      "özel anahtarına",
+      "özel anahtarında",
+      "özel anahtarından",
+      "özel anahtarının",
+      "özel anahtarları",
+      "özel anahtarlara",
+      "özel anahtarlarda",
+      "özel anahtarlardan",
+      "özel anahtarların",
+      "özel anahtarlarını",
+      "özel anahtarlarına",
+      "özel anahtarlarında",
+      "özel anahtarlarının",
+      "gizli anahtar"
+    ],
+    "definition": "Özel anahtar cüzdanına erişim sağlar ve kripto varlıklarını başka cüzdanlara göndermene izin verir."
+  },
+  "private transaction routing": {
+    "keyword": "özel işlem yönlendirmesi",
+    "keyword_forms": [
+      "özel işlem yönlendirmesini",
+      "özel işlem yönlendirmesine",
+      "özel işlem yönlendirmesinde",
+      "özel işlem yönlendirmesinden",
+      "özel işlem yönlendirmesinin",
+      "özel işlem yönlendirme",
+      "gizli işlem yönlendirmesi",
+      "özel işlem gönderimi"
+    ],
+    "definition": "İşlemleri herkese açık sıra yerine doğrudan blok üreticilerine göndermek. Böylece işlemler, önden işlem yapan botlardan gizlenir."
+  },
+  "proof of stake": {
+    "keyword": "Proof of Stake",
+    "keyword_forms": [
+      "proof-of-stake",
+      "PoS",
+      "Proof of Stake'i",
+      "Proof of Stake'e",
+      "Proof of Stake'te",
+      "Proof of Stake'in",
+      "hisse ispatı",
+      "pay kanıtı"
+    ],
+    "definition": "Blok üreticilerini, her katılımcının protokole kilitlediği stake miktarına göre rastgele seçen uzlaşma yöntemi."
+  },
+  "proof of work": {
+    "keyword": "Proof of Work",
+    "keyword_forms": [
+      "proof-of-work",
+      "PoW",
+      "Proof of Work'ü",
+      "Proof of Work'e",
+      "Proof of Work'te",
+      "Proof of Work'ün",
+      "iş ispatı",
+      "iş kanıtı"
+    ],
+    "definition": "Madencilerin, geçerli blok önermek için işlem gücü (yani “iş”) harcayarak yarıştığı uzlaşma yöntemi."
+  },
+  "proof-of-stake": {
+    "keyword": "proof-of-stake",
+    "keyword_forms": [
+      "proof of stake",
+      "PoS",
+      "proof-of-stake'i",
+      "proof-of-stake'e",
+      "proof-of-stake'te",
+      "proof-of-stake'in",
+      "hisse ispatı"
+    ],
+    "definition": "Doğrulayıcı düğümleri, düğümün kilitlediği stake miktarına göre seçen bir blokzincir uzlaşma yöntemi."
+  },
+  "pseudonymous": {
+    "keyword": "takma adlı",
+    "keyword_forms": [
+      "takma ad",
+      "takma adla",
+      "takma adını kullanan",
+      "takma isimli",
+      "müstear adlı"
+    ],
+    "definition": "Gerçek kimliğini gizleyen, kendi seçtiğin bir adla hareket etme."
+  },
+  "public": {
+    "keyword": "herkese açık",
+    "keyword_forms": [
+      "halka açık",
+      "kamuya açık",
+      "herkese açıktır",
+      "açık"
+    ],
+    "definition": "Herkese açık blokzincirlerde defteri herkes görüntüleyebilir."
+  },
+  "public good": {
+    "keyword": "kamu malı",
+    "keyword_plural": "kamu malları",
+    "keyword_forms": [
+      "kamu malını",
+      "kamu malına",
+      "kamu malında",
+      "kamu malından",
+      "kamu malının",
+      "kamu mallarını",
+      "kamu mallarına",
+      "kamu mallarında",
+      "kamu mallarından",
+      "kamu mallarının",
+      "kamu yararı",
+      "kamusal fayda"
+    ],
+    "definition": "Kamu malı, toplumun tüm üyelerinin erişebildiği bir mal ya da hizmettir."
+  },
+  "public key": {
+    "keyword": "genel anahtar",
+    "keyword_plural": "genel anahtarlar",
+    "keyword_forms": [
+      "genel anahtarı",
+      "genel anahtara",
+      "genel anahtarda",
+      "genel anahtardan",
+      "genel anahtarın",
+      "genel anahtarını",
+      "genel anahtarına",
+      "genel anahtarında",
+      "genel anahtarından",
+      "genel anahtarının",
+      "genel anahtarları",
+      "genel anahtarlara",
+      "genel anahtarlarda",
+      "genel anahtarlardan",
+      "genel anahtarların",
+      "genel anahtarlarını",
+      "genel anahtarlarına",
+      "genel anahtarlarında",
+      "genel anahtarlarının",
+      "açık anahtar",
+      "açık anahtarı",
+      "herkese açık anahtar"
+    ],
+    "definition": "Özel anahtarından üretilen ve paylaşması güvenli olan kod. Cüzdan adresin genel anahtarından türetilir."
+  },
+  "quadratic funding": {
+    "keyword": "karesel fonlama",
+    "keyword_forms": [
+      "karesel fonlamayı",
+      "karesel fonlamaya",
+      "karesel fonlamada",
+      "karesel fonlamadan",
+      "karesel fonlamanın",
+      "karesel fonlamasını",
+      "karesel fonlamasına",
+      "karesel fonlamasında",
+      "karesel fonlamasından",
+      "karesel fonlamasının",
+      "karesel fonlaman",
+      "karesel fonlamanı",
+      "karesel fonlamana",
+      "karesel fonlamanda",
+      "kuadratik fonlama"
+    ],
+    "definition": "Her büyüklükteki bağışın oy gibi sayıldığı ve mevcut kaynakları büyüten bir kitlesel fonlama yöntemi. Destek ne kadar genişse etki o kadar büyük olur."
+  },
+  "recovery phrase": {
+    "keyword": "kurtarma ifadesi",
+    "keyword_plural": "kurtarma ifadeleri",
+    "keyword_forms": [
+      "kurtarma ifadesini",
+      "kurtarma ifadesine",
+      "kurtarma ifadesinde",
+      "kurtarma ifadesinden",
+      "kurtarma ifadesinin",
+      "kurtarma ifadelerini",
+      "kurtarma ifadelerine",
+      "kurtarma ifadelerinde",
+      "kurtarma ifadelerinden",
+      "kurtarma ifadelerinin",
+      "seed ifadesi",
+      "tohum ifadesi",
+      "kurtarma cümlesi"
+    ],
+    "definition": "Kurtarma ifadesi, cüzdanının genel anahtarını ve özel anahtarını üretmek için kullanılan 12 ila 24 kelimelik bir listedir."
+  },
+  "red flag": {
+    "keyword": "tehlike işareti",
+    "keyword_plural": "tehlike işaretleri",
+    "keyword_forms": [
+      "tehlike işaretini",
+      "tehlike işaretine",
+      "tehlike işaretinde",
+      "tehlike işaretinden",
+      "tehlike işaretinin",
+      "tehlike işaretlerini",
+      "tehlike işaretlerine",
+      "tehlike işaretlerinde",
+      "tehlike işaretlerinden",
+      "tehlike işaretlerinin",
+      "uyarı işareti",
+      "uyarı işaretleri",
+      "kırmızı bayrak"
+    ],
+    "definition": "Tehlikeyi gösteren uyarı işareti."
+  },
+  "restaking": {
+    "keyword": "restaking",
+    "keyword_forms": [
+      "restaking'i",
+      "restaking'e",
+      "restaking'de",
+      "restaking'in",
+      "yeniden staking",
+      "yeniden stake etme",
+      "yeniden stake etmek"
+    ],
+    "definition": "Stake edilmiş Ether tokenlarını, ödül karşılığında başka protokolleri güvence altına almak ve doğrulamak için yeniden kullanmak."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "keyword_forms": [
+      "RetroPGF'i",
+      "RetroPGF'e",
+      "RetroPGF'te",
+      "RetroPGF'in",
+      "geriye dönük kamu malı fonlaması"
+    ],
+    "definition": "(Geriye Dönük Kamu Malı Fonlaması) Projeleri geçmişteki etkilerine göre fonlayan bir mekanizma."
+  },
+  "rollup": {
+    "keyword": "rollup",
+    "keyword_plural": "rolluplar",
+    "keyword_forms": [
+      "rollupu",
+      "rollupa",
+      "rollupta",
+      "rolluptan",
+      "rollupun",
+      "rollupunu",
+      "rollupuna",
+      "rollupunda",
+      "rollupundan",
+      "rollupunun",
+      "rollupları",
+      "rolluplara",
+      "rolluplarda",
+      "rolluplardan",
+      "rollupların",
+      "rolluplarını",
+      "rolluplarına",
+      "rolluplarında",
+      "rolluplarının",
+      "rollup'u",
+      "rollup'a",
+      "rollup'ta",
+      "rollup'un",
+      "rollup'lar",
+      "rollup'ları",
+      "toplama zinciri"
+    ],
+    "definition": "İşlemlerin çoğunu ana zincirin dışında işleyip tek bir parti halinde zincire yazan Layer 2 ölçekleme çözümü. Kapasiteyi artırır, maliyeti düşürür."
+  },
+  "sandwich attack": {
+    "keyword": "sandviç saldırısı",
+    "keyword_plural": "sandviç saldırıları",
+    "keyword_forms": [
+      "sandviç saldırısını",
+      "sandviç saldırısına",
+      "sandviç saldırısında",
+      "sandviç saldırısından",
+      "sandviç saldırısının",
+      "sandviç saldırılarını",
+      "sandviç saldırılarına",
+      "sandviç saldırılarında",
+      "sandviç saldırılarından",
+      "sandviç saldırılarının",
+      "sandwich saldırısı"
+    ],
+    "definition": "Botların, senin işleminin hemen öncesine ve sonrasına işlem yerleştirip fiyatı oynatarak senin zararına kâr ettiği saldırı."
+  },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "keyword_forms": [
+      "Satoshi Nakamoto'yu",
+      "Satoshi Nakamoto'ya",
+      "Satoshi Nakamoto'da",
+      "Satoshi Nakamoto'dan",
+      "Satoshi Nakamoto'nun",
+      "Satoshi",
+      "Satoshi'nin"
+    ],
+    "definition": "Bitcoin’in takma adlı yaratıcısı. Gerçek kimliğini bugün hâlâ kimse bilmiyor."
+  },
+  "scalability": {
+    "keyword": "ölçeklenebilirlik",
+    "keyword_forms": [
+      "ölçeklenebilirliği",
+      "ölçeklenebilirliğe",
+      "ölçeklenebilirlikte",
+      "ölçeklenebilirlikten",
+      "ölçeklenebilirliğin",
+      "ölçeklenebilirliğini",
+      "ölçeklenebilirliğine",
+      "ölçeklenebilirliğinde",
+      "ölçeklenebilirliğinden",
+      "ölçeklenebilirliğinin",
+      "ölçeklenme",
+      "ölçeklenebilir olma"
+    ],
+    "definition": "Bir blokzincirin, artan iş, işlem ve kullanım yükünü kullanıcıları en az etkileyerek karşılayabilme kapasitesi."
+  },
+  "scam-token": {
+    "keyword": "dolandırıcı token",
+    "keyword_plural": "dolandırıcı tokenlar",
+    "keyword_forms": [
+      "dolandırıcı tokenı",
+      "dolandırıcı tokena",
+      "dolandırıcı tokenda",
+      "dolandırıcı tokendan",
+      "dolandırıcı tokenın",
+      "dolandırıcı tokenını",
+      "dolandırıcı tokenına",
+      "dolandırıcı tokenında",
+      "dolandırıcı tokenından",
+      "dolandırıcı tokenının",
+      "dolandırıcı tokenları",
+      "dolandırıcı tokenlara",
+      "dolandırıcı tokenlarda",
+      "dolandırıcı tokenlardan",
+      "dolandırıcı tokenların",
+      "dolandırıcı tokenlarını",
+      "dolandırıcı tokenlarına",
+      "dolandırıcı tokenlarında",
+      "dolandırıcı tokenlarının",
+      "sahte token",
+      "scam token",
+      "dolandırıcılık tokenı",
+      "sahte tokenlar"
+    ],
+    "definition": "Yalnızca yatırımcıların parasını çalmak için çıkarılan kripto para tokenı."
+  },
+  "scarce": {
+    "keyword": "kıt",
+    "keyword_forms": [
+      "kıttır",
+      "kıt olan",
+      "az bulunur",
+      "az bulunan",
+      "sınırlı",
+      "arzı sınırlı"
+    ],
+    "definition": "Arzı sınırlı, az bulunur olma durumu."
+  },
+  "scarcity": {
+    "keyword": "kıtlık",
+    "keyword_forms": [
+      "kıtlığı",
+      "kıtlığa",
+      "kıtlıkta",
+      "kıtlıktan",
+      "kıtlığın",
+      "kıtlığını",
+      "kıtlığına",
+      "kıtlığında",
+      "kıtlığından",
+      "kıtlığının",
+      "az bulunurluk",
+      "arz kıtlığı"
+    ],
+    "definition": "Bir şeyin arzının sınırlı olması, az bulunması."
+  },
+  "security": {
+    "keyword": "güvenlik",
+    "keyword_forms": [
+      "güvenliği",
+      "güvenliğe",
+      "güvenlikte",
+      "güvenlikten",
+      "güvenliğin",
+      "güvenliğini",
+      "güvenliğine",
+      "güvenliğinde",
+      "güvenliğinden",
+      "güvenliğinin",
+      "ağ güvenliği",
+      "güvenli olma"
+    ],
+    "definition": "Bir blokzincirin hack denemelerine, kod açıklarına ve ekonomik saldırılara dayanıp normal çalışmayı sürdürebilme yeteneği."
+  },
+  "seed phrase": {
+    "keyword": "kurtarma ifadesi",
+    "keyword_plural": "kurtarma ifadeleri",
+    "keyword_forms": [
+      "kurtarma ifadesini",
+      "kurtarma ifadesine",
+      "kurtarma ifadesinde",
+      "kurtarma ifadesinden",
+      "kurtarma ifadesinin",
+      "kurtarma ifadelerini",
+      "kurtarma ifadelerine",
+      "kurtarma ifadelerinde",
+      "kurtarma ifadelerinden",
+      "kurtarma ifadelerinin",
+      "seed ifadesi",
+      "tohum ifadesi",
+      "gizli kurtarma ifadesi"
+    ],
+    "definition": "Cüzdan kurulurken üretilen rastgele kelimeler. O cüzdanın kontrol ettiği TÜM hesapların ana anahtarıdır. KURTARMA İFADENİ HİÇBİR SEBEPLE KİMSEYLE PAYLAŞMA."
+  },
+  "self-custodial": {
+    "keyword": "öz saklamalı",
+    "keyword_forms": [
+      "öz saklama",
+      "öz saklamalı cüzdan",
+      "kendi saklamanda",
+      "kendi kendine saklama",
+      "kendi sakladığın"
+    ],
+    "definition": "Varlıklarını yalnızca senin erişebileceğin şekilde tutma yöntemi."
+  },
+  "self-custody": {
+    "keyword": "öz saklama",
+    "keyword_forms": [
+      "öz saklamayı",
+      "öz saklamaya",
+      "öz saklamada",
+      "öz saklamadan",
+      "öz saklamanın",
+      "öz saklamasını",
+      "öz saklamasına",
+      "öz saklamasında",
+      "öz saklamasından",
+      "öz saklamasının",
+      "öz saklaman",
+      "öz saklamanı",
+      "öz saklamana",
+      "öz saklamanda",
+      "kendi saklaman",
+      "kendi saklamanda",
+      "bireysel saklama",
+      "öz saklama yöntemi"
+    ],
+    "definition": "Varlıklarını yalnızca senin erişebileceğin şekilde tutma yöntemi."
+  },
+  "self-custody wallet": {
+    "keyword": "öz saklama cüzdanı",
+    "keyword_plural": "öz saklama cüzdanları",
+    "keyword_forms": [
+      "öz saklama cüzdanını",
+      "öz saklama cüzdanına",
+      "öz saklama cüzdanında",
+      "öz saklama cüzdanından",
+      "öz saklama cüzdanının",
+      "öz saklama cüzdanlarını",
+      "öz saklama cüzdanlarına",
+      "öz saklama cüzdanlarında",
+      "öz saklama cüzdanlarından",
+      "öz saklama cüzdanlarının",
+      "saklayıcısız cüzdan"
+    ],
+    "definition": "(Diğer adı: saklayıcısız cüzdan) Öz saklama cüzdanında özel anahtarların tek kontrolü sendedir, o anahtarlar da kripto varlıklarını kontrol eder."
+  },
+  "settlement layer": {
+    "keyword": "mutabakat katmanı",
+    "keyword_plural": "mutabakat katmanları",
+    "keyword_forms": [
+      "mutabakat katmanını",
+      "mutabakat katmanına",
+      "mutabakat katmanında",
+      "mutabakat katmanından",
+      "mutabakat katmanının",
+      "mutabakat katmanlarını",
+      "mutabakat katmanlarına",
+      "mutabakat katmanlarında",
+      "mutabakat katmanlarından",
+      "mutabakat katmanlarının",
+      "takas katmanı",
+      "uzlaşma katmanı"
+    ],
+    "definition": "Kesinleşen işlemlerdeki varlık değişimini kaydeden en alt blokzincir katmanı. Ethereum Mainnet, Ethereum Layer 2 çözümlerinin mutabakat katmanıdır."
+  },
+  "settlement time": {
+    "keyword": "mutabakat süresi",
+    "keyword_plural": "mutabakat süreleri",
+    "keyword_forms": [
+      "mutabakat süresini",
+      "mutabakat süresine",
+      "mutabakat süresinde",
+      "mutabakat süresinden",
+      "mutabakat süresinin",
+      "mutabakat sürelerini",
+      "mutabakat sürelerine",
+      "mutabakat sürelerinde",
+      "mutabakat sürelerinden",
+      "mutabakat sürelerinin",
+      "onay süresi",
+      "işlem onay süresi"
+    ],
+    "definition": "Bir işlemin onaylanması için gereken süre."
+  },
+  "sharding": {
+    "keyword": "sharding",
+    "keyword_forms": [
+      "sharding'i",
+      "sharding'e",
+      "sharding'de",
+      "sharding'in",
+      "parçalama",
+      "parçalamayı",
+      "zincir parçalama",
+      "shard"
+    ],
+    "definition": "Ölçeklenebilirliği artırmak için tek bir blokzinciri, paralel çalışan birden fazla zincire bölme süreci."
+  },
+  "sidechain": {
+    "keyword": "yan zincir",
+    "keyword_plural": "yan zincirler",
+    "keyword_forms": [
+      "yan zinciri",
+      "yan zincire",
+      "yan zincirde",
+      "yan zincirden",
+      "yan zincirin",
+      "yan zincirini",
+      "yan zincirine",
+      "yan zincirinde",
+      "yan zincirinden",
+      "yan zincirinin",
+      "yan zincirleri",
+      "yan zincirlere",
+      "yan zincirlerde",
+      "yan zincirlerden",
+      "yan zincirlerin",
+      "yan zincirlerini",
+      "yan zincirlerine",
+      "yan zincirlerinde",
+      "yan zincirlerinin",
+      "sidechain"
+    ],
+    "definition": "Ana blokzincire paralel çalışan, bir bridge ile bağlı, kendi doğrulayıcıları ve güvenliği olan ayrı bir blokzincir."
+  },
+  "slashed": {
+    "keyword": "kesintiye uğramış",
+    "keyword_forms": [
+      "kesintiye uğrar",
+      "kesilmiş",
+      "stake'i kesilmiş",
+      "slash edilmiş",
+      "cezalandırılmış",
+      "kesinti uygulanmış"
+    ],
+    "definition": "Bir Proof of Stake blokzincirinde kanıtlanmış hile yüzünden doğrulayıcının stake’inin bir kısmını kaybetmesi."
+  },
+  "slashing": {
+    "keyword": "slashing",
+    "keyword_forms": [
+      "slashing'i",
+      "slashing'e",
+      "slashing'de",
+      "slashing'in",
+      "kesinti",
+      "kesintiyi",
+      "kesintiye",
+      "ceza kesintisi",
+      "stake kesintisi"
+    ],
+    "definition": "Proof of Stake ağlarında, çelişkili iki blok imzalamak gibi kanıtlanabilir hilelerde doğrulayıcının stake’inin bir kısmını yok eden ceza."
+  },
+  "slippage": {
+    "keyword": "slippage",
+    "keyword_forms": [
+      "slippage'ı",
+      "slippage'a",
+      "slippage'da",
+      "slippage'ın",
+      "slippage'i",
+      "slippage'e",
+      "slippage'de",
+      "fiyat kayması",
+      "fiyat kaymasını",
+      "fiyat kaymasına",
+      "kayma"
+    ],
+    "definition": "Beklediğin fiyat ile işlemin gerçekleştiğinde aldığın fiyat arasındaki fark."
+  },
+  "slippage tolerance": {
+    "keyword": "slippage toleransı",
+    "keyword_plural": "slippage toleransları",
+    "keyword_forms": [
+      "slippage toleransını",
+      "slippage toleransına",
+      "slippage toleransında",
+      "slippage toleransından",
+      "slippage toleransının",
+      "slippage toleranslarını",
+      "slippage toleranslarına",
+      "slippage toleranslarında",
+      "slippage toleranslarından",
+      "slippage toleranslarının",
+      "kayma toleransı",
+      "fiyat kayması toleransı"
+    ],
+    "definition": "Bir işlem için kabul ettiğin en yüksek fiyat değişimi. Fiyat bundan fazla oynarsa işlem iptal edilir."
+  },
+  "smart account": {
+    "keyword": "akıllı hesap",
+    "keyword_plural": "akıllı hesaplar",
+    "keyword_forms": [
+      "akıllı hesabı",
+      "akıllı hesaba",
+      "akıllı hesapta",
+      "akıllı hesaptan",
+      "akıllı hesabın",
+      "akıllı hesabını",
+      "akıllı hesabına",
+      "akıllı hesabında",
+      "akıllı hesabından",
+      "akıllı hesabının",
+      "akıllı hesapları",
+      "akıllı hesaplara",
+      "akıllı hesaplarda",
+      "akıllı hesaplardan",
+      "akıllı hesapların",
+      "akıllı hesaplarını",
+      "akıllı hesaplarına",
+      "akıllı hesaplarında",
+      "akıllı hesaplarının",
+      "smart account",
+      "sözleşme hesabı"
+    ],
+    "definition": "Akıllı sözleşmeyle çalışan cüzdan hesabı; akıllı cüzdanın diğer adı."
+  },
+  "smart contract": {
+    "keyword": "akıllı sözleşme",
+    "keyword_plural": "akıllı sözleşmeler",
+    "keyword_forms": [
+      "akıllı sözleşmeyi",
+      "akıllı sözleşmeye",
+      "akıllı sözleşmede",
+      "akıllı sözleşmeden",
+      "akıllı sözleşmenin",
+      "akıllı sözleşmesini",
+      "akıllı sözleşmesine",
+      "akıllı sözleşmesinde",
+      "akıllı sözleşmesinden",
+      "akıllı sözleşmesinin",
+      "akıllı sözleşmen",
+      "akıllı sözleşmeni",
+      "akıllı sözleşmene",
+      "akıllı sözleşmende",
+      "akıllı sözleşmeleri",
+      "akıllı sözleşmelere",
+      "akıllı sözleşmelerde",
+      "akıllı sözleşmelerden",
+      "akıllı sözleşmelerin",
+      "akıllı sözleşmelerini",
+      "akıllı sözleşmelerine",
+      "akıllı sözleşmelerinde",
+      "akıllı sözleşmelerinin",
+      "akıllı kontrat",
+      "smart contract"
+    ],
+    "definition": "Bir sözleşmenin şartlarını otomatik olarak uygulayan bilgisayar kodu."
+  },
+  "smart wallet": {
+    "keyword": "akıllı cüzdan",
+    "keyword_plural": "akıllı cüzdanlar",
+    "keyword_forms": [
+      "akıllı cüzdanı",
+      "akıllı cüzdana",
+      "akıllı cüzdanda",
+      "akıllı cüzdandan",
+      "akıllı cüzdanın",
+      "akıllı cüzdanını",
+      "akıllı cüzdanına",
+      "akıllı cüzdanında",
+      "akıllı cüzdanından",
+      "akıllı cüzdanının",
+      "akıllı cüzdanları",
+      "akıllı cüzdanlara",
+      "akıllı cüzdanlarda",
+      "akıllı cüzdanlardan",
+      "akıllı cüzdanların",
+      "akıllı cüzdanlarını",
+      "akıllı cüzdanlarına",
+      "akıllı cüzdanlarında",
+      "akıllı cüzdanlarının",
+      "smart wallet"
+    ],
+    "definition": "Tek bir özel anahtar yerine akıllı sözleşmeyle çalışan cüzdan. Hesap kurtarma ve passkey ile giriş gibi özellikler sunar."
+  },
+  "social engineering": {
+    "keyword": "sosyal mühendislik",
+    "keyword_forms": [
+      "sosyal mühendisliği",
+      "sosyal mühendisliğe",
+      "sosyal mühendislikte",
+      "sosyal mühendislikten",
+      "sosyal mühendisliğin",
+      "sosyal mühendisliğini",
+      "sosyal mühendisliğine",
+      "sosyal mühendisliğinde",
+      "sosyal mühendisliğinden",
+      "sosyal mühendisliğinin",
+      "sosyal mühendislik saldırısı"
+    ],
+    "definition": "Birini parola ya da kurtarma ifadesi gibi hassas bilgileri paylaşmaya yönlendirme."
+  },
+  "solo staker": {
+    "keyword": "bireysel staker",
+    "keyword_plural": "bireysel stakerlar",
+    "keyword_forms": [
+      "bireysel stakerı",
+      "bireysel stakera",
+      "bireysel stakerda",
+      "bireysel stakerdan",
+      "bireysel stakerın",
+      "bireysel stakerını",
+      "bireysel stakerına",
+      "bireysel stakerında",
+      "bireysel stakerından",
+      "bireysel stakerının",
+      "bireysel stakerları",
+      "bireysel stakerlara",
+      "bireysel stakerlarda",
+      "bireysel stakerlardan",
+      "bireysel stakerların",
+      "bireysel stakerlarını",
+      "bireysel stakerlarına",
+      "bireysel stakerlarında",
+      "bireysel stakerlarının",
+      "solo staker",
+      "tek başına stake eden",
+      "bireysel stake eden"
+    ],
+    "definition": "Bağımsız bir doğrulayıcı düğüm çalıştıran düğüm operatörü."
+  },
+  "solo staking": {
+    "keyword": "bireysel staking",
+    "keyword_forms": [
+      "solo staking",
+      "bireysel staking'i",
+      "bireysel staking'e",
+      "bireysel staking'de",
+      "tek başına staking",
+      "kendi düğümünle staking"
+    ],
+    "definition": "Proof of Stake sistemlerinde işlemleri işlemek için kendi doğrulayıcı düğümünü çalıştırmak."
+  },
+  "solver": {
+    "keyword": "çözücü",
+    "keyword_plural": "çözücüler",
+    "keyword_forms": [
+      "çözücüyü",
+      "çözücüye",
+      "çözücüde",
+      "çözücüden",
+      "çözücünün",
+      "çözücüsünü",
+      "çözücüsüne",
+      "çözücüsünde",
+      "çözücüsünden",
+      "çözücüsünün",
+      "çözücün",
+      "çözücünü",
+      "çözücüne",
+      "çözücünde",
+      "çözücüleri",
+      "çözücülere",
+      "çözücülerde",
+      "çözücülerden",
+      "çözücülerin",
+      "çözücülerini",
+      "çözücülerine",
+      "çözücülerinde",
+      "çözücülerinin",
+      "solver",
+      "solver'lar",
+      "çözücüsü"
+    ],
+    "definition": "Bir kullanıcının isteğini mümkün olan en iyi fiyattan gerçekleştirmek için başkalarıyla yarışan uzman."
+  },
+  "spend": {
+    "keyword": "harcamak",
+    "keyword_forms": [
+      "harca",
+      "harcama",
+      "harcamayı",
+      "harcarsın",
+      "harcama yapmak",
+      "kripto harcamak"
+    ],
+    "definition": "Mal ya da hizmet için kripto varlıklarınla ödeme yapmak."
+  },
+  "spot etf": {
+    "keyword": "spot ETF",
+    "keyword_plural": "spot ETF'ler",
+    "keyword_forms": [
+      "spot ETF'yi",
+      "spot ETF'ye",
+      "spot ETF'de",
+      "spot ETF'nin",
+      "spot ETF'leri",
+      "spot ETF'lere",
+      "spot ETF'lerde",
+      "spot ETF fonu"
+    ],
+    "definition": "Varlığın kendisini, örneğin bitcoin’i tutan ETF. İnsanların geleneksel borsadan o varlığa yatırım yapmasını sağlar."
+  },
+  "stablecoin": {
+    "keyword": "stablecoin",
+    "keyword_plural": "stablecoinler",
+    "keyword_forms": [
+      "stablecoini",
+      "stablecoine",
+      "stablecoinde",
+      "stablecoinden",
+      "stablecoinin",
+      "stablecoinini",
+      "stablecoinine",
+      "stablecoininde",
+      "stablecoininden",
+      "stablecoininin",
+      "stablecoinleri",
+      "stablecoinlere",
+      "stablecoinlerde",
+      "stablecoinlerden",
+      "stablecoinlerin",
+      "stablecoinlerini",
+      "stablecoinlerine",
+      "stablecoinlerinde",
+      "stablecoinlerinin",
+      "stablecoin'i",
+      "stablecoin'e",
+      "stablecoin'de",
+      "stablecoin'in",
+      "stablecoin'ler",
+      "sabitcoin"
+    ],
+    "definition": "Değerini sabit tutmak için tasarlanmış, genelde ABD doları gibi bir para birimine 1:1 sabitlenen token."
+  },
+  "stablecoin issuer": {
+    "keyword": "stablecoin ihraççısı",
+    "keyword_plural": "stablecoin ihraççıları",
+    "keyword_forms": [
+      "stablecoin ihraççısını",
+      "stablecoin ihraççısına",
+      "stablecoin ihraççısında",
+      "stablecoin ihraççısından",
+      "stablecoin ihraççısının",
+      "stablecoin ihraççılarını",
+      "stablecoin ihraççılarına",
+      "stablecoin ihraççılarında",
+      "stablecoin ihraççılarından",
+      "stablecoin ihraççılarının",
+      "stablecoin çıkaran şirket"
+    ],
+    "definition": "Bir stablecoin’i çıkaran ve değerini destekleyen rezervleri yöneten şirket ya da kuruluş."
+  },
+  "stake": {
+    "keyword": "stake",
+    "keyword_plural": "stake'ler",
+    "keyword_forms": [
+      "stake'i",
+      "stake'e",
+      "stake'te",
+      "stake'ten",
+      "stake'in",
+      "stake'ini",
+      "stake'ine",
+      "stake'inde",
+      "stake'leri",
+      "stake miktarı",
+      "kilitli stake",
+      "teminat"
+    ],
+    "definition": "Bir kripto para protokolüne kilitlenen finansal varlık miktarı. Kişinin protokole finansal bağlılığını, yani riske attığı kendi payını gösterir."
+  },
+  "staked": {
+    "keyword": "stake edilmiş",
+    "keyword_forms": [
+      "stake edilen",
+      "stake ettiğin",
+      "stake edilmiş Ether",
+      "kilitlenmiş",
+      "stake'lenmiş",
+      "stake edildi"
+    ],
+    "definition": "Faiz (“ödül”) kazanmak için kriptonun bir kısmını belirli bir süre akıllı sözleşmede kilitleme."
+  },
+  "staker": {
+    "keyword": "staker",
+    "keyword_plural": "stakerlar",
+    "keyword_forms": [
+      "staker'ı",
+      "staker'a",
+      "staker'da",
+      "staker'ın",
+      "staker'lar",
+      "staker'ları",
+      "stakerı",
+      "stakera",
+      "stakerda",
+      "stakerın",
+      "stakerları",
+      "stakerlara",
+      "stakerlarda",
+      "stakerların",
+      "stake eden",
+      "stake edenler"
+    ],
+    "definition": "Ödül karşılığında bir doğrulayıcı düğüme Ether sağlayan Ethereum topluluğu üyesi."
+  },
+  "stakers": {
+    "keyword": "stakerlar",
+    "keyword_forms": [
+      "stakerları",
+      "stakerlara",
+      "stakerlarda",
+      "stakerların",
+      "staker'lar",
+      "staker'ları",
+      "stake edenler",
+      "stake edenlerin"
+    ],
+    "definition": "Ödül karşılığında doğrulayıcı düğümlere Ether sağlayan Ethereum topluluğu üyeleri."
+  },
+  "staking": {
+    "keyword": "staking",
+    "keyword_forms": [
+      "staking'i",
+      "staking'e",
+      "staking'de",
+      "staking'den",
+      "staking'in",
+      "stakingi",
+      "stakinge",
+      "stakingde",
+      "stake etme",
+      "stake etmek",
+      "stake etmeyi"
+    ],
+    "definition": "Faiz (“ödül”) kazanmak karşılığında kriptonun bir kısmını belirli bir süre akıllı sözleşmede kilitleme."
+  },
+  "staking pool": {
+    "keyword": "staking havuzu",
+    "keyword_plural": "staking havuzları",
+    "keyword_forms": [
+      "staking havuzunu",
+      "staking havuzuna",
+      "staking havuzunda",
+      "staking havuzundan",
+      "staking havuzunun",
+      "staking havuzlarını",
+      "staking havuzlarına",
+      "staking havuzlarında",
+      "staking havuzlarından",
+      "staking havuzlarının",
+      "stake havuzu"
+    ],
+    "definition": "Ethereum’da: Stake edenlerin başka birinin doğrulayıcı düğümüne Ether sağladığı akıllı sözleşmeler."
+  },
+  "staking providers": {
+    "keyword": "staking sağlayıcıları",
+    "keyword_forms": [
+      "staking sağlayıcısı",
+      "staking sağlayıcısını",
+      "staking sağlayıcısına",
+      "staking sağlayıcılarını",
+      "staking sağlayıcılarına",
+      "staking sağlayıcılarında",
+      "staking sağlayıcılarının",
+      "staking platformları"
+    ],
+    "definition": "Genelde staking havuzları üzerinden staking hizmeti sunan dijital platformlar."
+  },
+  "standard record": {
+    "keyword": "standart kayıt",
+    "keyword_plural": "standart kayıtlar",
+    "keyword_forms": [
+      "standart kaydı",
+      "standart kayda",
+      "standart kayıtta",
+      "standart kayıttan",
+      "standart kaydın",
+      "standart kaydını",
+      "standart kaydına",
+      "standart kaydında",
+      "standart kaydından",
+      "standart kaydının",
+      "standart kayıtları",
+      "standart kayıtlara",
+      "standart kayıtlarda",
+      "standart kayıtlardan",
+      "standart kayıtların",
+      "standart kayıtlarını",
+      "standart kayıtlarına",
+      "standart kayıtlarında",
+      "standart kayıtlarının"
+    ],
+    "definition": "Bir ENS alan adına bağlı yaygın veri girdisi; cüzdan adresi, avatar ya da e-posta gibi."
+  },
+  "swap": {
+    "keyword": "takas",
+    "keyword_plural": "takaslar",
+    "keyword_forms": [
+      "takası",
+      "takasa",
+      "takasta",
+      "takastan",
+      "takasın",
+      "takasını",
+      "takasına",
+      "takasında",
+      "takasından",
+      "takasının",
+      "takasları",
+      "takaslara",
+      "takaslarda",
+      "takaslardan",
+      "takasların",
+      "takaslarını",
+      "takaslarına",
+      "takaslarında",
+      "takaslarının",
+      "swap",
+      "takas etmek",
+      "takas et",
+      "takas işlemi"
+    ],
+    "definition": "Bir tokenı başka bir tokenla değiştirme."
+  },
+  "token": {
+    "keyword": "token",
+    "keyword_plural": "tokenlar",
+    "keyword_forms": [
+      "tokenı",
+      "tokena",
+      "tokenda",
+      "tokendan",
+      "tokenın",
+      "tokenını",
+      "tokenına",
+      "tokenında",
+      "tokenından",
+      "tokenının",
+      "tokenları",
+      "tokenlara",
+      "tokenlarda",
+      "tokenlardan",
+      "tokenların",
+      "tokenlarını",
+      "tokenlarına",
+      "tokenlarında",
+      "tokenlarının",
+      "token'ı",
+      "token'a",
+      "token'da",
+      "token'ın",
+      "token'lar",
+      "token'ları",
+      "tokeni",
+      "tokene",
+      "tokende",
+      "tokenin",
+      "tokenler",
+      "tokenleri"
+    ],
+    "definition": "Var olan bir blokzincir üzerine kurulmuş, varlıkları ya da hakları temsil edebilen birimler."
+  },
+  "token allowance": {
+    "keyword": "token izni",
+    "keyword_plural": "token izinleri",
+    "keyword_forms": [
+      "token iznini",
+      "token iznine",
+      "token izninde",
+      "token izninden",
+      "token izninin",
+      "token izinlerini",
+      "token izinlerine",
+      "token izinlerinde",
+      "token izinlerinden",
+      "token izinlerinin"
+    ],
+    "definition": "Bir cüzdan ile akıllı sözleşme arasında, belirli bir tokena sınırlı ya da sınırsız erişim veren anlaşma."
+  },
+  "token approval": {
+    "keyword": "token onayı",
+    "keyword_plural": "token onayları",
+    "keyword_forms": [
+      "token onayını",
+      "token onayına",
+      "token onayında",
+      "token onayından",
+      "token onayının",
+      "token onaylarını",
+      "token onaylarına",
+      "token onaylarında",
+      "token onaylarından",
+      "token onaylarının",
+      "token izni",
+      "onay verme"
+    ],
+    "definition": "Bir akıllı sözleşmeye, cüzdanından belirli bir tokenı taşıma yetkisi vermen; token izni de denir."
+  },
+  "token distribution": {
+    "keyword": "token dağılımı",
+    "keyword_plural": "token dağılımları",
+    "keyword_forms": [
+      "token dağılımını",
+      "token dağılımına",
+      "token dağılımında",
+      "token dağılımından",
+      "token dağılımının",
+      "token dağılımlarını",
+      "token dağılımlarına",
+      "token dağılımlarında",
+      "token dağılımlarından",
+      "token dağılımlarının",
+      "token dağıtımı",
+      "token dağıtımını"
+    ],
+    "definition": "Tokenların farklı paydaş gruplarına nasıl dağıtıldığı."
+  },
+  "token pair": {
+    "keyword": "token çifti",
+    "keyword_plural": "token çiftleri",
+    "keyword_forms": [
+      "token çiftini",
+      "token çiftine",
+      "token çiftinde",
+      "token çiftinden",
+      "token çiftinin",
+      "token çiftlerini",
+      "token çiftlerine",
+      "token çiftlerinde",
+      "token çiftlerinden",
+      "token çiftlerinin",
+      "işlem çifti"
+    ],
+    "definition": "Bir likidite havuzunu oluşturan, birbiriyle eşleşmiş iki kripto para."
+  },
+  "token swap": {
+    "keyword": "token takası",
+    "keyword_plural": "token takasları",
+    "keyword_forms": [
+      "token takasını",
+      "token takasına",
+      "token takasında",
+      "token takasından",
+      "token takasının",
+      "token takaslarını",
+      "token takaslarına",
+      "token takaslarında",
+      "token takaslarından",
+      "token takaslarının",
+      "token takas etme"
+    ],
+    "definition": "Bir tokenı başka bir tokenla değiştirme."
+  },
+  "tps": {
+    "keyword": "TPS",
+    "keyword_forms": [
+      "TPS'yi",
+      "TPS'ye",
+      "TPS'de",
+      "TPS'nin",
+      "saniyedeki işlem sayısı",
+      "saniyede işlem"
+    ],
+    "definition": "(Saniyedeki İşlem Sayısı) Bir blokzincirin ölçeklenebilirlik ölçüsü: saniyede işlediği işlem sayısı."
+  },
+  "trade": {
+    "keyword": "alım satım",
+    "keyword_plural": "alım satımlar",
+    "keyword_forms": [
+      "alım satımı",
+      "alım satıma",
+      "alım satımda",
+      "alım satımdan",
+      "alım satımın",
+      "alım satımını",
+      "alım satımına",
+      "alım satımında",
+      "alım satımından",
+      "alım satımının",
+      "alım satımları",
+      "alım satımlara",
+      "alım satımlarda",
+      "alım satımlardan",
+      "alım satımların",
+      "alım satımlarını",
+      "alım satımlarına",
+      "alım satımlarında",
+      "alım satımlarının",
+      "ticaret",
+      "ticareti",
+      "alım satım işlemi",
+      "işlem yapmak"
+    ],
+    "definition": "Varlıkları ya da parayı değerli bir şeyle değiştirmek; beceri küpündeki para fiili."
+  },
+  "trade route": {
+    "keyword": "takas rotası",
+    "keyword_plural": "takas rotaları",
+    "keyword_forms": [
+      "takas rotasını",
+      "takas rotasına",
+      "takas rotasında",
+      "takas rotasından",
+      "takas rotasının",
+      "takas rotalarını",
+      "takas rotalarına",
+      "takas rotalarında",
+      "takas rotalarından",
+      "takas rotalarının",
+      "işlem rotası",
+      "alım satım rotası",
+      "işlem rotasını"
+    ],
+    "definition": "Bir alım satımda başlangıç tokenından bitiş tokenına izlenen yol."
+  },
+  "trade routing": {
+    "keyword": "takas yönlendirme",
+    "keyword_forms": [
+      "takas yönlendirmesi",
+      "takas yönlendirmesini",
+      "takas yönlendirmeyi",
+      "işlem yönlendirme",
+      "işlem yönlendirmesi",
+      "rota belirleme",
+      "rota planlama"
+    ],
+    "definition": "Bir alım satımda başlangıç tokenından bitiş tokenına izlenecek yolu planlamak."
+  },
+  "transaction": {
+    "keyword": "işlem",
+    "keyword_plural": "işlemler",
+    "keyword_forms": [
+      "işlemi",
+      "işleme",
+      "işlemde",
+      "işlemden",
+      "işlemin",
+      "işlemini",
+      "işlemine",
+      "işleminde",
+      "işleminden",
+      "işleminin",
+      "işlemleri",
+      "işlemlere",
+      "işlemlerde",
+      "işlemlerden",
+      "işlemlerin",
+      "işlemlerini",
+      "işlemlerine",
+      "işlemlerinde",
+      "işlemlerinin",
+      "transfer"
+    ],
+    "definition": "Blokzincir üzerinde parasal ya da başka türlü bir transferin kaydı."
+  },
+  "transaction finality": {
+    "keyword": "işlem kesinliği",
+    "keyword_forms": [
+      "işlem kesinliğini",
+      "işlem kesinliğine",
+      "işlem kesinliğinde",
+      "işlem kesinliğinden",
+      "işlem kesinliğinin",
+      "kesinlik",
+      "kesinleşme"
+    ],
+    "definition": "Bir işlemin geçerli ve kesin olduğundan, yani geri alınmayacağından emin olmak için geçen süre."
+  },
+  "transaction hash": {
+    "keyword": "işlem hash'i",
+    "keyword_plural": "işlem hash'leri",
+    "keyword_forms": [
+      "işlem hash'ini",
+      "işlem hash'ine",
+      "işlem hash'inde",
+      "işlem hash'inin",
+      "işlem hash'lerini",
+      "işlem hashi",
+      "işlem hashini",
+      "işlem özeti",
+      "işlem kimliği",
+      "TX hash"
+    ],
+    "definition": "Her işlemin benzersiz kimliği. İşlem verisinden, gönderenin dijital imzasından ve işlemin tekrarlanmasını önleyen tek kullanımlık bir sayıdan türetilir."
+  },
+  "transaction throughput": {
+    "keyword": "işlem kapasitesi",
+    "keyword_forms": [
+      "işlem kapasiteleri",
+      "işlem kapasitesini",
+      "işlem kapasitesine",
+      "işlem kapasitesinde",
+      "işlem kapasitesinden",
+      "işlem kapasitesinin",
+      "işlem kapasitelerini",
+      "işlem kapasitelerine",
+      "işlem kapasitelerinde",
+      "işlem kapasitelerinden",
+      "işlem kapasitelerinin",
+      "işlem hacmi",
+      "saniyedeki işlem sayısı"
+    ],
+    "definition": "Bir blokzincirin aynı anda kaç işlem işleyebildiği; genelde saniyedeki işlem sayısıyla (TPS) ölçülür."
+  },
+  "trustless": {
+    "keyword": "güven gerektirmeyen",
+    "keyword_forms": [
+      "güven gerektirmez",
+      "güven gerektirmeden",
+      "güvene ihtiyaç duymayan",
+      "güven gerektirmeyen sistem"
+    ],
+    "definition": "Kişilere ya da kurumlara güvenmeyi gerektirmeden çalışma niteliği. (Otomatiktir ve kimsenin malı değildir.)"
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "keyword_forms": [
+      "TVL'yi",
+      "TVL'ye",
+      "TVL'de",
+      "TVL'nin",
+      "kilitli toplam değer",
+      "toplam kilitli değer"
+    ],
+    "definition": "(Kilitli Toplam Değer) Belirli bir yerde tutulan toplam varlık değeri."
+  },
+  "two factor authentication": {
+    "keyword": "iki faktörlü kimlik doğrulama",
+    "keyword_forms": [
+      "iki faktörlü kimlik doğrulamayı",
+      "iki faktörlü kimlik doğrulamaya",
+      "iki faktörlü kimlik doğrulamada",
+      "iki faktörlü kimlik doğrulamadan",
+      "iki faktörlü kimlik doğrulamanın",
+      "iki faktörlü kimlik doğrulamasını",
+      "iki faktörlü kimlik doğrulamasına",
+      "iki faktörlü kimlik doğrulamasında",
+      "iki faktörlü kimlik doğrulamasından",
+      "iki faktörlü kimlik doğrulamasının",
+      "iki faktörlü kimlik doğrulaman",
+      "iki faktörlü kimlik doğrulamanı",
+      "iki faktörlü kimlik doğrulamana",
+      "iki faktörlü kimlik doğrulamanda",
+      "2FA",
+      "iki adımlı doğrulama",
+      "iki faktörlü doğrulama"
+    ],
+    "definition": "Bir çevrim içi hesaba erişmeye çalışan kişinin gerçekten o kişi olduğundan emin olmak için eklenen ekstra güvenlik katmanı."
+  },
+  "validating bridge": {
+    "keyword": "doğrulayan köprü",
+    "keyword_plural": "doğrulayan köprüler",
+    "keyword_forms": [
+      "doğrulayan bridge",
+      "doğrulayan bridge'i",
+      "doğrulayan bridge'e",
+      "doğrulayan bridge'de",
+      "doğrulayan bridge'in",
+      "doğrulayan bridge'leri",
+      "doğrulamalı bridge",
+      "doğrulayan köprü",
+      "doğrulayan köprüyü",
+      "doğrulayan köprüye",
+      "doğrulayan köprüde",
+      "doğrulayan köprünün",
+      "doğrulayan köprüler",
+      "doğrulayan köprüleri"
+    ],
+    "definition": "Para çekme işlemlerini kendisi doğrulayan bridge sözleşmesi. Böylece dışarıdan bir otoriteye güvenmen gerekmez."
+  },
+  "validator": {
+    "keyword": "doğrulayıcı",
+    "keyword_plural": "doğrulayıcılar",
+    "keyword_forms": [
+      "doğrulayıcıyı",
+      "doğrulayıcıya",
+      "doğrulayıcıda",
+      "doğrulayıcıdan",
+      "doğrulayıcının",
+      "doğrulayıcısını",
+      "doğrulayıcısına",
+      "doğrulayıcısında",
+      "doğrulayıcısından",
+      "doğrulayıcısının",
+      "doğrulayıcın",
+      "doğrulayıcını",
+      "doğrulayıcına",
+      "doğrulayıcında",
+      "doğrulayıcıları",
+      "doğrulayıcılara",
+      "doğrulayıcılarda",
+      "doğrulayıcılardan",
+      "doğrulayıcıların",
+      "doğrulayıcılarını",
+      "doğrulayıcılarına",
+      "doğrulayıcılarında",
+      "doğrulayıcılarının",
+      "validator"
+    ],
+    "definition": "Proof of Stake ağında işlemleri kontrol etmek ve blok önermek için stake kilitleyen, dürüst çalışması karşılığında ödül kazanan katılımcı."
+  },
+  "validator client": {
+    "keyword": "doğrulayıcı istemcisi",
+    "keyword_plural": "doğrulayıcı istemcileri",
+    "keyword_forms": [
+      "doğrulayıcı istemcisini",
+      "doğrulayıcı istemcisine",
+      "doğrulayıcı istemcisinde",
+      "doğrulayıcı istemcisinden",
+      "doğrulayıcı istemcisinin",
+      "doğrulayıcı istemcilerini",
+      "doğrulayıcı istemcilerine",
+      "doğrulayıcı istemcilerinde",
+      "doğrulayıcı istemcilerinden",
+      "doğrulayıcı istemcilerinin",
+      "validator client",
+      "doğrulayıcı yazılımı"
+    ],
+    "definition": "Bir doğrulayıcı düğümün, Proof of Stake ağında yeni blok önermek ve kontrol etmek için çalıştırdığı yazılım."
+  },
+  "validator node": {
+    "keyword": "doğrulayıcı düğüm",
+    "keyword_plural": "doğrulayıcı düğümler",
+    "keyword_forms": [
+      "doğrulayıcı düğümü",
+      "doğrulayıcı düğüme",
+      "doğrulayıcı düğümde",
+      "doğrulayıcı düğümden",
+      "doğrulayıcı düğümün",
+      "doğrulayıcı düğümünü",
+      "doğrulayıcı düğümüne",
+      "doğrulayıcı düğümünde",
+      "doğrulayıcı düğümünden",
+      "doğrulayıcı düğümünün",
+      "doğrulayıcı düğümleri",
+      "doğrulayıcı düğümlere",
+      "doğrulayıcı düğümlerde",
+      "doğrulayıcı düğümlerden",
+      "doğrulayıcı düğümlerin",
+      "doğrulayıcı düğümlerini",
+      "doğrulayıcı düğümlerine",
+      "doğrulayıcı düğümlerinde",
+      "doğrulayıcı düğümlerinin",
+      "validator node"
+    ],
+    "definition": "Ethereum topluluğundan birinin çalıştırdığı bilgisayar. Ödül karşılığında ağdaki işlemleri işler."
+  },
+  "validator nodes": {
+    "keyword": "doğrulayıcı düğümler",
+    "keyword_forms": [
+      "doğrulayıcı düğümleri",
+      "doğrulayıcı düğümlere",
+      "doğrulayıcı düğümlerde",
+      "doğrulayıcı düğümlerin",
+      "doğrulayıcı düğümlerini",
+      "validator node"
+    ],
+    "definition": "Ethereum topluluğu üyelerinin çalıştırdığı bilgisayarlar. Ödül karşılığında ağdaki işlemleri işlerler."
+  },
+  "validity proof": {
+    "keyword": "geçerlilik kanıtı",
+    "keyword_plural": "geçerlilik kanıtları",
+    "keyword_forms": [
+      "geçerlilik kanıtını",
+      "geçerlilik kanıtına",
+      "geçerlilik kanıtında",
+      "geçerlilik kanıtından",
+      "geçerlilik kanıtının",
+      "geçerlilik kanıtlarını",
+      "geçerlilik kanıtlarına",
+      "geçerlilik kanıtlarında",
+      "geçerlilik kanıtlarından",
+      "geçerlilik kanıtlarının",
+      "geçerlilik ispatı"
+    ],
+    "definition": "Bir işlem partisinin doğru olduğunu gösteren matematiksel kanıt. Blokzincir işi baştan yapmadan doğrulayabilir."
+  },
+  "value-creation": {
+    "keyword": "değer yaratma",
+    "keyword_forms": [
+      "değer yaratmayı",
+      "değer yaratmaya",
+      "değer yaratmada",
+      "değer yaratmadan",
+      "değer yaratmanın",
+      "değer yaratmasını",
+      "değer yaratmasına",
+      "değer yaratmasında",
+      "değer yaratmasından",
+      "değer yaratmasının",
+      "değer yaratman",
+      "değer yaratmanı",
+      "değer yaratmana",
+      "değer yaratmanda",
+      "değer üretme",
+      "değer yaratan",
+      "değer yaratımı"
+    ],
+    "definition": "Kullanıcılar ve ekonomi için yenilikçi, kaliteli ürün ve hizmetler üretmeye odaklanan iş anlayışı."
+  },
+  "value-extraction": {
+    "keyword": "değer sömürüsü",
+    "keyword_forms": [
+      "değer sömürüsünü",
+      "değer sömürüsüne",
+      "değer sömürüsünde",
+      "değer sömürüsünden",
+      "değer sömürüsünün",
+      "değer çıkarma",
+      "değer sömürme",
+      "değer sömüren"
+    ],
+    "definition": "Kullanıcıların yüksek ücretler, veri toplama ve haksız şartlarla sömürüldüğü iş anlayışı."
+  },
+  "value-extractive": {
+    "keyword": "değer sömürücü",
+    "keyword_forms": [
+      "değer sömüren",
+      "değer sömürüsü",
+      "değer sömürüsüne dayalı",
+      "sömürücü"
+    ],
+    "definition": "Kullanıcıların yüksek ücretler, veri toplama ve haksız şartlarla sömürüldüğü iş anlayışı."
+  },
+  "vault": {
+    "keyword": "kasa",
+    "keyword_plural": "kasalar",
+    "keyword_forms": [
+      "kasayı",
+      "kasaya",
+      "kasada",
+      "kasadan",
+      "kasanın",
+      "kasasını",
+      "kasasına",
+      "kasasında",
+      "kasasından",
+      "kasasının",
+      "kasan",
+      "kasanı",
+      "kasana",
+      "kasanda",
+      "kasaları",
+      "kasalara",
+      "kasalarda",
+      "kasalardan",
+      "kasaların",
+      "kasalarını",
+      "kasalarına",
+      "kasalarında",
+      "kasalarının",
+      "vault",
+      "vault'lar",
+      "kasası"
+    ],
+    "definition": "Yatırılan tokenları tutup çalıştıran, yatıranlara payını temsil eden bir token veren akıllı sözleşme."
+  },
+  "veto": {
+    "keyword": "veto",
+    "keyword_plural": "vetolar",
+    "keyword_forms": [
+      "vetoyu",
+      "vetoya",
+      "vetoda",
+      "vetodan",
+      "vetonun",
+      "vetosunu",
+      "vetosuna",
+      "vetosunda",
+      "vetosundan",
+      "vetosunun",
+      "veton",
+      "vetonu",
+      "vetona",
+      "vetonda",
+      "vetoları",
+      "vetolara",
+      "vetolarda",
+      "vetolardan",
+      "vetoların",
+      "vetolarını",
+      "vetolarına",
+      "vetolarında",
+      "vetolarının",
+      "veto etmek",
+      "veto oyu",
+      "veto hakkı"
+    ],
+    "definition": "Bir yönetişim önerisini reddeden oy."
+  },
+  "wallet": {
+    "keyword": "cüzdan",
+    "keyword_plural": "cüzdanlar",
+    "keyword_forms": [
+      "cüzdanı",
+      "cüzdana",
+      "cüzdanda",
+      "cüzdandan",
+      "cüzdanın",
+      "cüzdanını",
+      "cüzdanına",
+      "cüzdanında",
+      "cüzdanından",
+      "cüzdanının",
+      "cüzdanları",
+      "cüzdanlara",
+      "cüzdanlarda",
+      "cüzdanlardan",
+      "cüzdanların",
+      "cüzdanlarını",
+      "cüzdanlarına",
+      "cüzdanlarında",
+      "cüzdanlarının",
+      "kripto cüzdan",
+      "wallet"
+    ],
+    "definition": "Cüzdan, blokzincirde kripto varlık gönderip almak için kullanılan uygulama ya da cihazdır."
+  },
+  "wallet app": {
+    "keyword": "cüzdan uygulaması",
+    "keyword_plural": "cüzdan uygulamaları",
+    "keyword_forms": [
+      "cüzdan uygulamasını",
+      "cüzdan uygulamasına",
+      "cüzdan uygulamasında",
+      "cüzdan uygulamasından",
+      "cüzdan uygulamasının",
+      "cüzdan uygulamalarını",
+      "cüzdan uygulamalarına",
+      "cüzdan uygulamalarında",
+      "cüzdan uygulamalarından",
+      "cüzdan uygulamalarının",
+      "wallet app"
+    ],
+    "definition": "Blokzincirdeki cüzdanına bağlanmak için bilgisayarında ya da telefonunda kullandığın uygulama."
+  },
+  "wallet provider": {
+    "keyword": "cüzdan sağlayıcısı",
+    "keyword_plural": "cüzdan sağlayıcıları",
+    "keyword_forms": [
+      "cüzdan sağlayıcısını",
+      "cüzdan sağlayıcısına",
+      "cüzdan sağlayıcısında",
+      "cüzdan sağlayıcısından",
+      "cüzdan sağlayıcısının",
+      "cüzdan sağlayıcılarını",
+      "cüzdan sağlayıcılarına",
+      "cüzdan sağlayıcılarında",
+      "cüzdan sağlayıcılarından",
+      "cüzdan sağlayıcılarının",
+      "cüzdan sağlayıcı",
+      "cüzdan geliştiricisi"
+    ],
+    "definition": "Cüzdanına erişmek için kullandığın yazılımı geliştiren taraf. Cüzdanının sahibi değildir, sadece blokzincirdeki hesabına erişmeni sağlayan bir köprü görevi görür."
+  },
+  "web2": {
+    "keyword": "web2",
+    "keyword_forms": [
+      "web2'yi",
+      "web2'ye",
+      "web2'de",
+      "web2'den",
+      "web2'nin",
+      "Web 2.0"
+    ],
+    "definition": "Blokzincir altyapısı olmayan, merkezi platformlardan ve hesaplardan oluşan internet."
+  },
+  "web3": {
+    "keyword": "web3",
+    "keyword_forms": [
+      "web3'ü",
+      "web3'e",
+      "web3'te",
+      "web3'ten",
+      "web3'ün",
+      "Web 3.0"
+    ],
+    "definition": "Kullanıcıların varlıklarını ve verilerini kendilerinin saklayabildiği, blokzincirlerden oluşan interneti anlatır."
+  },
+  "yield farm": {
+    "keyword": "getiri çiftliği",
+    "keyword_plural": "getiri çiftlikleri",
+    "keyword_forms": [
+      "getiri çiftliğini",
+      "getiri çiftliğine",
+      "getiri çiftliğinde",
+      "getiri çiftliğinden",
+      "getiri çiftliğinin",
+      "getiri çiftliklerini",
+      "getiri çiftliklerine",
+      "getiri çiftliklerinde",
+      "getiri çiftliklerinden",
+      "getiri çiftliklerinin",
+      "getiri çiftçiliği",
+      "yield farm"
+    ],
+    "definition": "Kullanıcıların ödül kazanmak için token yatırdığı DeFi protokolü. Getiri çiftçiliği, bu ödüllerin en iyisinin peşinden koşmak demektir."
+  },
+  "yourname.eth": {
+    "keyword": "adin.eth",
+    "keyword_forms": [
+      "adın.eth",
+      "yourname.eth",
+      "isminiz.eth",
+      "senin-adin.eth",
+      "adin.eth adresi"
+    ],
+    "definition": "Örnek bir ENS adı: cüzdan adresine işaret eden, okunabilir bir web3 kullanıcı adı."
+  },
+  "zero-knowledge": {
+    "keyword": "sıfır bilgi",
+    "keyword_forms": [
+      "sıfır-bilgi",
+      "sıfır bilgiyle",
+      "sıfır bilgi kanıtı",
+      "sıfır bilgili",
+      "zero-knowledge"
+    ],
+    "definition": "Bir tarafın, hakkında başka hiçbir bilgi vermeden bir ifadenin doğru olduğunu kanıtlamasını sağlayan matematiksel yöntem."
+  },
+  "zk rollup": {
+    "keyword": "ZK rollup",
+    "keyword_plural": "ZK rolluplar",
+    "keyword_forms": [
+      "ZK rollupu",
+      "ZK rollupa",
+      "ZK rollupta",
+      "ZK rolluptan",
+      "ZK rollupun",
+      "ZK rollupunu",
+      "ZK rollupuna",
+      "ZK rollupunda",
+      "ZK rollupundan",
+      "ZK rollupunun",
+      "ZK rollupları",
+      "ZK rolluplara",
+      "ZK rolluplarda",
+      "ZK rolluplardan",
+      "ZK rollupların",
+      "ZK rolluplarını",
+      "ZK rolluplarına",
+      "ZK rolluplarında",
+      "ZK rolluplarının",
+      "ZK rollup'u",
+      "ZK rollup'a",
+      "ZK rollup'ta",
+      "ZK rollup'un",
+      "ZK rollup'lar",
+      "zk-rollup"
+    ],
+    "definition": "Toplu işlemlerinin geçerli olduğunu Layer 1 blokzincirinde matematiksel olarak kanıtlamak için sıfır bilgi kanıtları kullanan Layer 2 rollup."
+  }
+}

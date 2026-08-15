@@ -19,7 +19,7 @@ import lessonPTBR from '../../translation/website/pt-br/lesson.json'
 
 // ZH = Chinese Simplified
 import commonZH from '../../translation/website/zh/common.json'
-// import homepageZH from '../../translation/website/zh/homepage.json'
+import homepageZH from '../../translation/website/zh/homepage.json'
 import questsZH from '../../translation/website/zh/quests.json'
 import keywordsZH from '../../translation/keywords/zh/keywords.json'
 import lessonZH from '../../translation/website/zh/lesson.json'
@@ -47,28 +47,28 @@ import lessonFR from '../../translation/website/fr/lesson.json'
 
 // IT = Italian
 import commonIT from '../../translation/website/it/common.json'
-// import homepageIT from '../../translation/website/it/homepage.json'
+import homepageIT from '../../translation/website/it/homepage.json'
 import questsIT from '../../translation/website/it/quests.json'
 import keywordsIT from '../../translation/keywords/it/keywords.json'
 import lessonIT from '../../translation/website/it/lesson.json'
 
 // JA = Japanese
 import commonJA from '../../translation/website/ja/common.json'
-// import homepageJA from '../../translation/website/ja/homepage.json'
+import homepageJA from '../../translation/website/ja/homepage.json'
 import questsJA from '../../translation/website/ja/quests.json'
 import keywordsJA from '../../translation/keywords/ja/keywords.json'
 import lessonJA from '../../translation/website/ja/lesson.json'
 
 // TR = Turkish
 import commonTR from '../../translation/website/tr/common.json'
-// import homepageTR from '../../translation/website/tr/homepage.json'
+import homepageTR from '../../translation/website/tr/homepage.json'
 import questsTR from '../../translation/website/tr/quests.json'
 import keywordsTR from '../../translation/keywords/tr/keywords.json'
 import lessonTR from '../../translation/website/tr/lesson.json'
 
 // UK = Ukrainian
 import commonUK from '../../translation/website/uk/common.json'
-// import homepageUK from '../../translation/website/uk/homepage.json'
+import homepageUK from '../../translation/website/uk/homepage.json'
 import questsUK from '../../translation/website/uk/quests.json'
 import keywordsUK from '../../translation/keywords/uk/keywords.json'
 import lessonUK from '../../translation/website/uk/lesson.json'
@@ -112,7 +112,7 @@ i18next
       },
       zh: {
         common: commonZH,
-        // homepage: homepageZH,
+        homepage: homepageZH,
         quests: questsZH,
         keywords: keywordsZH,
         lesson: lessonZH,
@@ -140,28 +140,28 @@ i18next
       },
       it: {
         common: commonIT,
-        // homepage: homepageIT,
+        homepage: homepageIT,
         quests: questsIT,
         keywords: keywordsIT,
         lesson: lessonIT,
       },
       ja: {
         common: commonJA,
-        // homepage: homepageJA,
+        homepage: homepageJA,
         quests: questsJA,
         keywords: keywordsJA,
         lesson: lessonJA,
       },
       tr: {
         common: commonTR,
-        // homepage: homepageTR,
+        homepage: homepageTR,
         quests: questsTR,
         keywords: keywordsTR,
         lesson: lessonTR,
       },
       uk: {
         common: commonUK,
-        // homepage: homepageUK,
+        homepage: homepageUK,
         quests: questsUK,
         keywords: keywordsUK,
         lesson: lessonUK,

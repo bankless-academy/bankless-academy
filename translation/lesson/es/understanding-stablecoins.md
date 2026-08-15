@@ -1,5 +1,5 @@
 ---
-TITLE: Entendiendo las stablecoins
+TITLE: Entender las stablecoins
 DESCRIPTION: Usa dólares, euros y más en la blockchain.
 LANGUAGE: Español
 WRITERS: Tetranome

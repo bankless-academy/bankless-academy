@@ -94,15 +94,23 @@ quizzes in the md but have no `[x]`; their type is pinned in `slideMeta`.
 13. **Avoid em dashes (—).** They read as AI-generated and translate poorly.
     Use a comma, colon, parentheses, or a separate sentence instead. Applies
     to all new/edited lesson text and quiz feedback.
-14. **Always consider the mobile view.** Most length/layout limits bind on
+14. **Keep punctuation outside emphasis markers, and never use `_…_`
+    intraword.** CommonMark decides whether `**` opens or closes from the
+    characters flanking it, so `**Value:**text` and `block_**chain**_` do not
+    render — they ship a literal `**` / `_` to the reader. Write `**Value**:`,
+    bold the link *text* rather than the whole link (`[**name**](url)`), and
+    use `*x*` where `_x_` would sit against a letter. This bites hardest in
+    ja/zh (no word spaces, full-width `：「」`) but broke English too.
+    `validate-content.js` fails the build on it.
+15. **Always consider the mobile view.** Most length/layout limits bind on
     small screens first: slide text, quiz options, feedback toasts, banners.
     When judging "too long" or changing lesson-related UI, assume a narrow
     viewport (~375px), not desktop.
-15. **Keep every lesson beginner-friendly and easy to understand.** The reader
+16. **Keep every lesson beginner-friendly and easy to understand.** The reader
     is new to crypto: short sentences, familiar analogies, one concept at a
     time. If a slide needs prior knowledge the curriculum hasn't taught yet,
     link the lesson that teaches it.
-16. **Avoid jargon and overly technical wording — prefer ELI5.** Explain like
+17. **Avoid jargon and overly technical wording — prefer ELI5.** Explain like
     the reader is smart but new: plain words first, the technical term after
     (backticked if it's a glossary keyword). Don't say "EOA delegation via
     EIP-7702" when "letting your wallet run extra code" teaches the same idea;
@@ -188,6 +196,23 @@ Spanish were produced. The ordering is not optional:
    Agents must not touch `lesson-meta.json` or run the compiler; concurrent
    writes to one JSON file lose edits silently.
 
+**Batch size: 3 languages at a time, 5 agents each.** Measured over the
+it/ja/tr/uk/zh wave (20 agents): **170k tokens per agent** (range 138k-230k),
+**~680k per language**, 11-25 min per agent. Five languages at once costs
+~3.4M tokens in one burst, which is where an earlier wave hit the session
+limit and lost 8 in-flight agents. Three languages is ~2.1M with headroom.
+The binding constraint is not agent parallelism (agents are independent) but
+the **central reconciliation**, which is serial and runs in the orchestrator's
+context: each language returns 2-4 glossary/terminology decisions to
+adjudicate, and five languages of that at once is where mistakes happen.
+
+**Split the slugs 4/4/4/4/3, not 4/3/4/8.** The wave used four groups
+(foundations 4, wallet+security+L1 3, L2+defi+staking 4, **DEX+handbooks 8**)
+and the 8-slug group was the long pole in every single language — the three
+slowest agents of the wave were all DEX groups (21, 21, 26 min) while three
+siblings sat idle. Five balanced groups cut per-language wall clock from
+~21 min to ~14.
+
 Three helpers make a wave repeatable (`lang-tools.js`, at the repo root):
 
 - `node lang-tools.js pins <lang>` — seeds the style guide's ```terms``` block from ETHGlossary,
@@ -236,13 +261,14 @@ render a warning banner on the intro slide.
 - [x] Quiz slide titles standardized (2026-08-14): `build-content.js` reads them from the md `Knowledge Check <n>` heading; the stale Notion `title` dropped from all 90 QUIZ/POLL `slideMeta` entries. No UI change — the frontend renders a hardcoded translated label.
 - [x] `validate-content.js` extended to translated md (2026-08-14): section count, quiz count, per-quiz option count, `[x]` position vs English, image stems (localized variants allowed), frontmatter; dropped cross-links warn instead of failing. Plus `staleTranslations` support.
 - [x] `validate-content.js` gates terminology per language (2026-08-15): **dead tooltips** (a backticked term in a translated md that resolves to nothing through that language's `keyword`/`keyword_plural`/`keyword_forms` index — the English md was already gated, translations were not, so a broken tooltip shipped silently) and **style-guide pin compliance** (a term pinned in `translation/style/<lang>.md` must match the shipped glossary entry). Languages whose glossary is English-keyed and complete fail the build; Crowdin-era files only warn until their wave regenerates them. First run caught 4 dead tooltips in a legacy `es/wallet-basics`, 2 in `es/blockchain-basics`, and a wrong `self-custodial` pin in the French style guide.
+- [x] **Unrenderable emphasis gated (2026-08-15):** `findBrokenEmphasis` in `content-lib.js` renders every line with markdown-it (the same parser `build-content.js` compiles slides with) and fails the build on any `**`/`_` marker that survives as literal text. CommonMark decides whether a delimiter opens or closes from the characters flanking it, and CJK breaks the rule constantly (no word spaces, full-width punctuation): `**価値：**時間` never renders, it ships a literal `**` to the reader. Do **not** hand-roll the flanking rules — a regex approximation missed 10 real cases and invented 9. The gate caught 87 lines in the ja/zh/uk wave and **three long-standing defects in the English source** that every translation had copied verbatim: `block_**chain**_`, `_**tri**_lemma` and `_0x__________` (which italicised "0x" and ate an underscore). Escaped `\_` and fill-in-the-blank `_____` runs are excluded.
 - [x] 8 structurally broken translations unregistered (2026-08-14): `bitcoin-basics` es/fr/pt-br/tr/uk/zh, `wallet-basics` uk, `optimism-governance` fr — files kept in git under `staleTranslations`, pages now serve English instead of mis-grading learners.
 - [x] `translate-content.js` built (2026-08-14): per-unit hash gating, ETHGlossary + style-guide terminology pinning, structural + length verification with retry, glossary sync, offline `--verify-only` / `--terms` / `--keywords` modes. French `bitcoin-basics` regenerated as the pilot. **The API path is still unrun** (no `ANTHROPIC_API_KEY` yet) — the pilot content was authored directly against the same contract.
 - [x] Slide overflow fixed in the UI (2026-08-14): the fixed-height slide container had `maxH: 533px` and no overflow rule, so long text was painted over by the nav bar. Now `overflowY: auto` on desktop + bottom padding clearing the fixed mobile nav. Overflow scrolls instead of vanishing, which matters most for languages that run longer than English.
 - [x] **Pre-translation gate cleared (2026-08-15):** quest components translatable, translated md served from disk (`/api/lesson-content/[...slug]`) instead of raw.githubusercontent, `.env.example` refreshed, `GITHUB_TOKEN` on Vercel
 - [x] **`nsSeparator: false`** (2026-08-15) — the single highest-impact i18n bug. Our keys ARE English sentences, and i18next reads a `:` in a key as a namespace prefix, so **every key ending in `:` resolved to an empty string**: "Resources:", "Answer selected:", "3. Paste the successful swap transaction hash below:" simply vanished from the UI in all languages, English included. Fixed in `src/utils/translation.ts`. `keySeparator` stays ON: `keyPrefix` joins with `.` regardless of the setting (i18next `getFixedT`), the quests bundle is nested, and i18next's `deepFind` already resolves keys containing dots. Glossary definitions no longer go through `t('<term>.definition')` — `Lesson.tsx`/`Article.tsx` read the resource bundle directly.
 - [x] **French complete (2026-08-15):** all 19 active lessons translated and structurally verified, `common` 266/266, `quests` 116/116, `homepage` 37/37, `lesson` 38/38, glossary 274/274 (80 French plurals added so plural display forms resolve to a tooltip). Site sweep closed the last hardcoded strings (`_app`, `explore`, `my-profile`, `mini-apps`, Mini* lists, `Reward`, `Badge`, `ShareModal`, `LessonContent`, `MintDatadisk*`, `confirmation`, `maintenance`). Out of scope by request: `leaderboard.tsx`, social share text, Notion pages, `onchain-summer-challenge`, `CryptoArchetypeQuiz.tsx`.
-- [ ] Repair the remaining pre-pipeline glossary files with `--keywords` (de/es/it/ja/pt-br/tr/uk/zh still hold Crowdin-era definitions; French is done) — needs an API key
+- [x] All nine glossaries converted to English-keyed and fully translated (2026-08-15): 274/274 entries in de/es/fr/it/ja/pt-br/tr/uk/zh, 0 leftover English definitions. Produced by the parallel-agent waves + `lang-tools merge`, not `--keywords` (no API key needed). Inflected-form counts vary by morphology: tr 274, uk 256, de 122, it 107, pt-br 80, es 15, fr 13, ja/zh 0 (correctly — neither inflects).
 - [ ] 17 legacy translated slides still exceed the ceiling (it 2, es 2, tr 1, pt-br 1, de 1 + older waves) — they now scroll rather than clip, and clear as each wave regenerates
 - [ ] `translate-content` AI translation script (see `docs/i18n-25-languages-plan.md` — existing 9 languages to full coverage first; must also emit `website/<lang>/*.json` and `keywords/<lang>/keywords.json`, not just lesson md)
 - [ ] **After**: lazy-load i18next namespaces, `fallback: 'blocking'` + ISR for translated lesson paths, localize `/glossary` (+ per-term anchors, `glossary: true` audit), RTL audit before the first ar/ur wave, hreflang in the sitemap
@@ -401,6 +427,15 @@ Understand all five before touching translations — they fail independently.
   it) but is not served, and the validator stops demanding a `languages[]`
   entry for it. `staleTranslations` is stripped by `build-content.js` and never
   reaches the app.
+- **Turkish `İ` breaks glossary lookups.** Case folding is not script-neutral:
+  JS lowercases `İ` (U+0130) to `i` + U+0307 (combining dot above), a
+  two-codepoint sequence that never equals the `i` in a glossary key. Every
+  Turkish term backticked at the start of a sentence or list item was a dead
+  tooltip, and the first Turkish wave worked around it by rewording clauses to
+  keep such terms mid-sentence. Fixed 2026-08-15 with `normalizeKeyword` in
+  `src/constants/languages.ts` (mirrored in `content-lib.js` for the offline
+  validators), applied on both sides of every keyword comparison. The same trap
+  waits for any language whose casing rules are not Latin-1.
 - Quiz **slide titles never render**: `Lesson.tsx` shows a hardcoded
   `t('Knowledge Check')` for QUIZ slides and a hardcoded `'Poll'` for POLL
   slides (the latter is not wrapped in `t()` — small i18n bug). Slide titles

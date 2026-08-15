@@ -151,7 +151,7 @@ Para esta lección, recuerda que los datos del registro se comparten entre las m
 
 Una característica clave de las blockchains es que los datos de transacciones pasadas no se pueden cambiar una vez incluidos en un bloque. Esto es así porque cada bloque tiene un `hash de bloque` único, como una huella digital, que sirve para enlazar los bloques uno tras otro. Nadie puede cambiar transacciones pasadas sin cambiar esa huella y la de TODOS los bloques siguientes, porque cada huella depende de la anterior.
 
-Así, cada `bloque` es simplemente un grupo de transacciones más una huella única (su `hash de bloque`) calculada a partir de su contenido. Los bloques quedan encadenados porque cada uno hace referencia a la huella del bloque anterior, formando una sola block_**chain**_ conectada.
+Así, cada `bloque` es simplemente un grupo de transacciones más una huella única (su `hash de bloque`) calculada a partir de su contenido. Los bloques quedan encadenados porque cada uno hace referencia a la huella del bloque anterior, formando una sola block**chain** conectada.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
 
@@ -244,7 +244,7 @@ Los datos de una blockchain son una lista de transacciones agrupadas en bloques.
 
 Una `dirección` es un identificador público que cualquiera puede consultar en la blockchain. Como con un correo electrónico, cualquiera puede enviarle fondos, pero solo quien controla la `clave privada` puede desbloquear y usar los fondos de esa dirección.
 
-En Ethereum, una dirección siempre empieza por _0x__________ y tiene 42 caracteres entre números y letras, derivados de la `clave pública` de esa dirección.
+En Ethereum, una dirección siempre empieza por \_0x\_\_\_\_\_\_\_\_\_\_ y tiene 42 caracteres entre números y letras, derivados de la `clave pública` de esa dirección.
 
 Al mirar una transacción en un explorador de bloques, vemos las direcciones From: y To:. Eso no nos dice quiénes son las _personas_ que controlan esas direcciones, pero permite seguir el movimiento de las criptomonedas por el registro de la blockchain.
 

@@ -151,7 +151,7 @@ Was macht eine Blockchain dezentral?
 
 Eine wichtige Eigenschaft von Blockchains: Transaktionsdaten lassen sich nicht mehr ändern, sobald sie in einem Block stehen. Denn jeder Block hat einen eigenen `Block-Hash`, einen Fingerabdruck, der die Blöcke nacheinander verkettet. Niemand kann alte Transaktionen ändern, ohne diesen Fingerabdruck und den JEDES folgenden Blocks zu ändern, denn jeder Fingerabdruck hängt vom vorherigen ab.
 
-Ein `Block` ist also einfach eine Gruppe von Transaktionen plus ein eigener Fingerabdruck (sein `Block-Hash`), berechnet aus dem Inhalt des Blocks. Die Blöcke sind verkettet, weil jeder auf den Fingerabdruck des vorherigen Blocks verweist. So entsteht eine zusammenhängende Block_**kette**_.
+Ein `Block` ist also einfach eine Gruppe von Transaktionen plus ein eigener Fingerabdruck (sein `Block-Hash`), berechnet aus dem Inhalt des Blocks. Die Blöcke sind verkettet, weil jeder auf den Fingerabdruck des vorherigen Blocks verweist. So entsteht eine zusammenhängende Block**kette**.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
 
@@ -244,7 +244,7 @@ Daten auf einer Blockchain sind einfach eine Liste von Transaktionen in Blöcken
 
 Eine `Adresse` ist eine öffentliche Kennung, die jeder auf der Blockchain nachschlagen kann. Wie bei einer E-Mail-Adresse kann jeder Geld dorthin senden, aber nur wer den `privaten Schlüssel` besitzt, kann das Guthaben dort nutzen.
 
-Auf Ethereum beginnt eine Adresse immer mit _0x__________ und besteht aus 42 Zeichen aus Zahlen und Buchstaben, abgeleitet vom `öffentlichen Schlüssel` dieser Adresse.
+Auf Ethereum beginnt eine Adresse immer mit \_0x\_\_\_\_\_\_\_\_\_\_ und besteht aus 42 Zeichen aus Zahlen und Buchstaben, abgeleitet vom `öffentlichen Schlüssel` dieser Adresse.
 
 Sehen wir uns eine einzelne Transaktion in einem Block-Explorer an, erkennen wir die Adressen unter From: und To:. Wer diese Adressen kontrolliert, verrät das nicht, aber jeder kann so die Bewegung von Kryptowährung im Kontobuch verfolgen.
 

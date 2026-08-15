@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // Per-language wave helpers. The Spanish run needed all three of these done by
 // hand; scripting them removes the steps where mistakes actually happened.
 //
@@ -65,8 +66,23 @@ if (cmd === 'pins') {
 // merge: combine the two glossary halves and surface every disagreement
 // ---------------------------------------------------------------------------
 if (cmd === 'merge') {
-  const p1 = read(`${SCRATCH}/${lang}-keywords-part1.json`)
-  const p2 = read(`${SCRATCH}/${lang}-keywords-part2.json`)
+  const half = (n) => {
+    const f = `${SCRATCH}/${lang}-keywords-part${n}.json`
+    if (!fs.existsSync(f)) {
+      console.error(
+        `missing ${f}\n(set TRANSLATION_SCRATCH if the drafts live elsewhere; half ${n} may still be in progress)`
+      )
+      process.exit(1)
+    }
+    try {
+      return read(f)
+    } catch (e) {
+      console.error(`${f} is not valid JSON: ${e.message}`)
+      process.exit(1)
+    }
+  }
+  const p1 = half(1)
+  const p2 = half(2)
   const overlap = Object.keys(p1).filter((k) => k in p2)
   if (overlap.length) {
     console.error('halves overlap:', overlap.join(', '))

@@ -47,7 +47,16 @@ Reference material, in order of authority:
 5. **Quiz options ≤ ~70 characters.** Move nuance into the `> ℹ️` feedback.
    Feedback lines: one or two short sentences, ~150 chars max.
 6. **No em dashes (—)** anywhere.
-7. Do not touch `src/constants/lesson-meta.json`, do not run
+7. **Emphasis markers must be able to render.** CommonMark decides whether
+   `**` opens or closes from the characters flanking it, so punctuation inside
+   the delimiters silently breaks bold and ships a literal `**` to the reader.
+   This bit ja and zh on 87 lines in one wave, and `_x_` next to Cyrillic in
+   uk. Keep punctuation outside (`**価値**：`, not `**価値：**`), bold the link
+   *text* rather than the whole link (`[**name**](url)`), and never use `_…_`
+   against a non-Latin letter — `_` cannot open or close intraword, use `*…*`.
+   `validate-content.js` renders every line with markdown-it and fails on any
+   marker that survives as literal text.
+8. Do not touch `src/constants/lesson-meta.json`, do not run
    `build-content.js`, do not commit. Registration and the final build happen
    centrally after every agent finishes.
 

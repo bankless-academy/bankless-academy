@@ -1,6 +1,11 @@
 // Shared helpers for the content scripts (build/validate/translate).
 // Kept in one place so the English gate and the translation gate can never
 // drift apart on what counts as "too long for the slide".
+import MarkdownIt from 'markdown-it'
+
+// Same options build-content.js compiles slides with, so findBrokenEmphasis
+// judges emphasis exactly as the shipped renderer does.
+const md = new MarkdownIt({ html: true })
 
 // French typography puts a space before : ; ! ? and inside « ». It has to be a
 // NO-BREAK space: with a normal one the browser is free to wrap there, which
@@ -34,8 +39,89 @@ export const hasCleanTypography = (text, lang) =>
 // binds sooner. Calibrated against a known-overflowing slide (~26 est. lines).
 export const MAX_SLIDE_LINES = 22
 
+// Rendered width of a string in half-width units. CJK ideographs, kana, hangul
+// and fullwidth forms occupy roughly two Latin character widths, so counting
+// raw `.length` under-measures a Japanese or Chinese slide by about half and
+// waves it through the ceiling while it actually overflows. Everything else,
+// including Cyrillic and Turkish, is close enough to 1.
+const WIDE =
+  /[\u1100-\u115F\u2E80-\u303E\u3041-\u33FF\u3400-\u4DBF\u4E00-\u9FFF\uA000-\uA4CF\uAC00-\uD7A3\uF900-\uFAFF\uFE30-\uFE6F\uFF00-\uFF60\uFFE0-\uFFE6]/
+export const displayWidth = (str) => {
+  let w = 0
+  for (const ch of str) w += WIDE.test(ch) ? 2 : 1
+  return w
+}
+
+// Emphasis markers that CommonMark will NOT resolve, which ship to the reader
+// as literal ** or _ in the slide.
+//
+// CommonMark's flanking rules are defined in terms of Unicode punctuation and
+// whitespace, and CJK has neither word spaces nor ASCII punctuation, so two
+// constructs that are fine in English silently break in ja/zh:
+//
+//   `**価値：**時間`  the closing ** is preceded by punctuation (：) and
+//                     followed by a letter (時), so it is not right-flanking
+//                     and cannot close. Fix: move the colon out, `**価値**：時間`.
+//   `の_増減_を`      `_` may not open or close intraword, and CJK ideographs
+//                     count as word characters. Fix: use `*増減*` (asterisks
+//                     have no intraword restriction).
+//
+// There are more failure modes than those two (an opener followed by
+// punctuation, a stray space inside the delimiters, a closer after `)` from a
+// link), and the flanking rules are far too subtle to approximate with a
+// regex — a hand-rolled version of this check missed 10 real cases and
+// invented 9 more. So we ask the renderer: markdown-it is the parser
+// build-content.js compiles slides with, and any ** or _emphasis_ still
+// present as literal text in its output is a marker that will not render.
+//
+// Returns one finding per offending line: { line, text, kind }.
+export const findBrokenEmphasis = (text) => {
+  const out = []
+  const lines = text.split('\n')
+  let inFence = false
+  lines.forEach((line, i) => {
+    if (/^\s*```/.test(line)) {
+      inFence = !inFence
+      return
+    }
+    if (inFence || !line.trim()) return
+    // `***` on its own is a thematic break, not emphasis
+    if (/^\s*\*{3,}\s*$/.test(line)) return
+    // Code spans keep their contents verbatim, so ** inside one is intentional.
+    const html = md
+      .render(line)
+      .replace(/<code>[\s\S]*?<\/code>/g, '')
+      .replace(/<pre>[\s\S]*?<\/pre>/g, '')
+    if (html.includes('**')) {
+      out.push({ line: i + 1, text: line.trim(), kind: 'bold-marker-not-rendered' })
+      return
+    }
+    // A `_` left sitting against an emphasis tag is the signature of a half-
+    // resolved nested span: `block_**chain**_` renders as
+    // `block_<strong>chain</strong>_` in EVERY script, English included, so
+    // this must not be gated on the flanking letter being non-ASCII.
+    const hugsTag = /_<(strong|em)>|<\/(strong|em)>_/.test(html)
+    // Bare `_x_` that survived. Two kinds of underscore are deliberate and
+    // must not be flagged: ones the author escaped (`\_0x\_\_\_`), and runs of
+    // 2+ used as a fill-in-the-blank rule ("your address is like your _____").
+    // Escapes are dropped from the source before re-rendering rather than
+    // guessed at in the output, where a literal `_` looks identical either way.
+    const bare = md
+      .render(line.replace(/\\_/g, ''))
+      .replace(/<code>[\s\S]*?<\/code>/g, '')
+      .replace(/_{2,}/g, '')
+    const barePair =
+      /(^|[^\p{L}\p{N}\\])_[^_\s][^_]*_([^\p{L}\p{N}]|$)/u.test(bare) ||
+      /[^\p{ASCII}]_[^_\s][^_]*_|_[^_\s][^_]*_[^\p{ASCII}]/u.test(bare)
+    if (hugsTag || barePair)
+      out.push({ line: i + 1, text: line.trim(), kind: 'underscore-emphasis-not-rendered' })
+  })
+  return out
+}
+
 // Estimated rendered lines for one slide section (heading line included).
-// Image slides get a ~58-char text column, imageless ones ~116.
+// Image slides get a ~58-column text column, imageless ones ~116, measured in
+// half-width units (see displayWidth).
 // <details> blocks render collapsed, so only their <summary> counts.
 export const estimateSlideLines = (section) => {
   const [title] = section.split('\n')
@@ -53,9 +139,15 @@ export const estimateSlideLines = (section) => {
     for (const ln of block.split('\n')) {
       const t = ln.trim()
       if (!t) continue
-      lines += t === '---' || t === '~S~' ? 1.2 : Math.ceil(t.length / cpl)
+      lines += t === '---' || t === '~S~' ? 1.2 : Math.ceil(displayWidth(t) / cpl)
     }
     lines += 0.6
   }
   return lines
 }
+
+// Mirror of `normalizeKeyword` in src/constants/languages.ts — see the comment
+// there. Duplicated rather than imported because the content scripts are plain
+// Node ESM and cannot pull in the app's TypeScript. Keep the two in sync: if
+// they disagree, the validator passes content whose tooltips die at runtime.
+export const normalizeKeyword = (s) => s.toLowerCase().replace(/̇/g, '')

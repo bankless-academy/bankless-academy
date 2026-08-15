@@ -1,5 +1,5 @@
 ---
-TITLE: Entendiendo los estándares de tokens de Ethereum
+TITLE: Estándares de tokens de Ethereum
 DESCRIPTION: Descubre cómo las plantillas de activos de Ethereum sostienen clases de activos tradicionales y emergentes.
 LANGUAGE: Español
 WRITERS: Musharraf, Tetranome

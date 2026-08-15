@@ -1,5 +1,5 @@
 ---
-TITLE: Gestionar las autorizaciones de tokens
+TITLE: Gestionar autorizaciones de tokens
 DESCRIPTION: Protege tu billetera de interacciones no deseadas con smart contracts.
 LANGUAGE: Español
 WRITERS: estmcmxci, Tetranome

@@ -38,7 +38,7 @@ Cette leçon explique pourquoi Ethereum et les autres blockchains sont soumis au
 
 # Le trilemme de la blockchain
 
-Comme le suggère le mot _**tri**_lemme, trois qualités des blockchains entrent en concurrence et empêchent de les optimiser toutes les trois en même temps.
+Comme le suggère le mot **tri**lemme, trois qualités des blockchains entrent en concurrence et empêchent de les optimiser toutes les trois en même temps.
 
 Ce sont : la `sécurité`, la `scalabilité` et la `décentralisation`.
 

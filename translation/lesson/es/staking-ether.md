@@ -1,5 +1,5 @@
 ---
-TITLE: Staking de Ether
+TITLE: Staking de ETH
 DESCRIPTION: Genera rendimiento con tu Ether protegiendo Ethereum.
 LANGUAGE: Español
 WRITERS: Tetranome

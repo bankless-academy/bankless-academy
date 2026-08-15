@@ -21,16 +21,13 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
-    "staleTranslations": {
-      "languages": [
-        "tr",
-        "uk",
-        "zh"
-      ],
-      "reason": "pre-2026-08 rewrite: KC1/KC2 translate the old True/False quizzes (2 options vs 3-4 in en), so the en answer key points at options that are not on screen"
-    },
     "level": "Essentials",
     "lessonWriters": "Tetranome",
     "quest": "BitcoinBasics",
@@ -185,7 +182,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Essentials",
     "lessonWriters": "Tetranome",
@@ -388,14 +390,9 @@
       "pt-br",
       "tr",
       "zh",
-      "de"
+      "de",
+      "uk"
     ],
-    "staleTranslations": {
-      "languages": [
-        "uk"
-      ],
-      "reason": "pre-2026-08 rewrite: 4 quizzes vs 8 in en"
-    },
     "level": "Essentials",
     "lessonWriters": "Ap0ll0517, Jordy, Tetranome",
     "quest": "WalletBasics",
@@ -552,7 +549,12 @@
       "de",
       "es",
       "fr",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Essentials",
     "lessonWriters": "iSpeakNerd",
@@ -681,7 +683,11 @@
       "uk",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "zh",
+      "tr"
     ],
     "level": "Essentials",
     "tags": [
@@ -841,7 +847,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "lessonWriters": "iSpeakNerd",
@@ -1002,7 +1013,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "tags": [
@@ -1146,7 +1162,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "tags": [
@@ -1212,7 +1233,12 @@
       "fr",
       "es",
       "pt-br",
-      "de"
+      "de",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "tags": [
@@ -1282,7 +1308,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "tags": [
@@ -1414,7 +1445,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "lessonWriters": "Tetranome",
@@ -1461,7 +1497,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "lessonWriters": "Tetranome",
@@ -1624,7 +1665,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "tags": [
@@ -1675,7 +1721,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "lessonWriters": "Tetranome",
@@ -1841,7 +1892,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "lessonWriters": "Tetranome",
@@ -1902,7 +1958,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "tags": [
@@ -1956,7 +2017,12 @@
       "fr",
       "es",
       "de",
-      "pt-br"
+      "pt-br",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "lessonWriters": "iSpeakNerd",
@@ -2092,7 +2158,12 @@
       "fr",
       "es",
       "pt-br",
-      "de"
+      "de",
+      "it",
+      "ja",
+      "uk",
+      "zh",
+      "tr"
     ],
     "level": "Level 1",
     "lessonWriters": "Musharef, Tetranome",

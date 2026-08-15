@@ -38,7 +38,7 @@ Esta lição explica por que o Ethereum e outras blockchains estão sujeitos ao 
 
 # Trilema da blockchain
 
-Como sugere a palavra _**tri**_lema, há três qualidades das blockchains que competem entre si e impedem otimizar as três ao mesmo tempo.
+Como sugere a palavra **tri**lema, há três qualidades das blockchains que competem entre si e impedem otimizar as três ao mesmo tempo.
 
 São elas: `segurança`, `escalabilidade` e `descentralização`.
 

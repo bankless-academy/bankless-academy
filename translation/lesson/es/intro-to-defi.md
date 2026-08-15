@@ -1,5 +1,5 @@
 ---
-TITLE: Introducción a la DeFi
+TITLE: Introducción a DeFi
 DESCRIPTION: Entiende los fundamentos de las finanzas descentralizadas.
 LANGUAGE: Español
 WRITERS: Ap0ll0

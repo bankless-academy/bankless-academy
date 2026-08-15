@@ -1,9 +1,10 @@
 ---
-TITLE: Creare un portafoglio cripto
-DESCRIPTION: Configura il tuo primo portafoglio di criptovalute con la nostra guida passo passo.
+TITLE: Creare un crypto wallet
+DESCRIPTION: Configura il tuo primo crypto wallet con la nostra guida passo passo.
 LANGUAGE: Italiano
 WRITERS: Tetranome
-TRANSLATORS: fa3io
+EDITORS: Claude (Anthropic AI, 2026 review)
+TRANSLATORS: Claude (Anthropic AI)
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -26,56 +27,55 @@ ________________________________________________________________________________
 ```
 
 ---
-
-Questo è un riassunto della nostra lezione [Fondamenti del portafoglio](https://app.banklessacademy.com/lessons/wallet-basics), insieme a una guida per la missione. Guarda [la lezione completa](https://app.banklessacademy.com/lessons/wallet-basics) per **migliorare le tue conoscenze e ottenere il tuo badge**
+Questo è un riassunto della nostra lezione [Le basi del wallet](https://app.banklessacademy.com/lessons/wallet-basics), insieme a una guida passo passo per la missione. Dai un'occhiata alla [lezione completa](https://app.banklessacademy.com/lessons/wallet-basics) per **approfondire le tue conoscenze e ottenere il badge!**
 
 ---
 
-## Punti Chiave
+## Punti chiave
 
-> - Per accedere al mondo delle blockchain è necessario un `portafoglio crittografico`!
+> * Ti serve un `crypto wallet` per accedere al mondo delle blockchain!
 >
-> - Un portafoglio è come un account `blockchain`.
+> * Un wallet è come un account sulla `blockchain`.
 >
-> - I portafogli sono utilizzati per conservare `criptovalute`, accedere alle applicazioni blockchain e altro ancora.
+> * I wallet servono a conservare `criptovalute`, ad accedere alle app blockchain e altro ancora.
 >
-> - Questi portafogli funzionano sia su computer che su telefoni.
+> * Questi wallet funzionano sia su computer sia su telefono.
 >
-> - La creazione di un portafoglio è semplice e richiede circa 5 minuti. Ti mostreremo come fare nel nostro video qui sotto!
+> * Creare un wallet è facile e richiede circa 5 minuti. Ti mostriamo come nel video qui sotto!
 
-## Che cos'è un portafoglio cripto?
+## Che cos'è un crypto wallet?
 
-I portafogli di criptovalute sono un elemento essenziale dell'attrezzatura web3, che consentono di utilizzare le `criptovalute` sul tuo computer o telefono. I portafogli sono accessibili utilizzando un software chiamato `app per portafogli` — un'estensione per il browser web sul tuo computer, o un'app sul tuo telefono.
+I crypto wallet sono un equipaggiamento essenziale del web3: ti permettono di usare le `criptovalute` sul computer o sul telefono. Si usano tramite un software chiamato `app wallet`: un'estensione per il browser sul computer, o un'app sul telefono.
 
-Ma c'è di più. I portafogli sono più che semplici account per tenere criptovalute — sono la nostra connessione alla blockchain. Possiamo usarli per scambiare criptovalute con altri, accedere ad applicazioni blockchain, **e persino collezionare oggetti digitali come i badge di Bankless Academy.** Più esploriamo, più i nostri portafogli si evolvono — alcuni li considerano l'inizio di un'identità digitale.
+C'è di più. I wallet sono molto più di semplici account per conservare criptovalute: sono la nostra connessione alla blockchain. Ci servono per scambiare criptovalute con gli altri, per accedere alle applicazioni blockchain **e perfino per collezionare oggetti digitali come i badge di Bankless Academy.** Più esploriamo, più i nostri wallet crescono di ruolo, tanto che alcuni li considerano l'inizio dell'identità digitale.
 
-I portafogli contengono due informazioni fondamentali dell'account:
+Ogni wallet ha due informazioni di account fondamentali:
 
-- Una `chiave pubblica`, che si può considerare come il proprio _nome utente_. La condividerai pubblicamente per ricevere criptovalute.
+* Una `chiave pubblica`, che genera l'`indirizzo` del tuo wallet. L'indirizzo funziona come il tuo *nome utente*: lo condividi pubblicamente per ricevere criptovalute.
 
-- Una `chiave privata`, che funge da _password_. Questo dato deve sempre rimanere privato e non può essere modificato.
+* Una `chiave privata`, che fa da *password*. Va sempre tenuta riservata e non può essere cambiata.
 
-Proteggere la chiave privata è fondamentale, perché questa garantisce l'accesso istantaneo al portafoglio. Non si deve mai condividere la propria chiave privata. Puoi saperne di più seguendo [la lezione completa](https://app.banklessacademy.com/lessons/wallet-basics).
+Proteggere la chiave privata è fondamentale, perché dà accesso immediato al tuo wallet. Non condividerla mai con nessuno. Puoi saperne di più seguendo [la lezione completa](https://app.banklessacademy.com/lessons/wallet-basics).
 
-Oggi configureremo il nostro primo portafoglio, utilizzando il nostro portafoglio di criptovalute consigliato: Zerion!
+Oggi creeremo il nostro primo wallet con il crypto wallet che consigliamo: Zerion!
 
-## Procedura
+## Guida passo passo
 
-Configura il tuo primo portafoglio sul computer, utilizzando la guida qui sotto, oppure continua a scorrere per la nostra guida sul portafoglio dall'app del telefono.
+Crea il tuo primo wallet sul computer seguendo la guida qui sotto, oppure scorri per la guida al wallet su telefono.
 
-### Portafoglio per computer
+### Wallet su computer
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
-### Portafoglio per telefono
+### Wallet su telefono
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
-**È il momento di unirti al multiverso blockchain!**
+**È ora di entrare nel multiverso della blockchain!**
 
-Non dimenticare di raccogliere questa voce del manuale per una facile consultazione durante i tuoi viaggi e per sostenere Bankless Academy.
+Non dimenticare di collezionare questa voce del manuale: ti sarà utile durante i tuoi viaggi e sostiene Bankless Academy.
 
 Buon viaggio, Esploratore!
 
@@ -83,34 +83,34 @@ Buon viaggio, Esploratore!
 
 ## Domande frequenti
 
-### Cos'è una criptovaluta?
+### Che cos'è una criptovaluta?
 
-Le criptovalute sono una forma di denaro digitale, protetto dalla `crittografia`. Queste valute possono funzionare senza la necessità di autorità e banche centralizzate, riducendo le possibilità di frode e aumentando la libertà finanziaria dei titolari.
+Le criptovalute sono una forma di denaro digitale, protetta dalla `crittografia`. Queste valute possono funzionare senza autorità centrali e senza banche, riducendo il rischio di frode e aumentando la libertà finanziaria di chi le possiede.
 
-Scopri di più sulle criptovalute con la nostra lezione **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** e scopri come queste valute digitali stanno rivoluzionando il mondo finanziario!
+Scopri di più sulle criptovalute con la nostra lezione **[Le basi di Bitcoin](https://app.banklessacademy.com/lessons/bitcoin-basics)** e guarda come queste valute digitali stanno rivoluzionando il mondo della finanza!
 
 ### Cosa sono le chiavi pubbliche e private?
 
-La `crittografia` a chiave pubblica/privata consente al portafoglio di rendere pubbliche alcune informazioni, come l'indirizzo a cui gli altri possono inviare le criptovalute, mantenendo privato l'accesso alle criptovalute. Una chiave è come l'indirizzo di casa della criptovaluta, l'altra apre la porta d'ingresso.
+La `cifratura` a chiave pubblica e privata permette al tuo wallet di rendere pubbliche alcune informazioni, come l'indirizzo a cui gli altri possono inviarti criptovalute, tenendo però privato l'accesso ai tuoi fondi. L'indirizzo del wallet, creato dalla chiave pubblica, è come l'indirizzo di casa tua, e la chiave privata apre la porta d'ingresso.
 
-Puoi condividere la tua chiave pubblica con chiunque sia di tua fiducia per farti inviare criptovalute, ma la tua chiave privata è solo per te — perché dà accesso a tutti gli beni all'interno del portafoglio. Non condividerla mai, anche se il tuo contatto afferma di essere di Bankless Academy o di Zerion.
+Puoi condividere il tuo indirizzo con chiunque ritieni affidabile per farti inviare criptovalute, ma la chiave privata è solo per i tuoi occhi, perché dà accesso a tutti gli asset dentro il wallet. Non condividerla mai, nemmeno se chi te la chiede dice di essere di Bankless Academy o di Zerion.
 
-Per saperne di più e ricevere un premio per la creazione del tuo primo portafoglio, consultate la nostra lezione [Fondamenti del portafoglio](https://app.banklessacademy.com/lessons/wallet-basics).
+Scopri di più e ricevi una ricompensa creando il tuo primo wallet, nella lezione [Le basi del wallet](https://app.banklessacademy.com/lessons/wallet-basics).
 
-### Cosa succede se perdo la frase di recupero?
+### Cosa succede se perdo la mia frase di recupero?
 
-La frase di recupero, nota anche come "frase segreta" o "frase seme", è l'unico backup in caso di perdita dell'accesso al portafoglio sul dispositivo. Se perdi la frase di recupero, i fondi del portafoglio andranno persi per sempre. Per questo motivo è importante conservarla in un luogo sicuro, non solo per evitare furti o smarrimenti, ma anche incendi o danni causati dall'acqua.
+La tua frase di recupero, chiamata anche “frase segreta” o “frase seed”, è la tua unica copia di sicurezza se perdi l'accesso al wallet sul tuo dispositivo. Se perdi la frase di recupero, quello che c'è nel wallet è perso per sempre. Per questo è importante conservarla in un posto sicuro, al riparo non solo da furti e smarrimenti, ma anche da incendi e acqua.
 
-### I portafogli Ethereum possono contenere Bitcoin?
+### I wallet Ethereum possono contenere Bitcoin?
 
-I portafogli Ethereum possono contenere Bitcoin, ma in forma "impacchettata" o "wrapped". Se vuoi tenere Bitcoin originali, dovrai creare un portafoglio che funzioni sulla rete Bitcoin, come [Exodus](https://www.exodus.com/) o [Mycelium](https://wallet.mycelium.com/).
+I wallet Ethereum possono contenere Bitcoin, ma in forma “wrapped”, come il token cbBTC di Coinbase. Se vuoi possedere Bitcoin originali, dovrai creare un wallet che funziona sulla rete Bitcoin, come [Exodus](https://www.exodus.com/) o [BlueWallet](https://bluewallet.io/).
 
 ---
 
 **Autore**
 
-[Tetranome](https://twitter.com/Tetranome) è il responsabile dei contenuti e del design di Bankless Academy, con focus sul percorso di apprendimento, l'interfaccia utente e l'esperienza, nonché sull'arte della piattaforma.
+[Tetranome](https://twitter.com/Tetranome) è Content & Design Lead di Bankless Academy e si occupa del percorso di apprendimento, dell'interfaccia, dell'esperienza d'uso e delle illustrazioni della piattaforma.
 
 **Patron**
 
-Questa guida è fornita da Zerion.
+Questa guida è realizzata con il supporto di Zerion.

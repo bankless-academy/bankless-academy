@@ -24,7 +24,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -308,7 +313,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -613,7 +623,8 @@ const LESSONS: LessonType[] = [
       'pt-br',
       'tr',
       'zh',
-      'de'
+      'de',
+      'uk'
     ],
     level: 'Essentials',
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
@@ -929,7 +940,12 @@ const LESSONS: LessonType[] = [
       'de',
       'es',
       'fr',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Essentials',
     lessonWriters: 'iSpeakNerd',
@@ -1072,7 +1088,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '9b35ad0ec12f4b8b91bb55b8bd95817d',
         title: 'Block Anatomy',
-        content: '<div class="bloc1"><p>An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique <code>block hash</code>, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and the fingerprint of EVERY block that follows it because each fingerprint depends on the previous one.</p><p>So each <code>block</code> is simply a group of transactions, plus a unique fingerprint (its <code>block hash</code>) computed from the block’s contents. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block<em><strong>chain</strong></em>.</p></div><div class="bloc2"><img src=\'/images/blockchain-basics/block-anatomy-5c22845b.svg\'></div>'
+        content: '<div class="bloc1"><p>An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique <code>block hash</code>, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and the fingerprint of EVERY block that follows it because each fingerprint depends on the previous one.</p><p>So each <code>block</code> is simply a group of transactions, plus a unique fingerprint (its <code>block hash</code>) computed from the block’s contents. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block<strong>chain</strong>.</p></div><div class="bloc2"><img src=\'/images/blockchain-basics/block-anatomy-5c22845b.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1156,7 +1172,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '9ab48a4f7b4b47c7bcaa3af14a21bf69',
         title: 'User Addresses',
-        content: '<div class="bloc1"><p>An <code>address</code> is a public identifier that anyone can look up on the blockchain. Like an email address, anyone can send funds to it but only someone who controls the <code>private key</code> can unlock and use the funds at that address.</p><p>On Ethereum, an address always starts with <em>0x_________</em> and is 42 characters of numbers and letters derived from the <code>public key</code> of that address.</p><p>When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the <em>people</em> are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.</p></div><div class="bloc2"><img src=\'/images/blockchain-basics/user-addresses-57e130d9.svg\'></div>'
+        content: '<div class="bloc1"><p>An <code>address</code> is a public identifier that anyone can look up on the blockchain. Like an email address, anyone can send funds to it but only someone who controls the <code>private key</code> can unlock and use the funds at that address.</p><p>On Ethereum, an address always starts with \<em>0x\</em>\<em>\</em>\<em>\</em>\<em>\</em>\<em>\</em>\_ and is 42 characters of numbers and letters derived from the <code>public key</code> of that address.</p><p>When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the <em>people</em> are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.</p></div><div class="bloc2"><img src=\'/images/blockchain-basics/user-addresses-57e130d9.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1204,7 +1220,11 @@ const LESSONS: LessonType[] = [
       'uk',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'zh',
+      'tr'
     ],
     level: 'Essentials',
     tags: [
@@ -1516,7 +1536,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -1580,7 +1605,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '2933158cd04448dbab8d9d0ba7a97ce8',
         title: 'Blockchain Trilemma',
-        content: '<div class="bloc1"><p>As implied by the word <em><strong>tri</strong></em>lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once.</p><p>These are: <code>Security</code>, <code>Scalability</code>, and <code>Decentralization</code>.</p><p>For a blockchain to serve as an unbiased foundation for a monetary system at a global scale, it should excel in all three aspects. A monetary system needs to be secure from fraud, safe from attacks by censors through decentralization, and scalable to meet the needs of over 8 billion humans in a global society.</p></div><div class="bloc2"><img src=\'/images/layer-1-blockchains/blockchain-trilemma-9bd1b1e4.svg\'></div>'
+        content: '<div class="bloc1"><p>As implied by the word <strong>tri</strong>lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once.</p><p>These are: <code>Security</code>, <code>Scalability</code>, and <code>Decentralization</code>.</p><p>For a blockchain to serve as an unbiased foundation for a monetary system at a global scale, it should excel in all three aspects. A monetary system needs to be secure from fraud, safe from attacks by censors through decentralization, and scalable to meet the needs of over 8 billion humans in a global society.</p></div><div class="bloc2"><img src=\'/images/layer-1-blockchains/blockchain-trilemma-9bd1b1e4.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1843,7 +1868,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     tags: [
@@ -2105,7 +2135,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     tags: [
@@ -2172,7 +2207,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'pt-br',
-      'de'
+      'de',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     tags: [
@@ -2243,7 +2283,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     tags: [
@@ -2541,7 +2586,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2589,7 +2639,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2914,7 +2969,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     tags: [
@@ -2966,7 +3026,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3256,7 +3321,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3318,7 +3388,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     tags: [
@@ -3373,7 +3448,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'pt-br'
+      'pt-br',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -3649,7 +3729,12 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'pt-br',
-      'de'
+      'de',
+      'it',
+      'ja',
+      'uk',
+      'zh',
+      'tr'
     ],
     level: 'Level 1',
     lessonWriters: 'Musharef, Tetranome',

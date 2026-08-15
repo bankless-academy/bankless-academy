@@ -48,7 +48,7 @@ Optimismでは、「Agora」と呼ばれる投票用dAppを使って、適格な
 
 Explorer’s Handbookのエントリー、 [「How to fund a Wallet on Layer 2」](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2)にステップバイステップのガイドがあります。
 
-**2. ** `DEX`を使用して、ETHをOptimismネットワーク上のOPトークンにスワップします。
+**2.**  `DEX`を使用して、ETHをOptimismネットワーク上のOPトークンにスワップします。
 
 DEXを使用してOPトークンを購入するためのステップバイステップガイドについては、Explorer’s Handbookのエントリー [「How to Swap on a Decentralized Exchange」](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange)をご確認ください。
 

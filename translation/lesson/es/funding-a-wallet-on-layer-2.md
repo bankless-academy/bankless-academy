@@ -1,5 +1,5 @@
 ---
-TITLE: Fondear una billetera en Layer 2
+TITLE: Añadir fondos en Layer 2
 DESCRIPTION: Aprende a fondear tu billetera en L2 mediante CEX, rampas de entrada de terceros y puentes.
 LANGUAGE: Español
 WRITERS: HiroKennelly
