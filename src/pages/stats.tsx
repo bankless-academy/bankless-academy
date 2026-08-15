@@ -5,6 +5,7 @@ import axios from 'axios'
 
 import { MetaData } from 'components/Head'
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
+import { t } from 'i18next'
 
 const pageMeta: MetaData = {
   title: 'Stats',
@@ -41,7 +42,7 @@ const Stats = (): JSX.Element => {
           {!IS_WHITELABEL && (
             <Box mt={8}>
               <Text fontSize="lg" color="orange.300">
-                Number of unique addresses connected to the app
+                {t('Number of unique addresses connected to the app')}
               </Text>
               {`${stats?.uniqueAddresses} 👨‍🚀 | ${stats?.uniqueAddresses7days} 'week | ${stats?.uniqueAddresses1day} 'day`}
               <br />

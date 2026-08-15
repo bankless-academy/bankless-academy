@@ -208,9 +208,9 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                       <Text fontWeight="bold">
                         {t('Always do your own research.')}
                       </Text>
-                      Blockchain is a new technology and most applications are
-                      new. Before depositing any large quantities of money, make
-                      sure you understand the risks.
+                      {t(
+                        'Blockchain is a new technology and most applications are new. Before depositing any large quantities of money, make sure you understand the risks.'
+                      )}
                     </Box>
                   </>
                 }

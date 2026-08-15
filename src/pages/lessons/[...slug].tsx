@@ -13,7 +13,13 @@ import { markdown } from 'utils/markdown'
 import LessonContent from 'components/LessonContent'
 import Layout from 'layout/Layout'
 import { useApp } from 'contexts/AppContext'
-import { isLanguage, parseLangFromPath } from 'constants/languages'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import {
+  isLanguage,
+  normalizeLangCode,
+  parseLangFromPath,
+} from 'constants/languages'
 
 const SPLIT = `\`\`\`
 
@@ -257,24 +263,48 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   const lesson = pageMeta?.lesson
   const { openLessons, hideNavBar } = useApp()
 
-  const lang =
-    typeof window !== 'undefined'
-      ? parseLangFromPath(window.location.pathname)
-      : 'en'
+  const router = useRouter()
+  // router.asPath, not window.location: it is reactive and defined during SSR,
+  // so this no longer differs between server and client render.
+  const lang = parseLangFromPath(router.asPath)
 
   const isLessonOpen = lesson?.slug && openLessons.includes(lesson.slug)
 
-  if (!lesson) {
-    console.log('redirect to lesson select')
-    // redirect to lesson select if lesson is not found
-    document.location.href = '/lessons'
-    return null
-  } else if (lang !== 'en' && lang !== lesson?.lang) {
-    console.log('redirect to lesson')
-    // redirect to english lesson if translation is not found
-    document.location.href = `/lessons/${lesson.slug}`
-    return null
-  }
+  // A corrective redirect must REPLACE, never push. `document.location.href`
+  // added a history entry, so Back returned to the bad URL, which redirected
+  // forward again: the back button was trapped on any lesson whose translation
+  // had been unregistered. Running it in an effect also keeps render pure —
+  // assigning to document.location during render is a side effect that React
+  // 18 strict mode fires twice.
+  const wrongLanguage = !!lesson && lang !== 'en' && lang !== lesson?.lang
+  useEffect(() => {
+    if (!lesson) {
+      router.replace('/lessons')
+    } else if (wrongLanguage) {
+      router.replace(`/lessons/${lesson.slug}`)
+    }
+  }, [lesson, wrongLanguage, router])
+
+  // First visit only: send a reader whose browser language has a translation
+  // to that translation. Deliberately client-side and `replace`:
+  //   - a server/middleware redirect on Accept-Language can stop Google
+  //     crawling the other language versions, so the HTML served for
+  //     /lessons/<slug> stays English and the alternates are declared via
+  //     hreflang instead;
+  //   - `replace` adds no history entry, so Back is not trapped;
+  //   - it runs only when nothing is stored, so it never overrides a reader
+  //     who has actually chosen a language.
+  useEffect(() => {
+    if (!lesson || wrongLanguage || lang !== 'en') return
+    if (typeof window === 'undefined') return
+    if (window.localStorage.getItem('i18nextLng')) return
+    const browserLang = normalizeLangCode(navigator.language)
+    if (browserLang === 'en') return
+    if (!lesson.languages?.includes(browserLang)) return
+    router.replace(`/lessons/${browserLang}/${lesson.slug}`)
+  }, [lesson, wrongLanguage, lang, router])
+
+  if (!lesson || wrongLanguage) return null
 
   return (
     <>

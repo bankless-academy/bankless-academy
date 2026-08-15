@@ -481,11 +481,14 @@ const ConnectWalletButton = ({
               </Box>
             </Button>
           </PopoverTrigger>
-          {/* Width follows the labels: translated strings ("Déconnecter le
-              portefeuille") run well past the English ones and used to be
-              clipped by the fixed width. */}
+          {/* Width follows the labels, so "Disconnect Wallet" and "Déconnecter
+              le portefeuille" each get exactly the room they need.
+              `max-content` rather than `auto`: this box is absolutely
+              positioned, so `auto` means shrink-to-fit, and the w="100%"
+              buttons inside then resolve against the AVAILABLE width instead
+              of the content — which blew the menu up to ~570px. */}
           <PopoverContent
-            w="auto"
+            w="max-content"
             minW={isSmallScreen ? '260px' : '300px'}
             maxW="calc(100vw - 32px)"
           >
@@ -506,12 +509,7 @@ const ConnectWalletButton = ({
                     }
                     onClick={onClose}
                   >
-                    <Box
-                      minW={isSmallScreen ? '150px' : '180px'}
-                      whiteSpace="nowrap"
-                    >
-                      {t('My Explorer Profile')}
-                    </Box>
+                    <Box whiteSpace="nowrap">{t('My Explorer Profile')}</Box>
                   </Button>
                 </InternalLink>
               </Box>
@@ -540,12 +538,7 @@ const ConnectWalletButton = ({
                   }
                   onClick={disconnectWallet}
                 >
-                  <Box
-                    minW={isSmallScreen ? '150px' : '180px'}
-                    whiteSpace="nowrap"
-                  >
-                    {t('Disconnect Wallet')}
-                  </Box>
+                  <Box whiteSpace="nowrap">{t('Disconnect Wallet')}</Box>
                 </Button>
               </Box>
             </PopoverBody>
@@ -600,12 +593,12 @@ const ConnectWalletButton = ({
                 >
                   {t('Get help here')}
                 </ExternalLink> */}
-                {`No wallet? `}
+                {`${t('No wallet?')} `}
                 <ExternalLink
                   underline="true"
                   href="https://bankless.ac/zerion"
                 >
-                  👉 Get Zerion wallet here
+                  {t('👉 Get Zerion wallet here')}
                 </ExternalLink>
               </Text>
             </PopoverBody>

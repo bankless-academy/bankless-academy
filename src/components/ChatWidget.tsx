@@ -142,7 +142,7 @@ export const ChatWidget = ({
     setUserMessageCount(0)
     setLastTelegramMessageId(null)
     toast({
-      title: 'Chat history cleared',
+      title: t('Chat history cleared'),
       status: 'success',
       duration: 2000,
       isClosable: true,
@@ -277,7 +277,7 @@ export const ChatWidget = ({
         setMessages((prev) => prev.filter((msg) => !msg.isThinking))
         toast({
           title: 'Error',
-          description: 'Failed to get AI response. Please try again.',
+          description: t('Failed to get AI response. Please try again.'),
           status: 'error',
           duration: 5000,
           isClosable: true,
@@ -343,7 +343,7 @@ export const ChatWidget = ({
               leftIcon={<DeleteIcon />}
               iconSpacing={isSmallScreen ? 0 : 2}
             >
-              {isSmallScreen ? '' : 'Clear History'}
+              {isSmallScreen ? '' : t('Clear History')}
             </Button>
             <DrawerCloseButton
               position="absolute"

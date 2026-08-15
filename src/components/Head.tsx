@@ -16,6 +16,8 @@ import {
 import { useEffect } from 'react'
 import { LessonType } from 'entities/lesson'
 import LESSONS from 'constants/lessons'
+import { t } from 'i18next'
+import { LANGUAGE_CODES } from 'constants/languages'
 
 export interface MetaData {
   title?: string
@@ -46,6 +48,36 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     ? `${metadata.title} | ${PROJECT_NAME}`
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
+
+  // hreflang alternates. Each localized URL renders exactly one language, so
+  // without these Google reads /lessons/x and /lessons/fr/x as near-duplicates
+  // instead of alternates. x-default points at the English URL, which is also
+  // where a reader with no matching language should land.
+  const alternateSlug = metadata?.lesson?.slug
+  const lessonLanguages = metadata?.lesson?.languages || []
+  const isGlossary = router.asPath.split(/[?#]/)[0].startsWith('/glossary')
+  const alternates: { hreflang: string; href: string }[] = alternateSlug
+    ? [
+        {
+          hreflang: 'x-default',
+          href: `${DOMAIN_URL_}/lessons/${alternateSlug}`,
+        },
+        { hreflang: 'en', href: `${DOMAIN_URL_}/lessons/${alternateSlug}` },
+        ...lessonLanguages.map((l) => ({
+          hreflang: l,
+          href: `${DOMAIN_URL_}/lessons/${l}/${alternateSlug}`,
+        })),
+      ]
+    : isGlossary
+    ? [
+        { hreflang: 'x-default', href: `${DOMAIN_URL_}/glossary` },
+        { hreflang: 'en', href: `${DOMAIN_URL_}/glossary` },
+        ...LANGUAGE_CODES.filter((l) => l !== 'en').map((l) => ({
+          hreflang: l,
+          href: `${DOMAIN_URL_}/glossary/${l}`,
+        })),
+      ]
+    : []
   const image = metadata?.image
     ? metadata?.image.startsWith('http')
       ? `${metadata?.image}`
@@ -177,6 +209,14 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
               : canonical
           }
         />
+        {alternates.map((a) => (
+          <link
+            key={a.hreflang}
+            rel="alternate"
+            hrefLang={a.hreflang}
+            href={a.href}
+          />
+        ))}
         {/* Robot indexing: only index in production */}
         <meta
           name="robots"
@@ -311,7 +351,9 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         {/* Base Build */}
         <meta name="base:app_id" content="698f0e007ca07f5750bbd81e" />
         {/* noscript */}
-        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <noscript>
+          {t('You need to enable JavaScript to run this app.')}
+        </noscript>
       </NextHead>
       {/* Umami */}
       <Script

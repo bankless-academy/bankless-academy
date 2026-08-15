@@ -203,9 +203,9 @@ const MintDatadiskModal = ({
           <ModalHeader>
             {t('Collect DataDisk')}
             <Box mt="4" fontSize="md" fontWeight="normal">
-              Bankless Academy is issuing a small quantity of collectible
-              DataDisk devices in an evolving effort to share educational
-              content with the deeper reaches of blockspace.
+              {t(
+                'Bankless Academy is issuing a small quantity of collectible DataDisk devices in an evolving effort to share educational content with the deeper reaches of blockspace.'
+              )}
               <Box mt="2">
                 Collect yours to become a Guardian of Bankless Academy{' '}
                 <b>and retroactively fund this lesson!</b>

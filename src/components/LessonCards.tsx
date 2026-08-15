@@ -5,6 +5,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { isMobile } from 'react-device-detect'
 import { useAccount } from 'wagmi'
 import queryString from 'query-string'
+import { useTranslation } from 'react-i18next'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import MODULES from 'constants/whitelabel_modules'
@@ -74,6 +75,7 @@ const LessonCards = ({
     []
   )
   const { address } = useAccount()
+  const { t } = useTranslation()
   const {
     isOpen: isOpenAppModal,
     onOpen: onOpenAppModal,
@@ -82,22 +84,21 @@ const LessonCards = ({
 
   const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
 
-  const Lessons =
-    moduleId
-      ? LESSONS.filter(
-          (lesson) =>
-            (lesson.publicationStatus === 'publish' ||
-              (debug === 'true' && lesson.publicationStatus === 'hidden')) &&
-            lesson.moduleId === moduleId
-        )
-      : all === null
-      ? LESSONS
-      : LESSONS.filter(
-          (lesson) =>
-            lesson.publicationStatus === 'publish' ||
-            lesson.publicationStatus === 'planned' ||
-            (debug === 'true' && lesson.publicationStatus === 'hidden')
-        )
+  const Lessons = moduleId
+    ? LESSONS.filter(
+        (lesson) =>
+          (lesson.publicationStatus === 'publish' ||
+            (debug === 'true' && lesson.publicationStatus === 'hidden')) &&
+          lesson.moduleId === moduleId
+      )
+    : all === null
+    ? LESSONS
+    : LESSONS.filter(
+        (lesson) =>
+          lesson.publicationStatus === 'publish' ||
+          lesson.publicationStatus === 'planned' ||
+          (debug === 'true' && lesson.publicationStatus === 'hidden')
+      )
 
   // useEffect(() => {
   //   if (IS_DEBUG) {
@@ -156,7 +157,10 @@ const LessonCards = ({
         textAlign="center"
         pt={isSmallScreen ? '12px' : '16px'}
       >
-        {level || moduleName || "Explorer's Handbook"}
+        {/* `level` is a data value ('Essentials' / 'Level 1') used directly as
+            the page title, so it needs translating like any other label.
+            `moduleName` is whitelabel-supplied content and stays as authored. */}
+        {level ? t(level) : moduleName || t("Explorer's Handbook")}
       </Heading>
       {!moduleName ? (
         <Heading
@@ -169,10 +173,12 @@ const LessonCards = ({
           mb={6}
         >
           {level === 'Essentials'
-            ? `Begin your crypto journey with these entry-level lessons.`
+            ? t('Begin your crypto journey with these entry-level lessons.')
             : level === 'Level 1'
-            ? `Level up your knowledge and abilities with more specific topics and quests.`
-            : `Quick guides for getting your crypto journey started.`}
+            ? t(
+                'Level up your knowledge and abilities with more specific topics and quests.'
+              )
+            : t('Quick guides for getting your crypto journey started.')}
         </Heading>
       ) : null}
       <SimpleGrid

@@ -433,6 +433,11 @@ const Layout = ({
                             src={DEFAULT_AVATAR}
                           />
                         </Box>
+                        {/* The sidebar is a fixed 230px and Chakra buttons are
+                            nowrap by default, so a label longer than the
+                            English one overflows the rail: "Connecter un
+                            portefeuille" is 79% longer than "Connect Wallet".
+                            Cap the width and let the label wrap instead. */}
                         <Button
                           onClick={openModal}
                           size={isSmallScreen ? 'sm' : 'md'}
@@ -440,8 +445,14 @@ const Layout = ({
                           zIndex={2}
                           variant="primary"
                           marginY="20px"
+                          maxW={`calc(${menuBarWidth} - 32px)`}
+                          whiteSpace="normal"
+                          h="auto"
+                          minH="40px"
+                          py="2"
+                          lineHeight="1.3"
                         >
-                          Connect Wallet
+                          {t('Connect Wallet')}
                         </Button>
                       </Box>
                     </Box>

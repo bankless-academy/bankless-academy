@@ -8,7 +8,7 @@ import React, {
 import { useRouter } from 'next/router'
 import i18next from 'i18next'
 
-import { parseLangFromPath } from 'constants/languages'
+import { isLocalizablePath, parseLangFromPath } from 'constants/languages'
 
 export interface OnboardingModalOptions {
   newsletterOnly?: boolean
@@ -69,13 +69,16 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   )
 
   useEffect(() => {
-    // Set language from translated lesson URLs (/lessons/<lang>/<slug>);
-    // leave the user's selected language untouched everywhere else.
+    // On a route whose URL carries the language (lesson, glossary) the URL
+    // wins, INCLUDING when it resolves to English. This used to be one-way —
+    // only non-English URLs applied — so going back from /lessons/fr/x to
+    // /lessons/x left French chrome wrapped around English lesson prose.
+    // Anywhere else there is no language in the URL, so the reader's stored
+    // preference is left alone.
+    if (!isLocalizablePath(router.asPath)) return
     const langFromUrl = parseLangFromPath(router.asPath)
-    if (langFromUrl !== 'en') {
-      setLanguage(langFromUrl)
-      i18next.changeLanguage(langFromUrl)
-    }
+    setLanguage(langFromUrl)
+    i18next.changeLanguage(langFromUrl)
   }, [router.asPath])
 
   const value = {

@@ -29,18 +29,7 @@ const BridgeButton = ({
         leftIcon={<Image h="24px" src={'/images/bridge.svg'} />}
         {...props}
       >
-        <Box
-          minW={
-            props.w === '100%' && props.size === 'lg'
-              ? '180px'
-              : props.w === '100%'
-              ? '150px'
-              : 'unset'
-          }
-          whiteSpace="nowrap"
-        >
-          {t('Bridge')}
-        </Box>
+        <Box whiteSpace="nowrap">{t('Bridge')}</Box>
       </Button>
     </ExternalLink>
   )

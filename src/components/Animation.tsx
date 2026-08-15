@@ -126,7 +126,11 @@ const Animation = ({
   const [isDisabled, setIsDisabled] = useState(false)
 
   const containerRef = useRef<HTMLDivElement>(null)
-  const playerRef = useRef<any>(null)
+  // The lottie-web AnimationItem, captured via the Player's `lottieRef` prop.
+  // A React ref on <Player> does NOT work here: Player is a class component
+  // behind next/dynamic, and next/dynamic does not forward refs to the loaded
+  // component, so playerRef.current was never the player and `.stop()` threw.
+  const lottieRef = useRef<any>(null)
 
   const nextTooltipRef = useRef()
   const prevTooltipRef = useRef()
@@ -268,12 +272,9 @@ const Animation = ({
   }
 
   const reloadAnimation = () => {
-    if (playerRef.current) {
-      // Cast playerRef.current to Player type to access setSeeker method
-      const player = playerRef.current as any
-      player.stop() // Stop the animation first
-      player.play() // Then restart it from beginning
-    }
+    // goToAndPlay(0, true) rewinds to frame 0 and plays: the stop()+play()
+    // pair this replaces, in one call on the underlying animation.
+    lottieRef.current?.goToAndPlay?.(0, true)
   }
 
   useHotkeys('left', () => clickLeft(), [isDisabled, animationStepLS])
@@ -303,7 +304,9 @@ const Animation = ({
           {isLottie ? (
             <NonSSRWrapper>
               <Player
-                ref={playerRef}
+                lottieRef={(instance: any) => {
+                  lottieRef.current = instance
+                }}
                 autoplay={true}
                 loop={false}
                 keepLastFrame={true}

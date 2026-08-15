@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "node validate-content.js && node test-content.js && next build",
+    "build": "node validate-content.js && node validate-i18n.js && node test-content.js && next build",
     "start": "next start",
     "import-content": "node import-content.js",
     "build-content": "node build-content.js",
@@ -21,7 +21,8 @@
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "jest --passWithNoTests",
     "test-all": "yarn lint && yarn type-check && yarn test",
-    "validate-content": "node validate-content.js"
+    "validate-content": "node validate-content.js",
+    "validate-i18n": "node validate-i18n.js"
   },
   "husky": {
     "hooks": {

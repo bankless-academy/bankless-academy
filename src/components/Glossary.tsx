@@ -3,6 +3,7 @@ import { Box, Heading } from '@chakra-ui/react'
 
 // import { StyledHeading } from 'components/LessonCards'
 import { useSmallScreen } from 'hooks/index'
+import { useTranslation } from 'react-i18next'
 
 interface Term {
   id: string
@@ -15,6 +16,7 @@ interface GlossaryProps {
 }
 
 const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   const groupedTerms: { [key: string]: Term[] } = {}
   terms.forEach((term) => {
@@ -66,7 +68,7 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
           textAlign="center"
           pt={isSmallScreen ? '12px' : '16px'}
         >
-          Glossary
+          {t('Glossary')}
         </Heading>
         {Object.keys(groupedTerms).map((letter) => (
           <Box key={letter} id={`section-${letter}`}>

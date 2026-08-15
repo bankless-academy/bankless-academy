@@ -21,7 +21,8 @@ const LESSONS: LessonType[] = [
     description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -302,7 +303,8 @@ const LESSONS: LessonType[] = [
     description: 'What is Ethereum? Unlock the “new internet” and your digital freedom.',
     name: 'Ethereum Basics',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -1192,7 +1194,8 @@ const LESSONS: LessonType[] = [
     name: 'Web3 Security',
     languages: [
       'fr',
-      'uk'
+      'uk',
+      'es'
     ],
     level: 'Essentials',
     tags: [
@@ -1501,7 +1504,8 @@ const LESSONS: LessonType[] = [
     description: 'Understand how Layer 1 blockchains work and learn their limitations!',
     name: 'Layer 1 Blockchains',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -1825,7 +1829,8 @@ const LESSONS: LessonType[] = [
     description: 'Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.',
     name: 'Layer 2 Blockchains',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     tags: [
@@ -2084,7 +2089,8 @@ const LESSONS: LessonType[] = [
     description: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.',
     name: 'Funding a Wallet on Layer 2',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     tags: [
@@ -2148,7 +2154,8 @@ const LESSONS: LessonType[] = [
     description: 'Customize your wallet address with ENS, start building your digital identity.',
     name: 'Registering Your Web3 Username',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     tags: [
@@ -2216,7 +2223,8 @@ const LESSONS: LessonType[] = [
     description: 'Understand the basics of decentralized finance.',
     name: 'Intro to DeFi',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     tags: [
@@ -2511,7 +2519,8 @@ const LESSONS: LessonType[] = [
     description: 'Use dollars, euros, and more on the blockchain.',
     name: 'Understanding Stablecoins',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2556,7 +2565,8 @@ const LESSONS: LessonType[] = [
     description: 'Discover how smart-contract exchanges enable permissionless token swaps!',
     name: 'Decentralized Exchanges',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2878,7 +2888,8 @@ const LESSONS: LessonType[] = [
     description: 'Begin your journey into DeFi with this Decentralized Exchange walkthrough.',
     name: 'Swapping on a Decentralized Exchange',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     tags: [
@@ -2927,7 +2938,8 @@ const LESSONS: LessonType[] = [
     description: 'Become a guardian of Ethereum: Secure the network, earn Ether rewards.',
     name: 'Staking on Ethereum',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3214,7 +3226,8 @@ const LESSONS: LessonType[] = [
     description: 'Generate yield on your Ether by protecting Ethereum.',
     name: 'Staking Ether',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3273,7 +3286,8 @@ const LESSONS: LessonType[] = [
     description: 'Protect your wallet from unwanted smart contract interactions.',
     name: 'Managing Token Allowances',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     tags: [
@@ -3325,7 +3339,8 @@ const LESSONS: LessonType[] = [
     description: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
     name: 'DEX Aggregators',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -3598,7 +3613,8 @@ const LESSONS: LessonType[] = [
     description: 'Learn how Ethereum’s asset templates support both traditional and emerging asset classes.',
     name: 'Understanding Ethereum Token Standards',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     level: 'Level 1',
     lessonWriters: 'Musharef, Tetranome',

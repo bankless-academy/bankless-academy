@@ -23,6 +23,7 @@ import {
   LanguageCode,
   LanguageDef,
   isLanguage,
+  isLocalizablePath,
   normalizeLangCode,
 } from 'constants/languages'
 import { LessonType, LanguageType } from 'entities/lesson'
@@ -94,11 +95,14 @@ const LanguageSelector = ({
       setDefaultLanguage(normalizedLanguage)
       return
     }
+    // On a localizable route AppContext already applied the language from the
+    // URL. Re-applying the stored preference here would fight it and flicker.
+    if (isLocalizablePath(router.asPath)) return
     if (defaultLanguage && i18n.language !== defaultLanguage) {
       i18n.changeLanguage(defaultLanguage)
       setLanguage(defaultLanguage)
     }
-  }, [defaultLanguage, i18n, setLanguage])
+  }, [defaultLanguage, i18n, setLanguage, router.asPath])
 
   // RTL groundwork: keep <html dir> in sync with the active language
   React.useEffect(() => {

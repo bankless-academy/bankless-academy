@@ -763,8 +763,12 @@ const Lesson = ({
 
   // Suggest Changes is available on content slides once the reader has earned
   // it; where it renders depends on whether the bottom bar already exists.
+  // `isMobile` is device-based (react-device-detect) and misses a narrow
+  // viewport on a desktop browser, where the icon crowds the slide title.
+  // The modal is a desktop authoring affordance, so gate on the viewport too.
   const canSuggestChanges =
     !isMobile &&
+    !isSmallScreen &&
     !lesson?.isPreview &&
     !IS_WHITELABEL &&
     !!address &&
@@ -1037,43 +1041,42 @@ const Lesson = ({
         as="h2"
         position="relative"
       >
-        {/* Suggest Changes lives in the header on every slide but the first,
-            where the intro still has a bottom bar with room to spell it out. */}
-        {canSuggestChanges && !isFirstSlide && (
-          <Box
-            position="absolute"
-            right="34px"
-            top="50%"
-            transform="translateY(-50%)"
-          >
+        {/* Header actions. Both icons live in one stack so they stay aligned
+            and evenly spaced; they were positioned independently before and
+            differed in shape, size and hover treatment.
+            Suggest Changes is here on every slide but the first, where the
+            intro still has a bottom bar with room to spell it out. `?` is a
+            power-user convention nobody guesses, so the shortcuts overlay gets
+            a quiet permanent affordance. */}
+        <HStack
+          position="absolute"
+          right="0"
+          top="50%"
+          transform="translateY(-50%)"
+          spacing="1"
+        >
+          {canSuggestChanges && !isFirstSlide && (
             <EditContentModal lesson={lesson} slide={slide} iconOnly />
-          </Box>
-        )}
-        {/* `?` is a power-user convention nobody guesses, so the overlay gets a
-            quiet permanent affordance. Sits inside the header row, well clear
-            of the close button hanging off the top-right corner. */}
-        {!isSmallScreen && (
-          <Tooltip
-            hasArrow
-            label={`${t('Keyboard shortcuts')} (?)`}
-            openDelay={400}
-          >
-            <IconButton
-              aria-label={t('Keyboard shortcuts')}
-              icon={<Question width="20px" height="20px" />}
-              onClick={() => setIsShortcutsOpen(true)}
-              variant="ghost"
-              size="sm"
-              isRound
-              position="absolute"
-              right="0"
-              top="50%"
-              transform="translateY(-50%)"
-              opacity={0.5}
-              _hover={{ opacity: 1, bg: 'whiteAlpha.200' }}
-            />
-          </Tooltip>
-        )}
+          )}
+          {!isSmallScreen && (
+            <Tooltip
+              hasArrow
+              label={`${t('Keyboard shortcuts')} (?)`}
+              openDelay={400}
+            >
+              <IconButton
+                aria-label={t('Keyboard shortcuts')}
+                icon={<Question width="20px" height="20px" />}
+                onClick={() => setIsShortcutsOpen(true)}
+                variant="ghost"
+                size="sm"
+                isRound
+                opacity={0.5}
+                _hover={{ opacity: 1, bg: 'whiteAlpha.200' }}
+              />
+            </Tooltip>
+          )}
+        </HStack>
         <Box display="inline-flex" alignItems="center" mr="4">
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
@@ -1385,7 +1388,7 @@ const Lesson = ({
                 _hover={{ px: isSmallScreen ? '0' : '24px' }}
                 iconSpacing={isSmallScreen ? '0' : '8px'}
               >
-                {isSmallScreen ? '' : 'Close'}
+                {isSmallScreen ? '' : t('Close')}
               </Button>
             )}
             {!edgeNav && !isFirstSlide && (
@@ -1396,7 +1399,7 @@ const Lesson = ({
                 onClick={() => clickLeft()}
                 leftIcon={<ArrowBackIcon />}
               >
-                {isSmallScreen ? '' : 'Prev'}
+                {isSmallScreen ? '' : t('Prev')}
               </Button>
             )}
             {canSuggestChanges && isFirstSlide && (

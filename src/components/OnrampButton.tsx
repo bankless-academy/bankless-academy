@@ -216,16 +216,7 @@ const OnrampButton = ({
       leftIcon={<ArrowCircleDown height="24px" width="24px" weight="bold" />}
       {...props}
     >
-      <Box
-        minW={
-          props.w === '100%' && props.size === 'lg'
-            ? '180px'
-            : props.w === '100%'
-            ? '150px'
-            : 'unset'
-        }
-        whiteSpace="nowrap"
-      >
+      <Box whiteSpace="nowrap">
         {t('Add funds')}
         {/* via Coinbase */}
       </Box>

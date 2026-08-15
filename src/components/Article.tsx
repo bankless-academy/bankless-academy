@@ -12,13 +12,14 @@ import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
+import { isMobile } from 'react-device-detect'
 import { useTranslation } from 'react-i18next'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import MintHandbookButton from 'components/MintHandbookButton'
-import { LessonType } from 'entities/lesson'
+import { LessonType, SlideType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import {
   IS_PROD,
@@ -32,6 +33,7 @@ import {
   Mixpanel,
 } from 'utils/index'
 import Keyword from 'components/Keyword'
+import EditContentModal from 'components/EditContentModal'
 import MintNFT from 'components/MintNFT'
 import i18next from 'i18next'
 
@@ -613,7 +615,31 @@ const Article = ({
         borderRadius={isSmallScreen ? '0' : '0.375rem'}
         mt={isSmallScreen ? '0' : '24px'}
       />
-      <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
+      <Box position="relative">
+        <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
+        {/* Handbooks never had Suggest Changes: EditContentModal was only ever
+            rendered by Lesson.tsx, so the 9 article-format lessons had no way
+            to propose an edit. articleContent is the raw md, so one synthetic
+            whole-article section is all the modal needs. */}
+        {!isMobile && !isSmallScreen && !IS_WHITELABEL && !!address && (
+          <Box
+            position="absolute"
+            right="24px"
+            top="50%"
+            transform="translateY(-50%)"
+          >
+            <EditContentModal
+              lesson={lesson}
+              slide={{
+                type: 'LEARN' as SlideType,
+                title: lesson.name,
+                md: lesson.articleContent,
+              }}
+              iconOnly
+            />
+          </Box>
+        )}
+      </Box>
       {lesson.publicationStatus === 'deprecated' && (
         <Box
           m="16px 24px"

@@ -126,8 +126,8 @@ const LessonCard = ({
               gold={(isBadgeMinted || isArticleRead)?.toString()}
             >
               {isBadgeMinted || isArticleRead
-                ? 'Done'
-                : `${lesson.duration} minutes`}
+                ? t('Done')
+                : t('{{duration}} minutes', { duration: lesson.duration })}
               {isBadgeMinted || isArticleRead ? (
                 <TagRightIcon as={CircleWavyCheck} weight="bold" />
               ) : null}

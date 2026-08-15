@@ -162,6 +162,39 @@ After a run: add the language to that lesson's `languages[]` in
 Full walkthrough (unit splitting, hash gating, terminology precedence, the
 verification contract, offline modes): `docs/translation-pipeline.md`.
 
+### Running a language wave with parallel agents
+
+`translate-content.js` needs an `ANTHROPIC_API_KEY`. Without one, the same
+contract is met by fanning the work out to subagents, which is how French and
+Spanish were produced. The ordering is not optional:
+
+1. **Write `translation/style/<lang>.md` first.** It is the only thing holding
+   a dozen independent agents to one vocabulary: variety/register, terms kept
+   in English, typography, and a ```terms``` block of pinned translations that
+   beat both ETHGlossary and the agents' own judgment.
+2. **Wave 1 — glossary + UI, in parallel.** Glossary halves write to scratchpad
+   files and are merged centrally; never let two agents write one JSON file.
+   UI namespaces (`common`, `quests`, `homepage`, `lesson`) are disjoint, so
+   those agents can write in place.
+3. **Merge and reconcile the glossary before wave 2.** Splitting 274 entries
+   alphabetically means cross-half terms drift (`bridge` vs `validating
+   bridge`), and the glossary can disagree with the UI files entirely — `mint`
+   shipped as "acuñar" in the glossary while both UI namespaces said "mintear".
+   Prefer the form the UI already shows learners and keep the loser as a
+   `keyword_forms` alias so either phrasing still resolves to a tooltip.
+4. **Wave 2 — lessons, in parallel**, only once the glossary exists: lesson
+   bodies must backtick display forms the glossary can resolve.
+5. **Register `languages[]`, `build-content`, `validate-content` centrally.**
+   Agents must not touch `lesson-meta.json` or run the compiler; concurrent
+   writes to one JSON file lose edits silently.
+
+Agents build a lesson with
+`scratchpad/build-lang.sh <lang> "<localName>" <slug> "<TITLE>" "<DESC>"`,
+which applies the language's typography to a temp copy, assembles the md with
+`translate-content.js`'s own parser/renderer (so banner and frontmatter are
+exact), and runs the structural verifier. Verify the script is a no-op on an
+already-finished lesson before handing it to a fleet.
+
 ### Deprecation policy
 
 Deprecated lessons get `publicationStatus: "deprecated"` in `lesson-meta.json`:
@@ -185,6 +218,7 @@ render a warning banner on the intro slide.
 - [x] Full-repo audit (2026-08-14) → `docs/pre-translation-audit.md`: coverage numbers per layer, 25 of 38 translated lesson files structurally stale (6 with live quiz-option bugs), ordered before/after list for the translation phase
 - [x] Quiz slide titles standardized (2026-08-14): `build-content.js` reads them from the md `Knowledge Check <n>` heading; the stale Notion `title` dropped from all 90 QUIZ/POLL `slideMeta` entries. No UI change — the frontend renders a hardcoded translated label.
 - [x] `validate-content.js` extended to translated md (2026-08-14): section count, quiz count, per-quiz option count, `[x]` position vs English, image stems (localized variants allowed), frontmatter; dropped cross-links warn instead of failing. Plus `staleTranslations` support.
+- [x] `validate-content.js` gates terminology per language (2026-08-15): **dead tooltips** (a backticked term in a translated md that resolves to nothing through that language's `keyword`/`keyword_plural`/`keyword_forms` index — the English md was already gated, translations were not, so a broken tooltip shipped silently) and **style-guide pin compliance** (a term pinned in `translation/style/<lang>.md` must match the shipped glossary entry). Languages whose glossary is English-keyed and complete fail the build; Crowdin-era files only warn until their wave regenerates them. First run caught 4 dead tooltips in a legacy `es/wallet-basics`, 2 in `es/blockchain-basics`, and a wrong `self-custodial` pin in the French style guide.
 - [x] 8 structurally broken translations unregistered (2026-08-14): `bitcoin-basics` es/fr/pt-br/tr/uk/zh, `wallet-basics` uk, `optimism-governance` fr — files kept in git under `staleTranslations`, pages now serve English instead of mis-grading learners.
 - [x] `translate-content.js` built (2026-08-14): per-unit hash gating, ETHGlossary + style-guide terminology pinning, structural + length verification with retry, glossary sync, offline `--verify-only` / `--terms` / `--keywords` modes. French `bitcoin-basics` regenerated as the pilot. **The API path is still unrun** (no `ANTHROPIC_API_KEY` yet) — the pilot content was authored directly against the same contract.
 - [x] Slide overflow fixed in the UI (2026-08-14): the fixed-height slide container had `maxH: 533px` and no overflow rule, so long text was painted over by the nav bar. Now `overflowY: auto` on desktop + bottom padding clearing the fixed mobile nav. Overflow scrolls instead of vanishing, which matters most for languages that run longer than English.

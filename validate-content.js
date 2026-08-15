@@ -33,6 +33,56 @@ const resolvesToKeyword = (term) => {
   )
 }
 
+// Per-language keyword resolution, mirroring the reverse index Lesson.tsx and
+// Article.tsx build at runtime: a translated md carries the TRANSLATED term
+// inside backticks, and the glossary is keyed by the English one, so a tooltip
+// resolves through `keyword` / `keyword_plural` / `keyword_forms` (and the
+// English key itself, which is how pre-pipeline files still work).
+const langKeywordIndex = (lang) => {
+  const p = `translation/keywords/${lang}/keywords.json`
+  if (!fs.existsSync(p)) return null
+  const bundle = JSON.parse(fs.readFileSync(p, 'utf8'))
+  const keys = Object.keys(bundle)
+  if (!keys.length) return null
+  const forms = new Set()
+  for (const [englishKey, e] of Object.entries(bundle))
+    for (const f of [englishKey, e?.keyword, e?.keyword_plural, ...(e?.keyword_forms || [])])
+      if (typeof f === 'string' && f) forms.add(f.toLowerCase())
+  // A file is "current" once it is keyed by the English term and covers the
+  // English glossary. Those gate hard; Crowdin-era files only warn, because
+  // they are already queued for regeneration and would drown the output.
+  const englishKeyed = keys.filter((k) => keywordKeys.has(k.toLowerCase())).length
+  const current = englishKeyed / keys.length > 0.9 && keys.length / keywordKeys.size > 0.9
+  return { forms, current }
+}
+const langIndexCache = {}
+const resolvesInLang = (term, lang) => {
+  if (!(lang in langIndexCache)) langIndexCache[lang] = langKeywordIndex(lang)
+  const idx = langIndexCache[lang]
+  if (!idx) return null // no usable glossary for this language: nothing to say
+  const t = term.toLowerCase()
+  return idx.forms.has(t) || (t.endsWith('s') && idx.forms.has(t.slice(0, -1)))
+}
+
+// A per-language style guide may pin terminology in a ```terms``` block
+// (`english = translation`). Those pins exist so the glossary, the UI strings
+// and 19 lessons agree; drift between them is invisible at runtime and only
+// shows up as a dead tooltip or two words for one concept.
+const stylePins = (lang) => {
+  const p = `translation/style/${lang}.md`
+  if (!fs.existsSync(p)) return []
+  const block = fs.readFileSync(p, 'utf8').match(/```terms\n([\s\S]*?)```/)
+  if (!block) return []
+  return block[1]
+    .split('\n')
+    .map((l) => l.trim())
+    .filter((l) => l && l.includes('='))
+    .map((l) => {
+      const i = l.indexOf('=')
+      return [l.slice(0, i).trim().toLowerCase(), l.slice(i + 1).trim()]
+    })
+}
+
 const files = fs.readdirSync(EN_DIR).filter((f) => f.endsWith('.md'))
 const fileSlugs = new Set(files.map((f) => f.replace(/\.md$/, '')))
 
@@ -252,6 +302,27 @@ for (const [slug, m] of Object.entries(meta)) {
     for (const u of new Set(trStems.filter((u) => !enStems.includes(u))))
       err(`image not present in the English source: ${u}`)
 
+    // Backticked terms must resolve to a tooltip in THIS language. The English
+    // md is already gated (rule 9); without the same check a translation can
+    // backtick a word the glossary never learned and the tooltip is silently
+    // dead — the reader sees a dashed underline that explains nothing.
+    {
+      const proseTr = body.replace(/```[\s\S]*?```/g, '')
+      const seenTr = new Set()
+      const dead = []
+      for (const mm of proseTr.matchAll(/`([^`\n]+)`/g)) {
+        const term = mm[1]
+        if (seenTr.has(term)) continue
+        seenTr.add(term)
+        if (resolvesInLang(term, lang) === false) dead.push(term)
+      }
+      if (dead.length) {
+        const msg = `${lang}/${slug}: ${dead.length} backticked term(s) with no ${lang} glossary entry (dead tooltip): ${dead.map((t) => '`' + t + '`').join(', ')}`
+        if (langIndexCache[lang]?.current) errors.push(msg)
+        else warnings.push(msg)
+      }
+    }
+
     // Internal cross-links should survive translation, but a missing one only
     // costs a link (the lesson still renders correctly), so it warns instead of
     // failing the build — older translations predate links added in the rewrite.
@@ -261,6 +332,29 @@ for (const [slug, m] of Object.entries(meta)) {
     const trLinks = links(body)
     for (const u of new Set(enLinks.filter((u) => !trLinks.includes(u))))
       warnings.push(`${lang}/${slug}: lesson link dropped in translation: /${u.split('/').slice(1).join('/')}`)
+  }
+}
+
+// Style-guide pins vs the shipped glossary, once per language. This is the
+// check that would have caught `mint` shipping as "acuñar" in the glossary
+// while both UI namespaces said "mintear".
+for (const lang of langDirs) {
+  const pins = stylePins(lang)
+  if (!pins.length) continue
+  const p = `translation/keywords/${lang}/keywords.json`
+  if (!fs.existsSync(p)) continue
+  const bundle = JSON.parse(fs.readFileSync(p, 'utf8'))
+  if (!Object.keys(bundle).length) continue
+  for (const [english, pinned] of pins) {
+    const e = bundle[english]
+    if (!e) continue // the pin covers prose wording, not a glossary entry
+    const forms = [e.keyword, e.keyword_plural, ...(e.keyword_forms || [])]
+      .filter(Boolean)
+      .map((f) => f.toLowerCase())
+    if (!forms.includes(pinned.toLowerCase()))
+      warnings.push(
+        `${lang} glossary: "${english}" is pinned to "${pinned}" in translation/style/${lang}.md but the entry reads "${e.keyword}" — one of the two is wrong`
+      )
   }
 }
 

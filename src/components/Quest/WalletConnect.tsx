@@ -12,8 +12,14 @@ import ExternalLink from 'components/ExternalLink'
 // ConnectFirst(...)`), so it cannot own a hook without breaking hook order.
 // It reads from the i18next instance directly instead; the surrounding tree
 // re-renders on a language change, so the strings still update.
+//
+// getFixedT, NOT i18next.t(key, { keyPrefix }): `i18next.t` is bound straight
+// to Translator.translate, which never reads `keyPrefix` — the option is
+// silently dropped, the lookup misses, and i18next returns the key, so every
+// string here rendered in English in every language. Only getFixedT applies a
+// prefix. Resolved per call so a language switch is picked up.
 const tc = (key: string) =>
-  i18next.t(key, { ns: 'quests', keyPrefix: 'ConnectFirst' })
+  i18next.getFixedT(null, 'quests', 'ConnectFirst')(key)
 
 export const ConnectFirst = (
   isSmallScreen: boolean,

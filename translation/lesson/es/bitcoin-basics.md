@@ -1,9 +1,10 @@
 ---
-TITLE: Conceptos básicos de Bitcoin
+TITLE: Fundamentos de Bitcoin
 DESCRIPTION: ¿Qué es Bitcoin? Explora la primera criptomoneda exitosa y repiensa el dinero.
 LANGUAGE: Español
 WRITERS: Tetranome
-TRANSLATORS: OrnellaWeb3
+EDITORS: Claude (Anthropic AI, 2026 review)
+TRANSLATORS: Claude (Anthropic AI)
 LINK: https://app.banklessacademy.com/lessons/bitcoin-basics
 FORMAT: LESSON
 ---
@@ -29,23 +30,23 @@ ________________________________________________________________________________
 
 # Bienvenido a Bankless Academy
 
-Bienvenido, audaz Explorador, a la frontera de la innovación digital.
+Bienvenido, valiente Explorador, a la frontera de la innovación digital.
 
-En Bankless Academy, nuestra misión es proporcionar a Exploradores como tú, las mejores herramientas y conocimientos para navegar por el universo de las cadenas de bloques [blockchain] y "ser bankless!".
+En Bankless Academy, nuestra misión es darte las mejores herramientas y conocimientos para navegar el universo blockchain y “¡volverte bankless!”.
 
-Hoy aprenderemos sobre la `criptomoneda` que comenzó todo: Bitcoin.
+Hoy hablamos de la `criptomoneda` que lo empezó todo: Bitcoin.
 
-Bitcoin es un nuevo tipo de dinero. Aumenta la libertad financiera de quienes lo poseen y protege el dinero que tanto les ha costado ganar para que no pierda valor con el paso del tiempo.
+Bitcoin es un nuevo tipo de dinero, diseñado para resistir la `inflación`: su suministro está fijado en el código, así que nadie puede crear más. Su precio aún fluctúa a corto plazo, pero sus reglas nunca cambian.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
 # La historia de Bitcoin
 
-Lanzado en 2009 por el misterioso "`Satoshi Nakamoto`", Bitcoin marcó el inicio de una nueva era económica.
+Lanzado en 2009 por el misterioso “`Satoshi Nakamoto`”, Bitcoin marcó el inicio de una nueva era económica.
 
-Como la primera `criptomoneda` exitosa, Bitcoin comenzó una conversación poderosa: ¿debería seguir descansando el control y el poder del dinero dentro de los sistemas bancarios tradicionales? ¿O pertenece a los ciudadanos que lo ganan y usan cada día? Si no estás seguro de lo que esto significa exactamente, ¡estás en el lugar adecuado!
+Como primera `criptomoneda` exitosa, Bitcoin abrió un debate de fondo: ¿el control y el poder sobre el dinero deben seguir en manos de los sistemas bancarios tradicionales? ¿O pertenecen a los ciudadanos que lo ganan y lo usan cada día? Si no tienes claro qué significa esto, ¡estás en el lugar correcto!
 
-La realidad es que, hoy en día, no controlamos nuestro dinero como creemos. Esto tiene consecuencias reales.
+La realidad es que hoy no controlamos nuestro dinero como creemos. Esto tiene consecuencias muy reales.
 
 Es hora de aprender cómo Bitcoin está revolucionando las finanzas.
 
@@ -53,145 +54,152 @@ Es hora de aprender cómo Bitcoin está revolucionando las finanzas.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
-# Breve Historia del Dinero
+# Breve historia del dinero
 
-El dinero ha sido parte integral de la sociedad desde la antiguedad, cuando se utilizaban cuentas, conchas y piedras para intercambiar bienes y servicios.
+El dinero ha sido parte de la sociedad desde nuestros inicios, cuando cuentas, conchas y piedras servían para intercambiar bienes y servicios.
 
-Sin embargo, las monedas tempranas tenían un problema: era demasiado fácil que alguien encontrara o creara dinero nuevo. A mayor cantidad disponible, menor valor, por lo que el dinero de todos pierde valor, poco a poco. Si la moneda debía mantener su valor, necesitaba ser más difícil de encontrar.
+Pero las primeras monedas tenían un problema: era demasiado fácil encontrar o crear dinero nuevo. Cuanto más abunda algo, menos vale, así que el dinero de todos perdía valor poco a poco. Para conservar su valor, la moneda tenía que ser más difícil de obtener.
 
-Materiales como oro y plata fueron finalmente adoptados para resolver este problema. La principal ventaja de estos materiales era su escasez: no había una oferta infinita, lo que dificultaba que alguien pudiera aumentar significativamente la cantidad de dinero en circulación. Esta `escasez` ayudó a mantener el valor del dinero.
+Con el tiempo se adoptaron materiales como el oro y la plata. Su gran ventaja era la escasez: no había un suministro infinito, así que era difícil aumentar mucho el dinero en circulación. Esta `escasez` ayudaba a mantener el valor del dinero.
 
-A medida que las sociedades crecían, el banco central de un gobierno emitía monedas estandarizadas de oro y plata. Este tipo de moneda hacía que el dinero fuera reconocible y mensurable, y su vez servía como un sólido depósito de valor.
+Al crecer las sociedades, el banco central de un gobierno emitía monedas estandarizadas de oro y plata. Esa moneda era reconocible y medible, y servía como una sólida reserva de valor.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg)
 
 # Knowledge Check 1
 
-Verdadero o Falso:
-"A medida que se añade más dinero a un sistema monetario, el dinero existente vale menos"
+¿Qué le pasa al dinero existente cuando se agrega mucho dinero nuevo a un sistema monetario?
 
-- [ ] Verdadero
+- [x] Vale menos.
 
-> ¡Correcto! Cuanto más dinero hay en circulación, menos valor tiene.
+> ℹ️ ¡Correcto! Cuanto más dinero hay, menos vale cada unidad.
 
-- [ ] Falso
+- [ ] Vale más.
 
-> Inténtalo de nuevo.
+> ℹ️ ¡Inténtalo de nuevo! Un suministro mayor hace que cada unidad valga menos, no más.
 
-# Breve Historia del Dinero (Parte 2)
+- [ ] Su valor no cambia.
 
-Con la introducción del dinero en papel, las monedas pasaron a ser 'respaldadas' por el oro. El valor del dinero estaba directamente vinculado a una cantidad específica del metal precioso almacenado.
+> ℹ️ ¡Inténtalo de nuevo! El dinero nuevo diluye el valor del dinero que la gente ya tiene.
 
-Luego, en el siglo XX, vino la caída de este “`estándar de oro`”.
+# Breve historia del dinero (parte 2)
 
-Los metales preciosos se fueron desconectando poco a poco de las monedas de todo el mundo, un esfuerzo que permitiría a la economía de cualquier país crecer más allá de su oferta de oro. Los banco centrales ya no necesitaban oro para crear su moneda. Cada uno podría crear tanto dinero nuevo como considerara necesario para la economía de su país. Al controlar firmemente la oferta monetaria, también podrían controlar su valor.
+Con el papel moneda, las monedas pasaron a estar “respaldadas” por oro. Su valor estaba ligado a una cantidad concreta de metal precioso guardada en reserva.
 
-Entrando en la era digital, la moneda electrónica ha reemplazado masivamente a la moneda física. Almacenar nuestro dinero en bancos comerciales nos ha proporcionado la comodidad de las tarjetas de crédito y las aplicaciones de pago. Aunque es fácil y seguro, también interpone empresas con ánimo de lucro entre las personas y su dinero.
+Luego, en el siglo XX, cayó este “`patrón oro`”.
 
+Los metales preciosos se fueron desligando de las monedas de todo el mundo, para que cada economía pudiera crecer más allá de su reserva de oro. Como un banco central ya no necesitaba oro para crear moneda, podía emitir todo el dinero que considerara necesario. Al controlar el suministro, también controlaba su valor.
 
+En la era digital, el dinero electrónico reemplazó casi por completo al físico. Guardar nuestro dinero en bancos comerciales nos dio la comodidad de las tarjetas de crédito y las apps de pago. Es fácil y seguro, pero pone empresas con fines de lucro entre las personas y su dinero.
 
-# El Problema
+![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
-El problema de nuestro sistema financiero actual es la falta de control que tenemos sobre nuestro dinero, y el cómo esto afecta nuestra capacidad de decidir libremente qué ahorrar y qué gastar.
+# El problema
 
-Los `bancos centrales`, al gestionar la `política monetaria` de un país, tienen la capacidad de introducir la cantidad de dinero nuevo que quieran. Esta falta de `escasez`, hace que nuestro dinero valga menos cada año. El dinero, con un valor impredecible y decreciente, a menudo nos obliga a gastarlo: **"Si mi dinero va a valer menos cada año, ¿para qué ahorrar? Será mejor que lo gaste ahora "** 💸
+El problema de nuestro sistema financiero actual es la falta de control sobre nuestro dinero, que reduce nuestra libertad para decidir qué ahorrar y qué gastar.
 
-Los `bancos comerciales`, los que se utilizan para ahorro y gasto diario, también influyen en nuestros hábitos de gasto. Como `custodio`, pueden bloquear transacciones o confiscar nuestros fondos. ¡Algunos bancos han impedido a sus clientes comprar criptomonedas! **Si tu banco puede congelar los ahorros de tu vida en cualquier momento… ¿eres realmente dueño de tu dinero?** 💸
+Los `bancos centrales`, que gestionan la `política monetaria` de un país, pueden emitir cualquier cantidad de dinero nuevo. Esta falta de `escasez` hace que nuestro dinero valga menos cada año. Un dinero con valor impredecible y decreciente nos empuja a gastarlo: **“Si mi dinero va a valer menos cada año, ¿para qué ahorrar? Mejor lo gasto ahora.”** 💸
+
+Los `bancos comerciales`, los del ahorro y el gasto diario, también influyen en nuestros hábitos. Como `custodio`, pueden bloquear transacciones o confiscar nuestros fondos. ¡Algunos han impedido a sus clientes comprar criptomonedas! **Si tu banco puede congelar los ahorros de tu vida en cualquier momento… ¿de verdad son tuyos?** 💸
 
 ---
 
-Para que el dinero vuelva a apoyar la libertad financiera, debe recuperar las dos propiedades clave que ha perdido con el tiempo:
+Para que el dinero sostenga otra vez la libertad financiera, debe recuperar dos propiedades clave que ha perdido:
 
-- 💎 **Valor:** El dinero debe almacenar de forma fiable su valor a lo largo del tiempo.
-- ✊ **Propiedad:** El dinero debe ser fácil de guardar y de proteger por nuestra cuenta.
+- 💎 **Valor:** el dinero debe conservar su poder adquisitivo con el tiempo.
+- ✊ **Propiedad:** debe ser fácil de guardar y proteger por nosotros mismos.
 
-Sólo estas cualidades pueden restablecer la habilidad de ahorrar y gastar nuestro dinero libremente.
+Solo con esas cualidades recuperamos la libertad de ahorrar y gastar nuestro dinero.
 
-# Conoce Bitcoin
+# Llega Bitcoin
 
-`Satoshi Nakamoto` pensaba que el dinero era demasiado importante para ser controlado por unas pocas personas. Quería crear un tipo de dinero que pudiera ser justo y fiable para todos.
+`Satoshi Nakamoto` pensó que el dinero era demasiado importante para estar en manos de unos pocos. Quería un dinero justo y confiable para todos.
 
-Conoce Bitcoin (`BTC`): una moneda digital que opera más allá del sistema bancario tradicional.
+Llega Bitcoin (`BTC`): una moneda digital que funciona fuera del sistema bancario tradicional.
 
-- ⛓️ Es `entre pares`: Conecta a las personas directamente entre sí. Al ser automatizada mediante la `tecnología de cadena de bloques` [blockchain], elimina la necesidad de que las instituciones faciliten el almacenamiento o las transacciones. Sus defensores lo llaman "un conjunto de normas sin gobernantes".
-- 💎 Es `escaso`: Sin un banco central que emita dinero nuevo ilimitado, Bitcoin tiene una política monetaria estable y predecible que honra el ahorro a largo plazo.
-- ✊ Permite la `autocustodia`: Se puede tener sin necesidad que las instituciones ayuden con transferencias o almacenamiento. Cuando se almacena en su estado natural, Bitcoin se guarda en una caja fuerte segura en línea y sólo el propietario tiene acceso.
+- ⛓️ Es `entre pares`: conecta a las personas directamente. Automatizado con `tecnología blockchain`, elimina la necesidad de instituciones para guardar o mover fondos. Sus defensores lo llaman “reglas sin gobernantes”.
+- 💎 Es `escaso`: sin un banco central emitiendo dinero sin límite, Bitcoin tiene una política monetaria estable y predecible que premia el ahorro.
+- ✊ Es `de autocustodia`: se puede guardar sin instituciones. La red registra quién posee qué y tus `claves privadas` lo demuestran: solo quien tiene la clave mueve las monedas.
 
-Por sus cualidades, Bitcoin se ha ganado el apodo de "oro digital".
+Por estas cualidades, Bitcoin se ganó el apodo de “oro digital”.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/enter-bitcoin-b108517c.svg)
 
-# Oro Digital: Escasez
+# Oro digital: escasez
 
-📉 ¿Te cuesta seguir el ritmo del aumento de los gastos?
+📉 ¿Te cuesta seguir el ritmo del aumento de los precios?
 
----
+La escasez en Bitcoin significa que hay un tope de cuántos bitcoins pueden existir: un máximo de 21 millones. Este `suministro máximo` está escrito en su código y lo vuelve raro, como el oro.
 
-La escasez en Bitcoin se refiere a que hay un límite en el número de bitcoins que pueden existir: un máximo de 21 millones. Este `suministro máximo` está incrustado en su código, haciendo que Bitcoin sea raro y potencialmente valioso. Esto lo sitúa en una buena posición como depósito de valor a largo plazo, al igual que el oro.
+Aún entra moneda nueva al `suministro en circulación` mediante un proceso laborioso: la `minería de criptomonedas`. Cada cuatro años aproximadamente, esta emisión se reduce a la mitad (el `halving`) y tiende a cero al acercarse al tope, así que los mineros dependen más de las comisiones.
 
-Mientras que la oferta máxima de `BTC` no puede superar los 21 millones, se agrega nueva moneda al mercado en intervalos regulares. Al igual que la minería de oro, el nuevo Bitcoin se introduce a través de un laborioso proceso llamado `minería de criptomonedas`. Este aumento predecible de su `oferta circulante`, mantiene la economía de Bitcoin en marcha.
+La `política monetaria` fija de Bitcoin lo hace atractivo para preservar valor a largo plazo. Desde 2024, fondos regulados (`ETF al contado`) permiten a inversores tradicionales tenerlo, reforzando su papel de “oro digital”.
 
-La `política monetaria` de Bitcoin, al ser fija, lo convierte en un activo atractivo para quienes buscan preservar el valor a largo plazo, ya que a su vez permite estar al día con el aumento del costo de vida.
-
-Su valor a corto plazo permanece volátil debido a la especulación del mercado.
+Su valor a corto plazo sigue siendo volátil por la especulación del mercado.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
 # Knowledge Check 2
 
-¿Cómo fomenta Bitcoin la preservación del valor a largo plazo?
+¿Cómo favorece Bitcoin la preservación de valor a largo plazo?
 
-- [ ] Utilizando un límite máximo de suministro.
+- [x] Con un tope de suministro máximo.
 
-> ¡Correcto! La oferta fija de Bitcoin crea una escasez similar a la de los metales preciosos. Esto ayuda a retener valor.
+> ℹ️ ¡Correcto! El suministro fijo de Bitcoin crea una escasez parecida a la de los metales preciosos, y eso ayuda a conservar valor.
 
 - [ ] Eliminando a los custodios.
 
-> ¡Inténtalo de nuevo! La custodia se relaciona con la propiedad, más que con el valor.
+> ℹ️ ¡Inténtalo de nuevo! La custodia tiene que ver con la propiedad, no con el valor.
 
-# Oro Digital: Autocustodia
+- [ ] Manteniendo su precio estable.
 
-🧊 ¿Tu banco te ha congelado los fondos sin previo aviso porque realizaste una transferencia que no les gustó?
+> ℹ️ ¡Inténtalo de nuevo! El precio de Bitcoin es volátil a corto plazo; su suministro fijo sostiene el valor a largo plazo.
+
+- [ ] Dejando que un banco central gestione el suministro.
+
+> ℹ️ ¡Inténtalo de nuevo! Bitcoin no tiene banco central; sus reglas de suministro están fijadas en el código.
+
+# Oro digital: autocustodia
+
+🧊 ¿Tu banco ha congelado tus fondos sin aviso por una transferencia que no le gustó?
 
 ---
 
-En democracia, la propiedad es un derecho humano protegido, ya que da a los ciudadanos un mayor control y libertad sobre sus vidas. No podemos actuar libremente cuando nuestros medios de supervivencia están condicionados, juzgados por empresas o instituciones.
+En las democracias, la propiedad es un derecho humano protegido porque da a los ciudadanos control y libertad sobre su vida. No podemos actuar libremente si nuestros medios de vida dependen del juicio de empresas o instituciones.
 
-A medida que nuestros activos se digitalizan cada vez más (es decir, nuestro dinero, nuestros bienes e incluso nuestra identidad), nuestras vidas adquieren una cualidad digital que debemos aprender a proteger.
+A medida que nuestros bienes se digitalizan (tu dinero, tus propiedades y hasta tu identidad), nuestra vida adquiere una dimensión digital que debemos aprender a proteger.
 
-La `autocustodia` de Bitcoin ofrece una verdadera propiedad digital, más allá del alcance de los `custodios`. Mientras no compartas la información de tu cuenta con otra persona, tendrás acceso exclusivo a tus activos. Es como tener tu propia bóveda de oro en un espacio seguro en línea.
+La `autocustodia` de Bitcoin ofrece propiedad digital real, fuera del alcance de los `custodios`. Tus monedas no viven en una app ni en un sitio: la red registra que son tuyas y tus `claves privadas` lo demuestran. Guárdalas bien y solo tú tendrás la llave de tu bóveda de oro digital.
 
-Este sistema de propiedad te ofrece el control total de tu patrimonio digital, en cualquier lugar del mundo y en cualquier momento.
+Este sistema de propiedad te da control total de tu riqueza digital: en cualquier lugar y a cualquier hora.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg)
 
 # Knowledge Check 3
 
-¿Cómo permite la autocustodia darte verdadera propiedad?
+¿Cómo permite la autocustodia la propiedad real?
 
-- [ ] Al darte acceso exclusivo a tus activos.
+- [x] Te da acceso exclusivo a tus activos.
 
-> ¡Correcto! Cualquiera que tenga acceso a nuestros activos puede confiscarlos.
+> ℹ️ ¡Correcto! Cualquiera con acceso a nuestros activos tiene la capacidad de confiscarlos.
 
-- [ ] Permitiendo a los custodios acceder a tus activos.
+- [ ] Permite que los custodios accedan a tus activos.
 
-> ¡Inténtalo de nuevo! La autocustodia significa que no hay ningún custodio (terceros) que pueda acceder a nuestros activos.
+> ℹ️ ¡Inténtalo de nuevo! La autocustodia significa que no hay un custodio (un tercero) que pueda acceder a nuestros activos.
 
-# Bitcoin: ¡es como enviar dinero por correo electrónico!
+# Bitcoin: ¡es como enviar dinero por correo!
 
-⌛ ¿Has tenido alguna vez que esperar varios días laborables para enviar dinero internacionalmente, pagando entre un 3% y un 5% de comisiones?
+⌛ ¿Alguna vez esperaste varios días hábiles para enviar dinero al extranjero pagando entre 3 y 5 % de comisión?
 
----
+El correo electrónico simplificó el envío de cartas al eliminar la oficina postal. Bitcoin hace lo mismo con el dinero al eliminar los bancos.
 
-El correo electrónico simplificó el envío de cartas al eliminar la necesidad de una oficina de correos. De forma similar, Bitcoin ha agilizado el envío de dinero al eliminar la necesidad de bancos.
+- ⚡ Envía dinero a todo el mundo, 24/7. Sin papeleo, sin aprobación bancaria, sin pausas.
+- ⚙️ La confirmación tarda de minutos a una hora; la `Lightning Network`, una capa de pagos rápidos, resuelve los pagos diarios al instante.
+- 📡 Accede a Bitcoin desde cualquier lugar con conexión a internet.
 
-- ⚡ Transfiere Bitcoin globalmente por una comisión razonable.
-- ⚙️ Envía dinero 24/7. Sin esperas, sin papeleos, sin tiempos muertos.
-- 📡 Accede a Bitcoin desde cualquier lugar con conexión a Internet.
+Como una dirección de correo, una dirección de Bitcoin es todo lo que necesitas para recibir bitcoin. Se ve así: _bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4_
 
-Del mismo modo que tienes una dirección de correo electrónico, para recibir Bitcoin es necesaria una única dirección Bitcoin. Por defecto tiene este aspecto: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (¡más adelante te enseñaremos a personalizarlo!)
-
-Gestionarás tu cuenta usando tu `billetera de criptomonedas` conectada a tu navegador web o tu teléfono. Es la “cuenta bancaria” más fácil que hayas creado nunca. No se necesita cita previa, ¡ni carné de identidad!
+Gestionarás tus fondos con una `billetera de criptomonedas` en tu teléfono o computadora. ¡Sin cita ni identificación!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -199,57 +207,57 @@ Gestionarás tu cuenta usando tu `billetera de criptomonedas` conectada a tu nav
 
 ¿En qué se parece Bitcoin al correo electrónico?
 
-- [ ] Ambos están en línea 24 horas al día, 7 días a la semana.
+- [ ] Ambos están en línea 24/7.
 
-> ¡Correcto! Aunque no es la única respuesta correcta.
+> ℹ️ Cierto, pero también lo son las otras opciones. Elige la respuesta que las cubre todas.
 
-- [ ] Ambas son tecnologías digitales.
+- [ ] Ambos son tecnologías digitales.
 
-> ¡Correcto! Aunque no es la única respuesta correcta.
+> ℹ️ Cierto, pero también lo son las otras opciones. Elige la respuesta que las cubre todas.
 
-- [ ] Ambos se pueden acceder con un teléfono.
+- [ ] A ambos se accede con un teléfono.
 
-> ¡Correcto! Aunque no es la única respuesta correcta.
+> ℹ️ Cierto, pero también lo son las otras opciones. Elige la respuesta que las cubre todas.
 
-- [ ] Todas las anteriores.
+- [x] Todas las anteriores.
 
-> ¡Correcto! Tanto Bitcoin como el correo electrónico innovan sobre los servicios que les precedieron.
+> ℹ️ ¡Correcto! Bitcoin y el correo electrónico innovan sobre los servicios que existían antes.
 
-# La Red Bitcoin
+# La red Bitcoin
 
-Cambiemos de marcha y demos una mirada al motor de Bitcoin:
-**La red Bitcoin**.
+Cambiemos de tema y veamos el motor detrás de Bitcoin:
+**la red Bitcoin**.
 
-Bitcoin se ejecuta en una red compartida alojada en miles de computadoras en todo el mundo. Cada computador de la red, desempeña un papel en mantener su funcionamiento. ¡La red existe a través de ellos! Si una computadora procesa una transacción fraudulenta, existe otra para corregirla.
+Bitcoin funciona sobre una red compartida alojada en miles de computadoras de todo el mundo. Cada computadora cumple un papel en su funcionamiento: ¡la red existe gracias a ellas! Si una procesa una transacción fraudulenta, las demás la corrigen.
 
-Esto también significa, que no existe un único punto sobre el cual ejercer presión en un intento de hackeo. Para controlar la red, habría que comprometer la mayoría de las computadoras.
+Esto también significa que no hay un único punto donde presionar en un intento de hackeo. Para controlar la red habría que comprometer la mayoría de las computadoras.
 
-Esta estrategia de defensa se denomina `descentralización`: el desplazamiento del control de un grupo central a otros más pequeños. Es lo que hace prácticamente imparables las redes de criptomonedas.
+Esta estrategia de defensa se llama `descentralización`: pasar el control de un grupo central a muchos más pequeños. Es lo que hace que las redes de criptomonedas sean casi imparables.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg)
 
 # Minería de Bitcoin
 
-Al no contar con un banco central, la red de Bitcoin depende de sus participantes `descentralizados`. Conocidos como 'mineros', los participantes verifican constantemente las transacciones y las añaden a la 'base de datos', es decir, a la `cadena de bloques`.
+Como la red Bitcoin no tiene banco central, depende de sus participantes `descentralizados`. Se les llama `mineros` y revisan constantemente las transacciones para añadirlas a una “base de datos”: la `blockchain`.
 
-Es importante que los mineros sean motivados a ser activos y honestos, protegiendo así la red del fraude. Los mineros frecuentemente comprueban los resultados de los demás, pero también son recompensados por el trabajo que realizan. Cuando enviamos transacciones Bitcoin, pagamos una pequeña comisión que va al minero encargado de validar nuestra transacción. Los mineros también ganan nuevos Bitcoin, conocidos como "recompensas de bloque", por su trabajo.
+Es clave que estos mineros se mantengan activos y honestos para proteger la red del fraude. Se verifican los resultados entre ellos y, además, reciben una recompensa por su trabajo. Al enviar una transacción pagamos una pequeña comisión que va al minero que la procesa. Los mineros también ganan bitcoin nuevo: las “recompensas de bloque”.
 
-Estas recompensas aumentan lentamente la `oferta circulante` de Bitcoin dentro del límite de `suministro máximo` de 21 millones de `BTC`.
+Estas recompensas aumentan poco a poco el `suministro en circulación` de Bitcoin, dentro del tope de `suministro máximo` de 21 millones de `BTC`.
 
-Es la introducción lenta y predecible de nuevas monedas lo que separa a Bitcoin de las divisas tradicionales. Todo se gestiona mediante un código informático aprobado por la comunidad - "reglas sin gobernantes"- y participantes descentralizados, en lugar de pequeños grupos de personas en el `banco central`.
+Esa entrada lenta y predecible de monedas nuevas separa a Bitcoin de las monedas tradicionales. Todo lo gestiona un código aprobado por la comunidad (“reglas sin gobernantes”) y participantes descentralizados, no un pequeño grupo en el `banco central`.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
-# Envío de Transacciones Bitcoin
+# Enviar una transacción de Bitcoin
 
-Comprender los mecanismos exactos que impulsan las transacciones y la minería de Bitcoin puede resultar bastante complicado. A pesar de ello, utilizar y enviar Bitcoin en sí ¡es muy sencillo!
+Entender los mecanismos exactos que impulsan las transacciones y la minería de Bitcoin puede ser complicado. Aun así, ¡usar y enviar Bitcoin es simple!
 
-Por hoy vamos a simplificar el proceso:
+Veamos hoy una versión simplificada del proceso:
 
-1. Envías una transacción utilizando tu `billetera de criptomonedas`, enviando 0,1 `BTC` a la dirección de la billetera de tu amigo.
-2. Un minero comprueba si hay errores en tu transacción. Otros mineros comprueban sus resultados.
-3. Si se aprueba, su transacción se añade a la base de datos de la `cadena de bloques`.
-4. Tu amigo recibe 0.1 BTC en su billetera.
+1. Envías una transacción desde tu `billetera de criptomonedas` con 0,1 `BTC` a la dirección de la billetera de tu amigo.
+2. Un minero revisa tu transacción en busca de errores. Otros mineros verifican su resultado.
+3. Si se aprueba, tu transacción se añade a la “base de datos” `blockchain`.
+4. Tu amigo recibe 0,1 BTC en su billetera.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
 
@@ -257,66 +265,66 @@ Por hoy vamos a simplificar el proceso:
 
 ¿Qué es la descentralización?
 
-- [ ] Aumento de la escasez.
+- [ ] Mayor escasez.
 
-> ¡Inténtalo de nuevo! Escasez significa que la oferta de un bien es escasa.
+> ℹ️ ¡Inténtalo de nuevo! La escasez significa que un activo tiene poca oferta.
 
-- [ ] Distribución del control entre múltiples participantes.
+- [x] Distribución del control entre varios participantes.
 
-> ¡Correcto! Esta distribución protege la red y a sus usuarios.
+> ℹ️ ¡Correcto! Esta distribución protege a la red y a sus usuarios.
 
-- [ ] Las recompensas obtenidas por los mineros.
+- [ ] Las recompensas que ganan los mineros.
 
-> ¡Inténtalo de nuevo! Los mineros son recompensados con comisiones por transacción y recompensas por bloque.
+> ℹ️ ¡Inténtalo de nuevo! Los mineros reciben comisiones de transacción y recompensas de bloque.
 
 # Knowledge Check 6
 
 ¿Cómo protege la minería a la red Bitcoin del fraude?
 
-- [ ] Recompensando a los mineros por comprobar las transacciones.
+- [x] Recompensa a los mineros por revisar transacciones.
 
-> ¡Correcto! Las recompensas de Bitcoin atraen a los mineros y los incentiva a actuar honestamente.
+> ℹ️ ¡Correcto! Las recompensas atraen mineros y los incentivan a actuar con honestidad.
 
-- [ ] Aumentando el suministro circulante de Bitcoin.
+- [ ] Aumenta el suministro en circulación de Bitcoin.
 
-> ¡Inténtalo de nuevo! El aumento de la oferta no ayuda a evitar el fraude.
+> ℹ️ ¡Inténtalo de nuevo! Aumentar el suministro no ayuda a prevenir el fraude.
 
-- [ ] Todas las anteriores.
+- [ ] Ambas cosas.
 
-> ¡Inténtalo de nuevo! Sólo una de las anteriores ayuda a prevenir el fraude.
+> ℹ️ ¡Inténtalo de nuevo! Solo una de las opciones ayuda a prevenir el fraude.
 
-# La Innovación del Dinero
+# La innovación del dinero
 
-En esta lección, hemos visto cómo la escasez de Bitcoin le ayuda a conservar su valor, y cómo la gestión institucional de nuestros activos implica renunciar a la plena propiedad.
+En esta lección vimos cómo la escasez ayuda a Bitcoin a conservar su valor, y cómo dejar nuestros activos en manos de instituciones implica renunciar a la propiedad plena.
 
-Sin embargo, Bitcoin ha evolucionado más allá de una simple herramienta monetaria. Se ha convertido en el catalizador de una revolución del `dinero descentralizado`. Este movimiento reimagina el sistema financiero tradicional distribuyendo el poder y el control monetario entre quienes lo utilizan.
+Pero Bitcoin ha evolucionado más allá de una simple herramienta monetaria. Se ha vuelto el catalizador de una revolución de `dinero descentralizado`. Este movimiento reimagina el sistema financiero tradicional distribuyendo el poder monetario entre quienes lo usan.
 
-Descentralizando el dinero y eliminando a los `custodios` podemos:
+Al descentralizar el dinero y eliminar a los `custodios` podemos:
 
-- 💵 Acoger un mercado global 24/7, asegurado por ciudadanos de todo el mundo.
-- 🛠️ Ofrecer herramientas financieras a las regiones no bancarizadas del planeta.
-- 🤝 Usar la tecnología `entre pares` para evitar las ineficiencias de instituciones intermediarias.
+- 💵 Sostener un mercado global 24/7, asegurado por ciudadanos de todo el mundo.
+- 🛠️ Ofrecer herramientas financieras a las regiones sin acceso bancario.
+- 🤝 Usar tecnología `entre pares` para evitar la ineficiencia de los intermediarios.
 - 🔎 Reducir la desigualdad institucional, el fraude y la manipulación del mercado.
-- ⚖️ Construir la `igualdad de oportunidad` en sistemas monetarios.
-- 🌐 Establecer una verdadera propiedad para la era digital.
+- ⚖️ Integrar la `igualdad de oportunidades` en los sistemas monetarios.
+- 🌐 Establecer la propiedad real para la era digital.
 
-La nueva era del dinero defiende los valores fundamentales de la democracia para aumentar la calidad de la vida cotidiana de los ciudadanos de todo el mundo, y tú, estás invitado.
+La nueva era del dinero defiende los valores fundamentales de la democracia para mejorar la vida diaria de los ciudadanos del mundo. Y estás invitado.
 
-"La democracia proporciona un entorno que respeta los derechos humanos y las libertades fundamentales, y en el que se ejerce la voluntad libremente expresada de las personas" — Naciones Unidas.
+“La democracia ofrece un entorno que respeta los derechos humanos y las libertades fundamentales, y en el que se ejerce la voluntad libremente expresada de las personas.” (Naciones Unidas)
 
-# Tu Misión Bitcoin
+# Tu misión Bitcoin
 
 Es hora de simular tu primera transacción de Bitcoin y practicar tu libertad en la era digital.
 
-Tu transacción incluirá los siguientes datos:
+Tu transacción incluirá estos datos:
 
-📫 La dirección de billetera de la persona a la que envías.
+📫 La dirección de la billetera de quien recibe.
 
 💰 La cantidad de Bitcoin a enviar.
 
-También incluirá una comisión por transacción que se entregará a los `mineros`.
+También incluirá una comisión de transacción para los `mineros`.
 
-Asegúrate de que todos los datos sean correctos.
-Una vez confirmada la transacción de Bitcoin, no puedes revertirla.
+Revisa que todos los datos sean correctos.
+Una vez confirmada, una transacción de Bitcoin no se puede revertir.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
