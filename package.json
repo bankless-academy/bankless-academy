@@ -22,7 +22,8 @@
     "test": "jest --passWithNoTests",
     "test-all": "yarn lint && yarn type-check && yarn test",
     "validate-content": "node validate-content.js",
-    "validate-i18n": "node validate-i18n.js"
+    "validate-i18n": "node validate-i18n.js",
+    "gsc-report": "node gsc-report.js"
   },
   "husky": {
     "hooks": {
