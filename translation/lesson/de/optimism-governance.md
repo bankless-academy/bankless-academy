@@ -1,6 +1,6 @@
 ---
 TITLE: Regierungsführung von Optimism
-DESCRIPTION: Sichere dir deinen ersten eigenen Anteil am Netzwerk und beginne damit, auf der Blockchain abzustimmen!
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Deutsch
 WRITERS: Tetranome
 TRANSLATORS: Ruben Silva Otero
@@ -67,7 +67,7 @@ Wie kann die sogenannte "Onchain Governance" zur Lösung zwischenmenschlicher De
 
 > ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] Alle oben genannten Punkte
+- [x] All of the above
 
 > ℹ️ Richtig! Die Onchain Governance schützt den Abstimmungsprozess durch mehrere Maßnahmen.
 
@@ -109,9 +109,9 @@ Welches der folgenden Güter ist NICHT ein öffentliches Gut?
 
 > ℹ️ Ethereum kann allen zugutekommen, und - durch den Einsatz von Layer 2 Systemen - reduziert die Nutzung durch eine Person nicht seine Verfügbarkeit.
 
-- [ ] Eine zentralisierte Börse
+- [x] A Centralized Exchange
 
-> ℹ️ Richtig! Während zentralisierte Börsen [CEXs] Vorteile für die Gemeinschaft bieten, handelt es sich dabei um Privatunternehmen.
+> ℹ️ Richtig. Während zentralisierte Börsen [CEXs] Vorteile für die Gemeinschaft bieten, handelt es sich dabei um Privatunternehmen.
 
 # Progressive Dezentralisierung
 
@@ -133,7 +133,7 @@ Richtig oder falsch? Die Optimism Foundation wird das Optimism Collective über 
 
 > Versuchs nochmal!
 
-- [ ] Falsch
+- [x] False
 
 > ℹ️ Richtig! Die Optimism Foundation wird sich schließlich auflösen, und das Optimism Collective wird die Mission weiterführen.
 
@@ -184,13 +184,13 @@ Wie schafft Optimism Anreize für gemeinschaftsorientiertes Wirtschaften?
 
 > Versuchs nochmal! Der Einsatz der Blockchain-Technologie allein hat keine Auswirkungen auf Wirtschaftsmodelle.
 
-- [ ] Durch die systematische Finanzierung von Geschäftsmodellen, die das Leben aller Nutzer des Netzwerks verbessern.
+- [x] By systemically funding business models that improve the lives of all network users.
 
 > ℹ️ Richtig! Das Netzwerk stellt einen Teil der Transaktionsgebühren für die Finanzierung öffentlicher Güter zur Verfügung.
 
 - [ ] Alle oben genannten Punkte.
 
-> Versuchs nochmal! Nur einer der Punkte ist richtig.
+> ℹ️ Try again! Nur einer der Punkte ist richtig.
 
 # Vorstellung der Häuser zur Regierungsführung
 
@@ -212,17 +212,17 @@ Wie unterscheidet sich das Bürger-Haus vom Token-Haus?
 
 > Versuchs nochmal! Beide Häuser haben ein Vetorecht.
 
-- [ ] Das Bürger-Haus vergibt RetroPGF-Mittel.
+- [x] The Citizens’ House allocates RetroPGF rewards.
 
 > ℹ️ Richtig! Das Bürger-Haus vergibt Mittel zur Förderung öffentlicher Güter.
 
 - [ ] Das Bürger-Haus treibt die Dezentralisierung des Netzwerks voran.
 
-> Versuchs nochmal! Beide Häuser halten an der Dezentralisierung fest.
+> ℹ️ Try again! Beide Häuser halten an der Dezentralisierung fest.
 
 - [ ] Alle oben genannten Punkte.
 
-> Versuchs nochmal!
+> ℹ️ Try again!
 
 # Das Token-Haus
 
@@ -279,9 +279,9 @@ Wie schützt das Token-Haus das Netzwerk vor Angriffen?
 
 > ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] Alle oben genannten Punkte.
+- [x] All of the above.
 
-> ℹ️ Richtig! Das Token-Haus hat vielfältige Aufgaben zum Schutz des Netzwerks.
+> ℹ️ Correct! Das Token-Haus hat vielfältige Aufgaben zum Schutz des Netzwerks.
 
 # Das Bürger-Haus
 
@@ -325,9 +325,9 @@ Wie schützt das Bürger-Haus das Netzwerk vor Angriffen?
 
 > ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] Beide oben genannten Punkte.
+- [x] Both of the above.
 
-> ℹ️ Richtig! Es diversifiziert seine eigenen Ansichten und gleicht die Ansichten des Token-Hauses aus.
+> ℹ️ Correct! Es diversifiziert seine eigenen Ansichten und gleicht die Ansichten des Token-Hauses aus.
 
 # Jahreszeiten der Regierungsführung
 
@@ -357,7 +357,7 @@ Die Geschichte wurde schon immer von den Optimisten der Menschheit geprägt - de
 
 Indem wir uns in innovativen Gemeinschaften engagieren und faire Systeme zur Regierungsführung nutzen, welche `trustless` [Vertrauenslosigkeit] sind, handeln wir wegweisend für die Zukunft der menschlichen Kooperation. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
 
-Die heutige Aufgabe lautet **, dem Token-Haus beizutreten und unsere OP-Token zu delegieren**.
+Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
 
 Während das Bürger-Haus seine Verfahren zum Onboarding entwickelt, können wir unsere Reise als Bürger mit der Teilnahme an Gesprächen in der [Optimism-Gemeinschaft](https://gov.optimism.io/) beginnen.
 
