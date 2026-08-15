@@ -15,6 +15,7 @@ import {
   readPreferredLanguage,
   writePreferredLanguage,
 } from 'constants/languages'
+import { loadLanguage } from 'utils/translation'
 
 export interface OnboardingModalOptions {
   newsletterOnly?: boolean
@@ -98,7 +99,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }
 
     setLanguage(next)
-    if (i18next.language !== next) i18next.changeLanguage(next)
+    if (i18next.language !== next) {
+      // Fetch the language's namespaces BEFORE switching, otherwise i18next
+      // renders English for a frame while the chunk arrives. Translations are
+      // lazy now (see LAZY_RESOURCES in utils/translation) so all ten languages
+      // are no longer in every visitor's bundle.
+      void loadLanguage(next).then(() => i18next.changeLanguage(next))
+    }
   }, [router.asPath])
 
   const value = {

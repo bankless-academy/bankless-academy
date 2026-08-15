@@ -212,10 +212,16 @@ for (const f of [...files, 'src/constants/animations.ts']) {
 // no error anywhere. Nothing else in the build would have caught it.
 {
   const init = fs.readFileSync('src/utils/translation.ts', 'utf8')
-  const resources = init.slice(
-    init.indexOf('resources: {'),
-    init.indexOf('defaultNS,')
-  )
+  // Two places to look since translations went lazy: English is still a static
+  // `resources: {}` block, every other language is a per-namespace loader in
+  // LAZY_RESOURCES. A namespace missing from EITHER is unreachable at runtime,
+  // which is the failure this check exists to catch.
+  const resources =
+    init.slice(init.indexOf('resources: {'), init.indexOf('defaultNS,')) +
+    init.slice(
+      init.indexOf('export const LAZY_RESOURCES'),
+      init.indexOf('const loaded = new Set')
+    )
   const registered = {}
   for (const m of resources.matchAll(/'?([a-z-]+)'?:\s*\{([^}]*)\}/g)) {
     const lang = m[1]

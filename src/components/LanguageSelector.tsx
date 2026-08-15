@@ -29,6 +29,7 @@ import {
 import { LessonType, LanguageType } from 'entities/lesson'
 import { useApp } from 'contexts/AppContext'
 import { Mixpanel } from 'utils/index'
+import { loadLanguage } from 'utils/translation'
 
 const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
@@ -137,7 +138,8 @@ const LanguageSelector = ({
     code === 'en' || !!currentLesson?.languages?.includes(code as LanguageType)
 
   const selectLanguage = (code: LanguageCode): void => {
-    i18n.changeLanguage(code)
+    // Load the chunk first so the UI never flashes English mid-switch.
+    void loadLanguage(code).then(() => i18n.changeLanguage(code))
     setDefaultLanguage(code)
     setLanguage(code)
     let path: string | null = null

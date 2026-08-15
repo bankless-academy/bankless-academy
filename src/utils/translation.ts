@@ -10,68 +10,113 @@ import homepage from '../../translation/website/en/homepage.json'
 import quests from '../../translation/website/en/quests.json'
 import keywords from '../../translation/keywords/en/keywords.json'
 
-// PT-BR = Brazilian Portuguese
-import commonPTBR from '../../translation/website/pt-br/common.json'
-import homepagePTBR from '../../translation/website/pt-br/homepage.json'
-import questsPTBR from '../../translation/website/pt-br/quests.json'
-import keywordsPTBR from '../../translation/keywords/pt-br/keywords.json'
-import lessonPTBR from '../../translation/website/pt-br/lesson.json'
 
-// ZH = Chinese Simplified
-import commonZH from '../../translation/website/zh/common.json'
-import homepageZH from '../../translation/website/zh/homepage.json'
-import questsZH from '../../translation/website/zh/quests.json'
-import keywordsZH from '../../translation/keywords/zh/keywords.json'
-import lessonZH from '../../translation/website/zh/lesson.json'
 
-// DE = German
-import commonDE from '../../translation/website/de/common.json'
-import homepageDE from '../../translation/website/de/homepage.json'
-import questsDE from '../../translation/website/de/quests.json'
-import keywordsDE from '../../translation/keywords/de/keywords.json'
-import lessonDE from '../../translation/website/de/lesson.json'
 
-// ES = Spanish
-import commonES from '../../translation/website/es/common.json'
-import homepageES from '../../translation/website/es/homepage.json'
-import questsES from '../../translation/website/es/quests.json'
-import keywordsES from '../../translation/keywords/es/keywords.json'
-import lessonES from '../../translation/website/es/lesson.json'
 
-// FR = French
-import commonFR from '../../translation/website/fr/common.json'
-import homepageFR from '../../translation/website/fr/homepage.json'
-import questsFR from '../../translation/website/fr/quests.json'
-import keywordsFR from '../../translation/keywords/fr/keywords.json'
-import lessonFR from '../../translation/website/fr/lesson.json'
 
-// IT = Italian
-import commonIT from '../../translation/website/it/common.json'
-import homepageIT from '../../translation/website/it/homepage.json'
-import questsIT from '../../translation/website/it/quests.json'
-import keywordsIT from '../../translation/keywords/it/keywords.json'
-import lessonIT from '../../translation/website/it/lesson.json'
 
-// JA = Japanese
-import commonJA from '../../translation/website/ja/common.json'
-import homepageJA from '../../translation/website/ja/homepage.json'
-import questsJA from '../../translation/website/ja/quests.json'
-import keywordsJA from '../../translation/keywords/ja/keywords.json'
-import lessonJA from '../../translation/website/ja/lesson.json'
 
-// TR = Turkish
-import commonTR from '../../translation/website/tr/common.json'
-import homepageTR from '../../translation/website/tr/homepage.json'
-import questsTR from '../../translation/website/tr/quests.json'
-import keywordsTR from '../../translation/keywords/tr/keywords.json'
-import lessonTR from '../../translation/website/tr/lesson.json'
 
-// UK = Ukrainian
-import commonUK from '../../translation/website/uk/common.json'
-import homepageUK from '../../translation/website/uk/homepage.json'
-import questsUK from '../../translation/website/uk/quests.json'
-import keywordsUK from '../../translation/keywords/uk/keywords.json'
-import lessonUK from '../../translation/website/uk/lesson.json'
+
+
+// Everything except English is loaded on demand.
+//
+// These were 46 static imports, so every visitor downloaded all ten languages:
+// 1.2MB of translation JSON to read one of them. English stays static because
+// it is the fallback and must always be present synchronously; the rest are
+// per-namespace dynamic imports, so a French reader fetches French only.
+//
+// Keep this map EXPLICIT (one line per namespace, no template-literal paths).
+// validate-i18n.js parses it to prove that every file on disk is actually
+// reachable at runtime — the check that caught a complete es/homepage.json
+// rendering English because its import was commented out.
+type NamespaceLoader = () => Promise<{ default: Record<string, unknown> }>
+export const LAZY_RESOURCES: { [lang: string]: { [ns: string]: NamespaceLoader } } = {
+  'pt-br': {
+    common: () => import('../../translation/website/pt-br/common.json'),
+    homepage: () => import('../../translation/website/pt-br/homepage.json'),
+    quests: () => import('../../translation/website/pt-br/quests.json'),
+    keywords: () => import('../../translation/keywords/pt-br/keywords.json'),
+    lesson: () => import('../../translation/website/pt-br/lesson.json'),
+  },
+  zh: {
+    common: () => import('../../translation/website/zh/common.json'),
+    homepage: () => import('../../translation/website/zh/homepage.json'),
+    quests: () => import('../../translation/website/zh/quests.json'),
+    keywords: () => import('../../translation/keywords/zh/keywords.json'),
+    lesson: () => import('../../translation/website/zh/lesson.json'),
+  },
+  de: {
+    common: () => import('../../translation/website/de/common.json'),
+    homepage: () => import('../../translation/website/de/homepage.json'),
+    quests: () => import('../../translation/website/de/quests.json'),
+    keywords: () => import('../../translation/keywords/de/keywords.json'),
+    lesson: () => import('../../translation/website/de/lesson.json'),
+  },
+  es: {
+    common: () => import('../../translation/website/es/common.json'),
+    homepage: () => import('../../translation/website/es/homepage.json'),
+    quests: () => import('../../translation/website/es/quests.json'),
+    keywords: () => import('../../translation/keywords/es/keywords.json'),
+    lesson: () => import('../../translation/website/es/lesson.json'),
+  },
+  fr: {
+    common: () => import('../../translation/website/fr/common.json'),
+    homepage: () => import('../../translation/website/fr/homepage.json'),
+    quests: () => import('../../translation/website/fr/quests.json'),
+    keywords: () => import('../../translation/keywords/fr/keywords.json'),
+    lesson: () => import('../../translation/website/fr/lesson.json'),
+  },
+  it: {
+    common: () => import('../../translation/website/it/common.json'),
+    homepage: () => import('../../translation/website/it/homepage.json'),
+    quests: () => import('../../translation/website/it/quests.json'),
+    keywords: () => import('../../translation/keywords/it/keywords.json'),
+    lesson: () => import('../../translation/website/it/lesson.json'),
+  },
+  ja: {
+    common: () => import('../../translation/website/ja/common.json'),
+    homepage: () => import('../../translation/website/ja/homepage.json'),
+    quests: () => import('../../translation/website/ja/quests.json'),
+    keywords: () => import('../../translation/keywords/ja/keywords.json'),
+    lesson: () => import('../../translation/website/ja/lesson.json'),
+  },
+  tr: {
+    common: () => import('../../translation/website/tr/common.json'),
+    homepage: () => import('../../translation/website/tr/homepage.json'),
+    quests: () => import('../../translation/website/tr/quests.json'),
+    keywords: () => import('../../translation/keywords/tr/keywords.json'),
+    lesson: () => import('../../translation/website/tr/lesson.json'),
+  },
+  uk: {
+    common: () => import('../../translation/website/uk/common.json'),
+    homepage: () => import('../../translation/website/uk/homepage.json'),
+    quests: () => import('../../translation/website/uk/quests.json'),
+    keywords: () => import('../../translation/keywords/uk/keywords.json'),
+    lesson: () => import('../../translation/website/uk/lesson.json'),
+  },
+}
+
+const loaded = new Set<string>(['en'])
+
+/**
+ * Fetch a language's namespaces and register them with i18next.
+ *
+ * Await this BEFORE i18next.changeLanguage(), otherwise the UI renders English
+ * for a frame while the chunk arrives. Idempotent and safe to call repeatedly.
+ */
+export const loadLanguage = async (lng: string): Promise<void> => {
+  const lang = normalizeLangCode(lng)
+  if (loaded.has(lang) || !LAZY_RESOURCES[lang]) return
+  const entries = Object.entries(LAZY_RESOURCES[lang])
+  const mods = await Promise.all(entries.map(([, load]) => load()))
+  entries.forEach(([ns], i) => {
+    // `true, true` = deep merge, overwrite: re-registering is harmless.
+    i18next.addResourceBundle(lang, ns, mods[i].default, true, true)
+  })
+  loaded.add(lang)
+}
 
 export const defaultNS = 'common'
 
@@ -97,74 +142,12 @@ i18next
       convertDetectedLanguage: (lng: string) => normalizeLangCode(lng),
     },
     resources: {
+      // English only — see LAZY_RESOURCES above for the other nine.
       en: {
         common,
         homepage,
         quests,
         keywords,
-      },
-      'pt-br': {
-        common: commonPTBR,
-        homepage: homepagePTBR,
-        quests: questsPTBR,
-        keywords: keywordsPTBR,
-        lesson: lessonPTBR,
-      },
-      zh: {
-        common: commonZH,
-        homepage: homepageZH,
-        quests: questsZH,
-        keywords: keywordsZH,
-        lesson: lessonZH,
-      },
-      de: {
-        common: commonDE,
-        homepage: homepageDE,
-        quests: questsDE,
-        keywords: keywordsDE,
-        lesson: lessonDE,
-      },
-      es: {
-        common: commonES,
-        homepage: homepageES,
-        quests: questsES,
-        keywords: keywordsES,
-        lesson: lessonES,
-      },
-      fr: {
-        common: commonFR,
-        homepage: homepageFR,
-        quests: questsFR,
-        keywords: keywordsFR,
-        lesson: lessonFR,
-      },
-      it: {
-        common: commonIT,
-        homepage: homepageIT,
-        quests: questsIT,
-        keywords: keywordsIT,
-        lesson: lessonIT,
-      },
-      ja: {
-        common: commonJA,
-        homepage: homepageJA,
-        quests: questsJA,
-        keywords: keywordsJA,
-        lesson: lessonJA,
-      },
-      tr: {
-        common: commonTR,
-        homepage: homepageTR,
-        quests: questsTR,
-        keywords: keywordsTR,
-        lesson: lessonTR,
-      },
-      uk: {
-        common: commonUK,
-        homepage: homepageUK,
-        quests: questsUK,
-        keywords: keywordsUK,
-        lesson: lessonUK,
       },
     },
     defaultNS,
