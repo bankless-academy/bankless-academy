@@ -4,6 +4,7 @@ import {
   Button,
   Input,
   Popover,
+  Portal,
   PopoverContent,
   PopoverBody,
   Text,
@@ -252,7 +253,12 @@ const LanguageSelector = ({
       onOpen={onOpen}
       onClose={closeAndReset}
       placement="bottom-end"
-      initialFocusRef={inputRef}
+      // Autofocusing the filter raises the mobile keyboard the instant the
+      // popover opens. That shrinks the VISUAL viewport while `vh`/`dvh` below
+      // is resolved against the LAYOUT viewport, so most of the list ends up
+      // behind the keyboard with almost nothing left to scroll. On a phone the
+      // list is the point, not the filter, so only focus it on larger screens.
+      initialFocusRef={isSmallScreen ? undefined : inputRef}
       isLazy
     >
       <PopoverTrigger>
@@ -278,64 +284,78 @@ const LanguageSelector = ({
           </Box>
         </Button>
       </PopoverTrigger>
-      <PopoverContent
-        zIndex="10"
-        w={isSmallScreen ? '290px' : '330px'}
-        maxW="calc(100vw - 24px)"
-      >
-        <PopoverBody p="2">
-          <Input
-            ref={inputRef}
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value)
-              setActiveIndex(-1)
-            }}
-            onKeyDown={handleKeyDown}
-            placeholder={t('Filter languages')}
-            // 16px keeps iOS Safari from zooming the viewport on focus
-            fontSize="16px"
-            size="md"
-            mb="2"
-            aria-label={t('Filter languages')}
-          />
-          <Box
-            ref={listRef}
-            role="listbox"
-            maxH="min(50vh, 320px)"
-            overflowY="auto"
-          >
-            {suggested && !q && (
-              <>
-                <Text
-                  fontSize="xs"
-                  color="gray.400"
-                  textTransform="uppercase"
-                  px="3"
-                  pt="1"
-                  pb="0.5"
-                >
-                  {t('Suggested')}
+      {/* Portalled so no current or future ancestor with overflow:hidden can
+          clip the dropdown; it also positions against the body rather than the
+          nav's stacking context. */}
+      <Portal>
+        <PopoverContent
+          zIndex="10"
+          w={isSmallScreen ? '290px' : '330px'}
+          maxW="calc(100vw - 24px)"
+        >
+          <PopoverBody p="2">
+            <Input
+              ref={inputRef}
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value)
+                setActiveIndex(-1)
+              }}
+              onKeyDown={handleKeyDown}
+              placeholder={t('Filter languages')}
+              // 16px keeps iOS Safari from zooming the viewport on focus
+              fontSize="16px"
+              size="md"
+              mb="2"
+              aria-label={t('Filter languages')}
+            />
+            <Box
+              ref={listRef}
+              role="listbox"
+              overflowY="auto"
+              // `dvh` tracks the viewport as mobile browser chrome and the
+              // keyboard change it; `vh` does not, and is kept as the fallback
+              // for anything that does not support it. Momentum scrolling is
+              // explicit so the list stays swipeable inside the popover on iOS.
+              sx={{
+                maxHeight: 'min(50vh, 320px)',
+                '@supports (height: 1dvh)': { maxHeight: 'min(60dvh, 320px)' },
+                WebkitOverflowScrolling: 'touch',
+                overscrollBehavior: 'contain',
+              }}
+            >
+              {suggested && !q && (
+                <>
+                  <Text
+                    fontSize="xs"
+                    color="gray.400"
+                    textTransform="uppercase"
+                    px="3"
+                    pt="1"
+                    pb="0.5"
+                  >
+                    {t('Suggested')}
+                  </Text>
+                  {renderRow(suggested, 0, true)}
+                  <Box
+                    borderBottom="1px solid"
+                    borderColor="whiteAlpha.300"
+                    my="1"
+                  />
+                </>
+              )}
+              {filtered.map((def, i) =>
+                renderRow(def, suggested && !q ? i + 1 : i)
+              )}
+              {!filtered.length && (
+                <Text px="3" py="2" fontSize="sm" color="gray.400">
+                  {t('No language found')}
                 </Text>
-                {renderRow(suggested, 0, true)}
-                <Box
-                  borderBottom="1px solid"
-                  borderColor="whiteAlpha.300"
-                  my="1"
-                />
-              </>
-            )}
-            {filtered.map((def, i) =>
-              renderRow(def, suggested && !q ? i + 1 : i)
-            )}
-            {!filtered.length && (
-              <Text px="3" py="2" fontSize="sm" color="gray.400">
-                {t('No language found')}
-              </Text>
-            )}
-          </Box>
-        </PopoverBody>
-      </PopoverContent>
+              )}
+            </Box>
+          </PopoverBody>
+        </PopoverContent>
+      </Portal>
     </Popover>
   )
 }
