@@ -67,7 +67,7 @@ Comment la gouvernance onchain peut-elle contribuer à résoudre le débat inter
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] Toutes les réponses ci-dessus
+- [x] All of the above
 
 > ℹ️ Correct ! La gouvernance onchain protège le processus de vote par de multiples moyens.
 
@@ -109,7 +109,7 @@ Lequel des éléments suivants n'est PAS un bien public ?
 
 > ℹ️ Ethereum peut profiter à tout le monde et, grâce à la Couche 2, l'utilisation par une personne ne réduit pas sa disponibilité.
 
-- [ ] Un Échange Centralisé
+- [x] A Centralized Exchange
 
 > ℹ️ Correct. Bien que les CEX offrent des avantages à la communauté, il s'agit d'entreprises privées.
 
@@ -133,7 +133,7 @@ Vrai ou faux ? La Fondation Optimism continuera à guider le Collectif Optimism 
 
 > ℹ️ Réessayez !
 
-- [ ] Faux
+- [x] False
 
 > ℹ️ Correct ! La Fondation finira par se dissoudre et le Collectif poursuivra sa mission.
 
@@ -184,13 +184,13 @@ Comment est-ce qu'Optimism favorise-t-il une économie axée sur la collectivit�
 
 > ℹ️ Réessayez ! L'utilisation de la technologie blockchain seule n'a pas d'effet sur les modèles économiques.
 
-- [ ] En finançant de façon systémique des modèles d'entreprise qui améliorent la vie de tous les utilisateurs du réseau.
+- [x] By systemically funding business models that improve the lives of all network users.
 
 > ℹ️ Correct ! Le réseau affecte une partie des frais de transaction au financement de biens publics.
 
 - [ ] Toutes les réponses ci-dessus.
 
-> ℹ️ Réessayez ! Seule l'une d'entre elles est vraie.
+> ℹ️ Try again! Seule l'une d'entre elles est vraie.
 
 # Présentation des Maisons Directrices [Governing Houses]
 
@@ -212,17 +212,17 @@ En quoi la Maison des Citoyens diffère-t-elle de la Maison des Jetons ?
 
 > ℹ️ Réessayez ! Les deux chambres disposent d'un droit de veto.
 
-- [La Maison des Citoyens attribue les récompenses RetroPGF.
+- [x] The Citizens’ House allocates RetroPGF rewards.
 
 > ℹ️ Correct ! La Maison des Citoyens attribue les fonds destinés aux biens publics.
 
 - [ ] La Maison des Citoyens dirige la décentralisation du réseau.
 
-> ℹ️ Réessayez ! Les deux chambres maintiennent la décentralisation.
+> ℹ️ Try again! Les deux chambres maintiennent la décentralisation.
 
 - [ ] Toutes les réponses ci-dessus.
 
-> ℹ️ Réessayez !
+> ℹ️ Try again!
 
 # La Maison des Jetons [Token House]
 
@@ -279,9 +279,9 @@ Comment la Maison des Jetons protège-t-elle le réseau contre les attaques ?
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] Toutes les réponses ci-dessus.
+- [x] All of the above.
 
-> ℹ️ Correct ! La Maison des Jetons a une série de responsabilités diverses dans la protection du réseau.
+> ℹ️ Correct! La Maison des Jetons a une série de responsabilités diverses dans la protection du réseau.
 
 # La Maison des Citoyens
 
@@ -325,9 +325,9 @@ Comment la Maison des Citoyens protège-t-elle le réseau contre les attaques ?
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] Toutes les deux réponses ci-dessus.
+- [x] Both of the above.
 
-> ℹ️ Correct ! Cette maison diversifie sa propre perspective et équilibre celle de la Maison des Jetons.
+> ℹ️ Correct! Cette maison diversifie sa propre perspective et équilibre celle de la Maison des Jetons.
 
 # Saisons de Gouvernance
 
