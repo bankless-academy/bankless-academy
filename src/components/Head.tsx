@@ -30,6 +30,14 @@ export interface MetaData {
   nolayout?: boolean
   ssr?: boolean
   isDatadisk?: boolean
+  /** Server-rendered article HTML for the /content pages. */
+  articleHtml?: string
+  /** Language actually rendered (the /content pages fall back to English). */
+  lang?: string
+  /** Section anchors for the /content contents nav. */
+  headings?: { id: string; text: string }[]
+  /** Build-time UI strings for the /content pages (rendered outside i18next). */
+  strings?: { [key: string]: string }
 }
 
 const umamiWebsiteId =
@@ -55,17 +63,27 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   // where a reader with no matching language should land.
   const alternateSlug = metadata?.lesson?.slug
   const lessonLanguages = metadata?.lesson?.languages || []
+  // A /content page's alternates must point at other /content pages. Pointing
+  // them at /lessons/<lang>/<slug> annotated a different page type, which does
+  // not reciprocate, and hreflang requires both ends to agree — so the whole
+  // cluster was discarded and the two page types looked like duplicates.
+  const contentSuffix = router.asPath.split(/[?#]/)[0].endsWith('/content')
+    ? '/content'
+    : ''
   const isGlossary = router.asPath.split(/[?#]/)[0].startsWith('/glossary')
   const alternates: { hreflang: string; href: string }[] = alternateSlug
     ? [
         {
           hreflang: 'x-default',
-          href: `${DOMAIN_URL_}/lessons/${alternateSlug}`,
+          href: `${DOMAIN_URL_}/lessons/${alternateSlug}${contentSuffix}`,
         },
-        { hreflang: 'en', href: `${DOMAIN_URL_}/lessons/${alternateSlug}` },
+        {
+          hreflang: 'en',
+          href: `${DOMAIN_URL_}/lessons/${alternateSlug}${contentSuffix}`,
+        },
         ...lessonLanguages.map((l) => ({
           hreflang: l,
-          href: `${DOMAIN_URL_}/lessons/${l}/${alternateSlug}`,
+          href: `${DOMAIN_URL_}/lessons/${l}/${alternateSlug}${contentSuffix}`,
         })),
       ]
     : isGlossary

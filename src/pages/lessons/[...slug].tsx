@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Box, Container, Text, Image, Center } from '@chakra-ui/react'
+import { Container } from '@chakra-ui/react'
 import fs from 'fs'
 
 import { MetaData } from 'components/Head'
@@ -10,7 +10,6 @@ import { DEFAULT_METADATA, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { markdown } from 'utils/markdown'
-import LessonContent from 'components/LessonContent'
 import Layout from 'layout/Layout'
 import { useApp } from 'contexts/AppContext'
 import { useRouter } from 'next/router'
@@ -150,9 +149,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
   // console.log(currentLesson)
-  const showContent = params.slug[params.slug?.length - 1] === 'content'
-  console.log('showContent', showContent)
-  currentLesson.showContent = showContent
   if (currentLesson?.languages) {
     for (const language of currentLesson.languages) {
       if (
@@ -203,19 +199,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
-  // The /content view renders the raw markdown. Read it here rather than
-  // fetching raw.githubusercontent at runtime: the content is in this repo, so
-  // the fetch only added latency, a third-party dependency, and a window where
-  // a translation existed locally but not yet on main (invisible on previews).
-  if (showContent) {
-    const localizedPath = `translation/lesson/${language}/${slug}.md`
-    const englishPath = `translation/lesson/en/${slug}.md`
-    const mdPath = fs.existsSync(localizedPath) ? localizedPath : englishPath
-    currentLesson.rawMd = fs.existsSync(mdPath)
-      ? fs.readFileSync(mdPath, 'utf8')
-      : null
-  }
-
   const isDatadisk = (params.slug as any).join('/').includes('-datadisk')
 
   const pageMeta: MetaData = {
@@ -238,7 +221,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = []
   for (const lesson of LESSONS) {
     paths.push({ params: { slug: [lesson.slug] } })
-    paths.push({ params: { slug: [lesson.slug, 'content'] } })
+    // /content is served by pages/lessons/[slug]/content.tsx (server-rendered);
+    // generating it here too would produce the same URL from two routes.
     if (lesson.lessonCollectibleGif)
       paths.push({
         params: { slug: [`${lesson.slug}-datadisk`] },
@@ -246,7 +230,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     if (lesson.languages) {
       for (const lang of lesson.languages) {
         paths.push({ params: { slug: [lang, lesson.slug] } })
-        paths.push({ params: { slug: [lang, lesson.slug, 'content'] } })
       }
     }
   }
@@ -318,66 +301,18 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
         </Layout>
       ) : (
         <Layout page="LESSON-DETAIL" isLessonOpen={isLessonOpen}>
-          {lesson?.showContent ? (
-            <>
-              <Center
-                height="58vh"
-                bgImage="/images/homepage_background_v4_half.png"
-                bgSize="cover"
-                bgPosition="bottom"
-                pb="16px"
-              >
-                <Box
-                  width="100%"
-                  maxW="800px"
-                  textAlign="center"
-                  alignItems="center"
-                  height="100%"
-                  alignContent="end"
-                >
-                  <Box w="100%" maxW="90%">
-                    <Image
-                      style={{
-                        filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
-                      }}
-                      maxW="90%"
-                      src="/images/BanklessAcademy.svg"
-                      alt="Bankless Academy"
-                      m="auto"
-                    />
-                    <Box ml="25%" w="73%">
-                      <Text
-                        fontSize={isSmallScreen ? '20px' : '25px'}
-                        mt="-15px"
-                        w="100%"
-                      >
-                        {`Your platform for building digital independence.`}
-                      </Text>
-                    </Box>
-                  </Box>
-                </Box>
-              </Center>
-              <Container
-                maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
-                px={isSmallScreen ? '8px' : '16px'}
-              >
-                <LessonContent lesson={lesson} />
-              </Container>
-            </>
-          ) : (
-            <Container
-              maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
-              px={isSmallScreen ? '8px' : isLessonOpen ? '24px' : '0'}
-              minH={
-                isMediumScreen
-                  ? `calc(100vh - 146px${hideNavBar ? ' + 65px' : ''})`
-                  : 'default'
-              }
-              pb={isSmallScreen ? '0' : isLessonOpen ? '8px' : '0'}
-            >
-              <LessonDetail key={lesson.slug} lesson={lesson} />
-            </Container>
-          )}
+          <Container
+            maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
+            px={isSmallScreen ? '8px' : isLessonOpen ? '24px' : '0'}
+            minH={
+              isMediumScreen
+                ? `calc(100vh - 146px${hideNavBar ? ' + 65px' : ''})`
+                : 'default'
+            }
+            pb={isSmallScreen ? '0' : isLessonOpen ? '8px' : '0'}
+          >
+            <LessonDetail key={lesson.slug} lesson={lesson} />
+          </Container>
         </Layout>
       )}
     </>

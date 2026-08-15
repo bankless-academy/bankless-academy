@@ -18,7 +18,6 @@
   "src/components/KeyboardShortcutsModal.tsx: untranslated user-facing string \"Select a quiz answer\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/KeyboardShortcutsModal.tsx: untranslated user-facing string \"Show this help\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/LessonCard.tsx: untranslated user-facing string \"Lesson notification\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
-  "src/components/LessonContent.tsx: untranslated user-facing string \"' ) // Name each image after the section it sits in. This used to build a real //\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/LessonDetail.tsx: untranslated user-facing string \"Back to Lesson Selection\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/MiniApp.tsx: untranslated user-facing string \"ETH request:\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/MiniApp.tsx: untranslated user-facing string \"Failed to initialize wallet\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
@@ -67,7 +66,6 @@
   "src/pages/ai.tsx: untranslated user-facing string \"AI assistant\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/pages/explorer/my-profile.tsx: untranslated user-facing string \"My Explorer profile\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/pages/index.tsx: untranslated user-facing string \"Newsletter signup\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
-  "src/pages/lessons/[...slug].tsx: untranslated user-facing string \"Your platform for building digital independence.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/pages/mobile.tsx: untranslated user-facing string \"Install the Bankless Academy Mobile App on Android or iOS.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/pages/newsletter.tsx: untranslated user-facing string \"Sign up for our newsletter to be notified of new lessons and platform updates!\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/pages/report-an-issue.tsx: untranslated user-facing string \"Report an Issue\" — wrap it in t(), or add it to ALLOWED if it is a brand name"
