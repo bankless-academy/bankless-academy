@@ -29,7 +29,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -318,7 +321,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -572,7 +578,10 @@ const LESSONS: LessonType[] = [
       'tr',
       'uk',
       'zh',
-      'de'
+      'de',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -624,7 +633,10 @@ const LESSONS: LessonType[] = [
       'tr',
       'zh',
       'de',
-      'uk'
+      'uk',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Essentials',
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
@@ -945,7 +957,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Essentials',
     lessonWriters: 'iSpeakNerd',
@@ -1224,7 +1239,10 @@ const LESSONS: LessonType[] = [
       'it',
       'ja',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Essentials',
     tags: [
@@ -1541,7 +1559,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -1873,7 +1894,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     tags: [
@@ -2140,7 +2164,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     tags: [
@@ -2212,7 +2239,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     tags: [
@@ -2288,7 +2318,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     tags: [
@@ -2591,7 +2624,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2644,7 +2680,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2974,7 +3013,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     tags: [
@@ -3031,7 +3073,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3326,7 +3371,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3393,7 +3441,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     tags: [
@@ -3453,7 +3504,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -3734,7 +3788,10 @@ const LESSONS: LessonType[] = [
       'ja',
       'uk',
       'zh',
-      'tr'
+      'tr',
+      'hi',
+      'id',
+      'vi'
     ],
     level: 'Level 1',
     lessonWriters: 'Musharef, Tetranome',

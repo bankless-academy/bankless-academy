@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // Assemble a translated lesson md from a translated body, reusing
 // translate-content.js's own parser/renderer so the banner and spacing are exact.
 import fs from 'fs'
@@ -24,5 +25,8 @@ const frontmatter = en.frontmatter.map(([k, v]) => {
   return [k, v]
 })
 const out = `translation/lesson/${lang}/${slug}.md`
+// The first wave for a language has no translation/lesson/<lang>/ yet, so
+// without this every lesson agent dies with ENOENT on its very first write.
+fs.mkdirSync(`translation/lesson/${lang}`, { recursive: true })
 fs.writeFileSync(out, m.renderMd({ frontmatter, banner: en.banner, gap: en.gap, units }))
 console.log(`wrote ${out} (${units.length} units)`)

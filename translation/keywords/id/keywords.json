@@ -1,0 +1,1965 @@
+{
+  ".eth": {
+    "keyword": ".eth",
+    "keyword_forms": [
+      "domain .eth"
+    ],
+    "definition": "Akhiran domain web3 yang dipakai Ethereum Name Service (ENS), seperti namakamu.eth."
+  },
+  "2 factor authentication": {
+    "keyword": "autentikasi dua faktor",
+    "keyword_forms": [
+      "autentikasi 2 faktor",
+      "verifikasi dua langkah",
+      "2 Factor Authentication"
+    ],
+    "definition": "Lapisan keamanan tambahan untuk memastikan bahwa orang yang mencoba masuk ke sebuah akun online benar-benar pemiliknya."
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "Lapisan keamanan tambahan untuk memastikan bahwa orang yang mencoba masuk ke sebuah akun online benar-benar pemiliknya."
+  },
+  "51% attack": {
+    "keyword": "serangan 51%",
+    "keyword_plural": "serangan 51%",
+    "keyword_forms": [
+      "serangan 51 persen",
+      "51% attack"
+    ],
+    "definition": "Serangan terhadap konsensus blockchain dengan menguasai lebih dari setengah daya produksi blok di jaringan."
+  },
+  "address": {
+    "keyword": "alamat",
+    "keyword_plural": "alamat",
+    "keyword_forms": [
+      "address"
+    ],
+    "definition": "Identitas publik unik untuk sebuah entitas di blockchain."
+  },
+  "addresses": {
+    "keyword": "alamat",
+    "definition": "Identitas publik unik untuk berbagai entitas di blockchain."
+  },
+  "aggregator": {
+    "keyword": "agregator",
+    "keyword_plural": "agregator",
+    "keyword_forms": [
+      "aggregator"
+    ],
+    "definition": "Alat yang menggabungkan banyak sumber untuk menawarkan pilihan paling kompetitif."
+  },
+  "airdrop": {
+    "keyword": "airdrop",
+    "keyword_plural": "airdrop",
+    "definition": "Pembagian gratis aset kripto kepada pengguna."
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "definition": "Singkatan dari Capital Allocation Protocol. Protokol open source yang memungkinkan sebuah kelompok membagikan dana bersama secara efisien dan transparan."
+  },
+  "allowance": {
+    "keyword": "izin",
+    "keyword_plural": "izin",
+    "keyword_forms": [
+      "allowance",
+      "mengizinkan",
+      "diizinkan"
+    ],
+    "definition": "Memberi sebuah entitas, biasanya kontrak pintar, hak untuk memakai sejumlah token kamu dalam sebuah transaksi."
+  },
+  "alternative layer 1": {
+    "keyword": "Layer 1 alternatif",
+    "keyword_plural": "Layer 1 alternatif",
+    "keyword_forms": [
+      "L1 alternatif",
+      "alternative Layer 1"
+    ],
+    "definition": "Blockchain Layer 1 selain Ethereum dan Bitcoin."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM",
+    "definition": "(Automated Market Maker) Sistem penjodohan perdagangan yang berjalan dengan algoritma publik."
+  },
+  "app": {
+    "keyword": "aplikasi",
+    "keyword_plural": "aplikasi",
+    "keyword_forms": [
+      "app"
+    ],
+    "definition": "Aplikasi untuk komputer atau perangkat seluler."
+  },
+  "app store": {
+    "keyword": "app store",
+    "keyword_plural": "app store",
+    "keyword_forms": [
+      "toko aplikasi"
+    ],
+    "definition": "Toko digital tempat mengunduh aplikasi komputer atau perangkat seluler."
+  },
+  "asynchronous": {
+    "keyword": "asinkron",
+    "keyword_forms": [
+      "asynchronous"
+    ],
+    "definition": "Komunikasi antara beberapa orang yang tidak mengharuskan semua peserta hadir saat pesan dikirim."
+  },
+  "attestation": {
+    "keyword": "atestasi",
+    "keyword_plural": "atestasi",
+    "keyword_forms": [
+      "mengatestasi",
+      "diatestasi",
+      "attestation"
+    ],
+    "definition": "Konfirmasi bertanda tangan bahwa sesuatu itu benar. Di Ethereum, validator menerbitkan atestasi untuk memberi suara bahwa sebuah blok valid."
+  },
+  "autonomy": {
+    "keyword": "otonomi",
+    "keyword_forms": [
+      "otonom"
+    ],
+    "definition": "Kemampuan mengatur tindakan sendiri, bukan mengikuti aturan yang dibuat pihak lain."
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "definition": "Layanan penamaan di jaringan Base yang memberi dompet nama mudah dibaca dan berakhiran .base.eth."
+  },
+  "batch auction": {
+    "keyword": "lelang batch",
+    "keyword_plural": "lelang batch",
+    "keyword_forms": [
+      "batch auction"
+    ],
+    "definition": "Metode perdagangan yang mengumpulkan banyak order dalam waktu singkat, lalu menyelesaikan semuanya bersama pada satu harga yang adil."
+  },
+  "bet": {
+    "keyword": "taruhan",
+    "keyword_plural": "taruhan",
+    "keyword_forms": [
+      "bertaruh",
+      "memasang taruhan"
+    ],
+    "definition": "Mempertaruhkan uang demi peluang imbalan yang lebih besar."
+  },
+  "blob": {
+    "keyword": "blob",
+    "keyword_plural": "blob",
+    "definition": "Ruang data murah dan sementara di dalam blok Ethereum, dipakai Layer 2 untuk mengirim kumpulan transaksinya."
+  },
+  "block": {
+    "keyword": "blok",
+    "keyword_plural": "blok",
+    "keyword_forms": [
+      "block"
+    ],
+    "definition": "Sekumpulan transaksi di blockchain."
+  },
+  "block builder": {
+    "keyword": "pembangun blok",
+    "keyword_plural": "pembangun blok",
+    "keyword_forms": [
+      "pembuat blok",
+      "block builder"
+    ],
+    "definition": "Operator khusus yang menyusun transaksi menjadi blok baru, lalu blok itu dipublikasikan ke jaringan oleh pengusul blok."
+  },
+  "block explorer": {
+    "keyword": "penjelajah blok",
+    "keyword_plural": "penjelajah blok",
+    "keyword_forms": [
+      "block explorer"
+    ],
+    "definition": "Alat untuk mencari dan menelusuri data blockchain."
+  },
+  "block hash": {
+    "keyword": "hash blok",
+    "keyword_plural": "hash blok",
+    "keyword_forms": [
+      "block hash"
+    ],
+    "definition": "Identitas unik setiap file blok. Setiap blok baru merujuk ke hash blok sebelumnya sehingga terbentuk satu rantai blockchain yang tersambung."
+  },
+  "block producer": {
+    "keyword": "produsen blok",
+    "keyword_plural": "produsen blok",
+    "keyword_forms": [
+      "block producer"
+    ],
+    "definition": "Peserta jaringan yang terpilih untuk membuat blok transaksi baru, misalnya penambang atau validator."
+  },
+  "block proposer": {
+    "keyword": "pengusul blok",
+    "keyword_plural": "pengusul blok",
+    "keyword_forms": [
+      "proposer blok",
+      "block proposer"
+    ],
+    "definition": "Node validator yang dipilih algoritma jaringan untuk menentukan blok berikutnya yang ditambahkan ke blockchain."
+  },
+  "block reward": {
+    "keyword": "imbalan blok",
+    "keyword_plural": "imbalan blok",
+    "keyword_forms": [
+      "block reward"
+    ],
+    "definition": "Sejumlah koin native yang diberikan kepada pengusul blok valid yang baru."
+  },
+  "block space": {
+    "keyword": "ruang blok",
+    "keyword_forms": [
+      "block space"
+    ],
+    "definition": "Jumlah ruang di setiap blok untuk menyimpan transaksi dan data."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchain",
+    "definition": "Sistem yang mencatat transaksi mata uang kripto di banyak komputer di seluruh dunia."
+  },
+  "blockchain apps": {
+    "keyword": "aplikasi blockchain",
+    "definition": "Aplikasi blockchain yang memungkinkan kamu melakukan swap mata uang kripto, memakai media sosial web3, berdonasi, bahkan belajar onchain seperti di Bankless Academy."
+  },
+  "blockchain architecture": {
+    "keyword": "arsitektur blockchain",
+    "keyword_plural": "arsitektur blockchain",
+    "definition": "Struktur yang menentukan cara data disimpan dalam teknologi blockchain."
+  },
+  "blockchain technology": {
+    "keyword": "teknologi blockchain",
+    "keyword_plural": "teknologi blockchain",
+    "definition": "Jenis jaringan baru yang berjalan di banyak komputer. Teknologi ini menambahkan lapisan kepemilikan digital ke internet."
+  },
+  "blockchain trilemma": {
+    "keyword": "trilema blockchain",
+    "keyword_plural": "trilema blockchain",
+    "definition": "Masalah yang menggambarkan kebutuhan akan 3 sifat blockchain sekaligus: Keamanan, Skalabilitas, dan Desentralisasi."
+  },
+  "blockspace": {
+    "keyword": "ruang blok",
+    "keyword_forms": [
+      "blockspace"
+    ],
+    "definition": "Jumlah ruang yang tersedia di setiap blok untuk menyimpan transaksi dan data."
+  },
+  "borrower": {
+    "keyword": "peminjam",
+    "keyword_plural": "peminjam",
+    "keyword_forms": [
+      "borrower"
+    ],
+    "definition": "Pihak yang bersedia membayar bunga kepada pemberi pinjaman agar bisa meminjam aset."
+  },
+  "bridge": {
+    "keyword": "jembatan",
+    "keyword_plural": "jembatan",
+    "keyword_forms": [
+      "bridge",
+      "menjembatani",
+      "dijembatani"
+    ],
+    "definition": "Koneksi yang memungkinkan dua jaringan blockchain berbeda saling berkomunikasi dan bertukar aset."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "Simbol pasar untuk bitcoin."
+  },
+  "censorship-resistant": {
+    "keyword": "tahan sensor",
+    "keyword_forms": [
+      "tahan terhadap sensor",
+      "antisensor"
+    ],
+    "definition": "Tidak ada pemerintah atau perusahaan yang bisa menentukan apa yang boleh dan tidak boleh dilakukan."
+  },
+  "central bank": {
+    "keyword": "bank sentral",
+    "keyword_plural": "bank sentral",
+    "definition": "Lembaga yang mengatur uang, bank, dan mata uang di sebuah negara."
+  },
+  "centralization": {
+    "keyword": "sentralisasi",
+    "keyword_forms": [
+      "pemusatan",
+      "pemusatan kekuasaan"
+    ],
+    "definition": "Pemusatan kendali atas seluruh sistem di tangan satu otoritas atau entitas."
+  },
+  "centralized": {
+    "keyword": "terpusat",
+    "keyword_forms": [
+      "tersentralisasi"
+    ],
+    "definition": "Ketika satu otoritas atau entitas mengendalikan seluruh sistem."
+  },
+  "centralized exchange": {
+    "keyword": "bursa terpusat",
+    "keyword_plural": "bursa terpusat",
+    "keyword_forms": [
+      "centralized exchange"
+    ],
+    "definition": "(CEX) Platform terpusat yang mengoordinasikan perdagangan mata uang kripto dengan memungut biaya, mirip bursa saham."
+  },
+  "centralized exchange staking": {
+    "keyword": "staking di bursa terpusat",
+    "keyword_forms": [
+      "staking di bursa"
+    ],
+    "definition": "Mengunci token lewat bursa terpusat untuk menghasilkan imbalan."
+  },
+  "centralized services": {
+    "keyword": "layanan terpusat",
+    "definition": "Perusahaan atau entitas yang mengendalikan aktivitas online, menetapkan aturan dan biaya, serta mengelola data dan konten dengan cara yang sering mendahulukan kepentingan mereka sendiri daripada kebutuhan pengguna."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX",
+    "definition": "(Centralized Exchange) Platform yang mengoordinasikan perdagangan mata uang kripto dengan memungut biaya, mirip bursa saham."
+  },
+  "chain": {
+    "keyword": "rantai",
+    "keyword_plural": "rantai",
+    "keyword_forms": [
+      "chain"
+    ],
+    "definition": "Mengikat blok-blok data menjadi satu basis data yang tidak bisa diubah."
+  },
+  "circulating supply": {
+    "keyword": "pasokan beredar",
+    "keyword_plural": "pasokan beredar",
+    "definition": "Jumlah koin atau token sebuah mata uang kripto yang tersedia untuk diperdagangkan di pasar."
+  },
+  "coin": {
+    "keyword": "koin",
+    "keyword_plural": "koin",
+    "keyword_forms": [
+      "coin"
+    ],
+    "definition": "Aset native sebuah blockchain, umumnya dipakai sebagai mata uang untuk transaksi di jaringan tersebut."
+  },
+  "cold wallet": {
+    "keyword": "dompet dingin",
+    "keyword_plural": "dompet dingin",
+    "keyword_forms": [
+      "cold wallet"
+    ],
+    "definition": "Jenis dompet penyimpanan mandiri yang disimpan di perangkat keras offline."
+  },
+  "collateral": {
+    "keyword": "agunan",
+    "keyword_forms": [
+      "jaminan",
+      "collateral"
+    ],
+    "definition": "Aset tertentu yang dijanjikan peminjam kepada pemberi pinjaman sebagai penjamin pelunasan utang."
+  },
+  "commercial bank": {
+    "keyword": "bank komersial",
+    "keyword_plural": "bank komersial",
+    "definition": "Bank yang mengelola uang milik masyarakat dan pelaku usaha."
+  },
+  "composability": {
+    "keyword": "komposabilitas",
+    "keyword_forms": [
+      "kemampuan menyusun",
+      "composability"
+    ],
+    "definition": "Kemampuan menggabungkan kontrak pintar dan aplikasi yang sudah ada seperti balok mainan untuk membuat produk baru."
+  },
+  "consensus": {
+    "keyword": "konsensus",
+    "definition": "Kesepakatan, kepercayaan, dan keamanan di seluruh jaringan komputer terdesentralisasi seperti blockchain."
+  },
+  "consensus mechanism": {
+    "keyword": "mekanisme konsensus",
+    "keyword_plural": "mekanisme konsensus",
+    "definition": "Cara sebuah jaringan blockchain menilai transaksi mana yang sah dan mana yang curang."
+  },
+  "consensus mechanisms": {
+    "keyword": "mekanisme konsensus",
+    "definition": "Berbagai cara jaringan blockchain menilai transaksi mana yang sah dan mana yang curang."
+  },
+  "counterparty risk": {
+    "keyword": "risiko pihak lawan",
+    "keyword_plural": "risiko pihak lawan",
+    "keyword_forms": [
+      "risiko rekanan",
+      "counterparty risk"
+    ],
+    "definition": "Risiko bahwa pihak lain tidak memenuhi kewajibannya dalam sebuah kesepakatan."
+  },
+  "credible neutrality": {
+    "keyword": "netralitas kredibel",
+    "definition": "Mekanisme yang tidak memihak maupun merugikan kelompok orang tertentu."
+  },
+  "crypto": {
+    "keyword": "kripto",
+    "definition": "(Cryptocurrency) Mata uang yang lahir di internet, bukan milik satu negara. Alih-alih dikelola bank sentral, mata uang ini sering diatur oleh penggunanya sendiri."
+  },
+  "crypto wallet": {
+    "keyword": "dompet kripto",
+    "keyword_plural": "dompet kripto",
+    "keyword_forms": [
+      "crypto wallet"
+    ],
+    "definition": "Aplikasi untuk menyimpan mata uang kripto kamu, lalu mengirim, menerima, atau membelanjakannya."
+  },
+  "cryptocurrencies": {
+    "keyword": "mata uang kripto",
+    "definition": "Mata uang yang lahir di internet, bukan milik negara tertentu. Alih-alih dikelola bank sentral, mata uang ini sering diatur oleh penggunanya sendiri."
+  },
+  "cryptocurrency": {
+    "keyword": "mata uang kripto",
+    "keyword_plural": "mata uang kripto",
+    "keyword_forms": [
+      "cryptocurrency"
+    ],
+    "definition": "Mata uang yang lahir di internet, bukan milik satu negara. Alih-alih dikelola bank sentral, mata uang ini sering diatur oleh penggunanya."
+  },
+  "cryptocurrency mining": {
+    "keyword": "penambangan kripto",
+    "keyword_forms": [
+      "menambang kripto",
+      "penambangan mata uang kripto"
+    ],
+    "definition": "Memverifikasi transaksi blockchain untuk mendapat imbalan kripto, dipakai di jaringan Proof-of-Work seperti Bitcoin."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "dompet mata uang kripto",
+    "keyword_plural": "dompet mata uang kripto",
+    "keyword_forms": [
+      "cryptocurrency wallet"
+    ],
+    "definition": "Aplikasi untuk menyimpan mata uang kripto kamu, lalu mengirim, menerima, atau membelanjakannya."
+  },
+  "cryptography": {
+    "keyword": "kriptografi",
+    "keyword_forms": [
+      "kriptografis"
+    ],
+    "definition": "Teknik untuk mengamankan komunikasi atau transaksi dari campur tangan pihak luar."
+  },
+  "custodial wallet": {
+    "keyword": "dompet kustodian",
+    "keyword_plural": "dompet kustodian",
+    "keyword_forms": [
+      "custodial wallet"
+    ],
+    "definition": "Pada dompet kustodian, pihak lain yang memegang kunci privat, sehingga merekalah yang mengendalikan akses ke aset kripto kamu."
+  },
+  "custodian": {
+    "keyword": "kustodian",
+    "keyword_plural": "kustodian",
+    "keyword_forms": [
+      "custodian"
+    ],
+    "definition": "Lembaga keuangan yang diberi tanggung jawab untuk mengamankan aset kamu."
+  },
+  "custom record": {
+    "keyword": "catatan khusus",
+    "keyword_plural": "catatan khusus",
+    "keyword_forms": [
+      "custom record"
+    ],
+    "definition": "Data yang kamu tentukan sendiri dan ditautkan ke domain ENS, sehingga kamu bisa menambahkan informasi lain seperti situs web atau tautan media sosial, di luar alamat standar."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO",
+    "definition": "(Decentralized Autonomous Organization) Struktur organisasi yang memakai teknologi blockchain untuk mengotomatiskan pemungutan suara dan pengelolaan."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApp",
+    "keyword_forms": [
+      "dapp"
+    ],
+    "definition": "Aplikasi terdesentralisasi (decentralized application) yang terhubung ke blockchain dan jaringan terdesentralisasi."
+  },
+  "death spiral": {
+    "keyword": "spiral kematian",
+    "keyword_plural": "spiral kematian",
+    "keyword_forms": [
+      "death spiral"
+    ],
+    "definition": "Keruntuhan yang memperkuat dirinya sendiri: harga yang jatuh memicu tindakan yang menjatuhkan harga lebih jauh, seperti pada sebagian stablecoin algoritmik."
+  },
+  "decentralization": {
+    "keyword": "desentralisasi",
+    "keyword_forms": [
+      "decentralization"
+    ],
+    "definition": "Perpindahan kendali ke banyak orang, bukan ke satu otoritas tunggal."
+  },
+  "decentralized": {
+    "keyword": "terdesentralisasi",
+    "keyword_forms": [
+      "decentralized"
+    ],
+    "definition": "Tidak ada satu otoritas atau entitas pun yang mengendalikan sistem."
+  },
+  "decentralized exchange": {
+    "keyword": "bursa terdesentralisasi",
+    "keyword_plural": "bursa terdesentralisasi",
+    "keyword_forms": [
+      "decentralized exchange"
+    ],
+    "definition": "(DEX) Protokol yang memfasilitasi pertukaran tanpa perlu perantara tepercaya."
+  },
+  "decentralized finance": {
+    "keyword": "keuangan terdesentralisasi",
+    "keyword_forms": [
+      "Decentralized Finance"
+    ],
+    "definition": "(DeFi) Sekumpulan alat keuangan penyimpanan mandiri yang berjalan di blockchain."
+  },
+  "decentralized money": {
+    "keyword": "uang terdesentralisasi",
+    "definition": "Uang dengan sifat yang disepakati komunitas, bukan ditetapkan oleh sebuah lembaga."
+  },
+  "decentralized services": {
+    "keyword": "layanan terdesentralisasi",
+    "definition": "(dApp) Layanan online yang memakai otomatisasi untuk menekan biaya dan memperbaiki pengalaman pengguna."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "(Decentralized Finance) Sekumpulan alat keuangan penyimpanan mandiri yang berjalan di blockchain."
+  },
+  "delegate": {
+    "keyword": "delegasi",
+    "keyword_plural": "delegasi",
+    "keyword_forms": [
+      "mendelegasikan",
+      "didelegasikan",
+      "delegasikan"
+    ],
+    "definition": "Memberikan tanggung jawab tertentu kepada orang lain, misalnya mendelegasikan hak suara token."
+  },
+  "delegation": {
+    "keyword": "pendelegasian",
+    "keyword_plural": "pendelegasian",
+    "keyword_forms": [
+      "pelimpahan"
+    ],
+    "definition": "Pemberian tanggung jawab tertentu kepada orang lain, misalnya pelimpahan hak suara token."
+  },
+  "democracy": {
+    "keyword": "demokrasi",
+    "keyword_plural": "demokrasi",
+    "keyword_forms": [
+      "demokratis"
+    ],
+    "definition": "Sistem pemerintahan yang warganya menjalankan kekuasaan dengan berperan penting dalam pengambilan keputusan."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX",
+    "definition": "(Decentralized Exchange) Protokol yang memfasilitasi pertukaran tanpa perlu perantara tepercaya."
+  },
+  "dex aggregator": {
+    "keyword": "agregator DEX",
+    "keyword_plural": "agregator DEX",
+    "keyword_forms": [
+      "DEX aggregator"
+    ],
+    "definition": "Protokol yang menggabungkan likuiditas DEX dari banyak sumber dalam satu antarmuka."
+  },
+  "digital assets": {
+    "keyword": "aset digital",
+    "definition": "Segala sesuatu yang bernilai dan disimpan secara digital."
+  },
+  "digital signature": {
+    "keyword": "tanda tangan digital",
+    "keyword_plural": "tanda tangan digital",
+    "keyword_forms": [
+      "menandatangani secara digital"
+    ],
+    "definition": "Bukti, yang dibuat dengan kunci privat kamu, bahwa kamu menyetujui sebuah pesan atau transaksi. Cara kerjanya seperti tanda tangan biasa, tetapi tidak bisa dipalsukan."
+  },
+  "double-spend": {
+    "keyword": "belanja ganda",
+    "keyword_plural": "belanja ganda",
+    "keyword_forms": [
+      "double-spend",
+      "double spend",
+      "pengeluaran ganda"
+    ],
+    "definition": "Membelanjakan uang digital yang sama dua kali. Konsensus blockchain ada untuk mencegah hal ini tanpa otoritas pusat."
+  },
+  "earn": {
+    "keyword": "menghasilkan",
+    "keyword_forms": [
+      "hasilkan",
+      "earn"
+    ],
+    "definition": "Memberi kontribusi bernilai sebagai ganti imbalan."
+  },
+  "encryption": {
+    "keyword": "enkripsi",
+    "keyword_forms": [
+      "mengenkripsi",
+      "dienkripsi",
+      "terenkripsi"
+    ],
+    "definition": "Proses mengubah informasi menjadi kode rahasia yang aman, dipakai untuk mencegah akses tanpa izin."
+  },
+  "epoch": {
+    "keyword": "epoch",
+    "keyword_plural": "epoch",
+    "definition": "Waktu yang dibutuhkan untuk memasukkan sejumlah blok tertentu ke sebuah blockchain."
+  },
+  "equality of opportunity": {
+    "keyword": "kesetaraan kesempatan",
+    "keyword_forms": [
+      "kesetaraan peluang"
+    ],
+    "definition": "Prinsip keadilan yang memberi setiap orang peluang sukses yang sama, apa pun latar belakang dan keadaannya."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20",
+    "definition": "Standar untuk token fungible di Ethereum. Token ini bisa dipecah dan tidak unik."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721",
+    "definition": "Standar untuk token non-fungible di Ethereum. Token ini punya identitas digital yang unik, tidak bisa disalin, dan tidak bisa dipecah."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155",
+    "definition": "Standar untuk menerbitkan token fungible sekaligus non-fungible di Ethereum, dalam satu kontrak yang lebih hemat."
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF",
+    "definition": "(Exchange-Traded Fund) Dana investasi yang diperdagangkan di bursa saham dan memegang aset seperti saham, emas, atau bitcoin."
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "(Ether) Mata uang kripto native Ethereum. Dipakai untuk melakukan transaksi di jaringan, menjalankan node validator, dan lainnya."
+  },
+  "ether": {
+    "keyword": "ether",
+    "definition": "(ETH) Mata uang kripto native Ethereum. Dipakai untuk melakukan transaksi di jaringan, menjalankan node validator, dan lainnya."
+  },
+  "ethereum blockchain": {
+    "keyword": "blockchain Ethereum",
+    "keyword_forms": [
+      "Ethereum Blockchain"
+    ],
+    "definition": "Buku besar publik yang mencatat transaksi dan kepemilikan di jaringan Ethereum."
+  },
+  "ethereum mainnet": {
+    "keyword": "Ethereum Mainnet",
+    "keyword_forms": [
+      "mainnet Ethereum"
+    ],
+    "definition": "Jaringan Layer 1 utama Ethereum, tempat transaksi membawa nilai nyata. Jaringan ini menjadi lapisan penyelesaian bagi Layer 2 Ethereum."
+  },
+  "ethereum virtual machine": {
+    "keyword": "Ethereum Virtual Machine",
+    "keyword_forms": [
+      "EVM",
+      "mesin virtual Ethereum"
+    ],
+    "definition": "Ethereum Virtual Machine atau EVM adalah perangkat lunak yang menjalankan kontrak pintar dan menghitung kondisi terkini jaringan Ethereum."
+  },
+  "fiat": {
+    "keyword": "fiat",
+    "keyword_forms": [
+      "uang fiat",
+      "mata uang fiat"
+    ],
+    "definition": "Mata uang negara yang nilainya tidak ditopang komoditas seperti emas, melainkan berasal dari kepercayaan publik kepada penerbitnya."
+  },
+  "finality": {
+    "keyword": "finalitas",
+    "definition": "Jaminan bahwa transaksi blockchain yang sudah dikonfirmasi bersifat permanen dan tidak bisa dibatalkan atau diubah."
+  },
+  "finality time": {
+    "keyword": "waktu finalitas",
+    "definition": "Waktu yang dibutuhkan untuk memastikan sebuah transaksi valid dan final, artinya tidak akan dibatalkan atau diubah."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) Rasa cemas atau khawatir karena takut ketinggalan sesuatu."
+  },
+  "fork": {
+    "keyword": "fork",
+    "keyword_plural": "fork",
+    "definition": "Perubahan mendasar pada jaringan blockchain yang menghasilkan dua cabang: satu mengikuti protokol lama, satu lagi mengikuti protokol baru."
+  },
+  "fraud": {
+    "keyword": "kecurangan",
+    "keyword_forms": [
+      "curang",
+      "penipuan"
+    ],
+    "definition": "Dalam ekonomi blockchain: transaksi palsu atau tidak jujur yang dipakai untuk mengubah jumlah kripto yang dimiliki."
+  },
+  "fraud proof": {
+    "keyword": "bukti kecurangan",
+    "keyword_plural": "bukti kecurangan",
+    "keyword_forms": [
+      "fraud proof"
+    ],
+    "definition": "Bukti bahwa sebuah transaksi tidak valid dan telah terjadi kecurangan."
+  },
+  "front-running": {
+    "keyword": "front-running",
+    "keyword_forms": [
+      "mendahului transaksi"
+    ],
+    "definition": "Melihat transaksi orang lain yang masih menunggu, lalu membayar agar transaksi sendiri diproses lebih dulu demi keuntungan atas kerugian orang tersebut."
+  },
+  "fungibility": {
+    "keyword": "fungibilitas",
+    "keyword_forms": [
+      "sifat fungible",
+      "fungibility"
+    ],
+    "definition": "Sifat saling bisa menggantikan: setiap unit punya nilai yang sama dan bisa menggantikan unit lain, seperti selembar uang dengan lembar lainnya."
+  },
+  "gas": {
+    "keyword": "gas",
+    "definition": "Biaya transaksi untuk jaringan blockchain."
+  },
+  "gas fee": {
+    "keyword": "biaya gas",
+    "keyword_plural": "biaya gas",
+    "keyword_forms": [
+      "gas fee"
+    ],
+    "definition": "Biaya transaksi yang dibayar untuk memakai sebuah jaringan blockchain."
+  },
+  "gasless transactions": {
+    "keyword": "transaksi tanpa gas",
+    "keyword_forms": [
+      "gasless",
+      "transaksi bebas gas"
+    ],
+    "definition": "Transaksi yang biaya gasnya dibayar memakai token yang diperdagangkan, atau ditanggung sponsor, bukan memakai koin native jaringan."
+  },
+  "gold standard": {
+    "keyword": "standar emas",
+    "keyword_plural": "standar emas",
+    "definition": "Sistem moneter yang nilai mata uang sebuah negara ditautkan langsung ke emas."
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "definition": "Satuan di blockchain Ethereum, setara dengan 0,000000001 ETH (sepermiliar), umumnya dipakai untuk menyebut harga gas."
+  },
+  "halving": {
+    "keyword": "halving",
+    "keyword_plural": "halving",
+    "definition": "Peristiwa terjadwal, kira-kira setiap empat tahun, yang memangkas imbalan penambangan Bitcoin baru menjadi setengahnya."
+  },
+  "hardware wallet": {
+    "keyword": "dompet perangkat keras",
+    "keyword_plural": "dompet perangkat keras",
+    "keyword_forms": [
+      "hardware wallet"
+    ],
+    "definition": "Jenis dompet penyimpanan mandiri yang menyimpan kunci privat secara offline di sebuah perangkat keras fisik."
+  },
+  "hash": {
+    "keyword": "hash",
+    "keyword_plural": "hash",
+    "definition": "Sidik jari digital untuk sebuah informasi."
+  },
+  "hashing function": {
+    "keyword": "fungsi hash",
+    "keyword_plural": "fungsi hash",
+    "keyword_forms": [
+      "fungsi hashing",
+      "hashing function"
+    ],
+    "definition": "Fungsi yang mengubah masukan apa pun menjadi sidik jari (hash) unik berukuran tetap. Mudah dihitung satu arah, tetapi praktis mustahil dibalik."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) Istilah gaul kripto untuk tidak menjual kripto apa pun kondisi pasarnya."
+  },
+  "hot wallet": {
+    "keyword": "dompet panas",
+    "keyword_plural": "dompet panas",
+    "keyword_forms": [
+      "hot wallet"
+    ],
+    "definition": "Jenis dompet penyimpanan mandiri yang selalu terhubung ke internet."
+  },
+  "inflation": {
+    "keyword": "inflasi",
+    "keyword_forms": [
+      "inflasioner"
+    ],
+    "definition": "Kenaikan harga secara umum yang menurunkan daya beli uang."
+  },
+  "intent": {
+    "keyword": "intent",
+    "keyword_plural": "intent",
+    "keyword_forms": [
+      "niat transaksi"
+    ],
+    "definition": "Permintaan perdagangan bertanda tangan yang menyebutkan hasil yang kamu inginkan, misalnya menukar X menjadi paling sedikit Y, lalu menyerahkan pemilihan rute terbaik kepada pihak yang ahli."
+  },
+  "intermediaries": {
+    "keyword": "perantara",
+    "definition": "Entitas atau layanan yang menghubungkan orang untuk memudahkan pertukaran nilai atau informasi."
+  },
+  "intermediary": {
+    "keyword": "perantara",
+    "keyword_plural": "perantara",
+    "keyword_forms": [
+      "intermediary"
+    ],
+    "definition": "Entitas atau layanan yang menghubungkan orang untuk memudahkan satu pertukaran nilai atau informasi."
+  },
+  "intermediary token": {
+    "keyword": "token perantara",
+    "keyword_plural": "token perantara",
+    "definition": "Token yang berada di tengah rute perdagangan, bukan token awal maupun token akhir."
+  },
+  "interoperability": {
+    "keyword": "interoperabilitas",
+    "keyword_forms": [
+      "interoperabel",
+      "keteroperasian"
+    ],
+    "definition": "Kemampuan berbagai aplikasi, token, dan blockchain untuk bekerja sama dan berbagi informasi."
+  },
+  "invest": {
+    "keyword": "investasi",
+    "keyword_forms": [
+      "berinvestasi",
+      "menginvestasikan"
+    ],
+    "definition": "Menaruh uang pada sebuah aset, seperti koin atau token, dengan harapan nilainya tumbuh."
+  },
+  "know-your-customer": {
+    "keyword": "Know Your Customer",
+    "keyword_forms": [
+      "Know-Your-Customer"
+    ],
+    "definition": "(KYC) Proses verifikasi identitas pengguna yang diwajibkan pemerintah."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know Your Customer) Proses verifikasi identitas pengguna yang diwajibkan pemerintah."
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "definition": "Layer 1 merujuk pada jaringan dasar seperti Bitcoin atau Ethereum."
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "definition": "Blockchain yang memperluas skalabilitas Ethereum sambil mewarisi keamanan Ethereum."
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1",
+    "definition": "Layer 1 merujuk pada jaringan dasar seperti Bitcoin atau Ethereum."
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2",
+    "definition": "Blockchain yang memperluas skalabilitas Ethereum sambil mewarisi keamanan Ethereum."
+  },
+  "ledger": {
+    "keyword": "buku besar",
+    "keyword_plural": "buku besar",
+    "keyword_forms": [
+      "ledger"
+    ],
+    "definition": "Catatan seluruh transaksi yang pernah terjadi."
+  },
+  "lender": {
+    "keyword": "pemberi pinjaman",
+    "keyword_plural": "pemberi pinjaman",
+    "keyword_forms": [
+      "lender"
+    ],
+    "definition": "Pihak yang menyetorkan aset untuk mendapatkan bunga."
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "definition": "Jaringan pembayaran yang dibangun di atas Bitcoin, memakai kanal pembayaran agar pembayaran sehari-hari menjadi instan dan murah."
+  },
+  "liquid": {
+    "keyword": "likuid",
+    "keyword_forms": [
+      "liquid"
+    ],
+    "definition": "Dalam ekonomi blockchain: kemudahan sebuah aset digital untuk diperdagangkan atau dipakai di kontrak pintar."
+  },
+  "liquid staking token": {
+    "keyword": "liquid staking token",
+    "keyword_plural": "liquid staking token",
+    "keyword_forms": [
+      "LST",
+      "token liquid staking"
+    ],
+    "definition": "Token yang mewakili ether yang di-stake. Pemegangnya mendapat sebagian imbalan staking sesuai jumlah yang di-stake."
+  },
+  "liquidation": {
+    "keyword": "likuidasi",
+    "keyword_plural": "likuidasi",
+    "keyword_forms": [
+      "dilikuidasi",
+      "melikuidasi",
+      "likuidasi paksa"
+    ],
+    "definition": "Penjualan otomatis agunan peminjam saat nilainya turun terlalu rendah untuk menutup pinjaman dengan aman."
+  },
+  "liquidity": {
+    "keyword": "likuiditas",
+    "definition": "Jumlah token yang tersedia untuk diperdagangkan."
+  },
+  "liquidity pool": {
+    "keyword": "kolam likuiditas",
+    "keyword_plural": "kolam likuiditas",
+    "keyword_forms": [
+      "liquidity pool",
+      "pool likuiditas"
+    ],
+    "definition": "Wadah token bersama yang memungkinkan swap token tanpa izin."
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP",
+    "keyword_forms": [
+      "penyedia likuiditas",
+      "LPs"
+    ],
+    "definition": "(Liquidity Provider) Pengguna blockchain yang meminjamkan token mereka ke protokol untuk mendapat bagian dari biaya."
+  },
+  "lsts": {
+    "keyword": "LST",
+    "keyword_forms": [
+      "LSTs"
+    ],
+    "definition": "Token yang mewakili ether yang di-stake. Pemegangnya mendapat sebagian imbalan staking sesuai jumlah yang di-stake."
+  },
+  "mainnet": {
+    "keyword": "Mainnet",
+    "keyword_forms": [
+      "jaringan utama"
+    ],
+    "definition": "Jaringan blockchain utama yang aktif, tempat transaksi membawa nilai nyata, berbeda dari jaringan uji. Sering merujuk ke Layer 1 Ethereum."
+  },
+  "market cap": {
+    "keyword": "kapitalisasi pasar",
+    "keyword_plural": "kapitalisasi pasar",
+    "keyword_forms": [
+      "market cap",
+      "kapitalisasi",
+      "nilai kapitalisasi pasar"
+    ],
+    "definition": "Nilai total sebuah token, atau sebuah sektor pasar."
+  },
+  "max supply": {
+    "keyword": "pasokan maksimum",
+    "keyword_plural": "pasokan maksimum",
+    "keyword_forms": [
+      "max supply",
+      "pasokan maksimal"
+    ],
+    "definition": "Jumlah maksimum koin atau token yang akan pernah ada untuk sebuah mata uang kripto."
+  },
+  "memecoin": {
+    "keyword": "memecoin",
+    "keyword_plural": "memecoin",
+    "keyword_forms": [
+      "meme coin",
+      "koin meme"
+    ],
+    "definition": "Token mata uang kripto bertema meme internet, sering tanpa tujuan atau kegunaan."
+  },
+  "meta-aggregator": {
+    "keyword": "meta-agregator",
+    "keyword_plural": "meta-agregator",
+    "keyword_forms": [
+      "meta-aggregator",
+      "meta agregator"
+    ],
+    "definition": "Alat yang menyatukan beberapa agregator lain menjadi satu lapisan ringkasan tambahan."
+  },
+  "mev": {
+    "keyword": "MEV",
+    "keyword_forms": [
+      "Maximal Extractable Value"
+    ],
+    "definition": "(Maximal Extractable Value) Keuntungan yang bisa diambil produsen blok dengan mengurutkan ulang, menyisipkan, atau menyensor transaksi di dalam blok."
+  },
+  "miner": {
+    "keyword": "penambang",
+    "keyword_plural": "penambang",
+    "keyword_forms": [
+      "miner",
+      "para penambang"
+    ],
+    "definition": "Peserta di jaringan Proof of Work, seperti Bitcoin, yang bersaing mengusulkan blok baru untuk mendapat imbalan."
+  },
+  "mining": {
+    "keyword": "penambangan",
+    "keyword_forms": [
+      "tambang",
+      "menambang",
+      "ditambang",
+      "mining"
+    ],
+    "definition": "Proses Proof of Work untuk memverifikasi transaksi dan menambahkan blok baru ke blockchain, dengan imbalan bagi yang berhasil."
+  },
+  "mint": {
+    "keyword": "mint",
+    "keyword_forms": [
+      "minting",
+      "mencetak",
+      "dicetak",
+      "melakukan mint",
+      "pencetakan"
+    ],
+    "definition": "Menerbitkan token mata uang kripto baru di sebuah blockchain, baik token biasa maupun NFT."
+  },
+  "monetary policy": {
+    "keyword": "kebijakan moneter",
+    "keyword_plural": "kebijakan moneter",
+    "definition": "Cara bank sentral mengatur jumlah uang yang beredar di sebuah perekonomian."
+  },
+  "money": {
+    "keyword": "uang",
+    "definition": "Alat tukar, satuan hitung, dan penyimpan nilai, yang dipakai untuk memudahkan transaksi barang dan jasa."
+  },
+  "multi-token standard": {
+    "keyword": "standar multi-token",
+    "keyword_forms": [
+      "multi-token standard",
+      "standar multitoken"
+    ],
+    "definition": "Standar token, seperti ERC-1155, yang mendukung token sepadan sekaligus token unik dalam satu kontrak pintar."
+  },
+  "network governance": {
+    "keyword": "tata kelola jaringan",
+    "definition": "Proses saat komunitas terdesentralisasi mencapai kesepakatan tentang fitur atau peningkatan jaringan."
+  },
+  "neutrality": {
+    "keyword": "netralitas",
+    "keyword_forms": [
+      "netral"
+    ],
+    "definition": "Prinsip memperlakukan semua peserta secara setara, tanpa memihak pengguna atau kelompok mana pun."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT",
+    "keyword_forms": [
+      "NFTs",
+      "token non-fungible"
+    ],
+    "definition": "(Non-fungible Token) Token dengan ID unik yang tidak bisa digandakan, berbeda dari token sepadan seperti ether yang tidak punya penanda unik."
+  },
+  "node": {
+    "keyword": "node",
+    "keyword_plural": "node",
+    "keyword_forms": [
+      "nodes"
+    ],
+    "definition": "Komputer yang menjalankan perangkat lunak blockchain, menyimpan salinan buku besar, dan membantu memverifikasi jaringan."
+  },
+  "node operator": {
+    "keyword": "operator node",
+    "keyword_plural": "operator node",
+    "keyword_forms": [
+      "node operator"
+    ],
+    "definition": "Anggota komunitas Ethereum yang menjalankan node validator untuk memproses transaksi di jaringan."
+  },
+  "non-custodial wallet": {
+    "keyword": "dompet non-kustodian",
+    "keyword_plural": "dompet non-kustodian",
+    "keyword_forms": [
+      "non-custodial wallet",
+      "dompet nonkustodian"
+    ],
+    "definition": "(Alias: dompet penyimpanan mandiri) Dengan dompet non-kustodian, hanya kamu yang memegang kunci privat, dan kunci itulah yang mengendalikan aset kripto kamu."
+  },
+  "offchain": {
+    "keyword": "offchain",
+    "keyword_forms": [
+      "off-chain",
+      "di luar rantai"
+    ],
+    "definition": "Aksi atau data apa pun yang terjadi di luar blockchain, misalnya di server biasa atau di dalam pesan yang ditandatangani."
+  },
+  "onchain": {
+    "keyword": "onchain",
+    "keyword_forms": [
+      "on-chain"
+    ],
+    "definition": "Tercatat di jaringan blockchain. Merujuk pada aksi yang dilakukan di jaringan mata uang kripto seperti Ethereum."
+  },
+  "onchain governance": {
+    "keyword": "tata kelola onchain",
+    "definition": "Sistem otomatis yang mengatur perubahan pada struktur sebuah blockchain."
+  },
+  "onchain identity": {
+    "keyword": "identitas onchain",
+    "keyword_plural": "identitas onchain",
+    "keyword_forms": [
+      "identitas on-chain"
+    ],
+    "definition": "Identitas publik yang terbentuk dari aktivitas dan catatan blockchain kamu, misalnya nama ENS yang terhubung ke alamat dompet."
+  },
+  "onramp": {
+    "keyword": "onramp",
+    "keyword_plural": "onramp",
+    "keyword_forms": [
+      "on-ramp",
+      "onramps"
+    ],
+    "definition": "Layanan yang mengubah uang biasa, seperti dolar, menjadi mata uang kripto. Offramp melakukan sebaliknya."
+  },
+  "open internet": {
+    "keyword": "internet terbuka",
+    "definition": "Ruang digital yang mudah diakses, tempat informasi, layanan, dan komunikasi tersedia untuk semua pengguna tanpa dikendalikan pihak terpusat."
+  },
+  "open source": {
+    "keyword": "open source",
+    "keyword_forms": [
+      "sumber terbuka",
+      "open-source"
+    ],
+    "definition": "Perangkat lunak yang kode sumbernya bisa diperiksa, diubah, dan dikembangkan siapa saja."
+  },
+  "optimistic rollup": {
+    "keyword": "Optimistic Rollup",
+    "keyword_plural": "Optimistic Rollup",
+    "definition": "Rollup Layer 2 yang menganggap semua transaksi dalam satu batch valid, kecuali dibuktikan salah lewat bukti kecurangan selama masa sanggah."
+  },
+  "oracle": {
+    "keyword": "oracle",
+    "keyword_plural": "oracle",
+    "keyword_forms": [
+      "orakel",
+      "oracles"
+    ],
+    "definition": "Layanan yang membawa informasi dari luar, seperti harga pasar, ke blockchain agar bisa dipakai kontrak pintar."
+  },
+  "order book": {
+    "keyword": "order book",
+    "keyword_plural": "order book",
+    "keyword_forms": [
+      "buku pesanan",
+      "order books"
+    ],
+    "definition": "Daftar penawaran beli dan jual pada berbagai harga. Bursa tradisional mencocokkan perdagangan dari daftar ini."
+  },
+  "otc": {
+    "keyword": "OTC",
+    "definition": "(Over the Counter) Perdagangan yang dilakukan langsung dengan pihak swasta."
+  },
+  "over the counter": {
+    "keyword": "over the counter",
+    "definition": "(OTC) Perdagangan yang dilakukan langsung dengan pihak swasta."
+  },
+  "password manager": {
+    "keyword": "pengelola kata sandi",
+    "keyword_plural": "pengelola kata sandi",
+    "keyword_forms": [
+      "password manager",
+      "manajer kata sandi"
+    ],
+    "definition": "Aplikasi yang menyimpan kata sandi kamu dengan aman dan bisa membuatkan kata sandi kuat dan unik untuk tiap akun."
+  },
+  "payment channel": {
+    "keyword": "kanal pembayaran",
+    "keyword_plural": "kanal pembayaran",
+    "keyword_forms": [
+      "payment channel",
+      "saluran pembayaran"
+    ],
+    "definition": "Memungkinkan dua pihak bertransaksi berkali-kali tanpa setiap transaksi harus dicatat di blockchain."
+  },
+  "peer": {
+    "keyword": "rekan",
+    "keyword_plural": "rekan",
+    "keyword_forms": [
+      "peer",
+      "sesama"
+    ],
+    "definition": "Orang atau pihak yang diperlakukan setara."
+  },
+  "peer-to-peer": {
+    "keyword": "peer-to-peer",
+    "keyword_forms": [
+      "P2P",
+      "antar rekan"
+    ],
+    "definition": "Hubungan langsung antara beberapa pihak tanpa perlu perantara."
+  },
+  "peg": {
+    "keyword": "patokan",
+    "keyword_plural": "patokan",
+    "keyword_forms": [
+      "peg",
+      "mematok",
+      "dipatok",
+      "nilai patokan",
+      "tambatan"
+    ],
+    "definition": "Cara menjaga agar nilai dua aset atau lebih tetap setara."
+  },
+  "permissionless": {
+    "keyword": "tanpa izin",
+    "keyword_forms": [
+      "permissionless",
+      "tanpa perlu izin"
+    ],
+    "definition": "Tidak memerlukan izin dari pihak mana pun, siapa saja bisa ikut."
+  },
+  "phishing": {
+    "keyword": "phishing",
+    "keyword_forms": [
+      "pengelabuan"
+    ],
+    "definition": "Serangan rekayasa sosial saat penyerang menyamar sebagai orang atau organisasi tepercaya untuk menipu korban agar membagikan informasi sensitif atau mengirim uang."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAP",
+    "keyword_forms": [
+      "POAPs"
+    ],
+    "definition": "POAP (Proof of Attendance Protocol) adalah lencana yang menyimpan catatan pengalaman di dompet kamu, misalnya bukti berhasil menyelesaikan sebuah pelajaran."
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "(Proof of Stake) Mekanisme konsensus saat validator mengunci stake untuk mengamankan jaringan."
+  },
+  "price impact": {
+    "keyword": "dampak harga",
+    "keyword_plural": "dampak harga",
+    "keyword_forms": [
+      "price impact"
+    ],
+    "definition": "Seberapa besar perdagangan kamu sendiri menggeser harga di DEX, tergantung ukuran perdagangan itu."
+  },
+  "primary name": {
+    "keyword": "nama utama",
+    "keyword_plural": "nama utama",
+    "keyword_forms": [
+      "primary name"
+    ],
+    "definition": "Nama ENS yang terhubung ke alamat dompet kamu, sehingga aplikasi bisa menampilkan nama itu, bukan alamat yang panjang."
+  },
+  "private key": {
+    "keyword": "kunci privat",
+    "keyword_plural": "kunci privat",
+    "keyword_forms": [
+      "private key",
+      "kunci pribadi"
+    ],
+    "definition": "Kunci privat memberi akses ke dompet kamu dan memungkinkan kamu mengirim aset kripto ke dompet lain."
+  },
+  "private transaction routing": {
+    "keyword": "perutean transaksi privat",
+    "keyword_forms": [
+      "perutean transaksi pribadi"
+    ],
+    "definition": "Mengirim transaksi langsung ke pembangun blok, bukan ke antrean publik, sehingga transaksi tersembunyi dari bot front-running."
+  },
+  "proof of stake": {
+    "keyword": "Proof of Stake",
+    "definition": "Mekanisme konsensus yang memilih produsen blok secara acak berdasarkan besarnya stake yang dikunci tiap peserta di protokol."
+  },
+  "proof of work": {
+    "keyword": "Proof of Work",
+    "keyword_forms": [
+      "PoW"
+    ],
+    "definition": "Mekanisme konsensus saat penambang bersaing mengusulkan blok yang valid dengan mengeluarkan daya komputasi, yaitu \"kerja\" itu sendiri."
+  },
+  "proof-of-stake": {
+    "keyword": "Proof-of-Stake",
+    "definition": "Mekanisme konsensus blockchain yang memilih node validator berdasarkan jumlah stake yang dikunci node tersebut."
+  },
+  "pseudonymous": {
+    "keyword": "pseudonim",
+    "keyword_forms": [
+      "nama samaran",
+      "samaran",
+      "pseudonimus"
+    ],
+    "definition": "Bertindak memakai nama pilihan yang menyembunyikan identitas asli."
+  },
+  "public": {
+    "keyword": "publik",
+    "keyword_forms": [
+      "umum"
+    ],
+    "definition": "Blockchain publik memungkinkan siapa saja melihat isi buku besarnya."
+  },
+  "public good": {
+    "keyword": "barang publik",
+    "keyword_plural": "barang publik",
+    "keyword_forms": [
+      "public good"
+    ],
+    "definition": "Barang publik adalah barang atau layanan yang tersedia untuk semua anggota masyarakat."
+  },
+  "public key": {
+    "keyword": "kunci publik",
+    "keyword_plural": "kunci publik",
+    "keyword_forms": [
+      "public key"
+    ],
+    "definition": "Kode yang dibuat dari kunci privat kamu dan aman untuk dibagikan. Alamat dompet kamu diturunkan dari kunci publik."
+  },
+  "quadratic funding": {
+    "keyword": "pendanaan kuadratik",
+    "definition": "Mekanisme pendanaan bersama yang melipatgandakan dana tersedia, dengan setiap donasi berapa pun besarnya berfungsi sebagai suara. Makin luas dukungannya, makin besar dampaknya!"
+  },
+  "recovery phrase": {
+    "keyword": "frasa pemulihan",
+    "keyword_plural": "frasa pemulihan",
+    "keyword_forms": [
+      "recovery phrase",
+      "frasa pemulihan rahasia"
+    ],
+    "definition": "Frasa pemulihan adalah daftar 12 sampai 24 kata yang dipakai untuk membuat kunci publik dan kunci privat dompet kamu."
+  },
+  "red flag": {
+    "keyword": "tanda bahaya",
+    "keyword_plural": "tanda bahaya",
+    "keyword_forms": [
+      "red flag",
+      "tanda peringatan"
+    ],
+    "definition": "Tanda peringatan adanya bahaya."
+  },
+  "restaking": {
+    "keyword": "restaking",
+    "keyword_forms": [
+      "staking ulang",
+      "melakukan staking ulang"
+    ],
+    "definition": "Memakai ulang token ether yang sudah di-stake untuk ikut mengamankan dan memvalidasi protokol lain, dengan imbalan tambahan."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "definition": "(Retroactive Public Goods Funding) Mekanisme pendanaan proyek berdasarkan dampak yang sudah mereka hasilkan."
+  },
+  "rollup": {
+    "keyword": "rollup",
+    "keyword_plural": "rollup",
+    "keyword_forms": [
+      "rollups"
+    ],
+    "definition": "Solusi penskalaan Layer 2 yang memproses banyak transaksi di luar rantai utama, lalu mengirimkannya dalam satu batch, sehingga kapasitas naik dan biaya turun."
+  },
+  "sandwich attack": {
+    "keyword": "serangan sandwich",
+    "keyword_plural": "serangan sandwich",
+    "keyword_forms": [
+      "sandwich attack"
+    ],
+    "definition": "Serangan saat bot menempatkan perdagangan tepat sebelum dan sesudah perdagangan kamu untuk menggeser harga dan mengambil untung dari kamu."
+  },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "definition": "Pencipta Bitcoin yang memakai nama samaran. Sampai hari ini identitas aslinya tidak diketahui siapa pun."
+  },
+  "scalability": {
+    "keyword": "skalabilitas",
+    "definition": "Kemampuan blockchain menangani beban kerja, transaksi, dan penggunaan yang terus bertambah dengan gangguan sekecil mungkin bagi pengguna."
+  },
+  "scam-token": {
+    "keyword": "token penipuan",
+    "keyword_plural": "token penipuan",
+    "keyword_forms": [
+      "scam token",
+      "token scam",
+      "token palsu"
+    ],
+    "definition": "Token mata uang kripto yang dibuat semata-mata untuk mencuri dana investor."
+  },
+  "scarce": {
+    "keyword": "langka",
+    "definition": "Keadaan saat pasokan sangat terbatas."
+  },
+  "scarcity": {
+    "keyword": "kelangkaan",
+    "definition": "Kondisi saat pasokan terbatas."
+  },
+  "security": {
+    "keyword": "keamanan",
+    "definition": "Kemampuan blockchain bertahan dari upaya peretasan, eksploitasi kode, dan eksploitasi ekonomi, serta tetap berjalan normal."
+  },
+  "seed phrase": {
+    "keyword": "seed phrase",
+    "keyword_plural": "seed phrase",
+    "keyword_forms": [
+      "seed phrases"
+    ],
+    "definition": "Kumpulan kata acak yang dibuat dompet saat pertama kali disiapkan. Kata-kata ini adalah kunci utama untuk SEMUA akun yang dikendalikan dompet itu. JANGAN PERNAH MEMBAGIKAN SEED PHRASE KAMU KEPADA SIAPA PUN, APA PUN ALASANNYA."
+  },
+  "self-custodial": {
+    "keyword": "penyimpanan mandiri",
+    "keyword_forms": [
+      "self-custodial",
+      "secara mandiri"
+    ],
+    "definition": "Cara menyimpan aset saat hanya kamu sendiri yang bisa mengaksesnya."
+  },
+  "self-custody": {
+    "keyword": "penyimpanan mandiri",
+    "keyword_forms": [
+      "self-custody",
+      "kustodi mandiri",
+      "menyimpan sendiri"
+    ],
+    "definition": "Cara menyimpan aset saat hanya kamu sendiri yang bisa mengaksesnya."
+  },
+  "self-custody wallet": {
+    "keyword": "dompet penyimpanan mandiri",
+    "keyword_plural": "dompet penyimpanan mandiri",
+    "keyword_forms": [
+      "self-custody wallet",
+      "dompet mandiri"
+    ],
+    "definition": "(Alias: dompet non-kustodian) Dengan dompet penyimpanan mandiri, hanya kamu yang memegang kunci privat, dan kunci itulah yang mengendalikan aset kripto kamu."
+  },
+  "settlement layer": {
+    "keyword": "lapisan penyelesaian",
+    "keyword_plural": "lapisan penyelesaian",
+    "keyword_forms": [
+      "settlement layer",
+      "lapisan settlement"
+    ],
+    "definition": "Lapisan paling dasar sebuah blockchain, tempat detail pertukaran aset dari transaksi yang sudah final dicatat. Ethereum Mainnet adalah lapisan penyelesaian bagi solusi penskalaan Layer 2 Ethereum."
+  },
+  "settlement time": {
+    "keyword": "waktu penyelesaian",
+    "keyword_plural": "waktu penyelesaian",
+    "keyword_forms": [
+      "settlement time"
+    ],
+    "definition": "Waktu yang dibutuhkan sampai sebuah transaksi terkonfirmasi."
+  },
+  "sharding": {
+    "keyword": "sharding",
+    "keyword_forms": [
+      "shard"
+    ],
+    "definition": "Proses memecah satu blockchain menjadi beberapa rantai yang berjalan berdampingan untuk menaikkan skalabilitas."
+  },
+  "sidechain": {
+    "keyword": "sidechain",
+    "keyword_plural": "sidechain",
+    "keyword_forms": [
+      "sidechains",
+      "rantai samping"
+    ],
+    "definition": "Blockchain terpisah yang berjalan berdampingan dengan blockchain utama, terhubung lewat jembatan, dengan validator dan keamanannya sendiri."
+  },
+  "slashed": {
+    "keyword": "terkena slashing",
+    "keyword_forms": [
+      "di-slash",
+      "slashed",
+      "terkena pemotongan"
+    ],
+    "definition": "Hukuman saat validator kehilangan sebagian stake-nya karena terbukti curang di blockchain Proof of Stake."
+  },
+  "slashing": {
+    "keyword": "slashing",
+    "keyword_forms": [
+      "pemotongan stake"
+    ],
+    "definition": "Hukuman di jaringan Proof of Stake yang memusnahkan sebagian stake validator karena kecurangan yang terbukti, misalnya menandatangani dua blok yang bertentangan."
+  },
+  "slippage": {
+    "keyword": "slippage",
+    "definition": "Selisih antara harga yang kamu harapkan dan harga yang benar-benar kamu dapat saat perdagangan dieksekusi."
+  },
+  "slippage tolerance": {
+    "keyword": "toleransi slippage",
+    "keyword_plural": "toleransi slippage",
+    "keyword_forms": [
+      "slippage tolerance"
+    ],
+    "definition": "Perubahan harga maksimum yang kamu terima untuk sebuah perdagangan. Jika harga bergerak lebih dari itu, perdagangan dibatalkan."
+  },
+  "smart account": {
+    "keyword": "akun pintar",
+    "keyword_plural": "akun pintar",
+    "keyword_forms": [
+      "smart account",
+      "smart accounts"
+    ],
+    "definition": "Akun dompet yang dijalankan kontrak pintar; nama lain untuk dompet pintar."
+  },
+  "smart contract": {
+    "keyword": "kontrak pintar",
+    "keyword_plural": "kontrak pintar",
+    "keyword_forms": [
+      "smart contract",
+      "smart contracts"
+    ],
+    "definition": "Kode komputer yang menjalankan isi sebuah perjanjian secara otomatis."
+  },
+  "smart wallet": {
+    "keyword": "dompet pintar",
+    "keyword_plural": "dompet pintar",
+    "keyword_forms": [
+      "smart wallet",
+      "smart wallets"
+    ],
+    "definition": "Dompet yang dijalankan kontrak pintar, bukan satu kunci privat, sehingga bisa punya fitur seperti pemulihan akun dan login dengan passkey."
+  },
+  "social engineering": {
+    "keyword": "rekayasa sosial",
+    "keyword_forms": [
+      "social engineering"
+    ],
+    "definition": "Memanipulasi seseorang agar membagikan informasi sensitif atau rahasia, seperti kata sandi atau seed phrase."
+  },
+  "solo staker": {
+    "keyword": "staker mandiri",
+    "keyword_plural": "staker mandiri",
+    "keyword_forms": [
+      "solo staker",
+      "pelaku staking mandiri"
+    ],
+    "definition": "Operator node yang menjalankan node validator sendiri."
+  },
+  "solo staking": {
+    "keyword": "staking mandiri",
+    "keyword_forms": [
+      "solo staking"
+    ],
+    "definition": "Menjalankan node validator sendiri untuk memproses transaksi di sistem Proof of Stake."
+  },
+  "solver": {
+    "keyword": "solver",
+    "keyword_plural": "solver",
+    "keyword_forms": [
+      "solvers"
+    ],
+    "definition": "Pihak khusus yang bersaing dengan yang lain untuk mengeksekusi intent pengguna dengan harga terbaik."
+  },
+  "spend": {
+    "keyword": "belanja",
+    "keyword_forms": [
+      "membelanjakan",
+      "dibelanjakan",
+      "belanjakan",
+      "pengeluaran"
+    ],
+    "definition": "Memakai aset kripto kamu untuk membayar barang atau jasa."
+  },
+  "spot etf": {
+    "keyword": "ETF spot",
+    "keyword_plural": "ETF spot",
+    "keyword_forms": [
+      "spot ETF"
+    ],
+    "definition": "ETF yang benar-benar memegang asetnya, misalnya bitcoin, sehingga orang bisa berinvestasi lewat pasar saham tradisional."
+  },
+  "stablecoin": {
+    "keyword": "stablecoin",
+    "keyword_plural": "stablecoin",
+    "keyword_forms": [
+      "stablecoins",
+      "koin stabil"
+    ],
+    "definition": "Token yang dirancang untuk menjaga nilainya tetap stabil, biasanya dipatok 1:1 ke mata uang seperti dolar AS."
+  },
+  "stablecoin issuer": {
+    "keyword": "penerbit stablecoin",
+    "keyword_plural": "penerbit stablecoin",
+    "keyword_forms": [
+      "stablecoin issuer"
+    ],
+    "definition": "Perusahaan atau organisasi yang membuat sebuah stablecoin dan mengelola cadangan yang menopang nilainya."
+  },
+  "stake": {
+    "keyword": "stake",
+    "keyword_plural": "stake",
+    "keyword_forms": [
+      "stakes"
+    ],
+    "definition": "Jumlah aset finansial yang dikunci di sebuah protokol mata uang kripto. Jumlah ini menunjukkan komitmen finansial seseorang pada protokol tersebut, semacam taruhan pribadinya."
+  },
+  "staked": {
+    "keyword": "di-stake",
+    "keyword_forms": [
+      "distake",
+      "yang di-stake",
+      "staked",
+      "ter-stake"
+    ],
+    "definition": "Mengunci sebagian kripto kamu untuk sementara di sebuah kontrak pintar selama jangka waktu tertentu untuk mendapat bunga (disebut \"imbalan\")."
+  },
+  "staker": {
+    "keyword": "staker",
+    "keyword_plural": "staker",
+    "keyword_forms": [
+      "pelaku staking"
+    ],
+    "definition": "Anggota komunitas Ethereum yang menyediakan ether untuk sebuah node validator dan mendapat imbalan."
+  },
+  "stakers": {
+    "keyword": "staker",
+    "keyword_forms": [
+      "para staker",
+      "stakers"
+    ],
+    "definition": "Anggota komunitas Ethereum yang menyediakan ether untuk node validator dan mendapat imbalan."
+  },
+  "staking": {
+    "keyword": "staking",
+    "keyword_forms": [
+      "melakukan staking"
+    ],
+    "definition": "Mengunci sebagian kripto kamu untuk sementara di sebuah kontrak pintar selama jangka waktu tertentu untuk mendapat bunga (disebut \"imbalan\")."
+  },
+  "staking pool": {
+    "keyword": "staking pool",
+    "keyword_plural": "staking pool",
+    "keyword_forms": [
+      "staking pools",
+      "kolam staking"
+    ],
+    "definition": "Di Ethereum: kontrak pintar yang dipakai staker untuk menyetor ether ke node validator milik staker lain."
+  },
+  "staking providers": {
+    "keyword": "penyedia staking",
+    "keyword_forms": [
+      "penyedia layanan staking",
+      "staking provider"
+    ],
+    "definition": "Platform digital yang menyediakan layanan staking, biasanya lewat staking pool."
+  },
+  "standard record": {
+    "keyword": "catatan standar",
+    "keyword_plural": "catatan standar",
+    "keyword_forms": [
+      "standard record",
+      "record standar"
+    ],
+    "definition": "Data umum yang terhubung ke sebuah domain ENS, misalnya alamat dompet, avatar, atau email."
+  },
+  "swap": {
+    "keyword": "swap",
+    "keyword_plural": "swap",
+    "keyword_forms": [
+      "tukar",
+      "menukar",
+      "ditukar",
+      "pertukaran",
+      "swaps"
+    ],
+    "definition": "Perdagangan dari satu token ke token lain."
+  },
+  "token": {
+    "keyword": "token",
+    "keyword_plural": "token",
+    "keyword_forms": [
+      "tokens"
+    ],
+    "definition": "Satuan yang bisa mewakili aset atau hak, dibangun di atas blockchain yang sudah ada."
+  },
+  "token allowance": {
+    "keyword": "izin token",
+    "keyword_plural": "izin token",
+    "keyword_forms": [
+      "token allowance"
+    ],
+    "definition": "Kesepakatan antara dompet dan kontrak pintar yang memberi akses terbatas atau tak terbatas ke sebuah token tertentu."
+  },
+  "token approval": {
+    "keyword": "persetujuan token",
+    "keyword_plural": "persetujuan token",
+    "keyword_forms": [
+      "token approval",
+      "approval token"
+    ],
+    "definition": "Izin yang kamu berikan ke kontrak pintar untuk memindahkan token tertentu dari dompet kamu; disebut juga izin token."
+  },
+  "token distribution": {
+    "keyword": "distribusi token",
+    "keyword_plural": "distribusi token",
+    "keyword_forms": [
+      "token distribution"
+    ],
+    "definition": "Cara token dibagikan ke berbagai kelompok pemangku kepentingan."
+  },
+  "token pair": {
+    "keyword": "pasangan token",
+    "keyword_plural": "pasangan token",
+    "keyword_forms": [
+      "token pair",
+      "pair token"
+    ],
+    "definition": "Dua mata uang kripto yang saling berpasangan dan membentuk sebuah kolam likuiditas."
+  },
+  "token swap": {
+    "keyword": "swap token",
+    "keyword_plural": "swap token",
+    "keyword_forms": [
+      "token swap",
+      "tukar token"
+    ],
+    "definition": "Perdagangan dari satu token ke token lain."
+  },
+  "tps": {
+    "keyword": "TPS",
+    "keyword_forms": [
+      "transaksi per detik"
+    ],
+    "definition": "(Transactions Per Second) Ukuran skalabilitas blockchain: jumlah transaksi yang diproses per detik."
+  },
+  "trade": {
+    "keyword": "dagang",
+    "keyword_plural": "dagang",
+    "keyword_forms": [
+      "berdagang",
+      "perdagangan",
+      "memperdagangkan",
+      "diperdagangkan",
+      "trading"
+    ],
+    "definition": "Menukar aset atau uang dengan sesuatu yang bernilai."
+  },
+  "trade route": {
+    "keyword": "rute perdagangan",
+    "keyword_plural": "rute perdagangan",
+    "keyword_forms": [
+      "trade route"
+    ],
+    "definition": "Jalur yang ditempuh dari token awal ke token akhir dalam sebuah perdagangan."
+  },
+  "trade routing": {
+    "keyword": "perutean perdagangan",
+    "keyword_forms": [
+      "trade routing"
+    ],
+    "definition": "Merencanakan jalur yang ditempuh dari token awal ke token akhir dalam sebuah perdagangan."
+  },
+  "transaction": {
+    "keyword": "transaksi",
+    "keyword_plural": "transaksi",
+    "keyword_forms": [
+      "transactions",
+      "bertransaksi"
+    ],
+    "definition": "Catatan pemindahan di blockchain, baik berupa uang maupun hal lain."
+  },
+  "transaction finality": {
+    "keyword": "finalitas transaksi",
+    "definition": "Waktu yang dibutuhkan sampai kamu yakin sebuah transaksi valid dan final, artinya tidak akan dibatalkan atau diubah."
+  },
+  "transaction hash": {
+    "keyword": "hash transaksi",
+    "keyword_plural": "hash transaksi",
+    "keyword_forms": [
+      "transaction hash",
+      "tx hash"
+    ],
+    "definition": "Penanda unik untuk setiap transaksi. Hash ini berasal dari data transaksi, tanda tangan digital pengirim, dan satu angka sekali pakai yang mencegah transaksi ganda."
+  },
+  "transaction throughput": {
+    "keyword": "throughput transaksi",
+    "keyword_forms": [
+      "laju pemrosesan transaksi"
+    ],
+    "definition": "Berapa banyak transaksi yang bisa diproses sebuah blockchain sekaligus, biasanya diukur dalam transaksi per detik (TPS)."
+  },
+  "trustless": {
+    "keyword": "tanpa perlu percaya",
+    "keyword_forms": [
+      "trustless",
+      "tanpa kepercayaan"
+    ],
+    "definition": "Sifat sistem yang berjalan tanpa perlu mempercayai orang atau lembaga, karena berjalan otomatis dan tidak dimiliki siapa pun."
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "keyword_forms": [
+      "total nilai terkunci"
+    ],
+    "definition": "(Total Value Locked) Total nilai aset yang tersimpan di satu tempat tertentu."
+  },
+  "two factor authentication": {
+    "keyword": "autentikasi dua faktor",
+    "keyword_forms": [
+      "otentikasi dua faktor",
+      "autentikasi dua langkah"
+    ],
+    "definition": "Lapisan keamanan tambahan untuk memastikan orang yang mencoba masuk ke sebuah akun online benar-benar pemiliknya."
+  },
+  "validating bridge": {
+    "keyword": "jembatan validasi",
+    "keyword_plural": "jembatan validasi",
+    "keyword_forms": [
+      "validating bridge",
+      "jembatan yang memvalidasi"
+    ],
+    "definition": "Kontrak jembatan yang memverifikasi sendiri setiap penarikan, sehingga tidak perlu mempercayai otoritas luar mana pun."
+  },
+  "validator": {
+    "keyword": "validator",
+    "keyword_plural": "validator",
+    "keyword_forms": [
+      "validators",
+      "pemvalidasi"
+    ],
+    "definition": "Peserta di jaringan Proof of Stake yang mengunci stake untuk memeriksa transaksi dan mengusulkan blok, lalu mendapat imbalan atas kerja jujurnya."
+  },
+  "validator client": {
+    "keyword": "klien validator",
+    "keyword_plural": "klien validator",
+    "keyword_forms": [
+      "validator client"
+    ],
+    "definition": "Perangkat lunak yang dijalankan node validator untuk mengusulkan dan memeriksa blok baru di jaringan Proof of Stake."
+  },
+  "validator node": {
+    "keyword": "node validator",
+    "keyword_plural": "node validator",
+    "keyword_forms": [
+      "validator node"
+    ],
+    "definition": "Perangkat komputer yang dijalankan seorang anggota komunitas Ethereum. Perangkat ini memproses transaksi di jaringan dan mendapat imbalan."
+  },
+  "validator nodes": {
+    "keyword": "node validator",
+    "keyword_forms": [
+      "validator nodes"
+    ],
+    "definition": "Perangkat komputer yang dijalankan para anggota komunitas Ethereum. Perangkat ini memproses transaksi di jaringan dan mendapat imbalan."
+  },
+  "validity proof": {
+    "keyword": "bukti validitas",
+    "keyword_plural": "bukti validitas",
+    "keyword_forms": [
+      "validity proof"
+    ],
+    "definition": "Bukti matematis bahwa satu batch transaksi sudah benar, sehingga blockchain bisa memverifikasinya tanpa mengulang seluruh pekerjaannya."
+  },
+  "value-creation": {
+    "keyword": "penciptaan nilai",
+    "keyword_forms": [
+      "menciptakan nilai",
+      "pencipta nilai"
+    ],
+    "definition": "Praktik bisnis yang berfokus pada menghasilkan produk dan layanan bermutu dan inovatif bagi pengguna dan perekonomian."
+  },
+  "value-extraction": {
+    "keyword": "ekstraksi nilai",
+    "keyword_forms": [
+      "pengerukan nilai",
+      "mengeruk nilai"
+    ],
+    "definition": "Praktik bisnis yang mengeksploitasi pengguna lewat biaya tinggi, pengumpulan data, dan syarat yang tidak adil."
+  },
+  "value-extractive": {
+    "keyword": "ekstraktif",
+    "keyword_forms": [
+      "bersifat ekstraktif",
+      "ekstraktif nilai"
+    ],
+    "definition": "Praktik bisnis yang mengeksploitasi pengguna lewat biaya tinggi, pengumpulan data, dan syarat yang tidak adil."
+  },
+  "vault": {
+    "keyword": "brankas",
+    "keyword_plural": "brankas",
+    "keyword_forms": [
+      "vault",
+      "kubah"
+    ],
+    "definition": "Kontrak pintar yang menampung token yang disetor dan memutarnya, lalu memberi penyetor sebuah token yang mewakili bagian mereka."
+  },
+  "veto": {
+    "keyword": "veto",
+    "keyword_plural": "veto",
+    "keyword_forms": [
+      "memveto",
+      "hak veto"
+    ],
+    "definition": "Suara yang menolak sebuah proposal tata kelola."
+  },
+  "wallet": {
+    "keyword": "dompet",
+    "keyword_plural": "dompet",
+    "keyword_forms": [
+      "wallet",
+      "dompet digital"
+    ],
+    "definition": "Dompet adalah aplikasi atau perangkat yang dipakai untuk mengirim dan menerima aset kripto di blockchain."
+  },
+  "wallet app": {
+    "keyword": "aplikasi dompet",
+    "keyword_plural": "aplikasi dompet",
+    "keyword_forms": [
+      "wallet app",
+      "aplikasi dompet kripto"
+    ],
+    "definition": "Aplikasi di komputer atau ponsel kamu yang dipakai untuk terhubung ke dompet kamu di blockchain."
+  },
+  "wallet provider": {
+    "keyword": "penyedia dompet",
+    "keyword_plural": "penyedia dompet",
+    "keyword_forms": [
+      "wallet provider",
+      "penyedia layanan dompet"
+    ],
+    "definition": "Pembuat perangkat lunak yang kamu pakai untuk mengakses dompet. Penyedia ini tidak memiliki dompet kamu, mereka hanya jembatan agar kamu bisa mengakses akun kamu di blockchain."
+  },
+  "web2": {
+    "keyword": "web2",
+    "definition": "Internet berbasis platform dan akun terpusat, tanpa infrastruktur blockchain."
+  },
+  "web3": {
+    "keyword": "web3",
+    "definition": "Merujuk pada internet berbasis blockchain, tempat pengguna bisa menyimpan sendiri aset dan datanya."
+  },
+  "yield farm": {
+    "keyword": "yield farm",
+    "keyword_plural": "yield farm",
+    "keyword_forms": [
+      "yield farming",
+      "yield farms"
+    ],
+    "definition": "Protokol DeFi tempat pengguna menyetor token untuk mendapat imbalan. Yield farming berarti mengejar imbalan yang paling menguntungkan."
+  },
+  "yourname.eth": {
+    "keyword": "namamu.eth",
+    "keyword_forms": [
+      "yourname.eth",
+      "namakamu.eth"
+    ],
+    "definition": "Contoh nama ENS: nama pengguna web3 yang mudah dibaca dan mengarah ke alamat dompet kamu."
+  },
+  "zero-knowledge": {
+    "keyword": "Zero-Knowledge",
+    "keyword_forms": [
+      "ZK"
+    ],
+    "definition": "Metode matematis yang memungkinkan satu pihak membuktikan sebuah pernyataan benar tanpa membocorkan informasi tambahan apa pun tentangnya."
+  },
+  "zk rollup": {
+    "keyword": "ZK Rollup",
+    "keyword_plural": "ZK Rollup",
+    "keyword_forms": [
+      "ZK-Rollup",
+      "rollup ZK"
+    ],
+    "definition": "Rollup Layer 2 yang memakai bukti zero-knowledge untuk membuktikan secara matematis bahwa transaksi dalam batch-nya valid di blockchain Layer 1."
+  }
+}

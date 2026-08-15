@@ -1,0 +1,1368 @@
+{
+  ".eth": {
+    "keyword": ".eth",
+    "definition": "Đuôi tên miền web3 do Ethereum Name Service (ENS) sử dụng, ví dụ tenban.eth."
+  },
+  "2 factor authentication": {
+    "keyword": "xác thực hai yếu tố",
+    "definition": "Một lớp bảo mật bổ sung, giúp chắc chắn rằng người đang truy cập một tài khoản trực tuyến đúng là chủ tài khoản đó."
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "Một lớp bảo mật bổ sung, giúp chắc chắn rằng người đang truy cập một tài khoản trực tuyến đúng là chủ tài khoản đó."
+  },
+  "51% attack": {
+    "keyword": "tấn công 51%",
+    "keyword_plural": "tấn công 51%",
+    "definition": "Một cuộc tấn công vào đồng thuận của blockchain bằng cách kiểm soát hơn một nửa sức mạnh tạo khối của mạng lưới."
+  },
+  "address": {
+    "keyword": "địa chỉ",
+    "keyword_plural": "địa chỉ",
+    "definition": "Mã định danh công khai duy nhất của một thực thể trên blockchain."
+  },
+  "addresses": {
+    "keyword": "địa chỉ",
+    "definition": "Các mã định danh công khai duy nhất của những thực thể trên blockchain."
+  },
+  "aggregator": {
+    "keyword": "công cụ tổng hợp",
+    "keyword_plural": "công cụ tổng hợp",
+    "keyword_forms": [
+      "aggregator"
+    ],
+    "definition": "Công cụ gom nhiều nguồn lại để đưa ra lựa chọn có lợi nhất."
+  },
+  "airdrop": {
+    "keyword": "airdrop",
+    "keyword_plural": "airdrop",
+    "definition": "Đợt phân phát tài sản crypto miễn phí cho người dùng."
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "definition": "Viết tắt của Capital Allocation Protocol. Một giao thức mã nguồn mở giúp các nhóm phân bổ nguồn vốn chung một cách hiệu quả và minh bạch."
+  },
+  "allowance": {
+    "keyword": "hạn mức",
+    "keyword_plural": "hạn mức",
+    "definition": "Cho phép một thực thể, thường là hợp đồng thông minh, được dùng một lượng token nhất định của bạn trong giao dịch."
+  },
+  "alternative layer 1": {
+    "keyword": "Layer 1 thay thế",
+    "keyword_plural": "Layer 1 thay thế",
+    "definition": "Các blockchain Layer 1 khác ngoài Ethereum và Bitcoin."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM",
+    "definition": "(Automated Market Maker) Hệ thống ghép lệnh giao dịch dựa trên một thuật toán công khai."
+  },
+  "app": {
+    "keyword": "ứng dụng",
+    "keyword_plural": "ứng dụng",
+    "definition": "Một chương trình dùng trên máy tính hoặc điện thoại."
+  },
+  "app store": {
+    "keyword": "cửa hàng ứng dụng",
+    "keyword_plural": "cửa hàng ứng dụng",
+    "definition": "Cửa hàng số để tải ứng dụng cho máy tính hoặc điện thoại."
+  },
+  "asynchronous": {
+    "keyword": "bất đồng bộ",
+    "definition": "Cách trao đổi giữa nhiều người, trong đó các bên không cần có mặt cùng lúc khi nhắn tin."
+  },
+  "attestation": {
+    "keyword": "chứng thực",
+    "keyword_plural": "chứng thực",
+    "keyword_forms": [
+      "sự chứng thực"
+    ],
+    "definition": "Một xác nhận có chữ ký rằng điều gì đó là đúng. Trên Ethereum, các validator công bố chứng thực để bỏ phiếu rằng một khối là hợp lệ."
+  },
+  "autonomy": {
+    "keyword": "quyền tự chủ",
+    "keyword_forms": [
+      "sự tự chủ",
+      "tự chủ"
+    ],
+    "definition": "Khả năng tự quyết định hành động của mình, thay vì đi theo khuôn khổ do người khác đặt ra."
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "definition": "Dịch vụ đặt tên trên mạng Base, cho phép ví có tên dễ đọc kết thúc bằng .base.eth."
+  },
+  "batch auction": {
+    "keyword": "đấu giá theo lô",
+    "keyword_plural": "đấu giá theo lô",
+    "definition": "Cách giao dịch gom nhiều lệnh trong một khoảng thời gian ngắn rồi khớp tất cả cùng lúc ở một mức giá chung công bằng."
+  },
+  "bet": {
+    "keyword": "đặt cược",
+    "keyword_plural": "đặt cược",
+    "definition": "Chấp nhận rủi ro mất tiền để đổi lấy phần thưởng lớn hơn."
+  },
+  "blob": {
+    "keyword": "blob",
+    "keyword_plural": "blob",
+    "definition": "Vùng dữ liệu tạm thời và rẻ trong khối Ethereum, được các Layer 2 dùng để đăng các lô giao dịch của mình."
+  },
+  "block": {
+    "keyword": "khối",
+    "keyword_plural": "khối",
+    "definition": "Một nhóm giao dịch trên blockchain."
+  },
+  "block builder": {
+    "keyword": "nhà xây dựng khối",
+    "keyword_plural": "nhà xây dựng khối",
+    "keyword_forms": [
+      "trình tạo block"
+    ],
+    "definition": "Đơn vị chuyên trách gom giao dịch thành khối mới, để nhà đề xuất khối công bố ra mạng lưới."
+  },
+  "block explorer": {
+    "keyword": "trình khám phá khối",
+    "keyword_plural": "trình khám phá khối",
+    "definition": "Công cụ tra cứu và khám phá dữ liệu blockchain."
+  },
+  "block hash": {
+    "keyword": "mã băm khối",
+    "keyword_plural": "mã băm khối",
+    "definition": "Mã định danh duy nhất của mỗi khối. Mỗi khối mới đều tham chiếu tới mã băm của khối trước, tạo thành một blockchain nối liền nhau."
+  },
+  "block producer": {
+    "keyword": "nhà sản xuất khối",
+    "keyword_plural": "nhà sản xuất khối",
+    "definition": "Bên tham gia mạng lưới được chọn để tạo khối giao dịch mới, ví dụ thợ đào hoặc validator."
+  },
+  "block proposer": {
+    "keyword": "nhà đề xuất khối",
+    "keyword_plural": "nhà đề xuất khối",
+    "keyword_forms": [
+      "người đề xuất khối"
+    ],
+    "definition": "Node validator được thuật toán của mạng lưới chọn để quyết định khối tiếp theo được thêm vào blockchain."
+  },
+  "block reward": {
+    "keyword": "phần thưởng khối",
+    "keyword_plural": "phần thưởng khối",
+    "definition": "Lượng coin gốc trao cho bên đề xuất một khối hợp lệ mới."
+  },
+  "block space": {
+    "keyword": "không gian khối",
+    "definition": "Dung lượng trong mỗi khối dùng để lưu giao dịch và dữ liệu."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchain",
+    "definition": "Hệ thống lưu giữ bản ghi các giao dịch tiền mã hóa trên rất nhiều máy tính khắp thế giới."
+  },
+  "blockchain apps": {
+    "keyword": "ứng dụng blockchain",
+    "definition": "Các ứng dụng blockchain cho phép bạn hoán đổi tiền mã hóa, dùng mạng xã hội web3, quyên góp từ thiện, hay thậm chí học on-chain như tại Bankless Academy."
+  },
+  "blockchain architecture": {
+    "keyword": "kiến trúc blockchain",
+    "keyword_plural": "kiến trúc blockchain",
+    "definition": "Cách dữ liệu được tổ chức và lưu trữ trong công nghệ blockchain."
+  },
+  "blockchain technology": {
+    "keyword": "công nghệ blockchain",
+    "keyword_plural": "công nghệ blockchain",
+    "definition": "Một loại mạng lưới mới, chạy trên rất nhiều máy tính. Nó thêm một lớp sở hữu số cho internet."
+  },
+  "blockchain trilemma": {
+    "keyword": "bộ ba bất khả thi của blockchain",
+    "keyword_plural": "bộ ba bất khả thi của blockchain",
+    "definition": "Bài toán mô tả việc một blockchain cần đủ cả 3 phẩm chất: bảo mật, khả năng mở rộng và sự phi tập trung."
+  },
+  "blockspace": {
+    "keyword": "không gian khối",
+    "definition": "Dung lượng trong mỗi khối dùng để lưu giao dịch và dữ liệu."
+  },
+  "borrower": {
+    "keyword": "người đi vay",
+    "keyword_plural": "người đi vay",
+    "definition": "Người sẵn sàng trả lãi cho bên cho vay để mượn tài sản."
+  },
+  "bridge": {
+    "keyword": "cầu nối",
+    "keyword_plural": "cầu nối",
+    "definition": "Kết nối cho phép hai mạng blockchain khác nhau trao đổi thông tin và tài sản với nhau."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "Ký hiệu thị trường của bitcoin."
+  },
+  "censorship-resistant": {
+    "keyword": "chống kiểm duyệt",
+    "definition": "Không chính phủ hay công ty nào có quyền quyết định điều gì được phép và điều gì không."
+  },
+  "central bank": {
+    "keyword": "ngân hàng trung ương",
+    "keyword_plural": "ngân hàng trung ương",
+    "definition": "Cơ quan quản lý tiền tệ, ngân hàng và đồng tiền của một quốc gia."
+  },
+  "centralization": {
+    "keyword": "sự tập trung",
+    "keyword_forms": [
+      "tập trung hóa"
+    ],
+    "definition": "Việc quyền lực trên toàn hệ thống dồn về một cơ quan hoặc thực thể duy nhất."
+  },
+  "centralized": {
+    "keyword": "tập trung",
+    "definition": "Khi một cơ quan hoặc thực thể duy nhất kiểm soát toàn bộ hệ thống."
+  },
+  "centralized exchange": {
+    "keyword": "sàn giao dịch tập trung",
+    "keyword_plural": "sàn giao dịch tập trung",
+    "definition": "(CEX) Nền tảng tập trung điều phối việc giao dịch tiền mã hóa và thu phí, giống như một sàn chứng khoán."
+  },
+  "centralized exchange staking": {
+    "keyword": "staking trên sàn tập trung",
+    "definition": "Khóa token thông qua một sàn giao dịch tập trung để nhận phần thưởng."
+  },
+  "centralized services": {
+    "keyword": "dịch vụ tập trung",
+    "definition": "Các công ty hoặc tổ chức kiểm soát hoạt động trực tuyến, đặt ra luật lệ và mức phí, quản lý dữ liệu và nội dung theo cách thường ưu tiên lợi ích của họ hơn nhu cầu người dùng."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX",
+    "definition": "(Centralized Exchange) Nền tảng điều phối việc giao dịch tiền mã hóa và thu phí, giống như một sàn chứng khoán."
+  },
+  "chain": {
+    "keyword": "chuỗi",
+    "keyword_plural": "chuỗi",
+    "definition": "Liên kết các khối dữ liệu lại với nhau thành một cơ sở dữ liệu không thể sửa đổi."
+  },
+  "circulating supply": {
+    "keyword": "nguồn cung lưu hành",
+    "keyword_plural": "nguồn cung lưu hành",
+    "definition": "Số coin hoặc token của một loại tiền mã hóa đang được công khai lưu hành để thị trường giao dịch."
+  },
+  "coin": {
+    "keyword": "coin",
+    "keyword_plural": "coin",
+    "definition": "Tài sản gốc của một blockchain, chủ yếu dùng như đồng tiền để thực hiện giao dịch trên mạng lưới."
+  },
+  "cold wallet": {
+    "keyword": "ví lạnh",
+    "keyword_plural": "ví lạnh",
+    "definition": "Loại ví tự lưu ký được giữ trên thiết bị ngoại tuyến."
+  },
+  "collateral": {
+    "keyword": "tài sản thế chấp",
+    "definition": "Tài sản mà người đi vay cam kết với bên cho vay để bảo đảm khoản vay sẽ được hoàn trả."
+  },
+  "commercial bank": {
+    "keyword": "ngân hàng thương mại",
+    "keyword_plural": "ngân hàng thương mại",
+    "definition": "Ngân hàng quản lý tiền cho cá nhân và doanh nghiệp."
+  },
+  "composability": {
+    "keyword": "khả năng kết hợp",
+    "definition": "Khả năng ghép các hợp đồng thông minh và ứng dụng sẵn có như những mảnh lắp ghép để tạo ra sản phẩm mới."
+  },
+  "consensus": {
+    "keyword": "đồng thuận",
+    "keyword_forms": [
+      "sự đồng thuận"
+    ],
+    "definition": "Sự nhất trí, tin cậy và bảo mật trên một mạng máy tính phi tập trung như blockchain."
+  },
+  "consensus mechanism": {
+    "keyword": "cơ chế đồng thuận",
+    "keyword_plural": "cơ chế đồng thuận",
+    "definition": "Cách một mạng blockchain xác định giao dịch nào là hợp lệ và giao dịch nào là gian lận."
+  },
+  "consensus mechanisms": {
+    "keyword": "cơ chế đồng thuận",
+    "definition": "Các cách mà mạng blockchain xác định giao dịch nào là hợp lệ và giao dịch nào là gian lận."
+  },
+  "counterparty risk": {
+    "keyword": "rủi ro đối tác",
+    "keyword_plural": "rủi ro đối tác",
+    "definition": "Rủi ro bên kia không thực hiện đúng phần của mình trong một thỏa thuận."
+  },
+  "credible neutrality": {
+    "keyword": "tính trung lập đáng tin cậy",
+    "definition": "Cơ chế không thiên vị hay phân biệt đối với bất kỳ ai."
+  },
+  "crypto": {
+    "keyword": "crypto",
+    "definition": "(Cryptocurrency) Các đồng tiền sinh ra từ internet, không thuộc một quốc gia nào. Thay vì do ngân hàng trung ương quản lý, chúng thường do chính người dùng quản trị."
+  },
+  "crypto wallet": {
+    "keyword": "ví tiền mã hóa",
+    "keyword_plural": "ví tiền mã hóa",
+    "keyword_forms": [
+      "ví tiền mã hoá"
+    ],
+    "definition": "Ứng dụng giúp bạn lưu trữ tiền mã hóa, rồi gửi, nhận hoặc chi tiêu."
+  },
+  "cryptocurrencies": {
+    "keyword": "tiền mã hóa",
+    "definition": "Các đồng tiền sinh ra từ internet, không thuộc quốc gia nào. Thay vì do ngân hàng trung ương quản lý, chúng thường do chính người dùng quản trị."
+  },
+  "cryptocurrency": {
+    "keyword": "tiền mã hóa",
+    "keyword_plural": "tiền mã hóa",
+    "keyword_forms": [
+      "tiền mã hoá",
+      "tiền điện tử"
+    ],
+    "definition": "Đồng tiền sinh ra từ internet, không thuộc một quốc gia nào. Thay vì do ngân hàng trung ương quản lý, nó thường do chính người dùng quản trị."
+  },
+  "cryptocurrency mining": {
+    "keyword": "khai thác tiền mã hóa",
+    "definition": "Việc xác minh giao dịch blockchain để nhận thưởng bằng tiền mã hóa, dùng trên các mạng Proof-of-Work như Bitcoin."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "ví tiền mã hóa",
+    "keyword_plural": "ví tiền mã hóa",
+    "definition": "Ứng dụng giúp bạn lưu trữ tiền mã hóa, rồi gửi, nhận hoặc chi tiêu."
+  },
+  "cryptography": {
+    "keyword": "mật mã học",
+    "definition": "Các kỹ thuật giúp liên lạc hoặc giao dịch an toàn, ngăn bên ngoài can thiệp."
+  },
+  "custodial wallet": {
+    "keyword": "ví lưu ký",
+    "keyword_plural": "ví lưu ký",
+    "definition": "Với ví lưu ký, một bên khác nắm giữ khóa riêng tư, nên bên đó kiểm soát quyền truy cập vào tài sản crypto của bạn."
+  },
+  "custodian": {
+    "keyword": "bên lưu ký",
+    "keyword_plural": "bên lưu ký",
+    "definition": "Tổ chức tài chính được giao trách nhiệm giữ an toàn tài sản của bạn."
+  },
+  "custom record": {
+    "keyword": "bản ghi tùy chỉnh",
+    "keyword_plural": "bản ghi tùy chỉnh",
+    "definition": "Mục dữ liệu do người dùng tự đặt, gắn với một tên miền ENS, cho phép bạn thêm thông tin ngoài địa chỉ, như website hay liên kết mạng xã hội."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO",
+    "definition": "(Decentralized Autonomous Organization) Mô hình tổ chức dùng công nghệ blockchain để tự động hóa việc bỏ phiếu và quản lý."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApp",
+    "definition": "“Ứng dụng phi tập trung”, kết nối với các blockchain và mạng lưới phi tập trung."
+  },
+  "death spiral": {
+    "keyword": "vòng xoáy sụp đổ",
+    "keyword_plural": "vòng xoáy sụp đổ",
+    "definition": "Vòng lặp tự khuếch đại, khi giá giảm buộc phải có những hành động đẩy giá xuống sâu hơn nữa, như đã xảy ra với một số stablecoin thuật toán."
+  },
+  "decentralization": {
+    "keyword": "sự phi tập trung",
+    "definition": "Việc chuyển quyền kiểm soát cho nhiều cá nhân thay vì một cơ quan duy nhất."
+  },
+  "decentralized": {
+    "keyword": "phi tập trung",
+    "definition": "Không có cơ quan hay thực thể đơn lẻ nào kiểm soát hệ thống."
+  },
+  "decentralized exchange": {
+    "keyword": "sàn giao dịch phi tập trung",
+    "keyword_plural": "sàn giao dịch phi tập trung",
+    "definition": "(DEX) Giao thức cho phép trao đổi mà không cần bên trung gian đáng tin cậy."
+  },
+  "decentralized finance": {
+    "keyword": "tài chính phi tập trung",
+    "definition": "(DeFi) Bộ công cụ tài chính tự lưu ký, chạy trên blockchain."
+  },
+  "decentralized money": {
+    "keyword": "tiền phi tập trung",
+    "definition": "Đồng tiền có các đặc tính do cộng đồng thống nhất, thay vì do một tổ chức đặt ra."
+  },
+  "decentralized services": {
+    "keyword": "dịch vụ phi tập trung",
+    "definition": "(dApps) Các dịch vụ trực tuyến dùng tự động hóa để giảm phí và cải thiện trải nghiệm người dùng."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "(Decentralized Finance) Bộ công cụ tài chính tự lưu ký, chạy trên blockchain."
+  },
+  "delegate": {
+    "keyword": "ủy quyền",
+    "keyword_plural": "ủy quyền",
+    "keyword_forms": [
+      "người đại diện"
+    ],
+    "definition": "Giao một trách nhiệm cụ thể cho người khác, ví dụ ủy quyền quyền bỏ phiếu bằng token."
+  },
+  "delegation": {
+    "keyword": "sự ủy quyền",
+    "keyword_plural": "sự ủy quyền",
+    "definition": "Việc giao một trách nhiệm cụ thể cho người khác, ví dụ ủy quyền quyền bỏ phiếu bằng token."
+  },
+  "democracy": {
+    "keyword": "dân chủ",
+    "keyword_plural": "dân chủ",
+    "keyword_forms": [
+      "nền dân chủ"
+    ],
+    "definition": "Hệ thống chính quyền trong đó người dân nắm quyền lực bằng cách giữ vai trò then chốt trong việc ra quyết định."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX",
+    "definition": "(Decentralized Exchange) Giao thức cho phép trao đổi mà không cần bên trung gian đáng tin cậy."
+  },
+  "dex aggregator": {
+    "keyword": "DEX aggregator",
+    "keyword_plural": "DEX aggregator",
+    "definition": "Giao thức gom thanh khoản từ nhiều DEX vào một giao diện duy nhất."
+  },
+  "digital assets": {
+    "keyword": "tài sản số",
+    "definition": "Bất cứ thứ gì có giá trị được lưu trữ dưới dạng số."
+  },
+  "digital signature": {
+    "keyword": "chữ ký số",
+    "keyword_plural": "chữ ký số",
+    "definition": "Bằng chứng do khóa riêng tư của bạn tạo ra, cho thấy bạn đã chấp thuận một thông điệp hoặc giao dịch. Nó hoạt động như chữ ký tay nhưng không thể giả mạo."
+  },
+  "double-spend": {
+    "keyword": "chi tiêu hai lần",
+    "keyword_plural": "chi tiêu hai lần",
+    "keyword_forms": [
+      "double-spend"
+    ],
+    "definition": "Việc tiêu cùng một khoản tiền số hai lần. Đồng thuận blockchain sinh ra để ngăn điều này mà không cần một cơ quan trung ương."
+  },
+  "earn": {
+    "keyword": "kiếm tiền",
+    "definition": "Đóng góp giá trị để đổi lấy phần thưởng; động từ về tiền trên khối kỹ năng."
+  },
+  "encryption": {
+    "keyword": "mã hóa",
+    "keyword_forms": [
+      "mã hoá"
+    ],
+    "definition": "Quá trình chuyển thông tin thành mã riêng tư và an toàn, dùng để ngăn truy cập trái phép."
+  },
+  "epoch": {
+    "keyword": "epoch",
+    "keyword_plural": "epoch",
+    "definition": "Khoảng thời gian để một số lượng khối nhất định được thêm vào một blockchain."
+  },
+  "equality of opportunity": {
+    "keyword": "bình đẳng về cơ hội",
+    "definition": "Nguyên tắc công bằng, theo đó ai cũng có cơ hội thành công như nhau bất kể xuất thân hay hoàn cảnh."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20",
+    "definition": "Tiêu chuẩn cho token có thể thay thế trên Ethereum. Loại token này chia nhỏ được và không độc nhất."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721",
+    "definition": "Tiêu chuẩn cho token không thể thay thế trên Ethereum. Loại token này có mã định danh số độc nhất, không thể sao chép hay chia nhỏ."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155",
+    "definition": "Tiêu chuẩn cho phép phát hành cả token có thể thay thế lẫn không thể thay thế trên Ethereum, trong cùng một hợp đồng tối ưu."
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF",
+    "definition": "(Exchange-Traded Fund) Quỹ đầu tư được giao dịch trên thị trường chứng khoán, nắm giữ các tài sản như cổ phiếu, vàng hoặc bitcoin."
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "(Ether) Tiền mã hóa gốc của Ethereum. Dùng để thực hiện giao dịch trên mạng lưới, vận hành node validator và nhiều việc khác."
+  },
+  "ether": {
+    "keyword": "Ether",
+    "definition": "(ETH) Tiền mã hóa gốc của Ethereum. Dùng để thực hiện giao dịch trên mạng lưới, vận hành node validator và nhiều việc khác."
+  },
+  "ethereum blockchain": {
+    "keyword": "blockchain Ethereum",
+    "definition": "Sổ cái công khai ghi lại các giao dịch và quyền sở hữu trên mạng Ethereum."
+  },
+  "ethereum mainnet": {
+    "keyword": "mạng chính Ethereum",
+    "definition": "Mạng Layer 1 chính của Ethereum, nơi các giao dịch mang giá trị thật. Đây là lớp quyết toán cho các Layer 2 của Ethereum."
+  },
+  "ethereum virtual machine": {
+    "keyword": "Máy ảo Ethereum",
+    "definition": "Máy ảo Ethereum, hay EVM, là phần mềm thực thi các hợp đồng thông minh và tính toán trạng thái của mạng Ethereum."
+  },
+  "fiat": {
+    "keyword": "tiền pháp định",
+    "definition": "Đồng tiền quốc gia không được bảo chứng bằng hàng hóa như vàng, mà có giá trị nhờ niềm tin của công chúng vào bên phát hành."
+  },
+  "finality": {
+    "keyword": "tính chung cuộc",
+    "definition": "Sự bảo đảm rằng một giao dịch blockchain đã được xác nhận là vĩnh viễn, không thể đảo ngược hay thay đổi."
+  },
+  "finality time": {
+    "keyword": "thời gian chung cuộc",
+    "definition": "Thời gian cần để chắc chắn rằng một giao dịch là hợp lệ và chung cuộc, tức là sẽ không bị đảo ngược hay thay đổi."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) Cảm giác lo lắng vì sợ bị bỏ lỡ điều gì đó."
+  },
+  "fork": {
+    "keyword": "phân nhánh",
+    "keyword_plural": "phân nhánh",
+    "keyword_forms": [
+      "fork"
+    ],
+    "definition": "Thay đổi lớn trong một mạng blockchain, tạo ra hai nhánh: một nhánh theo giao thức cũ và một nhánh theo giao thức mới."
+  },
+  "fraud": {
+    "keyword": "gian lận",
+    "definition": "Trong kinh tế blockchain: các giao dịch giả mạo hoặc không công bằng, dùng để thay đổi lượng tiền mã hóa đang nắm giữ."
+  },
+  "fraud proof": {
+    "keyword": "bằng chứng gian lận",
+    "keyword_plural": "bằng chứng gian lận",
+    "definition": "Bằng chứng cho thấy một giao dịch không hợp lệ và đã có gian lận xảy ra."
+  },
+  "front-running": {
+    "keyword": "chạy trước lệnh",
+    "keyword_forms": [
+      "front-running",
+      "chạy trước"
+    ],
+    "definition": "Nhìn thấy giao dịch đang chờ của người khác rồi trả thêm phí để giao dịch của mình được xử lý trước, kiếm lời trên phần thiệt của họ."
+  },
+  "fungibility": {
+    "keyword": "khả năng thay thế",
+    "keyword_forms": [
+      "tính thay thế"
+    ],
+    "definition": "Đặc tính có thể hoán đổi cho nhau: mỗi đơn vị có cùng giá trị và thay được cho đơn vị khác, như tờ tiền này đổi lấy tờ tiền kia."
+  },
+  "gas": {
+    "keyword": "gas",
+    "definition": "Phí giao dịch của các mạng blockchain."
+  },
+  "gas fee": {
+    "keyword": "phí gas",
+    "keyword_plural": "phí gas",
+    "definition": "Khoản phí giao dịch phải trả để dùng một mạng blockchain."
+  },
+  "gasless transactions": {
+    "keyword": "giao dịch không mất gas",
+    "definition": "Giao dịch mà phí gas được trả bằng chính token đang giao dịch, hoặc do một bên tài trợ, thay vì bằng coin gốc của mạng lưới."
+  },
+  "gold standard": {
+    "keyword": "bản vị vàng",
+    "keyword_plural": "bản vị vàng",
+    "definition": "Hệ thống tiền tệ trong đó giá trị đồng tiền của một quốc gia gắn trực tiếp với vàng."
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "definition": "Đơn vị trên blockchain Ethereum, bằng 0,000000001 ETH (một phần tỷ), thường dùng để nói về giá gas."
+  },
+  "halving": {
+    "keyword": "halving",
+    "keyword_plural": "halving",
+    "definition": "Sự kiện định kỳ khoảng bốn năm một lần, cắt một nửa phần thưởng cho việc khai thác Bitcoin mới."
+  },
+  "hardware wallet": {
+    "keyword": "ví phần cứng",
+    "keyword_plural": "ví phần cứng",
+    "definition": "Loại ví tự lưu ký giữ khóa riêng tư ngoại tuyến trong một thiết bị phần cứng."
+  },
+  "hash": {
+    "keyword": "mã băm",
+    "keyword_plural": "mã băm",
+    "keyword_forms": [
+      "hash"
+    ],
+    "definition": "Dấu vân tay số của một thông tin."
+  },
+  "hashing function": {
+    "keyword": "hàm băm",
+    "keyword_plural": "hàm băm",
+    "definition": "Hàm biến mọi dữ liệu đầu vào thành một dấu vân tay duy nhất, có độ dài cố định (mã băm). Tính theo một chiều thì dễ, nhưng đảo ngược lại thì gần như không thể."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) Tiếng lóng crypto, chỉ việc không bán crypto dù thị trường thế nào."
+  },
+  "hot wallet": {
+    "keyword": "ví nóng",
+    "keyword_plural": "ví nóng",
+    "definition": "Loại ví tự lưu ký luôn kết nối với internet."
+  },
+  "inflation": {
+    "keyword": "lạm phát",
+    "definition": "Mức giá chung tăng lên và sức mua của đồng tiền giảm xuống."
+  },
+  "intent": {
+    "keyword": "ý định",
+    "keyword_plural": "ý định",
+    "keyword_forms": [
+      "intent"
+    ],
+    "definition": "Yêu cầu giao dịch có chữ ký, mô tả kết quả bạn muốn, kiểu “hoán đổi X lấy ít nhất Y”, còn việc tìm lộ trình tốt nhất để cho các bên chuyên trách lo."
+  },
+  "intermediaries": {
+    "keyword": "bên trung gian",
+    "definition": "Các tổ chức hoặc dịch vụ kết nối mọi người, để hỗ trợ việc trao đổi giá trị hoặc thông tin."
+  },
+  "intermediary": {
+    "keyword": "bên trung gian",
+    "keyword_plural": "bên trung gian",
+    "definition": "Tổ chức hoặc dịch vụ kết nối mọi người, để hỗ trợ một cuộc trao đổi giá trị hoặc thông tin."
+  },
+  "intermediary token": {
+    "keyword": "token trung gian",
+    "keyword_plural": "token trung gian",
+    "definition": "Token nằm ở giữa một lộ trình giao dịch, không phải token đầu hay token cuối."
+  },
+  "interoperability": {
+    "keyword": "khả năng tương tác",
+    "definition": "Khả năng các ứng dụng, token và blockchain khác nhau phối hợp và chia sẻ thông tin với nhau."
+  },
+  "invest": {
+    "keyword": "đầu tư",
+    "definition": "Bỏ tiền vào một tài sản, như coin hay token, với kỳ vọng giá trị của nó sẽ tăng."
+  },
+  "know-your-customer": {
+    "keyword": "định danh khách hàng",
+    "definition": "(KYC) Quy trình xác minh danh tính người dùng theo quy định của nhà nước."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know-Your-Customer) Quy trình xác minh danh tính người dùng theo quy định của nhà nước."
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "definition": "Layer 1 là mạng nền tảng như Bitcoin hoặc Ethereum."
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "definition": "Blockchain mở rộng khả năng xử lý của Ethereum trong khi vẫn kế thừa bảo mật của Ethereum."
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1",
+    "definition": "Layer 1 là mạng nền tảng như Bitcoin hoặc Ethereum."
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2",
+    "definition": "Blockchain mở rộng khả năng xử lý của Ethereum trong khi vẫn kế thừa bảo mật của Ethereum."
+  },
+  "ledger": {
+    "keyword": "sổ cái",
+    "keyword_plural": "sổ cái",
+    "definition": "Bản ghi tất cả các giao dịch đã từng diễn ra."
+  },
+  "lender": {
+    "keyword": "bên cho vay",
+    "keyword_plural": "bên cho vay",
+    "definition": "Bên gửi tài sản vào để nhận lãi."
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "definition": "Mạng thanh toán xây trên Bitcoin, dùng các kênh thanh toán để việc chi trả hằng ngày trở nên tức thì và rẻ."
+  },
+  "liquid": {
+    "keyword": "có tính thanh khoản",
+    "definition": "Trong kinh tế blockchain: khả năng dễ dàng dùng một tài sản số để giao dịch, hoặc dùng trong hợp đồng thông minh."
+  },
+  "liquid staking token": {
+    "keyword": "liquid staking token",
+    "keyword_plural": "liquid staking token",
+    "definition": "Token đại diện cho Ether đã stake. Người nắm giữ nhận một phần phần thưởng staking tương ứng với lượng đã stake."
+  },
+  "liquidation": {
+    "keyword": "thanh lý",
+    "definition": "Việc tự động bán tài sản thế chấp của người đi vay khi giá trị của nó giảm quá thấp, không còn đủ an toàn để bảo đảm cho khoản vay.",
+    "keyword_plural": "thanh lý"
+  },
+  "liquidity": {
+    "keyword": "thanh khoản",
+    "keyword_forms": [
+      "tính thanh khoản"
+    ],
+    "definition": "Lượng token có sẵn để giao dịch."
+  },
+  "liquidity pool": {
+    "keyword": "pool thanh khoản",
+    "definition": "Một kho token chung, giúp mọi người hoán đổi token mà không cần cấp phép.",
+    "keyword_plural": "pool thanh khoản"
+  },
+  "lp": {
+    "keyword": "LP",
+    "definition": "(Liquidity Provider) Người dùng blockchain cho các giao thức mượn token của mình, đổi lại là một phần phí thu được.",
+    "keyword_plural": "LP"
+  },
+  "lsts": {
+    "keyword": "LST",
+    "definition": "Các token đại diện cho Ether đã stake. Người nắm giữ được chia phần thưởng staking theo tỷ lệ số Ether đã stake."
+  },
+  "mainnet": {
+    "keyword": "mạng chính",
+    "keyword_forms": [
+      "mainnet"
+    ],
+    "definition": "Mạng blockchain chính đang hoạt động, nơi giao dịch mang giá trị thật, khác với các mạng thử nghiệm. Thường dùng để chỉ Layer 1 của Ethereum."
+  },
+  "market cap": {
+    "keyword": "vốn hóa thị trường",
+    "keyword_forms": [
+      "vốn hoá thị trường",
+      "market cap"
+    ],
+    "definition": "Tổng giá trị của một token, hoặc của cả một mảng thị trường.",
+    "keyword_plural": "vốn hóa thị trường"
+  },
+  "max supply": {
+    "keyword": "nguồn cung tối đa",
+    "definition": "Số coin hoặc token nhiều nhất sẽ từng tồn tại của một loại tiền mã hóa.",
+    "keyword_plural": "nguồn cung tối đa"
+  },
+  "memecoin": {
+    "keyword": "memecoin",
+    "definition": "Token tiền mã hóa lấy chủ đề từ một meme trên internet, thường không có mục đích hay công dụng nào.",
+    "keyword_plural": "memecoin"
+  },
+  "meta-aggregator": {
+    "keyword": "meta-aggregator",
+    "definition": "Công cụ gom nhiều aggregator khác lại thành một lớp tổng hợp nằm bên trên.",
+    "keyword_plural": "meta-aggregator"
+  },
+  "mev": {
+    "keyword": "MEV",
+    "definition": "(Maximal Extractable Value) Khoản lợi nhuận mà nhà sản xuất khối có thể thu được nhờ sắp xếp lại, chèn thêm hoặc kiểm duyệt các giao dịch trong khối."
+  },
+  "miner": {
+    "keyword": "thợ đào",
+    "keyword_forms": [
+      "miner"
+    ],
+    "definition": "Người tham gia mạng Proof of Work như Bitcoin, cạnh tranh để đề xuất khối mới và nhận phần thưởng.",
+    "keyword_plural": "thợ đào"
+  },
+  "mining": {
+    "keyword": "khai thác",
+    "keyword_forms": [
+      "mining"
+    ],
+    "definition": "Quy trình Proof of Work để xác minh giao dịch và thêm khối mới vào blockchain, đổi lại là phần thưởng."
+  },
+  "mint": {
+    "keyword": "mint",
+    "definition": "Việc phát hành token tiền mã hóa mới trên một blockchain, có thể là token thay thế được hoặc không thay thế được."
+  },
+  "monetary policy": {
+    "keyword": "chính sách tiền tệ",
+    "definition": "Cách ngân hàng trung ương quản lý lượng tiền đang lưu thông trong nền kinh tế.",
+    "keyword_plural": "chính sách tiền tệ"
+  },
+  "money": {
+    "keyword": "tiền",
+    "definition": "Phương tiện trao đổi, đơn vị tính toán và nơi lưu trữ giá trị, dùng để thực hiện các giao dịch hàng hóa và dịch vụ."
+  },
+  "multi-token standard": {
+    "keyword": "tiêu chuẩn đa token",
+    "definition": "Một tiêu chuẩn token, như ERC-1155, hỗ trợ cả token thay thế được và token không thay thế được trong cùng một hợp đồng thông minh."
+  },
+  "network governance": {
+    "keyword": "quản trị mạng lưới",
+    "definition": "Quy trình để một cộng đồng phi tập trung thống nhất với nhau về các tính năng và bản nâng cấp của mạng lưới."
+  },
+  "neutrality": {
+    "keyword": "tính trung lập",
+    "definition": "Nguyên tắc đối xử bình đẳng với mọi người tham gia, không thiên vị bất kỳ người dùng hay nhóm nào."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "definition": "(Non-fungible Token) Token có ID duy nhất, không thể sao chép, khác với token thay thế được như Ether vốn không có mã định danh riêng.",
+    "keyword_plural": "NFT"
+  },
+  "node": {
+    "keyword": "node",
+    "definition": "Máy tính chạy phần mềm blockchain, lưu một bản sao của sổ cái và giúp xác minh mạng lưới.",
+    "keyword_plural": "node"
+  },
+  "node operator": {
+    "keyword": "người vận hành node",
+    "definition": "Thành viên cộng đồng Ethereum vận hành một node validator để xử lý giao dịch trên mạng lưới.",
+    "keyword_plural": "người vận hành node"
+  },
+  "non-custodial wallet": {
+    "keyword": "ví không lưu ký",
+    "definition": "(Còn gọi là: ví tự lưu ký) Với ví không lưu ký, chỉ mình bạn nắm khóa riêng tư, và khóa đó kiểm soát tài sản crypto của bạn.",
+    "keyword_plural": "ví không lưu ký"
+  },
+  "offchain": {
+    "keyword": "off-chain",
+    "definition": "Mọi hành động hoặc dữ liệu diễn ra bên ngoài blockchain, ví dụ trên máy chủ thông thường hoặc trong các tin nhắn đã ký."
+  },
+  "onchain": {
+    "keyword": "on-chain",
+    "definition": "Được ghi lại trên mạng blockchain. Chỉ những hành động thực hiện trên các mạng tiền mã hóa như Ethereum."
+  },
+  "onchain governance": {
+    "keyword": "quản trị on-chain",
+    "definition": "Hệ thống tự động điều phối mọi thay đổi trong cấu trúc của một blockchain."
+  },
+  "onchain identity": {
+    "keyword": "danh tính on-chain",
+    "definition": "Danh tính công khai được dựng lên từ hoạt động và hồ sơ blockchain của bạn, ví dụ một tên ENS gắn với địa chỉ ví.",
+    "keyword_plural": "danh tính on-chain"
+  },
+  "onramp": {
+    "keyword": "on-ramp",
+    "definition": "Dịch vụ đổi tiền thông thường, như đô la, sang tiền mã hóa. Off-ramp làm điều ngược lại.",
+    "keyword_plural": "on-ramp"
+  },
+  "open internet": {
+    "keyword": "internet mở",
+    "definition": "Không gian số dễ tiếp cận, nơi thông tin, dịch vụ và giao tiếp mở cho mọi người dùng, không bị các tổ chức tập trung kiểm soát."
+  },
+  "open source": {
+    "keyword": "mã nguồn mở",
+    "definition": "Phần mềm có mã nguồn mà ai cũng xem, chỉnh sửa và cải tiến được."
+  },
+  "optimistic rollup": {
+    "keyword": "Optimistic Rollup",
+    "definition": "Một rollup Layer 2 mặc định coi mọi giao dịch trong lô là hợp lệ, trừ khi có bằng chứng gian lận chứng minh điều ngược lại trong thời gian khiếu nại.",
+    "keyword_plural": "Optimistic Rollup"
+  },
+  "oracle": {
+    "keyword": "oracle",
+    "keyword_forms": [
+      "nguồn cấp dữ liệu"
+    ],
+    "definition": "Dịch vụ đưa thông tin bên ngoài, như giá thị trường, lên blockchain để hợp đồng thông minh sử dụng.",
+    "keyword_plural": "oracle"
+  },
+  "order book": {
+    "keyword": "sổ lệnh",
+    "definition": "Danh sách các lệnh mua và bán ở nhiều mức giá. Sàn giao dịch truyền thống khớp lệnh dựa trên danh sách này.",
+    "keyword_plural": "sổ lệnh"
+  },
+  "otc": {
+    "keyword": "OTC",
+    "definition": "(Over the Counter) Các giao dịch thực hiện trực tiếp với đối tác tư nhân."
+  },
+  "over the counter": {
+    "keyword": "giao dịch OTC",
+    "definition": "(OTC) Các giao dịch thực hiện trực tiếp với đối tác tư nhân."
+  },
+  "password manager": {
+    "keyword": "trình quản lý mật khẩu",
+    "definition": "Ứng dụng lưu mật khẩu một cách an toàn và tạo được mật khẩu mạnh, riêng biệt cho từng tài khoản.",
+    "keyword_plural": "trình quản lý mật khẩu"
+  },
+  "payment channel": {
+    "keyword": "kênh thanh toán",
+    "definition": "Cho phép hai bên giao dịch với nhau nhiều lần mà không cần ghi từng giao dịch lên blockchain.",
+    "keyword_plural": "kênh thanh toán"
+  },
+  "peer": {
+    "keyword": "bên ngang hàng",
+    "definition": "Một người hoặc tổ chức được đối xử bình đẳng.",
+    "keyword_plural": "bên ngang hàng"
+  },
+  "peer-to-peer": {
+    "keyword": "ngang hàng",
+    "definition": "Kết nối trực tiếp giữa nhiều bên mà không cần bên trung gian."
+  },
+  "peg": {
+    "keyword": "neo giá",
+    "keyword_forms": [
+      "peg"
+    ],
+    "definition": "Cách giữ cho giá trị của hai hay nhiều tài sản luôn tương đương nhau.",
+    "keyword_plural": "neo giá"
+  },
+  "permissionless": {
+    "keyword": "không cần cấp phép",
+    "definition": "Không cần sự cho phép của bất kỳ tổ chức nào."
+  },
+  "phishing": {
+    "keyword": "phishing",
+    "definition": "Một dạng tấn công social engineering, trong đó kẻ tấn công giả làm người hoặc tổ chức đáng tin để lừa nạn nhân chia sẻ thông tin nhạy cảm hoặc gửi tiền cho chúng."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "definition": "POAP (Proof of Attendance Protocol) là một huy hiệu lưu lại dấu vết đáng tin cậy về những trải nghiệm trong ví của bạn, ví dụ như hoàn thành một bài học.",
+    "keyword_plural": "POAP"
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "(Proof of Stake) Cơ chế đồng thuận trong đó validator khóa phần stake của mình lại để bảo vệ mạng lưới."
+  },
+  "price impact": {
+    "keyword": "tác động giá",
+    "definition": "Mức độ mà chính lệnh của bạn làm dịch chuyển giá trên một DEX, tùy theo quy mô lệnh.",
+    "keyword_plural": "tác động giá"
+  },
+  "primary name": {
+    "keyword": "tên chính",
+    "definition": "Tên ENS gắn với địa chỉ ví của bạn, giúp các ứng dụng hiển thị tên thay vì một địa chỉ dài.",
+    "keyword_plural": "tên chính"
+  },
+  "private key": {
+    "keyword": "khóa riêng tư",
+    "keyword_forms": [
+      "khoá riêng tư"
+    ],
+    "definition": "Khóa riêng tư cho phép truy cập vào ví, để bạn gửi tài sản crypto sang các ví khác.",
+    "keyword_plural": "khóa riêng tư"
+  },
+  "private transaction routing": {
+    "keyword": "định tuyến giao dịch riêng tư",
+    "definition": "Việc gửi giao dịch thẳng tới bên xây dựng khối thay vì vào hàng đợi công khai, nhằm giấu giao dịch khỏi các bot front-running."
+  },
+  "proof of stake": {
+    "keyword": "Proof of Stake",
+    "definition": "Cơ chế đồng thuận chọn ngẫu nhiên nhà sản xuất khối dựa trên lượng stake mà mỗi người tham gia đã khóa vào giao thức."
+  },
+  "proof of work": {
+    "keyword": "Proof of Work",
+    "definition": "Cơ chế đồng thuận trong đó thợ đào bỏ ra sức mạnh tính toán (phần “công việc”) để cạnh tranh đề xuất khối hợp lệ."
+  },
+  "proof-of-stake": {
+    "keyword": "Proof-of-Stake",
+    "definition": "Cơ chế đồng thuận blockchain chọn node validator dựa trên lượng stake mà node đó đã khóa."
+  },
+  "pseudonymous": {
+    "keyword": "dùng bí danh",
+    "keyword_forms": [
+      "bí danh"
+    ],
+    "definition": "Hoạt động dưới một cái tên tự chọn để che giấu danh tính thật."
+  },
+  "public": {
+    "keyword": "công khai",
+    "definition": "Blockchain công khai cho phép bất kỳ ai cũng xem được sổ cái."
+  },
+  "public good": {
+    "keyword": "hàng hóa công cộng",
+    "keyword_forms": [
+      "hàng hoá công cộng"
+    ],
+    "definition": "Hàng hóa công cộng là hàng hóa hoặc dịch vụ mà mọi thành viên trong xã hội đều dùng được.",
+    "keyword_plural": "hàng hóa công cộng"
+  },
+  "public key": {
+    "keyword": "khóa công khai",
+    "keyword_forms": [
+      "khoá công khai"
+    ],
+    "definition": "Một đoạn mã tạo ra từ khóa riêng tư và chia sẻ được một cách an toàn. Địa chỉ ví của bạn bắt nguồn từ khóa công khai.",
+    "keyword_plural": "khóa công khai"
+  },
+  "quadratic funding": {
+    "keyword": "tài trợ bậc hai",
+    "definition": "Cơ chế gây quỹ cộng đồng giúp khuếch đại nguồn lực sẵn có, trong đó mỗi khoản đóng góp dù lớn hay nhỏ đều đóng vai trò như một lá phiếu. Càng nhiều người ủng hộ, tác động càng lớn!"
+  },
+  "recovery phrase": {
+    "keyword": "cụm từ khôi phục",
+    "definition": "Cụm từ khôi phục là danh sách 12 đến 24 từ, dùng để tạo ra khóa công khai và khóa riêng tư của ví.",
+    "keyword_plural": "cụm từ khôi phục"
+  },
+  "red flag": {
+    "keyword": "dấu hiệu cảnh báo",
+    "definition": "Một dấu hiệu báo trước nguy hiểm.",
+    "keyword_plural": "dấu hiệu cảnh báo"
+  },
+  "restaking": {
+    "keyword": "restaking",
+    "keyword_forms": [
+      "stake lại"
+    ],
+    "definition": "Việc dùng lại số Ether đã stake để giúp bảo vệ và xác thực các giao thức khác, đổi lại là phần thưởng."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "definition": "(Retroactive Public Goods Funding) Cơ chế tài trợ cho các dự án dựa trên tác động mà chúng đã tạo ra trong quá khứ."
+  },
+  "rollup": {
+    "keyword": "rollup",
+    "definition": "Giải pháp mở rộng Layer 2 xử lý nhiều giao dịch bên ngoài chuỗi chính, rồi đăng chúng lên thành một lô, giúp tăng thông lượng và giảm chi phí.",
+    "keyword_plural": "rollup"
+  },
+  "sandwich attack": {
+    "keyword": "tấn công sandwich",
+    "definition": "Kiểu tấn công trong đó bot đặt lệnh ngay trước và ngay sau lệnh của bạn để đẩy giá, chúng kiếm lời còn bạn chịu thiệt.",
+    "keyword_plural": "tấn công sandwich"
+  },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "definition": "Người tạo ra Bitcoin dưới một bí danh. Đến nay vẫn chưa ai biết danh tính thật của họ."
+  },
+  "scalability": {
+    "keyword": "khả năng mở rộng",
+    "definition": "Khả năng của một blockchain trong việc xử lý khối lượng công việc, giao dịch và người dùng ngày càng tăng mà ít gây gián đoạn."
+  },
+  "scam-token": {
+    "keyword": "token lừa đảo",
+    "definition": "Token tiền mã hóa được tạo ra chỉ nhằm chiếm đoạt tiền của nhà đầu tư.",
+    "keyword_plural": "token lừa đảo"
+  },
+  "scarce": {
+    "keyword": "khan hiếm",
+    "definition": "Ở trạng thái có nguồn cung hạn chế."
+  },
+  "scarcity": {
+    "keyword": "sự khan hiếm",
+    "definition": "Tình trạng nguồn cung hạn chế."
+  },
+  "security": {
+    "keyword": "bảo mật",
+    "definition": "Khả năng của một blockchain trong việc chống lại các nỗ lực tấn công, khai thác lỗ hổng mã nguồn và lỗ hổng kinh tế, mà vẫn hoạt động bình thường."
+  },
+  "seed phrase": {
+    "keyword": "cụm từ khôi phục",
+    "keyword_forms": [
+      "seed phrase"
+    ],
+    "definition": "Nhóm từ ngẫu nhiên do ví tạo ra khi cài đặt, đóng vai trò chìa khóa chủ cho TẤT CẢ tài khoản mà ví đó kiểm soát. TUYỆT ĐỐI KHÔNG CHIA SẺ CỤM TỪ KHÔI PHỤC VỚI BẤT KỲ AI, VÌ BẤT KỲ LÝ DO GÌ.",
+    "keyword_plural": "cụm từ khôi phục"
+  },
+  "self-custodial": {
+    "keyword": "tự lưu ký",
+    "definition": "Cách nắm giữ tài sản mà chỉ mình bạn có quyền truy cập."
+  },
+  "self-custody": {
+    "keyword": "tự lưu ký",
+    "definition": "Cách nắm giữ tài sản mà chỉ mình bạn có quyền truy cập."
+  },
+  "self-custody wallet": {
+    "keyword": "ví tự lưu ký",
+    "definition": "(Còn gọi là: ví không lưu ký) Với ví tự lưu ký, chỉ mình bạn nắm khóa riêng tư, và khóa đó kiểm soát tài sản crypto của bạn.",
+    "keyword_plural": "ví tự lưu ký"
+  },
+  "settlement layer": {
+    "keyword": "lớp quyết toán",
+    "definition": "Tầng “thấp nhất” của một blockchain, nơi ghi lại chi tiết việc trao đổi tài sản từ các giao dịch đã hoàn tất. Mạng chính Ethereum là lớp quyết toán cho các giải pháp mở rộng Layer 2 của Ethereum.",
+    "keyword_plural": "lớp quyết toán"
+  },
+  "settlement time": {
+    "keyword": "thời gian quyết toán",
+    "definition": "Khoảng thời gian cần để một giao dịch được xác nhận.",
+    "keyword_plural": "thời gian quyết toán"
+  },
+  "sharding": {
+    "keyword": "sharding",
+    "definition": "Quá trình chia một blockchain thành nhiều chuỗi chạy song song với nhau để tăng khả năng mở rộng."
+  },
+  "sidechain": {
+    "keyword": "sidechain",
+    "definition": "Một blockchain riêng chạy song song với blockchain chính, nối với nhau bằng cầu nối, có validator và cơ chế bảo mật riêng.",
+    "keyword_plural": "sidechain"
+  },
+  "slashed": {
+    "keyword": "bị slash",
+    "definition": "Hình phạt khiến validator mất một phần stake khi bị chứng minh là gian lận trên blockchain Proof of Stake."
+  },
+  "slashing": {
+    "keyword": "slashing",
+    "definition": "Hình phạt trên mạng Proof of Stake, hủy một phần stake của validator khi có bằng chứng gian lận, ví dụ ký hai khối mâu thuẫn nhau."
+  },
+  "slippage": {
+    "keyword": "trượt giá",
+    "keyword_forms": [
+      "slippage"
+    ],
+    "definition": "Chênh lệch giữa mức giá bạn mong đợi và mức giá thực tế khi lệnh được khớp."
+  },
+  "slippage tolerance": {
+    "keyword": "dung sai trượt giá",
+    "keyword_forms": [
+      "slippage tolerance"
+    ],
+    "definition": "Mức thay đổi giá tối đa mà bạn chấp nhận cho một lệnh. Nếu giá đi xa hơn mức này, lệnh sẽ bị hủy.",
+    "keyword_plural": "dung sai trượt giá"
+  },
+  "smart account": {
+    "keyword": "tài khoản thông minh",
+    "definition": "Tài khoản ví vận hành bằng hợp đồng thông minh, một tên gọi khác của ví thông minh.",
+    "keyword_plural": "tài khoản thông minh"
+  },
+  "smart contract": {
+    "keyword": "hợp đồng thông minh",
+    "definition": "Đoạn mã máy tính tự động thực thi các điều khoản của một hợp đồng.",
+    "keyword_plural": "hợp đồng thông minh"
+  },
+  "smart wallet": {
+    "keyword": "ví thông minh",
+    "definition": "Ví vận hành bằng hợp đồng thông minh thay vì bằng một khóa riêng tư duy nhất, nhờ đó có thêm các tính năng như khôi phục tài khoản và đăng nhập bằng passkey.",
+    "keyword_plural": "ví thông minh"
+  },
+  "social engineering": {
+    "keyword": "social engineering",
+    "definition": "Việc thao túng ai đó để họ chia sẻ thông tin nhạy cảm hoặc bí mật, như mật khẩu hay cụm từ khôi phục."
+  },
+  "solo staker": {
+    "keyword": "solo staker",
+    "definition": "Người vận hành node chạy một node validator độc lập.",
+    "keyword_plural": "solo staker"
+  },
+  "solo staking": {
+    "keyword": "solo staking",
+    "definition": "Việc tự chạy node validator của mình để xử lý giao dịch trong hệ thống Proof of Stake."
+  },
+  "solver": {
+    "keyword": "solver",
+    "definition": "Bên chuyên trách cạnh tranh với những bên khác để thực hiện ý định của người dùng ở mức giá tốt nhất có thể.",
+    "keyword_plural": "solver"
+  },
+  "spend": {
+    "keyword": "chi tiêu",
+    "definition": "Dùng tài sản crypto của bạn để trả cho hàng hóa hoặc dịch vụ."
+  },
+  "spot etf": {
+    "keyword": "ETF giao ngay",
+    "definition": "ETF nắm giữ chính tài sản đó, ví dụ bitcoin, giúp mọi người đầu tư vào nó qua thị trường chứng khoán truyền thống.",
+    "keyword_plural": "ETF giao ngay"
+  },
+  "stablecoin": {
+    "keyword": "stablecoin",
+    "definition": "Token được thiết kế để giữ giá trị ổn định, thường neo giá theo tỷ lệ 1:1 với một đồng tiền như đô la Mỹ.",
+    "keyword_plural": "stablecoin"
+  },
+  "stablecoin issuer": {
+    "keyword": "tổ chức phát hành stablecoin",
+    "definition": "Công ty hoặc tổ chức tạo ra một stablecoin và quản lý khoản dự trữ bảo chứng cho giá trị của nó.",
+    "keyword_plural": "tổ chức phát hành stablecoin"
+  },
+  "stake": {
+    "keyword": "stake",
+    "definition": "Lượng tài sản tài chính được khóa vào một giao thức tiền mã hóa. Nó thể hiện cam kết tài chính của một người với giao thức: họ cũng có phần để mất nếu làm sai.",
+    "keyword_plural": "stake"
+  },
+  "staked": {
+    "keyword": "đã stake",
+    "definition": "Việc tạm khóa một phần crypto của bạn vào hợp đồng thông minh trong một khoảng thời gian nhất định để nhận lãi (“phần thưởng”)."
+  },
+  "staker": {
+    "keyword": "staker",
+    "keyword_forms": [
+      "người stake"
+    ],
+    "definition": "Thành viên cộng đồng Ethereum cung cấp Ether cho một node validator để nhận phần thưởng.",
+    "keyword_plural": "staker"
+  },
+  "stakers": {
+    "keyword": "staker",
+    "definition": "Các thành viên cộng đồng Ethereum cung cấp Ether cho những node validator để nhận phần thưởng."
+  },
+  "staking": {
+    "keyword": "staking",
+    "definition": "Việc tạm khóa một phần crypto của bạn vào hợp đồng thông minh trong một khoảng thời gian nhất định để nhận lãi (“phần thưởng”)."
+  },
+  "staking pool": {
+    "keyword": "pool staking",
+    "definition": "Trên Ethereum: các hợp đồng thông minh, qua đó staker cung cấp Ether cho node validator của một staker khác.",
+    "keyword_plural": "pool staking"
+  },
+  "staking providers": {
+    "keyword": "nhà cung cấp dịch vụ staking",
+    "definition": "Các nền tảng số cung cấp dịch vụ staking, thường thông qua pool staking."
+  },
+  "standard record": {
+    "keyword": "bản ghi tiêu chuẩn",
+    "definition": "Một mục dữ liệu phổ biến gắn với tên miền ENS, như địa chỉ ví, ảnh đại diện hoặc email.",
+    "keyword_plural": "bản ghi tiêu chuẩn"
+  },
+  "swap": {
+    "keyword": "hoán đổi",
+    "keyword_forms": [
+      "swap"
+    ],
+    "definition": "Việc đổi từ token này sang token khác.",
+    "keyword_plural": "hoán đổi"
+  },
+  "token": {
+    "keyword": "token",
+    "definition": "Đơn vị đại diện cho tài sản hoặc quyền sở hữu, được tạo ra trên một blockchain sẵn có.",
+    "keyword_plural": "token"
+  },
+  "token allowance": {
+    "keyword": "hạn mức token",
+    "definition": "Thỏa thuận giữa ví và hợp đồng thông minh, cho phép truy cập có giới hạn hoặc không giới hạn vào một token cụ thể.",
+    "keyword_plural": "hạn mức token"
+  },
+  "token approval": {
+    "keyword": "phê duyệt token",
+    "definition": "Quyền bạn cấp cho một hợp đồng thông minh để nó chuyển một token cụ thể ra khỏi ví; còn gọi là hạn mức token.",
+    "keyword_plural": "phê duyệt token"
+  },
+  "token distribution": {
+    "keyword": "phân phối token",
+    "definition": "Cách token được chia cho các nhóm bên liên quan khác nhau.",
+    "keyword_plural": "phân phối token"
+  },
+  "token pair": {
+    "keyword": "cặp token",
+    "definition": "Hai loại tiền mã hóa đi cùng nhau, tạo nên một pool thanh khoản.",
+    "keyword_plural": "cặp token"
+  },
+  "token swap": {
+    "keyword": "hoán đổi token",
+    "definition": "Việc đổi từ token này sang token khác.",
+    "keyword_plural": "hoán đổi token"
+  },
+  "tps": {
+    "keyword": "TPS",
+    "definition": "(Transactions Per Second) Thước đo khả năng mở rộng của một blockchain: số giao dịch nó xử lý được mỗi giây."
+  },
+  "trade": {
+    "keyword": "trao đổi",
+    "definition": "Đổi tài sản hoặc tiền lấy thứ gì đó có giá trị.",
+    "keyword_plural": "trao đổi"
+  },
+  "trade route": {
+    "keyword": "lộ trình giao dịch",
+    "definition": "Đường đi từ token ban đầu tới token cuối cùng trong một lệnh giao dịch.",
+    "keyword_plural": "lộ trình giao dịch"
+  },
+  "trade routing": {
+    "keyword": "định tuyến giao dịch",
+    "definition": "Việc hoạch định đường đi từ token ban đầu tới token cuối cùng trong một lệnh giao dịch."
+  },
+  "transaction": {
+    "keyword": "giao dịch",
+    "definition": "Bản ghi về một lần chuyển giao trên blockchain, bằng tiền hoặc không.",
+    "keyword_plural": "giao dịch"
+  },
+  "transaction finality": {
+    "keyword": "tính chung cuộc của giao dịch",
+    "definition": "Thời gian cần để chắc chắn rằng một giao dịch là hợp lệ và cuối cùng, nghĩa là nó sẽ không bị đảo ngược hay thay đổi."
+  },
+  "transaction hash": {
+    "keyword": "mã băm giao dịch",
+    "definition": "Mã định danh duy nhất của mỗi giao dịch. Nó được tạo ra từ dữ liệu giao dịch, chữ ký số của người gửi và một con số dùng một lần để tránh giao dịch trùng lặp.",
+    "keyword_plural": "mã băm giao dịch"
+  },
+  "transaction throughput": {
+    "keyword": "thông lượng giao dịch",
+    "definition": "Số giao dịch một blockchain xử lý được cùng lúc, thường đo bằng số giao dịch mỗi giây (TPS)."
+  },
+  "trustless": {
+    "keyword": "không cần tin cậy",
+    "definition": "Đặc tính vận hành mà không cần đặt niềm tin vào con người hay tổ chức nào. (Tự động, không thuộc sở hữu của riêng ai.)"
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "definition": "(Total Value Locked) Tổng giá trị tài sản đang được lưu giữ tại một nơi cụ thể."
+  },
+  "two factor authentication": {
+    "keyword": "xác thực hai yếu tố",
+    "keyword_forms": [
+      "xác thực 2 yếu tố"
+    ],
+    "definition": "Một lớp bảo mật bổ sung, dùng để chắc chắn rằng người đang truy cập vào tài khoản trực tuyến đúng là chủ tài khoản."
+  },
+  "validating bridge": {
+    "keyword": "cầu nối xác thực",
+    "definition": "Hợp đồng cầu nối tự kiểm tra các lệnh rút tiền, nhờ đó không cần tin vào bất kỳ bên có thẩm quyền nào bên ngoài.",
+    "keyword_plural": "cầu nối xác thực"
+  },
+  "validator": {
+    "keyword": "validator",
+    "definition": "Người tham gia mạng Proof of Stake, khóa phần stake để kiểm tra giao dịch và đề xuất khối, nhận phần thưởng khi làm việc trung thực.",
+    "keyword_plural": "validator"
+  },
+  "validator client": {
+    "keyword": "client validator",
+    "keyword_forms": [
+      "validator client",
+      "phần mềm validator"
+    ],
+    "definition": "Phần mềm mà một node validator chạy để đề xuất và kiểm tra khối mới trên mạng Proof of Stake.",
+    "keyword_plural": "client validator"
+  },
+  "validator node": {
+    "keyword": "node validator",
+    "definition": "Thiết bị máy tính do một thành viên cộng đồng Ethereum vận hành. Nó xử lý giao dịch trên mạng lưới để nhận phần thưởng.",
+    "keyword_plural": "node validator"
+  },
+  "validator nodes": {
+    "keyword": "node validator",
+    "definition": "Các thiết bị máy tính do thành viên cộng đồng Ethereum vận hành. Chúng xử lý giao dịch trên mạng lưới để nhận phần thưởng."
+  },
+  "validity proof": {
+    "keyword": "bằng chứng tính hợp lệ",
+    "definition": "Bằng chứng toán học cho thấy một lô giao dịch là chính xác, giúp blockchain xác minh mà không phải làm lại toàn bộ công việc.",
+    "keyword_plural": "bằng chứng tính hợp lệ"
+  },
+  "value-creation": {
+    "keyword": "tạo ra giá trị",
+    "definition": "Cách làm kinh doanh tập trung vào việc tạo ra sản phẩm và dịch vụ mới mẻ, chất lượng cao cho người dùng và cho nền kinh tế."
+  },
+  "value-extraction": {
+    "keyword": "trích xuất giá trị",
+    "definition": "Cách làm kinh doanh bóc lột người dùng bằng phí cao, thu thập dữ liệu và điều khoản bất công."
+  },
+  "value-extractive": {
+    "keyword": "trích xuất giá trị",
+    "definition": "Cách làm kinh doanh bóc lột người dùng bằng phí cao, thu thập dữ liệu và điều khoản bất công."
+  },
+  "vault": {
+    "keyword": "kho tiền",
+    "keyword_forms": [
+      "vault"
+    ],
+    "definition": "Hợp đồng thông minh giữ số token được gửi vào và đưa chúng đi sinh lời, trả lại cho người gửi một token đại diện cho phần của họ.",
+    "keyword_plural": "kho tiền"
+  },
+  "veto": {
+    "keyword": "phủ quyết",
+    "definition": "Lá phiếu bác bỏ một đề xuất quản trị.",
+    "keyword_plural": "phủ quyết"
+  },
+  "wallet": {
+    "keyword": "ví",
+    "definition": "Ví là ứng dụng hoặc thiết bị dùng để gửi và nhận tài sản crypto trên blockchain.",
+    "keyword_plural": "ví"
+  },
+  "wallet app": {
+    "keyword": "ứng dụng ví",
+    "definition": "Ứng dụng trên máy tính hoặc điện thoại, dùng để kết nối với ví của bạn trên blockchain.",
+    "keyword_plural": "ứng dụng ví"
+  },
+  "wallet provider": {
+    "keyword": "nhà cung cấp ví",
+    "definition": "Bên tạo ra phần mềm bạn dùng để truy cập ví. Họ không sở hữu ví của bạn, mà chỉ đóng vai trò cầu nối giúp bạn truy cập tài khoản của mình trên blockchain.",
+    "keyword_plural": "nhà cung cấp ví"
+  },
+  "web2": {
+    "keyword": "Web2",
+    "definition": "Internet của các nền tảng và tài khoản tập trung, không có hạ tầng blockchain."
+  },
+  "web3": {
+    "keyword": "Web3",
+    "definition": "Chỉ internet của các blockchain, nơi người dùng tự lưu ký được tài sản và dữ liệu của mình."
+  },
+  "yield farm": {
+    "keyword": "yield farm",
+    "definition": "Giao thức DeFi nơi người dùng gửi token vào để nhận phần thưởng. Yield farming là việc đi tìm những phần thưởng tốt nhất trong số đó.",
+    "keyword_plural": "yield farm"
+  },
+  "yourname.eth": {
+    "keyword": "tenban.eth",
+    "definition": "Một ví dụ về tên ENS: tên người dùng Web3 dễ đọc, trỏ tới địa chỉ ví của bạn."
+  },
+  "zero-knowledge": {
+    "keyword": "zero-knowledge",
+    "definition": "Phương pháp toán học cho phép một bên chứng minh rằng một tuyên bố là đúng mà không tiết lộ thêm bất kỳ thông tin nào về nó."
+  },
+  "zk rollup": {
+    "keyword": "ZK Rollup",
+    "definition": "Một rollup Layer 2 dùng bằng chứng zero-knowledge để chứng minh bằng toán học rằng lô giao dịch của nó là hợp lệ trên blockchain Layer 1.",
+    "keyword_plural": "ZK Rollup"
+  }
+}

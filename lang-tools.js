@@ -7,6 +7,7 @@
 //   node lang-tools.js register <lang>  register every verified lesson, run gates
 import fs from 'fs'
 import { execSync } from 'child_process'
+import { parseStylePins } from './content-lib.js'
 
 // Glossary halves are drafted outside the repo (one file per agent) and merged
 // here; point SCRATCH at wherever those drafts live.
@@ -120,13 +121,10 @@ if (cmd === 'merge') {
   // style-guide pins must be honoured
   const stylePath = `translation/style/${lang}.md`
   if (fs.existsSync(stylePath)) {
-    const block = fs.readFileSync(stylePath, 'utf8').match(/```terms\n([\s\S]*?)```/)
-    for (const line of block ? block[1].split('\n') : []) {
-      const clean = line.split('#')[0].trim()
-      if (!clean.includes('=')) continue
-      const i = clean.indexOf('=')
-      const key = clean.slice(0, i).trim().toLowerCase()
-      const pinned = clean.slice(i + 1).trim()
+    for (const [english, pinned] of parseStylePins(
+      fs.readFileSync(stylePath, 'utf8')
+    )) {
+      const key = english.toLowerCase()
       const e = out[key]
       if (!e) continue
       const forms = [e.keyword, e.keyword_plural, ...(e.keyword_forms || [])]
@@ -137,6 +135,10 @@ if (cmd === 'merge') {
     }
   }
 
+  // A brand-new language has no translation/keywords/<lang>/ yet, and this is
+  // the step that first creates its glossary — so `merge` crashed with ENOENT
+  // on exactly the languages it exists to onboard.
+  fs.mkdirSync(`translation/keywords/${lang}`, { recursive: true })
   fs.writeFileSync(
     `translation/keywords/${lang}/keywords.json`,
     `${JSON.stringify(out, null, 2)}\n`

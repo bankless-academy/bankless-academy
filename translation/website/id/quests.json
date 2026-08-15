@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Bitcoin kamu sedang dalam perjalanan ke Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Sekarang penambang jaringan sedang memverifikasinya...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Transaksi kamu ditambahkan ke “basis data” blockchain...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto sudah menerima Bitcoin kamu!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Dengan simulator Bitcoin sederhana kami, kirim BTC berapa pun ke alamat Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Simulasi Interaktif: Mengirim Bitcoin ke Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Atur ulang simulasi",
+    "Recipient": "Penerima",
+    "Address": "Alamat",
+    "Asset": "Aset",
+    "Amount": "Jumlah",
+    "Balance": "Saldo",
+    "Send": "Kirim"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Memahami Transaksi",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Untuk memvalidasi Quest ini, tempel alamat \"From\" (Dari) dan \"To\" (Ke) pada transaksi ini",
+    "From": "Dari",
+    "To": "Ke"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Mulai perjalanan kamu di Optimism Network dengan mendelegasikan OP.",
+    "Select a ": "Pilih ",
+    "Delegate": "Delegasi",
+    " for your OP": " untuk OP kamu",
+    "or delegate to ": "atau delegasikan ke ",
+    "Tip": "Tips",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Baca artikel Handbook Penjelajah tentang '{{lesson_title}}' untuk panduan Quest selengkapnya.",
+    "Refresh": "Muat ulang",
+    "Read Entry": "Baca Artikel"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "Buat dompet kripto pertama kamu.",
+    "If you already have a wallet, move to step 2.": "Jika kamu sudah punya dompet, lanjut ke langkah 2.",
+    "1. Download and install the Zerion wallet from ": "1. Unduh dan pasang dompet Zerion dari ",
+    "2. Connect your wallet to Bankless Academy": "2. Hubungkan dompet kamu ke Bankless Academy",
+    "Tip": "Tips",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Baca artikel Handbook Penjelajah tentang '{{lesson_title}}' untuk panduan Quest langkah demi langkah.",
+    "Read Entry": "Baca Artikel"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Pilih semua tangkapan layar yang berisi penipuan 👆",
+    "Hint: 1 screenshot is not a scam": "Petunjuk: 1 tangkapan layar bukan penipuan"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Hubungkan dompet kamu ke Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Gabung ke gm.xyz lewat ",
+    "invite link": "tautan undangan",
+    " or register with a phone number": " atau daftar dengan nomor telepon",
+    "3. Join ": "3. Gabung ",
+    "Validate quest": "Validasi Quest"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Jawaban terpilih:",
+    "Bankless Archetype results:": "Hasil Arketipe Bankless:",
+    "Risk": "Risiko",
+    "Self sovereignty": "Kedaulatan diri",
+    "DEX": "DEX",
+    "Trads": "TradFi",
+    "LP": "LP",
+    "Long term": "Jangka panjang",
+    "Works in a DAO": "Bekerja di DAO",
+    "Crypto knowledge": "Pengetahuan kripto",
+    "Crypto donation": "Donasi kripto",
+    "Buys stuff in crypto": "Belanja pakai kripto",
+    "Deployed smart contracts": "Deploy kontrak pintar",
+    "Anon": "Anonim",
+    "Works in web3": "Bekerja di web3",
+    "Creates digital art": "Membuat seni digital",
+    "Owns Bitcoin": "Punya Bitcoin",
+    "Owns NFTs": "Punya NFT",
+    "Aping into something new": "Terjun ke hal baru",
+    "Owns shitcoin": "Punya shitcoin"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Cara swap token dengan 1inch",
+    "1. Load ": "1. Buka ",
+    " on the ": " di ",
+    "Base network": "jaringan Base",
+    "2. Swap any token.": "2. Swap token apa saja.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Tempel hash transaksi <b>swap</b> yang berhasil di bawah ini:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Tips:</b> 🚨 Pastikan kamu menempel hash transaksi <b>swap</b> yang dilakukan di <b>jaringan Base</b>, bukan hash transaksi <b>persetujuan</b> token.",
+    "Read documentation": "Baca dokumentasi"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Buka ",
+    " on the ": " di ",
+    "Optimism network": "jaringan Optimism",
+    "2. Swap any token.": "2. Swap token apa saja.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Tempel hash transaksi <b>swap</b> yang berhasil di bawah ini:",
+    "Resources:": "Referensi:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Tips:</b> Pastikan kamu menempel hash transaksi <b>swap</b> yang dilakukan di <b>jaringan Optimism</b>, bukan hash transaksi persetujuan token. Baca artikel Handbook Penjelajah untuk informasi lebih lanjut.",
+    "Read Entry": "Baca Artikel"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Apa yang paling ingin kamu pelajari untuk dilakukan dengan DeFi?",
+    "Signature verified": "Tanda tangan terverifikasi",
+    "Sign your answer": "Tandatangani jawaban kamu",
+    "Select your answer": "Pilih jawaban kamu",
+    "Investing": "Berinvestasi",
+    "Trading": "Trading",
+    "Lending & Borrowing": "Meminjamkan & Meminjam",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Mulai perjalanan staking kamu dengan Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "Dapatkan 0,0002 rETH di salah satu jaringan yang didukung*.",
+    "a) Visit a ": "a) Kunjungi ",
+    "Decentralized Exchange": "bursa terdesentralisasi",
+    " to swap for rETH (Optimism or Base recommended)": " untuk swap ke rETH (Optimism atau Base disarankan)",
+    "b) Or mint rETH on Mainnet via ": "b) Atau mint rETH di Mainnet lewat ",
+    " (0.01 ETH minimum)": " (minimum 0,01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Tips: Baca artikel Handbook Penjelajah '{{lesson_title}}' untuk menemukan cara pendanaan terbaik untuk kamu.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Jaringan yang didukung: Ethereum, Optimism, Base, Arbitrum, dan Polygon (POS)",
+    "Check Quest": "Cek Quest"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Kamu butuh dompet kripto untuk Quest ini.",
+    "Wallet connected!": "Dompet terhubung!",
+    "Waiting to detect your wallet ...": "Menunggu dompet kamu terdeteksi ...",
+    "If you don't have one, let's set one up!": "Belum punya dompet? Ayo buat sekarang!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Misi dan hadiah onchain kami hanya berfungsi jika dompet terhubung.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Dompet itu seperti akun di blockchain. Kamu butuh dompet untuk memakai aplikasi blockchain, atau untuk membeli, menyimpan, dan mengirim mata uang kripto.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Ikuti video panduan singkat ini untuk membuat dompet pertama kamu dengan Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Dengan kondisi teknologi blockchain saat ini, sebuah blockchain paling banyak bisa mengoptimalkan dua dari tiga karakteristik.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Centang karakteristik yang awalnya diprioritaskan Bitcoin dan Ethereum."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Mulai perjalanan L2 kamu.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Miliki saldo minimal 0,0002 ETH di Base atau Optimism",
+    "Options to fund your wallet:": "Pilihan untuk mengisi dompet kamu:",
+    "Explore other options": "Lihat pilihan lain",
+    "Check Quest": "Cek Quest"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Sebelum mengklaim sertifikasi onchain kamu:",
+    "Share on Twitter / X": "Bagikan di Twitter / X",
+    "Share on Farcaster": "Bagikan di Farcaster",
+    "See you there! Over and out 📡": "Sampai jumpa di sana! Ganti dan selesai 📡",
+    "Connect": "Hubungkan",
+    "Repost on Twitter / X": "Repost di Twitter / X",
+    "Validate": "Validasi"
+  }
+}

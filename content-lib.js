@@ -152,6 +152,39 @@ export const estimateSlideLines = (section) => {
   return lines
 }
 
+// Parse a style guide's ```terms``` block into [english, translation] pairs.
+//
+// One implementation for all three callers (validate-content, translate-content,
+// lang-tools) because they used to disagree: `lang-tools merge` stripped inline
+// comments and the other two did not. `lang-tools pins` emits its ranking as a
+// trailing comment —
+//
+//     private key = निजी कुंजी   # x17
+//
+// — and that output is meant to be pasted straight into the guide, so the two
+// unstripped parsers would pin the literal value "निजी कुंजी   # x17", which no
+// glossary entry can ever match. The merge tool would enforce one value while
+// the validator compared against another: drift between the tools that exist
+// to prevent drift.
+//
+// Comments are cut at a whitespace-preceded `#` rather than the first `#`
+// anywhere, so a term that legitimately contains one survives.
+export const parseStylePins = (text) => {
+  const out = []
+  for (const block of text.matchAll(/```terms\n([\s\S]*?)```/g)) {
+    for (const raw of block[1].split('\n')) {
+      const line = raw.replace(/\s+#.*$/, '').trim()
+      if (!line || line.startsWith('#')) continue
+      const i = line.indexOf('=')
+      if (i === -1) continue
+      const english = line.slice(0, i).trim()
+      const translation = line.slice(i + 1).trim()
+      if (english && translation) out.push([english, translation])
+    }
+  }
+  return out
+}
+
 // Mirror of `normalizeKeyword` in src/constants/languages.ts — see the comment
 // there. Duplicated rather than imported because the content scripts are plain
 // Node ESM and cannot pull in the app's TypeScript. Keep the two in sync: if

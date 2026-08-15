@@ -123,8 +123,24 @@ const LanguageSelector = ({
       : undefined
 
   // ---- filtering ----
+  // Standard practice for a language picker (W3C i18n guidance, and what
+  // Wikipedia/Mozilla do): show each language in its OWN name and script, sort
+  // alphabetically by that endonym, and privilege none of them — the reader's
+  // likely language is offered separately, by the suggestion row above, rather
+  // than by reordering the list. So English is not pinned; it sorts to third,
+  // between Deutsch and Español, like every other entry.
+  //
+  // The registry itself is grouped by when each language landed (legacy
+  // pt-br/zh, then the first wave, then each new wave appended), which put
+  // Português and 简体中文 ahead of Deutsch and left hi/id/vi dangling off the
+  // end — an order that means nothing to a reader scanning for their language.
+  // Sorted here rather than in the registry so `LANGUAGES` stays a declaration
+  // and display order stays a presentation concern.
+  const byDisplayName = [...LANGUAGES].sort((a, b) =>
+    a.localName.localeCompare(b.localName)
+  )
   const q = fold(query.trim())
-  const filtered = LANGUAGES.filter(
+  const filtered = byDisplayName.filter(
     (l) => !q || fold(l.name).includes(q) || fold(l.localName).includes(q)
   )
   // flat list driving keyboard navigation: suggestion row (only when not

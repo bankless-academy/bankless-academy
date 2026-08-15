@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Bitcoin của bạn đang trên đường đến Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Giao dịch đang được các thợ đào trên mạng lưới xác minh...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Giao dịch của bạn được thêm vào “cơ sở dữ liệu” blockchain...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto đã nhận được Bitcoin của bạn!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Dùng trình mô phỏng Bitcoin đơn giản của chúng tôi, gửi một lượng BTC bất kỳ đến địa chỉ của Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Mô phỏng tương tác: gửi Bitcoin đến Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Đặt lại mô phỏng",
+    "Recipient": "Người nhận",
+    "Address": "Địa chỉ",
+    "Asset": "Tài sản",
+    "Amount": "Số lượng",
+    "Balance": "Số dư",
+    "Send": "Gửi"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Tìm hiểu một giao dịch",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Để xác thực nhiệm vụ này, dán địa chỉ “Từ” và “Đến” của giao dịch này",
+    "From": "Từ",
+    "To": "Đến"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Bắt đầu hành trình trên mạng Optimism bằng cách ủy quyền OP.",
+    "Select a ": "Chọn một ",
+    "Delegate": "Đại diện",
+    " for your OP": " cho OP của bạn",
+    "or delegate to ": "hoặc ủy quyền cho ",
+    "Tip": "Mẹo",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Xem bài “{{lesson_title}}” trong Cẩm nang Nhà thám hiểm để có hướng dẫn đầy đủ cho nhiệm vụ.",
+    "Refresh": "Làm mới",
+    "Read Entry": "Đọc bài viết"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "Tạo ví tiền mã hóa đầu tiên của bạn.",
+    "If you already have a wallet, move to step 2.": "Nếu bạn đã có ví, chuyển sang bước 2.",
+    "1. Download and install the Zerion wallet from ": "1. Tải và cài đặt ví Zerion từ ",
+    "2. Connect your wallet to Bankless Academy": "2. Kết nối ví với Bankless Academy",
+    "Tip": "Mẹo",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Xem bài “{{lesson_title}}” trong Cẩm nang Nhà thám hiểm để có hướng dẫn từng bước cho nhiệm vụ.",
+    "Read Entry": "Đọc bài viết"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Chọn tất cả ảnh chụp màn hình có lừa đảo 👆",
+    "Hint: 1 screenshot is not a scam": "Gợi ý: 1 ảnh chụp màn hình không phải lừa đảo"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Kết nối ví với Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Tham gia gm.xyz bằng ",
+    "invite link": "liên kết mời",
+    " or register with a phone number": " hoặc đăng ký bằng số điện thoại",
+    "3. Join ": "3. Tham gia ",
+    "Validate quest": "Xác thực nhiệm vụ"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Câu trả lời đã chọn:",
+    "Bankless Archetype results:": "Kết quả nguyên mẫu Bankless:",
+    "Risk": "Rủi ro",
+    "Self sovereignty": "Tự chủ cá nhân",
+    "DEX": "DEX",
+    "Trads": "TradFi",
+    "LP": "LP",
+    "Long term": "Dài hạn",
+    "Works in a DAO": "Làm việc trong DAO",
+    "Crypto knowledge": "Kiến thức crypto",
+    "Crypto donation": "Quyên góp crypto",
+    "Buys stuff in crypto": "Mua sắm bằng crypto",
+    "Deployed smart contracts": "Đã triển khai hợp đồng thông minh",
+    "Anon": "Ẩn danh",
+    "Works in web3": "Làm việc trong Web3",
+    "Creates digital art": "Sáng tạo nghệ thuật số",
+    "Owns Bitcoin": "Sở hữu Bitcoin",
+    "Owns NFTs": "Sở hữu NFT",
+    "Aping into something new": "Lao vào thứ mới mẻ",
+    "Owns shitcoin": "Sở hữu shitcoin"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Cách hoán đổi token với 1inch",
+    "1. Load ": "1. Mở ",
+    " on the ": " trên ",
+    "Base network": "mạng Base",
+    "2. Swap any token.": "2. Hoán đổi token bất kỳ.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Dán mã băm của giao dịch <b>hoán đổi</b> thành công vào ô bên dưới:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Mẹo:</b> 🚨 Nhớ dán mã băm của giao dịch <b>hoán đổi</b> thực hiện trên <b>mạng Base</b>, không phải mã băm của giao dịch <b>phê duyệt</b> token.",
+    "Read documentation": "Đọc tài liệu"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Mở ",
+    " on the ": " trên ",
+    "Optimism network": "mạng Optimism",
+    "2. Swap any token.": "2. Hoán đổi token bất kỳ.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Dán mã băm của giao dịch <b>hoán đổi</b> thành công vào ô bên dưới:",
+    "Resources:": "Tài nguyên:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Mẹo:</b> nhớ dán mã băm của giao dịch <b>hoán đổi</b> thực hiện trên <b>mạng Optimism</b>, không phải mã băm của giao dịch phê duyệt token. Đọc bài viết trong Cẩm nang Nhà thám hiểm để biết thêm chi tiết.",
+    "Read Entry": "Đọc bài viết"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Bạn muốn học làm điều gì nhất với DeFi?",
+    "Signature verified": "Đã xác minh chữ ký",
+    "Sign your answer": "Ký câu trả lời",
+    "Select your answer": "Chọn câu trả lời",
+    "Investing": "Đầu tư",
+    "Trading": "Giao dịch",
+    "Lending & Borrowing": "Cho vay & Đi vay",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Bắt đầu hành trình staking với Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "Nhận 0,0002 rETH trên bất kỳ mạng lưới nào được hỗ trợ*.",
+    "a) Visit a ": "a) Truy cập một ",
+    "Decentralized Exchange": "sàn giao dịch phi tập trung",
+    " to swap for rETH (Optimism or Base recommended)": " để hoán đổi lấy rETH (khuyến nghị Optimism hoặc Base)",
+    "b) Or mint rETH on Mainnet via ": "b) Hoặc mint rETH trên Mainnet qua ",
+    " (0.01 ETH minimum)": " (tối thiểu 0,01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Mẹo: xem bài “{{lesson_title}}” trong Cẩm nang Nhà thám hiểm để tìm cách nạp tiền phù hợp nhất với bạn.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Các mạng được hỗ trợ: Ethereum, Optimism, Base, Arbitrum và Polygon (POS)",
+    "Check Quest": "Kiểm tra nhiệm vụ"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Bạn cần một ví tiền mã hóa cho nhiệm vụ này.",
+    "Wallet connected!": "Đã kết nối ví!",
+    "Waiting to detect your wallet ...": "Đang chờ phát hiện ví của bạn ...",
+    "If you don't have one, let's set one up!": "Nếu chưa có, hãy tạo một chiếc ví ngay!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Các nhiệm vụ và phần thưởng on-chain chỉ hoạt động khi ví đã được kết nối.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Ví giống như tài khoản trên blockchain. Bạn cần có ví để dùng các ứng dụng blockchain, hoặc để mua, giữ và gửi tiền mã hóa.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Xem video hướng dẫn ngắn này để tạo chiếc ví đầu tiên với Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Với công nghệ blockchain hiện nay, một blockchain chỉ có thể tối ưu tối đa hai trong ba đặc tính.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Đánh dấu những đặc tính mà Bitcoin và Ethereum ưu tiên ngay từ đầu."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Bắt đầu hành trình L2 của bạn.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Giữ số dư ít nhất 0,0002 ETH trên Base hoặc Optimism",
+    "Options to fund your wallet:": "Các cách nạp tiền vào ví:",
+    "Explore other options": "Xem các lựa chọn khác",
+    "Check Quest": "Kiểm tra nhiệm vụ"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Trước khi nhận chứng nhận on-chain:",
+    "Share on Twitter / X": "Chia sẻ lên Twitter / X",
+    "Share on Farcaster": "Chia sẻ lên Farcaster",
+    "See you there! Over and out 📡": "Hẹn gặp bạn ở đó! Hết 📡",
+    "Connect": "Kết nối",
+    "Repost on Twitter / X": "Đăng lại trên Twitter / X",
+    "Validate": "Xác thực"
+  }
+}

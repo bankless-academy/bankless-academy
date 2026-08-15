@@ -12,6 +12,7 @@ import {
   hasCleanTypography,
   findBrokenEmphasis,
   normalizeKeyword,
+  parseStylePins,
 } from './content-lib.js'
 
 const EN_DIR = 'translation/lesson/en'
@@ -83,16 +84,10 @@ const resolvesInLang = (term, lang) => {
 const stylePins = (lang) => {
   const p = `translation/style/${lang}.md`
   if (!fs.existsSync(p)) return []
-  const block = fs.readFileSync(p, 'utf8').match(/```terms\n([\s\S]*?)```/)
-  if (!block) return []
-  return block[1]
-    .split('\n')
-    .map((l) => l.trim())
-    .filter((l) => l && l.includes('='))
-    .map((l) => {
-      const i = l.indexOf('=')
-      return [normalizeKeyword(l.slice(0, i).trim()), l.slice(i + 1).trim()]
-    })
+  return parseStylePins(fs.readFileSync(p, 'utf8')).map(([en, tr]) => [
+    normalizeKeyword(en),
+    tr,
+  ])
 }
 
 const files = fs.readdirSync(EN_DIR).filter((f) => f.endsWith('.md'))
@@ -429,10 +424,65 @@ for (const [slug, m] of Object.entries(meta)) {
   }
 }
 
+// A translated lesson whose HEADINGS are still English.
+//
+// The structural verifier counts sections and compares images, links and quiz
+// shape, but never looks at heading text, so a lesson can translate every
+// paragraph and leave all twenty slide titles in English and still report OK.
+// That is exactly what happened to four Vietnamese lessons in the hi/id/vi
+// wave (blockchain-basics 9/9, intro-to-defi 10/10, layer-1-blockchains 12/12,
+// wallet-basics 14/14 headings identical to English) while the sibling lessons
+// in the same language translated theirs.
+//
+// Judged per FILE as a ratio, not per heading, because individual matches are
+// legitimate and common: `Knowledge Check <n>` MUST stay English (the compiler
+// reads it as an identifier), and pinned loanwords like `Proof-of-Stake`,
+// `Slashing`, `Staking`, `Ethernomics` and `FAQ` are correctly left alone. One
+// or two matches in a file is normal; most of the file matching is a miss.
+// A warning, not an error: a language may legitimately keep more headings in
+// Latin than this threshold expects.
+for (const lang of langDirs) {
+  for (const file of fs.readdirSync(`translation/lesson/${lang}`)) {
+    if (!file.endsWith('.md')) continue
+    const enPath = path.join(EN_DIR, file)
+    if (!fs.existsSync(enPath)) continue
+    const heads = (p) =>
+      fs
+        .readFileSync(p, 'utf8')
+        .split('\n')
+        .filter((l) => /^#{1,2} \S/.test(l))
+        .map((l) => l.trim())
+    const en = heads(enPath)
+    const tr = heads(`translation/lesson/${lang}/${file}`)
+    let same = 0
+    let total = 0
+    en.forEach((h, i) => {
+      if (!tr[i] || /^#{1,2} Knowledge Check/.test(h)) return
+      total++
+      if (h === tr[i]) same++
+    })
+    if (total >= 4 && same / total > 0.5)
+      warnings.push(
+        `${lang}/${file}: ${same} of ${total} headings are identical to English — the slide titles look untranslated`
+      )
+  }
+}
+
 // Style-guide pins vs the shipped glossary, once per language. This is the
 // check that would have caught `mint` shipping as "acuñar" in the glossary
 // while both UI namespaces said "mintear".
-for (const lang of langDirs) {
+//
+// Scope is every language with a STYLE GUIDE, not `langDirs` — that is derived
+// from `translation/lesson/`, so a language whose glossary has landed but whose
+// lessons have not (the entire first half of a wave: hi, id and vi all sat in
+// exactly this state) was skipped silently, and the run still printed "content
+// validation passed". This check compares pins against the glossary; it has no
+// dependency on lesson files existing.
+const pinLangs = fs
+  .readdirSync('translation/style')
+  .filter((f) => f.endsWith('.md'))
+  .map((f) => f.replace(/\.md$/, ''))
+for (const lang of pinLangs) {
   const pins = stylePins(lang)
   if (!pins.length) continue
   const p = `translation/keywords/${lang}/keywords.json`

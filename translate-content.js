@@ -35,6 +35,7 @@ import {
   MAX_SLIDE_LINES,
   estimateSlideLines,
   applyTypography,
+  parseStylePins,
 } from './content-lib.js'
 
 const EN_DIR = 'translation/lesson/en'
@@ -88,6 +89,7 @@ const loadLanguages = () => {
   const m = src.match(/const LANGUAGE_DEFS = \[([\s\S]*?)\] as const/)
   if (!m) throw new Error(`could not parse LANGUAGE_DEFS out of ${REGISTRY_FILE}`)
   const json = `[${m[1]}]`
+    .replace(/^[ \t]*\/\/.*$/gm, '') // drop `//` comment lines between entries
     .replace(/(\w+):/g, '"$1":') // quote keys
     .replace(/'/g, '"')
     .replace(/,(\s*[}\]])/g, '$1') // trailing commas
@@ -258,15 +260,8 @@ const loadScriptRules = () => {
 // lines; `english = english` pins a term to its English form.
 const parseTermOverrides = (style) => {
   const out = {}
-  for (const m of style.matchAll(/```terms\n([\s\S]*?)```/g)) {
-    for (const line of m[1].split('\n')) {
-      const t = line.trim()
-      if (!t || t.startsWith('#')) continue
-      const i = t.indexOf('=')
-      if (i === -1) continue
-      out[t.slice(0, i).trim().toLowerCase()] = t.slice(i + 1).trim()
-    }
-  }
+  for (const [english, translation] of parseStylePins(style))
+    out[english.toLowerCase()] = translation
   return out
 }
 
