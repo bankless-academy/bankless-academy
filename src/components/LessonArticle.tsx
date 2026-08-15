@@ -93,7 +93,7 @@ const LessonArticle = ({
   articleHtml: string
   headings: ArticleHeading[]
   lang: string
-  strings: { startLesson: string; contents: string }
+  strings: { startLesson: string; contents: string; deprecated?: string }
 }): React.ReactElement => {
   const alternates = contentAlternates(lesson)
   const lessonHref =
@@ -121,19 +121,30 @@ const LessonArticle = ({
         <Box as="h1" fontSize={{ base: '2rem', md: '2.7rem' }} fontWeight="700" lineHeight="1.15" mb={4}>
           {lesson.name}
         </Box>
+        {strings.deprecated && (
+          <Box
+            mb={6}
+            p="12px 16px"
+            borderRadius="8px"
+            border="1px solid orange"
+            background="rgba(255, 165, 0, 0.1)"
+          >
+            {strings.deprecated}
+          </Box>
+        )}
         {lesson.description && (
           <Box fontSize="1.15rem" opacity={0.85} mb={6}>
             {lesson.description}
           </Box>
         )}
 
-        {/* `primary` compensates for its 1px hover border with 15px padding,
-            which only lines up at the default size — pairing it with size="lg"
-            (24px) makes the button shrink on hover. `primaryBig` is the one
-            that expects size="lg" (23px + 1px). Rendered as an anchor rather
-            than a button inside a link: <a><button> is invalid HTML and gives
-            two competing hover targets. */}
-        <Button as="a" href={lessonHref} variant="primary">
+        {/* Same variant and size as the footer CTA, so both are the 60px pill.
+            `primaryBig` compensates for its 1px hover border with 23px padding,
+            which lines up only at size="lg" (24px) — pairing a variant with the
+            size it was calibrated for is what stops the button resizing on
+            hover. Rendered as an anchor rather than a button inside a link:
+            <a><button> is invalid HTML and gives two competing hover targets. */}
+        <Button as="a" href={lessonHref} variant="primaryBig" size="lg">
           {strings.startLesson}
         </Button>
 

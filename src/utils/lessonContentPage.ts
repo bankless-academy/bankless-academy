@@ -94,6 +94,11 @@ export const getContentPageProps = (lang: string, slug: string) => {
         image: lesson.socialImageLink || DEFAULT_METADATA.image,
         nolayout: true,
         ssr: true,
+        // Deprecated lessons are kept reachable by direct URL but excluded
+        // from listings, rss and the sitemap. Server-rendering their prose
+        // would newly expose the full text of unmaintained material to search,
+        // which the old client-only view never did, so keep them out.
+        noindex: lesson.publicationStatus === 'deprecated',
         canonical: url,
         lesson: { ...lesson, name, description },
         articleHtml,
@@ -101,6 +106,13 @@ export const getContentPageProps = (lang: string, slug: string) => {
         lang: usedLang,
         strings: {
           startLesson: uiString(usedLang, 'Start Lesson'),
+          deprecated:
+            lesson.publicationStatus === 'deprecated'
+              ? uiString(
+                  usedLang,
+                  'This lesson is no longer maintained and is kept for historical reference. Some of its content may be outdated.'
+                )
+              : '',
           contents: uiString(usedLang, 'Lesson Content:').replace(
             /[\s:\uFF1A]+$/,
             ''

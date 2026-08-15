@@ -297,7 +297,10 @@ and `test-content.js`.
   `/lessons/<slug>`, `/lessons/<slug>/content`, `/lessons/<lang>/<slug>`,
   `/lessons/<lang>/<slug>/content`, plus `/lessons/<slug>-datadisk`.
   The first segment is treated as a language only if `isLanguage()` says so.
-  `getStaticPaths` currently emits **102 paths** with `fallback: true`.
+  `/content` is **no longer served here** — it has dedicated server-rendered
+  routes (see "Lesson content pages" below), and generating it in both places
+  would produce the same URL from two routes. A full `next build` emits ~449
+  static pages, 203 of them content pages.
 - **Other pages**: `/` (homepage), `/glossary`, `/explore`, `/explorer/[address]`,
   `/explorer/my-profile`, `/leaderboard`, `/stats`, `/quest`, `/quiz`,
   `/quiz/[id]`, `/module/[slug]`, `/animation/[slug]`, `/passport`, `/mini-apps`,
@@ -376,6 +379,58 @@ Basenames resolution, and a hosted Envio indexer at
 - `.env.example` is **stale** (still lists MintKudos vars; missing
   `NOTION_SECRET`, `GITHUB_TOKEN`, Alchemy/KV/iron-session keys). ~75 env vars
   are referenced in code.
+
+### Lesson content pages (`/lessons/<lang>/<slug>/content`)
+
+These exist because the interactive lesson is a client-rendered slideshow that
+a crawler cannot read; the content page is the indexable mirror. **It was not
+doing that job.** The markdown was fetched into state in a `useEffect` and run
+through `hljs.highlight(md, 'markdown')`, so the page shipped a
+syntax-highlighted *source dump* with no headings, and only after JS. Measured
+against production, the whole document carried **80 characters** of crawlable
+text ("You need to enable JavaScript to run this app.") — Google indexed the
+URLs and none of the prose. Rebuilt 2026-08-15; `bitcoin-basics/content` now
+serves ~13,500 crawlable characters.
+
+| File | Role |
+|---|---|
+| `src/pages/lessons/[slug]/content.tsx` | English route |
+| `src/pages/lessons/[slug]/[lessonSlug]/content.tsx` | Localized route. **`slug` is the LANGUAGE here** — Next.js requires one name per dynamic position across sibling routes, and position 1 is already `[slug]` in the English route. |
+| `src/utils/lessonContentPage.ts` | Server-only build-time data (`fs`); imported only from getStaticProps/Paths so it leaves the client bundle. |
+| `src/utils/lessonContent.ts` | markdown -> semantic HTML, heading anchors, hreflang alternates, JSON-LD. |
+| `src/components/LessonArticle.tsx` | The rendering. **Must stay free of localStorage/matchMedia/wallet/router state.** |
+| `src/components/RecordPreferredLanguage.tsx` | Effect-only; records the language AppProvider would have. |
+
+Rules that keep it working:
+
+- The page opts out of the app-wide `NonSSRWrapper` via **`nolayout: true` +
+  `ssr: true`** in pageMeta (the same escape hatch `/onchain-summer-challenge`
+  and `/quiz/[id]` use). Anything added to the tree that reads user state
+  reintroduces a hydration mismatch and silently reverts the page to
+  client-only — which is invisible until someone measures the served HTML.
+- **Do not add the site nav.** It reads localStorage and wallet state. The
+  logo is a plain link + `<img>` on purpose.
+- That branch mounts no `AppProvider`, so `AppContext` never records the
+  reader's language. `RecordPreferredLanguage` mirrors its exact rule: an
+  explicit language segment records a preference, the English (no-segment) URL
+  does not — recording there would strand a translated reader in English.
+- `getContentPageProps` **throws** rather than emit an empty page: a page whose
+  only purpose is being crawlable is worse than absent if it renders a shell.
+- Quiz answers are stripped (`[x]` neutralized, `> ℹ️` feedback dropped) so the
+  page is not an answer key.
+- Slide headings are demoted `#` -> `##` so the page has one `<h1>` (the lesson
+  name) instead of twenty. ja/zh headings slugify to nothing, so they fall back
+  to `section-N` anchors.
+- **Deprecated lessons get `noindex`** plus the same warning banner the lesson
+  pages show. They are excluded from the sitemap (`publicationStatus ===
+  'publish'`) but still generated, and server-rendering them would newly expose
+  unmaintained prose to search.
+- `Head.tsx` appends `/content` to the hreflang cluster on these URLs.
+  Previously they annotated `/lessons/<lang>/<slug>`, a different page type
+  that does not reciprocate, so the whole cluster was discarded.
+- No new i18n keys: the page reuses `Start Lesson` and `Lesson Content:`, read
+  from `translation/website/<lang>/common.json` at build time (it renders
+  outside i18next). ja/zh use full-width `：` U+FF1A when trimming.
 
 ### Whitelabel mode
 
