@@ -1,10 +1,10 @@
 ---
-TITLE: Eine Krypto-Wallet erstellen
-DESCRIPTION: Erstelle deine erste Krypto-Wallet mit unserer Schritt-für-Schritt-Anleitung.
-LANGUAGE: Deutsch
+TITLE: Creating a Crypto Wallet
+DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
+LANGUAGE: English
 WRITERS: Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -27,90 +27,91 @@ ________________________________________________________________________________
 ```
 
 ---
-Dies ist eine Zusammenfassung unserer Lektion [Wallet-Grundlagen](https://app.banklessacademy.com/lessons/wallet-basics), zusammen mit einer Anleitung für die Quest. Sieh dir [die ganze Lektion](https://app.banklessacademy.com/lessons/wallet-basics) an, um **dein Wissen zu vertiefen und dein Badge zu holen!**
+
+This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
 
 ---
 
-## Das Wichtigste
+## Key Takeaways
 
-> * Du brauchst eine `Krypto-Wallet`, um in die Welt der Blockchains zu kommen!
+> - You’ll need a `crypto wallet` to access the world of blockchains!
 >
-> * Eine Wallet ist wie ein Konto auf einer `Blockchain`.
+> - A wallet is like a `blockchain` account.
 >
-> * Wallets speichern `Kryptowährung`, melden dich bei Blockchain-Apps an und mehr.
+> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
 >
-> * Diese Wallets laufen auf Computern und auf Handys.
+> - These wallets work on both computers and phones.
 >
-> * Eine Wallet zu erstellen ist einfach und dauert rund 5 Minuten. Wie es geht, zeigen wir dir unten im Video!
+> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
 
-## Was ist eine Krypto-Wallet?
+## What is a Crypto Wallet?
 
-Krypto-Wallets gehören zur Grundausstattung im Web3: Mit ihnen nutzt du `Kryptowährung` auf Computer oder Handy. Du greifst über eine Software darauf zu, die `Wallet-App`: eine Browser-Erweiterung auf dem Computer oder eine App auf dem Handy.
+Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app`: a web browser extension for your computer, or an app on your phone.
 
-Es kommt noch besser. Wallets sind mehr als Konten für Kryptowährung: Sie sind unsere Verbindung zur Blockchain. Wir tauschen damit Kryptowährung mit anderen, melden uns bei Blockchain-Anwendungen an **und sammeln sogar digitale Objekte wie die Badges der Bankless Academy.** Je mehr wir erkunden, desto mehr wird aus unseren Wallets; manche sehen darin den Anfang einer digitalen Identität.
+It gets better. Wallets are more than accounts for holding cryptocurrency: they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become, with some viewing them as the beginning of digital identity.
 
-Eine Wallet bringt zwei zentrale Kontoinformationen mit:
+Wallets come with two core pieces of account information:
 
-* Einen `öffentlichen Schlüssel`, aus dem die `Adresse` deiner Wallet entsteht. Die Adresse funktioniert wie dein *Benutzername*: Du teilst sie öffentlich, um Kryptowährung zu empfangen.
+- A `public key`, which creates your wallet’s `address`. The address works like your _username_: you’ll share it publicly to receive cryptocurrency.
 
-* Einen `privaten Schlüssel`, der wie dein *Passwort* wirkt. Er muss immer geheim bleiben und lässt sich nicht ändern.
+- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
 
-Deinen privaten Schlüssel zu schützen ist entscheidend, denn er gibt sofortigen Zugang zu deiner Wallet. Teile ihn niemals. Mehr dazu in [der ganzen Lektion](https://app.banklessacademy.com/lessons/wallet-basics).
+Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
 
-Heute richten wir unsere erste Wallet ein, mit der Krypto-Wallet, die wir empfehlen: Zerion!
+Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
 
-## Anleitung
+## Walkthrough
 
-Richte deine erste Wallet auf dem Computer ein, mit der Anleitung unten, oder scrolle weiter für die Anleitung fürs Handy.
+Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
 
-### Wallet auf dem Computer
+### Computer Wallet
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
-### Wallet auf dem Handy
+### Phone Wallet
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
-**Zeit, dem Blockchain-Multiversum beizutreten!**
+**It’s time to join the blockchain multiverse!**
 
-Vergiss nicht, diesen Handbuch-Eintrag zu sammeln: als Nachschlagewerk für unterwegs und als Unterstützung für Bankless Academy.
+Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
 
-Gute Reise, Explorer!
+Safe travels, Explorer!
 
 ---
 
 ## FAQ
 
-### Was ist eine Kryptowährung?
+### What is a cryptocurrency?
 
-Kryptowährungen sind eine Form von digitalem Geld, gesichert durch `Kryptografie`. Sie kommen ohne zentrale Behörden und Banken aus. Das verringert die Möglichkeit für Betrug und erhöht die finanzielle Freiheit der Besitzer.
+Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
 
-Mehr über Kryptowährung erfährst du in unserer Lektion **[Bitcoin-Grundlagen](https://app.banklessacademy.com/lessons/bitcoin-basics)**. Dort siehst du, wie diese digitalen Währungen die Finanzwelt umkrempeln!
+Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
 
-### Was sind öffentliche und private Schlüssel?
+### What are public and private keys?
 
-Die `Verschlüsselung` mit öffentlichem und privatem Schlüssel macht manche Informationen deiner Wallet öffentlich, etwa die Adresse, an die dir andere Kryptowährung senden können. Der Zugang zu deiner Kryptowährung bleibt dabei privat. Die Adresse deiner Wallet, erzeugt aus dem öffentlichen Schlüssel, ist wie deine Hausadresse, und der private Schlüssel öffnet die Haustür.
+Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. Your wallet’s address, created from the public key, is like your house address, and the private key unlocks the front door.
 
-Deine Adresse kannst du mit jedem teilen, dem du vertraust, um Kryptowährung zu empfangen. Dein privater Schlüssel ist dagegen nur für dich, denn er öffnet alle Werte in der Wallet. Teile ihn nie, auch wenn dein Gegenüber behauptet, von Bankless Academy oder Zerion zu sein.
+You can share your address with anyone you trust to send you cryptocurrency, but your private key is for your eyes only, because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
 
-Lerne mehr und werde für deine erste Wallet belohnt, in unserer Lektion [Wallet-Grundlagen](https://app.banklessacademy.com/lessons/wallet-basics).
+Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
 
-### Was passiert, wenn ich meine Wiederherstellungsphrase verliere?
+### What happens if I lose my recovery phrase?
 
-Deine Wiederherstellungsphrase, auch „geheime Phrase“ oder „Seed-Phrase“ genannt, ist deine einzige Sicherung, wenn du den Zugang zu deiner Wallet auf dem Gerät verlierst. Verlierst du sie, ist das Guthaben der Wallet für immer weg. Deshalb ist es wichtig, sie sicher aufzubewahren: geschützt vor Diebstahl und Verlust, aber auch vor Feuer und Wasser.
+Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe, from not only theft or loss, but fire or water damage too.
 
-### Können Ethereum-Wallets Bitcoin halten?
+### Can Ethereum wallets hold Bitcoin?
 
-Ethereum-Wallets können Bitcoin halten, aber in einer „verpackten“ Form, etwa als Token cbBTC von Coinbase. Willst du echtes Bitcoin halten, brauchst du eine Wallet, die im Bitcoin-Netzwerk läuft, zum Beispiel [Exodus](https://www.exodus.com/) oder [BlueWallet](https://bluewallet.io/).
+Ethereum wallets can hold Bitcoin, but in a “wrapped” form, such as Coinbase’s cbBTC token. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [BlueWallet](https://bluewallet.io/).
 
 ---
 
-**Autor**
+**Author**
 
-[Tetranome](https://twitter.com/Tetranome) ist Content & Design Lead bei Bankless Academy und kümmert sich um den Lernweg, Benutzeroberfläche und Nutzererlebnis sowie die Illustrationen der Plattform.
+[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
 
-**Förderer**
+**Patron**
 
-Diese Anleitung wird von Zerion unterstützt.
+This walkthrough is powered by Zerion.
