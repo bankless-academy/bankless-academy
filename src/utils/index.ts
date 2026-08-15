@@ -34,7 +34,6 @@ import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
 import { lensGraphQLClient } from 'utils/gql/lens'
-import { wagmiConfig } from 'utils/wagmi'
 import { ACHIEVEMENTS } from 'constants/achievements'
 import { INDEXER_URL, INDEXER_URL_BACKUP, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
 import { triggerHaptic as tactusTriggerHaptic } from 'tactus'
@@ -726,6 +725,13 @@ export async function getLensProfile(address: string): Promise<{
 export async function getUD(address: string): Promise<string | null> {
   let res = null
   try {
+    // Imported lazily on purpose. `utils/wagmi` instantiates a WagmiAdapter at
+    // module scope, which drags @walletconnect / @reown / @coinbase / viem into
+    // whatever bundle references it. This barrel is imported by ~52 files, so a
+    // static import here put the entire wallet stack — and its module-time side
+    // effects — into the SERVER bundle of every page, costing ~15s of cold-start
+    // evaluation on a route that never touches a wallet.
+    const { wagmiConfig } = await import('utils/wagmi')
     const balanceOfUDPolygon: any = await readContract(wagmiConfig, {
       address: '0xa9a6a3626993d487d2dbda3173cf58ca1a9d9e9f',
       chainId: polygon.id,

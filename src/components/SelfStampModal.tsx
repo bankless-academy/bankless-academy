@@ -15,7 +15,6 @@ import {
   Link as ChakraLink,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { SelfAppBuilder, getUniversalLink } from '@selfxyz/qrcode'
 import type { SelfApp } from '@selfxyz/qrcode'
 
 const SELF_SCOPE = process.env.NEXT_PUBLIC_SELF_SCOPE || 'bankless-academy'
@@ -41,10 +40,17 @@ type Props = {
   onSuccess: () => void
 }
 
-const SelfStampModal = ({ isOpen, onClose, address, onSuccess }: Props): React.ReactElement => {
+const SelfStampModal = ({
+  isOpen,
+  onClose,
+  address,
+  onSuccess,
+}: Props): React.ReactElement => {
   const { t } = useTranslation()
   const [userId, setUserId] = useState<string>(() =>
-    typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : ''
+    typeof crypto !== 'undefined' && crypto.randomUUID
+      ? crypto.randomUUID()
+      : ''
   )
   const [selfApp, setSelfApp] = useState<SelfApp | null>(null)
   const [universalLink, setUniversalLink] = useState('')
@@ -58,34 +64,50 @@ const SelfStampModal = ({ isOpen, onClose, address, onSuccess }: Props): React.R
   const effectiveStaging = ALLOW_STAGING && useStaging
 
   // Build the SelfApp once we have an address + userId.
+  //
+  // @selfxyz/qrcode is imported lazily (~136MB in node_modules, and it logs
+  // "[WebSocket] Initializing websocket module" at import time). A static
+  // import put it in the server bundle of every page that reaches this
+  // component, which only ever needs it after the user opens this modal.
   useEffect(() => {
     if (!isOpen || !address || !userId) return
-    try {
-      const baseEndpoint =
-        process.env.NEXT_PUBLIC_SELF_ENDPOINT ||
-        `${process.env.NEXT_PUBLIC_STAMP_CALLBACK || ''}/self`
-      const params: string[] = []
-      params.push(`address=${encodeURIComponent(address)}`)
-      if (effectiveStaging) params.push('staging=true')
-      const endpoint = `${baseEndpoint}?${params.join('&')}`
+    let cancelled = false
+    const build = async () => {
+      try {
+        const { SelfAppBuilder, getUniversalLink } = await import(
+          '@selfxyz/qrcode'
+        )
+        if (cancelled) return
+        const baseEndpoint =
+          process.env.NEXT_PUBLIC_SELF_ENDPOINT ||
+          `${process.env.NEXT_PUBLIC_STAMP_CALLBACK || ''}/self`
+        const params: string[] = []
+        params.push(`address=${encodeURIComponent(address)}`)
+        if (effectiveStaging) params.push('staging=true')
+        const endpoint = `${baseEndpoint}?${params.join('&')}`
 
-      const app = new SelfAppBuilder({
-        appName: 'Bankless Academy',
-        scope: SELF_SCOPE,
-        endpoint,
-        endpointType: effectiveStaging ? 'staging_https' : 'https',
-        userId,
-        userIdType: 'uuid',
-        // Empty disclosures: only the nullifier (always present in the proof
-        // output) is needed for sybil checking. No personal data is shared.
-        disclosures: {},
-      } as Partial<SelfApp>).build()
+        const app = new SelfAppBuilder({
+          appName: 'Bankless Academy',
+          scope: SELF_SCOPE,
+          endpoint,
+          endpointType: effectiveStaging ? 'staging_https' : 'https',
+          userId,
+          userIdType: 'uuid',
+          // Empty disclosures: only the nullifier (always present in the proof
+          // output) is needed for sybil checking. No personal data is shared.
+          disclosures: {},
+        } as Partial<SelfApp>).build()
 
-      setSelfApp(app)
-      setUniversalLink(getUniversalLink(app))
-    } catch (e) {
-      console.error('Failed to initialize Self app:', e)
-      setError(t('Failed to initialize verification. Please try again.'))
+        setSelfApp(app)
+        setUniversalLink(getUniversalLink(app))
+      } catch (e) {
+        console.error('Failed to initialize Self app:', e)
+        setError(t('Failed to initialize verification. Please try again.'))
+      }
+    }
+    build()
+    return () => {
+      cancelled = true
     }
   }, [isOpen, address, userId, effectiveStaging, t])
 
@@ -127,7 +149,8 @@ const SelfStampModal = ({ isOpen, onClose, address, onSuccess }: Props): React.R
       }
     }
     document.addEventListener('visibilitychange', onVisibilityChange)
-    return () => document.removeEventListener('visibilitychange', onVisibilityChange)
+    return () =>
+      document.removeEventListener('visibilitychange', onVisibilityChange)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, polling, success, userId])
 
@@ -147,7 +170,9 @@ const SelfStampModal = ({ isOpen, onClose, address, onSuccess }: Props): React.R
     setSelfApp(null)
     setUniversalLink('')
     setUserId(
-      typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : ''
+      typeof crypto !== 'undefined' && crypto.randomUUID
+        ? crypto.randomUUID()
+        : ''
     )
     hasOpenedSelfApp.current = false
   }
@@ -184,7 +209,13 @@ const SelfStampModal = ({ isOpen, onClose, address, onSuccess }: Props): React.R
                 )}
               </Text>
 
-              <Box as="ol" pl={5} fontSize="sm" mb={4} sx={{ listStyle: 'decimal' }}>
+              <Box
+                as="ol"
+                pl={5}
+                fontSize="sm"
+                mb={4}
+                sx={{ listStyle: 'decimal' }}
+              >
                 <li>
                   {t('Download the Self app on')}{' '}
                   <ChakraLink
@@ -222,7 +253,8 @@ const SelfStampModal = ({ isOpen, onClose, address, onSuccess }: Props): React.R
                   bg="rgba(255,255,255,0.08)"
                 >
                   <Text fontSize="xs">
-                    {t('Self mode')}: {effectiveStaging ? t('Test') : t('Production')}
+                    {t('Self mode')}:{' '}
+                    {effectiveStaging ? t('Test') : t('Production')}
                   </Text>
                   <Button
                     size="xs"

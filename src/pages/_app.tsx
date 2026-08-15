@@ -1,6 +1,7 @@
 // MUST be first: installs a server-side localStorage stub so components
 // that read storage during render can be prerendered. See the file for why.
 import 'utils/ssrStorage'
+import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
@@ -10,12 +11,8 @@ import 'mac-scrollbar/dist/mac-scrollbar.css'
 import 'highlight.js/styles/vs.css'
 import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
-import styled from '@emotion/styled'
-import { Box, Button, Container, Heading, Image } from '@chakra-ui/react'
-import { createAppKit, useAppKitState } from '@reown/appkit/react'
-import { WagmiProvider } from 'wagmi'
+import { Container, Heading, Image } from '@chakra-ui/react'
 import Router from 'next/router'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import * as Sentry from '@sentry/nextjs'
 import { SENTRY_ENABLED } from 'constants/index'
 
@@ -24,29 +21,17 @@ import Layout from 'layout/index'
 import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
 import NonSSRWrapper from 'components/NonSSRWrapper'
+// ssr:false is load-bearing: it is what keeps @walletconnect/@reown/@coinbase/
+// viem out of the SERVER bundle. Importing Web3Providers statically silently
+// re-adds ~15s of cold-start module evaluation to every dynamic route.
+const Web3Providers = dynamic(
+  () => import('components/providers/Web3Providers'),
+  { ssr: false }
+)
 import 'utils/translation'
-import {
-  WALLET_CONNECT_PROJECT_ID,
-  wagmiAdapter,
-  networks,
-  metadata,
-} from 'utils/wagmi'
-import { FrameProvider } from 'components/providers/FrameProvider'
-import ExternalLink from 'components/ExternalLink'
 import { AppProvider } from 'contexts/AppContext'
 import { t } from 'i18next'
 
-const Overlay = styled(Box)`
-  opacity: 1;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: var(--chakra-colors-blackAlpha-600);
-  margin: 0;
-  backdrop-filter: blur(10px);
-`
 
 const App = ({
   Component,
@@ -133,41 +118,8 @@ const App = ({
     )
   }
 
-  // 0. Setup queryClient
-  const queryClient = new QueryClient()
 
-  // 3. createWeb3Modal
-  const themeVariables = {
-    '--w3m-accent': '#B85FF1',
-    '--w3m-color-mix': '#B85FF1',
-  }
-  createAppKit({
-    adapters: [wagmiAdapter],
-    networks,
-    metadata: metadata,
-    projectId: WALLET_CONNECT_PROJECT_ID,
-    themeMode: 'dark',
-    themeVariables,
-    allowUnsupportedChain: true,
-    features: {
-      analytics: true,
-      onramp: false,
-      email: false,
-      socials: [],
-    },
-    featuredWalletIds: [
-      // Zerion
-      'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
-      // Rainbow
-      '1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369',
-      // MetaMask
-      'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
-      // Coinbase Wallet
-      'fd20dc426fb37566d803205b19bbc1d4096b248ac04548e3cfb6b3a38bd033aa',
-    ],
-  })
 
-  const stateData = useAppKitState()
   const [isLoadingProfile, setIsLoadingProfile] = useState(false)
   useEffect(() => {
     Router.events.on('routeChangeStart', (url) => {
@@ -198,10 +150,7 @@ const App = ({
             resume position and wallet state. Each is a hydration mismatch and a
             visible flash. Making this work needs user state out of render and
             locale-prefixed URLs, not a wrapper change. See CLAUDE.md. */}
-        <NonSSRWrapper>
-          <WagmiProvider config={wagmiAdapter.wagmiConfig}>
-            <QueryClientProvider client={queryClient}>
-              <FrameProvider>
+        <Web3Providers>
                 <AppProvider>
                   <>
                     <Global
@@ -443,33 +392,7 @@ const App = ({
                     </Layout>
                   </>
                 </AppProvider>
-              </FrameProvider>
-            </QueryClientProvider>
-          </WagmiProvider>
-
-          <Overlay hidden={!stateData.open} zIndex="999" />
-          {/* don't show if injected wallet is detected */}
-          {stateData.open &&
-            typeof window !== 'undefined' &&
-            !window.ethereum && (
-              <Box
-                position="fixed"
-                top="0"
-                left="0"
-                right="0"
-                p="4"
-                zIndex="1000"
-                maxW="380px"
-                margin="auto"
-              >
-                <ExternalLink href="https://bankless.ac/zerion">
-                  <Button size="lg" variant="primaryBig" width="100%">
-                    {t('No wallet? 👉 Get Zerion wallet here')}
-                  </Button>
-                </ExternalLink>
-              </Box>
-            )}
-        </NonSSRWrapper>
+        </Web3Providers>
       </ThemeProvider>
     </>
   )
