@@ -1,10 +1,10 @@
 ---
-TITLE: Fundamentos de la billetera
-DESCRIPTION: ¿Qué es una billetera cripto? ¡Aprende cómo funcionan y crea la tuya hoy!
+TITLE: Conceptos Básicos de la Billetera
+DESCRIPTION: '¿Qué es una billetera cripto? Learn how wallets work and create your first one today!'
 LANGUAGE: Español
 WRITERS: Ap0ll0517, Jordy, Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: OrnellaWeb3
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -28,39 +28,39 @@ ________________________________________________________________________________
 
 ---
 
-# Introducción a las billeteras
+# Introducción a las Billeteras
 
-**¡Saludos, Explorador Bankless!**
+**¡Saludos Explorador Bankless!**
 
-Es hora de profundizar en tu viaje por el multiverso blockchain. Todo Explorador de este espacio termina necesitando crear una billetera cripto.
+Es hora de profundizar tu viaje en el multiverso blockchain. Cada explorador de este espacio necesita crear una billetera criptográfica.
 
-Las billeteras se parecen a las cuentas del internet `web2` que ya conoces. Usarás una billetera para entrar al ecosistema blockchain, también llamado `web3`, donde podrás usar `criptomonedas` y conectarte a `aplicaciones blockchain`.
+Las billeteras son como las cuentas de internet `web2` a las que estás acostumbrado. Utilizarás una billetera para conectarte al ecosistema de blockchain, también conocido como `web3`. En el podrás utilizar `criptomonedas` y conectarte a `aplicaciones blockchain`.
 
-En esta lección te presentaremos las billeteras, cómo funcionan y cómo mantener seguras tus criptomonedas. Terminaremos con una guía para crear una y acceder a **la blockchain de Ethereum, el hogar de Bankless Academy.**
+En esta lección, te presentaremos qué son las billeteras cripto, cómo funcionan y cómo mantener tus criptomonedas segura. We’ll end with a guide on how to set one up and access **the Ethereum blockchain, the home of Bankless Academy.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# Definición de billetera
+# Billetera: Definición
 
 ¿Qué es exactamente una billetera cripto?
 
-La definición corta: una cuenta en una `blockchain`, usada para guardar activos digitales y entrar a aplicaciones blockchain.
+La definición abreviada es: una cuenta en una `cadena de bloques`, utilizada para almacenar activos digitales e iniciar sesión en aplicaciones de la misma.
 
-Es como tener tu propia caja fuerte personal en internet, y tú tienes la única llave que la abre. A la vez, esa caja fuerte se parece a una cuenta de sitio web común. Puedes usarla para comprar, enviar o recibir `criptomonedas` e interactuar con una blockchain.
+Es como tener tu propia caja fuerte personal en internet y tú tienes la única llave para abrirla. Al mismo tiempo, esta caja fuerte es similar a una cuenta de un sitio web normal. Puedes usarla para realizar compras, enviar o recibir `criptomonedas` e interactuar con una cadena de bloques.
 
-Pero a diferencia de las cuentas `web2` que conoces, una sola billetera puede acceder a toda una blockchain y a un gran número de aplicaciones blockchain. Es como tener una sola cuenta para todo el internet.
+Sin embargo, a diferencia de las cuentas `web2` a las que estás acostumbrado, una única billetera puede acceder a una cadena de bloques completa, y a su vez, a un gran número de aplicaciones en ella. Es como tener una sola cuenta para todo internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
 # ¿Es difícil crear una billetera?
 
-Antes lo era, pero hoy cualquiera puede crear una billetera con bastante facilidad.
+Antes era difícil, pero hoy en día cualquiera puede crear una billetera con bastante facilidad.
 
-Si te sientes cómodo descargando e instalando programas en tu computadora (o aplicaciones en tu teléfono), no tendrás problema para crear tu primera billetera.
+Si te sientes cómodo descargando e instalando programas en tu computador (o aplicaciones en tu teléfono), no tendrás ningún problema para crear tu primera billetera.
 
-La parte más delicada es mantenerla segura, y de eso hablaremos enseguida.
+The trickier part of managing a wallet involves keeping it secure, which we’ll dive into shortly!
 
-Elegir tu `aplicación de billetera` también puede intimidar. Es la app que instalarás en tu dispositivo para acceder a tu billetera en la blockchain. Te recomendamos empezar con la app Zerion: es fácil de usar y da acceso a muchas blockchains populares. A medida que ganes confianza en el espacio `web3`, probablemente explorarás otros proveedores y crearás varias billeteras.
+Elegir cual `aplicación de billetera` usar también puede resultar intimidante. Esta es la aplicación que instalarás en tu dispositivo para acceder a tu billetera en la cadena de bloques. Recomendamos comenzar con la aplicación de billeteras Zerion: es fácil de usar y tiene acceso a muchas blockchains populares. A medida que te sientas más cómodo en el espacio `web3`, es probable que explores otras aplicaciones y crees múltiples billeteras.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
@@ -68,100 +68,99 @@ Elegir tu `aplicación de billetera` también puede intimidar. Es la app que ins
 
 ¿Qué es una billetera?
 
-- [ ] Una blockchain
+- [ ] Una cadena de bloques
 
-> ℹ️ ¡Inténtalo de nuevo! Tu billetera está alojada en una blockchain.
+> ℹ️ ¡Inténtalo de nuevo! Tu billetera está alojada o 'vive' en una cadena de bloques.
 
 - [ ] Una criptomoneda
 
-> ℹ️ ¡Inténtalo de nuevo! Las criptomonedas son algo que guardas en tu billetera.
+> ℹ️ ¡Inténtalo de nuevo! Las criptomonedas se tienen en la billetera.
 
 - [ ] Un coleccionable digital
 
-> ℹ️ ¡Inténtalo de nuevo! Los coleccionables digitales son algo que guardas en tu billetera.
+> ℹ️ ¡Inténtalo de nuevo! Los coleccionables digitales se tienen en tu billetera.
 
-- [x] Una cuenta de blockchain
+- [x] A blockchain account
 
-> ℹ️ ¡Correcto! Las billeteras son cuentas que sirven para interactuar con blockchains.
+> ℹ️ ¡Correcto! Las billeteras son cuentas utilizadas para interactuar con blockchains.
 
-# Billeteras y recuperación de contraseña
+# Billeteras y Recuperación de Contraseñas
 
-Esta es una de las cosas más importantes que debes entender sobre las billeteras `web3`:
-**no existe “restablecer contraseña” ni “cambiar contraseña”.**
+Esta es una de las cosas más importantes que hay que entender sobre las billeteras `web3`: **no existe el "restablecimiento de contraseña" o "cambios de contraseña".**
 
-Casi todos estamos acostumbrados a esas opciones. Si olvidamos una contraseña, hacemos clic en un botón, seguimos unos pasos y obtenemos una nueva. Fácil.
+La mayoría de nosotros estamos acostumbrados a estas funciones. Si olvidamos una contraseña, pulsamos un botón, hacemos algunas acciones y obtenemos una nueva contraseña. Fácil.
 
-Con las billeteras cripto no es así. Por cómo funcionan las blockchains, al crearse reciben una “dirección” y una “contraseña” compleja, y tú no las eliges.
+No ocurre lo mismo con las billeteras cripto. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created, and you do not choose these.
 
-Esa combinación de dirección y contraseña no se puede cambiar, aunque siempre puedes crear una billetera nueva si lo necesitas. Algunas billeteras recientes añaden funciones de recuperación, pero nunca dependas de eso. Aprendamos un poco más sobre estas direcciones y contraseñas especiales, para usarlas con confianza.
+This address and password combination cannot be changed, although you can always create a new wallet if you need to. Some newer wallets add recovery features, but never rely on that. Aprendamos un poco más sobre estas direcciones especiales y contraseñas, ¡para que podamos sentirnos seguros de usarlas!
 
-# La clave pública de tu billetera
+# La llave pública de tu billetera
 
-La `dirección` de tu billetera se crea a partir de su `clave pública`. Piensa en la dirección como tu nombre de usuario: suele verse como una serie aleatoria de letras y números.
+Your wallet’s `address` is created from its `public key`. Think of the address as your username: it often looks like a random series of letters and numbers.
 
 Ejemplo: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-Con algunos servicios `web3` puedes crear versiones más fáciles de recordar, pero eso es tema de otra lección.
+Es posible crear versiones de esta dirección más fáciles de recordar con algunos servicios `web3`, pero eso es una lección para otro momento.
 
-También puedes pensar en tu dirección como la dirección de una casa. Es pública, cualquiera puede verla, e indica a los demás dónde enviarte activos cripto, sin revelar nada personal sobre ti.
+You can also think of your address like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets, without revealing anything personal about you.
 
-Compartir la **dirección** de tu billetera es totalmente seguro.
+It is perfectly safe to share your wallet’s **address**.
 
-**Nota:** una sola aplicación de billetera puede contener varios pares de clave pública y `clave privada`.
+**Nota:** Una única aplicación de billetera puede contener varios pares de llave públicas y `llave privada`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
-# La clave privada de tu billetera
+# La llave privada de tu billetera
 
-Si tu dirección es como la dirección de una casa, la `clave privada` es como la llave de la puerta. Es la “contraseña” de tus fondos y activos.
+If your address is like a house address, then the `private key` is like the key to the front door. Es la "contraseña" de tus fondos y activos.
 
-Ejemplo: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092a4c72b53e69cf74d215_
+Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092a4c72b53e69cf74d215_
 
-**Nunca es seguro compartir esta clave: podrías perder tu billetera y todo lo que hay en ella.**
+**It’s never safe to share this key: you could lose your wallet and everything in it.**
 
-La mayoría recomienda que ni siquiera la guardes en formato digital. Quien tenga acceso a una clave privada tiene acceso a todo lo que haya en la `billetera`.
+La mayoría de la personas recomienda que ni siquiera la guardes digitalmente. Cualquiera que tenga acceso a una llave privada, tiene acceso a lo que esté en la `billetera` correspondiente.
 
-Esto es más que una contraseña. No puedes restablecerla si pierdes el acceso.
+Esto es más que una simple contraseña. No podrás restablecerla si pierdes acceso a ella.
 
-Por suerte, la mayoría de las `aplicaciones blockchain` no te piden escribir una cadena larga de caracteres cada vez que envías fondos o firmas una transacción. La clave privada funciona en silencio, en segundo plano.
+Afortunadamente, la mayoría de `aplicaciones blockchain` no requieren que escribas una larga y complicada cadena de caracteres cada vez que necesites enviar fondos o firmar una transacción. La llave privada suele funcionar silenciosamente en segundo plano.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-La dirección de tu billetera es como tu _____ y tu clave privada es como tu _____ .
+Your wallet address is like your _____ and your private key is like your _____ .
 
-- [ ] Número de ruta bancaria / Número de cuenta
+- [ ] Número de ruta / Número de cuenta
 
-> ℹ️ ¡Inténtalo de nuevo! A diferencia de un número de cuenta bancaria, tu clave privada no se comparte con nadie.
+> ℹ️ ¡Inténtalo de nuevo! A diferencia de un número de cuenta bancaria, tu llave privada no debe compartirse con otros.
 
-- [ ] Correo electrónico / Código postal
+- [ ] Email address / Zip code
 
-> ℹ️ ¡Inténtalo de nuevo! A diferencia de un código postal, tu clave privada no se comparte con nadie.
+> ℹ️ ¡Inténtalo de nuevo! A diferencia del código postal, tu llave privada no debe compartirse con otros.
 
-- [x] Dirección de una casa / Llave de la casa
+- [x] House address / House key
 
-> ℹ️ ¡Correcto! Tu dirección permite que otros te encuentren; solo tu clave privada te deja entrar.
+> ℹ️ ¡Correcto! Your address lets others find you, while only your private key lets you in.
 
-- [ ] Número de teléfono / Número de pasaporte
+- [ ] Número de teléfono / número de pasaporte
 
-> ℹ️ ¡Inténtalo de nuevo! Son ejemplos de información pública y privada, pero no tienen relación entre sí.
+> ℹ️ ¡Inténtalo de nuevo! Estos son ejemplos de información pública & privada, pero no están relacionados.
 
-# Frase de recuperación
+# Frase de Recuperación
 
-Cuando configuras una billetera nueva, tu aplicación de billetera te dará una `frase de recuperación`.
+Cuando configures una nueva billetera, la aplicación de tu billetera te proporcionará una `frase de recuperación`.
 
-También llamada “frase semilla” o “frase secreta”, da acceso a tu billetera y a tus activos cripto si:
+También llamada "frase semilla" o "frase secreta", esta cadena de palabras puede utilizarse para acceder a tu billetera y a tus criptoactivos si:
 
-- Tu `aplicación de billetera` o tu dispositivo falla o se daña.
-- Pierdes tu dispositivo o te lo roban.
-- Quieres acceder a tu billetera en varios dispositivos.
+- Tu `aplicación de billetera` o dispositivo falla inesperadamente o es dañada.
+- Tu dispositivo se ha perdido o robado.
+- Quieres acceder a tu billetera desde varios dispositivos.
 
-Suelen tener entre 12 y 24 palabras que representan un dato único, con el que se generan la `clave pública` y la `clave privada` de tu billetera.
+La mayoría de las frases de recuperación son una lista de 12 a 24 palabras que representan una cantidad de datos específicos. Estos datos se utilizan para generar tanto la `llave pública` como la `llave privada` de tu billetera.
 
-Recuperar la billetera **no** cambia ni restablece las claves.
+La recuperación de la billetera **no** cambia ni restablece las claves.
 
-Es como una llave maestra: recrea todos los pares de claves de tu billetera. **Nunca compartas tu frase de recuperación.**
+Your recovery phrase is like a master key: it can recreate every key pair in your wallet. **Nunca compartas tu frase de recuperación.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
@@ -173,41 +172,41 @@ Es como una llave maestra: recrea todos los pares de claves de tu billetera. **N
 
 > ℹ️ ¡Inténtalo de nuevo!
 
-- [x] Sí
+- [x] Yes
 
-> ℹ️ ¡Correcto! Las frases de recuperación dan acceso a tu billetera, incluso en varios dispositivos.
+> ℹ️ ¡Correcto! Las frases de recuperación permiten el acceso a tu billetera, incluso en múltiples dispositivos.
 
-# Tipos de billetera
+# Tipos de Billeteras
 
-Igual que hay muchos tipos de software, hay muchos tipos de billetera. Veamos las cuatro categorías principales:
+Así como existen muchos tipos de programas informáticos, también existen muchos tipos de billeteras. Veamos las cuatro categorías principales:
 
-- 🏦 **Billeteras con custodia:** un tercero se hace responsable de tus claves privadas.
-- 👤 **Billeteras de autocustodia (sin custodia):** tú eres responsable de tus claves privadas.
+- 🏦 **Billeteras de custodia:** en los que un tercero es responsable de tus claves privadas.
+- **👤 Billeteras de autocustodia (sin custodia de un tercero):** en los que eres responsable de tus llaves privadas.
 
-Hay dos estilos de `billetera de autocustodia`:
+Existen dos estilos de `billetera de autocustodia`:
 
-- 🔥 **Billeteras calientes:** software en tu computadora o teléfono.
-- 🧊 **Billeteras frías:** un aparato físico (como una memoria USB) guardado en un lugar seguro.
+- 🔥 **Billeteras calientes:** software en tu computador o teléfono.
+- 🧊 **Billeteras frías:** una pieza de hardware (como un dispositivo de memoria) que almacenas en un lugar seguro.
 
-También oirás hablar de las `billeteras inteligentes`: un tipo emergente que ejecuta código y añade extras como acceso con passkey y recuperación de cuenta.
+You may also hear about `smart wallets`: an emerging type that runs code, enabling extras like passkey logins and account recovery.
 
-Cada billetera sirve para un caso distinto. Tranquilo, hoy solo crearemos una.
+Each wallet serves a different use-case. No te preocupes, hoy crearemos sólo una billetera.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Billeteras con custodia
+# Billetera Custodiadas
 
-Como tu `clave privada` abre el acceso a tu `billetera`, mantenerla segura es muy importante.
+Dado que tu `llave privada` desbloquea el acceso a tu `billetera`, ¡es muy importante mantenerla segura!
 
-Los servicios de `billetera con custodia` incluyen plataformas de intercambio como Coinbase y Kraken. **Ellas son tu custodio**: guardan tus claves privadas por ti. Accedes a sus servicios como a cualquier sitio web, con un correo y una contraseña que puedes restablecer.
+Ejemplos de servicios de `billetera custodiada` son las bolsas de intercambio de criptodivisas como Coinbase y Kraken. **They are your wallet custodian**: they look after your private keys for you. Accedes a sus servicios como en cualquier otro sitio web (con un nombre de usuario de correo electrónico y una contraseña restablecible).
 
-A algunas personas esto les basta, pero exige confiar en un tercero para proteger tus activos cripto y darte acceso cuando quieras operar con ellos o enviarlos. Además, tu acceso a algunas `aplicaciones blockchain` puede ser limitado.
+Esto puede ser todo lo que algunas personas necesiten, pero requiere que confíes en terceros la seguridad de tus criptoactivos, como a su vez el acceso a ellos cuando quieras comercializarlos o enviarlos a algún lugar. Además, tu acceso a algunas `aplicaciones blockchain` podría estar limitado.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-¿Controlas tu clave privada con una billetera con custodia?
+¿Controlas tú la llave privada de una billetera custodiada?
 
 - [ ] Sí
 
@@ -215,51 +214,51 @@ A algunas personas esto les basta, pero exige confiar en un tercero para protege
 
 - [x] No
 
-> ℹ️ ¡Correcto! Las billeteras con custodia exigen confiar en un tercero (el custodio) que controla tus claves privadas.
+> ℹ️ ¡Correcto! Las billeteras custodiadas requieren confiar en un tercero (custodio) para que controle tus llaves privadas.
 
-# Billetera sin custodia
+# Billetera No Custodiada o de Autocustodia
 
-Una `billetera de autocustodia` (como Zerion o Trezor) es aquella en la que controlas por completo tu `clave privada`. No tienes **ningún custodio**, y solo tú eres responsable de mantenerla a salvo.
+Tienes una `billetera de autocustodia` (como Zerion o Trezor) cuando controlas por completo su acceso a través de tu `llave privada`. **No tiene custodio externo**, y sólo tú eres responsable de mantener a salvo tu llave privada.
 
-Estas billeteras ofrecen el mayor acceso y libertad dentro del mundo `web3`. Nunca tendrás que preocuparte de que un tercero congele o gestione mal tus fondos.
+Estas billeteras ofrecen el mayor rango de acceso y libertad dentro del mundo `web3`. Nunca tendrás que preocuparte de que un tercero congele o maneje mal tus fondos.
 
-La contrapartida es el riesgo: si pierdes el acceso a tu `frase de recuperación`, o tu clave privada queda expuesta, casi nunca hay forma de recuperar la billetera.
+La contrapartida está en el riesgo: si pierdes el acceso a tu `frase de recuperación`, o tu llave privada se ve comprometida, a menudo existe muy poco que puedas hacer para restaurar el acceso a la billetera.
 
-Elijas el camino que elijas, conviene conocer bien la seguridad de las billeteras. Te daremos algunos consejos antes de terminar la lección.
+Cualquiera que sea la ruta que elijas, trae sus beneficios el estar familiarizado y cómodo/a con la seguridad de tu billetera. Te daremos algunos consejos antes de completar esta lección.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-¿Eres responsable de tu clave privada con una billetera de autocustodia?
+¿Eres tú el responsable de tu llave privada con una billetera de autocustodia?
 
-- [x] Sí
+- [x] Yes
 
-> ℹ️ ¡Correcto! Con una billetera de autocustodia, eres el único responsable de tus claves privadas.
+> ℹ️ ¡Correcto! Con una billetera de autocustodia, tú eres el único responsable de tus llaves privadas.
 
 - [ ] No
 
 > ℹ️ ¡Inténtalo de nuevo!
 
-# Billeteras calientes
+# Billeteras Calientes
 
-Escucharás bastante los términos “billetera caliente” y “billetera fría” en `web3`.
+Escucharás los términos "billetera caliente" y "billetera fría" bastante en `web3`.
 
-Una `billetera caliente` es una billetera a la que accedes desde una app en tu dispositivo, por ejemplo la app de Zerion. Como muchas apps `web2`, una aplicación de billetera está conectada a internet todo el tiempo.
+A `hot wallet` is a wallet accessed via an app on your device, the Zerion app for example. Al igual que muchas aplicaciones `web2`, una aplicación de billetera está siempre conectada a internet.
 
-Tu `clave privada` se guarda cifrada dentro de la app y solo se usa cuando interactúas con la blockchain. Se llaman “calientes” por esa conexión “caliente” entre internet y tu clave privada.
+Tu `llave privada` se cifra y almacena dentro de la aplicación de billetera, y sólo se accede a ella cuando interactúas con la cadena de bloques. Estas billeteras se llaman ‘billeteras calientes’ por esta conexión “caliente o activa” entre internet y su llave privada.
 
-Las billeteras calientes son cómodas para el día a día, como la billetera física que llevas en el bolsillo. ¡Hoy crearemos una billetera caliente!
+Las billeteras calientes son convenientes para las interacciones pequeñas del día a día, de la misma manera que una billetera o monedero físics que mantienes en tu bolsillo. ¡Hoy crearemos una billetera caliente!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Billeteras frías
+# Billeteras Frías
 
-A medida que avances en tu viaje `web3`, encontrarás un panorama lleno de compromisos tecnológicos interesantes.
+A medida que profundices tu viaje en `web3`, irás conociendo un panorama lleno de interesantes equilibrios tecnológicos.
 
-Las `billeteras frías` dan más seguridad a cambio de comodidad. En una billetera fría, tu `clave privada` se guarda en un aparato dedicado (como una memoria USB o un disco externo). Debes conectarlo físicamente a tu computadora para acceder a tu billetera en la blockchain. Tu clave privada nunca se conecta directamente a internet, y de ahí viene el nombre “fría”.
+Las `billeteras frías` garantizan una mayor seguridad a costa de la conveniencia. Una billetera fría es aquella en la que tu `llave privada` se almacena en un dispositivo hardware dedicado (como un disco de memoria o disco duro externo). Debes conectar físicamente la billetera física a su computador para acceder a tu billetera en la cadena de bloques. En este caso, tu llave privada nunca está o ha estado conectada directamente a internet. Las billeteras frías se llaman así debido a esta conexión de internet “fría”.
 
-Se consideran más seguras que las `billeteras calientes`, porque tu `clave privada` se guarda sin conexión, fuera del alcance de atacantes digitales.
+They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline, out of reach of digital attackers.
 
 Ledger y Trezor son ejemplos de `billeteras frías`.
 
@@ -267,37 +266,37 @@ Ledger y Trezor son ejemplos de `billeteras frías`.
 
 # Knowledge Check 6
 
-¿Cuál de estos tipos de billetera se considera el más seguro?
+¿Cuál de los siguientes tipos de billetera se considera el más seguro?
 
-- [ ] Todas las billeteras son más o menos iguales
+- [ ] Todas las billeteras son similares
 
-> ℹ️ ¡Inténtalo de nuevo! Cada tipo de billetera tiene sus compromisos, y el nivel de seguridad es uno de ellos.
+> ℹ️ ¡Inténtalo de nuevo! Cada tipo de billetera tiene sus ventajas y desventajas, y el nivel de seguridad es una de ellas.
 
 - [ ] Una billetera caliente
 
-> ℹ️ ¡Inténtalo de nuevo! Una billetera caliente tiene conexión activa a internet, lo que la hace más vulnerable a ataques digitales.
+> ℹ️ ¡Inténtalo de nuevo! Una billetera caliente tiene una conexión activa a internet que la hace más susceptible a ataques digitales.
 
-- [ ] Una billetera con custodia
+- [ ] Una billetera custodiada
 
-> ℹ️ ¡Inténtalo de nuevo! El tercero que guarda las claves privadas puede sufrir un hackeo o quebrar.
+> ℹ️ ¡Inténtalo de nuevo! El tercero que posea las llaves privadas puede ser hackeado o ir en quiebra.
 
-- [x] Una billetera fría
+- [x] A cold wallet
 
-> ℹ️ ¡Correcto! Las billeteras frías no están conectadas a internet, lo que las hace más resistentes a ataques.
+> ℹ️ ¡Correcto! Las billeteras frías no están conectadas activamente a internet, lo que las hace resistente a ataques.
 
-# Seguridad de la billetera
+# Seguridad de la Billetera
 
-Sea caliente o fría, tu `billetera de autocustodia` merece varias buenas prácticas de seguridad.
+Independientemente de si tu `billetera de autocustodia` es caliente o fría, hay muchas prácticas de seguridad inteligentes que deberías desarrollar.
 
-🖊️ Anota tu `frase de recuperación` en un material duradero (papel plastificado o incluso acero) y guárdala en un lugar muy seguro. Nunca la compartas, ni tampoco tu `clave privada`. **Es más que una contraseña.**
+🖊️ Record your `recovery phrase` on durable physical material (laminated paper, or even steel) and store it somewhere very safe. Nunca la compartas ni compartas tu `llave privada` con nadie. **It’s more than just a password.**
 
-🔍 Revisa bien los datos cada vez que envíes fondos o firmes, incluso montos pequeños: los errores no se deshacen.
+🔍 Double-check the details whenever you send funds or sign, even for small amounts: mistakes cannot be undone.
 
-🔭 Investiga las `aplicaciones blockchain` que uses antes de conectar tu billetera o firmar sus transacciones.
+🔭 Research any `blockchain apps` you plan to use before connecting your wallet or signing their transactions.
 
-💰 Usa billeteras con pocos fondos para explorar web3 y reparte los activos valiosos en varias billeteras.
+💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts.
 
-🛡️ Cuidado con las estafas que te hacen firmar autorizaciones dañinas: nuestra lección [Seguridad en Web3](https://app.banklessacademy.com/lessons/web3-security) enseña a detectarlas.
+🛡️ Watch out for scams that trick you into signing harmful transactions or approvals: our [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) lesson shows how to spot them.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
@@ -305,46 +304,46 @@ Sea caliente o fría, tu `billetera de autocustodia` merece varias buenas práct
 
 ¿Cuál es la forma más segura de proteger tu frase de recuperación?
 
-- [x] Escribirla en un material duradero y guardarla en un lugar seguro.
+- [x] Write it on a durable material and store it in a safe place.
 
-> ℹ️ ¡Correcto! Una copia física bien guardada, sin rastro digital, es la opción más segura.
+> ℹ️ ¡Correcto! Una copia de seguridad física sin rastros digitales es la opción de almacenamiento más segura.
 
-- [ ] Guardarla en tu computadora e imprimirla.
+- [ ] Guardarlo en tu computador e imprimirlo
 
-> ℹ️ ¡Inténtalo de nuevo! Si hackean tu computadora, podrían encontrarla. Imprimirla también abre muchas vías de ataque.
+> ℹ️ ¡Inténtalo de nuevo! Si su computadora es hackeada, su frase de recuperación podría ser encontrada. Imprimir también abre muchas oportunidades de ataque.
 
-- [ ] Tomarle una captura de pantalla y guardarla en tu teléfono.
+- [ ] Toma una captura de pantalla y guárdala en tu teléfono.
 
-> ℹ️ ¡Inténtalo de nuevo! Si hackean tu teléfono, podrías perder todos los activos de tu billetera.
+> ℹ️ ¡Inténtalo de nuevo! Si tu teléfono es hackeado, podrías perder todos los activos de tu billetera.
 
-- [ ] Guardarla en tu gestor de contraseñas.
+- [ ] Guardarlo en su gestor de contraseñas.
 
-> ℹ️ ¡Inténtalo de nuevo! Una sola filtración del gestor podría exponerla. Mantén tu frase sin conexión.
+> ℹ️ ¡Inténtalo de nuevo! A single password manager breach could expose it. Keep your phrase offline.
 
-# ¡Ya puedes crear tu primera billetera!
+# ¡Estás listo para crear tu primera billetera!
 
-De hecho, necesitarás una si quieres reclamar la prueba de haber completado esta misión.
+De hecho, necesitarás una si deseas reclamar la certificación de nuestra prueba de conocimientos.
 
-Hoy existen varias apps de `billetera caliente` con `autocustodia`. Usaremos la billetera Zerion en el resto de la lección porque:
+Hoy en día existen varias aplicaciones de `billetera caliente` con `autocustodia`. Para finalizar esta lección, exploraremos la billetera de Zerion, ya que:
 
 - ⚙️ Es compatible con la mayoría de las `aplicaciones blockchain`.
-- ⚡ Su interfaz es muy fluida y fácil de usar.
-- 💻 Tiene extensión para Chrome, Brave, Edge, Opera y Firefox.
-- 📱 También está disponible como app móvil para Android e iOS.
-- 🗣️ Zerion está traducida a varios idiomas.
+- ⚡ La interfaz es increíblemente fluida y fácil de usar.
+- 💻 It has a browser extension for Chrome, Brave, Edge, Opera, and Firefox internet browsers.
+- 📱 También está disponible como aplicación móvil para usuarios de Android e iOS.
+- 🗣️ Zerion soporta varios idiomas.
 
-El final de la lección está muy cerca: ahí te daremos las instrucciones para configurar tu billetera con Zerion.
+El final de la lección está a la vuelta de la esquina, ¡donde compartiremos las instrucciones para configurar tu billetera con Zerion!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-¿Zerion es una aplicación de billetera con custodia?
+¿Es Zerion una aplicación de billetera custodiada?
 
 - [ ] Sí
 
-> ℹ️ ¡Inténtalo de nuevo! Tu billetera Zerion no está controlada por un custodio.
+> ℹ️ ¡Inténtalo de nuevo! Tu billetera Zerion no está controlada por un custodiano.
 
 - [x] No
 
-> ℹ️ ¡Correcto! Las billeteras Zerion son de autocustodia, controladas solo por ti.
+> ℹ️ ¡Correcto! Zerion wallets are self-custody wallets, controlled by you, and you alone.
