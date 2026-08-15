@@ -1,0 +1,77 @@
+{
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "L'état actuel de l'internet, sans l'infrastructure blockchain."
+  },
+  "web3": {
+    "keyword": "web3",
+    "keyword_plural": "web3s",
+    "definition": "Se réfère à l'internet des blockchains, où les utilisateurs peuvent auto-garder leurs actifs et leurs données."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptomonnaie",
+    "keyword_plural": "cryptomonnaies",
+    "definition": "Une monnaie numérique hébergée par la technologie blockchain plutôt que par des autorités centralisées."
+  },
+  "blockchain apps": {
+    "keyword": "applications blockchain",
+    "keyword_plural": "blockchain appss",
+    "definition": "Des applications blockchain qui vous permettent d'échanger des crypto-monnaies, d'utiliser les médias sociaux web3, de faire des dons caritatifs ou même d'apprendre sur la blockchain - comme à la Bankless Academy."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchains",
+    "definition": "Système dans lequel un enregistrement des transactions en crypto-monnaies est conservé sur de nombreux ordinateurs à travers le monde."
+  },
+  "wallet app": {
+    "keyword": "application wallet",
+    "keyword_plural": "wallet apps",
+    "definition": "Une application sur votre ordinateur ou votre téléphone, utilisée pour se connecter à votre portefeuille sur la blockchain."
+  },
+  "public key": {
+    "keyword": "clé publique",
+    "keyword_plural": "public keys",
+    "definition": "La clé publique est l'adresse de votre wallet. Elle donne aux autres un point de référence pour vous envoyer des crypto-actifs."
+  },
+  "private key": {
+    "keyword": "clé privée",
+    "keyword_plural": "clés privées",
+    "definition": "Une clé privée donne accès à votre wallet, ce qui vous permet d'envoyer des crypto-actifs à d'autres portefeuilles."
+  },
+  "wallet": {
+    "keyword": "wallet",
+    "keyword_plural": "wallets",
+    "definition": "Un wallet est une application ou un dispositif utilisé pour envoyer et recevoir des actifs cryptographiques sur la blockchain."
+  },
+  "recovery phrase": {
+    "keyword": "phrase de récupération",
+    "keyword_plural": "recovery phrases",
+    "definition": "Une phrase de récupération est une liste de 12 à 24 mots, utilisée pour générer la clé publique et la clé privée de votre portefeuille."
+  },
+  "self-custody wallet": {
+    "keyword": "wallet en auto-garde",
+    "keyword_plural": "wallets en auto-garde",
+    "definition": "(AKA : wallet non-custodial) Avec un wallet à auto-garde, vous avez le contrôle exclusif de vos clés privées, qui à leur tour contrôlent vos crypto-actifs."
+  },
+  "custodial wallet": {
+    "keyword": "wallet custodial",
+    "keyword_plural": "wallets custodiaux",
+    "definition": "Avec un wallet custodial, une autre partie contrôle les clés privées, contrôlant ainsi l'accès à vos crypto-actifs."
+  },
+  "hot wallet": {
+    "keyword": "wallet chaud",
+    "keyword_plural": "wallets chauds",
+    "definition": "Un type de wallet en auto-garde qui est perpétuellement connecté à l'internet."
+  },
+  "cold wallet": {
+    "keyword": "wallet froid",
+    "keyword_plural": "wallets froids",
+    "definition": "Un type de wallet en auto-garde qui est stocké sur du matériel hors ligne."
+  },
+  "self-custody": {
+    "keyword": "auto-garde",
+    "keyword_plural": "self-custodys",
+    "definition": "Il s'agit d'un moyen de conserver vos actifs à un endroit où vous êtes seul à y avoir accès."
+  }
+}
