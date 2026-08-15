@@ -1,0 +1,42 @@
+{
+  "crypto wallet": {
+    "keyword": "加密钱包",
+    "keyword_plural": "加密钱包",
+    "definition": "允许您存储加密货币并发送/接收或使用它的应用程序。"
+  },
+  "blockchain": {
+    "keyword": "区块链",
+    "keyword_plural": "区块链",
+    "definition": "一种在全球多台计算机上保存加密货币交易记录的系统。"
+  },
+  "cryptocurrency": {
+    "keyword": "加密货币",
+    "keyword_plural": "加密货币",
+    "definition": "由区块链技术而非中央机构托管的数字货币。"
+  },
+  "wallet app": {
+    "keyword": "钱包应用程序（app）",
+    "keyword_plural": "钱包应用程序",
+    "definition": "电脑或手机上的app，用于连接区块链上的钱包。"
+  },
+  "public key": {
+    "keyword": "公钥",
+    "keyword_plural": "公钥",
+    "definition": "公钥就是你的地址。他人如果要向您发送加密资产，公钥将提供地址定位。"
+  },
+  "private key": {
+    "keyword": "私钥",
+    "keyword_plural": "私钥",
+    "definition": "私钥授权访问您的钱包，允许您将加密资产发送给其他钱包。"
+  },
+  "cryptography": {
+    "keyword": "密码学",
+    "keyword_plural": "密码学",
+    "definition": "一类用于安全通信或交易、防止外来干涉的技术。"
+  },
+  "encryption": {
+    "keyword": "加密",
+    "keyword_plural": "加密",
+    "definition": "将信息转换为私有、安全代码的过程，用于防止未经授权的访问。"
+  }
+}
