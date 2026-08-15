@@ -33,6 +33,15 @@ const LANGUAGE_DEFS = [
   { code: 'hi', name: 'Hindi', localName: 'हिन्दी', dir: 'ltr' },
   { code: 'id', name: 'Indonesian', localName: 'Bahasa Indonesia', dir: 'ltr' },
   { code: 'vi', name: 'Vietnamese', localName: 'Tiếng Việt', dir: 'ltr' },
+  // Wave 3 (2026-08-15). Highest reach remaining with no new mechanics: `ru`
+  // and `ko` add scripts we already handle (Cyrillic is live via uk; Hangul
+  // slugifies like ja/zh, so /content anchors fall back to `section-N`), and
+  // `pl` is Latin. What is NOT here is deliberate: `ar`/`ur` are blocked on
+  // the RTL audit, and `zh-tw` on a Traditional-vs-Simplified policy against
+  // the existing `zh`.
+  { code: 'ru', name: 'Russian', localName: 'Русский', dir: 'ltr' },
+  { code: 'ko', name: 'Korean', localName: '한국어', dir: 'ltr' },
+  { code: 'pl', name: 'Polish', localName: 'Polski', dir: 'ltr' },
 ] as const
 
 // 'en' | 'pt-br' | 'zh' | ... — derived from the registry

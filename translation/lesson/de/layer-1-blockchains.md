@@ -202,7 +202,7 @@ Wir können also sagen, etwas sei „dezentraler als etwas anderes“ statt „z
 
 Verschiedene Blockchains sind unterschiedlich stark dezentralisiert.
 
-- [x] Richtig
+- [x] Wahr
 
 > ℹ️ Richtig! Dezentralisierung ist ein Spektrum: Jede Blockchain wählt, wie viel sie für Skalierbarkeit oder andere Ziele eintauscht.
 

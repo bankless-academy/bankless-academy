@@ -129,7 +129,7 @@ Rechtliche Kontrollen und Abwägungen, wie z. B. die Möglichkeit des Optimism C
 
 Richtig oder falsch? Die Optimism Foundation wird das Optimism Collective über die gesamte Lebensdauer des Netzwerks anführen.
 
-- [ ] Richtig
+- [ ] Wahr
 
 > Versuchs nochmal!
 

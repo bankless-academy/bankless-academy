@@ -47,7 +47,18 @@ if (cmd === 'pins') {
     .sort((a, b) => b[1] - a[1])
     .map(([k, n]) => {
       const e = eg[k]
-      const t = e?.contexts?.prose?.term || e?.term || ''
+      // CITATION form (`term`), not `contexts.prose.term`. A pin seeds the
+      // glossary's `keyword`, which is the display form a lesson backticks and
+      // the runtime index matches on — it has to be the dictionary form, with
+      // inflections living in `keyword_forms`. ETHGlossary's prose form is the
+      // word as it appears mid-sentence, which for an inflecting language is
+      // case-marked and for Korean carries an agglutinated particle:
+      // `블록체인은` (blockchain + topic particle), `개인 키를` (private key +
+      // object particle). Pinning those makes a tooltip that can never resolve.
+      // Divergence is not marginal — prose differs from citation in 77% of ko
+      // entries, 54% of ru, 52% of uk, 49% of pl (vs 5-9% for fr/ja/hi/vi,
+      // which is why it went unnoticed through the earlier waves).
+      const t = e?.term || e?.contexts?.prose?.term || ''
       const latin = e?.scriptRule === 'keep_latin' || e?.scriptRule === 'always_latin'
       return { key: k, n, suggested: latin ? k : t, latin, hasEG: !!e }
     })

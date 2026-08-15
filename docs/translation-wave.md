@@ -40,6 +40,15 @@ Reference material, in order of authority:
    app maps the displayed word back to that key at runtime. `validate-content.js`
    fails the build on a backticked term that resolves to nothing, so check
    before you finish.
+   **A pinned term is not necessarily a backtickable one.** The style guide's
+   ```terms``` block fixes how a word is TRANSLATED wherever it appears; the
+   glossary decides whether it gets a tooltip. Several pins deliberately have no
+   glossary entry (`governance`, `fee`, `network`, `supply`, `yield`, `lending`,
+   `borrowing` …), because they exist for prose consistency. Backticking one is
+   a dead tooltip: the ru and vi waves each lost a verify cycle to `yield`,
+   whose only glossary key is `yield farm`. Follow the pin for the wording,
+   but only add backticks when the term resolves in
+   `translation/keywords/<lang>/keywords.json`.
 4. **Length is capped.** Slides are a fixed height; the verifier rejects a unit
    over 22 estimated rendered lines. Most languages run 20-35% longer than
    English, so compress: cut filler, shorten clauses, merge sentences. Never
@@ -66,8 +75,12 @@ For each slug assigned to you:
 
 1. Read `translation/lesson/en/<slug>.md`.
 2. Write **only the body** — everything after the frontmatter and the ASCII
-   banner block, starting at the first `#` for a LESSON or the first `##` for a
-   HANDBOOK — to
+   banner block. That is the first `#` for a LESSON and *usually* the first
+   `##` for a HANDBOOK, but **if the article opens with a preamble paragraph
+   before its first `##`, that preamble is part of the body**: `splitUnits`
+   counts pre-heading text as unit 0, so `staking-ether` is 7 units, not 6, and
+   a body that starts at `## Key Takeaways` fails the assembler with a
+   unit-count mismatch. Check the English unit count before you start. Write to
    `$TRANSLATION_SCRATCH/<lang>-<slug>.body.md`
    Do not copy the frontmatter or the banner: the assembler takes those from
    the English file and rewrites TITLE / DESCRIPTION / LANGUAGE / TRANSLATORS.

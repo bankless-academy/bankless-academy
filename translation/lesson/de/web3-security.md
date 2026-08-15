@@ -61,7 +61,7 @@ Deine Seed-Phrase ist aber nicht das einzige Ziel: Eine einzige schädliche Sign
 
 Richtig oder falsch? Betrüger können Token aus deiner Wallet abziehen, indem sie dich zu einer schädlichen Signatur verleiten, ohne deine Seed-Phrase zu kennen.
 
-- [x] Richtig
+- [x] Wahr
 
 > ℹ️ Richtig! Eine schädliche Signatur oder Token-Freigabe reicht schon aus. Schütze, was du signierst, so gut wie deine Seed-Phrase.
 
@@ -278,7 +278,7 @@ Eine Grenze bleibt: Eine Hardware-Wallet signiert alles, was du freigibst. Blind
 
 Richtig oder falsch? Eine Hardware-Wallet schützt dein Guthaben nur, wenn du jede Transaktion vor der Freigabe prüfst.
 
-- [x] Richtig
+- [x] Wahr
 
 > ℹ️ Richtig! Eine Hardware-Wallet schützt deine Schlüssel, aber nur das Prüfen der Signatur schützt dein Guthaben.
 

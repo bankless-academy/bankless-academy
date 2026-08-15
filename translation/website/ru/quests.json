@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Ваш Bitcoin в пути к Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Теперь его проверяют майнеры сети...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Транзакция записана в «базу данных» блокчейна...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto получил ваш Bitcoin!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "В нашем упрощённом симуляторе Bitcoin отправьте любую сумму BTC на адрес Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Интерактивная симуляция: отправка Bitcoin на адрес Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Сбросить симуляцию",
+    "Recipient": "Получатель",
+    "Address": "Адрес",
+    "Asset": "Актив",
+    "Amount": "Сумма",
+    "Balance": "Баланс",
+    "Send": "Отправить"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Разобраться в транзакции",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Чтобы засчитать квест, вставьте адреса «Откуда» и «Куда» из этой транзакции",
+    "From": "Откуда",
+    "To": "Куда"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Начните путь в сети Optimism с делегирования OP.",
+    "Select a ": "Выберите ",
+    "Delegate": "делегата",
+    " for your OP": " для своих OP",
+    "or delegate to ": "или делегируйте ",
+    "Tip": "Совет",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "смотрите статью «{{lesson_title}}» в Справочнике Исследователя, там полный разбор квеста.",
+    "Refresh": "Обновить",
+    "Read Entry": "Читать статью"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "Создайте свой первый криптокошелёк.",
+    "If you already have a wallet, move to step 2.": "Если кошелёк уже есть, переходите к шагу 2.",
+    "1. Download and install the Zerion wallet from ": "1. Скачайте и установите кошелёк Zerion с ",
+    "2. Connect your wallet to Bankless Academy": "2. Подключите кошелёк к Bankless Academy",
+    "Tip": "Совет",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "смотрите статью «{{lesson_title}}» в Справочнике Исследователя, там пошаговый разбор квеста.",
+    "Read Entry": "Читать статью"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Выберите все скриншоты с мошенничеством 👆",
+    "Hint: 1 screenshot is not a scam": "Подсказка: один скриншот не мошеннический"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Подключите кошелёк к Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Зарегистрируйтесь на gm.xyz по этому ",
+    "invite link": "приглашению",
+    " or register with a phone number": " или по номеру телефона",
+    "3. Join ": "3. Вступите в ",
+    "Validate quest": "Проверить квест"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Выбранные ответы:",
+    "Bankless Archetype results:": "Результаты архетипа Bankless:",
+    "Risk": "Риск",
+    "Self sovereignty": "Личный суверенитет",
+    "DEX": "DEX",
+    "Trads": "Традфи",
+    "LP": "LP",
+    "Long term": "Долгий срок",
+    "Works in a DAO": "Работает в DAO",
+    "Crypto knowledge": "Знания о криптовалютах",
+    "Crypto donation": "Донаты в криптовалюте",
+    "Buys stuff in crypto": "Покупает за криптовалюту",
+    "Deployed smart contracts": "Разворачивает смарт-контракты",
+    "Anon": "Аноним",
+    "Works in web3": "Работает в web3",
+    "Creates digital art": "Создаёт цифровое искусство",
+    "Owns Bitcoin": "Владеет Bitcoin",
+    "Owns NFTs": "Владеет NFT",
+    "Aping into something new": "Бросается во всё новое",
+    "Owns shitcoin": "Владеет шиткоином"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Как обменять токены через 1inch",
+    "1. Load ": "1. Откройте ",
+    " on the ": " в сети ",
+    "Base network": "Base",
+    "2. Swap any token.": "2. Обменяйте любой токен.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Вставьте ниже хеш успешной транзакции <b>обмена</b>:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Совет:</b> 🚨 Убедитесь, что вставляете хеш транзакции <b>обмена</b> в <b>сети Base</b>, а не хеш транзакции <b>одобрения</b> токена.",
+    "Read documentation": "Читать документацию"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Откройте ",
+    " on the ": " в сети ",
+    "Optimism network": "Optimism",
+    "2. Swap any token.": "2. Обменяйте любой токен.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Вставьте ниже хеш успешной транзакции <b>обмена</b>:",
+    "Resources:": "Материалы:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Совет:</b> убедитесь, что вставляете хеш транзакции <b>обмена</b> в <b>сети Optimism</b>, а не хеш транзакции одобрения токена. Подробности в статье Справочника Исследователя.",
+    "Read Entry": "Читать статью"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Что вам интереснее всего научиться делать в DeFi?",
+    "Signature verified": "Подпись проверена",
+    "Sign your answer": "Подписать ответ",
+    "Select your answer": "Выберите ответ",
+    "Investing": "Инвестиции",
+    "Trading": "Торговля",
+    "Lending & Borrowing": "Кредитование и заимствование",
+    "Staking": "Стейкинг"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Начните путь в стейкинге с Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "Получите 0,0002 rETH в любой поддерживаемой сети*.",
+    "a) Visit a ": "a) Зайдите на ",
+    "Decentralized Exchange": "децентрализованную биржу",
+    " to swap for rETH (Optimism or Base recommended)": " и обменяйте на rETH (рекомендуем Optimism или Base)",
+    "b) Or mint rETH on Mainnet via ": "b) Или выпустите rETH в основной сети через ",
+    " (0.01 ETH minimum)": " (минимум 0,01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Совет: смотрите статью «{{lesson_title}}» в Справочнике Исследователя, чтобы выбрать удобный способ пополнения.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Поддерживаемые сети: Ethereum, Optimism, Base, Arbitrum и Polygon (POS)",
+    "Check Quest": "Проверить квест"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Для этого квеста понадобится криптокошелёк.",
+    "Wallet connected!": "Кошелёк подключён!",
+    "Waiting to detect your wallet ...": "Ищем кошелёк ...",
+    "If you don't have one, let's set one up!": "Если его нет, давайте создадим!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Ончейн-квесты и награды работают только с подключённым кошельком.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Кошелёк работает как аккаунт в блокчейне. Он нужен, чтобы пользоваться блокчейн-приложениями и покупать, хранить и отправлять криптовалюту.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Посмотрите короткое видео и создайте первый кошелёк в Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "При нынешнем уровне блокчейн-технологий блокчейн может оптимизировать не более двух свойств из трёх.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Отметьте свойства, которые Bitcoin и Ethereum выбрали изначально."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Начните путь в L2.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Держите на балансе минимум 0,0002 ETH в сети Base или Optimism",
+    "Options to fund your wallet:": "Способы пополнить кошелёк:",
+    "Explore other options": "Другие способы",
+    "Check Quest": "Проверить квест"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Перед получением ончейн-сертификата:",
+    "Share on Twitter / X": "Поделиться в Twitter / X",
+    "Share on Farcaster": "Поделиться в Farcaster",
+    "See you there! Over and out 📡": "До встречи! Конец связи 📡",
+    "Connect": "Подключить",
+    "Repost on Twitter / X": "Сделать репост в Twitter / X",
+    "Validate": "Проверить"
+  }
+}

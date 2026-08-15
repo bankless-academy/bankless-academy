@@ -386,3 +386,32 @@ Interface strings
 - Same for wallet prompts and security screens: "Secret Recovery Phrase",
   "Approve", "Sign", "Swap", "Revoke". Gloss once, then reuse the English
   label.
+
+## Fixed True/False option labels
+
+Several Knowledge Checks are True/False questions whose two options are the
+bare words `True` and `False`. Render them as exactly:
+
+| English option | id |
+|---|---|
+| `True` | **Benar** |
+| `False` | **Salah** |
+
+**Do not re-translate these per lesson.** The 19 lessons are split across five
+independent agents, so an unpinned two-word string drifts: before this section
+existed, German shipped both *Wahr* and *Richtig*, Hindi both गलत and ग़लत (a
+nukta apart, visually near-identical), Chinese both 正确 and 对, and Russian
+three different pairs across five agents. None of it was visible to the
+structural verifier, which checks that the option COUNT and the `[x]` index
+match English and never looks at the option text.
+
+Two constraints on the choice, both already satisfied above:
+
+1. **The label must not collide with a quiz-feedback opener.** If the
+   correct-answer opener were the same word as the "True" option, the toast
+   would read as an echo of the option the learner just clicked rather than as
+   a verdict. This is why Russian uses Правда/Неправда and not Верно/Неверно
+   (its opener is `Верно!`), and why Indonesian uses Tepat! as its opener
+   rather than Benar!, which is its "True" option.
+2. **Keep the `[x]` on the same option index as English.** Only the option
+   TEXT changes here; users have answer numbers saved in localStorage.

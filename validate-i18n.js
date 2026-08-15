@@ -16,6 +16,7 @@
 // Run: `yarn validate-i18n` (also runs as part of `yarn build`).
 import fs from 'fs'
 import path from 'path'
+import { displayWidth } from './content-lib.js'
 
 const errors = []
 const warnings = []
@@ -318,9 +319,17 @@ for (const lang of langs) {
     for (const [k, v] of Object.entries(trFlat)) {
       const source = enFlat[k]
       if (typeof source !== 'string' || typeof v !== 'string') continue
-      if (source.length > SHORT_EN || source.length < 4) continue
-      if (v.length < source.length * GROWTH) continue
-      worst.push({ ns, k, source, v, ratio: v.length / source.length })
+      // Measured in RENDERED width, not code units. `.length` counts a Hangul
+      // syllable or a CJK ideograph as 1 while it occupies two Latin character
+      // widths, so this check was effectively blind for ko/ja/zh — the very
+      // languages whose labels are most likely to overflow a fixed-width slot.
+      // `displayWidth` (shared with the slide-length estimator) counts them as
+      // 2 and skips combining marks.
+      const srcW = displayWidth(source)
+      const trW = displayWidth(v)
+      if (srcW > SHORT_EN || srcW < 4) continue
+      if (trW < srcW * GROWTH) continue
+      worst.push({ ns, k, source, v, ratio: trW / srcW })
     }
   }
   worst.sort((a, b) => b.ratio - a.ratio)

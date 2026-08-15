@@ -1,0 +1,1765 @@
+{
+  ".eth": {
+    "keyword": ".eth",
+    "definition": "이더리움 네임 서비스(ENS)에서 쓰는 Web3 도메인 끝부분이에요. yourname.eth처럼 써요."
+  },
+  "2 factor authentication": {
+    "keyword": "2단계 인증",
+    "keyword_forms": [
+      "2요소 인증",
+      "이중 인증"
+    ],
+    "definition": "온라인 계정에 접속하려는 사람이 정말 본인인지 한 번 더 확인하는 보안 장치예요."
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "온라인 계정에 접속하려는 사람이 정말 본인인지 한 번 더 확인하는 보안 장치예요."
+  },
+  "51% attack": {
+    "keyword": "51% 공격",
+    "keyword_plural": "51% 공격",
+    "keyword_forms": [
+      "51퍼센트 공격"
+    ],
+    "definition": "네트워크의 블록 생성 능력을 절반 넘게 차지해서 블록체인의 합의를 공격하는 일이에요."
+  },
+  "address": {
+    "keyword": "주소",
+    "keyword_plural": "주소",
+    "definition": "블록체인에서 어떤 대상을 가리키는 고유한 공개 식별자예요."
+  },
+  "addresses": {
+    "keyword": "주소",
+    "definition": "블록체인에서 각 대상을 가리키는 고유한 공개 식별자예요."
+  },
+  "aggregator": {
+    "keyword": "애그리게이터",
+    "keyword_plural": "애그리게이터",
+    "keyword_forms": [
+      "어그리게이터"
+    ],
+    "definition": "여러 곳의 정보를 한데 모아 가장 좋은 조건을 보여 주는 도구예요."
+  },
+  "airdrop": {
+    "keyword": "에어드롭",
+    "keyword_plural": "에어드롭",
+    "keyword_forms": [
+      "에어드랍"
+    ],
+    "definition": "암호화폐 자산을 사용자에게 무료로 나눠 주는 일이에요."
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "definition": "Capital Allocation Protocol의 줄임말이에요. 모아 둔 자금을 여러 사람이 효율적이고 투명하게 나눠 쓸 수 있게 해 주는 오픈소스 프로토콜이에요."
+  },
+  "allowance": {
+    "keyword": "허용량",
+    "keyword_plural": "허용량",
+    "definition": "스마트 컨트랙트 같은 대상에게, 보유한 토큰을 트랜잭션에서 정해진 만큼 쓸 수 있도록 주는 권한이에요."
+  },
+  "alternative layer 1": {
+    "keyword": "대안 레이어 1",
+    "keyword_plural": "대안 레이어 1",
+    "keyword_forms": [
+      "대체 레이어 1"
+    ],
+    "definition": "이더리움과 비트코인 외의 레이어 1 블록체인이에요."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM",
+    "definition": "(Automated Market Maker) 공개된 알고리즘을 바탕으로 거래 상대를 자동으로 이어 주는 시스템이에요."
+  },
+  "app": {
+    "keyword": "앱",
+    "keyword_plural": "앱",
+    "definition": "컴퓨터나 모바일 기기에서 쓰는 응용 프로그램이에요."
+  },
+  "app store": {
+    "keyword": "앱 스토어",
+    "keyword_plural": "앱 스토어",
+    "keyword_forms": [
+      "앱스토어"
+    ],
+    "definition": "컴퓨터나 모바일 기기용 앱을 내려받는 디지털 상점이에요."
+  },
+  "asynchronous": {
+    "keyword": "비동기",
+    "keyword_forms": [
+      "비동기식"
+    ],
+    "definition": "여러 사람이 함께 일할 때, 모두가 같은 시간에 있지 않아도 되는 소통 방식이에요."
+  },
+  "attestation": {
+    "keyword": "증명",
+    "keyword_plural": "증명",
+    "keyword_forms": [
+      "어테스테이션"
+    ],
+    "definition": "무언가가 사실이라고 서명으로 확인해 주는 거예요. 이더리움에서는 검증자가 블록이 유효하다고 투표하며 증명을 발행해요."
+  },
+  "autonomy": {
+    "keyword": "자율성",
+    "definition": "남이 정한 틀을 따르는 대신, 자기 행동을 스스로 정하는 성질이에요."
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "keyword_forms": [
+      "Basename"
+    ],
+    "definition": "Base 네트워크의 이름 서비스예요. 지갑에 .base.eth로 끝나는 읽기 쉬운 이름을 붙일 수 있어요."
+  },
+  "batch auction": {
+    "keyword": "일괄 경매",
+    "keyword_plural": "일괄 경매",
+    "keyword_forms": [
+      "배치 옥션"
+    ],
+    "definition": "짧은 시간 동안 모인 여러 주문을 한꺼번에 묶어 하나의 공정한 가격으로 체결하는 거래 방식이에요."
+  },
+  "bet": {
+    "keyword": "베팅",
+    "keyword_plural": "베팅",
+    "keyword_forms": [
+      "내기"
+    ],
+    "definition": "더 큰 보상을 노리고 돈을 잃을 위험을 감수하는 거예요."
+  },
+  "blob": {
+    "keyword": "블롭",
+    "keyword_plural": "블롭",
+    "keyword_forms": [
+      "블랍"
+    ],
+    "definition": "이더리움 블록 안에 있는 값싸고 임시적인 데이터 공간이에요. 레이어 2가 트랜잭션 묶음을 올릴 때 써요."
+  },
+  "block": {
+    "keyword": "블록",
+    "keyword_plural": "블록",
+    "keyword_forms": [
+      "블럭"
+    ],
+    "definition": "블록체인에 담기는 트랜잭션 묶음이에요."
+  },
+  "block builder": {
+    "keyword": "블록 빌더",
+    "keyword_plural": "블록 빌더",
+    "definition": "트랜잭션을 모아 새 블록을 조립하는 전문 운영자예요. 이렇게 만든 블록을 블록 제안자가 네트워크에 알려요."
+  },
+  "block explorer": {
+    "keyword": "블록 탐색기",
+    "keyword_plural": "블록 탐색기",
+    "keyword_forms": [
+      "블록 익스플로러",
+      "블록탐색기"
+    ],
+    "definition": "블록체인 데이터를 검색하고 살펴볼 수 있는 도구예요."
+  },
+  "block hash": {
+    "keyword": "블록 해시",
+    "keyword_plural": "블록 해시",
+    "keyword_forms": [
+      "블록해시"
+    ],
+    "definition": "각 블록 파일의 고유한 식별자예요. 새 블록마다 바로 앞 블록의 블록 해시를 담아, 하나로 이어진 블록체인을 만들어요."
+  },
+  "block producer": {
+    "keyword": "블록 생성자",
+    "keyword_plural": "블록 생성자",
+    "keyword_forms": [
+      "블록 생산자"
+    ],
+    "definition": "새 트랜잭션 블록을 만들도록 뽑힌 네트워크 참여자예요. 채굴자나 검증자가 여기에 해당해요."
+  },
+  "block proposer": {
+    "keyword": "블록 제안자",
+    "keyword_plural": "블록 제안자",
+    "keyword_forms": [
+      "블록 프로포저"
+    ],
+    "definition": "네트워크 알고리즘이 뽑은 검증자 노드예요. 블록체인에 다음으로 추가할 블록을 고르는 역할을 해요."
+  },
+  "block reward": {
+    "keyword": "블록 보상",
+    "keyword_plural": "블록 보상",
+    "definition": "유효한 새 블록을 제안한 참여자에게 주는 네트워크 기본 코인이에요."
+  },
+  "block space": {
+    "keyword": "블록 공간",
+    "definition": "각 블록에서 트랜잭션과 데이터를 담을 수 있는 공간의 크기예요."
+  },
+  "blockchain": {
+    "keyword": "블록체인",
+    "keyword_plural": "블록체인",
+    "keyword_forms": [
+      "블럭체인"
+    ],
+    "definition": "암호화폐 트랜잭션 기록을 전 세계 수많은 컴퓨터가 함께 보관하는 시스템이에요."
+  },
+  "blockchain apps": {
+    "keyword": "블록체인 앱",
+    "keyword_forms": [
+      "블록체인 애플리케이션"
+    ],
+    "definition": "암호화폐를 스왑하거나, Web3 소셜 미디어를 쓰거나, 기부를 하거나, Bankless Academy처럼 온체인에서 배우게 해 주는 블록체인 응용 프로그램이에요."
+  },
+  "blockchain architecture": {
+    "keyword": "블록체인 구조",
+    "keyword_plural": "블록체인 구조",
+    "keyword_forms": [
+      "블록체인 아키텍처"
+    ],
+    "definition": "블록체인 기술에서 데이터를 어떻게 저장하는지 정해 둔 구조예요."
+  },
+  "blockchain technology": {
+    "keyword": "블록체인 기술",
+    "keyword_plural": "블록체인 기술",
+    "definition": "수많은 컴퓨터에 나뉘어 돌아가는 새로운 종류의 네트워크예요. 인터넷에 디지털 소유권이라는 새로운 층을 더해 줘요."
+  },
+  "blockchain trilemma": {
+    "keyword": "블록체인 트릴레마",
+    "keyword_plural": "블록체인 트릴레마",
+    "keyword_forms": [
+      "블록체인 삼중 딜레마"
+    ],
+    "definition": "보안, 확장성, 탈중앙화라는 세 가지 성질을 동시에 갖추기 어렵다는 문제예요."
+  },
+  "blockspace": {
+    "keyword": "블록 공간",
+    "keyword_forms": [
+      "블록스페이스"
+    ],
+    "definition": "각 블록에서 트랜잭션과 데이터를 담을 수 있는 공간의 크기예요."
+  },
+  "borrower": {
+    "keyword": "차입자",
+    "keyword_plural": "차입자",
+    "keyword_forms": [
+      "차용자"
+    ],
+    "definition": "이자를 내고 자산을 빌려 쓰는 사람이에요."
+  },
+  "bridge": {
+    "keyword": "브릿지",
+    "keyword_plural": "브릿지",
+    "keyword_forms": [
+      "브리지"
+    ],
+    "definition": "서로 다른 두 블록체인 네트워크가 소통하고 자산을 주고받을 수 있게 이어 주는 연결 통로예요."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "비트코인의 시장 심볼이에요."
+  },
+  "censorship-resistant": {
+    "keyword": "검열 저항성",
+    "definition": "어떤 정부나 기업도 무엇이 허용되고 무엇이 안 되는지를 마음대로 정할 수 없는 성질이에요."
+  },
+  "central bank": {
+    "keyword": "중앙은행",
+    "keyword_plural": "중앙은행",
+    "keyword_forms": [
+      "중앙 은행"
+    ],
+    "definition": "한 나라의 돈과 은행, 통화를 관리하는 기관이에요."
+  },
+  "centralization": {
+    "keyword": "중앙화",
+    "keyword_forms": [
+      "중앙집중화"
+    ],
+    "definition": "시스템 전체를 좌우하는 권한이 하나의 주체에 몰리는 거예요."
+  },
+  "centralized": {
+    "keyword": "중앙화된",
+    "keyword_forms": [
+      "중앙집중식"
+    ],
+    "definition": "하나의 주체가 시스템 전체를 통제하는 상태예요."
+  },
+  "centralized exchange": {
+    "keyword": "중앙화 거래소",
+    "keyword_plural": "중앙화 거래소",
+    "keyword_forms": [
+      "중앙화된 거래소"
+    ],
+    "definition": "(CEX) 수수료를 받고 암호화폐 거래를 중개하는 중앙화된 플랫폼이에요. 주식 거래소와 비슷해요."
+  },
+  "centralized exchange staking": {
+    "keyword": "중앙화 거래소 스테이킹",
+    "definition": "중앙화 거래소를 통해 토큰을 묶어 두고 보상을 받는 방식이에요."
+  },
+  "centralized services": {
+    "keyword": "중앙화 서비스",
+    "definition": "온라인 활동을 통제하는 기업이나 조직이에요. 규칙과 수수료를 정하고 데이터와 콘텐츠를 관리하는데, 사용자보다 자기 이익을 앞세우는 경우가 많아요."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX",
+    "definition": "(Centralized Exchange) 수수료를 받고 암호화폐 거래를 중개하는 플랫폼이에요. 주식 거래소와 비슷해요."
+  },
+  "chain": {
+    "keyword": "체인",
+    "keyword_plural": "체인",
+    "definition": "데이터 블록들을 하나로 묶어, 나중에 바꾸거나 고칠 수 없는 데이터베이스를 만들어요."
+  },
+  "circulating supply": {
+    "keyword": "유통 공급량",
+    "keyword_plural": "유통 공급량",
+    "keyword_forms": [
+      "유통량"
+    ],
+    "definition": "시장에서 실제로 거래할 수 있게 풀린 특정 암호화폐의 코인이나 토큰 수량이에요."
+  },
+  "coin": {
+    "keyword": "코인",
+    "keyword_plural": "코인",
+    "definition": "블록체인의 기본 자산이에요. 주로 네트워크에서 트랜잭션을 처리하는 화폐로 써요."
+  },
+  "cold wallet": {
+    "keyword": "콜드 지갑",
+    "keyword_plural": "콜드 지갑",
+    "keyword_forms": [
+      "콜드 월렛",
+      "콜드월렛"
+    ],
+    "definition": "인터넷에 연결되지 않은 기기에 보관하는 셀프 커스터디 지갑이에요."
+  },
+  "collateral": {
+    "keyword": "담보",
+    "keyword_forms": [
+      "담보물"
+    ],
+    "definition": "빌린 돈을 갚겠다는 보증으로, 차입자가 대출자에게 맡기는 자산이에요."
+  },
+  "commercial bank": {
+    "keyword": "상업은행",
+    "keyword_plural": "상업은행",
+    "keyword_forms": [
+      "상업 은행",
+      "시중은행"
+    ],
+    "definition": "개인과 기업의 돈을 관리하는 은행이에요."
+  },
+  "composability": {
+    "keyword": "조합성",
+    "keyword_forms": [
+      "컴포저빌리티",
+      "구성 가능성"
+    ],
+    "definition": "이미 있는 스마트 컨트랙트와 앱을 블록처럼 이어 붙여 새로운 서비스를 만들 수 있는 성질이에요."
+  },
+  "consensus": {
+    "keyword": "합의",
+    "keyword_forms": [
+      "컨센서스"
+    ],
+    "definition": "블록체인처럼 탈중앙화된 컴퓨터 네트워크 전체가 같은 내용에 동의하며 신뢰와 보안을 지키는 거예요."
+  },
+  "consensus mechanism": {
+    "keyword": "합의 메커니즘",
+    "keyword_plural": "합의 메커니즘",
+    "keyword_forms": [
+      "합의 알고리즘",
+      "합의 방식"
+    ],
+    "definition": "블록체인 네트워크가 어떤 트랜잭션이 정당하고 어떤 것이 사기인지 가려내는 방법이에요."
+  },
+  "consensus mechanisms": {
+    "keyword": "합의 메커니즘",
+    "definition": "블록체인 네트워크들이 어떤 트랜잭션이 정당하고 어떤 것이 사기인지 가려내는 방법이에요."
+  },
+  "counterparty risk": {
+    "keyword": "거래상대방 위험",
+    "keyword_plural": "거래상대방 위험",
+    "keyword_forms": [
+      "거래 상대방 위험",
+      "카운터파티 리스크"
+    ],
+    "definition": "상대방이 약속한 몫을 지키지 않을 수 있다는 위험이에요."
+  },
+  "credible neutrality": {
+    "keyword": "신뢰할 수 있는 중립성",
+    "definition": "특정한 사람을 편들지도, 차별하지도 않는 구조예요."
+  },
+  "crypto": {
+    "keyword": "암호화폐",
+    "definition": "(Cryptocurrency) 특정 국가가 아니라 인터넷에서 태어난 화폐예요. 중앙은행이 관리하는 대신 사용자들이 함께 운영하는 경우가 많아요."
+  },
+  "crypto wallet": {
+    "keyword": "암호화폐 지갑",
+    "keyword_plural": "암호화폐 지갑",
+    "keyword_forms": [
+      "암호화폐 월렛"
+    ],
+    "definition": "암호화폐를 보관하고 보내거나 받고 쓸 수 있게 해 주는 앱이에요."
+  },
+  "cryptocurrencies": {
+    "keyword": "암호화폐",
+    "definition": "특정 국가가 아니라 인터넷에서 태어난 화폐예요. 중앙은행이 관리하는 대신 사용자들이 함께 운영하는 경우가 많아요."
+  },
+  "cryptocurrency": {
+    "keyword": "암호화폐",
+    "keyword_plural": "암호화폐",
+    "keyword_forms": [
+      "가상화폐",
+      "암호 화폐"
+    ],
+    "definition": "특정 국가가 아니라 인터넷에서 태어난 화폐예요. 중앙은행이 관리하는 대신 사용자들이 함께 운영하는 경우가 많아요."
+  },
+  "cryptocurrency mining": {
+    "keyword": "암호화폐 채굴",
+    "keyword_forms": [
+      "암호화폐 마이닝"
+    ],
+    "definition": "블록체인 트랜잭션을 검증하고 그 대가로 암호화폐 보상을 받는 일이에요. 비트코인 같은 작업증명 네트워크에서 써요."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "암호화폐 지갑",
+    "keyword_plural": "암호화폐 지갑",
+    "definition": "암호화폐를 보관하고 보내거나 받고 쓸 수 있게 해 주는 앱이에요."
+  },
+  "cryptography": {
+    "keyword": "암호학",
+    "definition": "바깥에서 끼어들지 못하도록 안전하게 소통하거나 거래하는 기술이에요."
+  },
+  "custodial wallet": {
+    "keyword": "커스터디 지갑",
+    "keyword_plural": "커스터디 지갑",
+    "keyword_forms": [
+      "수탁 지갑",
+      "커스터디얼 지갑"
+    ],
+    "definition": "커스터디 지갑에서는 다른 곳이 개인 키를 갖고 있어서, 암호화폐 자산에 접근할 권한도 그쪽이 쥐고 있어요."
+  },
+  "custodian": {
+    "keyword": "커스터디언",
+    "keyword_plural": "커스터디언",
+    "keyword_forms": [
+      "수탁 기관",
+      "수탁자"
+    ],
+    "definition": "자산을 안전하게 지킬 책임을 맡은 금융 기관이에요."
+  },
+  "custom record": {
+    "keyword": "커스텀 레코드",
+    "keyword_plural": "커스텀 레코드",
+    "definition": "ENS 도메인에 직접 붙이는 데이터 항목이에요. 기본 주소 말고도 웹사이트나 소셜 링크 같은 정보를 더 담을 수 있어요."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO",
+    "definition": "(Decentralized Autonomous Organization) 블록체인 기술로 투표와 운영을 자동화하는 조직 구조예요."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApp",
+    "keyword_forms": [
+      "디앱"
+    ],
+    "definition": "블록체인과 탈중앙화된 네트워크에 연결되는 “탈중앙화 애플리케이션”이에요."
+  },
+  "death spiral": {
+    "keyword": "데스 스파이럴",
+    "keyword_plural": "데스 스파이럴",
+    "definition": "가격이 떨어지면 가격을 더 떨어뜨리는 행동이 이어지며 스스로 무너지는 현상이에요. 일부 알고리즘 스테이블코인에서 일어났어요."
+  },
+  "decentralization": {
+    "keyword": "탈중앙화",
+    "definition": "하나의 권력이 아니라 여러 사람에게 통제권을 나누는 거예요."
+  },
+  "decentralized": {
+    "keyword": "탈중앙화된",
+    "definition": "어떤 하나의 권력이나 주체도 시스템을 통제하지 않는 상태예요."
+  },
+  "decentralized exchange": {
+    "keyword": "탈중앙화 거래소",
+    "keyword_plural": "탈중앙화 거래소",
+    "keyword_forms": [
+      "탈중앙화된 거래소"
+    ],
+    "definition": "(DEX) 믿을 만한 중개자 없이도 교환이 이루어지게 해 주는 프로토콜이에요."
+  },
+  "decentralized finance": {
+    "keyword": "탈중앙화 금융",
+    "definition": "(DeFi) 블록체인 위에서 돌아가는 셀프 커스터디 금융 도구 모음이에요."
+  },
+  "decentralized money": {
+    "keyword": "탈중앙화 화폐",
+    "definition": "기관이 정하는 대신 커뮤니티가 함께 합의한 성질을 가진 돈이에요."
+  },
+  "decentralized services": {
+    "keyword": "탈중앙화 서비스",
+    "definition": "(dApp) 자동화를 이용해 수수료를 낮추고 사용자 경험을 개선하는 온라인 서비스예요."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "keyword_forms": [
+      "디파이"
+    ],
+    "definition": "(Decentralized Finance) 블록체인 위에서 돌아가는 셀프 커스터디 금융 도구 모음이에요."
+  },
+  "delegate": {
+    "keyword": "위임",
+    "keyword_plural": "위임",
+    "definition": "특정한 책임을 다른 사람에게 맡기는 거예요. 토큰 투표권을 넘겨 주는 일이 그 예예요."
+  },
+  "delegation": {
+    "keyword": "위임",
+    "keyword_plural": "위임",
+    "definition": "특정한 책임을 다른 사람에게 맡기는 거예요. 토큰 투표권을 넘겨 주는 일이 그 예예요."
+  },
+  "democracy": {
+    "keyword": "민주주의",
+    "keyword_plural": "민주주의",
+    "definition": "시민이 의사 결정에서 핵심 역할을 하며 권력을 행사하는 정치 체제예요."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX",
+    "definition": "(Decentralized Exchange) 믿을 만한 중개자 없이도 교환이 이루어지게 해 주는 프로토콜이에요."
+  },
+  "dex aggregator": {
+    "keyword": "DEX 애그리게이터",
+    "keyword_plural": "DEX 애그리게이터",
+    "keyword_forms": [
+      "DEX 어그리게이터"
+    ],
+    "definition": "여러 곳에 흩어진 DEX 유동성을 하나의 화면에 모아 주는 프로토콜이에요."
+  },
+  "digital assets": {
+    "keyword": "디지털 자산",
+    "definition": "디지털로 보관하는 가치 있는 모든 것이에요."
+  },
+  "digital signature": {
+    "keyword": "디지털 서명",
+    "keyword_plural": "디지털 서명",
+    "keyword_forms": [
+      "전자 서명",
+      "전자서명"
+    ],
+    "definition": "개인 키로 만든 증거로, 메시지나 트랜잭션을 승인했다는 뜻이에요. 손으로 쓴 서명과 비슷하지만 위조할 수 없어요."
+  },
+  "double-spend": {
+    "keyword": "이중 지불",
+    "keyword_plural": "이중 지불",
+    "keyword_forms": [
+      "이중 지출",
+      "이중지불",
+      "더블 스펜딩"
+    ],
+    "definition": "같은 디지털 돈을 두 번 쓰는 거예요. 블록체인 합의는 중앙 기관 없이 이것을 막으려고 존재해요."
+  },
+  "earn": {
+    "keyword": "벌기",
+    "keyword_forms": [
+      "수익 창출"
+    ],
+    "definition": "가치를 보태고 그 대가로 보상을 받는 거예요. 스킬 큐브에 있는 돈 관련 동사 중 하나예요."
+  },
+  "encryption": {
+    "keyword": "암호화",
+    "definition": "정보를 남이 볼 수 없는 안전한 코드로 바꾸는 과정이에요. 허가받지 않은 접근을 막는 데 써요."
+  },
+  "epoch": {
+    "keyword": "에포크",
+    "keyword_plural": "에포크",
+    "keyword_forms": [
+      "에폭"
+    ],
+    "definition": "특정 블록체인에서 정해진 개수의 블록이 쌓이는 데 걸리는 시간이에요."
+  },
+  "equality of opportunity": {
+    "keyword": "기회의 평등",
+    "definition": "배경이나 상황과 상관없이 누구나 같은 성공 기회를 갖는다는 공정성 원칙이에요."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20",
+    "definition": "이더리움의 대체 가능한 토큰 표준이에요. 이런 토큰은 잘게 쪼갤 수 있고 서로 구분되지 않아요."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721",
+    "definition": "이더리움의 대체 불가능한 토큰 표준이에요. 이런 토큰은 고유한 디지털 식별자를 가져서 복제하거나 쪼갤 수 없어요."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155",
+    "definition": "대체 가능한 토큰과 대체 불가능한 토큰을 하나의 최적화된 컨트랙트에서 함께 발행하는 이더리움 표준이에요."
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF",
+    "definition": "(Exchange-Traded Fund) 주식 시장에서 거래되는 투자 펀드예요. 주식, 금, 비트코인 같은 자산을 담고 있어요."
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "(이더) 이더리움의 기본 암호화폐예요. 네트워크에서 트랜잭션을 처리하고 검증자 노드를 운영하는 데 써요."
+  },
+  "ether": {
+    "keyword": "이더",
+    "definition": "(ETH) 이더리움의 기본 암호화폐예요. 네트워크에서 트랜잭션을 처리하고 검증자 노드를 운영하는 데 써요."
+  },
+  "ethereum blockchain": {
+    "keyword": "이더리움 블록체인",
+    "definition": "이더리움 네트워크의 트랜잭션과 소유권을 기록하는 공개 원장이에요."
+  },
+  "ethereum mainnet": {
+    "keyword": "이더리움 메인넷",
+    "definition": "이더리움의 주 레이어 1 네트워크예요. 여기서 일어나는 트랜잭션은 실제 가치를 가지며, 이더리움 레이어 2의 정산 레이어 역할을 해요."
+  },
+  "ethereum virtual machine": {
+    "keyword": "이더리움 가상 머신",
+    "keyword_forms": [
+      "EVM"
+    ],
+    "definition": "이더리움 가상 머신(EVM)은 스마트 컨트랙트를 실행하고 이더리움 네트워크의 상태를 계산하는 소프트웨어예요."
+  },
+  "fiat": {
+    "keyword": "법정화폐",
+    "keyword_forms": [
+      "법정 화폐",
+      "피아트"
+    ],
+    "definition": "금 같은 실물로 뒷받침되지 않고, 발행 주체에 대한 대중의 신뢰에서 가치가 나오는 국가 화폐예요."
+  },
+  "finality": {
+    "keyword": "완결성",
+    "keyword_forms": [
+      "파이널리티"
+    ],
+    "definition": "확정된 블록체인 트랜잭션이 영구적이며 되돌리거나 바꿀 수 없다는 보장이에요."
+  },
+  "finality time": {
+    "keyword": "완결 시간",
+    "definition": "트랜잭션이 유효하고 되돌려지지 않는다고 확신하기까지 걸리는 시간이에요."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) 나만 빠지는 것 같아 느끼는 불안이나 조바심이에요."
+  },
+  "fork": {
+    "keyword": "포크",
+    "keyword_plural": "포크",
+    "definition": "블록체인 네트워크에 큰 변화가 생겨 두 갈래로 나뉘는 거예요. 한쪽은 기존 프로토콜을, 다른 쪽은 새 프로토콜을 따라요."
+  },
+  "fraud": {
+    "keyword": "사기",
+    "definition": "블록체인 경제에서는 보유한 암호화폐 수량을 부당하게 바꾸려고 만든 불공정하거나 가짜인 트랜잭션을 뜻해요."
+  },
+  "fraud proof": {
+    "keyword": "사기 증명",
+    "keyword_plural": "사기 증명",
+    "keyword_forms": [
+      "사기 증거"
+    ],
+    "definition": "트랜잭션이 무효이며 사기가 일어났다는 것을 보여 주는 증거예요."
+  },
+  "front-running": {
+    "keyword": "프론트러닝",
+    "keyword_forms": [
+      "프론트 러닝",
+      "선행 매매"
+    ],
+    "definition": "남의 대기 중인 트랜잭션을 보고 돈을 더 내서 자기 트랜잭션을 먼저 처리시키며, 그 사람의 손해로 이익을 얻는 행위예요."
+  },
+  "fungibility": {
+    "keyword": "대체 가능성",
+    "keyword_forms": [
+      "대체가능성"
+    ],
+    "definition": "서로 바꿔 쓸 수 있는 성질이에요. 1달러 지폐끼리처럼 모든 단위의 가치가 같아서 어느 것으로든 대신할 수 있어요."
+  },
+  "gas": {
+    "keyword": "가스",
+    "definition": "블록체인 네트워크의 트랜잭션 수수료예요."
+  },
+  "gas fee": {
+    "keyword": "가스비",
+    "keyword_plural": "가스비",
+    "keyword_forms": [
+      "가스 수수료"
+    ],
+    "definition": "블록체인 네트워크를 쓰려고 내는 트랜잭션 수수료예요."
+  },
+  "gasless transactions": {
+    "keyword": "가스리스 트랜잭션",
+    "keyword_forms": [
+      "무가스 트랜잭션",
+      "가스비 없는 트랜잭션"
+    ],
+    "definition": "네트워크 기본 코인 대신, 거래하는 토큰으로 가스비를 내거나 후원자가 대신 내 주는 트랜잭션이에요."
+  },
+  "gold standard": {
+    "keyword": "금본위제",
+    "keyword_plural": "금본위제",
+    "definition": "한 나라의 화폐 가치를 금에 직접 연동하는 통화 제도예요."
+  },
+  "gwei": {
+    "keyword": "Gwei",
+    "definition": "이더리움 블록체인에서 쓰는 단위로, 10억분의 1 ETH인 0.000000001 ETH예요. 보통 가스 가격을 나타낼 때 써요."
+  },
+  "halving": {
+    "keyword": "반감기",
+    "keyword_plural": "반감기",
+    "keyword_forms": [
+      "하빙"
+    ],
+    "definition": "약 4년마다 찾아오는 예정된 사건이에요. 새 비트코인을 채굴할 때 받는 보상이 절반으로 줄어요."
+  },
+  "hardware wallet": {
+    "keyword": "하드웨어 지갑",
+    "keyword_plural": "하드웨어 지갑",
+    "keyword_forms": [
+      "하드웨어 월렛",
+      "하드웨어지갑"
+    ],
+    "definition": "개인 키를 인터넷에 연결되지 않은 물리적 기기에 보관하는 셀프 커스터디 지갑이에요."
+  },
+  "hash": {
+    "keyword": "해시",
+    "keyword_plural": "해시",
+    "keyword_forms": [
+      "해쉬"
+    ],
+    "definition": "정보의 디지털 지문이에요."
+  },
+  "hashing function": {
+    "keyword": "해시 함수",
+    "keyword_plural": "해시 함수",
+    "keyword_forms": [
+      "해싱 함수",
+      "해시함수"
+    ],
+    "definition": "어떤 입력이든 길이가 일정한 고유한 지문, 곧 해시로 바꿔 주는 함수예요. 한 방향으로 계산하기는 쉽지만 거꾸로 되돌리기는 사실상 불가능해요."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) 시장이 어떻든 암호화폐를 팔지 않는다는 뜻의 암호화폐 은어예요."
+  },
+  "hot wallet": {
+    "keyword": "핫 지갑",
+    "keyword_plural": "핫 지갑",
+    "keyword_forms": [
+      "핫 월렛",
+      "핫월렛"
+    ],
+    "definition": "늘 인터넷에 연결된 상태로 쓰는 셀프 커스터디 지갑이에요."
+  },
+  "inflation": {
+    "keyword": "인플레이션",
+    "definition": "물가가 전반적으로 오르고 돈의 구매력이 떨어지는 현상이에요."
+  },
+  "intent": {
+    "keyword": "인텐트",
+    "keyword_plural": "인텐트",
+    "definition": "“X를 최소 Y로 스왑해 줘”처럼 원하는 결과를 적어 서명한 거래 요청이에요. 가장 좋은 경로는 전문가에게 맡겨요."
+  },
+  "intermediaries": {
+    "keyword": "중개자",
+    "definition": "가치나 정보를 주고받도록 사람들을 이어 주는 조직이나 서비스예요."
+  },
+  "intermediary": {
+    "keyword": "중개자",
+    "keyword_plural": "중개자",
+    "definition": "가치나 정보를 주고받도록 사람들을 이어 주는 조직이나 서비스예요."
+  },
+  "intermediary token": {
+    "keyword": "중간 토큰",
+    "keyword_plural": "중간 토큰",
+    "definition": "거래 경로의 중간에 들어가는 토큰이에요. 시작 토큰도 도착 토큰도 아니에요."
+  },
+  "interoperability": {
+    "keyword": "상호운용성",
+    "keyword_forms": [
+      "상호 운용성"
+    ],
+    "definition": "서로 다른 앱과 토큰, 블록체인이 함께 작동하고 정보를 주고받을 수 있는 성질이에요."
+  },
+  "invest": {
+    "keyword": "투자",
+    "keyword_forms": [
+      "투자하기"
+    ],
+    "definition": "가치가 오를 것으로 기대하며 코인이나 토큰 같은 자산에 돈을 넣는 거예요."
+  },
+  "know-your-customer": {
+    "keyword": "고객 신원 확인",
+    "definition": "(KYC) 정부가 정한 절차에 따라 사용자의 신원을 확인하는 과정이에요."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know-Your-Customer) 정부가 정한 절차에 따라 사용자의 신원을 확인하는 과정이에요."
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "definition": "레이어 1은 비트코인이나 이더리움 같은 기반 네트워크를 뜻해요."
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "definition": "이더리움의 보안을 그대로 물려받으면서 확장성을 넓혀 주는 블록체인이에요."
+  },
+  "layer 1": {
+    "keyword": "레이어 1",
+    "keyword_plural": "레이어 1",
+    "keyword_forms": [
+      "레이어1"
+    ],
+    "definition": "레이어 1은 비트코인이나 이더리움 같은 기반 네트워크를 뜻해요."
+  },
+  "layer 2": {
+    "keyword": "레이어 2",
+    "keyword_plural": "레이어 2",
+    "keyword_forms": [
+      "레이어2"
+    ],
+    "definition": "이더리움의 보안을 그대로 물려받으면서 확장성을 넓혀 주는 블록체인이에요."
+  },
+  "ledger": {
+    "keyword": "원장",
+    "keyword_plural": "원장",
+    "keyword_forms": [
+      "장부"
+    ],
+    "definition": "지금까지 일어난 모든 트랜잭션의 기록이에요."
+  },
+  "lender": {
+    "keyword": "대출자",
+    "keyword_plural": "대출자",
+    "keyword_forms": [
+      "대여자"
+    ],
+    "definition": "이자를 받으려고 자산을 맡기는 사람이에요."
+  },
+  "lightning network": {
+    "keyword": "라이트닝 네트워크",
+    "definition": "비트코인 위에 세운 결제 네트워크예요. 결제 채널을 이용해 일상 결제를 즉시, 저렴하게 처리해요."
+  },
+  "liquid": {
+    "keyword": "유동적",
+    "definition": "블록체인 경제에서는 디지털 자산을 거래하거나 스마트 컨트랙트에서 쉽게 쓸 수 있는 상태를 뜻해요."
+  },
+  "liquid staking token": {
+    "keyword": "리퀴드 스테이킹 토큰",
+    "keyword_plural": "리퀴드 스테이킹 토큰",
+    "keyword_forms": [
+      "유동성 스테이킹 토큰",
+      "LST"
+    ],
+    "definition": "스테이킹한 이더를 나타내는 토큰이에요. 보유자는 맡긴 양에 비례해 스테이킹 보상의 일부를 받아요."
+  },
+  "liquidation": {
+    "keyword": "청산",
+    "keyword_plural": "청산",
+    "definition": "빌린 돈을 안전하게 갚기 어려울 만큼 담보 가치가 떨어지면 담보를 자동으로 파는 것이에요."
+  },
+  "liquidity": {
+    "keyword": "유동성",
+    "definition": "거래에 쓸 수 있는 토큰의 양이에요."
+  },
+  "liquidity pool": {
+    "keyword": "유동성 풀",
+    "keyword_plural": "유동성 풀",
+    "keyword_forms": [
+      "유동성풀"
+    ],
+    "definition": "누구나 허가 없이 토큰을 바꿀 수 있게 여러 사람이 함께 채워 넣은 토큰 창고예요."
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP",
+    "keyword_forms": [
+      "유동성 공급자"
+    ],
+    "definition": "(Liquidity Provider) 수수료의 일부를 받는 대신 프로토콜에 토큰을 빌려주는 블록체인 사용자예요."
+  },
+  "lsts": {
+    "keyword": "LSTs",
+    "definition": "스테이킹한 이더를 나타내는 토큰이에요. 보유자는 맡긴 금액에 비례해 스테이킹 보상의 일부를 받아요."
+  },
+  "mainnet": {
+    "keyword": "메인넷",
+    "definition": "테스트 네트워크와 달리 실제 가치가 오가는, 살아 있는 메인 블록체인 네트워크예요. 보통 이더리움의 레이어 1을 가리켜요."
+  },
+  "market cap": {
+    "keyword": "시가총액",
+    "keyword_plural": "시가총액",
+    "keyword_forms": [
+      "시가 총액"
+    ],
+    "definition": "특정 토큰이나 시장 부문 전체의 가치를 합한 금액이에요."
+  },
+  "max supply": {
+    "keyword": "최대 공급량",
+    "keyword_plural": "최대 공급량",
+    "keyword_forms": [
+      "최대공급량"
+    ],
+    "definition": "특정 암호화폐가 앞으로 만들어 낼 수 있는 코인이나 토큰의 최대 개수예요."
+  },
+  "memecoin": {
+    "keyword": "밈코인",
+    "keyword_plural": "밈코인",
+    "keyword_forms": [
+      "밈 코인"
+    ],
+    "definition": "인터넷 밈을 주제로 만든 암호화폐 토큰이에요. 쓸모나 목적이 없는 경우가 많아요."
+  },
+  "meta-aggregator": {
+    "keyword": "메타 애그리게이터",
+    "keyword_plural": "메타 애그리게이터",
+    "keyword_forms": [
+      "메타애그리게이터",
+      "메타 어그리게이터"
+    ],
+    "definition": "여러 애그리게이터를 한데 모아 한 단계 위에서 보여 주는 도구예요."
+  },
+  "mev": {
+    "keyword": "MEV",
+    "definition": "(Maximal Extractable Value) 블록 생성자가 블록 안의 트랜잭션 순서를 바꾸거나, 끼워 넣거나, 빼면서 얻는 이익이에요."
+  },
+  "miner": {
+    "keyword": "채굴자",
+    "keyword_plural": "채굴자",
+    "keyword_forms": [
+      "마이너"
+    ],
+    "definition": "비트코인처럼 작업증명을 쓰는 네트워크에서 보상을 받으려고 새 블록을 제안하며 경쟁하는 참여자예요."
+  },
+  "mining": {
+    "keyword": "채굴",
+    "keyword_forms": [
+      "마이닝"
+    ],
+    "definition": "작업증명 방식에서 보상을 받는 대신 트랜잭션을 검증하고 블록체인에 새 블록을 더하는 과정이에요."
+  },
+  "mint": {
+    "keyword": "민팅",
+    "keyword_forms": [
+      "발행",
+      "민트"
+    ],
+    "definition": "특정 블록체인에서 대체 가능한 토큰이나 대체 불가능한 토큰을 새로 만들어 내는 것이에요."
+  },
+  "monetary policy": {
+    "keyword": "통화정책",
+    "keyword_plural": "통화정책",
+    "keyword_forms": [
+      "통화 정책"
+    ],
+    "definition": "중앙은행이 경제 안에 도는 돈의 양을 조절하는 방식이에요."
+  },
+  "money": {
+    "keyword": "화폐",
+    "keyword_forms": [
+      "돈"
+    ],
+    "definition": "교환의 수단이자 가치의 척도, 가치의 저장 수단으로 쓰이며 물건과 서비스의 거래를 돕는 것이에요."
+  },
+  "multi-token standard": {
+    "keyword": "멀티 토큰 표준",
+    "keyword_forms": [
+      "멀티토큰 표준"
+    ],
+    "definition": "ERC-1155처럼 하나의 스마트 컨트랙트 안에서 대체 가능한 토큰과 대체 불가능한 토큰을 함께 다루는 토큰 표준이에요."
+  },
+  "network governance": {
+    "keyword": "네트워크 거버넌스",
+    "definition": "탈중앙화된 커뮤니티가 네트워크 기능이나 업그레이드를 두고 합의에 이르는 과정이에요."
+  },
+  "neutrality": {
+    "keyword": "중립성",
+    "definition": "특정 사용자나 집단을 편들지 않고 모든 참여자를 똑같이 대하는 원칙이에요."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT",
+    "keyword_forms": [
+      "대체 불가능 토큰"
+    ],
+    "definition": "(Non-fungible Token) 고유한 ID를 가져 복제할 수 없는 토큰이에요. 고유 식별자가 없는 이더 같은 대체 가능한 토큰과 달라요."
+  },
+  "node": {
+    "keyword": "노드",
+    "keyword_plural": "노드",
+    "definition": "블록체인 소프트웨어를 돌리는 컴퓨터예요. 원장 사본을 저장하고 네트워크를 검증하는 일을 도와요."
+  },
+  "node operator": {
+    "keyword": "노드 운영자",
+    "keyword_plural": "노드 운영자",
+    "keyword_forms": [
+      "노드운영자"
+    ],
+    "definition": "네트워크의 트랜잭션을 처리하려고 검증자 노드를 돌리는 이더리움 커뮤니티의 일원이에요."
+  },
+  "non-custodial wallet": {
+    "keyword": "논커스터디 지갑",
+    "keyword_plural": "논커스터디 지갑",
+    "keyword_forms": [
+      "논커스터디얼 지갑",
+      "비수탁 지갑"
+    ],
+    "definition": "(셀프 커스터디 지갑이라고도 해요) 논커스터디 지갑에서는 개인 키를 오직 자신만 관리하고, 그 키가 암호화폐 자산을 통제해요."
+  },
+  "offchain": {
+    "keyword": "오프체인",
+    "keyword_forms": [
+      "오프 체인"
+    ],
+    "definition": "일반 서버나 서명된 메시지처럼 블록체인 밖에서 일어나는 동작이나 데이터예요."
+  },
+  "onchain": {
+    "keyword": "온체인",
+    "keyword_forms": [
+      "온 체인"
+    ],
+    "definition": "블록체인 네트워크에 기록된 것을 뜻해요. 이더리움 같은 암호화폐 네트워크 위에서 이뤄지는 활동을 가리켜요."
+  },
+  "onchain governance": {
+    "keyword": "온체인 거버넌스",
+    "definition": "블록체인의 구조를 바꾸는 과정을 자동으로 처리하는 시스템이에요."
+  },
+  "onchain identity": {
+    "keyword": "온체인 신원",
+    "keyword_plural": "온체인 신원",
+    "definition": "지갑 주소에 연결한 ENS 이름처럼, 블록체인 활동과 기록으로 쌓이는 공개된 신원이에요."
+  },
+  "onramp": {
+    "keyword": "온램프",
+    "keyword_plural": "온램프",
+    "keyword_forms": [
+      "온 램프"
+    ],
+    "definition": "달러 같은 일반 화폐를 암호화폐로 바꿔 주는 서비스예요. 오프램프는 그 반대예요."
+  },
+  "open internet": {
+    "keyword": "열린 인터넷",
+    "keyword_forms": [
+      "오픈 인터넷"
+    ],
+    "definition": "정보와 서비스, 소통이 중앙화된 주체의 통제 없이 모든 사용자에게 열려 있는 디지털 공간이에요."
+  },
+  "open source": {
+    "keyword": "오픈소스",
+    "keyword_forms": [
+      "오픈 소스"
+    ],
+    "definition": "누구나 소스 코드를 살펴보고, 고치고, 개선할 수 있는 소프트웨어예요."
+  },
+  "optimistic rollup": {
+    "keyword": "옵티미스틱 롤업",
+    "keyword_plural": "옵티미스틱 롤업",
+    "keyword_forms": [
+      "옵티미스틱롤업"
+    ],
+    "definition": "묶음 안의 트랜잭션이 모두 정상이라고 일단 가정하는 레이어 2 롤업이에요. 이의 제기 기간에 사기 증명으로 틀렸다고 밝혀지면 되돌려요."
+  },
+  "oracle": {
+    "keyword": "오라클",
+    "keyword_plural": "오라클",
+    "definition": "시장 가격 같은 바깥 정보를 블록체인으로 가져와 스마트 컨트랙트가 쓸 수 있게 해 주는 서비스예요."
+  },
+  "order book": {
+    "keyword": "오더북",
+    "keyword_plural": "오더북",
+    "keyword_forms": [
+      "오더 북",
+      "호가창"
+    ],
+    "definition": "여러 가격대의 매수 주문과 매도 주문을 모아 놓은 목록이에요. 전통 거래소는 이 목록에서 거래를 맞춰요."
+  },
+  "otc": {
+    "keyword": "OTC",
+    "definition": "(Over the Counter) 거래소를 거치지 않고 개인이나 기관과 직접 하는 거래예요."
+  },
+  "over the counter": {
+    "keyword": "장외거래",
+    "keyword_forms": [
+      "장외 거래"
+    ],
+    "definition": "(OTC) 거래소를 거치지 않고 개인이나 기관과 직접 하는 거래예요."
+  },
+  "password manager": {
+    "keyword": "비밀번호 관리자",
+    "keyword_plural": "비밀번호 관리자",
+    "keyword_forms": [
+      "패스워드 관리자",
+      "비밀번호 관리 앱"
+    ],
+    "definition": "비밀번호를 안전하게 보관하고, 계정마다 강력하고 서로 다른 비밀번호를 만들어 주는 앱이에요."
+  },
+  "payment channel": {
+    "keyword": "결제 채널",
+    "keyword_plural": "결제 채널",
+    "keyword_forms": [
+      "결제채널"
+    ],
+    "definition": "두 사람이 모든 거래를 블록체인에 기록하지 않고도 여러 번 주고받을 수 있게 해 주는 통로예요."
+  },
+  "peer": {
+    "keyword": "피어",
+    "keyword_plural": "피어",
+    "definition": "동등한 상대로 대하는 사람이나 주체예요."
+  },
+  "peer-to-peer": {
+    "keyword": "P2P",
+    "keyword_forms": [
+      "피어 투 피어",
+      "피어투피어"
+    ],
+    "definition": "중개자 없이 여러 당사자가 직접 연결되는 것이에요."
+  },
+  "peg": {
+    "keyword": "페그",
+    "keyword_plural": "페그",
+    "keyword_forms": [
+      "페깅"
+    ],
+    "definition": "둘 이상의 자산이 같은 가치를 유지하도록 묶어 두는 방법이에요."
+  },
+  "permissionless": {
+    "keyword": "퍼미션리스",
+    "keyword_forms": [
+      "무허가",
+      "허가 불필요"
+    ],
+    "definition": "어떤 주체의 허가도 필요하지 않은 것을 뜻해요."
+  },
+  "phishing": {
+    "keyword": "피싱",
+    "definition": "믿을 만한 사람이나 기관인 척하며 민감한 정보를 넘기거나 돈을 보내도록 속이는 사회공학 공격이에요."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAP",
+    "keyword_forms": [
+      "참석 증명"
+    ],
+    "definition": "POAP(Proof of Attendance Protocol)는 레슨을 끝낸 일처럼 경험의 기록을 지갑에 확실하게 남겨 주는 배지예요."
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "(Proof of Stake) 검증자가 지분을 맡겨 네트워크를 지키는 합의 방식이에요."
+  },
+  "price impact": {
+    "keyword": "가격 영향",
+    "keyword_plural": "가격 영향",
+    "keyword_forms": [
+      "가격영향",
+      "가격 임팩트"
+    ],
+    "definition": "거래 규모에 따라 내 거래가 DEX의 가격을 얼마나 움직이는지를 말해요."
+  },
+  "primary name": {
+    "keyword": "Primary Name",
+    "keyword_plural": "Primary Name",
+    "keyword_forms": [
+      "기본 이름"
+    ],
+    "definition": "지갑 주소에 연결한 ENS 이름이에요. 앱이 긴 주소 대신 이 이름을 보여 줄 수 있어요."
+  },
+  "private key": {
+    "keyword": "개인 키",
+    "keyword_plural": "개인 키",
+    "keyword_forms": [
+      "개인키",
+      "프라이빗 키"
+    ],
+    "definition": "지갑에 접근할 권한을 주는 키예요. 이 키로 다른 지갑에 암호화폐 자산을 보낼 수 있어요."
+  },
+  "private transaction routing": {
+    "keyword": "프라이빗 트랜잭션 라우팅",
+    "definition": "트랜잭션을 공개 대기열 대신 블록 빌더에게 곧바로 보내, 프론트러닝 봇의 눈을 피하는 방법이에요."
+  },
+  "proof of stake": {
+    "keyword": "지분증명",
+    "keyword_forms": [
+      "지분 증명",
+      "프루프 오브 스테이크"
+    ],
+    "definition": "참여자가 프로토콜에 맡긴 지분에 따라 블록 생성자를 무작위로 뽑는 합의 방식이에요."
+  },
+  "proof of work": {
+    "keyword": "작업증명",
+    "keyword_forms": [
+      "작업 증명",
+      "프루프 오브 워크"
+    ],
+    "definition": "채굴자가 컴퓨터 연산력(“작업”)을 써서 올바른 블록을 제안하려 경쟁하는 합의 방식이에요."
+  },
+  "proof-of-stake": {
+    "keyword": "지분증명",
+    "definition": "노드가 맡긴 지분의 양을 기준으로 검증자 노드를 뽑는 블록체인 합의 방식이에요."
+  },
+  "pseudonymous": {
+    "keyword": "가명",
+    "definition": "본명을 감추고 스스로 정한 이름으로 활동하는 것을 뜻해요."
+  },
+  "public": {
+    "keyword": "공개",
+    "definition": "공개 블록체인에서는 누구나 블록체인 원장을 들여다볼 수 있어요."
+  },
+  "public good": {
+    "keyword": "공공재",
+    "keyword_plural": "공공재",
+    "definition": "사회 구성원 누구나 이용할 수 있는 재화나 서비스예요."
+  },
+  "public key": {
+    "keyword": "공개 키",
+    "keyword_plural": "공개 키",
+    "keyword_forms": [
+      "공개키",
+      "퍼블릭 키"
+    ],
+    "definition": "개인 키에서 만들어지는, 남에게 알려 줘도 안전한 코드예요. 지갑 주소는 공개 키에서 나와요."
+  },
+  "quadratic funding": {
+    "keyword": "쿼드래틱 펀딩",
+    "definition": "금액과 상관없이 개인의 후원이 한 표처럼 작동해 모인 자금을 키우는 크라우드펀딩 방식이에요. 후원자가 넓게 퍼질수록 효과가 커져요."
+  },
+  "recovery phrase": {
+    "keyword": "복구 구문",
+    "keyword_plural": "복구 구문",
+    "keyword_forms": [
+      "복구구문",
+      "리커버리 구문"
+    ],
+    "definition": "12개에서 24개의 단어로 된 목록이에요. 이 단어들로 지갑의 공개 키와 개인 키를 만들어요."
+  },
+  "red flag": {
+    "keyword": "위험 신호",
+    "keyword_plural": "위험 신호",
+    "keyword_forms": [
+      "위험신호",
+      "레드 플래그"
+    ],
+    "definition": "위험하다는 것을 미리 알려 주는 경고 표시예요."
+  },
+  "restaking": {
+    "keyword": "리스테이킹",
+    "keyword_forms": [
+      "재스테이킹"
+    ],
+    "definition": "스테이킹한 이더 토큰을 다시 활용해 다른 프로토콜의 보안과 검증을 돕고 보상을 받는 것이에요."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "definition": "(Retroactive Public Goods Funding) 프로젝트가 지금까지 만들어 낸 영향을 기준으로 자금을 지원하는 방식이에요."
+  },
+  "rollup": {
+    "keyword": "롤업",
+    "keyword_plural": "롤업",
+    "definition": "메인 체인 밖에서 많은 트랜잭션을 처리한 뒤 한 묶음으로 올리는 레이어 2 확장 방식이에요. 처리량은 늘고 비용은 줄어요."
+  },
+  "sandwich attack": {
+    "keyword": "샌드위치 공격",
+    "keyword_plural": "샌드위치 공격",
+    "definition": "봇이 내 거래 바로 앞뒤에 거래를 넣어 가격을 움직이고, 그 차이로 이익을 챙기는 공격이에요."
+  },
+  "satoshi nakamoto": {
+    "keyword": "사토시 나카모토",
+    "definition": "비트코인을 만든 가명의 인물이에요. 지금까지도 실제 정체를 아는 사람은 없어요."
+  },
+  "scalability": {
+    "keyword": "확장성",
+    "definition": "블록체인이 늘어나는 작업량과 트랜잭션, 사용량을 사용자 불편 없이 감당하는 능력이에요."
+  },
+  "scam-token": {
+    "keyword": "스캠 토큰",
+    "keyword_plural": "스캠 토큰",
+    "keyword_forms": [
+      "스캠토큰",
+      "사기 토큰"
+    ],
+    "definition": "오직 투자자의 돈을 훔치려고 만들어 낸 암호화폐 토큰이에요."
+  },
+  "scarce": {
+    "keyword": "희소한",
+    "definition": "공급이 부족한 상태를 뜻해요."
+  },
+  "scarcity": {
+    "keyword": "희소성",
+    "definition": "공급이 부족한 것을 뜻해요."
+  },
+  "security": {
+    "keyword": "보안",
+    "definition": "블록체인이 해킹 시도와 코드 취약점, 경제적 공격을 견디고 평소처럼 작동하는 능력이에요."
+  },
+  "seed phrase": {
+    "keyword": "시드 구문",
+    "keyword_plural": "시드 구문",
+    "keyword_forms": [
+      "시드구문",
+      "시드 단어",
+      "시드 문구"
+    ],
+    "definition": "지갑을 처음 만들 때 생성되는 무작위 단어 묶음이에요. 그 지갑이 관리하는 모든 계정의 마스터 키이니, 어떤 이유로도 절대 누구에게도 알려 주지 마세요."
+  },
+  "self-custodial": {
+    "keyword": "셀프 커스터디",
+    "definition": "오직 자신만 자산에 접근할 수 있게 보관하는 방식이에요."
+  },
+  "self-custody": {
+    "keyword": "셀프 커스터디",
+    "keyword_forms": [
+      "셀프커스터디",
+      "자기 수탁"
+    ],
+    "definition": "오직 자신만 자산에 접근할 수 있게 직접 보관하는 것이에요."
+  },
+  "self-custody wallet": {
+    "keyword": "셀프 커스터디 지갑",
+    "keyword_plural": "셀프 커스터디 지갑",
+    "keyword_forms": [
+      "셀프커스터디 지갑",
+      "자기 수탁 지갑"
+    ],
+    "definition": "(논커스터디 지갑이라고도 해요) 셀프 커스터디 지갑에서는 개인 키를 오직 자신만 관리하고, 그 키가 암호화폐 자산을 통제해요."
+  },
+  "settlement layer": {
+    "keyword": "정산 레이어",
+    "keyword_plural": "정산 레이어",
+    "keyword_forms": [
+      "정산 계층"
+    ],
+    "definition": "확정된 트랜잭션의 자산 이동 내역을 기록하는, 블록체인의 가장 “아래” 층이에요. 이더리움 메인넷은 이더리움 레이어 2 확장 방식의 정산 레이어예요."
+  },
+  "settlement time": {
+    "keyword": "정산 시간",
+    "keyword_plural": "정산 시간",
+    "definition": "트랜잭션이 확정되기까지 걸리는 시간이에요."
+  },
+  "sharding": {
+    "keyword": "샤딩",
+    "definition": "확장성을 높이려고 하나의 블록체인을 여러 체인으로 나눠 나란히 돌리는 방식이에요."
+  },
+  "sidechain": {
+    "keyword": "사이드체인",
+    "keyword_plural": "사이드체인",
+    "keyword_forms": [
+      "사이드 체인"
+    ],
+    "definition": "메인 블록체인과 나란히 돌아가는 별도의 블록체인이에요. 브릿지로 연결되고, 자체 검증자와 보안을 갖춰요."
+  },
+  "slashed": {
+    "keyword": "슬래싱",
+    "definition": "지분증명 블록체인에서 부정 행위가 드러난 검증자가 지분의 일부를 잃는 벌칙이에요."
+  },
+  "slashing": {
+    "keyword": "슬래싱",
+    "definition": "지분증명 네트워크에서 서로 충돌하는 블록에 서명하는 등 부정 행위가 드러난 검증자의 지분 일부를 없애는 벌칙이에요."
+  },
+  "slippage": {
+    "keyword": "슬리피지",
+    "definition": "거래가 체결될 때 기대한 가격과 실제 가격의 차이예요."
+  },
+  "slippage tolerance": {
+    "keyword": "슬리피지 허용치",
+    "keyword_plural": "슬리피지 허용치",
+    "keyword_forms": [
+      "슬리피지 허용 범위"
+    ],
+    "definition": "거래에서 받아들일 수 있는 최대 가격 변화예요. 이보다 크게 움직이면 거래가 취소돼요."
+  },
+  "smart account": {
+    "keyword": "스마트 계정",
+    "keyword_plural": "스마트 계정",
+    "keyword_forms": [
+      "스마트계정"
+    ],
+    "definition": "스마트 컨트랙트로 움직이는 지갑 계정이에요. 스마트 지갑의 다른 이름이에요."
+  },
+  "smart contract": {
+    "keyword": "스마트 컨트랙트",
+    "keyword_plural": "스마트 컨트랙트",
+    "keyword_forms": [
+      "스마트컨트랙트",
+      "스마트 계약"
+    ],
+    "definition": "계약 조건을 자동으로 실행하는 컴퓨터 코드예요."
+  },
+  "smart wallet": {
+    "keyword": "스마트 지갑",
+    "keyword_plural": "스마트 지갑",
+    "keyword_forms": [
+      "스마트 월렛"
+    ],
+    "definition": "하나의 개인 키 대신 스마트 컨트랙트로 움직이는 지갑이에요. 계정 복구나 패스키 로그인 같은 기능을 쓸 수 있어요."
+  },
+  "social engineering": {
+    "keyword": "사회공학",
+    "keyword_forms": [
+      "사회 공학",
+      "소셜 엔지니어링"
+    ],
+    "definition": "비밀번호나 시드 구문 같은 민감한 정보를 스스로 넘기도록 사람을 조종하는 수법이에요."
+  },
+  "solo staker": {
+    "keyword": "솔로 스테이커",
+    "keyword_plural": "솔로 스테이커",
+    "keyword_forms": [
+      "솔로스테이커"
+    ],
+    "definition": "독립된 검증자 노드를 직접 돌리는 노드 운영자예요."
+  },
+  "solo staking": {
+    "keyword": "솔로 스테이킹",
+    "keyword_forms": [
+      "솔로스테이킹",
+      "단독 스테이킹"
+    ],
+    "definition": "지분증명 방식에서 트랜잭션을 처리하려고 자기 검증자 노드를 직접 돌리는 것이에요."
+  },
+  "solver": {
+    "keyword": "솔버",
+    "keyword_plural": "솔버",
+    "definition": "사용자의 인텐트를 가장 좋은 가격에 실행하려고 서로 경쟁하는 전문 참여자예요."
+  },
+  "spend": {
+    "keyword": "지출",
+    "keyword_forms": [
+      "소비"
+    ],
+    "definition": "암호화폐 자산으로 물건이나 서비스의 값을 치르는 것이에요."
+  },
+  "spot etf": {
+    "keyword": "현물 ETF",
+    "keyword_plural": "현물 ETF",
+    "keyword_forms": [
+      "스팟 ETF"
+    ],
+    "definition": "비트코인처럼 실제 자산을 직접 보유하는 ETF예요. 전통 주식 시장을 통해 그 자산에 투자할 수 있어요."
+  },
+  "stablecoin": {
+    "keyword": "스테이블코인",
+    "keyword_plural": "스테이블코인",
+    "keyword_forms": [
+      "스테이블 코인"
+    ],
+    "definition": "가치를 일정하게 유지하도록 만든 토큰이에요. 보통 미국 달러 같은 통화에 1:1로 값을 맞춰요."
+  },
+  "stablecoin issuer": {
+    "keyword": "스테이블코인 발행사",
+    "keyword_plural": "스테이블코인 발행사",
+    "keyword_forms": [
+      "스테이블코인 발행자"
+    ],
+    "definition": "스테이블코인을 만들고 그 가치를 뒷받침하는 준비금을 관리하는 회사나 단체예요."
+  },
+  "stake": {
+    "keyword": "지분",
+    "keyword_plural": "지분",
+    "keyword_forms": [
+      "예치금"
+    ],
+    "definition": "암호화폐 프로토콜에 잠가 둔 금융 자산의 양이에요. 그 프로토콜에 자기 돈을 걸었다는 뜻이에요."
+  },
+  "staked": {
+    "keyword": "스테이킹된",
+    "keyword_forms": [
+      "스테이킹한",
+      "예치된"
+    ],
+    "definition": "보상(“이자”)을 받는 대신 암호화폐의 일부를 정해진 기간 동안 스마트 컨트랙트에 맡겨 두는 것이에요."
+  },
+  "staker": {
+    "keyword": "스테이커",
+    "keyword_plural": "스테이커",
+    "definition": "보상을 받는 대신 검증자 노드에 이더를 맡기는 이더리움 커뮤니티의 일원이에요."
+  },
+  "stakers": {
+    "keyword": "스테이커",
+    "definition": "보상을 받는 대신 검증자 노드에 이더를 맡기는 이더리움 커뮤니티의 구성원이에요."
+  },
+  "staking": {
+    "keyword": "스테이킹",
+    "definition": "보상(“이자”)을 받는 대신 암호화폐의 일부를 정해진 기간 동안 스마트 컨트랙트에 맡겨 두는 것이에요."
+  },
+  "staking pool": {
+    "keyword": "스테이킹 풀",
+    "keyword_plural": "스테이킹 풀",
+    "keyword_forms": [
+      "스테이킹풀"
+    ],
+    "definition": "이더리움에서, 스테이커가 다른 스테이커의 검증자 노드에 이더를 맡길 수 있게 해 주는 스마트 컨트랙트예요."
+  },
+  "staking providers": {
+    "keyword": "스테이킹 제공업체",
+    "keyword_forms": [
+      "스테이킹 제공자",
+      "스테이킹 서비스 업체"
+    ],
+    "definition": "보통 스테이킹 풀을 통해 스테이킹 서비스를 제공하는 디지털 플랫폼이에요."
+  },
+  "standard record": {
+    "keyword": "표준 레코드",
+    "keyword_plural": "표준 레코드",
+    "keyword_forms": [
+      "표준 기록"
+    ],
+    "definition": "지갑 주소, 아바타, 이메일처럼 ENS 도메인에 연결하는 일반적인 데이터 항목이에요."
+  },
+  "swap": {
+    "keyword": "스왑",
+    "keyword_plural": "스왑",
+    "definition": "한 토큰을 다른 토큰으로 바꾸는 거래예요."
+  },
+  "token": {
+    "keyword": "토큰",
+    "keyword_plural": "토큰",
+    "definition": "기존 블록체인 위에 만들어져 자산이나 권리를 나타낼 수 있는 단위예요."
+  },
+  "token allowance": {
+    "keyword": "토큰 허용량",
+    "keyword_plural": "토큰 허용량",
+    "keyword_forms": [
+      "토큰허용량"
+    ],
+    "definition": "특정 토큰에 제한적으로 또는 무제한으로 접근할 수 있게 해 주는, 지갑과 스마트 컨트랙트 사이의 약속이에요."
+  },
+  "token approval": {
+    "keyword": "토큰 승인",
+    "keyword_plural": "토큰 승인",
+    "keyword_forms": [
+      "토큰승인"
+    ],
+    "definition": "특정 토큰을 지갑에서 옮길 수 있도록 스마트 컨트랙트에 주는 권한이에요. 토큰 허용량이라고도 해요."
+  },
+  "token distribution": {
+    "keyword": "토큰 분배",
+    "keyword_plural": "토큰 분배",
+    "keyword_forms": [
+      "토큰분배"
+    ],
+    "definition": "토큰을 여러 이해관계자 집단에 나눠 주는 방식이에요."
+  },
+  "token pair": {
+    "keyword": "토큰 페어",
+    "keyword_plural": "토큰 페어",
+    "keyword_forms": [
+      "토큰 쌍"
+    ],
+    "definition": "유동성 풀을 이루는, 짝을 지은 두 개의 암호화폐예요."
+  },
+  "token swap": {
+    "keyword": "토큰 스왑",
+    "keyword_plural": "토큰 스왑",
+    "keyword_forms": [
+      "토큰스왑"
+    ],
+    "definition": "한 토큰을 다른 토큰으로 바꾸는 거래예요."
+  },
+  "tps": {
+    "keyword": "TPS",
+    "keyword_forms": [
+      "초당 트랜잭션 수"
+    ],
+    "definition": "(Transactions Per Second) 블록체인이 1초에 처리하는 트랜잭션의 수로, 확장성을 재는 지표예요."
+  },
+  "trade": {
+    "keyword": "거래",
+    "keyword_plural": "거래",
+    "definition": "자산이나 돈을 가치 있는 다른 것과 맞바꾸는 일이에요."
+  },
+  "trade route": {
+    "keyword": "거래 경로",
+    "keyword_plural": "거래 경로",
+    "keyword_forms": [
+      "거래경로"
+    ],
+    "definition": "거래에서 처음 토큰부터 마지막 토큰까지 거치는 길이에요."
+  },
+  "trade routing": {
+    "keyword": "거래 라우팅",
+    "keyword_forms": [
+      "거래 경로 설정"
+    ],
+    "definition": "거래에서 처음 토큰부터 마지막 토큰까지 거치는 길을 짜는 것이에요."
+  },
+  "transaction": {
+    "keyword": "트랜잭션",
+    "keyword_plural": "트랜잭션",
+    "definition": "블록체인에 남는 이전 기록이에요. 돈일 수도 있고 다른 것일 수도 있어요."
+  },
+  "transaction finality": {
+    "keyword": "트랜잭션 완결성",
+    "definition": "트랜잭션이 유효하고 최종이라는 것, 즉 되돌리거나 바꿀 수 없다는 것을 확신하기까지 걸리는 시간이에요."
+  },
+  "transaction hash": {
+    "keyword": "트랜잭션 해시",
+    "keyword_plural": "트랜잭션 해시",
+    "keyword_forms": [
+      "트랜잭션해시"
+    ],
+    "definition": "트랜잭션마다 붙는 고유 식별자예요. 트랜잭션 데이터와 보낸 사람의 디지털 서명, 그리고 중복을 막는 일회용 숫자에서 만들어져요."
+  },
+  "transaction throughput": {
+    "keyword": "트랜잭션 처리량",
+    "definition": "블록체인이 한 번에 처리할 수 있는 트랜잭션의 양이에요. 보통 초당 트랜잭션 수(TPS)로 재요."
+  },
+  "trustless": {
+    "keyword": "트러스트리스",
+    "keyword_forms": [
+      "무신뢰",
+      "신뢰 최소화"
+    ],
+    "definition": "사람이나 기관을 믿지 않아도 되는 성질이에요. 자동으로 돌아가고, 어느 한 사람의 것이 아니에요."
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "keyword_forms": [
+      "총 예치 자산"
+    ],
+    "definition": "(Total Value Locked) 특정 곳에 보관된 자산 가치의 총합이에요."
+  },
+  "two factor authentication": {
+    "keyword": "2단계 인증",
+    "keyword_forms": [
+      "이중 인증",
+      "2요소 인증"
+    ],
+    "definition": "온라인 계정에 접속하려는 사람이 본인이 맞는지 확인하는 추가 보안 장치예요."
+  },
+  "validating bridge": {
+    "keyword": "검증 브릿지",
+    "keyword_plural": "검증 브릿지",
+    "keyword_forms": [
+      "검증형 브릿지",
+      "검증 브리지"
+    ],
+    "definition": "출금을 스스로 검증하는 브릿지 컨트랙트예요. 바깥의 어떤 권한도 믿을 필요가 없어요."
+  },
+  "validator": {
+    "keyword": "검증자",
+    "keyword_plural": "검증자",
+    "keyword_forms": [
+      "밸리데이터"
+    ],
+    "definition": "지분증명 네트워크에서 지분을 맡기고 트랜잭션을 확인하며 블록을 제안하는 참여자예요. 정직하게 일하면 보상을 받아요."
+  },
+  "validator client": {
+    "keyword": "검증자 클라이언트",
+    "keyword_plural": "검증자 클라이언트",
+    "definition": "지분증명 네트워크에서 새 블록을 제안하고 확인하려고 검증자 노드가 돌리는 소프트웨어예요."
+  },
+  "validator node": {
+    "keyword": "검증자 노드",
+    "keyword_plural": "검증자 노드",
+    "keyword_forms": [
+      "밸리데이터 노드"
+    ],
+    "definition": "이더리움 커뮤니티의 일원이 운영하는 컴퓨터 장치예요. 보상을 받는 대신 네트워크의 트랜잭션을 처리해요."
+  },
+  "validator nodes": {
+    "keyword": "검증자 노드",
+    "definition": "이더리움 커뮤니티 구성원이 운영하는 컴퓨터 장치예요. 보상을 받는 대신 네트워크의 트랜잭션을 처리해요."
+  },
+  "validity proof": {
+    "keyword": "유효성 증명",
+    "keyword_plural": "유효성 증명",
+    "definition": "트랜잭션 묶음이 올바르다는 것을 보여 주는 수학적 증명이에요. 블록체인이 계산을 다시 하지 않고도 확인할 수 있어요."
+  },
+  "value-creation": {
+    "keyword": "가치 창출",
+    "keyword_forms": [
+      "가치창출"
+    ],
+    "definition": "사용자와 경제에 도움이 되는 혁신적이고 질 좋은 제품과 서비스를 만드는 사업 방식이에요."
+  },
+  "value-extraction": {
+    "keyword": "가치 추출",
+    "keyword_forms": [
+      "가치추출"
+    ],
+    "definition": "높은 수수료와 데이터 수집, 불공정한 약관으로 사용자를 착취하는 사업 방식이에요."
+  },
+  "value-extractive": {
+    "keyword": "가치 추출적",
+    "definition": "높은 수수료와 데이터 수집, 불공정한 약관으로 사용자를 착취하는 사업 방식이에요."
+  },
+  "vault": {
+    "keyword": "볼트",
+    "keyword_plural": "볼트",
+    "keyword_forms": [
+      "금고"
+    ],
+    "definition": "맡긴 토큰을 보관하고 굴려 주는 스마트 컨트랙트예요. 예치한 사람에게는 자기 몫을 나타내는 토큰을 줘요."
+  },
+  "veto": {
+    "keyword": "거부권",
+    "keyword_plural": "거부권",
+    "keyword_forms": [
+      "비토"
+    ],
+    "definition": "거버넌스 제안에 반대하는 표예요."
+  },
+  "wallet": {
+    "keyword": "지갑",
+    "keyword_plural": "지갑",
+    "keyword_forms": [
+      "월렛"
+    ],
+    "definition": "블록체인에서 암호화폐 자산을 보내고 받을 때 쓰는 앱이나 기기예요."
+  },
+  "wallet app": {
+    "keyword": "지갑 앱",
+    "keyword_plural": "지갑 앱",
+    "keyword_forms": [
+      "지갑앱",
+      "월렛 앱"
+    ],
+    "definition": "블록체인 위의 지갑에 연결할 때 쓰는 컴퓨터나 휴대폰 앱이에요."
+  },
+  "wallet provider": {
+    "keyword": "지갑 제공업체",
+    "keyword_plural": "지갑 제공업체",
+    "keyword_forms": [
+      "지갑 제공자",
+      "월렛 제공업체"
+    ],
+    "definition": "지갑에 접근할 때 쓰는 소프트웨어를 만드는 곳이에요. 지갑을 소유하지는 않고, 블록체인 위의 계정으로 이어 주는 다리 역할을 해요."
+  },
+  "web2": {
+    "keyword": "Web2",
+    "keyword_forms": [
+      "웹2"
+    ],
+    "definition": "블록체인 기반이 없는, 중앙화된 플랫폼과 계정의 인터넷이에요."
+  },
+  "web3": {
+    "keyword": "Web3",
+    "keyword_forms": [
+      "웹3"
+    ],
+    "definition": "사용자가 자기 자산과 데이터를 직접 보관할 수 있는 블록체인의 인터넷이에요."
+  },
+  "yield farm": {
+    "keyword": "이자 농사",
+    "keyword_plural": "이자 농사",
+    "keyword_forms": [
+      "이자농사",
+      "일드 파밍"
+    ],
+    "definition": "토큰을 맡기고 보상을 받는 DeFi 프로토콜이에요. 이자 농사는 그중 가장 좋은 보상을 찾아다니는 일을 뜻해요."
+  },
+  "yourname.eth": {
+    "keyword": "yourname.eth",
+    "definition": "ENS 이름의 예시예요. 지갑 주소를 가리키는, 사람이 읽을 수 있는 Web3 사용자 이름이에요."
+  },
+  "zero-knowledge": {
+    "keyword": "영지식",
+    "definition": "어떤 내용도 더 드러내지 않으면서 어떤 주장이 참이라는 것을 증명하게 해 주는 수학적 방법이에요."
+  },
+  "zk rollup": {
+    "keyword": "ZK 롤업",
+    "keyword_plural": "ZK 롤업",
+    "keyword_forms": [
+      "ZK롤업",
+      "영지식 롤업"
+    ],
+    "definition": "영지식 증명으로 묶음 안의 트랜잭션이 올바르다는 것을 레이어 1 블록체인에 수학적으로 증명하는 레이어 2 롤업이에요."
+  }
+}
