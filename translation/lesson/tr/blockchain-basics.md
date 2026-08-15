@@ -1,10 +1,10 @@
 ---
-TITLE: Blokzincir Temelleri
-DESCRIPTION: Blokzincir teknolojisinin temel mimarisini öğren.
-LANGUAGE: Türkçe
+TITLE: Blockchain Basics
+DESCRIPTION: Learn about the fundamental architecture of blockchain technology.
+LANGUAGE: English
 WRITERS: iSpeakNerd
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 FORMAT: LESSON
 ---
@@ -28,244 +28,244 @@ ________________________________________________________________________________
 
 ---
 
-# Giriş
+# Introduction
 
-`Blokzincir` teknolojisi, veriyi saklamanın ve takip etmenin devrimci bir yolu; üstelik bu veriyi herkesin erişimine açar. Veriyi, herkesin görebildiği ama düzenleyemediği tek bir herkese açık işlem listesinde düzenler. Bu herkese açık işlem listesine topluca blokzincir `defteri` denir.
+`Blockchain` technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain `ledger`.
 
-Bir blokzincirin katmanlarını inceledikten sonra, `blok gezgini` denen blokzincir aracının gösterdiği yapıyı anlayacaksın: blokların **listesi**, bu blokların içindeki **işlemler** ve her bir işlemin **detayları**. Çalışırken görmek için Ethereum'un popüler blok gezgini [Etherscan](https://etherscan.io/)'i dene.
+After examining the layers of a blockchain, you will understand the structure that a blockchain tool called a `block explorer` displays: the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction. To see it in action, try [Etherscan](https://etherscan.io/), a popular block explorer for Ethereum.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/introduction-1e34f31e.svg)
 
-# Blokzincirin Yapısı
+# Blockchain Structure
 
-Blokzincir kelimesi bir isim (Bitcoin blokzinciri) ya da bir sıfat (blokzincir teknolojisi) olarak kullanılabilir. Her iki durumda da `blokzincir`, kripto paraların üzerine kurulduğu yapının tamamını ifade eder.
+The term blockchain can be used as a noun (the Bitcoin blockchain) or as an adjective (blockchain technology). Either way, `blockchain` refers to the entire structure cryptocurrencies are built on.
 
-Dışarıdan yakınlaştırdığımızda bir blokzincirde 3 yapı katmanı vardır:
+Zooming in from the outside, there are 3 levels of structure in a blockchain:
 
-1. Genel `blokzincir`, sırayla birbirine bağlanan bloklardan oluşur
-2. `Bloklar`, bir araya getirilmiş işlem gruplarından oluşur
-3. Bir `işlem`, ağdaki `adresler` arasında bir değer transferi ya da bir programa verilen talimattır
+1. The overall `blockchain` is made up of blocks that are linked together in order
+2. `Blocks` are made up of groups of transactions put together
+3. `Transactions` are transfers of value, or instructions to programs, between `addresses` on the network
 
-Bu üç katmanlı yapı bir araya gelerek kriptografik bir defter oluşturur: ağda gerçekleşen tüm işlemlerin değiştirilemez tarihi.
+This three-tiered structure comes together to create a cryptographic ledger - an unalterable history of all transactions performed on the network.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-1c9a9ed4.svg)
 
 # Knowledge Check 1
 
-Blokzincir nedir?
+What is a blockchain?
 
-- [ ] Blok denen düzenli işlem grupları
+- [ ] Organized groups of transactions called blocks
 
-> ℹ️ Tekrar dene! Bloklar yapının bir parçası, ama tek doğru cevap değil.
+> ℹ️ Try again! Blocks are part of the structure, but they aren’t the only correct answer.
 
-- [ ] Herkesin görebildiği ama kimsenin düzenleyemediği ortak bir kayıt
+- [ ] A shared record anyone can view but no one can edit
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek doğru cevap değil.
+> ℹ️ Try again! This is true, but it isn’t the only correct answer.
 
-- [ ] Sırayla birbirine bağlanan bloklar
+- [ ] Blocks linked together in sequence
 
-> ℹ️ Tekrar dene! Bu, blok zincirini anlatıyor ama tek doğru cevap değil.
+> ℹ️ Try again! This describes the chain of blocks, but it isn’t the only correct answer.
 
-- [x] Yukarıdakilerin hepsi
+- [x] All of the above
 
-> ℹ️ Doğru! Üçü de doğru: blokzincir, bloklar halinde gruplanmış ve sırayla bağlanmış, ortak ve değiştirilemez bir işlem kaydıdır.
+> ℹ️ Correct! All three are true: a blockchain is a shared, uneditable record of transactions grouped into blocks, linked in sequence.
 
-# Defteri İncelemek
+# Examining the Ledger
 
-Alışıldık para sistemlerinde, kimin ne kadar parası olduğunu takip etmek için bankalar gibi üçüncü taraflara güveniriz. Ama gerçekten Bankless olmak için, defteri yönetsin diye tek bir kuruma güvenmemizi gerektirmeyen bir sistem istiyoruz.
+In typical money systems, we trust third parties like banks to keep track of how much money each person has. But, to be truly Bankless, we want a system that doesn’t require us to trust one entity to manage the ledger.
 
-`Defter`, bir blokzincirde şimdiye kadar yapılmış TÜM işlemlerin listesidir ve `herkese açık` blokzincirlerde onu herkes görebilir. Defterdeki ayrı işlem grupları, bir araya gelip blokzinciri oluşturan blokları meydana getirir.
+The `ledger` is the list of ALL transactions ever made on a blockchain, and anyone can see it for `public` blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.
 
-Deftere yeni işlemler eklendiğinde her `adreste` tutulan bakiyeler güncellenir; geçmiş işlemler değiştirilemez. Bu, herkesin tüm zamanlara ait banka hesap geçmişine istediğin an bakabilmek gibidir.
+When new transactions are added to the ledger, balances stored at each `address` get updated; past transactions cannot be altered. It’s like letting anyone look at everyone’s all-time bank account transaction history, at any time.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-838ca24f.svg)
 
-# Defterdeki İşlemler
+# Transactions on the Ledger
 
-Birkaç örnek işleme bakalım:
+Let’s look at some example transactions:
 
-- Alice, Bob'a 5 ETH gönderir
-- Bob, Charlie'ye 2 ETH gönderir
+- Alice sends 5 ETH to Bob
+- Bob sends 2 ETH to Charlie
 
-Tek tek işlemler her adresin kripto para miktarındaki _değişimi_ gösterir, yani tüm işlemlerin toplam sonucu her adresin sahip olduğu kripto para miktarıdır.
+Individual transactions show the _change_ in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.
 
 ---
 
-⇒ Alice 5 ETH kaybetti
+⇒ Alice has lost 5 ETH
 
-⇒ Bob toplamda 3 ETH kazandı (5 aldı, 2 gönderdi)
+⇒ Bob has gained 3 ETH total (received 5, sent 2)
 
-⇒ Charlie 2 ETH kazandı
+⇒ Charlie has gained 2 ETH
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/transactions-on-the-ledger-6b86493d.svg)
 
 # Knowledge Check 2
 
-Herkese açık blokzincir defterleri için aşağıdakilerden hangisi doğrudur?
+Which of the following is true for public blockchain ledgers?
 
-- [ ] Tüm işlemler herkese açıktır ve geçmiş işlemler değiştirilemez
+- [ ] All transactions are public and past transactions are unchangeable
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek doğru ifade değil.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [ ] Defter, her adresin şu an ne kadar kripto parası olduğunu takip eder
+- [ ] The ledger tracks how much cryptocurrency each address currently has
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek doğru ifade değil.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [ ] Yeni işlemler eklendikçe defter büyür
+- [ ] The ledger grows as new transactions are added to it
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek doğru ifade değil.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [x] Yukarıdakilerin hepsi
+- [x] All of the above
 
-> ℹ️ Doğru! Defter herkese açıktır, değiştirilemez, adres bakiyelerini güncel tutar ve her yeni işlemle büyür.
+> ℹ️ Correct! The ledger is public, unchangeable, keeps address balances up to date, and grows with every new transaction.
 
-# Merkeziyetsizlik
+# Decentralization
 
-Bir `blokzincir` defterindeki işlemler yalnızca değiştirilemez değildir; aynı zamanda geniş bir bilgisayar ağına paylaştırılır ve dağıtılır. Tek bir kurumun veriyi değiştirme gücü olmasın diye, blokzincir defterinin kopyaları ağ boyunca `düğüm` denen birçok bilgisayarda saklanır.
+Not only are transactions included on a `blockchain` ledger unchangeable, they are also shared and distributed amongst a large network of computers. To make sure that no single entity has the power to change the data, copies of the blockchain ledger are stored on many computers, called `nodes`, across the network.
 
-Blokzincir defterini `merkeziyetsiz` yapan şey bu paylaşılan veridir. Veriyi tek bir otorite ya da kurum kontrol etmez. Ethereum gibi blokzincirler aynı zamanda `herkese açıktır`, çünkü defteri herkes görebilir.
+This shared data is what makes the blockchain ledger `decentralized`. No single authority or entity controls the data. Blockchains like Ethereum are also `public` because the ledger can be viewed by anyone.
 
-Bu ders için şunu hatırlaman yeterli: defter verisi, Ethereum ağını çalıştıran birçok bilgisayar arasında paylaşılır.
+For this lesson, just remember that the ledger data is shared across the many computers running the Ethereum network.
 
 # Knowledge Check 3
 
-Bir blokzinciri merkeziyetsiz yapan nedir?
+What makes a blockchain decentralized?
 
-- [ ] Blokzincire yalnızca tek bir kurum yazabilir
+- [ ] Only one entity can write to the blockchain
 
-> ℹ️ Tekrar dene! Tek bir kurumun kontrolü, merkeziyetsizliğin tam tersidir.
+> ℹ️ Try again! A single entity in control is the opposite of decentralization.
 
-- [ ] Devletin belirlediği merkeziyetsizlik şartlarını karşılar
+- [ ] It meets decentralization requirements set by the government
 
-> ℹ️ Tekrar dene! Merkeziyetsizlik ağın tasarımından gelir, devlet onayından değil.
+> ℹ️ Try again! Decentralization comes from the network’s design, not from government approval.
 
-- [x] Defteri tek bir kurum kontrol etmez, birçok bilgisayarda durur
+- [x] No single entity controls the ledger, stored on many computers
 
-> ℹ️ Doğru! Defterin kopyalarını birçok düğümde tutmak, tek bir kurumun veriyi kontrol etmesini ya da değiştirmesini engeller.
+> ℹ️ Correct! Storing copies of the ledger on many nodes means no single entity has the power to control or change the data.
 
-- [ ] Defter tek bir güvenli sunucuda saklanır
+- [ ] The ledger is stored on a single secure server
 
-> ℹ️ Tekrar dene! Tek bir sunucu merkezi bir kontrol noktası olurdu. Defterin kopyaları birçok düğümde saklanır.
+> ℹ️ Try again! A single server would be a central point of control. Copies of the ledger are stored on many nodes.
 
-# Blok Anatomisi
+# Block Anatomy
 
-Blokzincirlerin önemli bir özelliği, geçmiş işlem verisinin bir bloka girdikten sonra değiştirilememesidir. Bunun nedeni, her blokun parmak izi gibi benzersiz bir `blok hash'i` olması ve blokların bununla art arda birbirine bağlanmasıdır. Kimse geçmiş işlemleri, o parmak izini ve ardından gelen HER blokun parmak izini değiştirmeden değiştiremez, çünkü her parmak izi bir öncekine dayanır.
+An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique `block hash`, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and the fingerprint of EVERY block that follows it because each fingerprint depends on the previous one.
 
-Yani her `blok` basitçe bir işlem grubudur, artı blokun içeriğinden hesaplanan benzersiz bir parmak izi (`blok hash'i`). Bloklar birbirine zincirlenir, çünkü her biri bir önceki blokun benzersiz parmak izine atıf yapar ve tek bir bağlı blok**zinciri** oluşur.
+So each `block` is simply a group of transactions, plus a unique fingerprint (its `block hash`) computed from the block’s contents. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block**chain**.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
 
 # Knowledge Check 4
 
-Blok hash'inin amacı nedir?
+What is the purpose of a block hash?
 
-- [ ] Blok verisini kimse okuyamasın diye şifrelemek
+- [ ] To encrypt block data so no one can read it
 
-> ℹ️ Tekrar dene! Blok verisi herkese açık kalır. Hash bir parmak izidir, şifreleme değil.
+> ℹ️ Try again! Block data stays publicly readable. The hash is a fingerprint, not encryption.
 
-- [x] Blokları birbirine bağlamak ve geçmiş veriyi değiştirilemez kılmak
+- [x] To link blocks together and keep past transaction data unchangeable
 
-> ℹ️ Doğru! Her blok bir öncekinin parmak izine atıf yapar, yani geçmişi değiştirmek sonraki tüm blokları bozar.
+> ℹ️ Correct! Each block references the previous block’s fingerprint, so changing past data would break every block that follows.
 
-- [ ] İşlemlerin doğru adrese gitmesini sağlamak
+- [ ] To ensure transactions are sent to the correct address
 
-> ℹ️ Tekrar dene! Paranın nereye gideceğini adresler belirler. Blok hash'i blokları birbirine bağlar.
+> ℹ️ Try again! Addresses handle where funds go. The block hash links blocks together.
 
-- [ ] Blokzincirin merkeziyetsiz kalmasını sağlamak
+- [ ] To ensure the blockchain stays decentralized
 
-> ℹ️ Tekrar dene! Merkeziyetsizlik, defterin birçok düğüme dağıtılmasından gelir, blok hash'inden değil.
+> ℹ️ Try again! Decentralization comes from distributing the ledger across many nodes, not from the block hash.
 
-# Blokun İçi
+# Inside a Block
 
-Unutma: `blok` verisi bir araya getirilmiş bir işlem grubundan ibarettir. Tek bir blokun içine baktığımızda bir işlem listesi ve bloku kimin oluşturduğuna dair birkaç veri görürüz.
+Remember, `block` data is just a group of transactions put together. Looking within a single block, we see a list of transactions and some data about who created the block.
 
-Blokzincir defterini konuşurken verdiğimiz örnekteki iki işlem tek bir blokta gruplanabilir ya da zaman içinde birden fazla bloka dağılabilir. Ama hangi bloka girerlerse girsinler, sonunda hepsi genel blokzincir defterine eklenir.
+From our example earlier when discussing the blockchain ledger, both of those transactions might be grouped within one block, or spread out into multiple blocks over time. But no matter what block they are included in, they are all added to the overall blockchain ledger eventually.
 
-- Alice, Bob'a 5 ETH gönderir
-- Bob, Charlie'ye 2 ETH gönderir
+- Alice sends 5 ETH to Bob
+- Bob sends 2 ETH to Charlie
 
-Her blokun, blokzinciri birbirine bağlamak için bir önceki blokun `blok hash'ine` de atıf yapması gerektiğini hatırla.
+Recall that each block must also reference the past block’s `block hash` to link the blockchain together.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b0c2dd11.svg)
 
 # Knowledge Check 5
 
-Bir blokta hangi bilgiler bulunur?
+What information is contained in a block?
 
-- [ ] Önceki bloklardaki tüm bilgiler
+- [ ] All the information contained in previous blocks
 
-> ℹ️ Tekrar dene! Bir blok yalnızca önceki blokun hash'ine atıf yapar. Tüm geçmiş veriyi kopyalamaz.
+> ℹ️ Try again! A block only references the previous block’s hash. It doesn’t copy all past data.
 
-- [ ] Blok boyutu sınırsız olduğu için blokzincirle ilgili her şey
+- [ ] Anything relevant to the blockchain as block size is unlimited
 
-> ℹ️ Tekrar dene! Blok, sınırsız bir kap değil, ayrı bir işlem grubudur.
+> ℹ️ Try again! A block is a discrete group of transactions, not an unlimited container.
 
-- [x] İşlem verisi ve önceki bloka bir atıf
+- [x] Transaction data and a reference to the previous block
 
-> ℹ️ Doğru! Blok, bir işlem grubu artı blokları birbirine zincirleyen önceki blokun hash'idir.
+> ℹ️ Correct! A block is a group of transactions plus the previous block’s hash, which chains the blocks together.
 
-- [ ] Belirli bir zaman aralığında oluşan tüm işlem verisi
+- [ ] All transaction data generated within a fixed timeframe
 
-> ℹ️ Tekrar dene! İşlemler tek bir blokta gruplanabilir ya da zaman içinde birden fazla bloka dağılabilir.
+> ℹ️ Try again! Transactions can be grouped into one block or spread across multiple blocks over time.
 
-# Tek Tek İşlemler
+# Individual Transactions
 
-Herhangi bir blokzincirdeki veri basitçe `işlemlerin` listesidir: kullanıcılar arasında hareket eden paranın kayıtları. Her işlemin geçerli olması için gönderenin `dijital imzası` ile imzalanması gerekir.
+The data on any blockchain is simply a list of `transactions`, records of currency moved between users. Each transaction must be signed by the sender’s `digital signature` to be valid.
 
-Bir işlemi cüzdanınla onaylarken yaptığın şey budur: işlemi yetkilendirmek için dijital imzanla imzalarsın. Bunu bir çeki, fişi ya da kredi kartı slipini fiziksel olarak imzalamanın dijital karşılığı gibi düşünebilirsin.
+This is what you do when you confirm a transaction with a wallet, you are signing with your digital signature to authorize a transaction. You can think of it as the digital equivalent of physically signing a check, receipt, or credit card transaction.
 
-İşlemler kripto varlık göndermek gibi basit olabilir. Kripto varlık takas etmek ya da tetiklendiğinde çalışan özel kodlar (`akıllı sözleşmeler`) yerleştirmek gibi daha karmaşık da olabilir.
+Transactions can be simple, like sending crypto assets, or more complex, such as swapping crypto assets or even deploying special code that executes when triggered, called `smart contracts`.
 
-Son olarak, her işlemin başka hiçbir işlemde bulunmayan benzersiz bir dijital kimliği vardır: `işlem hash'i`. Bu, sonradan tek bir işleme kolayca atıf yapmayı sağlar ve o işlemin detaylarının sonradan değiştirilemeyeceğini garanti eder.
+Finally, each transaction has a unique digital identifier, called its `transaction hash`, that no other transaction has. This makes it easy to refer to any single transaction later on and ensures that the details of that transaction can’t be changed afterward.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-de83e15c.svg)
 
 # Knowledge Check 6
 
-Blokzincirdeki veri, bloklar halinde gruplanmış basit bir işlem listesidir. Bu işlemlere örnek olarak şunlar verilebilir:
+Data on a blockchain is simply a list of transactions grouped into blocks. Examples of such transactions might include:
 
-- [x] Kripto varlık göndermek ya da almak
+- [x] Sending or receiving crypto assets
 
-> ℹ️ Doğru! İşlemler, basit transferlerden akıllı sözleşme etkileşimlerine kadar kullanıcılar arasındaki para hareketini kaydeder.
+> ℹ️ Correct! Transactions record currency moving between users, from simple transfers to smart contract interactions.
 
-- [ ] Blokun boyutunu değiştirmek
+- [ ] Changing the size of the block
 
-> ℹ️ Tekrar dene! Blok boyutu, bir işlemin değiştirebileceği bir şey değildir.
+> ℹ️ Try again! Block size isn’t something a transaction can change.
 
-- [ ] Geçmiş blokzincir verisini düzenlemek
+- [ ] Editing past blockchain data
 
-> ℹ️ Tekrar dene! Geçmiş blokzincir verisi değiştirilemez. Bu, blokzincirlerin temel özelliğidir.
+> ℹ️ Try again! Past blockchain data cannot be changed. That’s a core feature of blockchains.
 
-- [ ] Yukarıdakilerin hepsi
+- [ ] All of the above
 
-> ℹ️ Tekrar dene! Yukarıdakilerden yalnızca biri geçerli bir blokzincir işlemidir.
+> ℹ️ Try again! Only one of the above is a valid blockchain transaction.
 
-# Kullanıcı Adresleri
+# User Addresses
 
-`Adres`, herkesin blokzincirde arayabileceği herkese açık bir kimliktir. E-posta adresi gibi, herkes ona para gönderebilir ama o adresteki parayı yalnızca `özel anahtarı` elinde tutan kişi açıp kullanabilir.
+An `address` is a public identifier that anyone can look up on the blockchain. Like an email address, anyone can send funds to it but only someone who controls the `private key` can unlock and use the funds at that address.
 
-Ethereum'da bir adres her zaman \_0x\_\_\_\_\_\_\_\_\_\_ ile başlar ve o adresin `genel anahtarından` türetilen 42 karakterlik rakam ve harften oluşur.
+On Ethereum, an address always starts with \_0x\_\_\_\_\_\_\_\_\_\_ and is 42 characters of numbers and letters derived from the `public key` of that address.
 
-Bir blok gezgininde tek bir işleme baktığımızda From: ve To: adreslerini görebiliriz. Bu bize o adresleri kontrol eden _kişilerin_ kim olduğunu söylemez, ama herkesin kripto paranın blokzincir defteri boyunca hareketini takip etmesini sağlar.
+When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the _people_ are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-57e130d9.svg)
 
 # Knowledge Check 7
 
-Blokzincir adresleri hakkında ne doğrudur?
+What is true about blockchain addresses?
 
-- [ ] Blokzincirdeki farklı tarafların herkese açık kimlikleridir
+- [ ] They are the public identifiers of different entities on a blockchain
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek doğru ifade değil.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [ ] Ethereum'da her zaman _0x_ ile başlarlar
+- [ ] They always start with _0x_ on Ethereum
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek doğru ifade değil.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [ ] Özel anahtarı kontrol eden kişi o adresteki parayı kullanabilir
+- [ ] Whoever controls the private key can use the funds at that address
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek doğru ifade değil.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [x] Yukarıdakilerin hepsi
+- [x] All of the above
 
-> ℹ️ Doğru! Adresler herkese açık kimliklerdir, Ethereum'da 0x ile başlar ve içindeki para özel anahtarla açılır.
+> ℹ️ Correct! Addresses are public identifiers, start with 0x on Ethereum, and their funds are unlocked by the private key.
