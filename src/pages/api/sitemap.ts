@@ -17,6 +17,17 @@ const LASTMOD: { [key: string]: string } = (() => {
   }
 })()
 
+// Languages that actually have a glossary to show. A language enters the
+// registry (LANGUAGES) as soon as we start a translation wave for it, which is
+// well before any of its content exists — hi/id/vi were registered with zero
+// keywords, and mapping the registry straight into the sitemap submitted
+// /glossary/hi|id|vi to Google as three more copies of the English glossary.
+// Register a language freely; it reaches the sitemap when its content lands.
+const GLOSSARY_LANGUAGES = LANGUAGES.filter(
+  (l) =>
+    l.code !== 'en' && fs.existsSync(`translation/keywords/${l.code}/keywords.json`)
+)
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -92,9 +103,7 @@ export default async function handler(
       '/lessons',
       '/faq',
       '/glossary',
-      ...LANGUAGES.filter((l) => l.code !== 'en').map(
-        (l) => `/glossary/${l.code}`
-      ),
+      ...GLOSSARY_LANGUAGES.map((l) => `/glossary/${l.code}`),
       '/onchain-summer-challenge',
       '/explore',
       // Indexable and self-canonical, but were absent from the sitemap.
