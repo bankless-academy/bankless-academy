@@ -56,26 +56,31 @@ function replaceImagesInMarkdown(markdownString) {
     '<img alt="" src="$1" width="400px" />'
   )
 
-  // add alt & title to images
-  // const contentDiv = new JSDOM(replacedString)
+  // Name each image after the section it sits in. This used to build a real
+  // <div> and query it, which meant the page could not be server-rendered at
+  // all ("document is not defined"). String work gets the same result and,
+  // more to the point, keeps the alt text in the HTML a crawler receives.
   const sectionSplit = `<span class="hljs-section">`
   const sections = replacedString.split(sectionSplit)
   replacedString = ''
-  for (const section of sections) {
-    const contentDiv = document.createElement('div')
-    contentDiv.innerHTML = `${sectionSplit}${section}`
-    const sectionTitles = contentDiv.querySelectorAll('.hljs-section')
-    // console.log(sectionTitles)
-    const sectionTitle = sectionTitles[0].textContent?.replace('# ', '')
-    // console.log(sectionTitle)
-    const images = contentDiv.querySelectorAll('img')
-    // console.log(images)
-    for (const image of images) {
-      image.alt = sectionTitle
-      image.title = sectionTitle
+  for (const [i, section] of sections.entries()) {
+    // the first chunk is whatever preceded the first heading
+    if (i === 0) {
+      replacedString += section
+      continue
     }
-    // console.log(contentDiv)
-    replacedString += contentDiv.innerHTML
+    const [titleHtml] = section.split('</span>')
+    const sectionTitle = titleHtml
+      .replace(/<[^>]*>/g, '')
+      .replace('# ', '')
+      .trim()
+    const escaped = sectionTitle.replace(/"/g, '&quot;')
+    replacedString +=
+      sectionSplit +
+      section.replace(
+        /<img alt=""/g,
+        `<img alt="${escaped}" title="${escaped}"`
+      )
   }
 
   return replacedString

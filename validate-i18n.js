@@ -95,7 +95,16 @@ for (const f of files) {
 // ---------------------------------------------------------------------------
 // 2. user-facing English that never reaches t(), in all three shapes
 // ---------------------------------------------------------------------------
+// The scanner reads source text, so it occasionally catches a fragment of code
+// rather than copy — a leading quote makes `') const sectionTitle = ...` look
+// like a sentence. Reject anything with code punctuation or keywords in it.
+const looksLikeCode = (t) =>
+  /=>|\bconst\b|\blet\b|\bvar\b|\bfunction\b|\breturn\b|\.(replace|map|filter|split|join|match)\(|[{};]|\$\{|\)\s*\.|\s=\s/.test(
+    t
+  )
+
 const looksUserFacing = (t) =>
+  !looksLikeCode(t) &&
   t.length >= 12 &&
   // a capital, a quote, or an emoji lead-in ("👉 Get Zerion wallet here"
   // slipped past an earlier capital-letter-only rule)
@@ -141,23 +150,35 @@ for (const f of files) {
 }
 
 // Ratchet, not a wall. This backlog predates the check, so failing the build on
-// all of it would just get the whole check disabled. Instead: the count may
-// only ever go down. Lower BASELINE whenever you fix some.
-const BASELINE = 81 // lower this as the backlog is cleared
-if (untranslated.length > BASELINE) {
-  errors.push(
-    `${untranslated.length} untranslated user-facing strings, up from the ${BASELINE} baseline — the ${untranslated.length - BASELINE} new one(s) are listed below`
+// all of it would just get the whole check disabled. Instead the baseline is a
+// committed LIST: any string not on it fails, and strings that disappear are
+// reported so the list can shrink. Comparing identities rather than a count
+// matters — a count moves by a couple when unrelated formatting shifts the
+// regex window, which produced a false failure the first time this ran.
+const BASELINE_FILE = 'i18n-untranslated-baseline.json'
+const baseline = fs.existsSync(BASELINE_FILE)
+  ? new Set(JSON.parse(fs.readFileSync(BASELINE_FILE, 'utf8')))
+  : null
+if (!baseline) {
+  fs.writeFileSync(
+    BASELINE_FILE,
+    `${JSON.stringify(untranslated.sort(), null, 2)}\n`
   )
-  for (const u of untranslated) errors.push(u)
-} else {
   warnings.push(
-    `${untranslated.length} untranslated user-facing string(s) remaining (baseline ${BASELINE}). Run with SHOW_UNTRANSLATED=1 to list them.`
+    `wrote ${BASELINE_FILE} with ${untranslated.length} pre-existing untranslated strings; commit it, then any NEW one fails the build`
   )
-  if (process.env.SHOW_UNTRANSLATED)
-    for (const u of untranslated) warnings.push(u)
-  if (untranslated.length < BASELINE)
+} else {
+  const added = untranslated.filter((u) => !baseline.has(u))
+  const fixed = [...baseline].filter((b) => !untranslated.includes(b))
+  for (const a of added)
+    errors.push(`NEW untranslated user-facing string. ${a}`)
+  if (fixed.length)
     warnings.push(
-      `${BASELINE - untranslated.length} fixed since the baseline was set — lower BASELINE in validate-i18n.js to lock the win in`
+      `${fixed.length} untranslated string(s) fixed since the baseline — regenerate ${BASELINE_FILE} (delete it and re-run) to lock the win in`
+    )
+  if (!added.length)
+    warnings.push(
+      `${untranslated.length} known untranslated user-facing string(s) (see ${BASELINE_FILE}); no new ones`
     )
 }
 
@@ -179,6 +200,50 @@ for (const f of [...files, 'src/constants/animations.ts']) {
       errors.push(
         `${f}: i18next.t(..., { keyPrefix }) silently ignores keyPrefix — use i18next.getFixedT(null, ns, keyPrefix)(key) instead`
       )
+}
+
+// ---------------------------------------------------------------------------
+// 2c. every translation file on disk must be registered in translation.ts
+//
+// i18next resources are static imports, so a namespace that is not listed there
+// simply does not exist at runtime: the file can be complete and perfectly
+// translated while the page silently renders English. That is exactly what
+// happened to the Spanish homepage — 37/37 keys on disk, import commented out,
+// no error anywhere. Nothing else in the build would have caught it.
+{
+  const init = fs.readFileSync('src/utils/translation.ts', 'utf8')
+  const resources = init.slice(
+    init.indexOf('resources: {'),
+    init.indexOf('defaultNS,')
+  )
+  const registered = {}
+  for (const m of resources.matchAll(/'?([a-z-]+)'?:\s*\{([^}]*)\}/g)) {
+    const lang = m[1]
+    if (lang === 'resources') continue
+    registered[lang] = new Set(
+      [...m[2].matchAll(/^\s*(?!\/\/)\s*([a-z]+):/gm)].map((x) => x[1])
+    )
+  }
+  for (const lang of fs.readdirSync('translation/website')) {
+    if (!fs.statSync(`translation/website/${lang}`).isDirectory()) continue
+    if (lang === 'en') continue // English falls through to the key by design
+    for (const f of fs.readdirSync(`translation/website/${lang}`)) {
+      if (!f.endsWith('.json')) continue
+      const ns = f.replace(/\.json$/, '')
+      const count = Object.keys(
+        JSON.parse(fs.readFileSync(`translation/website/${lang}/${f}`, 'utf8'))
+      ).length
+      if (!count) continue // an intentionally empty placeholder
+      if (!registered[lang])
+        warnings.push(
+          `${lang} has translation files but no resources entry in src/utils/translation.ts`
+        )
+      else if (!registered[lang].has(ns))
+        errors.push(
+          `translation/website/${lang}/${f} has ${count} keys but "${ns}" is not registered for "${lang}" in src/utils/translation.ts — the app will silently render English`
+        )
+    }
+  }
 }
 
 // ---------------------------------------------------------------------------

@@ -92,6 +92,43 @@ export const isLocalizablePath = (pathname: string): boolean => {
   )
 }
 
+// localStorage key holding the reader's CHOSEN language. Distinct from
+// i18next's own `i18nextLng` cache, which tracks whatever is merely active.
+//
+// The value is JSON-encoded, because LanguageSelector reads it through
+// usehooks-ts `useLocalStorage`, which JSON.parses whatever it finds. Writing a
+// bare "es" here makes that hook throw on the next render, so always go through
+// the two helpers below rather than touching localStorage directly.
+export const PREFERRED_LANGUAGE_KEY = 'default-language'
+
+export const readPreferredLanguage = (): LanguageCode | null => {
+  if (typeof window === 'undefined') return null
+  const raw = window.localStorage.getItem(PREFERRED_LANGUAGE_KEY)
+  if (!raw) return null
+  try {
+    const value = JSON.parse(raw)
+    return typeof value === 'string' && isLanguage(value) ? value : null
+  } catch {
+    // tolerate a bare (non-JSON) value so a browser that already stored one
+    // keeps working; the next write below repairs the format
+    return isLanguage(raw) ? raw : null
+  }
+}
+
+export const writePreferredLanguage = (lang: string): void => {
+  if (typeof window === 'undefined') return
+  window.localStorage.setItem(PREFERRED_LANGUAGE_KEY, JSON.stringify(lang))
+}
+
+// Does the URL literally carry a language segment (/lessons/fr/x, /glossary/fr)?
+// Distinct from parseLangFromPath, which answers 'en' both for an explicitly
+// English URL and for one with no segment at all. The difference matters:
+// arriving on /lessons/fr/x is a deliberate choice of language and should be
+// remembered, while /lessons/x merely means "this page is English" and must not
+// overwrite a reader who prefers French.
+export const hasLangSegment = (pathname: string): boolean =>
+  !!pathname && parseLangFromPath(pathname) !== 'en'
+
 export const parseLangFromPath = (pathname: string): LanguageCode => {
   if (!pathname) return 'en'
   const segments = pathname.split(/[?#]/)[0].split('/').filter(Boolean)

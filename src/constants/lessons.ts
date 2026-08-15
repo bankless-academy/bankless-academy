@@ -22,7 +22,9 @@ const LESSONS: LessonType[] = [
     name: 'Bitcoin Basics',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -304,7 +306,9 @@ const LESSONS: LessonType[] = [
     name: 'Ethereum Basics',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -557,7 +561,8 @@ const LESSONS: LessonType[] = [
       'pt-br',
       'tr',
       'uk',
-      'zh'
+      'zh',
+      'de'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -607,7 +612,8 @@ const LESSONS: LessonType[] = [
       'ja',
       'pt-br',
       'tr',
-      'zh'
+      'zh',
+      'de'
     ],
     level: 'Essentials',
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
@@ -922,7 +928,8 @@ const LESSONS: LessonType[] = [
     languages: [
       'de',
       'es',
-      'fr'
+      'fr',
+      'pt-br'
     ],
     level: 'Essentials',
     lessonWriters: 'iSpeakNerd',
@@ -1195,7 +1202,9 @@ const LESSONS: LessonType[] = [
     languages: [
       'fr',
       'uk',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Essentials',
     tags: [
@@ -1505,7 +1514,9 @@ const LESSONS: LessonType[] = [
     name: 'Layer 1 Blockchains',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -1830,7 +1841,9 @@ const LESSONS: LessonType[] = [
     name: 'Layer 2 Blockchains',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     tags: [
@@ -2090,7 +2103,9 @@ const LESSONS: LessonType[] = [
     name: 'Funding a Wallet on Layer 2',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     tags: [
@@ -2155,7 +2170,9 @@ const LESSONS: LessonType[] = [
     name: 'Registering Your Web3 Username',
     languages: [
       'fr',
-      'es'
+      'es',
+      'pt-br',
+      'de'
     ],
     level: 'Level 1',
     tags: [
@@ -2224,7 +2241,9 @@ const LESSONS: LessonType[] = [
     name: 'Intro to DeFi',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     tags: [
@@ -2520,7 +2539,9 @@ const LESSONS: LessonType[] = [
     name: 'Understanding Stablecoins',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2566,7 +2587,9 @@ const LESSONS: LessonType[] = [
     name: 'Decentralized Exchanges',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2889,7 +2912,9 @@ const LESSONS: LessonType[] = [
     name: 'Swapping on a Decentralized Exchange',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     tags: [
@@ -2939,7 +2964,9 @@ const LESSONS: LessonType[] = [
     name: 'Staking on Ethereum',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3227,7 +3254,9 @@ const LESSONS: LessonType[] = [
     name: 'Staking Ether',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3287,7 +3316,9 @@ const LESSONS: LessonType[] = [
     name: 'Managing Token Allowances',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     tags: [
@@ -3340,7 +3371,9 @@ const LESSONS: LessonType[] = [
     name: 'DEX Aggregators',
     languages: [
       'fr',
-      'es'
+      'es',
+      'de',
+      'pt-br'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -3614,7 +3647,9 @@ const LESSONS: LessonType[] = [
     name: 'Understanding Ethereum Token Standards',
     languages: [
       'fr',
-      'es'
+      'es',
+      'pt-br',
+      'de'
     ],
     level: 'Level 1',
     lessonWriters: 'Musharef, Tetranome',

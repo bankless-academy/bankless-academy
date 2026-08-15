@@ -20,7 +20,7 @@ import { Envelope } from '@phosphor-icons/react'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
 import { useLocalStorage } from 'usehooks-ts'
-import router from 'next/router'
+import { useRouter } from 'next/router'
 import { FollowersYouKnow } from 'ethereum-identity-kit'
 
 import Badges from 'components/Badges'
@@ -88,6 +88,7 @@ const ExplorerProfile = ({
     typeof window !== 'undefined' ? `${window.location.href}` : ''
   const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
   const [isMobileScreen] = useMediaQuery(['(max-width: 800px)'])
+  const router = useRouter()
   const { referral, badge, lng } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)

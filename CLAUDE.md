@@ -184,15 +184,32 @@ Spanish were produced. The ordering is not optional:
    `keyword_forms` alias so either phrasing still resolves to a tooltip.
 4. **Wave 2 — lessons, in parallel**, only once the glossary exists: lesson
    bodies must backtick display forms the glossary can resolve.
-5. **Register `languages[]`, `build-content`, `validate-content` centrally.**
+5. **Register `languages[]` and run the gates centrally** (`lang-tools register`).
    Agents must not touch `lesson-meta.json` or run the compiler; concurrent
    writes to one JSON file lose edits silently.
 
+Three helpers make a wave repeatable (`lang-tools.js`, at the repo root):
+
+- `node lang-tools.js pins <lang>` — seeds the style guide's ```terms``` block from ETHGlossary,
+  **ranked by how many of the 19 lessons backtick each term**. Pinning the
+  high-traffic terms first is what stops two glossary halves diverging; the
+  Spanish wave pinned ~60 terms by hand and still needed `mint`, `bridge` and
+  Proof-of-Work casing reconciled afterwards.
+- `node lang-tools.js merge <lang>` — merges the halves, enforces the style-guide pins, and
+  reports display-form collisions and leftover English definitions. Collisions
+  are usually harmless English singular/plural pairs, but they also catch real
+  clashes: German had `collateral` and `security` both as *Sicherheit*, which
+  would have shown one term's definition under the other.
+- `node lang-tools.js register <lang>` — adds the language to `languages[]` for every verified
+  file, clears `staleTranslations`, then runs verify + build + both validators.
+
 Agents build a lesson with
-`scratchpad/build-lang.sh <lang> "<localName>" <slug> "<TITLE>" "<DESC>"`,
+`./build-translation.sh <lang> "<localName>" <slug> "<TITLE>" "<DESC>"`,
 which applies the language's typography to a temp copy, assembles the md with
-`translate-content.js`'s own parser/renderer (so banner and frontmatter are
-exact), and runs the structural verifier. Verify the script is a no-op on an
+`translate-content.js`'s own parser/renderer via `assemble-translation.js` (so
+banner and frontmatter are exact), and runs the structural verifier. Drafts
+live in `$TRANSLATION_SCRATCH` (default `.translation-drafts/`, gitignored).
+The agent brief they all follow is `docs/translation-wave.md`. Verify the script is a no-op on an
 already-finished lesson before handing it to a fleet.
 
 ### Deprecation policy
@@ -392,6 +409,64 @@ Understand all five before touching translations — they fail independently.
   slides do, and the stale `title` field was dropped from all 90 QUIZ/POLL
   `slideMeta` entries. **Keep every quiz heading as `Knowledge Check <n>`** in
   the md, numbered sequentially per lesson.
+### Language resolution (one place, three cases)
+
+`AppContext` is the **single** source of truth for the active language. It used
+to be split between `AppContext` and `LanguageSelector`, which each re-applied
+their own answer on every route change and fought each other; that is how
+reading a French lesson and then going to the homepage snapped back to English.
+`LanguageSelector` now only migrates legacy codes and handles the picker.
+
+| URL | renders | records the preference |
+|---|---|---|
+| `/lessons/fr/x`, `/glossary/fr` (explicit segment) | that language | **yes** |
+| `/lessons/x`, `/glossary` (localizable, no segment) | English | no |
+| `/`, `/explore`, `/lessons/handbook`, everything else | stored preference | no |
+
+`isLocalizablePath()` decides row 2 vs row 3, and excludes the sibling pages
+under `/lessons` (`handbook`, `preview`) — they are listings, not lessons, and
+treating them as lessons forced them to English.
+
+**Two storage keys, do not confuse them.** `default-language`
+(`PREFERRED_LANGUAGE_KEY`) is the reader's *chosen* language; `i18nextLng` is
+i18next's cache of whatever is merely *active*, so it is set the instant anyone
+opens a translated URL. Anything asking "has this reader picked a language?"
+(the first-visit redirect, for one) must read the former.
+
+`default-language` is **JSON-encoded**, because `LanguageSelector` reads it via
+usehooks-ts `useLocalStorage`, which `JSON.parse`s whatever it finds. Writing a
+bare `es` makes that hook throw on the next render. Always go through
+`readPreferredLanguage()` / `writePreferredLanguage()` in the registry; nothing
+else may touch the key.
+
+Navigation is language-aware through `InternalLink`, which rewrites `/glossary`
+-> `/glossary/<lang>` and `/lessons/<slug>` -> `/lessons/<lang>/<slug>` when the
+translation exists. Every entry point (sidebar `DesktopButton`, `LessonCard`,
+`FeaturedLessons`, homepage) goes through it. A raw `<a href>` or `ExternalLink`
+to a localizable route silently drops the language.
+
+### `validate-i18n.js` (runs in `yarn build`)
+
+Four classes of silent i18n failure, all found the hard way:
+
+1. **Untranslated user-facing strings**, in the three shapes they hide in: a
+   bare JSX text node, the same node wrapped across lines by prettier, and a
+   string literal inside a JSX expression. Ratcheted against a committed
+   identity list (`i18n-untranslated-baseline.json`) — a *count* moves by a
+   couple when unrelated formatting shifts the regex window and false-fails.
+2. **`t()` call sites with no key** in the English namespace.
+3. **`i18next.t(..., { keyPrefix })`**, which silently ignores the prefix (see
+   the gotchas below).
+4. **Translation files that exist but are not registered** in
+   `src/utils/translation.ts`. i18next resources are static imports, so an
+   unregistered namespace does not exist at runtime: `es/homepage.json` was
+   complete and the homepage rendered English, with nothing reporting it.
+
+Plus placeholder/HTML-tag parity per language (hard errors), and a warning when
+a short English label grows >60% in translation, since those live in
+fixed-width furniture — that is what caught "Connect Wallet" overflowing the
+230px sidebar rail as "Connecter un portefeuille".
+
 - **A `:` in a key used to eat the whole string.** i18next's default
   `nsSeparator` is `':'`, and our keys are English sentences, so
   `t('Resources:')` was parsed as namespace `Resources` + empty key and
@@ -401,6 +476,11 @@ Understand all five before touching translations — they fail independently.
   the quests bundle is nested one level under the component name, and
   `deepFind` already handles keys containing dots. Turning it off makes every
   `keyPrefix`ed quest string fall back to the raw key.
+- **`i18next.t(key, { keyPrefix })` silently ignores `keyPrefix`.** `i18next.t`
+  is bound straight to `Translator.translate`, which never reads that option;
+  only `getFixedT(lng, ns, keyPrefix)` applies a prefix. It type-checks, looks
+  right, and returns the raw key at runtime — the whole ConnectFirst quest flow
+  rendered in English in every language because of one line.
 - Glossary definitions are read straight off the resource bundle
   (`i18next.getResourceBundle(lang, 'keywords')`) in `Lesson.tsx` and
   `Article.tsx`, not via `t('<term>.definition')` — same `useMemo` that builds

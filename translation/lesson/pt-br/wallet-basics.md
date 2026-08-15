@@ -1,9 +1,10 @@
 ---
-TITLE: Princípios Básicos de Carteiras
-DESCRIPTION: O que é uma carteira de criptomoedas? Saiba mais e crie sua primeira carteira hoje!
+TITLE: Fundamentos da carteira
+DESCRIPTION: O que é uma carteira cripto? Entenda como funcionam e crie a sua hoje mesmo!
 LANGUAGE: Português
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: beatrizabreupeixoto
+EDITORS: Claude (Anthropic AI, 2026 review)
+TRANSLATORS: Claude (Anthropic AI)
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -27,39 +28,39 @@ ________________________________________________________________________________
 
 ---
 
-# Introdução às Carteiras
+# Introdução às carteiras
 
 **Saudações, Explorador Bankless!**
 
-É hora de mergulhar mais fundo em sua jornada pelo multiverso blockchain. Todo Explorador neste espaço eventualmente precisa criar uma carteira de criptomoedas.
+É hora de avançar na sua jornada pelo multiverso blockchain. Todo Explorador deste espaço uma hora precisa criar uma carteira cripto.
 
-As carteiras são como as contas na internet da `web2` com as quais você está acostumado. Você usará uma carteira para fazer login no ecossistema de blockchains, também conhecido como `web3`, onde poderá usar `criptomoedas` e se conectar a `aplicativos blockchain`!
+As carteiras se parecem com as contas da internet `web2` que você já conhece. Você vai usar uma carteira para entrar no ecossistema blockchain, também chamado de `web3`, onde poderá usar `criptomoedas` e se conectar a `aplicativos blockchain`!
 
-Nesta lição, falaremos sobre carteiras, como elas funcionam e como você pode manter suas criptomoedas seguras. Terminaremos com um guia sobre como criar uma e acessar **a blockchain da Ethereum, o lar da Bankless Academy.**
+Nesta lição vamos apresentar as carteiras, como elas funcionam e como manter suas criptomoedas seguras. No final, um guia para criar a sua e acessar **a blockchain do Ethereum, a casa da Bankless Academy.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# Definição de Carteira
+# Definição de carteira
 
-O que é exatamente uma carteira de criptomoedas?
+O que exatamente é uma carteira cripto?
 
-A resposta curta é: uma conta em uma `blockchain`, usada para armazenar ativos digitais e acessar aplicativos blockchain.
+A definição curta: uma conta em uma `blockchain`, usada para guardar ativos digitais e entrar em aplicativos blockchain.
 
-É como ter seu próprio cofre na internet, e você tem a única chave para o abrir. Ao mesmo tempo, esse cofre é semelhante a uma conta em um site comum. Você pode usá-lo para fazer compras, enviar ou receber `criptomoedas` e interagir com uma blockchain.
+É como ter seu próprio cofre pessoal na internet, e só você tem a chave que o abre. Ao mesmo tempo, esse cofre lembra uma conta comum de site. Você pode usá-la para fazer compras, enviar ou receber `criptomoedas` e interagir com uma blockchain.
 
-No entanto, ao contrário das contas `web2` a que você está acostumado, uma única carteira pode acessar uma blockchain inteira e um grande número de aplicativos blockchain. É como ter uma única conta para acessar toda a internet.
+Mas, diferente das contas `web2` que você conhece, uma única carteira acessa uma blockchain inteira e um grande número de aplicativos blockchain. É como ter uma só conta para toda a internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# É difícil criar uma carteira?
+# Criar uma carteira é difícil?
 
-Antigamente sim, era difícil. Mas hoje, qualquer pessoa pode facilmente criar uma carteira.
+Já foi difícil, mas hoje qualquer pessoa cria uma carteira com facilidade.
 
-Se você não tiver dificuldades para baixar e instalar um software em seu computador (ou aplicativos no seu celular), então você não terá problemas em criar sua primeira carteira.
+Se você se sente à vontade baixando e instalando programas no computador (ou aplicativos no celular), não vai ter problema para criar sua primeira carteira.
 
-A parte mais complicada de gerenciar uma carteira consiste em mantê-la segura, o que veremos em breve!
+A parte mais delicada é manter a carteira segura, e já vamos falar disso!
 
-Escolher seu `aplicativo de carteira` também pode parecer intimidante. Esse é o aplicativo que você instalará em seu dispositivo para acessar sua carteira na blockchain. Recomendamos começar com o aplicativo de carteira da Zerion: ela é fácil de usar e tem acesso a muitas blockchains populares. À medida que você se sentir mais confortável no espaço da `web3`, provavelmente explorará outros provedores e criará várias carteiras.
+Escolher seu `aplicativo de carteira` também pode intimidar. É o app que você instala no seu dispositivo para acessar sua carteira na blockchain. Recomendamos começar pelo app da Zerion: ele é fácil de usar e dá acesso a muitas blockchains populares. Conforme ganhar confiança no `web3`, você provavelmente vai testar outros provedores e criar várias carteiras.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
@@ -69,195 +70,196 @@ O que é uma carteira?
 
 - [ ] Uma blockchain
 
-> ℹ️ Tente novamente! Sua carteira está hospedada em uma blockchain.
+> ℹ️ Tente de novo! Sua carteira fica hospedada em uma blockchain.
 
 - [ ] Uma criptomoeda
 
-> ℹ️ Tente novamente! As criptomoedas são algo que você guarda em sua carteira.
+> ℹ️ Tente de novo! As criptomoedas são algo que você guarda na carteira.
 
 - [ ] Um colecionável digital
 
-> ℹ️ Tente novamente! Os colecionáveis digitais são algo que você guarda em sua carteira.
+> ℹ️ Tente de novo! Os colecionáveis digitais são algo que você guarda na carteira.
 
-- [ ] Uma conta na blockchain
+- [x] Uma conta de blockchain
 
-> ℹ️ Correto! As carteiras são contas usadas para interagir com blockchains.
+> ℹ️ Correto! Carteiras são contas usadas para interagir com blockchains.
 
-# Carteiras e Recuperação de Senhas
+# Carteiras e recuperação de senha
 
-Esta é uma das coisas mais importantes que você deve entender sobre as carteiras na `web3`: **Não é possível "redefinir" ou "alterar" sua senha.**
+Esta é uma das coisas mais importantes de entender sobre carteiras `web3`:
+**não existe “redefinir senha” nem “trocar senha”.**
 
-A maioria de nós está acostumada a esses recursos. Se esquecermos uma senha, clicamos em um botão, fazemos algumas coisas e recebemos uma nova senha. Simples.
+Quase todo mundo está acostumado com esses recursos. Se esquecemos uma senha, clicamos em um botão, seguimos alguns passos e ganhamos uma nova. Fácil.
 
-O mesmo não acontece com as carteiras de criptomoedas. Devido à forma como as blockchains funcionam, as carteiras recebem um "endereço" e uma "senha" complexa quando são criadas. Você não as escolhe.
+Com carteiras cripto não é assim. Pelo jeito que as blockchains funcionam, ao serem criadas as carteiras recebem um “endereço” e uma “senha” complexa, e você não escolhe nenhum dos dois.
 
-É impossível alterar essa combinação de endereço e senha, embora você possa criar uma nova carteira a qualquer altura, se necessário. Vamos aprender um pouco mais sobre esses endereços e senhas especiais, para que nos possamos sentir confiantes ao usá-los!
+Essa combinação de endereço e senha não pode ser alterada, embora você sempre possa criar uma carteira nova se precisar. Algumas carteiras mais recentes trazem recursos de recuperação, mas nunca conte com isso. Vamos entender melhor esses endereços e senhas especiais, para usá-los com confiança!
 
 # A chave pública da sua carteira
 
-Uma `chave pública` é basicamente o endereço de sua carteira. Muitas vezes, isso se parece com uma série aleatória de letras e números.
+O `endereço` da sua carteira é criado a partir da `chave pública`. Pense no endereço como seu nome de usuário: costuma parecer uma sequência aleatória de letras e números.
 
 Exemplo: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-É possível criar versões mais fáceis de lembrar usando alguns serviços da `Web3`, mas essa é uma lição para outro momento.
+Com alguns serviços `web3` dá para criar versões mais fáceis de lembrar, mas isso é assunto para outra lição.
 
-Você também pode pensar na chave pública como um endereço de casa. Ele é público, qualquer pessoa pode vê-lo e diz a outros para onde eles podem enviar ativos de criptomoedas, sem revelar nenhuma informação pessoal sobre você.
+Você também pode pensar no endereço como o endereço de uma casa. Ele é público, qualquer um pode ver, e indica para onde te enviar ativos cripto, sem revelar nada pessoal sobre você.
 
-É perfeitamente seguro compartilhar a **chave pública** de sua carteira.
+Compartilhar o **endereço** da sua carteira é totalmente seguro.
 
-**Nota:** Um único aplicativo de carteira pode armazenar vários pares de `chave privada`/ pública.
+**Observação:** um único aplicativo de carteira pode guardar vários pares de chave pública e `chave privada`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
 # A chave privada da sua carteira
 
-Se a chave pública é como um endereço de uma casa, então a `chave privada` é como a chave para a porta da frente. É a "senha" para seus fundos e ativos.
+Se o endereço é como o endereço de uma casa, a `chave privada` é como a chave da porta. É a “senha” dos seus fundos e ativos.
 
-Exemplo: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+Exemplo: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092a4c72b53e69cf74d215_
 
-**Nunca é seguro compartilhar essa chave. Você pode perder sua carteira e tudo o que ela contém.**
+**Nunca é seguro compartilhar essa chave: você pode perder a carteira e tudo o que há nela.**
 
-A maioria das pessoas até recomenda que você nem a guarde em formato digital. Quem tem acesso a uma chave privada tem acesso a tudo o que está na `carteira`.
+A maioria recomenda nem guardá-la em formato digital. Quem tem acesso a uma chave privada tem acesso a tudo o que está na `carteira`.
 
-Isso é mais do que uma simples senha. Você não a pode redefinir se perder o acesso a ela.
+Isso é mais do que uma senha. Você não pode redefini-la se perder o acesso.
 
-Felizmente, a maioria dos `aplicativos blockchain` não exige que você digite uma sequência longa e complicada de caracteres sempre que precisar enviar fundos ou assinar uma transação na blockchain. A chave privada geralmente opera silenciosamente em segundo plano.
+Por sorte, a maioria dos `aplicativos blockchain` não pede que você digite uma longa sequência de caracteres toda vez que envia fundos ou assina uma transação. A chave privada funciona em silêncio, nos bastidores.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-Sua chave pública é como seu _____ e sua chave privada é como sua _____ .
+O endereço da sua carteira é como seu _____ e sua chave privada é como sua _____ .
 
-- [ ] Número de Roteamento / Número da Conta
+- [ ] Número do banco / Número da conta
 
-> ℹ️ Tente novamente! Ao contrário do número de uma conta bancária, sua chave privada não deve ser compartilhada com outras pessoas.
+> ℹ️ Tente de novo! Diferente do número de uma conta bancária, a chave privada não se compartilha.
 
-- [ ] Endereço / CEP
+- [ ] E-mail / CEP
 
-> ℹ️ Tente novamente! Ao contrário de um CEP, sua chave privada não deve ser compartilhada com outras pessoas.
+> ℹ️ Tente de novo! Diferente de um CEP, sua chave privada não deve ser compartilhada com ninguém.
 
-- [ ] Endereço da Casa / Chave da Casa
+- [x] Endereço da casa / Chave da casa
 
-> ℹ️ Correto! Sua chave pública permite que outras pessoas o encontrem, enquanto somente sua chave privada permite que você entre.
+> ℹ️ Correto! O endereço permite que outros te encontrem; só a chave privada abre a porta.
 
-- [ ] Número de Celular / Número de Passaporte
+- [ ] Número de telefone / Número do passaporte
 
-> ℹ️ Tente novamente! Esses são exemplos de informações públicas e privadas, mas não estão relacionadas.
+> ℹ️ Tente de novo! São exemplos de informação pública e privada, mas não têm relação entre si.
 
-# Frase de Recuperação
+# Frase de recuperação
 
-Quando você configurar uma nova carteira, o aplicativo de carteira fornecerá uma `frase de recuperação`.
+Ao configurar uma carteira nova, o `aplicativo de carteira` te dá uma `frase de recuperação`.
 
-Também chamada de "frase semente" ou "frase secreta", essa sequência de palavras pode ser usada para acessar sua carteira e seus ativos de criptomoedas se:
+Também chamada de “frase semente” ou “frase secreta”, ela dá acesso à sua carteira e aos seus ativos cripto se:
 
-- Seu `aplicativo de carteira` ou dispositivo falhar inesperadamente ou estiver danificado.
-- Seu dispositivo for perdido ou roubado.
-- Você quiser acessar sua carteira em vários dispositivos.
+- Seu aplicativo ou dispositivo falhar ou for danificado.
+- Você perder o dispositivo ou ele for roubado.
+- Você quiser acessar a carteira em vários dispositivos.
 
-A maioria das frases de recuperação consiste em uma lista de 12 a 24 palavras que representam dados únicos. Esses dados são usados para gerar a `chave pública` e a `chave privada` de sua carteira.
+Em geral são 12 a 24 palavras que representam um dado único, usado para gerar a `chave pública` e a `chave privada` da sua carteira.
 
-A recuperação da carteira **não** altera nem redefine as chaves.
+Recuperar a carteira **não** troca nem redefine as chaves.
 
-Sua frase de recuperação é basicamente uma versão mais fácil de ler do seu par de chaves públicas/privadas. **Nunca compartilhe sua frase de recuperação.**
+Ela é como uma chave mestra: recria todos os pares de chaves. **Nunca compartilhe sua frase de recuperação.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Você consegue acessar a sua carteira com uma frase de recuperação se o seu dispositivo for danificado ou perdido?
+Você consegue acessar sua carteira com a frase de recuperação se o dispositivo for danificado ou perdido?
 
 - [ ] Não
 
-> ℹ️ Tente novamente!
+> ℹ️ Tente de novo!
 
-- [ ] Sim
+- [x] Sim
 
-> ℹ️ Correto! As frases de recuperação concedem acesso à sua carteira, mesmo em vários dispositivos.
+> ℹ️ Correto! A frase de recuperação dá acesso à sua carteira, inclusive em vários dispositivos.
 
-# Tipos de Carteiras
+# Tipos de carteira
 
-Assim como existem muitos tipos de softwares de computador, existem muitos tipos de carteira. Vamos dar uma olhada nas quatro categorias principais:
+Assim como existem muitos tipos de software, existem muitos tipos de carteira. Veja as quatro categorias principais:
 
-- 🏦 **Carteiras custodiais:** onde um terceiro é responsável por suas chaves privadas.
-- 👤 **Carteiras de auto-custódia (não custodiais):** once você é responsável por suas chaves privadas.
+- 🏦 **Carteiras com custódia:** um terceiro é responsável pelas suas chaves privadas.
+- 👤 **Carteiras de autocustódia (sem custódia):** você é responsável pelas suas chaves privadas.
 
-Existem dois estilos de carteiras de `auto-custódia`:
+Há dois estilos de `carteira de autocustódia`:
 
-- 🔥 **Carteiras quentes ("hot wallets"):** software no seu computador ou celular.
-- 🧊 **Carteiras frias ("cold wallets"):** um pedaço de hardware (como um cartão de memória) que você armazena em algum lugar seguro.
+- 🔥 **Carteiras quentes:** software no computador ou no celular.
+- 🧊 **Carteiras frias:** um aparelho físico (como um pendrive) guardado em lugar seguro.
 
-Cada tipo de carteira serve um caso de uso diferente. Muitos usuários avançados têm um de cada!
+Você também vai ouvir falar das `carteiras inteligentes`: um tipo emergente que executa código e traz extras como login com passkey e recuperação de conta.
 
-Não se preocupe, criaremos apenas uma carteira hoje.
+Cada carteira serve a um uso diferente. Fique tranquilo: hoje vamos criar só uma.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Carteiras Custodiais
+# Carteiras com custódia
 
-Como sua `chave privada` libera o acesso à sua `carteira`, é muito importante mantê-la sã e salva!
+Como a `chave privada` destrava o acesso à sua `carteira`, mantê-la segura é muito importante!
 
-Os serviços de `carteira custodial` incluem corretoras de criptomoedas, como Coinbase e Kraken. **Eles são os guardiões (custodiantes) de sua carteira**, cuidando de suas chaves privadas por você. Você acessa seus serviços como qualquer outro site (com um login de e-mail e uma senha redefinível).
+Serviços de `carteira com custódia` incluem exchanges de criptomoedas como Coinbase e Kraken. **Elas ficam com a custódia**: guardam suas chaves privadas por você. O acesso funciona como em qualquer site, com login por e-mail e senha que pode ser redefinida.
 
-Pode ser tudo que algumas pessoas precisam, mas é preciso que você confie nesses terceiros para proteger seus ativos cripto e lhe dar acesso quando quiser trocá-los ou enviá-los para algum lugar. Além disso, seu acesso a alguns `aplicativos blockchain` pode ser limitado.
+Para algumas pessoas isso basta, mas exige confiar nesses terceiros para proteger seus ativos cripto e liberar o acesso quando você quiser negociar ou enviar. Além disso, seu acesso a alguns `aplicativos blockchain` pode ser limitado.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-Você controla sua chave privada com uma carteira custodial?
+Você controla sua chave privada em uma carteira com custódia?
 
 - [ ] Sim
 
-> ℹ️ Tente novamente!
+> ℹ️ Tente de novo!
 
-- [ ] Não
+- [x] Não
 
-> ℹ️ Correto! As carteiras custodiais exigem que você confie em um terceiro (custodiante) para controlar suas chaves privadas.
+> ℹ️ Correto! Carteiras com custódia exigem confiar em um terceiro (o custodiante) que controla suas chaves privadas.
 
-# Carteiras Não Custodiais
+# Carteira sem custódia
 
-A `carteira de auto-custódia` (como Zerion ou Trezor) é quando você controla totalmente sua `chave privada`. Você **não tem um custodiante** e é o único responsável por manter sua chave privada em segurança.
+Em uma `carteira de autocustódia` (como Zerion ou Trezor), você controla totalmente a sua `chave privada`. Não há **nenhum custodiante**, e só você é responsável por manter essa chave segura.
 
-Essas carteiras oferecem a mais vasta gama de acesso e liberdade no mundo da `Web3`. Você nunca precisará se preocupar com o congelamento ou o mau uso de seus fundos por terceiros.
+Essas carteiras oferecem o maior acesso e a maior liberdade dentro do mundo `web3`. Você nunca precisa se preocupar com um terceiro congelando ou administrando mal seus fundos.
 
-A troca está no risco: se você perder o acesso à sua `frase de recuperação` ou se sua chave privada for comprometida, geralmente há muito pouco que você possa fazer para restaurar o acesso à carteira.
+Em troca, vem o risco: se você perder o acesso à sua `frase de recuperação`, ou se a chave privada for comprometida, quase nunca há como recuperar a carteira.
 
-Seja qual for o caminho escolhido, vale a pena se familiarizar e ficar confortável com a segurança da carteira. Daremos algumas dicas antes de você terminar esta lição.
+Seja qual for o caminho, vale conhecer bem a segurança de carteiras. Vamos dar algumas dicas antes de você terminar esta lição.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-Você é o responsável por sua chave privada em uma carteira de auto-custódia?
+Você é responsável pela sua chave privada em uma carteira de autocustódia?
 
-- [ ] Sim
+- [x] Sim
 
-> ℹ️ Correto! Em uma carteira auto-custódia você é o único responsável por suas chaves privadas.
+> ℹ️ Correto! Com uma carteira de autocustódia, você é o único responsável pelas suas chaves privadas.
 
 - [ ] Não
 
-> ℹ️ Tente novamente!
+> ℹ️ Tente de novo!
 
-# Carteiras Quentes
+# Carteiras quentes
 
-Você ouvirá bastante os termos "carteira quente" e "fria" na `web3`.
+Você vai ouvir bastante os termos “carteira quente” e “carteira fria” no `web3`.
 
-Uma `carteira quente` ("hot wallet") é uma carteira acessada por meio de um aplicativo no seu dispositivo, como é o caso do aplicativo da Zerion. Tal como muitos aplicativos da `web2`, um aplicativo de carteira está sempre conectado à internet.
+Uma `carteira quente` é acessada por um app no seu dispositivo, como o app da Zerion. Assim como muitos apps `web2`, um aplicativo de carteira fica conectado à internet o tempo todo.
 
-Sua `chave privada` é encriptada e armazenada dentro do aplicativo de carteira e só é acessada quando você interage com a blockchain. Essas carteiras são chamadas de ‘carteiras quentes‘ por causa dessa conexão "quente" entre a internet e sua chave privada.
+Sua `chave privada` fica criptografada dentro do app e só é usada quando você interage com a blockchain. Essas carteiras são chamadas de “quentes” por causa dessa conexão “quente” entre a internet e a sua chave privada.
 
-As carteiras quentes são convenientes para pequenas interações do dia-a-dia, tal como uma carteira física que você tem no bolso. Hoje iremos criar uma carteira quente!
+Carteiras quentes são práticas para o dia a dia, como a carteira física que você leva no bolso. Hoje vamos criar uma carteira quente!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Carteiras Frias
+# Carteiras frias
 
-À medida que você mergulha mais fundo na sua jornada pela `web3`, você conhecerá um cenário cheio de trade-offs de tecnologia interessantes.
+Conforme avança na sua jornada `web3`, você vai encontrar um cenário cheio de trocas tecnológicas interessantes.
 
-As `carteiras frias` concedem maior segurança em troca da conveniência. Uma carteira fria é aquela que armazena sua `chave privada` em um dispositivo de hardware dedicado (como um cartão de memória ou disco rígido externo). Você deve conectar fisicamente a carteira de hardware ao seu computador para acessar sua carteira na blockchain. Sua chave privada nunca é conectada diretamente à internet. As carteiras frias têm esse nome devido a essa conexão "fria" com a internet.
+As `carteiras frias` dão mais segurança em troca de comodidade. Nelas, a `chave privada` fica guardada em um aparelho dedicado (como um pendrive ou um HD externo). Você precisa conectá-lo fisicamente ao computador para acessar sua carteira na blockchain. A chave privada nunca fica ligada diretamente à internet, e daí vem o nome “fria”.
 
-Eles são amplamente consideradas como mais seguras que `carteiras quentes`, porque a sua `chave privada` é armazenada offline, fora do alcance dos atacantes digitais.
+Elas são consideradas mais seguras que as `carteiras quentes`, porque a `chave privada` fica offline, fora do alcance de atacantes digitais.
 
 Ledger e Trezor são exemplos de `carteiras frias`.
 
@@ -265,82 +267,84 @@ Ledger e Trezor são exemplos de `carteiras frias`.
 
 # Knowledge Check 6
 
-Qual dos seguintes tipos de carteira é considerado o mais seguro?
+Qual destes tipos de carteira é considerado o mais seguro?
 
-- [ ] É quase igual para todas as carteiras
+- [ ] Todas as carteiras são parecidas
 
-> ℹ️ Tente novamente! Existem vários trade-offs para cada tipo de carteira, sendo o nível de segurança um deles.
+> ℹ️ Tente de novo! Cada tipo de carteira tem suas trocas, e o nível de segurança é uma delas.
 
 - [ ] Uma carteira quente
 
-> ℹ️ Tente novamente! Uma carteira quente tem uma conexão ativa com a internet, o que a torna mais suscetível a ataques digitais.
+> ℹ️ Tente de novo! A carteira quente tem conexão ativa com a internet, o que a deixa mais exposta a ataques digitais.
 
-- [ ] Uma carteira custodial
+- [ ] Uma carteira com custódia
 
-> ℹ️ Tente novamente! O terceiro que detém as chaves privadas pode ser hackeado ou ir à falência.
+> ℹ️ Tente de novo! O terceiro que guarda as chaves privadas pode ser hackeado ou falir.
 
-- [ ] Uma carteira fria
+- [x] Uma carteira fria
 
-> ℹ️ Correto! As carteiras frias não estão ativamente conectadas à internet, tornando-as mais resistentes a ataques.
+> ℹ️ Correto! Carteiras frias não ficam conectadas à internet, o que as torna mais resistentes a ataques.
 
-# Segurança da Carteira
+# Segurança da carteira
 
-Independentemente de sua `carteira de auto-custódia` ser quente ou fria, há várias medidas de segurança inteligentes que você deve adotar.
+Sendo quente ou fria, sua `carteira de autocustódia` pede boas práticas de segurança.
 
-🖊️ Registre sua `frase de recuperação` em um material físico e durável (como papel laminado ou até mesmo aço) e guarde-a em um local bem seguro. Nunca compartilhe esse material ou a sua `chave privada` com ninguém. **Lembre-se, isso é mais que apenas uma senha.**
+🖊️ Anote a `frase de recuperação` em material durável (papel plastificado ou até aço) e guarde em lugar bem seguro. Nunca compartilhe a frase nem a `chave privada`. **É mais do que uma senha.**
 
-🔍 Ao interagir com uma blockchain ou enviar fundos, mesmo que sejam pequenas quantias, verifique os detalhes com muito cuidado. Detalhes incorretos não podem ser alterados após uma interação.
+🔍 Confira os detalhes sempre que enviar fundos ou assinar, mesmo valores pequenos: erros não podem ser desfeitos.
 
-🔭 Passe algum tempo pesquisando e reunindo informações sobre quaisquer `aplicativos blockchain` com os quais você planeja interagir antes de conectar sua carteira a ele ou assinar suas transações.
+🔭 Pesquise os `aplicativos blockchain` que pretende usar antes de conectar a carteira ou assinar transações.
 
-💰 Use carteiras com menos fundos para experimentar coisas novas e explorar a web3, e considere armazenar ativos de maior valor em várias contas de carteira (ou seja, evite colocar todos os seus ovos cripto na mesma cesta).
+💰 Use carteiras com pouco saldo para explorar o web3 e distribua os ativos de valor entre várias carteiras.
+
+🛡️ Cuidado com golpes que levam você a assinar transações ou permissões nocivas: nossa lição [Segurança no web3](https://app.banklessacademy.com/lessons/web3-security) ensina a identificá-los.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-Qual é a maneira mais segura de proteger sua frase de recuperação?
+Qual é a forma mais segura de proteger sua frase de recuperação?
 
-- [ ] Escrevendo-a em um material duradouro e armazenando-o em um lugar seguro.
+- [x] Anotar em material durável e guardar em lugar seguro.
 
-> ℹ️ Correto! Um backup físico armazenado com segurança, sem rastros digitais, é a opção de armazenamento mais segura.
+> ℹ️ Correto! Um backup físico bem guardado, sem rastro digital, é a opção mais segura.
 
-- [ ] Salvando-a em seu computador e imprimindo-a.
+- [ ] Salvar no computador e imprimir.
 
-> ℹ️ Tente novamente! Se o seu computador for hackeado, sua frase de recuperação poderá ser encontrada. A impressão também cria muitas oportunidades para ataques.
+> ℹ️ Tente de novo! Se hackearem seu computador, a frase pode ser encontrada. Imprimir também abre brechas de ataque.
 
-- [ ] Capturando a tela e salvando-a no seu celular.
+- [ ] Tirar um print e guardar no celular.
 
-> ℹ️ Tente novamente! Se o seu celular for hackeado, você poderá perder todos os ativos da sua carteira.
+> ℹ️ Tente de novo! Se hackearem seu celular, você pode perder todos os ativos da carteira.
 
-- [ ] Salvando-a no seu gerenciador de senhas.
+- [ ] Salvar no seu gerenciador de senhas.
 
-> ℹ️ Tente novamente! Se o seu gerenciador de senhas for hackeado, sua frase de recuperação poderá ser vazada.
+> ℹ️ Tente de novo! Um único vazamento do gerenciador exporia a frase. Mantenha-a offline.
 
-# Você está pronto para criar sua primeira carteira!
+# Você já pode criar sua primeira carteira!
 
-Na verdade, você precisará de uma se quiser reivindicar a prova de conclusão dessa missão!
+Aliás, você vai precisar de uma para reivindicar a prova de conclusão desta missão!
 
-Atualmente, existem vários aplicativos de `carteira quente` de `auto-custódia` disponíveis. Vamos explorar a carteira Zerion para o resto desta lição, uma vez que:
+Hoje existem vários apps de `carteira quente` com `autocustódia`. Vamos usar a carteira Zerion no resto da lição porque:
 
 - ⚙️ É compatível com a maioria dos `aplicativos blockchain`.
-- ⚡ A interface é extremamente simples e fácil de usar.
-- 💻 Tem uma extensão para navegadores de internet como o Chrome, Brave, Edge e Opera.
-- 📱 Também está disponível como um aplicativo móvel para usuários de Android e iOS.
-- 🗣️ Zerion suporta vários idiomas.
+- ⚡ A interface é muito fluida e fácil de usar.
+- 💻 Tem extensão para os navegadores Chrome, Brave, Edge, Opera e Firefox.
+- 📱 Também está disponível como app para Android e iOS.
+- 🗣️ A Zerion tem suporte a vários idiomas.
 
-O fim da aula está bem ao virar da esquina, onde compartilharemos todas as instruções sobre como configurar sua carteira com a Zerion!
+O fim da lição está logo ali, e é onde vamos compartilhar as instruções para configurar sua carteira com a Zerion!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-A Zerion é um aplicativo de carteira custodial?
+A Zerion é um aplicativo de carteira com custódia?
 
 - [ ] Sim
 
-> ℹ️ Tente novamente! Sua carteira da Zerion não é controlada por um custodiante.
+> ℹ️ Tente de novo! Sua carteira Zerion não é controlada por um custodiante.
 
-- [ ] Não
+- [x] Não
 
-> ℹ️ Correto! As carteiras da Zerion são carteiras de auto-custódia, controladas por você, e apenas você.
+> ℹ️ Correto! As carteiras Zerion são de autocustódia, controladas só por você.

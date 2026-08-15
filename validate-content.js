@@ -13,7 +13,9 @@ import {
 } from './content-lib.js'
 
 const EN_DIR = 'translation/lesson/en'
-const meta = JSON.parse(fs.readFileSync('src/constants/lesson-meta.json', 'utf8'))
+const meta = JSON.parse(
+  fs.readFileSync('src/constants/lesson-meta.json', 'utf8')
+)
 const slugs = new Set(Object.keys(meta))
 const errors = []
 // non-fatal: reported at the end but never fails the build
@@ -46,13 +48,21 @@ const langKeywordIndex = (lang) => {
   if (!keys.length) return null
   const forms = new Set()
   for (const [englishKey, e] of Object.entries(bundle))
-    for (const f of [englishKey, e?.keyword, e?.keyword_plural, ...(e?.keyword_forms || [])])
+    for (const f of [
+      englishKey,
+      e?.keyword,
+      e?.keyword_plural,
+      ...(e?.keyword_forms || []),
+    ])
       if (typeof f === 'string' && f) forms.add(f.toLowerCase())
   // A file is "current" once it is keyed by the English term and covers the
   // English glossary. Those gate hard; Crowdin-era files only warn, because
   // they are already queued for regeneration and would drown the output.
-  const englishKeyed = keys.filter((k) => keywordKeys.has(k.toLowerCase())).length
-  const current = englishKeyed / keys.length > 0.9 && keys.length / keywordKeys.size > 0.9
+  const englishKeyed = keys.filter((k) =>
+    keywordKeys.has(k.toLowerCase())
+  ).length
+  const current =
+    englishKeyed / keys.length > 0.9 && keys.length / keywordKeys.size > 0.9
   return { forms, current }
 }
 const langIndexCache = {}
@@ -89,7 +99,11 @@ const fileSlugs = new Set(files.map((f) => f.replace(/\.md$/, '')))
 // translation files on disk must match each lesson's languages[] registration
 const langDirs = fs
   .readdirSync('translation/lesson')
-  .filter((d) => d !== 'en' && fs.statSync(path.join('translation/lesson', d)).isDirectory())
+  .filter(
+    (d) =>
+      d !== 'en' &&
+      fs.statSync(path.join('translation/lesson', d)).isDirectory()
+  )
 for (const [slug, m] of Object.entries(meta)) {
   const listed = new Set(m.languages || [])
   // deliberately unregistered: file kept in git for the translation pass to
@@ -97,23 +111,34 @@ for (const [slug, m] of Object.entries(meta)) {
   const stale = new Set(m.staleTranslations?.languages || [])
   for (const l of stale) {
     if (listed.has(l))
-      errors.push(`${slug}: "${l}" is in both languages[] and staleTranslations`)
+      errors.push(
+        `${slug}: "${l}" is in both languages[] and staleTranslations`
+      )
     if (!fs.existsSync(`translation/lesson/${l}/${slug}.md`))
-      errors.push(`${slug}: "${l}" marked stale but translation/lesson/${l}/${slug}.md does not exist`)
+      errors.push(
+        `${slug}: "${l}" marked stale but translation/lesson/${l}/${slug}.md does not exist`
+      )
   }
   if (m.staleTranslations && !m.staleTranslations.reason)
     errors.push(`${slug}: staleTranslations needs a "reason"`)
   for (const lang of langDirs) {
     const exists = fs.existsSync(`translation/lesson/${lang}/${slug}.md`)
     if (exists && !listed.has(lang) && !stale.has(lang))
-      errors.push(`${slug}: translation file exists for "${lang}" but the language is neither listed in languages[] nor marked in staleTranslations`)
+      errors.push(
+        `${slug}: translation file exists for "${lang}" but the language is neither listed in languages[] nor marked in staleTranslations`
+      )
     if (!exists && listed.has(lang))
-      errors.push(`${slug}: language "${lang}" is listed in lesson-meta.json but translation/lesson/${lang}/${slug}.md is missing`)
+      errors.push(
+        `${slug}: language "${lang}" is listed in lesson-meta.json but translation/lesson/${lang}/${slug}.md is missing`
+      )
   }
 }
 
 for (const slug of slugs) {
-  if (!fileSlugs.has(slug)) errors.push(`${slug}: in lesson-meta.json but ${EN_DIR}/${slug}.md is missing`)
+  if (!fileSlugs.has(slug))
+    errors.push(
+      `${slug}: in lesson-meta.json but ${EN_DIR}/${slug}.md is missing`
+    )
 }
 
 for (const file of files) {
@@ -146,34 +171,52 @@ for (const file of files) {
     quizIdx++
     const options = section.match(/^- \[[ x]\] .+$/gm) || []
     const checked = options.filter((o) => o.startsWith('- [x] '))
-    if (options.length < 2) err(`"${title.trim()}": only ${options.length} option(s)`)
+    if (options.length < 2)
+      err(`"${title.trim()}": only ${options.length} option(s)`)
     if (isPoll.has(quizIdx)) {
-      if (checked.length > 0) err(`"${title.trim()}": POLL section must not have a checked option`)
+      if (checked.length > 0)
+        err(`"${title.trim()}": POLL section must not have a checked option`)
     } else {
-      if (checked.length !== 1) err(`"${title.trim()}": expected exactly one [x], found ${checked.length}`)
+      if (checked.length !== 1)
+        err(
+          `"${title.trim()}": expected exactly one [x], found ${checked.length}`
+        )
     }
   }
 
   // internal lesson links must point at existing slugs
-  for (const m of md.matchAll(/app\.banklessacademy\.com\/lessons\/([a-z0-9.-]+[a-z0-9])/g)) {
+  for (const m of md.matchAll(
+    /app\.banklessacademy\.com\/lessons\/([a-z0-9.-]+[a-z0-9])/g
+  )) {
     if (!slugs.has(m[1])) err(`broken internal lesson link: /lessons/${m[1]}`)
   }
 
   // local images must exist in public/
-  for (const m of md.matchAll(/https:\/\/app\.banklessacademy\.com(\/images\/[^\s)"']+)/g)) {
+  for (const m of md.matchAll(
+    /https:\/\/app\.banklessacademy\.com(\/images\/[^\s)"']+)/g
+  )) {
     const rel = decodeURI(m[1].split('?')[0])
-    if (!fs.existsSync(path.join('public', rel))) err(`missing image file: public${rel}`)
+    if (!fs.existsSync(path.join('public', rel)))
+      err(`missing image file: public${rel}`)
   }
 
   // LEARN slides must fit the fixed-height desktop lesson UI (rule 2/14)
-  if (meta[slug]?.slideMeta && slugs.has(slug) && meta[slug].publicationStatus !== 'deprecated') {
+  if (
+    meta[slug]?.slideMeta &&
+    slugs.has(slug) &&
+    meta[slug].publicationStatus !== 'deprecated'
+  ) {
     const stripped = md.replace(/```[\s\S]*?```/g, '')
     for (const section of stripped.split(/^# /m).slice(1)) {
       const [title] = section.split('\n')
       if (/Knowledge Check/i.test(title)) continue
       const lines = estimateSlideLines(section)
       if (lines > MAX_SLIDE_LINES)
-        err(`slide "${title.trim()}" likely overflows the UI (~${Math.round(lines)} est. lines, max ${MAX_SLIDE_LINES}) — trim the text`)
+        err(
+          `slide "${title.trim()}" likely overflows the UI (~${Math.round(
+            lines
+          )} est. lines, max ${MAX_SLIDE_LINES}) — trim the text`
+        )
     }
   }
 
@@ -185,7 +228,8 @@ for (const file of files) {
     const term = m[1]
     if (seen.has(term)) continue
     seen.add(term)
-    if (!resolvesToKeyword(term)) err(`backticked term without glossary entry: \`${term}\``)
+    if (!resolvesToKeyword(term))
+      err(`backticked term without glossary entry: \`${term}\``)
   }
 }
 
@@ -217,7 +261,9 @@ for (const [slug, m] of Object.entries(meta)) {
   const enBody = bodyOf(fs.readFileSync(enPath, 'utf8'))
   const enSections = sectionsOf(enBody)
   const enQuizzes = enSections.filter((s) => optionsOf(s).length > 0)
-  const expectedSections = (m.slideMeta || []).filter((s) => s.type !== 'QUEST').length
+  const expectedSections = (m.slideMeta || []).filter(
+    (s) => s.type !== 'QUEST'
+  ).length
 
   for (const lang of langs) {
     const p = `translation/lesson/${lang}/${slug}.md`
@@ -233,11 +279,42 @@ for (const [slug, m] of Object.entries(meta)) {
       err('no content section (missing the ``` + --- separator?)')
       continue
     }
+    // Typography and dead tooltips apply to handbooks too. They used to sit
+    // below the `isArticle` early-exit, so 9 of the 19 lessons were never
+    // checked for either. Run them first, then bail out of the slide-shaped
+    // checks that genuinely do not apply to an article.
+    if (!hasCleanTypography(body, lang))
+      warnings.push(
+        `${lang}/${slug}: punctuation spacing is not normalized (needs a no-break space before : ; ! ?) — re-run translate-content or fix by hand`
+      )
+    {
+      const proseTr = body.replace(/```[\s\S]*?```/g, '')
+      const seenTr = new Set()
+      const dead = []
+      for (const mm of proseTr.matchAll(/`([^`\n]+)`/g)) {
+        const term = mm[1]
+        if (seenTr.has(term)) continue
+        seenTr.add(term)
+        if (resolvesInLang(term, lang) === false) dead.push(term)
+      }
+      if (dead.length) {
+        const msg = `${lang}/${slug}: ${
+          dead.length
+        } backticked term(s) with no ${lang} glossary entry (dead tooltip): ${dead
+          .map((t) => '`' + t + '`')
+          .join(', ')}`
+        if (langIndexCache[lang]?.current) errors.push(msg)
+        else warnings.push(msg)
+      }
+    }
+
     if (m.isArticle) continue
 
     const sections = sectionsOf(body)
     if (sections.length !== expectedSections) {
-      err(`${sections.length} sections but the lesson has ${expectedSections} non-QUEST slides — processMD would fall back to English`)
+      err(
+        `${sections.length} sections but the lesson has ${expectedSections} non-QUEST slides — processMD would fall back to English`
+      )
       continue
     }
 
@@ -250,7 +327,11 @@ for (const [slug, m] of Object.entries(meta)) {
       const en = optionsOf(enQuizzes[i])
       const tr = optionsOf(section)
       if (tr.length !== en.length) {
-        err(`quiz ${i + 1}: ${tr.length} options but English has ${en.length} — the English answer key would point at a missing option`)
+        err(
+          `quiz ${i + 1}: ${tr.length} options but English has ${
+            en.length
+          } — the English answer key would point at a missing option`
+        )
         return
       }
       // `[x]` is optional in translations (older files predate the convention),
@@ -258,7 +339,11 @@ for (const [slug, m] of Object.entries(meta)) {
       const enPos = en.findIndex((o) => o.startsWith('- [x] '))
       const trPos = tr.findIndex((o) => o.startsWith('- [x] '))
       if (trPos !== -1 && trPos !== enPos)
-        err(`quiz ${i + 1}: correct answer marked at option ${trPos + 1} but English has it at ${enPos + 1}`)
+        err(
+          `quiz ${i + 1}: correct answer marked at option ${
+            trPos + 1
+          } but English has it at ${enPos + 1}`
+        )
     })
 
     // Translations run longer than English (French ~15-20%, German more), and
@@ -274,7 +359,9 @@ for (const [slug, m] of Object.entries(meta)) {
         if (optionsOf(section).length) continue // quiz slides scroll differently
         const lines = estimateSlideLines(section)
         if (lines > MAX_SLIDE_LINES) {
-          const msg = `${lang}/${slug}: slide "${title.trim()}" likely overflows the UI (~${Math.round(lines)} est. lines, max ${MAX_SLIDE_LINES}) — trim the translation`
+          const msg = `${lang}/${slug}: slide "${title.trim()}" likely overflows the UI (~${Math.round(
+            lines
+          )} est. lines, max ${MAX_SLIDE_LINES}) — trim the translation`
           if (generated) errors.push(msg)
           else warnings.push(msg)
         }
@@ -293,8 +380,9 @@ for (const [slug, m] of Object.entries(meta)) {
     // different content hash — the text is baked into the SVG), so compare the
     // hash-stripped stem rather than the exact URL.
     const stems = (s) =>
-      (s.match(/https:\/\/app\.banklessacademy\.com\/images\/[^\s)"']+/g) || [])
-        .map((u) => u.replace(/-[0-9a-f]{6,}(\.[a-z0-9]+)$/i, '$1'))
+      (
+        s.match(/https:\/\/app\.banklessacademy\.com\/images\/[^\s)"']+/g) || []
+      ).map((u) => u.replace(/-[0-9a-f]{6,}(\.[a-z0-9]+)$/i, '$1'))
     const enStems = stems(enBody)
     const trStems = stems(body)
     for (const u of new Set(enStems.filter((u) => !trStems.includes(u))))
@@ -317,7 +405,11 @@ for (const [slug, m] of Object.entries(meta)) {
         if (resolvesInLang(term, lang) === false) dead.push(term)
       }
       if (dead.length) {
-        const msg = `${lang}/${slug}: ${dead.length} backticked term(s) with no ${lang} glossary entry (dead tooltip): ${dead.map((t) => '`' + t + '`').join(', ')}`
+        const msg = `${lang}/${slug}: ${
+          dead.length
+        } backticked term(s) with no ${lang} glossary entry (dead tooltip): ${dead
+          .map((t) => '`' + t + '`')
+          .join(', ')}`
         if (langIndexCache[lang]?.current) errors.push(msg)
         else warnings.push(msg)
       }
@@ -327,11 +419,16 @@ for (const [slug, m] of Object.entries(meta)) {
     // costs a link (the lesson still renders correctly), so it warns instead of
     // failing the build — older translations predate links added in the rewrite.
     const links = (s) =>
-      (s.match(/app\.banklessacademy\.com\/lessons\/[a-z0-9.-]+[a-z0-9]/g) || [])
+      s.match(/app\.banklessacademy\.com\/lessons\/[a-z0-9.-]+[a-z0-9]/g) || []
     const enLinks = links(enBody)
     const trLinks = links(body)
     for (const u of new Set(enLinks.filter((u) => !trLinks.includes(u))))
-      warnings.push(`${lang}/${slug}: lesson link dropped in translation: /${u.split('/').slice(1).join('/')}`)
+      warnings.push(
+        `${lang}/${slug}: lesson link dropped in translation: /${u
+          .split('/')
+          .slice(1)
+          .join('/')}`
+      )
   }
 }
 
@@ -363,7 +460,11 @@ if (warnings.length) {
   for (const w of warnings) console.warn(`  ! ${w}`)
 }
 if (errors.length) {
-  console.error(`content validation FAILED (${errors.length} error${errors.length > 1 ? 's' : ''}):`)
+  console.error(
+    `content validation FAILED (${errors.length} error${
+      errors.length > 1 ? 's' : ''
+    }):`
+  )
   for (const e of errors) console.error(`  - ${e}`)
   process.exit(1)
 }

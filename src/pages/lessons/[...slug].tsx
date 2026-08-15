@@ -19,6 +19,7 @@ import {
   isLanguage,
   normalizeLangCode,
   parseLangFromPath,
+  readPreferredLanguage,
 } from 'constants/languages'
 
 const SPLIT = `\`\`\`
@@ -297,7 +298,10 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   useEffect(() => {
     if (!lesson || wrongLanguage || lang !== 'en') return
     if (typeof window === 'undefined') return
-    if (window.localStorage.getItem('i18nextLng')) return
+    // the reader's CHOSEN language, not i18next's `i18nextLng` cache — that
+    // one records whatever is merely active, so it is set the moment anyone
+    // opens a translated URL and would suppress the redirect for real newcomers
+    if (readPreferredLanguage()) return
     const browserLang = normalizeLangCode(navigator.language)
     if (browserLang === 'en') return
     if (!lesson.languages?.includes(browserLang)) return

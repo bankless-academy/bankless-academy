@@ -166,7 +166,12 @@ const SocialSharing = (
     }, 1000)
   }
 
-  const shareLink = `${window.location.href}?referrer=${account}`
+  // read during render, so it has to survive prerendering; the real URL is
+  // filled in on the client immediately after hydration
+  const shareLink =
+    typeof window !== 'undefined'
+      ? `${window.location.href}?referrer=${account}`
+      : ''
 
   const twitterLink = generateTwitterLink(share, shareLink)
 

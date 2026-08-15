@@ -198,9 +198,18 @@ const HomePage = (): JSX.Element => {
                 placeItems="center"
               >
                 <Box w="100%" borderBottom="3px solid #423952" />
+                {/* The label sits between two rules, so it must never wrap:
+                    German ("gemeinsam mit unseren Partnern:") is well past the
+                    250px floor and broke onto a second line. nowrap plus
+                    flexShrink 0 makes the rules give way instead of the text,
+                    and the font steps down on narrow viewports so the longest
+                    translations still fit on one line. */}
                 <Text
-                  fontSize="xl"
+                  fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                   minW="250px"
+                  flexShrink={0}
+                  whiteSpace="nowrap"
+                  px="3"
                   textAlign="center"
                   color="#9E9E9E"
                 >

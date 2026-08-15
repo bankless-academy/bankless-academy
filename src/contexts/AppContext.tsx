@@ -8,7 +8,13 @@ import React, {
 import { useRouter } from 'next/router'
 import i18next from 'i18next'
 
-import { isLocalizablePath, parseLangFromPath } from 'constants/languages'
+import {
+  hasLangSegment,
+  isLocalizablePath,
+  parseLangFromPath,
+  readPreferredLanguage,
+  writePreferredLanguage,
+} from 'constants/languages'
 
 export interface OnboardingModalOptions {
   newsletterOnly?: boolean
@@ -68,17 +74,31 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     []
   )
 
+  // Single source of truth for the active language. This used to be split
+  // between here and LanguageSelector, which each re-applied their own answer
+  // on every route change and fought: reading a French lesson then going to the
+  // homepage snapped back to English, because the URL had set the language
+  // without ever recording it as the reader's preference.
+  //
+  // Three cases, in order:
+  //   /lessons/fr/x, /glossary/fr  explicit choice -> apply AND remember
+  //   /lessons/x, /glossary        this page is English -> apply, remember
+  //                                nothing (a French reader keeps their pref)
+  //   anywhere else                no language in the URL -> apply the pref
   useEffect(() => {
-    // On a route whose URL carries the language (lesson, glossary) the URL
-    // wins, INCLUDING when it resolves to English. This used to be one-way —
-    // only non-English URLs applied — so going back from /lessons/fr/x to
-    // /lessons/x left French chrome wrapped around English lesson prose.
-    // Anywhere else there is no language in the URL, so the reader's stored
-    // preference is left alone.
-    if (!isLocalizablePath(router.asPath)) return
-    const langFromUrl = parseLangFromPath(router.asPath)
-    setLanguage(langFromUrl)
-    i18next.changeLanguage(langFromUrl)
+    const path = router.asPath
+    let next: string
+    if (hasLangSegment(path)) {
+      next = parseLangFromPath(path)
+      writePreferredLanguage(next)
+    } else if (isLocalizablePath(path)) {
+      next = 'en'
+    } else {
+      next = readPreferredLanguage() || 'en'
+    }
+
+    setLanguage(next)
+    if (i18next.language !== next) i18next.changeLanguage(next)
   }, [router.asPath])
 
   const value = {

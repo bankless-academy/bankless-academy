@@ -1,3 +1,6 @@
+// MUST be first: installs a server-side localStorage stub so components
+// that read storage during render can be prerendered. See the file for why.
+import 'utils/ssrStorage'
 import { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
@@ -186,6 +189,12 @@ const App = ({
         <NonSSRWrapper>
           {!isMobile && !isTelegramWebApp && <GlobalScrollbar skin="dark" />}
         </NonSSRWrapper>
+        {/* The whole tree is still client-only. Server-rendering it is close but
+            not done: router-singleton, localStorage, document and most window
+            accesses are fixed (see ssrStorage.ts and the useRouter conversions),
+            and only `web3-security` still throws "window is not defined" during
+            prerender. Until that last one is found this stays wrapped, because
+            a half-migrated tree fails the build outright. */}
         <NonSSRWrapper>
           <WagmiProvider config={wagmiAdapter.wagmiConfig}>
             <QueryClientProvider client={queryClient}>

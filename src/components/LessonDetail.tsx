@@ -446,7 +446,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     )}
                   </Box>
                 )}
-                {/* <LanguageSwitch lesson={lesson} /> */}
                 <Box
                   display="flex"
                   mt="4"

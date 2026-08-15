@@ -12,7 +12,7 @@ import keywords from '../../translation/keywords/en/keywords.json'
 
 // PT-BR = Brazilian Portuguese
 import commonPTBR from '../../translation/website/pt-br/common.json'
-// import homepagePTBR from '../../translation/website/pt-br/homepage.json'
+import homepagePTBR from '../../translation/website/pt-br/homepage.json'
 import questsPTBR from '../../translation/website/pt-br/quests.json'
 import keywordsPTBR from '../../translation/keywords/pt-br/keywords.json'
 import lessonPTBR from '../../translation/website/pt-br/lesson.json'
@@ -26,14 +26,14 @@ import lessonZH from '../../translation/website/zh/lesson.json'
 
 // DE = German
 import commonDE from '../../translation/website/de/common.json'
-// import homepageDE from '../../translation/website/de/homepage.json'
+import homepageDE from '../../translation/website/de/homepage.json'
 import questsDE from '../../translation/website/de/quests.json'
 import keywordsDE from '../../translation/keywords/de/keywords.json'
 import lessonDE from '../../translation/website/de/lesson.json'
 
 // ES = Spanish
 import commonES from '../../translation/website/es/common.json'
-// import homepageES from '../../translation/website/es/homepage.json'
+import homepageES from '../../translation/website/es/homepage.json'
 import questsES from '../../translation/website/es/quests.json'
 import keywordsES from '../../translation/keywords/es/keywords.json'
 import lessonES from '../../translation/website/es/lesson.json'
@@ -105,7 +105,7 @@ i18next
       },
       'pt-br': {
         common: commonPTBR,
-        // homepage: homepagePTBR,
+        homepage: homepagePTBR,
         quests: questsPTBR,
         keywords: keywordsPTBR,
         lesson: lessonPTBR,
@@ -119,14 +119,14 @@ i18next
       },
       de: {
         common: commonDE,
-        // homepage: homepageDE,
+        homepage: homepageDE,
         quests: questsDE,
         keywords: keywordsDE,
         lesson: lessonDE,
       },
       es: {
         common: commonES,
-        // homepage: homepageES,
+        homepage: homepageES,
         quests: questsES,
         keywords: keywordsES,
         lesson: lessonES,

@@ -16,7 +16,7 @@ import { Wallet, UserCircle, SignOut } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
-import router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import { useAppKit } from '@reown/appkit/react'
 import { useAccount, useSignMessage } from 'wagmi'
 import { useDisconnect } from '@reown/appkit/react'
@@ -67,7 +67,8 @@ const ConnectWalletButton = ({
   const { t } = useTranslation()
   const { open } = useAppKit()
   const { address, connector, chainId } = useAccount()
-  const { asPath } = useRouter()
+  const router = useRouter()
+  const { asPath } = router
   // const { simulate } = query
   // if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
   //   address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'

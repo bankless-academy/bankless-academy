@@ -80,15 +80,21 @@ const LessonCard = ({
   const [isSmallScreen] = useSmallScreen()
 
   const isBadgeMinted = badgesMintedLS?.includes(lesson.badgeId)
+  // localStorage is read during render, which throws on the server. These two
+  // are progress flags: absent on first paint is exactly right, and the client
+  // re-renders with the real value immediately after hydration.
+  const hasStorage = typeof window !== 'undefined'
   const isNotified =
-    lesson.publicationStatus === 'planned'
+    hasStorage && lesson.publicationStatus === 'planned'
       ? localStorage.getItem(`${lesson.slug}-notification`)
       : false
   const isArticleCollected =
     lesson.mirrorNFTAddress?.length &&
     articlesCollectedLS?.includes(lesson.mirrorNFTAddress.toLowerCase())
   const isArticleRead =
-    lesson.isArticle && localStorage.getItem(lesson.slug) === 'true'
+    hasStorage &&
+    lesson.isArticle &&
+    localStorage.getItem(lesson.slug) === 'true'
   const isLessonCollected =
     IS_COLLECTIBLE_ACTIVATED &&
     !!lesson.lessonCollectibleTokenAddress?.length &&

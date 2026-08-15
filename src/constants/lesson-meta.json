@@ -19,11 +19,12 @@
     "name": "Bitcoin Basics",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "staleTranslations": {
       "languages": [
-        "pt-br",
         "tr",
         "uk",
         "zh"
@@ -182,7 +183,9 @@
     "name": "Ethereum Basics",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Essentials",
     "lessonWriters": "Tetranome",
@@ -334,7 +337,8 @@
       "pt-br",
       "tr",
       "uk",
-      "zh"
+      "zh",
+      "de"
     ],
     "level": "Essentials",
     "lessonWriters": "Tetranome",
@@ -383,7 +387,8 @@
       "ja",
       "pt-br",
       "tr",
-      "zh"
+      "zh",
+      "de"
     ],
     "staleTranslations": {
       "languages": [
@@ -546,7 +551,8 @@
     "languages": [
       "de",
       "es",
-      "fr"
+      "fr",
+      "pt-br"
     ],
     "level": "Essentials",
     "lessonWriters": "iSpeakNerd",
@@ -673,7 +679,9 @@
     "languages": [
       "fr",
       "uk",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Essentials",
     "tags": [
@@ -831,7 +839,9 @@
     "name": "Layer 1 Blockchains",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "lessonWriters": "iSpeakNerd",
@@ -990,7 +1000,9 @@
     "name": "Layer 2 Blockchains",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "tags": [
@@ -1132,7 +1144,9 @@
     "name": "Funding a Wallet on Layer 2",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "tags": [
@@ -1196,7 +1210,9 @@
     "name": "Registering Your Web3 Username",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "pt-br",
+      "de"
     ],
     "level": "Level 1",
     "tags": [
@@ -1264,7 +1280,9 @@
     "name": "Intro to DeFi",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "tags": [
@@ -1394,7 +1412,9 @@
     "name": "Understanding Stablecoins",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "lessonWriters": "Tetranome",
@@ -1439,7 +1459,9 @@
     "name": "Decentralized Exchanges",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "lessonWriters": "Tetranome",
@@ -1600,7 +1622,9 @@
     "name": "Swapping on a Decentralized Exchange",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "tags": [
@@ -1649,7 +1673,9 @@
     "name": "Staking on Ethereum",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "lessonWriters": "Tetranome",
@@ -1813,7 +1839,9 @@
     "name": "Staking Ether",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "lessonWriters": "Tetranome",
@@ -1872,7 +1900,9 @@
     "name": "Managing Token Allowances",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "tags": [
@@ -1924,7 +1954,9 @@
     "name": "DEX Aggregators",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "de",
+      "pt-br"
     ],
     "level": "Level 1",
     "lessonWriters": "iSpeakNerd",
@@ -2058,7 +2090,9 @@
     "name": "Understanding Ethereum Token Standards",
     "languages": [
       "fr",
-      "es"
+      "es",
+      "pt-br",
+      "de"
     ],
     "level": "Level 1",
     "lessonWriters": "Musharef, Tetranome",

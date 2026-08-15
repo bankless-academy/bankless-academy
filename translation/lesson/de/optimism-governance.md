@@ -111,7 +111,7 @@ Welches der folgenden Güter ist NICHT ein öffentliches Gut?
 
 - [ ] Eine zentralisierte Börse
 
-> ℹ️ Richtig. Während zentralisierte Börsen [CEXs] Vorteile für die Gemeinschaft bieten, handelt es sich dabei um Privatunternehmen.
+> ℹ️ Richtig! Während zentralisierte Börsen [CEXs] Vorteile für die Gemeinschaft bieten, handelt es sich dabei um Privatunternehmen.
 
 # Progressive Dezentralisierung
 
