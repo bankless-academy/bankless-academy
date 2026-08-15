@@ -15,6 +15,17 @@
 // the value is present even if git is unavailable; the sitemap falls back to
 // publicationDate per URL if a date is missing, so a stale or absent manifest
 // degrades to today's behaviour rather than breaking.
+//
+// IMPORTANT — why this refuses to write on Vercel: Vercel checks out a SHALLOW
+// clone (depth 1). `git log -1 -- <file>` then finds exactly one commit for
+// every file, so all 204 files came back with the deploy date and the sitemap
+// told crawlers all 380 lesson URLs changed on every single deploy. That is
+// worse than having no manifest, because git SUCCEEDS — the per-URL fallback to
+// publicationDate never fires, it just reports a confident wrong answer, and a
+// <lastmod> that always equals build time is what makes Google stop trusting
+// <lastmod> site-wide. The committed manifest is the source of truth in any
+// checkout that cannot do better; this script only refreshes it where the full
+// history is actually present.
 import { execFileSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
@@ -22,16 +33,35 @@ import path from 'path'
 const OUT = 'translation/.lastmod.json'
 const ROOT = 'translation/lesson'
 
-const gitDate = (file) => {
+const git = (args) => {
   try {
-    const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', file], {
+    return execFileSync('git', args, {
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', 'ignore'],
     }).trim()
-    return out ? out.slice(0, 10) : null
   } catch {
-    return null // no git (or file never committed) -> sitemap falls back
+    return null
   }
+}
+
+// Bail out before touching the file if this checkout cannot produce real dates.
+const inRepo = git(['rev-parse', '--is-inside-work-tree']) === 'true'
+const isShallow = git(['rev-parse', '--is-shallow-repository']) === 'true'
+if (!inRepo || isShallow) {
+  const n = fs.existsSync(OUT)
+    ? Object.keys(JSON.parse(fs.readFileSync(OUT, 'utf8'))).length
+    : 0
+  console.log(
+    `lastmod manifest: keeping the committed ${n} entries ` +
+      `(${isShallow ? 'shallow clone' : 'no git repo'} cannot date files)`
+  )
+  process.exit(0)
+}
+
+const gitDate = (file) => {
+  // null = never committed here -> that URL falls back to publicationDate
+  const out = git(['log', '-1', '--format=%cI', '--', file])
+  return out ? out.slice(0, 10) : null
 }
 
 const manifest = {}
@@ -53,10 +83,23 @@ for (const lang of fs.readdirSync(ROOT)) {
 }
 
 const existing = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : ''
+const prevCount = existing ? Object.keys(JSON.parse(existing)).length : 0
+const dates = Object.values(manifest).sort()
+
+// Never trade a good manifest for a worse one. A checkout that is a repo and
+// not shallow can still be missing history (a grafted/filtered clone, a fresh
+// `git init`), which would silently replace real dates with an empty object.
+if (Object.keys(manifest).length < prevCount) {
+  console.log(
+    `lastmod manifest: keeping the committed ${prevCount} entries ` +
+      `(this checkout could only date ${Object.keys(manifest).length})`
+  )
+  process.exit(0)
+}
+
 const next = `${JSON.stringify(manifest, null, 2)}\n`
 if (existing !== next) fs.writeFileSync(OUT, next)
 
-const dates = Object.values(manifest).sort()
 console.log(
   `lastmod manifest: ${Object.keys(manifest).length} files ` +
     `(${dates[0]} .. ${dates[dates.length - 1]})` +

@@ -280,15 +280,16 @@ render a warning banner on the intro slide.
 - [ ] `translate-content` AI translation script (see `docs/i18n-25-languages-plan.md` — existing 9 languages to full coverage first; must also emit `website/<lang>/*.json` and `keywords/<lang>/keywords.json`, not just lesson md)
 - [ ] **After**: `fallback: 'blocking'` + ISR for translated lesson paths, localize `/glossary` (+ per-term anchors, `glossary: true` audit), RTL audit before the first ar/ur wave. (i18next lazy-loading and sitemap hreflang: done, see above.)
 - [x] Retired importers guarded (2026-08-15): `import-content.js` and `import-translations.js` are marked DEPRECATED and refuse to run without `RUN_RETIRED_IMPORT=1`. They stay in the repo for reference — the point was that `yarn import-content` was a live command that would overwrite the in-repo lesson markdown from Notion. (`import-translations.js` was already unrunnable: it uses `require` in a `"type": "module"` package.)
+- [x] **Unbounded 200s on `/lessons/*` closed (2026-08-15, verified live):** `getStaticPaths` used `fallback: true` with no `notFound`, so `/lessons/bitcoin-basics/contentt` served 200 carrying the real lesson's title — an unlimited indexable near-duplicate surface. `[...slug].tsx` now validates the URL *shape* (1 segment, or 2 with a real non-`en` language), rejects `-datadisk` unless `hasCollectible`, and uses `fallback: 'blocking'`. Confirmed in production: `/lessons/en/<slug>`, `/lessons/xx/<slug>`, `/lessons/<slug>/contentt` and `/lessons/not-a-lesson` all 404.
+- [x] **`<lastmod>` was the build date on every URL (2026-08-15):** `build-lastmod.js` runs inside `yarn build`, and **Vercel checks out a shallow (depth-1) clone**, so `git log -1 -- <file>` found the same single commit for all 204 files. The build log proves it — `204 files (2026-08-15 .. 2026-08-15)` on Vercel vs `2026-08-08 .. 2026-08-15` locally — and 380 of 401 sitemap URLs claimed to have changed that day. Worse than a failure, because git *succeeded*: the per-URL fallback to `publicationDate` never fired, and a `<lastmod>` that always equals build time is exactly what makes Google discard `<lastmod>` site-wide. The script now refuses to write when the checkout is shallow or not a repo, and never replaces a manifest with a smaller one, so **the committed manifest is the source of truth anywhere the full history is absent**. Reproduce with `git clone --depth=1 file://$PWD`.
 
 ### Next up, in order
 
 1. **Wait on Search Console** (no work). Two weeks of data on the `/content` pages decides whether the SSR migration below is necessary or merely nice. Deciding earlier means deciding without evidence.
-2. **`/lessons/<anything>` returns 200 forever** — `getStaticPaths` uses `fallback: true` with no `notFound`, so `/lessons/bitcoin-basics/contentt` serves 200 carrying the real lesson's title. Unbounded indexable near-duplicate surface. Needs its own careful pass: changing fallback behaviour touches ISR for every lesson route.
-3. **Cold start**: Fluid Compute (a project setting) or ISR for `/explore` + the Notion pages, which have no per-request data. Do NOT keep shrinking the bundle — see the measurement above.
-4. **Stale KV with no cron**: `announcement` is 499 days old, `bankless-dao-news` 727. Only `leaderboard` has a scheduled cron.
-5. **`middleware` -> `proxy`** (Next 16 deprecation) and the `@sentry/nextjs` peer conflict with Next 16, before any Next upgrade.
-6. **SSR migration** (`docs/ssr-migration.md`) — the big one, gated on item 1. `/lessons/<slug>` still serves 80 crawlable characters; `/content` is a mirror of the page you actually want ranking.
+2. **Cold start**: Fluid Compute (a project setting) or ISR for `/explore` + the Notion pages, which have no per-request data. Do NOT keep shrinking the bundle — see the measurement above.
+3. **Stale KV with no cron**: `announcement` is 499 days old, `bankless-dao-news` 727. Only `leaderboard` has a scheduled cron.
+4. **`middleware` -> `proxy`** (Next 16 deprecation) and the `@sentry/nextjs` peer conflict with Next 16, before any Next upgrade.
+5. **SSR migration** (`docs/ssr-migration.md`) — the big one, gated on item 1. `/lessons/<slug>` still serves 80 crawlable characters; `/content` is a mirror of the page you actually want ranking.
 
 ## Website structure
 
