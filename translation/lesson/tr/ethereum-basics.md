@@ -1,10 +1,10 @@
 ---
-TITLE: Ethereum Temelleri
-DESCRIPTION: Ethereum nedir? “Yeni internetin” ve dijital özgürlüğünün kapısını aç.
-LANGUAGE: Türkçe
+TITLE: Ethereum Basics
+DESCRIPTION: What is Ethereum? Unlock the “new internet” and your digital freedom.
+LANGUAGE: English
 WRITERS: Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/ethereum-basics
 FORMAT: LESSON
 ---
@@ -28,299 +28,299 @@ ________________________________________________________________________________
 
 ---
 
-# Ethereum Temelleri
+# Ethereum Basics
 
-Hoş geldin Kâşif, Bankless Academy'nin en önemli derslerinden birine.
+Welcome, Explorer, to one of the most important lessons at Bankless Academy.
 
-Bugün Ethereum'a bakıyoruz: internetin bir sonraki çağı. Yeni internet `uygulamaları` ve dijital paralardan oluşan bir dünyaya güç veren devrimci bir platform.
+Today we’re looking at Ethereum: the next era of the internet. It’s a revolutionary platform powering a world of new internet `apps` and digital currencies.
 
-Ethereum'u Google ya da Apple `uygulama mağazası` gibi düşünebilirsin. Birkaç önemli farkla:
+A simple way to think of Ethereum is like the Google or Apple `app store`, but with some key differences:
 
-- 💸 `Fiat` para (dolar, euro, yuan) yerine `kripto para` kullanır.
-- 📡 Doğrudan internet tarayıcına eklenen bir katmandır ve sitelerde yeni işlevlerin kilidini açar.
-- ⚖️ Mağazanın kuralları kullanıcılar ve uygulama geliştiricileri tarafından birlikte belirlenir. Başta merkezi bir şirket yoktur.
+- 💸 It uses `cryptocurrency` instead of `fiat` currency (the US dollar, the euro, or the Chinese yuan).
+- 📡 It’s a layer added directly to your internet browser, unlocking new functionality on websites.
+- ⚖️ The store rules are agreed on by users and app builders. There’s no central corporation in charge.
 
-Dünyada milyonlarca insanın Ethereum'u neden kullandığını anlamak için temel misyonuna bakmamız gerekiyor…
+To understand why millions of people are using Ethereum across the world, we need to look at its core mission…
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
 
-# Küresel Şehir Meydanı
+# A Global Town Square
 
-Son kırk yılda internet dünyanın şehir meydanı haline geldi.
+Over the last forty years, the internet has become the world’s town square.
 
-Burada tamamen yabancı insanlar bağlantı kurar, fikir, mal ve hizmet takas eder, hatta birlikte küresel hareketler başlatır. İnsanlığın bağlantı, yaratıcılık ve yeniliği en güçlü biçimde kesiştiği yer burasıdır.
+Here, total strangers connect, exchange ideas, goods and services, and even ignite global movements together. It's humanity's most powerful intersection of connection, creativity, and innovation.
 
-**Ama büyük bir sorunu var…**
+**But it has one big problem…**
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/a-global-town-square-fcb47024.svg)
 
-# Merkezi Hizmetler
+# Centralized Services
 
-**İnternet, çıkarlarımızı her zaman gözetmeyen küçük bir şirket grubuna dayanıyor.**
+**The internet relies on a small group of corporations that don’t always have our best interests at heart.**
 
-`Merkezi hizmetler` internet üzerinde her zamankinden fazla kontrole sahip ve çevrimiçi yaptığın neredeyse her şeyde `aracı` olarak duruyor.
+`Centralized services` have more control over the internet than ever before, acting as `intermediaries` for almost everything you do online.
 
-Büyük bankaların alışverişlerini nasıl yönettiğini, Facebook ve Instagram'ın sosyal etkileşimlerini nasıl bağladığını, Apple ya da Google'ın telefonunda hangi uygulamaların olabileceğini nasıl belirlediğini düşün. Kuralları, ücretleri ve kurumsal çıkarlarıyla dijital takaslarının üzerinde inanılmaz bir etkileri var.
+Think of how big banks manage your purchases, Facebook and Instagram connect your social interactions, and Apple or Google control the apps you can have on your phone. Through their rules, fees, and corporate motives, they have an incredible influence over your digital exchanges.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/centralized-services-adf5be05.svg)
 
-# Tek Taraflı Takaslar
+# One-sided Trades
 
-Onlara `merkezi hizmetler` diyoruz çünkü tüm güç tek bir yerde toplanıyor. Bu çoğu zaman, senden istediğini nasıl alacağını çok iyi bilen bir kralın yönetimi altında sıkışmak gibidir. Takaslarının gerçek yüzü seni şaşırtabilir…
+We call them `centralized services` because all the power is in one place. It’s often like being stuck under the rule of a king who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…
 
-💸 Bankalar senden ücret alır ve paranı kendi kârı için yatırıma sokar.
+💸 Banks charge you fees and invest your money for their own profit.
 
-💳 Visa ve Mastercard gibi ödeme ağları alışveriş verilerini reklamcılara satar.
+💳 Payment networks, like Visa & Mastercard, sell your purchase data to advertisers.
 
-📞 Instagram gibi sosyal platformlar özel konuşmalarını görebilir.
+📞 Social platforms, like Instagram, can view your private conversations.
 
-🪓 YouTube gibi içerik platformları, adil bir yargılama olmadan üreticilerin tüm kariyerini silebilir.
+🪓 Content platforms, like YouTube, can freely delete creators’ entire careers, with no fair trial.
 
-Bu karanlık kurallar ve ücretler çoğu zaman “Kullanım Koşulları” içinde gizlidir ve zamanla kötüleşir. Favori hizmetlerinin sözleşmelerine buradan bak: [https://tosdr.org/](https://tosdr.org/) 👀
+These shady rules and fees are often hidden away in the ‘Terms & Conditions’, and tend to get worse over time. Take a closer look at your favorite service agreements here: [https://tosdr.org/](https://tosdr.org/) 👀
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/one-sided-trades-8d68270f.svg)
 
 # Knowledge Check 1
 
-Doğru mu Yanlış mı: Çoğu çevrimiçi hizmet, seninle etkileşim kurduğun kişiler arasına bir aracı yerleştirir.
+True or False: Most online services place an intermediary between you and the people you interact with.
 
-- [x] Doğru
+- [x] True
 
-> ℹ️ Doğru! Bankalar, sosyal platformlar ve uygulama mağazaları ortada durur, kuralları ve ücretleri belirler.
+> ℹ️ Correct! Banks, social platforms, and app stores all sit in the middle, setting the rules and fees.
 
-- [ ] Yanlış
+- [ ] False
 
-> ℹ️ Tekrar dene! Merkezi hizmetler, çevrimiçi yaptığın neredeyse her şeyde aracı olarak davranır.
+> ℹ️ Try again! Centralized services act as intermediaries for almost everything you do online.
 
-# Açık Bir İnternet
+# An Open Internet
 
-😤 **İhtiyaçlarına saygı göstermeyen platformlardan bıktın mı?**
+😤 **Had enough of platforms that don’t respect your needs?**
 
 ---
 
-Alıştığımız internet bu: `değer sömürücü` bir internet.
+This is the `value-extractive` internet we’ve become used to.
 
-Bu hizmetlere, ne kadar kısıtlayıcı oldukları ve terk etmeyi ne kadar zorlaştırdıkları için “duvarlı bahçe” deniyor. Daha iyi alternatifler bulmak zaman alıcı ve pahalı olabiliyor. Çoğu zaman yüksek ücretlere, şeffaflık eksikliğine ve tek taraflı takaslara katlanmak daha kolay geliyor.
+Called “walled gardens” for how restrictive these services are and how difficult they make it to leave, finding better alternatives can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades.
 
-Aracıların ve duvarlı bahçelerinin ötesinde, daha adil ve daha güvenilir bir internete ihtiyacımız var. Gücün kullanıcıda olduğu bir çevrimiçi alana ihtiyacımız var; internet başta böyle olmak üzere kurulmuştu.
+We need a fairer, more reliable internet, beyond intermediaries and their walled gardens. We need an online space where power is held by the user, the way the internet was initially built to be.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/an-open-internet-31819e5b.svg)
 
-# Eşler Arası Takaslar
+# Peer-to-Peer Trades
 
-Çözüm, internetin nasıl bağlandığını değiştirmekle başlıyor.
+The solution starts with changing how the internet is connected.
 
-Geleneksel internet hizmetlerinde bir `eşten` gelen bilgi ya da para, hedefine varmadan önce bir `aracı` kontrol noktasından geçer. Teoride aracılar, takas tamamlanmadan önce istediklerini yapabilir.
+In traditional internet services, information or money from one `peer` goes through an `intermediary` checkpoint before arriving at its destination. In theory, intermediaries can do whatever they want before the trade completes.
 
-**Eş → Aracı → Eş**
+**Peer → Intermediary → Peer**
 
-Ama ikinci bir model var: `eşler arası` ağ. Aracı hizmetlerin yerine otomatik ve şeffaf bilgisayar kodu koyar.
+But there’s a second model, called `peer-to-peer` networking. It replaces intermediary services with automated, transparent computer code.
 
-**Eş → Otomasyon → Eş**
+**Peer → Automation → Peer**
 
-Bu, aracının yerine self servis bir kiosk koymak gibi. Hizmetler daha öngörülebilir olur, ücretler düşer, kullanıcılar kontrolü geri alır.
+It’s like replacing your intermediary with a self-service kiosk. Services become more predictable, fees go down, and users regain control.
 
-Göreceğimiz gibi, eşler arası bir internet her şeyi değiştiriyor.
+As we’ll see, a peer-to-peer internet changes everything.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/peer-to-peer-trades-f043c3c0.svg)
 
 # Knowledge Check 2
 
-Otomasyon çevrimiçi deneyimlerini nasıl iyileştirebilir?
+How can automation improve your online experiences?
 
-- [ ] Aracıların erişimini genişleterek.
+- [ ] By increasing the reach of intermediaries.
 
-> ℹ️ Tekrar dene.
+> ℹ️ Try again.
 
-- [x] Katılımcılara daha fazla kontrol vererek.
+- [x] By giving participants more control.
 
-> ℹ️ Doğru!
+> ℹ️ Correct!
 
-# Ethereum: Açık İnternet
+# Ethereum: The Open Internet
 
-⚖️ **Aynı kurallar herkes için geçerli olsa internet daha iyi bir yer olmaz mıydı?**
+⚖️ **Wouldn’t the internet be a better place if the same rules applied to everyone?**
 
-Ethereum'u dijital bir şehir gibi düşün: işletmelerden kamu hizmetlerine kadar her şey self servis ve şeffaf sistemlerle yürüyor. Aracı yok ve her sistemin nasıl çalıştığını herkes inceleyebiliyor.
+Think of Ethereum as a digital city, where everything (from businesses to public services) is run by self-service, transparent systems. There are no intermediaries, and anyone can inspect how each system works.
 
-Şehirdeki işlemler `Ethereum Blokzinciri` adlı herkese açık bir kayda işlenir. Blokzincir şehirdeki dijital mülkü takip eder ve saklar. Böylece klasik bir aracıya daha gerek kalmaz: bankaya!
+Transactions in the city are noted on a public record called the `Ethereum blockchain`. The blockchain tracks and stores digital property in the city, removing the need for another classic intermediary: the bank!
 
-Her işlem küçük bir ücret öder. Bu ücretin çoğu yok edilir; şehir kalabalıklaştıkça bu, şehrin parası `ether`'i daha kıt hale getirebilir. Küçük bir bahşiş ise işlemini işleyen bilgisayarı ödüllendirir.
+Every transaction pays a small fee. Most of that fee is destroyed, which can make the city’s currency, `ether`, scarcer as the city gets busier. A small tip rewards the computer that processes your transaction.
 
-Şehrin kurallarını hiçbir şirket belirlemez: değişiklikler geliştiriciler, araştırmacılar ve kullanıcılar tarafından açıkça kararlaştırılır. Şeffaf kod kralların yerini aldı ve kimse kuralların üstünde değil.
+The city’s rules aren’t set by any company: changes are agreed on openly by builders, researchers, and users. Transparent code has replaced kings, and nobody is above the rules.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg)
 
-# Merkeziyetsiz Ekonomi
+# The Decentralized Economy
 
-Ethereum'a bilgisayarının ya da telefonunun web tarayıcısından erişirsin. Tek bir hesapla bu yeni internetin tamamına giriş yapabilirsin: `kripto cüzdan` denen tek bir giriş. Bu evrensel hesap, hizmet değiştirmeyi ve “duvarlı bahçelerden” kaçmayı kolaylaştırır.
+To access Ethereum you’ll use your computer or mobile device’s web browser. With just one account you can log into the entirety of this new internet: a single login called a `crypto wallet`. This universal account makes it easier to change services and escape “walled gardens”.
 
-Ethereum uygulama katmanını etkinleştirdiğinde `dApp'ler` denen yeni sitelere erişebilirsin. Bunlar az önce bahsettiğimiz self servis sistemler. dApp'ler şu tür dijital mal ve hizmetleri sunar:
+When you enable the Ethereum app layer, you can access new websites known as `dApps`. These are the self-service systems we mentioned earlier. dApps offer digital goods and services like:
 
-- 🤝 para, hisse senedi ve diğer dijital malları göndermek ya da alıp satmak, ama **düşük ücretlerle ve 7/24 hizmetle**.
-- 📻 favori üreticilerinle bağlantı kurmak, ama **özel ayrıcalıkların ve fırsatların kilidini açarak** ve paranın doğrudan sanatçıya gitmesini sağlayarak.
-- 👪 sosyal medya, ama platformu beğenmezsen **sosyal çevreni kolayca taşıyabilirsin**.
-- 🗳️ favori projelere bağış yapmak, ama 1 dolarlık bir bağış bile **büyük bir eşleştirme bonusu alır, yani etkisi çok daha büyük olur**.
-- ⚙️ bilgisayarının işlem gücünü kiralayarak **pasif gelir** elde etmek.
+- 🤝 sending or trading currencies, stocks and other digital goods, but with **low fees and 24/7 service**.
+- 📻 connection with your favorite creators, but you can **unlock unique perks and opportunities** while ensuring your money goes directly to the artist.
+- 👪 social media, but if you dislike the platform you can **easily transfer your social circle** to a new one.
+- 🗳️ donating to your favorite projects, but even a $1 donation receives **a large matching bonus, meaning greater impact**.
+- ⚙️ renting out your computer’s processing power for **passive income**.
 
-Ethereum, aracıları, bankaları ve her hizmet için ayrı hesapları kaldırarak ekonomisini `merkeziyetsiz` hale getirdi (“dApp”teki “d” buradan geliyor). dApp'ler belirsiz iş pratikleri ve kontrol üzerinden değil, kalite üzerinden rekabet ettikçe giderek daha iyi oluyor.
+By removing intermediaries, banks, and individual accounts for each service, Ethereum has made its economy `decentralized` (this is the “d” in “dApp”). dApps get better and better as they compete on quality, not unclear business practices and control.
 
-# Bir dApp Kullanmak
+# Using a dApp
 
-Bir `dApp` kullanmak, normal uygulamaları ve internet hizmetlerini kullanmaya benzer.
+Using a `dApp` is similar to using regular apps and internet services.
 
-Çevrimiçi `kripto` takası için bir dApp kullanmayı simüle edelim. Bu simülasyonda, Circle şirketinin çıkardığı `zincir üstü` bir ABD doları olan USDC'yi (yani Circle onu dondurabilir) Ethereum'un yerel parası `ETH` ile takas edeceğiz.
+Let’s simulate using a dApp for swapping `crypto` online. In this simulation we’ll swap USDC, an `onchain` US dollar issued by the company Circle (meaning Circle can freeze it), for `ETH`, Ethereum’s native currency.
 
-1. `Kripto cüzdanını` dApp'in sitesine bağla.
-2. Bu dApp'in Ethereum cüzdanınla etkileşime girmesine izin verdiğini onayla.
-3. “Maximum” seçeneğine tıklayıp tüm USDC'ni ETH'ye çevir.
-4. Takası başlat.
-5. Cüzdanında takasının koşullarını kontrol et, sonra imzala.
-6. Harika! Ethereum kripto takasını işledi!
+1. Connect your `crypto wallet` to the dApp’s website.
+2. Confirm that you want to allow this dApp to interact with your Ethereum wallet.
+3. Swap all of your USDC to ETH by clicking “Maximum”.
+4. Initiate the swap.
+5. In your wallet, check the terms of your trade, and then sign.
+6. Great! Ethereum has processed your crypto swap!
 
-Cüzdanını bir dApp'e bağlayıp kripto takas etmek bu kadar kolay. Artık arkadaşlarına gönderebilir, alışverişte kullanabilir ya da başka finansal hizmet dApp'lerini deneyebilirsin.
+Plugging your wallet into a dApp and swapping crypto is that easy. Now you can send it to friends, use it to make purchases, or try other financial service dApps.
 
 [embed](https://app.banklessacademy.com/animation/swap)
 
 # Knowledge Check 3
 
-Ethereum'da hizmetler giderek daha iyi oluyor çünkü…
+On Ethereum, services get better and better because…
 
-- [ ] İş pratikleri daha şeffaf.
+- [ ] Business practices are more transparent.
 
-> ℹ️ Tekrar dene.
+> ℹ️ Try again.
 
-- [ ] Hizmet sağlayıcını kolayca değiştirebilirsin.
+- [ ] You can easily change service providers.
 
-> ℹ️ Tekrar dene.
+> ℹ️ Try again.
 
-- [x] Yukarıdakilerin ikisi de.
+- [x] Both of the above.
 
-> ℹ️ Doğru!
+> ℹ️ Correct!
 
-# Küresel Bankacılık Sistemi
+# A Global Banking System
 
-⌛ **Yurt dışına daha hızlı ve daha ucuz para göndermek ister misin?**
+⌛ **Do you want a faster, cheaper way to transfer money internationally?**
 
 ---
 
-Ethereum, `kripto` göndermeni ve saklamanı aracılar olmadan mümkün kılar: daha iyi hizmet, daha düşük maliyet.
+Ethereum makes it possible for you to send and store `crypto` without intermediaries, with better services at lower costs.
 
-⚡ Kriptoyla dünyanın her yerine saniyeler içinde para gönderebilirsin. Günlük işlerin çoğu artık `Layer 2` ağlarında oluyor. Bunlar Ethereum'un üzerine kurulmuş daha hızlı ve daha ucuz şeritler; bir transfer bir sente kadar düşebiliyor. Bunu bankayla para göndermekle karşılaştır: %3-4 ücret ve 1-5 gün.
+⚡ With crypto, you can send money anywhere in the world in seconds. Most everyday activity now happens on `Layer 2` networks, faster and cheaper lanes built on top of Ethereum, where a transfer can cost as little as one cent. Compare this to sending money through a bank, where they can charge you 3-4% in fees, and take 1-5 days.
 
-🔐 Ethereum hesabına erişebilen tek kişi sensin. Birikimini ödünç veren ya da paranla ne yapacağını belirleyen bir aracı yok. Paran, daha önce bir dApp'e bağlanırken kullandığın kişisel `kripto cüzdanında` durur.
+🔐 You’re the only person with access to your Ethereum account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are stored in your personal `crypto wallet`, the same one you used to connect to a dApp earlier.
 
-Ethereum'da kendi bankan sensin ve bunu hissedersin!
+On Ethereum, you’re your own bank, and you feel like it!
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/a-global-banking-system-5a241dfc.svg)
 
-# Ödeme Göndermek
+# Sending a Payment
 
-Kripto para göndermeyi başka bir simülasyonla deneyelim. 0,015 `ETH`'ni Bankless Academy `kripto cüzdanına` göndermeyi dene.
+Let’s use another simulation to practice sending cryptocurrency. Try sending your 0.015 `ETH` to the Bankless Academy `crypto wallet`.
 
-1. Cüzdanının kilidini aç.
-2. Cüzdanının içinde gönder'i seç.
-3. “Maximum” seçeneğine tıklayıp miktarı 0,015 ETH yap.
-4. Para birimini ve miktarı onayla.
-5. Kişiler bölümünde banklessacademy.eth'i seç.
-6. Bu kadar! Uluslararası transferin saniyeler içinde tamamlandı ve hiçbir aracı seni durduramadı.
+1. Unlock your wallet.
+2. Inside of your wallet, select send.
+3. Adjust the amount to 0.015 ETH by clicking “Maximum”.
+4. Confirm the currency and amount.
+5. In contacts, select banklessacademy.eth.
+6. That’s it! Your international transfer was done in seconds, and no intermediary could stop you.
 
-Ethereum cüzdanlarıyla kripto paradan fazlasına sahip olabilir ve gönderebilirsin. Transfer edilebilir varlıklar, `zincir üstü` saklanabilen her tür dijital mülkü kapsar. Dijital sanat, kulüp üyelikleri, konser biletleri, hisse senetleri, site adresi sahipliği ve hatta gerçek dünya mülkiyet hakları Ethereum'a taşındı.
+With Ethereum wallets, you can own and send more than just cryptocurrency. Transferable assets include any digital property that can be stored `onchain`. Digital art, club memberships, show tickets, stocks, website address ownership, and even real-world property rights have made their way onto Ethereum.
 
 [embed](https://app.banklessacademy.com/animation/send)
 
 # Knowledge Check 4
 
-Doğru mu Yanlış mı: Ethereum'da paran bir aracıda değil, kendi kripto cüzdanında durur.
+True or False: On Ethereum, your funds are stored in your own crypto wallet, not held by an intermediary.
 
-- [x] Doğru
+- [x] True
 
-> ℹ️ Doğru. “Bankless” olabilirsin! Paranı kendin tutarsın, daha düşük ücret ve daha fazla kontrolle.
+> ℹ️ Correct. You can go “Bankless”! You hold your own funds, with lower fees and more control.
 
-- [ ] Yanlış
+- [ ] False
 
-> ℹ️ Tekrar dene. Kripto cüzdanına yalnızca sen erişebilirsin, yani seninle paran arasında banka yoktur.
+> ℹ️ Try again. Only you can access your crypto wallet, so no bank sits between you and your money.
 
-# Nasıl Çalışıyor
+# How it Works
 
-Her şeyi bir araya getirip Ethereum'un bunu nasıl mümkün kıldığına hızlıca bakalım.
+Let’s bring everything together by taking a quick look at how Ethereum makes it all possible.
 
-`Eşler arası` bir ağ olan Ethereum, dünyaya yayılmış binlerce bilgisayardan oluşur; bunlara `düğüm` denir. Herkes bir tane çalıştırabilir. Bazı operatörler kendi ether'lerini kilitleyerek (`stake` ederek) `doğrulayıcı düğüm` olur: yazılımları işlemleri işler, sahtekârlığı önlemek için başkalarının sonuçlarını denetler ve karşılığında `ether` ödülü kazanır. Çoğu insan kendi bilgisayarını çalıştırmak yerine [staking hizmetleri](https://app.banklessacademy.com/lessons/staking-on-ethereum) üzerinden katılır.
+As a `peer-to-peer` network, Ethereum is made up of thousands of computers, called `nodes`, spread across the world. Anyone can run one. Some operators lock up (`stake`) their own ether to act as `validator nodes`: their software processes transactions and double-checks others’ results to prevent fraud, earning `ether` rewards in return. Most people join in through [staking services](https://app.banklessacademy.com/lessons/staking-on-ethereum) rather than running their own computer.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/how-it-works-08c71cad.svg)
 
-# Nasıl Çalışıyor (2. Bölüm)
+# How it Works (Pt. II)
 
-Az önce gönderdiğin işlem, bu Ethereum ağı `doğrulayıcı düğümleri` tarafından işlendi.
+The transaction you submitted earlier was processed by these Ethereum network `validator nodes`.
 
-1. ETH işlemin Ethereum Ağı'na gönderildi.
-2. Bir `doğrulayıcı` işlemini hatalara karşı kontrol etti. Diğer doğrulayıcılar sonucu bir kez daha denetledi.
-3. İşlemin, ağın herkese açık defterine, yani `Ethereum Blokzinciri`'ne eklendi.
-4. Gönderdiğin ETH hesabımıza ulaştı.
+1. Your ETH transaction was submitted to the Ethereum Network.
+2. A `validator` checked your transaction for errors. Other validators double-checked their results.
+3. Your transaction was added to the network’s public ledger, the `Ethereum blockchain`.
+4. We received your transferred ETH in our account.
 
-Bu doğrulayıcıların neden paranı alıp kaçmadığını merak ediyor olabilirsin. Kısa cevap: Ethereum bunu neredeyse imkânsız kılıyor. Sıradaki dersin “Blokzincir Temelleri” bunu daha iyi anlamana yardım edecek.
+You might be wondering why these validators don’t just run off with your funds. The short answer is because Ethereum makes this virtually impossible. Your upcoming lesson, “Blockchain Basics”, will help you understand more.
 
 [embed](https://app.banklessacademy.com/animation/ethereum)
 
-# Sık Sorulan Sorular
+# Common Questions
 
 <details>
-  <summary>Ethereum nasıl ortaya çıktı?</summary>
+  <summary>How was Ethereum created?</summary>
 
-Ethereum 2015'te başladı; erken gelişimini Ethereum Foundation koordine etti ve bu rolü bugün de sürdürüyor. Yükseltmeler geliştiriciler, araştırmacılar ve geniş topluluk arasında açık ve herkese görünür bir süreçle kararlaştırılır; şirket ya da token oylaması yoktur. Bu açıklık, ağın kuruluşundaki açık internet vizyonunu destekler.
+Ethereum launched in 2015, with the Ethereum Foundation coordinating its early development, a role it still plays today. Upgrades are agreed through an open, public process among developers, researchers, and the wider community; there is no company or token vote. This openness supports the network’s founding vision of an open internet.
 
 </details>
 <details>
-  <summary>Ethereum güvenli mi?</summary>
+  <summary>Is Ethereum safe?</summary>
 
-Ethereum'daki dijital mülkün doğrudan çalınamaz. Ama dolandırıcılar seni kandırıp varlıklarına erişim vermeni sağlayabilir. “Web3 Güvenliği” dersimiz güvende kalmanın temellerini ve sana paraya mal olabilecek basit hatalardan kaçınmayı öğretecek.
-
-</details>
-<details>
-  <summary>Ethereum yaygın olarak kullanılıyor mu?</summary>
-
-Evet. 2024'te ABD düzenleyicileri [spot ETH yatırım fonlarını (ETF) onayladı](https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/) ve insanlar geleneksel borsa üzerinden Ethereum'a yatırım yapabilir hale geldi. [Sony](https://www.bankless.com/sony-introduces-soneium-its-ethereum-l2-network) ve [Visa](https://caribbean.visa.com/about-visa/newsroom/press-releases/visa-network-to-settle-transactions-in-usd-coin-usdc.html) gibi şirketler bile onun üzerine inşa ediyor.
+Your digital property on Ethereum can't be stolen directly. However, scammers can trick you into giving them access to your assets. Our “Web3 Security” lesson will teach you the basics of staying safe and avoiding simple mistakes that can cost you money.
 
 </details>
 <details>
-  <summary>Ethereum suç faaliyetlerinde kullanılıyor mu?</summary>
+  <summary>Is Ethereum widely used?</summary>
 
-[Chainalysis'in sektör araştırması](https://www.chainalysis.com/blog/2026-crypto-crime-report-introduction/) kripto para işlem hacminin %1'inden azının suç faaliyetiyle bağlantılı olduğunu tutarlı biçimde tahmin ediyor. Bu oran, suç faaliyetiyle ilişkili olduğu düşünülen [küresel GSYİH'nin tahmini %2-5'inin](https://www.forbes.com/sites/haileylennon/2021/01/19/the-false-narrative-of-bitcoins-role-in-illicit-activity/) çok altında. Ethereum'un yüksek şeffaflığı, araştırmacıların `zincir üstü` hareket eden suçluları takip etmesini ve yargılamasını da kolaylaştırıyor.
-
-</details>
-<details>
-  <summary>Ethereum enerji açısından verimli mi?</summary>
-
-Ethereum'un günlük kullanımı arttıkça topluluk büyüyen bir çevresel etki fark etti. “The Merge” adlı büyük bir ağ yükseltmesi [Ethereum'un enerji tüketimini %99,9 azalttı](https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/). Bu başarı, Ethereum'un kullanıcılarının ihtiyaçlarına uyum sağlayabildiğini gösteriyor!
+Yes. In 2024, US regulators [approved spot ETH investment funds (ETFs)](https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/), letting people invest in Ethereum through the traditional stock market. Businesses, such as [Sony](https://www.bankless.com/sony-introduces-soneium-its-ethereum-l2-network) and [Visa](https://caribbean.visa.com/about-visa/newsroom/press-releases/visa-network-to-settle-transactions-in-usd-coin-usdc.html), are even building on it.
 
 </details>
 <details>
-  <summary>Ethereum'a nasıl yatırım yapabilirim?</summary>
+  <summary>Is Ethereum used for criminal activity?</summary>
 
-Ethereum'a yatırım yapmak için ağın yerel kripto parası `ETH`'ye sahip olman gerekir. ETH'yi `kripto cüzdanın` üzerinden alabilirsin; bir sonraki derste seninkini oluşturmana yardım edeceğiz. ETH'yi Coinbase ya da Binance gibi bir `merkezi borsadan` da alabilirsin, ama bir cüzdana transfer etmeden Ethereum'da kullanamazsın.
+[Industry research by Chainalysis](https://www.chainalysis.com/blog/2026-crypto-crime-report-introduction/) consistently estimates that less than 1% of cryptocurrency transaction volume is linked to criminal activity. This is far below the [estimated 2-5% of global GDP](https://www.forbes.com/sites/haileylennon/2021/01/19/the-false-narrative-of-bitcoins-role-in-illicit-activity/) suspected to be involved in criminal activity. Ethereum’s high transparency also makes it easy for investigators to track and prosecute criminals acting `onchain`.
+
+</details>
+<details>
+  <summary>Is Ethereum energy efficient?</summary>
+
+As Ethereum’s daily usage grew the community identified a growing environmental impact. A major network upgrade, called 'The Merge', [reduced Ethereum's energy consumption by 99.9%](https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/). This achievement showcases Ethereum's adaptability to the needs of its users!
+
+</details>
+<details>
+  <summary>How can I invest in Ethereum?</summary>
+
+To invest in Ethereum, you’ll want to own `ETH`, the network’s native cryptocurrency. ETH can be bought through your `crypto wallet`; we’ll be helping you create yours in the next lesson. You can also buy ETH on a `centralized exchange` like Coinbase or Binance, but you won’t be able to use it on Ethereum until you transfer it to a wallet.
 
 </details>
 
-# Harekete Katılmak
+# Joining the Movement
 
-💪 **Dijital hayatının kontrolünü ele alma zamanı.**
+💪 **It’s time to take control of your digital life.**
 
 ---
 
-Ethereum, aracıların internetin kendi köşelerine ördüğü duvarları aşındırıyor ve bir `değer sömürüsü` ekonomisini `değer yaratma` ekonomisine dönüştürüyor. Güçlü ama adil çevrimiçi hizmetlerin, dijital varlıkların üzerinde gerçek sahipliğin, cesur yeni toplulukların ve dönüştürücü iş fırsatlarının zamanı geldi.
+Ethereum is eroding the walls that intermediaries have put up around their corners of the internet, transforming an economy of `value-extraction` into one of `value-creation`. It’s time for powerful yet fair online services, true ownership over your digital assets, bold new communities, transformative work opportunities, and more.
 
-İzini bırakmaya hazır mısın?
+Ready to make your mark?
 
-Yolculuğuna başlamak için `kripto cüzdanını` oluşturman gerekecek. Bu, Ethereum dünyasına açılan pasaportun. Sıradaki dersin “Cüzdan Temelleri”nde seninkini kuracağız.
+To start your journey you’ll need to create your `crypto wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, “Wallet Basics”.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
 
 # Knowledge Check 5
 
-Kendini Ethereum'u nasıl kullanırken hayal ediyorsun? (Uygun olanların hepsini işaretle)
+How do you imagine yourself using Ethereum? (Check all that apply)
 
-- [ ] Yeni dijital mal ve hizmetleri keşfederken.
-- [ ] Yurt dışına para gönderirken.
-- [ ] Ethereum projelerine yatırım yaparken.
-- [ ] Sevdiğim sanatçılarla bağlantı kurarken.
-- [ ] Güçlü topluluk projelerine katkı sunarken.
-- [ ] Yenilikçi dApp'ler geliştirirken.
+- [ ] Exploring new digital goods and services.
+- [ ] Sending money internationally.
+- [ ] Investing in Ethereum projects.
+- [ ] Connecting with the artists I love.
+- [ ] Contributing to powerful community projects.
+- [ ] Building innovative dApps.
