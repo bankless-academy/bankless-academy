@@ -1,6 +1,6 @@
 ---
 TITLE: Gobernanza en Optimism
-DESCRIPTION: Aprende a votar onchain y mintea tu Academy Badge.
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Español
 WRITERS: Tetranome
 TRANSLATORS: OrnellaWeb3
@@ -67,7 +67,7 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] Todas las anteriores
+- [x] All of the above
 
 > ℹ️ ¡Correcto! La gobernanza onchain protege el proceso de votación a través de múltiples medios.
 
@@ -109,7 +109,7 @@ Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende dire
 
 > ℹ️ La educación puede beneficiar a todos, y además con Layer 2, el uso de una persona no reduce su disponibilidad.
 
-- [ ] Un Exchange Centralizado
+- [x] A Centralized Exchange
 
 > ℹ️ ¡Correcto! Si bien los CEXs proporcionan beneficios a la comunidad, son negocios privados.
 
@@ -133,7 +133,7 @@ Los controles y equilibrios legales, como la capacidad del Colectivo para destit
 
 > ℹ️ ¡Inténtalo de nuevo!
 
-- [ ] Falso
+- [x] False
 
 > ℹ️ ¡Correcto! La Fundación acabará disolviéndose y el Colectivo continuará la misión.
 
@@ -182,15 +182,15 @@ _"Es un algoritmo que recompensa a los primeros contribuyentes que crearon las c
 
 - [ ] Proporcionando un mercado libre, pero en la blockchain.
 
-> ℹ️ ¡Inténtalo de nuevo! El uso de la tecnología blockchain por sí sola, no afecta a los modelos económicos.
+> ℹ️ ¡Inténtalo de nuevo! ℹ️ ¡Inténtalo de nuevo! El uso de la tecnología blockchain por sí sola, no afecta a los modelos económicos.
 
-- [ ] Financiando sistemáticamente modelos de negocio que mejoren la vida de todos los usuarios de la red.
+- [x] By systemically funding business models that improve the lives of all network users.
 
 > ℹ️ ¡Correcto! La red destina una parte de las comisiones de transacción a financiar bienes públicos.
 
 - [ ] Todas las anteriores.
 
-> ℹ️ ¡Inténtalo de nuevo! Sólo una de ellas es cierta.
+> ℹ️ Try again! Sólo una de ellas es cierta.
 
 # Introducción a las Cámaras de Gobernanza
 
@@ -212,17 +212,17 @@ Ambas cámaras mantienen el equilibrio de la red a través de sus funciones, mec
 
 > ℹ️ ¡Inténtalo de nuevo! Ambas cámaras tienen poder de veto.
 
-- [ ] La Cámara de los Ciudadanos asigna recompensas RetroPGF.
+- [x] The Citizens’ House allocates RetroPGF rewards.
 
 > ℹ️ ¡Correcto! La Cámara de los Ciudadanos asigna fondos de bienes públicos.
 
 - [ ] La Cámara de los Ciudadanos lidera la descentralización de la red.
 
-> ℹ️ ¡Inténtalo de nuevo! Ambas cámaras mantienen la descentralización.
+> ℹ️ Try again! Ambas cámaras mantienen la descentralización.
 
 - [ ] Todas las anteriores.
 
-> ℹ️ ¡Inténtalo de nuevo!
+> ℹ️ Try again!
 
 # La Cámara de Tokens
 
@@ -279,9 +279,9 @@ Revisa el [plan de distribución de OP](https://community.optimism.io/docs/gover
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] Todas las anteriores.
+- [x] All of the above.
 
-> ℹ️ ¡Correcto! La Cámara de Tokens tiene diversas responsabilidades en la protección de la red.
+> ℹ️ Correct! La Cámara de Tokens tiene diversas responsabilidades en la protección de la red.
 
 # La Cámara de Ciudadanos
 
@@ -325,9 +325,9 @@ En la actualidad, la distribución de RetroPGF se realiza aproximadamente dos ve
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] Todas las anteriores.
+- [x] Both of the above.
 
-> ℹ️ ¡Correcto! Esta casa diversifica su propia perspectiva y equilibra la perspectiva de la Cámara de Tokens.
+> ℹ️ Correct! Esta casa diversifica su propia perspectiva y equilibra la perspectiva de la Cámara de Tokens.
 
 # Temporadas de Governanza
 
