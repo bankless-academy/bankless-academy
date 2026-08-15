@@ -53,6 +53,27 @@ export const withSsrTiming = (
           process.env.VERCEL_REGION || 'local'
         } marks=[${getMarks()}]`
       )
+      // ---------------------------------------------------------------
+      // KEEP THIS WHEN THE TIMING INSTRUMENTATION IS REMOVED. It is caching
+      // policy, not telemetry; it only lives here because these four pages
+      // already share this wrapper. Move it into each getServerSideProps
+      // rather than deleting it with the rest of the file.
+      // ---------------------------------------------------------------
+      // These pages send `private, no-cache, no-store` by default, so every
+      // visitor pays the ~16s cold start again after any idle period. None of
+      // them is per-user: /explore reads a KV blob refreshed by cron, the
+      // Notion pages change maybe monthly. A short s-maxage with a long
+      // stale-while-revalidate means one unlucky request pays and everyone
+      // else is served from the edge while it refreshes behind them.
+      try {
+        if (!ctx.res?.headersSent)
+          ctx.res?.setHeader(
+            'Cache-Control',
+            'public, s-maxage=300, stale-while-revalidate=86400'
+          )
+      } catch {
+        // headers already sent — nothing to do
+      }
       // Also expose it to the browser, so it can be read from devtools
       // (Network -> Timing) without needing Vercel log access.
       try {

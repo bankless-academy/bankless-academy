@@ -48,7 +48,13 @@ const WIDE =
   /[\u1100-\u115F\u2E80-\u303E\u3041-\u33FF\u3400-\u4DBF\u4E00-\u9FFF\uA000-\uA4CF\uAC00-\uD7A3\uF900-\uFAFF\uFE30-\uFE6F\uFF00-\uFF60\uFFE0-\uFFE6]/
 export const displayWidth = (str) => {
   let w = 0
-  for (const ch of str) w += WIDE.test(ch) ? 2 : 1
+  // NFC first: a decomposed "ó" is two code points but one rendered glyph, so
+  // counting raw code points inflated Vietnamese by ~36% and failed slides
+  // that actually fit. Any combining mark still left contributes zero.
+  for (const ch of str.normalize('NFC')) {
+    if (/\p{M}/u.test(ch)) continue
+    w += WIDE.test(ch) ? 2 : 1
+  }
   return w
 }
 
@@ -150,4 +156,9 @@ export const estimateSlideLines = (section) => {
 // there. Duplicated rather than imported because the content scripts are plain
 // Node ESM and cannot pull in the app's TypeScript. Keep the two in sync: if
 // they disagree, the validator passes content whose tooltips die at runtime.
-export const normalizeKeyword = (s) => s.toLowerCase().replace(/̇/g, '')
+// Unicode normalization matters as much as case folding. Vietnamese "ví tiền
+// mã hóa" is 14 code points in NFC and 19 in NFD; the two render identically
+// and never compare equal, so an NFD backticked term is a dead tooltip against
+// an NFC glossary key with nothing visible to debug. NFC first, then fold.
+export const normalizeKeyword = (s) =>
+  s.normalize('NFC').toLowerCase().replace(/̇/g, '')

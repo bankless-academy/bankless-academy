@@ -6,6 +6,17 @@ import { DOMAIN_URL, GENERIC_ERROR_MESSAGE, LESSONS } from 'constants/index'
 import { lessonLink } from 'utils'
 import { LANGUAGES } from 'constants/languages'
 
+// Real per-file dates from git, emitted by build-lastmod.js at build time.
+// Absent or partial is fine: each URL falls back to the lesson's
+// publicationDate, which is what the sitemap used to advertise everywhere.
+const LASTMOD: { [key: string]: string } = (() => {
+  try {
+    return JSON.parse(fs.readFileSync('translation/.lastmod.json', 'utf8'))
+  } catch {
+    return {}
+  }
+})()
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -26,7 +37,12 @@ export default async function handler(
 
     for (const lesson of publishedLessons) {
       const date = new Date(lesson.publicationDate)
-      const lastmod = date.toISOString().slice(0, 10)
+      const published = date.toISOString().slice(0, 10)
+      // Per LANGUAGE, not per lesson: a translated file has its own edit date,
+      // and inheriting the English publication date is what made every
+      // localized URL advertise a date up to two years stale.
+      const lastmodFor = (language: string) =>
+        LASTMOD[`${language}/${lesson.slug}`] || published
       if (date.getTime() > newest) newest = date.getTime()
 
       // Only languages whose markdown is actually on disk; `languages[]` and
@@ -54,11 +70,15 @@ export default async function handler(
             href: `${localized(language)}${suffix}`,
           })),
         ]
-        urls.push({ loc: `${enLink}${suffix}`, lastmod, alternates: cluster })
+        urls.push({
+          loc: `${enLink}${suffix}`,
+          lastmod: lastmodFor('en'),
+          alternates: cluster,
+        })
         for (const language of langs)
           urls.push({
             loc: `${localized(language)}${suffix}`,
-            lastmod,
+            lastmod: lastmodFor(language),
             alternates: cluster,
           })
       }
@@ -77,6 +97,12 @@ export default async function handler(
       ),
       '/onchain-summer-challenge',
       '/explore',
+      // Indexable and self-canonical, but were absent from the sitemap.
+      // (/start, /mobile, /newsletter, /mini-apps canonicalize to '/', so
+      // their absence is correct and they stay out.)
+      '/lessons/handbook',
+      '/leaderboard',
+      '/feedback',
     ]
     for (const p of staticPaths)
       urls.push({ loc: `${DOMAIN_URL}${p}`, lastmod: siteLastmod })

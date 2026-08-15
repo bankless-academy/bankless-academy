@@ -26,6 +26,13 @@ const LANGUAGE_DEFS = [
   { code: 'ja', name: 'Japanese', localName: '日本語', dir: 'ltr' },
   { code: 'tr', name: 'Turkish', localName: 'Türkçe', dir: 'ltr' },
   { code: 'uk', name: 'Ukrainian', localName: 'Українська', dir: 'ltr' },
+  // Wave 2 (2026-08-15). Chosen as the highest crypto-adoption markets not
+  // already covered; all three are LTR, so the RTL audit is still pending and
+  // gates `ar`. Hindi is the first Indic script: its headings slugify to
+  // nothing, so /content anchors fall back to `section-N` exactly as ja/zh do.
+  { code: 'hi', name: 'Hindi', localName: 'हिन्दी', dir: 'ltr' },
+  { code: 'id', name: 'Indonesian', localName: 'Bahasa Indonesia', dir: 'ltr' },
+  { code: 'vi', name: 'Vietnamese', localName: 'Tiếng Việt', dir: 'ltr' },
 ] as const
 
 // 'en' | 'pt-br' | 'zh' | ... — derived from the registry
@@ -151,5 +158,9 @@ export const parseLangFromPath = (pathname: string): LanguageCode => {
 // Stripping the combining dot after folding makes both sides comparable.
 // Keep in sync with `normalizeKeyword` in content-lib.js, which the content
 // validators use to reach the same verdict offline.
+// Unicode normalization matters as much as case folding. Vietnamese "ví tiền
+// mã hóa" is 14 code points in NFC and 19 in NFD; the two render identically
+// and never compare equal, so an NFD backticked term is a dead tooltip against
+// an NFC glossary key with nothing visible to debug. NFC first, then fold.
 export const normalizeKeyword = (s: string): string =>
-  s.toLowerCase().replace(/̇/g, '')
+  s.normalize('NFC').toLowerCase().replace(/̇/g, '')

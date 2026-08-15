@@ -152,7 +152,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const segments = params.slug as string[]
   const validShape =
     segments.length === 1 ||
-    (segments.length === 2 && isLanguage(segments[0]))
+    // `en` is in the registry but is NOT a URL segment: English lives at the
+    // unprefixed /lessons/<slug>. Accepting it minted 23 self-canonical
+    // duplicates (plus 2 datadisk) whose own hreflang cluster named the
+    // unprefixed URL as both x-default and en — contradictory signals.
+    (segments.length === 2 &&
+      isLanguage(segments[0]) &&
+      segments[0] !== 'en')
   if (!validShape) return { notFound: true }
 
   const currentLessonMatch = LESSONS.find(
@@ -233,6 +239,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     isLesson: !currentLesson.isArticle,
     lesson: currentLesson,
     isDatadisk,
+    // Deprecated lessons are excluded from listings, rss and the sitemap, and
+    // their /content mirror already serves noindex. The lesson page itself was
+    // still `robots: all`, so the unmaintained material stayed indexable
+    // through any inbound link. One policy, both page types.
+    noindex: currentLesson.publicationStatus === 'deprecated',
   }
   return {
     props: { pageMeta },

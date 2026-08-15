@@ -23,14 +23,22 @@ import { LANGUAGES } from 'constants/languages'
 // metadata and decoration; none of it belongs in an article.
 export const CONTENT_SPLIT = '```\n\n---'
 
-const md = new MarkdownIt({ html: true, linkify: true })
+// `linkify` is deliberately OFF, matching content-lib.js which compiles the
+// real lessons. With it on, this mirror autolinked bare domains written as
+// prose — "if you own a website like web3explorer.com" became a live link to
+// an unowned domain on 10 pages.
+const md = new MarkdownIt({ html: true })
 
 /** Strip the answer key so the content page is not a cheat sheet. */
 const hideQuizAnswers = (text: string): string =>
   text
     .split('\n')
-    // per-option feedback ("> ℹ️ Correct! …") names the right answer outright
-    .filter((line) => !line.trim().startsWith('> '))
+    // Per-option feedback ("> ℹ️ Correct! …") names the right answer outright.
+    // Match the ℹ️ marker, NOT every blockquote: this filter used to drop any
+    // line starting with "> ", which silently deleted the "Key Takeaways"
+    // blockquote from all 9 articles in all 10 locales (110 blockquotes across
+    // 80 pages) — the very pages the sitemap fix had just made indexable.
+    .filter((line) => !line.trim().startsWith('> ℹ️'))
     .join('\n')
     // and the checkbox marks it
     .replaceAll('- [x] ', '- [ ] ')
@@ -114,9 +122,26 @@ export const buildArticle = (
 
   // Anchor every top-level section so the contents nav can link into it, and
   // so other pages can deep-link a single concept.
+  //
+  // Which tag is "top level" differs by format: lessons author slides as `#`
+  // (demoted to h2), articles author sections as `##` (demoted to h3). Keying
+  // on h2 alone left all 80 article content pages with no anchors and an empty
+  // table of contents.
+  const topTag = html.includes('<h2>') ? 'h2' : 'h3'
   const headings: ArticleHeading[] = []
-  html = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_m, inner) => {
-    let text = String(inner).replace(/<[^>]*>/g, '').trim()
+  const headingRe = new RegExp(`<${topTag}>([\\s\\S]*?)</${topTag}>`, 'g')
+  html = html.replace(headingRe, (_m, inner) => {
+    // Text is harvested from already-rendered HTML, so entities are still
+    // encoded; React would escape them a second time and the reader would see
+    // a literal "&amp;" in the contents nav.
+    let text = String(inner)
+      .replace(/<[^>]*>/g, '')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .trim()
     if (knowledgeCheckLabel) {
       const localized = text.replace(
         /^Knowledge Check(\s+\d+)?$/,
@@ -129,7 +154,7 @@ export const buildArticle = (
     }
     const id = headingId(text, headings.length)
     headings.push({ id, text })
-    return `<h2 id="${id}">${inner}</h2>`
+    return `<${topTag} id="${id}">${inner}</${topTag}>`
   })
   return { html, headings }
 }

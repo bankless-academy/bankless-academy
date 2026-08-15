@@ -181,22 +181,22 @@
     {
       "source": "/lessons/conceptos-(.*)",
       "destination": "/lessons/es/blockchain-basics",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/lessons(.*)/how-to-fund-a-wallet-on-layer-2",
-      "destination": "/lessons/funding-a-wallet-on-layer-2",
-      "permanent": false
+      "destination": "/lessons$1/funding-a-wallet-on-layer-2",
+      "permanent": true
     },
     {
       "source": "/lessons(.*)/the-stablecoin-guide",
-      "destination": "/lessons/understanding-stablecoins",
-      "permanent": false
+      "destination": "/lessons$1/understanding-stablecoins",
+      "permanent": true
     },
     {
       "source": "/lessons(.*)/how-to-swap-on-a-decentralized-exchange",
-      "destination": "/lessons/swapping-on-a-decentralized-exchange",
-      "permanent": false
+      "destination": "/lessons$1/swapping-on-a-decentralized-exchange",
+      "permanent": true
     }
   ],
   "crons": [
