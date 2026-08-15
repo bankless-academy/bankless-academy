@@ -1,10 +1,10 @@
 ---
-TITLE: Web3-Sicherheit
-DESCRIPTION: Schütze dich und deine Wallet vor den häufigsten Betrugsmaschen im Web3.
-LANGUAGE: Deutsch
+TITLE: Web3 Security
+DESCRIPTION: Protect yourself and your wallet from the most common scams in web3.
+LANGUAGE: English
 EDITORS: Claude (Anthropic AI, 2026 review)
 WRITERS:
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/web3-security
 FORMAT: LESSON
 ---
@@ -28,320 +28,320 @@ ________________________________________________________________________________
 
 ---
 
-# Einführung
+# Introduction
 
-Digitales Eigentum ist das Neue am Web3. Mit Blockchains, Kryptowährungen und NFTs gibt Web3 Eigentum und Macht an die Nutzer zurück. Digitale Finanzprodukte selbst zu besitzen, ist für viele neu, und diese fehlende Erfahrung nutzen Betrüger aus, um anderen ihre Werte zu stehlen. Diese Maschen funktionieren so gut, weil die meisten Menschen nicht wissen, wie sie ablaufen.
+Digital ownership is the new feature of web3. Using blockchains, cryptocurrencies, and NFTs, web3 gives ownership and power back to users. This online ownership of digital financial products is new for many, and that lack of experience gives opportunities for predatory people to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work.
 
-Betrug gibt es aber nicht nur im Web3: Auch Web2-Dienste wie E-Mail und soziale Medien sind voll davon. Viele Web3-Werkzeuge hängen außerdem an Web2-Diensten wie Bankkonten oder zentralisierten Börsen, die du ebenfalls schützen musst. Glückwunsch also, Academy Explorer, dass du dir das Wissen aneignest, das dich auf deinem Weg ins `Web3` schützt!
+But, it's not just web3 that suffers from scams, web2 services like email and social media are full of scams as well. In addition, many web3 tools are still tied to web2 services like bank accounts or centralized exchanges so protecting those is important too. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into `web3`!
 
-Diese Lektion behandelt:
+This lesson will cover:
 
-- Sicherheit in Web2 und Web3.
-- Die häufigsten Wege, auf denen Menschen ihr Geld verlieren, und wie du dich davor schützt.
-- Eine allgemeine Strategie für Wallet-Sicherheit.
-- Wie du dich erholst, wenn du Opfer eines Betrugs geworden bist.
+- Web2 & web3 security.
+- The most common ways people lose their funds and how to protect oneself from them.
+- A general strategy for wallet security.
+- How one can recover if they are the victim of a scam.
 
-# Geld im Web2
+# Money in Web2
 
-Im Web2 verwahren Institutionen das Geld der Menschen. Wer an sein Geld will, muss sich gegenüber der Institution ausweisen. Genauso läuft es bei einem Bankkonto oder einer `zentralisierten Börse` (CEX): Man braucht eine Login-ID und ein Passwort.
+In web2, the institutions hold money on behalf of people. A user must prove their identity to an institution in order to access and use their money. It’s the same as a bank account or a `centralized exchange` (CEX); one needs a login ID and a password.
 
-Um an dein Geld zu kommen, braucht ein Betrüger genau diese Kombination. Weil die Institutionen für den Schutz deines Geldes zuständig sind, lassen sich betrügerische Zahlungen rückgängig machen, ähnlich wie bei einer Kreditkartenreklamation.
+For a scammer to gain access to your money, they need this ID + password combination. Because the institutions are charged with protecting your money, fraudulent transactions can be reversed - like a credit card transaction dispute.
 
 ![](https://app.banklessacademy.com/images/web3-security/money-in-web2-7e1a5fd1.svg)
 
-# Geld im Web3
+# Money in Web3
 
-Im Web3 funktioniert Geld anders. Es ähnelt einer abgeschlossenen Bargeldbörse: einmal ausgegeben, ist das Geld weg. Deine `Seed-Phrase` (diese besondere Folge geheimer Wörter) öffnet deine `privaten Schlüssel`. Wer sie hat, kontrolliert deine Wallet. Gib sie _**niemals**_ weiter und speichere sie nie digital; Fotos und Notiz-Apps können kompromittiert werden.
+In web3, money works differently. It’s more like a locked cash wallet; once money is spent, it’s gone. Your `seed phrase` (that special set of secret words) unlocks your `private keys`, so anyone who obtains it controls your wallet. _**Never**_ give it to anyone, and never store it digitally; photos and notes apps can get compromised.
 
-Deine Seed-Phrase ist aber nicht das einzige Ziel: Eine einzige schädliche Signatur (eine Transaktion oder Nachricht, die du freigibst) kann deine Token abfließen lassen, ganz ohne deine Seed-Phrase. Schütze deine **Seed-Phrase** _und_ deine **Signatur**.
+But your seed phrase isn’t the only target: one malicious signature (a transaction or message you approve) can let a scammer drain your tokens without ever seeing your seed phrase. Protect your **seed phrase** _and_ your **signature**.
 
 ![](https://app.banklessacademy.com/images/web3-security/money-in-web3-f575b0f6.svg)
 
 # Knowledge Check 1
 
-Richtig oder falsch? Betrüger können Token aus deiner Wallet abziehen, indem sie dich zu einer schädlichen Signatur verleiten, ohne deine Seed-Phrase zu kennen.
+True or false? Scammers can drain tokens from your wallet by tricking you into signing a malicious transaction or approval, without ever knowing your seed phrase.
 
-- [x] Richtig
+- [x] True
 
-> ℹ️ Richtig! Eine schädliche Signatur oder Token-Freigabe reicht schon aus. Schütze, was du signierst, so gut wie deine Seed-Phrase.
+> ℹ️ Correct! A malicious signature or token approval can hand over your funds on its own. Protect what you sign as carefully as your seed phrase.
 
-- [ ] Falsch
+- [ ] False
 
-> ℹ️ Versuch es nochmal! Die Seed-Phrase ist nicht das einzige Ziel: Eine einzige schädliche Freigabe kann deine Token abziehen.
+> ℹ️ Try again! Your seed phrase isn’t the only target; a single malicious approval or signature can drain your tokens too.
 
-# Seed-Phrase sicher aufbewahren
+# Secure Seed Storage
 
-Es gibt viele Methoden, eine Seed-Phrase sicher zu lagern. Ein guter Anfang: auf physischem Material (laminiertes Papier oder Ähnliches) notieren und in einem wasser- und feuerfesten Safe bei dir zu Hause verwahren. Speichere eine `Seed-Phrase` **nicht** als Foto oder auf anderen digitalen Wegen, auch nicht im Passwort-Manager.
+There are many methods for storing seed phrases securely, but a good start is to keep it on physical media (laminated paper or similar) and store it in a water- and fire-proof safe in your own home. **Do not** store a `seed phrase` as a photo or other digital methods - even in a password manager.
 
-Schlechte Orte für Seed-Phrasen:
+Bad places to store seed phrases include:
 
-- Im Aktenschrank
-- In einer digitalen Notiz-App
-- Am Arbeitsplatz
-- Als digitales Foto
+- In a filing cabinet
+- Digital notes application
+- At your workplace
+- Digital photo
 
-Wo auch immer du deine Seed-Phrase aufbewahrst: Nur du solltest Zugriff haben, und sie muss vor Verlust und Zerstörung geschützt sein. Man weiß nie, was die Zukunft bringt!
+Wherever you store your seed phrase, you should ensure that only you have access to it and that it is protected from loss and destruction. You never know what might happen in the future!
 
-# Schütze deine Passwörter
+# Protect your Passwords
 
-Gute Passwörter und ein sauberer Umgang damit gehören zum Alltag im Internet.
+Healthy password usage and management is an important piece of everyday internet exploration.
 
-Für jeden einzelnen Web2-Dienst solltest du ein eigenes Passwort nutzen: E-Mail, zentralisierte Börsen und alle anderen Konten. Es ist schon schlimm, wenn jemand ID und Passwort für ein Konto erbeutet. Viel schlimmer ist es, wenn diese Kombination alle deine Konten öffnet!
+Passwords should be different for each and every web2 service used online. This includes services like email, centralized exchanges, and other service accounts. It’s problematic if someone manages to get the ID + password for one account, but it’s far worse if that combination unlocks all of your accounts!
 
-`Passwort-Manager` wie 1Password, Bitwarden und KeePass speichern viele Passwörter verschlüsselt. Sie erzeugen sogar neue, sehr sichere Passwörter und legen sie automatisch ab. Du musst dir nur ein Master-Passwort merken.
+`Password manager` applications like 1Password, Bitwarden, and KeePass securely store and encrypt multiple passwords; they can even generate new high-security passwords and store them automatically. The user just has to remember a single master password.
 
-Speichere eine Web3-`Seed-Phrase` **nicht** im Passwort-Manager: Ein einziger Einbruch reicht, um alle deine Web3-Werte zu verlieren, und niemand holt sie dir zurück.
+Do **not** store a web3 `seed phrase` in a password manager; it takes just one password breach to obtain all of your web3 assets and there is no one to recover your assets for you.
 
 # Knowledge Check 2
 
-Warum sind Passwort-Manager hilfreich?
+Why are password managers helpful?
 
-- [ ] Man muss sich nur das Master-Passwort merken.
+- [ ] People only have to remember their master password to use them.
 
-> ℹ️ Versuch es nochmal! Das stimmt, ist aber nicht der einzige Vorteil.
+> ℹ️ Try again! This is true, but it isn’t the only benefit.
 
-- [ ] Sie erzeugen und speichern starke, einzigartige Passwörter.
+- [ ] They generate and store strong, unique passwords.
 
-> ℹ️ Versuch es nochmal! Das stimmt, ist aber nicht der einzige Vorteil.
+> ℹ️ Try again! This is true, but it isn’t the only benefit.
 
-- [ ] Sie verschlüsseln Passwörter und halten sie sicher.
+- [ ] They encrypt passwords to keep them secure.
 
-> ℹ️ Versuch es nochmal! Das stimmt, ist aber nicht der einzige Vorteil.
+> ℹ️ Try again! This is true, but it isn’t the only benefit.
 
-- [x] Alles davon
+- [x] All of the above
 
-> ℹ️ Richtig! Passwort-Manager erzeugen, verschlüsseln und speichern für jedes Konto ein eigenes Passwort. Du merkst dir nur das Master-Passwort.
+> ℹ️ Correct! Password managers generate, encrypt, and store unique passwords for every account. You only remember the master password.
 
-# Zwei-Faktor-Authentifizierung
+# Two Factor Authentication
 
-`Zwei-Faktor-Authentifizierung`, kurz 2FA, ist eine zweite Sicherheitsebene im Web2.
+`Two Factor Authentication`, also known as 2FA, is a secondary layer of web2 security.
 
-Vielen wurden trotz starker Passwörter Konten gehackt oder Zugangsdaten gestohlen. Web2-Websites (und auch `Passwort-Manager`) bieten meist 2FA an: einen Nachweis von einem zweiten Gerät oder einer App, zusätzlich zum Passwort.
+Many people have had their accounts hacked or credentials stolen despite strong passwords. Web2 websites (and even `password managers`) often support 2FA as a second layer: proof from another device or app, in addition to your normal password.
 
-Nicht jede 2FA ist gleich gut:
+Not all 2FA is equal:
 
-🥉 **SMS-Codes** sind am schwächsten: Per `Social Engineering` ziehen Betrüger deine Nummer auf ihr eigenes Gerät um. Trotzdem besser als keine 2FA.
+🥉 **SMS codes** are the weakest option: scammers use `social engineering` to “SIM-swap” your phone number onto their own device and receive your codes. Still, SMS beats having no 2FA.
 
-🥈 **Authenticator-Apps** (Google Authenticator, 2FAS, Aegis) erzeugen Codes auf deinem Gerät, eine solide Wahl.
+🥈 **Authenticator apps** (like Google Authenticator, 2FAS, or Aegis) generate codes on your device, a solid choice for most accounts.
 
-🥇 **Passkeys und Hardware-Sicherheitsschlüssel** (etwa YubiKey) sind der Goldstandard: an die echte Website gebunden, versagen sie auf gefälschten Kopien.
+🥇 **Passkeys and hardware security keys** (like a YubiKey) are the phishing-resistant gold standard: tied to the real website, they simply won’t log in on a fake look-alike.
 
 ![](https://app.banklessacademy.com/images/web3-security/two-factor-authentication-7fa9bfdf.svg)
 
 # Knowledge Check 3
 
-Warum wird Zwei-Faktor-Authentifizierung dringend empfohlen?
+Why is two-factor authentication strongly recommended?
 
-- [ ] Mit aktivem 2FA lässt sich ein Konto nicht mehr hacken.
+- [ ] It’s impossible to hack an account when the user has 2FA enabled.
 
-> ℹ️ Versuch es nochmal! 2FA erhöht die Sicherheit stark, macht ein Konto aber nie unhackbar. SIM-Swaps knacken zum Beispiel SMS-Codes.
+> ℹ️ Try again! 2FA greatly improves security, but no method makes an account impossible to hack. SIM-swaps can defeat SMS codes, for example.
 
-- [x] Es fügt Web2-Konten eine weitere Sicherheitsebene hinzu.
+- [x] It adds another layer of security to web2 accounts.
 
-> ℹ️ Richtig! 2FA verlangt zusätzlich zum Passwort einen Nachweis von einem anderen Gerät oder einer App.
+> ℹ️ Correct! 2FA requires proof from another device or app on top of your password, so a stolen password alone isn’t enough.
 
-- [ ] Es macht Passwörter stärker.
+- [ ] It makes passwords stronger.
 
-> ℹ️ Versuch es nochmal! 2FA ändert dein Passwort nicht. Es legt eine zweite Prüfung darüber.
+> ℹ️ Try again! 2FA doesn’t change your password. It adds a second layer of proof on top of it.
 
-- [ ] Alles davon
+- [ ] All of the above
 
-> ℹ️ Versuch es nochmal! Nur eine dieser Aussagen stimmt.
+> ℹ️ Try again! Only one of these statements is true.
 
-# Social-Engineering-Betrug
+# Social Engineering Scams
 
-In Web2 und Web3 nutzen Betrüger `Phishing`, um an Passwörter und Seed-Phrasen zu kommen oder dich zu einer schädlichen Transaktion zu bringen. Oft geben sie sich als Support aus, „Hallo, hier ist der Metamask-Support“, oder als Admin einer Community, „Neuer NFT-Mint, exklusiv für unsere Community“.
+In both web2 and web3, scammers use `phishing` tactics to trick people into giving up their passwords and seed phrases, or signing a malicious transaction. Often they’ll pretend to be product support staff offering help, “Hello this is Metamask support”, or pretend to be an admin of a community, “New NFT mint, exclusive for our community”.
 
-Mit `Social Engineering` setzen sie dich unter Druck. Beispiele:
+They use `social engineering` to pressure people. Examples include:
 
-- „Die Zeit läuft ab!“ lässt dich hetzen.
-- „Glückwunsch, du hast unser Gewinnspiel gewonnen!“ lässt dich exklusiv fühlen.
-- „Sichere dir früh Zugang zum Pre-Mint!“ erzeugt `FOMO` beim Opfer.
+- “Time is running out!” - making you feel rushed.
+- “Congratulations you won our giveaway!” - making things feel exclusive.
+- ”Get early access to our pre-mint!” - generating `FOMO` in the person being scammed.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-engineering-scams-73c69132.svg)
 
-# Angst, etwas zu verpassen
+# Fear Of Missing Out
 
-`FOMO` steht für „Fear Of Missing Out“, die Angst, etwas zu verpassen. Es ist das stressige Gefühl, dass dir eine große Chance entgeht, wenn du nicht **sofort** handelst.
+`FOMO` stands for the ‘Fear Of Missing Out’, it’s the stressful feeling that you’re not going to get a great benefit or opportunity unless you do something **right now**.
 
-Die beste Verteidigung gegen FOMO: einen Schritt zurücktreten und eine Pause machen. Unter Stress denken Menschen nicht klar, genau deshalb funktioniert FOMO so gut. Mit etwas Abstand erkennst du Betrugsversuche viel leichter als das, was sie sind.
+The best defense against FOMO is to simply take a step back from your computer and take a break. People don’t think clearly when they’re stressed, that’s why FOMO is such an effective scamming tool. By stepping away from the situation, it becomes much easier to spot the scams for what they are.
 
 # Knowledge Check 4
 
-Wie nutzen Betrüger Social Engineering?
+How do scammers use social engineering?
 
-- [ ] Sie geben sich als Autorität in einer Community aus.
+- [ ] Pretending to be an authority in a community.
 
-> ℹ️ Versuch es nochmal! Das ist eine Taktik, aber nicht die einzige.
+> ℹ️ Try again! This is one tactic, but it isn’t the only one.
 
-- [ ] Sie setzen Menschen mit knapper Zeit unter Druck.
+- [ ] Pressuring people with short amounts of time.
 
-> ℹ️ Versuch es nochmal! Das ist eine Taktik, aber nicht die einzige.
+> ℹ️ Try again! This is one tactic, but it isn’t the only one.
 
-- [ ] Sie versprechen Gewinnspiele oder gratis NFTs für FOMO.
+- [ ] Offering giveaways or free NFTs to generate FOMO.
 
-> ℹ️ Versuch es nochmal! Das ist eine Taktik, aber nicht die einzige.
+> ℹ️ Try again! This is one tactic, but it isn’t the only one.
 
-- [x] Alles davon
+- [x] All of the above
 
-> ℹ️ Richtig! Betrüger spielen Autorität, erzeugen Zeitdruck und FOMO, damit du nicht mehr klar denkst.
+> ℹ️ Correct! Scammers impersonate authority figures, create time pressure, and generate FOMO, all to stop you from thinking clearly.
 
-# Sicherheit in sozialen Medien
+# Social Media Safety
 
-Betrüger sind in sozialen Medien und in den Discord-Servern von Krypto-Projekten unterwegs. Meist ziehen sie das Gespräch in private Nachrichten, damit erfahrene Mitglieder nichts merken. Rede in öffentlichen Kanälen, gib deine `Seed-Phrase` _**niemals**_ weiter und signiere nichts über einen Link aus einer DM.
+Scammers love to engage on social media and in the Discord servers of crypto projects, typically moving conversations into direct messages to avoid being spotted by experienced members. Talk in public areas, and _**never**_ give your `seed phrase` to anyone, or sign anything from a link sent in a DM.
 
-`Warnsignale` in sozialen Medien:
+Social media `red flags`:
 
-🚩 **Sprach- und Grammatikfehler:** seit/seid, das/dass.
+🚩 **Language and grammar errors:** They’re/their/there, etc.
 
-🚩 **FOMO:** „Verpass es nicht!“
+🚩 **FOMO:** “Don’t miss out!”
 
-🚩 **Identitätsklau:** ein Admin, der Support, Vitalik Buterin, Elon Musk.
+🚩 **Impersonation:** an admin, support desk, Vitalik Buterin, Elon Musk, etc.
 
-🚩 **Garantierte Renditen:** In Krypto ist nichts garantiert.
+🚩 **Guaranteed returns:** Nothing is guaranteed in crypto.
 
-🚩 **Ungefragte Links und Angebote,** _besonders in privaten Nachrichten_.
+🚩 **Unrequested links and offers,** _especially in direct messages_.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-safety-a76a39f4.svg)
 
-# Gute Gewohnheiten in sozialen Medien
+# Social Media Best Practices
 
-So bleibst du sicher:
+Practices for staying safe:
 
-✅ Wer sein Produkt per privater Nachricht verkaufen muss, hat meist keins, das du willst.
+✅ If they have to direct message you to sell their product, you probably don’t want it.
 
-✅ Prüfe Follower- und Mitgliederzahlen, auch wenn sie weder Seriosität noch Qualität garantieren.
+✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.
 
-✅ Verifiziere alles über eine zweite Quelle, etwa einen anderen offiziellen Kanal des Projekts.
+✅ Verify everything with an outside source, like another official project account.
 
-✅ Wenn du unsicher bist, frag angesehene Mitglieder einer großen Community, der du vertraust, und zwar öffentlich.
+✅ If you’re ever uncertain, check with reputable members from a large community you trust - and ask in public.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-best-practices-48ad350f.svg)
 
-# Scam-Token und Address Poisoning
+# Scam-Tokens & Address Poisoning
 
-Tauchen zufällige Token oder NFTs in deiner Wallet auf? `Scam-Token` gehen an tausende Wallets zugleich. Wer sie bewegen oder verkaufen will, löst versteckten Code im Smart Contract aus oder landet auf einer `Phishing`-Seite, die nach der `Seed-Phrase` oder einer schädlichen Signatur fragt. Die beste Antwort: gar nicht anfassen, liegen lassen oder in der Wallet ausblenden.
+Random tokens or NFTs appearing in your wallet? `Scam-tokens` are transferred to thousands of wallets at once, hoping someone tries to move or sell them, triggering malicious code hidden in the token’s smart contract, or luring victims to a `phishing` website that asks for a `seed phrase` or a malicious signature. The best response: don’t interact with them at all; leave them alone or hide them in your wallet.
 
-Verwandt ist **Address Poisoning**: Betrüger senden dir Kleinstbeträge von einer Adresse, die deiner fast gleicht, mit denselben ersten und letzten Zeichen. Kopierst du später eine Adresse aus deinem Verlauf, erwischst du vielleicht die Fälschung.
+A related trick is **address poisoning**: scammers send tiny transfers from an address crafted to look almost identical to one you use, matching its first and last characters. Copy an address from your transaction history later, and you may grab the scammer’s look-alike instead.
 
-So schützt du dich:
+Protect yourself:
 
-- Kopiere keine Adressen aus deinem Transaktionsverlauf.
-- Prüfe mehr als die ersten und letzten Zeichen.
-- Schicke vor großen Beträgen einen kleinen Test.
+- Don’t copy addresses from your transaction history.
+- Verify more than the first and last few characters.
+- Send a small test amount before large transfers.
 
 ![](https://app.banklessacademy.com/images/web3-security/scam-tokens-761d5f63.svg)
 
-# Schädliche Freigaben und Blind Signing
+# Malicious Approvals & Blind Signing
 
-Heute geht Geld meist nicht durch gestohlene Seed-Phrasen verloren, sondern durch Signaturen, die man verschenkt. „Wallet Drainer“-Phishing zeigt dir eine Transaktion oder Nachricht, die harmlos aussieht, es aber nicht ist:
+Today, most funds are lost not to stolen seed phrases but to signatures given away. “Wallet drainer” phishing kits present a transaction or message that looks routine, but isn’t:
 
-- **Schädliche Freigaben:** Eine einzige Transaktion kann dem Vertrag eines Betrügers eine unbegrenzte `Token-Freigabe` für deine Token und NFTs erteilen.
-- **Signatur-Phishing:** Gaslose Freigaben per Signatur (wie Permit2) erlauben Token-Transfers, ganz ohne Transaktion.
-- **Delegations-Angriffe:** Eine neuere Wallet-Funktion (EIP-7702) lässt eine Signatur Code auf deinem Konto installieren. Drainer räumen Wallets damit automatisch leer.
+- **Malicious approvals:** a single approval transaction can give a scammer’s contract unlimited `token allowance` to spend your tokens or NFTs.
+- **Signature phishing:** gasless signature approvals (like Permit2) can authorize token transfers, no transaction required.
+- **Delegation drains:** a newer wallet feature (EIP-7702) lets one signature install code on your account; drainers abuse this to auto-sweep wallets.
 
-Etwas zu signieren, das du nicht verstehst, heißt **Blind Signing**. Selbst Profis fallen darauf herein: Im Februar 2025 verlor die Börse Bybit rund 1,5 Milliarden Dollar, weil sie eine Transaktion freigab, deren Anzeige manipuliert war.
+Signing what you don’t understand is called **blind signing**, and even professionals get burned: in February 2025, the Bybit exchange lost roughly $1.5 billion approving a transaction whose display had been tampered with.
 
-Deine Verteidigung: langsam machen, jede Signaturanfrage lesen, „Verifiziere deine Wallet“-Aufforderungen als feindlich behandeln und eine Wallet nutzen, die Transaktionen vorab simuliert.
+Your defenses: slow down, read every signature request, treat “verify your wallet” prompts as hostile, and use a wallet that simulates transactions before you sign.
 
 # Knowledge Check 5
 
-Du bekommst eine DM: „Deine Wallet muss migriert werden: verbinde dich auf metamask-upgrade.app und signiere zur Prüfung deiner Werte.“ Die Seite verlangt eine gaslose Freigabe. Was stimmt hier nicht?
+You receive a DM: “Your wallet needs migrating: connect at metamask-upgrade.app and sign to verify your assets.” The site asks you to sign a gasless approval. What’s wrong here?
 
-- [ ] Nichts: Signaturen sind kostenlos und bewegen kein Geld.
+- [ ] Nothing: signatures are free and can’t move funds.
 
-> ℹ️ Versuch es nochmal! Gaslose Freigabe-Signaturen können Token-Transfers ganz allein autorisieren.
+> ℹ️ Try again! Gasless approval signatures can authorize token transfers all by themselves.
 
-- [ ] Gefährlich wird es erst, wenn du die Seed-Phrase eintippst.
+- [ ] It’s only dangerous if you also type in your seed phrase.
 
-> ℹ️ Versuch es nochmal! Dafür braucht es keine Seed-Phrase. Die Signatur allein kann Ausgaberechte über deine Token geben.
+> ℹ️ Try again! No seed phrase is needed. The signature itself can grant spending power over your tokens.
 
-- [ ] Es ist sicher, denn Support-Teams schreiben per DM.
+- [ ] It’s safe because support teams contact users by direct message.
 
-> ℹ️ Versuch es nochmal! Echter Support schreibt dich nie zuerst an. Das ist ein klassisches Warnsignal.
+> ℹ️ Try again! Legitimate support will never DM you first. That’s a classic red flag.
 
-- [x] Es ist Signatur-Phishing: Die Signatur kann Token abziehen.
+- [x] It’s signature phishing: the signature could drain your tokens.
 
-> ℹ️ Richtig! Ungefragte DM, Zeitdruck, eine nachgemachte URL und eine Signaturanfrage: Das ist ein Wallet Drainer.
+> ℹ️ Correct! An unrequested DM, urgency, a look-alike URL, and a signature request: this is a wallet drainer.
 
-# Hardware-Wallets
+# Hardware Wallets
 
-Wie du aus unserer Lektion [Wallet-Grundlagen](https://app.banklessacademy.com/lessons/wallet-basics) weißt, hält eine `Hardware-Wallet` deine `privaten Schlüssel` auf einem eigenen Gerät, getrennt von deinem Computer. Das macht dein Guthaben viel sicherer: Schadsoftware kommt nicht an die Schlüssel, und ein Dieb müsste das Gerät stehlen und knacken. Bekannte Modelle sind Ledger, Trezor und Keystone. Kaufe immer direkt beim Hersteller.
+If you remember from our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, a `hardware wallet` keeps your `private keys` on a dedicated device, away from your internet-connected computer. This makes your funds much safer: malware can’t read your keys, and a thief would have to physically steal the device and break into it. Popular options include Ledger, Trezor, and Keystone. Always buy directly from the manufacturer.
 
-Du kannst eine Hardware-Wallet sogar über Browser-Wallets wie MetaMask nutzen und so Bequemlichkeit mit Hardware-Sicherheit verbinden. Ledger hat dazu [eine eigene Anleitung](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask) geschrieben.
+You can even use a hardware wallet through browser extension wallets like MetaMask, combining convenience with hardware security. Ledger has [written their own guide](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask) on setting this up.
 
-Eine Grenze bleibt: Eine Hardware-Wallet signiert alles, was du freigibst. Blind Signing kostet dich auch hier dein Geld. Prüfe die Details immer auf dem Display des Geräts.
+One limit: a hardware wallet signs whatever you approve, so blind-signing a malicious transaction still loses your funds. Always verify the details on the device’s own screen before confirming.
 
 ![](https://app.banklessacademy.com/images/web3-security/hardware-wallets-22a096d4.svg)
 
 # Knowledge Check 6
 
-Richtig oder falsch? Eine Hardware-Wallet schützt dein Guthaben nur, wenn du jede Transaktion vor der Freigabe prüfst.
+True or false? A hardware wallet only keeps your funds safe if you verify each transaction before approving it.
 
-- [x] Richtig
+- [x] True
 
-> ℹ️ Richtig! Eine Hardware-Wallet schützt deine Schlüssel, aber nur das Prüfen der Signatur schützt dein Guthaben.
+> ℹ️ Correct! A hardware wallet protects your keys, but only verifying what you sign protects your funds.
 
-- [ ] Falsch
+- [ ] False
 
-> ℹ️ Versuch es nochmal! Eine Hardware-Wallet signiert alles, was du freigibst. Blind Signing leert sie trotzdem.
+> ℹ️ Try again! A hardware wallet signs whatever you approve. Blind signing can still drain it.
 
-# Wallet-Strategien
+# Wallet Strategies
 
-Nach der Hardware-Wallet ist es eine der besten Ideen, dein Guthaben auf mehrere `Wallets` zu verteilen. Eine bewährte Aufteilung mit drei getrennten Wallets:
+After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple `wallets`. Here is a compartmentalized strategy using three separate wallets:
 
-1. **Social Wallet:** Eine `Hot-Wallet` mit wenig oder keinem Guthaben, für Logins, Mints und neue DApps. Nimm an, dass alles darin verloren gehen kann.
-2. **Trading Wallet:** Eine `Hot-Wallet` für Handel und alles, was kurzfristig bewegt werden muss.
-3. **HODL Wallet:** Eine `Hardware-Wallet` für den langen `HODL`. Nutze sie _**niemals**_ für Smart Contracts oder unbekannte Websites.
+1. **Social Wallet:** A `hot wallet` holding little to no funds, used for logins, minting, and trying out new dapps. Assume anything in it could be lost.
+2. **Trading Wallet:** A `hot wallet` for trading and other activities involving funds that may need to be moved on short notice.
+3. **HODL Wallet:** A `hardware wallet` for the long-term `HODL`: these are funds intended to hold for a long time. _**Never**_ use this wallet to interact with smart contracts or unfamiliar websites.
 
-👍 **PRO:** Ein Betrug bedroht nur das Guthaben in _dieser einen Wallet_, nicht _alles_.
+👍 **PROs:** Separation ensures that scams only threaten funds in _that particular wallet_ rather than _everything_.
 
-👎 **CONTRA:** Etwas mehr Aufwand beim Überblick, aber viele Wallet-Apps lassen dich Wallets benennen.
+👎 **CONs:** It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.
 
 ![](https://app.banklessacademy.com/images/web3-security/wallet-strategies-2b743061.svg)
 
 # Knowledge Check 7
 
-Für mehr Sicherheit empfehlen wir, dein Guthaben _______________.
+We recommend keeping your funds _______________ for higher security.
 
-- [ ] in mehreren Airdrops zu lagern
+- [ ] stored in multiple airdrops
 
-> ℹ️ Versuch es nochmal! Airdrops sind Token-Verteilungen, kein Ort zum Aufbewahren von Guthaben.
+> ℹ️ Try again! Airdrops are token giveaways, not a place to store funds.
 
-- [ ] in mehreren NFTs zu binden
+- [ ] locked in multiple NFTs
 
-> ℹ️ Versuch es nochmal! NFTs sind selbst Vermögenswerte, keine Sicherheitsstrategie für dein Guthaben.
+> ℹ️ Try again! NFTs are assets themselves, not a security strategy for your funds.
 
-- [x] auf mehrere Wallets zu verteilen
+- [x] separated in multiple wallets
 
-> ℹ️ Richtig! Getrennte Wallets sorgen dafür, dass ein Betrug nur das Guthaben in dieser einen Wallet bedroht.
+> ℹ️ Correct! Compartmentalizing funds across separate wallets means a scam only threatens the funds in that particular wallet.
 
-- [ ] in mehreren Adressen liquide zu halten
+- [ ] liquid in multiple addresses
 
-> ℹ️ Versuch es nochmal! Es geht nicht um Liquidität. Nur getrennte Wallets begrenzen den Schaden eines Betrugs.
+> ℹ️ Try again! It’s not about liquidity. Separating funds between distinct wallets is what limits the damage a scam can do.
 
-# Nach einem Web2-Betrug
+# Recovering from Web2 Scams
 
-Hoffentlich bist du noch nie auf einen Betrüger hereingefallen. Falls doch, solltest du deine Konten wieder absichern.
+Hopefully you have not already fallen victim to a scammer. If you have, there are some steps you should take to secure your accounts once more.
 
-Bei einem Betrug über einen Web2-Dienst wie Gmail oder Discord:
+For a scam involving a web2 service, like Gmail or Discord, you should:
 
-- Ändere das Passwort des betroffenen Kontos.
-- Nutze, wenn vorhanden, „überall abmelden“, um die Betrüger hinauszuwerfen.
-- Aktiviere `2FA`: am besten Passkey oder Hardware-Sicherheitsschlüssel, sonst eine Authenticator-App.
-- Melde den Betrug beim betroffenen Dienst.
-- Sichere auch dein E-Mail-Konto ab.
-- Sprich mit Freunden oder vertrauten Community-Mitgliedern darüber.
+- Change your password on the affected account.
+- Where it’s available, use the “sign out everywhere else” button to kick the scammers off your account.
+- Enable `2FA`: ideally a passkey or hardware security key, otherwise an authenticator app.
+- Report the scam to the service involved.
+- Ensure your email account is also secure.
+- Discuss the scam with friends or trusted community members.
 
-# Nach einem Web3-Betrug
+# Recovering from Web3 Scams
 
-Auf Ethereum brauchen Verträge eine ausdrückliche Erlaubnis, um Token auszugeben. Die `Freigabe` legt fest, wie viel ein bestimmter Vertrag ausgeben darf. Niedrige Freigaben senken das Risiko für deine Werte.
+Contracts must be given explicit permission to spend tokens on Ethereum. The token `allowance` is how much you’ve allowed a specific contract to spend. Keeping allowances low reduces the risk to your assets.
 
-Im Web3 gibt es keine Zentrale, bei der du Betrüger melden kannst, aber handeln kannst du trotzdem:
+Web3 doesn’t have anyone in charge of protocols to report scammers to, but you can still take action:
 
-- Schiebe verbliebenes Guthaben sofort auf eine andere Wallet-Adresse, **die eine andere Seed-Phrase hat.**
-- Prüfe und widerrufe deine `Freigaben` mit [revoke.cash](https://revoke.cash) (funktioniert auf vielen Netzwerken) oder [etherscan.io/tokenapprovalchecker](https://etherscan.io/tokenapprovalchecker). Widerrufen kostet Gas; revoke.cash hat eine [Schritt-für-Schritt-Anleitung](https://revoke.cash/learn/approvals/how-to-revoke-token-approvals).
-- Prüfe bei revoke.cash auch den Tab „Delegations“ auf unbekannte Wallet-Delegationen und entferne sie in deiner Wallet-App.
-- Nutze künftig eine `Hardware-Wallet` und prüfe alles, was du signierst.
-- Warne andere und melde den Betrug in der betroffenen Community.
-- Sprich mit Freunden oder vertrauten Community-Mitgliedern darüber, wie ihr euch künftig besser schützen könnt.
+- Immediately move any funds still in the compromised wallet to a different wallet address, **make sure the new address has a different seed phrase.**
+- Review and revoke your token `allowances` with [revoke.cash](https://revoke.cash) (works across many networks) or [etherscan.io/tokenapprovalchecker](https://etherscan.io/tokenapprovalchecker). Revoking costs gas; revoke.cash has a [walkthrough guide](https://revoke.cash/learn/approvals/how-to-revoke-token-approvals).
+- Also check revoke.cash’s “Delegations” tab for any wallet delegation you don’t recognize, and remove it from inside your wallet app.
+- Use a `hardware wallet` in the future, and verify everything you sign.
+- Warn others by reporting the scam to the affected community.
+- Discuss the scam process with friends or trusted community members to see how you can protect yourself and others in the future.
