@@ -9,6 +9,21 @@ const { Command } = require('commander')
 const axios = require('axios')
 const fs = require('fs')
 
+// Retired flows are still runnable by accident via `yarn import-content` /
+// `yarn import-translations`, and both WRITE over files that are now the source
+// of truth. Require an explicit opt-in so that can only happen deliberately.
+if (!process.env.RUN_RETIRED_IMPORT) {
+  console.error(
+    '\n  DEPRECATED - this script is retired and would overwrite in-repo content.\n' +
+      '  Lessons are edited directly in translation/lesson/en/*.md and compiled\n' +
+      '  by build-content.js; translations come from translate-content.js.\n' +
+      '  See "Lesson content pipeline" in CLAUDE.md.\n\n' +
+      '  If you really mean it: RUN_RETIRED_IMPORT=1 yarn <script>\n'
+  )
+  process.exit(1)
+}
+
+
 const sortObject = (not_sorted) => {
   return Object.keys(not_sorted)
     .sort()
