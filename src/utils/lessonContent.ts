@@ -53,14 +53,39 @@ export interface ArticleHeading {
   text: string
 }
 
+// Letters that carry no Unicode decomposition, so NFD cannot reduce them to
+// ASCII. Turkish dotless ı is the one that actually bites us; the rest are
+// cheap insurance for future languages.
+const NON_DECOMPOSABLE: { [ch: string]: string } = {
+  ı: 'i',
+  ø: 'o',
+  ł: 'l',
+  ß: 'ss',
+  đ: 'd',
+  æ: 'ae',
+  œ: 'oe',
+  ð: 'd',
+  þ: 'th',
+}
+
 /**
  * A readable anchor where the script allows one, a positional fallback where it
  * does not. Japanese and Chinese headings are entirely non-ASCII, so slugifying
  * them yields an empty string and every anchor would collide.
+ *
+ * Accents must be folded first. `\p{L}` matches `é`, so it survived into the
+ * slug and then failed the ASCII test below — which silently sent most Latin
+ * non-English headings to a positional anchor (fr 12/22, tr 13/22, pt-br 10/22
+ * on wallet-basics). NFD splits `é` into `e` + a combining mark we can strip;
+ * `\p{M}` is the combining-mark class.
  */
 const headingId = (text: string, index: number): string => {
-  const slug = text
-    .toLowerCase()
+  const folded = [...text.toLowerCase()]
+    .map((ch) => NON_DECOMPOSABLE[ch] ?? ch)
+    .join('')
+    .normalize('NFD')
+    .replace(/\p{M}+/gu, '')
+  const slug = folded
     .replace(/[^\p{L}\p{N}]+/gu, '-')
     .replace(/^-|-$/g, '')
   return /^[a-z0-9-]+$/.test(slug) && slug ? slug : `section-${index + 1}`
@@ -72,7 +97,13 @@ const headingId = (text: string, index: number): string => {
  * fail loudly rather than publish a shell.
  */
 export const buildArticle = (
-  rawMd?: string | null
+  rawMd?: string | null,
+  // Translated label for the quiz headings. The md stores them as the English
+  // identifier `Knowledge Check <n>` (build-content.js reads it), and the
+  // interactive lesson renders its own translated label — but this page prints
+  // the raw heading, so every localized content page showed ~8 English
+  // headings. Translating here keeps the md identifier untouched.
+  knowledgeCheckLabel?: string
 ): { html: string; headings: ArticleHeading[] } => {
   const empty = { html: '', headings: [] }
   if (!rawMd || rawMd[0] === '<') return empty
@@ -85,7 +116,17 @@ export const buildArticle = (
   // so other pages can deep-link a single concept.
   const headings: ArticleHeading[] = []
   html = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_m, inner) => {
-    const text = String(inner).replace(/<[^>]*>/g, '').trim()
+    let text = String(inner).replace(/<[^>]*>/g, '').trim()
+    if (knowledgeCheckLabel) {
+      const localized = text.replace(
+        /^Knowledge Check(\s+\d+)?$/,
+        (_x, n) => `${knowledgeCheckLabel}${n || ''}`
+      )
+      if (localized !== text) {
+        inner = localized
+        text = localized
+      }
+    }
     const id = headingId(text, headings.length)
     headings.push({ id, text })
     return `<h2 id="${id}">${inner}</h2>`

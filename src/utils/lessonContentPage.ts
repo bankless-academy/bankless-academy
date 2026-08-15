@@ -58,7 +58,10 @@ export const getContentPageProps = (lang: string, slug: string) => {
   // A page whose only reason to exist is being crawlable is worse than absent
   // if it renders empty, so fail the build rather than publish a shell.
   const raw = fs.readFileSync(path, 'utf8')
-  const { html: articleHtml, headings } = buildArticle(raw)
+  const { html: articleHtml, headings } = buildArticle(
+    raw,
+    uiString(usedLang, 'Knowledge Check')
+  )
   if (!articleHtml) {
     throw new Error(
       `lesson content page: ${path} produced no article HTML (missing the \`\`\` + --- separator?)`
