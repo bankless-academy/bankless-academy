@@ -1,10 +1,10 @@
 ---
-TITLE: Crea tu billetera cripto
-DESCRIPTION: Configura tu primera billetera cripto con nuestra guía paso a paso.
+TITLE: Creando una Billetera Cripto
+DESCRIPTION: Configura tu primera billetera criptográfica con nuestra guía paso a paso.
 LANGUAGE: Español
 WRITERS: Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: OrnellaWeb3
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -27,90 +27,91 @@ ________________________________________________________________________________
 ```
 
 ---
-Este es un resumen de nuestra lección [Fundamentos de la billetera](https://app.banklessacademy.com/lessons/wallet-basics), junto con una guía paso a paso para la misión. Consulta [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics) para **subir de nivel y reclamar tu insignia.**
+
+Este es un resumen de nuestra lección [Conceptos Básicos de la Billetera](https://app.banklessacademy.com/lessons/wallet-basics), junto con un tutorial para completar la prueba de conocimientos. Revisa [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics) para **subir el nivel de tus conocimientos y reclamar tu insignia!**
 
 ---
 
-## Puntos clave
+## Conclusiones Clave
 
-> * ¡Necesitarás una `billetera cripto` para acceder al mundo de las blockchains!
+> - Necesitarás una billetera cripto para acceder al mundo de las cadenas de bloques.
 >
-> * Una billetera es como una cuenta de `blockchain`.
+> - Una billetera es como una cuenta de \`blockchain'.
 >
-> * Las billeteras sirven para guardar `criptomonedas`, iniciar sesión en aplicaciones blockchain y más.
+> - Las billeteras se utilizan para almacenar 'criptomonedas', iniciar sesión en las aplicaciones de blockchain, y más.
 >
-> * Estas billeteras funcionan tanto en computadoras como en teléfonos.
+> - Estas billeteras funcionan tanto en computadoras como en teléfonos móviles.
 >
-> * Crear una billetera es fácil y toma unos 5 minutos. ¡Te mostramos cómo en el video de abajo!
+> - Crear una billetara es fácil y toma alrededor de 5 minutos. Te mostraremos cómo, ¡en nuestro video a continuación!
 
 ## ¿Qué es una billetera cripto?
 
-Las billeteras cripto son equipamiento esencial del web3: te permiten usar `criptomonedas` en tu computadora o teléfono. Se accede a ellas con un software llamado `aplicación de billetera`: una extensión de navegador en tu computadora, o una app en tu teléfono.
+Las billeteras criptográficas son una pieza esencial de tu equipamiento en web3, ya que te permiten utilizar `criptomonedas` en tu computador o teléfono. Wallets are accessed using software called a `wallet app`: a web browser extension for your computer, or an app on your phone.
 
-Y hay más. Las billeteras son más que cuentas para guardar criptomonedas: son nuestra conexión con la blockchain. Sirven para intercambiar criptomonedas con otras personas, iniciar sesión en aplicaciones blockchain **e incluso coleccionar objetos digitales como las insignias de Bankless Academy.** Cuanto más exploramos, más importancia toman nuestras billeteras, hasta el punto de que algunos las ven como el inicio de la identidad digital.
+Se pone aún mejor. Wallets are more than accounts for holding cryptocurrency: they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become, with some viewing them as the beginning of digital identity.
 
-Las billeteras traen dos datos centrales de cuenta:
+Las billeteras vienen con dos piezas básicas de información de la cuenta:
 
-* Una `clave pública`, que crea la `dirección` de tu billetera. La dirección funciona como tu *nombre de usuario*: la compartes en público para recibir criptomonedas.
+- A `public key`, which creates your wallet’s `address`. The address works like your _username_: you’ll share it publicly to receive cryptocurrency.
 
-* Una `clave privada`, que actúa como tu *contraseña*. Siempre debe mantenerse en secreto y no se puede cambiar.
+- Una `llave privada`, que actúa como tu _contraseña_. Este dato debe mantenerse siempre en privado y no puede modificarse.
 
-Proteger tu clave privada es crítico porque esa clave da acceso inmediato a tu billetera. Nunca compartas tu clave privada. Aprende más en [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics).
+Proteger tu llave privada es fundamental, ya que esta llave garantiza el acceso instantáneo a tu billetera. Nunca debes compartir tu llave privada. Puedes aprender más tomando [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics).
 
-¡Hoy configuraremos nuestra primera billetera con la billetera cripto que recomendamos: Zerion!
+Hoy vamos a crear nuestra primera billetera, utilizando nuestra billetera cripto recomendada: ¡Zerion!
 
-## Guía paso a paso
+## Guía
 
-Configura tu primera billetera en la computadora con la guía de abajo, o sigue bajando para ver la guía de billetera en el teléfono.
+Configura tu primera billetera en tu computador, usando la guía abajo, o sigue desplazándote y encuentra nuestra guía para instalar tu billetera cripto en tu móvil.
 
-### Billetera en la computadora
+### Computer Wallet
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
-### Billetera en el teléfono
+### Billetera Móvil
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
-**¡Es hora de unirte al multiverso blockchain!**
+**¡Es hora de unirse al multiverso blockchain!**
 
-No olvides coleccionar esta entrada del manual para consultarla fácilmente en tus viajes y apoyar a Bankless Academy.
+No te olvides de coleccionar esta entrada del manual para una fácil referencia en tus viajes y apoyar también a Bankless Academy.
 
 ¡Buen viaje, Explorador!
 
 ---
 
-## Preguntas frecuentes
+## FAQ
 
-### ¿Qué es una criptomoneda?
+### ¿Qué son las criptomonedas?
 
-Las criptomonedas son una forma de dinero digital protegida por `criptografía`. Estas monedas pueden funcionar sin autoridades centralizadas ni bancos, lo que reduce la posibilidad de fraude y aumenta la libertad financiera de quien las tiene.
+Las criptomonedas son una forma de dinero digital, asegurado por la "criptografía". Estas monedas pueden funcionar sin necesidad de autoridades ni bancos centralizados, lo que reduce la posibilidad de fraude al tiempo que aumenta la libertad financiera del titular.
 
-Aprende más sobre criptomonedas en nuestra lección **[Fundamentos de Bitcoin](https://app.banklessacademy.com/lessons/bitcoin-basics)** y descubre cómo estas monedas digitales están revolucionando el mundo financiero.
+Aprende más sobre las criptomonedas con nuestra lección **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)**, ¡y descubre cómo estas monedas digitales están revolucionando el mundo financiero!
 
-### ¿Qué son las claves pública y privada?
+### ¿Qué son las llaves pública y privada?
 
-El `cifrado` de clave pública y privada permite que tu billetera haga pública cierta información, como la dirección donde otros pueden enviarte criptomonedas, mientras mantiene privado el acceso a ellas. La dirección de tu billetera, creada a partir de la clave pública, es como la dirección de tu casa, y la clave privada abre la puerta.
+El "cifrado" de llave pública/privada permite a tu billetera hacer pública cierta información, como la dirección a la que otros pueden enviarte criptomonedas, mientras que mantiene el acceso a tus criptomonedas en privado. Your wallet’s address, created from the public key, is like your house address, and the private key unlocks the front door.
 
-Puedes compartir tu dirección con quien confíes para que te envíe criptomonedas, pero tu clave privada es solo para ti, porque da acceso a todos los activos de la billetera. Nunca la compartas, aunque tu contacto diga ser de Bankless Academy o de Zerion.
+You can share your address with anyone you trust to send you cryptocurrency, but your private key is for your eyes only, because it grants access to all assets inside the wallet. Nunca la compartas, aunque tu contacto diga ser de Bankless Academy o Zerion.
 
-Aprende más y recibe una recompensa por crear tu primera billetera en nuestra lección [Fundamentos de la billetera](https://app.banklessacademy.com/lessons/wallet-basics).
+Aprende más y obtén recompensas por crear tu primera billetera, en nuestra lección [Conceptos Básicos de la Billetera](https://app.banklessacademy.com/lessons/wallet-basics).
 
-### ¿Qué pasa si pierdo mi frase de recuperación?
+### ¿Qué sucede si pierdo mi frase de recuperación?
 
-Tu frase de recuperación, también llamada “frase secreta” o “frase semilla”, es tu único respaldo si pierdes el acceso a la billetera en tu dispositivo. Si la pierdes, los fondos de tu billetera se perderán para siempre. Por eso es importante guardarla en un lugar seguro, protegido no solo del robo o el extravío, sino también del fuego y el agua.
+Tu frase de recuperación, también conocida como "frase secreta" o "frase semilla", es tu única copia de seguridad si pierdes el acceso a tu billetera en tu dispositivo. Si pierdes tu frase de recuperación, el contenido de tu billetera se perderá para siempre. This is why it’s important to store it somewhere safe, from not only theft or loss, but fire or water damage too.
 
-### ¿Las billeteras de Ethereum pueden guardar Bitcoin?
+### ¿Pueden las billeteras Ethereum contener Bitcoin?
 
-Las billeteras de Ethereum pueden guardar Bitcoin, pero en forma “envuelta”, como el token cbBTC de Coinbase. Si quieres tener Bitcoin original, tendrás que crear una billetera que funcione en la red Bitcoin, como [Exodus](https://www.exodus.com/) o [BlueWallet](https://bluewallet.io/).
+Ethereum wallets can hold Bitcoin, but in a “wrapped” form, such as Coinbase’s cbBTC token. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [BlueWallet](https://bluewallet.io/).
 
 ---
 
 **Autor**
 
-[Tetranome](https://twitter.com/Tetranome) es el líder de Contenido y Diseño de Bankless Academy, enfocado en el recorrido de aprendizaje, la interfaz y experiencia de usuario, y el arte de la plataforma.
+[Tetranome](https://twitter.com/Tetranome) es responsable de contenido y diseño en Bankless Academy, y se centra en el proceso de aprendizaje, la interfaz y la experiencia del usuario, y el diseño de la plataforma.
 
-**Patrocinador**
+Patrón
 
-Esta guía es posible gracias a Zerion.
+Esta guía está potenciada por Zerion.
