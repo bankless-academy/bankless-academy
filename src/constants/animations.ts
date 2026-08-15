@@ -1,10 +1,20 @@
-import i18next from 'i18next'
-
+// NOTE: these strings are translation KEYS, not translated text.
+//
+// They used to be written as `i18next.t('...')` at module scope, which
+// evaluates ONCE at import time and freezes whatever language happened to be
+// active then. Switching language afterwards never updated them, so a reader
+// could see a Portuguese lesson with a German animation title, and only a hard
+// refresh (which re-imports the module) appeared to fix it.
+//
+// Translate at RENDER time instead: `t(animation.name)` / `t(animation.type)`.
+// Keeping the raw English here also makes `animation.type === 'Animation'` in
+// Animation.tsx a reliable comparison; against a translated value it broke in
+// every language that renders that word differently.
 export const ANIMATIONS = {
   // Bitcoin Basics
   bitcoin: {
-    name: i18next.t('Sending a Bitcoin Transaction'),
-    type: i18next.t('Animation'),
+    name: 'Sending a Bitcoin Transaction',
+    type: 'Animation',
     description: 'Animation description',
     socialImageLink: null,
     steps: [
@@ -16,8 +26,8 @@ export const ANIMATIONS = {
   },
   // Staking on Ethereum
   'validating-tx-with-ethereum-staking': {
-    name: i18next.t('Ethereum Proof-of-Stake consensus'),
-    type: i18next.t('Animation'),
+    name: 'Ethereum Proof-of-Stake consensus',
+    type: 'Animation',
     description: 'Validating transactions when staking with Ethereum.',
     socialImageLink: null,
     steps: [
@@ -32,8 +42,8 @@ export const ANIMATIONS = {
   },
   // Ethereum Basics
   swap: {
-    name: i18next.t('Using a dApp'),
-    type: i18next.t('Interactive Simulation'),
+    name: 'Using a dApp',
+    type: 'Interactive Simulation',
     description: 'Making a swap on a DEX',
     socialImageLink: null,
     steps: [
@@ -46,8 +56,8 @@ export const ANIMATIONS = {
     ],
   },
   send: {
-    name: i18next.t('Sending a Payment'),
-    type: i18next.t('Interactive Simulation'),
+    name: 'Sending a Payment',
+    type: 'Interactive Simulation',
     description: 'Sending a Payment',
     socialImageLink: null,
     steps: [
@@ -60,8 +70,8 @@ export const ANIMATIONS = {
     ],
   },
   ethereum: {
-    name: i18next.t('How does sending a payment work on Ethereum?'),
-    type: i18next.t('Animation'),
+    name: 'How does sending a payment work on Ethereum?',
+    type: 'Animation',
     description: 'How it Works',
     socialImageLink: null,
     steps: [

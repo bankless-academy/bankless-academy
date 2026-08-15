@@ -1,3 +1,4 @@
+import { kv } from '@vercel/kv'
 import { GetServerSideProps } from 'next'
 import {
   Box,
@@ -19,7 +20,6 @@ import { MetaData } from 'components/Head'
 import Layout from 'layout/Layout'
 import ExternalLink from 'components/ExternalLink'
 import { ExploreType } from 'entities/explore'
-import { fetchBE } from 'utils/server'
 import Card from 'components/Card'
 import Helper from 'components/Helper'
 import { useSmallScreen } from 'hooks'
@@ -39,14 +39,18 @@ export const getServerSideProps: GetServerSideProps<
   ExplorePageProps
 > = async () => {
   try {
-    const explore = await fetchBE(
-      `https://app.banklessacademy.com/api/cache/explore`
-    )
+    // Read KV directly. This used to fetch the page's OWN public URL
+    // (`https://app.banklessacademy.com/api/cache/explore`) from inside the
+    // serverless function, so every render went function -> public internet ->
+    // Vercel edge -> a second function -> KV and back. That round trip is why
+    // an uncached /explore took ~16s while /api/cache/explore alone took 0.4s.
+    // `/api/cache/[cache]` does exactly this one call, so nothing else is lost.
+    const explore: any = await kv.get('explore')
 
     return {
       props: {
         pageMeta,
-        initialData: explore?.data || [],
+        initialData: explore?.data || explore || [],
       },
     }
   } catch (error) {

@@ -297,7 +297,10 @@ const Animation = ({
       >
         <Simulation>
           <SimulationTitle>
-            {`${animation.type}: ${animation.name} - ${
+            {/* Translated here, not in constants/animations.ts: those are keys
+                frozen at import time, which is how a pt-br lesson ended up with
+                a German animation title. */}
+            {`${t(animation.type)}: ${t(animation.name)} - ${
               animationStepLS + 1
             } / ${animationLength}`}
           </SimulationTitle>
