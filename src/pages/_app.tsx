@@ -1,5 +1,10 @@
-// MUST be first: installs a server-side localStorage stub so components
-// that read storage during render can be prerendered. See the file for why.
+// TEMPORARY (cold-start investigation): records when the module loader first
+// reached this file. Safe ahead of ssrStorage — it has no imports of its own
+// and touches nothing but process.uptime().
+import { mark } from 'utils/bootTiming'
+// MUST be first among modules with side effects: installs a server-side
+// localStorage stub so components that read storage during render can be
+// prerendered. See the file for why.
 import 'utils/ssrStorage'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
@@ -31,6 +36,9 @@ const Web3Providers = dynamic(
 import 'utils/translation'
 import { AppProvider } from 'contexts/AppContext'
 import { t } from 'i18next'
+
+// Runs after every import above has finished evaluating.
+mark('_app-imports-done')
 
 
 const App = ({

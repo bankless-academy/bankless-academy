@@ -13,9 +13,11 @@
 //
 // Remove this once the cause is identified — it logs on every dynamic render.
 import type { GetServerSideProps, GetServerSidePropsContext } from 'next'
+import { getMarks, mark } from 'utils/bootTiming'
 
 // Captured when this module is first evaluated, i.e. during cold start.
 const MODULE_LOAD_UPTIME = process.uptime()
+mark('ssrTiming')
 
 /**
  * Wraps a getServerSideProps so each request logs one greppable line:
@@ -47,7 +49,9 @@ export const withSsrTiming = (
           1
         )}s cold=${isCold ? 'YES' : 'no'} modLoad=${MODULE_LOAD_UPTIME.toFixed(
           1
-        )}s gssp=${gssp}ms region=${process.env.VERCEL_REGION || 'local'}`
+        )}s gssp=${gssp}ms region=${
+          process.env.VERCEL_REGION || 'local'
+        } marks=[${getMarks()}]`
       )
       // Also expose it to the browser, so it can be read from devtools
       // (Network -> Timing) without needing Vercel log access.

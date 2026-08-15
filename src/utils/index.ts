@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable no-console */
+import { mark as _mark } from 'utils/bootTiming'
 import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
@@ -37,6 +38,7 @@ import { lensGraphQLClient } from 'utils/gql/lens'
 import { ACHIEVEMENTS } from 'constants/achievements'
 import { INDEXER_URL, INDEXER_URL_BACKUP, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
 import { triggerHaptic as tactusTriggerHaptic } from 'tactus'
+_mark('utils-index-done')
 
 declare global {
   interface Window {
