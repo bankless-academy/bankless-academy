@@ -1,10 +1,10 @@
 ---
-TITLE: Les bases de la blockchain
-DESCRIPTION: Découvrez l'architecture fondamentale de la technologie blockchain.
+TITLE: Les bases de la Blockchain
+DESCRIPTION: Découvrez l’architecture fondamentale de la technologie blockchain.
 LANGUAGE: Français
 WRITERS: iSpeakNerd
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: ChatGPT o1
 LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 FORMAT: LESSON
 ---
@@ -30,70 +30,70 @@ ________________________________________________________________________________
 
 # Introduction
 
-La technologie `blockchain` est une façon révolutionnaire de stocker et de suivre des données, tout en les rendant accessibles à tous. Elle organise les données dans une liste publique unique de toutes les transactions passées, que chacun peut consulter mais que personne ne peut modifier. Cette liste publique s'appelle le `registre` de la blockchain.
+La technologie de la `blockchain` représente une manière révolutionnaire de stocker et de suivre des données, tout en rendant ces données accessibles à tout le monde. C’est une méthode d’organisation des informations en une liste publique unique de toutes les transactions historiques, que chacun peut consulter mais qu’aucun utilisateur ne peut modifier. Cette liste publique de transactions est collectivement appelée le `registre` (ledger) de la blockchain.
 
-Après avoir exploré les couches d'une blockchain, vous comprendrez la structure qu'affiche un outil appelé `explorateur de blocs` : la **liste** des blocs, les **transactions** qu'ils contiennent, et le **détail** de chaque transaction. Pour le voir en action, essayez [Etherscan](https://etherscan.io/), un explorateur populaire pour Ethereum.
+After examining the layers of a blockchain, you will understand the structure that a blockchain tool called a `block explorer` displays: the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction. To see it in action, try [Etherscan](https://etherscan.io/), a popular block explorer for Ethereum.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/introduction-1e34f31e.svg)
 
-# Structure de la blockchain
+# Structure de la Blockchain
 
-Le mot blockchain peut s'employer comme nom (la blockchain Bitcoin) ou comme adjectif (la technologie blockchain). Dans les deux cas, `blockchain` désigne toute la structure sur laquelle reposent les cryptomonnaies.
+The term blockchain can be used as a noun (the Bitcoin blockchain) or as an adjective (blockchain technology). Dans tous les cas, le mot `blockchain` fait référence à l’infrastructure complète sur laquelle reposent les cryptomonnaies.
 
-En zoomant depuis l'extérieur, une blockchain comporte trois niveaux de structure :
+En zoomant depuis l’extérieur, on peut distinguer 3 niveaux dans la structure d’une blockchain :
 
-1. La `blockchain` dans son ensemble est faite de blocs reliés les uns aux autres dans l'ordre
-2. Les `blocs` sont des groupes de transactions rassemblées
-3. Les `transactions` sont des transferts de valeur, ou des instructions envoyées à des programmes, entre les `adresses` du réseau
+1. La `blockchain` dans son ensemble est constituée de blocs reliés les uns aux autres dans un ordre précis
+2. Les `blocs` sont composés de groupes de transactions regroupées
+3. `Transactions` are transfers of value, or instructions to programs, between `addresses` on the network
 
-Ces trois niveaux forment ensemble un registre cryptographique : un historique inaltérable de toutes les transactions effectuées sur le réseau.
+Ces trois niveaux forment ensemble un registre cryptographique : un historique inaltérable de toutes les transactions effectuées sur le réseau.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-1c9a9ed4.svg)
 
 # Knowledge Check 1
 
-Qu'est-ce qu'une blockchain ?
+Qu’est-ce qu’une blockchain ?
 
-- [ ] Des groupes de transactions organisés appelés blocs
+- [ ] Des groupes de transactions organisées appelées blocs
 
-> ℹ️ Réessayez ! Les blocs font partie de la structure, mais ce n'est pas la seule bonne réponse.
+> ℹ️ Try again! Blocks are part of the structure, but they aren’t the only correct answer.
 
-- [ ] Un registre partagé que chacun peut consulter mais que personne ne peut modifier
+- [ ] A shared record anyone can view but no one can edit
 
-> ℹ️ Réessayez ! C'est vrai, mais ce n'est pas la seule bonne réponse.
+> ℹ️ Try again! This is true, but it isn’t the only correct answer.
 
-- [ ] Des blocs reliés les uns aux autres dans l'ordre
+- [ ] Des blocs reliés les uns aux autres dans une séquence
 
-> ℹ️ Réessayez ! Cela décrit la chaîne de blocs, mais ce n'est pas la seule bonne réponse.
+> ℹ️ Try again! This describes the chain of blocks, but it isn’t the only correct answer.
 
-- [x] Toutes les réponses ci-dessus
+- [x] All of the above
 
-> ℹ️ Correct ! Les trois sont vraies : une blockchain est un registre partagé et inaltérable de transactions groupées en blocs, reliés dans l'ordre.
+> ℹ️ Correct! All three are true: a blockchain is a shared, uneditable record of transactions grouped into blocks, linked in sequence.
 
 # Examiner le registre
 
-Dans les systèmes monétaires habituels, nous faisons confiance à des tiers comme les banques pour tenir le compte de ce que possède chacun. Mais pour être vraiment bankless, nous voulons un système qui ne nous oblige pas à faire confiance à une seule entité pour gérer le registre.
+Dans les systèmes monétaires traditionnels, nous faisons confiance à des tiers comme les banques pour tenir à jour le montant d’argent que chacun possède. Mais, pour être vraiment *Bankless*, nous voulons un système qui ne nécessite pas de faire confiance à une entité unique pour gérer le registre.
 
-Le `registre` est la liste de TOUTES les transactions jamais réalisées sur une blockchain, et chacun peut la consulter sur les blockchains `publiques`. Des groupes distincts de transactions du registre forment les blocs qui, ensemble, composent la blockchain.
+Le `registre` est la liste de TOUTES les transactions jamais effectuées sur une blockchain. Pour les blockchains `publiques`, tout le monde peut le consulter. Des groupes distincts de transactions du registre forment les blocs qui, réunis, constituent la blockchain.
 
-Quand de nouvelles transactions sont ajoutées au registre, les soldes de chaque `adresse` sont mis à jour ; les transactions passées ne peuvent pas être modifiées. C'est comme si chacun pouvait consulter à tout moment l'historique complet du compte bancaire de tout le monde.
+Lorsque de nouvelles transactions sont ajoutées au registre, les soldes stockés à chaque `adresse` sont mis à jour. Les transactions passées ne peuvent pas être modifiées. It’s like letting anyone look at everyone’s all-time bank account transaction history, at any time.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-838ca24f.svg)
 
-# Les transactions dans le registre
+# Les transactions sur le registre
 
-Prenons quelques exemples de transactions :
+Observons quelques transactions d’exemple :
 
 - Alice envoie 5 ETH à Bob
 - Bob envoie 2 ETH à Charlie
 
-Chaque transaction indique la _variation_ du montant de cryptomonnaie pour chaque adresse : le résultat de toutes les transactions EST donc le montant que possède chaque adresse.
+Les transactions individuelles montrent la *variation* du montant de cryptomonnaie pour chaque adresse. Ainsi, la somme de toutes les transactions correspond au montant final de cryptomonnaie détenu par chaque adresse.
 
 ---
 
-⇒ Alice a perdu 5 ETH
+⇒ Alice a perdu 5 ETH ⇒ Bob a gagné au total 3 ETH (reçu 5, envoyé 2) ⇒ Charlie a gagné 2 ETH
 
-⇒ Bob a gagné 3 ETH au total (5 reçus, 2 envoyés)
+⇒ Bob a gagné 3 ETH au total (reçu 5, envoyé 2)
 
 ⇒ Charlie a gagné 2 ETH
 
@@ -101,171 +101,171 @@ Chaque transaction indique la _variation_ du montant de cryptomonnaie pour chaqu
 
 # Knowledge Check 2
 
-Parmi les affirmations suivantes, laquelle est vraie pour les registres des blockchains publiques ?
+Which of the following is true for public blockchain ledgers?
 
-- [ ] Toutes les transactions sont publiques et les transactions passées sont immuables
+- [ ] Toutes les transactions sont publiques et les transactions passées sont inchangeables
 
-> ℹ️ Réessayez ! C'est vrai, mais ce n'est pas la seule affirmation exacte.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [ ] Le registre indique combien de cryptomonnaie possède actuellement chaque adresse
+- [ ] Le registre indique combien de cryptomonnaies chaque adresse possède actuellement
 
-> ℹ️ Réessayez ! C'est vrai, mais ce n'est pas la seule affirmation exacte.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [ ] Le registre grandit à mesure que de nouvelles transactions s'y ajoutent
+- [ ] Le registre grandit au fur et à mesure que de nouvelles transactions y sont ajoutées
 
-> ℹ️ Réessayez ! C'est vrai, mais ce n'est pas la seule affirmation exacte.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [x] Toutes les réponses ci-dessus
+- [x] All of the above
 
-> ℹ️ Correct ! Le registre est public, immuable, tient les soldes à jour et grandit à chaque nouvelle transaction.
+> ℹ️ Correct! The ledger is public, unchangeable, keeps address balances up to date, and grows with every new transaction.
 
 # La décentralisation
 
-Les transactions inscrites dans un registre `blockchain` sont non seulement immuables, elles sont aussi partagées et réparties sur un vaste réseau d'ordinateurs. Pour qu'aucune entité ne puisse modifier les données à elle seule, des copies du registre sont conservées sur de nombreux ordinateurs du réseau, appelés `nœuds`.
+Non seulement les transactions incluses dans le registre d’une `blockchain` sont inaltérables, mais elles sont également partagées et distribuées sur un large réseau d’ordinateurs. To make sure that no single entity has the power to change the data, copies of the blockchain ledger are stored on many computers, called `nodes`, across the network.
 
-Ce partage des données est ce qui rend le registre `décentralisé`. Aucune autorité ni entité unique ne contrôle les données. Des blockchains comme Ethereum sont aussi `publiques`, car chacun peut consulter le registre.
+Ces données partagées constituent ce qui rend le registre de la blockchain `décentralisé`. Aucune autorité ou entité unique ne contrôle les informations. Les blockchains comme Ethereum sont également dites `publiques`, car leur registre peut être consulté par n’importe qui.
 
-Pour cette leçon, retenez simplement que les données du registre sont partagées entre les nombreux ordinateurs qui font tourner le réseau Ethereum.
+For this lesson, just remember that the ledger data is shared across the many computers running the Ethereum network.
 
 # Knowledge Check 3
 
-Qu'est-ce qui rend une blockchain décentralisée ?
+Qu’est-ce qui rend une blockchain décentralisée ?
 
-- [ ] Une seule entité peut écrire dans la blockchain
+- [ ] Une seule entité peut inscrire des données sur la blockchain
 
-> ℹ️ Réessayez ! Une entité unique aux commandes, c'est l'inverse de la décentralisation.
+> ℹ️ Try again! A single entity in control is the opposite of decentralization.
 
-- [ ] Elle respecte des critères de décentralisation fixés par l'État
+- [ ] Elle répond aux exigences de décentralisation fixées par le gouvernement
 
-> ℹ️ Réessayez ! La décentralisation vient de la conception du réseau, pas d'une validation officielle.
+> ℹ️ Try again! Decentralization comes from the network’s design, not from government approval.
 
-- [x] Aucune entité ne contrôle le registre, stocké sur de nombreux ordinateurs
+- [x] No single entity controls the ledger, stored on many computers
 
-> ℹ️ Correct ! Conserver des copies du registre sur de nombreux nœuds fait qu'aucune entité ne peut contrôler ou modifier les données.
+> ℹ️ Correct! Storing copies of the ledger on many nodes means no single entity has the power to control or change the data.
 
 - [ ] Le registre est stocké sur un seul serveur sécurisé
 
-> ℹ️ Réessayez ! Un serveur unique serait un point de contrôle central. Les copies du registre sont réparties sur de nombreux nœuds.
+> ℹ️ Try again! A single server would be a central point of control. Copies of the ledger are stored on many nodes.
 
-# Anatomie d'un bloc
+# Anatomie d’un bloc
 
-Une caractéristique importante des blockchains est que les données d'une transaction passée ne peuvent plus être modifiées une fois inscrites dans un bloc. Chaque bloc possède en effet un `hash de bloc` unique, comme une empreinte digitale, qui sert à relier les blocs les uns après les autres. Personne ne peut modifier une transaction passée sans changer cette empreinte, ainsi que celle de TOUS les blocs suivants, puisque chaque empreinte dépend de la précédente.
+Une caractéristique importante des blockchains est que les données de transaction passées ne peuvent plus être modifiées après avoir été incluses dans un bloc. En effet, chaque bloc possède un `hash de bloc` unique, semblable à une empreinte digitale, qui sert à relier les blocs les uns aux autres dans l’ordre. Personne ne peut modifier les transactions passées sans changer cette empreinte digitale, ainsi que celle de TOUS les blocs suivants, car chaque empreinte dépend de la précédente.
 
-Chaque `bloc` est donc simplement un groupe de transactions, plus une empreinte unique (son `hash de bloc`) calculée à partir de son contenu. Les blocs sont enchaînés parce que chacun renvoie à l'empreinte du bloc précédent, ce qui forme une _**chaîne**_ continue.
+So each `block` is simply a group of transactions, plus a unique fingerprint (its `block hash`) computed from the block’s contents. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block**chain**.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
 
 # Knowledge Check 4
 
-À quoi sert un hash de bloc ?
+Quel est le but du *hash* de bloc ?
 
-- [ ] À chiffrer les données du bloc pour que personne ne puisse les lire
+- [ ] Chiffrer les données du bloc afin que personne ne puisse les lire
 
-> ℹ️ Réessayez ! Les données du bloc restent lisibles publiquement. Le hash est une empreinte, pas un chiffrement.
+> ℹ️ Try again! Block data stays publicly readable. The hash is a fingerprint, not encryption.
 
-- [x] À relier les blocs entre eux et rendre les transactions passées immuables
+- [x] To link blocks together and keep past transaction data unchangeable
 
-> ℹ️ Correct ! Chaque bloc renvoie à l'empreinte du précédent : modifier une donnée passée casserait tous les blocs suivants.
+> ℹ️ Correct! Each block references the previous block’s fingerprint, so changing past data would break every block that follows.
 
-- [ ] À garantir que les transactions arrivent à la bonne adresse
+- [ ] S’assurer que les transactions sont envoyées à la bonne adresse
 
-> ℹ️ Réessayez ! Ce sont les adresses qui déterminent la destination des fonds. Le hash de bloc relie les blocs.
+> ℹ️ Try again! Addresses handle where funds go. The block hash links blocks together.
 
-- [ ] À garantir que la blockchain reste décentralisée
+- [ ] S’assurer que la blockchain reste décentralisée
 
-> ℹ️ Réessayez ! La décentralisation vient de la répartition du registre sur de nombreux nœuds, pas du hash de bloc.
+> ℹ️ Try again! Decentralization comes from distributing the ledger across many nodes, not from the block hash.
 
-# À l'intérieur d'un bloc
+# À l’intérieur d’un bloc
 
-Rappelez-vous : les données d'un `bloc` sont simplement un groupe de transactions. En regardant à l'intérieur d'un bloc, on voit une liste de transactions et quelques informations sur celui qui l'a créé.
+Rappelons que les données d’un `bloc` ne sont qu’un ensemble de transactions regroupées. En examinant un bloc, nous voyons la liste des transactions et quelques informations sur la personne qui a créé le bloc.
 
-Dans notre exemple précédent, ces deux transactions pourraient être regroupées dans un même bloc, ou réparties dans plusieurs blocs au fil du temps. Quel que soit le bloc qui les contient, elles finissent toutes par être ajoutées au registre.
+Reprenons l’exemple précédent à propos du registre de la blockchain : les deux transactions dont nous avons parlé peuvent se trouver dans un même bloc, ou être réparties sur plusieurs blocs au fil du temps. Mais peu importe le bloc dans lequel elles sont incluses, elles finissent par être ajoutées au registre global de la blockchain.
 
 - Alice envoie 5 ETH à Bob
 - Bob envoie 2 ETH à Charlie
 
-Rappelez-vous aussi que chaque bloc doit renvoyer au `hash de bloc` du bloc précédent pour relier la chaîne.
+Souvenez-vous que chaque bloc doit aussi référencer le `hash` du bloc précédent pour relier la blockchain.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b0c2dd11.svg)
 
 # Knowledge Check 5
 
-Quelles informations un bloc contient-il ?
+What information is contained in a block?
 
-- [ ] Toutes les informations contenues dans les blocs précédents
+- [ ] All the information contained in previous blocks
 
-> ℹ️ Réessayez ! Un bloc renvoie seulement au hash du bloc précédent. Il ne recopie pas toutes les données passées.
+> ℹ️ Try again! A block only references the previous block’s hash. It doesn’t copy all past data.
 
-- [ ] Tout ce qui concerne la blockchain, car la taille d'un bloc est illimitée
+- [ ] Tout ce qui peut être utile à la blockchain, étant donné que la taille d’un bloc est illimitée
 
-> ℹ️ Réessayez ! Un bloc est un groupe défini de transactions, pas un contenant illimité.
+> ℹ️ Try again! A block is a discrete group of transactions, not an unlimited container.
 
-- [x] Des données de transaction et une référence au bloc précédent
+- [x] Transaction data and a reference to the previous block
 
-> ℹ️ Correct ! Un bloc est un groupe de transactions accompagné du hash du bloc précédent, ce qui enchaîne les blocs.
+> ℹ️ Correct! A block is a group of transactions plus the previous block’s hash, which chains the blocks together.
 
-- [ ] Toutes les transactions générées pendant une durée fixe
+- [ ] Toutes les transactions générées dans un laps de temps fixe
 
-> ℹ️ Réessayez ! Les transactions peuvent être regroupées dans un bloc ou réparties sur plusieurs blocs au fil du temps.
+> ℹ️ Try again! Transactions can be grouped into one block or spread across multiple blocks over time.
 
 # Les transactions individuelles
 
-Les données d'une blockchain sont simplement une liste de `transactions`, l'enregistrement de mouvements de monnaie entre utilisateurs. Chaque transaction doit être signée par la `signature numérique` de l'expéditeur pour être valide.
+Les données sur n’importe quelle blockchain correspondent simplement à une liste de `transactions`, c’est-à-dire des enregistrements de transferts de cryptomonnaie entre utilisateurs. Chaque transaction doit être signée par la `signature numérique` de l’expéditeur pour être valide.
 
-C'est ce que vous faites lorsque vous confirmez une transaction avec un portefeuille : vous la signez pour l'autoriser. Voyez cela comme l'équivalent numérique de la signature d'un chèque, d'un reçu ou d'un paiement par carte.
+C’est exactement ce que vous faites lorsque vous validez une transaction avec un portefeuille : vous la signez avec votre signature numérique pour l’autoriser. Vous pouvez considérer cela comme l’équivalent numérique d’une signature physique sur un chèque, un reçu ou une transaction par carte bancaire.
 
-Les transactions peuvent être simples, comme l'envoi d'actifs crypto, ou plus complexes, comme un échange d'actifs ou même le déploiement de code qui s'exécute quand il est déclenché : les `smart contracts`.
+Les transactions peuvent être simples, comme l’envoi de crypto-actifs, ou plus complexes, par exemple l’échange de crypto-actifs ou même le déploiement d’un code spécial qui s’exécute lorsqu’il est déclenché, appelé `smart contract`.
 
-Enfin, chaque transaction possède un identifiant numérique unique, son `hash de transaction`, que nulle autre ne partage. Cela permet de s'y référer facilement plus tard et garantit que ses détails ne pourront plus être modifiés.
+Enfin, chaque transaction possède un identifiant numérique unique, appelé son `hash de transaction`, que personne d’autre ne partage. Cela permet de référencer facilement une transaction particulière par la suite et garantit que les détails de cette transaction ne puissent pas être modifiés ultérieurement.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-de83e15c.svg)
 
 # Knowledge Check 6
 
-Les données d'une blockchain sont simplement une liste de transactions groupées en blocs. Parmi ces exemples, lequel en est une ?
+Les données sur une blockchain sont simplement une liste de transactions regroupées en blocs. Parmi les exemples de transactions, on trouve :
 
-- [x] Envoyer ou recevoir des actifs crypto
+- [x] Sending or receiving crypto assets
 
-> ℹ️ Correct ! Les transactions enregistrent des mouvements de monnaie entre utilisateurs, du simple transfert à l'interaction avec un smart contract.
+> ℹ️ Correct! Transactions record currency moving between users, from simple transfers to smart contract interactions.
 
-- [ ] Modifier la taille du bloc
+- [ ] Modifier la taille d’un bloc
 
-> ℹ️ Réessayez ! La taille d'un bloc n'est pas quelque chose qu'une transaction peut changer.
+> ℹ️ Try again! Block size isn’t something a transaction can change.
 
-- [ ] Modifier des données passées de la blockchain
+- [ ] Éditer les données passées de la blockchain
 
-> ℹ️ Réessayez ! Les données passées ne peuvent pas être modifiées. C'est une caractéristique fondamentale des blockchains.
+> ℹ️ Try again! Past blockchain data cannot be changed. That’s a core feature of blockchains.
 
 - [ ] Toutes les réponses ci-dessus
 
-> ℹ️ Réessayez ! Une seule des réponses ci-dessus est une transaction valide.
+> ℹ️ Try again! Only one of the above is a valid blockchain transaction.
 
-# Les adresses des utilisateurs
+# Les adresses utilisateurs
 
-Une `adresse` est un identifiant public que chacun peut consulter sur la blockchain. Comme une adresse e-mail, tout le monde peut y envoyer des fonds, mais seule la personne qui détient la `clé privée` peut débloquer et utiliser les fonds qui s'y trouvent.
+Une `adresse` est un identifiant public que tout le monde peut consulter sur la blockchain. Comme pour une adresse e-mail, n’importe qui peut envoyer des fonds à cette adresse, mais seule la personne qui possède la `clé privée` peut déverrouiller et utiliser ces fonds.
 
-Sur Ethereum, une adresse commence toujours par \_0x\_\_\_\_\_\_\_\_\_\_ et compte 42 caractères, chiffres et lettres, dérivés de la `clé publique` de cette adresse.
+On Ethereum, an address always starts with \_0x\_\_\_\_\_\_\_\_\_\_ and is 42 characters of numbers and letters derived from the `public key` of that address.
 
-En consultant une transaction dans un explorateur de blocs, on voit les adresses De : et Vers :. Cela ne dit pas qui sont les _personnes_ derrière ces adresses, mais permet à chacun de suivre les mouvements de cryptomonnaie dans le registre.
+Lorsque vous consultez une transaction dans un explorateur de blocs, vous pouvez voir l’adresse d’envoi (From:) et l’adresse de réception (To:). Cela ne révèle pas l’identité des *personnes* qui contrôlent ces adresses, mais permet à tout utilisateur de suivre les déplacements de cryptomonnaie à travers le registre de la blockchain.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-57e130d9.svg)
 
 # Knowledge Check 7
 
-Qu'est-ce qui est vrai à propos des adresses blockchain ?
+Qu’est-ce qui est vrai à propos des adresses sur la blockchain ?
 
-- [ ] Ce sont les identifiants publics des différentes entités d'une blockchain
+- [ ] Elles sont les identifiants publics des différentes entités sur une blockchain
 
-> ℹ️ Réessayez ! C'est vrai, mais ce n'est pas la seule affirmation exacte.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [ ] Sur Ethereum, elles commencent toujours par _0x_
+- [ ] Elles commencent toujours par *0x* sur Ethereum
 
-> ℹ️ Réessayez ! C'est vrai, mais ce n'est pas la seule affirmation exacte.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [ ] Celui qui détient la clé privée peut utiliser les fonds de cette adresse
+- [ ] Whoever controls the private key can use the funds at that address
 
-> ℹ️ Réessayez ! C'est vrai, mais ce n'est pas la seule affirmation exacte.
+> ℹ️ Try again! This is true, but it isn’t the only true statement.
 
-- [x] Toutes les réponses ci-dessus
+- [x] All of the above
 
-> ℹ️ Correct ! Les adresses sont des identifiants publics, commencent par 0x sur Ethereum, et leurs fonds sont débloqués par la clé privée.
+> ℹ️ Correct! Addresses are public identifiers, start with 0x on Ethereum, and their funds are unlocked by the private key.
