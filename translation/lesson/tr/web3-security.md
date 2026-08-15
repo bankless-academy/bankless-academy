@@ -1,10 +1,10 @@
 ---
-TITLE: Web3 Güvenliği
-DESCRIPTION: Kendini ve cüzdanını web3'teki en yaygın dolandırıcılıklardan koru.
-LANGUAGE: Türkçe
+TITLE: Web3 Security
+DESCRIPTION: Protect yourself and your wallet from the most common scams in web3.
+LANGUAGE: English
 EDITORS: Claude (Anthropic AI, 2026 review)
 WRITERS:
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/web3-security
 FORMAT: LESSON
 ---
@@ -28,320 +28,320 @@ ________________________________________________________________________________
 
 ---
 
-# Giriş
+# Introduction
 
-Dijital sahiplik web3'ün yeni özelliğidir. Blokzincirler, kripto paralar ve NFT'ler sayesinde web3, sahipliği ve gücü kullanıcılara geri verir. Dijital finansal ürünlere çevrimiçi sahip olmak çoğu kişi için yeni. Bu deneyimsizlik, avcı ruhlu kişilere başkalarının varlıklarını dolandırma ve çalma fırsatı verir. Bu dolandırıcılıklar çok işe yarıyor, çünkü çoğu insan nasıl işlediklerini bilmiyor.
+Digital ownership is the new feature of web3. Using blockchains, cryptocurrencies, and NFTs, web3 gives ownership and power back to users. This online ownership of digital financial products is new for many, and that lack of experience gives opportunities for predatory people to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work.
 
-Ama dolandırıcılık sadece web3'e özgü değil; e-posta ve sosyal medya gibi web2 hizmetleri de dolandırıcılıkla dolu. Üstelik birçok web3 aracı hâlâ banka hesapları veya merkezi borsalar gibi web2 hizmetlerine bağlı, yani onları korumak da önemli. Tebrikler Academy Kaşifi: `web3` dünyasına açılırken seni koruyacak bilgiyle donanmak için zaman ayırıyorsun!
+But, it's not just web3 that suffers from scams, web2 services like email and social media are full of scams as well. In addition, many web3 tools are still tied to web2 services like bank accounts or centralized exchanges so protecting those is important too. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into `web3`!
 
-Bu ders şunları kapsayacak:
+This lesson will cover:
 
-- Web2 ve web3 güvenliği.
-- İnsanların paralarını en sık nasıl kaybettiği ve bundan nasıl korunacağın.
-- Cüzdan güvenliği için genel bir strateji.
-- Dolandırılan biri nasıl toparlanabilir.
+- Web2 & web3 security.
+- The most common ways people lose their funds and how to protect oneself from them.
+- A general strategy for wallet security.
+- How one can recover if they are the victim of a scam.
 
-# Web2'de Para
+# Money in Web2
 
-Web2'de parayı kurumlar insanlar adına tutar. Kullanıcı, parasına erişip onu kullanabilmek için kimliğini kuruma kanıtlamak zorundadır. Banka hesabı ya da `merkezi borsa` (CEX) gibi: bir giriş kimliği ve parola gerekir.
+In web2, the institutions hold money on behalf of people. A user must prove their identity to an institution in order to access and use their money. It’s the same as a bank account or a `centralized exchange` (CEX); one needs a login ID and a password.
 
-Bir dolandırıcının paranı ele geçirmesi için bu kimlik + parola ikilisi gerekir. Paranı korumakla kurumlar görevli olduğu için, sahte işlemler geri alınabilir; kredi kartı işlemine itiraz etmek gibi.
+For a scammer to gain access to your money, they need this ID + password combination. Because the institutions are charged with protecting your money, fraudulent transactions can be reversed - like a credit card transaction dispute.
 
 ![](https://app.banklessacademy.com/images/web3-security/money-in-web2-7e1a5fd1.svg)
 
-# Web3'te Para
+# Money in Web3
 
-Web3'te para farklı çalışır. Daha çok kilitli bir nakit cüzdanı gibidir; para bir kez harcandı mı gitmiştir. `Kurtarma ifadesi` (o özel gizli kelime dizisi) `özel anahtarlarını` açar, yani onu ele geçiren herkes cüzdanını kontrol eder. Onu _**asla**_ kimseye verme ve asla dijital ortamda saklama; fotoğraflar ve not uygulamaları ele geçirilebilir.
+In web3, money works differently. It’s more like a locked cash wallet; once money is spent, it’s gone. Your `seed phrase` (that special set of secret words) unlocks your `private keys`, so anyone who obtains it controls your wallet. _**Never**_ give it to anyone, and never store it digitally; photos and notes apps can get compromised.
 
-Ama tek hedef kurtarma ifaden değil: onayladığın tek bir kötü niyetli imza (bir işlem ya da mesaj), dolandırıcının kurtarma ifadeni hiç görmeden tokenlarını boşaltmasına yeter. Hem **kurtarma ifadeni** _hem de_ **imzanı** koru.
+But your seed phrase isn’t the only target: one malicious signature (a transaction or message you approve) can let a scammer drain your tokens without ever seeing your seed phrase. Protect your **seed phrase** _and_ your **signature**.
 
 ![](https://app.banklessacademy.com/images/web3-security/money-in-web3-f575b0f6.svg)
 
 # Knowledge Check 1
 
-Doğru mu yanlış mı? Dolandırıcılar, kurtarma ifadeni hiç bilmeden, seni kötü niyetli bir işlem ya da onay imzalamaya kandırarak cüzdanındaki tokenları boşaltabilir.
+True or false? Scammers can drain tokens from your wallet by tricking you into signing a malicious transaction or approval, without ever knowing your seed phrase.
 
-- [x] Doğru
+- [x] True
 
-> ℹ️ Doğru! Kötü niyetli bir imza ya da token onayı tek başına paranı teslim edebilir. İmzaladığın şeyi kurtarma ifaden kadar dikkatli koru.
+> ℹ️ Correct! A malicious signature or token approval can hand over your funds on its own. Protect what you sign as carefully as your seed phrase.
 
-- [ ] Yanlış
+- [ ] False
 
-> ℹ️ Tekrar dene! Tek hedef kurtarma ifaden değil; tek bir kötü niyetli onay veya imza da tokenlarını boşaltabilir.
+> ℹ️ Try again! Your seed phrase isn’t the only target; a single malicious approval or signature can drain your tokens too.
 
-# Kurtarma İfadesini Güvenle Saklamak
+# Secure Seed Storage
 
-Kurtarma ifadelerini güvenle saklamanın birçok yolu var, ama iyi bir başlangıç onu fiziksel bir ortamda (lamine kağıt veya benzeri) tutmak ve kendi evindeki suya ve ateşe dayanıklı bir kasada saklamaktır. `Kurtarma ifadesini` fotoğraf olarak ya da başka dijital yöntemlerle **saklama**, parola yöneticisinde bile.
+There are many methods for storing seed phrases securely, but a good start is to keep it on physical media (laminated paper or similar) and store it in a water- and fire-proof safe in your own home. **Do not** store a `seed phrase` as a photo or other digital methods - even in a password manager.
 
-Kurtarma ifadesi için kötü saklama yerleri:
+Bad places to store seed phrases include:
 
-- Dosya dolabı
-- Dijital not uygulaması
-- İş yerin
-- Dijital fotoğraf
+- In a filing cabinet
+- Digital notes application
+- At your workplace
+- Digital photo
 
-Kurtarma ifadeni nerede saklarsan sakla, ona yalnızca senin erişebildiğinden ve kaybolmaya ya da zarar görmeye karşı korunduğundan emin ol. Gelecekte ne olacağını asla bilemezsin!
+Wherever you store your seed phrase, you should ensure that only you have access to it and that it is protected from loss and destruction. You never know what might happen in the future!
 
-# Parolalarını Koru
+# Protect your Passwords
 
-Sağlıklı parola kullanımı ve yönetimi, günlük internet keşfinin önemli bir parçasıdır.
+Healthy password usage and management is an important piece of everyday internet exploration.
 
-Parolalar, çevrimiçi kullandığın her web2 hizmeti için farklı olmalı. Buna e-posta, merkezi borsalar ve diğer hizmet hesapları dahil. Birinin tek bir hesabın kimlik + parolasını ele geçirmesi zaten sorun, ama o ikili bütün hesaplarını açıyorsa çok daha kötü!
+Passwords should be different for each and every web2 service used online. This includes services like email, centralized exchanges, and other service accounts. It’s problematic if someone manages to get the ID + password for one account, but it’s far worse if that combination unlocks all of your accounts!
 
-1Password, Bitwarden ve KeePass gibi `parola yöneticisi` uygulamaları birden fazla parolayı güvenle saklar ve şifreler; hatta yeni ve yüksek güvenlikli parolalar üretip otomatik kaydedebilir. Kullanıcının tek bir ana parolayı hatırlaması yeter.
+`Password manager` applications like 1Password, Bitwarden, and KeePass securely store and encrypt multiple passwords; they can even generate new high-security passwords and store them automatically. The user just has to remember a single master password.
 
-Web3 `kurtarma ifadesini` bir parola yöneticisinde **saklama**; tek bir parola ihlali tüm web3 varlıklarını ele geçirmeye yeter ve varlıklarını senin için kurtaracak kimse yoktur.
+Do **not** store a web3 `seed phrase` in a password manager; it takes just one password breach to obtain all of your web3 assets and there is no one to recover your assets for you.
 
 # Knowledge Check 2
 
-Parola yöneticileri neden faydalıdır?
+Why are password managers helpful?
 
-- [ ] Kullanmak için sadece ana parolanı hatırlaman yeter.
+- [ ] People only have to remember their master password to use them.
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek faydası bu değil.
+> ℹ️ Try again! This is true, but it isn’t the only benefit.
 
-- [ ] Güçlü ve benzersiz parolalar üretip saklarlar.
+- [ ] They generate and store strong, unique passwords.
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek faydası bu değil.
+> ℹ️ Try again! This is true, but it isn’t the only benefit.
 
-- [ ] Parolaları güvende tutmak için şifrelerler.
+- [ ] They encrypt passwords to keep them secure.
 
-> ℹ️ Tekrar dene! Bu doğru, ama tek faydası bu değil.
+> ℹ️ Try again! This is true, but it isn’t the only benefit.
 
-- [x] Yukarıdakilerin hepsi
+- [x] All of the above
 
-> ℹ️ Doğru! Parola yöneticileri her hesap için benzersiz parola üretir, şifreler ve saklar. Sen sadece ana parolayı hatırlarsın.
+> ℹ️ Correct! Password managers generate, encrypt, and store unique passwords for every account. You only remember the master password.
 
-# İki Faktörlü Kimlik Doğrulama
+# Two Factor Authentication
 
-2FA olarak da bilinen `iki faktörlü kimlik doğrulama`, web2 güvenliğinin ikinci katmanıdır.
+`Two Factor Authentication`, also known as 2FA, is a secondary layer of web2 security.
 
-Güçlü parolalara rağmen birçok kişinin hesabı hacklendi ya da bilgileri çalındı. Web2 siteleri (hatta `parola yöneticileri`) genelde ikinci katman olarak 2FA sunar: normal parolanın yanında, başka bir cihazdan veya uygulamadan kanıt.
+Many people have had their accounts hacked or credentials stolen despite strong passwords. Web2 websites (and even `password managers`) often support 2FA as a second layer: proof from another device or app, in addition to your normal password.
 
-Her 2FA aynı değil:
+Not all 2FA is equal:
 
-🥉 **SMS kodları** en zayıf seçenek: dolandırıcılar `sosyal mühendislik` ile numaranı kendi cihazlarına taşıyıp (“SIM swap”) kodlarını alır. Yine de SMS, hiç 2FA olmamasından iyidir.
+🥉 **SMS codes** are the weakest option: scammers use `social engineering` to “SIM-swap” your phone number onto their own device and receive your codes. Still, SMS beats having no 2FA.
 
-🥈 **Doğrulayıcı uygulamalar** (Google Authenticator, 2FAS veya Aegis gibi) kodları cihazında üretir; çoğu hesap için sağlam bir seçim.
+🥈 **Authenticator apps** (like Google Authenticator, 2FAS, or Aegis) generate codes on your device, a solid choice for most accounts.
 
-🥇 **Passkey'ler ve donanım güvenlik anahtarları** (YubiKey gibi) oltalamaya dayanıklı altın standarttır: gerçek siteye bağlıdırlar, sahte bir kopyada giriş yapmazlar.
+🥇 **Passkeys and hardware security keys** (like a YubiKey) are the phishing-resistant gold standard: tied to the real website, they simply won’t log in on a fake look-alike.
 
 ![](https://app.banklessacademy.com/images/web3-security/two-factor-authentication-7fa9bfdf.svg)
 
 # Knowledge Check 3
 
-İki faktörlü kimlik doğrulama neden şiddetle tavsiye edilir?
+Why is two-factor authentication strongly recommended?
 
-- [ ] 2FA açıkken bir hesabı hacklemek imkânsızdır.
+- [ ] It’s impossible to hack an account when the user has 2FA enabled.
 
-> ℹ️ Tekrar dene! 2FA güvenliği çok artırır, ama hiçbir yöntem hesabı hacklenemez yapmaz. Örneğin SIM swap, SMS kodlarını aşabilir.
+> ℹ️ Try again! 2FA greatly improves security, but no method makes an account impossible to hack. SIM-swaps can defeat SMS codes, for example.
 
-- [x] Web2 hesaplarına ek bir güvenlik katmanı ekler.
+- [x] It adds another layer of security to web2 accounts.
 
-> ℹ️ Doğru! 2FA, parolanın üstüne başka bir cihazdan veya uygulamadan kanıt ister; çalınan parola tek başına yetmez.
+> ℹ️ Correct! 2FA requires proof from another device or app on top of your password, so a stolen password alone isn’t enough.
 
-- [ ] Parolaları daha güçlü yapar.
+- [ ] It makes passwords stronger.
 
-> ℹ️ Tekrar dene! 2FA parolanı değiştirmez. Onun üstüne ikinci bir kanıt katmanı ekler.
+> ℹ️ Try again! 2FA doesn’t change your password. It adds a second layer of proof on top of it.
 
-- [ ] Yukarıdakilerin hepsi
+- [ ] All of the above
 
-> ℹ️ Tekrar dene! Bu ifadelerden yalnızca biri doğru.
+> ℹ️ Try again! Only one of these statements is true.
 
-# Sosyal Mühendislik Dolandırıcılıkları
+# Social Engineering Scams
 
-Hem web2'de hem web3'te dolandırıcılar, insanları parolalarını ve kurtarma ifadelerini vermeye ya da kötü niyetli bir işlem imzalamaya kandırmak için `oltalama` taktikleri kullanır. Çoğu zaman yardım teklif eden bir destek görevlisi (“Merhaba, ben MetaMask destek”) ya da bir topluluğun yöneticisi (“Yeni NFT mint'i, topluluğumuza özel”) gibi davranırlar.
+In both web2 and web3, scammers use `phishing` tactics to trick people into giving up their passwords and seed phrases, or signing a malicious transaction. Often they’ll pretend to be product support staff offering help, “Hello this is Metamask support”, or pretend to be an admin of a community, “New NFT mint, exclusive for our community”.
 
-İnsanları sıkıştırmak için `sosyal mühendislik` kullanırlar. Örnekler:
+They use `social engineering` to pressure people. Examples include:
 
-- “Süre doluyor!” - seni acele ettirmek.
-- “Tebrikler, çekilişimizi kazandın!” - ayrıcalıklı hissettirmek.
-- “Ön satışımıza erken erişim al!” - dolandırılan kişide `FOMO` yaratmak.
+- “Time is running out!” - making you feel rushed.
+- “Congratulations you won our giveaway!” - making things feel exclusive.
+- ”Get early access to our pre-mint!” - generating `FOMO` in the person being scammed.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-engineering-scams-73c69132.svg)
 
-# Kaçırma Korkusu
+# Fear Of Missing Out
 
-`FOMO`, “Fear Of Missing Out” yani “kaçırma korkusu” demektir. **Hemen şimdi** bir şey yapmazsan büyük bir fırsatı kaçıracağın hissini veren o stresli duygudur.
+`FOMO` stands for the ‘Fear Of Missing Out’, it’s the stressful feeling that you’re not going to get a great benefit or opportunity unless you do something **right now**.
 
-FOMO'ya karşı en iyi savunma, bilgisayarından bir adım geri çekilip ara vermektir. İnsanlar stresliyken net düşünemez; FOMO'nun bu kadar etkili bir dolandırıcılık aracı olmasının sebebi de bu. Durumdan uzaklaşınca dolandırıcılığı olduğu gibi görmek çok daha kolaylaşır.
+The best defense against FOMO is to simply take a step back from your computer and take a break. People don’t think clearly when they’re stressed, that’s why FOMO is such an effective scamming tool. By stepping away from the situation, it becomes much easier to spot the scams for what they are.
 
 # Knowledge Check 4
 
-Dolandırıcılar sosyal mühendisliği nasıl kullanır?
+How do scammers use social engineering?
 
-- [ ] Bir toplulukta yetkili biri gibi davranarak.
+- [ ] Pretending to be an authority in a community.
 
-> ℹ️ Tekrar dene! Bu taktiklerden biri, ama tek taktik değil.
+> ℹ️ Try again! This is one tactic, but it isn’t the only one.
 
-- [ ] İnsanları kısa süre baskısıyla sıkıştırarak.
+- [ ] Pressuring people with short amounts of time.
 
-> ℹ️ Tekrar dene! Bu taktiklerden biri, ama tek taktik değil.
+> ℹ️ Try again! This is one tactic, but it isn’t the only one.
 
-- [ ] FOMO yaratmak için çekiliş veya bedava NFT sunarak.
+- [ ] Offering giveaways or free NFTs to generate FOMO.
 
-> ℹ️ Tekrar dene! Bu taktiklerden biri, ama tek taktik değil.
+> ℹ️ Try again! This is one tactic, but it isn’t the only one.
 
-- [x] Yukarıdakilerin hepsi
+- [x] All of the above
 
-> ℹ️ Doğru! Dolandırıcılar yetkili kişileri taklit eder, zaman baskısı kurar ve FOMO yaratır; hepsi net düşünmeni engellemek için.
+> ℹ️ Correct! Scammers impersonate authority figures, create time pressure, and generate FOMO, all to stop you from thinking clearly.
 
-# Sosyal Medyada Güvenlik
+# Social Media Safety
 
-Dolandırıcılar sosyal medyada ve kripto projelerinin Discord sunucularında dolaşmayı sever; deneyimli üyelere yakalanmamak için konuşmayı genelde özel mesaja taşırlar. Herkese açık alanlarda konuş, `kurtarma ifadesini` _**asla**_ kimseye verme ve özel mesajla gelen bir bağlantıda hiçbir şey imzalama.
+Scammers love to engage on social media and in the Discord servers of crypto projects, typically moving conversations into direct messages to avoid being spotted by experienced members. Talk in public areas, and _**never**_ give your `seed phrase` to anyone, or sign anything from a link sent in a DM.
 
-Sosyal medyadaki `tehlike işaretleri`:
+Social media `red flags`:
 
-🚩 **Dil ve yazım hataları:** bozuk cümleler, makine çevirisi kokan metinler.
+🚩 **Language and grammar errors:** They’re/their/there, etc.
 
-🚩 **FOMO:** “Kaçırma!”
+🚩 **FOMO:** “Don’t miss out!”
 
-🚩 **Taklit:** yönetici, destek ekibi, Vitalik Buterin, Elon Musk vb.
+🚩 **Impersonation:** an admin, support desk, Vitalik Buterin, Elon Musk, etc.
 
-🚩 **Garantili getiri:** Kriptoda hiçbir şey garanti değildir.
+🚩 **Guaranteed returns:** Nothing is guaranteed in crypto.
 
-🚩 **İstenmeyen bağlantılar ve teklifler,** _özellikle özel mesajlarda_.
+🚩 **Unrequested links and offers,** _especially in direct messages_.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-safety-a76a39f4.svg)
 
-# Sosyal Medyada İyi Alışkanlıklar
+# Social Media Best Practices
 
-Güvende kalmak için:
+Practices for staying safe:
 
-✅ Ürününü satmak için sana özel mesaj atmak zorunda kalıyorsa, muhtemelen o ürünü istemezsin.
+✅ If they have to direct message you to sell their product, you probably don’t want it.
 
-✅ Projenin takipçi ve üye sayısına bak; yine de bunlar projenin meşruluğunu, kalitesini veya sağlamlığını garanti etmez.
+✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.
 
-✅ Her şeyi dışarıdan bir kaynakla, örneğin projenin başka bir resmi hesabıyla doğrula.
+✅ Verify everything with an outside source, like another official project account.
 
-✅ Emin olamadığında güvendiğin büyük bir topluluğun saygın üyelerine danış, üstelik herkese açık alanda sor.
+✅ If you’re ever uncertain, check with reputable members from a large community you trust - and ask in public.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-best-practices-48ad350f.svg)
 
-# Dolandırıcı Tokenlar ve Adres Zehirleme
+# Scam-Tokens & Address Poisoning
 
-Cüzdanında rastgele tokenlar veya NFT'ler mi beliriyor? `Dolandırıcı tokenlar` aynı anda binlerce cüzdana gönderilir; biri onları taşımaya ya da satmaya kalksın diye. Böylece tokenın akıllı sözleşmesinde gizlenen kötü niyetli kod tetiklenir veya kurban, `kurtarma ifadesi` ya da kötü niyetli bir imza isteyen bir `oltalama` sitesine çekilir. En iyi tepki: onlarla hiç etkileşime girme; oldukları yerde bırak ya da cüzdanında gizle.
+Random tokens or NFTs appearing in your wallet? `Scam-tokens` are transferred to thousands of wallets at once, hoping someone tries to move or sell them, triggering malicious code hidden in the token’s smart contract, or luring victims to a `phishing` website that asks for a `seed phrase` or a malicious signature. The best response: don’t interact with them at all; leave them alone or hide them in your wallet.
 
-Benzer bir hile de **adres zehirleme**: dolandırıcılar, kullandığın bir adrese neredeyse birebir benzeyen, ilk ve son karakterleri aynı olan bir adresten minik transferler gönderir. Sonradan işlem geçmişinden bir adres kopyalarsan, dolandırıcının benzerini kapabilirsin.
+A related trick is **address poisoning**: scammers send tiny transfers from an address crafted to look almost identical to one you use, matching its first and last characters. Copy an address from your transaction history later, and you may grab the scammer’s look-alike instead.
 
-Kendini koru:
+Protect yourself:
 
-- İşlem geçmişinden adres kopyalama.
-- Sadece ilk ve son birkaç karakteri değil, adresin tamamını doğrula.
-- Büyük transferlerden önce küçük bir deneme gönder.
+- Don’t copy addresses from your transaction history.
+- Verify more than the first and last few characters.
+- Send a small test amount before large transfers.
 
 ![](https://app.banklessacademy.com/images/web3-security/scam-tokens-761d5f63.svg)
 
-# Kötü Niyetli Onaylar ve Kör İmzalama
+# Malicious Approvals & Blind Signing
 
-Bugün paralar çoğunlukla çalınan kurtarma ifadeleri yüzünden değil, verilen imzalar yüzünden kaybediliyor. “Cüzdan boşaltıcı” oltalama kitleri, sıradan görünen ama olmayan bir işlem ya da mesaj sunar:
+Today, most funds are lost not to stolen seed phrases but to signatures given away. “Wallet drainer” phishing kits present a transaction or message that looks routine, but isn’t:
 
-- **Kötü niyetli onaylar:** tek bir onay işlemi, dolandırıcının sözleşmesine tokenlarını veya NFT'lerini harcaması için sınırsız `token izni` verebilir.
-- **İmza oltalaması:** gassız imza onayları (Permit2 gibi) token transferlerine yetki verebilir, işlem bile gerekmez.
-- **Yetki devri boşaltmaları:** yeni bir cüzdan özelliği (EIP-7702) tek imzayla hesabına kod kurulmasını sağlar; boşaltıcılar bunu cüzdanları otomatik süpürmek için kötüye kullanır.
+- **Malicious approvals:** a single approval transaction can give a scammer’s contract unlimited `token allowance` to spend your tokens or NFTs.
+- **Signature phishing:** gasless signature approvals (like Permit2) can authorize token transfers, no transaction required.
+- **Delegation drains:** a newer wallet feature (EIP-7702) lets one signature install code on your account; drainers abuse this to auto-sweep wallets.
 
-Anlamadığın şeyi imzalamaya **kör imzalama** denir ve profesyoneller bile yanıyor: 2025 Şubat'ında Bybit borsası, ekrandaki gösterimi değiştirilmiş bir işlemi onaylayarak yaklaşık 1,5 milyar dolar kaybetti.
+Signing what you don’t understand is called **blind signing**, and even professionals get burned: in February 2025, the Bybit exchange lost roughly $1.5 billion approving a transaction whose display had been tampered with.
 
-Savunman: yavaşla, her imza isteğini oku, “cüzdanını doğrula” tarzı istekleri düşmanca kabul et ve imzalamadan önce işlemleri simüle eden bir cüzdan kullan.
+Your defenses: slow down, read every signature request, treat “verify your wallet” prompts as hostile, and use a wallet that simulates transactions before you sign.
 
 # Knowledge Check 5
 
-Bir DM alıyorsun: “Cüzdanının taşınması gerekiyor: metamask-upgrade.app adresine bağlan ve varlıklarını doğrulamak için imzala.” Site senden gassız bir onay imzalamanı istiyor. Buradaki sorun ne?
+You receive a DM: “Your wallet needs migrating: connect at metamask-upgrade.app and sign to verify your assets.” The site asks you to sign a gasless approval. What’s wrong here?
 
-- [ ] Hiçbir sorun yok: imzalar ücretsizdir ve para taşıyamaz.
+- [ ] Nothing: signatures are free and can’t move funds.
 
-> ℹ️ Tekrar dene! Gassız onay imzaları tek başına token transferlerine yetki verebilir.
+> ℹ️ Try again! Gasless approval signatures can authorize token transfers all by themselves.
 
-- [ ] Sadece kurtarma ifadeni de yazarsan tehlikeli olur.
+- [ ] It’s only dangerous if you also type in your seed phrase.
 
-> ℹ️ Tekrar dene! Kurtarma ifadesi gerekmiyor. İmzanın kendisi tokenların üzerinde harcama yetkisi verebilir.
+> ℹ️ Try again! No seed phrase is needed. The signature itself can grant spending power over your tokens.
 
-- [ ] Güvenli, çünkü destek ekipleri kullanıcılara özel mesaj atar.
+- [ ] It’s safe because support teams contact users by direct message.
 
-> ℹ️ Tekrar dene! Gerçek destek ekipleri sana ilk mesajı asla atmaz. Bu klasik bir tehlike işaretidir.
+> ℹ️ Try again! Legitimate support will never DM you first. That’s a classic red flag.
 
-- [x] Bu imza oltalaması: imza tokenlarını boşaltabilir.
+- [x] It’s signature phishing: the signature could drain your tokens.
 
-> ℹ️ Doğru! İstenmeyen bir DM, aciliyet, benzer görünen bir URL ve imza isteği: bu bir cüzdan boşaltıcı.
+> ℹ️ Correct! An unrequested DM, urgency, a look-alike URL, and a signature request: this is a wallet drainer.
 
-# Donanım Cüzdanları
+# Hardware Wallets
 
-[Cüzdan Temelleri](https://app.banklessacademy.com/lessons/wallet-basics) dersimizden hatırlarsan, `donanım cüzdanı` `özel anahtarlarını` internete bağlı bilgisayarından uzakta, ayrı bir cihazda tutar. Bu, paranı çok daha güvenli kılar: zararlı yazılım anahtarlarını okuyamaz, hırsızın da cihazı fiziksel olarak çalıp kırması gerekir. Popüler seçenekler arasında Ledger, Trezor ve Keystone var. Her zaman doğrudan üreticiden satın al.
+If you remember from our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, a `hardware wallet` keeps your `private keys` on a dedicated device, away from your internet-connected computer. This makes your funds much safer: malware can’t read your keys, and a thief would have to physically steal the device and break into it. Popular options include Ledger, Trezor, and Keystone. Always buy directly from the manufacturer.
 
-Donanım cüzdanını MetaMask gibi tarayıcı eklentisi cüzdanlarıyla birlikte de kullanabilir, kolaylıkla donanım güvenliğini birleştirebilirsin. Ledger bunun kurulumu için [kendi rehberini yazdı](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask).
+You can even use a hardware wallet through browser extension wallets like MetaMask, combining convenience with hardware security. Ledger has [written their own guide](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask) on setting this up.
 
-Tek sınırı: donanım cüzdanı neyi onaylarsan onu imzalar, yani kötü niyetli bir işlemi kör imzalarsan paranı yine kaybedersin. Onaylamadan önce ayrıntıları her zaman cihazın kendi ekranında doğrula.
+One limit: a hardware wallet signs whatever you approve, so blind-signing a malicious transaction still loses your funds. Always verify the details on the device’s own screen before confirming.
 
 ![](https://app.banklessacademy.com/images/web3-security/hardware-wallets-22a096d4.svg)
 
 # Knowledge Check 6
 
-Doğru mu yanlış mı? Donanım cüzdanı paranı ancak her işlemi onaylamadan önce doğrularsan güvende tutar.
+True or false? A hardware wallet only keeps your funds safe if you verify each transaction before approving it.
 
-- [x] Doğru
+- [x] True
 
-> ℹ️ Doğru! Donanım cüzdanı anahtarlarını korur, ama paranı ancak imzaladığın şeyi doğrulaman korur.
+> ℹ️ Correct! A hardware wallet protects your keys, but only verifying what you sign protects your funds.
 
-- [ ] Yanlış
+- [ ] False
 
-> ℹ️ Tekrar dene! Donanım cüzdanı neyi onaylarsan onu imzalar. Kör imzalama onu da boşaltabilir.
+> ℹ️ Try again! A hardware wallet signs whatever you approve. Blind signing can still drain it.
 
-# Cüzdan Stratejileri
+# Wallet Strategies
 
-Kurulumuna bir donanım cüzdanı ekledikten sonra, paranı güvenceye almanın en iyi yollarından biri onu birden fazla `cüzdana` yaymaktır. İşte üç ayrı cüzdanla bölümlere ayırma stratejisi:
+After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple `wallets`. Here is a compartmentalized strategy using three separate wallets:
 
-1. **Sosyal Cüzdan:** Girişler, mint'ler ve yeni dApp denemeleri için, içinde çok az para olan ya da hiç olmayan bir `sıcak cüzdan`. İçindeki her şeyin kaybolabileceğini varsay.
-2. **Ticaret Cüzdanı:** Alım satım ve kısa sürede taşınması gerekebilecek paralarla ilgili işler için bir `sıcak cüzdan`.
-3. **HODL Cüzdanı:** Uzun vadeli `HODL` için bir `donanım cüzdanı`: uzun süre tutmayı planladığın paralar. Bu cüzdanı akıllı sözleşmelerle veya tanımadığın sitelerle etkileşim için _**asla**_ kullanma.
+1. **Social Wallet:** A `hot wallet` holding little to no funds, used for logins, minting, and trying out new dapps. Assume anything in it could be lost.
+2. **Trading Wallet:** A `hot wallet` for trading and other activities involving funds that may need to be moved on short notice.
+3. **HODL Wallet:** A `hardware wallet` for the long-term `HODL`: these are funds intended to hold for a long time. _**Never**_ use this wallet to interact with smart contracts or unfamiliar websites.
 
-👍 **ARTILARI:** Bu ayrım sayesinde dolandırıcılık _her şeyi_ değil, yalnızca _o cüzdandaki_ parayı tehdit eder.
+👍 **PROs:** Separation ensures that scams only threaten funds in _that particular wallet_ rather than _everything_.
 
-👎 **EKSİLERİ:** Takibi daha karmaşık, ama birçok cüzdan uygulaması cüzdanlarına isim vermene izin verir.
+👎 **CONs:** It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.
 
 ![](https://app.banklessacademy.com/images/web3-security/wallet-strategies-2b743061.svg)
 
 # Knowledge Check 7
 
-Daha yüksek güvenlik için paranı _______________ tutmanı öneririz.
+We recommend keeping your funds _______________ for higher security.
 
-- [ ] birden fazla airdrop'ta
+- [ ] stored in multiple airdrops
 
-> ℹ️ Tekrar dene! Airdrop'lar token dağıtımıdır, para saklanacak bir yer değil.
+> ℹ️ Try again! Airdrops are token giveaways, not a place to store funds.
 
-- [ ] birden fazla NFT'de kilitli
+- [ ] locked in multiple NFTs
 
-> ℹ️ Tekrar dene! NFT'ler başlı başına birer varlıktır, paran için bir güvenlik stratejisi değil.
+> ℹ️ Try again! NFTs are assets themselves, not a security strategy for your funds.
 
-- [x] birden fazla cüzdanda ayrı
+- [x] separated in multiple wallets
 
-> ℹ️ Doğru! Parayı ayrı cüzdanlara bölmek, bir dolandırıcılığın yalnızca o cüzdandaki parayı tehdit etmesi demektir.
+> ℹ️ Correct! Compartmentalizing funds across separate wallets means a scam only threatens the funds in that particular wallet.
 
-- [ ] birden fazla adreste likit
+- [ ] liquid in multiple addresses
 
-> ℹ️ Tekrar dene! Mesele likidite değil. Zararı sınırlayan şey, parayı ayrı cüzdanlara bölmektir.
+> ℹ️ Try again! It’s not about liquidity. Separating funds between distinct wallets is what limits the damage a scam can do.
 
-# Web2 Dolandırıcılıklarından Sonra Toparlanmak
+# Recovering from Web2 Scams
 
-Umarız henüz bir dolandırıcıya kurban gitmemişsindir. Gittiysen, hesaplarını yeniden güvene almak için atman gereken adımlar var.
+Hopefully you have not already fallen victim to a scammer. If you have, there are some steps you should take to secure your accounts once more.
 
-Gmail veya Discord gibi bir web2 hizmetini ilgilendiren bir dolandırıcılıkta şunları yap:
+For a scam involving a web2 service, like Gmail or Discord, you should:
 
-- Etkilenen hesabın parolasını değiştir.
-- Varsa “diğer tüm cihazlardan çıkış yap” düğmesiyle dolandırıcıları hesabından at.
-- `2FA'yı` etkinleştir: tercihen passkey ya da donanım güvenlik anahtarı, olmazsa doğrulayıcı uygulama.
-- Dolandırıcılığı ilgili hizmete bildir.
-- E-posta hesabının da güvende olduğundan emin ol.
-- Dolandırıcılığı arkadaşlarınla veya güvendiğin topluluk üyeleriyle konuş.
+- Change your password on the affected account.
+- Where it’s available, use the “sign out everywhere else” button to kick the scammers off your account.
+- Enable `2FA`: ideally a passkey or hardware security key, otherwise an authenticator app.
+- Report the scam to the service involved.
+- Ensure your email account is also secure.
+- Discuss the scam with friends or trusted community members.
 
-# Web3 Dolandırıcılıklarından Sonra Toparlanmak
+# Recovering from Web3 Scams
 
-Ethereum'da sözleşmelere token harcama izni açıkça verilmelidir. Token `harcama izni`, belirli bir sözleşmeye harcaması için tanıdığın miktardır. İzinleri düşük tutmak varlıklarının riskini azaltır.
+Contracts must be given explicit permission to spend tokens on Ethereum. The token `allowance` is how much you’ve allowed a specific contract to spend. Keeping allowances low reduces the risk to your assets.
 
-Web3'te dolandırıcıları şikâyet edebileceğin, protokollerin başında duran biri yok, ama yine de yapabileceklerin var:
+Web3 doesn’t have anyone in charge of protocols to report scammers to, but you can still take action:
 
-- Ele geçirilen cüzdanda kalan parayı hemen farklı bir cüzdan adresine taşı, **yeni adresin farklı bir kurtarma ifadesine sahip olduğundan emin ol.**
-- Token `harcama izinlerini` [revoke.cash](https://revoke.cash) (birçok ağda çalışır) veya [etherscan.io/tokenapprovalchecker](https://etherscan.io/tokenapprovalchecker) ile gözden geçir ve iptal et. İptal etmek gas harcar; revoke.cash'in bir [adım adım rehberi](https://revoke.cash/learn/approvals/how-to-revoke-token-approvals) var.
-- Ayrıca revoke.cash'in “Delegations” sekmesinde tanımadığın bir cüzdan yetki devri var mı bak, varsa cüzdan uygulamandan kaldır.
-- Bundan sonra `donanım cüzdanı` kullan ve imzaladığın her şeyi doğrula.
-- Dolandırıcılığı etkilenen topluluğa bildirerek başkalarını uyar.
-- Gelecekte kendini ve başkalarını nasıl koruyacağını görmek için dolandırıcılık sürecini arkadaşlarınla veya güvendiğin topluluk üyeleriyle konuş.
+- Immediately move any funds still in the compromised wallet to a different wallet address, **make sure the new address has a different seed phrase.**
+- Review and revoke your token `allowances` with [revoke.cash](https://revoke.cash) (works across many networks) or [etherscan.io/tokenapprovalchecker](https://etherscan.io/tokenapprovalchecker). Revoking costs gas; revoke.cash has a [walkthrough guide](https://revoke.cash/learn/approvals/how-to-revoke-token-approvals).
+- Also check revoke.cash’s “Delegations” tab for any wallet delegation you don’t recognize, and remove it from inside your wallet app.
+- Use a `hardware wallet` in the future, and verify everything you sign.
+- Warn others by reporting the scam to the affected community.
+- Discuss the scam process with friends or trusted community members to see how you can protect yourself and others in the future.
