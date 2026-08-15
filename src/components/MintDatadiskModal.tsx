@@ -406,7 +406,9 @@ const MintDatadiskModal = ({
           <ModalFooter>
             <ExternalLink
               underline="true"
-              href={`/report-an-issue?context=datadisk-minting_${window?.location.pathname}`}
+              href={`/report-an-issue?context=datadisk-minting_${
+                typeof window !== 'undefined' ? window.location.pathname : ''
+              }`}
               alt={t('Report an Issue')}
             >
               {t('Help')}

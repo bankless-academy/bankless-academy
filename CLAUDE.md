@@ -409,6 +409,24 @@ Understand all five before touching translations — they fail independently.
   slides do, and the stale `title` field was dropped from all 90 QUIZ/POLL
   `slideMeta` entries. **Keep every quiz heading as `Knowledge Check <n>`** in
   the md, numbered sequentially per lesson.
+### Server-side rendering: off, on purpose
+
+Every page currently serves an empty `<div id="__next">`: `_app.tsx` wraps the
+whole tree in `NonSSRWrapper` (`dynamic(..., { ssr: false })`). `<head>` is
+server-rendered and correct (hreflang, canonicals, localized titles), but no
+page content reaches a crawler without JS.
+
+The router-singleton, `localStorage`, `document` and `window` accesses that
+blocked SSR are all fixed. What blocks it now is hydration: the UI reads
+`localStorage` during render in ~116 places, so the server says "15 minutes" /
+"English" / "Start Lesson" where the client says "Done" / "Deutsch" / "View
+Lesson". Unlocking it needs user state out of render plus locale-prefixed URLs
+site-wide. Full findings and a reproduction recipe: `docs/ssr-migration.md`.
+
+**Optional chaining does not guard a global.** `window?.location` and
+`document?.referrer` still throw during prerender — optional chaining protects
+a null value, not an undeclared identifier. Use `typeof x !== 'undefined'`.
+
 ### Language resolution (one place, three cases)
 
 `AppContext` is the **single** source of truth for the active language. It used

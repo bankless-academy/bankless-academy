@@ -218,7 +218,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
               </Box>
             </Box>
             {/* {MD_ENABLED && lesson.hasCollectible && (
-              <InternalLink href={`${window.location.pathname}/content`}>
+              <InternalLink href={`${router.asPath.split('?')[0]}/content`}>
                 <Button
                   position="absolute"
                   size="sm"

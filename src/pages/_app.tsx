@@ -189,12 +189,15 @@ const App = ({
         <NonSSRWrapper>
           {!isMobile && !isTelegramWebApp && <GlobalScrollbar skin="dark" />}
         </NonSSRWrapper>
-        {/* The whole tree is still client-only. Server-rendering it is close but
-            not done: router-singleton, localStorage, document and most window
-            accesses are fixed (see ssrStorage.ts and the useRouter conversions),
-            and only `web3-security` still throws "window is not defined" during
-            prerender. Until that last one is found this stays wrapped, because
-            a half-migrated tree fails the build outright. */}
+        {/* Client-only, deliberately. Server-rendering this tree is mechanically
+            close — the router-singleton, localStorage, document and window
+            accesses that blocked it are all fixed — but the UI is a function of
+            localStorage in too many places to hydrate cleanly: the lesson card
+            renders "15 minutes" on the server and "Done" on the client, the
+            language label "English" then "Deutsch", and so on for badges,
+            resume position and wallet state. Each is a hydration mismatch and a
+            visible flash. Making this work needs user state out of render and
+            locale-prefixed URLs, not a wrapper change. See CLAUDE.md. */}
         <NonSSRWrapper>
           <WagmiProvider config={wagmiAdapter.wagmiConfig}>
             <QueryClientProvider client={queryClient}>
