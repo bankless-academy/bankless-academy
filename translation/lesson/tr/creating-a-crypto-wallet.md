@@ -1,10 +1,10 @@
 ---
-TITLE: Kripto Cüzdan Oluşturma
-DESCRIPTION: Adım adım rehberimizle ilk kripto cüzdanını kur.
+TITLE: Kripto Cüzdanı Oluşturma
+DESCRIPTION: Adım adım kılavuzumuzla ilk kripto cüzdanınızı oluşturun.
 LANGUAGE: Türkçe
 WRITERS: Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: İlknur Beyaz
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -27,41 +27,42 @@ ________________________________________________________________________________
 ```
 
 ---
-Bu, [Cüzdan Temelleri](https://app.banklessacademy.com/lessons/wallet-basics) dersimizin özeti ve görevin rehberidir. **Bilgini geliştirmek ve rozetini kazanmak için** [dersin tamamına](https://app.banklessacademy.com/lessons/wallet-basics) göz at!
+
+Bu, [Cüzdanın Temelleri](https://app.banklessacademy.com/lessons/wallet-basics) dersimizin ve ders sonundaki görev için sunulan kılavuzun bir özetidir. **Bilginizi artırmak ve rozetinizi almak** için [dersin tamamına](https://app.banklessacademy.com/lessons/wallet-basics) göz atın!
 
 ---
 
-## Önemli Noktalar
+## Önemli Bilgiler
 
-> * Blokzincir dünyasına erişmek için bir `kripto cüzdana` ihtiyacın var!
+> - Blok zincirleri dünyasına erişmek için bir `kripto cüzdanı`na ihtiyacınız olacak!
 >
-> * Cüzdan, bir `blokzincir` hesabı gibidir.
+> - Cüzdan bir `blok zinciri` hesabına benzer.
 >
-> * Cüzdanlar `kripto para` saklamak, blokzincir uygulamalarına giriş yapmak ve daha fazlası için kullanılır.
+> - Cüzdanlar `kripto para` saklamak, blok zinciri uygulamalarına giriş yapmak ve daha fazlası için kullanılır.
 >
-> * Bu cüzdanlar hem bilgisayarda hem telefonda çalışır.
+> - Bu cüzdanlar hem bilgisayarlarda hem de telefonlarda çalışır.
 >
-> * Cüzdan oluşturmak kolaydır ve yaklaşık 5 dakika sürer. Aşağıdaki videomuzda nasıl yapıldığını göstereceğiz!
+> - Cüzdan oluşturmak kolaydır ve yaklaşık 5 dakika sürer. Aşağıdaki videomuzda size bunun nasıl yapılacağını göstereceğiz!
 
-## Kripto Cüzdan Nedir?
+## Kripto Cüzdanı Nedir?
 
-Kripto cüzdanlar web3'ün temel ekipmanlarından biridir; bilgisayarında ya da telefonunda `kripto para` kullanmanı sağlar. Cüzdanlara `cüzdan uygulaması` denen bir yazılımla erişilir: bilgisayarında bir tarayıcı eklentisi, telefonunda ise bir uygulama.
+Kripto cüzdanı, bilgisayarınızda veya telefonunuzda `kripto para` kullanmanıza olanak tanıyan önemli bir web3 aracıdır. Wallets are accessed using software called a `wallet app`: a web browser extension for your computer, or an app on your phone.
 
-Dahası da var. Cüzdanlar kripto para tutan hesaplardan ibaret değil: blokzincire bağlantımızdır. Onları başkalarıyla kripto para takas etmek, blokzincir uygulamalarına giriş yapmak **ve hatta Bankless Academy rozetleri gibi dijital eşyalar toplamak** için kullanabiliriz. Ne kadar çok keşfedersek cüzdanlarımız o kadar çok işe yarıyor; kimileri onları dijital kimliğin başlangıcı olarak görüyor.
+Dahası var. Wallets are more than accounts for holding cryptocurrency: they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become, with some viewing them as the beginning of digital identity.
 
-Cüzdanlar iki temel hesap bilgisiyle gelir:
+Cüzdanlar iki temel hesap bilgisine sahiptir:
 
-* Bir `genel anahtar`: cüzdanının `adresi` buradan doğar. Adres *kullanıcı adın* gibi çalışır: kripto para almak için onu herkesle paylaşırsın.
+- A `public key`, which creates your wallet’s `address`. The address works like your _username_: you’ll share it publicly to receive cryptocurrency.
 
-* *Parolan* gibi davranan bir `özel anahtar`. Bu her zaman gizli kalmalıdır ve değiştirilemez.
+- _Parola_ işlevi gören bir `özel anahtar`. Değiştirilemeyen bu anahtar her zaman gizli tutulmalıdır.
 
-Özel anahtarını korumak kritiktir, çünkü bu anahtar cüzdanına anında erişim verir. Özel anahtarını asla paylaşmamalısın. Daha fazlasını [dersin tamamını](https://app.banklessacademy.com/lessons/wallet-basics) alarak öğrenebilirsin.
+Özel anahtarınızı korumak çok önemlidir çünkü bu anahtar cüzdanınıza anında erişim sağlar. Özel anahtarınızı kesinlikle paylaşmamalısınız. [Dersin tamamını](https://app.banklessacademy.com/lessons/wallet-basics) alarak daha fazla bilgi edinebilirsiniz.
 
-Bugün önerdiğimiz kripto cüzdanla ilk cüzdanımızı kuracağız: Zerion!
+Bugün, tavsiye edilen kripto cüzdanı Zerion'u kullanarak ilk cüzdanımızı oluşturacağız!
 
-## Rehber
+## Kılavuz
 
-İlk cüzdanını bilgisayarında kurmak için aşağıdaki rehberi izle ya da telefon cüzdanı rehberimiz için kaydırmaya devam et.
+İlk cüzdanınızı aşağıdaki kılavuzu kullanarak bilgisayarınızda oluşturun ya da telefon cüzdanı kılavuzumuz için aşağı kaydırmaya devam edin.
 
 ### Bilgisayar Cüzdanı
 
@@ -73,11 +74,11 @@ Bugün önerdiğimiz kripto cüzdanla ilk cüzdanımızı kuracağız: Zerion!
 
 ---
 
-**Blokzincir çoklu evrenine katılma zamanı!**
+**Blok zinciri çoklu evrenine katılmanın zamanı geldi!**
 
-Yolculuklarında kolayca başvurabilmek ve Bankless Academy'yi desteklemek için bu el kitabı girdisini toplamayı unutma.
+Yolculuklarınıza kolay başvuru sağlamak ve Bankless Academy'e destek olmak için bu el kitabı konusunu koleksiyonunuza eklemeyi unutmayın.
 
-İyi yolculuklar Kâşif!
+İyi yolculuklar, Kaşif!
 
 ---
 
@@ -85,32 +86,32 @@ Yolculuklarında kolayca başvurabilmek ve Bankless Academy'yi desteklemek için
 
 ### Kripto para nedir?
 
-Kripto paralar, `kriptografi` ile güvence altına alınmış bir dijital para biçimidir. Bu paralar merkezi otoritelere ve bankalara ihtiyaç duymadan çalışabilir; bu da sahtekârlık ihtimalini azaltırken sahibinin finansal özgürlüğünü artırır.
+Kripto paralar, `kriptografi` ile güvence altına alınan bir dijital para biçimidir. Bu paralar, merkezi otoritelere ve bankalara ihtiyaç duymadan  çalışarak sahiplerinin finansal özgürlüğünü artırırken dolandırıcılık ihtimalini azaltır.
 
-Kripto para hakkında daha fazlasını **[Bitcoin Temelleri](https://app.banklessacademy.com/lessons/bitcoin-basics)** dersimizde öğren ve bu dijital paraların finans dünyasını nasıl dönüştürdüğünü gör!
+**[Bitcoin'in Temelleri](https://app.banklessacademy.com/lessons/bitcoin-basics)** dersimizle kripto para hakkında daha fazla bilgi edinin ve bu dijital para birimlerinin finans dünyasında nasıl devrim yarattığını görün!
 
 ### Genel ve özel anahtar nedir?
 
-Genel ve özel anahtarla yapılan `şifreleme`, cüzdanının bazı bilgileri herkese açık tutmasını sağlar (başkalarının sana kripto para gönderebileceği adres gibi), kripto parana erişimi ise gizli tutar. Cüzdanının genel anahtardan üretilen adresi ev adresin gibidir; özel anahtar da ön kapıyı açar.
+Genel/özel anahtar `şifreleme` cüzdanınızın, kripto paranıza erişimi gizli tutarken başkalarının size kripto para gönderebileceği adres gibi bazı bilgileri herkese açık hale getirmesine olanak tanır. Your wallet’s address, created from the public key, is like your house address, and the private key unlocks the front door.
 
-Adresini, sana kripto para göndermesi için güvendiğin herkesle paylaşabilirsin. Ama özel anahtarın yalnızca sana özeldir, çünkü cüzdandaki tüm varlıklara erişim verir. Karşındaki kişi Bankless Academy'den ya da Zerion'dan olduğunu söylese bile onu asla paylaşma.
+You can share your address with anyone you trust to send you cryptocurrency, but your private key is for your eyes only, because it grants access to all assets inside the wallet. Karşınızdaki kişi Bankless Academy veya Zerion'dan olduğunu iddia etse dahi özel anahtarınızı kimseyle paylaşmayın.
 
-Daha fazlasını öğren ve ilk cüzdanını oluşturduğun için ödül kazan: [Cüzdan Temelleri](https://app.banklessacademy.com/lessons/wallet-basics) dersi.
+[Cüzdanın Temelleri](https://app.banklessacademy.com/lessons/wallet-basics) dersimizde daha fazla bilgi edinin ve ilk cüzdanınızı oluşturarak ödül kazanın.
 
-### Kurtarma ifademi kaybedersem ne olur?
+### Kurtarma ifadem kaybolursa ne olur?
 
-“Gizli ifade” ya da “seed ifadesi” olarak da bilinen kurtarma ifaden, cihazındaki cüzdana erişimini kaybedersen tek yedeğindir. Kurtarma ifadeni kaybedersen cüzdanındaki varlıklar sonsuza dek kaybolur. Bu yüzden onu yalnızca hırsızlığa ve kaybolmaya karşı değil, yangına ve suya karşı da güvenli bir yerde saklamak önemlidir.
+“Gizli ifade” veya “tohum ifadesi” olarak da adlandırılan kurtarma ifadeniz, cihazınızda cüzdanınıza erişiminizi kaybetmeniz durumunda tek yedeğinizdir. Kurtarma ifadenizi kaybederseniz cüzdanınızdaki varlıklar sonsuza dek kaybolur. This is why it’s important to store it somewhere safe, from not only theft or loss, but fire or water damage too.
 
-### Ethereum cüzdanları Bitcoin tutabilir mi?
+### Ethereum cüzdanlarında Bitcoin tutulabilir mi?
 
-Ethereum cüzdanları Bitcoin tutabilir, ama “sarmalanmış” bir biçimde; örneğin Coinbase'in cbBTC tokenı gibi. Orijinal Bitcoin tutmak istiyorsan Bitcoin ağında çalışan bir cüzdan oluşturman gerekir: [Exodus](https://www.exodus.com/) ya da [BlueWallet](https://bluewallet.io/) gibi.
+Ethereum wallets can hold Bitcoin, but in a “wrapped” form, such as Coinbase’s cbBTC token. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [BlueWallet](https://bluewallet.io/).
 
 ---
 
 **Yazar**
 
-[Tetranome](https://twitter.com/Tetranome), Bankless Academy'de İçerik ve Tasarım Lideridir; öğrenme yolculuğu, kullanıcı arayüzü ve deneyimi ile platform görselleri üzerine çalışır.
+Bankless Academy'de İçerik ve Tasarım Lideri olarak görev yapan [Tetranome](https://twitter.com/Tetranome), öğrenme yolculuğu, kullanıcı arayüzü ile deneyimi ve platform sanatına odaklanır.
 
-**Destekçi**
+**Sahibi**
 
-Bu rehber Zerion tarafından desteklenmektedir.
+Bu kılavuz Zerion tarafından sağlanmaktadır.
