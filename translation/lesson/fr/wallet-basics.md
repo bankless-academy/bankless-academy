@@ -1,10 +1,10 @@
 ---
-TITLE: Les bases du portefeuille
-DESCRIPTION: Qu'est-ce qu'un portefeuille crypto ? Créez le vôtre et entrez dans le web3.
+TITLE: Les bases d'un wallet
+DESCRIPTION: Qu'est-ce qu'un portefeuille crypto ? Learn how wallets work and create your first one today!
 LANGUAGE: Français
 WRITERS: Ap0ll0517, Jordy, Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: Didier Krux
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -28,323 +28,322 @@ ________________________________________________________________________________
 
 ---
 
-# Introduction aux portefeuilles
+# Introduction au wallet
 
-**Salutations, Explorateur Bankless !**
+**Salutations Explorateur Bankless !**
 
-Il est temps d'aller plus loin dans votre voyage à travers le multivers de la blockchain. Chaque Explorateur finit par avoir besoin de créer un portefeuille crypto.
+Il est temps d'approfondir votre voyage dans le multivers de la blockchain. Tout explorateur dans ce domaine doit un jour ou l'autre créer un portefeuille de cryptomonnaies.
 
-Les portefeuilles ressemblent un peu aux comptes de l'internet `Web2` dont vous avez l'habitude. Vous utiliserez un portefeuille pour vous connecter à l'écosystème blockchain, aussi appelé `web3`, où vous pourrez utiliser des `cryptomonnaie` et vous connecter à des `applications blockchain` !
+Les wallets [portefeuilles crypto] sont un peu comme les comptes de l'internet `web2` auxquels vous êtes habitués. Vous utiliserez un portefeuille pour vous connecter à l'écosystème de la blockchain, également connu sous le nom de `web3`, où vous pourrez utiliser des `cryptomonnaies` et vous connecter à des `applications blockchain`!
 
-Dans cette leçon, nous vous présenterons les portefeuilles, leur fonctionnement et la façon de sécuriser vos cryptomonnaies. Nous terminerons par un guide pour en créer un et accéder à **la blockchain Ethereum, la maison de Bankless Academy.**
+Dans cette leçon, nous vous présenterons les wallets, leur fonctionnement et la manière de sécuriser vos crypto-monnaies. We’ll end with a guide on how to set one up and access **the Ethereum blockchain, the home of Bankless Academy.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# Définition du portefeuille
+# Définition du wallet
 
-Qu'est-ce qu'un portefeuille crypto, exactement ?
+Qu'est-ce qu'un crypto wallet ?
 
-La définition courte : un compte sur une `blockchain`, utilisé pour conserver des actifs numériques et se connecter aux applications blockchain.
+La définition courte est la suivante : un compte sur une `blockchain`, utilisé pour stocker des actifs numériques et se connecter à des applications blockchain.
 
-C'est comme avoir votre propre coffre-fort personnel sur internet, dont vous seul détenez la clé. En même temps, ce coffre ressemble à un compte de site web classique. Vous pouvez l'utiliser pour faire des achats, envoyer ou recevoir des `cryptomonnaie`, et interagir avec une blockchain.
+C'est comme si vous aviez votre propre coffre-fort sur l'internet et que vous déteniez la seule clé pour le déverrouiller. En même temps, ce coffre-fort est similaire à un compte de site web ordinaire. Vous pouvez l'utiliser pour effectuer des achats, envoyer ou recevoir des `cryptomonnaies` et interagir avec une blockchain.
 
-Mais contrairement aux comptes `Web2` que vous connaissez, un seul portefeuille peut accéder à toute une blockchain, et à un grand nombre d'applications blockchain. C'est comme avoir un seul compte pour tout l'internet.
+Toutefois, contrairement aux comptes `web2` auxquels vous êtes habitués, un portefeuille unique peut accéder à une blockchain entière et à un grand nombre d'applications blockchain. C'est comme avoir un seul compte pour l'ensemble de l'internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# Est-ce difficile de créer un portefeuille ?
+# La création d'un wallet est-elle difficile ?
 
-Cela l'était autrefois, mais aujourd'hui tout le monde peut créer un portefeuille assez facilement.
+Autrefois, c'était difficile, mais aujourd'hui, tout le monde peut créer un wallet assez facilement.
 
-Si vous êtes à l'aise avec le téléchargement et l'installation de logiciels sur votre ordinateur (ou d'applications sur votre téléphone), vous n'aurez aucun mal à créer votre premier portefeuille.
+Si vous êtes à l'aise avec le téléchargement et l'installation de logiciels sur votre ordinateur (ou d'applications sur votre téléphone), vous n'aurez aucun mal à créer votre premier wallet.
 
-La partie la plus délicate consiste à le sécuriser, et nous y viendrons très vite !
+The trickier part of managing a wallet involves keeping it secure, which we’ll dive into shortly!
 
-Choisir votre `application de portefeuille` peut aussi sembler intimidant. C'est l'application que vous installerez sur votre appareil pour accéder à votre portefeuille sur la blockchain. Nous recommandons de commencer avec l'application Zerion : elle est simple d'usage et donne accès à de nombreuses blockchains populaires. À mesure que vous vous sentirez à l'aise dans l'univers `web3`, vous explorerez sans doute d'autres fournisseurs et créerez plusieurs portefeuilles.
+Le choix de l'`application wallet` peut également sembler intimidant. Il s'agit de l'application que vous installerez sur votre appareil pour accéder à votre wallet sur la blockchain. Nous vous recommandons de commencer par l'application wallet Zerion : elle est simple d'utilisation et permet d'accéder à de nombreuses blockchains populaires. À mesure que vous vous sentirez plus à l'aise dans le monde `web3`, vous explorerez probablement d'autres fournisseurs et créerez plusieurs portefeuilles.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
 # Knowledge Check 1
 
-Qu'est-ce qu'un portefeuille ?
+Qu'est-ce qu'un wallet ?
 
 - [ ] Une blockchain
 
-> ℹ️ Réessayez ! Votre portefeuille est hébergé sur une blockchain.
+> ℹ️ Réessayez ! Votre wallet est hébergé sur une blockchain.
 
 - [ ] Une cryptomonnaie
 
-> ℹ️ Réessayez ! Les cryptomonnaies sont ce que vous conservez dans votre portefeuille.
+> ℹ️ Réessayez ! Les cryptomonnaies sont quelque chose que vous détenez dans votre wallet.
 
-- [ ] Un objet numérique de collection
+- [ ] Un collectible numérique
 
-> ℹ️ Réessayez ! Les objets de collection sont ce que vous conservez dans votre portefeuille.
+> ℹ️ Réessayez ! Les collecibles numériques sont quelque chose que vous tenez dans votre wallet.
 
-- [x] Un compte sur une blockchain
+- [x] A blockchain account
 
-> ℹ️ Correct ! Les portefeuilles sont des comptes utilisés pour interagir avec les blockchains.
+> ℹ️ Correct ! Les wallets sont des comptes utilisés pour interagir avec les blockchains.
 
-# Portefeuilles et récupération de mot de passe
+# Les wallets et la récupération des mot de passes
 
-Voici l'une des choses les plus importantes à comprendre sur les portefeuilles `web3` :
-**il n'existe ni « réinitialisation » ni « changement » de mot de passe.**
+Voici l'une des choses les plus importantes à comprendre à propos des portefeuilles `web3`: **Il n'y a pas de "réinitialisation de mot de passe" ou de "changement de mot de passe".**
 
-La plupart d'entre nous ont l'habitude de ces fonctions. Si nous oublions un mot de passe, nous cliquons sur un bouton, faisons deux ou trois choses, et obtenons un nouveau mot de passe. Facile.
+La plupart d'entre nous sont habitués à ces fonctionnalités. Si nous oublions un mot de passe, nous cliquons sur un bouton, nous effectuons quelques opérations et nous obtenons un nouveau mot de passe. Facile.
 
-Pas avec les portefeuilles crypto. En raison du fonctionnement des blockchains, les portefeuilles reçoivent une « adresse » et un « mot de passe » complexe au moment de leur création, et vous ne les choisissez pas.
+Pas ainsi avec les portefeuilles de cryptomonnaies. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created, and you do not choose these.
 
-Cette combinaison d'adresse et de mot de passe ne peut pas être modifiée, même si vous pouvez toujours créer un nouveau portefeuille au besoin. Certains portefeuilles récents ajoutent des fonctions de récupération, mais ne comptez jamais dessus. Apprenons-en un peu plus sur ces adresses et mots de passe particuliers, pour les utiliser en confiance !
+This address and password combination cannot be changed, although you can always create a new wallet if you need to. Some newer wallets add recovery features, but never rely on that. Découvrons un peu mieux ces adresses et mots de passe spéciaux, afin de pouvoir les utiliser en toute confiance !
 
-# La clé publique de votre portefeuille
+# La clé publique de votre wallet
 
-L'`adresse` de votre portefeuille est créée à partir de sa `clé publique`. Voyez l'adresse comme votre nom d'utilisateur : elle ressemble souvent à une suite aléatoire de lettres et de chiffres.
+Your wallet’s `address` is created from its `public key`. Think of the address as your username: it often looks like a random series of letters and numbers.
 
-Exemple : _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
+Exemple : _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-Il est possible d'en créer des versions plus faciles à retenir avec certains services `web3`, mais ce sera pour une autre leçon.
+Il est possible de créer des versions plus faciles à mémoriser avec certains services `web3`, mais c'est une leçon pour une autre fois.
 
-Vous pouvez aussi voir votre adresse comme l'adresse d'une maison. Elle est publique, tout le monde peut la voir, et elle indique aux autres où vous envoyer des actifs crypto, sans rien révéler de personnel sur vous.
+You can also think of your address like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets, without revealing anything personal about you.
 
-Partager l'**adresse** de votre portefeuille est parfaitement sûr.
+It is perfectly safe to share your wallet’s **address**.
 
-**Remarque :** une même application de portefeuille peut contenir plusieurs paires de clés publique/`clé privée`.
+**Remarque :** Une seule application de wallet peut contenir plusieurs paires de clés publiques/`clés privées`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
-# La clé privée de votre portefeuille
+# La clé privée de votre wallet
 
-Si votre adresse est comme l'adresse d'une maison, alors la `clé privée` est comme la clé de la porte d'entrée. C'est le « mot de passe » de vos fonds et de vos actifs.
+If your address is like a house address, then the `private key` is like the key to the front door. C'est le "mot de passe" qui permet d'accès à vos fonds et actifs.
 
-Exemple : _eceac283e04f121cbd40b69e16ab9dec0220df80bf092a4c72b53e69cf74d215_
+Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092a4c72b53e69cf74d215_
 
-**Il n'est jamais sûr de partager cette clé : vous pourriez perdre votre portefeuille et tout ce qu'il contient.**
+**It’s never safe to share this key: you could lose your wallet and everything in it.**
 
-La plupart des gens recommandent de ne même pas l'enregistrer sous forme numérique. Quiconque a accès à une clé privée a accès à tout ce que contient le `portefeuille`.
+La plupart des gens vous recommandent de ne jamais l'enregistrer numériquement. Quiconque a accès à une clé privée a accès à tout ce qui se trouve dans le `wallet`.
 
-C'est bien plus qu'un mot de passe. Vous ne pouvez pas la réinitialiser si vous en perdez l'accès.
+C'est plus qu'un simple mot de passe. Vous ne pouvez pas le réinitialiser si vous n'y avez plus accès.
 
-Heureusement, la plupart des `applications blockchain` ne vous demandent pas de saisir une longue suite de caractères chaque fois que vous envoyez des fonds ou signez une transaction. La clé privée agit en général discrètement en arrière-plan.
+Heureusement, la plupart des `applications blockchain` ne vous obligent pas à taper une longue chaîne de caractères compliquée chaque fois que vous devez envoyer des fonds ou signer une transaction de blockchain. La clé privée fonctionne généralement en arrière-plan.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-L'adresse de votre portefeuille est comme votre _____ et votre clé privée est comme votre _____ .
+Your wallet address is like your _____ and your private key is like your _____ .
 
-- [ ] Code banque / Numéro de compte
+- [ ] Numéro de routage / Numéro de compte
 
-> ℹ️ Réessayez ! Contrairement à un numéro de compte bancaire, votre clé privée ne doit jamais être partagée.
+> ℹ️ Réessayez ! Contrairement à un numéro de compte bancaire, votre clé privée ne doit pas être partagée avec d'autres personnes.
 
-- [ ] Adresse e-mail / Code postal
+- [ ] Email address / Zip code
 
-> ℹ️ Réessayez ! Contrairement à un code postal, votre clé privée ne doit jamais être partagée.
+> ℹ️ Réessayez ! Contrairement à un code postal, votre clé privée ne doit pas être partagée avec d'autres personnes.
 
-- [x] Adresse de la maison / Clé de la maison
+- [x] House address / House key
 
-> ℹ️ Correct ! Votre adresse permet aux autres de vous trouver, mais seule votre clé privée vous laisse entrer.
+> ℹ️ Correct ! Your address lets others find you, while only your private key lets you in.
 
 - [ ] Numéro de téléphone / Numéro de passeport
 
-> ℹ️ Réessayez ! Ce sont des exemples d'informations publiques et privées, mais sans rapport.
+> ℹ️ Réessayez ! Ce sont des exemples d’informations publiques et privées, mais elles ne sont pas liées.
 
-# Phrase de récupération
+# Phrase de Récupération
 
-Quand vous créez un nouveau portefeuille, votre application vous fournit une `phrase de récupération`.
+Lorsque vous créez un nouveau wallet, l'application de votre wallet vous fournit une `phrase de récupération`.
 
-Aussi appelée « phrase seed » ou « phrase secrète », cette suite de mots permet d'accéder à votre portefeuille et à vos actifs crypto si :
+Également appelée "seed phrase" ou "phrase secrète", cette chaîne de mots peut être utilisée pour accéder à votre wallet et à vos crypto-actifs si :
 
-- Votre `application de portefeuille` ou votre appareil tombe en panne ou est endommagé.
-- Votre appareil est perdu ou volé.
-- Vous voulez accéder à votre portefeuille depuis plusieurs appareils.
+- Votre `application wallet` ou l'appareil contenant votre wallet tombe en panne de façon inattendue ou est endommagé.
+- Votre appareil a été perdu ou volé.
+- Vous souhaitez accéder à votre portefeuille sur plusieurs appareils.
 
-La plupart comptent 12 à 24 mots représentant une donnée unique, qui sert à générer la `clé publique` et la `clé privée` de votre portefeuille.
+La plupart des phrases de récupération sont une liste de 12 à 24 mots qui représentent un élément unique de données. Ces données sont utilisées pour générer la `clé publique` et la `clé privée` de votre wallet.
 
-La récupération d'un portefeuille ne change **pas** les clés et ne les réinitialise pas.
+La récupération du wallet **ne** modifie ni ne réinitialise les clés.
 
-Votre phrase de récupération est comme une clé maîtresse : elle peut recréer chaque paire de clés de votre portefeuille. **Ne la partagez jamais.**
+Your recovery phrase is like a master key: it can recreate every key pair in your wallet. **Ne partagez jamais votre phrase de récupération.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Pouvez-vous accéder à votre portefeuille avec une phrase de récupération si votre appareil est endommagé ou perdu ?
+Pouvez-vous accéder à votre wallet à l'aide d'une phrase de récupération si votre appareil est endommagé ou perdu ?
 
 - [ ] Non
 
-> ℹ️ Réessayez !
+> ℹ️ Réessayez !
 
-- [x] Oui
+- [x] Yes
 
-> ℹ️ Correct ! Les phrases de récupération donnent accès à votre portefeuille, même sur plusieurs appareils.
+> ℹ️ Correct ! Les phrases de récupération permettent d'accéder à votre wallet, même sur plusieurs appareils.
 
-# Types de portefeuille
+# Types de wallet
 
-Tout comme il existe de nombreux types de logiciels, il existe de nombreux types de portefeuille. Voyons les quatre grandes catégories :
+Tout comme il existe de nombreux types de logiciels, il existe de nombreux types de wallet. Examinons les quatre catégories principales :
 
-- 🏦 **Portefeuilles avec dépositaire :** un tiers est responsable de vos clés privées.
-- 👤 **Portefeuilles en auto-conservation :** vous êtes responsable de vos clés privées.
+- 🏦 **Les wallets custodiaux :** un tiers est responsable de vos clés privées.
+- 👤 **Les wallets en auto-garde (non-custodiaux) :** où vous êtes responsable de vos clés privées.
 
-Il existe deux styles de `portefeuille en auto-conservation` :
+Il existe deux types de `wallets en auto-garde`:
 
-- 🔥 **Portefeuilles à chaud :** un logiciel sur votre ordinateur ou votre téléphone.
-- 🧊 **Portefeuilles à froid :** un appareil (comme une clé USB) que vous rangez en lieu sûr.
+- 🔥 **Portefeuilles chauds :** logiciel sur votre bureau ou votre téléphone.
+- 🧊 **Portefeuilles froids :** un périphérique matériel (comme une clé USB) que vous stockez dans un endroit sûr.
 
-Vous entendrez peut-être parler de `portefeuilles intelligents` : un type émergent qui exécute du code, permettant la connexion par passkey et la récupération de compte.
+You may also hear about `smart wallets`: an emerging type that runs code, enabling extras like passkey logins and account recovery.
 
-Chaque portefeuille répond à un usage différent. Rassurez-vous, nous n'en créerons qu'un seul aujourd'hui.
+Each wallet serves a different use-case. Ne vous inquiétez pas, nous ne créerons qu'un seul wallet aujourd'hui.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Portefeuilles avec dépositaire
+# Les wallets custodiaux
 
-Comme votre `clé privée` ouvre l'accès à votre `portefeuille`, la garder en sécurité est essentiel !
+Comme votre `clé privée` vous permet d'accéder à votre `wallet`, il est très important de la conserver en toute sécurité !
 
-Les services de `portefeuille avec dépositaire` comprennent les plateformes d'échange comme Coinbase et Kraken. **Ils sont le dépositaire de votre portefeuille :** ils gardent vos clés privées à votre place. Vous accédez à leurs services comme à n'importe quel site web (identifiant e-mail et mot de passe réinitialisable).
+Les services de `wallets custodiaux` comprennent les échanges de crypto-monnaies tels que Coinbase et Kraken. **They are your wallet custodian**: they look after your private keys for you. Vous accédez à leurs services comme à n'importe quel autre site web (avec un login et un mot de passe réinitialisable).
 
-Cela suffit peut-être à certaines personnes, mais il faut faire confiance à ces tiers pour sécuriser vos actifs et vous y donner accès quand vous voulez les échanger ou les envoyer. Par ailleurs, votre accès à certaines `applications blockchain` peut être limité.
+C'est peut-être tout ce dont certaines personnes ont besoin, mais cela implique que vous fassiez confiance à ces tiers pour sécuriser vos crypto-actifs et vous permettre d'y accéder lorsque vous souhaitez les échanger ou les envoyer quelque part. En outre, votre accès à certaines `applications blockchain` peut être limité.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-Contrôlez-vous votre clé privée avec un portefeuille avec dépositaire ?
+Contrôlez-vous votre clé privée avec un wallet custodial ?
 
 - [ ] Oui
 
-> ℹ️ Réessayez !
+> ℹ️ Réessayez !
 
-- [x] Non
+- [x] No
 
-> ℹ️ Correct ! Ces portefeuilles exigent de faire confiance à un tiers (le dépositaire) pour contrôler vos clés privées.
+> ℹ️ Correct ! Les wallets custodiaux nécessitent de faire confiance à un tiers (gardien) pour contrôler vos clés privées.
 
-# Portefeuille sans dépositaire
+# Wallet non-custodial
 
-Un `portefeuille en auto-conservation` (comme Zerion ou Trezor) est un portefeuille dont vous contrôlez entièrement la `clé privée`. Vous n'avez **aucun dépositaire**, et vous êtes seul responsable de la sécurité de votre clé privée.
+Un `wallet en auto-garde` (comme Zerion ou Trezor) vous permet de contrôler entièrement votre `clé privée`. Vous n'avez **pas de gardien** et vous êtes seul responsable de la sécurité de votre clé privée.
 
-Ces portefeuilles offrent le plus large accès et la plus grande liberté dans l'univers `web3`. Vous n'avez jamais à craindre qu'un tiers gèle ou gère mal vos fonds.
+Ces wallets offrent le plus large éventail d'accès et de liberté dans le monde du `web3`. Vous n'avez jamais à vous soucier du gel ou de la mauvaise gestion de vos fonds par un tiers.
 
-La contrepartie est le risque : si vous perdez l'accès à votre `phrase de récupération`, ou si votre clé privée est compromise, il n'y a souvent presque rien à faire pour retrouver l'accès au portefeuille.
+La contrepartie est le risque : si vous perdez l'accès à votre `phrase de récupération` ou si votre clé privée est compromise, il y a souvent très peu de choses que vous puissiez faire pour rétablir l'accès au wallet.
 
-Quelle que soit la voie choisie, il vaut mieux être à l'aise avec la sécurité des portefeuilles. Nous vous donnerons quelques conseils avant la fin de cette leçon.
+Quelle que soit la route que vous choisissez, il paie d'être familier et à l'aise avec la sécurité du wallet. Nous vous donnerons quelques conseils avant que vous ne terminiez cette leçon.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-Êtes-vous responsable de votre clé privée avec un portefeuille en auto-conservation ?
+Êtes-vous responsable de votre clé privée dans le cas d'un wallet auto-gardé ?
 
-- [x] Oui
+- [x] Yes
 
-> ℹ️ Correct ! Avec ce type de portefeuille, vous êtes seul responsable de vos clés privées.
+> ℹ️ Correct ! Avec un wallet auto-gardé, vous êtes seul responsable de vos clés privées.
 
 - [ ] Non
 
-> ℹ️ Réessayez !
+> ℹ️ Réessayez !
 
-# Portefeuilles à chaud
+# Wallets chauds
 
-Vous entendrez souvent les termes « portefeuille à chaud » et « à froid » dans le `web3`.
+Vous entendrez souvent les termes "wallet chaud" et "wallet froid" dans le `web3`.
 
-Un `portefeuille à chaud` est accessible via une application sur votre appareil, l'application Zerion par exemple. Comme beaucoup d'applications `Web2`, elle est connectée en permanence à internet.
+A `hot wallet` is a wallet accessed via an app on your device, the Zerion app for example. Comme de nombreuses applications `web2`, une application de wallet est constamment connectée à l'internet.
 
-Votre `clé privée` est chiffrée et stockée dans l'application, et n'est utilisée que lorsque vous interagissez avec la blockchain. Ces portefeuilles doivent leur nom à cette connexion « chaude » entre internet et votre clé privée.
+Votre `clé privée` est cryptée et stockée dans l'application du wallet, et n'est accessible que lorsque vous interagissez avec la blockchain. Ces portefeuilles sont appelés `wallets chauds` en raison de la connexion "chaude" entre l'internet et votre clé privée.
 
-Les portefeuilles à chaud sont pratiques pour les petites opérations du quotidien, un peu comme un portefeuille physique dans votre poche. C'est celui que nous allons créer aujourd'hui !
+Les wallets chauds sont pratiques pour les petites interactions quotidiennes, tout comme un portefeuille physique que vous gardez dans votre poche. Nous allons créer un wallet chaud aujourd'hui !
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Portefeuilles à froid
+# Wallets froids
 
-À mesure que vous avancez dans votre parcours `web3`, vous découvrirez un paysage plein de compromis techniques intéressants.
+À mesure que vous plongez plus profondément dans votre parcours `web3`, vous découvrirez un paysage plein de compromis technologiques intéressants.
 
-Les `portefeuilles à froid` offrent une sécurité supérieure au prix de la commodité. Dans un portefeuille à froid, votre `clé privée` est conservée sur un appareil dédié (comme une clé USB ou un disque externe). Vous devez le brancher physiquement à votre ordinateur pour accéder à votre portefeuille sur la blockchain. Votre clé privée n'est jamais directement connectée à internet, d'où le nom de connexion « froide ».
+Les `wallets froids` offrent une plus grande sécurité au détriment de la commodité. Un wallet froid est un wallet dans lequel votre `clé privée` est stockée sur un dispositif matériel dédié (comme une clé USB ou un disque dur externe). Vous devez connecter physiquement le hardware wallet à votre ordinateur pour accéder à votre wallet sur la blockchain. Votre clé privée n'est jamais directement connectée à l'internet. Les wallets froids tirent leur nom de cette connexion internet "froide".
 
-Ils sont largement considérés comme plus sûrs que les `portefeuilles à chaud`, car votre `clé privée` est stockée hors ligne, hors de portée des attaquants.
+They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline, out of reach of digital attackers.
 
-Ledger et Trezor sont des exemples de `portefeuilles à froid`.
+Ledger et Trezor sont des exemples de `wallets froids`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Lequel de ces types de portefeuille est considéré comme le plus sûr ?
+Parmi les types de wallet suivants, lequel est considéré comme le plus sûr ?
 
-- [ ] Tous les portefeuilles se valent
+- [ ] Tous les wallets sont à peu près identiques
 
-> ℹ️ Réessayez ! Chaque type de portefeuille a ses compromis, dont le niveau de sécurité.
+> ℹ️ Réessayez ! Il existe différents compromis pour chaque type de wallet, le niveau de sécurité étant l'un d'entre eux.
 
-- [ ] Un portefeuille à chaud
+- [ ] Un wallet chaud
 
-> ℹ️ Réessayez ! Il a une connexion internet active, ce qui le rend plus exposé aux attaques.
+> ℹ️ Réessayez ! Un wallet chaud a une connexion internet active qui le rend plus vulnérable aux attaques numériques.
 
-- [ ] Un portefeuille avec dépositaire
+- [ ] Un wallet custodial
 
-> ℹ️ Réessayez ! Le tiers qui détient les clés privées peut être piraté ou faire faillite.
+> ℹ️ Réessayez ! Le tiers qui détient les clés privées peut être piraté ou faire faillite.
 
-- [x] Un portefeuille à froid
+- [x] A cold wallet
 
-> ℹ️ Correct ! Il n'est pas connecté à internet en permanence, ce qui le rend plus résistant aux attaques.
+> ℹ️ Correct ! Les wallets froids ne sont pas activement connectés à l'internet, ce qui les rend plus résistants aux attaques.
 
-# Sécurité du portefeuille
+# Sécurité du wallet
 
-Que votre `portefeuille en auto-conservation` soit à chaud ou à froid, adoptez ces bonnes pratiques.
+Peu importe si votre `wallet en auto-garde` est chaud ou froid, il existe de nombreuses pratiques de sécurité intelligentes que vous devriez développer.
 
-🖊️ Notez votre `phrase de récupération` sur un support durable (papier plastifié, ou acier) et rangez-la en lieu sûr. Ne la partagez jamais, ni votre `clé privée`. **C'est plus qu'un mot de passe.**
+🖊️ Record your `recovery phrase` on durable physical material (laminated paper, or even steel) and store it somewhere very safe. Ne partagez jamais votre `clé privée` avec quiconque. **It’s more than just a password.**
 
-🔍 Vérifiez deux fois les détails avant d'envoyer des fonds ou de signer, même pour de petits montants : les erreurs sont irréversibles.
+🔍 Double-check the details whenever you send funds or sign, even for small amounts: mistakes cannot be undone.
 
-🔭 Renseignez-vous sur les `applications blockchain` avant d'y connecter votre portefeuille ou de signer leurs transactions.
+🔭 Research any `blockchain apps` you plan to use before connecting your wallet or signing their transactions.
 
-💰 Testez avec des portefeuilles peu garnis, et répartissez vos actifs de valeur sur plusieurs portefeuilles.
+💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts.
 
-🛡️ Méfiez-vous des arnaques qui font signer des transactions néfastes : notre leçon [Sécurité Web3](https://app.banklessacademy.com/lessons/web3-security) montre comment les repérer.
+🛡️ Watch out for scams that trick you into signing harmful transactions or approvals: our [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) lesson shows how to spot them.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-Quelle est la façon la plus sûre de protéger votre phrase de récupération ?
+Quel est le moyen le plus sûr de protéger votre phrase de récupération ?
 
-- [x] L'écrire sur un support durable et la ranger en lieu sûr.
+- [x] Write it on a durable material and store it in a safe place.
 
-> ℹ️ Correct ! Une sauvegarde physique bien rangée, sans trace numérique, est l'option la plus sûre.
+> ℹ️ Correct ! Une sauvegarde physique stockée en toute sécurité et sans traces numériques est l'option de stockage la plus sûre.
 
-- [ ] L'enregistrer sur votre ordinateur et l'imprimer.
+- [ ] Enregistrez-la sur votre ordinateur et imprimez-la.
 
-> ℹ️ Réessayez ! Si votre ordinateur est piraté, elle peut être trouvée. L'impression ouvre aussi bien des risques.
+> ℹ️ Réessayez ! Si votre ordinateur est piraté, votre phrase de récupération peut être trouvée. L'impression ouvre également de nombreuses opportunités d'attaque.
 
-- [ ] En faire une capture d'écran sur votre téléphone.
+- [ ] Prenez une capture d'écran et enregistrez-la sur votre téléphone.
 
-> ℹ️ Réessayez ! Si votre téléphone est piraté, vous pourriez perdre tous les actifs de votre portefeuille.
+> ℹ️ Réessayez ! Si votre téléphone est piraté, vous risquez de perdre tous les actifs de votre wallet.
 
-- [ ] L'enregistrer dans votre gestionnaire de mots de passe.
+- [ ] Enregistrez-la dans votre gestionnaire de mots de passe.
 
-> ℹ️ Réessayez ! Une seule fuite du gestionnaire suffirait à l'exposer. Gardez votre phrase hors ligne.
+> ℹ️ Réessayez ! A single password manager breach could expose it. Keep your phrase offline.
 
-# Vous êtes prêt à créer votre premier portefeuille !
+# Vous êtes prêt à créer votre premier wallet !
 
-D'ailleurs, il vous en faudra un pour réclamer la preuve d'achèvement de cette quête !
+En fait, vous en aurez besoin si vous voulez obtenir une preuve d'accomplissement de cette quête !
 
-Il existe aujourd'hui plusieurs applications de `portefeuille à chaud` en `auto-conservation`. Nous explorerons l'application Zerion pour la suite de cette leçon, car :
+Il existe plusieurs applications de `wallet en auto-garde` chaudes disponibles aujourd'hui. Nous allons explorer le wallet Zerion pendant le reste de cette leçon :
 
 - ⚙️ Elle est compatible avec la plupart des `applications blockchain`.
-- ⚡ L'interface est très fluide et facile à prendre en main.
-- 💻 Elle a une extension pour les navigateurs Chrome, Brave, Edge, Opera et Firefox.
-- 📱 Elle existe aussi en application mobile pour Android et iOS.
-- 🗣️ Zerion prend en charge de nombreuses langues.
+- ⚡ L'interface est incroyablement simple et facile à utiliser.
+- 💻 It has a browser extension for Chrome, Brave, Edge, Opera, and Firefox internet browsers.
+- 📱 Elle est également disponible sous forme d'application mobile pour les utilisateurs d'Android et d'iOS.
+- 🗣️ Zerion prend en charge un grand nombre de langues.
 
-La fin de la leçon approche : nous vous donnerons alors les instructions pour créer votre portefeuille avec Zerion !
+La fin de la leçon est imminente : nous vous donnerons les instructions pour configurer votre wallet avec Zerion !
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-Zerion est-elle une application de portefeuille avec dépositaire ?
+Zerion est-elle une application de wallet custodial?
 
 - [ ] Oui
 
-> ℹ️ Réessayez ! Votre portefeuille Zerion n'est pas contrôlé par un dépositaire.
+> ℹ️ Réessayez ! Votre portefeuille Zerion n'est pas contrôlé par un gardien.
 
-- [x] Non
+- [x] No
 
-> ℹ️ Correct ! Les portefeuilles Zerion sont en auto-conservation, contrôlés par vous, et vous seul.
+> ℹ️ Correct ! Zerion wallets are self-custody wallets, controlled by you, and you alone.
