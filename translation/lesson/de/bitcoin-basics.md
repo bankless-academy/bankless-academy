@@ -1,10 +1,10 @@
 ---
-TITLE: Bitcoin-Grundlagen
-DESCRIPTION: Was ist Bitcoin? Entdecke die erste erfolgreiche Kryptowährung und denk Geld neu.
-LANGUAGE: Deutsch
+TITLE: Bitcoin Basics
+DESCRIPTION: What is Bitcoin? Explore the first successful cryptocurrency and rethink money.
+LANGUAGE: English
 WRITERS: Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)
-TRANSLATORS: Claude (Anthropic AI)
+TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/bitcoin-basics
 FORMAT: LESSON
 ---
@@ -28,303 +28,303 @@ ________________________________________________________________________________
 
 ---
 
-# Willkommen bei Bankless Academy
+# Welcome to Bankless Academy
 
-Willkommen, mutiger Explorer, an der Grenze der digitalen Innovation.
+Welcome, bold Explorer, to the frontier of digital innovation.
 
-Unsere Mission bei Bankless Academy: Explorern wie dir die besten Werkzeuge und das beste Wissen geben, um das Blockchain-Universum zu erkunden und „bankless“ zu werden!
+At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”
 
-Heute geht es um die `Kryptowährung`, die alles ins Rollen brachte: Bitcoin.
+Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
 
-Bitcoin ist eine neue Art von Geld, gebaut gegen `Inflation`: Das Angebot steht fest im Code, niemand kann mehr davon drucken. Der Preis schwankt kurzfristig weiter, aber die Regeln ändern sich nie.
+Bitcoin is a new type of money, designed to resist `inflation`: its supply is fixed in code, so no one can print more of it. Its price still swings in the short term, but its rules never change.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
-# Die Geschichte von Bitcoin
+# Bitcoin’s Story
 
-2009 vom geheimnisvollen „`Satoshi Nakamoto`“ gestartet, markierte Bitcoin den Beginn einer neuen Wirtschaftsära.
+Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the beginning of a new economic era.
 
-Als erste erfolgreiche `Kryptowährung` löste Bitcoin eine große Debatte aus: Soll die Macht über das Geld weiter bei den traditionellen Banksystemen liegen? Oder gehört sie den Bürgern, die es täglich verdienen und nutzen? Wenn dir noch unklar ist, was das bedeutet, bist du hier genau richtig!
+As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
 
-Tatsache ist: Wir kontrollieren unser Geld heute nicht so, wie wir denken. Das hat sehr reale Folgen.
+The reality is that today, we aren’t in control of our money in the way we think we are. This has very real consequences.
 
-Zeit zu lernen, wie Bitcoin die Finanzwelt revolutioniert.
+It’s time to learn how Bitcoin is revolutionizing finance.
 
-**Zeit, Geld neu zu denken.**
+**It’s time to rethink money.**
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
-# Eine kurze Geschichte des Geldes
+# A Brief History of Money
 
-Geld gehört seit unseren frühesten Tagen zur Gesellschaft: Perlen, Muscheln und Steine dienten zum Tausch von Waren und Diensten.
+Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.
 
-Frühe Währungen hatten aber ein Problem: Neues Geld war zu leicht zu finden oder herzustellen. Je mehr es von etwas gibt, desto weniger ist es wert. So verlor das Geld aller langsam an Wert. Eine Währung musste schwerer zu beschaffen sein, um ihren Wert zu halten.
+Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.
 
-Gold und Silber lösten dieses Problem. Ihr großer Vorteil war die Seltenheit: Der Vorrat war begrenzt, niemand konnte die Geldmenge im Umlauf stark erhöhen. Diese `Knappheit` half, den Wert des Geldes zu erhalten.
+Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn't an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This `scarcity` helped maintain the value of money.
 
-Mit wachsenden Gesellschaften prägte die Zentralbank eines Staates genormte Münzen aus Gold und Silber. Solches Geld war erkennbar und messbar und diente als starker Wertspeicher.
+As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg)
 
 # Knowledge Check 1
 
-Was passiert mit dem vorhandenen Geld, wenn einem Geldsystem viel neues Geld hinzugefügt wird?
+What happens to existing money when lots of new money is added to a monetary system?
 
-- [x] Es wird weniger wert.
+- [x] It becomes worth less.
 
-> ℹ️ Richtig! Je mehr Geld es gibt, desto weniger ist jede Einheit wert.
+> ℹ️ Correct! The more money there is, the less each unit is worth.
 
-- [ ] Es wird mehr wert.
+- [ ] It becomes worth more.
 
-> ℹ️ Versuch es nochmal! Ein größeres Angebot macht jede Einheit weniger wert, nicht mehr.
+> ℹ️ Try again! A bigger supply makes each unit worth less, not more.
 
-- [ ] Sein Wert bleibt gleich.
+- [ ] Its value stays the same.
 
-> ℹ️ Versuch es nochmal! Neues Geld verwässert den Wert des Geldes, das die Leute schon halten.
+> ℹ️ Try again! New money dilutes the value of the money people already hold.
 
-# Eine kurze Geschichte des Geldes (Teil 2)
+# A Brief History of Money (Part 2)
 
-Mit dem Papiergeld wurden Währungen durch Gold „gedeckt“. Der Wert des Geldes war direkt an eine bestimmte Menge Edelmetall im Tresor gebunden.
+With the introduction of paper money, currencies shifted to being 'backed' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.
 
-Im 20. Jahrhundert fiel dann dieser „`Goldstandard`“.
+Then, in the 20th century, came the fall of this “`Gold Standard`”.
 
-Weltweit wurden Edelmetalle nach und nach von den Währungen gelöst. So konnte jede Volkswirtschaft über ihre Goldreserven hinaus wachsen. Eine Zentralbank brauchte kein Gold mehr, um Geld zu schaffen, und konnte so viel neues Geld ausgeben, wie sie für nötig hielt. Wer die Geldmenge fest kontrolliert, kontrolliert auch ihren Wert.
+Precious metals were slowly disconnected from currencies worldwide, an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
 
-Im digitalen Zeitalter hat elektronisches Geld das Bargeld weitgehend ersetzt. Geld bei Geschäftsbanken zu halten, bringt uns Kreditkarten und Zahlungs-Apps. Das ist bequem und sicher, stellt aber gewinnorientierte Unternehmen zwischen die Menschen und ihr Geld.
+Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
-# Das Problem
+# The Problem
 
-Das Problem unseres heutigen Finanzsystems ist die fehlende Kontrolle über unser Geld. Sie schränkt unsere Freiheit ein, selbst zu entscheiden, was wir sparen und was wir ausgeben.
+The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.
 
-`Zentralbanken` steuern die `Geldpolitik` eines Landes und können beliebig viel neues Geld schaffen. Diese fehlende `Knappheit` lässt unser Geld oft Jahr für Jahr an Wert verlieren. Geld mit unvorhersehbar sinkendem Wert drängt uns zum Ausgeben: **„Wenn mein Geld jedes Jahr weniger wert ist, warum sparen? Dann gebe ich es lieber jetzt aus.“** 💸
+`Central banks`, the bank managing a country’s `monetary policy`, can introduce any amount of new money. This lack of `scarcity` often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: **“If my money is going to be worth less every year, why save? I might as well spend it now.”** 💸
 
-`Geschäftsbanken`, die wir für Sparen und Ausgeben im Alltag nutzen, beeinflussen unser Verhalten ebenfalls. Als `Verwahrer` können sie Transaktionen blockieren oder Guthaben einziehen. Manche Banken haben ihren Kunden den Kauf von Kryptowährungen verboten! **Wenn deine Bank jederzeit deine Ersparnisse einfrieren kann… gehört dir dein Geld dann wirklich?** 💸
+`Commercial banks`, those used for everyday saving and spending, also influence our spending habits. As a `custodian`, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! **If your bank can freeze your life savings at any time… do you truly own your money?** 💸
 
 ---
 
-Damit Geld wieder finanzielle Freiheit trägt, muss es zwei Eigenschaften zurückgewinnen, die es verloren hat:
+For money to once again support financial freedom, it must regain the two key properties it has lost over time:
 
-- 💎 **Wert:** Geld muss seinen Wert über die Zeit zuverlässig halten.
-- ✊ **Eigentum:** Geld muss leicht selbst zu verwahren und zu schützen sein.
+- 💎 **Value:** Money must reliably store its worth over time.
+- ✊ **Ownership:** Money must be easy to store and protect ourselves.
 
-Nur diese Eigenschaften geben uns die Freiheit zurück, frei zu sparen und auszugeben.
+Only these qualities can restore our ability to freely save and spend our money.
 
-# Bitcoin betritt die Bühne
+# Enter Bitcoin
 
-`Satoshi Nakamoto` hielt Geld für zu wichtig, um es wenigen Menschen zu überlassen. Das Ziel: ein Geld, das für alle fair und verlässlich ist.
+`Satoshi Nakamoto` thought that money was too important to be controlled by just a few people. They wanted to create a type of money that could be fair and reliable for everyone.
 
-Das ist Bitcoin (`BTC`): eine digitale Währung außerhalb des traditionellen Bankensystems.
+Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
 
-- ⛓️ Es ist `Peer-to-Peer`: Es verbindet Menschen direkt. Automatisiert durch `Blockchain-Technologie`, ohne Institutionen für Verwahrung oder Transaktionen. Anhänger nennen es „Regeln ohne Herrscher“.
-- 💎 Es ist `knapp`: Keine Zentralbank gibt unbegrenzt neues Geld aus. Bitcoin folgt einer stabilen, vorhersehbaren Geldpolitik, die langes Sparen belohnt.
-- ✊ Es ist `selbstverwahrend`: Du hältst es ohne Institution. Das Netzwerk speichert, wem was gehört, und deine `privaten Schlüssel` beweisen es. Nur wer den Schlüssel hat, kann die Coins bewegen.
+- ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.
+- 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
+- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. The network records who owns what, and your `private keys` prove it: only the key holder can move the coins.
 
-Diese Eigenschaften brachten Bitcoin den Beinamen „digitales Gold“ ein.
+For its qualities, Bitcoin has earned the nickname “digital gold”.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/enter-bitcoin-b108517c.svg)
 
-# Digitales Gold: Knappheit
+# Digital Gold: Scarcity
 
-📉 Fällt es dir schwer, mit steigenden Preisen mitzuhalten?
+📉 Do you find it difficult to keep up with rising costs?
 
-Knappheit heißt bei Bitcoin: Es kann nie mehr als 21 Millionen Bitcoin geben. Dieses `maximale Angebot` steht im Code und macht Bitcoin selten, ähnlich wie Gold.
+Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist: a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare, much like gold.
 
-Neue Coins kommen weiter über einen aufwendigen Prozess in die `Umlaufmenge`: das `Krypto-Mining`. Etwa alle vier Jahre halbiert sich diese Ausgabe (das `Halving`) und sinkt Richtung null. Miner leben deshalb mit der Zeit stärker von Transaktionsgebühren.
+New currency still enters the `circulating supply` through a laborious process called `cryptocurrency mining`. Roughly every four years, this new issuance is cut in half (the `halving`), shrinking toward zero as the cap approaches, so miners rely more on transaction fees over time.
 
-Die feste `Geldpolitik` macht Bitcoin attraktiv, um langfristig Wert zu bewahren. Seit 2024 halten auch traditionelle Anleger Bitcoin über regulierte Fonds (`Spot-ETFs`). Das stärkt die Rolle als „digitales Gold“.
+Bitcoin's fixed `monetary policy` makes it attractive for preserving value in the long term. Since 2024, regulated funds (`spot ETFs`) have let traditional investors hold Bitcoin, strengthening its “digital gold” role.
 
-Kurzfristig bleibt der Wert wegen Spekulation volatil.
+Its short term value remains volatile due to market speculation.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
 # Knowledge Check 2
 
-Wie fördert Bitcoin den Werterhalt auf lange Sicht?
+How does Bitcoin promote value preservation in the long term?
 
-- [x] Mit einer Obergrenze für das Angebot.
+- [x] Using a max supply cap.
 
-> ℹ️ Richtig! Das feste Angebot schafft Knappheit wie bei Edelmetallen und hilft beim Werterhalt.
+> ℹ️ Correct! Bitcoin's fixed supply creates scarcity similar to precious metals. This aids value retention.
 
-- [ ] Indem es Verwahrer abschafft.
+- [ ] By removing custodians.
 
-> ℹ️ Versuch es nochmal! Verwahrung betrifft das Eigentum, nicht den Wert.
+> ℹ️ Try again! Custody relates to ownership, rather than value.
 
-- [ ] Indem es den Preis stabil hält.
+- [ ] By keeping its price stable.
 
-> ℹ️ Versuch es nochmal! Kurzfristig ist der Preis volatil; das feste Angebot stützt den langfristigen Wert.
+> ℹ️ Try again! Bitcoin’s price is volatile in the short term; its fixed supply supports long-term value.
 
-- [ ] Indem eine Zentralbank das Angebot steuert.
+- [ ] By letting a central bank manage supply.
 
-> ℹ️ Versuch es nochmal! Bitcoin hat keine Zentralbank; seine Angebotsregeln stehen im Code.
+> ℹ️ Try again! Bitcoin has no central bank; its supply rules are fixed in code.
 
-# Digitales Gold: Selbstverwahrung
+# Digital Gold: Self-Custody
 
-🧊 Hat deine Bank schon einmal ohne Vorwarnung dein Guthaben eingefroren, weil ihr eine Überweisung nicht gefiel?
+🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
 
 ---
 
-In Demokratien ist Eigentum ein geschütztes Recht: Es gibt Bürgern mehr Kontrolle über ihr Leben. Frei handeln wir nicht, wenn unsere Existenz vom Urteil von Firmen oder Institutionen abhängt.
+In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional, judged by businesses or institutions.
 
-Je mehr unsere Werte digital werden (Geld, Besitz, sogar Identität), desto mehr müssen wir dieses digitale Leben schützen.
+As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
 
-Bitcoins `Selbstverwahrung` bietet echtes digitales Eigentum, außer Reichweite von `Verwahrern`. Deine Coins liegen in keiner App: Das Netzwerk hält fest, wem sie gehören, deine `privaten Schlüssel` beweisen es. Behältst du sie für dich, öffnest nur du deinen Tresor aus digitalem Gold.
+Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. Your coins aren’t stored in an app or website: the network records your ownership, and your `private keys` prove it. Keep those keys to yourself, and you alone hold the key to your vault of digital gold.
 
-So hast du die volle Kontrolle über dein digitales Vermögen: überall, jederzeit.
+This system of ownership gives you total control of your digital wealth: anywhere in the world, any time.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg)
 
 # Knowledge Check 3
 
-Wie ermöglicht Selbstverwahrung echtes Eigentum?
+How does self-custody enable true ownership?
 
-- [x] Sie gibt dir allein Zugang zu deinen Werten.
+- [x] By giving you sole access to your assets.
 
-> ℹ️ Richtig! Wer Zugang zu unseren Werten hat, kann sie auch beschlagnahmen.
+> ℹ️ Correct! Anyone with access to our assets has the ability to confiscate them.
 
-- [ ] Sie erlaubt Verwahrern Zugang zu deinen Werten.
+- [ ] By allowing custodians to access to your assets.
 
-> ℹ️ Versuch es nochmal! Selbstverwahrung heißt: Kein Verwahrer (Dritter) hat Zugang zu unseren Werten.
+> ℹ️ Try again! Self-custody means there is no custodian (third party) that can access our assets.
 
-# Bitcoin: wie Geld per E-Mail!
+# Bitcoin: It’s like Emailing Money!
 
-⌛ Hast du schon einmal mehrere Werktage auf eine Auslandsüberweisung gewartet und dabei 3 bis 5 % Gebühren gezahlt?
+⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?
 
-E-Mail hat den Briefversand vereinfacht, weil die Post wegfiel. Genauso vereinfacht Bitcoin den Geldversand, weil die Bank wegfällt.
+Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
 
-- ⚡ Sende Geld weltweit, rund um die Uhr. Kein Papierkram, keine Freigabe der Bank, keine Ausfallzeiten.
-- ⚙️ Die Bestätigung dauert Minuten bis eine Stunde. Für sofortige Alltagszahlungen gibt es das `Lightning Network`.
-- 📡 Nutze Bitcoin überall, wo du Internet hast.
+- ⚡ Send money globally, 24/7. No paperwork, no bank approval, no downtime.
+- ⚙️ Confirmation takes minutes to an hour; a fast-payments layer, the `Lightning Network`, handles instant everyday payments.
+- 📡 Access Bitcoin from anywhere with an internet connection.
 
-Wie bei einer E-Mail-Adresse brauchst du nur eine Bitcoin-Adresse, um Bitcoin zu empfangen. Sie sieht so aus: _bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4_
+Like an email address, a Bitcoin address is all you need to receive bitcoin. It looks like this: _bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4_
 
-Dein Guthaben verwaltest du mit einer `Krypto-Wallet` auf Handy oder Computer. Kein Termin, kein Ausweis nötig!
+You’ll manage your funds with `cryptocurrency wallet` software on your phone or computer. No appointment or ID required!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
 # Knowledge Check 4
 
-Was haben Bitcoin und E-Mail gemeinsam?
+How is Bitcoin similar to email?
 
-- [ ] Beide sind rund um die Uhr online.
+- [ ] Both are online 24/7.
 
-> ℹ️ Stimmt, aber die anderen Antworten auch. Wähle die Antwort, die alle umfasst.
+> ℹ️ True, but so are the other options. Pick the answer that covers them all.
 
-- [ ] Beide sind digitale Technologien.
+- [ ] Both are digital technologies.
 
-> ℹ️ Stimmt, aber die anderen Antworten auch. Wähle die Antwort, die alle umfasst.
+> ℹ️ True, but so are the other options. Pick the answer that covers them all.
 
-- [ ] Beide sind per Handy nutzbar.
+- [ ] Both can be accessed with a phone.
 
-> ℹ️ Stimmt, aber die anderen Antworten auch. Wähle die Antwort, die alle umfasst.
+> ℹ️ True, but so are the other options. Pick the answer that covers them all.
 
-- [x] Alle genannten Antworten.
+- [x] All of the above.
 
-> ℹ️ Richtig! Bitcoin und E-Mail verbessern beide die Dienste, die es vorher gab.
+> ℹ️ Correct! Both Bitcoin and email innovate on the services that came before them.
 
-# Das Bitcoin-Netzwerk
+# The Bitcoin Network
 
-Wechseln wir die Perspektive und schauen auf den Motor hinter Bitcoin:
-**das Bitcoin-Netzwerk**.
+Let’s switch gears and look at the engine behind Bitcoin:
+**The Bitcoin Network**.
 
-Bitcoin läuft auf einem geteilten Netzwerk aus tausenden Computern weltweit. Jeder Computer im Netzwerk trägt zum Betrieb bei; das Netzwerk besteht aus ihnen! Verarbeitet ein Computer eine betrügerische Transaktion, korrigieren die anderen sie.
+Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.
 
-Es gibt also keinen einzelnen Punkt, an dem ein Angriff ansetzen kann. Wer das Netzwerk kontrollieren will, müsste die Mehrheit der Computer übernehmen.
+This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.
 
-Diese Verteidigungsstrategie heißt `Dezentralisierung`: Die Kontrolle wandert von einer zentralen Gruppe zu vielen kleinen. Das macht Krypto-Netzwerke praktisch unaufhaltsam.
+This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency networks virtually unstoppable.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg)
 
-# Bitcoin-Mining
+# Bitcoin Mining
 
-Das Bitcoin-Netzwerk hat keine Zentralbank und verlässt sich auf seine `dezentralen` Teilnehmer. Diese `Miner` prüfen laufend Transaktionen und fügen sie einer „Datenbank“ hinzu: der `Blockchain`.
+With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database”: the `blockchain`.
 
-Miner müssen aktiv und ehrlich bleiben, um das Netzwerk vor Betrug zu schützen. Sie prüfen die Ergebnisse der anderen gegen und werden belohnt: Jede Transaktion zahlt eine kleine Gebühr an ihren Miner, und Miner verdienen neue Bitcoin, die „Block-Belohnungen“.
+It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
 
-Diese Belohnungen erhöhen langsam die `Umlaufmenge`, innerhalb des `maximalen Angebots` von 21 Millionen `BTC`.
+These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
 
-Diese langsame, vorhersehbare Ausgabe neuer Coins unterscheidet Bitcoin von klassischen Währungen. Alles steuern von der Community geprüfter Code („Regeln ohne Herrscher“) und dezentrale Teilnehmer, nicht kleine Gruppen in der `Zentralbank`.
+It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code (“rules with no rulers”) and decentralized participants, rather than small groups of people at the `central bank`.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
-# Eine Bitcoin-Transaktion senden
+# Sending a Bitcoin Transaction
 
-Die genauen Mechanismen hinter Bitcoin-Transaktionen und Mining sind ziemlich komplex. Bitcoin zu nutzen und zu senden ist dagegen einfach!
+Understanding the exact mechanisms that power Bitcoin transactions and mining can get quite complicated. That said, using and sending Bitcoin is simple!
 
-Hier eine vereinfachte Sicht auf den Ablauf:
+We’ll take a simplified view of the process for today:
 
-1. Du sendest eine Transaktion aus deiner `Krypto-Wallet`: 0,1 `BTC` an die Wallet-Adresse deiner Freundin.
-2. Ein Miner prüft deine Transaktion auf Fehler. Andere Miner kontrollieren sein Ergebnis.
-3. Wird sie bestätigt, kommt deine Transaktion in die „Datenbank“ der `Blockchain`.
-4. Deine Freundin erhält 0,1 BTC in ihrer Wallet.
+1. You submit a transaction using your `cryptocurrency wallet`, sending 0.1 `BTC` to your friend’s wallet address.
+2. A miner checks your transaction for errors. Other miners double-check their results.
+3. If approved, your transaction is added to the `blockchain` “database”.
+4. Your friend receives 0.1 BTC in their wallet.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
 
 # Knowledge Check 5
 
-Was ist Dezentralisierung?
+What is decentralization?
 
-- [ ] Mehr Knappheit.
+- [ ] Increased scarcity.
 
-> ℹ️ Versuch es nochmal! Knappheit heißt, dass ein Wert nur begrenzt verfügbar ist.
+> ℹ️ Try again! Scarcity means an asset is in low supply.
 
-- [x] Verteilung der Kontrolle auf viele Teilnehmer.
+- [x] Distribution of control across multiple participants.
 
-> ℹ️ Richtig! Diese Verteilung schützt das Netzwerk und seine Nutzer.
+> ℹ️ Correct! This distribution protects the network and its users.
 
-- [ ] Die Belohnungen der Miner.
+- [ ] The rewards earned by miners.
 
-> ℹ️ Versuch es nochmal! Miner werden mit Transaktionsgebühren und Block-Belohnungen bezahlt.
+> ℹ️ Try again! Miners are rewarded with transaction fees and block rewards.
 
 # Knowledge Check 6
 
-Wie schützt Mining das Bitcoin-Netzwerk vor Betrug?
+How does mining protect the Bitcoin Network from fraud?
 
-- [x] Es belohnt Miner für das Prüfen von Transaktionen.
+- [x] By rewarding miners for checking transactions.
 
-> ℹ️ Richtig! Belohnungen ziehen Miner an und motivieren sie, ehrlich zu handeln.
+> ℹ️ Correct! Bitcoin rewards attract miners and incentivize them to act honestly.
 
-- [ ] Es erhöht die Umlaufmenge von Bitcoin.
+- [ ] By increasing the circulating supply of Bitcoin.
 
-> ℹ️ Versuch es nochmal! Ein größeres Angebot verhindert keinen Betrug.
+> ℹ️ Try again! Supply increases don’t help to prevent fraud.
 
-- [ ] Beides zusammen.
+- [ ] Both of the above.
 
-> ℹ️ Versuch es nochmal! Nur eine der Antworten hilft gegen Betrug.
+> ℹ️ Try again! Only one of the above helps to prevent fraud.
 
-# Die Innovation des Geldes
+# The Innovation of Money
 
-In dieser Lektion haben wir gesehen, wie Bitcoins Knappheit den Wert erhält und wie die Verwaltung unserer Werte durch Institutionen volles Eigentum kostet.
+In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.
 
-Doch Bitcoin ist mehr als ein Geldwerkzeug geworden. Es ist zum Auslöser einer Revolution des `dezentralen Geldes` geworden. Diese Bewegung denkt das Finanzsystem neu und verteilt die Macht über das Geld an die, die es nutzen.
+However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a `decentralized money` revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.
 
-Wenn wir Geld dezentralisieren und `Verwahrer` entfernen, können wir:
+By decentralizing money and removing `custodians` we can:
 
-- 💵 einen weltweiten Markt rund um die Uhr betreiben, gesichert von Bürgern überall.
-- 🛠️ Menschen ohne Bankzugang Finanzwerkzeuge anbieten.
-- 🤝 mit `Peer-to-Peer`-Technik die Trägheit von Mittelsmännern vermeiden.
-- 🔎 institutionelle Ungleichheit, Betrug und Marktmanipulation verringern.
-- ⚖️ `Chancengleichheit` in Geldsysteme einbauen.
-- 🌐 echtes Eigentum im digitalen Zeitalter schaffen.
+- 💵 Host a 24/7 global marketplace, secured by citizens around the world.
+- 🛠️ Offer financial tools to the unbanked regions of the globe.
+- 🤝 Use `peer-to-peer` technology to avoid the inefficiencies of middleman institutions.
+- 🔎 Reduce institutional inequality, fraud and market manipulation.
+- ⚖️ Build `equality of opportunity` into monetary systems.
+- 🌐 Establish true ownership for the digital age.
 
-Die neue Ära des Geldes lebt die Grundwerte der Demokratie und verbessert den Alltag von Bürgern weltweit. Und du bist eingeladen.
+The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe. And you’re invited.
 
-„Demokratie schafft ein Umfeld, das die Menschenrechte und Grundfreiheiten achtet und in dem der frei geäußerte Wille der Menschen zur Geltung kommt.“ (Vereinte Nationen)
+”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.
 
-# Deine Bitcoin-Quest
+# Your Bitcoin Quest
 
-Zeit, deine erste Bitcoin-Transaktion zu simulieren und deine Freiheit im digitalen Zeitalter zu üben.
+It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.
 
-Deine Transaktion enthält folgende Angaben:
+Your transaction will include the following details:
 
-📫 Die Wallet-Adresse der Person, an die du sendest.
+📫 The wallet address of the person you’re sending to.
 
-💰 Den Betrag an Bitcoin, den du senden willst.
+💰 The amount of Bitcoin to send.
 
-Dazu kommt eine Transaktionsgebühr für die `Miner`.
+It will also include a transaction fee given to the `miners`.
 
-Prüfe, ob alle Angaben stimmen.
-Eine bestätigte Bitcoin-Transaktion lässt sich nicht mehr rückgängig machen.
+Remember to make sure all details are accurate.
+Once a Bitcoin transaction is confirmed, you cannot reverse it.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
