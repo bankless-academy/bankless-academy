@@ -1,0 +1,77 @@
+{
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
+  "web3": {
+    "keyword": "web3",
+    "keyword_plural": "web3s",
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "keyword_plural": "cryptocurrencys",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "blockchain apps": {
+    "keyword": "blockchain apps",
+    "keyword_plural": "blockchain appss",
+    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchains",
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+  },
+  "wallet app": {
+    "keyword": "wallet app",
+    "keyword_plural": "wallet apps",
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  },
+  "public key": {
+    "keyword": "public key",
+    "keyword_plural": "public keys",
+    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+  },
+  "private key": {
+    "keyword": "private key",
+    "keyword_plural": "private keys",
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+  },
+  "wallet": {
+    "keyword": "wallet",
+    "keyword_plural": "wallets",
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+  },
+  "recovery phrase": {
+    "keyword": "recovery phrase",
+    "keyword_plural": "recovery phrases",
+    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+  },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "keyword_plural": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
+  "custodial wallet": {
+    "keyword": "custodial wallet",
+    "keyword_plural": "custodial wallets",
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+  },
+  "hot wallet": {
+    "keyword": "hot wallet",
+    "keyword_plural": "hot wallets",
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+  },
+  "cold wallet": {
+    "keyword": "cold wallet",
+    "keyword_plural": "cold wallets",
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
+  },
+  "self-custody": {
+    "keyword": "self-custody",
+    "keyword_plural": "self-custodys",
+    "definition": "A means of holding your assets where only you have access to them."
+  }
+}
