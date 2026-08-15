@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Image } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { t } from 'i18next'
 
 interface MiniApp {
   domain: string
@@ -56,7 +57,7 @@ const MiniAppsList: React.FC<MiniAppsListProps> = ({ onSelectApp }) => {
   }, [])
 
   if (loading) {
-    return <LoadingContainer>Loading mini apps...</LoadingContainer>
+    return <LoadingContainer>{t('Loading mini apps...')}</LoadingContainer>
   }
 
   if (error) {

@@ -5,6 +5,7 @@ import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
 import DEFAULT_KEYWORDS from '../../translation/keywords/en/keywords.json'
 import WHITELABEL_KEYWORDS from '../../whitelabel-keywords.json'
 import { LanguageDescriptionType } from 'entities/lesson'
+import { LANGUAGES } from 'constants/languages'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
 
@@ -175,19 +176,11 @@ export const DEFAULT_ENS = 'web3explorer.eth'
 
 export const NB_DATADISK_MAX = 2
 
+// code -> native language name, sorted by name; derived from the registry
 export const LanguageDescription: LanguageDescriptionType = Object.fromEntries(
-  Object.entries({
-    en: 'English',
-    br: 'Português (BR)',
-    cn: '简体中文',
-    de: 'Deutsch',
-    es: 'Español',
-    fr: 'Français',
-    it: 'Italiano',
-    jp: '英語',
-    tr: 'Türkçe',
-    ua: 'Українська',
-  }).sort((a, b) => a[1].localeCompare(b[1]))
+  LANGUAGES.map((l): [string, string] => [l.code, l.localName]).sort((a, b) =>
+    a[1].localeCompare(b[1])
+  )
 )
 
 export const IS_COLLECTIBLE_ACTIVATED = false

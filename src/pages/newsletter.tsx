@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { GetStaticProps } from 'next'
 
 import { MetaData } from 'components/Head'
 import HomePage from 'pages/index'
-import OnboardingModal from 'components/OnboardingModal'
+import { useApp } from 'contexts/AppContext'
 
 const pageMeta: MetaData = {
   title: 'Newsletter',
@@ -19,24 +19,13 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Newsletter = (): JSX.Element => {
-  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const { openOnboardingModal } = useApp()
 
   useEffect(() => {
-    setIsOnboardingModalOpen(true)
-  }, [])
+    openOnboardingModal({ newsletterOnly: true })
+  }, [openOnboardingModal])
 
-  return (
-    <>
-      <OnboardingModal
-        isOpen={isOnboardingModalOpen}
-        onClose={() => {
-          setIsOnboardingModalOpen(false)
-        }}
-        newsletterOnly={true}
-      />
-      <HomePage />
-    </>
-  )
+  return <HomePage />
 }
 
 export default Newsletter

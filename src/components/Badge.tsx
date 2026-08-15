@@ -60,16 +60,16 @@ const Badge = ({
   const lang = langURL ? `&lng=${langURL}` : ''
   const locationOrigin =
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
-    const referrer = `${
-      typeof ensName === 'string' && ensName?.includes('.')
-        ? ensName
-        : address || currentWallet
-    }`
-    const shareLink = IS_WHITELABEL
-      ? `${locationOrigin}/lessons/${lang}${lesson.slug}`
-      : `${locationOrigin}/start?badge=${lesson.badgeId}${
-          langURL ? `&lang=${langURL?.replace('/', '')}` : ''
-        }${referrer ? `&referrer=${referrer}` : ''}`
+  const referrer = `${
+    typeof ensName === 'string' && ensName?.includes('.')
+      ? ensName
+      : address || currentWallet
+  }`
+  const shareLink = IS_WHITELABEL
+    ? `${locationOrigin}/lessons/${lang}${lesson.slug}`
+    : `${locationOrigin}/start?badge=${lesson.badgeId}${
+        langURL ? `&lang=${langURL?.replace('/', '')}` : ''
+      }${referrer ? `&referrer=${referrer}` : ''}`
 
   // TODO: TRANSLATE
   const shareMessage = `I've just claimed my "${lesson.name}" onchain certification at @${TWITTER_ACCOUNT} 🎉
@@ -174,7 +174,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     onShareOpen()
                   }}
                 >
-                  Share & Refer
+                  {t('Share & Refer')}
                 </Button>
               </Box>
             ) : (

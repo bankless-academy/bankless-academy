@@ -8,6 +8,7 @@ import { theme } from 'theme/index'
 import { wagmiConfig } from 'utils/wagmi'
 import { verifySignature } from 'utils/SignatureUtil'
 import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -18,6 +19,7 @@ const IntroToDeFi = (
   questComponent: React.ReactElement
 } => {
   const { chain } = useAccount()
+  const { t } = useTranslation('quests', { keyPrefix: 'IntroToDeFi' })
   const [answer, setAnswer] = useState(
     localStorage.getItem('quest-intro-to-defi')
   )
@@ -80,7 +82,7 @@ const IntroToDeFi = (
     isQuestCompleted: isSignatureVerified,
     questComponent: (
       <>
-        <h2>What are you most interested to learn to do with DeFi?</h2>
+        <h2>{t('What are you most interested to learn to do with DeFi?')}</h2>
         <Box textAlign="center" pb="5">
           {VERBS.map((verb, key) => (
             <Button
@@ -91,7 +93,7 @@ const IntroToDeFi = (
               backgroundColor={answer === verb ? '#44A991' : ''}
               _hover={{ bg: answer === verb ? '#54cfb3' : '#4d4d4d' }}
             >
-              {verb}
+              {t(verb)}
             </Button>
           ))}
         </Box>
@@ -110,10 +112,10 @@ const IntroToDeFi = (
           isDisabled={!answer}
         >
           {isSignatureVerified
-            ? 'Signature verified'
+            ? t('Signature verified')
             : answer
-            ? 'Sign your answer'
-            : 'Select your answer'}
+            ? t('Sign your answer')
+            : t('Select your answer')}
         </Button>
       </>
     ),

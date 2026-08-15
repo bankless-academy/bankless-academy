@@ -31,8 +31,7 @@ import {
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
 import { Mixpanel, triggerHaptic } from 'utils/index'
 import { useSmallScreen } from 'hooks/index'
-import { useState } from 'react'
-import OnboardingModal from 'components/OnboardingModal'
+import { useApp } from 'contexts/AppContext'
 import Layout from 'layout/Layout'
 import InternalLink from 'components/InternalLink'
 
@@ -118,7 +117,7 @@ const IS_PARTNERSHIP_ACTIVACTED = true
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation('homepage')
   const [isSmallScreen, isMediumScreen] = useSmallScreen()
-  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false)
+  const { openOnboardingModal } = useApp()
 
   if (IS_WHITELABEL) return <WhitelabelHomepage />
   else
@@ -199,9 +198,18 @@ const HomePage = (): JSX.Element => {
                 placeItems="center"
               >
                 <Box w="100%" borderBottom="3px solid #423952" />
+                {/* The label sits between two rules, so it must never wrap:
+                    German ("gemeinsam mit unseren Partnern:") is well past the
+                    250px floor and broke onto a second line. nowrap plus
+                    flexShrink 0 makes the rules give way instead of the text,
+                    and the font steps down on narrow viewports so the longest
+                    translations still fit on one line. */}
                 <Text
-                  fontSize="xl"
+                  fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
                   minW="250px"
+                  flexShrink={0}
+                  whiteSpace="nowrap"
+                  px="3"
                   textAlign="center"
                   color="#9E9E9E"
                 >
@@ -346,7 +354,7 @@ const HomePage = (): JSX.Element => {
                       variant="primaryBig"
                       size="lg"
                       onClick={() => {
-                        setIsOnboardingModalOpen(true)
+                        openOnboardingModal({ newsletterOnly: true })
                         Mixpanel.track('click_internal_link', {
                           link: 'modal',
                           name: 'Newsletter signup',
@@ -396,13 +404,6 @@ const HomePage = (): JSX.Element => {
                   </ExternalLink>
                 </Box>
               </Box>
-              <OnboardingModal
-                isOpen={isOnboardingModalOpen}
-                onClose={() => {
-                  setIsOnboardingModalOpen(false)
-                }}
-                newsletterOnly={true}
-              />
               <FeaturedLessons />
               <>
                 <Box my={isSmallScreen ? '16' : '8'}>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
 import styled from '@emotion/styled'
 
 interface EthereumShowcaseItem {
@@ -63,6 +64,7 @@ const ethereumShowcaseItems: EthereumShowcaseItem[] = [
 const EthereumShowcaseList: React.FC<EthereumShowcaseListProps> = ({
   onSelectItem,
 }) => {
+  const { t } = useTranslation()
   return (
     <ShowcaseGrid>
       {ethereumShowcaseItems.map((item, index) => (
@@ -82,7 +84,7 @@ const EthereumShowcaseList: React.FC<EthereumShowcaseListProps> = ({
             )}
           </ShowcaseIcon>
           <ShowcaseInfo>
-            <ShowcaseName>{item.name}</ShowcaseName>
+            <ShowcaseName>{t(item.name)}</ShowcaseName>
           </ShowcaseInfo>
         </ShowcaseCard>
       ))}

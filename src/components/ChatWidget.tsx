@@ -38,6 +38,7 @@ const MacScrollbar = dynamic(
 import { useSmallScreen } from 'hooks'
 import { DEFAULT_AVATAR, LESSONS } from 'constants/index'
 import Helper from 'components/Helper'
+import { t } from 'i18next'
 
 const GM_RESPONSES = [
   'gm Explorer! 🧑‍🚀',
@@ -104,7 +105,9 @@ export const ChatWidget = ({
   const [messages, setMessages] = useLocalStorage<Message[]>('chat-history', [
     {
       id: '1',
-      text: `gm! I'm the Bankless Academy AI assistant. How can I help you today?`,
+      text: t(
+        `gm! I'm the Bankless Academy AI assistant. How can I help you today?`
+      ),
       sender: 'ai',
       timestamp: new Date(),
     },
@@ -129,7 +132,9 @@ export const ChatWidget = ({
     setMessages([
       {
         id: Date.now().toString(),
-        text: `gm! I'm the Bankless Academy AI assistant. How can I help you today?`,
+        text: t(
+          `gm! I'm the Bankless Academy AI assistant. How can I help you today?`
+        ),
         sender: 'ai',
         timestamp: new Date(),
       },
@@ -137,7 +142,7 @@ export const ChatWidget = ({
     setUserMessageCount(0)
     setLastTelegramMessageId(null)
     toast({
-      title: 'Chat history cleared',
+      title: t('Chat history cleared'),
       status: 'success',
       duration: 2000,
       isClosable: true,
@@ -272,7 +277,7 @@ export const ChatWidget = ({
         setMessages((prev) => prev.filter((msg) => !msg.isThinking))
         toast({
           title: 'Error',
-          description: 'Failed to get AI response. Please try again.',
+          description: t('Failed to get AI response. Please try again.'),
           status: 'error',
           duration: 5000,
           isClosable: true,
@@ -287,7 +292,7 @@ export const ChatWidget = ({
     <>
       <Tooltip label="Bankless Academy AI" hasArrow placement="left">
         <IconButton
-          aria-label="Open chat"
+          aria-label={t('Open chat')}
           icon={<RiRobot2Line size={26} />}
           position="fixed"
           bottom={isSmallScreen ? '24' : '4'}
@@ -323,9 +328,9 @@ export const ChatWidget = ({
             position="relative"
           >
             <Box position="relative" pr="2">
-              Ask anything about crypto
+              {t('Ask anything about crypto')}
               <Helper
-                title="Ask anything about crypto"
+                title={t('Ask anything about crypto')}
                 definition="The Bankless Academy AI assistant is here to help you learn about crypto. You can only ask crypto related questions. This tool is not a financial advisor. Do your own research before investing in crypto."
               />
             </Box>
@@ -338,7 +343,7 @@ export const ChatWidget = ({
               leftIcon={<DeleteIcon />}
               iconSpacing={isSmallScreen ? 0 : 2}
             >
-              {isSmallScreen ? '' : 'Clear History'}
+              {isSmallScreen ? '' : t('Clear History')}
             </Button>
             <DrawerCloseButton
               position="absolute"
@@ -403,7 +408,7 @@ export const ChatWidget = ({
                               <Text>
                                 {message.isThinking ? (
                                   <Box as="span" animation="pulse 1s infinite">
-                                    Thinking...
+                                    {t('Thinking...')}
                                   </Box>
                                 ) : (
                                   message.text
@@ -461,7 +466,7 @@ export const ChatWidget = ({
 
               <HStack width="full" spacing={2} p={4}>
                 <Input
-                  placeholder="Type your message..."
+                  placeholder={t('Type your message...')}
                   value={newMessage}
                   onChange={(e) => setNewMessage(e.target.value)}
                   onKeyPress={(e) => {

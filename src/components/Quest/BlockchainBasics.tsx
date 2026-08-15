@@ -77,7 +77,7 @@ const BlockchainBasics = (): {
             </p>
             <Box pr="2">
               <InputGroup maxW="530px">
-                <InputLeftAddon width="71px">From</InputLeftAddon>
+                <InputLeftAddon width="71px">{t('From')}</InputLeftAddon>
                 <Input
                   placeholder="0x..."
                   value={from}
@@ -101,7 +101,7 @@ const BlockchainBasics = (): {
                 </InputRightElement>
               </InputGroup>
               <InputGroup maxW="530px">
-                <InputLeftAddon width="71px">To</InputLeftAddon>
+                <InputLeftAddon width="71px">{t('To')}</InputLeftAddon>
                 <Input
                   placeholder="0x..."
                   value={to}

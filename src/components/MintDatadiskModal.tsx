@@ -203,9 +203,9 @@ const MintDatadiskModal = ({
           <ModalHeader>
             {t('Collect DataDisk')}
             <Box mt="4" fontSize="md" fontWeight="normal">
-              Bankless Academy is issuing a small quantity of collectible
-              DataDisk devices in an evolving effort to share educational
-              content with the deeper reaches of blockspace.
+              {t(
+                'Bankless Academy is issuing a small quantity of collectible DataDisk devices in an evolving effort to share educational content with the deeper reaches of blockspace.'
+              )}
               <Box mt="2">
                 Collect yours to become a Guardian of Bankless Academy{' '}
                 <b>and retroactively fund this lesson!</b>
@@ -305,7 +305,9 @@ const MintDatadiskModal = ({
                           toast({
                             title: 'Switch your network to Optimism.',
                             description: (
-                              <>Click Mint again after switching network.</>
+                              <>
+                                {t('Click Mint again after switching network.')}
+                              </>
                             ),
                             status: 'error',
                             duration: 10000,
@@ -315,7 +317,7 @@ const MintDatadiskModal = ({
                         setIsMinting(false)
                         toast({
                           title: 'The network has been switched to Optimism.',
-                          description: <>Click Mint again.</>,
+                          description: <>{t('Click Mint again.')}</>,
                           status: 'warning',
                           duration: 10000,
                           isClosable: true,
@@ -404,7 +406,9 @@ const MintDatadiskModal = ({
           <ModalFooter>
             <ExternalLink
               underline="true"
-              href={`/report-an-issue?context=datadisk-minting_${window?.location.pathname}`}
+              href={`/report-an-issue?context=datadisk-minting_${
+                typeof window !== 'undefined' ? window.location.pathname : ''
+              }`}
               alt={t('Report an Issue')}
             >
               {t('Help')}

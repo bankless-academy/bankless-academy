@@ -3,6 +3,7 @@ import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import Nav from 'layout/Nav'
+import OnboardingModal from 'components/OnboardingModal'
 import { useSmallScreen } from 'hooks/index'
 import { useApp } from 'contexts/AppContext'
 
@@ -36,7 +37,13 @@ const Layout = ({
   isLesson: boolean
 }): React.ReactElement => {
   const [isSmallScreen, isSmallLesson] = useSmallScreen()
-  const { hideNavBar, openLessons } = useApp()
+  const {
+    hideNavBar,
+    openLessons,
+    isOnboardingModalOpen,
+    onboardingModalOptions,
+    closeOnboardingModal,
+  } = useApp()
 
   const currentLessonSlug =
     typeof window !== 'undefined' ? window.location.href.split('/').pop() : ''
@@ -60,6 +67,13 @@ const Layout = ({
       >
         <main>{children}</main>
       </StyledBackground>
+      {/* the app's only OnboardingModal - open it with openOnboardingModal() */}
+      <OnboardingModal
+        isOpen={isOnboardingModalOpen}
+        onClose={closeOnboardingModal}
+        newsletterOnly={onboardingModalOptions.newsletterOnly}
+        forceOnboarding={onboardingModalOptions.forceOnboarding}
+      />
       {/* <Footer /> */}
     </Box>
   )

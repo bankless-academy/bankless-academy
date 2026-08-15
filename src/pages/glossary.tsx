@@ -1,9 +1,7 @@
 import { GetStaticProps } from 'next'
 
 import { MetaData } from 'components/Head'
-import Layout from 'layout/Layout'
-import Glossary from 'components/Glossary'
-import { KEYWORDS } from 'constants/index'
+import GlossaryPage from 'components/GlossaryPage'
 
 export const pageMeta: MetaData = {
   title: 'Glossary',
@@ -15,23 +13,6 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-function GlossaryPage(): JSX.Element {
-  const terms = Object.keys(KEYWORDS)
-    .map((k) => {
-      return {
-        id: k,
-        name: KEYWORDS[k]['keyword'],
-        definition: KEYWORDS[k]['definition'],
-        glossary: KEYWORDS[k]['glossary'],
-      }
-    })
-    .filter((k) => k.glossary)
-
-  return (
-    <Layout page="GLOSSARY">
-      <Glossary terms={terms} />
-    </Layout>
-  )
+export default function Glossary(): JSX.Element {
+  return <GlossaryPage />
 }
-
-export default GlossaryPage

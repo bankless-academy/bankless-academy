@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import {
   Box,
   Container,
@@ -12,13 +12,14 @@ import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
+import { isMobile } from 'react-device-detect'
 import { useTranslation } from 'react-i18next'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import MintHandbookButton from 'components/MintHandbookButton'
-import { LessonType } from 'entities/lesson'
+import { LessonType, SlideType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import {
   IS_PROD,
@@ -32,7 +33,10 @@ import {
   Mixpanel,
 } from 'utils/index'
 import Keyword from 'components/Keyword'
+import EditContentModal from 'components/EditContentModal'
 import MintNFT from 'components/MintNFT'
+import i18next from 'i18next'
+import { normalizeKeyword } from 'constants/languages'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -573,6 +577,28 @@ const Article = ({
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
 
+  // Same keyword index as Lesson.tsx: translated glossary files are keyed by
+  // the English term, while the markdown carries the translated one.
+  const { keywordIndex, keywordDefs } = useMemo(() => {
+    const bundle = i18next.getResourceBundle(i18n.language, 'keywords') || {}
+    const index: { [form: string]: string } = {}
+    const defs: { [englishKey: string]: string } = {}
+    for (const [englishKey, entry] of Object.entries<any>(bundle)) {
+      if (typeof entry?.definition === 'string')
+        defs[englishKey] = entry.definition
+      for (const form of [
+        englishKey,
+        entry?.keyword,
+        entry?.keyword_plural,
+        ...(entry?.keyword_forms || []),
+      ]) {
+        if (typeof form === 'string' && form)
+          index[normalizeKeyword(form)] = englishKey
+      }
+    }
+    return { keywordIndex: index, keywordDefs: defs }
+  }, [i18n.language])
+
   const isArticleCollected =
     lesson.mirrorNFTAddress?.length &&
     articlesCollectedLS.includes(lesson.mirrorNFTAddress)
@@ -590,7 +616,44 @@ const Article = ({
         borderRadius={isSmallScreen ? '0' : '0.375rem'}
         mt={isSmallScreen ? '0' : '24px'}
       />
-      <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
+      <Box position="relative">
+        <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
+        {/* Handbooks never had Suggest Changes: EditContentModal was only ever
+            rendered by Lesson.tsx, so the 9 article-format lessons had no way
+            to propose an edit. articleContent is the raw md, so one synthetic
+            whole-article section is all the modal needs. */}
+        {!isMobile && !isSmallScreen && !IS_WHITELABEL && !!address && (
+          <Box
+            position="absolute"
+            right="24px"
+            top="50%"
+            transform="translateY(-50%)"
+          >
+            <EditContentModal
+              lesson={lesson}
+              slide={{
+                type: 'LEARN' as SlideType,
+                title: lesson.name,
+                md: lesson.articleContent,
+              }}
+              iconOnly
+            />
+          </Box>
+        )}
+      </Box>
+      {lesson.publicationStatus === 'deprecated' && (
+        <Box
+          m="16px 24px"
+          p="12px 16px"
+          borderRadius="8px"
+          border="1px solid orange"
+          background="rgba(255, 165, 0, 0.1)"
+        >
+          {t(
+            'This lesson is no longer maintained and is kept for historical reference. Some of its content may be outdated.'
+          )}
+        </Box>
+      )}
       {!IS_WALLET_DISABLED && (
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
           <Box
@@ -640,7 +703,9 @@ const Article = ({
             // Tooltip with definition
             code: ({ node }: any) => {
               const keyword = node.children[0]?.value
-              const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
+              const lowerCaseKeyword = node.children[0]?.value
+                ? normalizeKeyword(node.children[0].value)
+                : undefined
               const lowerCaseKeywordSingular =
                 lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
                   ? lowerCaseKeyword.slice(0, -1)
@@ -649,19 +714,14 @@ const Article = ({
               const englishDefition =
                 keywords[lowerCaseKeyword]?.definition ||
                 keywords[lowerCaseKeywordSingular]?.definition
+              const translationKey =
+                keywordIndex[lowerCaseKeyword] ||
+                keywordIndex[lowerCaseKeywordSingular] ||
+                lowerCaseKeyword
+              const translated = keywordDefs[translationKey]
               const definition =
-                i18n.language !== 'en'
-                  ? !t(`${lowerCaseKeyword}.definition`, {
-                      ns: 'keywords',
-                    }).endsWith('.definition')
-                    ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
-                    : !t(`${lowerCaseKeywordSingular}.definition`, {
-                        ns: 'keywords',
-                      }).endsWith('.definition')
-                    ? t(`${lowerCaseKeywordSingular}.definition`, {
-                        ns: 'keywords',
-                      })
-                    : englishDefition
+                i18n.language !== 'en' && translated?.length
+                  ? translated
                   : englishDefition
               return definition?.length ? (
                 <Keyword

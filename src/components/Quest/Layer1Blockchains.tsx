@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Box, Checkbox, Stack, Text } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
 
 const BLOCKCHAINS = [
   {
@@ -32,6 +33,7 @@ const Layer1Blockchains = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'Layer1Blockchains' })
   const [selections, setSelections] = useState(() => {
     const savedState = localStorage.getItem('quest-layer-1-blockchains')
     if (!savedState) {
@@ -101,11 +103,13 @@ const Layer1Blockchains = (): {
     questComponent: (
       <>
         <Text fontSize="lg" mb={4}>
-          Given the current state of blockchain technology, blockchains can
-          optimize for at most two of the three characteristics.
+          {t(
+            'Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.'
+          )}
           <br />
-          Tick the characteristics that Bitcoin and Ethereum initially
-          prioritized.
+          {t(
+            'Tick the characteristics that Bitcoin and Ethereum initially prioritized.'
+          )}
         </Text>
         <Stack
           mt="4"
@@ -142,8 +146,10 @@ const Layer1Blockchains = (): {
                     mb={2}
                     colorScheme="purple"
                   >
-                    {characteristic.charAt(0).toUpperCase() +
-                      characteristic.slice(1)}
+                    {(() => {
+                      const label = t(characteristic)
+                      return label.charAt(0).toUpperCase() + label.slice(1)
+                    })()}
                   </Checkbox>
                 ))}
               </Box>

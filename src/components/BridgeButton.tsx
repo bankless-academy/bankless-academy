@@ -1,5 +1,6 @@
 import { Box, Button, Image } from '@chakra-ui/react'
 import ExternalLink from './ExternalLink'
+import { t } from 'i18next'
 
 const BridgeButton = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -28,17 +29,7 @@ const BridgeButton = ({
         leftIcon={<Image h="24px" src={'/images/bridge.svg'} />}
         {...props}
       >
-        <Box
-          minW={
-            props.w === '100%' && props.size === 'lg'
-              ? '180px'
-              : props.w === '100%'
-              ? '150px'
-              : 'unset'
-          }
-        >
-          Bridge Token
-        </Box>
+        <Box whiteSpace="nowrap">{t('Bridge')}</Box>
       </Button>
     </ExternalLink>
   )

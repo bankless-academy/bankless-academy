@@ -3,6 +3,8 @@ import { Box, VStack, Button, Spinner } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
+import { useTranslation } from 'react-i18next'
+
 import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
@@ -13,6 +15,7 @@ const AcademyCommunity = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'AcademyCommunity' })
   const [hasUserJoinedGM, setHasUserJoinedGM] = useState(false)
   const [hasUserJoinedBA, setHasUserJoinedBA] = useState(false)
   const [isSmallScreen] = useSmallScreen()
@@ -75,7 +78,7 @@ const AcademyCommunity = (
                     )
                   }
                 >
-                  {'1. Connect your wallet to Bankless Academy'}
+                  {t('1. Connect your wallet to Bankless Academy')}
                 </Button>
                 <Button
                   cursor="default"
@@ -96,11 +99,11 @@ const AcademyCommunity = (
                     )
                   }
                 >
-                  {'2. Join gm.xyz using this '}
+                  {t('2. Join gm.xyz using this ')}
                   <ExternalLink href="https://gm.xyz/invite/K3iot3AU7o" mx="1">
-                    invite link
+                    {t('invite link')}
                   </ExternalLink>
-                  {` or register with a phone number`}
+                  {t(' or register with a phone number')}
                 </Button>
                 <Button
                   cursor="default"
@@ -118,7 +121,7 @@ const AcademyCommunity = (
                     )
                   }
                 >
-                  {'3. Join '}
+                  {t('3. Join ')}
                   <ExternalLink
                     href="https://gm.xyz/c/BanklessAcademy?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson"
                     ml="1"
@@ -137,7 +140,7 @@ const AcademyCommunity = (
                     variant="primary"
                     ml="8"
                   >
-                    Validate quest
+                    {t('Validate quest')}
                   </Button>
                 </Box>
               )}

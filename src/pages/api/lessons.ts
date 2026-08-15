@@ -14,12 +14,12 @@ export default async function handler(
     // Sort lessons first, then handbooks
     const sortedLessons = [...LESSONS].sort((a, b) => {
       if ((a.isArticle || false) === (b.isArticle || false)) return 0
-      return (a.isArticle || false) ? 1 : -1
+      return a.isArticle || false ? 1 : -1
     })
 
     if (readme === 'true') {
-      const lessons = sortedLessons.filter(lesson => !lesson.isArticle)
-      const handbooks = sortedLessons.filter(lesson => lesson.isArticle)
+      const lessons = sortedLessons.filter((lesson) => !lesson.isArticle)
+      const handbooks = sortedLessons.filter((lesson) => lesson.isArticle)
 
       const formatItem = (lesson: LessonType) => {
         const mainLink = `${DOMAIN_URL_}/lessons/${lesson.slug}`
@@ -27,9 +27,14 @@ export default async function handler(
 
         if (lesson.languages?.length) {
           const otherLangs = lesson.languages
-            .filter(lang => lang !== 'en')
-            .sort((a, b) => LanguageDescription[a].localeCompare(LanguageDescription[b]))
-            .map(lang => `[${LanguageDescription[lang]}](${DOMAIN_URL_}/lessons/${lang}/${lesson.slug})`)
+            .filter((lang) => lang !== 'en')
+            .sort((a, b) =>
+              LanguageDescription[a].localeCompare(LanguageDescription[b])
+            )
+            .map(
+              (lang) =>
+                `[${LanguageDescription[lang]}](${DOMAIN_URL_}/lessons/${lang}/${lesson.slug})`
+            )
 
           if (otherLangs.length > 0) {
             languageLinks = ` [${otherLangs.join(',')}]`
@@ -43,7 +48,7 @@ export default async function handler(
         'Lessons:\n',
         ...lessons.map(formatItem),
         '\nHandbooks:\n',
-        ...handbooks.map(formatItem)
+        ...handbooks.map(formatItem),
       ].join('\n')
 
       res.setHeader('Content-Type', 'text/plain; charset=utf-8')
@@ -55,20 +60,24 @@ export default async function handler(
         delete lesson?.imageLinks
         // Initialize lessonLinks object with default English link
         lesson.lessonLinks = {
-          en: `${DOMAIN_URL_}/lessons/${lesson.slug}`
+          en: `${DOMAIN_URL_}/lessons/${lesson.slug}`,
         }
 
         // Initialize rawContentFiles with English content
         lesson.rawContentFiles = {
-          en: `https://raw.githubusercontent.com/bankless-academy/bankless-academy/refs/heads/main/translation/lesson/en/${lesson.slug}.md`
+          en: `${DOMAIN_URL_}/api/lesson-content/${lesson.slug}`,
         }
 
         // Add language-specific links and raw content files if languages are specified
         if (lesson.languages?.length) {
           lesson.languages.forEach((lang: LanguageType) => {
             if (lang !== 'en') {
-              lesson.lessonLinks![lang] = `${DOMAIN_URL_}/lessons/${lang}/${lesson.slug}`
-              lesson.rawContentFiles![lang] = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/refs/heads/main/translation/lesson/${lang}/${lesson.slug}.md`
+              lesson.lessonLinks![
+                lang
+              ] = `${DOMAIN_URL_}/lessons/${lang}/${lesson.slug}`
+              lesson.rawContentFiles![
+                lang
+              ] = `${DOMAIN_URL_}/api/lesson-content/${lang}/${lesson.slug}`
             }
           })
         }
@@ -82,12 +91,14 @@ export default async function handler(
           'lessonCollectibleVideo',
           'socialImageLink',
           'sponsorLogo',
-          'nftGatingImageLink'
+          'nftGatingImageLink',
         ]
 
-        mediaFields.forEach(field => {
+        mediaFields.forEach((field) => {
           if (lesson[field] && !lesson[field].startsWith('http')) {
-            lesson[field] = `${DOMAIN_URL_}${lesson[field].startsWith('/') ? '' : '/'}${lesson[field]}`
+            lesson[field] = `${DOMAIN_URL_}${
+              lesson[field].startsWith('/') ? '' : '/'
+            }${lesson[field]}`
           }
         })
 
@@ -103,7 +114,7 @@ export default async function handler(
 
         return {
           ...lesson,
-          type: lesson.isArticle ? 'HANDBOOK' : 'LESSON' as ContentType
+          type: lesson.isArticle ? 'HANDBOOK' : ('LESSON' as ContentType),
         }
       })
     )

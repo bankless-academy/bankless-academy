@@ -11,9 +11,9 @@ FORMAT: LESSON
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -63,7 +63,7 @@ What’s true about public goods?
 
 - [ ] They run out when used
 - [ ] They’re invite-only spaces
-- [ ] They are free and shared
+- [x] They are free and shared
 - [ ] They’re locked behind a paywall
 
 # Using web3 to fund public goods
@@ -100,7 +100,7 @@ What does a Public Nouns NFT represent?
 
 - [ ] Pets of each community member
 - [ ] Speculative art with no intrinsic value
-- [ ] A specific public goods project
+- [x] A specific public goods project
 - [ ] Memecoins
 
 # What is a DAO?
@@ -125,12 +125,14 @@ The Nouns movement started with a meme and lets the community **decide what to b
 
 This cultural icon has expanded from the _digital realm to real-world landmarks_ and events such as the [Shibuya Crossing in Tokyo](https://x.com/punk4156/status/1822040547059446040), to a projection on the [Eiffel Tower](https://x.com/johnhamon_/status/1761348271421747554), and has even been part of a [Super Bowl commercial](https://www.youtube.com/watch?v=Dbke3F1VnsQ). Noggles are a **cultural symbol of shared Nouns identity** across sub-DAOs like Lil Nouns, Gnars, and of course, Public Nouns.
 
+[embed](https://www.youtube.com/embed/lOzCA7bZG_k?rel=0&start=8)
+
 # Knowledge Check 3
 
 What connects Public Nouns to Nouns?
 
 - [ ] They have shared treasury and governance
-- [ ] Coded fork and shared symbols
+- [x] Coded fork and shared symbols
 - [ ] Founded by the same web3 team
 - [ ] They use pixel art that changes every week
 
@@ -172,7 +174,7 @@ What does forking mean?
 
 - [ ] Attending the annual Public Nouns dinner
 - [ ] Rewritten the governance contract
-- [ ] Copying code and reusing it
+- [x] Copying code and reusing it
 - [ ] Delegate the ability to vote on proposals
 
 # Public Nouns’ Impact - Part I
@@ -203,9 +205,9 @@ Recent examples include:
 
 Each project followed a _three-step process_:
 
-1. The proposal was **posted** in the [Public Nouns Discord](/20f12837a13b80fca3f0c312ba7d1fac) 🗨️
+1. The proposal was **posted** in the [Public Nouns Discord](/20f12837a13b80fca3f0c312ba7d1fac?pvs=25) 🗨️
 2. A 7-day (suggested) community **discussion** period took place 🧠
-3. The proposal advanced to **onchain voting** at [publicnouns.wtf](http://publicnouns.wtf/) 🗳️
+3. The proposal advanced to **onchain voting** at [publicnouns.wtf](http://publicnouns.wtf) 🗳️
 
 ![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-ii-5de36323.png)
 
@@ -237,4 +239,3 @@ Getting involved in any of these initiatives, supports the mission and helps it 
 _💡 To participate in the first three it's important to mention that you do not need to own a Public Nouns. All activities are free to access._
 
 ![](https://app.banklessacademy.com/images/public-nouns-a-public-goods-dao-experiment/whats-next-an-open-invitation-5efe6f41.png)
-

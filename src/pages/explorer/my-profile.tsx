@@ -10,6 +10,7 @@ import { MetaData } from 'components/Head'
 import { UserType } from 'entities/user'
 import Card from 'components/Card'
 import { DEFAULT_AVATAR } from 'constants/index'
+import { t } from 'i18next'
 
 const pageMeta: MetaData = {
   title: 'My profile',
@@ -66,7 +67,7 @@ export default function Page() {
     return (
       <Container maxW="992px">
         <Heading as="h2" size="xl" m="8" textAlign="center">
-          Loading Explorer Profile
+          {t('Loading Explorer Profile')}
         </Heading>
         <Image
           margin="auto"
@@ -107,7 +108,7 @@ export default function Page() {
             mt="40px"
             mb="8"
           >
-            Explorer Profile
+            {t('Explorer Profile')}
           </Text>
         </Card>
         {error}

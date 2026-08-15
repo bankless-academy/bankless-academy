@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
@@ -16,6 +17,7 @@ const StakingOnEthereum = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'StakingOnEthereum' })
   const [isSmallScreen] = useSmallScreen()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-staking-on-ethereum') || 'false'
@@ -64,7 +66,7 @@ const StakingOnEthereum = (
           <div className="bloc1" style={{ alignSelf: 'center' }}>
             <Box m="4">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {`Begin your staking journey with Rocket Pool.`}
+                {t('Begin your staking journey with Rocket Pool.')}
               </Text>
               <VStack mt="8" alignItems="start">
                 {/* <Button
@@ -106,34 +108,41 @@ const StakingOnEthereum = (
                     whiteSpace="break-spaces"
                     lineHeight="1.5em"
                   >
-                    {'Obtain 0.0002 rETH on any supported network*.'}
+                    {t('Obtain 0.0002 rETH on any supported network*.')}
                     <Box ml="2">
-                      {'a) Visit a '}
+                      {t('a) Visit a ')}
                       <ExternalLink href="https://app.uniswap.org/explore/tokens/base/0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c">
-                        Decentralized Exchange
+                        {t('Decentralized Exchange')}
                       </ExternalLink>
-                      {' to swap for rETH (Optimism or Base recommended)'}
+                      {t(' to swap for rETH (Optimism or Base recommended)')}
                       <br />
-                      {'b) Or mint rETH on Mainnet via '}
+                      {t('b) Or mint rETH on Mainnet via ')}
                       <ExternalLink href="https://stake.rocketpool.net/">
                         Rocket Pool
                       </ExternalLink>
-                      {' (0.01 ETH minimum)'}
+                      {t(' (0.01 ETH minimum)')}
                     </Box>
                   </Box>
                 </Button>
               </VStack>
               <Box mt="8">
-                {`Tip: Check our Explorer's Handbook entry '${lesson.name}' to find the best funding pathway for you.`}
+                {t(
+                  "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.",
+                  {
+                    lesson_title: lesson.name,
+                    interpolation: { escapeValue: false },
+                  }
+                )}
               </Box>
               <Box mt="8">
-                * Supported networks: Ethereum, Optimism, Base, Arbitrum and
-                Polygon (POS)
+                {t(
+                  '* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)'
+                )}
               </Box>
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
-                    {'Check Quest'}
+                    {t('Check Quest')}
                   </Button>
                 </Box>
               )}

@@ -7,6 +7,7 @@ import Helper from 'components/Helper'
 import ExternalLink from './ExternalLink'
 import { countExplorerBadges } from 'utils'
 import { IS_REWARDS_ACTIVATED } from 'constants/index'
+import { t } from 'i18next'
 
 const Reward = ({
   lesson,
@@ -52,13 +53,14 @@ const Reward = ({
                 definition={
                   <>
                     <Box mb="4">
-                      Campaign deadline: December 30th, 12 pm UTC or the first
-                      250 mints, whatever happens first.
+                      {t(
+                        'Campaign deadline: December 30th, 12 pm UTC or the first 250 mints, whatever happens first.'
+                      )}
                       <br />
                       <br />
-                      Rewards will be airdropped to all eligible addresses once
-                      the campaign is finalized. Explorers who already claimed
-                      this badge previously are already eligible ✅
+                      {t(
+                        'Rewards will be airdropped to all eligible addresses once the campaign is finalized. Explorers who already claimed this badge previously are already eligible ✅'
+                      )}
                       <br />
                       <br />
                       {count !== null && count > 0 && (
@@ -74,7 +76,7 @@ const Reward = ({
                         underline="true"
                         href="https://x.com/BanklessAcademy/status/1869412319819956491"
                       >
-                        Learn more
+                        {t('Learn more')}
                       </ExternalLink>
                     </Box>
                   </>

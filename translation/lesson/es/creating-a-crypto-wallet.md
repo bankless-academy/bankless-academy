@@ -1,9 +1,10 @@
 ---
-TITLE: Creando una Billetera Cripto
-DESCRIPTION: Configura tu primera billetera criptográfica con nuestra guía paso a paso.
+TITLE: Crea tu billetera cripto
+DESCRIPTION: Configura tu primera billetera cripto con nuestra guía paso a paso.
 LANGUAGE: Español
 WRITERS: Tetranome
-TRANSLATORS: OrnellaWeb3
+EDITORS: Claude (Anthropic AI, 2026 review)
+TRANSLATORS: Claude (Anthropic AI)
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -11,9 +12,9 @@ FORMAT: HANDBOOK
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -26,91 +27,90 @@ ________________________________________________________________________________
 ```
 
 ---
-
-Este es un resumen de nuestra lección [Conceptos Básicos de la Billetera](https://app.banklessacademy.com/lessons/wallet-basics), junto con un tutorial para completar la prueba de conocimientos. Revisa [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics) para **subir el nivel de tus conocimientos y reclamar tu insignia!**
+Este es un resumen de nuestra lección [Fundamentos de la billetera](https://app.banklessacademy.com/lessons/wallet-basics), junto con una guía paso a paso para la misión. Consulta [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics) para **subir de nivel y reclamar tu insignia.**
 
 ---
 
-## Conclusiones Clave
+## Puntos clave
 
-> - Necesitarás una billetera cripto para acceder al mundo de las cadenas de bloques.
+> * ¡Necesitarás una `billetera cripto` para acceder al mundo de las blockchains!
 >
-> - Una billetera es como una cuenta de \`blockchain'.
+> * Una billetera es como una cuenta de `blockchain`.
 >
-> - Las billeteras se utilizan para almacenar 'criptomonedas', iniciar sesión en las aplicaciones de blockchain, y más.
+> * Las billeteras sirven para guardar `criptomonedas`, iniciar sesión en aplicaciones blockchain y más.
 >
-> - Estas billeteras funcionan tanto en computadoras como en teléfonos móviles.
+> * Estas billeteras funcionan tanto en computadoras como en teléfonos.
 >
-> - Crear una billetara es fácil y toma alrededor de 5 minutos. Te mostraremos cómo, ¡en nuestro video a continuación!
+> * Crear una billetera es fácil y toma unos 5 minutos. ¡Te mostramos cómo en el video de abajo!
 
 ## ¿Qué es una billetera cripto?
 
-Las billeteras criptográficas son una pieza esencial de tu equipamiento en web3, ya que te permiten utilizar `criptomonedas` en tu computador o teléfono. Se accede a las billeteras utilizando software llamado `aplicación de billetera`: una extensión de navegador web para su computadora, o una aplicación en su teléfono.
+Las billeteras cripto son equipamiento esencial del web3: te permiten usar `criptomonedas` en tu computadora o teléfono. Se accede a ellas con un software llamado `aplicación de billetera`: una extensión de navegador en tu computadora, o una app en tu teléfono.
 
-Se pone aún mejor. Las billeteras son más que cuentas para mantener criptomonedas — son nuestra conexión con la cadena de bloques. Podemos utilizarlas para intercambiar criptomonedas con otras personas, iniciar sesión en aplicaciones de blockchain, **e incluso coleccionar objetos digitales como insignias de la Bankless Academy.** Cuanto más exploramos, más se convierten nuestras billeteras en algo que algunos consideran como el principio de la identidad digital.
+Y hay más. Las billeteras son más que cuentas para guardar criptomonedas: son nuestra conexión con la blockchain. Sirven para intercambiar criptomonedas con otras personas, iniciar sesión en aplicaciones blockchain **e incluso coleccionar objetos digitales como las insignias de Bankless Academy.** Cuanto más exploramos, más importancia toman nuestras billeteras, hasta el punto de que algunos las ven como el inicio de la identidad digital.
 
-Las billeteras vienen con dos piezas básicas de información de la cuenta:
+Las billeteras traen dos datos centrales de cuenta:
 
-- Una `llave pública`, que puedes considerar como tu _nombre de usuario_. La compartirás públicamente para recibir criptomonedas.
+* Una `clave pública`, que crea la `dirección` de tu billetera. La dirección funciona como tu *nombre de usuario*: la compartes en público para recibir criptomonedas.
 
-- Una `llave privada`, que actúa como tu _contraseña_. Este dato debe mantenerse siempre en privado y no puede modificarse.
+* Una `clave privada`, que actúa como tu *contraseña*. Siempre debe mantenerse en secreto y no se puede cambiar.
 
-Proteger tu llave privada es fundamental, ya que esta llave garantiza el acceso instantáneo a tu billetera. Nunca debes compartir tu llave privada. Puedes aprender más tomando [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics).
+Proteger tu clave privada es crítico porque esa clave da acceso inmediato a tu billetera. Nunca compartas tu clave privada. Aprende más en [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics).
 
-Hoy vamos a crear nuestra primera billetera, utilizando nuestra billetera cripto recomendada: ¡Zerion!
+¡Hoy configuraremos nuestra primera billetera con la billetera cripto que recomendamos: Zerion!
 
-## Guía
+## Guía paso a paso
 
-Configura tu primera billetera en tu computador, usando la guía abajo, o sigue desplazándote y encuentra nuestra guía para instalar tu billetera cripto en tu móvil.
+Configura tu primera billetera en la computadora con la guía de abajo, o sigue bajando para ver la guía de billetera en el teléfono.
 
-### Computer Wallet
+### Billetera en la computadora
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
-### Billetera Móvil
+### Billetera en el teléfono
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
-**¡Es hora de unirse al multiverso blockchain!**
+**¡Es hora de unirte al multiverso blockchain!**
 
-No te olvides de coleccionar esta entrada del manual para una fácil referencia en tus viajes y apoyar también a Bankless Academy.
+No olvides coleccionar esta entrada del manual para consultarla fácilmente en tus viajes y apoyar a Bankless Academy.
 
 ¡Buen viaje, Explorador!
 
 ---
 
-## FAQ
+## Preguntas frecuentes
 
-### ¿Qué son las criptomonedas?
+### ¿Qué es una criptomoneda?
 
-Las criptomonedas son una forma de dinero digital, asegurado por la "criptografía". Estas monedas pueden funcionar sin necesidad de autoridades ni bancos centralizados, lo que reduce la posibilidad de fraude al tiempo que aumenta la libertad financiera del titular.
+Las criptomonedas son una forma de dinero digital protegida por `criptografía`. Estas monedas pueden funcionar sin autoridades centralizadas ni bancos, lo que reduce la posibilidad de fraude y aumenta la libertad financiera de quien las tiene.
 
-Aprende más sobre las criptomonedas con nuestra lección **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)**, ¡y descubre cómo estas monedas digitales están revolucionando el mundo financiero!
+Aprende más sobre criptomonedas en nuestra lección **[Fundamentos de Bitcoin](https://app.banklessacademy.com/lessons/bitcoin-basics)** y descubre cómo estas monedas digitales están revolucionando el mundo financiero.
 
-### ¿Qué son las llaves pública y privada?
+### ¿Qué son las claves pública y privada?
 
-El "cifrado" de llave pública/privada permite a tu billetera hacer pública cierta información, como la dirección a la que otros pueden enviarte criptomonedas, mientras que mantiene el acceso a tus criptomonedas en privado. Una llave es como la dirección de tu casa de criptomonedas, y la otra abre la puerta principal.
+El `cifrado` de clave pública y privada permite que tu billetera haga pública cierta información, como la dirección donde otros pueden enviarte criptomonedas, mientras mantiene privado el acceso a ellas. La dirección de tu billetera, creada a partir de la clave pública, es como la dirección de tu casa, y la clave privada abre la puerta.
 
-Puedes compartir tu llave pública con cualquiera en quien confíes para que te envíe criptodivisas, pero tu llave privada es sólo para tus ojos, porque garantiza el acceso a todos los activos dentro del monedero. Nunca la compartas, aunque tu contacto diga ser de Bankless Academy o Zerion.
+Puedes compartir tu dirección con quien confíes para que te envíe criptomonedas, pero tu clave privada es solo para ti, porque da acceso a todos los activos de la billetera. Nunca la compartas, aunque tu contacto diga ser de Bankless Academy o de Zerion.
 
-Aprende más y obtén recompensas por crear tu primera billetera, en nuestra lección [Conceptos Básicos de la Billetera](https://app.banklessacademy.com/lessons/wallet-basics).
+Aprende más y recibe una recompensa por crear tu primera billetera en nuestra lección [Fundamentos de la billetera](https://app.banklessacademy.com/lessons/wallet-basics).
 
-### ¿Qué sucede si pierdo mi frase de recuperación?
+### ¿Qué pasa si pierdo mi frase de recuperación?
 
-Tu frase de recuperación, también conocida como "frase secreta" o "frase semilla", es tu única copia de seguridad si pierdes el acceso a tu billetera en tu dispositivo. Si pierdes tu frase de recuperación, el contenido de tu billetera se perderá para siempre. Por eso es importante guardarla en un lugar seguro, no sólo contra robos o pérdidas, sino también contra incendios o daños por agua.
+Tu frase de recuperación, también llamada “frase secreta” o “frase semilla”, es tu único respaldo si pierdes el acceso a la billetera en tu dispositivo. Si la pierdes, los fondos de tu billetera se perderán para siempre. Por eso es importante guardarla en un lugar seguro, protegido no solo del robo o el extravío, sino también del fuego y el agua.
 
-### ¿Pueden las billeteras Ethereum contener Bitcoin?
+### ¿Las billeteras de Ethereum pueden guardar Bitcoin?
 
-Las billeteras de Ethereum pueden contener Bitcoin, pero en un formulario “envuelto”. Si quieres mantener el Bitcoin original, tendrás que crear un billetera que se ejecute en la red Bitcoin, como [Exodus](https://www.exodus.com/) o [Mycelium](https://wallet.mycelium.com/).
+Las billeteras de Ethereum pueden guardar Bitcoin, pero en forma “envuelta”, como el token cbBTC de Coinbase. Si quieres tener Bitcoin original, tendrás que crear una billetera que funcione en la red Bitcoin, como [Exodus](https://www.exodus.com/) o [BlueWallet](https://bluewallet.io/).
 
 ---
 
 **Autor**
 
-[Tetranome](https://twitter.com/Tetranome) es responsable de contenido y diseño en Bankless Academy, y se centra en el proceso de aprendizaje, la interfaz y la experiencia del usuario, y el diseño de la plataforma.
+[Tetranome](https://twitter.com/Tetranome) es el líder de Contenido y Diseño de Bankless Academy, enfocado en el recorrido de aprendizaje, la interfaz y experiencia de usuario, y el arte de la plataforma.
 
-Patrón
+**Patrocinador**
 
-Esta guía está potenciada por Zerion.
+Esta guía es posible gracias a Zerion.

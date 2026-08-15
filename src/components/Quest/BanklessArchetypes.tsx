@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { Box } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
+import { useTranslation } from 'react-i18next'
 
 import { LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
@@ -11,6 +12,7 @@ const BanklessArchetypes = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'BanklessArchetypes' })
   const [isSmallScreen] = useSmallScreen()
 
   const MATCHING_ALGO = {
@@ -67,7 +69,7 @@ const BanklessArchetypes = (): {
   for (let i = 1; i <= nbOfQuizzes; i++) {
     const quiz_result = localStorage.getItem(`quiz-${LESSON_SLUG}-${i}`)
     quiz_results.push(quiz_result)
-    quiz_res += `${TRAITS[i - 1]}:${quiz_result}<br />`
+    quiz_res += `${t(TRAITS[i - 1])}:${quiz_result}<br />`
   }
   // console.log(quiz_results)
 
@@ -103,11 +105,11 @@ const BanklessArchetypes = (): {
     questComponent: (
       <Box display={isSmallScreen ? 'block' : 'flex'} w="80%">
         <div className="bloc1">
-          <h2>Answer selected:</h2>
+          <h2>{t('Answer selected:')}</h2>
           {ReactHtmlParser(quiz_res)}
         </div>
         <div className="bloc2">
-          <h2>Bankless Archetype results:</h2>
+          <h2>{t('Bankless Archetype results:')}</h2>
           {ReactHtmlParser(res)}
         </div>
       </Box>

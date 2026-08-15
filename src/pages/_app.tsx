@@ -1,3 +1,6 @@
+// MUST be first: installs a server-side localStorage stub so components
+// that read storage during render can be prerendered. See the file for why.
+import 'utils/ssrStorage'
 import { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
@@ -31,6 +34,7 @@ import {
 import { FrameProvider } from 'components/providers/FrameProvider'
 import ExternalLink from 'components/ExternalLink'
 import { AppProvider } from 'contexts/AppContext'
+import { t } from 'i18next'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -99,9 +103,11 @@ const App = ({
     pageProps.pageMeta?.title === 'Maintenance'
   ) {
     return SENTRY_ENABLED ? (
-      <Sentry.ErrorBoundary>Maintenance in progress ...</Sentry.ErrorBoundary>
+      <Sentry.ErrorBoundary>
+        {t('Maintenance in progress ...')}
+      </Sentry.ErrorBoundary>
     ) : (
-      <div>Maintenance in progress ...</div>
+      <div>{t('Maintenance in progress ...')}</div>
     )
   }
   if (pageProps.pageMeta?.nolayout) {
@@ -183,6 +189,15 @@ const App = ({
         <NonSSRWrapper>
           {!isMobile && !isTelegramWebApp && <GlobalScrollbar skin="dark" />}
         </NonSSRWrapper>
+        {/* Client-only, deliberately. Server-rendering this tree is mechanically
+            close — the router-singleton, localStorage, document and window
+            accesses that blocked it are all fixed — but the UI is a function of
+            localStorage in too many places to hydrate cleanly: the lesson card
+            renders "15 minutes" on the server and "Done" on the client, the
+            language label "English" then "Deutsch", and so on for badges,
+            resume position and wallet state. Each is a hydration mismatch and a
+            visible flash. Making this work needs user state out of render and
+            locale-prefixed URLs, not a wrapper change. See CLAUDE.md. */}
         <NonSSRWrapper>
           <WagmiProvider config={wagmiAdapter.wagmiConfig}>
             <QueryClientProvider client={queryClient}>
@@ -413,7 +428,7 @@ const App = ({
                       {isLoadingProfile ? (
                         <Container maxW="container.xl">
                           <Heading as="h2" size="xl" m="8" textAlign="center">
-                            Loading Explorer Profile
+                            {t('Loading Explorer Profile')}
                           </Heading>
                           <Image
                             margin="auto"
@@ -434,24 +449,26 @@ const App = ({
 
           <Overlay hidden={!stateData.open} zIndex="999" />
           {/* don't show if injected wallet is detected */}
-          {stateData.open && typeof window !== 'undefined' && !window.ethereum && (
-            <Box
-              position="fixed"
-              top="0"
-              left="0"
-              right="0"
-              p="4"
-              zIndex="1000"
-              maxW="380px"
-              margin="auto"
-            >
-              <ExternalLink href="https://bankless.ac/zerion">
-                <Button size="lg" variant="primaryBig" width="100%">
-                  No wallet? 👉 Get Zerion wallet here
-                </Button>
-              </ExternalLink>
-            </Box>
-          )}
+          {stateData.open &&
+            typeof window !== 'undefined' &&
+            !window.ethereum && (
+              <Box
+                position="fixed"
+                top="0"
+                left="0"
+                right="0"
+                p="4"
+                zIndex="1000"
+                maxW="380px"
+                margin="auto"
+              >
+                <ExternalLink href="https://bankless.ac/zerion">
+                  <Button size="lg" variant="primaryBig" width="100%">
+                    {t('No wallet? 👉 Get Zerion wallet here')}
+                  </Button>
+                </ExternalLink>
+              </Box>
+            )}
         </NonSSRWrapper>
       </ThemeProvider>
     </>

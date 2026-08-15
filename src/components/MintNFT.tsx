@@ -15,6 +15,7 @@ import { wagmiConfig } from 'utils/wagmi'
 import { NFTAddress, nftABI } from 'constants/nft'
 import { api, getNFTsCollectors } from 'utils/index'
 import { client } from 'utils/paymaster'
+import { t } from 'i18next'
 
 const MintNFT = (): JSX.Element => {
   const { address, chain } = useAccount()
@@ -102,7 +103,7 @@ const MintNFT = (): JSX.Element => {
                 <SealCheck width="40px" height="auto" />
               </Box>
               <Box flexDirection="column">
-                <Box>NFT minted:</Box>
+                <Box>{t('NFT minted:')}</Box>
                 <ExternalLink underline="true" href={txLink} alt="OpenSea Link">
                   {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                 </ExternalLink>
@@ -134,7 +135,7 @@ const MintNFT = (): JSX.Element => {
                   <Gear width="40px" height="auto" />
                 </Box>
                 <Box flexDirection="column">
-                  <Box>Minting in progress:</Box>
+                  <Box>{t('Minting in progress:')}</Box>
                   <ExternalLink
                     underline="true"
                     href={txLink}
@@ -193,7 +194,7 @@ const MintNFT = (): JSX.Element => {
           w="100%"
           background="transparent !important"
         >
-          NFT Collected
+          {t('NFT Collected')}
         </Button>
       ) : (
         <>
@@ -218,7 +219,7 @@ const MintNFT = (): JSX.Element => {
                       toast({
                         title: 'Switch your network to Base.',
                         description: (
-                          <>Click Mint again after switching network.</>
+                          <>{t('Click Mint again after switching network.')}</>
                         ),
                         status: 'error',
                         duration: 10000,
@@ -228,7 +229,7 @@ const MintNFT = (): JSX.Element => {
                     setIsMinting(false)
                     toast({
                       title: 'The network has been switched to Base.',
-                      description: <>Click Mint again.</>,
+                      description: <>{t('Click Mint again.')}</>,
                       status: 'warning',
                       duration: 10000,
                       isClosable: true,
@@ -248,7 +249,9 @@ const MintNFT = (): JSX.Element => {
                                 ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
                                 : mintingError}
                             </Box>
-                            <Box>Refresh the page before trying again.</Box>
+                            <Box>
+                              {t('Refresh the page before trying again.')}
+                            </Box>
                           </>
                         ),
                         status: 'error',
@@ -375,7 +378,7 @@ const MintNFT = (): JSX.Element => {
               }
             }}
           >
-            <Box fontWeight="bold">Mint Free Smart Wallet NFT</Box>
+            <Box fontWeight="bold">{t('Mint Free Smart Wallet NFT')}</Box>
             <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
           </Button>
           <br />

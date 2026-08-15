@@ -1,0 +1,166 @@
+# Japanese style guide (translate-content)
+
+Register and address
+- Use **です・ます体** (polite form) throughout. Not 敬語 (humble/honorific) —
+  that reads like a bank. Not だ・である体 — that reads like a textbook.
+- **Do not use 「あなた」** as a second-person pronoun. Japanese drops the
+  subject; "あなたのウォレット" should be just "ウォレット" or "ご自身のウォレット"
+  when ownership must be explicit. Overusing あなた is the clearest sign of a
+  machine translation.
+- Short sentences. Break long English sentences at the clause boundary rather
+  than chaining with 〜ので〜ため〜が.
+- Explorer (the site's term for its readers) -> **エクスプローラー**.
+
+Length — Japanese is the one language that gets SHORTER
+Japanese typically renders in 40-60% of the English character count, but each
+character is **full width**, occupying about two Latin character widths. The
+length estimator accounts for this (`displayWidth` in `content-lib.js` counts
+CJK as 2), so the 22-line ceiling is measured correctly — but the intuition
+"my translation is much shorter, so it must fit" is wrong. Trust the verifier.
+
+Script and terms
+- Established crypto vocabulary stays in **katakana**: ブロックチェーン、トークン、
+  ウォレット、ステーキング、マイニング、ロールアップ、ステーブルコイン、
+  スマートコントラクト、エアドロップ、ブリッジ。
+- Product and network names stay in **Latin script**: Bitcoin, Ethereum,
+  Uniswap, Optimism, Base, MetaMask, Coinbase, Velodrome, Rocket Pool,
+  OpenSea, Revoke.cash. Do not transliterate them.
+- Tickers, units and acronyms stay Latin: ETH, BTC, USDC, OP, gwei, wei, API,
+  DEX, CEX, AMM, KYC, TVL, LP, NFT, DAO, DeFi, Web3, ERC-20, EIP.
+- Where a native Japanese term is genuinely standard, use it: 秘密鍵
+  (private key), 公開鍵 (public key), 取引 / トランザクション (transaction),
+  手数料 (fee), 分散型 (decentralized), 中央集権型 (centralized).
+
+Particles and tooltips
+Japanese has no spaces, so a backticked term sits directly against its
+particle: `ウォレット`を、`ウォレット`は、`ウォレット`が. The backtick boundary
+keeps the term intact, so the tooltip resolves on the bare term — you do NOT
+need suffixed forms the way Turkish and Ukrainian do. Keep the particle
+**outside** the backticks.
+
+Emphasis — punctuation must sit OUTSIDE the markers
+CommonMark decides whether `**` opens or closes from the characters flanking
+it, and Japanese breaks the rule constantly because 「」： are punctuation and
+there are no word spaces. These do **not** render, and ship a literal `**` to
+the reader:
+
+    **価値：**時間が…        ->  **価値**：時間が…
+    **「代替可能性」**は…     ->  「**代替可能性**」は…
+    **[レッスン名](url)**の   ->  [**レッスン名**](url)の
+    ウォレットの_増減_を      ->  ウォレットの*増減*を
+
+Rules: never end or begin a `**…**` span on punctuation, never wrap a whole
+link in bold (bold the link *text* instead), and never use `_…_` next to
+Japanese characters — `_` cannot open or close intraword, so use `*…*`.
+`validate-content.js` renders every line with markdown-it and fails the build
+on any marker that survives as literal text.
+
+No nakaguro in katakana compounds
+ETHGlossary separates katakana compounds with ・ (スマート・コントラクト、
+ステーキング・プール、ピア・ツー・ピア). **We do not.** Write them solid:
+スマートコントラクト、ステーキングプール、ピアツーピア、ブロックエクスプローラー、
+オプティミスティックロールアップ. The one exception is a foreign personal name,
+where ・ is correct Japanese: サトシ・ナカモト.
+
+Glossary overrides
+`x = x` pins a term to its Latin form. Ordered by how many of the 19 lessons
+use the term.
+
+Two terms that drift
+- **transaction -> トランザクション**, always, when it means an onchain
+  transaction. Reserve **取引** for trading and exchange senses (trade, order
+  book, OTC), otherwise 取引所 stops reading as "place of transactions".
+- **Proof of Work / Proof of Stake -> プルーフオブワーク / プルーフオブステーク**
+  in prose; the acronyms PoW / PoS stay Latin.
+
+```terms
+transaction = トランザクション
+proof of work = プルーフオブワーク
+proof of stake = プルーフオブステーク
+mint = ミント
+allowance = 許可枠
+token allowance = トークン許可
+bridge = ブリッジ
+trade = 取引する
+validator = バリデーター
+private key = 秘密鍵
+public key = 公開鍵
+blockchain = ブロックチェーン
+blockchain technology = ブロックチェーン技術
+layer 1 = Layer 1
+layer 2 = Layer 2
+smart contract = スマートコントラクト
+cryptocurrency = 暗号資産
+decentralized = 分散型
+decentralization = 分散化
+dapp = dApp
+staking pool = ステーキングプール
+staking = ステーキング
+web3 = Web3
+web2 = Web2
+block = ブロック
+crypto wallet = 暗号資産ウォレット
+wallet = ウォレット
+liquidity = 流動性
+liquidity pool = 流動性プール
+dex = DEX
+cex = CEX
+validator node = バリデーターノード
+node operator = ノードオペレーター
+address = アドレス
+gas = ガス
+gas fee = ガス代
+optimistic rollup = オプティミスティックロールアップ
+zk rollup = ZKロールアップ
+rollup = ロールアップ
+seed phrase = シードフレーズ
+recovery phrase = リカバリーフレーズ
+dao = DAO
+peer-to-peer = ピアツーピア
+defi = DeFi
+hot wallet = ホットウォレット
+cold wallet = コールドウォレット
+ledger = 台帳
+price impact = 価格インパクト
+decentralized exchange = 分散型取引所
+centralized exchange = 中央集権型取引所
+onchain = オンチェーン
+sidechain = サイドチェーン
+permissionless = パーミッションレス
+trustless = トラストレス
+token = トークン
+token allowance = トークン許可
+stablecoin = ステーブルコイン
+mining = マイニング
+miners = マイナー
+self-custody = 自己保管
+hash = ハッシュ
+nft = NFT
+slippage = スリッページ
+governance = ガバナンス
+monetary policy = 金融政策
+central bank = 中央銀行
+gold standard = 金本位制
+max supply = 最大供給量
+circulating supply = 流通供給量
+scarcity = 希少性
+inflation = インフレ
+halving = 半減期
+```
+
+Typography
+- Use the full-width Japanese period 。 and comma 、 — never . and , in
+  Japanese prose.
+- Quotation marks are 「 」 (and 『 』 nested).
+- **No spaces between Japanese words.** Put a space only around Latin-script
+  runs where it aids readability (Ethereum の, ETH を).
+- Never use em dashes (—).
+- Numbers stay half-width Arabic: 0.0002 ETH, 120,000, 51%. Note Japanese uses
+  a **period** decimal separator and comma thousands separator, and **no space**
+  before the percent sign — unlike the European languages in this repo.
+- Large figures may use 万 / 億 where natural (1億ドル), but keep the figure
+  itself accurate to the English.
+
+Interface strings
+- Keep an English app's button label in English and gloss it in Japanese on
+  first use: 「Connect Wallet」(ウォレットを接続)をクリックします。

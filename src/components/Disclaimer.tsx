@@ -73,11 +73,11 @@ const Disclaimer = ({
         <ModalBody>
           <Box>
             <Box mb="4">
-              {`Remember, this is the frontier of technology and finance. Even the most trained Explorers can make mistakes and lose money. Education only reduces risk.`}
+              {t(`Remember, this is the frontier of technology and finance. Even the most trained Explorers can make mistakes and lose money. Education only reduces risk.`)}
             </Box>
             <Box mb="4" fontWeight="bold">
               <ExternalLink underline="true" href="/disclaimer">
-                {`Do you accept full responsibility for your Bankless journey?`}
+                {t(`Do you accept full responsibility for your Bankless journey?`)}
               </ExternalLink>
             </Box>
             {/* <Box

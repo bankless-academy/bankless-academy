@@ -6,6 +6,7 @@ import { Box, useToast, Image, Button } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { STAMP_PLATFORMS } from 'constants/passport'
 import { shortenAddress } from 'utils/index'
+import { t } from 'i18next'
 
 const pageMeta: MetaData = {
   description: 'Confirmation',
@@ -52,7 +53,7 @@ const Confirmation = (): JSX.Element => {
                 }}
                 m="10px auto"
               >
-                Close Window
+                {t('Close Window')}
               </Button>
             </Box>
           </>

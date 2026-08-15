@@ -16,7 +16,7 @@ import { Wallet, UserCircle, SignOut } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
-import router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import { useAppKit } from '@reown/appkit/react'
 import { useAccount, useSignMessage } from 'wagmi'
 import { useDisconnect } from '@reown/appkit/react'
@@ -67,7 +67,8 @@ const ConnectWalletButton = ({
   const { t } = useTranslation()
   const { open } = useAppKit()
   const { address, connector, chainId } = useAccount()
-  const { asPath } = useRouter()
+  const router = useRouter()
+  const { asPath } = router
   // const { simulate } = query
   // if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
   //   address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
@@ -481,7 +482,17 @@ const ConnectWalletButton = ({
               </Box>
             </Button>
           </PopoverTrigger>
-          <PopoverContent width={isSmallScreen ? '260px' : '300px'}>
+          {/* Width follows the labels, so "Disconnect Wallet" and "Déconnecter
+              le portefeuille" each get exactly the room they need.
+              `max-content` rather than `auto`: this box is absolutely
+              positioned, so `auto` means shrink-to-fit, and the w="100%"
+              buttons inside then resolve against the AVAILABLE width instead
+              of the content — which blew the menu up to ~570px. */}
+          <PopoverContent
+            w="max-content"
+            minW={isSmallScreen ? '260px' : '300px'}
+            maxW="calc(100vw - 32px)"
+          >
             <PopoverArrow />
             <PopoverBody>
               <Box textAlign="center" m="2">
@@ -499,9 +510,7 @@ const ConnectWalletButton = ({
                     }
                     onClick={onClose}
                   >
-                    <Box minW={isSmallScreen ? '150px' : '180px'}>
-                      {t('My Explorer Profile')}
-                    </Box>
+                    <Box whiteSpace="nowrap">{t('My Explorer Profile')}</Box>
                   </Button>
                 </InternalLink>
               </Box>
@@ -530,9 +539,7 @@ const ConnectWalletButton = ({
                   }
                   onClick={disconnectWallet}
                 >
-                  <Box minW={isSmallScreen ? '150px' : '180px'}>
-                    {t('Disconnect Wallet')}
-                  </Box>
+                  <Box whiteSpace="nowrap">{t('Disconnect Wallet')}</Box>
                 </Button>
               </Box>
             </PopoverBody>
@@ -587,12 +594,12 @@ const ConnectWalletButton = ({
                 >
                   {t('Get help here')}
                 </ExternalLink> */}
-                {`No wallet? `}
+                {`${t('No wallet?')} `}
                 <ExternalLink
                   underline="true"
                   href="https://bankless.ac/zerion"
                 >
-                  👉 Get Zerion wallet here
+                  {t('👉 Get Zerion wallet here')}
                 </ExternalLink>
               </Text>
             </PopoverBody>

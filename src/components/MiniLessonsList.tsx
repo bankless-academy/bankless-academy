@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Image } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { LESSONS } from 'constants/index'
+import { t } from 'i18next'
 
 interface MiniLesson {
   name: string
@@ -59,7 +60,7 @@ const MiniLessonsList: React.FC<MiniLessonsListProps> = ({
   }
 
   if (loading) {
-    return <LoadingContainer>Loading lessons...</LoadingContainer>
+    return <LoadingContainer>{t('Loading lessons...')}</LoadingContainer>
   }
 
   if (error) {

@@ -3,6 +3,7 @@ TITLE: Swapping on a Decentralized Exchange
 DESCRIPTION: Begin your journey into DeFi with this Decentralized Exchange walkthrough.
 LANGUAGE: English
 WRITERS: Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange
 FORMAT: HANDBOOK
@@ -11,9 +12,9 @@ FORMAT: HANDBOOK
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -34,7 +35,7 @@ ________________________________________________________________________________
 >
 > * We can use block explorers to inspect our on-chain transactions.
 
-The Decentralized Exchange (DEX) is the most commonly used application in the world of `Decentralized Finance` (DeFi) — and for good reason! DEXs enable automated swapping of one cryptocurrency token for another, without need for a mediator. Unlike Centralized Exchanges (CEXs), this type of swap also enables users to swap while retaining full ownership of their assets.
+The Decentralized Exchange (DEX) is the most commonly used application in the world of `Decentralized Finance` (DeFi), and for good reason! DEXs enable automated swapping of one cryptocurrency token for another, without need for a mediator. Unlike Centralized Exchanges (CEXs), this type of swap also enables users to swap while retaining full ownership of their assets.
 
 Autonomy, and permissionless protocols, are backbone features of DeFi. They empower DeFi users with true ownership over their digital assets, and open access to fundamental blockchain services 24/7. Anyone with an internet connection can access DeFi, regardless of their personal background, beliefs, or geographical location.
 
@@ -42,7 +43,7 @@ In this handbook entry, we will cover how to use your self-custody wallet to int
 
 ## Choosing a DEX
 
-Selecting an affordable and safe platform is the first step in performing a token swap. In this walkthrough we will be using Velodrome, the most popular DEX on the Optimism network (at time of writing). As you become more confident in blockchain navigation, you’ll learn how to evaluate other exchanges and find the best fit for your needs. Our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson includes a comprehensive list of qualities to look out for.
+Selecting an affordable and safe platform is the first step in performing a token swap. In this walkthrough we will be using Velodrome, a well-established DEX on the Optimism network. As you become more confident in blockchain navigation, you’ll learn how to evaluate other exchanges and find the best fit for your needs. Our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson includes a comprehensive list of qualities to look out for.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-a5b39b1d.png)
 
@@ -62,7 +63,7 @@ Use the standard ‘Connect’ button typically located in the top right corner 
 
 If you are on desktop, connect with your browser wallet.
 
-If you are on mobile, you will be prompted to use WalletConnect — the web3 standard for connecting mobile wallets to dApps.
+If you are on mobile, a wallet-connection prompt will let you link your mobile wallet to the dApp.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-1d7c44d3.png)
 
@@ -86,13 +87,13 @@ For this walkthrough, make sure your wallet is set to the Optimism network.
 
 **6\. Customize your swap:**
 
-It’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP — but you can swap whatever tokens you like!
+It’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP, but you can swap whatever tokens you like!
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-7b117655.png)
 
-**7\. Approve token permissions:**
+**7\. Approve token permissions (token swaps only):**
 
-You will be prompted to set and approve permission for Velodrome to access your wallet funds. We recommend limiting this to your trade size to limit future interactions with your tokens. (Stay tuned for future content on token permissions!)
+If you are swapping a token like USDC, your wallet will first ask you to approve permission for Velodrome to access that token. We recommend limiting the approval to your trade size. ETH is the network’s native currency and needs no approval, so in our example the wallet goes straight to the swap confirmation.
 
 **8\. Confirm the transaction:**
 
@@ -102,7 +103,7 @@ Once you’re happy with your swap quote and settings, you can begin the swap. T
 
 **9\. Check your balance:**
 
-Your transaction should take around 40 seconds to confirm, after which you will see your new token balance in your wallet. If your token type is not displayed, make sure you’ve imported the token addresses.
+Your transaction should take a few seconds to confirm, after which you will see your new token balance in your wallet. If your token type is not displayed, make sure you’ve imported the token addresses.
 
 *Optimism token contract address: 0x4200000000000000000000000000000000000042*
 
@@ -110,17 +111,15 @@ Your transaction should take around 40 seconds to confirm, after which you will 
 
 **10\. Fetch your transaction hash:**
 
-To complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the ***transaction hash of the swap*** (not to be confused with the hash from your token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details.. If you missed it, or it’s missing, you’ll find another link in your wallet activity log — tied directly to your trade.
+To complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the ***transaction hash of the swap*** (not to be confused with the hash from a token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details. If you missed it, or it’s missing, you’ll find another link in your wallet activity log, tied directly to your trade.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-bcfdf0ee.png)
-
 
 ---
 
 It’s time to explore the world of decentralized trading! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Swapping on a Decentralized Exchange’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
-
 
 ---
 
@@ -132,11 +131,11 @@ Price quotes are typically calculated at the time you enter your desired swap in
 
 ### How long does it take for a token swap to execute?
 
-The answer depends on a variety of factors, primarily the block speed of the blockchain and how much you underpay or overpay the gas fee. DEX transactions submitted to Ethereum Mainnet typically take between 15 seconds and a couple of minutes to be confirmed. Layer 2 transactions are usually faster!
+The answer depends on a variety of factors, primarily the block speed of the blockchain and how much you underpay or overpay the gas fee. DEX transactions submitted to Ethereum Mainnet typically take between 12 seconds and a couple of minutes to be confirmed. Layer 2 transactions are usually faster!
 
 ### Why did my transaction fail?
 
-There are a number of reasons why a transaction could fail: insufficient funds to pay gas, gas limit set too low, or slippage set too low. The best way to begin troubleshooting is to look for User Interface error messages. You can also view your transaction on a block explorer, like [Etherscan](https://optimistic.etherscan.io/), to check if there are any on-chain error messages. We’ll cover more troubleshooting specifics in future content!
+There are a number of reasons why a transaction could fail: insufficient funds to pay gas, gas limit set too low, or slippage set too low. The best way to begin troubleshooting is to look for User Interface error messages. You can also view your transaction on a block explorer, like [Etherscan](https://optimistic.etherscan.io/), to check if there are any on-chain error messages. You can raise your `slippage tolerance` in the DEX swap settings if prices are moving faster than your trade. Many wallets and DEXs also offer protected transaction routing, which shields your swap from `MEV` bots trying to profit from pending trades.
 
 ### Can I change or remove token permissions?
 
@@ -146,8 +145,7 @@ Granting token permissions to a smart contract can leave our wallet vulnerable t
 
 If your token isn’t listed by default, you’ll have to paste the token contract address into the list. To find the token contract address, check <https://www.coingecko.com/> or the official project website.
 
-**Note:** Token addresses can change for a given token on different networks. For example the [USDC contract on Mainnet](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) is different than the [USDC contract on Optimism](https://optimistic.etherscan.io/token/0x7f5c764cbc14f9669b88837ca1490cca17c31607). Always verify token addresses before swapping!
-
+**Note:** Token addresses can change for a given token on different networks. For example the [USDC contract on Mainnet](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) is different than the [USDC contract on Optimism](https://optimistic.etherscan.io/token/0x0b2c639c533813f4aa9d7837caf62653d097ff85). Always verify token addresses before swapping!
 
 ---
 

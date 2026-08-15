@@ -159,6 +159,26 @@
   ],
   "redirects": [
     {
+      "source": "/lessons/br/:path*",
+      "destination": "/lessons/pt-br/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/lessons/cn/:path*",
+      "destination": "/lessons/zh/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/lessons/jp/:path*",
+      "destination": "/lessons/ja/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/lessons/ua/:path*",
+      "destination": "/lessons/uk/:path*",
+      "permanent": true
+    },
+    {
       "source": "/lessons/conceptos-(.*)",
       "destination": "/lessons/es/blockchain-basics",
       "permanent": false

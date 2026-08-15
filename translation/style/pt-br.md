@@ -1,0 +1,165 @@
+# Brazilian Portuguese style guide (translate-content)
+
+Variety and register
+- Write **Brazilian Portuguese**, not European. "você" (never "tu" as a
+  pronoun), gerund progressives ("está carregando", not "está a carregar"),
+  "celular" not "telemóvel", "tela" not "ecrã", "arquivo" not "ficheiro",
+  "time" not "equipa", "usuário" not "utilizador", "mouse" not "rato".
+- Address the reader as **você**, warm and direct. Imperatives take the
+  informal form matching "você": "conecte sua carteira", "clique em",
+  "guarde", "verifique". Never the "tu" forms ("conecta", "clica").
+- Prefer the active voice and short sentences. Portuguese runs ~20-25% longer
+  than English. Cut filler ("de forma a", "é importante ressaltar que",
+  "com o intuito de") rather than let a slide overflow.
+- Avoid anglicisms where a natural Portuguese word exists ("carteira" not
+  "wallet" in prose), but keep the English term when it is what Brazilian
+  crypto speakers actually say (see below).
+
+Terms kept in English
+- Product and network names: Bitcoin, Ethereum, Uniswap, Optimism, Base,
+  MetaMask, Coinbase, Velodrome, Rocket Pool, OpenSea, Revoke.cash.
+- Tickers and units: ETH, BTC, USDC, OP, gwei, wei.
+- Established crypto vocabulary used as-is in Brazilian Portuguese: blockchain,
+  token, smart contract, staking, gas, DeFi, NFT, DAO, rollup, hash,
+  stablecoin, HODL, airdrop, memecoin, bridge, mining (though "mineração" is
+  standard and preferred in prose), sidechain, slippage.
+- Acronyms: API, DEX, CEX, AMM, KYC, TPS, APR/APY, TVL, LP, ERC-20, EIP.
+
+Grammatical gender for the loanwords (use these consistently)
+- **a** blockchain, **a** wallet (but prefer "a carteira"), **a** DApp,
+  **a** DAO, **a** stablecoin, **a** sidechain
+- **o** token, **o** smart contract, **o** staking, **o** gas, **o** hash,
+  **o** rollup, **o** NFT, **o** bloco, **o** nó, **o** bridge
+
+Terms to translate
+- wallet -> carteira  (NOT "bolsa", NOT "wallet" in prose)
+- key (private/public) -> chave (privada/pública)
+- seed phrase / recovery phrase -> frase semente / frase de recuperação
+- address -> endereço
+- fee -> taxa
+- network -> rede
+- node -> nó
+- block -> bloco
+- ledger -> livro-razão (the shared-record sense)
+- supply -> oferta; circulating supply -> oferta circulante
+- yield -> rendimento
+- lending / borrowing -> empréstimo / tomada de empréstimo
+- swap -> troca (verb: trocar); "swap" as a product noun is acceptable
+- trade (verb) -> negociar; (noun) -> negociação
+- self-custody -> autocustódia
+- mining -> mineração; miner -> minerador
+- liquidity pool -> pool de liquidez ("pool" stays English, it is what is said)
+- governance -> governança
+- collateral -> colateral (garantia where it reads better)
+- peg -> paridade; pegged -> atrelado
+- permissionless -> sem permissão
+- trustless -> sem necessidade de confiança
+
+Glossary overrides
+These win over the vendored ETHGlossary, which returns inflected forms
+("descentralizados") and prefers some terms Brazilian crypto speakers do not
+use ("ponto a ponto" for peer-to-peer, "gás" for gas). `x = x` pins a term to
+its English form. Ordered by how many lessons use the term, so the ones most
+likely to drift between translators are pinned first.
+
+```terms
+private key = chave privada
+private keys = chaves privadas
+public key = chave pública
+blockchain = blockchain
+blockchains = blockchains
+blockchain technology = tecnologia blockchain
+blockchain apps = aplicativos blockchain
+layer 1 = Layer 1
+layer 2 = Layer 2
+smart contract = smart contract
+smart contracts = smart contracts
+cryptocurrency = criptomoeda
+cryptocurrencies = criptomoedas
+decentralized = descentralizado
+decentralization = descentralização
+decentralized money = dinheiro descentralizado
+dapp = dApp
+dapps = dApps
+staking pool = pool de staking
+staking pools = pools de staking
+staking = staking
+web3 = web3
+web2 = web2
+block = bloco
+crypto wallet = carteira cripto
+cryptocurrency wallet = carteira de criptomoedas
+wallet = carteira
+wallets = carteiras
+liquidity = liquidez
+liquidity pool = pool de liquidez
+liquidity pools = pools de liquidez
+dex = DEX
+cex = CEX
+validator node = nó validador
+validator nodes = nós validadores
+node operator = operador de nó
+address = endereço
+addresses = endereços
+gas = gas
+gas fee = taxa de gas
+optimistic rollup = rollup otimista
+zk rollup = rollup ZK
+rollup = rollup
+rollups = rollups
+seed phrase = frase semente
+recovery phrase = frase de recuperação
+dao = DAO
+peer-to-peer = peer-to-peer
+defi = DeFi
+hot wallet = carteira quente
+cold wallet = carteira fria
+ledger = livro-razão
+price impact = impacto no preço
+decentralized exchange = exchange descentralizada
+centralized exchange = exchange centralizada
+onchain = onchain
+sidechain = sidechain
+permissionless = sem permissão
+trustless = sem necessidade de confiança
+token = token
+tokens = tokens
+token allowance = permissão de token
+erc-20 = ERC-20
+erc-721 = ERC-721
+erc-1155 = ERC-1155
+stablecoin = stablecoin
+stablecoins = stablecoins
+mining = mineração
+miners = mineradores
+self-custody = autocustódia
+custodian = custodiante
+hash = hash
+nft = NFT
+airdrop = airdrop
+memecoin = memecoin
+slippage = slippage
+governance = governança
+monetary policy = política monetária
+central bank = banco central
+central banks = bancos centrais
+gold standard = padrão-ouro
+max supply = oferta máxima
+circulating supply = oferta circulante
+scarcity = escassez
+inflation = inflação
+halving = halving
+```
+
+Typography
+- Portuguese quotation marks are the straight double quotes “ ”; do not use « ».
+- Never use em dashes (—). Use a comma, colon, parentheses, or a new sentence.
+- Decimal comma and period as thousands separator, Brazilian convention:
+  0,0002 ETH, 120.000, R$ 1.500,00. Space before the percent sign: 51 %.
+- Accents are mandatory: "é" vs "e", "está" vs "esta", "só", "você", "não",
+  "então", "também", "após". Watch "por que / porque / por quê / porquê".
+
+Interface strings
+- When a slide describes clicking a button in an app whose interface is
+  English, keep the button label in English and gloss it in Portuguese on
+  first use: clique em “Connect Wallet” (conectar carteira).

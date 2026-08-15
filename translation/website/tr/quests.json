@@ -1,10 +1,12 @@
 {
   "BitcoinBasics": {
-    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Bitcoin'iniz Satoshi Nakamoto'ya doğru yola çıktı.",
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Bitcoin’in Satoshi Nakamoto’ya doğru yolda.",
     "2. It's now being verified by network miners...": "2. Şimdi ağdaki madenciler tarafından doğrulanıyor...",
-    "3. Your transaction is added to the blockchain “database”...": "3. İşleminiz, blok zinciri \"veri tabanına\" ekleniyor...",
-    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto Bitcoin'inizi aldı!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Bitcoin simülatörümüzü kullanarak Satoshi Nakamoto'nun adresine <strong>0.00000001</strong> BTC gönderin",
+    "3. Your transaction is added to the blockchain “database”...": "3. İşlemin blokzincir “veritabanına” ekleniyor...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto Bitcoin’ini aldı!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Basitleştirilmiş Bitcoin simülatörümüzle Satoshi Nakamoto’nun adresine istediğin kadar BTC gönder",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Etkileşimli Simülasyon: Satoshi Nakamoto’ya Bitcoin gönderme {{step}}",
+    "Reset simulation": "Simülasyonu sıfırla",
     "Recipient": "Alıcı",
     "Address": "Adres",
     "Asset": "Varlık",
@@ -12,22 +14,135 @@
     "Balance": "Bakiye",
     "Send": "Gönder"
   },
+  "BlockchainBasics": {
+    "Understand a transaction": "Bir işlemi anla",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Bu görevi doğrulamak için işlemin \"From\" (Gönderen) ve \"To\" (Alıcı) adreslerini yapıştır",
+    "From": "Gönderen",
+    "To": "Alıcı"
+  },
   "OptimismGovernance": {
-    "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
-    "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
-    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
-    "See the delegation platform here": "See the delegation platform here",
+    "Begin your Optimism Network journey by delegating OP.": "OP’lerini delege ederek Optimism Network yolculuğuna başla.",
+    "Select a ": "OP’lerin için bir ",
+    "Delegate": "Delege",
+    " for your OP": " seç",
+    "or delegate to ": "ya da şuna delege et: ",
     "Tip": "İpucu",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
-    "Refresh": "Refresh",
-    "Read Entry": "Read Entry"
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Görevin tam anlatımı için Kaşif El Kitabı’ndaki ‘{{lesson_title}}’ yazısına bak.",
+    "Refresh": "Yenile",
+    "Read Entry": "Yazıyı Oku"
   },
   "WalletBasics": {
-    "Create your first crypto wallet, with Zerion.": "Zerion ile ilk kripto cüzdanınızı oluşturun.",
-    "1. Download and install the Zerion wallet from ": "1. Zerion cüzdanını şu adresten indirip yükleyin:",
-    "If you already have a wallet, move to step 2.": "Zaten bir cüzdanınız varsa 2. adıma geçin.",
-    "2. Connect your wallet to Bankless Academy": "2. Cüzdanınızı Bankless Academy'ye bağlayın",
+    "Create your first crypto wallet.": "İlk kripto cüzdanını oluştur.",
+    "If you already have a wallet, move to step 2.": "Cüzdanın zaten varsa 2. adıma geç.",
+    "1. Download and install the Zerion wallet from ": "1. Zerion cüzdanını indir ve kur: ",
+    "2. Connect your wallet to Bankless Academy": "2. Cüzdanını Bankless Academy’ye bağla",
     "Tip": "İpucu",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Görevin adım adım anlatımı için Kaşifin El Kitabı'ndaki '{{lesson_title}}' başlıklı konuya göz atın."
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Görevin adım adım anlatımı için Kaşif El Kitabı’ndaki ‘{{lesson_title}}’ yazısına bak.",
+    "Read Entry": "Yazıyı Oku"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Dolandırıcılık içeren tüm ekran görüntülerini seç 👆",
+    "Hint: 1 screenshot is not a scam": "İpucu: 1 ekran görüntüsü dolandırıcılık değil"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Cüzdanını Bankless Academy’ye bağla",
+    "2. Join gm.xyz using this ": "2. Bu ",
+    "invite link": "davet bağlantısıyla",
+    " or register with a phone number": " gm.xyz’ye katıl ya da telefon numarasıyla kaydol",
+    "3. Join ": "3. Şuraya katıl: ",
+    "Validate quest": "Görevi doğrula"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Seçilen cevap:",
+    "Bankless Archetype results:": "Bankless Arketip sonuçların:",
+    "Risk": "Risk",
+    "Self sovereignty": "Öz egemenlik",
+    "DEX": "DEX",
+    "Trads": "TradFi",
+    "LP": "LP",
+    "Long term": "Uzun vadeli",
+    "Works in a DAO": "DAO’da çalışıyor",
+    "Crypto knowledge": "Kripto bilgisi",
+    "Crypto donation": "Kripto bağışı",
+    "Buys stuff in crypto": "Kripto ile alışveriş",
+    "Deployed smart contracts": "Akıllı sözleşme yazdı",
+    "Anon": "Anon",
+    "Works in web3": "web3’te çalışıyor",
+    "Creates digital art": "Dijital sanat üretiyor",
+    "Owns Bitcoin": "Bitcoin sahibi",
+    "Owns NFTs": "NFT sahibi",
+    "Aping into something new": "Yeni şeylere atlıyor",
+    "Owns shitcoin": "Shitcoin sahibi"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "1inch ile token takası nasıl yapılır",
+    "1. Load ": "1. ",
+    " on the ": " uygulamasını şu ağda aç: ",
+    "Base network": "Base ağı",
+    "2. Swap any token.": "2. Herhangi bir token takas et.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Başarılı <b>swap</b> işleminin hash’ini aşağıya yapıştır:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>İpucu:</b> 🚨 <b>Base ağında</b> yaptığın <b>swap</b> işleminin hash’ini yapıştır, token <b>approval</b> işleminin hash’ini değil.",
+    "Read documentation": "Dokümanları oku"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. ",
+    " on the ": " uygulamasını şu ağda aç: ",
+    "Optimism network": "Optimism ağı",
+    "2. Swap any token.": "2. Herhangi bir token takas et.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Başarılı <b>swap</b> işleminin hash’ini aşağıya yapıştır:",
+    "Resources:": "Kaynaklar:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>İpucu:</b> <b>Optimism ağında</b> yaptığın <b>swap</b> işleminin hash’ini yapıştır, token approval işleminin hash’ini değil. Ayrıntı için Kaşif El Kitabı yazısını oku.",
+    "Read Entry": "Yazıyı Oku"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "DeFi ile en çok ne yapmayı öğrenmek istersin?",
+    "Signature verified": "İmza doğrulandı",
+    "Sign your answer": "Cevabını imzala",
+    "Select your answer": "Cevabını seç",
+    "Investing": "Yatırım",
+    "Trading": "Alım satım",
+    "Lending & Borrowing": "Borç verme ve alma",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Staking yolculuğuna Rocket Pool ile başla.",
+    "Obtain 0.0002 rETH on any supported network*.": "Desteklenen herhangi bir ağda* 0,0002 rETH edin.",
+    "a) Visit a ": "a) rETH almak için bir ",
+    "Decentralized Exchange": "merkeziyetsiz borsaya",
+    " to swap for rETH (Optimism or Base recommended)": " git (Optimism ya da Base önerilir)",
+    "b) Or mint rETH on Mainnet via ": "b) Ya da Mainnet’te rETH mint et: ",
+    " (0.01 ETH minimum)": " (en az 0,01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "İpucu: Sana en uygun para yükleme yolunu bulmak için Kaşif El Kitabı’ndaki ‘{{lesson_title}}’ yazısına bak.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Desteklenen ağlar: Ethereum, Optimism, Base, Arbitrum ve Polygon (POS)",
+    "Check Quest": "Görevi Kontrol Et"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Bu görev için bir kripto cüzdana ihtiyacın var.",
+    "Wallet connected!": "Cüzdan bağlandı!",
+    "Waiting to detect your wallet ...": "Cüzdanın algılanmayı bekliyor ...",
+    "If you don't have one, let's set one up!": "Yoksa hemen bir tane oluşturalım!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Zincir üstü görevlerimiz ve ödüllerimiz yalnızca cüzdan bağlıyken çalışır.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Cüzdanlar blokzincir hesapları gibidir. Blokzincir uygulamalarını kullanmak ya da kripto para almak, saklamak ve göndermek için bir cüzdana ihtiyacın var.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Zerion ile ilk cüzdanını oluşturmak için bu kısa videoyu izle: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Blokzincir teknolojisinin bugünkü hâliyle bir blokzincir, üç özellikten en fazla ikisini optimize edebilir.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin ve Ethereum’un başlangıçta öncelik verdiği özellikleri işaretle."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "L2 yolculuğuna başla.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Base ya da Optimism’de en az 0,0002 ETH bulundur",
+    "Options to fund your wallet:": "Cüzdanına para yükleme seçenekleri:",
+    "Explore other options": "Diğer seçenekleri keşfet",
+    "Check Quest": "Görevi Kontrol Et"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Zincir üstü sertifikanı almadan önce:",
+    "Share on Twitter / X": "Twitter / X’te paylaş",
+    "Share on Farcaster": "Farcaster’da paylaş",
+    "See you there! Over and out 📡": "Orada görüşürüz! Tamam, kapanıyorum 📡",
+    "Connect": "Bağla",
+    "Repost on Twitter / X": "Twitter / X’te yeniden paylaş",
+    "Validate": "Doğrula"
   }
 }

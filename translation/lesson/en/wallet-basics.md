@@ -1,8 +1,9 @@
 ---
 TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your “Ethereum account” today!
+DESCRIPTION: What is a crypto wallet? Learn how wallets work and create your first one today!
 LANGUAGE: English
 WRITERS: Ap0ll0517, Jordy, Tetranome
+EDITORS: Claude (Anthropic AI, 2026 review)
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
@@ -11,9 +12,9 @@ FORMAT: LESSON
 ```
 __________________________________________________________________________________________________________________________________________________________
 
-$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\                                   
-$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |                                  
-$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\ 
+$$$$$$$\                      $$\       $$\                                      $$$$$$\                           $$\
+$$  __$$\                     $$ |      $$ |                                    $$  __$$\                          $$ |
+$$ |  $$ | $$$$$$\  $$$$$$$\  $$ |  $$\ $$ | $$$$$$\   $$$$$$$\  $$$$$$$\       $$ /  $$ | $$$$$$$\ $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\  $$\   $$\
 $$$$$$$\ | \____$$\ $$  __$$\ $$ | $$  |$$ |$$  __$$\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\____$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\ $$ |  $$ |
 $$  __$$\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\$$$$$$\  \$$$$$$\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
 $$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \____$$\  \____$$\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
@@ -35,7 +36,7 @@ It’s time to dive deeper on your journey into the blockchain multiverse. Every
 
 Wallets are kind of like the accounts from the `web2` internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
 
-In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain, the home of Bankless Academy.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
@@ -57,7 +58,7 @@ It used to be difficult, but these days anyone can create a wallet quite easily.
 
 If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
 
-The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!
+The trickier part of managing a wallet involves keeping it secure, which we’ll dive into shortly!
 
 Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
 
@@ -79,7 +80,7 @@ What is a wallet?
 
 > ℹ️ Try again! Digital collectibles are something you hold in your wallet.
 
-- [ ] A blockchain account
+- [x] A blockchain account
 
 > ℹ️ Correct! Wallets are accounts used to interact with blockchains.
 
@@ -90,21 +91,21 @@ Here is one of the most important things to understand about `web3` wallets:
 
 Most of us are used to these features. If we forget a password, we click a button, do a few things, and get a new password. Easy.
 
-Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created — and you do not choose these.
+Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created, and you do not choose these.
 
-This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
+This address and password combination cannot be changed, although you can always create a new wallet if you need to. Some newer wallets add recovery features, but never rely on that. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
 
 # Your wallet’s public key
 
-A `public key` is basically your wallet’s address. Often, this looks like a random series of letters and numbers.
+Your wallet’s `address` is created from its `public key`. Think of the address as your username: it often looks like a random series of letters and numbers.
 
 Example: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
 It is possible to create easier to remember versions of this with some `web3` services, but that’s a lesson for another time.
 
-You can also think of a public key like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+You can also think of your address like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets, without revealing anything personal about you.
 
-It is perfectly safe to share your wallet’s **public key**.
+It is perfectly safe to share your wallet’s **address**.
 
 **Note:** A single wallet app can hold multiple public/`private key` pairs.
 
@@ -112,11 +113,11 @@ It is perfectly safe to share your wallet’s **public key**.
 
 # Your wallet’s private key
 
-If the public key is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
+If your address is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
 
-Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092a4c72b53e69cf74d215_
 
-**It’s never safe to share this key — you could lose your wallet and everything in it.**
+**It’s never safe to share this key: you could lose your wallet and everything in it.**
 
 Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the `wallet`.
 
@@ -128,19 +129,19 @@ Luckily, most `blockchain apps` do not require you to type a long, complicated s
 
 # Knowledge Check 2
 
-Your public key is like your _____ and your private key is like your _____ .
+Your wallet address is like your _____ and your private key is like your _____ .
 
 - [ ] Routing Number / Account Number
 
 > ℹ️ Try again! Unlike a bank account number, your private key shouldn’t be shared with others.
 
-- [ ] Address / Zip code
+- [ ] Email address / Zip code
 
 > ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.
 
-- [ ] House address / House key
+- [x] House address / House key
 
-> ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.
+> ℹ️ Correct! Your address lets others find you, while only your private key lets you in.
 
 - [ ] Phone Number / Passport Number
 
@@ -160,7 +161,7 @@ Most recovery phrases are a list of 12 to 24 words that represent a unique piece
 
 Wallet recovery does **not** change or reset the keys.
 
-Your recovery phrase is essentially an easier to read version of your public/private key pair. **Never share your recovery phrase.**
+Your recovery phrase is like a master key: it can recreate every key pair in your wallet. **Never share your recovery phrase.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
@@ -172,7 +173,7 @@ Can you access your wallet with a recovery phrase if your device gets damaged or
 
 > ℹ️ Try again!
 
-- [ ] Yes
+- [x] Yes
 
 > ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.
 
@@ -188,9 +189,9 @@ There are two styles of `self-custody wallet`:
 - 🔥 **Hot wallets:** software on your desktop or phone.
 - 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
 
-Each wallet solution serves a different use-case. Many advanced users have one of each!
+You may also hear about `smart wallets`: an emerging type that runs code, enabling extras like passkey logins and account recovery.
 
-Don’t worry, we’ll only be creating one wallet today.
+Each wallet serves a different use-case. Don’t worry, we’ll only be creating one wallet today.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
@@ -198,7 +199,7 @@ Don’t worry, we’ll only be creating one wallet today.
 
 Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
 
-`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. **They are your wallet custodian** — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
+`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. **They are your wallet custodian**: they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
 
 This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some `blockchain apps` may be limited.
 
@@ -212,7 +213,7 @@ Do you control your private key with a custodial wallet?
 
 > ℹ️ Try again!
 
-- [ ] No
+- [x] No
 
 > ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
 
@@ -232,7 +233,7 @@ Whichever route you choose, it pays to be familiar and comfortable with wallet s
 
 Are you responsible for your private key with a self-custody wallet?
 
-- [ ] Yes
+- [x] Yes
 
 > ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
 
@@ -244,7 +245,7 @@ Are you responsible for your private key with a self-custody wallet?
 
 You will hear the terms “hot” and “cold wallet” quite a bit in `web3`.
 
-A `hot wallet` is a wallet accessed via an app on your device — the Zerion app for example. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
+A `hot wallet` is a wallet accessed via an app on your device, the Zerion app for example. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
 
 Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. These wallets are named ‘hot wallets’ for this “hot” connection between the internet and your private key.
 
@@ -258,7 +259,7 @@ As you dive deeper into your `web3` journey, you will come to know a landscape f
 
 `Cold wallets` grant higher security at the cost of convenience. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
 
-They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
+They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline, out of reach of digital attackers.
 
 Ledger and Trezor are examples of `cold wallets`.
 
@@ -280,7 +281,7 @@ Which of the following wallet types is considered the most secure?
 
 > ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
 
-- [ ] A cold wallet
+- [x] A cold wallet
 
 > ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
 
@@ -288,13 +289,15 @@ Which of the following wallet types is considered the most secure?
 
 Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ Record your `recovery phrase` on durable physical material (laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **It’s more than just a password.**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 Double-check the details whenever you send funds or sign, even for small amounts: mistakes cannot be undone.
 
-🔭 Spend time researching and gathering info on any `blockchain apps` you plan to interact with before connecting your wallet to it or signing its transactions.
+🔭 Research any `blockchain apps` you plan to use before connecting your wallet or signing their transactions.
 
-💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts.
+
+🛡️ Watch out for scams that trick you into signing harmful transactions or approvals: our [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) lesson shows how to spot them.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
@@ -302,7 +305,7 @@ Regardless if your `self-custody wallet` is hot or cold, there are many smart se
 
 What is the safest way to protect your recovery phrase?
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [x] Write it on a durable material and store it in a safe place.
 
 > ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.
 
@@ -316,7 +319,7 @@ What is the safest way to protect your recovery phrase?
 
 - [ ] Save it in your password manager.
 
-> ℹ️ Try again! If your password manager is hacked, your recovery phrase could be leaked.
+> ℹ️ Try again! A single password manager breach could expose it. Keep your phrase offline.
 
 # You’re ready to create your first wallet!
 
@@ -326,7 +329,7 @@ There are several `self-custody`, `hot wallet` apps available today. We will exp
 
 - ⚙️ It’s compatible with most `blockchain apps`.
 - ⚡ The interface is incredibly smooth and easy to use.
-- 💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.
+- 💻 It has a browser extension for Chrome, Brave, Edge, Opera, and Firefox internet browsers.
 - 📱 It is also available as a mobile app for Android and iOS users.
 - 🗣️ Zerion supports a variety of languages.
 
@@ -342,7 +345,6 @@ Is Zerion a custodial wallet app?
 
 > ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.
 
-- [ ] No
+- [x] No
 
-> ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
-
+> ℹ️ Correct! Zerion wallets are self-custody wallets, controlled by you, and you alone.

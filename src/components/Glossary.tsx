@@ -3,6 +3,7 @@ import { Box, Heading } from '@chakra-ui/react'
 
 // import { StyledHeading } from 'components/LessonCards'
 import { useSmallScreen } from 'hooks/index'
+import { useTranslation } from 'react-i18next'
 
 interface Term {
   id: string
@@ -15,11 +16,18 @@ interface GlossaryProps {
 }
 
 const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   const groupedTerms: { [key: string]: Term[] } = {}
   terms.forEach((term) => {
-    let firstLetter = term.name.charAt(0).toUpperCase()
-    if (parseInt(firstLetter)) firstLetter = 'number'
+    // strip accents so É groups under E, and match digits properly (the old
+    // parseInt test missed terms starting with "0")
+    let firstLetter = term.name
+      .charAt(0)
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .toUpperCase()
+    if (/[0-9]/.test(firstLetter)) firstLetter = 'number'
     if (!groupedTerms[firstLetter]) {
       groupedTerms[firstLetter] = []
     }
@@ -60,7 +68,7 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
           textAlign="center"
           pt={isSmallScreen ? '12px' : '16px'}
         >
-          Glossary
+          {t('Glossary')}
         </Heading>
         {Object.keys(groupedTerms).map((letter) => (
           <Box key={letter} id={`section-${letter}`}>

@@ -26,16 +26,26 @@ const InternalLink = ({
 
   const lessonSlug = isLessonLink ? href?.split('/')?.pop() : ''
 
-  const iHref =
-    isLessonLink &&
-    language !== 'en' &&
-    LESSONS.some(
-      (lesson) =>
-        lesson.slug === lessonSlug &&
-        (lesson.languages as any)?.includes(language)
-    )
-      ? href.replace('/lessons/', `/lessons/${language}/`)
-      : href
+  // the glossary has one URL per language too, so navigating to it should keep
+  // the reader in the language they are already browsing in
+  const isGlossaryLink =
+    !ignoreLocale &&
+    (href === '/glossary' ||
+      href === 'https://app.banklessacademy.com/glossary')
+
+  const iHref = isGlossaryLink
+    ? language !== 'en'
+      ? `/glossary/${language}`
+      : '/glossary'
+    : isLessonLink &&
+      language !== 'en' &&
+      LESSONS.some(
+        (lesson) =>
+          lesson.slug === lessonSlug &&
+          (lesson.languages as any)?.includes(language)
+      )
+    ? href.replace('/lessons/', `/lessons/${language}/`)
+    : href
 
   return (
     <NextLink href={iHref} passHref legacyBehavior>

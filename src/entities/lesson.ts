@@ -1,9 +1,17 @@
 import { QuestComponentType } from 'components/Quest/QuestComponent'
+import { LanguageCode } from 'constants/languages'
 
 export type SlideType = 'LEARN' | 'QUIZ' | 'POLL' | 'QUEST' | 'END'
-export type LanguageType = 'en' | 'br' | 'cn' | 'de' | 'es' | 'fr' | 'it' | 'jp' | 'tr' | 'ua'
-export type LanguageDescriptionType = { [Key in LanguageType as string]?: string }
-export type LevelType = 'Essentials' | 'Level 1' | 'Level 2' | 'Community Lessons'
+// derived from the language registry (src/constants/languages.ts)
+export type LanguageType = LanguageCode
+export type LanguageDescriptionType = {
+  [Key in LanguageType as string]?: string
+}
+export type LevelType =
+  | 'Essentials'
+  | 'Level 1'
+  | 'Level 2'
+  | 'Community Lessons'
 export type LessonTypeType = 'LESSON' | 'HANDBOOK'
 
 export interface LessonType {
@@ -41,7 +49,9 @@ export interface LessonType {
   quest?: QuestComponentType
   questSocialMessage?: string
   imageLinks?: string[]
-  publicationStatus: 'publish' | 'planned' | 'hidden'
+  // 'deprecated': hidden from all listings but still reachable by direct URL,
+  // with a warning banner on the intro slide
+  publicationStatus: 'publish' | 'planned' | 'hidden' | 'deprecated'
   publicationDate?: string
   translationDate?: string
   featuredOrderOnHomepage?: number
@@ -65,6 +75,8 @@ export interface LessonType {
   lang?: LanguageType
   keywords?: string[]
   showContent?: boolean
+  // raw markdown for the /content view, read from disk in getStaticProps
+  rawMd?: string
   slides?: {
     type: SlideType
     title: string

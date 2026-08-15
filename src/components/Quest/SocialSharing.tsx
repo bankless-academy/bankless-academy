@@ -13,7 +13,7 @@ import {
   Icon,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
-// import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 import { theme } from 'theme/index'
 import {
@@ -47,7 +47,7 @@ const SocialSharing = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  // const { t } = useTranslation('quests', { keyPrefix: 'SocialSharing' })
+  const { t } = useTranslation('quests', { keyPrefix: 'SocialSharing' })
   const [isQuestValidated, setIsQuestValidated] = useState(null)
   const [isSmallScreen] = useSmallScreen()
   const [messageLink, setMessageLink] = useState(
@@ -166,7 +166,12 @@ const SocialSharing = (
     }, 1000)
   }
 
-  const shareLink = `${window.location.href}?referrer=${account}`
+  // read during render, so it has to survive prerendering; the real URL is
+  // filled in on the client immediately after hydration
+  const shareLink =
+    typeof window !== 'undefined'
+      ? `${window.location.href}?referrer=${account}`
+      : ''
 
   const twitterLink = generateTwitterLink(share, shareLink)
 
@@ -191,7 +196,7 @@ const SocialSharing = (
               }
             </Text>
             <Text mx="0 !important" fontSize="xl">
-              {'Before claiming your onchain certification:'}
+              {t('Before claiming your onchain certification:')}
             </Text>
             {socialSharingQuestType === 'TWEET' ? (
               <>
@@ -214,7 +219,7 @@ const SocialSharing = (
                           />
                         }
                       >
-                        {'Share on Twitter / X'}
+                        {t('Share on Twitter / X')}
                       </Button>
                     </ExternalLink>
                   </Box>
@@ -228,7 +233,7 @@ const SocialSharing = (
                           composeCast(farcasterText, shareLink)
                         }}
                       >
-                        {'Share on Farcaster'}
+                        {t('Share on Farcaster')}
                       </Button>
                     ) : (
                       <ExternalLink href={farcasterLink} mr="2">
@@ -243,7 +248,7 @@ const SocialSharing = (
                             />
                           }
                         >
-                          {'Share on Farcaster'}
+                          {t('Share on Farcaster')}
                         </Button>
                       </ExternalLink>
                     )}
@@ -292,7 +297,7 @@ const SocialSharing = (
                       }
                     </Text>
                     <Text mx="0 !important" fontSize="xl">
-                      {'See you there! Over and out 📡'}
+                      {t('See you there! Over and out 📡')}
                     </Text>
                   </Box>
                 </Box>
@@ -334,7 +339,7 @@ const SocialSharing = (
                         }}
                         isLoading={loadingStamp === 'twitter'}
                       >
-                        {'Connect'}
+                        {t('Connect')}
                       </Button>
                     )}
                   </Box>
@@ -367,7 +372,7 @@ const SocialSharing = (
                           />
                         }
                       >
-                        {'Repost on Twitter / X'}
+                        {t('Repost on Twitter / X')}
                       </Button>
                     </ExternalLink>
                     <Box flexGrow={1} textAlign="right">
@@ -396,7 +401,7 @@ const SocialSharing = (
                           isLoading={isLoading}
                           loadingText="Validating quest"
                         >
-                          {'Validate'}
+                          {t('Validate')}
                         </Button>
                       </Box>
                     )}

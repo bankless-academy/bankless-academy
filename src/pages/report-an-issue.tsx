@@ -30,7 +30,9 @@ const ReportAnIssue = (): JSX.Element => {
       <Box w="100%" h="100%" padding="0" backgroundColor="transparent">
         <iframe
           src={`https://tally.so/embed/wAr8gz?hideTitle=0&alignLeft=1&wallet=${address}&domain=${DOMAIN_PROD}&context=${encodeURIComponent(
-            (context as string) || document?.referrer || 'no_context'
+            (context as string) ||
+              (typeof document !== 'undefined' ? document.referrer : '') ||
+              'no_context'
           )}`}
           frameBorder="0"
           width="100%"

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Box, Spinner, Button, VStack, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 
@@ -15,6 +16,7 @@ const Layer2Blockchains = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'Layer2Blockchains' })
   const [isSmallScreen] = useSmallScreen()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-layer-2-blockchains') || 'false'
@@ -65,7 +67,7 @@ const Layer2Blockchains = (
           <div className="bloc1">
             <Box m="4">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {`Begin your L2 journey.`}
+                {t('Begin your L2 journey.')}
                 {/* <Image
                   alt="Base"
                   src="/images/base.svg"
@@ -120,7 +122,7 @@ const Layer2Blockchains = (
                     )
                   }
                 >
-                  {'Hold a balance of at least 0.0002 ETH on Base or Optimism'}
+                  {t('Hold a balance of at least 0.0002 ETH on Base or Optimism')}
                 </Button>
               </VStack>
               {/* <Box mt="8">
@@ -128,7 +130,7 @@ const Layer2Blockchains = (
               </Box> */}
               <Box mt="8">
                 <Text mx="0 !important" fontSize="md">
-                  {'Options to fund your wallet:'}
+                  {t('Options to fund your wallet:')}
                 </Text>
                 1. <OnrampButton address={account} />
                 {/* <br />
@@ -138,7 +140,7 @@ const Layer2Blockchains = (
                 <Box mt="4">
                   2.{' '}
                   <ExternalLink href={`/lessons/${lesson.slug}`}>
-                    Explore other options{' '}
+                    {t('Explore other options')}{' '}
                     <ExternalLinkIcon mx="2px" mt="-4px" />
                   </ExternalLink>
                 </Box>
@@ -146,7 +148,7 @@ const Layer2Blockchains = (
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
-                    {'Check Quest'}
+                    {t('Check Quest')}
                   </Button>
                 </Box>
               )}

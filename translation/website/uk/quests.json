@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Твій Bitcoin вирушив до Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Тепер його перевіряють майнери мережі...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Твою транзакцію додано до «бази даних» блокчейну...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto отримав твій Bitcoin!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "У нашому спрощеному симуляторі Bitcoin надішли будь-яку суму BTC на адресу Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Інтерактивна симуляція: надсилання Bitcoin до Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Скинути симуляцію",
+    "Recipient": "Отримувач",
+    "Address": "Адреса",
+    "Asset": "Актив",
+    "Amount": "Сума",
+    "Balance": "Баланс",
+    "Send": "Надіслати"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Розберись у транзакції",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Щоб зарахувати квест, встав адреси «From» (від) і «To» (до) з цієї транзакції",
+    "From": "Від",
+    "To": "До"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Почни свій шлях у мережі Optimism з делегування OP.",
+    "Select a ": "Обери ",
+    "Delegate": "делегата",
+    " for your OP": " для своїх OP",
+    "or delegate to ": "або делегуй до ",
+    "Tip": "Порада",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Повний розбір квесту шукай у Посібнику Дослідника: «{{lesson_title}}».",
+    "Refresh": "Оновити",
+    "Read Entry": "Читати запис"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "Створи свій перший криптогаманець.",
+    "If you already have a wallet, move to step 2.": "Якщо гаманець уже є, переходь до кроку 2.",
+    "1. Download and install the Zerion wallet from ": "1. Завантаж і встанови гаманець Zerion з ",
+    "2. Connect your wallet to Bankless Academy": "2. Підключи гаманець до Bankless Academy",
+    "Tip": "Порада",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Покроковий розбір квесту шукай у Посібнику Дослідника: «{{lesson_title}}».",
+    "Read Entry": "Читати запис"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Познач усі скриншоти зі скамом 👆",
+    "Hint: 1 screenshot is not a scam": "Підказка: 1 скриншот не є скамом"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Підключи гаманець до Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Приєднайся до gm.xyz за цим ",
+    "invite link": "запрошенням",
+    " or register with a phone number": " або зареєструйся за номером телефону",
+    "3. Join ": "3. Приєднайся до ",
+    "Validate quest": "Зарахувати квест"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Обрана відповідь:",
+    "Bankless Archetype results:": "Твій архетип Bankless:",
+    "Risk": "Ризик",
+    "Self sovereignty": "Самосуверенність",
+    "DEX": "DEX",
+    "Trads": "TradFi",
+    "LP": "LP",
+    "Long term": "Надовго",
+    "Works in a DAO": "Працює в DAO",
+    "Crypto knowledge": "Знання крипто",
+    "Crypto donation": "Донати в крипто",
+    "Buys stuff in crypto": "Купує за крипто",
+    "Deployed smart contracts": "Деплоїв смартконтракти",
+    "Anon": "Анон",
+    "Works in web3": "Працює у Web3",
+    "Creates digital art": "Робить цифрове мистецтво",
+    "Owns Bitcoin": "Має Bitcoin",
+    "Owns NFTs": "Має NFT",
+    "Aping into something new": "Стрибає в нове",
+    "Owns shitcoin": "Має шиткоїни"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Як обміняти токени через 1inch",
+    "1. Load ": "1. Відкрий ",
+    " on the ": " у ",
+    "Base network": "мережі Base",
+    "2. Swap any token.": "2. Обміняй будь-який токен.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Встав нижче хеш успішної транзакції <b>swap</b>:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Порада:</b> 🚨 Встав хеш саме транзакції <b>swap</b> у <b>мережі Base</b>, а не транзакції <b>approval</b> для токена.",
+    "Read documentation": "Читати документацію"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Відкрий ",
+    " on the ": " у ",
+    "Optimism network": "мережі Optimism",
+    "2. Swap any token.": "2. Обміняй будь-який токен.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Встав нижче хеш успішної транзакції <b>swap</b>:",
+    "Resources:": "Матеріали:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Порада:</b> Встав хеш саме транзакції <b>swap</b> у <b>мережі Optimism</b>, а не транзакції approval для токена. Докладніше в статті Посібника Дослідника.",
+    "Read Entry": "Читати запис"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Що тобі найцікавіше навчитися робити з DeFi?",
+    "Signature verified": "Підпис підтверджено",
+    "Sign your answer": "Підпиши відповідь",
+    "Select your answer": "Обери відповідь",
+    "Investing": "Інвестувати",
+    "Trading": "Торгувати",
+    "Lending & Borrowing": "Кредити та позики",
+    "Staking": "Стейкінг"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Почни свій шлях у стейкінгу з Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "Отримай 0,0002 rETH у будь-якій підтримуваній мережі*.",
+    "a) Visit a ": "a) Зайди на ",
+    "Decentralized Exchange": "децентралізовану біржу",
+    " to swap for rETH (Optimism or Base recommended)": " і обміняй на rETH (радимо Optimism або Base)",
+    "b) Or mint rETH on Mainnet via ": "b) Або викарбуй rETH у Mainnet через ",
+    " (0.01 ETH minimum)": " (мінімум 0,01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Порада: у Посібнику Дослідника «{{lesson_title}}» знайдеш найкращий для себе спосіб поповнення.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Підтримувані мережі: Ethereum, Optimism, Base, Arbitrum і Polygon (POS)",
+    "Check Quest": "Перевірити квест"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Для цього квесту потрібен криптогаманець.",
+    "Wallet connected!": "Гаманець підключено!",
+    "Waiting to detect your wallet ...": "Чекаємо на твій гаманець ...",
+    "If you don't have one, let's set one up!": "Немає гаманця? Створимо його разом!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Наші ончейн-квести та нагороди працюють лише з підключеним гаманцем.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Гаманець це як акаунт у блокчейні. Він потрібен, щоб користуватися блокчейн-застосунками або купувати, зберігати й надсилати криптовалюту.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Це коротке відео покаже, як створити перший гаманець у Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "На нинішньому рівні технології блокчейн може оптимізувати щонайбільше дві з трьох характеристик.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Познач характеристики, які Bitcoin і Ethereum обрали першими."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Почни свій шлях на L2.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Май на балансі щонайменше 0,0002 ETH у Base або Optimism",
+    "Options to fund your wallet:": "Як поповнити гаманець:",
+    "Explore other options": "Інші варіанти",
+    "Check Quest": "Перевірити квест"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Перш ніж отримати ончейн-сертифікат:",
+    "Share on Twitter / X": "Поділитися у Twitter / X",
+    "Share on Farcaster": "Поділитися у Farcaster",
+    "See you there! Over and out 📡": "Побачимось! Кінець зв'язку 📡",
+    "Connect": "Підключити",
+    "Repost on Twitter / X": "Репост у Twitter / X",
+    "Validate": "Підтвердити"
+  }
+}

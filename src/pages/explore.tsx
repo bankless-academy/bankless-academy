@@ -24,6 +24,7 @@ import Card from 'components/Card'
 import Helper from 'components/Helper'
 import { useSmallScreen } from 'hooks'
 import { Plus } from '@phosphor-icons/react'
+import { t } from 'i18next'
 export const pageMeta: MetaData = {
   title: 'Explore Apps',
   description: 'The best apps for your crypto journey — all in one place.',
@@ -197,19 +198,19 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
             justifyContent="center"
             position="relative"
           >
-            Explore Apps
+            {t('Explore Apps')}
             <Box position="absolute" top="-4px" right="-10px">
               <Helper
-                title="Disclaimer"
+                title={t('Disclaimer')}
                 definition={
                   <>
                     <Box mb="4">
                       <Text fontWeight="bold">
-                        Always do your own research.
+                        {t('Always do your own research.')}
                       </Text>
-                      Blockchain is a new technology and most applications are
-                      new. Before depositing any large quantities of money, make
-                      sure you understand the risks.
+                      {t(
+                        'Blockchain is a new technology and most applications are new. Before depositing any large quantities of money, make sure you understand the risks.'
+                      )}
                     </Box>
                   </>
                 }
@@ -226,7 +227,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
           mt={4}
           mb={6}
         >
-          The best apps for your crypto journey — all in one place.
+          {t('The best apps for your crypto journey — all in one place.')}
         </Heading>
         <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
           {featuredItems.map((item) => (
@@ -298,7 +299,7 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                 ))}
               <ExternalLink href="/feature-request" ml={2}>
                 <Button leftIcon={<Plus />} variant="secondary">
-                  Submit an App
+                  {t('Submit an App')}
                 </Button>
               </ExternalLink>
             </TabList>

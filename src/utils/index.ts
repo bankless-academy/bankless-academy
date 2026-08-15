@@ -27,6 +27,7 @@ import {
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
+import { normalizeLangCode } from 'constants/languages'
 import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
@@ -438,7 +439,8 @@ const withMixpanel = {
     }
     const i18nextLng = localStorage.getItem('i18nextLng')
     if (!props.language && i18nextLng?.length) {
-      props.language = i18nextLng
+      // legacy stored codes (br/cn/jp/ua) -> ISO registry codes
+      props.language = normalizeLangCode(i18nextLng)
     }
     mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
   },
