@@ -1,3 +1,4 @@
+import { withSsrTiming } from 'utils/ssrTiming'
 import React, { useEffect } from 'react'
 import { GetServerSideProps } from 'next'
 import { NotionRenderer } from 'react-notion-x'
@@ -15,7 +16,7 @@ export const ALLOWED_SLUGS = Object.keys(NOTION_PAGES)
 
 export const ALLOWED_IDS = Object.values(NOTION_PAGES)
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+const getServerSidePropsImpl: GetServerSideProps = async (context) => {
   const slug =
     typeof context.params?.slug === 'string' ? context.params?.slug : null
 
@@ -117,3 +118,8 @@ const NotionPage = ({
 }
 
 export default NotionPage
+
+export const getServerSideProps = withSsrTiming(
+  '/notion/[slug]',
+  getServerSidePropsImpl
+)

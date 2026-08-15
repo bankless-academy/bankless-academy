@@ -1,3 +1,4 @@
+import { withSsrTiming } from 'utils/ssrTiming'
 import { kv } from '@vercel/kv'
 import { GetServerSideProps } from 'next'
 import {
@@ -35,9 +36,7 @@ interface ExplorePageProps {
   initialData: ExploreType[]
 }
 
-export const getServerSideProps: GetServerSideProps<
-  ExplorePageProps
-> = async () => {
+const getServerSidePropsImpl: GetServerSideProps<ExplorePageProps> = async () => {
   try {
     // Read KV directly. This used to fetch the page's OWN public URL
     // (`https://app.banklessacademy.com/api/cache/explore`) from inside the
@@ -590,3 +589,8 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
 }
 
 export default ExplorePage
+
+export const getServerSideProps = withSsrTiming(
+  '/explore',
+  getServerSidePropsImpl as any
+)

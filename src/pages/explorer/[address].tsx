@@ -1,9 +1,10 @@
+import { withSsrTiming } from 'utils/ssrTiming'
 import { MetaData } from 'components/Head'
 import { shortenAddress } from 'utils/index'
 import { DOMAIN_URL } from 'constants/index'
 import ExplorerProfile from 'components/ExplorerProfile'
 
-export async function getServerSideProps({ query }) {
+const getServerSidePropsImpl = async ({ query }: any) => {
   const { address, badge } = query
 
   let preloadError = ''
@@ -48,3 +49,8 @@ export default function ExplorerPage({
     />
   )
 }
+
+export const getServerSideProps = withSsrTiming(
+  '/explorer/[address]',
+  getServerSidePropsImpl as any
+)

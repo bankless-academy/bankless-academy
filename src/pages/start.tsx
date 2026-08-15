@@ -1,3 +1,4 @@
+import { withSsrTiming } from 'utils/ssrTiming'
 import React, { useEffect } from 'react'
 import { GetServerSideProps } from 'next'
 
@@ -11,7 +12,7 @@ import {
   MINI_APP_DESCRIPTION,
 } from 'constants/index'
 
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+const getServerSidePropsImpl: GetServerSideProps = async ({ query }) => {
   const { lesson, badge, referrer, r } = query
 
   const pageMeta: MetaData = {
@@ -52,3 +53,8 @@ const Start = (): JSX.Element => {
 }
 
 export default Start
+
+export const getServerSideProps = withSsrTiming(
+  '/start',
+  getServerSidePropsImpl
+)
