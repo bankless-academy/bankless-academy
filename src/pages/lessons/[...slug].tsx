@@ -140,14 +140,36 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   console.log('slug', slug)
   const language: any = hasLangSegment ? params.slug[0] : 'en'
   console.log('language', language)
-  let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
-  if (!currentLesson) {
-    // lesson not found
-    console.log('lesson not found')
-    return {
-      props: {},
-    }
-  }
+
+  // Reject anything that is not a shape this route actually serves. Without
+  // this the catch-all answered 200 to ANY url under /lessons/ — and because
+  // an unknown first segment is treated as a slug, /lessons/bitcoin-basics/
+  // contentt rendered the real lesson (title and all) at a junk URL, with
+  // `robots: all`. That is an unbounded indexable near-duplicate surface, and
+  // every unique URL also became a permanent prerender cache entry.
+  //
+  // Valid: [slug] | [slug-datadisk] | [lang, slug]
+  const segments = params.slug as string[]
+  const validShape =
+    segments.length === 1 ||
+    (segments.length === 2 && isLanguage(segments[0]))
+  if (!validShape) return { notFound: true }
+
+  const currentLessonMatch = LESSONS.find(
+    (lesson: LessonType) => lesson.slug === slug
+  )
+  if (!currentLessonMatch) return { notFound: true }
+
+  // `-datadisk` is only a real page for lessons that have a collectible; the
+  // other 17 existed purely because `fallback: true` invented them, and served
+  // a social image (`/images/<slug>/social-datadisk.jpg`) that does not exist.
+  if (
+    segments[segments.length - 1].endsWith('-datadisk') &&
+    !currentLessonMatch.hasCollectible
+  )
+    return { notFound: true }
+
+  let currentLesson = currentLessonMatch
   // console.log(currentLesson)
   if (currentLesson?.languages) {
     for (const language of currentLesson.languages) {
@@ -236,7 +258,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   // console.log('paths', paths)
   return {
     paths,
-    fallback: true,
+    // 'blocking' (not true): an unknown path must run getStaticProps so it can
+    // return notFound. With `true`, Next serves a fallback shell as 200 first
+    // and caches it, which is what made every junk URL indexable.
+    fallback: 'blocking',
   }
 }
 
