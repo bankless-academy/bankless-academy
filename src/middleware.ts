@@ -7,58 +7,16 @@ import type { NextRequest } from 'next/server'
 export async function middleware(request: NextRequest): Promise<NextResponse> {
   const ipAddress = request.ip || 'local'
   const ua = userAgent(request)
-  const { pathname } = request.nextUrl;
 
-  // Image handling middleware
-  if (pathname.match(/^\/images\/.*\.(png|jpg|jpeg|gif|webp)$/)) {
-    // Skip if the request is already going to an API route
-    if (pathname.startsWith('/api/')) {
-      return NextResponse.next();
-    }
-
-    // console.log('request.url', request);
-
-    // Check if this is a middleware check request to avoid infinite loops
-    const url = new URL(request.url);
-    if (url.searchParams.has('middleware_check')) {
-      return NextResponse.next();
-    }
-
-    try {
-      // Add a parameter to the URL to mark it as a middleware check
-      const checkUrl = new URL(request.url);
-      checkUrl.searchParams.set('middleware_check', 'true');
-
-      // Force HTTP protocol for localhost:3000
-      if (checkUrl.host === 'localhost:3000') {
-        checkUrl.protocol = 'http:';
-      } else {
-        // For other hosts, match the request protocol
-        checkUrl.protocol = request.nextUrl.protocol;
-      }
-
-      // console.log('checkUrl', checkUrl.toString());
-
-      // Add error handling for the fetch request
-      const response = await fetch(checkUrl.toString(), {
-        // Add a longer timeout
-        signal: AbortSignal.timeout(5000),
-      });
-
-      if (response.status === 404) {
-        console.log('detected 404 for image:', pathname);
-
-        const slug = pathname.split('/')[2];
-        const type = pathname?.split('/')[3]?.split('-')[0];
-        const rewriteUrl = new URL(`/api/lesson-image?slug=${slug}&type=${type}`, request.url);
-        console.log('rewriteUrl', rewriteUrl);
-        return NextResponse.rewrite(rewriteUrl);
-      }
-    } catch (error) {
-      console.error('Error checking image:', error);
-      // In case of an error, continue with the original request
-    }
-  }
+  // NOTE: the missing-image fallback used to live here. It fetched the image
+  // URL *itself* (with ?middleware_check=true) on every request just to learn
+  // whether it 404s, so every OG/social image cost an extra round trip plus a
+  // middleware invocation on the hottest static assets on the site.
+  //
+  // It is now a `fallback` rewrite in next.config.mjs. Fallback rewrites are
+  // evaluated only after the filesystem and dynamic routes have both missed —
+  // i.e. exactly when the image is absent — so the common case (image exists)
+  // costs nothing at all.
 
   // Detect and redirect bots
   if (ua.ua.includes('python') || ua.ua.includes('curl')) {
@@ -90,5 +48,8 @@ export default middleware;
 
 // Apply middleware only to specific routes
 export const config = {
-  matcher: ['/api/passport', '/api/mint-badge', '/api/validate-quest', '/images/(.*)/social-(.*)', '/images/(.*)/lesson-(.*)'],
+  // Image paths deliberately removed: the fallback rewrite in next.config.mjs
+  // handles missing images, and matching them here also meant the curl/python
+  // bot rule below 307'd real link-preview and RSS crawlers away from OG images.
+  matcher: ['/api/passport', '/api/mint-badge', '/api/validate-quest'],
 }

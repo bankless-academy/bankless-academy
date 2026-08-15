@@ -10,11 +10,8 @@ import { verifyTypedData } from 'ethers/lib/utils'
 import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
-import { readContract } from '@wagmi/core'
 import axios from 'axios'
-import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
-import { mainnet, polygon } from 'viem/chains'
-import type { Abi } from 'viem'
+import type { Network as AlchemyNetwork } from 'alchemy-sdk'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -27,6 +24,7 @@ import {
   MIRROR_ARTICLE_ADDRESSES,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
+import { mainnet, polygon } from 'viem/chains'
 import { NETWORKS } from 'constants/networks'
 import { normalizeLangCode } from 'constants/languages'
 import UDPolygonABI from 'abis/UDPolygon.json'
@@ -39,6 +37,17 @@ import { ACHIEVEMENTS } from 'constants/achievements'
 import { INDEXER_URL, INDEXER_URL_BACKUP, BASE_BADGE_CONTRACT_ADDRESS } from 'constants/badges'
 import { triggerHaptic as tactusTriggerHaptic } from 'tactus'
 _mark('utils-index-done')
+
+// PERF: alchemy-sdk and @wagmi/core are imported lazily inside the functions
+// that use them, never at module scope.
+//
+// This barrel is imported by ~52 files including _app, so its import graph is
+// evaluated on every serverless cold start. Measured in production via the
+// boot marks: `boot@0.501s -> utils-index-done@14.324s` — 13.8 SECONDS of the
+// ~17s cold response, while getServerSideProps itself took 184ms. These two
+// packages are a large share of that graph's local evaluation cost, and both
+// are only reachable from an async function (getUD runs client-side only, from
+// ConnectWalletButton). viem/chains is deliberately NOT in this list: see getUD.
 
 declare global {
   interface Window {
@@ -205,6 +214,8 @@ export async function validateOnchainQuest(
   address: string,
   tx?: string
 ): Promise<boolean> {
+  // Enum is a runtime value, so it cannot come from the type-only import above.
+  const { Network: AlchemyNetwork } = await import('alchemy-sdk')
   try {
     if (quest === 'DEXAggregators') {
       const check = []
@@ -733,7 +744,14 @@ export async function getUD(address: string): Promise<string | null> {
     // static import here put the entire wallet stack — and its module-time side
     // effects — into the SERVER bundle of every page, costing ~15s of cold-start
     // evaluation on a route that never touches a wallet.
-    const { wagmiConfig } = await import('utils/wagmi')
+    // viem/chains is NOT lazy here on purpose: constants/networks needs the
+    // full chain objects and imports it statically, so deferring it here moved
+    // nothing (measured: barrel eval 2.17s -> 2.14s). Keeping the static import
+    // avoids pretending to an optimisation that does not exist.
+    const [{ wagmiConfig }, { readContract }] = await Promise.all([
+      import('utils/wagmi'),
+      import('@wagmi/core'),
+    ])
     const balanceOfUDPolygon: any = await readContract(wagmiConfig, {
       address: '0xa9a6a3626993d487d2dbda3173cf58ca1a9d9e9f',
       chainId: polygon.id,
@@ -815,6 +833,7 @@ export function calculateExplorerScore(stats: UserStatsType) {
 }
 
 export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: string, tokenContractAddresses: string[]) => {
+  const { Alchemy } = await import('alchemy-sdk')
   const settings = {
     apiKey: ALCHEMY_KEY_BACKEND,
     network,
@@ -831,6 +850,7 @@ export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: str
 }
 
 export const getBalance = async (network: AlchemyNetwork, ownerAddress: string) => {
+  const { Alchemy } = await import('alchemy-sdk')
   const settings = {
     apiKey: ALCHEMY_KEY_BACKEND,
     network,

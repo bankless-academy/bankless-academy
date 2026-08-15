@@ -19,6 +19,27 @@ const nextConfig = {
     return config
   },
   transpilePackages: ['ethereum-identity-kit'],
+  // Missing lesson/social images fall back to the generator.
+  //
+  // `fallback` rewrites are evaluated ONLY after the filesystem and all dynamic
+  // routes have missed, so an image that exists is served straight from the CDN
+  // with zero extra work. This replaces a middleware block that fetched the
+  // image URL itself on every request just to detect a 404 — an extra round
+  // trip and a middleware invocation on the site's hottest static assets.
+  async rewrites() {
+    return {
+      fallback: [
+        {
+          source: '/images/:slug/social-:file',
+          destination: '/api/lesson-image?slug=:slug&type=social',
+        },
+        {
+          source: '/images/:slug/lesson-:file',
+          destination: '/api/lesson-image?slug=:slug&type=lesson',
+        },
+      ],
+    }
+  },
 }
 
 const SENTRY_ENABLED = process.env.NEXT_PUBLIC_SENTRY_ENABLED === 'true' || false
