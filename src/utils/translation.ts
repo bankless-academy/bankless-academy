@@ -116,6 +116,14 @@ export const loadLanguage = async (lng: string): Promise<void> => {
     i18next.addResourceBundle(lang, ns, mods[i].default, true, true)
   })
   loaded.add(lang)
+
+  // addResourceBundle does not notify anyone. If this IS the active language
+  // (the usual case on a reload, where the detector set it before the chunk
+  // existed), mounted components are still showing English and nothing would
+  // ever re-render them. Emitting languageChanged is what react-i18next's
+  // useTranslation subscribes to.
+  if (normalizeLangCode(i18next.language) === lang)
+    i18next.emit('languageChanged', lang)
 }
 
 export const defaultNS = 'common'
@@ -152,3 +160,9 @@ i18next
     },
     defaultNS,
   })
+
+// The detector resolves a stored/browser language during init, but resources
+// are lazy now — so on every reload in a non-English language i18next was
+// "in French" with no French bundle, silently rendering English while the
+// selector correctly reported French. Kick off that load immediately.
+void loadLanguage(i18next.language)

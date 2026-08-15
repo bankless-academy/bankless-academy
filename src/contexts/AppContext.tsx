@@ -99,13 +99,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }
 
     setLanguage(next)
-    if (i18next.language !== next) {
-      // Fetch the language's namespaces BEFORE switching, otherwise i18next
-      // renders English for a frame while the chunk arrives. Translations are
-      // lazy now (see LAZY_RESOURCES in utils/translation) so all ten languages
-      // are no longer in every visitor's bundle.
-      void loadLanguage(next).then(() => i18next.changeLanguage(next))
-    }
+    // loadLanguage is idempotent and MUST NOT be gated on the language
+    // differing: after a reload the detector has already set i18next.language
+    // to the stored language, so that guard skipped the load entirely and left
+    // the UI in English with the right language selected.
+    void loadLanguage(next).then(() => {
+      if (i18next.language !== next) i18next.changeLanguage(next)
+    })
   }, [router.asPath])
 
   const value = {
@@ -114,7 +114,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     language,
     setLanguage: (lang: string) => {
       setLanguage(lang)
-      i18next.changeLanguage(lang)
+      void loadLanguage(lang).then(() => i18next.changeLanguage(lang))
     },
     openLessons,
     setOpenLessons,
