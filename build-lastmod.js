@@ -59,13 +59,32 @@ if (!inRepo || isShallow) {
 }
 
 const gitDate = (file) => {
-  // null = never committed here -> that URL falls back to publicationDate
+  // null = git has never seen this file (new, uncommitted)
   const out = git(['log', '-1', '--format=%cI', '--', file])
   return out ? out.slice(0, 10) : null
 }
 
+// A file git cannot date is one being ADDED in the commit about to be made, so
+// the honest answer is "today", not "unknown".
+//
+// This used to `continue`, dropping the file from the manifest entirely. That
+// looked harmless — the sitemap falls back to publicationDate per URL — but for
+// a TRANSLATED file that fallback is the ENGLISH lesson's publication date,
+// which is routinely years stale, and the omission was permanent: nothing ever
+// revisited a file once it had been skipped. Because `git log` cannot see a
+// staged file, the only way to fill the gap was to re-run this script AFTER
+// committing and amend, which is a ritual nobody remembers. It was missed on
+// two consecutive language waves, leaving 171 files across 9 languages with no
+// <lastmod> at all.
+//
+// Dating them "today" instead makes the manifest complete at generation time,
+// so adding lessons is a single ordinary commit: write the files, build, commit
+// everything together. The next run after that commit resolves the entry to the
+// real commit date.
+const TODAY = new Date().toISOString().slice(0, 10)
+
 const manifest = {}
-let missing = 0
+let added = 0
 
 for (const lang of fs.readdirSync(ROOT)) {
   const dir = path.join(ROOT, lang)
@@ -74,11 +93,8 @@ for (const lang of fs.readdirSync(ROOT)) {
     if (!file.endsWith('.md')) continue
     const slug = file.replace(/\.md$/, '')
     const date = gitDate(path.join(dir, file))
-    if (!date) {
-      missing++
-      continue
-    }
-    manifest[`${lang}/${slug}`] = date
+    if (!date) added++
+    manifest[`${lang}/${slug}`] = date || TODAY
   }
 }
 
@@ -103,5 +119,5 @@ if (existing !== next) fs.writeFileSync(OUT, next)
 console.log(
   `lastmod manifest: ${Object.keys(manifest).length} files ` +
     `(${dates[0]} .. ${dates[dates.length - 1]})` +
-    (missing ? `, ${missing} without a git date (will fall back)` : '')
+    (added ? `, ${added} not yet committed (dated ${TODAY})` : '')
 )

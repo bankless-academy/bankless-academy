@@ -59,7 +59,7 @@ Cüzdanlar iki temel hesap bilgisiyle gelir:
 
 Bugün önerdiğimiz kripto cüzdanla ilk cüzdanımızı kuracağız: Zerion!
 
-## Rehber
+## Adım Adım Rehber
 
 İlk cüzdanını bilgisayarında kurmak için aşağıdaki rehberi izle ya da telefon cüzdanı rehberimiz için kaydırmaya devam et.
 

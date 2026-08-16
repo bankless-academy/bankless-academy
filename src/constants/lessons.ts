@@ -35,7 +35,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -330,7 +333,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -590,7 +596,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -648,7 +657,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Essentials',
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
@@ -975,7 +987,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Essentials',
     lessonWriters: 'iSpeakNerd',
@@ -1260,7 +1275,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Essentials',
     tags: [
@@ -1583,7 +1601,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -1921,7 +1942,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     tags: [
@@ -2194,7 +2218,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     tags: [
@@ -2272,7 +2299,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     tags: [
@@ -2354,7 +2384,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     tags: [
@@ -2663,7 +2696,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2722,7 +2758,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3058,7 +3097,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     tags: [
@@ -3121,7 +3163,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3422,7 +3467,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3495,7 +3543,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     tags: [
@@ -3561,7 +3612,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -3848,7 +3902,10 @@ const LESSONS: LessonType[] = [
       'vi',
       'ru',
       'ko',
-      'pl'
+      'pl',
+      'cs',
+      'sw',
+      'bn'
     ],
     level: 'Level 1',
     lessonWriters: 'Musharef, Tetranome',

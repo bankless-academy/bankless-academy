@@ -15,6 +15,34 @@ const md = new MarkdownIt({ html: true })
 const NBSP = '\u00a0'
 // plain space or narrow no-break space (anything that is not already an NBSP)
 const SP = '[ \\u202f]'
+// Spans a typography rule must never touch: code spans (a backticked glossary
+// term is matched against the keyword index verbatim, so an NBSP inside one is
+// a dead tooltip), images, links, autolinks and bare URLs (an NBSP in a URL
+// breaks it). Kept as one capturing group so `split` interleaves plain and
+// protected parts.
+const PROTECTED_SPAN =
+  /(`[^`\n]*`|!?\[[^\]\n]*\]\([^)\n]*\)|<https?:\/\/[^>\n]*>|https?:\/\/\S+)/g
+
+// Apply a substitution to the prose of each line only: fenced code blocks and
+// headings keep plain spaces, and protected spans pass through untouched.
+const perLine = (text, fix) => {
+  let inFence = false
+  return text
+    .split('\n')
+    .map((line) => {
+      if (/^\s*```/.test(line)) {
+        inFence = !inFence
+        return line
+      }
+      if (inFence || /^\s*#{1,6} /.test(line)) return line
+      return line
+        .split(PROTECTED_SPAN)
+        .map((part, i) => (i % 2 ? part : fix(part)))
+        .join('')
+    })
+    .join('\n')
+}
+
 const TYPOGRAPHY = {
   fr: (text) =>
     text
@@ -23,6 +51,47 @@ const TYPOGRAPHY = {
       // same for !, but never touch a markdown image: `text ![](url)`
       .replace(new RegExp(`${SP}+!(?!\\[)`, 'g'), `${NBSP}!`)
       .replace(new RegExp(`\u00ab${SP}+`, 'g'), `\u00ab${NBSP}`),
+
+  // Czech and Polish typography forbids leaving a one-letter word at the end of
+  // a line. Both waves shipped correct files, but only because each agent was
+  // told to run a scratch script by hand \u2014 which is not a rule, it is a habit
+  // that the next wave forgets. Encoding it here means `build-translation.sh`
+  // applies it at assembly for every future lesson.
+  //
+  // The replace loops because the pattern consumes the separator before the
+  // one-letter word, so "w z sieci" needs a second pass to reach "z".
+  cs: (text) =>
+    perLine(text, (s) => {
+      let prev
+      let out = s
+      do {
+        prev = out
+        out = out
+          // one-letter Czech words: k s v z o u a i (+ capitals)
+          .replace(/(^|[\s(\u201e\u201c\u201a'*_>-])([kKsSvVzZoOuUaAiI]) (?=\S)/g, `$1$2${NBSP}`)
+      } while (out !== prev)
+      return (
+        out
+          // thousands groups: 21 000 000
+          .replace(/(\d) (?=\d{3}(\D|$))/g, `$1${NBSP}`)
+          // number + unit / currency / percent
+          .replace(
+            /(\d) (?=(%|ETH|BTC|OP|USDC|USDT|USD|mil\.|mld\.|miliard|milion|bilion|sekund|vte\u0159in|minut|hodin|bod|dolar))/g,
+            `$1${NBSP}`
+          )
+      )
+    }),
+
+  pl: (text) =>
+    perLine(text, (s) => {
+      let prev
+      let out = s
+      do {
+        prev = out
+        out = out.replace(/(^|[\s(\u201e\u00bb"'*])([aeiouwzAEIOUWZ]) (?=\S)/g, `$1$2${NBSP}`)
+      } while (out !== prev)
+      return out
+    }),
 }
 
 // Normalize punctuation spacing for a language; a no-op for languages with no

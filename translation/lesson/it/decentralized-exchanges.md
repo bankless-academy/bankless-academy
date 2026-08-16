@@ -162,7 +162,7 @@ Gli AMM possono instradare uno scambio attraverso più pool di liquidità in una
 
 - [x] Vero
 
-> ℹ️ Esatto! Potresti pagare un costo di rete più alto, ma le azioni sono riunite in un'unica transazione.
+> ℹ️ Corretto! Potresti pagare un costo di rete più alto, ma le azioni sono riunite in un'unica transazione.
 
 - [ ] Falso
 

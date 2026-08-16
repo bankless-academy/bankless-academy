@@ -138,6 +138,27 @@ export const LAZY_RESOURCES: { [lang: string]: { [ns: string]: NamespaceLoader }
     keywords: () => import('../../translation/keywords/pl/keywords.json'),
     lesson: () => import('../../translation/website/pl/lesson.json'),
   },
+  cs: {
+    common: () => import('../../translation/website/cs/common.json'),
+    homepage: () => import('../../translation/website/cs/homepage.json'),
+    quests: () => import('../../translation/website/cs/quests.json'),
+    keywords: () => import('../../translation/keywords/cs/keywords.json'),
+    lesson: () => import('../../translation/website/cs/lesson.json'),
+  },
+  sw: {
+    common: () => import('../../translation/website/sw/common.json'),
+    homepage: () => import('../../translation/website/sw/homepage.json'),
+    quests: () => import('../../translation/website/sw/quests.json'),
+    keywords: () => import('../../translation/keywords/sw/keywords.json'),
+    lesson: () => import('../../translation/website/sw/lesson.json'),
+  },
+  bn: {
+    common: () => import('../../translation/website/bn/common.json'),
+    homepage: () => import('../../translation/website/bn/homepage.json'),
+    quests: () => import('../../translation/website/bn/quests.json'),
+    keywords: () => import('../../translation/keywords/bn/keywords.json'),
+    lesson: () => import('../../translation/website/bn/lesson.json'),
+  },
 }
 
 const loaded = new Set<string>(['en'])

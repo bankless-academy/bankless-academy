@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Bitcoin yako inaelekea kwa Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Sasa inathibitishwa na wachimbaji wa mtandao...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Muamala wako unaongezwa kwenye \"hifadhidata\" ya blockchain...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto amepokea Bitcoin yako!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Kwa kutumia kiigaji chetu rahisi cha Bitcoin, tuma kiasi chochote cha BTC kwenye anwani ya Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Uigaji shirikishi: kutuma Bitcoin kwa Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Anza uigaji upya",
+    "Recipient": "Mpokeaji",
+    "Address": "Anwani",
+    "Asset": "Mali",
+    "Amount": "Kiasi",
+    "Balance": "Salio",
+    "Send": "Tuma"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Elewa muamala",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Ili kuthibitisha Quest hii, bandika anwani za \"From\" (Kutoka) na \"To\" (Kwenda) za muamala huu",
+    "From": "Kutoka",
+    "To": "Kwenda"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Anza safari yako ya Optimism Network kwa kukabidhi OP.",
+    "Select a ": "Chagua ",
+    "Delegate": "Mwakilishi",
+    " for your OP": " wa OP yako",
+    "or delegate to ": "au kabidhi kwa ",
+    "Tip": "Kidokezo",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Angalia makala ya Mwongozo wa Mgunduzi kuhusu '{{lesson_title}}' kwa maelekezo kamili ya Quest.",
+    "Refresh": "Pakia upya",
+    "Read Entry": "Soma makala"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "Tengeneza mkoba wako wa kwanza wa kripto.",
+    "If you already have a wallet, move to step 2.": "Kama tayari una mkoba, nenda hatua ya 2.",
+    "1. Download and install the Zerion wallet from ": "1. Pakua na usakinishe mkoba wa Zerion kutoka ",
+    "2. Connect your wallet to Bankless Academy": "2. Unganisha mkoba wako na Bankless Academy",
+    "Tip": "Kidokezo",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Angalia makala ya Mwongozo wa Mgunduzi kuhusu '{{lesson_title}}' kwa maelekezo ya Quest hatua kwa hatua.",
+    "Read Entry": "Soma makala"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Chagua picha zote zenye ulaghai 👆",
+    "Hint: 1 screenshot is not a scam": "Dokezo: picha 1 si ulaghai"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Unganisha mkoba wako na Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Jiunge na gm.xyz kupitia ",
+    "invite link": "kiungo cha mwaliko",
+    " or register with a phone number": " au jisajili kwa namba ya simu",
+    "3. Join ": "3. Jiunge na ",
+    "Validate quest": "Thibitisha Quest"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Jibu ulilochagua:",
+    "Bankless Archetype results:": "Matokeo ya Bankless Archetype:",
+    "Risk": "Hatari",
+    "Self sovereignty": "Kujitawala",
+    "DEX": "DEX",
+    "Trads": "Fedha za kawaida",
+    "LP": "LP",
+    "Long term": "Muda mrefu",
+    "Works in a DAO": "Anafanya kazi katika DAO",
+    "Crypto knowledge": "Ujuzi wa kripto",
+    "Crypto donation": "Michango ya kripto",
+    "Buys stuff in crypto": "Ananunua vitu kwa kripto",
+    "Deployed smart contracts": "Amezindua mikataba mahiri",
+    "Anon": "Anon",
+    "Works in web3": "Anafanya kazi katika web3",
+    "Creates digital art": "Anatengeneza sanaa ya kidijitali",
+    "Owns Bitcoin": "Ana Bitcoin",
+    "Owns NFTs": "Ana NFT",
+    "Aping into something new": "Kujitosa kwenye jambo jipya",
+    "Owns shitcoin": "Ana shitcoin"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Jinsi ya kubadilisha tokeni kwa 1inch",
+    "1. Load ": "1. Fungua ",
+    " on the ": " kwenye ",
+    "Base network": "mtandao wa Base",
+    "2. Swap any token.": "2. Badilisha tokeni yoyote.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Bandika hapa chini heshi ya muamala wa <b>swap</b> uliofanikiwa:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Kidokezo:</b> 🚨 Hakikisha unabandika heshi ya muamala wa <b>swap</b> uliofanyika kwenye <b>mtandao wa Base</b>, siyo heshi ya muamala wa <b>approval</b> wa tokeni.",
+    "Read documentation": "Soma nyaraka"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Fungua ",
+    " on the ": " kwenye ",
+    "Optimism network": "mtandao wa Optimism",
+    "2. Swap any token.": "2. Badilisha tokeni yoyote.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Bandika hapa chini heshi ya muamala wa <b>swap</b> uliofanikiwa:",
+    "Resources:": "Marejeleo:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Kidokezo:</b> Hakikisha unabandika heshi ya muamala wa <b>swap</b> uliofanyika kwenye <b>mtandao wa Optimism</b>, siyo heshi ya muamala wa idhini ya tokeni. Soma makala ya Mwongozo wa Mgunduzi kwa maelezo zaidi.",
+    "Read Entry": "Soma makala"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Ungependa zaidi kujifunza kufanya nini na DeFi?",
+    "Signature verified": "Saini imethibitishwa",
+    "Sign your answer": "Saini jibu lako",
+    "Select your answer": "Chagua jibu lako",
+    "Investing": "Kuwekeza",
+    "Trading": "Kufanya biashara",
+    "Lending & Borrowing": "Kukopesha na kukopa",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Anza safari yako ya staking na Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "Pata 0.0002 rETH kwenye mtandao wowote unaotumika*.",
+    "a) Visit a ": "a) Tembelea ",
+    "Decentralized Exchange": "soko lililogatuliwa",
+    " to swap for rETH (Optimism or Base recommended)": " ili kubadilisha na kupata rETH (Optimism au Base inapendekezwa)",
+    "b) Or mint rETH on Mainnet via ": "b) Au zalisha rETH kwenye Mainnet kupitia ",
+    " (0.01 ETH minimum)": " (kima cha chini 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Kidokezo: Angalia makala ya Mwongozo wa Mgunduzi '{{lesson_title}}' ili kupata njia bora ya kujaza mkoba wako.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Mitandao inayotumika: Ethereum, Optimism, Base, Arbitrum na Polygon (POS)",
+    "Check Quest": "Angalia Quest"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Utahitaji mkoba wa kripto kwa Quest hii.",
+    "Wallet connected!": "Mkoba umeunganishwa!",
+    "Waiting to detect your wallet ...": "Inasubiri kutambua mkoba wako ...",
+    "If you don't have one, let's set one up!": "Kama huna, tutengeneze mmoja!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Quest na tuzo zetu za onchain hufanya kazi tu ukiwa umeunganisha mkoba.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Mikoba ni kama akaunti za blockchain. Utahitaji mmoja ili kutumia programu za blockchain, au kununua, kuhifadhi na kutuma sarafu za kripto.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Fuata video hii fupi ya maelekezo ili kutengeneza mkoba wako wa kwanza na Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Kwa hali ya sasa ya teknolojia ya blockchain, blockchain zinaweza kuboresha sifa mbili tu kati ya tatu.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Tia alama sifa ambazo Bitcoin na Ethereum zilipa kipaumbele mwanzoni."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Anza safari yako ya L2.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Kuwa na salio la angalau 0.0002 ETH kwenye Base au Optimism",
+    "Options to fund your wallet:": "Njia za kujaza mkoba wako:",
+    "Explore other options": "Angalia njia nyingine",
+    "Check Quest": "Angalia Quest"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Kabla ya kudai cheti chako cha onchain:",
+    "Share on Twitter / X": "Shiriki kwenye Twitter / X",
+    "Share on Farcaster": "Shiriki kwenye Farcaster",
+    "See you there! Over and out 📡": "Tutaonana huko! Tumemaliza 📡",
+    "Connect": "Unganisha",
+    "Repost on Twitter / X": "Sambaza tena kwenye Twitter / X",
+    "Validate": "Thibitisha"
+  }
+}

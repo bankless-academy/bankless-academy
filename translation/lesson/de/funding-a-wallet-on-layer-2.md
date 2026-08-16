@@ -27,7 +27,7 @@ ________________________________________________________________________________
 ```
 
 ---
-## Das Wichtigste in Kürze
+## Wichtigste Erkenntnisse
 
 > * Es gibt mehrere Wege, deine Wallet auf einer Ethereum-Skalierungslösung wie Base, Optimism oder Arbitrum aufzuladen.
 >

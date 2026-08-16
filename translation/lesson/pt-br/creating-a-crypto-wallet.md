@@ -81,7 +81,7 @@ Boa viagem, Explorador!
 
 ---
 
-## FAQ
+## Perguntas frequentes
 
 ### O que é uma criptomoeda?
 

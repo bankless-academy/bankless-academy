@@ -41,7 +41,7 @@ Autonomia i protokoły niewymagające pozwoleń to filary DeFi. Dają użytkown
 
 W tym wpisie poradnika pokażemy, jak używać portfela samodzielnego przechowywania do obsługi giełdy DEX, aby wymienić jeden token na inny. Więcej o mechanice, cechach i profilu ryzyka tej technologii oraz o porównaniu z giełdami CEX znajdziesz w naszej lekcji [Zdecentralizowane giełdy](https://app.banklessacademy.com/lessons/decentralized-exchanges).
 
-## Wybór giełdy DEX
+## Wybór DEX-a
 
 Wybór taniej i bezpiecznej platformy to pierwszy krok do wymiany tokenów. W tym przewodniku użyjemy Velodrome, uznanej giełdy DEX w sieci Optimism. Gdy nabierzesz pewności w poruszaniu się po blockchainie, nauczysz się oceniać inne giełdy i znajdziesz taką, która najlepiej ci odpowiada. Nasza lekcja [Zdecentralizowane giełdy](https://app.banklessacademy.com/lessons/decentralized-exchanges) zawiera pełną listę cech, na które warto patrzeć.
 

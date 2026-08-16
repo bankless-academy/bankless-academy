@@ -468,6 +468,130 @@ for (const lang of langDirs) {
   }
 }
 
+// Cross-FILE consistency within one language: a recurring English heading, a
+// stock quiz-feedback opener, or a True/False option label that this language
+// renders two different ways in two different lessons.
+//
+// This is the failure mode that splitting 19 lessons across 5 agents produces
+// and that nothing else catches: every per-file check passes, because each file
+// is internally fine. Only comparing files against each other shows that
+// `Key Takeaways` shipped as three different German phrases, or that Japanese
+// says "Try again!" four different ways. Found in 10 of the 15 languages the
+// first time this ran; the waves that pinned these strings in the style guide
+// BEFORE any lesson work started (id, vi, ru, ko, fr) were the clean ones.
+//
+// Warnings, not errors. Some divergence is a judgment call (a heading may
+// genuinely read better differently in context), and this must never block a
+// deploy over prose. Scope is registered, published lessons only: a deprecated
+// or unregistered translation is knowingly stale, not divergent.
+{
+  const headsOf = (md) =>
+    md.split('\n').filter((l) => /^#{1,3} \S/.test(l)).map((l) => l.replace(/^#+ /, '').trim())
+  // the leading interjection of a `> ℹ️` feedback line, up to its terminator
+  const openerOf = (line) => {
+    const body = line.replace(/^>\s*ℹ️\s*/, '').trim()
+    const m = body.match(/^([^.!?！？。：:]{1,30}[.!?！？。：:])/)
+    return m ? m[1].trim() : null
+  }
+  const fbOf = (md) => md.split('\n').filter((l) => /^>\s*ℹ️/.test(l)).map(openerOf)
+  const optsOf = (md) =>
+    md.split('\n').filter((l) => /^- \[[ x]\]/.test(l)).map((l) => l.replace(/^- \[[ x]\]\s*/, '').trim())
+  // Line-initial bold labels — the handbook credit lines (`**Author**`,
+  // `**Patron**`, `**Editor**`). They recur across lessons exactly like the
+  // headings do, and they drift exactly like them: Bengali shipped `লিখেছেন`
+  // in three handbooks and `রচনা` in two, Swahili `ingizo` against `sehemu`.
+  // Neither is visible to any per-file check.
+  const labelsOf = (md) =>
+    md.split('\n').map((l) => (l.match(/^\*\*([^*\n]{1,40})\*\*/) || [])[1] || null)
+  // NBSP is invisible in terminal output, and French really did ship
+  // "Réessayez !" 148 times and "Réessayez !" 7 times.
+  const show = (s) => JSON.stringify(s).replace(/ /g, '·NBSP·').replace(/ /g, '·NNBSP·')
+
+  const published = Object.entries(meta)
+    .filter(([s, v]) => v.publicationStatus === 'publish' && fs.existsSync(path.join(EN_DIR, `${s}.md`)))
+    .map(([s]) => s)
+  const enMd = Object.fromEntries(
+    published.map((s) => [s, fs.readFileSync(path.join(EN_DIR, `${s}.md`), 'utf8')])
+  )
+  // Only openers that recur across lessons are "stock". Most feedback lines are
+  // bespoke sentences; comparing those to each other is meaningless noise.
+  const stock = new Set()
+  const enFreq = {}
+  for (const s of published)
+    for (const o of fbOf(enMd[s]).filter(Boolean)) (enFreq[o] ||= new Set()).add(s)
+  for (const [o, ss] of Object.entries(enFreq)) if (ss.size >= 3) stock.add(o)
+
+  // same "recurs across lessons" rule for bold labels
+  const stockLabel = new Set()
+  const labFreq = {}
+  for (const s of published)
+    for (const l of labelsOf(enMd[s]).filter(Boolean)) (labFreq[l] ||= new Set()).add(s)
+  for (const [l, ss] of Object.entries(labFreq)) if (ss.size >= 3) stockLabel.add(l)
+
+  for (const lang of langDirs) {
+    const byHeading = {}
+    const byOpener = {}
+    const byOption = {}
+    const byLabel = {}
+    for (const slug of published) {
+      if (!(meta[slug].languages || []).includes(lang)) continue
+      const p = `translation/lesson/${lang}/${slug}.md`
+      if (!fs.existsSync(p)) continue
+      const md = fs.readFileSync(p, 'utf8')
+
+      const eh = headsOf(enMd[slug])
+      const th = headsOf(md)
+      if (eh.length === th.length)
+        eh.forEach((h, i) => {
+          if (/^Knowledge Check/.test(h)) return
+          ;((byHeading[h] ||= {})[th[i]] ||= []).push(slug)
+        })
+
+      const ef = fbOf(enMd[slug])
+      const tf = fbOf(md)
+      if (ef.length === tf.length)
+        ef.forEach((o, i) => {
+          if (!o || !stock.has(o) || !tf[i]) return
+          ;((byOpener[o] ||= {})[tf[i]] ||= []).push(slug)
+        })
+
+      const eo = optsOf(enMd[slug])
+      const to = optsOf(md)
+      if (eo.length === to.length)
+        eo.forEach((o, i) => {
+          if (o === 'True' || o === 'False') ((byOption[o] ||= {})[to[i]] ||= []).push(slug)
+        })
+
+      // Bold labels are matched by LINE INDEX, not by filtering to the bold
+      // lines first: a translation may bold a word the English source did not,
+      // which would shift a filtered list and compare the wrong pairs. The two
+      // files are the same length line-for-line by construction.
+      const el = labelsOf(enMd[slug])
+      const tl = labelsOf(md)
+      if (el.length === tl.length)
+        el.forEach((l, i) => {
+          if (l && stockLabel.has(l) && tl[i]) ((byLabel[l] ||= {})[tl[i]] ||= []).push(slug)
+        })
+    }
+    for (const [label, map] of [
+      ['heading', byHeading],
+      ['feedback opener', byOpener],
+      ['option label', byOption],
+      ['bold label', byLabel],
+    ])
+      for (const [key, forms] of Object.entries(map)) {
+        const variants = Object.entries(forms).sort((a, b) => b[1].length - a[1].length)
+        if (variants.length < 2) continue
+        warnings.push(
+          `${lang}: ${label} ${show(key)} has ${variants.length} translations — ` +
+            variants
+              .map(([v, ss]) => `${show(v)} x${ss.length} (${[...new Set(ss)].slice(0, 3).join(', ')})`)
+              .join(' vs ')
+        )
+      }
+  }
+}
+
 // Style-guide pins vs the shipped glossary, once per language. This is the
 // check that would have caught `mint` shipping as "acuñar" in the glossary
 // while both UI namespaces said "mintear".

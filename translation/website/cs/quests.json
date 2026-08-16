@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Tvůj Bitcoin je na cestě k Satoshimu Nakamotovi.",
+    "2. It's now being verified by network miners...": "2. Teď ho ověřují těžaři v síti...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Tvoje transakce se zapíše do „databáze“ blockchainu...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto dostal tvůj Bitcoin!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "V našem zjednodušeném simulátoru Bitcoinu pošli libovolné množství BTC na adresu Satoshiho Nakamota",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Interaktivní simulace: posílání Bitcoinu Satoshimu Nakamotovi {{step}}",
+    "Reset simulation": "Resetovat simulaci",
+    "Recipient": "Příjemce",
+    "Address": "Adresa",
+    "Asset": "Aktivum",
+    "Amount": "Částka",
+    "Balance": "Zůstatek",
+    "Send": "Poslat"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Pochop transakci",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Pro ověření úkolu vlož adresy „From“ a „To“ z této transakce",
+    "From": "From",
+    "To": "To"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Začni svoji cestu sítí Optimism delegováním OP.",
+    "Select a ": "Vyber ",
+    "Delegate": "delegáta",
+    " for your OP": " pro svoje OP",
+    "or delegate to ": "nebo deleguj na ",
+    "Tip": "Tip",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Kompletní návod k úkolu najdeš v článku „{{lesson_title}}“ z Příručky průzkumníka.",
+    "Refresh": "Obnovit",
+    "Read Entry": "Přečíst článek"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "Vytvoř si první kryptopeněženku.",
+    "If you already have a wallet, move to step 2.": "Pokud už peněženku máš, přejdi ke kroku 2.",
+    "1. Download and install the Zerion wallet from ": "1. Stáhni a nainstaluj peněženku Zerion z ",
+    "2. Connect your wallet to Bankless Academy": "2. Připoj peněženku k Bankless Academy",
+    "Tip": "Tip",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Návod k úkolu krok za krokem najdeš v článku „{{lesson_title}}“ z Příručky průzkumníka.",
+    "Read Entry": "Přečíst článek"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Označ všechny snímky obrazovky s podvody 👆",
+    "Hint: 1 screenshot is not a scam": "Nápověda: 1 snímek není podvod"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Připoj peněženku k Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Přidej se na gm.xyz přes tento ",
+    "invite link": "zvací odkaz",
+    " or register with a phone number": " nebo se zaregistruj telefonním číslem",
+    "3. Join ": "3. Přidej se na ",
+    "Validate quest": "Ověřit úkol"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Vybraná odpověď:",
+    "Bankless Archetype results:": "Výsledky archetypu Bankless:",
+    "Risk": "Riziko",
+    "Self sovereignty": "Osobní suverenita",
+    "DEX": "DEX",
+    "Trads": "TradFi",
+    "LP": "LP",
+    "Long term": "Dlouhodobě",
+    "Works in a DAO": "Pracuje v DAO",
+    "Crypto knowledge": "Znalost kryptoměn",
+    "Crypto donation": "Dary v kryptu",
+    "Buys stuff in crypto": "Nakupuje v kryptu",
+    "Deployed smart contracts": "Nasazené chytré kontrakty",
+    "Anon": "Anon",
+    "Works in web3": "Pracuje ve Web3",
+    "Creates digital art": "Tvoří digitální umění",
+    "Owns Bitcoin": "Vlastní Bitcoin",
+    "Owns NFTs": "Vlastní NFT",
+    "Aping into something new": "Vrhá se do novinek",
+    "Owns shitcoin": "Vlastní shitcoin"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Jak swapovat tokeny na 1inch",
+    "1. Load ": "1. Otevři ",
+    " on the ": " v ",
+    "Base network": "síti Base",
+    "2. Swap any token.": "2. Swapni libovolný token.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Vlož níže hash úspěšné transakce <b>swap</b>:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Tip:</b> 🚨 Ujisti se, že vkládáš hash transakce <b>swap</b> provedené v <b>síti Base</b>, a ne hash transakce schválení tokenu (<b>approval</b>).",
+    "Read documentation": "Přečíst dokumentaci"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Otevři ",
+    " on the ": " v ",
+    "Optimism network": "síti Optimism",
+    "2. Swap any token.": "2. Swapni libovolný token.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Vlož níže hash úspěšné transakce <b>swap</b>:",
+    "Resources:": "Zdroje:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Tip:</b> Ujisti se, že vkládáš hash transakce <b>swap</b> provedené v <b>síti Optimism</b>, a ne hash transakce schválení tokenu. Víc najdeš v článku z Příručky průzkumníka.",
+    "Read Entry": "Přečíst článek"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Co tě na DeFi nejvíc zajímá?",
+    "Signature verified": "Podpis ověřen",
+    "Sign your answer": "Podepsat odpověď",
+    "Select your answer": "Vybrat odpověď",
+    "Investing": "Investování",
+    "Trading": "Obchodování",
+    "Lending & Borrowing": "Půjčky",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Vydej se na cestu za stakingem s Rocket Poolem.",
+    "Obtain 0.0002 rETH on any supported network*.": "Získej 0,0002 rETH v libovolné podporované síti*.",
+    "a) Visit a ": "a) Navštiv ",
+    "Decentralized Exchange": "decentralizovanou burzu",
+    " to swap for rETH (Optimism or Base recommended)": " a swapni za rETH (doporučujeme Optimism nebo Base)",
+    "b) Or mint rETH on Mainnet via ": "b) Nebo zmintuj rETH na Mainnetu přes ",
+    " (0.01 ETH minimum)": " (minimálně 0,01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Tip: V článku „{{lesson_title}}“ z Příručky průzkumníka najdeš nejvhodnější cestu, jak si peněženku dobít.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Podporované sítě: Ethereum, Optimism, Base, Arbitrum a Polygon (POS)",
+    "Check Quest": "Ověřit úkol"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Na tenhle úkol budeš potřebovat kryptopeněženku.",
+    "Wallet connected!": "Peněženka je připojená!",
+    "Waiting to detect your wallet ...": "Hledáme tvoji peněženku ...",
+    "If you don't have one, let's set one up!": "Pokud ji ještě nemáš, pojď si ji vytvořit!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Naše onchain úkoly a odměny fungují jen s připojenou peněženkou.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Peněženka je něco jako účet na blockchainu. Potřebuješ ji k práci s blockchainovými aplikacemi a k nákupu, držení a odesílání kryptoměn.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Podívej se na tohle krátké video a vytvoř si první peněženku v Zerionu: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Při současném stavu blockchainové technologie dokážou blockchainy optimalizovat nanejvýš dvě ze tří vlastností.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Označ vlastnosti, které Bitcoin a Ethereum původně upřednostnily."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Začni svoji cestu na L2.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Měj na Base nebo Optimism zůstatek aspoň 0,0002 ETH",
+    "Options to fund your wallet:": "Jak si dobít peněženku:",
+    "Explore other options": "Prozkoumat další možnosti",
+    "Check Quest": "Ověřit úkol"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Než si vyzvedneš onchain certifikát:",
+    "Share on Twitter / X": "Sdílet na Twitteru / X",
+    "Share on Farcaster": "Sdílet na Farcasteru",
+    "See you there! Over and out 📡": "Uvidíme se tam! Konec vysílání 📡",
+    "Connect": "Připojit",
+    "Repost on Twitter / X": "Repostovat na Twitteru / X",
+    "Validate": "Ověřit"
+  }
+}

@@ -68,7 +68,7 @@ Completa la frase: per trovare il prezzo migliore conviene scambiare su mercati 
 
 - [x] alta, basso
 
-> ℹ️ Esatto! Più liquidità significa un impatto minore sul prezzo, come una piscina grande che cambia poco quando qualcuno si tuffa.
+> ℹ️ Corretto! Più liquidità significa un impatto minore sul prezzo, come una piscina grande che cambia poco quando qualcuno si tuffa.
 
 - [ ] bassa, buono
 
@@ -104,7 +104,7 @@ Quali due fattori determinano l'impatto sul prezzo di uno scambio su un DEX?
 
 - [x] La dimensione dello scambio e la liquidità disponibile
 
-> ℹ️ Esatto! Come in piscina, lo schizzo dipende da quanto è grande chi si tuffa e da quanta acqua c'è.
+> ℹ️ Corretto! Come in piscina, lo schizzo dipende da quanto è grande chi si tuffa e da quanta acqua c'è.
 
 - [ ] La liquidità disponibile e il token scelto per lo scambio
 
@@ -136,7 +136,7 @@ Negli aggregatori di DEX, l'instradamento degli scambi significa che:
 
 - [x] Gli scambi possono passare per più DEX e token intermedi
 
-> ℹ️ Esatto! Gli algoritmi esaminano tutti i tragitti possibili, comprese le "soste" sui token intermedi, per trovare il percorso più economico.
+> ℹ️ Corretto! Gli algoritmi esaminano tutti i tragitti possibili, comprese le "soste" sui token intermedi, per trovare il percorso più economico.
 
 # Come si calcola il costo del gas su Ethereum
 
@@ -170,7 +170,7 @@ Quale di questi NON è un modo con cui gli aggregatori di DEX riducono i costi d
 
 - [x] Chiedere ai DEX di abbassare i costi di rete
 
-> ℹ️ Esatto! I costi di rete li stabilisce la blockchain, non i DEX. Nessuno può semplicemente chiedere di abbassarli.
+> ℹ️ Corretto! I costi di rete li stabilisce la blockchain, non i DEX. Nessuno può semplicemente chiedere di abbassarli.
 
 - [ ] Tenere conto del costo del gas nell'instradamento
 
@@ -194,7 +194,7 @@ I meta-aggregatori confrontano più aggregatori di DEX per trovare i prezzi migl
 
 - [x] Vero
 
-> ℹ️ Esatto! I meta-aggregatori cercano tra gli aggregatori di DEX concorrenti e mostrano agli utenti i prezzi migliori.
+> ℹ️ Corretto! I meta-aggregatori cercano tra gli aggregatori di DEX concorrenti e mostrano agli utenti i prezzi migliori.
 
 - [ ] Falso
 
@@ -214,7 +214,7 @@ Per proteggerti, la tua tolleranza allo slippage dovrebbe restare:
 
 - [x] bassa
 
-> ℹ️ Esatto! Una tolleranza allo slippage bassa limita il valore che un attacco sandwich può estrarre dal tuo scambio.
+> ℹ️ Corretto! Una tolleranza allo slippage bassa limita il valore che un attacco sandwich può estrarre dal tuo scambio.
 
 - [ ] alta
 
@@ -246,4 +246,4 @@ Quali strumenti offrono molti aggregatori di DEX per far risparmiare i loro uten
 
 - [x] Tutte le precedenti
 
-> ℹ️ Esatto! Gli aggregatori uniscono la liquidità, considerano i costi del gas e possono offrire scambi OTC, per lasciare più valore all'utente.
+> ℹ️ Corretto! Gli aggregatori uniscono la liquidità, considerano i costi del gas e possono offrire scambi OTC, per lasciare più valore all'utente.

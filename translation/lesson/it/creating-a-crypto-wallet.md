@@ -59,7 +59,7 @@ Proteggere la chiave privata è fondamentale, perché dà accesso immediato al t
 
 Oggi creeremo il nostro primo wallet con il crypto wallet che consigliamo: Zerion!
 
-## Guida passo passo
+## Guida pratica
 
 Crea il tuo primo wallet sul computer seguendo la guida qui sotto, oppure scorri per la guida al wallet su telefono.
 
@@ -81,7 +81,7 @@ Buon viaggio, Esploratore!
 
 ---
 
-## Domande frequenti
+## FAQ
 
 ### Che cos'è una criptovaluta?
 

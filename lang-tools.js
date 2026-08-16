@@ -7,7 +7,7 @@
 //   node lang-tools.js register <lang>  register every verified lesson, run gates
 import fs from 'fs'
 import { execSync } from 'child_process'
-import { parseStylePins } from './content-lib.js'
+import { parseStylePins, normalizeKeyword } from './content-lib.js'
 
 // Glossary halves are drafted outside the repo (one file per agent) and merged
 // here; point SCRATCH at wherever those drafts live.
@@ -123,10 +123,21 @@ if (cmd === 'merge') {
   }
   // the same Spanish word claimed by two different English keys is usually a
   // divergence between halves, not a real synonym
+  // Compared with `normalizeKeyword`, NOT a bare `.toLowerCase()` — the same
+  // folding `validate-content.js` and the runtime tooltip index use. Plain
+  // lowercasing leaves Unicode normalization alone, so two forms that render
+  // identically but differ in composition never compare equal: this reported
+  // `pins "X" but entry reads "X"` with two visually identical strings, and a
+  // collision between two spellings of one word went unseen. Not hypothetical
+  // — the vendored `ethglossary/bn.json` is not NFC (য়/ড়/ঢ় have both a
+  // precomposed codepoint and a base+nukta form, and it mixes them). Turkish
+  // dotted İ folds wrong the same way. Keep this in step with
+  // `validate-content.js`: two tools that exist to prevent drift must not
+  // disagree about what "the same string" means.
   const byForm = {}
   for (const [k, e] of Object.entries(out))
     for (const f of [e.keyword, e.keyword_plural, ...(e.keyword_forms || [])].filter(Boolean))
-      (byForm[f.toLowerCase()] ||= []).push(k)
+      (byForm[normalizeKeyword(f)] ||= []).push(k)
   const collisions = Object.entries(byForm).filter(([, ks]) => new Set(ks).size > 1)
 
   // style-guide pins must be honoured
@@ -135,13 +146,13 @@ if (cmd === 'merge') {
     for (const [english, pinned] of parseStylePins(
       fs.readFileSync(stylePath, 'utf8')
     )) {
-      const key = english.toLowerCase()
+      const key = normalizeKeyword(english)
       const e = out[key]
       if (!e) continue
       const forms = [e.keyword, e.keyword_plural, ...(e.keyword_forms || [])]
         .filter(Boolean)
-        .map((f) => f.toLowerCase())
-      if (!forms.includes(pinned.toLowerCase()))
+        .map((f) => normalizeKeyword(f))
+      if (!forms.includes(normalizeKeyword(pinned)))
         problems.push(`${key}: style guide pins "${pinned}" but entry reads "${e.keyword}"`)
     }
   }

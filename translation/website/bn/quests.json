@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. আপনার Bitcoin এখন Satoshi Nakamoto-র পথে।",
+    "2. It's now being verified by network miners...": "2. এখন নেটওয়ার্ক মাইনাররা এটি যাচাই করছে...",
+    "3. Your transaction is added to the blockchain “database”...": "3. আপনার লেনদেন ব্লকচেইন “ডেটাবেস”-এ যুক্ত হচ্ছে...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto আপনার Bitcoin পেয়ে গেছেন!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "আমাদের সহজ Bitcoin সিমুলেটর দিয়ে Satoshi Nakamoto-র ঠিকানায় যেকোনো পরিমাণ BTC পাঠান",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "ইন্টারঅ্যাকটিভ সিমুলেশন: Satoshi Nakamoto-কে Bitcoin পাঠানো {{step}}",
+    "Reset simulation": "সিমুলেশন রিসেট করুন",
+    "Recipient": "গ্রহীতা",
+    "Address": "ঠিকানা",
+    "Asset": "অ্যাসেট",
+    "Amount": "পরিমাণ",
+    "Balance": "ব্যালেন্স",
+    "Send": "পাঠান"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "লেনদেন বুঝে নিন",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "এই কোয়েস্ট যাচাই করতে এই লেনদেনের “উৎস” ও “গন্তব্য” ঠিকানা পেস্ট করুন",
+    "From": "উৎস",
+    "To": "গন্তব্য"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "OP ডেলিগেট করে Optimism Network-এ আপনার যাত্রা শুরু করুন।",
+    "Select a ": "আপনার OP-এর জন্য একজন ",
+    "Delegate": "প্রতিনিধি",
+    " for your OP": " বেছে নিন",
+    "or delegate to ": "অথবা ডেলিগেট করুন: ",
+    "Tip": "পরামর্শ",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "কোয়েস্টের পূর্ণ নির্দেশনা পেতে আমাদের এক্সপ্লোরার হ্যান্ডবুকে ‘{{lesson_title}}’ লেখাটি দেখুন।",
+    "Refresh": "রিফ্রেশ",
+    "Read Entry": "লেখা পড়ুন"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "আপনার প্রথম ক্রিপ্টো ওয়ালেট তৈরি করুন।",
+    "If you already have a wallet, move to step 2.": "আপনার যদি আগে থেকেই ওয়ালেট থাকে, সরাসরি ধাপ 2-এ যান।",
+    "1. Download and install the Zerion wallet from ": "1. Zerion ওয়ালেট এখান থেকে ডাউনলোড করে ইনস্টল করুন: ",
+    "2. Connect your wallet to Bankless Academy": "2. আপনার ওয়ালেট Bankless Academy-তে যুক্ত করুন",
+    "Tip": "পরামর্শ",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "কোয়েস্টের ধাপে ধাপে নির্দেশনা পেতে আমাদের এক্সপ্লোরার হ্যান্ডবুকে ‘{{lesson_title}}’ লেখাটি দেখুন।",
+    "Read Entry": "লেখা পড়ুন"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "যেসব স্ক্রিনশটে স্ক্যাম আছে, সবগুলো বেছে নিন 👆",
+    "Hint: 1 screenshot is not a scam": "ইঙ্গিত: 1টি স্ক্রিনশট স্ক্যাম নয়"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. আপনার ওয়ালেট Bankless Academy-তে যুক্ত করুন",
+    "2. Join gm.xyz using this ": "2. এই ",
+    "invite link": "ইনভাইট লিংক",
+    " or register with a phone number": " দিয়ে gm.xyz-এ যোগ দিন, অথবা ফোন নম্বর দিয়ে রেজিস্টার করুন",
+    "3. Join ": "3. যোগ দিন: ",
+    "Validate quest": "কোয়েস্ট যাচাই করুন"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "বেছে নেওয়া উত্তর:",
+    "Bankless Archetype results:": "Bankless আর্কিটাইপ ফলাফল:",
+    "Risk": "ঝুঁকি",
+    "Self sovereignty": "আত্ম-সার্বভৌমত্ব",
+    "DEX": "DEX",
+    "Trads": "প্রচলিত অর্থব্যবস্থা",
+    "LP": "LP",
+    "Long term": "দীর্ঘমেয়াদি",
+    "Works in a DAO": "DAO-তে কাজ করা",
+    "Crypto knowledge": "ক্রিপ্টো জ্ঞান",
+    "Crypto donation": "ক্রিপ্টোতে দান",
+    "Buys stuff in crypto": "ক্রিপ্টো দিয়ে কেনাকাটা",
+    "Deployed smart contracts": "স্মার্ট কন্ট্রাক্ট ডিপ্লয় করা",
+    "Anon": "বেনামি",
+    "Works in web3": "Web3-তে কাজ করা",
+    "Creates digital art": "ডিজিটাল আর্ট তৈরি করা",
+    "Owns Bitcoin": "Bitcoin রাখা",
+    "Owns NFTs": "NFT রাখা",
+    "Aping into something new": "নতুন কিছুতে ঝাঁপিয়ে পড়া",
+    "Owns shitcoin": "শিটকয়েন রাখা"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "1inch দিয়ে কীভাবে টোকেন সোয়াপ করবেন",
+    "1. Load ": "1. ",
+    " on the ": " খুলুন এই নেটওয়ার্কে: ",
+    "Base network": "Base নেটওয়ার্ক",
+    "2. Swap any token.": "2. যেকোনো টোকেন সোয়াপ করুন।",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. সফল <b>সোয়াপ</b> লেনদেনের হ্যাশ নিচে পেস্ট করুন:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>পরামর্শ:</b> 🚨 খেয়াল রাখুন, আপনি যেন <b>Base নেটওয়ার্কে</b> করা <b>সোয়াপ</b> লেনদেনের হ্যাশ পেস্ট করেন, টোকেন <b>অনুমোদন</b> লেনদেনের হ্যাশ নয়।",
+    "Read documentation": "ডকুমেন্টেশন পড়ুন"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. ",
+    " on the ": " খুলুন এই নেটওয়ার্কে: ",
+    "Optimism network": "Optimism নেটওয়ার্ক",
+    "2. Swap any token.": "2. যেকোনো টোকেন সোয়াপ করুন।",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. সফল <b>সোয়াপ</b> লেনদেনের হ্যাশ নিচে পেস্ট করুন:",
+    "Resources:": "সহায়ক লিংক:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>পরামর্শ:</b> খেয়াল রাখুন, আপনি যেন <b>Optimism নেটওয়ার্কে</b> করা <b>সোয়াপ</b> লেনদেনের হ্যাশ পেস্ট করেন, টোকেন অনুমোদন লেনদেনের হ্যাশ নয়। আরও জানতে এক্সপ্লোরার হ্যান্ডবুকের লেখাটি পড়ুন।",
+    "Read Entry": "লেখা পড়ুন"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "DeFi দিয়ে কী করতে শিখতে আপনার সবচেয়ে বেশি আগ্রহ?",
+    "Signature verified": "স্বাক্ষর যাচাই হয়েছে",
+    "Sign your answer": "উত্তরে স্বাক্ষর করুন",
+    "Select your answer": "আপনার উত্তর বেছে নিন",
+    "Investing": "বিনিয়োগ",
+    "Trading": "ট্রেডিং",
+    "Lending & Borrowing": "ধার দেওয়া ও নেওয়া",
+    "Staking": "স্টেকিং"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Rocket Pool দিয়ে আপনার স্টেকিং যাত্রা শুরু করুন।",
+    "Obtain 0.0002 rETH on any supported network*.": "সমর্থিত যেকোনো নেটওয়ার্কে* 0.0002 rETH সংগ্রহ করুন।",
+    "a) Visit a ": "a) কোনো ",
+    "Decentralized Exchange": "বিকেন্দ্রীকৃত এক্সচেঞ্জ",
+    " to swap for rETH (Optimism or Base recommended)": " থেকে rETH সোয়াপ করে নিন (Optimism বা Base ভালো)",
+    "b) Or mint rETH on Mainnet via ": "b) অথবা Mainnet-এ rETH মিন্ট করুন এখানে: ",
+    " (0.01 ETH minimum)": " (কমপক্ষে 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "পরামর্শ: আপনার জন্য সবচেয়ে ভালো ফান্ডিং পথ খুঁজে পেতে আমাদের এক্সপ্লোরার হ্যান্ডবুকে ‘{{lesson_title}}’ লেখাটি দেখুন।",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* সমর্থিত নেটওয়ার্ক: Ethereum, Optimism, Base, Arbitrum ও Polygon (POS)",
+    "Check Quest": "কোয়েস্ট যাচাই করুন"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "এই কোয়েস্টের জন্য আপনার একটি ক্রিপ্টো ওয়ালেট লাগবে।",
+    "Wallet connected!": "ওয়ালেট যুক্ত হয়েছে!",
+    "Waiting to detect your wallet ...": "আপনার ওয়ালেট খোঁজা হচ্ছে ...",
+    "If you don't have one, let's set one up!": "না থাকলে চলুন একটি তৈরি করি!",
+    "Our onchain quests and rewards only work with a wallet connected.": "ওয়ালেট যুক্ত থাকলে তবেই আমাদের অনচেইন কোয়েস্ট ও পুরস্কার কাজ করে।",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "ওয়ালেট অনেকটা ব্লকচেইন অ্যাকাউন্টের মতো। ব্লকচেইন অ্যাপ ব্যবহার করতে, কিংবা ক্রিপ্টোকারেন্সি কিনতে, রাখতে ও পাঠাতে আপনার একটি ওয়ালেট লাগবে।",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Zerion দিয়ে আপনার প্রথম ওয়ালেট তৈরি করতে এই ছোট ভিডিওটি দেখুন: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "ব্লকচেইন প্রযুক্তির বর্তমান অবস্থায় একটি ব্লকচেইন তিনটি বৈশিষ্ট্যের মধ্যে বড়জোর দুটিকে সবচেয়ে ভালো করতে পারে।",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin ও Ethereum শুরুতে যে বৈশিষ্ট্যগুলোকে অগ্রাধিকার দিয়েছিল, সেগুলোতে টিক দিন।"
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "আপনার L2 যাত্রা শুরু করুন।",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Base বা Optimism-এ অন্তত 0.0002 ETH ব্যালেন্স রাখুন",
+    "Options to fund your wallet:": "ওয়ালেটে টাকা যোগ করার উপায়:",
+    "Explore other options": "অন্যান্য উপায় দেখুন",
+    "Check Quest": "কোয়েস্ট যাচাই করুন"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "আপনার অনচেইন সার্টিফিকেট নেওয়ার আগে:",
+    "Share on Twitter / X": "Twitter / X-এ শেয়ার করুন",
+    "Share on Farcaster": "Farcaster-এ শেয়ার করুন",
+    "See you there! Over and out 📡": "সেখানেই দেখা হবে! ওভার অ্যান্ড আউট 📡",
+    "Connect": "যুক্ত করুন",
+    "Repost on Twitter / X": "Twitter / X-এ রিপোস্ট করুন",
+    "Validate": "যাচাই করুন"
+  }
+}

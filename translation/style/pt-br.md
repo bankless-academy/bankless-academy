@@ -192,3 +192,47 @@ Two constraints on the choice, both already satisfied above:
    rather than Benar!, which is its "True" option.
 2. **Keep the `[x]` on the same option index as English.** Only the option
    TEXT changes here; users have answer numbers saved in localStorage.
+
+## Fixed section headings
+
+The 19 lessons are split across independent agents, and these headings recur
+across many of them. **Use exactly the Portuguese in this table. Do not
+re-translate them per lesson, and do not improve on them.** Two agents each
+picking a defensible synonym is exactly what shipped three different renderings
+of `Key Takeaways` in German and four of `Try again!` in Japanese, all
+repaired centrally afterwards.
+
+| English heading | Portuguese | occurrences |
+|---|---|---|
+| `Key Takeaways` | `Pontos principais` | 7 |
+| `Introduction` | `Introdução` | 6 |
+| `Walkthrough` | `Passo a passo` | 3 |
+| `FAQ` | `Perguntas frequentes` | 3 |
+| `Frequently Asked Questions` | `Perguntas frequentes` | 3 |
+| `Prerequisites` | `Pré-requisitos` | 2 |
+| `Choosing a DEX` | `Como escolher uma DEX` | 2 |
+
+- **`FAQ` and `Frequently Asked Questions` stay distinct** where both appear,
+  exactly as in the English source.
+- **A suffixed heading keeps the pinned form and appends its own suffix**,
+  translated: `## Walkthrough: Using Revoke.cash` keeps the pinned rendering of
+  *Walkthrough* and translates only the part after the colon.
+- Keep the heading level (`#` vs `##` vs `###`) exactly as the source has it.
+  No trailing period, no `**bold**`.
+- **`Knowledge Check <n>` stays in English, with its original number.** It is an
+  identifier that `build-content.js` reads, and the frontend renders its own
+  translated label. Never translate it, never renumber it, never merge two.
+
+## Fixed quiz-feedback openers
+
+Almost every `> ℹ️` line opens with one of a handful of English interjections.
+**Pin the opener; write the rest of the sentence freely.**
+
+| English opener | Portuguese |
+|---|---|
+| `Try again!` | `Tente de novo!` |
+| `Correct!` | `Correto!` |
+
+Keep the opener and the sentence after it on the same line, and keep the whole
+feedback to one or two short sentences: it renders as a toast overlay, which
+gets intrusive on mobile.

@@ -31,7 +31,7 @@ Dies ist eine Zusammenfassung unserer Lektion [Wallet-Grundlagen](https://app.ba
 
 ---
 
-## Das Wichtigste
+## Wichtigste Erkenntnisse
 
 > * Du brauchst eine `Krypto-Wallet`, um in die Welt der Blockchains zu kommen!
 >

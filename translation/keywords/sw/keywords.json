@@ -1,0 +1,2370 @@
+{
+  ".eth": {
+    "keyword": ".eth",
+    "keyword_forms": [
+      "domeni ya .eth"
+    ],
+    "definition": "Kiambishi cha domeni ya web3 kinachotumiwa na Ethereum Name Service (ENS), kama vile yourname.eth."
+  },
+  "2 factor authentication": {
+    "keyword": "uthibitishaji wa hatua mbili",
+    "keyword_forms": [
+      "2 Factor Authentication",
+      "uthibitishaji wa vipengele viwili"
+    ],
+    "definition": "Safu ya ziada ya usalama inayohakikisha kuwa mtu anayejaribu kuingia kwenye akaunti ya mtandaoni ndiye mwenyewe."
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "Safu ya ziada ya usalama inayohakikisha kuwa mtu anayejaribu kuingia kwenye akaunti ya mtandaoni ndiye mwenyewe."
+  },
+  "51% attack": {
+    "keyword": "shambulio la asilimia 51",
+    "keyword_plural": "mashambulio ya asilimia 51",
+    "keyword_forms": [
+      "51% attack",
+      "shambulio la 51%",
+      "mashambulio ya 51%"
+    ],
+    "definition": "Shambulio dhidi ya mwafaka wa blockchain kwa kudhibiti zaidi ya nusu ya nguvu ya kutengeneza bloku kwenye mtandao."
+  },
+  "address": {
+    "keyword": "anwani",
+    "keyword_plural": "anwani",
+    "keyword_forms": [
+      "address"
+    ],
+    "definition": "Kitambulisho cha kipekee cha umma cha mhusika kwenye blockchain."
+  },
+  "addresses": {
+    "keyword": "anwani",
+    "keyword_forms": [
+      "addresses"
+    ],
+    "definition": "Vitambulisho vya kipekee vya umma vya wahusika kwenye blockchain."
+  },
+  "aggregator": {
+    "keyword": "kikusanyaji",
+    "keyword_plural": "vikusanyaji",
+    "keyword_forms": [
+      "aggregator",
+      "aggregators"
+    ],
+    "definition": "Zana inayochanganya vyanzo vingi ili kukupa chaguo bora zaidi."
+  },
+  "airdrop": {
+    "keyword": "mgao wa bure",
+    "keyword_plural": "migao ya bure",
+    "keyword_forms": [
+      "airdrop",
+      "airdrops",
+      "ugawaji wa bure",
+      "kugawa bure"
+    ],
+    "definition": "Ugawaji wa bure wa mali za kripto kwa watumiaji."
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "keyword_forms": [
+      "Allo"
+    ],
+    "definition": "Kifupi cha Capital Allocation Protocol. Ni itifaki ya chanzo huria inayowezesha vikundi kugawa fedha za pamoja kwa uwazi na kwa ufanisi."
+  },
+  "allowance": {
+    "keyword": "kibali",
+    "keyword_plural": "vibali",
+    "keyword_forms": [
+      "allowance",
+      "allowances",
+      "kiwango kinachoruhusiwa"
+    ],
+    "definition": "Ruhusa ya kumwezesha mhusika, mara nyingi mkataba mahiri, kutumia kiasi fulani cha tokeni zako kwenye muamala."
+  },
+  "alternative layer 1": {
+    "keyword": "Layer 1 mbadala",
+    "keyword_plural": "Layer 1 mbadala",
+    "keyword_forms": [
+      "alternative Layer 1",
+      "alternative Layer 1s",
+      "L1 mbadala"
+    ],
+    "definition": "Blockchain za Layer 1 zisizokuwa Ethereum wala Bitcoin."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM",
+    "keyword_forms": [
+      "AMMs",
+      "Automated Market Maker"
+    ],
+    "definition": "(Automated Market Maker) Mfumo wa kuoanisha biashara unaoendeshwa na kanuni ya wazi ya kompyuta."
+  },
+  "app": {
+    "keyword": "programu",
+    "keyword_plural": "programu",
+    "keyword_forms": [
+      "app",
+      "apps",
+      "programu tumizi"
+    ],
+    "definition": "Programu ya kompyuta au ya simu."
+  },
+  "app store": {
+    "keyword": "duka la programu",
+    "keyword_plural": "maduka ya programu",
+    "keyword_forms": [
+      "app store",
+      "app stores"
+    ],
+    "definition": "Duka la kidijitali la kupakua programu za kompyuta au za simu."
+  },
+  "asynchronous": {
+    "keyword": "isiyo sambamba",
+    "keyword_forms": [
+      "asynchronous",
+      "asiye sambamba",
+      "wasio sambamba",
+      "usio sambamba",
+      "lisilo sambamba",
+      "yasiyo sambamba",
+      "kisicho sambamba",
+      "visivyo sambamba",
+      "zisizo sambamba"
+    ],
+    "definition": "Mawasiliano kati ya watu kadhaa ambapo si lazima wote wawepo wakati ujumbe unatumwa."
+  },
+  "attestation": {
+    "keyword": "uthibitisho",
+    "keyword_plural": "uthibitisho",
+    "keyword_forms": [
+      "attestation",
+      "attestations",
+      "ushuhuda",
+      "kuthibitisha"
+    ],
+    "definition": "Ushahidi uliotiwa saini kwamba jambo fulani ni kweli. Kwenye Ethereum, wathibitishaji hutuma uthibitisho wakipiga kura kwamba bloku ni halali."
+  },
+  "autonomy": {
+    "keyword": "kujitawala",
+    "keyword_forms": [
+      "autonomy",
+      "uhuru wa kujitawala"
+    ],
+    "definition": "Uwezo wa kuamua matendo yako mwenyewe badala ya kufuata mipango ya wengine."
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "keyword_forms": [
+      "Basename"
+    ],
+    "definition": "Huduma ya majina kwenye mtandao wa Base, inayotoa majina yanayosomeka kwa mikoba, yanayoishia na .base.eth."
+  },
+  "batch auction": {
+    "keyword": "mnada wa pamoja",
+    "keyword_plural": "minada ya pamoja",
+    "keyword_forms": [
+      "batch auction",
+      "batch auctions"
+    ],
+    "definition": "Njia ya kufanya biashara inayokusanya oda nyingi kwa muda mfupi kisha kuzikamilisha zote kwa bei moja ya haki."
+  },
+  "bet": {
+    "keyword": "kubeti",
+    "keyword_plural": "kubeti",
+    "keyword_forms": [
+      "bet",
+      "bets",
+      "beti",
+      "kuweka beti"
+    ],
+    "definition": "Kuhatarisha pesa kwa matumaini ya kupata tuzo kubwa zaidi."
+  },
+  "blob": {
+    "keyword": "blob",
+    "keyword_plural": "blob",
+    "keyword_forms": [
+      "blobs",
+      "blobu"
+    ],
+    "definition": "Nafasi ya data ya bei nafuu na ya muda mfupi ndani ya bloku za Ethereum, inayotumiwa na Layer 2 kutuma makundi ya miamala yao."
+  },
+  "block": {
+    "keyword": "bloku",
+    "keyword_plural": "bloku",
+    "keyword_forms": [
+      "block",
+      "blocks",
+      "kitalu",
+      "vitalu"
+    ],
+    "definition": "Kundi la miamala kwenye blockchain."
+  },
+  "block builder": {
+    "keyword": "mjenzi wa bloku",
+    "keyword_plural": "wajenzi wa bloku",
+    "keyword_forms": [
+      "block builder",
+      "block builders",
+      "mjenga kizuizi",
+      "mjenzi wa kizuizi"
+    ],
+    "definition": "Mhusika maalum anayekusanya miamala kuunda bloku mpya, kisha wapendekezaji wa bloku huzichapisha kwenye mtandao."
+  },
+  "block explorer": {
+    "keyword": "kichunguzi cha bloku",
+    "keyword_plural": "vichunguzi vya bloku",
+    "keyword_forms": [
+      "block explorer",
+      "block explorers",
+      "kichunguzi cha kizuizi"
+    ],
+    "definition": "Zana ya kutafuta na kuchunguza data ya blockchain."
+  },
+  "block hash": {
+    "keyword": "heshi ya bloku",
+    "keyword_plural": "heshi za bloku",
+    "keyword_forms": [
+      "block hash",
+      "block hashes"
+    ],
+    "definition": "Kitambulisho cha kipekee cha kila faili ya bloku. Kila bloku mpya hurejea heshi ya bloku iliyotangulia, na hivyo kuunda mnyororo mmoja."
+  },
+  "block producer": {
+    "keyword": "mtengenezaji wa bloku",
+    "keyword_plural": "watengenezaji wa bloku",
+    "keyword_forms": [
+      "block producer",
+      "block producers"
+    ],
+    "definition": "Mshiriki wa mtandao aliyechaguliwa kutengeneza bloku mpya za miamala, kama mchimbaji au mthibitishaji."
+  },
+  "block proposer": {
+    "keyword": "mpendekezaji wa bloku",
+    "keyword_plural": "wapendekezaji wa bloku",
+    "keyword_forms": [
+      "block proposer",
+      "block proposers",
+      "mpendekeza kitalu"
+    ],
+    "definition": "Nodi ya mthibitishaji iliyochaguliwa na kanuni ya mtandao kuchagua bloku inayofuata kuongezwa kwenye blockchain."
+  },
+  "block reward": {
+    "keyword": "tuzo ya bloku",
+    "keyword_plural": "tuzo za bloku",
+    "keyword_forms": [
+      "block reward",
+      "block rewards",
+      "zawadi ya bloku"
+    ],
+    "definition": "Kiasi cha sarafu ya asili anachopewa mpendekezaji wa bloku mpya halali."
+  },
+  "block space": {
+    "keyword": "nafasi ya bloku",
+    "keyword_forms": [
+      "block space"
+    ],
+    "definition": "Kiasi cha nafasi kilichopo kwenye kila bloku kwa ajili ya kuhifadhi miamala na data."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchain",
+    "keyword_forms": [
+      "blockchains",
+      "mnyororo wa bloku",
+      "mnyororo wa vitalu"
+    ],
+    "definition": "Mfumo ambapo rekodi ya miamala ya sarafu za kripto huhifadhiwa kwenye kompyuta nyingi duniani kote."
+  },
+  "blockchain apps": {
+    "keyword": "programu za blockchain",
+    "keyword_forms": [
+      "blockchain apps",
+      "programu ya blockchain"
+    ],
+    "definition": "Programu zinazokuwezesha kubadilisha sarafu za kripto, kutumia mitandao ya kijamii ya web3, kutoa michango ya hisani, au hata kujifunza onchain, kama hapa Bankless Academy."
+  },
+  "blockchain architecture": {
+    "keyword": "muundo wa blockchain",
+    "keyword_plural": "miundo ya blockchain",
+    "keyword_forms": [
+      "blockchain architecture",
+      "blockchain architectures"
+    ],
+    "definition": "Mpangilio wa jinsi data inavyohifadhiwa katika teknolojia ya blockchain."
+  },
+  "blockchain technology": {
+    "keyword": "teknolojia ya blockchain",
+    "keyword_plural": "teknolojia za blockchain",
+    "keyword_forms": [
+      "blockchain technology",
+      "blockchain technologies"
+    ],
+    "definition": "Aina mpya ya mtandao unaoendeshwa na kompyuta nyingi. Inaongeza safu mpya ya umiliki wa kidijitali kwenye intaneti."
+  },
+  "blockchain trilemma": {
+    "keyword": "trilema ya blockchain",
+    "keyword_plural": "trilema za blockchain",
+    "keyword_forms": [
+      "blockchain trilemma",
+      "blockchain trilemmas"
+    ],
+    "definition": "Tatizo linaloeleza haja ya sifa zote tatu za blockchain: usalama, uwezo wa kupanuka, na ugatuzi."
+  },
+  "blockspace": {
+    "keyword": "nafasi ya bloku",
+    "keyword_forms": [
+      "blockspace"
+    ],
+    "definition": "Kiasi cha nafasi kilichopo kwenye kila bloku kwa ajili ya kuhifadhi miamala na data."
+  },
+  "borrower": {
+    "keyword": "mkopaji",
+    "keyword_plural": "wakopaji",
+    "keyword_forms": [
+      "borrower",
+      "borrowers",
+      "kukopa"
+    ],
+    "definition": "Mtu aliye tayari kulipa riba kwa wakopeshaji ili aweze kukopa mali."
+  },
+  "bridge": {
+    "keyword": "daraja",
+    "keyword_plural": "madaraja",
+    "keyword_forms": [
+      "bridge",
+      "bridges",
+      "kiunganishi",
+      "kuvusha",
+      "darajani"
+    ],
+    "definition": "Kiunganishi kinachoruhusu mitandao miwili tofauti ya blockchain kuwasiliana na kubadilishana mali."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "Alama ya soko ya bitcoin."
+  },
+  "censorship-resistant": {
+    "keyword": "sugu kwa udhibiti",
+    "keyword_forms": [
+      "censorship-resistant",
+      "sugu dhidi ya udhibiti"
+    ],
+    "definition": "Hakuna serikali wala kampuni yenye uwezo wa kuamua kinachoruhusiwa na kisichoruhusiwa."
+  },
+  "central bank": {
+    "keyword": "benki kuu",
+    "keyword_plural": "benki kuu",
+    "keyword_forms": [
+      "central bank",
+      "central banks"
+    ],
+    "definition": "Taasisi inayosimamia pesa, benki na sarafu ndani ya nchi."
+  },
+  "centralization": {
+    "keyword": "mfumo wa kati",
+    "keyword_forms": [
+      "centralization",
+      "mkusanyiko wa madaraka"
+    ],
+    "definition": "Hali ambapo mamlaka juu ya mfumo mzima yamejikita mikononi mwa mhusika mmoja."
+  },
+  "centralized": {
+    "keyword": "ya kati",
+    "keyword_forms": [
+      "centralized",
+      "wa kati",
+      "la kati",
+      "cha kati",
+      "vya kati",
+      "za kati"
+    ],
+    "definition": "Hali ambapo mhusika mmoja anadhibiti mfumo mzima."
+  },
+  "centralized exchange": {
+    "keyword": "soko la kati",
+    "keyword_plural": "masoko ya kati",
+    "keyword_forms": [
+      "centralized exchange",
+      "centralized exchanges"
+    ],
+    "definition": "(CEX) Jukwaa la kati linaloratibu biashara ya sarafu za kripto kwa ada, kama soko la hisa."
+  },
+  "centralized exchange staking": {
+    "keyword": "staking kwenye soko la kati",
+    "keyword_forms": [
+      "centralized exchange staking"
+    ],
+    "definition": "Kufunga tokeni kupitia soko la kati ili kuzalisha tuzo."
+  },
+  "centralized services": {
+    "keyword": "huduma za kati",
+    "keyword_forms": [
+      "centralized services",
+      "huduma ya kati"
+    ],
+    "definition": "Kampuni au mashirika yanayodhibiti shughuli za mtandaoni, yakiweka sheria na ada, na kusimamia data na maudhui kwa namna inayotanguliza maslahi yao kuliko mahitaji ya watumiaji."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX",
+    "keyword_forms": [
+      "CEXs"
+    ],
+    "definition": "(Centralized Exchange) Jukwaa linaloratibu biashara ya sarafu za kripto kwa ada, kama soko la hisa."
+  },
+  "chain": {
+    "keyword": "mnyororo",
+    "keyword_plural": "minyororo",
+    "keyword_forms": [
+      "chain",
+      "chains",
+      "mnyororoni"
+    ],
+    "definition": "Huunganisha bloku za data pamoja ili kuunda hifadhidata isiyoweza kubadilishwa."
+  },
+  "circulating supply": {
+    "keyword": "ugavi unaozunguka",
+    "keyword_plural": "ugavi unaozunguka",
+    "keyword_forms": [
+      "circulating supply",
+      "circulating supplies"
+    ],
+    "definition": "Idadi ya sarafu au tokeni za sarafu fulani ya kripto zinazopatikana hadharani sokoni kwa ajili ya biashara."
+  },
+  "coin": {
+    "keyword": "sarafu",
+    "keyword_plural": "sarafu",
+    "keyword_forms": [
+      "coin",
+      "coins"
+    ],
+    "definition": "Mali ya asili ya blockchain, hutumika zaidi kama fedha ya kurahisisha miamala kwenye mtandao."
+  },
+  "cold wallet": {
+    "keyword": "mkoba wa nje ya mtandao",
+    "keyword_plural": "mikoba ya nje ya mtandao",
+    "keyword_forms": [
+      "cold wallet",
+      "cold wallets"
+    ],
+    "definition": "Aina ya mkoba wa uhifadhi binafsi unaohifadhiwa kwenye kifaa kilicho nje ya mtandao."
+  },
+  "collateral": {
+    "keyword": "dhamana",
+    "keyword_forms": [
+      "collateral",
+      "kudhamini"
+    ],
+    "definition": "Mali anayoweka mkopaji kama uhakikisho kwa mkopeshaji kwamba mkopo utalipwa."
+  },
+  "commercial bank": {
+    "keyword": "benki ya biashara",
+    "keyword_plural": "benki za biashara",
+    "keyword_forms": [
+      "commercial bank",
+      "commercial banks"
+    ],
+    "definition": "Benki inayosimamia pesa za watu na za biashara."
+  },
+  "composability": {
+    "keyword": "utangamano",
+    "keyword_forms": [
+      "composability",
+      "muundo unganishi"
+    ],
+    "definition": "Uwezo wa kuunganisha mikataba mahiri na programu zilizopo kama vipande vya ujenzi ili kutengeneza bidhaa mpya."
+  },
+  "consensus": {
+    "keyword": "mwafaka",
+    "keyword_forms": [
+      "consensus",
+      "makubaliano",
+      "kuafikiana"
+    ],
+    "definition": "Makubaliano, imani na usalama katika mtandao wa kompyuta uliogatuliwa kama blockchain."
+  },
+  "consensus mechanism": {
+    "keyword": "mfumo wa mwafaka",
+    "keyword_plural": "mifumo ya mwafaka",
+    "keyword_forms": [
+      "consensus mechanism",
+      "utaratibu wa makubaliano",
+      "mfumo wa makubaliano"
+    ],
+    "definition": "Njia ambayo mtandao wa blockchain hutumia kuamua ni miamala ipi halali na ipi ya udanganyifu."
+  },
+  "consensus mechanisms": {
+    "keyword": "mifumo ya mwafaka",
+    "keyword_forms": [
+      "consensus mechanisms",
+      "taratibu za makubaliano"
+    ],
+    "definition": "Njia ambazo mitandao ya blockchain hutumia kuamua ni miamala ipi halali na ipi ya udanganyifu."
+  },
+  "counterparty risk": {
+    "keyword": "hatari ya upande wa pili",
+    "keyword_plural": "hatari za upande wa pili",
+    "keyword_forms": [
+      "counterparty risk",
+      "counterparty risks"
+    ],
+    "definition": "Hatari kwamba upande mwingine hautatimiza sehemu yake ya makubaliano."
+  },
+  "credible neutrality": {
+    "keyword": "kutoegemea kunakoaminika",
+    "keyword_forms": [
+      "credible neutrality"
+    ],
+    "definition": "Mfumo usiombagua wala kumpendelea mtu yeyote."
+  },
+  "crypto": {
+    "keyword": "kripto",
+    "keyword_forms": [
+      "crypto"
+    ],
+    "definition": "(Sarafu ya kripto) Sarafu zinazozaliwa kwenye intaneti, si za nchi moja. Badala ya kusimamiwa na benki kuu, mara nyingi huongozwa na watumiaji wake."
+  },
+  "crypto wallet": {
+    "keyword": "mkoba wa kripto",
+    "keyword_plural": "mikoba ya kripto",
+    "keyword_forms": [
+      "crypto wallet",
+      "crypto wallets"
+    ],
+    "definition": "Programu inayokuwezesha kuhifadhi sarafu zako za kripto, na kuzituma, kuzipokea au kuzitumia."
+  },
+  "cryptocurrencies": {
+    "keyword": "sarafu za kripto",
+    "keyword_forms": [
+      "cryptocurrencies"
+    ],
+    "definition": "Sarafu zinazozaliwa kwenye intaneti, si za nchi fulani. Badala ya kusimamiwa na benki kuu, mara nyingi huongozwa na watumiaji wake."
+  },
+  "cryptocurrency": {
+    "keyword": "sarafu ya kripto",
+    "keyword_plural": "sarafu za kripto",
+    "keyword_forms": [
+      "cryptocurrency",
+      "sarafu-fiche",
+      "sarafufiche"
+    ],
+    "definition": "Sarafu inayozaliwa kwenye intaneti, si ya nchi fulani. Badala ya kusimamiwa na benki kuu, mara nyingi huongozwa na watumiaji wake."
+  },
+  "cryptocurrency mining": {
+    "keyword": "uchimbaji wa kripto",
+    "keyword_forms": [
+      "cryptocurrency mining",
+      "kuchimba kripto"
+    ],
+    "definition": "Kuthibitisha miamala ya blockchain ili kupata tuzo za kripto, hutumika kwenye mitandao ya Proof of Work kama Bitcoin."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "mkoba wa sarafu za kripto",
+    "keyword_plural": "mikoba ya sarafu za kripto",
+    "keyword_forms": [
+      "cryptocurrency wallet",
+      "cryptocurrency wallets"
+    ],
+    "definition": "Programu inayokuwezesha kuhifadhi sarafu zako za kripto, na kuzituma, kuzipokea au kuzitumia."
+  },
+  "cryptography": {
+    "keyword": "kriptografia",
+    "keyword_forms": [
+      "cryptography",
+      "usimbaji siri",
+      "fichasiri"
+    ],
+    "definition": "Mbinu za kulinda mawasiliano au miamala dhidi ya uingiliaji wa nje."
+  },
+  "custodial wallet": {
+    "keyword": "mkoba wenye mdhamini",
+    "keyword_plural": "mikoba yenye mdhamini",
+    "keyword_forms": [
+      "custodial wallet",
+      "custodial wallets"
+    ],
+    "definition": "Kwenye mkoba wenye mdhamini, mtu mwingine ndiye anayeshikilia funguo za siri, hivyo anadhibiti uwezo wako wa kufikia mali zako za kripto."
+  },
+  "custodian": {
+    "keyword": "mdhamini",
+    "keyword_plural": "wadhamini",
+    "keyword_forms": [
+      "custodian",
+      "custodians"
+    ],
+    "definition": "Taasisi ya kifedha iliyopewa jukumu la kulinda mali zako."
+  },
+  "custom record": {
+    "keyword": "rekodi maalum",
+    "keyword_plural": "rekodi maalum",
+    "keyword_forms": [
+      "custom record",
+      "custom records"
+    ],
+    "definition": "Taarifa unayoweka mwenyewe kwenye domeni ya ENS, ikikuruhusu kuambatanisha maelezo ya ziada kama tovuti au viungo vya mitandao ya kijamii, zaidi ya anwani za kawaida."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO",
+    "keyword_forms": [
+      "DAOs"
+    ],
+    "definition": "(Decentralized Autonomous Organization) Muundo wa shirika unaotumia teknolojia ya blockchain kuendesha upigaji kura na usimamizi kiotomatiki."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApp",
+    "keyword_forms": [
+      "dApps",
+      "programu iliyogatuliwa"
+    ],
+    "definition": "\"Programu iliyogatuliwa\" inayounganishwa na blockchain na mitandao iliyogatuliwa."
+  },
+  "death spiral": {
+    "keyword": "mzunguko wa kifo",
+    "keyword_plural": "mizunguko ya kifo",
+    "keyword_forms": [
+      "death spiral",
+      "death spirals"
+    ],
+    "definition": "Mzunguko wa kuporomoka unaojiendeleza wenyewe: bei inayoshuka hulazimisha hatua zinazoishusha zaidi, kama ilivyotokea kwa baadhi ya sarafu thabiti zinazoendeshwa na kanuni za kompyuta."
+  },
+  "decentralization": {
+    "keyword": "ugatuzi",
+    "keyword_forms": [
+      "decentralization",
+      "kugatua",
+      "usambazaji madaraka"
+    ],
+    "definition": "Kuhamisha udhibiti kwa watu wengi badala ya mamlaka moja."
+  },
+  "decentralized": {
+    "keyword": "iliyogatuliwa",
+    "keyword_forms": [
+      "decentralized",
+      "aliyegatuliwa",
+      "waliogatuliwa",
+      "uliogatuliwa",
+      "lililogatuliwa",
+      "yaliyogatuliwa",
+      "kilichogatuliwa",
+      "vilivyogatuliwa",
+      "zilizogatuliwa",
+      "yenye ugatuzi"
+    ],
+    "definition": "Hakuna mamlaka wala mhusika mmoja anayedhibiti mfumo."
+  },
+  "decentralized exchange": {
+    "keyword": "soko lililogatuliwa",
+    "keyword_plural": "masoko yaliyogatuliwa",
+    "keyword_forms": [
+      "decentralized exchange",
+      "decentralized exchanges"
+    ],
+    "definition": "(DEX) Itifaki inayowezesha kubadilishana bila kuhitaji wapatanishi wa kuaminika."
+  },
+  "decentralized finance": {
+    "keyword": "fedha zilizogatuliwa",
+    "keyword_forms": [
+      "Decentralized Finance",
+      "decentralized finance"
+    ],
+    "definition": "(DeFi) Seti ya zana za kifedha za uhifadhi binafsi zinazoendeshwa kwenye blockchain."
+  },
+  "decentralized money": {
+    "keyword": "pesa iliyogatuliwa",
+    "keyword_forms": [
+      "decentralized money"
+    ],
+    "definition": "Pesa yenye sifa zilizokubaliwa na jamii, badala ya kupangwa na taasisi."
+  },
+  "decentralized services": {
+    "keyword": "huduma zilizogatuliwa",
+    "keyword_forms": [
+      "decentralized services",
+      "huduma iliyogatuliwa"
+    ],
+    "definition": "(dApps) Huduma za mtandaoni zinazotumia mifumo ya kiotomatiki kupunguza ada na kuboresha hali ya mtumiaji."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "(Decentralized Finance) Seti ya zana za kifedha za uhifadhi binafsi zinazoendeshwa kwenye blockchain."
+  },
+  "delegate": {
+    "keyword": "mwakilishi",
+    "keyword_plural": "wawakilishi",
+    "keyword_forms": [
+      "delegate",
+      "delegates",
+      "kaimisha",
+      "mkaimishwaji"
+    ],
+    "definition": "Mtu unayempa jukumu fulani, kwa mfano uwezo wako wa kupiga kura kwa tokeni."
+  },
+  "delegation": {
+    "keyword": "uwakilishi",
+    "keyword_plural": "uwakilishi",
+    "keyword_forms": [
+      "delegation",
+      "delegations",
+      "ukaimishaji",
+      "kuwakilisha"
+    ],
+    "definition": "Kumpa mtu mwingine jukumu fulani, kwa mfano kumkabidhi uwezo wako wa kupiga kura kwa tokeni."
+  },
+  "democracy": {
+    "keyword": "demokrasia",
+    "keyword_plural": "demokrasia",
+    "keyword_forms": [
+      "democracy",
+      "democracies"
+    ],
+    "definition": "Mfumo wa utawala ambapo wananchi hutumia madaraka kwa kushiriki kwa kiasi kikubwa katika kufanya maamuzi."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX",
+    "keyword_forms": [
+      "DEXs"
+    ],
+    "definition": "(Decentralized Exchange) Itifaki inayowezesha kubadilishana bila kuhitaji wapatanishi wa kuaminika."
+  },
+  "dex aggregator": {
+    "keyword": "kikusanyaji cha DEX",
+    "keyword_plural": "vikusanyaji vya DEX",
+    "keyword_forms": [
+      "DEX aggregator",
+      "DEX aggregators"
+    ],
+    "definition": "Itifaki inayounganisha ukwasi wa DEX kutoka vyanzo vingi kwenye kiolesura kimoja."
+  },
+  "digital assets": {
+    "keyword": "mali za kidijitali",
+    "keyword_forms": [
+      "digital assets",
+      "mali ya kidijitali"
+    ],
+    "definition": "Kitu chochote chenye thamani kinachohifadhiwa kwa njia ya kidijitali."
+  },
+  "digital signature": {
+    "keyword": "saini ya kidijitali",
+    "keyword_plural": "saini za kidijitali",
+    "keyword_forms": [
+      "digital signature",
+      "digital signatures",
+      "sahihi ya kidijitali"
+    ],
+    "definition": "Ushahidi, unaotengenezwa kwa ufunguo wako wa siri, kwamba umeidhinisha ujumbe au muamala. Hufanya kazi kama saini ya mkono, lakini haiwezi kughushiwa."
+  },
+  "double-spend": {
+    "keyword": "kutumia mara mbili",
+    "keyword_plural": "kutumia mara mbili",
+    "keyword_forms": [
+      "double-spend",
+      "double-spends",
+      "matumizi mara mbili",
+      "matumizi rudufu"
+    ],
+    "definition": "Kutumia pesa zilezile za kidijitali mara mbili. Mwafaka wa blockchain upo ili kuzuia hili bila mamlaka kuu."
+  },
+  "earn": {
+    "keyword": "kupata",
+    "keyword_forms": [
+      "earn",
+      "pata"
+    ],
+    "definition": "Kuchangia thamani ili kupata tuzo."
+  },
+  "encryption": {
+    "keyword": "usimbaji fiche",
+    "keyword_forms": [
+      "encryption",
+      "kusimba fiche",
+      "ufumbaji"
+    ],
+    "definition": "Mchakato wa kugeuza taarifa kuwa msimbo wa siri na salama, ili kuzuia wasioruhusiwa kuzifikia."
+  },
+  "epoch": {
+    "keyword": "kipindi",
+    "keyword_plural": "vipindi",
+    "keyword_forms": [
+      "epoch",
+      "epochs",
+      "epochi"
+    ],
+    "definition": "Muda unaochukuliwa kwa idadi maalum ya bloku kuingizwa kwenye blockchain fulani."
+  },
+  "equality of opportunity": {
+    "keyword": "usawa wa fursa",
+    "keyword_forms": [
+      "equality of opportunity"
+    ],
+    "definition": "Kanuni ya haki ambapo kila mtu ana nafasi sawa ya kufanikiwa bila kujali asili yake au mazingira yake."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20",
+    "keyword_forms": [
+      "ERC20",
+      "ERC-20s"
+    ],
+    "definition": "Kiwango cha tokeni zinazobadilishana kwa usawa kwenye Ethereum. Tokeni hizi zinaweza kugawanywa na si za kipekee."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721",
+    "keyword_forms": [
+      "ERC721",
+      "ERC-721s"
+    ],
+    "definition": "Kiwango cha tokeni zisizobadilishana kwa usawa kwenye Ethereum. Tokeni hizi zina kitambulisho cha kipekee cha kidijitali, haziwezi kunakiliwa wala kugawanywa."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155",
+    "keyword_forms": [
+      "ERC1155",
+      "ERC-1155s"
+    ],
+    "definition": "Kiwango cha kutoa tokeni zinazobadilishana kwa usawa na zisizobadilishana, zote chini ya mkataba mmoja ulioboreshwa kwenye Ethereum."
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF",
+    "keyword_forms": [
+      "ETFs",
+      "Exchange-Traded Fund"
+    ],
+    "definition": "(Exchange-Traded Fund) Mfuko wa uwekezaji unaouzwa kwenye soko la hisa, wenye mali kama hisa, dhahabu au bitcoin."
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "(Ether) Sarafu ya kripto ya asili ya Ethereum. Hutumika kufanya miamala kwenye mtandao, kuendesha nodi ya mthibitishaji, na mengine."
+  },
+  "ether": {
+    "keyword": "ether",
+    "keyword_forms": [
+      "Etha"
+    ],
+    "definition": "(ETH) Sarafu ya kripto ya asili ya Ethereum. Hutumika kufanya miamala kwenye mtandao, kuendesha nodi ya mthibitishaji, na mengine."
+  },
+  "ethereum blockchain": {
+    "keyword": "blockchain ya Ethereum",
+    "keyword_forms": [
+      "Ethereum Blockchain"
+    ],
+    "definition": "Daftari la umma linaloandika miamala na umiliki kwenye mtandao wa Ethereum."
+  },
+  "ethereum mainnet": {
+    "keyword": "Mtandao Mkuu wa Ethereum",
+    "keyword_forms": [
+      "Ethereum Mainnet",
+      "Mainnet ya Ethereum"
+    ],
+    "definition": "Mtandao mkuu wa Layer 1 wa Ethereum, ambapo miamala ina thamani halisi. Ndio tabaka la ukamilishaji kwa Layer 2 za Ethereum."
+  },
+  "ethereum virtual machine": {
+    "keyword": "Ethereum Virtual Machine",
+    "keyword_forms": [
+      "EVM"
+    ],
+    "definition": "Ethereum Virtual Machine au EVM ni programu inayotekeleza mikataba mahiri na kukokotoa hali ya mtandao wa Ethereum."
+  },
+  "fiat": {
+    "keyword": "fiat",
+    "keyword_forms": [
+      "pesa ya fiat"
+    ],
+    "definition": "Sarafu ya nchi ambayo, badala ya kuungwa mkono na bidhaa kama dhahabu, hupata thamani kutokana na imani ya umma kwa mtoaji wake."
+  },
+  "finality": {
+    "keyword": "kutotenguka",
+    "keyword_forms": [
+      "finality",
+      "ukamilifu",
+      "hali ya kutotenguka"
+    ],
+    "definition": "Uhakika kwamba muamala uliothibitishwa kwenye blockchain ni wa kudumu na hauwezi kutenguliwa wala kubadilishwa."
+  },
+  "finality time": {
+    "keyword": "muda wa kutotenguka",
+    "keyword_forms": [
+      "finality time"
+    ],
+    "definition": "Muda unaochukua kuwa na uhakika kwamba muamala ni halali na wa mwisho, yaani hautatenguliwa wala kubadilishwa."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) Wasiwasi au hofu ya kukosa kushiriki katika jambo fulani."
+  },
+  "fork": {
+    "keyword": "mchepuo",
+    "keyword_plural": "michepuo",
+    "keyword_forms": [
+      "fork",
+      "forks",
+      "mgawanyiko"
+    ],
+    "definition": "Mabadiliko makubwa kwenye mtandao wa blockchain yanayozalisha matawi mawili: moja linalofuata itifaki ya zamani na lingine linalofuata mpya."
+  },
+  "fraud": {
+    "keyword": "udanganyifu",
+    "keyword_forms": [
+      "fraud",
+      "kudanganya"
+    ],
+    "definition": "Katika uchumi wa blockchain: miamala ya udanganyifu au ya kughushi, inayotumiwa kubadilisha kiasi cha kripto kinachomilikiwa."
+  },
+  "fraud proof": {
+    "keyword": "ushahidi wa udanganyifu",
+    "keyword_plural": "ushahidi wa udanganyifu",
+    "keyword_forms": [
+      "fraud proof",
+      "fraud proofs",
+      "uthibitisho wa udanganyifu"
+    ],
+    "definition": "Ushahidi unaoonyesha kwamba muamala si halali na kwamba udanganyifu umetokea."
+  },
+  "front-running": {
+    "keyword": "utangulizaji wa muamala",
+    "keyword_forms": [
+      "front-running",
+      "utangulizaji muamala",
+      "kutanguliza muamala"
+    ],
+    "definition": "Kuona muamala wa mtu unaosubiri kisha kulipa ili wako upitishwe kwanza, ukipata faida kwa hasara yake."
+  },
+  "fungibility": {
+    "keyword": "uwezo wa kubadilishana",
+    "keyword_forms": [
+      "fungibility"
+    ],
+    "definition": "Sifa ya kuweza kubadilishwa: kila kipande kina thamani ileile na kinaweza kuchukua nafasi ya kingine, kama noti moja ya dola kwa nyingine."
+  },
+  "gas": {
+    "keyword": "gesi",
+    "keyword_forms": [
+      "gas"
+    ],
+    "definition": "Ada za miamala kwenye mitandao ya blockchain."
+  },
+  "gas fee": {
+    "keyword": "ada ya gesi",
+    "keyword_plural": "ada za gesi",
+    "keyword_forms": [
+      "gas fee",
+      "gas fees",
+      "gharama ya gesi"
+    ],
+    "definition": "Ada ya muamala inayolipwa ili kutumia mtandao wa blockchain."
+  },
+  "gasless transactions": {
+    "keyword": "miamala isiyo na gesi",
+    "keyword_forms": [
+      "gasless transactions",
+      "muamala usio na gesi"
+    ],
+    "definition": "Miamala ambapo ada ya gesi hulipwa kwa tokeni inayobadilishwa, au hulipiwa na mfadhili, badala ya sarafu ya asili ya mtandao."
+  },
+  "gold standard": {
+    "keyword": "kiwango cha dhahabu",
+    "keyword_plural": "viwango vya dhahabu",
+    "keyword_forms": [
+      "gold standard",
+      "gold standards"
+    ],
+    "definition": "Mfumo wa fedha ambapo thamani ya sarafu ya nchi imefungamanishwa moja kwa moja na dhahabu."
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "definition": "Kipimo kinachotumika kwenye blockchain ya Ethereum, sawa na 0.000000001 ETH (sehemu moja ya bilioni), hutumika mara nyingi kuelezea bei za gesi."
+  },
+  "halving": {
+    "keyword": "halving",
+    "keyword_plural": "halving",
+    "keyword_forms": [
+      "halvings",
+      "kupunguzwa nusu"
+    ],
+    "definition": "Tukio lililopangwa, takriban kila miaka minne, linalopunguza kwa nusu tuzo ya kuchimba Bitcoin mpya."
+  },
+  "hardware wallet": {
+    "keyword": "mkoba wa maunzi",
+    "keyword_plural": "mikoba ya maunzi",
+    "keyword_forms": [
+      "hardware wallet",
+      "hardware wallets"
+    ],
+    "definition": "Aina ya mkoba wa uhifadhi binafsi unaohifadhi funguo za siri nje ya mtandao ndani ya kifaa halisi."
+  },
+  "hash": {
+    "keyword": "heshi",
+    "keyword_plural": "heshi",
+    "keyword_forms": [
+      "hash",
+      "hashes",
+      "kuheshi"
+    ],
+    "definition": "Alama ya kidole ya kidijitali ya taarifa."
+  },
+  "hashing function": {
+    "keyword": "kitendakazi cha heshi",
+    "keyword_plural": "vitendakazi vya heshi",
+    "keyword_forms": [
+      "hashing function",
+      "hashing functions"
+    ],
+    "definition": "Kitendakazi kinachogeuza kiingizo chochote kuwa alama ya kipekee ya ukubwa usiobadilika (heshi). Ni rahisi kukokotoa upande mmoja, lakini haiwezekani kurudisha nyuma."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) Msemo wa kripto wa kutouza kripto yako hata hali ya soko ikiwaje."
+  },
+  "hot wallet": {
+    "keyword": "mkoba wa mtandaoni",
+    "keyword_plural": "mikoba ya mtandaoni",
+    "keyword_forms": [
+      "hot wallet",
+      "hot wallets"
+    ],
+    "definition": "Aina ya mkoba wa uhifadhi binafsi ambao umeunganishwa na intaneti wakati wote."
+  },
+  "inflation": {
+    "keyword": "mfumuko wa bei",
+    "keyword_forms": [
+      "inflation"
+    ],
+    "definition": "Ongezeko la jumla la bei na kushuka kwa uwezo wa pesa kununua."
+  },
+  "intent": {
+    "keyword": "nia",
+    "keyword_plural": "nia",
+    "keyword_forms": [
+      "intent",
+      "intents",
+      "dhamira"
+    ],
+    "definition": "Ombi la biashara lililotiwa saini linaloeleza matokeo unayotaka, kama \"badilisha X upate angalau Y\", likiacha njia bora kwa wataalamu."
+  },
+  "intermediaries": {
+    "keyword": "wapatanishi",
+    "keyword_forms": [
+      "intermediaries"
+    ],
+    "definition": "Mashirika au huduma zinazounganisha watu ili kurahisisha kubadilishana thamani au taarifa."
+  },
+  "intermediary": {
+    "keyword": "mpatanishi",
+    "keyword_plural": "wapatanishi",
+    "keyword_forms": [
+      "intermediary"
+    ],
+    "definition": "Shirika au huduma inayounganisha watu ili kurahisisha kubadilishana thamani au taarifa."
+  },
+  "intermediary token": {
+    "keyword": "tokeni ya kati",
+    "keyword_plural": "tokeni za kati",
+    "keyword_forms": [
+      "intermediary token",
+      "intermediary tokens"
+    ],
+    "definition": "Tokeni iliyo katikati ya njia ya badilishano, si ile ya kuanzia wala ya kuishia."
+  },
+  "interoperability": {
+    "keyword": "mwingiliano",
+    "keyword_forms": [
+      "interoperability",
+      "utendaji kazi wa pamoja"
+    ],
+    "definition": "Uwezo wa programu, tokeni na blockchain tofauti kufanya kazi pamoja na kushirikiana taarifa."
+  },
+  "invest": {
+    "keyword": "kuwekeza",
+    "keyword_forms": [
+      "invest",
+      "wekeza",
+      "uwekezaji"
+    ],
+    "definition": "Kuweka pesa kwenye mali, kama sarafu au tokeni, ukitegemea thamani yake kukua."
+  },
+  "know-your-customer": {
+    "keyword": "Know Your Customer",
+    "keyword_forms": [
+      "Know-Your-Customer",
+      "Kumfahamu Mteja Wako"
+    ],
+    "definition": "(KYC) Mchakato wa kuthibitisha utambulisho wa mtumiaji unaotakiwa na serikali."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know Your Customer) Mchakato wa kuthibitisha utambulisho wa mtumiaji unaotakiwa na serikali."
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "keyword_forms": [
+      "L1s"
+    ],
+    "definition": "Layer 1 inamaanisha mtandao wa msingi kama Bitcoin au Ethereum."
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "keyword_forms": [
+      "L2s"
+    ],
+    "definition": "Blockchain inayoongeza uwezo wa Ethereum kupanuka huku ikirithi usalama wa Ethereum."
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1",
+    "keyword_forms": [
+      "Layer 1s"
+    ],
+    "definition": "Layer 1 inamaanisha mtandao wa msingi kama Bitcoin au Ethereum."
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2",
+    "keyword_forms": [
+      "Layer 2s"
+    ],
+    "definition": "Blockchain inayoongeza uwezo wa Ethereum kupanuka huku ikirithi usalama wa Ethereum."
+  },
+  "ledger": {
+    "keyword": "daftari",
+    "keyword_plural": "madaftari",
+    "keyword_forms": [
+      "ledger",
+      "ledgers",
+      "daftarini"
+    ],
+    "definition": "Rekodi ya miamala yote iliyowahi kutokea."
+  },
+  "lender": {
+    "keyword": "mkopeshaji",
+    "keyword_plural": "wakopeshaji",
+    "keyword_forms": [
+      "lender",
+      "lenders",
+      "kukopesha"
+    ],
+    "definition": "Mtu anayeweka mali ili kupata riba."
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "keyword_forms": [
+      "Lightning"
+    ],
+    "definition": "Mtandao wa malipo uliojengwa juu ya Bitcoin, unaotumia njia za malipo kufanya malipo ya kila siku kuwa ya papo hapo na nafuu."
+  },
+  "liquid": {
+    "keyword": "yenye ukwasi",
+    "keyword_forms": [
+      "liquid",
+      "mwenye ukwasi",
+      "wenye ukwasi",
+      "lenye ukwasi",
+      "chenye ukwasi",
+      "vyenye ukwasi",
+      "zenye ukwasi"
+    ],
+    "definition": "Katika uchumi wa blockchain: uwezo wa kutumia mali ya kidijitali kwa urahisi katika biashara au kwenye mikataba mahiri."
+  },
+  "liquid staking token": {
+    "keyword": "tokeni ya staking yenye ukwasi",
+    "keyword_plural": "tokeni za staking zenye ukwasi",
+    "keyword_forms": [
+      "liquid staking token",
+      "liquid staking tokens"
+    ],
+    "definition": "Tokeni zinazowakilisha ether iliyo kwenye staking. Wamiliki hupata sehemu ya tuzo za staking kulingana na kiasi walichoweka."
+  },
+  "liquidation": {
+    "keyword": "uuzaji wa dhamana",
+    "keyword_plural": "uuzaji wa dhamana",
+    "keyword_forms": [
+      "liquidation",
+      "ufilisishaji",
+      "kuuza dhamana"
+    ],
+    "definition": "Kuuzwa kiotomatiki kwa dhamana ya mkopaji pale thamani yake inaposhuka chini mno kufunika mkopo kwa usalama."
+  },
+  "liquidity": {
+    "keyword": "ukwasi",
+    "keyword_forms": [
+      "liquidity"
+    ],
+    "definition": "Kiasi cha tokeni kinachopatikana kwa kubadilishana."
+  },
+  "liquidity pool": {
+    "keyword": "bwawa la ukwasi",
+    "keyword_plural": "mabwawa ya ukwasi",
+    "keyword_forms": [
+      "liquidity pool",
+      "kikusanyo cha ukwasi"
+    ],
+    "definition": "Hifadhi ya pamoja ya tokeni inayowezesha badilishano la tokeni bila kuhitaji ruhusa."
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP",
+    "keyword_forms": [
+      "LPs",
+      "Liquidity Provider",
+      "mtoa ukwasi",
+      "watoa ukwasi"
+    ],
+    "definition": "(Liquidity Provider) Watumiaji wa blockchain wanaokopesha tokeni zao kwa itifaki ili kupata sehemu ya ada."
+  },
+  "lsts": {
+    "keyword": "LST",
+    "keyword_forms": [
+      "LSTs"
+    ],
+    "definition": "Tokeni zinazowakilisha Ether iliyo kwenye staking. Wenye tokeni hizi hupata sehemu ya tuzo za staking kulingana na kiasi walichoweka."
+  },
+  "mainnet": {
+    "keyword": "Mainnet",
+    "keyword_forms": [
+      "mainnet",
+      "Mtandao Mkuu"
+    ],
+    "definition": "Mtandao mkuu wa blockchain ulio hai, ambapo miamala ina thamani halisi, tofauti na mitandao ya majaribio. Mara nyingi humaanisha Layer 1 ya Ethereum."
+  },
+  "market cap": {
+    "keyword": "thamani ya soko",
+    "keyword_plural": "thamani za soko",
+    "keyword_forms": [
+      "market cap",
+      "thamani ya jumla ya soko"
+    ],
+    "definition": "Thamani ya jumla ya tokeni fulani, au ya sekta nzima ya soko."
+  },
+  "max supply": {
+    "keyword": "ugavi wa juu kabisa",
+    "keyword_plural": "ugavi wa juu kabisa",
+    "keyword_forms": [
+      "max supply",
+      "ugavi wa juu"
+    ],
+    "definition": "Idadi kubwa zaidi ya sarafu au tokeni zitakazowahi kuwepo kwa sarafu fulani ya kripto."
+  },
+  "memecoin": {
+    "keyword": "memecoin",
+    "keyword_plural": "memecoin",
+    "keyword_forms": [
+      "memecoins",
+      "sarafu ya meme"
+    ],
+    "definition": "Tokeni ya sarafu ya kripto yenye mtindo wa meme ya intaneti, mara nyingi bila madhumuni wala matumizi yoyote."
+  },
+  "meta-aggregator": {
+    "keyword": "meta-kikusanyaji",
+    "keyword_plural": "meta-vikusanyaji",
+    "keyword_forms": [
+      "meta-aggregator",
+      "meta-aggregators"
+    ],
+    "definition": "Zana inayokusanya vikusanyaji vingine katika tabaka moja la ziada la muhtasari."
+  },
+  "mev": {
+    "keyword": "MEV",
+    "keyword_forms": [
+      "Maximal Extractable Value",
+      "thamani ya juu inayoweza kuchotwa"
+    ],
+    "definition": "(Maximal Extractable Value) Faida ambayo watengenezaji wa bloku wanaweza kupata kwa kupanga upya, kuingiza au kuzuia miamala ndani ya bloku."
+  },
+  "miner": {
+    "keyword": "mchimbaji",
+    "keyword_plural": "wachimbaji",
+    "keyword_forms": [
+      "miner",
+      "miners"
+    ],
+    "definition": "Mshiriki katika mtandao wa Proof of Work, kama Bitcoin, anayeshindana kupendekeza bloku mpya ili kupata tuzo."
+  },
+  "mining": {
+    "keyword": "uchimbaji",
+    "keyword_forms": [
+      "mining",
+      "kuchimba"
+    ],
+    "definition": "Mchakato wa Proof of Work wa kuthibitisha miamala na kuongeza bloku mpya kwenye blockchain, ili kupata tuzo."
+  },
+  "mint": {
+    "keyword": "kuzalisha",
+    "keyword_forms": [
+      "mint",
+      "kufua",
+      "uzalishaji wa tokeni"
+    ],
+    "definition": "Kuzalisha tokeni mpya za sarafu ya kripto kwenye blockchain fulani, iwe tokeni zinazobadilishana au za kipekee kama NFT."
+  },
+  "monetary policy": {
+    "keyword": "sera ya fedha",
+    "keyword_plural": "sera za fedha",
+    "keyword_forms": [
+      "monetary policy"
+    ],
+    "definition": "Jinsi benki kuu inavyodhibiti kiasi cha pesa kinachozunguka katika uchumi."
+  },
+  "money": {
+    "keyword": "pesa",
+    "keyword_forms": [
+      "money",
+      "fedha"
+    ],
+    "definition": "Chombo cha kubadilishana, kipimo cha thamani na hifadhi ya thamani, kinachorahisisha miamala ya bidhaa na huduma."
+  },
+  "multi-token standard": {
+    "keyword": "kiwango cha tokeni nyingi",
+    "keyword_forms": [
+      "multi-token standard",
+      "viwango vya tokeni nyingi"
+    ],
+    "definition": "Kiwango cha tokeni, kama ERC-1155, kinachobeba tokeni zinazobadilishana na za kipekee ndani ya mkataba mahiri mmoja."
+  },
+  "network governance": {
+    "keyword": "utawala wa mtandao",
+    "keyword_forms": [
+      "network governance",
+      "utawala wa mitandao"
+    ],
+    "definition": "Mchakato ambao jumuiya iliyogatuliwa hutumia kufikia makubaliano kuhusu vipengele na maboresho ya mtandao."
+  },
+  "neutrality": {
+    "keyword": "kutoegemea upande",
+    "keyword_forms": [
+      "neutrality",
+      "kutoegemea",
+      "kutopendelea"
+    ],
+    "definition": "Kanuni ya kuwatendea washiriki wote sawa, bila kupendelea mtumiaji au kundi lolote."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT",
+    "keyword_forms": [
+      "NFTs",
+      "Non-fungible Token",
+      "tokeni ya kipekee"
+    ],
+    "definition": "(Non-fungible Token) Tokeni yenye kitambulisho cha kipekee kisichoweza kuigwa, tofauti na tokeni inayobadilishana kama Ether isiyo na kitambulisho cha kipekee."
+  },
+  "node": {
+    "keyword": "nodi",
+    "keyword_plural": "nodi",
+    "keyword_forms": [
+      "node",
+      "nodes"
+    ],
+    "definition": "Kompyuta inayoendesha programu ya blockchain, ikihifadhi nakala ya daftari na kusaidia kuthibitisha mtandao."
+  },
+  "node operator": {
+    "keyword": "mwendeshaji wa nodi",
+    "keyword_plural": "waendeshaji wa nodi",
+    "keyword_forms": [
+      "node operator",
+      "node operators"
+    ],
+    "definition": "Mwanajumuiya wa Ethereum anayeendesha nodi ya mthibitishaji ili kushughulikia miamala kwenye mtandao."
+  },
+  "non-custodial wallet": {
+    "keyword": "mkoba usio na mdhamini",
+    "keyword_plural": "mikoba isiyo na mdhamini",
+    "keyword_forms": [
+      "non-custodial wallet",
+      "non-custodial wallets"
+    ],
+    "definition": "(Pia: mkoba wa uhifadhi binafsi) Kwenye mkoba usio na mdhamini, wewe pekee ndiye unayedhibiti funguo zako za siri, ambazo hudhibiti mali zako za kripto."
+  },
+  "offchain": {
+    "keyword": "offchain",
+    "keyword_forms": [
+      "off-chain",
+      "nje ya mnyororo"
+    ],
+    "definition": "Kitendo au data yoyote inayotokea nje ya blockchain, kama kwenye seva za kawaida au katika ujumbe uliosainiwa."
+  },
+  "onchain": {
+    "keyword": "onchain",
+    "keyword_forms": [
+      "on-chain",
+      "kwenye mnyororo"
+    ],
+    "definition": "Iliyorekodiwa kwenye mtandao wa blockchain. Humaanisha vitendo vinavyofanyika kwenye mitandao ya sarafu za kripto kama Ethereum."
+  },
+  "onchain governance": {
+    "keyword": "utawala wa onchain",
+    "keyword_forms": [
+      "onchain governance",
+      "on-chain governance"
+    ],
+    "definition": "Mfumo wa kiotomatiki unaosimamia mabadiliko ya muundo wa blockchain."
+  },
+  "onchain identity": {
+    "keyword": "utambulisho wa onchain",
+    "keyword_plural": "utambulisho wa onchain",
+    "keyword_forms": [
+      "onchain identity",
+      "onchain identities"
+    ],
+    "definition": "Utambulisho wa hadharani unaojengwa kutokana na shughuli na rekodi zako za blockchain, kama jina la ENS lililounganishwa na anwani ya mkoba wako."
+  },
+  "onramp": {
+    "keyword": "onramp",
+    "keyword_plural": "onramp",
+    "keyword_forms": [
+      "onramps",
+      "njia ya kuingia",
+      "offramp"
+    ],
+    "definition": "Huduma inayobadilisha pesa za kawaida, kama dola, kuwa sarafu ya kripto. Offramp hufanya kinyume chake."
+  },
+  "open internet": {
+    "keyword": "intaneti huria",
+    "keyword_forms": [
+      "open internet",
+      "intaneti wazi"
+    ],
+    "definition": "Nafasi ya kidijitali inayofikika, ambapo taarifa, huduma na mawasiliano yanapatikana kwa watumiaji wote bila kudhibitiwa na taasisi za kati."
+  },
+  "open source": {
+    "keyword": "chanzo huria",
+    "keyword_forms": [
+      "open source",
+      "vyanzo huria",
+      "msimbo huria"
+    ],
+    "definition": "Programu ambayo msimbo wake wa chanzo unaweza kuchunguzwa, kubadilishwa na kuboreshwa na mtu yeyote."
+  },
+  "optimistic rollup": {
+    "keyword": "Optimistic Rollup",
+    "keyword_plural": "Optimistic Rollup",
+    "keyword_forms": [
+      "optimistic rollups",
+      "rollup ya optimistic",
+      "rollup ya matarajio chanya"
+    ],
+    "definition": "Rollup ya Layer 2 inayochukulia kuwa miamala yote katika kundi lake ni halali, isipokuwa ikithibitishwa kuwa si sahihi kwa ushahidi wa udanganyifu ndani ya kipindi cha changamoto."
+  },
+  "oracle": {
+    "keyword": "orakeli",
+    "keyword_plural": "orakeli",
+    "keyword_forms": [
+      "oracle",
+      "oracles",
+      "mtoa taarifa"
+    ],
+    "definition": "Huduma inayoleta taarifa za nje, kama bei za soko, kwenye blockchain ili mikataba mahiri iweze kuzitumia."
+  },
+  "order book": {
+    "keyword": "daftari la maagizo",
+    "keyword_plural": "madaftari ya maagizo",
+    "keyword_forms": [
+      "order book",
+      "daftari la oda"
+    ],
+    "definition": "Orodha ya ofa za kununua na kuuza kwa bei tofauti. Masoko ya kawaida hulinganisha biashara kutoka orodha hii."
+  },
+  "otc": {
+    "keyword": "OTC",
+    "keyword_forms": [
+      "OTCs"
+    ],
+    "definition": "(Over the Counter) Biashara zinazofanywa moja kwa moja na watu au taasisi binafsi."
+  },
+  "over the counter": {
+    "keyword": "over the counter",
+    "keyword_forms": [
+      "over-the-counter"
+    ],
+    "definition": "(OTC) Biashara zinazofanywa moja kwa moja na watu au taasisi binafsi."
+  },
+  "password manager": {
+    "keyword": "kidhibiti cha nenosiri",
+    "keyword_plural": "vidhibiti vya nenosiri",
+    "keyword_forms": [
+      "password manager",
+      "meneja wa manenosiri"
+    ],
+    "definition": "Programu inayohifadhi manenosiri yako kwa usalama na inayoweza kutengeneza nenosiri imara la kipekee kwa kila akaunti."
+  },
+  "payment channel": {
+    "keyword": "njia ya malipo",
+    "keyword_plural": "njia za malipo",
+    "keyword_forms": [
+      "payment channel",
+      "payment channels"
+    ],
+    "definition": "Huruhusu pande mbili kufanya miamala mara nyingi bila kila muamala kurekodiwa kwenye blockchain."
+  },
+  "peer": {
+    "keyword": "mwenza",
+    "keyword_plural": "wenza",
+    "keyword_forms": [
+      "peer",
+      "peers",
+      "rika"
+    ],
+    "definition": "Mtu au taasisi inayochukuliwa kuwa sawa na wengine."
+  },
+  "peer-to-peer": {
+    "keyword": "peer-to-peer",
+    "keyword_forms": [
+      "P2P",
+      "rika-kwa-rika",
+      "mtu-kwa-mtu"
+    ],
+    "definition": "Muunganiko kati ya pande mbili au zaidi usiohitaji mpatanishi."
+  },
+  "peg": {
+    "keyword": "fungamanisho",
+    "keyword_plural": "mafungamanisho",
+    "keyword_forms": [
+      "peg",
+      "kufungamanisha",
+      "uambatisho wa bei"
+    ],
+    "definition": "Njia ya kudumisha usawa wa thamani kati ya mali mbili au zaidi."
+  },
+  "permissionless": {
+    "keyword": "bila ruhusa",
+    "keyword_forms": [
+      "permissionless",
+      "isiyohitaji ruhusa",
+      "bila kuhitaji ruhusa"
+    ],
+    "definition": "Isiyohitaji ruhusa ya taasisi yoyote."
+  },
+  "phishing": {
+    "keyword": "phishing",
+    "keyword_forms": [
+      "udanganyifu wa phishing",
+      "ulaghai wa mtandaoni"
+    ],
+    "definition": "Aina ya udanganyifu wa kijamii ambapo mshambulizi hujifanya mtu au taasisi unayoiamini ili kukudanganya ushiriki taarifa nyeti au umtumie pesa."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAP",
+    "keyword_forms": [
+      "POAPs",
+      "Proof of Attendance Protocol"
+    ],
+    "definition": "POAP (Proof of Attendance Protocol) ni beji inayohifadhi rekodi ya kuaminika ya matukio ya maisha yako kwenye mkoba wako, kwa mfano kumaliza somo kwa mafanikio."
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "(Proof of Stake) Mfumo wa mwafaka ambapo wathibitishaji hufunga stake ili kulinda mtandao."
+  },
+  "price impact": {
+    "keyword": "athari ya bei",
+    "keyword_plural": "athari za bei",
+    "keyword_forms": [
+      "price impact"
+    ],
+    "definition": "Kiasi ambacho biashara yako mwenyewe inasogeza bei kwenye DEX, kulingana na ukubwa wa biashara hiyo."
+  },
+  "primary name": {
+    "keyword": "primary name",
+    "keyword_plural": "primary name",
+    "keyword_forms": [
+      "primary names",
+      "jina kuu"
+    ],
+    "definition": "Jina la ENS lililounganishwa na anwani ya mkoba wako, linalowezesha programu kuonyesha jina lako badala ya anwani ndefu."
+  },
+  "private key": {
+    "keyword": "ufunguo wa siri",
+    "keyword_plural": "funguo za siri",
+    "keyword_forms": [
+      "private key",
+      "private keys",
+      "ufunguo wa kibinafsi"
+    ],
+    "definition": "Ufunguo wa siri hukupa uwezo wa kufikia mkoba wako, ukikuruhusu kutuma mali za kripto kwenye mikoba mingine."
+  },
+  "private transaction routing": {
+    "keyword": "uelekezaji wa siri wa miamala",
+    "keyword_forms": [
+      "private transaction routing"
+    ],
+    "definition": "Kutuma miamala moja kwa moja kwa wajenzi wa bloku badala ya foleni ya hadharani, ili kuificha dhidi ya boti za utangulizaji wa muamala."
+  },
+  "proof of stake": {
+    "keyword": "Proof of Stake",
+    "definition": "Mfumo wa mwafaka unaochagua kwa nasibu watengenezaji wa bloku kulingana na stake ambayo kila mshiriki amefunga kwenye itifaki."
+  },
+  "proof of work": {
+    "keyword": "Proof of Work",
+    "keyword_forms": [
+      "PoW"
+    ],
+    "definition": "Mfumo wa mwafaka ambapo wachimbaji hutumia nguvu ya kompyuta (yaani \"kazi\") wakishindana kupendekeza bloku halali."
+  },
+  "proof-of-stake": {
+    "keyword": "Proof of Stake",
+    "definition": "Mfumo wa mwafaka wa blockchain unaochagua nodi za wathibitishaji kulingana na kiasi cha stake iliyofungwa na nodi hiyo."
+  },
+  "pseudonymous": {
+    "keyword": "kwa jina bandia",
+    "keyword_forms": [
+      "pseudonymous",
+      "jina bandia"
+    ],
+    "definition": "Kutenda kwa jina ulilochagua linalificha utambulisho wako halisi."
+  },
+  "public": {
+    "keyword": "ya umma",
+    "keyword_forms": [
+      "public",
+      "wa umma",
+      "la umma",
+      "cha umma",
+      "za umma",
+      "vya umma"
+    ],
+    "definition": "Blockchain za umma huruhusu mtu yeyote kuona daftari la blockchain."
+  },
+  "public good": {
+    "keyword": "bidhaa ya umma",
+    "keyword_plural": "bidhaa za umma",
+    "keyword_forms": [
+      "public good",
+      "public goods",
+      "manufaa ya umma"
+    ],
+    "definition": "Bidhaa ya umma ni kitu au huduma inayopatikana kwa wanajamii wote."
+  },
+  "public key": {
+    "keyword": "ufunguo wa umma",
+    "keyword_plural": "funguo za umma",
+    "keyword_forms": [
+      "public key",
+      "public keys"
+    ],
+    "definition": "Msimbo unaotokana na ufunguo wako wa siri, ambao ni salama kuushiriki. Anwani ya mkoba wako hutokana na ufunguo wa umma."
+  },
+  "quadratic funding": {
+    "keyword": "ufadhili wa kipeo cha pili",
+    "keyword_forms": [
+      "quadratic funding",
+      "ufadhili wa kwadratiki"
+    ],
+    "definition": "Mfumo wa ufadhili wa umati unaokuza rasilimali zilizopo, ambapo kila mchango wa mtu binafsi, wa ukubwa wowote, hufanya kazi kama kura. Kadri wafadhili wanavyoongezeka, ndivyo athari inavyokuwa kubwa!"
+  },
+  "recovery phrase": {
+    "keyword": "maneno ya kurejesha",
+    "keyword_plural": "maneno ya kurejesha",
+    "keyword_forms": [
+      "recovery phrase",
+      "recovery phrases",
+      "maneno ya uokoaji"
+    ],
+    "definition": "Maneno ya kurejesha ni orodha ya maneno 12 hadi 24, yanayotumika kutengeneza ufunguo wa umma na ufunguo wa siri wa mkoba wako."
+  },
+  "red flag": {
+    "keyword": "ishara ya hatari",
+    "keyword_plural": "ishara za hatari",
+    "keyword_forms": [
+      "red flag",
+      "red flags"
+    ],
+    "definition": "Ishara ya onyo la hatari."
+  },
+  "restaking": {
+    "keyword": "staking ya kurudia",
+    "keyword_forms": [
+      "restaking",
+      "uwekaji dhamana upya"
+    ],
+    "definition": "Kutumia tena tokeni za Ether zilizo kwenye staking ili kusaidia kulinda na kuthibitisha itifaki nyingine, ili kupata tuzo."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "keyword_forms": [
+      "Retroactive Public Goods Funding",
+      "RPGF"
+    ],
+    "definition": "(Retroactive Public Goods Funding) Mfumo wa kufadhili miradi kulingana na athari waliyoileta huko nyuma."
+  },
+  "rollup": {
+    "keyword": "rollup",
+    "keyword_plural": "rollup",
+    "keyword_forms": [
+      "rollups",
+      "mjumuisho"
+    ],
+    "definition": "Suluhisho la Layer 2 linaloshughulikia miamala mingi nje ya mnyororo mkuu, kisha kuituma yote kwa kundi moja, likiongeza kasi ya miamala na kupunguza gharama."
+  },
+  "sandwich attack": {
+    "keyword": "shambulio la sandwichi",
+    "keyword_plural": "mashambulio ya sandwichi",
+    "keyword_forms": [
+      "sandwich attack",
+      "sandwich attacks"
+    ],
+    "definition": "Shambulio ambapo boti huweka biashara mara moja kabla na baada ya yako ili kusogeza bei, zikipata faida kwa hasara yako."
+  },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "keyword_forms": [
+      "Satoshi"
+    ],
+    "definition": "Muundaji wa Bitcoin anayetumia jina bandia. Hadi leo, hakuna anayejua utambulisho wake halisi."
+  },
+  "scalability": {
+    "keyword": "uwezo wa kupanuka",
+    "keyword_forms": [
+      "scalability",
+      "uwezo wa kukua"
+    ],
+    "definition": "Uwezo wa blockchain kushughulikia kazi, miamala na matumizi yanayoongezeka bila usumbufu mkubwa kwa watumiaji."
+  },
+  "scam-token": {
+    "keyword": "tokeni ya ulaghai",
+    "keyword_plural": "tokeni za ulaghai",
+    "keyword_forms": [
+      "scam-token",
+      "scam token",
+      "scam-tokens"
+    ],
+    "definition": "Tokeni ya sarafu ya kripto inayozinduliwa kwa lengo la kuiba pesa za wawekezaji tu."
+  },
+  "scarce": {
+    "keyword": "adimu",
+    "keyword_forms": [
+      "scarce",
+      "haba"
+    ],
+    "definition": "Hali ya kuwa na ugavi mdogo."
+  },
+  "scarcity": {
+    "keyword": "uhaba",
+    "keyword_forms": [
+      "scarcity"
+    ],
+    "definition": "Kuwa na ugavi mdogo."
+  },
+  "security": {
+    "keyword": "usalama",
+    "keyword_forms": [
+      "security"
+    ],
+    "definition": "Uwezo wa blockchain kustahimili majaribio ya udukuzi, matumizi mabaya ya msimbo na mashambulio ya kiuchumi, na kuendelea kufanya kazi kama kawaida."
+  },
+  "seed phrase": {
+    "keyword": "seed phrase",
+    "keyword_plural": "seed phrase",
+    "keyword_forms": [
+      "seed phrases",
+      "kirai cha mbegu",
+      "Secret Recovery Phrase"
+    ],
+    "definition": "Kundi la maneno ya nasibu ambayo mkoba huzalisha wakati wa usanidi, na hufanya kazi kama ufunguo mkuu wa akaunti ZOTE zinazodhibitiwa na mkoba huo. USISHIRIKI SEED PHRASE YAKO NA MTU YEYOTE KWA SABABU YOYOTE."
+  },
+  "self-custodial": {
+    "keyword": "wa uhifadhi binafsi",
+    "keyword_forms": [
+      "self-custodial",
+      "ya uhifadhi binafsi",
+      "la uhifadhi binafsi",
+      "cha uhifadhi binafsi",
+      "za uhifadhi binafsi",
+      "vya uhifadhi binafsi"
+    ],
+    "definition": "Njia ya kushikilia mali zako ambapo wewe pekee ndiye unayeweza kuzifikia."
+  },
+  "self-custody": {
+    "keyword": "uhifadhi binafsi",
+    "keyword_forms": [
+      "self-custody",
+      "umiliki binafsi",
+      "kujihifadhia"
+    ],
+    "definition": "Njia ya kushikilia mali zako ambapo wewe pekee ndiye unayeweza kuzifikia."
+  },
+  "self-custody wallet": {
+    "keyword": "mkoba wa uhifadhi binafsi",
+    "keyword_plural": "mikoba ya uhifadhi binafsi",
+    "keyword_forms": [
+      "self-custody wallet",
+      "self-custody wallets"
+    ],
+    "definition": "(Pia: mkoba usio na mdhamini) Kwenye mkoba wa uhifadhi binafsi, wewe pekee ndiye unayedhibiti funguo zako za siri, ambazo hudhibiti mali zako za kripto."
+  },
+  "settlement layer": {
+    "keyword": "tabaka la ukamilishaji",
+    "keyword_plural": "matabaka ya ukamilishaji",
+    "keyword_forms": [
+      "settlement layer",
+      "settlement layers"
+    ],
+    "definition": "Tabaka la \"chini\" kabisa la blockchain, linalorekodi maelezo ya ubadilishanaji wa mali kutoka miamala iliyokamilika. Mainnet ya Ethereum ni tabaka la ukamilishaji kwa mitandao ya Layer 2 ya Ethereum."
+  },
+  "settlement time": {
+    "keyword": "muda wa kukamilika",
+    "keyword_plural": "muda wa kukamilika",
+    "keyword_forms": [
+      "settlement time",
+      "settlement times"
+    ],
+    "definition": "Muda unaohitajika ili muamala uthibitishwe."
+  },
+  "sharding": {
+    "keyword": "sharding",
+    "keyword_forms": [
+      "ugawaji wa mnyororo"
+    ],
+    "definition": "Mchakato wa kugawanya blockchain moja kuwa minyororo mingi inayofanya kazi sambamba ili kuongeza uwezo wa kupanuka."
+  },
+  "sidechain": {
+    "keyword": "sidechain",
+    "keyword_plural": "sidechain",
+    "keyword_forms": [
+      "sidechains",
+      "mnyororo wa kando"
+    ],
+    "definition": "Blockchain tofauti inayofanya kazi sambamba na blockchain kuu, iliyounganishwa kwa daraja, yenye wathibitishaji na usalama wake."
+  },
+  "slashed": {
+    "keyword": "kufanyiwa slashing",
+    "keyword_forms": [
+      "slashed",
+      "amefanyiwa slashing"
+    ],
+    "definition": "Adhabu ambapo mthibitishaji hupoteza sehemu ya stake yake kwa udanganyifu unaothibitika kwenye blockchain ya Proof of Stake."
+  },
+  "slashing": {
+    "keyword": "slashing",
+    "keyword_forms": [
+      "ukataji",
+      "adhabu ya slashing"
+    ],
+    "definition": "Adhabu kwenye mitandao ya Proof of Stake inayoharibu sehemu ya stake ya mthibitishaji kwa udanganyifu unaothibitika, kama kusaini bloku mbili zinazopingana."
+  },
+  "slippage": {
+    "keyword": "utelezi wa bei",
+    "keyword_forms": [
+      "slippage",
+      "utelezi",
+      "tofauti ya utekelezaji"
+    ],
+    "definition": "Tofauti kati ya bei unayotarajia na bei unayopata biashara yako inapotekelezwa."
+  },
+  "slippage tolerance": {
+    "keyword": "kiwango cha utelezi",
+    "keyword_plural": "viwango vya utelezi",
+    "keyword_forms": [
+      "slippage tolerance",
+      "kiwango cha utelezi wa bei"
+    ],
+    "definition": "Mabadiliko makubwa zaidi ya bei unayokubali kwa biashara. Bei ikisogea zaidi ya hapo, biashara hufutwa."
+  },
+  "smart account": {
+    "keyword": "akaunti mahiri",
+    "keyword_plural": "akaunti mahiri",
+    "keyword_forms": [
+      "smart account",
+      "smart accounts",
+      "akaunti janja"
+    ],
+    "definition": "Akaunti ya mkoba inayoendeshwa na mkataba mahiri; ni jina jingine la mkoba mahiri."
+  },
+  "smart contract": {
+    "keyword": "mkataba mahiri",
+    "keyword_plural": "mikataba mahiri",
+    "keyword_forms": [
+      "smart contract",
+      "smart contracts",
+      "mkataba mwerevu"
+    ],
+    "definition": "Msimbo wa kompyuta unaotekeleza masharti ya mkataba kiotomatiki."
+  },
+  "smart wallet": {
+    "keyword": "mkoba mahiri",
+    "keyword_plural": "mikoba mahiri",
+    "keyword_forms": [
+      "smart wallet",
+      "smart wallets"
+    ],
+    "definition": "Mkoba unaoendeshwa na mkataba mahiri badala ya ufunguo mmoja wa siri, unaowezesha vipengele kama kurejesha akaunti na kuingia kwa passkey."
+  },
+  "social engineering": {
+    "keyword": "udanganyifu wa kijamii",
+    "keyword_forms": [
+      "social engineering",
+      "uhandisi wa kijamii"
+    ],
+    "definition": "Kumshawishi mtu ashiriki taarifa nyeti au za siri kama manenosiri au seed phrase."
+  },
+  "solo staker": {
+    "keyword": "solo staker",
+    "keyword_plural": "solo staker",
+    "keyword_forms": [
+      "solo stakers",
+      "mfanya staking wa kujitegemea"
+    ],
+    "definition": "Mwendeshaji wa nodi anayeendesha nodi ya mthibitishaji kwa kujitegemea."
+  },
+  "solo staking": {
+    "keyword": "solo staking",
+    "keyword_forms": [
+      "staking ya kujitegemea",
+      "uwekaji dhamana wa kujitegemea"
+    ],
+    "definition": "Kuendesha nodi yako mwenyewe ya mthibitishaji ili kushughulikia miamala kwenye mifumo ya Proof of Stake."
+  },
+  "solver": {
+    "keyword": "mtatuaji",
+    "keyword_plural": "watatuaji",
+    "keyword_forms": [
+      "solver",
+      "solvers",
+      "msuluhishi"
+    ],
+    "definition": "Mtaalamu anayeshindana na wengine ili kutekeleza nia ya mtumiaji kwa bei bora zaidi."
+  },
+  "spend": {
+    "keyword": "kutumia",
+    "keyword_forms": [
+      "spend",
+      "matumizi"
+    ],
+    "definition": "Kutumia mali zako za kripto kulipia bidhaa au huduma."
+  },
+  "spot etf": {
+    "keyword": "spot ETF",
+    "keyword_plural": "spot ETF",
+    "keyword_forms": [
+      "spot ETFs"
+    ],
+    "definition": "ETF inayoshikilia mali halisi, kama bitcoin, ikiwaruhusu watu kuwekeza ndani yake kupitia soko la kawaida la hisa."
+  },
+  "stablecoin": {
+    "keyword": "sarafu thabiti",
+    "keyword_plural": "sarafu thabiti",
+    "keyword_forms": [
+      "stablecoin",
+      "stablecoins",
+      "sarafu imara"
+    ],
+    "definition": "Tokeni iliyoundwa kudumisha thamani thabiti, mara nyingi ikifungamanishwa 1:1 na sarafu kama dola ya Marekani."
+  },
+  "stablecoin issuer": {
+    "keyword": "mtoaji wa sarafu thabiti",
+    "keyword_plural": "watoaji wa sarafu thabiti",
+    "keyword_forms": [
+      "stablecoin issuer",
+      "stablecoin issuers"
+    ],
+    "definition": "Kampuni au taasisi inayotengeneza sarafu thabiti na kusimamia akiba inayoshikilia thamani yake."
+  },
+  "stake": {
+    "keyword": "stake",
+    "keyword_plural": "stake",
+    "keyword_forms": [
+      "stakes"
+    ],
+    "definition": "Kiasi cha mali ya kifedha kilichofungwa kwenye itifaki ya sarafu ya kripto. Kinaonyesha dhamira ya kifedha ya mtu kwa itifaki hiyo, yaani kuweka kitu chake mwenyewe hatarini."
+  },
+  "staked": {
+    "keyword": "iliyo kwenye staking",
+    "keyword_forms": [
+      "staked",
+      "zilizo kwenye staking",
+      "iliyowekwa dhamana"
+    ],
+    "definition": "Kufunga kwa muda sehemu ya kripto yako kwenye mkataba mahiri kwa kipindi maalum ili kupata riba (\"tuzo\")."
+  },
+  "staker": {
+    "keyword": "mfanya staking",
+    "keyword_plural": "wafanya staking",
+    "keyword_forms": [
+      "staker",
+      "mweka dhamana"
+    ],
+    "definition": "Mwanajumuiya wa Ethereum anayetoa Ether kwa nodi ya mthibitishaji ili kupata tuzo."
+  },
+  "stakers": {
+    "keyword": "wafanya staking",
+    "keyword_forms": [
+      "stakers",
+      "waweka dhamana"
+    ],
+    "definition": "Wanajumuiya wa Ethereum wanaotoa Ether kwa nodi za wathibitishaji ili kupata tuzo."
+  },
+  "staking": {
+    "keyword": "staking",
+    "keyword_forms": [
+      "uwekaji dhamana",
+      "kufanya staking"
+    ],
+    "definition": "Kufunga kwa muda sehemu ya kripto yako kwenye mkataba mahiri kwa kipindi maalum ili kupata riba (\"tuzo\")."
+  },
+  "staking pool": {
+    "keyword": "bwawa la staking",
+    "keyword_plural": "mabwawa ya staking",
+    "keyword_forms": [
+      "staking pool",
+      "staking pools",
+      "bwawa la uwekaji dhamana"
+    ],
+    "definition": "Kwenye Ethereum: mikataba mahiri ambayo kupitia hiyo wafanya staking hutoa Ether kwa nodi ya mthibitishaji ya mfanya staking mwingine."
+  },
+  "staking providers": {
+    "keyword": "watoa huduma za staking",
+    "keyword_forms": [
+      "staking providers",
+      "mtoa huduma za staking"
+    ],
+    "definition": "Majukwaa ya kidijitali yanayotoa huduma za staking, mara nyingi kupitia mabwawa ya staking."
+  },
+  "standard record": {
+    "keyword": "rekodi ya kawaida",
+    "keyword_plural": "rekodi za kawaida",
+    "keyword_forms": [
+      "standard record",
+      "standard records"
+    ],
+    "definition": "Data ya kawaida iliyounganishwa na kikoa cha ENS, kama anwani ya mkoba, avatar au barua pepe."
+  },
+  "swap": {
+    "keyword": "badilishano",
+    "keyword_plural": "mabadilishano",
+    "keyword_forms": [
+      "swap",
+      "swaps",
+      "kubadilishana",
+      "ubadilishanaji"
+    ],
+    "definition": "Kubadilisha tokeni moja kupata tokeni nyingine."
+  },
+  "token": {
+    "keyword": "tokeni",
+    "keyword_plural": "tokeni",
+    "keyword_forms": [
+      "token",
+      "tokens"
+    ],
+    "definition": "Vitengo vinavyoweza kuwakilisha mali au hati, vilivyojengwa juu ya blockchain iliyopo."
+  },
+  "token allowance": {
+    "keyword": "kibali cha tokeni",
+    "keyword_plural": "vibali vya tokeni",
+    "keyword_forms": [
+      "token allowance",
+      "token allowances"
+    ],
+    "definition": "Makubaliano kati ya mkoba na mkataba mahiri, yanayotoa ufikiaji wa kiwango fulani au usio na kikomo kwa tokeni maalum."
+  },
+  "token approval": {
+    "keyword": "idhini ya tokeni",
+    "keyword_plural": "idhini za tokeni",
+    "keyword_forms": [
+      "token approval",
+      "token approvals"
+    ],
+    "definition": "Ruhusa unayompa mkataba mahiri ya kuhamisha tokeni maalum kutoka kwenye mkoba wako; pia huitwa kibali cha tokeni."
+  },
+  "token distribution": {
+    "keyword": "mgawanyo wa tokeni",
+    "keyword_plural": "migawanyo ya tokeni",
+    "keyword_forms": [
+      "token distribution",
+      "token distributions"
+    ],
+    "definition": "Jinsi tokeni zinavyogawanywa kati ya makundi mbalimbali ya wadau."
+  },
+  "token pair": {
+    "keyword": "jozi ya tokeni",
+    "keyword_plural": "jozi za tokeni",
+    "keyword_forms": [
+      "token pair",
+      "token pairs"
+    ],
+    "definition": "Sarafu mbili za kripto zinazoungana kuunda bwawa la ukwasi."
+  },
+  "token swap": {
+    "keyword": "badilishano la tokeni",
+    "keyword_plural": "mabadilishano ya tokeni",
+    "keyword_forms": [
+      "token swap",
+      "token swaps"
+    ],
+    "definition": "Kubadilisha tokeni moja kupata tokeni nyingine."
+  },
+  "tps": {
+    "keyword": "TPS",
+    "keyword_forms": [
+      "Transactions Per Second",
+      "miamala kwa sekunde"
+    ],
+    "definition": "(Transactions Per Second) Kipimo cha uwezo wa blockchain kupanuka: idadi ya miamala inayoshughulikiwa kwa sekunde."
+  },
+  "trade": {
+    "keyword": "biashara",
+    "keyword_plural": "biashara",
+    "keyword_forms": [
+      "trade",
+      "trades",
+      "kufanya biashara"
+    ],
+    "definition": "Kubadilishana mali au pesa kupata kitu chenye thamani; ni kitenzi cha pesa kwenye mchemraba wa ujuzi."
+  },
+  "trade route": {
+    "keyword": "njia ya badilishano",
+    "keyword_plural": "njia za badilishano",
+    "keyword_forms": [
+      "trade route",
+      "trade routes"
+    ],
+    "definition": "Njia inayofuatwa kutoka tokeni ya kuanzia hadi tokeni ya mwisho katika biashara."
+  },
+  "trade routing": {
+    "keyword": "uelekezaji wa badilishano",
+    "keyword_forms": [
+      "trade routing"
+    ],
+    "definition": "Kupanga njia inayofuatwa kutoka tokeni ya kuanzia hadi tokeni ya mwisho katika biashara."
+  },
+  "transaction": {
+    "keyword": "muamala",
+    "keyword_plural": "miamala",
+    "keyword_forms": [
+      "transaction",
+      "transactions"
+    ],
+    "definition": "Rekodi ya uhamisho, wa fedha au wa kitu kingine, kwenye blockchain."
+  },
+  "transaction finality": {
+    "keyword": "kutotenguka kwa muamala",
+    "keyword_forms": [
+      "transaction finality"
+    ],
+    "definition": "Muda unaochukua kuwa na uhakika kwamba muamala ni halali na wa mwisho, yaani hautatenguliwa wala kubadilishwa."
+  },
+  "transaction hash": {
+    "keyword": "heshi ya muamala",
+    "keyword_plural": "heshi za miamala",
+    "keyword_forms": [
+      "transaction hash",
+      "tx hash"
+    ],
+    "definition": "Kitambulisho cha kipekee cha kila muamala; hutokana na data ya muamala, saini ya kidijitali ya mtumaji, na namba ya matumizi ya mara moja inayozuia miamala kujirudia."
+  },
+  "transaction throughput": {
+    "keyword": "kasi ya miamala",
+    "keyword_forms": [
+      "transaction throughput",
+      "uwezo wa upitishaji"
+    ],
+    "definition": "Idadi ya miamala ambayo blockchain inaweza kushughulikia kwa wakati mmoja, mara nyingi hupimwa kwa miamala kwa sekunde (TPS)."
+  },
+  "trustless": {
+    "keyword": "bila kuhitaji imani",
+    "keyword_forms": [
+      "trustless",
+      "bila hitaji la uaminifu",
+      "isiyohitaji imani"
+    ],
+    "definition": "Hali ya kufanya kazi bila kuhitaji kuwaamini watu au taasisi. (Ni ya kiotomatiki, na haimilikiwi na mtu yeyote mmoja.)"
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "keyword_forms": [
+      "Total Value Locked",
+      "jumla ya thamani iliyofungwa"
+    ],
+    "definition": "(Total Value Locked) Jumla ya thamani ya mali iliyohifadhiwa mahali fulani."
+  },
+  "two factor authentication": {
+    "keyword": "uthibitishaji wa hatua mbili",
+    "keyword_forms": [
+      "two factor authentication"
+    ],
+    "definition": "Tabaka la ziada la usalama linalotumika kuhakikisha kwamba mtu anayejaribu kuingia kwenye akaunti ya mtandaoni ni yeye hasa anayedai kuwa."
+  },
+  "validating bridge": {
+    "keyword": "daraja linalothibitisha",
+    "keyword_plural": "madaraja yanayothibitisha",
+    "keyword_forms": [
+      "validating bridge",
+      "validating bridges"
+    ],
+    "definition": "Mkataba wa daraja unaothibitisha wenyewe uondoaji wa fedha, hivyo huondoa haja ya kuamini mamlaka yoyote ya nje."
+  },
+  "validator": {
+    "keyword": "mthibitishaji",
+    "keyword_plural": "wathibitishaji",
+    "keyword_forms": [
+      "validator",
+      "validators",
+      "mhakikishaji"
+    ],
+    "definition": "Mshiriki katika mtandao wa Proof of Stake anayefunga stake ili kukagua miamala na kupendekeza bloku, akipata tuzo kwa kazi ya uaminifu."
+  },
+  "validator client": {
+    "keyword": "programu ya mthibitishaji",
+    "keyword_plural": "programu za wathibitishaji",
+    "keyword_forms": [
+      "validator client",
+      "validator clients"
+    ],
+    "definition": "Programu ambayo nodi ya mthibitishaji huendesha ili kupendekeza na kukagua bloku mpya kwenye mtandao wa Proof of Stake."
+  },
+  "validator node": {
+    "keyword": "nodi ya mthibitishaji",
+    "keyword_plural": "nodi za wathibitishaji",
+    "keyword_forms": [
+      "validator node"
+    ],
+    "definition": "Kifaa cha kompyuta kinachoendeshwa na mwanajumuiya wa Ethereum. Hushughulikia miamala kwenye mtandao ili kupata tuzo."
+  },
+  "validator nodes": {
+    "keyword": "nodi za wathibitishaji",
+    "keyword_forms": [
+      "validator nodes"
+    ],
+    "definition": "Vifaa vya kompyuta vinavyoendeshwa na wanajumuiya wa Ethereum. Hushughulikia miamala kwenye mtandao ili kupata tuzo."
+  },
+  "validity proof": {
+    "keyword": "uthibitisho wa uhalali",
+    "keyword_plural": "uthibitisho wa uhalali",
+    "keyword_forms": [
+      "validity proof",
+      "validity proofs",
+      "ushahidi wa uhalali"
+    ],
+    "definition": "Uthibitisho wa kihisabati kwamba kundi la miamala ni sahihi, unaoruhusu blockchain kuhakiki bila kurudia kazi yote."
+  },
+  "value-creation": {
+    "keyword": "uundaji wa thamani",
+    "keyword_forms": [
+      "value-creation",
+      "value creation"
+    ],
+    "definition": "Mtindo wa biashara unaolenga kutengeneza bidhaa na huduma bunifu za ubora wa juu kwa watumiaji na kwa uchumi."
+  },
+  "value-extraction": {
+    "keyword": "uchotaji wa thamani",
+    "keyword_forms": [
+      "value-extraction",
+      "value extraction"
+    ],
+    "definition": "Mtindo wa biashara ambapo watumiaji wanatumiwa vibaya kupitia ada kubwa, uvunaji wa data na masharti yasiyo ya haki."
+  },
+  "value-extractive": {
+    "keyword": "unaochota thamani",
+    "keyword_forms": [
+      "value-extractive",
+      "inayochota thamani",
+      "linalochota thamani",
+      "kinachochota thamani",
+      "yanayochota thamani",
+      "zinazochota thamani",
+      "vinavyochota thamani",
+      "wanaochota thamani"
+    ],
+    "definition": "Mtindo wa biashara ambapo watumiaji wanatumiwa vibaya kupitia ada kubwa, uvunaji wa data na masharti yasiyo ya haki."
+  },
+  "vault": {
+    "keyword": "hifadhi",
+    "keyword_plural": "hifadhi",
+    "keyword_forms": [
+      "vault",
+      "vaults",
+      "sefu"
+    ],
+    "definition": "Mkataba mahiri unaoshikilia tokeni zilizowekwa na kuzifanyisha kazi, ukiwapa walioziweka tokeni inayowakilisha sehemu yao."
+  },
+  "veto": {
+    "keyword": "veto",
+    "keyword_plural": "veto",
+    "keyword_forms": [
+      "vetoes",
+      "kura ya kupinga"
+    ],
+    "definition": "Kura ya kukataa pendekezo la utawala."
+  },
+  "wallet": {
+    "keyword": "mkoba",
+    "keyword_plural": "mikoba",
+    "keyword_forms": [
+      "wallet",
+      "wallets",
+      "pochi",
+      "mkoba wa kidijitali"
+    ],
+    "definition": "Mkoba ni programu au kifaa kinachotumika kutuma na kupokea mali za kripto kwenye blockchain."
+  },
+  "wallet app": {
+    "keyword": "programu ya mkoba",
+    "keyword_plural": "programu za mkoba",
+    "keyword_forms": [
+      "wallet app",
+      "wallet apps"
+    ],
+    "definition": "Programu kwenye kompyuta au simu yako, inayotumika kuunganisha na mkoba wako kwenye blockchain."
+  },
+  "wallet provider": {
+    "keyword": "mtoa huduma za mkoba",
+    "keyword_plural": "watoa huduma za mkoba",
+    "keyword_forms": [
+      "wallet provider",
+      "wallet providers"
+    ],
+    "definition": "Mtengenezaji wa programu unayotumia kufikia mkoba wako. Watoa huduma hawa hawamiliki mkoba wako, bali hufanya kazi kama daraja linalokuwezesha kufikia akaunti yako kwenye blockchain."
+  },
+  "web2": {
+    "keyword": "Web2",
+    "keyword_forms": [
+      "Web 2.0"
+    ],
+    "definition": "Intaneti ya majukwaa ya kati na akaunti, isiyo na miundombinu ya blockchain."
+  },
+  "web3": {
+    "keyword": "Web3",
+    "keyword_forms": [
+      "Web 3.0"
+    ],
+    "definition": "Humaanisha intaneti ya blockchain, ambapo watumiaji wanaweza kuhifadhi mali na data zao wenyewe."
+  },
+  "yield farm": {
+    "keyword": "yield farm",
+    "keyword_plural": "yield farm",
+    "keyword_forms": [
+      "yield farms",
+      "yield farming",
+      "ukulima wa faida"
+    ],
+    "definition": "Itifaki ya DeFi ambapo watumiaji huweka tokeni ili kupata tuzo. Yield farming maana yake ni kufuatilia tuzo bora zaidi kati ya hizi."
+  },
+  "yourname.eth": {
+    "keyword": "yourname.eth",
+    "definition": "Mfano wa jina la ENS: jina la mtumiaji la web3 linalosomeka, linaloelekeza kwenye anwani ya mkoba wako."
+  },
+  "zero-knowledge": {
+    "keyword": "zero-knowledge",
+    "keyword_forms": [
+      "zero knowledge",
+      "ZK",
+      "sifuri-maarifa",
+      "uthibitisho usiofichua"
+    ],
+    "definition": "Njia ya kihisabati inayomruhusu mtu kuthibitisha kwamba kauli ni sahihi bila kufichua taarifa nyingine zozote kuihusu."
+  },
+  "zk rollup": {
+    "keyword": "ZK Rollup",
+    "keyword_plural": "ZK Rollup",
+    "keyword_forms": [
+      "ZK Rollups",
+      "zk-rollup",
+      "mkusanyiko wa maarifa sifuri"
+    ],
+    "definition": "Rollup ya Layer 2 inayotumia uthibitisho wa zero-knowledge kuthibitisha kihisabati kwamba miamala yake ya kundi ni halali kwenye blockchain ya Layer 1."
+  }
+}

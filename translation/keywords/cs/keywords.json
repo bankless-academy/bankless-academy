@@ -1,0 +1,3493 @@
+{
+  ".eth": {
+    "keyword": ".eth",
+    "definition": "Koncovka web3 domény, kterou používá Ethereum Name Service (ENS), například yourname.eth."
+  },
+  "2 factor authentication": {
+    "keyword": "dvoufaktorové ověření",
+    "keyword_forms": [
+      "dvoufaktorového ověření",
+      "dvoufaktorovému ověření",
+      "dvoufaktorovém ověření",
+      "dvoufaktorovým ověřením",
+      "dvoufaktorová autentizace",
+      "dvoufaktorové ověřování",
+      "2 Factor Authentication"
+    ],
+    "definition": "Další vrstva zabezpečení online účtu. Kromě hesla vyžaduje ještě druhý důkaz, třeba kód z telefonu."
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "Další vrstva zabezpečení online účtu. Kromě hesla vyžaduje i druhý důkaz, třeba kód z telefonu."
+  },
+  "51% attack": {
+    "keyword": "51% útok",
+    "keyword_plural": "51% útoky",
+    "keyword_forms": [
+      "51% útoku",
+      "51% útokem",
+      "51% útoků",
+      "51% útokům",
+      "51% útocích",
+      "většinový útok",
+      "51% attack"
+    ],
+    "definition": "Útok na konsenzus blockchainu, při kterém někdo ovládne víc než polovinu síly, která v síti tvoří bloky."
+  },
+  "address": {
+    "keyword": "adresa",
+    "keyword_plural": "adresy",
+    "keyword_forms": [
+      "adrese",
+      "adresu",
+      "adresou",
+      "adres",
+      "adresám",
+      "adresách",
+      "adresami",
+      "address"
+    ],
+    "definition": "Jedinečný veřejný identifikátor účtu nebo kontraktu na blockchainu."
+  },
+  "addresses": {
+    "keyword": "adresy",
+    "keyword_forms": [
+      "adres",
+      "adresám",
+      "adresách",
+      "adresami",
+      "addresses"
+    ],
+    "definition": "Jedinečné veřejné identifikátory účtů a kontraktů na blockchainu."
+  },
+  "aggregator": {
+    "keyword": "agregátor",
+    "keyword_plural": "agregátory",
+    "keyword_forms": [
+      "agregátoru",
+      "agregátorem",
+      "agregátorů",
+      "agregátorům",
+      "agregátorech",
+      "aggregator"
+    ],
+    "definition": "Nástroj, který porovná nabídky z více zdrojů a vybere tu nejvýhodnější."
+  },
+  "airdrop": {
+    "keyword": "airdrop",
+    "keyword_plural": "airdropy",
+    "keyword_forms": [
+      "airdropu",
+      "airdropem",
+      "airdropů",
+      "airdropům",
+      "airdropech"
+    ],
+    "definition": "Bezplatné rozdání kryptoaktiv uživatelům."
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "keyword_forms": [
+      "Allo Protocolu",
+      "protokol Allo",
+      "protokolu Allo",
+      "protokolem Allo"
+    ],
+    "definition": "Zkratka pro Capital Allocation Protocol. Otevřený protokol, díky kterému mohou skupiny přehledně rozdělovat společné peníze."
+  },
+  "allowance": {
+    "keyword": "povolený limit",
+    "keyword_plural": "povolené limity",
+    "keyword_forms": [
+      "povoleného limitu",
+      "povolenému limitu",
+      "povoleném limitu",
+      "povoleným limitem",
+      "povolených limitů",
+      "povoleným limitům",
+      "povolených limitech",
+      "povolenými limity",
+      "allowance"
+    ],
+    "definition": "Oprávnění, obvykle pro chytrý kontrakt, použít v transakci určité množství tvých tokenů."
+  },
+  "alternative layer 1": {
+    "keyword": "alternativní Layer 1",
+    "keyword_plural": "alternativní Layer 1",
+    "keyword_forms": [
+      "alternativního Layer 1",
+      "alternativnímu Layer 1",
+      "alternativním Layer 1",
+      "alternativních Layer 1",
+      "alternativními Layer 1",
+      "alternativní Layer 1s",
+      "alternative Layer 1"
+    ],
+    "definition": "Blockchainy Layer 1 jiné než Ethereum a Bitcoin."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM",
+    "keyword_forms": [
+      "AMMs",
+      "automatický tvůrce trhu",
+      "automatizovaný tvůrce trhu"
+    ],
+    "definition": "(Automated Market Maker) Systém, který páruje obchody podle veřejného algoritmu, bez knihy objednávek."
+  },
+  "app": {
+    "keyword": "aplikace",
+    "keyword_plural": "aplikace",
+    "keyword_forms": [
+      "aplikaci",
+      "aplikací",
+      "aplikacím",
+      "aplikacích",
+      "aplikacemi",
+      "app"
+    ],
+    "definition": "Aplikace pro počítač nebo mobil."
+  },
+  "app store": {
+    "keyword": "obchod s aplikacemi",
+    "keyword_plural": "obchody s aplikacemi",
+    "keyword_forms": [
+      "obchodu s aplikacemi",
+      "obchodě s aplikacemi",
+      "obchodem s aplikacemi",
+      "obchodů s aplikacemi",
+      "obchodům s aplikacemi",
+      "obchodech s aplikacemi",
+      "app store"
+    ],
+    "definition": "Digitální obchod, kde si stáhneš aplikace pro počítač nebo mobil."
+  },
+  "asynchronous": {
+    "keyword": "asynchronní",
+    "keyword_forms": [
+      "asynchronního",
+      "asynchronnímu",
+      "asynchronním",
+      "asynchronních",
+      "asynchronními",
+      "asynchronous"
+    ],
+    "definition": "Způsob komunikace, při kterém nemusí být všichni online ve stejnou chvíli."
+  },
+  "attestation": {
+    "keyword": "atestace",
+    "keyword_plural": "atestace",
+    "keyword_forms": [
+      "atestaci",
+      "atestací",
+      "atestacím",
+      "atestacích",
+      "atestacemi",
+      "potvrzení",
+      "attestation"
+    ],
+    "definition": "Podepsané potvrzení, že něco platí. Na Ethereu validátoři posílají atestace, kterými hlasují, že blok je platný."
+  },
+  "autonomy": {
+    "keyword": "autonomie",
+    "keyword_forms": [
+      "autonomii",
+      "autonomií",
+      "autonomy"
+    ],
+    "definition": "Schopnost rozhodovat o vlastních krocích místo toho, aby pravidla určoval někdo jiný."
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "definition": "Jmenná služba v síti Base. Dává peněženkám čitelná jména končící na .base.eth."
+  },
+  "batch auction": {
+    "keyword": "dávková aukce",
+    "keyword_plural": "dávkové aukce",
+    "keyword_forms": [
+      "dávkové aukci",
+      "dávkovou aukci",
+      "dávkovou aukcí",
+      "dávkových aukcí",
+      "dávkovým aukcím",
+      "dávkových aukcích",
+      "dávkovými aukcemi",
+      "batch auction"
+    ],
+    "definition": "Způsob obchodování, který posbírá hodně příkazů za krátkou dobu a vypořádá je najednou za jednu spravedlivou cenu."
+  },
+  "bet": {
+    "keyword": "sázka",
+    "keyword_plural": "sázky",
+    "keyword_forms": [
+      "sázce",
+      "sázku",
+      "sázkou",
+      "sázek",
+      "sázkám",
+      "sázkách",
+      "sázkami",
+      "vsadit",
+      "sázet"
+    ],
+    "definition": "Riskování peněz výměnou za šanci na větší odměnu."
+  },
+  "blob": {
+    "keyword": "blob",
+    "keyword_plural": "bloby",
+    "keyword_forms": [
+      "blobu",
+      "blobem",
+      "blobů",
+      "blobům",
+      "blobech"
+    ],
+    "definition": "Levný dočasný datový prostor v blocích Etherea. Sítě Layer 2 do něj ukládají dávky svých transakcí."
+  },
+  "block": {
+    "keyword": "blok",
+    "keyword_plural": "bloky",
+    "keyword_forms": [
+      "bloku",
+      "blokem",
+      "bloků",
+      "blokům",
+      "blocích",
+      "block"
+    ],
+    "definition": "Skupina transakcí zapsaná na blockchainu."
+  },
+  "block builder": {
+    "keyword": "tvůrce bloků",
+    "keyword_plural": "tvůrci bloků",
+    "keyword_forms": [
+      "tvůrcem bloků",
+      "tvůrců bloků",
+      "tvůrcům bloků",
+      "tvůrcích bloků",
+      "stavitel bloků",
+      "block builder"
+    ],
+    "definition": "Specializovaný provozovatel, který skládá transakce do nových bloků. Navrhovatel bloku je pak zveřejní v síti."
+  },
+  "block explorer": {
+    "keyword": "prohlížeč bloků",
+    "keyword_plural": "prohlížeče bloků",
+    "keyword_forms": [
+      "prohlížeči bloků",
+      "prohlížečem bloků",
+      "prohlížečů bloků",
+      "prohlížečům bloků",
+      "prohlížečích bloků",
+      "block explorer"
+    ],
+    "definition": "Nástroj pro vyhledávání a prohlížení dat na blockchainu."
+  },
+  "block hash": {
+    "keyword": "hash bloku",
+    "keyword_plural": "hashe bloků",
+    "keyword_forms": [
+      "hashe bloku",
+      "hashi bloku",
+      "hashem bloku",
+      "hashů bloků",
+      "hashům bloků",
+      "hashích bloků",
+      "block hash"
+    ],
+    "definition": "Jedinečný identifikátor každého bloku. Každý nový blok odkazuje na hash toho předchozího, a tím vzniká souvislý řetězec."
+  },
+  "block producer": {
+    "keyword": "producent bloků",
+    "keyword_plural": "producenti bloků",
+    "keyword_forms": [
+      "producenta bloků",
+      "producentovi bloků",
+      "producentem bloků",
+      "producentů bloků",
+      "producentům bloků",
+      "producentech bloků",
+      "block producer"
+    ],
+    "definition": "Účastník sítě vybraný k tvorbě nových bloků transakcí, například těžař nebo validátor."
+  },
+  "block proposer": {
+    "keyword": "navrhovatel bloku",
+    "keyword_plural": "navrhovatelé bloků",
+    "keyword_forms": [
+      "navrhovatele bloku",
+      "navrhovateli bloku",
+      "navrhovatelem bloku",
+      "navrhovatelů bloků",
+      "navrhovatelům bloků",
+      "navrhovatelích bloků",
+      "navrhovatelé bloku",
+      "block proposer"
+    ],
+    "definition": "Validátorský uzel, který síť vybere, aby navrhl další blok k připojení na blockchain."
+  },
+  "block reward": {
+    "keyword": "odměna za blok",
+    "keyword_plural": "odměny za blok",
+    "keyword_forms": [
+      "odměně za blok",
+      "odměnu za blok",
+      "odměnou za blok",
+      "odměn za blok",
+      "odměnám za blok",
+      "odměnách za blok",
+      "odměnami za blok",
+      "block reward"
+    ],
+    "definition": "Množství nativní mince, které dostane navrhovatel nového platného bloku."
+  },
+  "block space": {
+    "keyword": "blokový prostor",
+    "keyword_forms": [
+      "blokového prostoru",
+      "blokovému prostoru",
+      "blokovém prostoru",
+      "blokovým prostorem",
+      "blokové prostory",
+      "blokových prostorů",
+      "block space"
+    ],
+    "definition": "Prostor v každém bloku pro uložení transakcí a dat."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchainy",
+    "keyword_forms": [
+      "blockchainu",
+      "blockchainem",
+      "blockchainů",
+      "blockchainům",
+      "blockchainech"
+    ],
+    "definition": "Systém, ve kterém záznam o transakcích s kryptoměnami udržuje mnoho počítačů po celém světě."
+  },
+  "blockchain apps": {
+    "keyword": "blockchainové aplikace",
+    "keyword_forms": [
+      "blockchainová aplikace",
+      "blockchainových aplikací",
+      "blockchainovým aplikacím",
+      "blockchainových aplikacích",
+      "blockchainovými aplikacemi",
+      "blockchain apps"
+    ],
+    "definition": "Aplikace na blockchainu, ve kterých můžeš směňovat kryptoměny, používat web3 sociální sítě, posílat dary nebo se učit onchain, třeba na Bankless Academy."
+  },
+  "blockchain architecture": {
+    "keyword": "architektura blockchainu",
+    "keyword_plural": "architektury blockchainu",
+    "keyword_forms": [
+      "architektuře blockchainu",
+      "architekturu blockchainu",
+      "architekturou blockchainu",
+      "architektur blockchainu",
+      "architekturám blockchainu",
+      "architekturách blockchainu",
+      "architekturami blockchainu",
+      "blockchain architecture"
+    ],
+    "definition": "Způsob, jakým se v blockchainové technologii ukládají data."
+  },
+  "blockchain technology": {
+    "keyword": "blockchainová technologie",
+    "keyword_plural": "blockchainové technologie",
+    "keyword_forms": [
+      "blockchainové technologii",
+      "blockchainovou technologii",
+      "blockchainovou technologií",
+      "blockchainových technologií",
+      "blockchainovým technologiím",
+      "blockchainových technologiích",
+      "blockchainovými technologiemi",
+      "blockchain technology"
+    ],
+    "definition": "Nový typ sítě, kterou provozuje mnoho počítačů najednou. Přidává internetu vrstvu digitálního vlastnictví."
+  },
+  "blockchain trilemma": {
+    "keyword": "blockchainové trilema",
+    "keyword_plural": "blockchainová trilemata",
+    "keyword_forms": [
+      "blockchainového trilematu",
+      "blockchainovému trilematu",
+      "blockchainovém trilematu",
+      "blockchainovým trilematem",
+      "blockchainových trilemat",
+      "trilema blockchainu",
+      "blockchain trilemma"
+    ],
+    "definition": "Problém, který popisuje potřebu všech tří vlastností blockchainu najednou: bezpečnosti, škálovatelnosti a decentralizace."
+  },
+  "blockspace": {
+    "keyword": "blokový prostor",
+    "keyword_forms": [
+      "blokového prostoru",
+      "blokovému prostoru",
+      "blokovém prostoru",
+      "blokovým prostorem",
+      "blokové prostory",
+      "blokových prostorů",
+      "blockspace"
+    ],
+    "definition": "Prostor v každém bloku pro uložení transakcí a dat."
+  },
+  "borrower": {
+    "keyword": "dlužník",
+    "keyword_plural": "dlužníci",
+    "keyword_forms": [
+      "dlužníka",
+      "dlužníkovi",
+      "dlužníku",
+      "dlužníkem",
+      "dlužníků",
+      "dlužníkům",
+      "dlužnících",
+      "dlužníky",
+      "borrower"
+    ],
+    "definition": "Ten, kdo si půjčuje aktiva a platí za to věřiteli úrok."
+  },
+  "bridge": {
+    "keyword": "most",
+    "keyword_plural": "mosty",
+    "keyword_forms": [
+      "mostu",
+      "mostě",
+      "mostem",
+      "mostů",
+      "mostům",
+      "mostech",
+      "bridge"
+    ],
+    "definition": "Spojení, které umožní dvěma různým blockchainovým sítím komunikovat a vyměňovat si aktiva."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "Tržní symbol bitcoinu."
+  },
+  "censorship-resistant": {
+    "keyword": "odolný vůči cenzuře",
+    "keyword_forms": [
+      "odolná vůči cenzuře",
+      "odolné vůči cenzuře",
+      "odolní vůči cenzuře",
+      "odolného vůči cenzuře",
+      "odolnému vůči cenzuře",
+      "odolném vůči cenzuře",
+      "odolným vůči cenzuře",
+      "odolnou vůči cenzuře",
+      "odolných vůči cenzuře",
+      "odolnými vůči cenzuře",
+      "odolný cenzuře",
+      "censorship-resistant"
+    ],
+    "definition": "Takový, u kterého žádná vláda ani firma nerozhoduje o tom, co je a co není povolené."
+  },
+  "central bank": {
+    "keyword": "centrální banka",
+    "keyword_plural": "centrální banky",
+    "keyword_forms": [
+      "centrální bance",
+      "centrální banku",
+      "centrální bankou",
+      "centrálních bank",
+      "centrálním bankám",
+      "centrálních bankách",
+      "centrálními bankami",
+      "central bank"
+    ],
+    "definition": "Instituce, která v zemi reguluje peníze, banky a měnu."
+  },
+  "centralization": {
+    "keyword": "centralizace",
+    "keyword_forms": [
+      "centralizaci",
+      "centralizací",
+      "centralization"
+    ],
+    "definition": "Soustředění moci nad celým systémem do rukou jediné autority."
+  },
+  "centralized": {
+    "keyword": "centralizovaný",
+    "keyword_forms": [
+      "centralizovaná",
+      "centralizované",
+      "centralizovaní",
+      "centralizovaného",
+      "centralizovanému",
+      "centralizovaném",
+      "centralizovaným",
+      "centralizovanou",
+      "centralizovaných",
+      "centralizovanými",
+      "centralized"
+    ],
+    "definition": "Takový, kde celý systém ovládá jediná autorita."
+  },
+  "centralized exchange": {
+    "keyword": "centralizovaná burza",
+    "keyword_plural": "centralizované burzy",
+    "keyword_forms": [
+      "centralizované burze",
+      "centralizovanou burzu",
+      "centralizovanou burzou",
+      "centralizovaných burz",
+      "centralizovaným burzám",
+      "centralizovaných burzách",
+      "centralizovanými burzami",
+      "centralized exchange"
+    ],
+    "definition": "(CEX) Centralizovaná platforma, která za poplatek zprostředkuje obchodování s kryptoměnami, podobně jako burza cenných papírů."
+  },
+  "centralized exchange staking": {
+    "keyword": "staking na centralizované burze",
+    "keyword_forms": [
+      "stakingu na centralizované burze",
+      "stakingem na centralizované burze",
+      "staking na centralizovaných burzách",
+      "centralized exchange staking"
+    ],
+    "definition": "Zamykání tokenů přes centralizovanou burzu, které přináší odměny."
+  },
+  "centralized services": {
+    "keyword": "centralizované služby",
+    "keyword_forms": [
+      "centralizovaná služba",
+      "centralizovaných služeb",
+      "centralizovaným službám",
+      "centralizovaných službách",
+      "centralizovanými službami",
+      "centralized services"
+    ],
+    "definition": "Firmy, které ovládají dění online. Nastavují pravidla i poplatky a spravují data a obsah často spíš ve svůj prospěch než ve prospěch lidí, kteří je používají."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX",
+    "keyword_forms": [
+      "CEXs",
+      "burza CEX",
+      "burzy CEX",
+      "burze CEX"
+    ],
+    "definition": "(Centralized Exchange) Platforma, která za poplatek zprostředkuje obchodování s kryptoměnami, podobně jako burza cenných papírů."
+  },
+  "chain": {
+    "keyword": "řetězec",
+    "keyword_plural": "řetězce",
+    "keyword_forms": [
+      "řetězci",
+      "řetězcem",
+      "řetězců",
+      "řetězcům",
+      "řetězcích",
+      "chain"
+    ],
+    "definition": "Spojuje bloky dat do databáze, kterou už nikdo nemůže dodatečně změnit."
+  },
+  "circulating supply": {
+    "keyword": "nabídka v oběhu",
+    "keyword_plural": "nabídky v oběhu",
+    "keyword_forms": [
+      "nabídce v oběhu",
+      "nabídku v oběhu",
+      "nabídkou v oběhu",
+      "nabídek v oběhu",
+      "nabídkách v oběhu",
+      "circulating supply"
+    ],
+    "definition": "Počet mincí nebo tokenů dané kryptoměny, které jsou volně dostupné k obchodování."
+  },
+  "coin": {
+    "keyword": "mince",
+    "keyword_plural": "mince",
+    "keyword_forms": [
+      "minci",
+      "mincí",
+      "mincím",
+      "mincích",
+      "mincemi",
+      "coin"
+    ],
+    "definition": "Nativní aktivum blockchainu. Nejčastěji slouží jako měna pro transakce v síti."
+  },
+  "cold wallet": {
+    "keyword": "studená peněženka",
+    "keyword_plural": "studené peněženky",
+    "keyword_forms": [
+      "studené peněžence",
+      "studenou peněženku",
+      "studenou peněženkou",
+      "studených peněženek",
+      "studeným peněženkám",
+      "studených peněženkách",
+      "studenými peněženkami",
+      "cold wallet"
+    ],
+    "definition": "Typ peněženky ve vlastní správě, která je uložená na zařízení bez připojení k internetu."
+  },
+  "collateral": {
+    "keyword": "zajištění",
+    "keyword_forms": [
+      "zajištěním",
+      "zajištěních",
+      "zajištěními",
+      "kolaterál",
+      "kolaterálu",
+      "zástava",
+      "zástavy",
+      "collateral"
+    ],
+    "definition": "Aktivum, které dlužník zastaví věřiteli jako jistotu, že půjčku splatí."
+  },
+  "commercial bank": {
+    "keyword": "komerční banka",
+    "keyword_plural": "komerční banky",
+    "keyword_forms": [
+      "komerční bance",
+      "komerční banku",
+      "komerční bankou",
+      "komerčních bank",
+      "komerčním bankám",
+      "komerčních bankách",
+      "komerčními bankami",
+      "commercial bank"
+    ],
+    "definition": "Banka, která spravuje peníze lidem a firmám."
+  },
+  "composability": {
+    "keyword": "skládatelnost",
+    "keyword_forms": [
+      "skládatelnosti",
+      "skládatelností",
+      "komponibilita",
+      "composability"
+    ],
+    "definition": "Možnost skládat existující chytré kontrakty a aplikace jako stavebnici a vytvářet z nich nové produkty."
+  },
+  "consensus": {
+    "keyword": "konsenzus",
+    "keyword_forms": [
+      "konsenzu",
+      "konsenzem",
+      "konsensus",
+      "konsensu",
+      "shoda",
+      "consensus"
+    ],
+    "definition": "Shoda, důvěra a bezpečnost napříč decentralizovanou počítačovou sítí, jakou je blockchain."
+  },
+  "consensus mechanism": {
+    "keyword": "mechanismus konsenzu",
+    "keyword_plural": "mechanismy konsenzu",
+    "keyword_forms": [
+      "mechanismu konsenzu",
+      "mechanismem konsenzu",
+      "mechanismů konsenzu",
+      "mechanismům konsenzu",
+      "mechanismech konsenzu",
+      "konsenzuální mechanismus",
+      "consensus mechanism"
+    ],
+    "definition": "Způsob, jakým blockchainová síť rozhoduje, které transakce jsou platné a které podvodné."
+  },
+  "consensus mechanisms": {
+    "keyword": "mechanismy konsenzu",
+    "keyword_forms": [
+      "mechanismů konsenzu",
+      "mechanismům konsenzu",
+      "mechanismech konsenzu",
+      "consensus mechanisms"
+    ],
+    "definition": "Způsoby, jakými blockchainové sítě rozhodují, které transakce jsou platné a které podvodné."
+  },
+  "counterparty risk": {
+    "keyword": "riziko protistrany",
+    "keyword_plural": "rizika protistrany",
+    "keyword_forms": [
+      "riziku protistrany",
+      "rizikem protistrany",
+      "rizik protistrany",
+      "rizikům protistrany",
+      "rizicích protistrany",
+      "riziky protistrany",
+      "counterparty risk"
+    ],
+    "definition": "Riziko, že druhá strana nesplní svou část dohody."
+  },
+  "credible neutrality": {
+    "keyword": "důvěryhodná neutralita",
+    "keyword_forms": [
+      "důvěryhodné neutrality",
+      "důvěryhodné neutralitě",
+      "důvěryhodnou neutralitu",
+      "důvěryhodnou neutralitou",
+      "credible neutrality"
+    ],
+    "definition": "Mechanismus, který nikoho nezvýhodňuje ani neznevýhodňuje."
+  },
+  "crypto": {
+    "keyword": "krypto",
+    "keyword_forms": [
+      "krypta",
+      "kryptu",
+      "kryptem",
+      "crypto"
+    ],
+    "definition": "(Kryptoměna) Měny, které patří internetu, ne jedné zemi. Místo centrální banky je obvykle řídí lidé, kteří je používají."
+  },
+  "crypto wallet": {
+    "keyword": "kryptopeněženka",
+    "keyword_plural": "kryptopeněženky",
+    "keyword_forms": [
+      "kryptopeněžence",
+      "kryptopeněženku",
+      "kryptopeněženkou",
+      "kryptopeněženek",
+      "kryptopeněženkám",
+      "kryptopeněženkách",
+      "kryptopeněženkami",
+      "krypto peněženka",
+      "krypto peněženky",
+      "crypto wallet"
+    ],
+    "definition": "Aplikace, ve které si uložíš kryptoměny a můžeš je posílat, přijímat nebo utrácet."
+  },
+  "cryptocurrencies": {
+    "keyword": "kryptoměny",
+    "keyword_forms": [
+      "kryptoměn",
+      "kryptoměnám",
+      "kryptoměnách",
+      "kryptoměnami",
+      "cryptocurrencies"
+    ],
+    "definition": "Měny, které patří internetu, ne jednotlivým zemím. Místo centrální banky je obvykle řídí lidé, kteří je používají."
+  },
+  "cryptocurrency": {
+    "keyword": "kryptoměna",
+    "keyword_plural": "kryptoměny",
+    "keyword_forms": [
+      "kryptoměně",
+      "kryptoměnu",
+      "kryptoměnou",
+      "kryptoměn",
+      "kryptoměnám",
+      "kryptoměnách",
+      "kryptoměnami",
+      "cryptocurrency"
+    ],
+    "definition": "Měna, která patří internetu, ne jedné zemi. Místo centrální banky ji obvykle řídí lidé, kteří ji používají."
+  },
+  "cryptocurrency mining": {
+    "keyword": "těžba kryptoměn",
+    "keyword_forms": [
+      "těžby kryptoměn",
+      "těžbě kryptoměn",
+      "těžbu kryptoměn",
+      "těžbou kryptoměn",
+      "cryptocurrency mining"
+    ],
+    "definition": "Ověřování transakcí na blockchainu výměnou za odměnu v kryptoměně. Používají ho sítě s Proof of Work, například Bitcoin."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "kryptoměnová peněženka",
+    "keyword_plural": "kryptoměnové peněženky",
+    "keyword_forms": [
+      "kryptoměnové peněžence",
+      "kryptoměnovou peněženku",
+      "kryptoměnovou peněženkou",
+      "kryptoměnových peněženek",
+      "kryptoměnovým peněženkám",
+      "kryptoměnových peněženkách",
+      "kryptoměnovými peněženkami",
+      "cryptocurrency wallet"
+    ],
+    "definition": "Aplikace, ve které si uložíš kryptoměny a můžeš je posílat, přijímat nebo utrácet."
+  },
+  "cryptography": {
+    "keyword": "kryptografie",
+    "keyword_forms": [
+      "kryptografii",
+      "kryptografií",
+      "cryptography"
+    ],
+    "definition": "Postupy pro bezpečnou komunikaci nebo transakci, které brání zásahu zvenčí."
+  },
+  "custodial wallet": {
+    "keyword": "kustodiální peněženka",
+    "keyword_plural": "kustodiální peněženky",
+    "keyword_forms": [
+      "kustodiální peněžence",
+      "kustodiální peněženku",
+      "kustodiální peněženkou",
+      "kustodiálních peněženek",
+      "kustodiálním peněženkám",
+      "kustodiálních peněženkách",
+      "kustodiálními peněženkami",
+      "opatrovnická peněženka",
+      "custodial wallet"
+    ],
+    "definition": "U kustodiální peněženky drží soukromé klíče někdo jiný, a tím ovládá přístup k tvým kryptoaktivům."
+  },
+  "custodian": {
+    "keyword": "správce",
+    "keyword_plural": "správci",
+    "keyword_forms": [
+      "správcem",
+      "správců",
+      "správcům",
+      "správcích",
+      "custodian"
+    ],
+    "definition": "Finanční instituce, která má na starost bezpečné uložení tvých aktiv."
+  },
+  "custom record": {
+    "keyword": "vlastní záznam",
+    "keyword_plural": "vlastní záznamy",
+    "keyword_forms": [
+      "vlastního záznamu",
+      "vlastnímu záznamu",
+      "vlastním záznamu",
+      "vlastním záznamem",
+      "vlastních záznamů",
+      "vlastním záznamům",
+      "vlastních záznamech",
+      "vlastními záznamy",
+      "custom record"
+    ],
+    "definition": "Vlastní údaj připojený k ENS doméně. Můžeš k ní přidat třeba web nebo odkazy na sociální sítě, nad rámec běžných adres."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO",
+    "keyword_forms": [
+      "DAOs",
+      "decentralizovaná autonomní organizace"
+    ],
+    "definition": "(Decentralized Autonomous Organization) Organizační struktura, která pomocí blockchainové technologie automatizuje hlasování a správu."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApps",
+    "keyword_forms": [
+      "dAppy",
+      "dAppu",
+      "dAppem",
+      "dAppů",
+      "dAppům",
+      "dAppech",
+      "decentralizovaná aplikace",
+      "decentralizované aplikace"
+    ],
+    "definition": "„Decentralizovaná aplikace“, která se připojuje k blockchainům a decentralizovaným sítím."
+  },
+  "death spiral": {
+    "keyword": "spirála smrti",
+    "keyword_plural": "spirály smrti",
+    "keyword_forms": [
+      "spirále smrti",
+      "spirálu smrti",
+      "spirálou smrti",
+      "spirál smrti",
+      "spirálám smrti",
+      "spirálách smrti",
+      "spirálami smrti",
+      "death spiral"
+    ],
+    "definition": "Sebeposilující zhroucení, kdy klesající cena vyvolá kroky, které cenu srazí ještě níž. Stalo se to některým algoritmickým stablecoinům."
+  },
+  "decentralization": {
+    "keyword": "decentralizace",
+    "keyword_forms": [
+      "decentralizaci",
+      "decentralizací",
+      "decentralization"
+    ],
+    "definition": "Přenesení kontroly na mnoho jednotlivců místo jediné autority."
+  },
+  "decentralized": {
+    "keyword": "decentralizovaný",
+    "keyword_forms": [
+      "decentralizovaná",
+      "decentralizované",
+      "decentralizovaní",
+      "decentralizovaného",
+      "decentralizovanému",
+      "decentralizovaném",
+      "decentralizovaným",
+      "decentralizovanou",
+      "decentralizovaných",
+      "decentralizovanými",
+      "decentralized"
+    ],
+    "definition": "Takový, kde systém neovládá žádná jediná autorita."
+  },
+  "decentralized exchange": {
+    "keyword": "decentralizovaná burza",
+    "keyword_plural": "decentralizované burzy",
+    "keyword_forms": [
+      "decentralizované burze",
+      "decentralizovanou burzu",
+      "decentralizovanou burzou",
+      "decentralizovaných burz",
+      "decentralizovaným burzám",
+      "decentralizovaných burzách",
+      "decentralizovanými burzami",
+      "decentralized exchange"
+    ],
+    "definition": "(DEX) Protokol, který umožní směnu bez důvěryhodných prostředníků."
+  },
+  "decentralized finance": {
+    "keyword": "decentralizované finance",
+    "keyword_forms": [
+      "decentralizovaných financí",
+      "decentralizovaným financím",
+      "decentralizovaných financích",
+      "decentralizovanými financemi",
+      "Decentralized Finance"
+    ],
+    "definition": "(DeFi) Sada finančních nástrojů ve vlastní správě, které běží na blockchainu."
+  },
+  "decentralized money": {
+    "keyword": "decentralizované peníze",
+    "keyword_forms": [
+      "decentralizovaných peněz",
+      "decentralizovaným penězům",
+      "decentralizovaných penězích",
+      "decentralizovanými penězi",
+      "decentralized money"
+    ],
+    "definition": "Peníze, jejichž vlastnosti si dohodne komunita, místo aby je určila instituce."
+  },
+  "decentralized services": {
+    "keyword": "decentralizované služby",
+    "keyword_forms": [
+      "decentralizovaná služba",
+      "decentralizovaných služeb",
+      "decentralizovaným službám",
+      "decentralizovaných službách",
+      "decentralizovanými službami",
+      "decentralized services"
+    ],
+    "definition": "(dApps) Online služby, které díky automatizaci snižují poplatky a zlepšují používání."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "(Decentralized Finance) Sada finančních nástrojů ve vlastní správě, které běží na blockchainu."
+  },
+  "delegate": {
+    "keyword": "delegovat",
+    "keyword_plural": "delegáti",
+    "keyword_forms": [
+      "deleguj",
+      "deleguješ",
+      "deleguje",
+      "zdelegovat",
+      "delegát",
+      "delegáta",
+      "delegátovi",
+      "delegátem",
+      "delegátů",
+      "delegate"
+    ],
+    "definition": "Předat konkrétní odpovědnost někomu jinému, například hlasovací sílu svých tokenů."
+  },
+  "delegation": {
+    "keyword": "delegace",
+    "keyword_plural": "delegace",
+    "keyword_forms": [
+      "delegaci",
+      "delegací",
+      "delegacím",
+      "delegacích",
+      "delegacemi",
+      "delegování",
+      "delegation"
+    ],
+    "definition": "Předání konkrétní odpovědnosti někomu jinému, například hlasovací síly tokenů."
+  },
+  "democracy": {
+    "keyword": "demokracie",
+    "keyword_plural": "demokracie",
+    "keyword_forms": [
+      "demokracii",
+      "demokracií",
+      "demokraciím",
+      "demokraciích",
+      "demokraciemi",
+      "democracy"
+    ],
+    "definition": "Systém vlády, ve kterém moc vykonávají občané tím, že se podílejí na rozhodování."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX",
+    "keyword_forms": [
+      "DEXs",
+      "burza DEX",
+      "burzy DEX",
+      "burze DEX"
+    ],
+    "definition": "(Decentralized Exchange) Protokol, který umožní směnu bez důvěryhodných prostředníků."
+  },
+  "dex aggregator": {
+    "keyword": "DEX agregátor",
+    "keyword_plural": "DEX agregátory",
+    "keyword_forms": [
+      "DEX agregátoru",
+      "DEX agregátorem",
+      "DEX agregátorů",
+      "DEX agregátorům",
+      "DEX agregátorech",
+      "agregátor DEX",
+      "DEX aggregator"
+    ],
+    "definition": "Protokol, který v jednom rozhraní spojí likviditu z více decentralizovaných burz."
+  },
+  "digital assets": {
+    "keyword": "digitální aktiva",
+    "keyword_forms": [
+      "digitální aktivum",
+      "digitálních aktiv",
+      "digitálním aktivům",
+      "digitálních aktivech",
+      "digitálními aktivy",
+      "digital assets"
+    ],
+    "definition": "Cokoli hodnotného, co je uložené digitálně."
+  },
+  "digital signature": {
+    "keyword": "digitální podpis",
+    "keyword_plural": "digitální podpisy",
+    "keyword_forms": [
+      "digitálního podpisu",
+      "digitálnímu podpisu",
+      "digitálním podpisu",
+      "digitálním podpisem",
+      "digitálních podpisů",
+      "digitálním podpisům",
+      "digitálních podpisech",
+      "digitálními podpisy",
+      "digital signature"
+    ],
+    "definition": "Důkaz vytvořený soukromým klíčem, že zpráva nebo transakce má tvůj souhlas. Funguje jako podpis rukou, ale padělat ho nejde."
+  },
+  "double-spend": {
+    "keyword": "dvojí utracení",
+    "keyword_plural": "dvojí utracení",
+    "keyword_forms": [
+      "dvojího utracení",
+      "dvojímu utracení",
+      "dvojím utracení",
+      "dvojím utracením",
+      "dvojích utracení",
+      "dvojí útrata",
+      "dvojité utracení",
+      "double-spend"
+    ],
+    "definition": "Utracení stejných digitálních peněz dvakrát. Konsenzus na blockchainu tomu brání i bez centrální autority."
+  },
+  "earn": {
+    "keyword": "vydělávat",
+    "keyword_forms": [
+      "vyděláváš",
+      "vydělávej",
+      "vydělat",
+      "vydělávání",
+      "výdělek",
+      "earn"
+    ],
+    "definition": "Přinášet hodnotu a dostávat za to odměnu. Jedno ze sloves o penězích na kostce dovedností."
+  },
+  "encryption": {
+    "keyword": "šifrování",
+    "keyword_forms": [
+      "šifrováním",
+      "zašifrování",
+      "zakódování",
+      "encryption"
+    ],
+    "definition": "Převod informace do tajného kódu, který brání přístupu nepovolaných."
+  },
+  "epoch": {
+    "keyword": "epocha",
+    "keyword_plural": "epochy",
+    "keyword_forms": [
+      "epoše",
+      "epochu",
+      "epochou",
+      "epoch",
+      "epochám",
+      "epochách",
+      "epochami"
+    ],
+    "definition": "Doba, za kterou se na daném blockchainu vytvoří určitý počet bloků."
+  },
+  "equality of opportunity": {
+    "keyword": "rovnost příležitostí",
+    "keyword_forms": [
+      "rovnosti příležitostí",
+      "rovností příležitostí",
+      "equality of opportunity"
+    ],
+    "definition": "Princip spravedlnosti, kdy má každý stejnou šanci uspět bez ohledu na to, odkud pochází."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20",
+    "keyword_forms": [
+      "ERC-20s",
+      "ERC20",
+      "token ERC-20",
+      "tokeny ERC-20",
+      "standard ERC-20"
+    ],
+    "definition": "Standard pro zaměnitelné tokeny na Ethereu. Tyto tokeny jsou dělitelné a nejsou jedinečné."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721",
+    "keyword_forms": [
+      "ERC-721s",
+      "ERC721",
+      "token ERC-721",
+      "tokeny ERC-721",
+      "standard ERC-721"
+    ],
+    "definition": "Standard pro nezaměnitelné tokeny na Ethereu. Každý takový token má jedinečný digitální identifikátor, nejde zkopírovat ani rozdělit."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155",
+    "keyword_forms": [
+      "ERC-1155s",
+      "ERC1155",
+      "token ERC-1155",
+      "tokeny ERC-1155",
+      "standard ERC-1155"
+    ],
+    "definition": "Standard, který umožní vydávat zaměnitelné i nezaměnitelné tokeny na Ethereu v jednom optimalizovaném kontraktu."
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF",
+    "keyword_forms": [
+      "ETFs",
+      "fond ETF",
+      "fondy ETF"
+    ],
+    "definition": "(Exchange-Traded Fund) Investiční fond obchodovaný na burze, který drží aktiva jako akcie, zlato nebo bitcoin."
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "(Ether) Nativní kryptoměna Etherea. Platíš s ní transakce v síti a potřebuješ ji i k provozu validátorského uzlu."
+  },
+  "ether": {
+    "keyword": "ether",
+    "keyword_forms": [
+      "etheru",
+      "etherem",
+      "etherech"
+    ],
+    "definition": "(ETH) Nativní kryptoměna Etherea. Platíš s ní transakce v síti a potřebuješ ji i k provozu validátorského uzlu."
+  },
+  "ethereum blockchain": {
+    "keyword": "blockchain Etherea",
+    "keyword_forms": [
+      "blockchainu Etherea",
+      "blockchainem Etherea",
+      "Ethereum Blockchain",
+      "blockchain Ethereum"
+    ],
+    "definition": "Veřejná účetní kniha, která zaznamenává transakce a vlastnictví v síti Ethereum."
+  },
+  "ethereum mainnet": {
+    "keyword": "Ethereum Mainnet",
+    "keyword_forms": [
+      "Ethereum Mainnetu",
+      "Ethereum Mainnetem",
+      "Mainnet Etherea",
+      "Mainnetu Etherea",
+      "hlavní síť Etherea"
+    ],
+    "definition": "Hlavní síť Layer 1 Etherea, kde mají transakce skutečnou hodnotu. Je zúčtovací vrstvou pro sítě Layer 2 na Ethereu."
+  },
+  "ethereum virtual machine": {
+    "keyword": "Ethereum Virtual Machine",
+    "keyword_forms": [
+      "EVM",
+      "virtuální stroj Etherea",
+      "virtuálního stroje Etherea",
+      "Ethereum Virtual Machine (EVM)"
+    ],
+    "definition": "Ethereum Virtual Machine neboli EVM je software, který spouští chytré kontrakty a počítá stav sítě Ethereum."
+  },
+  "fiat": {
+    "keyword": "fiat",
+    "keyword_forms": [
+      "fiatu",
+      "fiatem",
+      "fiat měna",
+      "fiat měny",
+      "fiatové peníze"
+    ],
+    "definition": "Národní měna, kterou nekryje komodita jako zlato. Hodnotu má z důvěry veřejnosti v jejího vydavatele."
+  },
+  "finality": {
+    "keyword": "finalita",
+    "keyword_forms": [
+      "finality",
+      "finalitě",
+      "finalitu",
+      "finalitou",
+      "konečnost",
+      "nevratnost"
+    ],
+    "definition": "Záruka, že potvrzená transakce na blockchainu je trvalá a nejde ji vrátit ani změnit."
+  },
+  "finality time": {
+    "keyword": "doba do finality",
+    "keyword_forms": [
+      "doby do finality",
+      "době do finality",
+      "dobu do finality",
+      "dobou do finality",
+      "finality time"
+    ],
+    "definition": "Doba, za kterou máš jistotu, že transakce je platná a konečná, tedy že se nevrátí ani nezmění."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) Úzkost z toho, že ti něco uteče."
+  },
+  "fork": {
+    "keyword": "fork",
+    "keyword_plural": "forky",
+    "keyword_forms": [
+      "forku",
+      "forkem",
+      "forků",
+      "forkům",
+      "forcích",
+      "rozvětvení",
+      "hard fork",
+      "soft fork"
+    ],
+    "definition": "Zásadní změna v blockchainové síti, po které vzniknou dvě větve: jedna pokračuje podle starého protokolu, druhá podle nového."
+  },
+  "fraud": {
+    "keyword": "podvod",
+    "keyword_forms": [
+      "podvodu",
+      "podvodem",
+      "podvody",
+      "podvodů",
+      "podvodům",
+      "podvodech",
+      "fraud"
+    ],
+    "definition": "V blockchainové ekonomice: nepoctivé nebo falešné transakce, kterými se mění držené množství kryptoměny."
+  },
+  "fraud proof": {
+    "keyword": "důkaz o podvodu",
+    "keyword_plural": "důkazy o podvodu",
+    "keyword_forms": [
+      "důkazu o podvodu",
+      "důkazem o podvodu",
+      "důkazů o podvodu",
+      "důkazům o podvodu",
+      "důkazech o podvodu",
+      "důkaz podvodu",
+      "fraud proof"
+    ],
+    "definition": "Důkaz, že transakce je neplatná a že došlo k podvodu."
+  },
+  "front-running": {
+    "keyword": "front-running",
+    "keyword_forms": [
+      "front-runningu",
+      "front-runningem",
+      "předbíhání",
+      "frontrunning"
+    ],
+    "definition": "Někdo uvidí tvoji čekající transakci a zaplatí za to, aby ta jeho prošla dřív. Vydělá tak na tvůj úkor."
+  },
+  "fungibility": {
+    "keyword": "zaměnitelnost",
+    "keyword_forms": [
+      "zaměnitelnosti",
+      "zaměnitelností",
+      "fungibilita",
+      "fungibility"
+    ],
+    "definition": "Vlastnost být vzájemně zaměnitelný: každý kus má stejnou hodnotu a nahradí kterýkoli jiný, jako jedna bankovka druhou."
+  },
+  "gas": {
+    "keyword": "gas",
+    "keyword_forms": [
+      "gasu",
+      "gasem",
+      "plyn",
+      "plynu",
+      "plynem"
+    ],
+    "definition": "Poplatek za transakci v blockchainové síti."
+  },
+  "gas fee": {
+    "keyword": "poplatek za gas",
+    "keyword_plural": "poplatky za gas",
+    "keyword_forms": [
+      "poplatku za gas",
+      "poplatkem za gas",
+      "poplatků za gas",
+      "poplatkům za gas",
+      "poplatcích za gas",
+      "poplatek za plyn",
+      "gas fee"
+    ],
+    "definition": "Poplatek za transakci, který zaplatíš za použití blockchainové sítě."
+  },
+  "gasless transactions": {
+    "keyword": "transakce bez gasu",
+    "keyword_forms": [
+      "transakci bez gasu",
+      "transakcí bez gasu",
+      "transakcím bez gasu",
+      "transakcích bez gasu",
+      "transakcemi bez gasu",
+      "gasless transactions"
+    ],
+    "definition": "Transakce, u kterých se poplatek platí v obchodovaném tokenu nebo ho pokryje sponzor, místo nativní mince sítě."
+  },
+  "gold standard": {
+    "keyword": "zlatý standard",
+    "keyword_plural": "zlaté standardy",
+    "keyword_forms": [
+      "zlatého standardu",
+      "zlatému standardu",
+      "zlatém standardu",
+      "zlatým standardem",
+      "zlatých standardů",
+      "zlatým standardům",
+      "zlatých standardech",
+      "zlatými standardy",
+      "gold standard"
+    ],
+    "definition": "Měnový systém, ve kterém je hodnota měny přímo navázaná na zlato."
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "keyword_forms": [
+      "gigawei"
+    ],
+    "definition": "Jednotka na blockchainu Ethereum, rovná 0,000000001 ETH, tedy jedné miliardtině. Běžně se v ní uvádí cena gasu."
+  },
+  "halving": {
+    "keyword": "halving",
+    "keyword_plural": "halvingy",
+    "keyword_forms": [
+      "halvingu",
+      "halvingem",
+      "halvingů",
+      "halvingům",
+      "halvinzích",
+      "půlení odměny"
+    ],
+    "definition": "Naplánovaná událost zhruba jednou za čtyři roky, která sníží odměnu za těžbu nových bitcoinů na polovinu."
+  },
+  "hardware wallet": {
+    "keyword": "hardwarová peněženka",
+    "keyword_plural": "hardwarové peněženky",
+    "keyword_forms": [
+      "hardwarové peněžence",
+      "hardwarovou peněženku",
+      "hardwarovou peněženkou",
+      "hardwarových peněženek",
+      "hardwarovým peněženkám",
+      "hardwarových peněženkách",
+      "hardwarovými peněženkami",
+      "hardware wallet"
+    ],
+    "definition": "Typ peněženky ve vlastní správě, která drží soukromé klíče offline ve fyzickém zařízení."
+  },
+  "hash": {
+    "keyword": "hash",
+    "keyword_plural": "hashe",
+    "keyword_forms": [
+      "hashi",
+      "hashem",
+      "hashů",
+      "hashům",
+      "hashích",
+      "haš"
+    ],
+    "definition": "Digitální otisk informace."
+  },
+  "hashing function": {
+    "keyword": "hashovací funkce",
+    "keyword_plural": "hashovací funkce",
+    "keyword_forms": [
+      "hashovací funkci",
+      "hashovací funkcí",
+      "hashovacích funkcí",
+      "hashovacím funkcím",
+      "hashovacích funkcích",
+      "hashovacími funkcemi",
+      "hashing function"
+    ],
+    "definition": "Funkce, která z libovolného vstupu udělá jedinečný otisk pevné délky (hash). Spočítat ho je snadné, obrátit zpět prakticky nemožné."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) Slangový výraz pro to, že krypto neprodáš, ať se na trhu děje cokoli."
+  },
+  "hot wallet": {
+    "keyword": "horká peněženka",
+    "keyword_plural": "horké peněženky",
+    "keyword_forms": [
+      "horké peněžence",
+      "horkou peněženku",
+      "horkou peněženkou",
+      "horkých peněženek",
+      "horkým peněženkám",
+      "horkých peněženkách",
+      "horkými peněženkami",
+      "hot wallet"
+    ],
+    "definition": "Typ peněženky ve vlastní správě, která je trvale připojená k internetu."
+  },
+  "inflation": {
+    "keyword": "inflace",
+    "keyword_forms": [
+      "inflaci",
+      "inflací",
+      "inflation"
+    ],
+    "definition": "Obecný růst cen a pokles kupní síly peněz."
+  },
+  "intent": {
+    "keyword": "záměr",
+    "keyword_plural": "záměry",
+    "keyword_forms": [
+      "záměru",
+      "záměrem",
+      "záměrů",
+      "záměrům",
+      "záměrech",
+      "intent"
+    ],
+    "definition": "Podepsaný požadavek na obchod, který popisuje výsledek, jaký chceš, třeba „směň X za nejméně Y“. Nejlepší cestu už dohledají specialisté."
+  },
+  "intermediaries": {
+    "keyword": "prostředníci",
+    "keyword_forms": [
+      "prostředníků",
+      "prostředníkům",
+      "prostřednících",
+      "prostředníky",
+      "intermediaries"
+    ],
+    "definition": "Subjekty nebo služby, které propojují lidi a zprostředkovávají výměnu hodnoty nebo informací."
+  },
+  "intermediary": {
+    "keyword": "prostředník",
+    "keyword_plural": "prostředníci",
+    "keyword_forms": [
+      "prostředníka",
+      "prostředníkovi",
+      "prostředníkem",
+      "prostředníků",
+      "prostředníkům",
+      "prostřednících",
+      "prostředníky",
+      "intermediary"
+    ],
+    "definition": "Subjekt nebo služba, která propojuje lidi a zprostředkuje výměnu hodnoty nebo informací."
+  },
+  "intermediary token": {
+    "keyword": "zprostředkující token",
+    "keyword_plural": "zprostředkující tokeny",
+    "keyword_forms": [
+      "zprostředkujícího tokenu",
+      "zprostředkujícímu tokenu",
+      "zprostředkujícím tokenu",
+      "zprostředkujícím tokenem",
+      "zprostředkujících tokenů",
+      "zprostředkujícím tokenům",
+      "zprostředkujících tokenech",
+      "zprostředkujícími tokeny",
+      "intermediary token"
+    ],
+    "definition": "Token uprostřed obchodní trasy, tedy ani počáteční, ani cílový."
+  },
+  "interoperability": {
+    "keyword": "interoperabilita",
+    "keyword_forms": [
+      "interoperability",
+      "interoperabilitě",
+      "interoperabilitu",
+      "interoperabilitou",
+      "vzájemná propojitelnost"
+    ],
+    "definition": "Schopnost různých aplikací, tokenů a blockchainů spolupracovat a sdílet informace."
+  },
+  "invest": {
+    "keyword": "investovat",
+    "keyword_forms": [
+      "investuješ",
+      "investuj",
+      "investování",
+      "investice",
+      "invest"
+    ],
+    "definition": "Vložit peníze do aktiva, třeba do mince nebo tokenu, s očekáváním, že jeho hodnota poroste."
+  },
+  "know-your-customer": {
+    "keyword": "poznej svého klienta",
+    "keyword_forms": [
+      "poznej svého zákazníka",
+      "Know-Your-Customer",
+      "know your customer"
+    ],
+    "definition": "(KYC) Ověření totožnosti uživatele, které vyžaduje stát."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know-Your-Customer) Ověření totožnosti uživatele, které vyžaduje stát."
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "keyword_forms": [
+      "L1s",
+      "síť L1",
+      "sítě L1",
+      "síti L1"
+    ],
+    "definition": "Layer 1 označuje základní síť, například Bitcoin nebo Ethereum."
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "keyword_forms": [
+      "L2s",
+      "síť L2",
+      "sítě L2",
+      "síti L2"
+    ],
+    "definition": "Blockchain, který rozšiřuje škálovatelnost Etherea a přebírá jeho bezpečnost."
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1",
+    "keyword_forms": [
+      "Layer 1s",
+      "síť Layer 1",
+      "sítě Layer 1",
+      "síti Layer 1",
+      "první vrstva"
+    ],
+    "definition": "Layer 1 označuje základní síť, například Bitcoin nebo Ethereum."
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2",
+    "keyword_forms": [
+      "Layer 2s",
+      "síť Layer 2",
+      "sítě Layer 2",
+      "síti Layer 2",
+      "druhá vrstva"
+    ],
+    "definition": "Blockchain, který rozšiřuje škálovatelnost Etherea a přebírá jeho bezpečnost."
+  },
+  "ledger": {
+    "keyword": "účetní kniha",
+    "keyword_plural": "účetní knihy",
+    "keyword_forms": [
+      "účetní knize",
+      "účetní knihu",
+      "účetní knihou",
+      "účetních knih",
+      "účetním knihám",
+      "účetních knihách",
+      "účetními knihami",
+      "registr",
+      "ledger"
+    ],
+    "definition": "Záznam všech transakcí, které se kdy uskutečnily."
+  },
+  "lender": {
+    "keyword": "věřitel",
+    "keyword_plural": "věřitelé",
+    "keyword_forms": [
+      "věřitele",
+      "věřiteli",
+      "věřitelem",
+      "věřitelů",
+      "věřitelům",
+      "věřitelích",
+      "lender"
+    ],
+    "definition": "Ten, kdo vkládá aktiva a získává za to úrok."
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "keyword_forms": [
+      "Lightning Networku",
+      "Lightning Networkem",
+      "síť Lightning",
+      "síti Lightning"
+    ],
+    "definition": "Platební síť postavená nad Bitcoinem. Používá platební kanály, aby byly běžné platby okamžité a levné."
+  },
+  "liquid": {
+    "keyword": "likvidní",
+    "keyword_forms": [
+      "likvidního",
+      "likvidnímu",
+      "likvidním",
+      "likvidních",
+      "likvidními",
+      "liquid"
+    ],
+    "definition": "V blockchainové ekonomice: takový, který snadno použiješ k obchodování nebo v chytrých kontraktech."
+  },
+  "liquid staking token": {
+    "keyword": "token likvidního stakingu",
+    "keyword_plural": "tokeny likvidního stakingu",
+    "keyword_forms": [
+      "tokenu likvidního stakingu",
+      "tokenem likvidního stakingu",
+      "tokenů likvidního stakingu",
+      "tokenům likvidního stakingu",
+      "tokenech likvidního stakingu",
+      "liquid staking token"
+    ],
+    "definition": "Token, který zastupuje stakovaný ether. Jeho držitelé dostávají část odměn ze stakingu podle vloženého množství."
+  },
+  "liquidation": {
+    "keyword": "likvidace",
+    "keyword_plural": "likvidace",
+    "keyword_forms": [
+      "likvidaci",
+      "likvidací",
+      "likvidacím",
+      "likvidacemi",
+      "likvidacích",
+      "liquidation"
+    ],
+    "definition": "Automatický prodej zajištění dlužníka ve chvíli, kdy jeho hodnota klesne příliš nízko na to, aby bezpečně kryla půjčku."
+  },
+  "liquidity": {
+    "keyword": "likvidita",
+    "keyword_forms": [
+      "likvidity",
+      "likviditě",
+      "likviditu",
+      "likviditou",
+      "liquidity"
+    ],
+    "definition": "Kolik tokenů je na trhu k dispozici k obchodování."
+  },
+  "liquidity pool": {
+    "keyword": "pool likvidity",
+    "keyword_plural": "pooly likvidity",
+    "keyword_forms": [
+      "poolu likvidity",
+      "poolem likvidity",
+      "poolů likvidity",
+      "poolům likvidity",
+      "poolech likvidity",
+      "fond likvidity",
+      "fondu likvidity",
+      "fondy likvidity",
+      "liquidity pool"
+    ],
+    "definition": "Společná zásoba tokenů v chytrém kontraktu, díky které může kdokoli swapovat tokeny bez povolení."
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP",
+    "keyword_forms": [
+      "LPs",
+      "poskytovatel likvidity",
+      "poskytovatele likvidity",
+      "poskytovatelé likvidity",
+      "Liquidity Provider"
+    ],
+    "definition": "(Liquidity Provider) Poskytovatel likvidity. Půjčuje své tokeny protokolu a za to dostává podíl na poplatcích."
+  },
+  "lsts": {
+    "keyword": "LST",
+    "keyword_forms": [
+      "LSTs",
+      "LST tokeny",
+      "token likvidního stakingu",
+      "tokeny likvidního stakingu",
+      "Liquid Staking Tokens"
+    ],
+    "definition": "Tokeny, které zastupují stakovaný ether. Jejich držitelé dostávají část odměn ze stakingu podle výše stakovaného množství."
+  },
+  "mainnet": {
+    "keyword": "Mainnet",
+    "keyword_forms": [
+      "Mainnetu",
+      "Mainnetem",
+      "hlavní síť",
+      "hlavní sítě",
+      "hlavní síti"
+    ],
+    "definition": "Hlavní, živá síť blockchainu, kde mají transakce skutečnou hodnotu, na rozdíl od testovacích sítí. Často se tím myslí Layer 1 Etherea."
+  },
+  "market cap": {
+    "keyword": "tržní kapitalizace",
+    "keyword_plural": "tržní kapitalizace",
+    "keyword_forms": [
+      "tržní kapitalizaci",
+      "tržní kapitalizací",
+      "tržních kapitalizací",
+      "tržním kapitalizacím",
+      "tržními kapitalizacemi",
+      "tržních kapitalizacích",
+      "market cap"
+    ],
+    "definition": "Celková hodnota daného tokenu nebo celého tržního segmentu."
+  },
+  "max supply": {
+    "keyword": "maximální nabídka",
+    "keyword_plural": "maximální nabídky",
+    "keyword_forms": [
+      "maximální nabídce",
+      "maximální nabídku",
+      "maximální nabídkou",
+      "maximálních nabídek",
+      "maximálním nabídkám",
+      "maximálními nabídkami",
+      "maximálních nabídkách",
+      "max supply"
+    ],
+    "definition": "Nejvyšší počet mincí nebo tokenů, které kdy u dané kryptoměny budou existovat."
+  },
+  "memecoin": {
+    "keyword": "memecoin",
+    "keyword_plural": "memecoiny",
+    "keyword_forms": [
+      "memecoinu",
+      "memecoinem",
+      "memecoinů",
+      "memecoinům",
+      "memecoinech",
+      "meme coin",
+      "meme coiny"
+    ],
+    "definition": "Kryptoměnový token postavený na internetovém memu, často bez jakéhokoli užitku."
+  },
+  "meta-aggregator": {
+    "keyword": "meta-agregátor",
+    "keyword_plural": "meta-agregátory",
+    "keyword_forms": [
+      "meta-agregátoru",
+      "meta-agregátorem",
+      "meta-agregátorů",
+      "meta-agregátorům",
+      "meta-agregátorech",
+      "metaagregátor",
+      "meta-aggregator"
+    ],
+    "definition": "Nástroj, který spojuje více agregátorů do jedné další vrstvy přehledu."
+  },
+  "mev": {
+    "keyword": "MEV",
+    "keyword_forms": [
+      "Maximal Extractable Value",
+      "maximální extrahovatelná hodnota"
+    ],
+    "definition": "(Maximal Extractable Value) Zisk, který mohou producenti bloků získat tím, že v blocích přeuspořádají, vloží nebo vynechají transakce."
+  },
+  "miner": {
+    "keyword": "těžař",
+    "keyword_plural": "těžaři",
+    "keyword_forms": [
+      "těžaře",
+      "těžařovi",
+      "těžařem",
+      "těžařů",
+      "těžařům",
+      "těžařích",
+      "miner",
+      "miners"
+    ],
+    "definition": "Účastník sítě Proof of Work, například Bitcoinu, který soutěží o právo navrhnout nový blok a dostává za to odměnu."
+  },
+  "mining": {
+    "keyword": "těžba",
+    "keyword_forms": [
+      "těžby",
+      "těžbě",
+      "těžbu",
+      "těžbou",
+      "mining"
+    ],
+    "definition": "Proces, kterým se v Proof of Work ověřují transakce a přidávají nové bloky do blockchainu. Za tuto práci se vyplácí odměna."
+  },
+  "mint": {
+    "keyword": "mintovat",
+    "keyword_forms": [
+      "mintování",
+      "mintování tokenů",
+      "zmintovat",
+      "mintnout",
+      "mintuje",
+      "mintovaný",
+      "razit",
+      "vyrazit",
+      "mint"
+    ],
+    "definition": "Vytvoření nových tokenů, zaměnitelných i nezaměnitelných, na daném blockchainu."
+  },
+  "monetary policy": {
+    "keyword": "měnová politika",
+    "keyword_plural": "měnové politiky",
+    "keyword_forms": [
+      "měnové politice",
+      "měnovou politiku",
+      "měnovou politikou",
+      "měnových politik",
+      "měnovým politikám",
+      "měnovými politikami",
+      "měnových politikách",
+      "monetary policy"
+    ],
+    "definition": "Způsob, jakým centrální banka řídí množství peněz v oběhu."
+  },
+  "money": {
+    "keyword": "peníze",
+    "keyword_forms": [
+      "peněz",
+      "penězům",
+      "penězi",
+      "penězích",
+      "money"
+    ],
+    "definition": "Prostředek směny, účetní jednotka a uchovatel hodnoty. Slouží k placení za zboží a služby."
+  },
+  "multi-token standard": {
+    "keyword": "multitokenový standard",
+    "keyword_forms": [
+      "multitokenového standardu",
+      "multitokenovému standardu",
+      "multitokenovém standardu",
+      "multitokenovým standardem",
+      "multitokenové standardy",
+      "multitokenových standardů",
+      "multi-token standard"
+    ],
+    "definition": "Standard tokenů, například ERC-1155, který v jednom chytrém kontraktu zvládne zaměnitelné i nezaměnitelné tokeny."
+  },
+  "network governance": {
+    "keyword": "řízení sítě",
+    "keyword_forms": [
+      "řízením sítě",
+      "řízeních sítě",
+      "správa sítě",
+      "správy sítě",
+      "network governance"
+    ],
+    "definition": "Postup, kterým se decentralizovaná komunita dohodne na nových funkcích a vylepšeních sítě."
+  },
+  "neutrality": {
+    "keyword": "neutralita",
+    "keyword_forms": [
+      "neutrality",
+      "neutralitě",
+      "neutralitu",
+      "neutralitou"
+    ],
+    "definition": "Zásada rovného zacházení se všemi účastníky, bez zvýhodnění jednotlivce nebo skupiny."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT",
+    "keyword_forms": [
+      "NFTs",
+      "token NFT",
+      "tokeny NFT",
+      "tokenu NFT",
+      "Non-fungible Token",
+      "nezaměnitelný token",
+      "nezaměnitelné tokeny"
+    ],
+    "definition": "(Non-fungible Token) Token s jedinečným identifikátorem, který nejde zkopírovat. Zaměnitelný token jako ether takový identifikátor nemá."
+  },
+  "node": {
+    "keyword": "uzel",
+    "keyword_plural": "uzly",
+    "keyword_forms": [
+      "uzlu",
+      "uzlem",
+      "uzlů",
+      "uzlům",
+      "uzlech",
+      "nod",
+      "nody",
+      "node",
+      "nodes"
+    ],
+    "definition": "Počítač s blockchainovým softwarem. Uchovává kopii účetní knihy a pomáhá ověřovat síť."
+  },
+  "node operator": {
+    "keyword": "provozovatel uzlu",
+    "keyword_plural": "provozovatelé uzlů",
+    "keyword_forms": [
+      "provozovatele uzlu",
+      "provozovateli uzlu",
+      "provozovatelem uzlu",
+      "provozovatelé uzlu",
+      "provozovatelů uzlů",
+      "provozovatelům uzlů",
+      "provozovatele uzlů",
+      "provozovateli uzlů",
+      "provozovatelích uzlů",
+      "node operator"
+    ],
+    "definition": "Člen komunity Etherea, který provozuje validátorský uzel a zpracovává tím transakce v síti."
+  },
+  "non-custodial wallet": {
+    "keyword": "nekustodiální peněženka",
+    "keyword_plural": "nekustodiální peněženky",
+    "keyword_forms": [
+      "nekustodiální peněžence",
+      "nekustodiální peněženku",
+      "nekustodiální peněženkou",
+      "nekustodiálních peněženek",
+      "nekustodiálním peněženkám",
+      "nekustodiálními peněženkami",
+      "nekustodiálních peněženkách",
+      "non-custodial wallet"
+    ],
+    "definition": "Peněženka, u které soukromé klíče ovládáš jenom ty, a přes ně i svoje kryptoaktiva."
+  },
+  "offchain": {
+    "keyword": "offchain",
+    "keyword_forms": [
+      "off-chain",
+      "mimo blockchain",
+      "mimořetězcový",
+      "offchainový",
+      "offchainová",
+      "offchainové"
+    ],
+    "definition": "Cokoli, co se děje mimo blockchain, třeba na běžných serverech nebo v podepsaných zprávách."
+  },
+  "onchain": {
+    "keyword": "onchain",
+    "keyword_forms": [
+      "on-chain",
+      "onchainový",
+      "onchainová",
+      "onchainové"
+    ],
+    "definition": "Zaznamenané v blockchainové síti. Označuje akce provedené v kryptoměnových sítích, jako je Ethereum."
+  },
+  "onchain governance": {
+    "keyword": "onchain řízení",
+    "keyword_forms": [
+      "onchain řízením",
+      "on-chain řízení",
+      "onchain správa",
+      "onchain governance"
+    ],
+    "definition": "Automatizovaný systém, přes který se schvalují změny ve struktuře blockchainu."
+  },
+  "onchain identity": {
+    "keyword": "onchain identita",
+    "keyword_plural": "onchain identity",
+    "keyword_forms": [
+      "onchain identitě",
+      "onchain identitu",
+      "onchain identitou",
+      "onchain identit",
+      "onchain identitám",
+      "onchain identitami",
+      "onchain identitách",
+      "on-chain identita"
+    ],
+    "definition": "Veřejná identita, která vzniká z tvojí aktivity a záznamů na blockchainu, například ENS jméno navázané na adresu peněženky."
+  },
+  "onramp": {
+    "keyword": "fiat brána",
+    "keyword_plural": "fiat brány",
+    "keyword_forms": [
+      "fiat bráně",
+      "fiat bránu",
+      "fiat bránou",
+      "fiat bran",
+      "fiat bránám",
+      "fiat bránami",
+      "fiat bránách",
+      "onramp",
+      "onrampy"
+    ],
+    "definition": "Služba, která mění běžné peníze, třeba dolary, na kryptoměnu. Opačným směrem funguje offramp."
+  },
+  "open internet": {
+    "keyword": "otevřený internet",
+    "keyword_forms": [
+      "otevřeného internetu",
+      "otevřenému internetu",
+      "otevřeném internetu",
+      "otevřeným internetem",
+      "open internet"
+    ],
+    "definition": "Přístupný digitální prostor, kde jsou informace, služby a komunikace dostupné všem a neovládá je žádná centrální autorita."
+  },
+  "open source": {
+    "keyword": "open source",
+    "keyword_forms": [
+      "open-source",
+      "opensource",
+      "otevřený zdrojový kód",
+      "otevřeného zdrojového kódu"
+    ],
+    "definition": "Software, jehož zdrojový kód si může kdokoli prohlédnout, upravit a vylepšit."
+  },
+  "optimistic rollup": {
+    "keyword": "optimistický rollup",
+    "keyword_plural": "optimistické rollupy",
+    "keyword_forms": [
+      "optimistického rollupu",
+      "optimistickému rollupu",
+      "optimistickém rollupu",
+      "optimistickým rollupem",
+      "optimistických rollupů",
+      "optimistickým rollupům",
+      "optimistickými rollupy",
+      "optimistických rollupech",
+      "optimistic rollup"
+    ],
+    "definition": "Rollup na Layer 2, který předpokládá, že jsou všechny transakce v dávce platné. Neplatnost musí někdo během lhůty doložit důkazem o podvodu."
+  },
+  "oracle": {
+    "keyword": "oracle",
+    "keyword_plural": "oracles",
+    "keyword_forms": [
+      "oraclu",
+      "oraclem",
+      "oraclů",
+      "oracly",
+      "orákulum",
+      "orákula",
+      "orákulem",
+      "orákul",
+      "orákulech"
+    ],
+    "definition": "Služba, která přináší na blockchain informace zvenčí, například tržní ceny, aby s nimi mohly pracovat chytré kontrakty."
+  },
+  "order book": {
+    "keyword": "kniha objednávek",
+    "keyword_plural": "knihy objednávek",
+    "keyword_forms": [
+      "knize objednávek",
+      "knihu objednávek",
+      "knihou objednávek",
+      "knih objednávek",
+      "knihám objednávek",
+      "knihami objednávek",
+      "knihách objednávek",
+      "order book",
+      "orderbook"
+    ],
+    "definition": "Seznam nabídek na nákup a prodej za různé ceny. Klasické burzy z něj párují obchody."
+  },
+  "otc": {
+    "keyword": "OTC",
+    "keyword_forms": [
+      "OTC obchod",
+      "OTC obchody"
+    ],
+    "definition": "(Over the Counter) Obchody uzavřené přímo se soukromými subjekty, mimo burzu."
+  },
+  "over the counter": {
+    "keyword": "mimoburzovní obchod",
+    "keyword_forms": [
+      "mimoburzovního obchodu",
+      "mimoburzovnímu obchodu",
+      "mimoburzovním obchodu",
+      "mimoburzovním obchodem",
+      "mimoburzovní obchody",
+      "mimoburzovních obchodů",
+      "mimoburzovními obchody",
+      "over the counter"
+    ],
+    "definition": "(OTC) Obchody uzavřené přímo se soukromými subjekty, mimo burzu."
+  },
+  "password manager": {
+    "keyword": "správce hesel",
+    "keyword_plural": "správci hesel",
+    "keyword_forms": [
+      "správcem hesel",
+      "správců hesel",
+      "správcům hesel",
+      "správcích hesel",
+      "manažer hesel",
+      "password manager"
+    ],
+    "definition": "Aplikace, která bezpečně ukládá tvoje hesla a umí pro každý účet vytvořit silné a jedinečné heslo."
+  },
+  "payment channel": {
+    "keyword": "platební kanál",
+    "keyword_plural": "platební kanály",
+    "keyword_forms": [
+      "platebního kanálu",
+      "platebnímu kanálu",
+      "platebním kanálu",
+      "platebním kanálem",
+      "platebních kanálů",
+      "platebním kanálům",
+      "platebními kanály",
+      "platebních kanálech",
+      "payment channel"
+    ],
+    "definition": "Umožňuje dvěma stranám poslat si peníze mnohokrát za sebou, aniž by se každá platba zapisovala na blockchain."
+  },
+  "peer": {
+    "keyword": "peer",
+    "keyword_plural": "peeři",
+    "keyword_forms": [
+      "peera",
+      "peeru",
+      "peerovi",
+      "peerem",
+      "peery",
+      "peerů",
+      "peerům",
+      "peerech",
+      "protějšek",
+      "rovnocenný uzel"
+    ],
+    "definition": "Člověk nebo subjekt se stejným postavením, tedy rovnocenný partner bez nadřazené strany."
+  },
+  "peer-to-peer": {
+    "keyword": "peer-to-peer",
+    "keyword_forms": [
+      "peer to peer",
+      "P2P",
+      "rovný s rovným",
+      "mezi rovnými"
+    ],
+    "definition": "Spojení mezi několika stranami, které se obejde bez prostředníka."
+  },
+  "peg": {
+    "keyword": "cenová vazba",
+    "keyword_plural": "cenové vazby",
+    "keyword_forms": [
+      "cenové vazbě",
+      "cenovou vazbu",
+      "cenovou vazbou",
+      "cenových vazeb",
+      "cenovým vazbám",
+      "cenovými vazbami",
+      "cenových vazbách",
+      "peg",
+      "pegy",
+      "fixace"
+    ],
+    "definition": "Způsob, jak udržet stejnou hodnotu mezi dvěma nebo více aktivy."
+  },
+  "permissionless": {
+    "keyword": "nevyžadující povolení",
+    "keyword_forms": [
+      "nevyžadujícího povolení",
+      "nevyžadujícímu povolení",
+      "nevyžadujícím povolení",
+      "nevyžadujících povolení",
+      "nevyžadujícími povolení",
+      "bez povolení",
+      "bez nutnosti povolení",
+      "permissionless"
+    ],
+    "definition": "Nevyžadující svolení žádného subjektu."
+  },
+  "phishing": {
+    "keyword": "phishing",
+    "keyword_forms": [
+      "phishingu",
+      "phishingem",
+      "phishingový",
+      "phishingová",
+      "phishingové"
+    ],
+    "definition": "Útok sociálního inženýrství, při kterém se útočník vydává za důvěryhodnou osobu nebo firmu, aby z tebe vylákal citlivé údaje nebo peníze."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAPy",
+    "keyword_forms": [
+      "POAPu",
+      "POAPem",
+      "POAPů",
+      "POAPům",
+      "POAPech",
+      "Proof of Attendance Protocol",
+      "POAPs"
+    ],
+    "definition": "POAP (Proof of Attendance Protocol) je odznak, který ti v peněžence uchová spolehlivý záznam o zážitku, třeba o dokončené lekci."
+  },
+  "pos": {
+    "keyword": "PoS",
+    "keyword_forms": [
+      "PoS konsenzus",
+      "PoS síť"
+    ],
+    "definition": "(Proof of Stake) Konsenzus, ve kterém validátoři zamykají stake, aby zabezpečili síť."
+  },
+  "price impact": {
+    "keyword": "cenový dopad",
+    "keyword_plural": "cenové dopady",
+    "keyword_forms": [
+      "cenového dopadu",
+      "cenovému dopadu",
+      "cenovém dopadu",
+      "cenovým dopadem",
+      "cenových dopadů",
+      "cenovým dopadům",
+      "cenovými dopady",
+      "cenových dopadech",
+      "vliv na cenu",
+      "price impact"
+    ],
+    "definition": "O kolik tvůj vlastní obchod pohne cenou na burze DEX. Čím větší obchod, tím větší dopad."
+  },
+  "primary name": {
+    "keyword": "primary name",
+    "keyword_plural": "primary names",
+    "keyword_forms": [
+      "hlavní jméno",
+      "hlavního jména",
+      "hlavní jména",
+      "primární jméno"
+    ],
+    "definition": "ENS jméno navázané na adresu tvojí peněženky. Aplikace pak místo dlouhé adresy ukazují jméno."
+  },
+  "private key": {
+    "keyword": "soukromý klíč",
+    "keyword_plural": "soukromé klíče",
+    "keyword_forms": [
+      "soukromého klíče",
+      "soukromému klíči",
+      "soukromém klíči",
+      "soukromým klíčem",
+      "soukromých klíčů",
+      "soukromým klíčům",
+      "soukromými klíči",
+      "privátní klíč",
+      "privátního klíče",
+      "privátní klíče",
+      "private key"
+    ],
+    "definition": "Soukromý klíč otevírá přístup k peněžence a umožňuje ti posílat kryptoaktiva do jiných peněženek."
+  },
+  "private transaction routing": {
+    "keyword": "soukromé směrování transakcí",
+    "keyword_forms": [
+      "soukromého směrování transakcí",
+      "soukromému směrování transakcí",
+      "soukromém směrování transakcí",
+      "soukromým směrováním transakcí",
+      "private transaction routing"
+    ],
+    "definition": "Posílání transakcí přímo tvůrcům bloků místo do veřejné fronty, takže je nevidí boti provádějící front-running."
+  },
+  "proof of stake": {
+    "keyword": "Proof of Stake",
+    "keyword_forms": [
+      "Proof-of-Stake",
+      "důkaz podílem"
+    ],
+    "definition": "Způsob konsenzu, který náhodně vybírá producenty bloků podle toho, kolik má každý účastník zamčeno v protokolu."
+  },
+  "proof of work": {
+    "keyword": "Proof of Work",
+    "keyword_forms": [
+      "Proof-of-Work",
+      "PoW",
+      "důkaz prací"
+    ],
+    "definition": "Způsob konsenzu, ve kterém těžaři utrácejí výpočetní výkon (tu „práci“) a soutěží o to, kdo navrhne platný blok."
+  },
+  "proof-of-stake": {
+    "keyword": "Proof of Stake",
+    "keyword_forms": [
+      "Proof-of-Stake"
+    ],
+    "definition": "Blockchainový konsenzus, který vybírá validátorské uzly podle výše stake zamčeného daným uzlem."
+  },
+  "pseudonymous": {
+    "keyword": "pseudonymní",
+    "keyword_forms": [
+      "pseudonymního",
+      "pseudonymnímu",
+      "pseudonymním",
+      "pseudonymních",
+      "pseudonymními",
+      "pseudonymně",
+      "pod pseudonymem"
+    ],
+    "definition": "Vystupující pod zvoleným jménem, které skrývá skutečnou identitu."
+  },
+  "public": {
+    "keyword": "veřejný",
+    "keyword_forms": [
+      "veřejná",
+      "veřejné",
+      "veřejní",
+      "veřejného",
+      "veřejnému",
+      "veřejném",
+      "veřejným",
+      "veřejnou",
+      "veřejných",
+      "veřejnými"
+    ],
+    "definition": "Veřejné blockchainy umožňují komukoli nahlédnout do účetní knihy."
+  },
+  "public good": {
+    "keyword": "veřejný statek",
+    "keyword_plural": "veřejné statky",
+    "keyword_forms": [
+      "veřejného statku",
+      "veřejnému statku",
+      "veřejném statku",
+      "veřejným statkem",
+      "veřejných statků",
+      "veřejným statkům",
+      "veřejnými statky",
+      "veřejných statcích",
+      "public good"
+    ],
+    "definition": "Veřejný statek je zboží nebo služba, kterou může využívat kdokoli ve společnosti."
+  },
+  "public key": {
+    "keyword": "veřejný klíč",
+    "keyword_plural": "veřejné klíče",
+    "keyword_forms": [
+      "veřejného klíče",
+      "veřejnému klíči",
+      "veřejném klíči",
+      "veřejným klíčem",
+      "veřejných klíčů",
+      "veřejným klíčům",
+      "veřejnými klíči",
+      "public key"
+    ],
+    "definition": "Kód odvozený ze soukromého klíče, který můžeš bez obav sdílet. Vzniká z něj adresa tvojí peněženky."
+  },
+  "quadratic funding": {
+    "keyword": "kvadratické financování",
+    "keyword_forms": [
+      "kvadratického financování",
+      "kvadratickému financování",
+      "kvadratickém financování",
+      "kvadratickým financováním",
+      "quadratic funding"
+    ],
+    "definition": "Způsob crowdfundingu, ve kterém každý dar funguje jako hlas bez ohledu na svou výši a znásobuje přidělené prostředky. Čím širší podpora, tím větší dopad."
+  },
+  "recovery phrase": {
+    "keyword": "obnovovací fráze",
+    "keyword_plural": "obnovovací fráze",
+    "keyword_forms": [
+      "obnovovací frázi",
+      "obnovovací frází",
+      "obnovovacích frází",
+      "obnovovacím frázím",
+      "obnovovacími frázemi",
+      "obnovovacích frázích",
+      "záchranná fráze",
+      "recovery phrase"
+    ],
+    "definition": "Obnovovací fráze je seznam 12 až 24 slov, ze kterých vznikne veřejný i soukromý klíč tvojí peněženky."
+  },
+  "red flag": {
+    "keyword": "varovný signál",
+    "keyword_plural": "varovné signály",
+    "keyword_forms": [
+      "varovného signálu",
+      "varovnému signálu",
+      "varovném signálu",
+      "varovným signálem",
+      "varovných signálů",
+      "varovným signálům",
+      "varovnými signály",
+      "varovných signálech",
+      "red flag",
+      "červená vlajka"
+    ],
+    "definition": "Varovné znamení, že něco není v pořádku."
+  },
+  "restaking": {
+    "keyword": "restaking",
+    "keyword_forms": [
+      "restakingu",
+      "restakingem",
+      "opětovný staking",
+      "re-staking"
+    ],
+    "definition": "Znovupoužití stakovaného etheru k zabezpečení a ověřování dalších protokolů, výměnou za odměny."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "keyword_forms": [
+      "Retroactive Public Goods Funding",
+      "retroaktivní financování veřejných statků",
+      "RetroPGF kolo"
+    ],
+    "definition": "(Retroactive Public Goods Funding) Způsob financování projektů podle toho, jaký dopad už měly."
+  },
+  "rollup": {
+    "keyword": "rollup",
+    "keyword_plural": "rollupy",
+    "keyword_forms": [
+      "rollupu",
+      "rollupem",
+      "rollupů",
+      "rollupům",
+      "rollupech",
+      "roll-up"
+    ],
+    "definition": "Škálovací řešení na Layer 2. Zpracuje mnoho transakcí mimo hlavní řetězec a pak je pošle v jedné dávce, takže síť zvládne víc a poplatky klesnou."
+  },
+  "sandwich attack": {
+    "keyword": "sendvičový útok",
+    "keyword_plural": "sendvičové útoky",
+    "keyword_forms": [
+      "sendvičového útoku",
+      "sendvičovému útoku",
+      "sendvičovém útoku",
+      "sendvičovým útokem",
+      "sendvičových útoků",
+      "sendvičovým útokům",
+      "sendvičovými útoky",
+      "sendvičových útocích",
+      "sandwich attack"
+    ],
+    "definition": "Útok, při kterém boti vloží svoje obchody těsně před tvůj a hned za něj, pohnou cenou a vydělají na tvůj úkor."
+  },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "keyword_forms": [
+      "Satoshiho Nakamota",
+      "Satoshimu Nakamotovi",
+      "Satoshim Nakamotem",
+      "Satoshi",
+      "Nakamoto"
+    ],
+    "definition": "Pseudonymní tvůrce Bitcoinu. Dodnes nikdo neví, kdo to doopravdy je."
+  },
+  "scalability": {
+    "keyword": "škálovatelnost",
+    "keyword_forms": [
+      "škálovatelnosti",
+      "škálovatelností",
+      "škálovatelnostem",
+      "scalability"
+    ],
+    "definition": "Schopnost blockchainu zvládat rostoucí počet transakcí a uživatelů, aniž by to omezovalo lidi, kteří ho používají."
+  },
+  "scam-token": {
+    "keyword": "podvodný token",
+    "keyword_plural": "podvodné tokeny",
+    "keyword_forms": [
+      "podvodného tokenu",
+      "podvodnému tokenu",
+      "podvodném tokenu",
+      "podvodným tokenem",
+      "podvodných tokenů",
+      "podvodným tokenům",
+      "podvodnými tokeny",
+      "podvodných tokenech",
+      "scam token",
+      "scam-token"
+    ],
+    "definition": "Kryptoměnový token vytvořený jen proto, aby připravil investory o peníze."
+  },
+  "scarce": {
+    "keyword": "vzácný",
+    "keyword_forms": [
+      "vzácná",
+      "vzácné",
+      "vzácní",
+      "vzácného",
+      "vzácnému",
+      "vzácném",
+      "vzácným",
+      "vzácnou",
+      "vzácných",
+      "vzácnými"
+    ],
+    "definition": "Dostupný jen v omezeném množství."
+  },
+  "scarcity": {
+    "keyword": "vzácnost",
+    "keyword_forms": [
+      "vzácnosti",
+      "vzácností",
+      "scarcity"
+    ],
+    "definition": "Stav, kdy je něčeho jen omezené množství."
+  },
+  "security": {
+    "keyword": "bezpečnost",
+    "keyword_forms": [
+      "bezpečnosti",
+      "bezpečností",
+      "security"
+    ],
+    "definition": "Schopnost blockchainu ustát pokusy o hacknutí, zneužití kódu i ekonomické útoky a fungovat dál jako obvykle."
+  },
+  "seed phrase": {
+    "keyword": "seed fráze",
+    "keyword_plural": "seed fráze",
+    "keyword_forms": [
+      "seed frázi",
+      "seed frází",
+      "seed frázím",
+      "seed frázemi",
+      "seed frázích",
+      "seedová fráze",
+      "seed phrase"
+    ],
+    "definition": "Skupina náhodných slov, kterou peněženka vytvoří při nastavení. Je to hlavní klíč ke VŠEM účtům té peněženky. SEED FRÁZI NIKDY NIKOMU NEUKAZUJ, ZA ŽÁDNÝCH OKOLNOSTÍ."
+  },
+  "self-custodial": {
+    "keyword": "ve vlastní správě",
+    "keyword_forms": [
+      "v osobní správě",
+      "ve vlastní úschově",
+      "self-custodial"
+    ],
+    "definition": "Označuje způsob držení majetku, ke kterému máš přístup jenom ty."
+  },
+  "self-custody": {
+    "keyword": "vlastní správa",
+    "keyword_forms": [
+      "vlastní správy",
+      "vlastní správě",
+      "vlastní správu",
+      "vlastní správou",
+      "osobní správa",
+      "osobní správy",
+      "self-custody"
+    ],
+    "definition": "Držení majetku tak, že k němu máš přístup jenom ty."
+  },
+  "self-custody wallet": {
+    "keyword": "peněženka ve vlastní správě",
+    "keyword_plural": "peněženky ve vlastní správě",
+    "keyword_forms": [
+      "peněžence ve vlastní správě",
+      "peněženku ve vlastní správě",
+      "peněženkou ve vlastní správě",
+      "peněženek ve vlastní správě",
+      "peněženkám ve vlastní správě",
+      "peněženkami ve vlastní správě",
+      "peněženkách ve vlastní správě",
+      "self-custody wallet"
+    ],
+    "definition": "Peněženka, u které soukromé klíče ovládáš jenom ty, a přes ně i svoje kryptoaktiva."
+  },
+  "settlement layer": {
+    "keyword": "zúčtovací vrstva",
+    "keyword_plural": "zúčtovací vrstvy",
+    "keyword_forms": [
+      "zúčtovací vrstvě",
+      "zúčtovací vrstvu",
+      "zúčtovací vrstvou",
+      "zúčtovacích vrstev",
+      "zúčtovacím vrstvám",
+      "zúčtovacími vrstvami",
+      "zúčtovacích vrstvách",
+      "vypořádací vrstva",
+      "settlement layer"
+    ],
+    "definition": "Nejnižší vrstva blockchainu, která zapisuje výsledky dokončených transakcí. Ethereum Mainnet je zúčtovací vrstva pro škálovací řešení na Layer 2."
+  },
+  "settlement time": {
+    "keyword": "doba vypořádání",
+    "keyword_plural": "doby vypořádání",
+    "keyword_forms": [
+      "době vypořádání",
+      "dobu vypořádání",
+      "dobou vypořádání",
+      "dob vypořádání",
+      "dobám vypořádání",
+      "dobami vypořádání",
+      "dobách vypořádání",
+      "settlement time"
+    ],
+    "definition": "Čas, který transakce potřebuje k potvrzení."
+  },
+  "sharding": {
+    "keyword": "sharding",
+    "keyword_forms": [
+      "shardingu",
+      "shardingem",
+      "shard",
+      "shardy",
+      "dělení řetězce"
+    ],
+    "definition": "Rozdělení jednoho blockchainu na několik řetězců, které běží souběžně a zvyšují tím škálovatelnost."
+  },
+  "sidechain": {
+    "keyword": "sidechain",
+    "keyword_plural": "sidechainy",
+    "keyword_forms": [
+      "sidechainu",
+      "sidechainem",
+      "sidechainů",
+      "sidechainům",
+      "sidechainech",
+      "postranní řetězec",
+      "postranního řetězce",
+      "postranní řetězce",
+      "vedlejší řetězec",
+      "side chain"
+    ],
+    "definition": "Samostatný blockchain, který běží vedle hlavního řetězce a je s ním spojený mostem. Má vlastní validátory i vlastní zabezpečení."
+  },
+  "slashed": {
+    "keyword": "penalizovaný",
+    "keyword_forms": [
+      "penalizovaná",
+      "penalizované",
+      "penalizovaní",
+      "penalizovaného",
+      "penalizovanému",
+      "penalizovaném",
+      "penalizovaným",
+      "penalizovanou",
+      "penalizovaných",
+      "penalizovanými",
+      "slashnutý"
+    ],
+    "definition": "Trest, při kterém validátor přijde o část stake za prokázaný podvod v síti Proof of Stake."
+  },
+  "slashing": {
+    "keyword": "slashing",
+    "keyword_forms": [
+      "slashingu",
+      "slashingem",
+      "penalizace",
+      "penalizaci",
+      "penalizací",
+      "zabavení stake"
+    ],
+    "definition": "Trest v sítích Proof of Stake, který zničí část stake validátora za prokázaný podvod, například za podepsání dvou různých bloků."
+  },
+  "slippage": {
+    "keyword": "cenový skluz",
+    "keyword_forms": [
+      "cenového skluzu",
+      "cenovému skluzu",
+      "cenovém skluzu",
+      "cenovým skluzem",
+      "skluz",
+      "skluzu",
+      "slippage"
+    ],
+    "definition": "Rozdíl mezi cenou, kterou čekáš, a cenou, za kterou se obchod nakonec provede."
+  },
+  "slippage tolerance": {
+    "keyword": "tolerance skluzu",
+    "keyword_plural": "tolerance skluzu",
+    "keyword_forms": [
+      "toleranci skluzu",
+      "tolerancí skluzu",
+      "tolerancím skluzu",
+      "tolerancemi skluzu",
+      "tolerancích skluzu",
+      "tolerance cenového skluzu",
+      "slippage tolerance"
+    ],
+    "definition": "Největší cenová změna, kterou u obchodu ještě přijmeš. Když se cena pohne víc, obchod se zruší."
+  },
+  "smart account": {
+    "keyword": "chytrý účet",
+    "keyword_plural": "chytré účty",
+    "keyword_forms": [
+      "chytrého účtu",
+      "chytrému účtu",
+      "chytrém účtu",
+      "chytrým účtem",
+      "chytrých účtů",
+      "chytrým účtům",
+      "chytrými účty",
+      "chytrých účtech",
+      "smart účet",
+      "inteligentní účet",
+      "smart account"
+    ],
+    "definition": "Účet peněženky, který pohání chytrý kontrakt. Jiné označení pro chytrou peněženku."
+  },
+  "smart contract": {
+    "keyword": "chytrý kontrakt",
+    "keyword_plural": "chytré kontrakty",
+    "keyword_forms": [
+      "chytrého kontraktu",
+      "chytrému kontraktu",
+      "chytrém kontraktu",
+      "chytrým kontraktem",
+      "chytrých kontraktů",
+      "chytrým kontraktům",
+      "chytrými kontrakty",
+      "chytrých kontraktech",
+      "inteligentní smlouva",
+      "inteligentní smlouvy",
+      "smart kontrakt",
+      "smart kontrakty",
+      "smart contract"
+    ],
+    "definition": "Počítačový kód, který automaticky plní podmínky dohody."
+  },
+  "smart wallet": {
+    "keyword": "chytrá peněženka",
+    "keyword_plural": "chytré peněženky",
+    "keyword_forms": [
+      "chytré peněžence",
+      "chytrou peněženku",
+      "chytrou peněženkou",
+      "chytrých peněženek",
+      "chytrým peněženkám",
+      "chytrými peněženkami",
+      "chytrých peněženkách",
+      "smart peněženka",
+      "smart wallet"
+    ],
+    "definition": "Peněženka, kterou místo jediného soukromého klíče pohání chytrý kontrakt. Díky tomu umí třeba obnovu účtu nebo přihlášení pomocí passkey."
+  },
+  "social engineering": {
+    "keyword": "sociální inženýrství",
+    "keyword_forms": [
+      "sociálního inženýrství",
+      "sociálnímu inženýrství",
+      "sociálním inženýrství",
+      "sociálním inženýrstvím",
+      "social engineering"
+    ],
+    "definition": "Manipulace, která má z někoho dostat citlivé údaje, třeba hesla nebo seed frázi."
+  },
+  "solo staker": {
+    "keyword": "solo staker",
+    "keyword_plural": "solo stakeři",
+    "keyword_forms": [
+      "solo stakera",
+      "solo stakerovi",
+      "solo stakerem",
+      "solo stakerů",
+      "solo stakerům",
+      "solo stakery",
+      "solo stakerech",
+      "sólo staker",
+      "sólo stakeři"
+    ],
+    "definition": "Provozovatel uzlu, který provozuje samostatný validátorský uzel."
+  },
+  "solo staking": {
+    "keyword": "solo staking",
+    "keyword_forms": [
+      "solo stakingu",
+      "solo stakingem",
+      "sólo staking",
+      "sólo stakingu",
+      "samostatný staking"
+    ],
+    "definition": "Provozování vlastního validátorského uzlu, který zpracovává transakce v systémech Proof of Stake."
+  },
+  "solver": {
+    "keyword": "solver",
+    "keyword_plural": "solveři",
+    "keyword_forms": [
+      "solvera",
+      "solverovi",
+      "solverem",
+      "solverů",
+      "solverům",
+      "solvery",
+      "solverech",
+      "řešitel",
+      "řešitelé",
+      "řešitele"
+    ],
+    "definition": "Specialista, který soutěží s ostatními o to, kdo splní záměr uživatele za nejlepší cenu."
+  },
+  "spend": {
+    "keyword": "utrácet",
+    "keyword_forms": [
+      "utratit",
+      "utrácení",
+      "utrácíš",
+      "utratíš",
+      "útrata",
+      "výdaje",
+      "spend"
+    ],
+    "definition": "Platit kryptoaktivy za zboží nebo služby. Jedno ze sloves o penězích na kostce dovedností."
+  },
+  "spot etf": {
+    "keyword": "spotový ETF",
+    "keyword_plural": "spotové ETF",
+    "keyword_forms": [
+      "spotového ETF",
+      "spotovému ETF",
+      "spotovém ETF",
+      "spotovým ETF",
+      "spotových ETF",
+      "spotovými ETF",
+      "spot ETF"
+    ],
+    "definition": "ETF, který drží skutečné aktivum, například bitcoin. Lidé do něj tak mohou investovat přes běžnou burzu cenných papírů."
+  },
+  "stablecoin": {
+    "keyword": "stablecoin",
+    "keyword_plural": "stablecoiny",
+    "keyword_forms": [
+      "stablecoinu",
+      "stablecoinem",
+      "stablecoinů",
+      "stablecoinům",
+      "stablecoinech",
+      "stabilní mince",
+      "stable coin"
+    ],
+    "definition": "Token navržený tak, aby držel stálou hodnotu, obvykle navázanou 1:1 na měnu jako americký dolar."
+  },
+  "stablecoin issuer": {
+    "keyword": "vydavatel stablecoinu",
+    "keyword_plural": "vydavatelé stablecoinů",
+    "keyword_forms": [
+      "vydavatele stablecoinu",
+      "vydavateli stablecoinu",
+      "vydavatelem stablecoinu",
+      "vydavatelé stablecoinu",
+      "vydavatelů stablecoinů",
+      "vydavatelům stablecoinů",
+      "vydavateli stablecoinů",
+      "vydavatelích stablecoinů",
+      "emitent stablecoinu",
+      "stablecoin issuer"
+    ],
+    "definition": "Firma nebo organizace, která stablecoin vydává a spravuje rezervy kryjící jeho hodnotu."
+  },
+  "stake": {
+    "keyword": "stake",
+    "keyword_plural": "staky",
+    "keyword_forms": [
+      "staku",
+      "stakem",
+      "staků",
+      "stakům",
+      "stacích",
+      "vklad",
+      "vklady"
+    ],
+    "definition": "Množství majetku zamčené v kryptoměnovém protokolu. Ukazuje, kolik toho daný účastník vložil a co může ztratit."
+  },
+  "staked": {
+    "keyword": "stakovaný",
+    "keyword_forms": [
+      "stakovaná",
+      "stakované",
+      "stakovaní",
+      "stakovaného",
+      "stakovanému",
+      "stakovaném",
+      "stakovaným",
+      "stakovanou",
+      "stakovaných",
+      "stakovanými",
+      "ve stakingu"
+    ],
+    "definition": "Označuje část krypta dočasně vloženou do chytrého kontraktu na určitou dobu výměnou za úrok (takzvané „odměny“)."
+  },
+  "staker": {
+    "keyword": "staker",
+    "keyword_plural": "stakeři",
+    "keyword_forms": [
+      "stakera",
+      "stakerovi",
+      "stakerem",
+      "stakerů",
+      "stakerům",
+      "stakery",
+      "stakerech"
+    ],
+    "definition": "Člen komunity Etherea, který dodává ether validátorskému uzlu a dostává za to odměny."
+  },
+  "stakers": {
+    "keyword": "stakeři",
+    "keyword_forms": [
+      "stakerů",
+      "stakerům",
+      "stakery",
+      "stakerech"
+    ],
+    "definition": "Členové komunity Etherea, kteří dodávají ether validátorským uzlům a dostávají za to odměny."
+  },
+  "staking": {
+    "keyword": "staking",
+    "keyword_forms": [
+      "stakingu",
+      "stakingem",
+      "stakování",
+      "stakovat"
+    ],
+    "definition": "Dočasné vložení části krypta do chytrého kontraktu na určitou dobu výměnou za úrok (takzvané „odměny“)."
+  },
+  "staking pool": {
+    "keyword": "stakingový pool",
+    "keyword_plural": "stakingové pooly",
+    "keyword_forms": [
+      "stakingového poolu",
+      "stakingovému poolu",
+      "stakingovém poolu",
+      "stakingovým poolem",
+      "stakingových poolů",
+      "stakingovým poolům",
+      "stakingovými pooly",
+      "stakingových poolech",
+      "pool pro staking",
+      "staking pool"
+    ],
+    "definition": "Na Ethereu: chytré kontrakty, přes které stakeři dodávají ether do validátorského uzlu někoho jiného."
+  },
+  "staking providers": {
+    "keyword": "poskytovatelé stakingu",
+    "keyword_forms": [
+      "poskytovatel stakingu",
+      "poskytovatele stakingu",
+      "poskytovateli stakingu",
+      "poskytovatelem stakingu",
+      "poskytovatelů stakingu",
+      "poskytovatelům stakingu",
+      "poskytovatelích stakingu",
+      "staking providers"
+    ],
+    "definition": "Digitální platformy, které nabízejí staking, obvykle přes stakingové pooly."
+  },
+  "standard record": {
+    "keyword": "standardní záznam",
+    "keyword_plural": "standardní záznamy",
+    "keyword_forms": [
+      "standardního záznamu",
+      "standardnímu záznamu",
+      "standardním záznamu",
+      "standardním záznamem",
+      "standardních záznamů",
+      "standardním záznamům",
+      "standardními záznamy",
+      "standardních záznamech",
+      "standard record"
+    ],
+    "definition": "Běžný údaj navázaný na doménu ENS, například adresa peněženky, avatar nebo e-mail."
+  },
+  "swap": {
+    "keyword": "swap",
+    "keyword_plural": "swapy",
+    "keyword_forms": [
+      "swapu",
+      "swapem",
+      "swapů",
+      "swapům",
+      "swapech",
+      "směna",
+      "směny",
+      "swapovat"
+    ],
+    "definition": "Výměna jednoho tokenu za jiný."
+  },
+  "token": {
+    "keyword": "token",
+    "keyword_plural": "tokeny",
+    "keyword_forms": [
+      "tokenu",
+      "tokenem",
+      "tokenů",
+      "tokenům",
+      "tokenech",
+      "žeton",
+      "žetony"
+    ],
+    "definition": "Jednotky, které mohou zastupovat majetek nebo práva a vznikají na existujícím blockchainu."
+  },
+  "token allowance": {
+    "keyword": "povolený limit tokenu",
+    "keyword_plural": "povolené limity tokenů",
+    "keyword_forms": [
+      "povoleného limitu tokenu",
+      "povolenému limitu tokenu",
+      "povoleném limitu tokenu",
+      "povoleným limitem tokenu",
+      "povolených limitů tokenů",
+      "povoleným limitům tokenů",
+      "povolenými limity tokenů",
+      "povolených limitech tokenů",
+      "povolený limit tokenů",
+      "token allowance"
+    ],
+    "definition": "Dohoda mezi peněženkou a chytrým kontraktem, která kontraktu dává omezený nebo neomezený přístup ke konkrétnímu tokenu."
+  },
+  "token approval": {
+    "keyword": "schválení tokenu",
+    "keyword_plural": "schválení tokenů",
+    "keyword_forms": [
+      "schválením tokenu",
+      "schváleními tokenů",
+      "schváleních tokenů",
+      "povolení tokenu",
+      "token approval"
+    ],
+    "definition": "Oprávnění, které dáš chytrému kontraktu, aby mohl přesouvat konkrétní token z tvojí peněženky. Říká se mu také povolený limit tokenu."
+  },
+  "token distribution": {
+    "keyword": "distribuce tokenů",
+    "keyword_plural": "distribuce tokenů",
+    "keyword_forms": [
+      "distribuci tokenů",
+      "distribucí tokenů",
+      "distribucím tokenů",
+      "distribucemi tokenů",
+      "distribucích tokenů",
+      "rozdělení tokenů",
+      "token distribution"
+    ],
+    "definition": "Způsob, jakým se tokeny rozdělí mezi různé skupiny držitelů."
+  },
+  "token pair": {
+    "keyword": "pár tokenů",
+    "keyword_plural": "páry tokenů",
+    "keyword_forms": [
+      "páru tokenů",
+      "párem tokenů",
+      "párů tokenů",
+      "párům tokenů",
+      "párech tokenů",
+      "tokenový pár",
+      "token pair"
+    ],
+    "definition": "Dvě kryptoměny, které spolu tvoří pool likvidity."
+  },
+  "token swap": {
+    "keyword": "swap tokenů",
+    "keyword_plural": "swapy tokenů",
+    "keyword_forms": [
+      "swapu tokenů",
+      "swapem tokenů",
+      "swapů tokenů",
+      "swapům tokenů",
+      "swapech tokenů",
+      "výměna tokenů",
+      "token swap"
+    ],
+    "definition": "Výměna jednoho tokenu za jiný."
+  },
+  "tps": {
+    "keyword": "TPS",
+    "keyword_forms": [
+      "Transactions Per Second",
+      "transakcí za sekundu",
+      "transakce za sekundu"
+    ],
+    "definition": "(Transactions Per Second) Měřítko škálovatelnosti blockchainu: kolik transakcí zvládne za sekundu."
+  },
+  "trade": {
+    "keyword": "obchod",
+    "keyword_plural": "obchody",
+    "keyword_forms": [
+      "obchodu",
+      "obchodem",
+      "obchodů",
+      "obchodům",
+      "obchodech",
+      "obchodovat"
+    ],
+    "definition": "Výměna majetku nebo peněz za něco hodnotného. Jedna z akcí s penězi na kostce dovedností."
+  },
+  "trade route": {
+    "keyword": "obchodní trasa",
+    "keyword_plural": "obchodní trasy",
+    "keyword_forms": [
+      "obchodní trase",
+      "obchodní trasu",
+      "obchodní trasou",
+      "obchodních tras",
+      "obchodním trasám",
+      "obchodními trasami",
+      "obchodních trasách",
+      "trade route"
+    ],
+    "definition": "Cesta, kterou obchod projde od výchozího tokenu k cílovému."
+  },
+  "trade routing": {
+    "keyword": "směrování obchodů",
+    "keyword_forms": [
+      "směrováním obchodů",
+      "směrování obchodu",
+      "směrováním obchodu",
+      "trade routing"
+    ],
+    "definition": "Plánování cesty, kterou obchod projde od výchozího tokenu k cílovému."
+  },
+  "transaction": {
+    "keyword": "transakce",
+    "keyword_plural": "transakce",
+    "keyword_forms": [
+      "transakci",
+      "transakcí",
+      "transakcím",
+      "transakcemi",
+      "transakcích",
+      "tx"
+    ],
+    "definition": "Záznam o převodu na blockchainu, peněžním i jiném."
+  },
+  "transaction finality": {
+    "keyword": "finalita transakce",
+    "keyword_forms": [
+      "finality transakce",
+      "finalitě transakce",
+      "finalitu transakce",
+      "finalitou transakce",
+      "finalita transakcí",
+      "transaction finality"
+    ],
+    "definition": "Doba, po které máš jistotu, že je transakce platná a konečná, tedy že se už nevrátí ani nezmění."
+  },
+  "transaction hash": {
+    "keyword": "hash transakce",
+    "keyword_plural": "hashe transakcí",
+    "keyword_forms": [
+      "hashe transakce",
+      "hashi transakce",
+      "hashem transakce",
+      "hashů transakcí",
+      "hashům transakcí",
+      "hashi transakcí",
+      "hashích transakcí",
+      "transakční hash",
+      "TxHash",
+      "ID transakce",
+      "transaction hash"
+    ],
+    "definition": "Jedinečný identifikátor každé transakce. Vzniká z dat transakce, z digitálního podpisu odesílatele a z jednorázového čísla, které brání duplicitám."
+  },
+  "transaction throughput": {
+    "keyword": "propustnost transakcí",
+    "keyword_forms": [
+      "propustnosti transakcí",
+      "propustností transakcí",
+      "transaction throughput"
+    ],
+    "definition": "Kolik transakcí zvládne blockchain zpracovat najednou. Obvykle se měří v transakcích za sekundu (TPS)."
+  },
+  "trustless": {
+    "keyword": "nevyžadující důvěru",
+    "keyword_forms": [
+      "nevyžadujícího důvěru",
+      "nevyžadujícímu důvěru",
+      "nevyžadujícím důvěru",
+      "nevyžadujících důvěru",
+      "nevyžadujícími důvěru",
+      "bez nutnosti důvěry",
+      "trustless"
+    ],
+    "definition": "Vlastnost systému, který funguje bez nutnosti věřit lidem nebo institucím. Běží automaticky a nepatří nikomu konkrétnímu."
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "keyword_forms": [
+      "Total Value Locked",
+      "celková zamčená hodnota",
+      "celkové zamčené hodnoty"
+    ],
+    "definition": "(Total Value Locked) Celková hodnota majetku uloženého na jednom konkrétním místě."
+  },
+  "two factor authentication": {
+    "keyword": "dvoufaktorové ověření",
+    "keyword_forms": [
+      "dvoufaktorového ověření",
+      "dvoufaktorovému ověření",
+      "dvoufaktorovém ověření",
+      "dvoufaktorovým ověřením",
+      "dvoufaktorová autentizace",
+      "dvoufaktorové ověřování",
+      "Two Factor Authentication"
+    ],
+    "definition": "Další vrstva zabezpečení. Ověří, že se do online účtu hlásí opravdu ten, kdo k němu patří."
+  },
+  "validating bridge": {
+    "keyword": "validující most",
+    "keyword_plural": "validující mosty",
+    "keyword_forms": [
+      "validujícího mostu",
+      "validujícímu mostu",
+      "validujícím mostě",
+      "validujícím mostu",
+      "validujícím mostem",
+      "validujících mostů",
+      "validujícím mostům",
+      "validujícími mosty",
+      "validujících mostech",
+      "validating bridge"
+    ],
+    "definition": "Mostní kontrakt, který si výběry ověřuje sám. Nemusíš tak věřit žádné vnější autoritě."
+  },
+  "validator": {
+    "keyword": "validátor",
+    "keyword_plural": "validátoři",
+    "keyword_forms": [
+      "validátora",
+      "validátorovi",
+      "validátoru",
+      "validátorem",
+      "validátorů",
+      "validátorům",
+      "validátory",
+      "validátorech",
+      "ověřovatel",
+      "ověřovatelé"
+    ],
+    "definition": "Účastník sítě Proof of Stake, který zamkne stake, kontroluje transakce a navrhuje bloky. Za poctivou práci dostává odměny."
+  },
+  "validator client": {
+    "keyword": "klient validátora",
+    "keyword_plural": "klienti validátorů",
+    "keyword_forms": [
+      "klienta validátora",
+      "klientovi validátora",
+      "klientem validátora",
+      "klienti validátora",
+      "klientů validátorů",
+      "klientům validátorů",
+      "klienty validátorů",
+      "klientech validátorů",
+      "validátorský klient",
+      "validator client"
+    ],
+    "definition": "Software, který běží na validátorském uzlu a navrhuje a kontroluje nové bloky v síti Proof of Stake."
+  },
+  "validator node": {
+    "keyword": "validátorský uzel",
+    "keyword_plural": "validátorské uzly",
+    "keyword_forms": [
+      "validátorského uzlu",
+      "validátorskému uzlu",
+      "validátorském uzlu",
+      "validátorským uzlem",
+      "validátorských uzlů",
+      "validátorským uzlům",
+      "validátorskými uzly",
+      "validátorských uzlech",
+      "uzel validátora",
+      "validator node"
+    ],
+    "definition": "Počítač, který provozuje člen komunity Etherea. Zpracovává transakce v síti a za to dostává odměny."
+  },
+  "validator nodes": {
+    "keyword": "validátorské uzly",
+    "keyword_forms": [
+      "validátorských uzlů",
+      "validátorským uzlům",
+      "validátorskými uzly",
+      "validátorských uzlech",
+      "uzly validátorů",
+      "validator nodes"
+    ],
+    "definition": "Počítače, které provozují členové komunity Etherea. Zpracovávají transakce v síti a dostávají za to odměny."
+  },
+  "validity proof": {
+    "keyword": "důkaz platnosti",
+    "keyword_plural": "důkazy platnosti",
+    "keyword_forms": [
+      "důkazu platnosti",
+      "důkazem platnosti",
+      "důkazů platnosti",
+      "důkazům platnosti",
+      "důkazech platnosti",
+      "validity proof"
+    ],
+    "definition": "Matematický důkaz, že je dávka transakcí správná. Blockchain ho může ověřit, aniž by celou práci dělal znovu."
+  },
+  "value-creation": {
+    "keyword": "tvorba hodnoty",
+    "keyword_forms": [
+      "tvorby hodnoty",
+      "tvorbě hodnoty",
+      "tvorbu hodnoty",
+      "tvorbou hodnoty",
+      "vytváření hodnoty",
+      "value creation"
+    ],
+    "definition": "Přístup k podnikání, který se soustředí na kvalitní a inovativní produkty a služby pro uživatele i pro ekonomiku."
+  },
+  "value-extraction": {
+    "keyword": "odčerpávání hodnoty",
+    "keyword_forms": [
+      "odčerpáváním hodnoty",
+      "odčerpávání hodnot",
+      "vysávání hodnoty",
+      "value extraction"
+    ],
+    "definition": "Přístup k podnikání, který uživatele využívá: vysoké poplatky, sbírání dat a nevýhodné podmínky."
+  },
+  "value-extractive": {
+    "keyword": "odčerpávající hodnotu",
+    "keyword_forms": [
+      "odčerpávajícího hodnotu",
+      "odčerpávajícímu hodnotu",
+      "odčerpávajícím hodnotu",
+      "odčerpávajících hodnotu",
+      "odčerpávajícími hodnotu",
+      "value extractive"
+    ],
+    "definition": "Označuje podnikání, které uživatele využívá: vysoké poplatky, sbírání dat a nevýhodné podmínky."
+  },
+  "vault": {
+    "keyword": "vault",
+    "keyword_plural": "vaulty",
+    "keyword_forms": [
+      "vaultu",
+      "vaultem",
+      "vaultů",
+      "vaultům",
+      "vaultech",
+      "trezor",
+      "trezoru",
+      "trezory",
+      "úložiště"
+    ],
+    "definition": "Chytrý kontrakt, který drží vložené tokeny a nechává je pracovat. Vkladatel za ně dostane token, který zastupuje jeho podíl."
+  },
+  "veto": {
+    "keyword": "veto",
+    "keyword_plural": "veta",
+    "keyword_forms": [
+      "vetu",
+      "vetem",
+      "vet",
+      "vetům",
+      "vety",
+      "vetech",
+      "vetovat",
+      "právo veta"
+    ],
+    "definition": "Hlas, kterým se zamítne návrh v řízení sítě."
+  },
+  "wallet": {
+    "keyword": "peněženka",
+    "keyword_plural": "peněženky",
+    "keyword_forms": [
+      "peněžence",
+      "peněženku",
+      "peněženkou",
+      "peněženek",
+      "peněženkám",
+      "peněženkami",
+      "peněženkách",
+      "wallet"
+    ],
+    "definition": "Peněženka je aplikace nebo zařízení, kterým posíláš a přijímáš kryptoaktiva na blockchainu."
+  },
+  "wallet app": {
+    "keyword": "aplikace peněženky",
+    "keyword_plural": "aplikace peněženek",
+    "keyword_forms": [
+      "aplikaci peněženky",
+      "aplikací peněženky",
+      "aplikacím peněženky",
+      "aplikacemi peněženky",
+      "aplikacích peněženky",
+      "aplikace pro peněženku",
+      "wallet app"
+    ],
+    "definition": "Aplikace v počítači nebo v telefonu, přes kterou se připojíš ke své peněžence na blockchainu."
+  },
+  "wallet provider": {
+    "keyword": "poskytovatel peněženky",
+    "keyword_plural": "poskytovatelé peněženek",
+    "keyword_forms": [
+      "poskytovatele peněženky",
+      "poskytovateli peněženky",
+      "poskytovatelem peněženky",
+      "poskytovatelé peněženky",
+      "poskytovatelů peněženek",
+      "poskytovatelům peněženek",
+      "poskytovateli peněženek",
+      "poskytovatelích peněženek",
+      "wallet provider"
+    ],
+    "definition": "Tvůrce softwaru, kterým se dostaneš ke své peněžence. Peněženka mu nepatří, jen ti zprostředkuje přístup k tvému účtu na blockchainu."
+  },
+  "web2": {
+    "keyword": "Web2",
+    "keyword_forms": [
+      "Web 2.0"
+    ],
+    "definition": "Internet centralizovaných platforem a účtů, bez blockchainové infrastruktury."
+  },
+  "web3": {
+    "keyword": "Web3",
+    "keyword_forms": [
+      "Web 3.0",
+      "web3.0"
+    ],
+    "definition": "Internet blockchainů, kde si uživatelé sami spravují svůj majetek i svoje data."
+  },
+  "yield farm": {
+    "keyword": "yield farm",
+    "keyword_plural": "yield farmy",
+    "keyword_forms": [
+      "yield farmu",
+      "yield farmem",
+      "yield farmů",
+      "yield farmům",
+      "yield farmech",
+      "yield farming",
+      "yield farma"
+    ],
+    "definition": "Protokol DeFi, kam vkládáš tokeny a získáváš za ně odměny. Yield farming znamená hledat ty nejvyšší odměny."
+  },
+  "yourname.eth": {
+    "keyword": "yourname.eth",
+    "definition": "Ukázkové ENS jméno: čitelné uživatelské jméno pro Web3, které ukazuje na adresu tvojí peněženky."
+  },
+  "zero-knowledge": {
+    "keyword": "zero-knowledge",
+    "keyword_forms": [
+      "zero knowledge",
+      "ZK",
+      "nulová znalost",
+      "nulové znalosti",
+      "s nulovým vědomím"
+    ],
+    "definition": "Matematická metoda, kterou jedna strana dokáže, že je tvrzení platné, aniž by o něm prozradila cokoli dalšího."
+  },
+  "zk rollup": {
+    "keyword": "ZK rollup",
+    "keyword_plural": "ZK rollupy",
+    "keyword_forms": [
+      "ZK rollupu",
+      "ZK rollupem",
+      "ZK rollupů",
+      "ZK rollupům",
+      "ZK rollupech",
+      "zk-rollup"
+    ],
+    "definition": "Rollup na Layer 2, který pomocí zero-knowledge důkazů matematicky dokáže Layer 1 blockchainu, že jsou jeho dávkové transakce platné."
+  }
+}

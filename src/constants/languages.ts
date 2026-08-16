@@ -42,6 +42,15 @@ const LANGUAGE_DEFS = [
   { code: 'ru', name: 'Russian', localName: 'Русский', dir: 'ltr' },
   { code: 'ko', name: 'Korean', localName: '한국어', dir: 'ltr' },
   { code: 'pl', name: 'Polish', localName: 'Polski', dir: 'ltr' },
+  // Wave 4 (2026-08-15). `cs` inflects like pl (7 cases, 46% of its
+  // ETHGlossary entries carry an inflected prose form), `sw` is Latin with
+  // simple orthography, and `bn` is the highest-reach language left. Bengali
+  // headings slugify to nothing, so its /content anchors fall back to
+  // `section-N` exactly as ja/zh/hi do. Still absent by design: `ar`/`ur`
+  // await the RTL audit, `zh-tw` a Traditional-vs-Simplified policy.
+  { code: 'cs', name: 'Czech', localName: 'Čeština', dir: 'ltr' },
+  { code: 'sw', name: 'Swahili', localName: 'Kiswahili', dir: 'ltr' },
+  { code: 'bn', name: 'Bengali', localName: 'বাংলা', dir: 'ltr' },
 ] as const
 
 // 'en' | 'pt-br' | 'zh' | ... — derived from the registry

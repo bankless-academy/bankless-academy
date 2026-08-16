@@ -99,7 +99,7 @@ Para comprar y guardar tu nombre ENS necesitarás una billetera, si aún no tien
 
 Puedes fondear tu billetera enviando criptomonedas desde una plataforma de intercambio centralizada, o usando servicios como [MoonPay](https://www.moonpay.com/) o [Transak](https://global.transak.com/). La tarifa de registro se paga en ETH.
 
-## Paso a paso
+## Guía paso a paso
 
 **1\. Abre la [aplicación ENS Manager](https://app.ens.domains/)** **y conecta tu billetera.**
 
