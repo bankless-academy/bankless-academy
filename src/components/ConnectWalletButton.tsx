@@ -40,6 +40,7 @@ import {
 } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, shortenAddress, api } from 'utils/index'
+import { useSmallScreen } from 'hooks/index'
 import OnrampButton from 'components/OnrampButton'
 import BridgeButton from 'components/BridgeButton'
 
@@ -65,6 +66,11 @@ const ConnectWalletButton = ({
   isSmallScreen: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
+  // `isSmallScreen` (<=800px) only picks the button size. The label has its own
+  // threshold: the nav row is logo + language + this + menu, and it is tightest
+  // between 390px and 500px, where the full 91px-wide wordmark is still shown
+  // alongside the compressed small-screen controls.
+  const [, , isNarrowScreen] = useSmallScreen()
   const { open } = useAppKit()
   const { address, connector, chainId } = useAccount()
   const router = useRouter()
@@ -567,8 +573,14 @@ const ConnectWalletButton = ({
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={<Wallet weight="bold" />}
               isLoading={waitingForSIWE || isDisconnecting}
+              // No loadingText when narrow: Chakra then shows the spinner alone
+              // at the button's existing width. These strings are far longer
+              // than the label they replace ("Se connecter avec Ethereum" is 26
+              // characters), so on a phone they blow the row apart mid-connect.
               loadingText={
-                isDisconnecting
+                isNarrowScreen
+                  ? undefined
+                  : isDisconnecting
                   ? t('Disconnecting')
                   : SIWE_ENABLED
                   ? t('Sign In With Ethereum')
@@ -576,8 +588,22 @@ const ConnectWalletButton = ({
               }
               zIndex={10}
               variant={isLessonPage || isProfilePage ? 'primary' : 'secondary'}
+              // Chakra buttons are nowrap with the flex default min-width:auto,
+              // so without this an over-long label refuses to shrink and pushes
+              // the 3-dot menu off the edge instead. Truncation is the last
+              // resort, not the plan: the short label below should mean the
+              // ellipsis never actually appears.
+              minW={0}
             >
-              {t('Connect Wallet')}
+              {/* The full label needs ~180px of text width in French, which the
+                  row cannot spare below 500px, so drop to the verb alone there.
+                  Shorten here rather than in a translation: "Connecter
+                  portefeuille" fits, but French does not allow a bare noun as
+                  the object, and the same trap waits in every language whose
+                  grammar is stricter than English's. */}
+              <Box as="span" isTruncated minW={0}>
+                {isNarrowScreen ? t('Connect') : t('Connect Wallet')}
+              </Box>
             </Button>
           </PopoverTrigger>
           <PopoverContent>
