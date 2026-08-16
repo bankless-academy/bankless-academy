@@ -119,9 +119,28 @@ export const displayWidth = (str) => {
   let w = 0
   // NFC first: a decomposed "ó" is two code points but one rendered glyph, so
   // counting raw code points inflated Vietnamese by ~36% and failed slides
-  // that actually fit. Any combining mark still left contributes zero.
+  // that actually fit.
+  //
+  // Then split the combining marks by category, because "combining" does not
+  // mean "free". Unicode distinguishes NON-SPACING marks (Mn, Me) — an acute
+  // over a Latin letter, a Devanagari ु below the consonant, a virama — which
+  // add no horizontal advance, from SPACING marks (Mc), which are the Indic
+  // vowel signs that render as their own glyph beside the consonant: ा ि ी ो
+  // in Devanagari, া ি in Bengali, ா ி ெ in Tamil, ా ి in Telugu.
+  //
+  // Skipping all of \p{M} therefore measured every Indic script as if its
+  // vowels were invisible. Hindi carries 24,986 spacing marks across its 19
+  // lessons and Bengali 40,779, so both measured ~0.75x of the English source
+  // and the 22-line ceiling was effectively ~12-19% looser for exactly the
+  // scripts most likely to overflow. This is the same class of bug as the
+  // pre-2026-08-15 `.length` check that measured CJK at half width, and it was
+  // found the same way: two independent language guides (ta, te) measured the
+  // ratio while being written and both compensated by hand.
+  //
+  // Latin and CJK are unaffected (they have no Mc), verified: the English and
+  // French over-ceiling slide sets are byte-identical before and after.
   for (const ch of str.normalize('NFC')) {
-    if (/\p{M}/u.test(ch)) continue
+    if (/\p{Mn}|\p{Me}/u.test(ch)) continue
     w += WIDE.test(ch) ? 2 : 1
   }
   return w

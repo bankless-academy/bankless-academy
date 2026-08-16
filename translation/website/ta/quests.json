@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. உங்கள் Bitcoin, Satoshi Nakamoto-வுக்குச் செல்கிறது.",
+    "2. It's now being verified by network miners...": "2. இப்போது நெட்வொர்க் மைனர்கள் இதைச் சரிபார்க்கிறார்கள்...",
+    "3. Your transaction is added to the blockchain “database”...": "3. உங்கள் பரிவர்த்தனை பிளாக்செயின் “டேட்டாபேஸில்” சேர்க்கப்படுகிறது...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto உங்கள் Bitcoin-ஐப் பெற்றுவிட்டார்!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "எங்கள் எளிய Bitcoin சிமுலேட்டரைப் பயன்படுத்தி, Satoshi Nakamoto-வின் முகவரிக்கு விரும்பிய அளவு BTC அனுப்புங்கள்",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "ஊடாடும் சிமுலேஷன்: Satoshi Nakamoto-வுக்கு Bitcoin அனுப்புதல் {{step}}",
+    "Reset simulation": "சிமுலேஷனை மீட்டமையுங்கள்",
+    "Recipient": "பெறுநர்",
+    "Address": "முகவரி",
+    "Asset": "சொத்து",
+    "Amount": "அளவு",
+    "Balance": "இருப்பு",
+    "Send": "அனுப்புங்கள்"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "பரிவர்த்தனையைப் புரிந்து கொள்ளுங்கள்",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "இந்தக் குவெஸ்ட்டைச் சரிபார்க்க, இந்தப் பரிவர்த்தனையின் “அனுப்புநர்” மற்றும் “பெறுநர்” முகவரிகளை ஒட்டுங்கள்",
+    "From": "அனுப்புநர்",
+    "To": "பெறுநர்"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "OP-ஐ ஒப்படைத்து, உங்கள் Optimism Network பயணத்தைத் தொடங்குங்கள்.",
+    "Select a ": "உங்கள் OP-க்கு ஒரு ",
+    "Delegate": "பிரதிநிதி",
+    " for your OP": " தேர்ந்தெடுங்கள்",
+    "or delegate to ": "அல்லது இவரிடம் ஒப்படையுங்கள்: ",
+    "Tip": "உதவிக்குறிப்பு",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "குவெஸ்ட்டின் முழுமையான வழிகாட்டிக்கு, எங்கள் எக்ஸ்ப்ளோரர் கையேட்டில் “{{lesson_title}}” கட்டுரையைப் படியுங்கள்.",
+    "Refresh": "புதுப்பியுங்கள்",
+    "Read Entry": "கட்டுரையைப் படியுங்கள்"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "உங்கள் முதல் கிரிப்டோ வாலெட்டை உருவாக்குங்கள்.",
+    "If you already have a wallet, move to step 2.": "ஏற்கெனவே வாலெட் இருந்தால், படி 2-க்குச் செல்லுங்கள்.",
+    "1. Download and install the Zerion wallet from ": "1. Zerion வாலெட்டை இங்கிருந்து பதிவிறக்கி நிறுவுங்கள்: ",
+    "2. Connect your wallet to Bankless Academy": "2. உங்கள் வாலெட்டை Bankless Academy-உடன் இணையுங்கள்",
+    "Tip": "உதவிக்குறிப்பு",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "குவெஸ்ட்டின் படிப்படியான வழிகாட்டிக்கு, எங்கள் எக்ஸ்ப்ளோரர் கையேட்டில் “{{lesson_title}}” கட்டுரையைப் படியுங்கள்.",
+    "Read Entry": "கட்டுரையைப் படியுங்கள்"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "ஸ்கேம் உள்ள எல்லா ஸ்கிரீன்ஷாட்களையும் தேர்ந்தெடுங்கள் 👆",
+    "Hint: 1 screenshot is not a scam": "குறிப்பு: 1 ஸ்கிரீன்ஷாட் ஸ்கேம் அல்ல"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. உங்கள் வாலெட்டை Bankless Academy-உடன் இணையுங்கள்",
+    "2. Join gm.xyz using this ": "2. இந்த ",
+    "invite link": "அழைப்பு இணைப்பு",
+    " or register with a phone number": " வழியாக gm.xyz-இல் சேருங்கள், அல்லது தொலைபேசி எண் மூலம் பதிவு செய்யுங்கள்",
+    "3. Join ": "3. இதில் சேருங்கள்: ",
+    "Validate quest": "குவெஸ்ட்டைச் சரிபாருங்கள்"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "தேர்ந்தெடுத்த பதில்:",
+    "Bankless Archetype results:": "Bankless ஆர்க்கிடைப் முடிவுகள்:",
+    "Risk": "ரிஸ்க்",
+    "Self sovereignty": "சுய இறையாண்மை",
+    "DEX": "DEX",
+    "Trads": "பாரம்பரிய நிதி",
+    "LP": "LP",
+    "Long term": "நீண்ட காலம்",
+    "Works in a DAO": "DAO-வில் பணிபுரிதல்",
+    "Crypto knowledge": "கிரிப்டோ அறிவு",
+    "Crypto donation": "கிரிப்டோ நன்கொடை",
+    "Buys stuff in crypto": "கிரிப்டோவில் பொருள் வாங்குதல்",
+    "Deployed smart contracts": "ஸ்மார்ட் ஒப்பந்தம் டிப்ளாய் செய்தல்",
+    "Anon": "அநாமதேயம்",
+    "Works in web3": "Web3-இல் பணிபுரிதல்",
+    "Creates digital art": "டிஜிட்டல் கலை உருவாக்குதல்",
+    "Owns Bitcoin": "Bitcoin வைத்திருத்தல்",
+    "Owns NFTs": "NFT வைத்திருத்தல்",
+    "Aping into something new": "புதியதில் துணிந்து இறங்குதல்",
+    "Owns shitcoin": "ஷிட்காயின் வைத்திருத்தல்"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "1inch மூலம் டோக்கன்களை ஸ்வாப் செய்வது எப்படி",
+    "1. Load ": "1. ",
+    " on the ": " ஆப்பை இதில் திறங்கள்: ",
+    "Base network": "Base நெட்வொர்க்",
+    "2. Swap any token.": "2. ஏதேனும் ஒரு டோக்கனை ஸ்வாப் செய்யுங்கள்.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. வெற்றிகரமான <b>ஸ்வாப்</b> பரிவர்த்தனையின் ஹாஷைக் கீழே ஒட்டுங்கள்:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>உதவிக்குறிப்பு:</b> 🚨 நீங்கள் ஒட்டுவது <b>Base நெட்வொர்க்கில்</b> செய்த <b>ஸ்வாப்</b> பரிவர்த்தனையின் ஹாஷ் என்பதை உறுதிசெய்யுங்கள். டோக்கன் <b>அனுமதி</b> பரிவர்த்தனையின் ஹாஷ் அல்ல.",
+    "Read documentation": "ஆவணங்களைப் படியுங்கள்"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. ",
+    " on the ": " ஆப்பை இதில் திறங்கள்: ",
+    "Optimism network": "Optimism நெட்வொர்க்",
+    "2. Swap any token.": "2. ஏதேனும் ஒரு டோக்கனை ஸ்வாப் செய்யுங்கள்.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. வெற்றிகரமான <b>ஸ்வாப்</b> பரிவர்த்தனையின் ஹாஷைக் கீழே ஒட்டுங்கள்:",
+    "Resources:": "பயனுள்ள இணைப்புகள்:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>உதவிக்குறிப்பு:</b> நீங்கள் ஒட்டுவது <b>Optimism நெட்வொர்க்கில்</b> செய்த <b>ஸ்வாப்</b> பரிவர்த்தனையின் ஹாஷ் என்பதை உறுதிசெய்யுங்கள். டோக்கன் அனுமதி பரிவர்த்தனையின் ஹாஷ் அல்ல. மேலும் தகவலுக்கு எக்ஸ்ப்ளோரர் கையேட்டுக் கட்டுரையைப் படியுங்கள்.",
+    "Read Entry": "கட்டுரையைப் படியுங்கள்"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "DeFi மூலம் என்ன செய்யக் கற்றுக்கொள்ள மிகவும் விரும்புகிறீர்கள்?",
+    "Signature verified": "கையொப்பம் சரிபார்க்கப்பட்டது",
+    "Sign your answer": "உங்கள் பதிலில் கையொப்பமிடுங்கள்",
+    "Select your answer": "உங்கள் பதிலைத் தேர்ந்தெடுங்கள்",
+    "Investing": "முதலீடு",
+    "Trading": "டிரேடிங்",
+    "Lending & Borrowing": "கடன் வழங்குதல் & பெறுதல்",
+    "Staking": "ஸ்டேக்கிங்"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Rocket Pool-உடன் உங்கள் ஸ்டேக்கிங் பயணத்தைத் தொடங்குங்கள்.",
+    "Obtain 0.0002 rETH on any supported network*.": "ஆதரிக்கப்படும் ஏதேனும் ஒரு நெட்வொர்க்கில்* 0.0002 rETH பெறுங்கள்.",
+    "a) Visit a ": "a) ஒரு ",
+    "Decentralized Exchange": "பரவலாக்கப்பட்ட எக்ஸ்சேஞ்ச்",
+    " to swap for rETH (Optimism or Base recommended)": " தளத்துக்குச் சென்று rETH-ஆக ஸ்வாப் செய்யுங்கள் (Optimism அல்லது Base பரிந்துரைக்கப்படுகிறது)",
+    "b) Or mint rETH on Mainnet via ": "b) அல்லது Mainnet-இல் rETH-ஐ இதன் மூலம் மிண்ட் செய்யுங்கள்: ",
+    " (0.01 ETH minimum)": " (குறைந்தபட்சம் 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "உதவிக்குறிப்பு: உங்களுக்கு ஏற்ற சிறந்த நிதி வழியைக் கண்டறிய, எங்கள் எக்ஸ்ப்ளோரர் கையேட்டில் “{{lesson_title}}” கட்டுரையைப் படியுங்கள்.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* ஆதரிக்கப்படும் நெட்வொர்க்குகள்: Ethereum, Optimism, Base, Arbitrum மற்றும் Polygon (POS)",
+    "Check Quest": "குவெஸ்ட்டைச் சரிபாருங்கள்"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "இந்தக் குவெஸ்ட்டுக்கு உங்களுக்கு ஒரு கிரிப்டோ வாலெட் தேவை.",
+    "Wallet connected!": "வாலெட் இணைக்கப்பட்டது!",
+    "Waiting to detect your wallet ...": "உங்கள் வாலெட்டைக் கண்டறியக் காத்திருக்கிறோம் ...",
+    "If you don't have one, let's set one up!": "உங்களிடம் வாலெட் இல்லையென்றால், ஒன்றை உருவாக்கலாம்!",
+    "Our onchain quests and rewards only work with a wallet connected.": "வாலெட் இணைக்கப்பட்டால் மட்டுமே எங்கள் ஆன்செயின் குவெஸ்ட்டுகளும் வெகுமதிகளும் செயல்படும்.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "வாலெட்டுகள் பிளாக்செயின் அக்கவுண்ட்கள் போன்றவை. பிளாக்செயின் ஆப்களைப் பயன்படுத்த, அல்லது கிரிப்டோகரன்சியை வாங்க, வைத்திருக்க, அனுப்ப உங்களுக்கு ஒரு வாலெட் தேவை.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Zerion-உடன் உங்கள் முதல் வாலெட்டை உருவாக்க, இந்தக் குறுகிய வழிகாட்டி வீடியோவைப் பாருங்கள்: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "தற்போதைய பிளாக்செயின் தொழில்நுட்பத்தில், மூன்று பண்புகளில் அதிகபட்சம் இரண்டை மட்டுமே ஒரு பிளாக்செயின் சிறப்பாகச் செய்ய முடியும்.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin மற்றும் Ethereum ஆரம்பத்தில் முன்னுரிமை அளித்த பண்புகளைத் தேர்ந்தெடுங்கள்."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "உங்கள் L2 பயணத்தைத் தொடங்குங்கள்.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Base அல்லது Optimism-இல் குறைந்தது 0.0002 ETH இருப்பு வைத்திருங்கள்",
+    "Options to fund your wallet:": "உங்கள் வாலெட்டில் பணம் சேர்க்கும் வழிகள்:",
+    "Explore other options": "மற்ற வழிகளைப் பாருங்கள்",
+    "Check Quest": "குவெஸ்ட்டைச் சரிபாருங்கள்"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "உங்கள் ஆன்செயின் சான்றிதழைப் பெறுவதற்கு முன்:",
+    "Share on Twitter / X": "Twitter / X-இல் பகிருங்கள்",
+    "Share on Farcaster": "Farcaster-இல் பகிருங்கள்",
+    "See you there! Over and out 📡": "அங்கே சந்திப்போம்! ஓவர் அண்ட் அவுட் 📡",
+    "Connect": "இணையுங்கள்",
+    "Repost on Twitter / X": "Twitter / X-இல் மீண்டும் பகிருங்கள்",
+    "Validate": "சரிபாருங்கள்"
+  }
+}

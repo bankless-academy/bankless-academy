@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. మీ Bitcoin Satoshi Nakamoto వైపు బయలుదేరింది.",
+    "2. It's now being verified by network miners...": "2. ఇప్పుడు నెట్‌వర్క్ మైనర్‌లు దీన్ని ధృవీకరిస్తున్నారు...",
+    "3. Your transaction is added to the blockchain “database”...": "3. మీ లావాదేవీ బ్లాక్‌చైన్ “డేటాబేస్”లో చేరుతోంది...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto మీ Bitcoin అందుకున్నారు!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "మా సరళమైన Bitcoin సిమ్యులేటర్‌తో Satoshi Nakamoto చిరునామాకు ఎంత BTC అయినా పంపండి",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "ఇంటరాక్టివ్ సిమ్యులేషన్: Satoshi Nakamoto-కు Bitcoin పంపడం {{step}}",
+    "Reset simulation": "సిమ్యులేషన్ రీసెట్ చేయండి",
+    "Recipient": "స్వీకర్త",
+    "Address": "చిరునామా",
+    "Asset": "అసెట్",
+    "Amount": "మొత్తం",
+    "Balance": "బ్యాలెన్స్",
+    "Send": "పంపండి"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "లావాదేవీని అర్థం చేసుకోండి",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "ఈ క్వెస్ట్ ధృవీకరించడానికి, ఈ లావాదేవీలోని “నుంచి”, “కు” చిరునామాలు రెండూ అతికించండి",
+    "From": "నుంచి",
+    "To": "కు"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "మీ OP అప్పగించి Optimism Network ప్రయాణం మొదలుపెట్టండి.",
+    "Select a ": "మీ OP కోసం ఒక ",
+    "Delegate": "ప్రతినిధి",
+    " for your OP": "ని ఎంచుకోండి",
+    "or delegate to ": "లేదా వీరికి అప్పగించండి: ",
+    "Tip": "చిట్కా",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "క్వెస్ట్ పూర్తి వివరాల కోసం ఎక్స్‌ప్లోరర్ హ్యాండ్‌బుక్‌లోని “{{lesson_title}}” చదవండి.",
+    "Refresh": "రిఫ్రెష్ చేయండి",
+    "Read Entry": "వ్యాసం చదవండి"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "మీ మొదటి క్రిప్టో వాలెట్ సృష్టించండి.",
+    "If you already have a wallet, move to step 2.": "మీకు ఇప్పటికే వాలెట్ ఉంటే, 2వ దశకు వెళ్లండి.",
+    "1. Download and install the Zerion wallet from ": "1. Zerion వాలెట్ ఇక్కడి నుంచి డౌన్‌లోడ్ చేసి ఇన్‌స్టాల్ చేయండి: ",
+    "2. Connect your wallet to Bankless Academy": "2. మీ వాలెట్ Bankless Academy-కి కనెక్ట్ చేయండి",
+    "Tip": "చిట్కా",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "క్వెస్ట్ దశలవారీ వివరాల కోసం ఎక్స్‌ప్లోరర్ హ్యాండ్‌బుక్‌లోని “{{lesson_title}}” చదవండి.",
+    "Read Entry": "వ్యాసం చదవండి"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "మోసం ఉన్న స్క్రీన్‌షాట్‌లు అన్నీ ఎంచుకోండి 👆",
+    "Hint: 1 screenshot is not a scam": "సూచన: 1 స్క్రీన్‌షాట్ మోసం కాదు"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. మీ వాలెట్ Bankless Academy-కి కనెక్ట్ చేయండి",
+    "2. Join gm.xyz using this ": "2. ఈ ",
+    "invite link": "ఆహ్వాన లింక్",
+    " or register with a phone number": " ద్వారా gm.xyz-లో చేరండి, లేదా ఫోన్ నంబర్‌తో రిజిస్టర్ చేయండి",
+    "3. Join ": "3. ఇందులో చేరండి: ",
+    "Validate quest": "క్వెస్ట్ ధృవీకరించండి"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "ఎంచుకున్న జవాబు:",
+    "Bankless Archetype results:": "Bankless ఆర్కిటైప్ ఫలితాలు:",
+    "Risk": "రిస్క్",
+    "Self sovereignty": "స్వీయ సార్వభౌమత్వం",
+    "DEX": "DEX",
+    "Trads": "సంప్రదాయ ఫైనాన్స్",
+    "LP": "LP",
+    "Long term": "దీర్ఘకాలం",
+    "Works in a DAO": "DAO-లో పని చేయడం",
+    "Crypto knowledge": "క్రిప్టో పరిజ్ఞానం",
+    "Crypto donation": "క్రిప్టో విరాళం",
+    "Buys stuff in crypto": "క్రిప్టోతో కొనుగోళ్లు",
+    "Deployed smart contracts": "స్మార్ట్ కాంట్రాక్ట్ డిప్లాయ్ చేయడం",
+    "Anon": "అనామకం",
+    "Works in web3": "Web3-లో పని చేయడం",
+    "Creates digital art": "డిజిటల్ ఆర్ట్ సృష్టించడం",
+    "Owns Bitcoin": "Bitcoin కలిగి ఉండటం",
+    "Owns NFTs": "NFT కలిగి ఉండటం",
+    "Aping into something new": "కొత్తవాటిలోకి దూకడం",
+    "Owns shitcoin": "షిట్‌కాయిన్ కలిగి ఉండటం"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "1inch-తో టోకెన్‌లు స్వాప్ చేయడం ఎలా",
+    "1. Load ": "1. ",
+    " on the ": "-ను ఇక్కడ తెరవండి: ",
+    "Base network": "Base నెట్‌వర్క్",
+    "2. Swap any token.": "2. ఏదైనా టోకెన్ స్వాప్ చేయండి.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. విజయవంతమైన <b>స్వాప్</b> లావాదేవీ హాష్ కింద అతికించండి:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>చిట్కా:</b> 🚨 <b>Base నెట్‌వర్క్</b>లో చేసిన <b>స్వాప్</b> లావాదేవీ హాష్ మాత్రమే అతికించండి, టోకెన్ <b>ఆమోదం</b> లావాదేవీ హాష్ కాదు.",
+    "Read documentation": "డాక్యుమెంటేషన్ చదవండి"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. ",
+    " on the ": "-ను ఇక్కడ తెరవండి: ",
+    "Optimism network": "Optimism నెట్‌వర్క్",
+    "2. Swap any token.": "2. ఏదైనా టోకెన్ స్వాప్ చేయండి.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. విజయవంతమైన <b>స్వాప్</b> లావాదేవీ హాష్ కింద అతికించండి:",
+    "Resources:": "వనరులు:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>చిట్కా:</b> <b>Optimism నెట్‌వర్క్</b>లో చేసిన <b>స్వాప్</b> లావాదేవీ హాష్ మాత్రమే అతికించండి, టోకెన్ ఆమోదం లావాదేవీ హాష్ కాదు. మరిన్ని వివరాల కోసం ఎక్స్‌ప్లోరర్ హ్యాండ్‌బుక్ వ్యాసం చదవండి.",
+    "Read Entry": "వ్యాసం చదవండి"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "DeFi-తో ఏం చేయడం నేర్చుకోవాలని మీకు ఎక్కువ ఆసక్తి ఉంది?",
+    "Signature verified": "సంతకం ధృవీకరణ పూర్తయింది",
+    "Sign your answer": "మీ జవాబుపై సంతకం చేయండి",
+    "Select your answer": "మీ జవాబు ఎంచుకోండి",
+    "Investing": "పెట్టుబడి",
+    "Trading": "ట్రేడింగ్",
+    "Lending & Borrowing": "అప్పు ఇవ్వడం, తీసుకోవడం",
+    "Staking": "స్టేకింగ్"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Rocket Pool-తో మీ స్టేకింగ్ ప్రయాణం మొదలుపెట్టండి.",
+    "Obtain 0.0002 rETH on any supported network*.": "మద్దతు ఉన్న ఏదైనా నెట్‌వర్క్‌లో* 0.0002 rETH పొందండి.",
+    "a) Visit a ": "a) ఒక ",
+    "Decentralized Exchange": "వికేంద్రీకృత ఎక్స్‌ఛేంజ్",
+    " to swap for rETH (Optimism or Base recommended)": " వద్ద rETH కోసం స్వాప్ చేయండి (Optimism లేదా Base సిఫార్సు)",
+    "b) Or mint rETH on Mainnet via ": "b) లేదా Mainnet-లో rETH ఇక్కడి నుంచి మింట్ చేయండి: ",
+    " (0.01 ETH minimum)": " (కనీసం 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "చిట్కా: మీకు తగిన ఉత్తమ ఫండింగ్ మార్గం తెలుసుకోవడానికి ఎక్స్‌ప్లోరర్ హ్యాండ్‌బుక్‌లోని “{{lesson_title}}” చదవండి.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* మద్దతు ఉన్న నెట్‌వర్క్‌లు: Ethereum, Optimism, Base, Arbitrum, Polygon (POS)",
+    "Check Quest": "క్వెస్ట్ తనిఖీ చేయండి"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "ఈ క్వెస్ట్ కోసం మీకు ఒక క్రిప్టో వాలెట్ కావాలి.",
+    "Wallet connected!": "వాలెట్ కనెక్ట్ అయింది!",
+    "Waiting to detect your wallet ...": "మీ వాలెట్ కోసం చూస్తున్నాం ...",
+    "If you don't have one, let's set one up!": "మీ దగ్గర లేకపోతే, ఒకటి సిద్ధం చేసుకుందాం!",
+    "Our onchain quests and rewards only work with a wallet connected.": "వాలెట్ కనెక్ట్ అయితేనే మా ఆన్‌చైన్ క్వెస్ట్‌లు, రివార్డ్‌లు పని చేస్తాయి.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "వాలెట్‌లు బ్లాక్‌చైన్ ఖాతాల లాంటివి. బ్లాక్‌చైన్ యాప్‌లు వాడటానికి, లేదా క్రిప్టోకరెన్సీ కొనడానికి, దాచుకోవడానికి, పంపడానికి మీకు ఒకటి కావాలి.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Zerion-తో మీ మొదటి వాలెట్ సృష్టించడానికి ఈ చిన్న వీడియో చూడండి: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "ఇప్పటి బ్లాక్‌చైన్ టెక్నాలజీతో, ఒక బ్లాక్‌చైన్ మూడు లక్షణాల్లో గరిష్ఠంగా రెండింటినే మెరుగుపరచగలదు.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin, Ethereum మొదట్లో ప్రాధాన్యం ఇచ్చిన లక్షణాలను గుర్తు పెట్టండి."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "మీ L2 ప్రయాణం మొదలుపెట్టండి.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Base లేదా Optimism-లో కనీసం 0.0002 ETH బ్యాలెన్స్ ఉంచండి",
+    "Options to fund your wallet:": "మీ వాలెట్‌లో డబ్బు జోడించే మార్గాలు:",
+    "Explore other options": "ఇతర మార్గాలు చూడండి",
+    "Check Quest": "క్వెస్ట్ తనిఖీ చేయండి"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "మీ ఆన్‌చైన్ సర్టిఫికెట్ పొందే ముందు:",
+    "Share on Twitter / X": "Twitter / X-లో షేర్ చేయండి",
+    "Share on Farcaster": "Farcaster-లో షేర్ చేయండి",
+    "See you there! Over and out 📡": "అక్కడ కలుద్దాం! ఓవర్ అండ్ అవుట్ 📡",
+    "Connect": "కనెక్ట్ చేయండి",
+    "Repost on Twitter / X": "Twitter / X-లో రీపోస్ట్ చేయండి",
+    "Validate": "ధృవీకరించండి"
+  }
+}

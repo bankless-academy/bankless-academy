@@ -38,7 +38,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -336,7 +339,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -599,7 +605,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -660,7 +669,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Essentials',
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
@@ -990,7 +1002,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Essentials',
     lessonWriters: 'iSpeakNerd',
@@ -1278,7 +1293,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Essentials',
     tags: [
@@ -1604,7 +1622,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -1945,7 +1966,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     tags: [
@@ -2221,7 +2245,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     tags: [
@@ -2302,7 +2329,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     tags: [
@@ -2387,7 +2417,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     tags: [
@@ -2699,7 +2732,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2761,7 +2797,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3100,7 +3139,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     tags: [
@@ -3166,7 +3208,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3470,7 +3515,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3546,7 +3594,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     tags: [
@@ -3615,7 +3666,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -3905,7 +3959,10 @@ const LESSONS: LessonType[] = [
       'pl',
       'cs',
       'sw',
-      'bn'
+      'bn',
+      'mr',
+      'ta',
+      'te'
     ],
     level: 'Level 1',
     lessonWriters: 'Musharef, Tetranome',

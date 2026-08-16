@@ -123,19 +123,29 @@ const LanguageSelector = ({
       : undefined
 
   // ---- filtering ----
-  // Standard practice for a language picker (W3C i18n guidance, and what
-  // Wikipedia/Mozilla do): show each language in its OWN name and script, sort
-  // alphabetically by that endonym, and privilege none of them — the reader's
-  // likely language is offered separately, by the suggestion row above, rather
-  // than by reordering the list. So English is not pinned; it sorts to third,
-  // between Deutsch and Español, like every other entry.
+  // Sorted by ENDONYM (the row's primary label), not by the English name, and
+  // no language is pinned — the reader's likely language is offered separately
+  // by the suggestion row above rather than by reordering the list.
   //
-  // The registry itself is grouped by when each language landed (legacy
-  // pt-br/zh, then the first wave, then each new wave appended), which put
-  // Português and 简体中文 ahead of Deutsch and left hi/id/vi dangling off the
-  // end — an order that means nothing to a reader scanning for their language.
-  // Sorted here rather than in the registry so `LANGUAGES` stays a declaration
-  // and display order stays a presentation concern.
+  // Two reasons, and the second is the one that matters:
+  //
+  // 1. Each row renders the endonym as its primary line and the English name
+  //    as secondary text below it. A list should be ordered by the line the
+  //    eye scans first.
+  // 2. `localeCompare` buckets by codepoint range, so endonym order groups the
+  //    scripts for free: Latin, then Cyrillic, then Devanagari, Bengali,
+  //    Tamil, Telugu, then Hangul/CJK — each a contiguous block. Sorting by
+  //    English name instead scatters them (CJK lands at positions 2, 10 and 11
+  //    interleaved with Latin and Indic), so a reader looking for their script
+  //    has to traverse the whole list. At 22+ languages across 9 scripts,
+  //    "my script is one block" is worth more than alphabetical order within
+  //    it, and it keeps working as `ar`/`ur` (Arabic) and `am` (Ge'ez) land.
+  //
+  // Searching in English is already covered: the filter below matches BOTH
+  // `name` and `localName`, so "german" and "Deutsch" both find the row.
+  //
+  // Sorted here rather than relying on registry order so display order stays a
+  // presentation concern; `LANGUAGES` is only a declaration.
   const byDisplayName = [...LANGUAGES].sort((a, b) =>
     a.localName.localeCompare(b.localName)
   )

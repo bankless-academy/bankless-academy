@@ -10,47 +10,80 @@ export interface LanguageDef {
   dir: 'ltr' | 'rtl'
 }
 
+// Rollout history and the traps each wave surfaced. Kept above the array so the
+// array itself stays a plain, alphabetically sorted declaration.
+//
+// Order here is alphabetical by ENGLISH name and carries no meaning: every
+// consumer sorts for itself (`constants/index.ts` and `LanguageSelector` both
+// sort by endonym, the W3C/Wikipedia convention), and the rest look up by code.
+//
+// Waves ran 3 languages at a time, 11 agents each (see CLAUDE.md "Running a
+// language wave with parallel agents"):
+//   wave 1  fr pilot + the 9 legacy glossaries converted to English-keyed
+//   wave 2  hi id vi      wave 3  ru ko pl
+//   wave 4  cs sw bn      wave 5  mr ta te
+//
+// Script traps worth remembering:
+//   - hi, bn, mr, ta, te, ja, zh, ko all slugify to nothing, so /content
+//     heading anchors fall back to `section-N`. Expected, not a bug.
+//   - `mr` shares Devanagari with `hi` but NOT its encoding rules. Hindi
+//     nuktas are composition exclusions so NFC repairs them; Marathi has three
+//     ambiguous spellings that survive NFC UNEQUAL - the vendored mr.json
+//     already spells "app" three ways. A backticked term whose spelling
+//     differs from its glossary key is a dead tooltip that renders perfectly,
+//     so `normalizeKeyword` cannot save it. The style guide pins one spelling.
+//     Marathi also ends sentences with `.`, not the danda hi/bn use.
+//   - `ta`/`te`/`bn`/`tr` agglutinate: a case suffix inside backticks is a
+//     dead tooltip. Suffix goes outside, or the clause gets rephrased.
+//   - `ta` has the worst vendored ETHGlossary data of any language: purist
+//     coinages no Tamil speaker uses, and `gas` rendered as combustible fuel
+//     gas. Its style guide overrides the vendored data constantly.
+//   - `tr` dotted-I folds to i + U+0307, which never equals a glossary `i`.
+//     Handled by `normalizeKeyword` below.
+//
+// Still absent by design, and queued on two tracks rather than one ranking.
+// DEPTH, from our own analytics (readers we already have): `zh-tw`, `nl`,
+// `th`, `tl`. REACH, from crypto-adoption data (cohorts we do not have yet):
+// `ar`, `ur`, `am`, with `fa` held pending a sanctions decision.
+//
+// `zh-tw` goes first on either reading: HK/TW readers currently get Simplified,
+// which is worse for them than English, and it is a CONVERSION of the finished
+// `zh` rather than a wave, so it is the cheapest item in the plan. `ar`/`ur`
+// ship together behind the one-time RTL audit.
+//
+// Ranking on analytics alone is a trap: a language shows little traffic partly
+// BECAUSE there is nothing to read in it, so measured readers optimize
+// retention and quietly foreclose acquisition. See
+// docs/i18n-25-languages-plan.md (which deliberately carries no figures, since
+// traffic and index positions move and a pasted snapshot goes stale).
 const LANGUAGE_DEFS = [
+  { code: 'bn', name: 'Bengali', localName: 'বাংলা', dir: 'ltr' },
+  { code: 'zh', name: 'Chinese Simplified', localName: '简体中文', dir: 'ltr' },
+  { code: 'cs', name: 'Czech', localName: 'Čeština', dir: 'ltr' },
   { code: 'en', name: 'English', localName: 'English', dir: 'ltr' },
+  { code: 'fr', name: 'French', localName: 'Français', dir: 'ltr' },
+  { code: 'de', name: 'German', localName: 'Deutsch', dir: 'ltr' },
+  { code: 'hi', name: 'Hindi', localName: 'हिन्दी', dir: 'ltr' },
+  { code: 'id', name: 'Indonesian', localName: 'Bahasa Indonesia', dir: 'ltr' },
+  { code: 'it', name: 'Italian', localName: 'Italiano', dir: 'ltr' },
+  { code: 'ja', name: 'Japanese', localName: '日本語', dir: 'ltr' },
+  { code: 'ko', name: 'Korean', localName: '한국어', dir: 'ltr' },
+  { code: 'mr', name: 'Marathi', localName: 'मराठी', dir: 'ltr' },
+  { code: 'pl', name: 'Polish', localName: 'Polski', dir: 'ltr' },
   {
     code: 'pt-br',
     name: 'Portuguese (Brazilian)',
     localName: 'Português',
     dir: 'ltr',
   },
-  { code: 'zh', name: 'Chinese Simplified', localName: '简体中文', dir: 'ltr' },
-  { code: 'de', name: 'German', localName: 'Deutsch', dir: 'ltr' },
+  { code: 'ru', name: 'Russian', localName: 'Русский', dir: 'ltr' },
   { code: 'es', name: 'Spanish', localName: 'Español', dir: 'ltr' },
-  { code: 'fr', name: 'French', localName: 'Français', dir: 'ltr' },
-  { code: 'it', name: 'Italian', localName: 'Italiano', dir: 'ltr' },
-  { code: 'ja', name: 'Japanese', localName: '日本語', dir: 'ltr' },
+  { code: 'sw', name: 'Swahili', localName: 'Kiswahili', dir: 'ltr' },
+  { code: 'ta', name: 'Tamil', localName: 'தமிழ்', dir: 'ltr' },
+  { code: 'te', name: 'Telugu', localName: 'తెలుగు', dir: 'ltr' },
   { code: 'tr', name: 'Turkish', localName: 'Türkçe', dir: 'ltr' },
   { code: 'uk', name: 'Ukrainian', localName: 'Українська', dir: 'ltr' },
-  // Wave 2 (2026-08-15). Chosen as the highest crypto-adoption markets not
-  // already covered; all three are LTR, so the RTL audit is still pending and
-  // gates `ar`. Hindi is the first Indic script: its headings slugify to
-  // nothing, so /content anchors fall back to `section-N` exactly as ja/zh do.
-  { code: 'hi', name: 'Hindi', localName: 'हिन्दी', dir: 'ltr' },
-  { code: 'id', name: 'Indonesian', localName: 'Bahasa Indonesia', dir: 'ltr' },
   { code: 'vi', name: 'Vietnamese', localName: 'Tiếng Việt', dir: 'ltr' },
-  // Wave 3 (2026-08-15). Highest reach remaining with no new mechanics: `ru`
-  // and `ko` add scripts we already handle (Cyrillic is live via uk; Hangul
-  // slugifies like ja/zh, so /content anchors fall back to `section-N`), and
-  // `pl` is Latin. What is NOT here is deliberate: `ar`/`ur` are blocked on
-  // the RTL audit, and `zh-tw` on a Traditional-vs-Simplified policy against
-  // the existing `zh`.
-  { code: 'ru', name: 'Russian', localName: 'Русский', dir: 'ltr' },
-  { code: 'ko', name: 'Korean', localName: '한국어', dir: 'ltr' },
-  { code: 'pl', name: 'Polish', localName: 'Polski', dir: 'ltr' },
-  // Wave 4 (2026-08-15). `cs` inflects like pl (7 cases, 46% of its
-  // ETHGlossary entries carry an inflected prose form), `sw` is Latin with
-  // simple orthography, and `bn` is the highest-reach language left. Bengali
-  // headings slugify to nothing, so its /content anchors fall back to
-  // `section-N` exactly as ja/zh/hi do. Still absent by design: `ar`/`ur`
-  // await the RTL audit, `zh-tw` a Traditional-vs-Simplified policy.
-  { code: 'cs', name: 'Czech', localName: 'Čeština', dir: 'ltr' },
-  { code: 'sw', name: 'Swahili', localName: 'Kiswahili', dir: 'ltr' },
-  { code: 'bn', name: 'Bengali', localName: 'বাংলা', dir: 'ltr' },
 ] as const
 
 // 'en' | 'pt-br' | 'zh' | ... — derived from the registry

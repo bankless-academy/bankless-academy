@@ -210,6 +210,47 @@ the **central reconciliation**, which is serial and runs in the orchestrator's
 context: each language returns 2-4 glossary/terminology decisions to
 adjudicate, and five languages of that at once is where mistakes happen.
 
+**Non-Latin scripts cost ~10x per character, so control what agents READ.**
+Devanagari/Tamil/Telugu/Bengali tokenize at roughly **2.8 tokens per character
+against ~0.28 for English**. That multiplier, not the writing, is what makes an
+Indic wave expensive: the mr/ta/te wave ran ~200k per agent versus the 170k
+measured above for Latin/CJK. Measured inputs, per agent, per language:
+
+| file every agent opens | tokens |
+|---|---|
+| `translation/keywords/<lang>/keywords.json` | 99k (mr), 110k (te), **136k (ta)** |
+| `translation/style/<lang>.md` | 31-37k |
+| English lesson source | ~5k |
+| `docs/translation-wave.md` | ~1k |
+
+Two fixes, neither of which removes anything an agent uses:
+
+1. **Lesson agents get a term index, not the glossary.** They need the display
+   form to backtick and the inflected forms that resolve; they never need the
+   274 tooltip *definitions*, which are the bulk of the file. Generate
+   `english = keyword  [forms…]` one line per entry: **61-72% smaller**
+   (ta 136k -> 52k), about **1.1M saved per wave** across 5 lesson agents x 3
+   languages.
+2. **Never tell a glossary agent to read a finished non-Latin glossary "for
+   shape".** `bn/keywords.json` is 98k tokens, read twice per language, to
+   convey a JSON structure a three-entry example conveys. ~590k per wave. The
+   French one is fine to keep at 16k, because it is Latin.
+
+3. **Verify with a script, never by reading the file into context.** The first
+   agent given the term index still Read the full glossary afterwards "to
+   check its backticks resolve", and cost 240k — more than the agents that
+   never had the index. Hand agents a checker that loads the glossary inside
+   Node and prints only failures (build a Set of `keyword` + `keyword_plural`
+   + `keyword_forms` under `normalizeKeyword`, then scan the file's backticked
+   spans). One line of output instead of 136k of context, and it matches the
+   build gate exactly because it folds the same way. The same applies to any
+   large artifact an agent wants to "check against".
+
+Together ~1.7M per wave, a 25-30% cut. What does **not** help: fewer/bigger
+agents (same total context, just redistributed) or shorter briefs (~2k against
+200k runs). Trimming the style guide is the only lever left after these, and it
+is the artifact holding eleven agents to one vocabulary, so cut it last if ever.
+
 **Split the slugs 4/4/4/4/3, not 4/3/4/8.** The wave used four groups
 (foundations 4, wallet+security+L1 3, L2+defi+staking 4, **DEX+handbooks 8**)
 and the 8-slug group was the long pole in every single language — the three
@@ -287,7 +328,8 @@ render a warning banner on the intro slide.
 - [x] **`build-lastmod.js` no longer drops files git cannot date (2026-08-16):** it did `if (!date) continue`, silently omitting any file with no commit history. That looked harmless — the sitemap falls back to `publicationDate` per URL — but for a TRANSLATED file that fallback is the **English** lesson's publication date, routinely years stale, and the omission was permanent: nothing revisited a file once skipped. Because `git log` cannot see a *staged* file, the only repair was to re-run the script AFTER committing and amend, a ritual nobody remembers — so it was missed on **two consecutive waves**, leaving **171 files across 9 languages** (hi/id/vi/ru/ko/pl + cs/sw/bn) with no `<lastmod>` at all while the manifest sat at 204 entries and looked fine. A file git has never seen is one being *added in the commit about to be made*, so it is now dated **today** rather than dropped; the next run after that commit resolves it to the real commit date. Manifest went **204 -> 375 entries, 10 -> 19 languages**. Adding lessons is now one ordinary commit. The shallow-clone guard is untouched and still verified by `git clone --depth=1 file://$PWD`.
 - [ ] 17 legacy translated slides still exceed the ceiling (it 2, es 2, tr 1, pt-br 1, de 1 + older waves) — they now scroll rather than clip, and clear as each wave regenerates
 - [ ] `translate-content` AI translation script (see `docs/i18n-25-languages-plan.md` — existing 9 languages to full coverage first; must also emit `website/<lang>/*.json` and `keywords/<lang>/keywords.json`, not just lesson md)
-- [ ] **After**: `fallback: 'blocking'` + ISR for translated lesson paths, localize `/glossary` (+ per-term anchors, `glossary: true` audit), RTL audit before the first ar/ur wave. (i18next lazy-loading and sitemap hreflang: done, see above.)
+- [ ] **After**: `fallback: 'blocking'` + ISR for translated lesson paths, localize `/glossary` (+ per-term anchors, `glossary: true` audit). (i18next lazy-loading and sitemap hreflang: done, see above.)
+- [ ] **Language queue reorganized into two tracks (2026-08-16).** **Depth** (ranked by our own analytics, serves readers we have): **`zh-tw`, `nl`, `th`, `tl`**. **Reach** (ranked by crypto-adoption/market data, opens cohorts we do not have): **`ar`, `ur`, `am`**, with `fa` a candidate held pending a sanctions/compliance decision. **Do `zh-tw` first regardless of track** — HK/TW readers currently get **Simplified**, which is worse for them than English, and it is the cheapest item in the plan: an OpenCC-style **conversion of the finished `zh`** plus a Taiwan/HK vocabulary pass, not a wave (a conversion cannot change unit counts or `[x]` positions, so structural parity is free). `nl` is **a university cohort taking the lessons as coursework**, not the VPN artefact the geography suggests, though they already complete in English. `ar`/`ur` ship together behind the one-time **RTL audit** (UI work that must land *before* their content); `am` is LTR. Set aside: Nigeria (large readership already engaging **in English**, and it would take Hausa+Yoruba+Igbo), `ms` (mutually intelligible with `id`), Punjabi, Hebrew, Nordics. **Two lessons: (1) ranking on analytics alone is a trap — a language shows little traffic partly *because* there is nothing to read in it, so measured readers are a lagging indicator that optimizes retention and forecloses acquisition; keep both tracks alive. (2) Keep hard figures OUT of the plan doc — traffic and index positions move, and a pasted snapshot goes stale and then misleads.** Full reasoning in `docs/i18n-25-languages-plan.md`.
 - [x] Retired importers guarded (2026-08-15): `import-content.js` and `import-translations.js` are marked DEPRECATED and refuse to run without `RUN_RETIRED_IMPORT=1`. They stay in the repo for reference — the point was that `yarn import-content` was a live command that would overwrite the in-repo lesson markdown from Notion. (`import-translations.js` was already unrunnable: it uses `require` in a `"type": "module"` package.)
 - [x] **Unbounded 200s on `/lessons/*` closed (2026-08-15, verified live):** `getStaticPaths` used `fallback: true` with no `notFound`, so `/lessons/bitcoin-basics/contentt` served 200 carrying the real lesson's title — an unlimited indexable near-duplicate surface. `[...slug].tsx` now validates the URL *shape* (1 segment, or 2 with a real non-`en` language), rejects `-datadisk` unless `hasCollectible`, and uses `fallback: 'blocking'`. Confirmed in production: `/lessons/en/<slug>`, `/lessons/xx/<slug>`, `/lessons/<slug>/contentt` and `/lessons/not-a-lesson` all 404.
 - [x] **ru / ko / pl wave complete (2026-08-15):** Russian, Korean and Polish shipped end to end — 274-entry glossary each (0 merge problems), all 4 UI namespaces, all 19 lessons, registered in `languages[]` and `LAZY_RESOURCES`. **15 non-English languages now at 19/19; 16 in the registry.** `validate-i18n` passes at 15 languages. The reconciliation cost collapsed versus the previous wave, because the fixes moved upstream into the style guides *before* any lesson work started:

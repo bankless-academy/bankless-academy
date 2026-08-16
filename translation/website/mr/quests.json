@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. तुमचे Bitcoin Satoshi Nakamoto यांच्याकडे जात आहे.",
+    "2. It's now being verified by network miners...": "2. आता नेटवर्कवरील मायनर याची पडताळणी करत आहेत...",
+    "3. Your transaction is added to the blockchain “database”...": "3. तुमचा व्यवहार ब्लॉकचेनच्या “डेटाबेस”मध्ये जोडला जात आहे...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto यांना तुमचे Bitcoin मिळाले!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "आमच्या सोप्या Bitcoin सिम्युलेटरमधून Satoshi Nakamoto यांच्या पत्त्यावर कितीही BTC पाठवा",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "इंटरॲक्टिव्ह सिम्युलेशन: Satoshi Nakamoto यांना Bitcoin पाठवणे {{step}}",
+    "Reset simulation": "सिम्युलेशन रीसेट करा",
+    "Recipient": "प्राप्तकर्ता",
+    "Address": "पत्ता",
+    "Asset": "ॲसेट",
+    "Amount": "रक्कम",
+    "Balance": "शिल्लक",
+    "Send": "पाठवा"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "व्यवहार समजून घ्या",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "हा क्वेस्ट तपासण्यासाठी या व्यवहाराचे “स्रोत” आणि “गंतव्य” पत्ते पेस्ट करा",
+    "From": "स्रोत",
+    "To": "गंतव्य"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "OP डेलिगेट करून Optimism Network-वरील तुमचा प्रवास सुरू करा.",
+    "Select a ": "तुमच्या OP-साठी एक ",
+    "Delegate": "प्रतिनिधी",
+    " for your OP": " निवडा",
+    "or delegate to ": "किंवा डेलिगेट करा: ",
+    "Tip": "टीप",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "क्वेस्टच्या संपूर्ण मार्गदर्शनासाठी आमच्या एक्सप्लोरर हँडबुकमधील “{{lesson_title}}” हा लेख वाचा.",
+    "Refresh": "रिफ्रेश",
+    "Read Entry": "लेख वाचा"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "तुमचे पहिले क्रिप्टो वॉलेट तयार करा.",
+    "If you already have a wallet, move to step 2.": "तुमच्याकडे आधीच वॉलेट असेल, तर थेट पायरी 2 वर जा.",
+    "1. Download and install the Zerion wallet from ": "1. Zerion वॉलेट येथून डाउनलोड करून इन्स्टॉल करा: ",
+    "2. Connect your wallet to Bankless Academy": "2. तुमचे वॉलेट Bankless Academy-शी कनेक्ट करा",
+    "Tip": "टीप",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "क्वेस्टच्या टप्प्याटप्प्याने मार्गदर्शनासाठी आमच्या एक्सप्लोरर हँडबुकमधील “{{lesson_title}}” हा लेख वाचा.",
+    "Read Entry": "लेख वाचा"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "ज्या स्क्रीनशॉटमध्ये स्कॅम आहे ते सर्व निवडा 👆",
+    "Hint: 1 screenshot is not a scam": "सूचना: 1 स्क्रीनशॉट स्कॅम नाही"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. तुमचे वॉलेट Bankless Academy-शी कनेक्ट करा",
+    "2. Join gm.xyz using this ": "2. ही ",
+    "invite link": "इनव्हाइट लिंक",
+    " or register with a phone number": " वापरून gm.xyz-वर सामील व्हा, किंवा फोन नंबरवरून नोंदणी करा",
+    "3. Join ": "3. सामील व्हा: ",
+    "Validate quest": "क्वेस्ट तपासा"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "निवडलेली उत्तरे:",
+    "Bankless Archetype results:": "Bankless आर्किटाइपचे निकाल:",
+    "Risk": "जोखीम",
+    "Self sovereignty": "स्व-सार्वभौमत्व",
+    "DEX": "DEX",
+    "Trads": "पारंपरिक वित्त",
+    "LP": "LP",
+    "Long term": "दीर्घकालीन",
+    "Works in a DAO": "DAO-मध्ये काम करणे",
+    "Crypto knowledge": "क्रिप्टोचे ज्ञान",
+    "Crypto donation": "क्रिप्टोमधून देणगी",
+    "Buys stuff in crypto": "क्रिप्टोने खरेदी करणे",
+    "Deployed smart contracts": "स्मार्ट कॉन्ट्रॅक्ट डिप्लॉय करणे",
+    "Anon": "निनावी",
+    "Works in web3": "Web3-मध्ये काम करणे",
+    "Creates digital art": "डिजिटल आर्ट तयार करणे",
+    "Owns Bitcoin": "Bitcoin बाळगणे",
+    "Owns NFTs": "NFT बाळगणे",
+    "Aping into something new": "नवीन गोष्टीत उडी घेणे",
+    "Owns shitcoin": "शिटकॉइन बाळगणे"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "1inch वापरून टोकन स्वॅप कसे करायचे",
+    "1. Load ": "1. ",
+    " on the ": " येथे उघडा: ",
+    "Base network": "Base नेटवर्क",
+    "2. Swap any token.": "2. कोणतेही टोकन स्वॅप करा.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. यशस्वी <b>स्वॅप</b> व्यवहाराचा हॅश खाली पेस्ट करा:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>टीप:</b> 🚨 <b>Base नेटवर्कवर</b> केलेल्या <b>स्वॅप</b> व्यवहाराचा हॅश पेस्ट करत आहात याची खात्री करा, टोकन <b>मंजुरी</b> व्यवहाराचा नाही.",
+    "Read documentation": "डॉक्युमेंटेशन वाचा"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. ",
+    " on the ": " येथे उघडा: ",
+    "Optimism network": "Optimism नेटवर्क",
+    "2. Swap any token.": "2. कोणतेही टोकन स्वॅप करा.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. यशस्वी <b>स्वॅप</b> व्यवहाराचा हॅश खाली पेस्ट करा:",
+    "Resources:": "उपयुक्त लिंक:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>टीप:</b> <b>Optimism नेटवर्कवर</b> केलेल्या <b>स्वॅप</b> व्यवहाराचा हॅश पेस्ट करत आहात याची खात्री करा, टोकन मंजुरी व्यवहाराचा नाही. अधिक माहितीसाठी एक्सप्लोरर हँडबुकमधील लेख वाचा.",
+    "Read Entry": "लेख वाचा"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "DeFi वापरून काय करायला शिकण्यात तुम्हाला सर्वात जास्त रस आहे?",
+    "Signature verified": "स्वाक्षरी पडताळली",
+    "Sign your answer": "तुमच्या उत्तरावर स्वाक्षरी करा",
+    "Select your answer": "तुमचे उत्तर निवडा",
+    "Investing": "गुंतवणूक",
+    "Trading": "ट्रेडिंग",
+    "Lending & Borrowing": "कर्ज देणे आणि घेणे",
+    "Staking": "स्टेकिंग"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Rocket Pool वापरून तुमचा स्टेकिंग प्रवास सुरू करा.",
+    "Obtain 0.0002 rETH on any supported network*.": "कोणत्याही समर्थित नेटवर्कवर* 0.0002 rETH मिळवा.",
+    "a) Visit a ": "a) कोणत्याही ",
+    "Decentralized Exchange": "विकेंद्रित एक्सचेंज",
+    " to swap for rETH (Optimism or Base recommended)": "वर जाऊन rETH स्वॅप करा (Optimism किंवा Base सुचवले जातात)",
+    "b) Or mint rETH on Mainnet via ": "b) किंवा येथून Mainnet-वर rETH मिंट करा: ",
+    " (0.01 ETH minimum)": " (किमान 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "टीप: वॉलेटमध्ये पैसे भरण्याचा सर्वात चांगला मार्ग शोधण्यासाठी आमच्या एक्सप्लोरर हँडबुकमधील “{{lesson_title}}” हा लेख वाचा.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* समर्थित नेटवर्क: Ethereum, Optimism, Base, Arbitrum आणि Polygon (POS)",
+    "Check Quest": "क्वेस्ट तपासा"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "या क्वेस्टसाठी तुम्हाला क्रिप्टो वॉलेट लागेल.",
+    "Wallet connected!": "वॉलेट कनेक्ट झाले!",
+    "Waiting to detect your wallet ...": "तुमचे वॉलेट शोधले जात आहे ...",
+    "If you don't have one, let's set one up!": "तुमच्याकडे वॉलेट नसेल, तर चला एक तयार करूया!",
+    "Our onchain quests and rewards only work with a wallet connected.": "आमचे ऑनचेन क्वेस्ट आणि बक्षिसे वॉलेट कनेक्ट असेल तरच काम करतात.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "वॉलेट म्हणजे ब्लॉकचेनवरील खात्यासारखे असते. ब्लॉकचेन ॲप्स वापरण्यासाठी, किंवा क्रिप्टोकरन्सी खरेदी करण्यासाठी, ठेवण्यासाठी आणि पाठवण्यासाठी तुम्हाला वॉलेट लागते.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Zerion वापरून तुमचे पहिले वॉलेट तयार करण्यासाठी हा छोटा व्हिडिओ पाहा: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "आजच्या ब्लॉकचेन तंत्रज्ञानात कोणतीही ब्लॉकचेन तीनपैकी जास्तीत जास्त दोनच वैशिष्ट्यांमध्ये सर्वोत्तम होऊ शकते.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "सुरुवातीला Bitcoin आणि Ethereum यांनी ज्या वैशिष्ट्यांना प्राधान्य दिले, ती निवडा."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "तुमचा L2 प्रवास सुरू करा.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Base किंवा Optimism-वर किमान 0.0002 ETH शिल्लक ठेवा",
+    "Options to fund your wallet:": "वॉलेटमध्ये पैसे भरण्याचे पर्याय:",
+    "Explore other options": "इतर पर्याय पाहा",
+    "Check Quest": "क्वेस्ट तपासा"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "तुमचे ऑनचेन प्रमाणपत्र मिळवण्यापूर्वी:",
+    "Share on Twitter / X": "Twitter / X-वर शेअर करा",
+    "Share on Farcaster": "Farcaster-वर शेअर करा",
+    "See you there! Over and out 📡": "तिथे भेटूया! ओव्हर अँड आउट 📡",
+    "Connect": "कनेक्ट करा",
+    "Repost on Twitter / X": "Twitter / X-वर रीपोस्ट करा",
+    "Validate": "तपासा"
+  }
+}

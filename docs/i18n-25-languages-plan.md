@@ -16,11 +16,97 @@ waves.
 
 ## Target languages
 
-en, ar (RTL), bn, cs, de, es, fr, hi, id, it, ja, ko, mr, pl, pt-br, ru, sw, ta,
-te, tr, uk, ur (RTL), vi, zh (Simplified), zh-tw (Traditional).
+Registered today (22): en, pt-br, zh, de, es, fr, it, ja, tr, uk, hi, id, vi,
+ru, ko, pl, cs, sw, bn, mr, ta, te.
 
-vs today's 10: en, br, cn, de, es, fr, it, jp, tr, ua — 4 of which use
-**non-standard codes** (br→pt-br, cn→zh, jp→ja, ua→uk). 15 net-new languages.
+The "25" is no longer a target worth defending on its own. Candidates are
+ranked on **two signals that answer different questions, and both belong in
+the plan**:
+
+- **Depth** — our own analytics say who already reads the site. Ranking on
+  this serves audiences we have.
+- **Reach** — crypto-adoption and market data say where the curriculum's
+  subject is actually being used. Ranking on this opens audiences we do not
+  have yet.
+
+**Ranking on analytics alone is a trap.** A language shows little traffic
+partly *because* there is nothing to read in it, so measured readers are a
+lagging indicator that optimizes retention and quietly forecloses acquisition.
+A growth-stage goal needs new cohorts, not just deeper engagement with the
+current ones. Keep both tracks alive, and state which track a language is on
+when scheduling it.
+
+**No hard figures in this doc.** Traffic and index positions move; a snapshot
+pasted here goes stale and then misleads. Pull the numbers when you schedule a
+wave, not from this file.
+
+### Track A — deepen (ordered by measured readership)
+
+1. **`zh-tw` Traditional Chinese** — Hong Kong and Taiwan are the largest
+   uncovered readership after Dutch, and they are currently served
+   **Simplified**, which is actively worse for a Traditional-only reader than
+   English. It is also the cheapest item anywhere in this plan: an OpenCC-style
+   **conversion of the finished `zh`** plus a Taiwan/HK vocabulary pass (軟體 vs
+   软件, 網路 vs 网络, 程式 vs 程序), not a translation wave. A script conversion
+   cannot change unit counts or `[x]` positions, so structural parity with `zh`
+   is free. Highest value and lowest cost: do it first.
+2. **`nl` Dutch** — our largest uncovered readership, and it is **a university
+   cohort taking the lessons as coursework**, not the VPN/hosting artefact the
+   raw geography suggests. Worth supporting as an institutional relationship,
+   with the honest caveat that this cohort already completes the lessons in
+   English, so Dutch deepens rather than unblocks.
+3. **`th` Thai** and **`tl` Filipino** — both have real readership today and
+   neither has a comfortable English fallback the way Dutch does. LTR, so
+   nothing gates them.
+
+### Track B — reach (market signal, little traffic today by definition)
+
+1. **`ar` Arabic** — the largest single language bloc still uncovered, spread
+   across many markets rather than concentrated in one. Ships with `ur`.
+2. **`ur` Urdu** — Pakistan is consistently among the highest crypto-adoption
+   markets. Shares the one-time **RTL audit** with `ar`, so schedule the two
+   together.
+3. **`am` Amharic** — Ethiopia is high on the adoption index and is the
+   fastest-growing market for retail-sized stablecoin transfers, driven by
+   currency collapse and remittances. That is the curriculum's actual subject:
+   stablecoins and self-custody as an escape hatch, not trading. It sends us
+   almost no traffic today, which on the Track B reading is the *argument for*
+   it rather than against. Costs to weigh: Ge'ez is a new script, Amharic is
+   not the only major language of Ethiopia, and internet penetration is low.
+4. **`fa` Persian** — kept as a candidate, **not scheduled**, pending a
+   compliance decision: a large share of Iran's on-chain activity is
+   state-linked rather than retail, and there is real sanctions exposure in
+   targeting the market. Resolve that before anyone starts a wave. It would
+   piggyback on the `ar`/`ur` RTL audit.
+
+### Candidates assessed and set aside
+
+- **Nigeria** — one of our largest readerships, and those readers already
+  arrive and engage **in English**, so they are not blocked. Covering Nigeria
+  in local languages would also mean Hausa *and* Yoruba *and* Igbo, not one
+  language.
+- **`ms` Malay** — real readership, but largely mutually intelligible with the
+  finished `id`, so the marginal gain is small.
+- **Punjabi** — very widely spoken, but splits across two scripts and its
+  territory is served by `hi`/`ur`.
+- **Hebrew** — outsized developer density, very small population.
+- **Nordics** — small and near-universally English-literate.
+
+Note our Portugal figures are inflated by our own testing and are not demand;
+`pt-br` already covers the language.
+
+The map looks well covered because the big linguae francae carry it: `fr`
+serves Francophone West/Central Africa, `es` covers LatAm's high-adoption
+countries, `pt-br` covers Brazil plus Lusophone Africa. The remaining gaps are
+where a **local** language dominates instead.
+
+**Known imbalance, recorded deliberately:** the set covers India **five times**
+(hi, bn, mr, ta, te). India tops the adoption index and each of those is a
+major world language, so every one was defensible on its own; in aggregate it
+is questionable, because the fifth Indian language competed for budget against
+the first language of a country with none. Judge additions on *marginal*
+coverage — which readers gain something they cannot get today — rather than on
+speaker count or index rank alone.
 
 ## Current state (mapped 2026-08-08)
 
@@ -101,15 +187,32 @@ in English) checked into `translation/style/<lang>.md`.
 
 ## Phase E — Rollout waves (each wave gated on the previous one shipping cleanly)
 
-1. Wave 0: Phase A + B shipped with existing 10 languages (ISO-migrated).
-   No new translations yet.
-2. Wave 1 (only after the English content freeze): complete the 10 existing
-   languages to full lesson coverage via translate-content (they're partial
-   today: fr 8/23 … it 2/23).
-3. Wave 2: +8 highest-impact new languages (suggest: hi, id, ru, vi, ko, pl,
-   zh-tw, ar — first RTL).
-4. Wave 3: remaining 7 (bn, cs, mr, sw, ta, te, ur).
-Each wave: generate → validate → native-speaker spot check if available → ship.
+Actual history (the plan below replaced the original 4-wave sketch; waves ran
+3 languages at a time, 11 agents each — see CLAUDE.md "Running a language wave
+with parallel agents"):
+
+- **Wave 0** — Phase A + B, ISO code migration, existing languages. Done.
+- **Wave 1** — `fr` to 19/19 as the pilot, then the 9 legacy languages'
+  glossaries converted to English-keyed. Done 2026-08-15.
+- **Wave 2** — hi, id, vi. Done 2026-08-15.
+- **Wave 3** — ru, ko, pl. Done 2026-08-15.
+- **Wave 4** — cs, sw, bn. Done 2026-08-16.
+- **Wave 5** — mr, ta, te. Done 2026-08-16. First wave where all three
+  glossaries merged with **0 problems**.
+- **Next (none started).** Interleave the two tracks rather than draining one:
+  a depth wave keeps existing readers, a reach wave brings new cohorts.
+  1. **`zh-tw` conversion** — not a wave, and the cheapest thing in the plan.
+     Do it first regardless of track.
+  2. **`nl`, `th`, `tl`** (depth) — all LTR, so nothing gates them. One
+     ordinary 3-language wave.
+  3. **`ar` + `ur` + `am`** (reach) — `ar`/`ur` are **gated on the RTL audit**,
+     which is UI work (layout mirroring, `dir`, sidebar rail, icon flipping)
+     and must land *before* their content, not alongside it. `am` is LTR and
+     can run in the same wave or ahead of it.
+
+Each wave: style guides → glossary + UI in parallel → central merge and
+reconcile → lessons in parallel → register + gates. Native-speaker spot check
+where available.
 
 ## Decisions needed
 
