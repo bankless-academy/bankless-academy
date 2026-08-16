@@ -1019,16 +1019,20 @@ const Lesson = ({
             <Button
               aria-label={t('Close')}
               position="absolute"
-              top="-20px"
-              right="-20px"
+              top="-24px"
+              right="-24px"
               iconSpacing="0"
               variant="secondaryBig"
-              leftIcon={<X width="24px" height="24px" />}
+              // bold weight + 48px box so it matches the edge Prev/Next
+              // arrows: Phosphor's regular stroke reads much thinner than
+              // Chakra's filled ArrowBackIcon at the same nominal size.
+              leftIcon={<X width="24px" height="24px" weight="bold" />}
               onClick={() => closeLesson()}
               p="0"
               _hover={{ p: '0' }}
-              h="40px !important"
-              w="40px !important"
+              h="48px !important"
+              w="48px !important"
+              minW="48px !important"
             ></Button>
           </Tooltip>
         </Box>
