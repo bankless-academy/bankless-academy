@@ -48,7 +48,11 @@ const DecentralizedExchanges = (
           address: account,
           quest: 'DecentralizedExchanges',
           // if tx contains a URL, just keep the tx hash
-          tx: tx?.includes('/') ? tx?.split('/')?.pop() : tx,
+          // Sharing a link from a mobile explorer app routinely appends a
+          // trailing slash, and `pop()` on that returns an empty string.
+          tx: tx?.includes('/')
+            ? tx.split('/').filter(Boolean).pop()
+            : tx,
         })
         if (result && result.status === 200) {
           setIsCheckingTx(false)
@@ -114,18 +118,34 @@ const DecentralizedExchanges = (
                 ),
               }}
             />
-            <InputGroup maxW="530px" ml="14.4px">
+            {/* 14.4px aligns the field with the numbered steps above, but on a
+                phone that is width taken from an input holding a 66-character
+                hash, and there is no second column to align against. */}
+            <InputGroup
+              maxW="530px"
+              ml={isSmallScreen ? '0' : '14.4px'}
+              size={isSmallScreen ? 'lg' : 'md'}
+            >
               <Input
                 placeholder="0x..."
                 value={tx}
                 mb="4"
+                // This value always arrives by paste from a wallet or explorer
+                // in another app, which is exactly where a stray space or a
+                // mobile autocorrect comes from. Either one fails validation
+                // with a red cross and nothing on screen explaining why.
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="none"
+                spellCheck={false}
                 onChange={(e): void => {
-                  setTx(e.target.value)
+                  const value = e.target.value.trim()
+                  setTx(value)
                   localStorage.setItem(
                     'quest-decentralized-exchanges-tx',
-                    e.target.value
+                    value
                   )
-                  validateQuest(e.target.value)
+                  validateQuest(value)
                 }}
               />
               <InputRightElement>
@@ -141,17 +161,21 @@ const DecentralizedExchanges = (
                 )}
               </InputRightElement>
             </InputGroup>
-            <Box ml="14.4px" mt="2" mb="4">
+            <Box ml={isSmallScreen ? '0' : '14.4px'} mt="2" mb="4">
               <b>{t('Resources:')}</b>
               {/* left-aligned with the numbered steps and the hash input above;
                   centering these read as a detached second block */}
+              {/* Grid, not flex: two equal columns give the pair the same width
+                  whatever the labels are, which shrink-to-fit never did
+                  ("Bridge" against "Add funds", and worse in languages that run
+                  longer). Capped at the input's 530px so they line up with the
+                  hash field above instead of sprawling. */}
               <Box
-                display="flex"
-                flexDirection={{ base: 'column', md: 'row' }}
+                display="grid"
+                gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}
+                maxW="530px"
                 gap="4"
                 mt="4"
-                justifyContent="flex-start"
-                alignItems={{ base: 'stretch', md: 'center' }}
               >
                 <BridgeButton border="2px solid white" address={account} />
                 <OnrampButton border="2px solid white" address={account} />
@@ -176,7 +200,11 @@ const DecentralizedExchanges = (
               m="auto"
             >
               <Box zIndex="2" position="relative">
-                <Box py="8">
+                {/* Half the padding on mobile. On desktop this card is a side
+                    column that costs nothing; stacked under the form on a
+                    phone it is the tallest thing on the slide, for a secondary
+                    "go read the handbook" link. */}
+                <Box py={isSmallScreen ? '4' : '8'}>
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
                     {lesson.name}
                   </Text>
@@ -188,7 +216,7 @@ const DecentralizedExchanges = (
                     <Image src={lesson.lessonImageLink} />
                   </InternalLink>
                 </Box>
-                <Box pb="8">
+                <Box pb={isSmallScreen ? '4' : '8'}>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.englishName}
