@@ -82,13 +82,22 @@ for (const f of files) {
   if (!en[ns]) continue
   const bag = prefix ? en[ns][prefix] || {} : en[ns]
   for (const g of s.matchAll(
-    /[^a-zA-Z0-9_]t\(\s*(['"`])((?:\\.|(?!\1)[^\\])*?)\1/g
+    /[^a-zA-Z0-9_]t\(\s*(['"`])((?:\\.|(?!\1)[^\\])*?)\1\s*(,\s*\{[^}]*\})?/g
   )) {
     const key = g[2].replace(/\\'/g, "'").replace(/\\"/g, '"')
     if (!key.trim() || key.includes('${')) continue
-    if (!Object.prototype.hasOwnProperty.call(bag, key))
+    // A per-call `{ ns: 'x' }` overrides the file's useTranslation namespace,
+    // and the check has to follow it or it reports against the wrong bag.
+    // `lesson` and `keywords` have no English file on purpose (English falls
+    // through to the key), so calls into those are not checkable here.
+    const callNs =
+      (g[3] && (g[3].match(/\bns:\s*['"]([a-z]+)['"]/) || [])[1]) || ns
+    if (!en[callNs]) continue
+    const isOwnNs = callNs === ns
+    const callBag = isOwnNs ? bag : en[callNs]
+    if (!Object.prototype.hasOwnProperty.call(callBag, key))
       errors.push(
-        `${f}: t(${JSON.stringify(key)}) has no key in ${ns}${prefix ? `.${prefix}` : ''} — add it to ${NS_FILES[ns]}`
+        `${f}: t(${JSON.stringify(key)}) has no key in ${callNs}${isOwnNs && prefix ? `.${prefix}` : ''} — add it to ${NS_FILES[callNs]}`
       )
   }
 }

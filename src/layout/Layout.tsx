@@ -411,7 +411,14 @@ const Layout = ({
                   ) : (
                     <Box
                       background="transparent"
-                      h={profileHeight}
+                      // minH, not h: the contents already total 274px against a
+                      // 268px box in English (24 padding + 170 avatar + 40
+                      // marginY + 40 button), and a label that wraps to two
+                      // lines pushes it to ~292px. With a fixed height the
+                      // excess escaped the box and, because the button carries
+                      // zIndex 2, painted on top of the Lessons row instead of
+                      // pushing it down.
+                      minH={profileHeight}
                       borderBottom="2px solid #574572"
                       textAlign="center"
                     >
@@ -447,6 +454,15 @@ const Layout = ({
                           marginY="20px"
                           maxW={`calc(${menuBarWidth} - 32px)`}
                           whiteSpace="normal"
+                          // Hover must not change geometry, or a wrapping label
+                          // reflows under the cursor (Czech "Připojit
+                          // peněženku" flips 2 lines -> 1). The variant's hover
+                          // sets padding 15px AND adds a 1px border, so pin
+                          // both here: 15+1 per side in every state. Reserving
+                          // the border also stops h="auto" growing 2px taller
+                          // on hover, which shifted the whole nav below it.
+                          px="15px"
+                          border="1px solid transparent"
                           h="auto"
                           minH="40px"
                           py="2"

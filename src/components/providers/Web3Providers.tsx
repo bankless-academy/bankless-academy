@@ -16,9 +16,10 @@
 // Behaviour is unchanged: this whole subtree already rendered inside
 // NonSSRWrapper, i.e. client-only.
 import React from 'react'
-import { Box, Button } from '@chakra-ui/react'
+import { Box, Button, Text } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { createAppKit, useAppKitState } from '@reown/appkit/react'
+import { ArrowSquareOut } from '@phosphor-icons/react'
 import { WagmiProvider } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { t } from 'i18next'
@@ -107,9 +108,35 @@ const Web3Providers = ({
         maxW="380px"
         margin="auto"
       >
+        {/* The qualifier is load-bearing here in a way it is not elsewhere:
+            this banner sits directly above AppKit's wallet list, which already
+            offers Zerion as a connect option. Without "No wallet?" the two read
+            as the same action, when one installs a wallet and the other
+            connects one you already have. */}
+        <Text textAlign="center" fontWeight="bold" mb="2">
+          {t('No wallet?')}
+        </Text>
         <ExternalLink href="https://bankless.ac/zerion">
-          <Button size="lg" variant="primaryBig" width="100%">
-            {t('No wallet? 👉 Get Zerion wallet here')}
+          <Button
+            size="lg"
+            variant="primaryBig"
+            width="100%"
+            // Same trailing marker as the nav popover: both go off-site to the
+            // same URL, and ExternalLink opens every one of them in a new tab.
+            rightIcon={<ArrowSquareOut />}
+            // Long in several languages ("Obtenez le portefeuille Zerion"),
+            // and the banner is capped at 380px, so wrap rather than clip.
+            whiteSpace="normal"
+            // Pin the geometry the variant's hover would otherwise change.
+            // primaryBig uses the wider 23px padding, not primary's 15px.
+            px="23px"
+            border="1px solid transparent"
+            h="auto"
+            minH="48px"
+            py="2"
+            lineHeight="1.3"
+          >
+            {t('Get the Zerion wallet')}
           </Button>
         </ExternalLink>
       </Box>

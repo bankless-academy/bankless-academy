@@ -12,7 +12,12 @@ import {
   Heading,
   useDisclosure,
 } from '@chakra-ui/react'
-import { Wallet, UserCircle, SignOut } from '@phosphor-icons/react'
+import {
+  Wallet,
+  UserCircle,
+  SignOut,
+  ArrowSquareOut,
+} from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
@@ -165,6 +170,8 @@ const ConnectWalletButton = ({
 
   const isLessonPage = asPath.includes('/lessons')
   const isProfilePage = asPath.includes('/explorer/my-profile')
+  // Don't offer the wallet lesson to someone already reading it.
+  const isWalletLesson = asPath.includes('creating-a-crypto-wallet')
 
   // const networkVersion =
   //   typeof window !== 'undefined'
@@ -612,22 +619,66 @@ const ConnectWalletButton = ({
               <Heading as="h2" size="md" textAlign="center" my="2">
                 {t('Connect your wallet to proceed.')}
               </Heading>
-              <Text textAlign="center">
-                {/* {`Don't know how? `}
-                <ExternalLink
-                  underline="true"
-                  href="https://app.banklessacademy.com/lessons/creating-a-crypto-wallet"
-                >
-                  {t('Get help here')}
-                </ExternalLink> */}
-                {`${t('No wallet?')} `}
-                <ExternalLink
-                  underline="true"
-                  href="https://bankless.ac/zerion"
-                >
-                  {t('👉 Get Zerion wallet here')}
-                </ExternalLink>
-              </Text>
+              {/* Only for readers who have never connected here. `current_wallet`
+                  outlives a disconnect, so someone signing back in after
+                  clearing their session is not pitched a wallet they own. */}
+              {!currentWallet && (
+                <>
+                  <Text textAlign="center" mb="2">
+                    {t('No wallet?')}
+                  </Text>
+                  <ExternalLink href="https://bankless.ac/zerion" alt="Zerion">
+                    {/* A block button, not an inline link: the old link wrapped
+                        to a second line in most languages, and a two-line
+                        inline link is a ragged tap target well under the 44px
+                        mobile baseline. */}
+                    <Button
+                      variant="secondary"
+                      w="100%"
+                      leftIcon={
+                        <Image
+                          src="/images/zerion-logo.svg"
+                          w="20px"
+                          h="20px"
+                          alt=""
+                        />
+                      }
+                      rightIcon={<ArrowSquareOut />}
+                      // The popover is 320px wide and the French label runs to
+                      // ~30 characters, so let it wrap rather than truncate.
+                      // There is vertical room here, unlike in the nav.
+                      whiteSpace="normal"
+                      // Pin the geometry the variant's hover would otherwise
+                      // change (padding 15px + a 1px border), so the label
+                      // neither reflows nor grows 2px taller under the cursor.
+                      px="15px"
+                      border="1px solid transparent"
+                      h="auto"
+                      minH="40px"
+                      py="2"
+                      lineHeight="1.3"
+                    >
+                      {t('Get the Zerion wallet')}
+                    </Button>
+                  </ExternalLink>
+                  {/* Teaching before installing is the on-brand first rung, but
+                      this popover fires when someone is blocked and trying to
+                      proceed, so the lesson stays the quieter of the two. Its
+                      title is already translated in every language via the
+                      `lesson` namespace, so this adds no new i18n key. */}
+                  {!isWalletLesson && (
+                    <Text textAlign="center" mt="3" fontSize="sm">
+                      <InternalLink
+                        href="/lessons/creating-a-crypto-wallet"
+                        alt={t('Creating a Crypto Wallet', { ns: 'lesson' })}
+                        textDecoration="underline"
+                      >
+                        {t('Creating a Crypto Wallet', { ns: 'lesson' })}
+                      </InternalLink>
+                    </Text>
+                  )}
+                </>
+              )}
             </PopoverBody>
           </PopoverContent>
         </Popover>
