@@ -1,7 +1,6 @@
 import { Box, useToast } from '@chakra-ui/react'
-import { ReactElement, useState } from 'react'
+import { ReactElement } from 'react'
 
-import Disclaimer from 'components/Disclaimer'
 import { LessonType } from 'entities/lesson'
 import { useAccount } from 'wagmi'
 import { useApp } from 'contexts/AppContext'
@@ -19,7 +18,6 @@ const OpenLesson = ({
   click?: boolean
   onLessonOpen?: () => void
 }): React.ReactElement => {
-  const [showDisclaimer, setShowDisclaimer] = useState(false)
   const toast = useToast()
   const { address } = useAccount()
   const { openLessons, setOpenLessons } = useApp()
@@ -68,37 +66,14 @@ const OpenLesson = ({
         cursor: 'pointer',
       }}
       position="relative"
-      onClick={async () => {
-        if (click) {
-          const disclaimerTimestamp = localStorage.getItem(
-            `disclaimer-${lesson.slug}`
-          )
-          if (disclaimerTimestamp) {
-            // If disclaimer was already accepted, open lesson directly
-            await openLesson()
-          } else {
-            // Show disclaimer if not yet accepted
-            setShowDisclaimer(true)
-          }
-        }
+      // The disclaimer modal used to gate this click. It now lives in the quest
+      // slide's nav (components/Quest/QuestDisclaimer), where the learner is
+      // asked to act — reading a lesson has never cost anyone money.
+      onClick={() => {
+        if (click) openLesson()
       }}
     >
       {children}
-      {showDisclaimer && (
-        <Disclaimer
-          lesson={lesson}
-          accepted={async () => {
-            const currentTimestamp = Math.floor(Date.now() / 1000)
-            localStorage.setItem(
-              `disclaimer-${lesson.slug}`,
-              currentTimestamp.toString()
-            )
-            await openLesson()
-            setShowDisclaimer(false)
-          }}
-          onClose={() => setShowDisclaimer(false)}
-        />
-      )}
     </Box>
   )
 }

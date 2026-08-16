@@ -633,7 +633,7 @@ const ConnectWalletButton = ({
                         inline link is a ragged tap target well under the 44px
                         mobile baseline. */}
                     <Button
-                      variant="secondary"
+                      variant="primaryWhite"
                       w="100%"
                       leftIcon={
                         <Image
@@ -652,7 +652,7 @@ const ConnectWalletButton = ({
                       // change (padding 15px + a 1px border), so the label
                       // neither reflows nor grows 2px taller under the cursor.
                       px="15px"
-                      border="1px solid transparent"
+                      // border="1px solid transparent"
                       h="auto"
                       minH="40px"
                       py="2"
@@ -672,6 +672,7 @@ const ConnectWalletButton = ({
                         href="/lessons/creating-a-crypto-wallet"
                         alt={t('Creating a Crypto Wallet', { ns: 'lesson' })}
                         textDecoration="underline"
+                        color="white"
                       >
                         {t('Creating a Crypto Wallet', { ns: 'lesson' })}
                       </InternalLink>

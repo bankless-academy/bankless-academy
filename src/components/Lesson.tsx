@@ -62,6 +62,7 @@ import {
 } from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
+import QuestDisclaimer from 'components/Quest/QuestDisclaimer'
 import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
@@ -1383,7 +1384,10 @@ const Lesson = ({
             />
           )}
         <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
-          <HStack flex="auto">
+          {/* Up to four buttons here on a quest slide (Close, Prev, Disclaimer,
+              Report an Issue) plus Next/Finish opposite, so the gaps are
+              tightened on mobile where that row is the binding constraint. */}
+          <HStack flex="auto" spacing={isSmallScreen ? '1' : '2'}>
             {!edgeNav && (
               <Button
                 ref={buttonLeftRef}
@@ -1405,6 +1409,13 @@ const Lesson = ({
                 size="lg"
                 onClick={() => clickLeft()}
                 leftIcon={<ArrowBackIcon />}
+                // Same treatment as Close above. Without it this button keeps
+                // size lg's 24px side padding plus 8px of icon spacing next to
+                // an empty label, making it ~74px against Close's 48px — the
+                // single biggest waste in a nav row that overflows on mobile.
+                p={isSmallScreen ? '0' : '24px'}
+                _hover={{ px: isSmallScreen ? '0' : '24px' }}
+                iconSpacing={isSmallScreen ? '0' : '8px'}
               >
                 {isSmallScreen ? '' : t('Prev')}
               </Button>
@@ -1440,6 +1451,12 @@ const Lesson = ({
                 />
               </Box>
             )}
+            {/* Not gated on `address` like Report an Issue below it: the risk
+                warning is about what the quest asks you to do, which does not
+                depend on whether a wallet happens to be connected yet. */}
+            {slide.type === 'QUEST' && (
+              <QuestDisclaimer isSmallScreen={isSmallScreen} />
+            )}
             {slide.type === 'QUEST' && address && (
               <ExternalLink
                 href={'/report-an-issue'}
@@ -1449,6 +1466,9 @@ const Lesson = ({
                   leftIcon={<Bug width="24px" height="24px" />}
                   iconSpacing={isSmallScreen ? 0 : '8px'}
                   variant="outline"
+                  // Icon-only on mobile, so the 16px side padding is buying
+                  // nothing but width in the row that overflows.
+                  px={isSmallScreen ? '2' : '4'}
                 >
                   {isSmallScreen ? '' : t('Report an Issue')}
                 </Button>
