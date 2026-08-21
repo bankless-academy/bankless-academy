@@ -1,0 +1,1249 @@
+{
+  ".eth": {
+    "keyword": ".eth",
+    "definition": "Ethereum Name Service（ENS）使用的 Web3 域名字尾，例如 yourname.eth。"
+  },
+  "2 factor authentication": {
+    "keyword": "雙因素認證",
+    "definition": "一層額外的安全保護，用來確認想要登入網路帳戶的人確實是本人。"
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "一層額外的安全保護，用來確認想要登入網路帳戶的人確實是本人。"
+  },
+  "51% attack": {
+    "keyword": "51% 攻擊",
+    "keyword_plural": "51% 攻擊",
+    "definition": "透過控制網路上超過一半的區塊生產算力，來攻擊區塊鏈共識的行為。"
+  },
+  "address": {
+    "keyword": "地址",
+    "keyword_plural": "地址",
+    "definition": "區塊鏈上某個實體的唯一公開識別符號。"
+  },
+  "addresses": {
+    "keyword": "地址",
+    "definition": "區塊鏈上各個實體的唯一公開識別符號。"
+  },
+  "aggregator": {
+    "keyword": "聚合器",
+    "keyword_plural": "聚合器",
+    "definition": "把多個來源彙總到一起、幫你找到最優選擇的工具。"
+  },
+  "airdrop": {
+    "keyword": "空投",
+    "keyword_plural": "空投",
+    "definition": "把加密資產免費分發給使用者。"
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "definition": "全稱 Capital Allocation Protocol，即資金分配協議。一個開源協議，讓團體高效、透明地分配彙集起來的資金。"
+  },
+  "allowance": {
+    "keyword": "授權額度",
+    "keyword_plural": "授權額度",
+    "definition": "允許某個實體（通常是智能合約）在交易中動用你指定數量的代幣。"
+  },
+  "alternative layer 1": {
+    "keyword": "替代性 Layer 1",
+    "keyword_plural": "替代性 Layer 1",
+    "definition": "指以太坊和比特幣之外的 Layer 1 區塊鏈。"
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM",
+    "definition": "（自動做市商）一種基於公開演算法的交易撮合系統。"
+  },
+  "app": {
+    "keyword": "應用",
+    "keyword_plural": "應用",
+    "definition": "電腦或手機上的應用程式。"
+  },
+  "app store": {
+    "keyword": "應用商店",
+    "keyword_plural": "應用商店",
+    "definition": "下載電腦或手機應用程式的數位商店。"
+  },
+  "asynchronous": {
+    "keyword": "非同步",
+    "definition": "多人協作時的一種溝通方式，參與者不需要在同一時間在場。"
+  },
+  "attestation": {
+    "keyword": "證明",
+    "keyword_plural": "證明",
+    "definition": "對某件事為真的簽名確認。在以太坊上，驗證者釋出證明，投票表示某個區塊有效。"
+  },
+  "autonomy": {
+    "keyword": "自主性",
+    "definition": "由你自己決定自己的行動，而不是遵守別人設定的框架。"
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "definition": "Base 網路上的域名服務，為錢包提供以 .base.eth 結尾的易讀名字。"
+  },
+  "batch auction": {
+    "keyword": "批次拍賣",
+    "keyword_plural": "批次拍賣",
+    "definition": "一種交易方式：先在很短的時間內收集大量訂單，再用同一個公平價格一起成交。"
+  },
+  "bet": {
+    "keyword": "下注",
+    "keyword_plural": "下注",
+    "definition": "拿錢去冒險，換取更高回報的可能。"
+  },
+  "blob": {
+    "keyword": "Blob",
+    "keyword_plural": "Blob",
+    "definition": "以太坊區塊裡一塊便宜的臨時資料空間，Layer 2 用它來提交自己的交易批次。"
+  },
+  "block": {
+    "keyword": "區塊",
+    "keyword_plural": "區塊",
+    "definition": "區塊鏈上的一組交易。"
+  },
+  "block builder": {
+    "keyword": "區塊構建者",
+    "keyword_plural": "區塊構建者",
+    "definition": "把交易打包成新區塊的專業角色，再由區塊提案者把區塊釋出到網路上。"
+  },
+  "block explorer": {
+    "keyword": "區塊瀏覽器",
+    "keyword_plural": "區塊瀏覽器",
+    "definition": "用來搜尋和檢視區塊鏈資料的工具。"
+  },
+  "block hash": {
+    "keyword": "區塊雜湊",
+    "keyword_plural": "區塊雜湊",
+    "definition": "每個區塊檔案的唯一識別符號。每個新區塊都會引用前一個區塊的雜湊，從而把所有區塊串成一條鏈。"
+  },
+  "block producer": {
+    "keyword": "區塊生產者",
+    "keyword_plural": "區塊生產者",
+    "definition": "被網路選中來建立新交易區塊的參與者，比如礦工或驗證者。"
+  },
+  "block proposer": {
+    "keyword": "區塊提案者",
+    "keyword_plural": "區塊提案者",
+    "definition": "由網路演算法選中的驗證者節點，負責決定下一個加入區塊鏈的區塊。"
+  },
+  "block reward": {
+    "keyword": "區塊獎勵",
+    "keyword_plural": "區塊獎勵",
+    "definition": "發給新有效區塊提案者的一筆原生幣獎勵。"
+  },
+  "block space": {
+    "keyword": "區塊空間",
+    "definition": "每個區塊中用來存放交易和資料的空間大小。"
+  },
+  "blockchain": {
+    "keyword": "區塊鏈",
+    "keyword_plural": "區塊鏈",
+    "definition": "一種由全球許多臺電腦共同維護加密貨幣交易記錄的系統。"
+  },
+  "blockchain apps": {
+    "keyword": "區塊鏈應用",
+    "definition": "執行在區塊鏈上的應用，可以讓你兌換加密貨幣、使用 Web3 社交媒體、進行慈善捐贈，甚至像在 Bankless Academy 一樣在鏈上學習。"
+  },
+  "blockchain architecture": {
+    "keyword": "區塊鏈架構",
+    "keyword_plural": "區塊鏈架構",
+    "definition": "區塊鏈技術中資料儲存方式的結構設計。"
+  },
+  "blockchain technology": {
+    "keyword": "區塊鏈技術",
+    "keyword_plural": "區塊鏈技術",
+    "definition": "一種由許多臺電腦共同承載的新型網路。它為網際網路加上了一層數位所有權。"
+  },
+  "blockchain trilemma": {
+    "keyword": "區塊鏈三難困境",
+    "keyword_plural": "區塊鏈三難困境",
+    "definition": "描述區塊鏈需要同時兼顧三種特性的難題：安全性、可擴充套件性和去中心化。"
+  },
+  "blockspace": {
+    "keyword": "區塊空間",
+    "definition": "每個區塊中用來存放交易和資料的空間大小。"
+  },
+  "borrower": {
+    "keyword": "借款人",
+    "keyword_plural": "借款人",
+    "definition": "願意向出借人支付利息，以便借入資產的人。"
+  },
+  "bridge": {
+    "keyword": "跨鏈橋",
+    "keyword_plural": "跨鏈橋",
+    "definition": "一種連線方式，讓兩條不同的區塊鏈網路互相通訊、交換資產。"
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "比特幣的市場代號。"
+  },
+  "censorship-resistant": {
+    "keyword": "抗審查",
+    "definition": "沒有任何政府或公司能決定什麼被允許、什麼不被允許。"
+  },
+  "central bank": {
+    "keyword": "中央銀行",
+    "keyword_plural": "中央銀行",
+    "definition": "在一個國家裡負責監管貨幣、銀行和幣值的機構。"
+  },
+  "centralization": {
+    "keyword": "中心化",
+    "definition": "整個系統的權力集中在單一權威或實體手中。"
+  },
+  "centralized": {
+    "keyword": "中心化",
+    "definition": "由單一權威或實體控制整個系統。"
+  },
+  "centralized exchange": {
+    "keyword": "中心化交易所",
+    "keyword_plural": "中心化交易所",
+    "definition": "（CEX）一個收取費用、為加密貨幣交易做撮合的中心化平臺，類似股票交易所。"
+  },
+  "centralized exchange staking": {
+    "keyword": "中心化交易所質押",
+    "definition": "透過中心化交易所鎖定代幣來獲得獎勵。"
+  },
+  "centralized services": {
+    "keyword": "中心化服務",
+    "definition": "控制網路活動的公司或實體。它們制定規則和費用，管理資料和內容，往往把自身利益放在使用者需求之前。"
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX",
+    "definition": "（中心化交易所）一個收取費用、為加密貨幣交易做撮合的平臺，類似股票交易所。"
+  },
+  "chain": {
+    "keyword": "鏈",
+    "keyword_plural": "鏈",
+    "definition": "把一個個資料區塊綁在一起，形成無法被篡改的資料庫。"
+  },
+  "circulating supply": {
+    "keyword": "流通供應量",
+    "keyword_plural": "流通供應量",
+    "definition": "某種加密貨幣中，已經公開發行、可以在市場上交易的幣或代幣數量。"
+  },
+  "coin": {
+    "keyword": "幣",
+    "keyword_plural": "幣",
+    "definition": "區塊鏈的原生資產，主要當作貨幣使用，用來完成網路上的交易。"
+  },
+  "cold wallet": {
+    "keyword": "冷錢包",
+    "keyword_plural": "冷錢包",
+    "definition": "一種自我託管錢包，儲存在離線的硬體裝置上。"
+  },
+  "collateral": {
+    "keyword": "抵押品",
+    "definition": "借款人抵押給出借人的特定資產，用來保證貸款會被償還。"
+  },
+  "commercial bank": {
+    "keyword": "商業銀行",
+    "keyword_plural": "商業銀行",
+    "definition": "為個人和企業管理資金的銀行。"
+  },
+  "composability": {
+    "keyword": "可組合性",
+    "definition": "把現有的智能合約和應用像積木一樣拼起來，做出新產品的能力。"
+  },
+  "consensus": {
+    "keyword": "共識",
+    "definition": "在區塊鏈這樣的去中心化計算機網路中達成的一致、信任與安全。"
+  },
+  "consensus mechanism": {
+    "keyword": "共識機制",
+    "keyword_plural": "共識機制",
+    "definition": "區塊鏈網路用來判斷哪些交易合法、哪些是欺詐的方法。"
+  },
+  "consensus mechanisms": {
+    "keyword": "共識機制",
+    "definition": "區塊鏈網路用來判斷哪些交易合法、哪些是欺詐的各種方法。"
+  },
+  "counterparty risk": {
+    "keyword": "交易對手風險",
+    "keyword_plural": "交易對手風險",
+    "definition": "對方可能不履行協議中自己那部分義務的風險。"
+  },
+  "credible neutrality": {
+    "keyword": "可信中立",
+    "definition": "一種機制不會偏袒或歧視任何特定的人群。"
+  },
+  "crypto": {
+    "keyword": "加密貨幣",
+    "definition": "屬於網際網路、而不屬於某個國家的貨幣。它們通常不由中央銀行管理，而是由使用者共同治理。"
+  },
+  "crypto wallet": {
+    "keyword": "加密錢包",
+    "keyword_plural": "加密錢包",
+    "definition": "一個讓你存放加密貨幣，並且收發或花掉它的應用。"
+  },
+  "cryptocurrencies": {
+    "keyword": "加密貨幣",
+    "definition": "屬於網際網路、而不屬於某個國家的貨幣。它們通常不由中央銀行管理，而是由使用者共同治理。"
+  },
+  "cryptocurrency": {
+    "keyword": "加密貨幣",
+    "keyword_plural": "加密貨幣",
+    "definition": "一種屬於網際網路、而不屬於某個國家的貨幣。它通常不由中央銀行管理，而是由使用者共同治理。"
+  },
+  "cryptocurrency mining": {
+    "keyword": "加密貨幣挖礦",
+    "definition": "驗證區塊鏈交易來換取加密貨幣獎勵，用在比特幣這類工作量證明網路上。"
+  },
+  "cryptocurrency wallet": {
+    "keyword": "加密貨幣錢包",
+    "keyword_plural": "加密貨幣錢包",
+    "definition": "一個讓你存放加密貨幣，並且收發或花掉它的應用。"
+  },
+  "cryptography": {
+    "keyword": "密碼學",
+    "definition": "用來保障通訊或交易安全、防止外部干擾的技術。"
+  },
+  "custodial wallet": {
+    "keyword": "託管錢包",
+    "keyword_plural": "託管錢包",
+    "definition": "使用託管錢包時，私鑰掌握在別人手裡，因此你的加密資產也由對方控制。"
+  },
+  "custodian": {
+    "keyword": "託管方",
+    "keyword_plural": "託管方",
+    "definition": "被委託保管你資產的金融機構。"
+  },
+  "custom record": {
+    "keyword": "自定義記錄",
+    "keyword_plural": "自定義記錄",
+    "definition": "繫結在 ENS 域名上的自定義資料條目，讓你在標準地址之外附加網站或社交連結等額外資訊。"
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO",
+    "definition": "（去中心化自治組織）一種利用區塊鏈技術自動完成投票和管理的組織形式。"
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApp",
+    "definition": "「去中心化應用」，連線區塊鏈和去中心化網路的應用。"
+  },
+  "death spiral": {
+    "keyword": "死亡螺旋",
+    "keyword_plural": "死亡螺旋",
+    "definition": "一種自我強化的崩塌：價格下跌逼出的操作又把價格進一步壓低，某些演算法穩定幣就是這樣倒下的。"
+  },
+  "decentralization": {
+    "keyword": "去中心化",
+    "definition": "把控制權交給許多個人，而不是集中在單一權威手裡。"
+  },
+  "decentralized": {
+    "keyword": "去中心化",
+    "definition": "沒有任何單一權威或實體控制整個系統。"
+  },
+  "decentralized exchange": {
+    "keyword": "去中心化交易所",
+    "keyword_plural": "去中心化交易所",
+    "definition": "（DEX）一種無需可信中介就能完成兌換的協議。"
+  },
+  "decentralized finance": {
+    "keyword": "去中心化金融",
+    "definition": "（DeFi）一套執行在區塊鏈上的自我託管金融工具。"
+  },
+  "decentralized money": {
+    "keyword": "去中心化貨幣",
+    "definition": "屬性由社群共同商定的貨幣，而不是由某個機構規定。"
+  },
+  "decentralized services": {
+    "keyword": "去中心化服務",
+    "definition": "（dApp）利用自動化來降低費用、改善使用體驗的網路服務。"
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "（去中心化金融）一套執行在區塊鏈上的自我託管金融工具。"
+  },
+  "delegate": {
+    "keyword": "委託",
+    "keyword_plural": "委託",
+    "definition": "把某項具體責任交給另一個人，比如把代幣的投票權委託出去。"
+  },
+  "delegation": {
+    "keyword": "委託",
+    "keyword_plural": "委託",
+    "definition": "把某項具體責任交給另一個人，比如把代幣的投票權委託出去。"
+  },
+  "democracy": {
+    "keyword": "民主",
+    "keyword_plural": "民主",
+    "definition": "一種政治制度，公民透過參與決策來行使權力。"
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX",
+    "definition": "（去中心化交易所）一種無需可信中介就能完成兌換的協議。"
+  },
+  "dex aggregator": {
+    "keyword": "DEX 聚合器",
+    "keyword_plural": "DEX 聚合器",
+    "definition": "把多個來源的 DEX 流動性彙總到同一個介面的協議。"
+  },
+  "digital assets": {
+    "keyword": "數位資產",
+    "definition": "任何以數位形式儲存的、有價值的東西。"
+  },
+  "digital signature": {
+    "keyword": "數位簽章",
+    "keyword_plural": "數位簽章",
+    "definition": "用你的私鑰生成的證明，表示你批准了某條訊息或某筆交易。它像手寫簽名，但無法偽造。"
+  },
+  "double-spend": {
+    "keyword": "雙重支付",
+    "keyword_plural": "雙重支付",
+    "definition": "把同一筆數位貨幣花兩次。區塊鏈共識存在的意義，就是在沒有中央權威的情況下防止這種事。"
+  },
+  "earn": {
+    "keyword": "賺取",
+    "definition": "貢獻價值來換取回報；技能立方上的金錢動詞。"
+  },
+  "encryption": {
+    "keyword": "加密",
+    "definition": "把資訊轉換成私密安全程式碼的過程，用來防止未經授權的存取。"
+  },
+  "epoch": {
+    "keyword": "時段",
+    "keyword_plural": "時段",
+    "definition": "在某條區塊鏈上，產生特定數量的區塊所需要的時間。"
+  },
+  "equality of opportunity": {
+    "keyword": "機會平等",
+    "definition": "一種公平原則：不論出身和處境如何，每個人都有同樣的成功機會。"
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20",
+    "definition": "以太坊上同質化代幣的標準。這類代幣可以拆分，彼此之間沒有區別。"
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721",
+    "definition": "以太坊上非同質化代幣的標準。這類代幣有唯一的數位標識，無法複製，也不能拆分。"
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155",
+    "definition": "以太坊上的一種標準，用一份最佳化過的合約同時發行同質化和非同質化代幣。"
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF",
+    "definition": "（交易所交易基金）在股票市場上交易的投資基金，持有股票、黃金或比特幣等資產。"
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "（以太幣）以太坊的原生加密貨幣。用來在網路上完成交易、執行驗證者節點等。"
+  },
+  "ether": {
+    "keyword": "以太幣",
+    "definition": "（ETH）以太坊的原生加密貨幣。用來在網路上完成交易、執行驗證者節點等。"
+  },
+  "ethereum blockchain": {
+    "keyword": "以太坊區塊鏈",
+    "definition": "記錄以太坊網路上交易和所有權的公共帳本。"
+  },
+  "ethereum mainnet": {
+    "keyword": "以太坊主網",
+    "definition": "以太坊的主 Layer 1 網路，上面的交易帶有真實價值。它是以太坊各個 Layer 2 的結算層。"
+  },
+  "ethereum virtual machine": {
+    "keyword": "以太坊虛擬機器",
+    "definition": "以太坊虛擬機器（EVM）是一個軟體，負責執行智能合約並計算以太坊網路的狀態。"
+  },
+  "fiat": {
+    "keyword": "法定貨幣",
+    "definition": "國家發行的貨幣。它沒有黃金這類商品做背書，價值來自公眾對發行方的信任。"
+  },
+  "finality": {
+    "keyword": "最終性",
+    "definition": "一筆已確認的區塊鏈交易是永久的、無法被撤銷或修改的保證。"
+  },
+  "finality time": {
+    "keyword": "最終確定時間",
+    "definition": "確認一筆交易有效、並且不會再被撤銷或修改所需要的時間。"
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "（錯失恐懼）擔心自己錯過某件事的焦慮感。"
+  },
+  "fork": {
+    "keyword": "分叉",
+    "keyword_plural": "分叉",
+    "definition": "區塊鏈網路的一次重大改動，結果分成兩條分支：一條沿用舊協議，一條採用新協議。"
+  },
+  "fraud": {
+    "keyword": "欺詐",
+    "definition": "在區塊鏈經濟中：用不公平或虛假的交易，來改變自己持有的加密貨幣數量。"
+  },
+  "fraud proof": {
+    "keyword": "欺詐證明",
+    "keyword_plural": "欺詐證明",
+    "definition": "證明某筆交易無效、確實發生了欺詐的證據。"
+  },
+  "front-running": {
+    "keyword": "搶跑",
+    "definition": "看到別人還沒處理的交易後，多付費用讓自己的交易先成交，從中獲利。"
+  },
+  "fungibility": {
+    "keyword": "同質性",
+    "definition": "可以互相替換的性質：每一單位的價值相同，可以頂替任何另一單位，就像一張一元紙幣換另一張。"
+  },
+  "gas": {
+    "keyword": "Gas",
+    "definition": "區塊鏈網路的交易費用。"
+  },
+  "gas fee": {
+    "keyword": "Gas 費",
+    "keyword_plural": "Gas 費",
+    "definition": "使用區塊鏈網路時支付的交易費用。"
+  },
+  "gasless transactions": {
+    "keyword": "免 Gas 交易",
+    "definition": "這類交易的 Gas 費用由被交易的代幣支付，或者由贊助方代付，不需要用網路的原生幣。"
+  },
+  "gold standard": {
+    "keyword": "金本位",
+    "keyword_plural": "金本位",
+    "definition": "一種貨幣制度，國家貨幣的價值直接與黃金掛鉤。"
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "definition": "以太坊區塊鏈上的一個單位，等於 0.000000001 ETH（十億分之一），常用來表示 Gas 價格。"
+  },
+  "halving": {
+    "keyword": "減半",
+    "keyword_plural": "減半",
+    "definition": "大約每四年發生一次的既定事件，把挖出新比特幣的獎勵減少一半。"
+  },
+  "hardware wallet": {
+    "keyword": "硬體錢包",
+    "keyword_plural": "硬體錢包",
+    "definition": "一種自我託管錢包，把私鑰離線儲存在一個實體硬體裝置裡。"
+  },
+  "hash": {
+    "keyword": "雜湊",
+    "keyword_plural": "雜湊",
+    "definition": "資訊的數位指紋。"
+  },
+  "hashing function": {
+    "keyword": "雜湊函式",
+    "keyword_plural": "雜湊函式",
+    "definition": "把任意輸入變成唯一且長度固定的指紋（雜湊）的函式。正向計算很容易，反向推回幾乎不可能。"
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "（Hold On for Dear Life）加密圈的俚語，指無論行情如何都不賣掉手裡的加密貨幣。"
+  },
+  "hot wallet": {
+    "keyword": "熱錢包",
+    "keyword_plural": "熱錢包",
+    "definition": "一種自我託管錢包，始終連線著網際網路。"
+  },
+  "inflation": {
+    "keyword": "通貨膨脹",
+    "definition": "物價普遍上漲，貨幣的購買力下降。"
+  },
+  "intent": {
+    "keyword": "意圖",
+    "keyword_plural": "意圖",
+    "definition": "一份簽名的交易請求，描述你想要的結果，比如「用 X 換到至少 Y」，具體路徑交給專業方去找。"
+  },
+  "intermediaries": {
+    "keyword": "中介",
+    "definition": "連線人與人的實體或服務，用來促成價值或資訊的交換。"
+  },
+  "intermediary": {
+    "keyword": "中介",
+    "keyword_plural": "中介",
+    "definition": "連線人與人的實體或服務，用來促成一次價值或資訊的交換。"
+  },
+  "intermediary token": {
+    "keyword": "中間代幣",
+    "keyword_plural": "中間代幣",
+    "definition": "位於一條交易路徑中間的代幣，既不是起點也不是終點。"
+  },
+  "interoperability": {
+    "keyword": "互操作性",
+    "definition": "不同的應用、代幣和區塊鏈之間協同工作、共享資訊的能力。"
+  },
+  "invest": {
+    "keyword": "投資",
+    "definition": "把錢投入某種資產，比如幣或代幣，期待它的價值增長。"
+  },
+  "know-your-customer": {
+    "keyword": "瞭解你的客戶",
+    "definition": "（KYC）政府規定的使用者身份驗證流程。"
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "（瞭解你的客戶）政府規定的使用者身份驗證流程。"
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "definition": "Layer 1 指比特幣或以太坊這樣的基礎網路。"
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "definition": "一種區塊鏈，在繼承以太坊安全性的同時擴充套件它的處理能力。"
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1",
+    "definition": "Layer 1 指比特幣或以太坊這樣的基礎網路。"
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2",
+    "definition": "一種區塊鏈，在繼承以太坊安全性的同時擴充套件它的處理能力。"
+  },
+  "ledger": {
+    "keyword": "帳本",
+    "keyword_plural": "帳本",
+    "definition": "記錄了迄今為止所有交易的帳目。"
+  },
+  "lender": {
+    "keyword": "出借人",
+    "keyword_plural": "出借人",
+    "definition": "存入資產來賺取利息的人。"
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "definition": "建立在比特幣之上的支付網路，也叫閃電網路。它用支付通道讓日常付款變得即時又便宜。"
+  },
+  "liquid": {
+    "keyword": "流動性強",
+    "definition": "在區塊鏈經濟中：一種數位資產可以輕鬆用於交易，或者在智能合約中使用。"
+  },
+  "liquid staking token": {
+    "keyword": "流動性質押代幣",
+    "keyword_plural": "流動性質押代幣",
+    "definition": "代表已質押 ETH 的代幣。持有者按質押金額的比例，分享一部分質押獎勵。"
+  },
+  "liquidation": {
+    "keyword": "清算",
+    "keyword_plural": "清算",
+    "definition": "當借款人的抵押品價值跌到不足以安全覆蓋貸款時，系統自動把抵押品賣掉。"
+  },
+  "liquidity": {
+    "keyword": "流動性",
+    "definition": "可供交易的代幣數量。"
+  },
+  "liquidity pool": {
+    "keyword": "流動性池",
+    "keyword_plural": "流動性池",
+    "definition": "一個公共的代幣金庫，讓代幣兌換無需許可就能完成。"
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP",
+    "definition": "（流動性提供者）把自己的代幣借給協議、換取部分手續費分成的區塊鏈使用者。"
+  },
+  "lsts": {
+    "keyword": "LST",
+    "definition": "代表已質押 ETH 的代幣。持有者按質押金額的比例，分享一部分質押獎勵。"
+  },
+  "mainnet": {
+    "keyword": "主網",
+    "definition": "交易具有真實價值的主要區塊鏈網路，與測試網路相對。通常指 Ethereum 的 Layer 1。"
+  },
+  "market cap": {
+    "keyword": "市值",
+    "keyword_plural": "市值",
+    "definition": "某個代幣或某個市場板塊的總價值。"
+  },
+  "max supply": {
+    "keyword": "最大供應量",
+    "keyword_plural": "最大供應量",
+    "definition": "某種加密貨幣將來最多會存在的幣或代幣數量。"
+  },
+  "memecoin": {
+    "keyword": "Meme 幣",
+    "keyword_plural": "Meme 幣",
+    "definition": "以網路迷因為主題的加密貨幣代幣，通常沒有任何用途或實際功能。"
+  },
+  "meta-aggregator": {
+    "keyword": "元聚合器",
+    "keyword_plural": "元聚合器",
+    "definition": "把多個聚合器彙總到一起、再加上一層總覽的工具。"
+  },
+  "mev": {
+    "keyword": "MEV",
+    "definition": "（最大可提取價值）區塊生產者透過重新排序、插入或遮蔽區塊內的交易而賺到的利潤。"
+  },
+  "miner": {
+    "keyword": "礦工",
+    "keyword_plural": "礦工",
+    "definition": "工作量證明網路（比如 Bitcoin）裡的參與者，透過競爭提議新區塊來換取獎勵。"
+  },
+  "mining": {
+    "keyword": "挖礦",
+    "definition": "工作量證明中驗證交易、把新區塊加到區塊鏈上的過程，參與者可以獲得獎勵。"
+  },
+  "mint": {
+    "keyword": "鑄造",
+    "definition": "在某條區塊鏈上發行新的同質化或非同質化加密代幣。"
+  },
+  "monetary policy": {
+    "keyword": "貨幣政策",
+    "keyword_plural": "貨幣政策",
+    "definition": "中央銀行管理經濟中流通貨幣數量的方式。"
+  },
+  "money": {
+    "keyword": "貨幣",
+    "definition": "一種交換媒介、記帳單位和價值儲存手段，用來完成商品和服務的交易。"
+  },
+  "multi-token standard": {
+    "keyword": "多代幣標準",
+    "definition": "像 ERC-1155 這樣的代幣標準，可以在一個智能合約裡同時支援同質化和非同質化代幣。"
+  },
+  "network governance": {
+    "keyword": "網路治理",
+    "definition": "去中心化社群就網路功能或升級達成一致的過程。"
+  },
+  "neutrality": {
+    "keyword": "中立性",
+    "definition": "平等對待所有參與者、不偏向任何使用者或群體的原則。"
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT",
+    "definition": "（非同質化代幣）帶有唯一 ID、無法複製的代幣，與 Ether 這類沒有唯一標識的同質化代幣相對。"
+  },
+  "node": {
+    "keyword": "節點",
+    "keyword_plural": "節點",
+    "definition": "執行區塊鏈軟體的計算機，它儲存一份帳本副本，並幫助驗證網路。"
+  },
+  "node operator": {
+    "keyword": "節點運營者",
+    "keyword_plural": "節點運營者",
+    "definition": "Ethereum 社群的成員，執行驗證者節點來處理網路上的交易。"
+  },
+  "non-custodial wallet": {
+    "keyword": "非託管錢包",
+    "keyword_plural": "非託管錢包",
+    "definition": "（又稱：自我託管錢包）用非託管錢包時，只有你掌控自己的私鑰，而私鑰控制著你的加密資產。"
+  },
+  "offchain": {
+    "keyword": "鏈下",
+    "definition": "發生在區塊鏈之外的操作或資料，比如放在普通伺服器上或寫在簽名訊息裡。"
+  },
+  "onchain": {
+    "keyword": "鏈上",
+    "definition": "記錄在區塊鏈網路上。指在 Ethereum 等加密貨幣網路上完成的操作。"
+  },
+  "onchain governance": {
+    "keyword": "鏈上治理",
+    "definition": "用自動化系統來決定一條區塊鏈的結構如何變更。"
+  },
+  "onchain identity": {
+    "keyword": "鏈上身份",
+    "keyword_plural": "鏈上身份",
+    "definition": "由你的區塊鏈活動和記錄構建出的公開身份，比如繫結到你錢包地址的 ENS 名稱。"
+  },
+  "onramp": {
+    "keyword": "入金通道",
+    "keyword_plural": "入金通道",
+    "definition": "把美元等普通貨幣兌換成加密貨幣的服務。出金通道則相反。"
+  },
+  "open internet": {
+    "keyword": "開放網際網路",
+    "definition": "一個人人都能使用的數位空間，資訊、服務和交流不受中心化機構控制。"
+  },
+  "open source": {
+    "keyword": "開源",
+    "definition": "任何人都可以檢視、修改和改進其原始碼的軟體。"
+  },
+  "optimistic rollup": {
+    "keyword": "Optimistic Rollup",
+    "keyword_plural": "Optimistic Rollup",
+    "definition": "一種 Layer 2 Rollup，預設它打包的所有交易都有效，除非有人在挑戰期內用欺詐證明推翻它。"
+  },
+  "oracle": {
+    "keyword": "預言機",
+    "keyword_plural": "預言機",
+    "definition": "把市場價格等外部資訊帶到區塊鏈上、供智能合約使用的服務。"
+  },
+  "order book": {
+    "keyword": "訂單簿",
+    "keyword_plural": "訂單簿",
+    "definition": "列出不同價格的買單和賣單的清單。傳統交易所靠它來撮合成交。"
+  },
+  "otc": {
+    "keyword": "OTC",
+    "definition": "（場外交易）直接和私人對手方完成的交易。"
+  },
+  "over the counter": {
+    "keyword": "場外交易",
+    "definition": "（OTC）直接和私人對手方完成的交易。"
+  },
+  "password manager": {
+    "keyword": "密碼管理器",
+    "keyword_plural": "密碼管理器",
+    "definition": "安全儲存你所有密碼的應用，還能為每個帳戶生成高強度的唯一密碼。"
+  },
+  "payment channel": {
+    "keyword": "支付通道",
+    "keyword_plural": "支付通道",
+    "definition": "讓雙方可以多次交易，而不必把每一筆都記錄到區塊鏈上。"
+  },
+  "peer": {
+    "keyword": "對等節點",
+    "keyword_plural": "對等節點",
+    "definition": "被平等對待的個人或組織。"
+  },
+  "peer-to-peer": {
+    "keyword": "點對點",
+    "definition": "多方之間不需要中間人的直接連線。"
+  },
+  "peg": {
+    "keyword": "錨定",
+    "keyword_plural": "錨定",
+    "definition": "讓兩種或多種資產保持價值等同的方法。"
+  },
+  "permissionless": {
+    "keyword": "無需許可",
+    "definition": "不需要得到任何機構的批准。"
+  },
+  "phishing": {
+    "keyword": "釣魚攻擊",
+    "definition": "一種社會工程攻擊，攻擊者偽裝成可信的人或機構，騙受害者交出敏感資訊或給自己轉帳。"
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAP",
+    "definition": "POAP（出席證明協議）是一種徽章，把人生經歷可靠地記錄在你的錢包裡，比如成功完成一節課程。"
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "（權益證明）驗證者鎖定質押資產來保護網路安全的一種共識機制。"
+  },
+  "price impact": {
+    "keyword": "價格影響",
+    "keyword_plural": "價格影響",
+    "definition": "你自己這筆交易把 DEX 上的價格推動了多少，取決於交易的規模。"
+  },
+  "primary name": {
+    "keyword": "主名稱",
+    "keyword_plural": "主名稱",
+    "definition": "繫結到你錢包地址的 ENS 名稱，讓應用顯示你的名字，而不是一長串地址。"
+  },
+  "private key": {
+    "keyword": "私鑰",
+    "keyword_plural": "私鑰",
+    "definition": "私鑰讓你可以使用自己的錢包，把加密資產傳送到其他錢包。"
+  },
+  "private transaction routing": {
+    "keyword": "私密交易路由",
+    "definition": "把交易直接發給區塊構建者，而不是放進公開的等待佇列，從而避開搶跑機器人。"
+  },
+  "proof of stake": {
+    "keyword": "權益證明",
+    "definition": "一種共識方式，按照每個參與者鎖定在協議裡的質押量，隨機挑選區塊生產者。"
+  },
+  "proof of work": {
+    "keyword": "工作量證明",
+    "definition": "一種共識方式，礦工投入算力（也就是「工作」）來競爭提議有效的區塊。"
+  },
+  "proof-of-stake": {
+    "keyword": "權益證明",
+    "definition": "一種區塊鏈共識方式，按照節點鎖定的質押數量來挑選驗證者節點。"
+  },
+  "pseudonymous": {
+    "keyword": "化名",
+    "definition": "用一個自己選定的名字行事，隱藏真實身份。"
+  },
+  "public": {
+    "keyword": "公開",
+    "definition": "公開區塊鏈允許任何人檢視區塊鏈帳本。"
+  },
+  "public good": {
+    "keyword": "公共物品",
+    "keyword_plural": "公共物品",
+    "definition": "公共物品是社會全體成員都能使用的商品或服務。"
+  },
+  "public key": {
+    "keyword": "公鑰",
+    "keyword_plural": "公鑰",
+    "definition": "由你的私鑰生成、可以安全分享的一串程式碼。你的錢包地址就是從公鑰推匯出來的。"
+  },
+  "quadratic funding": {
+    "keyword": "二次方融資",
+    "definition": "一種眾籌機制，任何金額的個人捐贈都算作一票，用來放大可分配的資金。支援面越廣，影響力就越大！"
+  },
+  "recovery phrase": {
+    "keyword": "助記詞",
+    "keyword_plural": "助記詞",
+    "definition": "助記詞是一組 12 到 24 個單詞，用來生成你錢包的公鑰和私鑰。"
+  },
+  "red flag": {
+    "keyword": "危險訊號",
+    "keyword_plural": "危險訊號",
+    "definition": "提示危險的警告跡象。"
+  },
+  "restaking": {
+    "keyword": "再質押",
+    "definition": "把已經質押的 Ether 代幣再利用起來，去幫助保護和驗證其他協議，以換取額外獎勵。"
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "definition": "（追溯性公共物品資助）一種按專案過往影響力來發放資金的機制。"
+  },
+  "rollup": {
+    "keyword": "Rollup",
+    "keyword_plural": "Rollup",
+    "definition": "一種 Layer 2 擴容方案，在主鏈之外處理大量交易，再打包成一批提交上鍊，提高吞吐量並降低成本。"
+  },
+  "sandwich attack": {
+    "keyword": "三明治攻擊",
+    "keyword_plural": "三明治攻擊",
+    "definition": "機器人在你的交易前後各下一單來推動價格，從中獲利，代價由你承擔。"
+  },
+  "satoshi nakamoto": {
+    "keyword": "中本聰",
+    "definition": "Bitcoin 的化名創造者。直到今天，還沒有人知道他的真實身份。"
+  },
+  "scalability": {
+    "keyword": "可擴充套件性",
+    "definition": "區塊鏈在工作量、交易量和使用量不斷增長時，仍能幾乎不打擾使用者地正常執行的能力。"
+  },
+  "scam-token": {
+    "keyword": "詐騙代幣",
+    "keyword_plural": "詐騙代幣",
+    "definition": "唯一目的就是騙走投資者資金的加密貨幣代幣。"
+  },
+  "scarce": {
+    "keyword": "稀缺",
+    "definition": "處於供應不足的狀態。"
+  },
+  "scarcity": {
+    "keyword": "稀缺性",
+    "definition": "供應不足，數量有限。"
+  },
+  "security": {
+    "keyword": "安全性",
+    "definition": "區塊鏈抵禦駭客攻擊、程式碼漏洞和經濟攻擊等威脅，並繼續正常執行的能力。"
+  },
+  "seed phrase": {
+    "keyword": "助記詞",
+    "keyword_plural": "助記詞",
+    "definition": "錢包在初次設定時生成的一組隨機單詞，它是這個錢包控制的所有帳戶的總鑰匙。絕對不要以任何理由把助記詞告訴任何人。"
+  },
+  "self-custodial": {
+    "keyword": "自我託管",
+    "definition": "一種持有資產的方式，只有你自己能動用這些資產。"
+  },
+  "self-custody": {
+    "keyword": "自我託管",
+    "definition": "一種持有資產的方式，只有你自己能動用這些資產。"
+  },
+  "self-custody wallet": {
+    "keyword": "自我託管錢包",
+    "keyword_plural": "自我託管錢包",
+    "definition": "（又稱：非託管錢包）用自我託管錢包時，只有你掌控自己的私鑰，而私鑰控制著你的加密資產。"
+  },
+  "settlement layer": {
+    "keyword": "結算層",
+    "keyword_plural": "結算層",
+    "definition": "區塊鏈最底下的一層，記錄已完成交易的資產交換細節。Ethereum 主網就是各個 Layer 2 擴容方案的結算層。"
+  },
+  "settlement time": {
+    "keyword": "結算時間",
+    "keyword_plural": "結算時間",
+    "definition": "一筆交易得到確認所需要的時間。"
+  },
+  "sharding": {
+    "keyword": "分片",
+    "definition": "把一條區塊鏈拆成多條並行執行的鏈，以提升可擴充套件性。"
+  },
+  "sidechain": {
+    "keyword": "側鏈",
+    "keyword_plural": "側鏈",
+    "definition": "與主區塊鏈並行執行的獨立區塊鏈，透過跨鏈橋相連，有自己的驗證者和安全機制。"
+  },
+  "slashed": {
+    "keyword": "被罰沒",
+    "definition": "一種懲罰：在權益證明區塊鏈上，驗證者被證實作弊時會損失一部分質押。"
+  },
+  "slashing": {
+    "keyword": "罰沒",
+    "definition": "權益證明網路上的一種懲罰機制，驗證者被證實作弊時（比如簽署兩個相互衝突的區塊），它的一部分質押會被銷燬。"
+  },
+  "slippage": {
+    "keyword": "滑點",
+    "definition": "你預期的價格和交易實際成交價格之間的差額。"
+  },
+  "slippage tolerance": {
+    "keyword": "滑點容忍度",
+    "keyword_plural": "滑點容忍度",
+    "definition": "你能接受的最大價格變動。如果價格波動超過這個範圍，交易就會被取消。"
+  },
+  "smart account": {
+    "keyword": "智能帳戶",
+    "keyword_plural": "智能帳戶",
+    "definition": "由智能合約驅動的錢包帳戶，也就是智能錢包的另一種叫法。"
+  },
+  "smart contract": {
+    "keyword": "智能合約",
+    "keyword_plural": "智能合約",
+    "definition": "自動執行合約條款的計算機程式碼。"
+  },
+  "smart wallet": {
+    "keyword": "智能錢包",
+    "keyword_plural": "智能錢包",
+    "definition": "由智能合約驅動的錢包，不再依賴單一的私鑰，可以實現帳戶恢復和 passkey 登入等功能。"
+  },
+  "social engineering": {
+    "keyword": "社會工程",
+    "definition": "透過操縱他人，騙取密碼或助記詞這類敏感、機密的資訊。"
+  },
+  "solo staker": {
+    "keyword": "獨立質押者",
+    "keyword_plural": "獨立質押者",
+    "definition": "自己執行一個獨立驗證者節點的節點運營者。"
+  },
+  "solo staking": {
+    "keyword": "獨立質押",
+    "definition": "在權益證明系統中執行自己的驗證者節點來處理交易。"
+  },
+  "solver": {
+    "keyword": "求解器",
+    "keyword_plural": "求解器",
+    "definition": "與同行競爭、以儘可能好的價格實現使用者意圖的專業執行方。"
+  },
+  "spend": {
+    "keyword": "消費",
+    "definition": "用你的加密資產支付商品或服務。"
+  },
+  "spot etf": {
+    "keyword": "現貨 ETF",
+    "keyword_plural": "現貨 ETF",
+    "definition": "真正持有比特幣等實際資產的 ETF，讓人們可以透過傳統股票市場投資它。"
+  },
+  "stablecoin": {
+    "keyword": "穩定幣",
+    "keyword_plural": "穩定幣",
+    "definition": "設計上保持價值穩定的代幣，通常與美元等貨幣按 1:1 錨定。"
+  },
+  "stablecoin issuer": {
+    "keyword": "穩定幣發行方",
+    "keyword_plural": "穩定幣發行方",
+    "definition": "建立穩定幣、並管理支撐其價值的儲備資產的公司或組織。"
+  },
+  "stake": {
+    "keyword": "質押",
+    "keyword_plural": "質押",
+    "definition": "鎖定在加密貨幣協議裡的金融資產數量。它代表一個人對協議投入的資金，也就是他的「利益繫結」。"
+  },
+  "staked": {
+    "keyword": "已質押",
+    "definition": "把一部分加密資產暫時鎖進智能合約一段時間，以換取利息（也就是「獎勵」）。"
+  },
+  "staker": {
+    "keyword": "質押者",
+    "keyword_plural": "質押者",
+    "definition": "Ethereum 社群的成員，把 Ether 提供給驗證者節點，以換取獎勵。"
+  },
+  "stakers": {
+    "keyword": "質押者",
+    "definition": "Ethereum 社群的成員，把 Ether 提供給驗證者節點，以換取獎勵。"
+  },
+  "staking": {
+    "keyword": "質押",
+    "definition": "把一部分加密資產暫時鎖進智能合約一段時間，以換取利息（也就是「獎勵」）。"
+  },
+  "staking pool": {
+    "keyword": "質押池",
+    "keyword_plural": "質押池",
+    "definition": "在 Ethereum 上：質押者透過這些智能合約，把 Ether 提供給另一位質押者的驗證者節點。"
+  },
+  "staking providers": {
+    "keyword": "質押服務商",
+    "definition": "提供質押服務的數位平臺，通常透過質押池運作。"
+  },
+  "standard record": {
+    "keyword": "標準記錄",
+    "keyword_plural": "標準記錄",
+    "definition": "繫結到 ENS 域名的常見資料項，比如錢包地址、頭像或郵箱。"
+  },
+  "swap": {
+    "keyword": "兌換",
+    "keyword_plural": "兌換",
+    "definition": "把一種代幣換成另一種代幣的交易。"
+  },
+  "token": {
+    "keyword": "代幣",
+    "keyword_plural": "代幣",
+    "definition": "建立在已有區塊鏈上的單位，可以代表某種資產或權益。"
+  },
+  "token allowance": {
+    "keyword": "代幣授權",
+    "keyword_plural": "代幣授權",
+    "definition": "錢包和智能合約之間的一項約定，允許合約有限或無限地動用某種特定代幣。"
+  },
+  "token approval": {
+    "keyword": "代幣批准",
+    "keyword_plural": "代幣批准",
+    "definition": "你授予智能合約的許可權，讓它可以從你的錢包裡轉走某種特定代幣，也叫代幣授權。"
+  },
+  "token distribution": {
+    "keyword": "代幣分配",
+    "keyword_plural": "代幣分配",
+    "definition": "代幣在不同利益相關群體之間的分配方式。"
+  },
+  "token pair": {
+    "keyword": "代幣對",
+    "keyword_plural": "代幣對",
+    "definition": "組成一個流動性池的那兩種關聯加密貨幣。"
+  },
+  "token swap": {
+    "keyword": "代幣兌換",
+    "keyword_plural": "代幣兌換",
+    "definition": "把一種代幣換成另一種代幣的交易。"
+  },
+  "tps": {
+    "keyword": "TPS",
+    "definition": "（每秒交易數）衡量區塊鏈可擴充套件性的指標：它每秒能處理多少筆交易。"
+  },
+  "trade": {
+    "keyword": "買賣",
+    "keyword_plural": "買賣",
+    "definition": "用資產或金錢換取有價值的東西。"
+  },
+  "trade route": {
+    "keyword": "交易路徑",
+    "keyword_plural": "交易路徑",
+    "definition": "一筆交易中，從起始代幣到目標代幣所經過的路徑。"
+  },
+  "trade routing": {
+    "keyword": "交易路由",
+    "definition": "規劃一筆交易中從起始代幣到目標代幣所經過的路徑。"
+  },
+  "transaction": {
+    "keyword": "交易",
+    "keyword_plural": "交易",
+    "definition": "區塊鏈上的一條轉移記錄，可以是資金轉移，也可以是其他內容。"
+  },
+  "transaction finality": {
+    "keyword": "交易最終性",
+    "definition": "確認一筆交易有效且已成定局所需要的時間，也就是它不會被撤銷或改動。"
+  },
+  "transaction hash": {
+    "keyword": "交易雜湊",
+    "keyword_plural": "交易雜湊",
+    "definition": "每筆交易的唯一識別符號，由交易資料、傳送方的數位簽章，以及一個用來避免重複交易的一次性數字共同生成。"
+  },
+  "transaction throughput": {
+    "keyword": "交易吞吐量",
+    "definition": "一條區塊鏈同時能處理多少筆交易，通常用每秒交易數（TPS）來衡量。"
+  },
+  "trustless": {
+    "keyword": "無需信任",
+    "definition": "不需要信任任何個人或機構就能運作的特性（自動執行，不由任何單一個人擁有）。"
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "definition": "（總鎖倉價值）存放在某個地方的資產總價值。"
+  },
+  "two factor authentication": {
+    "keyword": "雙重身份驗證",
+    "definition": "一層額外的安全保護，用來確認試圖登入某個線上帳戶的人確實是本人。"
+  },
+  "validating bridge": {
+    "keyword": "驗證型跨鏈橋",
+    "keyword_plural": "驗證型跨鏈橋",
+    "definition": "自己驗證提款的跨鏈橋合約，不需要信任任何外部機構。"
+  },
+  "validator": {
+    "keyword": "驗證者",
+    "keyword_plural": "驗證者",
+    "definition": "權益證明網路中的參與者，鎖定質押來檢查交易並提議區塊，誠實工作就能獲得獎勵。"
+  },
+  "validator client": {
+    "keyword": "驗證者客戶端",
+    "keyword_plural": "驗證者客戶端",
+    "definition": "驗證者節點執行的軟體，用來在權益證明網路上提議和檢查新區塊。"
+  },
+  "validator node": {
+    "keyword": "驗證者節點",
+    "keyword_plural": "驗證者節點",
+    "definition": "由 Ethereum 社群成員執行的計算機裝置。它處理網路上的交易，以換取獎勵。"
+  },
+  "validator nodes": {
+    "keyword": "驗證者節點",
+    "definition": "由 Ethereum 社群成員執行的計算機裝置。它們處理網路上的交易，以換取獎勵。"
+  },
+  "validity proof": {
+    "keyword": "有效性證明",
+    "keyword_plural": "有效性證明",
+    "definition": "一種數學證明，說明一批交易是正確的，讓區塊鏈不用重做一遍計算就能驗證它們。"
+  },
+  "value-creation": {
+    "keyword": "價值創造",
+    "definition": "一種商業模式，專注於為使用者和整個經濟創造創新、高品質的產品與服務。"
+  },
+  "value-extraction": {
+    "keyword": "價值榨取",
+    "definition": "一種商業模式，透過高額費用、收割資料和不公平條款來剝削使用者。"
+  },
+  "value-extractive": {
+    "keyword": "價值榨取型",
+    "definition": "一種商業模式，透過高額費用、收割資料和不公平條款來剝削使用者。"
+  },
+  "vault": {
+    "keyword": "金庫",
+    "keyword_plural": "金庫",
+    "definition": "一種智能合約，保管存進來的代幣並讓它們去賺取收益，同時給存款人一個代表份額的代幣。"
+  },
+  "veto": {
+    "keyword": "否決",
+    "keyword_plural": "否決",
+    "definition": "對一項治理提案投下反對票。"
+  },
+  "wallet": {
+    "keyword": "錢包",
+    "keyword_plural": "錢包",
+    "definition": "錢包是用來在區塊鏈上收發加密資產的應用或裝置。"
+  },
+  "wallet app": {
+    "keyword": "錢包應用",
+    "keyword_plural": "錢包應用",
+    "definition": "電腦或手機上的應用，用來連線你在區塊鏈上的錢包。"
+  },
+  "wallet provider": {
+    "keyword": "錢包服務商",
+    "keyword_plural": "錢包服務商",
+    "definition": "開發你用來存取錢包的軟體的公司。它們並不擁有你的錢包，只是充當橋樑，讓你能存取區塊鏈上的帳戶。"
+  },
+  "web2": {
+    "keyword": "Web2",
+    "definition": "由中心化平臺和帳戶組成的網際網路，背後沒有區塊鏈基礎設施。"
+  },
+  "web3": {
+    "keyword": "Web3",
+    "definition": "指由各條區塊鏈組成的網際網路，使用者可以自我託管自己的資產和資料。"
+  },
+  "yield farm": {
+    "keyword": "收益農場",
+    "keyword_plural": "收益農場",
+    "definition": "使用者存入代幣來賺取獎勵的 DeFi 協議。不斷追逐這類最高回報的做法叫流動性挖礦。"
+  },
+  "yourname.eth": {
+    "keyword": "你的名字.eth",
+    "definition": "一個 ENS 名稱示例：指向你錢包地址的、人類可讀的 Web3 使用者名稱。"
+  },
+  "zero-knowledge": {
+    "keyword": "零知識",
+    "definition": "一種數學方法，讓一方可以證明某個說法成立，同時不透露關於它的任何其他資訊。"
+  },
+  "zk rollup": {
+    "keyword": "ZK Rollup",
+    "keyword_plural": "ZK Rollup",
+    "definition": "一種 Layer 2 Rollup，用零知識證明在 Layer 1 區塊鏈上從數學上證明它打包的交易是有效的。"
+  }
+}

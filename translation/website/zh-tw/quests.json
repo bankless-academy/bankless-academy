@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. 你的比特幣正在發往 Satoshi Nakamoto。",
+    "2. It's now being verified by network miners...": "2. 網路礦工正在驗證這筆交易...",
+    "3. Your transaction is added to the blockchain “database”...": "3. 你的交易被寫入區塊鏈「資料庫」...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto 已經收到你的比特幣！",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "用我們的簡化版比特幣模擬器，向 Satoshi Nakamoto 的地址傳送任意數量的 BTC",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "互動模擬：向 Satoshi Nakamoto 傳送比特幣 {{step}}",
+    "Reset simulation": "重置模擬",
+    "Recipient": "收款人",
+    "Address": "地址",
+    "Asset": "資產",
+    "Amount": "數量",
+    "Balance": "餘額",
+    "Send": "傳送"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "讀懂一筆交易",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "要完成此任務，請複製這筆交易的「From」(傳送方) 和「To」(接收方) 地址並貼上到下方",
+    "From": "傳送方",
+    "To": "接收方"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "從委託 OP 開始你的 Optimism 網路之旅。",
+    "Select a ": "選擇一位",
+    "Delegate": "Delegate（代表）",
+    " for your OP": "來行使你的 OP 投票權",
+    "or delegate to ": "或直接委託給 ",
+    "Tip": "提示",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "檢視探索者手冊中的「{{lesson_title}}」條目，獲取完整的任務攻略。",
+    "Refresh": "重新整理",
+    "Read Entry": "閱讀條目"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "建立你的第一個加密錢包。",
+    "If you already have a wallet, move to step 2.": "如果你已經有錢包，請直接進入第 2 步。",
+    "1. Download and install the Zerion wallet from ": "1. 下載並安裝 Zerion 錢包：",
+    "2. Connect your wallet to Bankless Academy": "2. 將錢包連線到 Bankless Academy",
+    "Tip": "提示",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "檢視探索者手冊中的「{{lesson_title}}」條目，獲取任務的分步教程。",
+    "Read Entry": "閱讀條目"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "選出所有包含騙局的截圖 👆",
+    "Hint: 1 screenshot is not a scam": "提示：有 1 張截圖不是騙局"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. 將錢包連線到 Bankless Academy",
+    "2. Join gm.xyz using this ": "2. 透過這個",
+    "invite link": "邀請連結",
+    " or register with a phone number": "加入 gm.xyz，或用手機號註冊",
+    "3. Join ": "3. 加入",
+    "Validate quest": "驗證任務"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "已選擇的答案：",
+    "Bankless Archetype results:": "Bankless 原型測試結果：",
+    "Risk": "風險偏好",
+    "Self sovereignty": "自我主權",
+    "DEX": "DEX",
+    "Trads": "傳統金融",
+    "LP": "LP",
+    "Long term": "長期持有",
+    "Works in a DAO": "在 DAO 工作",
+    "Crypto knowledge": "加密知識",
+    "Crypto donation": "加密捐贈",
+    "Buys stuff in crypto": "用加密貨幣消費",
+    "Deployed smart contracts": "部署過智能合約",
+    "Anon": "匿名",
+    "Works in web3": "在 web3 工作",
+    "Creates digital art": "創作數位藝術",
+    "Owns Bitcoin": "持有比特幣",
+    "Owns NFTs": "持有 NFT",
+    "Aping into something new": "熱衷追逐新事物",
+    "Owns shitcoin": "持有垃圾幣"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "如何用 1inch 兌換代幣",
+    "1. Load ": "1. 開啟 ",
+    " on the ": "，切換到 ",
+    "Base network": "Base 網路",
+    "2. Swap any token.": "2. 兌換任意一種代幣。",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. 把成功的<b>兌換</b>交易雜湊貼上到下方：",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>提示：</b>🚨 請確認你貼上的是<b>兌換</b>交易的雜湊，且這筆交易在 <b>Base 網路</b>上完成，而不是代幣<b>授權</b>交易的雜湊。",
+    "Read documentation": "閱讀文件"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. 開啟 ",
+    " on the ": "，切換到 ",
+    "Optimism network": "Optimism 網路",
+    "2. Swap any token.": "2. 兌換任意一種代幣。",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. 把成功的<b>兌換</b>交易雜湊貼上到下方：",
+    "Resources:": "參考資料：",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>提示：</b>請確認你貼上的是<b>兌換</b>交易的雜湊，且這筆交易在 <b>Optimism 網路</b>上完成，而不是代幣授權交易的雜湊。更多資訊請閱讀探索者手冊中的文章。",
+    "Read Entry": "閱讀條目"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "你最想學會用 DeFi 做什麼？",
+    "Signature verified": "簽名已驗證",
+    "Sign your answer": "為你的答案簽名",
+    "Select your answer": "選擇你的答案",
+    "Investing": "投資",
+    "Trading": "交易",
+    "Lending & Borrowing": "借貸",
+    "Staking": "質押"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "用 Rocket Pool 開啟你的質押之旅。",
+    "Obtain 0.0002 rETH on any supported network*.": "在任意一個受支援的網路上獲得 0.0002 rETH*。",
+    "a) Visit a ": "a) 前往一個",
+    "Decentralized Exchange": "去中心化交易所",
+    " to swap for rETH (Optimism or Base recommended)": "兌換 rETH（推薦 Optimism 或 Base）",
+    "b) Or mint rETH on Mainnet via ": "b) 或者透過 ",
+    " (0.01 ETH minimum)": " 在以太坊主網鑄造 rETH（最低 0.01 ETH）",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "提示：檢視探索者手冊中的「{{lesson_title}}」條目，找到最適合你的充值方式。",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* 受支援的網路：以太坊、Optimism、Base、Arbitrum 和 Polygon (POS)",
+    "Check Quest": "檢查任務"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "完成這個任務需要一個加密錢包。",
+    "Wallet connected!": "錢包已連線！",
+    "Waiting to detect your wallet ...": "正在等待檢測你的錢包...",
+    "If you don't have one, let's set one up!": "如果你還沒有，我們一起來建立一個！",
+    "Our onchain quests and rewards only work with a wallet connected.": "我們的鏈上任務和獎勵需要連線錢包才能使用。",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "錢包就像區塊鏈上的帳戶。你需要它來使用區塊鏈應用，或者買入、保管和傳送加密貨幣。",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "跟著這個簡短的教學影片，用 Zerion 建立你的第一個錢包："
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "以目前的區塊鏈技術水平，一條區塊鏈最多隻能同時最佳化三項特性中的兩項。",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "勾選比特幣和以太坊最初優先選擇的特性。"
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "開啟你的 L2 之旅。",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "在 Base 或 Optimism 上持有至少 0.0002 ETH",
+    "Options to fund your wallet:": "給錢包充值的方式：",
+    "Explore other options": "檢視其他方式",
+    "Check Quest": "檢查任務"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "領取鏈上認證之前：",
+    "Share on Twitter / X": "分享到 Twitter / X",
+    "Share on Farcaster": "分享到 Farcaster",
+    "See you there! Over and out 📡": "我們那裡見！通話完畢 📡",
+    "Connect": "連線",
+    "Repost on Twitter / X": "在 Twitter / X 上轉發",
+    "Validate": "驗證"
+  }
+}

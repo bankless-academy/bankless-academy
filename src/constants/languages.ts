@@ -59,6 +59,12 @@ export interface LanguageDef {
 const LANGUAGE_DEFS = [
   { code: 'bn', name: 'Bengali', localName: 'বাংলা', dir: 'ltr' },
   { code: 'zh', name: 'Chinese Simplified', localName: '简体中文', dir: 'ltr' },
+  {
+    code: 'zh-tw',
+    name: 'Chinese Traditional',
+    localName: '繁體中文',
+    dir: 'ltr',
+  },
   { code: 'cs', name: 'Czech', localName: 'Čeština', dir: 'ltr' },
   { code: 'en', name: 'English', localName: 'English', dir: 'ltr' },
   { code: 'fr', name: 'French', localName: 'Français', dir: 'ltr' },

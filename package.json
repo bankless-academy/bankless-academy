@@ -147,6 +147,7 @@
     "jest": "^26.6.3",
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "^10.0.10",
+    "opencc-js": "^1.4.1",
     "prettier": "^2.0.2",
     "typescript": "^5.0.4",
     "utf-8-validate": "5.0.4"

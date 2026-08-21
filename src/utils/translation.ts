@@ -47,6 +47,13 @@ export const LAZY_RESOURCES: { [lang: string]: { [ns: string]: NamespaceLoader }
     keywords: () => import('../../translation/keywords/zh/keywords.json'),
     lesson: () => import('../../translation/website/zh/lesson.json'),
   },
+  'zh-tw': {
+    common: () => import('../../translation/website/zh-tw/common.json'),
+    homepage: () => import('../../translation/website/zh-tw/homepage.json'),
+    quests: () => import('../../translation/website/zh-tw/quests.json'),
+    keywords: () => import('../../translation/keywords/zh-tw/keywords.json'),
+    lesson: () => import('../../translation/website/zh-tw/lesson.json'),
+  },
   de: {
     common: () => import('../../translation/website/de/common.json'),
     homepage: () => import('../../translation/website/de/homepage.json'),
