@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Je Bitcoin is onderweg naar Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Deze wordt nu geverifieerd door miners in het netwerk...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Je transactie wordt toegevoegd aan de “database” van de blockchain...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto heeft je Bitcoin ontvangen!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Gebruik onze vereenvoudigde Bitcoin-simulator en stuur een willekeurig bedrag aan BTC naar het adres van Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Interactieve simulatie: Bitcoin sturen naar Satoshi Nakamoto {{step}}",
+    "Reset simulation": "Simulatie resetten",
+    "Recipient": "Ontvanger",
+    "Address": "Adres",
+    "Asset": "Asset",
+    "Amount": "Bedrag",
+    "Balance": "Saldo",
+    "Send": "Versturen"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Begrijp een transactie",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Om deze quest te valideren, plak je de \"From\"- en \"To\"-adressen van deze transactie",
+    "From": "From",
+    "To": "To"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Begin je reis op het Optimism-netwerk door OP te delegeren.",
+    "Select a ": "Selecteer een ",
+    "Delegate": "gedelegeerde",
+    " for your OP": " voor je OP",
+    "or delegate to ": "of delegeer aan ",
+    "Tip": "Tip",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Bekijk het artikel over '{{lesson_title}}' in het Explorer-handboek voor een volledig stappenplan van de quest.",
+    "Refresh": "Vernieuwen",
+    "Read Entry": "Artikel lezen"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "Maak je eerste cryptowallet aan.",
+    "If you already have a wallet, move to step 2.": "Heb je al een wallet? Ga dan naar stap 2.",
+    "1. Download and install the Zerion wallet from ": "1. Download en installeer de Zerion-wallet via ",
+    "2. Connect your wallet to Bankless Academy": "2. Koppel je wallet aan Bankless Academy",
+    "Tip": "Tip",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Bekijk het artikel over '{{lesson_title}}' in het Explorer-handboek voor een stappenplan van de quest.",
+    "Read Entry": "Artikel lezen"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Selecteer alle screenshots met scams 👆",
+    "Hint: 1 screenshot is not a scam": "Hint: 1 screenshot is geen scam"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Koppel je wallet aan Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Word lid van gm.xyz via deze ",
+    "invite link": "uitnodigingslink",
+    " or register with a phone number": " of registreer je met een telefoonnummer",
+    "3. Join ": "3. Word lid van ",
+    "Validate quest": "Quest valideren"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Gekozen antwoord:",
+    "Bankless Archetype results:": "Bankless Archetype-resultaten:",
+    "Risk": "Risico",
+    "Self sovereignty": "Zelfsoevereiniteit",
+    "DEX": "DEX",
+    "Trads": "Trads",
+    "LP": "LP",
+    "Long term": "Lange termijn",
+    "Works in a DAO": "Werkt in een DAO",
+    "Crypto knowledge": "Cryptokennis",
+    "Crypto donation": "Cryptodonatie",
+    "Buys stuff in crypto": "Koopt dingen met crypto",
+    "Deployed smart contracts": "Heeft smart contracts gedeployd",
+    "Anon": "Anon",
+    "Works in web3": "Werkt in web3",
+    "Creates digital art": "Maakt digitale kunst",
+    "Owns Bitcoin": "Bezit Bitcoin",
+    "Owns NFTs": "Bezit NFT's",
+    "Aping into something new": "Aapt in iets nieuws",
+    "Owns shitcoin": "Bezit shitcoins"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Zo swap je tokens met 1inch",
+    "1. Load ": "1. Open ",
+    " on the ": " op het ",
+    "Base network": "Base-netwerk",
+    "2. Swap any token.": "2. Swap een token naar keuze.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Plak hieronder de transactiehash van de geslaagde <b>swap</b>:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Tip:</b> 🚨 Zorg dat je de transactiehash van de <b>swap</b> op het <b>Base-netwerk</b> plakt, en niet de transactiehash van de token-<b>approval</b>.",
+    "Read documentation": "Documentatie lezen"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Open ",
+    " on the ": " op het ",
+    "Optimism network": "Optimism-netwerk",
+    "2. Swap any token.": "2. Swap een token naar keuze.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. Plak hieronder de transactiehash van de geslaagde <b>swap</b>:",
+    "Resources:": "Bronnen:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Tip:</b> Zorg dat je de transactiehash van de <b>swap</b> op het <b>Optimism-netwerk</b> plakt, en niet de transactiehash van de token-approval. Lees het artikel in het Explorer's Handbook voor meer informatie.",
+    "Read Entry": "Artikel lezen"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Wat wil je het liefst leren doen met DeFi?",
+    "Signature verified": "Handtekening geverifieerd",
+    "Sign your answer": "Onderteken je antwoord",
+    "Select your answer": "Selecteer je antwoord",
+    "Investing": "Beleggen",
+    "Trading": "Traden",
+    "Lending & Borrowing": "Uitlenen & lenen",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Begin je staking-reis met Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "Verkrijg 0,0002 rETH op een ondersteund netwerk*.",
+    "a) Visit a ": "a) Ga naar een ",
+    "Decentralized Exchange": "gedecentraliseerde beurs",
+    " to swap for rETH (Optimism or Base recommended)": " om naar rETH te swappen (Optimism of Base aanbevolen)",
+    "b) Or mint rETH on Mainnet via ": "b) Of mint rETH op Mainnet via ",
+    " (0.01 ETH minimum)": " (minimaal 0,01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Tip: Bekijk het artikel '{{lesson_title}}' in het Explorer-handboek om de beste route voor jou te vinden.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Ondersteunde netwerken: Ethereum, Optimism, Base, Arbitrum en Polygon (POS)",
+    "Check Quest": "Quest controleren"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Voor deze quest heb je een cryptowallet nodig.",
+    "Wallet connected!": "Wallet gekoppeld!",
+    "Waiting to detect your wallet ...": "Zoeken naar je wallet ...",
+    "If you don't have one, let's set one up!": "Heb je er nog geen? Dan maken we er nu een aan!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Onze onchain quests en beloningen werken alleen met een gekoppelde wallet.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Wallets zijn een soort blockchain-accounts. Je hebt er een nodig om blockchain-apps te gebruiken, of om cryptovaluta te kopen, te bewaren en te versturen.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Volg deze korte instructievideo om je eerste wallet aan te maken met Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Met de huidige stand van blockchain-technologie kunnen blockchains maximaal twee van de drie eigenschappen optimaliseren.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Vink de eigenschappen aan waaraan Bitcoin en Ethereum aanvankelijk prioriteit gaven."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Begin je L2-reis.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Zorg voor een saldo van minimaal 0,0002 ETH op Base of Optimism",
+    "Options to fund your wallet:": "Opties om je wallet te funden:",
+    "Explore other options": "Bekijk andere opties",
+    "Check Quest": "Quest controleren"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Voordat je je onchain certificaat claimt:",
+    "Share on Twitter / X": "Delen op Twitter / X",
+    "Share on Farcaster": "Delen op Farcaster",
+    "See you there! Over and out 📡": "We zien je daar! Over en uit 📡",
+    "Connect": "Koppelen",
+    "Repost on Twitter / X": "Reposten op Twitter / X",
+    "Validate": "Valideren"
+  }
+}

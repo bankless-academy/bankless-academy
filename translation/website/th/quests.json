@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Bitcoin ของคุณกำลังถูกส่งไปยังซาโตชิ นากาโมโตะ",
+    "2. It's now being verified by network miners...": "2. ขณะนี้ธุรกรรมกำลังได้รับการตรวจสอบโดยนักขุดในเครือข่าย...",
+    "3. Your transaction is added to the blockchain “database”...": "3. ธุรกรรมของคุณถูกเพิ่มลงใน “ฐานข้อมูล” บล็อกเชน...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. ซาโตชิ นากาโมโตะได้รับ Bitcoin ของคุณแล้ว!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "ใช้เครื่องจำลอง Bitcoin แบบง่ายของเรา ส่ง BTC จำนวนเท่าใดก็ได้ไปยังที่อยู่ของซาโตชิ นากาโมโตะ",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "การจำลองแบบอินเทอร์แอคทีฟ: การส่ง Bitcoin ให้ซาโตชิ นากาโมโตะ {{step}}",
+    "Reset simulation": "รีเซ็ตการจำลอง",
+    "Recipient": "ผู้รับ",
+    "Address": "ที่อยู่",
+    "Asset": "สินทรัพย์",
+    "Amount": "จำนวน",
+    "Balance": "ยอดคงเหลือ",
+    "Send": "ส่ง"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "ทำความเข้าใจธุรกรรม",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "หากต้องการยืนยันเควสต์นี้ ให้วางที่อยู่ \"From\" และ \"To\" ของธุรกรรมนี้",
+    "From": "From",
+    "To": "To"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "เริ่มต้นเส้นทางของคุณบนเครือข่าย Optimism ด้วยการมอบสิทธิ์ OP",
+    "Select a ": "เลือก",
+    "Delegate": "ผู้รับมอบสิทธิ์",
+    " for your OP": "สำหรับ OP ของคุณ",
+    "or delegate to ": "หรือมอบสิทธิ์ให้ ",
+    "Tip": "เคล็ดลับ",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "ดูบทความ Explorer's Handbook เรื่อง '{{lesson_title}}' สำหรับขั้นตอนการทำเควสต์แบบครบถ้วน",
+    "Refresh": "รีเฟรช",
+    "Read Entry": "อ่านบทความ"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "สร้างกระเป๋าเงินคริปโตใบแรกของคุณ",
+    "If you already have a wallet, move to step 2.": "หากคุณมีกระเป๋าเงินอยู่แล้ว ให้ข้ามไปที่ขั้นตอนที่ 2",
+    "1. Download and install the Zerion wallet from ": "1. ดาวน์โหลดและติดตั้งกระเป๋าเงิน Zerion จาก ",
+    "2. Connect your wallet to Bankless Academy": "2. เชื่อมต่อกระเป๋าเงินของคุณกับ Bankless Academy",
+    "Tip": "เคล็ดลับ",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "ดูบทความ Explorer's Handbook เรื่อง '{{lesson_title}}' สำหรับขั้นตอนการทำเควสต์แบบทีละขั้น",
+    "Read Entry": "อ่านบทความ"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "เลือกภาพหน้าจอทั้งหมดที่มีการหลอกลวง 👆",
+    "Hint: 1 screenshot is not a scam": "คำใบ้: มีภาพหน้าจอ 1 ภาพที่ไม่ใช่การหลอกลวง"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. เชื่อมต่อกระเป๋าเงินของคุณกับ Bankless Academy",
+    "2. Join gm.xyz using this ": "2. เข้าร่วม gm.xyz โดยใช้",
+    "invite link": "ลิงก์เชิญนี้",
+    " or register with a phone number": " หรือลงทะเบียนด้วยหมายเลขโทรศัพท์",
+    "3. Join ": "3. เข้าร่วม ",
+    "Validate quest": "ยืนยันเควสต์"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "คำตอบที่เลือก:",
+    "Bankless Archetype results:": "ผลลัพธ์ Bankless Archetype:",
+    "Risk": "ความเสี่ยง",
+    "Self sovereignty": "อธิปไตยในตนเอง",
+    "DEX": "DEX",
+    "Trads": "สายดั้งเดิม",
+    "LP": "LP",
+    "Long term": "ระยะยาว",
+    "Works in a DAO": "ทำงานใน DAO",
+    "Crypto knowledge": "ความรู้คริปโต",
+    "Crypto donation": "บริจาคคริปโต",
+    "Buys stuff in crypto": "ซื้อของด้วยคริปโต",
+    "Deployed smart contracts": "เคย Deploy สัญญาอัจฉริยะ",
+    "Anon": "นิรนาม",
+    "Works in web3": "ทำงานใน Web3",
+    "Creates digital art": "สร้างศิลปะดิจิทัล",
+    "Owns Bitcoin": "ถือ Bitcoin",
+    "Owns NFTs": "ถือ NFT",
+    "Aping into something new": "ทุ่มซื้อของใหม่แบบไม่คิดมาก",
+    "Owns shitcoin": "ถือ Shitcoin"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "วิธีสวอปโทเคนด้วย 1inch",
+    "1. Load ": "1. เปิด ",
+    " on the ": " บน",
+    "Base network": "เครือข่าย Base",
+    "2. Swap any token.": "2. สวอปโทเคนใดก็ได้",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. วางแฮชธุรกรรม <b>สวอป</b> ที่สำเร็จลงด้านล่าง:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>เคล็ดลับ:</b> 🚨 ตรวจสอบให้แน่ใจว่าคุณวางแฮชธุรกรรม <b>สวอป</b> ที่ทำบน <b>เครือข่าย Base</b> ไม่ใช่แฮชธุรกรรม <b>อนุมัติ</b> โทเคน",
+    "Read documentation": "อ่านเอกสาร"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. เปิด ",
+    " on the ": " บน",
+    "Optimism network": "เครือข่าย Optimism",
+    "2. Swap any token.": "2. สวอปโทเคนใดก็ได้",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. วางแฮชธุรกรรม <b>สวอป</b> ที่สำเร็จลงด้านล่าง:",
+    "Resources:": "แหล่งข้อมูล:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>เคล็ดลับ:</b> ตรวจสอบให้แน่ใจว่าคุณวางแฮชธุรกรรม <b>สวอป</b> ที่ทำบน <b>เครือข่าย Optimism</b> ไม่ใช่แฮชธุรกรรมอนุมัติโทเคน อ่านบทความใน Explorer's Handbook สำหรับข้อมูลเพิ่มเติม",
+    "Read Entry": "อ่านบทความ"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "คุณสนใจเรียนรู้การใช้ DeFi ทำอะไรมากที่สุด?",
+    "Signature verified": "ยืนยันลายเซ็นแล้ว",
+    "Sign your answer": "ลงนามคำตอบของคุณ",
+    "Select your answer": "เลือกคำตอบของคุณ",
+    "Investing": "การลงทุน",
+    "Trading": "การเทรด",
+    "Lending & Borrowing": "การปล่อยกู้และการกู้ยืม",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "เริ่มต้นเส้นทาง Staking ของคุณกับ Rocket Pool",
+    "Obtain 0.0002 rETH on any supported network*.": "รับ 0.0002 rETH บนเครือข่ายใดก็ได้ที่รองรับ*",
+    "a) Visit a ": "a) ไปที่",
+    "Decentralized Exchange": "กระดานซื้อขายแบบกระจายศูนย์",
+    " to swap for rETH (Optimism or Base recommended)": "เพื่อสวอปเป็น rETH (แนะนำ Optimism หรือ Base)",
+    "b) Or mint rETH on Mainnet via ": "b) หรือมินต์ rETH บนเมนเน็ตผ่าน ",
+    " (0.01 ETH minimum)": " (ขั้นต่ำ 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "เคล็ดลับ: ดูบทความ Explorer's Handbook เรื่อง '{{lesson_title}}' เพื่อหาวิธีเติมเงินที่เหมาะกับคุณที่สุด",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* เครือข่ายที่รองรับ: Ethereum, Optimism, Base, Arbitrum และ Polygon (POS)",
+    "Check Quest": "ตรวจสอบเควสต์"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "คุณต้องมีกระเป๋าเงินคริปโตสำหรับเควสต์นี้",
+    "Wallet connected!": "เชื่อมต่อกระเป๋าเงินแล้ว!",
+    "Waiting to detect your wallet ...": "กำลังรอตรวจหากระเป๋าเงินของคุณ ...",
+    "If you don't have one, let's set one up!": "หากคุณยังไม่มี มาสร้างกันเลย!",
+    "Our onchain quests and rewards only work with a wallet connected.": "เควสต์และรางวัลออนเชนของเราใช้งานได้ก็ต่อเมื่อเชื่อมต่อกระเป๋าเงินแล้วเท่านั้น",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "กระเป๋าเงินเปรียบเสมือนบัญชีบนบล็อกเชน คุณต้องมีไว้เพื่อใช้งานแอปบนบล็อกเชน หรือซื้อ ถือ และส่งคริปโทเคอร์เรนซี",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "ทำตามวิดีโอสอนสั้น ๆ นี้เพื่อสร้างกระเป๋าเงินใบแรกของคุณด้วย Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "ด้วยเทคโนโลยีบล็อกเชนในปัจจุบัน บล็อกเชนสามารถเพิ่มประสิทธิภาพได้มากที่สุดเพียง 2 ใน 3 คุณสมบัติ",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "เลือกคุณสมบัติที่ Bitcoin และ Ethereum ให้ความสำคัญตั้งแต่แรกเริ่ม"
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "เริ่มต้นเส้นทาง L2 ของคุณ",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "ถือยอดคงเหลืออย่างน้อย 0.0002 ETH บน Base หรือ Optimism",
+    "Options to fund your wallet:": "ตัวเลือกในการเติมเงินเข้ากระเป๋าเงินของคุณ:",
+    "Explore other options": "ดูตัวเลือกอื่น ๆ",
+    "Check Quest": "ตรวจสอบเควสต์"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "ก่อนรับใบรับรองออนเชนของคุณ:",
+    "Share on Twitter / X": "แชร์บน Twitter / X",
+    "Share on Farcaster": "แชร์บน Farcaster",
+    "See you there! Over and out 📡": "แล้วพบกันที่นั่น! จบการสื่อสาร 📡",
+    "Connect": "เชื่อมต่อ",
+    "Repost on Twitter / X": "รีโพสต์บน Twitter / X",
+    "Validate": "ยืนยัน"
+  }
+}

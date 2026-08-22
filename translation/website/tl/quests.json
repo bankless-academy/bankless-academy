@@ -1,0 +1,148 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Papunta na ang Bitcoin mo kay Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Vine-verify na ito ng mga miner ng network...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Naidagdag na ang transaksyon mo sa “database” ng blockchain...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Natanggap na ni Satoshi Nakamoto ang Bitcoin mo!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "Gamit ang simplified Bitcoin simulator namin, magpadala ng kahit magkanong BTC sa address ni Satoshi Nakamoto",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "Interactive Simulation: Pagpapadala ng Bitcoin kay Satoshi Nakamoto {{step}}",
+    "Reset simulation": "I-reset ang simulation",
+    "Recipient": "Tatanggap",
+    "Address": "Address",
+    "Asset": "Asset",
+    "Amount": "Halaga",
+    "Balance": "Balanse",
+    "Send": "Ipadala"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "Unawain ang isang transaksyon",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "Para ma-validate ang quest na ito, i-paste ang \"From\" at \"To\" na address ng transaksyong ito",
+    "From": "From",
+    "To": "To"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Simulan ang Optimism Network journey mo sa pag-delegate ng OP.",
+    "Select a ": "Pumili ng ",
+    "Delegate": "Delegate",
+    " for your OP": " para sa OP mo",
+    "or delegate to ": "o mag-delegate sa ",
+    "Tip": "Tip",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Tingnan ang Explorer's Handbook entry namin tungkol sa '{{lesson_title}}' para sa kumpletong quest walkthrough.",
+    "Refresh": "I-refresh",
+    "Read Entry": "Basahin ang Entry"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "Gumawa ng una mong crypto wallet.",
+    "If you already have a wallet, move to step 2.": "Kung may wallet ka na, dumiretso sa step 2.",
+    "1. Download and install the Zerion wallet from ": "1. I-download at i-install ang Zerion wallet mula sa ",
+    "2. Connect your wallet to Bankless Academy": "2. Ikonekta ang wallet mo sa Bankless Academy",
+    "Tip": "Tip",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Tingnan ang Explorer's Handbook entry namin tungkol sa '{{lesson_title}}' para sa hakbang-hakbang na gabay sa quest.",
+    "Read Entry": "Basahin ang Entry"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "Piliin ang lahat ng screenshot na may scam 👆",
+    "Hint: 1 screenshot is not a scam": "Hint: 1 screenshot ang hindi scam"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. Ikonekta ang wallet mo sa Bankless Academy",
+    "2. Join gm.xyz using this ": "2. Sumali sa gm.xyz gamit ang ",
+    "invite link": "invite link",
+    " or register with a phone number": " na ito o mag-register gamit ang phone number",
+    "3. Join ": "3. Sumali sa ",
+    "Validate quest": "I-validate ang quest"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "Napiling sagot:",
+    "Bankless Archetype results:": "Mga resulta ng Bankless Archetype:",
+    "Risk": "Risk",
+    "Self sovereignty": "Self sovereignty",
+    "DEX": "DEX",
+    "Trads": "Trads",
+    "LP": "LP",
+    "Long term": "Long term",
+    "Works in a DAO": "Nagtatrabaho sa DAO",
+    "Crypto knowledge": "Kaalaman sa crypto",
+    "Crypto donation": "Nag-donate ng crypto",
+    "Buys stuff in crypto": "Bumibili gamit ang crypto",
+    "Deployed smart contracts": "Nag-deploy ng smart contract",
+    "Anon": "Anon",
+    "Works in web3": "Nagtatrabaho sa web3",
+    "Creates digital art": "Gumagawa ng digital art",
+    "Owns Bitcoin": "May Bitcoin",
+    "Owns NFTs": "May NFT",
+    "Aping into something new": "Nag-a-ape sa mga bagong bagay",
+    "Owns shitcoin": "May shitcoin"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "Paano mag-swap ng token gamit ang 1inch",
+    "1. Load ": "1. Buksan ang ",
+    " on the ": " sa ",
+    "Base network": "Base network",
+    "2. Swap any token.": "2. Mag-swap ng kahit anong token.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. I-paste sa ibaba ang transaction hash ng matagumpay na <b>swap</b>:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>Tip:</b> 🚨 Siguraduhing ang i-paste mo ay ang transaction hash ng <b>swap</b> na ginawa sa <b>Base network</b>, hindi ang transaction hash ng token <b>approval</b>.",
+    "Read documentation": "Basahin ang documentation"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. Buksan ang ",
+    " on the ": " sa ",
+    "Optimism network": "Optimism network",
+    "2. Swap any token.": "2. Mag-swap ng kahit anong token.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. I-paste sa ibaba ang transaction hash ng matagumpay na <b>swap</b>:",
+    "Resources:": "Mga resource:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>Tip:</b> Siguraduhing ang i-paste mo ay ang transaction hash ng <b>swap</b> na ginawa sa <b>Optimism network</b>, hindi ang transaction hash ng token approval. Basahin ang explorer handbook article para sa karagdagang impormasyon.",
+    "Read Entry": "Basahin ang Entry"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "Ano ang pinakagusto mong matutunang gawin sa DeFi?",
+    "Signature verified": "Na-verify ang signature",
+    "Sign your answer": "I-sign ang sagot mo",
+    "Select your answer": "Piliin ang sagot mo",
+    "Investing": "Pag-invest",
+    "Trading": "Pag-trade",
+    "Lending & Borrowing": "Pagpapautang at panghihiram",
+    "Staking": "Staking"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Simulan ang staking journey mo sa Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "Kumuha ng 0.0002 rETH sa kahit anong supported network*.",
+    "a) Visit a ": "a) Pumunta sa isang ",
+    "Decentralized Exchange": "Decentralized Exchange",
+    " to swap for rETH (Optimism or Base recommended)": " para mag-swap ng rETH (inirerekomenda ang Optimism o Base)",
+    "b) Or mint rETH on Mainnet via ": "b) O mag-mint ng rETH sa Mainnet gamit ang ",
+    " (0.01 ETH minimum)": " (minimum na 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "Tip: Tingnan ang Explorer's Handbook entry namin na '{{lesson_title}}' para mahanap ang pinakaangkop na paraan ng funding para sa iyo.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* Mga supported network: Ethereum, Optimism, Base, Arbitrum at Polygon (POS)",
+    "Check Quest": "I-check ang Quest"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "Kakailanganin mo ng crypto wallet para sa quest na ito.",
+    "Wallet connected!": "Nakakonekta na ang wallet!",
+    "Waiting to detect your wallet ...": "Hinihintay na ma-detect ang wallet mo ...",
+    "If you don't have one, let's set one up!": "Kung wala ka pa, mag-set up tayo ngayon!",
+    "Our onchain quests and rewards only work with a wallet connected.": "Gumagana lang ang mga onchain quest at reward namin kapag may nakakonektang wallet.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "Parang blockchain account ang mga wallet. Kakailanganin mo ito para makagamit ng mga blockchain app, o para bumili, mag-hold at magpadala ng cryptocurrency.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Sundan ang maikling instructional video na ito para gumawa ng una mong wallet gamit ang Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Sa kasalukuyang estado ng blockchain technology, hanggang dalawa lang sa tatlong katangian ang kayang i-optimize ng mga blockchain.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Lagyan ng check ang mga katangiang inuna ng Bitcoin at Ethereum sa simula."
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "Simulan ang L2 journey mo.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Mag-hold ng balanseng hindi bababa sa 0.0002 ETH sa Base o Optimism",
+    "Options to fund your wallet:": "Mga paraan para ma-fund ang wallet mo:",
+    "Explore other options": "Tingnan ang iba pang opsyon",
+    "Check Quest": "I-check ang Quest"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "Bago i-claim ang onchain certification mo:",
+    "Share on Twitter / X": "I-share sa Twitter / X",
+    "Share on Farcaster": "I-share sa Farcaster",
+    "See you there! Over and out 📡": "Kitakits doon! Over and out 📡",
+    "Connect": "Ikonekta",
+    "Repost on Twitter / X": "I-repost sa Twitter / X",
+    "Validate": "I-validate"
+  }
+}

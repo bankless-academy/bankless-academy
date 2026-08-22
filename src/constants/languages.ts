@@ -22,6 +22,10 @@ export interface LanguageDef {
 //   wave 1  fr pilot + the 9 legacy glossaries converted to English-keyed
 //   wave 2  hi id vi      wave 3  ru ko pl
 //   wave 4  cs sw bn      wave 5  mr ta te
+//   wave 6  nl th tl (first wave with NO vendored ETHGlossary data — upstream
+//           has none for these three, so the style-guide pins carry all the
+//           terminology authority)
+//   zh-tw   derived from zh by convert-zh-tw.js, not a wave (2026-08-22)
 //
 // Script traps worth remembering:
 //   - hi, bn, mr, ta, te, ja, zh, ko all slugify to nothing, so /content
@@ -42,14 +46,9 @@ export interface LanguageDef {
 //     Handled by `normalizeKeyword` below.
 //
 // Still absent by design, and queued on two tracks rather than one ranking.
-// DEPTH, from our own analytics (readers we already have): `zh-tw`, `nl`,
-// `th`, `tl`. REACH, from crypto-adoption data (cohorts we do not have yet):
-// `ar`, `ur`, `am`, with `fa` held pending a sanctions decision.
-//
-// `zh-tw` goes first on either reading: HK/TW readers currently get Simplified,
-// which is worse for them than English, and it is a CONVERSION of the finished
-// `zh` rather than a wave, so it is the cheapest item in the plan. `ar`/`ur`
-// ship together behind the one-time RTL audit.
+// REACH, from crypto-adoption data (cohorts we do not have yet): `ar`, `ur`,
+// `am`, with `fa` held pending a sanctions decision. `ar`/`ur` ship together
+// behind the one-time RTL audit; `am` is LTR and unblocked.
 //
 // Ranking on analytics alone is a trap: a language shows little traffic partly
 // BECAUSE there is nothing to read in it, so measured readers optimize
@@ -66,7 +65,9 @@ const LANGUAGE_DEFS = [
     dir: 'ltr',
   },
   { code: 'cs', name: 'Czech', localName: 'Čeština', dir: 'ltr' },
+  { code: 'nl', name: 'Dutch', localName: 'Nederlands', dir: 'ltr' },
   { code: 'en', name: 'English', localName: 'English', dir: 'ltr' },
+  { code: 'tl', name: 'Filipino', localName: 'Filipino', dir: 'ltr' },
   { code: 'fr', name: 'French', localName: 'Français', dir: 'ltr' },
   { code: 'de', name: 'German', localName: 'Deutsch', dir: 'ltr' },
   { code: 'hi', name: 'Hindi', localName: 'हिन्दी', dir: 'ltr' },
@@ -87,6 +88,7 @@ const LANGUAGE_DEFS = [
   { code: 'sw', name: 'Swahili', localName: 'Kiswahili', dir: 'ltr' },
   { code: 'ta', name: 'Tamil', localName: 'தமிழ்', dir: 'ltr' },
   { code: 'te', name: 'Telugu', localName: 'తెలుగు', dir: 'ltr' },
+  { code: 'th', name: 'Thai', localName: 'ไทย', dir: 'ltr' },
   { code: 'tr', name: 'Turkish', localName: 'Türkçe', dir: 'ltr' },
   { code: 'uk', name: 'Ukrainian', localName: 'Українська', dir: 'ltr' },
   { code: 'vi', name: 'Vietnamese', localName: 'Tiếng Việt', dir: 'ltr' },

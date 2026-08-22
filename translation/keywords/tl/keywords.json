@@ -1,0 +1,1249 @@
+{
+  ".eth": {
+    "keyword": ".eth",
+    "definition": "Ang web3 domain ending na ginagamit ng Ethereum Name Service (ENS), tulad ng yourname.eth."
+  },
+  "2 factor authentication": {
+    "keyword": "2 Factor Authentication",
+    "definition": "Karagdagang layer ng seguridad para matiyak na ang taong sumusubok mag-access sa isang online account ay talagang siya."
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "Karagdagang layer ng seguridad para matiyak na ang taong sumusubok mag-access sa isang online account ay talagang siya."
+  },
+  "51% attack": {
+    "keyword": "51% attack",
+    "keyword_plural": "51% attack",
+    "definition": "Atake sa consensus ng blockchain sa pamamagitan ng pagkontrol sa mahigit kalahati ng block-producing power ng network."
+  },
+  "address": {
+    "keyword": "address",
+    "keyword_plural": "address",
+    "definition": "Natatanging pampublikong identifier ng isang entity sa blockchain."
+  },
+  "addresses": {
+    "keyword": "address",
+    "definition": "Mga natatanging pampublikong identifier ng mga entity sa blockchain."
+  },
+  "aggregator": {
+    "keyword": "aggregator",
+    "keyword_plural": "aggregator",
+    "definition": "Tool na pinagsasama ang maraming source para maialok sa iyo ang pinakamagandang option."
+  },
+  "airdrop": {
+    "keyword": "airdrop",
+    "keyword_plural": "airdrop",
+    "definition": "Libreng pamimigay ng mga crypto asset sa mga user."
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "definition": "Maikling tawag sa Capital Allocation Protocol. Open-source protocol na tumutulong sa mga grupo na maglaan ng pinagsamang pondo nang mahusay at transparent."
+  },
+  "allowance": {
+    "keyword": "allowance",
+    "keyword_plural": "allowance",
+    "definition": "Nagbibigay sa isang entity, kadalasan smart contract, ng karapatang gumamit ng tinukoy na halaga ng iyong mga token sa isang transaksyon."
+  },
+  "alternative layer 1": {
+    "keyword": "alternative Layer 1",
+    "keyword_plural": "alternative Layer 1",
+    "definition": "Mga Layer 1 blockchain maliban sa Ethereum at Bitcoin."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM",
+    "definition": "(Automated Market Maker) Sistemang nagtutugma ng mga trade gamit ang isang pampublikong algorithm."
+  },
+  "app": {
+    "keyword": "app",
+    "keyword_plural": "app",
+    "definition": "Application para sa computer o mobile device."
+  },
+  "app store": {
+    "keyword": "app store",
+    "keyword_plural": "app store",
+    "definition": "Digital na tindahan kung saan ka nagda-download ng mga application para sa computer o mobile device."
+  },
+  "asynchronous": {
+    "keyword": "asynchronous",
+    "definition": "Komunikasyon ng maraming katuwang kung saan hindi kailangang sabay-sabay na naroon ang mga kalahok sa oras ng pagmemensahe."
+  },
+  "attestation": {
+    "keyword": "attestation",
+    "keyword_plural": "attestation",
+    "definition": "Pirmadong kumpirmasyon na totoo ang isang bagay. Sa Ethereum, nagpa-publish ang mga validator ng mga attestation bilang boto na valid ang isang block."
+  },
+  "autonomy": {
+    "keyword": "awtonomiya",
+    "definition": "Ang kakayahang pamahalaan ang sarili mong mga aksyon, sa halip na sumunod sa mga framework ng iba."
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "definition": "Naming service sa Base network na nagbibigay sa mga wallet ng madaling basahing pangalan na nagtatapos sa .base.eth."
+  },
+  "batch auction": {
+    "keyword": "batch auction",
+    "keyword_plural": "batch auction",
+    "definition": "Paraan ng trading na kumokolekta ng maraming order sa maikling panahon at sabay-sabay silang sine-settle sa iisang patas na presyo."
+  },
+  "bet": {
+    "keyword": "tumaya",
+    "keyword_plural": "tumaya",
+    "definition": "Pagtaya ng pera kapalit ng posibleng mas malaking reward."
+  },
+  "blob": {
+    "keyword": "blob",
+    "keyword_plural": "blob",
+    "definition": "Mura at pansamantalang data space sa mga block ng Ethereum, ginagamit ng mga Layer 2 para i-post ang kanilang mga batch ng transaksyon."
+  },
+  "block": {
+    "keyword": "block",
+    "keyword_plural": "block",
+    "definition": "Grupo ng mga transaksyon sa blockchain."
+  },
+  "block builder": {
+    "keyword": "block builder",
+    "keyword_plural": "block builder",
+    "definition": "Espesyalisadong operator na bumubuo ng mga bagong block mula sa mga transaksyon, na pagkatapos ay ipina-publish ng mga block proposer sa network."
+  },
+  "block explorer": {
+    "keyword": "block explorer",
+    "keyword_plural": "block explorer",
+    "definition": "Tool para sa paghahanap at pag-explore ng blockchain data."
+  },
+  "block hash": {
+    "keyword": "block hash",
+    "keyword_plural": "block hash",
+    "definition": "Ang natatanging identifier ng bawat block file. Tumutukoy ang bawat bagong block sa block hash ng naunang block para mabuo ang tuloy-tuloy na blockchain."
+  },
+  "block producer": {
+    "keyword": "block producer",
+    "keyword_plural": "block producer",
+    "definition": "Kalahok sa network na napili para gumawa ng mga bagong block ng transaksyon, tulad ng miner o validator."
+  },
+  "block proposer": {
+    "keyword": "block proposer",
+    "keyword_plural": "block proposer",
+    "definition": "Ang validator node na pinili ng algorithm ng network para pumili ng susunod na block na idaragdag sa blockchain."
+  },
+  "block reward": {
+    "keyword": "block reward",
+    "keyword_plural": "block reward",
+    "definition": "Halaga ng native coin na ibinibigay sa proposer ng bagong valid na block."
+  },
+  "block space": {
+    "keyword": "block space",
+    "definition": "Ang dami ng espasyo sa bawat block para sa pag-iimbak ng mga transaksyon at data."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchain",
+    "definition": "Sistema kung saan ang record ng mga cryptocurrency transaction ay pinapanatili sa maraming computer sa buong mundo."
+  },
+  "blockchain apps": {
+    "keyword": "blockchain app",
+    "definition": "Mga blockchain application kung saan puwede kang mag-swap ng cryptocurrency, gumamit ng web3 social media, mag-donate sa charity, o matuto onchain, tulad dito sa Bankless Academy."
+  },
+  "blockchain architecture": {
+    "keyword": "blockchain architecture",
+    "keyword_plural": "blockchain architecture",
+    "definition": "Ang mga istruktura kung paano iniimbak ang data sa blockchain technology."
+  },
+  "blockchain technology": {
+    "keyword": "blockchain technology",
+    "keyword_plural": "blockchain technology",
+    "definition": "Bagong uri ng network na naka-host sa maraming computer. Nagdadagdag ito ng bagong layer ng digital na pagmamay-ari sa internet."
+  },
+  "blockchain trilemma": {
+    "keyword": "blockchain trilemma",
+    "keyword_plural": "blockchain trilemma",
+    "definition": "Ang problemang naglalarawan sa pangangailangan ng lahat ng 3 katangian ng blockchain: seguridad, scalability, at desentralisasyon."
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "definition": "Ang dami ng espasyo sa bawat block para sa pag-iimbak ng mga transaksyon at data."
+  },
+  "borrower": {
+    "keyword": "borrower",
+    "keyword_plural": "borrower",
+    "definition": "Handang magbayad ng interes sa mga lender para makahiram ng mga asset."
+  },
+  "bridge": {
+    "keyword": "bridge",
+    "keyword_plural": "bridge",
+    "definition": "Koneksyon na nagpapahintulot sa dalawang magkaibang blockchain network na mag-usap at magpalitan ng mga asset."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "Ang market symbol ng bitcoin."
+  },
+  "censorship-resistant": {
+    "keyword": "censorship-resistant",
+    "definition": "Walang gobyerno o kumpanyang may kontrol para magpasya kung ano ang pinapayagan at hindi."
+  },
+  "central bank": {
+    "keyword": "bangko sentral",
+    "keyword_plural": "bangko sentral",
+    "definition": "Institusyong nagre-regulate ng pera, mga bangko, at currency sa isang bansa."
+  },
+  "centralization": {
+    "keyword": "sentralisasyon",
+    "definition": "Ang pagtitipon ng kapangyarihan sa buong sistema sa ilalim ng iisang awtoridad o entity."
+  },
+  "centralized": {
+    "keyword": "sentralisado",
+    "definition": "Kapag iisang awtoridad o entity ang kumokontrol sa buong sistema."
+  },
+  "centralized exchange": {
+    "keyword": "centralized exchange",
+    "keyword_plural": "centralized exchange",
+    "definition": "(CEX) Sentralisadong platform na nag-aayos ng cryptocurrency trading kapalit ng bayad, katulad ng stock exchange."
+  },
+  "centralized exchange staking": {
+    "keyword": "centralized exchange staking",
+    "definition": "Pagla-lock ng mga token sa pamamagitan ng Centralized Exchange para kumita ng mga reward."
+  },
+  "centralized services": {
+    "keyword": "sentralisadong serbisyo",
+    "definition": "Mga korporasyon o entity na kumokontrol sa online na aktibidad. Sila ang nagtatakda ng mga patakaran at bayarin, at hawak nila ang data at content sa paraang madalas na inuuna ang sarili nilang interes kaysa sa pangangailangan ng mga user."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX",
+    "definition": "(Centralized Exchange) Platform na nag-aayos ng cryptocurrency trading kapalit ng bayad, katulad ng stock exchange."
+  },
+  "chain": {
+    "keyword": "chain",
+    "keyword_plural": "chain",
+    "definition": "Nagbubuklod sa mga block ng data para makabuo ng database na hindi na mababago o mapapalitan."
+  },
+  "circulating supply": {
+    "keyword": "circulating supply",
+    "keyword_plural": "circulating supply",
+    "definition": "Ang bilang ng mga coin o token ng isang cryptocurrency na pampublikong available para i-trade sa market."
+  },
+  "coin": {
+    "keyword": "coin",
+    "keyword_plural": "coin",
+    "definition": "Ang native asset ng isang blockchain, kadalasang ginagamit bilang pera para sa mga transaksyon sa network."
+  },
+  "cold wallet": {
+    "keyword": "cold wallet",
+    "keyword_plural": "cold wallet",
+    "definition": "Uri ng self-custody wallet na nakaimbak sa offline na hardware."
+  },
+  "collateral": {
+    "keyword": "collateral",
+    "definition": "Ang asset na isinasangla ng borrower sa lender para masiguro ang pagbabayad ng utang."
+  },
+  "commercial bank": {
+    "keyword": "komersyal na bangko",
+    "keyword_plural": "komersyal na bangko",
+    "definition": "Bangkong namamahala ng pera para sa mga tao at negosyo."
+  },
+  "composability": {
+    "keyword": "composability",
+    "definition": "Ang kakayahang pagsamahin ang mga existing na smart contract at app na parang building blocks para makagawa ng mga bagong produkto."
+  },
+  "consensus": {
+    "keyword": "consensus",
+    "definition": "Kasunduan, tiwala, at seguridad sa isang desentralisadong computer network tulad ng blockchain."
+  },
+  "consensus mechanism": {
+    "keyword": "consensus mechanism",
+    "keyword_plural": "consensus mechanism",
+    "definition": "Ang paraan kung paano hinuhusgahan ng isang blockchain network kung aling mga transaksyon ang lehitimo at alin ang panloloko."
+  },
+  "consensus mechanisms": {
+    "keyword": "consensus mechanism",
+    "definition": "Mga paraan kung paano hinuhusgahan ng mga blockchain network kung aling mga transaksyon ang lehitimo at alin ang panloloko."
+  },
+  "counterparty risk": {
+    "keyword": "counterparty risk",
+    "keyword_plural": "counterparty risk",
+    "definition": "Ang panganib na hindi tuparin ng kabilang partido ang bahagi nito sa isang kasunduan."
+  },
+  "credible neutrality": {
+    "keyword": "credible neutrality",
+    "definition": "Mekanismong hindi nandidiskrimina pabor o laban sa kahit sinong partikular na tao."
+  },
+  "crypto": {
+    "keyword": "crypto",
+    "definition": "(Cryptocurrency) Mga perang native sa internet, hindi sa iisang bansa. Sa halip na pamahalaan ng bangko sentral, madalas ay ang mga user mismo ang namamahala."
+  },
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "keyword_plural": "crypto wallet",
+    "definition": "App kung saan mo puwedeng itago ang iyong cryptocurrency, at magpadala, tumanggap, o gumastos nito."
+  },
+  "cryptocurrencies": {
+    "keyword": "cryptocurrency",
+    "definition": "Mga perang native sa internet, hindi sa iisang bansa. Sa halip na pamahalaan ng bangko sentral, madalas ay ang mga user mismo ang namamahala."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "keyword_plural": "cryptocurrency",
+    "definition": "Perang native sa internet, hindi sa iisang bansa. Sa halip na pamahalaan ng bangko sentral, madalas ay ang mga user mismo ang namamahala."
+  },
+  "cryptocurrency mining": {
+    "keyword": "cryptocurrency mining",
+    "definition": "Pag-verify ng mga transaksyon sa blockchain kapalit ng cryptocurrency rewards, ginagamit sa mga Proof-of-Work network tulad ng Bitcoin."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "cryptocurrency wallet",
+    "keyword_plural": "cryptocurrency wallet",
+    "definition": "App kung saan mo puwedeng itago ang iyong cryptocurrency, at magpadala, tumanggap, o gumastos nito."
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "definition": "Mga teknik para sa secure na komunikasyon o transaksyon, na pumipigil sa panghihimasok mula sa labas."
+  },
+  "custodial wallet": {
+    "keyword": "custodial wallet",
+    "keyword_plural": "custodial wallet",
+    "definition": "Sa custodial wallet, ibang partido ang may hawak ng mga private key, kaya sila rin ang kumokontrol sa access sa iyong mga crypto asset."
+  },
+  "custodian": {
+    "keyword": "custodian",
+    "keyword_plural": "custodian",
+    "definition": "Institusyong pinansyal na binigyan ng responsibilidad na ingatan ang iyong mga asset."
+  },
+  "custom record": {
+    "keyword": "custom record",
+    "keyword_plural": "custom record",
+    "definition": "Data entry na itinakda ng user at naka-link sa isang ENS domain, kung saan puwede kang maglagay ng dagdag na impormasyon tulad ng website o social links, bukod sa mga karaniwang address."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO",
+    "definition": "(Decentralized Autonomous Organization) Istruktura ng organisasyon na gumagamit ng blockchain technology para i-automate ang botohan at pamamahala."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApp",
+    "definition": "Isang “decentralized application” na kumokonekta sa mga blockchain at desentralisadong network."
+  },
+  "death spiral": {
+    "keyword": "death spiral",
+    "keyword_plural": "death spiral",
+    "definition": "Kusang lumalalang pagbagsak kung saan ang bumabagsak na presyo ay pumipilit ng mga aksyong lalong nagpapababa ng presyo, tulad ng nangyari sa ilang algorithmic stablecoin."
+  },
+  "decentralization": {
+    "keyword": "desentralisasyon",
+    "definition": "Ang paglilipat ng kontrol sa maraming indibidwal sa halip na sa iisang awtoridad."
+  },
+  "decentralized": {
+    "keyword": "desentralisado",
+    "definition": "Walang iisang awtoridad o entity na kumokontrol sa sistema."
+  },
+  "decentralized exchange": {
+    "keyword": "decentralized exchange",
+    "keyword_plural": "decentralized exchange",
+    "definition": "(DEX) Protocol na nagpapadali ng palitan nang hindi nangangailangan ng pinagkakatiwalaang tagapamagitan."
+  },
+  "decentralized finance": {
+    "keyword": "Decentralized Finance",
+    "definition": "(DeFi) Hanay ng mga self-custody finance tool na naka-host sa blockchain."
+  },
+  "decentralized money": {
+    "keyword": "desentralisadong pera",
+    "definition": "Pera na ang mga katangian ay napagkasunduan ng komunidad, sa halip na itinakda ng isang institusyon."
+  },
+  "decentralized services": {
+    "keyword": "desentralisadong serbisyo",
+    "definition": "(dApps) Mga online na serbisyo na gumagamit ng automation para mabawasan ang fees at mapaganda ang user experience."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "(Decentralized Finance) Hanay ng mga self-custody finance tool na naka-host sa blockchain."
+  },
+  "delegate": {
+    "keyword": "delegate",
+    "keyword_plural": "delegate",
+    "definition": "Pagbibigay ng partikular na responsibilidad sa ibang tao, halimbawa ang pag-delegate ng token voting power."
+  },
+  "delegation": {
+    "keyword": "delegation",
+    "keyword_plural": "delegation",
+    "definition": "Pagbibigay ng partikular na responsibilidad sa ibang tao, halimbawa ang pag-delegate ng token voting power."
+  },
+  "democracy": {
+    "keyword": "demokrasya",
+    "keyword_plural": "demokrasya",
+    "definition": "Sistema ng gobyerno kung saan ginagamit ng mga mamamayan ang kanilang kapangyarihan sa pamamagitan ng pagiging bahagi ng pagdedesisyon."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX",
+    "definition": "(Decentralized Exchange) Protocol na nagpapadali ng palitan nang hindi nangangailangan ng pinagkakatiwalaang tagapamagitan."
+  },
+  "dex aggregator": {
+    "keyword": "DEX aggregator",
+    "keyword_plural": "DEX aggregator",
+    "definition": "Protocol na pinagsasama ang DEX liquidity mula sa maraming source sa iisang interface."
+  },
+  "digital assets": {
+    "keyword": "digital asset",
+    "definition": "Kahit anong bagay na may halaga na nakaimbak nang digital."
+  },
+  "digital signature": {
+    "keyword": "digital signature",
+    "keyword_plural": "digital signature",
+    "definition": "Patunay, na gawa gamit ang iyong private key, na inaprubahan mo ang isang mensahe o transaksyon. Parang pirma ito sa papel, pero hindi kayang pekein."
+  },
+  "double-spend": {
+    "keyword": "double-spend",
+    "keyword_plural": "double-spend",
+    "definition": "Paggastos ng parehong digital na pera nang dalawang beses. Umiiral ang blockchain consensus para mapigilan ito nang walang central authority."
+  },
+  "earn": {
+    "keyword": "kumita",
+    "definition": "Pag-aambag ng halaga kapalit ng mga reward; money verb sa skill cube."
+  },
+  "encryption": {
+    "keyword": "encryption",
+    "definition": "Ang proseso ng pag-convert ng impormasyon sa pribado at secure na code, ginagamit para pigilan ang unauthorized na access."
+  },
+  "epoch": {
+    "keyword": "epoch",
+    "keyword_plural": "epoch",
+    "definition": "Ang oras na inaabot para maisama ang tiyak na bilang ng mga block sa isang blockchain."
+  },
+  "equality of opportunity": {
+    "keyword": "pantay na oportunidad",
+    "definition": "Prinsipyo ng pagkamakatarungan kung saan pare-pareho ang tsansa ng lahat na magtagumpay anuman ang kanilang pinagmulan o kalagayan."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20",
+    "definition": "Standard para sa mga fungible token sa Ethereum. Divisible ang mga token na ito at hindi unique."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721",
+    "definition": "Standard para sa mga non-fungible token sa Ethereum. May unique digital identifier ang mga token na ito at hindi puwedeng kopyahin o hatiin."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155",
+    "definition": "Standard para sa pag-deploy ng parehong fungible at non-fungible token sa Ethereum, sa ilalim ng iisang optimized na contract."
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF",
+    "definition": "(Exchange-Traded Fund) Investment fund na tine-trade sa stock market at humahawak ng mga asset tulad ng stocks, ginto, o bitcoin."
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "(Ether) Ang native cryptocurrency ng Ethereum. Ginagamit para magsagawa ng mga transaksyon sa network, magpatakbo ng validator node, at iba pa."
+  },
+  "ether": {
+    "keyword": "ether",
+    "definition": "(ETH) Ang native cryptocurrency ng Ethereum. Ginagamit para magsagawa ng mga transaksyon sa network, magpatakbo ng validator node, at iba pa."
+  },
+  "ethereum blockchain": {
+    "keyword": "Ethereum blockchain",
+    "definition": "Pampublikong ledger na nagtatala ng mga transaksyon at pagmamay-ari sa Ethereum network."
+  },
+  "ethereum mainnet": {
+    "keyword": "Ethereum mainnet",
+    "definition": "Ang pangunahing Layer 1 network ng Ethereum, kung saan may totoong halaga ang mga transaksyon. Ito ang settlement layer ng mga Layer 2 ng Ethereum."
+  },
+  "ethereum virtual machine": {
+    "keyword": "Ethereum Virtual Machine",
+    "definition": "Ang Ethereum Virtual Machine o EVM ay software na nagpapatakbo ng mga smart contract at nagkukuwenta ng state ng Ethereum network."
+  },
+  "fiat": {
+    "keyword": "fiat",
+    "definition": "Pambansang pera na, sa halip na nakasandal sa commodity tulad ng ginto, kumukuha ng halaga mula sa tiwala ng publiko sa nag-isyu nito."
+  },
+  "finality": {
+    "keyword": "finality",
+    "definition": "Ang garantiya na ang kumpirmadong transaksyon sa blockchain ay permanente at hindi na maibabalik o mababago."
+  },
+  "finality time": {
+    "keyword": "finality time",
+    "definition": "Ang oras na inaabot para makasiguro na valid at final na ang isang transaksyon, ibig sabihin hindi na ito maibabalik o mababago."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) Pagkabalisa o pag-aalala na baka maiwanan ka o hindi maisama sa isang bagay."
+  },
+  "fork": {
+    "keyword": "fork",
+    "keyword_plural": "fork",
+    "definition": "Radikal na pagbabago sa isang blockchain network na nagreresulta sa dalawang sangay: isang sumusunod sa dating protocol, at isang sumusunod sa bago."
+  },
+  "fraud": {
+    "keyword": "pandaraya",
+    "definition": "Sa mga blockchain economy: mga hindi patas o pekeng transaksyon na ginagamit para baguhin ang hawak na halaga ng cryptocurrency."
+  },
+  "fraud proof": {
+    "keyword": "fraud proof",
+    "keyword_plural": "fraud proof",
+    "definition": "Ebidensya na invalid ang isang transaksyon at may naganap na pandaraya."
+  },
+  "front-running": {
+    "keyword": "front-running",
+    "definition": "Pagsilip sa pending na transaksyon ng ibang tao at pagbabayad para maunang maproseso ang sa iyo, para kumita ka sa kapinsalaan nila."
+  },
+  "fungibility": {
+    "keyword": "fungibility",
+    "definition": "Ang katangiang mapagpapalit-palit: bawat unit ay may parehong halaga at puwedeng ipalit sa kahit aling iba, tulad ng pagpapalit ng isang perang papel sa kapareho nitong halaga."
+  },
+  "gas": {
+    "keyword": "gas",
+    "definition": "Mga transaction fee para sa mga blockchain network."
+  },
+  "gas fee": {
+    "keyword": "gas fee",
+    "keyword_plural": "gas fee",
+    "definition": "Transaction fee na binabayaran para magamit ang isang blockchain network."
+  },
+  "gasless transactions": {
+    "keyword": "gasless transaction",
+    "definition": "Mga transaksyon kung saan ang gas fee ay binabayaran gamit ang token na tine-trade, o sinasagot ng sponsor, sa halip na native coin ng network."
+  },
+  "gold standard": {
+    "keyword": "gold standard",
+    "keyword_plural": "gold standard",
+    "definition": "Sistema ng pera kung saan ang halaga ng currency ng isang bansa ay direktang nakatali sa ginto."
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "definition": "Unit na ginagamit sa Ethereum blockchain, katumbas ng 0.000000001 ETH (isang parte sa isang bilyon), karaniwang ginagamit para ilarawan ang presyo ng gas."
+  },
+  "halving": {
+    "keyword": "halving",
+    "keyword_plural": "halving",
+    "definition": "Nakaiskedyul na event, humigit-kumulang tuwing apat na taon, na nagpuputol sa kalahati ng reward para sa pagmimina ng bagong Bitcoin."
+  },
+  "hardware wallet": {
+    "keyword": "hardware wallet",
+    "keyword_plural": "hardware wallet",
+    "definition": "Uri ng self-custody wallet na nag-iimbak ng mga private key nang offline sa isang pisikal na hardware device."
+  },
+  "hash": {
+    "keyword": "hash",
+    "keyword_plural": "hash",
+    "definition": "Digital na fingerprint ng impormasyon."
+  },
+  "hashing function": {
+    "keyword": "hashing function",
+    "keyword_plural": "hashing function",
+    "definition": "Function na ginagawang unique at fixed-size na fingerprint (hash) ang kahit anong input. Madali itong i-compute sa isang direksyon, pero halos imposibleng baligtarin."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) Crypto slang para sa hindi pagbebenta ng crypto anuman ang kondisyon ng market."
+  },
+  "hot wallet": {
+    "keyword": "hot wallet",
+    "keyword_plural": "hot wallet",
+    "definition": "Uri ng self-custody wallet na palaging nakakonekta sa internet."
+  },
+  "inflation": {
+    "keyword": "implasyon",
+    "definition": "Pangkalahatang pagtaas ng mga presyo at pagbaba ng purchasing power ng pera."
+  },
+  "intent": {
+    "keyword": "intent",
+    "keyword_plural": "intent",
+    "definition": "Pirmadong trade request na naglalarawan ng resultang gusto mo, tulad ng “i-swap ang X para sa hindi bababa sa Y”, at ipinauubaya sa mga espesyalista ang paghahanap ng pinakamagandang ruta."
+  },
+  "intermediaries": {
+    "keyword": "tagapamagitan",
+    "definition": "Mga entity o serbisyong nag-uugnay sa mga tao para mapadali ang palitan ng halaga o impormasyon."
+  },
+  "intermediary": {
+    "keyword": "tagapamagitan",
+    "keyword_plural": "tagapamagitan",
+    "definition": "Entity o serbisyong nag-uugnay sa mga tao para mapadali ang palitan ng halaga o impormasyon."
+  },
+  "intermediary token": {
+    "keyword": "intermediary token",
+    "keyword_plural": "intermediary token",
+    "definition": "Token na bahagi ng gitna ng isang trade route, hindi ang panimulang token o ang huling token."
+  },
+  "interoperability": {
+    "keyword": "interoperability",
+    "definition": "Ang kakayahan ng iba't ibang app, token, at blockchain na magtulungan at magbahagi ng impormasyon."
+  },
+  "invest": {
+    "keyword": "invest",
+    "definition": "Paglalagay ng pera sa isang asset, tulad ng coin o token, sa pag-asang tataas ang halaga nito."
+  },
+  "know-your-customer": {
+    "keyword": "Know-Your-Customer",
+    "definition": "(KYC) Prosesong sinang-ayunan ng gobyerno para tukuyin ang pagkakakilanlan ng user."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know-Your-Customer) Prosesong sinang-ayunan ng gobyerno para tukuyin ang pagkakakilanlan ng user."
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "definition": "Ang Layer 1 ay tumutukoy sa base network tulad ng Bitcoin o Ethereum."
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "definition": "Blockchain na nagpapalawak ng scalability ng Ethereum habang minamana ang seguridad ng Ethereum."
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1",
+    "definition": "Ang Layer 1 ay tumutukoy sa base network tulad ng Bitcoin o Ethereum."
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2",
+    "definition": "Blockchain na nagpapalawak ng scalability ng Ethereum habang minamana ang seguridad ng Ethereum."
+  },
+  "ledger": {
+    "keyword": "ledger",
+    "keyword_plural": "ledger",
+    "definition": "Ang record ng lahat ng transaksyong naganap kailanman."
+  },
+  "lender": {
+    "keyword": "lender",
+    "keyword_plural": "lender",
+    "definition": "Nagdedeposito ng mga asset para kumita ng interes."
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "definition": "Payment network na nakapatong sa Bitcoin, gumagamit ng mga payment channel para maging instant at mura ang pang-araw-araw na pagbabayad."
+  },
+  "liquid": {
+    "keyword": "liquid",
+    "definition": "Sa mga blockchain economy: ang kakayahang madaling magamit ang digital asset sa trading o sa mga smart contract."
+  },
+  "liquid staking token": {
+    "keyword": "liquid staking token",
+    "keyword_plural": "liquid staking token",
+    "definition": "Mga token na kumakatawan sa naka-stake na Ether. Kumikita ang mga holder ng bahagi ng staking rewards na proporsyonal sa halagang naka-stake."
+  },
+  "liquidation": {
+    "keyword": "liquidation",
+    "keyword_plural": "liquidation",
+    "definition": "Ang awtomatikong pagbebenta ng collateral ng nangutang kapag bumaba nang husto ang halaga nito at hindi na ligtas na pantakip sa utang."
+  },
+  "liquidity": {
+    "keyword": "liquidity",
+    "definition": "Ang dami ng isang token na available para i-trade."
+  },
+  "liquidity pool": {
+    "keyword": "liquidity pool",
+    "keyword_plural": "liquidity pool",
+    "definition": "Isang shared na imbakan ng mga token na nagpapagana ng permissionless na token swap."
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP",
+    "definition": "(Liquidity Provider) Mga user ng blockchain na nagpapahiram ng kanilang mga token sa mga protocol kapalit ng bahagi sa mga fee."
+  },
+  "lsts": {
+    "keyword": "LSTs",
+    "definition": "Mga token na kumakatawan sa naka-stake na Ether. Kumikita ang mga holder ng bahagi ng staking rewards ayon sa laki ng na-stake nila."
+  },
+  "mainnet": {
+    "keyword": "Mainnet",
+    "definition": "Ang pangunahing live na blockchain network kung saan may totoong halaga ang mga transaksyon, di tulad ng mga test network. Madalas itong tumukoy sa Layer 1 ng Ethereum."
+  },
+  "market cap": {
+    "keyword": "market cap",
+    "keyword_plural": "market cap",
+    "definition": "Ang kabuuang halaga ng isang token o ng isang sektor ng market."
+  },
+  "max supply": {
+    "keyword": "max supply",
+    "keyword_plural": "max supply",
+    "definition": "Ang pinakamaraming coin o token na iiral kailanman para sa isang partikular na cryptocurrency."
+  },
+  "memecoin": {
+    "keyword": "memecoin",
+    "keyword_plural": "memecoin",
+    "definition": "Cryptocurrency token na naka-tema sa isang internet meme, kadalasang walang layunin o gamit."
+  },
+  "meta-aggregator": {
+    "keyword": "meta-aggregator",
+    "keyword_plural": "meta-aggregator",
+    "definition": "Tool na pinagsasama-sama ang ibang mga aggregator sa isang karagdagang overview layer."
+  },
+  "mev": {
+    "keyword": "MEV",
+    "definition": "(Maximal Extractable Value) Kita na puwedeng makuha ng mga block producer sa pag-reorder, pagsingit, o pag-censor ng mga transaksyon sa loob ng mga block."
+  },
+  "miner": {
+    "keyword": "miner",
+    "keyword_plural": "miner",
+    "definition": "Kalahok sa isang Proof-of-Work network tulad ng Bitcoin na nakikipagkumpitensyang magmungkahi ng mga bagong block kapalit ng rewards."
+  },
+  "mining": {
+    "keyword": "mining",
+    "definition": "Ang Proof-of-Work na proseso ng pag-verify ng mga transaksyon at pagdagdag ng mga bagong block sa blockchain, kapalit ng rewards."
+  },
+  "mint": {
+    "keyword": "mint",
+    "definition": "Ang paglabas ng mga bagong fungible o non-fungible na cryptocurrency token sa isang blockchain."
+  },
+  "monetary policy": {
+    "keyword": "patakarang pananalapi",
+    "keyword_plural": "patakarang pananalapi",
+    "definition": "Kung paano pinamamahalaan ng bangko sentral ang dami ng perang umiikot sa ekonomiya."
+  },
+  "money": {
+    "keyword": "pera",
+    "definition": "Isang bagay na ginagamit bilang pambayad sa mga produkto at serbisyo: medium of exchange, unit of account, at store of value."
+  },
+  "multi-token standard": {
+    "keyword": "multi-token standard",
+    "definition": "Token standard, tulad ng ERC-1155, na sumusuporta sa parehong fungible at non-fungible na token sa iisang smart contract."
+  },
+  "network governance": {
+    "keyword": "network governance",
+    "definition": "Ang proseso kung paano nagkakasundo ang isang desentralisadong komunidad sa mga feature at upgrade ng network."
+  },
+  "neutrality": {
+    "keyword": "neutrality",
+    "definition": "Ang prinsipyo ng pantay na pagtrato sa lahat ng kalahok, nang walang kinikilingang user o grupo."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT",
+    "definition": "(Non-fungible Token) Token na may natatanging ID na hindi makokopya, di tulad ng fungible token gaya ng Ether na walang natatanging identifier."
+  },
+  "node": {
+    "keyword": "node",
+    "keyword_plural": "node",
+    "definition": "Computer na nagpapatakbo ng blockchain software, nag-iimbak ng kopya ng ledger, at tumutulong i-verify ang network."
+  },
+  "node operator": {
+    "keyword": "node operator",
+    "keyword_plural": "node operator",
+    "definition": "Miyembro ng komunidad ng Ethereum na nagpapatakbo ng validator node para magproseso ng mga transaksyon sa network."
+  },
+  "non-custodial wallet": {
+    "keyword": "non-custodial wallet",
+    "keyword_plural": "non-custodial wallet",
+    "definition": "(AKA: Self-custody wallet) Sa non-custodial wallet, ikaw lang ang may hawak ng iyong mga private key, na siyang kumokontrol sa iyong mga crypto asset."
+  },
+  "offchain": {
+    "keyword": "offchain",
+    "definition": "Anumang aksyon o data na nangyayari sa labas ng blockchain, tulad ng sa mga regular na server o sa mga signed message."
+  },
+  "onchain": {
+    "keyword": "onchain",
+    "definition": "Nakatala sa isang blockchain network. Tumutukoy sa mga aksyong ginagawa sa mga cryptocurrency network tulad ng Ethereum."
+  },
+  "onchain governance": {
+    "keyword": "onchain governance",
+    "definition": "Ang automated na sistemang namamahala sa mga pagbabago sa istruktura ng isang blockchain."
+  },
+  "onchain identity": {
+    "keyword": "onchain identity",
+    "keyword_plural": "onchain identity",
+    "definition": "Pampublikong pagkakakilanlan na nabuo mula sa iyong blockchain activity at mga record, tulad ng ENS name na naka-link sa iyong wallet address."
+  },
+  "onramp": {
+    "keyword": "onramp",
+    "keyword_plural": "onramp",
+    "definition": "Serbisyong nagpapalit ng regular na pera, tulad ng dolyar, papunta sa cryptocurrency. Kabaligtaran naman ang ginagawa ng mga offramp."
+  },
+  "open internet": {
+    "keyword": "open internet",
+    "definition": "Bukas na digital na espasyo kung saan available sa lahat ang impormasyon, serbisyo, at komunikasyon, nang walang kontrol ng mga sentralisadong entidad."
+  },
+  "open source": {
+    "keyword": "open source",
+    "definition": "Software na ang source code ay puwedeng suriin, baguhin, at pagandahin ng kahit sino."
+  },
+  "optimistic rollup": {
+    "keyword": "optimistic rollup",
+    "keyword_plural": "optimistic rollup",
+    "definition": "Layer 2 rollup na ipinapalagay na valid ang lahat ng transaksyon sa batch nito, maliban kung mapatunayang mali ng isang fraud proof sa loob ng challenge period."
+  },
+  "oracle": {
+    "keyword": "oracle",
+    "keyword_plural": "oracle",
+    "definition": "Serbisyong nagdadala ng impormasyon mula sa labas, tulad ng mga presyo sa market, papunta sa blockchain para magamit ng mga smart contract."
+  },
+  "order book": {
+    "keyword": "order book",
+    "keyword_plural": "order book",
+    "definition": "Listahan ng mga alok na bumili at magbenta sa iba't ibang presyo. Dito nagtutugma ng mga trade ang mga tradisyonal na exchange."
+  },
+  "otc": {
+    "keyword": "OTC",
+    "definition": "(Over the Counter) Mga trade na direktang ginagawa sa mga pribadong entidad."
+  },
+  "over the counter": {
+    "keyword": "over the counter",
+    "definition": "(OTC) Mga trade na direktang ginagawa sa mga pribadong entidad."
+  },
+  "password manager": {
+    "keyword": "password manager",
+    "keyword_plural": "password manager",
+    "definition": "App na ligtas na nag-iimbak ng iyong mga password at kayang gumawa ng malakas at unique na password para sa bawat account."
+  },
+  "payment channel": {
+    "keyword": "payment channel",
+    "keyword_plural": "payment channel",
+    "definition": "Nagpapahintulot sa dalawang partido na magtransaksyon nang maraming beses nang hindi kailangang itala sa blockchain ang bawat transaksyon."
+  },
+  "peer": {
+    "keyword": "peer",
+    "keyword_plural": "peer",
+    "definition": "Tao o entidad na itinuturing na kapantay mo."
+  },
+  "peer-to-peer": {
+    "keyword": "peer-to-peer",
+    "definition": "Mga koneksyon sa pagitan ng maraming partido na hindi nangangailangan ng tagapamagitan."
+  },
+  "peg": {
+    "keyword": "peg",
+    "keyword_plural": "peg",
+    "definition": "Paraan ng pagpapanatili ng pantay na halaga sa pagitan ng dalawa o higit pang asset."
+  },
+  "permissionless": {
+    "keyword": "permissionless",
+    "definition": "Hindi nangangailangan ng pahintulot ng kahit anong entidad."
+  },
+  "phishing": {
+    "keyword": "phishing",
+    "definition": "Uri ng social engineering attack kung saan nagpapanggap ang attacker bilang pinagkakatiwalaang tao o organisasyon para lokohin kang magbahagi ng sensitibong impormasyon o magpadala ng pera sa kanila."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAP",
+    "definition": "Ang POAP (Proof of Attendance Protocol) ay badge na nagtatago ng maaasahang record ng mga karanasan mo sa iyong wallet, halimbawa ang matagumpay na pagtapos ng isang lesson."
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "(Proof of Stake) Consensus kung saan nagla-lock ng stake ang mga validator para i-secure ang network."
+  },
+  "price impact": {
+    "keyword": "price impact",
+    "keyword_plural": "price impact",
+    "definition": "Kung gaano kalaki ang epekto ng sarili mong trade sa presyo sa isang DEX, depende sa laki ng trade."
+  },
+  "primary name": {
+    "keyword": "primary name",
+    "keyword_plural": "primary name",
+    "definition": "Ang ENS name na naka-link sa iyong wallet address, para maipakita ng mga app ang pangalan mo sa halip na mahabang address."
+  },
+  "private key": {
+    "keyword": "private key",
+    "keyword_plural": "private key",
+    "definition": "Ang private key ang nagbibigay ng access sa iyong wallet, para makapagpadala ka ng mga crypto asset sa ibang mga wallet."
+  },
+  "private transaction routing": {
+    "keyword": "private transaction routing",
+    "definition": "Pagpapadala ng mga transaksyon nang direkta sa mga block builder sa halip na sa pampublikong pila, para matago ang mga ito sa mga front-running bot."
+  },
+  "proof of stake": {
+    "keyword": "Proof-of-Stake",
+    "definition": "Consensus na paraan na random na pumipili ng mga block producer batay sa stake na na-lock ng bawat kalahok sa protocol."
+  },
+  "proof of work": {
+    "keyword": "Proof-of-Work",
+    "definition": "Consensus na paraan kung saan gumagastos ang mga miner ng computing power (ang “work”) habang nagkukumpitensyang magmungkahi ng mga valid na block."
+  },
+  "proof-of-stake": {
+    "keyword": "Proof-of-Stake",
+    "definition": "Blockchain consensus na paraan na pumipili ng mga validator node batay sa dami ng stake na na-lock ng node."
+  },
+  "pseudonymous": {
+    "keyword": "pseudonymous",
+    "definition": "Ang paggamit ng piniling pangalan na nagtatago ng totoo mong pagkakakilanlan."
+  },
+  "public": {
+    "keyword": "pampubliko",
+    "definition": "Sa mga pampublikong blockchain, puwedeng makita ng kahit sino ang blockchain ledger."
+  },
+  "public good": {
+    "keyword": "public good",
+    "keyword_plural": "public good",
+    "definition": "Ang public good ay produkto o serbisyong available sa lahat ng miyembro ng lipunan."
+  },
+  "public key": {
+    "keyword": "public key",
+    "keyword_plural": "public key",
+    "definition": "Code na ginawa mula sa iyong private key na ligtas ibahagi. Mula sa public key mo hinango ang iyong wallet address."
+  },
+  "quadratic funding": {
+    "keyword": "quadratic funding",
+    "definition": "Crowd-funding na mekanismong nagpapalaki ng available na pondo, kung saan nagsisilbing boto ang bawat indibidwal na donasyon anuman ang laki. Mas malawak ang suporta, mas malaki ang epekto!"
+  },
+  "recovery phrase": {
+    "keyword": "recovery phrase",
+    "keyword_plural": "recovery phrase",
+    "definition": "Ang recovery phrase ay listahan ng 12 hanggang 24 na salita na ginagamit para buuin ang public key at private key ng iyong wallet."
+  },
+  "red flag": {
+    "keyword": "red flag",
+    "keyword_plural": "red flag",
+    "definition": "Babalang senyales ng panganib."
+  },
+  "restaking": {
+    "keyword": "restaking",
+    "definition": "Muling paggamit ng naka-stake na Ether token para tumulong i-secure at i-validate ang ibang mga protocol, kapalit ng rewards."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "definition": "(Retroactive Public Goods Funding) Mekanismo para pondohan ang mga proyekto batay sa naging epekto nila sa nakaraan."
+  },
+  "rollup": {
+    "keyword": "rollup",
+    "keyword_plural": "rollup",
+    "definition": "Layer 2 scaling solution na nagpoproseso ng maraming transaksyon sa labas ng main chain, tapos ipinopost ang mga ito sa iisang batch, kaya tumataas ang throughput at bumababa ang gastos."
+  },
+  "sandwich attack": {
+    "keyword": "sandwich attack",
+    "keyword_plural": "sandwich attack",
+    "definition": "Atake kung saan naglalagay ang mga bot ng trade bago at pagkatapos mismo ng trade mo para galawin ang presyo, at kumikita sila sa kapinsalaan mo."
+  },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "definition": "Ang pseudonymous na lumikha ng Bitcoin. Hanggang ngayon, walang nakakaalam ng totoo niyang pagkakakilanlan."
+  },
+  "scalability": {
+    "keyword": "scalability",
+    "definition": "Ang kakayahan ng blockchain na kayanin ang lumalaking dami ng trabaho, transaksyon, at paggamit nang halos walang abala sa mga user."
+  },
+  "scam-token": {
+    "keyword": "scam-token",
+    "keyword_plural": "scam-token",
+    "definition": "Cryptocurrency token na inilunsad para lang nakawin ang pera ng mga investor."
+  },
+  "scarce": {
+    "keyword": "limitado",
+    "definition": "Ang kalagayan ng pagiging kaunti lang ang supply."
+  },
+  "scarcity": {
+    "keyword": "kakapusan",
+    "definition": "Ang pagiging kaunti lang ang supply."
+  },
+  "security": {
+    "keyword": "seguridad",
+    "definition": "Kakayahan ng blockchain na tiisin ang mga hacking attempt, code exploit, economic exploit, at iba pang atake, at patuloy na gumana nang normal."
+  },
+  "seed phrase": {
+    "keyword": "seed phrase",
+    "keyword_plural": "seed phrase",
+    "definition": "Grupo ng mga random na salitang binubuo ng wallet sa setup; ito ang master key sa LAHAT ng account na kontrolado ng wallet na iyon. HUWAG MONG IBABAHAGI KAILANMAN ANG SEED PHRASE MO KANINO MAN, SA ANUMANG DAHILAN."
+  },
+  "self-custodial": {
+    "keyword": "self-custodial",
+    "definition": "Paraan ng paghawak ng iyong mga asset kung saan ikaw lang ang may access sa mga ito."
+  },
+  "self-custody": {
+    "keyword": "self-custody",
+    "definition": "Paraan ng paghawak ng iyong mga asset kung saan ikaw lang ang may access sa mga ito."
+  },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "keyword_plural": "self-custody wallet",
+    "definition": "(AKA: Non-custodial wallet) Sa self-custody wallet, ikaw lang ang may hawak ng iyong mga private key, na siyang kumokontrol sa iyong mga crypto asset."
+  },
+  "settlement layer": {
+    "keyword": "settlement layer",
+    "keyword_plural": "settlement layer",
+    "definition": "Ang “pinakamababang” antas ng blockchain na nagtatala ng mga detalye ng palitan ng asset mula sa mga finalized na transaksyon. Ang Mainnet Ethereum ang settlement layer para sa mga Layer 2 scaling solution ng Ethereum."
+  },
+  "settlement time": {
+    "keyword": "settlement time",
+    "keyword_plural": "settlement time",
+    "definition": "Ang oras na kailangan para ma-confirm ang isang transaksyon."
+  },
+  "sharding": {
+    "keyword": "sharding",
+    "definition": "Ang proseso ng paghati ng iisang blockchain sa maraming chain na sabay-sabay na tumatakbo nang parallel para tumaas ang scalability."
+  },
+  "sidechain": {
+    "keyword": "sidechain",
+    "keyword_plural": "sidechain",
+    "definition": "Hiwalay na blockchain na tumatakbo kasabay ng main blockchain, konektado sa pamamagitan ng bridge, at may sarili nitong mga validator at seguridad."
+  },
+  "slashed": {
+    "keyword": "slashed",
+    "definition": "Parusa kung saan nawawalan ang validator ng bahagi ng stake nito dahil sa napatunayang pandaraya sa isang Proof-of-Stake blockchain."
+  },
+  "slashing": {
+    "keyword": "slashing",
+    "definition": "Parusa sa mga Proof-of-Stake network na sumisira ng bahagi ng stake ng validator dahil sa napatunayang pandaraya, tulad ng pagpirma ng dalawang magkasalungat na block."
+  },
+  "slippage": {
+    "keyword": "slippage",
+    "definition": "Ang pagkakaiba ng presyong inaasahan mo at ng presyong nakuha mo nang maisagawa ang trade."
+  },
+  "slippage tolerance": {
+    "keyword": "slippage tolerance",
+    "keyword_plural": "slippage tolerance",
+    "definition": "Ang pinakamalaking pagbabago sa presyo na tatanggapin mo sa isang trade. Kapag gumalaw ang presyo nang lampas dito, kakanselahin ang trade."
+  },
+  "smart account": {
+    "keyword": "smart account",
+    "keyword_plural": "smart account",
+    "definition": "Wallet account na pinapagana ng smart contract; isa pang tawag sa smart wallet."
+  },
+  "smart contract": {
+    "keyword": "smart contract",
+    "keyword_plural": "smart contract",
+    "definition": "Computerized na code na awtomatikong nagpapatupad ng mga tuntunin ng isang kontrata."
+  },
+  "smart wallet": {
+    "keyword": "smart wallet",
+    "keyword_plural": "smart wallet",
+    "definition": "Wallet na pinapagana ng smart contract sa halip na iisang private key, kaya may mga feature tulad ng account recovery at passkey login."
+  },
+  "social engineering": {
+    "keyword": "social engineering",
+    "definition": "Pagmamanipula sa isang tao para magbahagi ng sensitibo o kumpidensyal na impormasyon tulad ng mga password o seed phrase."
+  },
+  "solo staker": {
+    "keyword": "solo staker",
+    "keyword_plural": "solo staker",
+    "definition": "Node operator na nagpapatakbo ng sariling independent na validator node."
+  },
+  "solo staking": {
+    "keyword": "solo staking",
+    "definition": "Pagpapatakbo ng sarili mong validator node para magproseso ng mga transaksyon sa mga Proof-of-Stake system."
+  },
+  "solver": {
+    "keyword": "solver",
+    "keyword_plural": "solver",
+    "definition": "Espesyalistang nakikipagkumpitensya sa iba para maisagawa ang intent ng user sa pinakamagandang presyong posible."
+  },
+  "spend": {
+    "keyword": "spend",
+    "definition": "Paggamit ng iyong mga crypto asset para magbayad ng mga produkto o serbisyo."
+  },
+  "spot etf": {
+    "keyword": "spot ETF",
+    "keyword_plural": "spot ETF",
+    "definition": "ETF na may hawak ng mismong asset, tulad ng bitcoin, para makapag-invest dito ang mga tao sa pamamagitan ng tradisyonal na stock market."
+  },
+  "stablecoin": {
+    "keyword": "stablecoin",
+    "keyword_plural": "stablecoin",
+    "definition": "Token na dinisenyong panatilihin ang matatag na halaga, kadalasang naka-peg 1:1 sa isang currency tulad ng US dollar."
+  },
+  "stablecoin issuer": {
+    "keyword": "stablecoin issuer",
+    "keyword_plural": "stablecoin issuer",
+    "definition": "Ang kumpanya o organisasyong gumagawa ng stablecoin at namamahala sa mga reserbang sumusuporta sa halaga nito."
+  },
+  "stake": {
+    "keyword": "stake",
+    "keyword_plural": "stake",
+    "definition": "Ang halaga ng asset na naka-lock sa isang cryptocurrency protocol. Kumakatawan ito sa pinansyal na commitment ng isang tao sa protocol, ang kanyang “skin in the game”."
+  },
+  "staked": {
+    "keyword": "staked",
+    "definition": "Ang pansamantalang pag-lock ng bahagi ng iyong crypto sa isang smart contract sa loob ng takdang panahon kapalit ng interes (“rewards”)."
+  },
+  "staker": {
+    "keyword": "staker",
+    "keyword_plural": "staker",
+    "definition": "Miyembro ng komunidad ng Ethereum na nagbibigay ng Ether sa isang validator node kapalit ng rewards."
+  },
+  "stakers": {
+    "keyword": "staker",
+    "definition": "Mga miyembro ng komunidad ng Ethereum na nagbibigay ng Ether sa mga validator node kapalit ng rewards."
+  },
+  "staking": {
+    "keyword": "staking",
+    "definition": "Ang pansamantalang pag-lock ng bahagi ng iyong crypto sa isang smart contract sa loob ng takdang panahon kapalit ng interes (“rewards”)."
+  },
+  "staking pool": {
+    "keyword": "staking pool",
+    "keyword_plural": "staking pool",
+    "definition": "Sa Ethereum: mga smart contract kung saan nagbibigay ang mga staker ng Ether sa validator node ng ibang staker."
+  },
+  "staking providers": {
+    "keyword": "staking provider",
+    "definition": "Mga digital platform na nag-aalok ng staking services, kadalasan sa pamamagitan ng mga staking pool."
+  },
+  "standard record": {
+    "keyword": "standard record",
+    "keyword_plural": "standard record",
+    "definition": "Karaniwang data entry na naka-link sa isang ENS domain, tulad ng wallet address, avatar, o email."
+  },
+  "swap": {
+    "keyword": "swap",
+    "keyword_plural": "swap",
+    "definition": "Palitan mula sa isang token papunta sa ibang token."
+  },
+  "token": {
+    "keyword": "token",
+    "keyword_plural": "token",
+    "definition": "Mga unit na kumakatawan sa mga asset o karapatan, na binuo sa ibabaw ng isang umiiral na blockchain."
+  },
+  "token allowance": {
+    "keyword": "token allowance",
+    "keyword_plural": "token allowance",
+    "definition": "Kasunduan sa pagitan ng wallet at smart contract na nagbibigay ng limitado o unlimited na access sa isang partikular na token."
+  },
+  "token approval": {
+    "keyword": "token approval",
+    "keyword_plural": "token approval",
+    "definition": "Pahintulot na ibinibigay mo sa isang smart contract para galawin ang isang partikular na token mula sa wallet mo; tinatawag ding token allowance."
+  },
+  "token distribution": {
+    "keyword": "token distribution",
+    "keyword_plural": "token distribution",
+    "definition": "Ang paraan ng paghahati ng mga token sa iba't ibang grupo ng stakeholder."
+  },
+  "token pair": {
+    "keyword": "token pair",
+    "keyword_plural": "token pair",
+    "definition": "Ang dalawang magkaugnay na cryptocurrency na bumubuo sa isang liquidity pool."
+  },
+  "token swap": {
+    "keyword": "token swap",
+    "keyword_plural": "token swap",
+    "definition": "Palitan mula sa isang token papunta sa ibang token."
+  },
+  "tps": {
+    "keyword": "TPS",
+    "definition": "(Transactions Per Second) Sukatan ng scalability ng blockchain: ang bilang ng mga transaksyong napoproseso nito bawat segundo."
+  },
+  "trade": {
+    "keyword": "trade",
+    "keyword_plural": "trade",
+    "definition": "Pagpapalit ng asset o pera para sa isang bagay na may halaga; isa sa mga money verb sa skill cube."
+  },
+  "trade route": {
+    "keyword": "trade route",
+    "keyword_plural": "trade route",
+    "definition": "Ang landas mula sa panimulang token papunta sa huling token sa isang trade."
+  },
+  "trade routing": {
+    "keyword": "trade routing",
+    "definition": "Pagpaplano ng landas mula sa panimulang token papunta sa huling token sa isang trade."
+  },
+  "transaction": {
+    "keyword": "transaksyon",
+    "keyword_plural": "transaksyon",
+    "definition": "Record ng paglipat, pera man o iba pa, sa blockchain."
+  },
+  "transaction finality": {
+    "keyword": "transaction finality",
+    "definition": "Ang oras bago ka makasiguradong valid at final na ang isang transaksyon, ibig sabihin hindi na ito mababawi o mababago."
+  },
+  "transaction hash": {
+    "keyword": "transaction hash",
+    "keyword_plural": "transaction hash",
+    "definition": "Ang natatanging identifier ng bawat transaksyon; hinango ito mula sa transaction data, sa digital signature ng nagpadala, at sa isang one-time na numero para maiwasan ang dobleng transaksyon."
+  },
+  "transaction throughput": {
+    "keyword": "transaction throughput",
+    "definition": "Kung ilang transaksyon ang kayang iproseso ng blockchain nang sabay-sabay, kadalasang sinusukat sa transactions per second (TPS)."
+  },
+  "trustless": {
+    "keyword": "trustless",
+    "definition": "Ang katangiang gumagana nang hindi kailangang magtiwala sa mga tao o institusyon. (Awtomatiko, walang nag-iisang may-ari.)"
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "definition": "(Total Value Locked) Ang kabuuang halaga ng asset na nakalagak sa isang partikular na lugar."
+  },
+  "two factor authentication": {
+    "keyword": "Two Factor Authentication",
+    "definition": "Karagdagang layer ng seguridad para matiyak na ang taong sumusubok mag-access ng isang online account ay talagang siya ang sinasabi niyang siya."
+  },
+  "validating bridge": {
+    "keyword": "validating bridge",
+    "keyword_plural": "validating bridge",
+    "definition": "Bridge contract na ito mismo ang nagve-verify ng mga withdrawal, kaya hindi na kailangang magtiwala sa anumang panlabas na awtoridad."
+  },
+  "validator": {
+    "keyword": "validator",
+    "keyword_plural": "validator",
+    "definition": "Kalahok sa isang Proof-of-Stake network na nagla-lock ng stake para suriin ang mga transaksyon at magmungkahi ng mga block, at kumikita ng rewards sa tapat na trabaho."
+  },
+  "validator client": {
+    "keyword": "validator client",
+    "keyword_plural": "validator client",
+    "definition": "Ang software na pinapatakbo ng validator node para magmungkahi at sumuri ng mga bagong block sa isang Proof-of-Stake network."
+  },
+  "validator node": {
+    "keyword": "validator node",
+    "keyword_plural": "validator node",
+    "definition": "Computer device na pinapatakbo ng miyembro ng komunidad ng Ethereum. Nagpoproseso ito ng mga transaksyon sa network kapalit ng rewards."
+  },
+  "validator nodes": {
+    "keyword": "validator node",
+    "definition": "Mga computer device na pinapatakbo ng mga miyembro ng komunidad ng Ethereum. Nagpoproseso ang mga ito ng mga transaksyon sa network kapalit ng rewards."
+  },
+  "validity proof": {
+    "keyword": "validity proof",
+    "keyword_plural": "validity proof",
+    "definition": "Mathematical na patunay na tama ang isang batch ng mga transaksyon, para ma-verify ito ng blockchain nang hindi inuulit ang trabaho."
+  },
+  "value-creation": {
+    "keyword": "value-creation",
+    "definition": "Gawi sa negosyo na nakatuon sa paggawa ng makabago at dekalidad na mga produkto at serbisyo para sa mga user at sa ekonomiya."
+  },
+  "value-extraction": {
+    "keyword": "value-extraction",
+    "definition": "Gawi sa negosyo kung saan pinagsasamantalahan ang mga user sa pamamagitan ng matataas na fee, pangongolekta ng data, at hindi patas na mga tuntunin."
+  },
+  "value-extractive": {
+    "keyword": "value-extractive",
+    "definition": "Gawi sa negosyo kung saan pinagsasamantalahan ang mga user sa pamamagitan ng matataas na fee, pangongolekta ng data, at hindi patas na mga tuntunin."
+  },
+  "vault": {
+    "keyword": "vault",
+    "keyword_plural": "vault",
+    "definition": "Smart contract na humahawak ng mga idinepositong token at pinagtatrabaho ang mga ito, at binibigyan ang mga depositor ng token na kumakatawan sa kanilang bahagi."
+  },
+  "veto": {
+    "keyword": "veto",
+    "keyword_plural": "veto",
+    "definition": "Botong tumatanggi sa isang governance proposal."
+  },
+  "wallet": {
+    "keyword": "wallet",
+    "keyword_plural": "wallet",
+    "definition": "Ang wallet ay application o device na ginagamit para magpadala at tumanggap ng mga crypto asset sa blockchain."
+  },
+  "wallet app": {
+    "keyword": "wallet app",
+    "keyword_plural": "wallet app",
+    "definition": "App sa iyong computer o phone na ginagamit para kumonekta sa iyong wallet sa blockchain."
+  },
+  "wallet provider": {
+    "keyword": "wallet provider",
+    "keyword_plural": "wallet provider",
+    "definition": "Ang gumawa ng software na ginagamit mo para ma-access ang iyong wallet. Hindi sila ang may-ari ng wallet mo; nagsisilbi silang tulay para ma-access mo ang account mo sa blockchain."
+  },
+  "web2": {
+    "keyword": "web2",
+    "definition": "Ang internet ng mga sentralisadong platform at account, walang blockchain infrastructure."
+  },
+  "web3": {
+    "keyword": "web3",
+    "definition": "Tumutukoy sa internet ng mga blockchain, kung saan kaya mong i-self-custody ang iyong mga asset at data."
+  },
+  "yield farm": {
+    "keyword": "yield farm",
+    "keyword_plural": "yield farm",
+    "definition": "DeFi protocol kung saan nagdedeposito ang mga user ng token para kumita ng rewards. Ang yield farming ay ang paghahabol sa pinakamagagandang rewards na ito."
+  },
+  "yourname.eth": {
+    "keyword": "yourname.eth",
+    "definition": "Halimbawa ng ENS name: web3 username na madaling basahin at nakaturo sa iyong wallet address."
+  },
+  "zero-knowledge": {
+    "keyword": "zero-knowledge",
+    "definition": "Mathematical na paraan na nagpapahintulot sa isang partido na patunayang valid ang isang pahayag nang hindi nagbubunyag ng karagdagang impormasyon tungkol dito."
+  },
+  "zk rollup": {
+    "keyword": "ZK rollup",
+    "keyword_plural": "ZK rollup",
+    "definition": "Layer 2 rollup na gumagamit ng zero-knowledge proofs para mathematically mapatunayan sa Layer 1 blockchain na valid ang mga batched na transaksyon nito."
+  }
+}

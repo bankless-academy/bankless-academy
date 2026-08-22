@@ -30,7 +30,12 @@ const enKw = read('translation/keywords/en/keywords.json')
 // from exactly the terms where a conflict is most visible.
 // ---------------------------------------------------------------------------
 if (cmd === 'pins') {
-  const eg = read(`translation/ethglossary/${lang}.json`).terms
+  // Some languages have no vendored ETHGlossary data (nl/th/tl/am are absent
+  // upstream too). The ranked term list is still the point of this command —
+  // it just prints with no suggestions, and every translation call is the
+  // style-guide author's.
+  const egPath = `translation/ethglossary/${lang}.json`
+  const eg = fs.existsSync(egPath) ? read(egPath).terms : {}
   // how often each glossary term is backticked across the English lessons
   const freq = {}
   for (const f of fs.readdirSync('translation/lesson/en')) {

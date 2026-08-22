@@ -1,0 +1,1252 @@
+{
+  ".eth": {
+    "keyword": ".eth",
+    "definition": "De web3-domeinuitgang van de Ethereum Name Service (ENS), zoals in jouwnaam.eth."
+  },
+  "2 factor authentication": {
+    "keyword": "tweefactorauthenticatie",
+    "definition": "Een extra beveiligingslaag die controleert of degene die toegang wil tot een online account echt is wie die zegt te zijn."
+  },
+  "2fa": {
+    "keyword": "2FA",
+    "definition": "Een extra beveiligingslaag die controleert of degene die toegang wil tot een online account echt is wie die zegt te zijn."
+  },
+  "51% attack": {
+    "keyword": "51%-aanval",
+    "keyword_plural": "51%-aanvallen",
+    "definition": "Een aanval op de consensus van een blockchain door meer dan de helft van de blokproducerende kracht op het netwerk in handen te krijgen."
+  },
+  "address": {
+    "keyword": "adres",
+    "keyword_plural": "adressen",
+    "definition": "Unieke publieke identificatie van een entiteit op een blockchain."
+  },
+  "addresses": {
+    "keyword": "adressen",
+    "definition": "Unieke publieke identificaties van entiteiten op een blockchain."
+  },
+  "aggregator": {
+    "keyword": "aggregator",
+    "keyword_plural": "aggregators",
+    "definition": "Een tool die meerdere bronnen combineert om de meest voordelige opties te bieden."
+  },
+  "airdrop": {
+    "keyword": "airdrop",
+    "keyword_plural": "airdrops",
+    "definition": "Het gratis uitdelen van crypto-assets aan gebruikers."
+  },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "definition": "Kort voor Capital Allocation Protocol. Een open-source protocol waarmee groepen gezamenlijk kapitaal efficiënt en transparant kunnen verdelen."
+  },
+  "allowance": {
+    "keyword": "allowance",
+    "keyword_plural": "allowances",
+    "definition": "Geeft een partij, meestal een smart contract, het recht om een bepaalde hoeveelheid van je tokens te gebruiken in een transactie."
+  },
+  "alternative layer 1": {
+    "keyword": "alternatieve Layer 1",
+    "keyword_plural": "alternatieve Layer 1's",
+    "definition": "Layer 1-blockchains anders dan Ethereum en Bitcoin."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "keyword_plural": "AMM's",
+    "definition": "(Automated Market Maker) Een systeem dat handelsorders automatisch koppelt op basis van een publiek algoritme."
+  },
+  "app": {
+    "keyword": "app",
+    "keyword_plural": "apps",
+    "definition": "Een applicatie voor een computer of mobiel apparaat."
+  },
+  "app store": {
+    "keyword": "app store",
+    "keyword_plural": "app stores",
+    "definition": "Een digitale winkel waar je applicaties voor je computer of mobiele apparaat downloadt."
+  },
+  "asynchronous": {
+    "keyword": "asynchroon",
+    "definition": "Communicatie tussen meerdere deelnemers, waarbij niet iedereen op het moment van het bericht aanwezig hoeft te zijn."
+  },
+  "attestation": {
+    "keyword": "attestatie",
+    "keyword_plural": "attestaties",
+    "definition": "Een ondertekende bevestiging dat iets waar is. Op Ethereum publiceren validators attestaties waarmee ze stemmen dat een blok geldig is."
+  },
+  "autonomy": {
+    "keyword": "autonomie",
+    "definition": "De eigenschap dat je je eigen handelen bepaalt, in plaats van je te voegen naar de kaders van anderen."
+  },
+  "basenames": {
+    "keyword": "Basenames",
+    "definition": "Een naamservice op het Base-netwerk die wallets leesbare namen geeft die eindigen op .base.eth."
+  },
+  "batch auction": {
+    "keyword": "batchveiling",
+    "keyword_plural": "batchveilingen",
+    "definition": "Een handelsmethode die in korte tijd veel orders verzamelt en ze samen afhandelt tegen één eerlijke prijs."
+  },
+  "bet": {
+    "keyword": "gok",
+    "keyword_plural": "gokken",
+    "definition": "Geld riskeren in ruil voor grotere beloningen."
+  },
+  "blob": {
+    "keyword": "blob",
+    "keyword_plural": "blobs",
+    "definition": "Goedkope, tijdelijke dataruimte in Ethereum-blokken, gebruikt door Layer 2's om hun transactiebatches te plaatsen."
+  },
+  "block": {
+    "keyword": "blok",
+    "keyword_plural": "blokken",
+    "definition": "Een groep transacties op de blockchain."
+  },
+  "block builder": {
+    "keyword": "block builder",
+    "keyword_plural": "block builders",
+    "definition": "Een gespecialiseerde partij die transacties samenvoegt tot nieuwe blokken, die block proposers vervolgens op het netwerk publiceren."
+  },
+  "block explorer": {
+    "keyword": "block explorer",
+    "keyword_plural": "block explorers",
+    "definition": "Zoek- en verkenningstool voor blockchain-data."
+  },
+  "block hash": {
+    "keyword": "blokhash",
+    "keyword_plural": "blokhashes",
+    "definition": "De unieke identificatie van elk blokbestand. Elk nieuw blok verwijst naar de blokhash van het vorige blok, zodat één aaneengesloten blockchain ontstaat."
+  },
+  "block producer": {
+    "keyword": "blokproducent",
+    "keyword_plural": "blokproducenten",
+    "definition": "Een netwerkdeelnemer die is gekozen om nieuwe blokken met transacties te maken, zoals een miner of validator."
+  },
+  "block proposer": {
+    "keyword": "block proposer",
+    "keyword_plural": "block proposers",
+    "definition": "De validatornode die door het netwerkalgoritme wordt gekozen om het volgende blok voor de blockchain te selecteren."
+  },
+  "block reward": {
+    "keyword": "blokbeloning",
+    "keyword_plural": "blokbeloningen",
+    "definition": "Een hoeveelheid van de eigen munt van het netwerk, gegeven aan de voorsteller van een nieuw geldig blok."
+  },
+  "block space": {
+    "keyword": "blockspace",
+    "definition": "De hoeveelheid ruimte in elk blok voor het opslaan van transacties en data."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchains",
+    "definition": "Een systeem waarin een register van cryptotransacties wordt bijgehouden op veel computers over de hele wereld."
+  },
+  "blockchain apps": {
+    "keyword": "blockchain-apps",
+    "definition": "Blockchain-applicaties waarmee je cryptovaluta kunt swappen, web3-social media kunt gebruiken, aan goede doelen kunt doneren of zelfs onchain kunt leren, zoals bij Bankless Academy."
+  },
+  "blockchain architecture": {
+    "keyword": "blockchain-architectuur",
+    "keyword_plural": "blockchain-architecturen",
+    "definition": "De structuren voor hoe data wordt opgeslagen in blockchain-technologie."
+  },
+  "blockchain technology": {
+    "keyword": "blockchain-technologie",
+    "keyword_plural": "blockchain-technologieën",
+    "definition": "Een nieuw type netwerk, gehost op veel computers. Het voegt een nieuwe laag van digitaal eigendom toe aan het internet."
+  },
+  "blockchain trilemma": {
+    "keyword": "blockchain-trilemma",
+    "keyword_plural": "blockchain-trilemma's",
+    "definition": "Het probleem dat beschrijft dat een blockchain alle drie de kwaliteiten nodig heeft: veiligheid, schaalbaarheid en decentralisatie."
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "definition": "De hoeveelheid ruimte in elk blok voor het opslaan van transacties en data."
+  },
+  "borrower": {
+    "keyword": "lener",
+    "keyword_plural": "leners",
+    "definition": "Betaalt rente aan uitleners om assets te kunnen lenen."
+  },
+  "bridge": {
+    "keyword": "bridge",
+    "keyword_plural": "bridges",
+    "definition": "Verbinding waarmee twee verschillende blockchain-netwerken met elkaar kunnen communiceren en assets kunnen uitwisselen."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "definition": "Het marktsymbool voor bitcoin."
+  },
+  "censorship-resistant": {
+    "keyword": "censuurbestendig",
+    "definition": "Geen overheid of bedrijf heeft de macht om te bepalen wat wel of niet is toegestaan."
+  },
+  "central bank": {
+    "keyword": "centrale bank",
+    "keyword_plural": "centrale banken",
+    "definition": "Een instelling die het geld, de banken en de valuta van een land reguleert."
+  },
+  "centralization": {
+    "keyword": "centralisatie",
+    "definition": "De concentratie van macht over een heel systeem bij één enkele autoriteit of partij."
+  },
+  "centralized": {
+    "keyword": "gecentraliseerd",
+    "definition": "Eén enkele autoriteit of partij beheert het hele systeem."
+  },
+  "centralized exchange": {
+    "keyword": "gecentraliseerde beurs",
+    "keyword_plural": "gecentraliseerde beurzen",
+    "definition": "(CEX) Een centraal platform dat tegen een vergoeding cryptohandel coördineert, vergelijkbaar met een effectenbeurs."
+  },
+  "centralized exchange staking": {
+    "keyword": "CEX-staking",
+    "definition": "Tokens vastzetten via een gecentraliseerde beurs om beloningen te verdienen."
+  },
+  "centralized services": {
+    "keyword": "gecentraliseerde diensten",
+    "definition": "Bedrijven of partijen die online activiteiten beheren: ze bepalen de regels en kosten en beheren data en content op manieren die vaak hun eigen belangen boven die van gebruikers stellen."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "keyword_plural": "CEX's",
+    "definition": "(Centralized Exchange) Een platform dat tegen een vergoeding cryptohandel coördineert, vergelijkbaar met een effectenbeurs."
+  },
+  "chain": {
+    "keyword": "keten",
+    "keyword_plural": "ketens",
+    "keyword_forms": [
+      "chain"
+    ],
+    "definition": "Verbindt blokken met data aan elkaar tot een database die niet kan worden gewijzigd of aangepast."
+  },
+  "circulating supply": {
+    "keyword": "circulerende voorraad",
+    "keyword_plural": "circulerende voorraden",
+    "definition": "Het aantal munten of tokens van een specifieke cryptovaluta dat publiek beschikbaar is om te verhandelen."
+  },
+  "coin": {
+    "keyword": "coin",
+    "keyword_plural": "coins",
+    "definition": "Het eigen asset van een blockchain, vooral gebruikt als betaalmiddel om transacties op het netwerk mogelijk te maken."
+  },
+  "cold wallet": {
+    "keyword": "cold wallet",
+    "keyword_plural": "cold wallets",
+    "definition": "Een type self-custody wallet dat offline op hardware wordt bewaard."
+  },
+  "collateral": {
+    "keyword": "onderpand",
+    "definition": "Een asset die een lener aan een uitlener toezegt als zekerheid voor de terugbetaling van een lening."
+  },
+  "commercial bank": {
+    "keyword": "commerciële bank",
+    "keyword_plural": "commerciële banken",
+    "definition": "Een bank die geld beheert voor mensen en bedrijven."
+  },
+  "composability": {
+    "keyword": "composability",
+    "definition": "De mogelijkheid om bestaande smart contracts en apps als bouwblokken te combineren tot nieuwe producten."
+  },
+  "consensus": {
+    "keyword": "consensus",
+    "definition": "Overeenstemming, vertrouwen en veiligheid in een gedecentraliseerd computernetwerk zoals een blockchain."
+  },
+  "consensus mechanism": {
+    "keyword": "consensusmechanisme",
+    "keyword_plural": "consensusmechanismen",
+    "definition": "De methode waarmee een blockchain-netwerk beoordeelt welke transacties legitiem zijn en welke frauduleus."
+  },
+  "consensus mechanisms": {
+    "keyword": "consensusmechanismen",
+    "definition": "Methoden waarmee blockchain-netwerken beoordelen welke transacties legitiem zijn en welke frauduleus."
+  },
+  "counterparty risk": {
+    "keyword": "tegenpartijrisico",
+    "keyword_plural": "tegenpartijrisico's",
+    "definition": "Het risico dat een andere partij haar deel van een afspraak niet nakomt."
+  },
+  "credible neutrality": {
+    "keyword": "geloofwaardige neutraliteit",
+    "definition": "Een mechanisme dat geen specifieke mensen voortrekt of benadeelt."
+  },
+  "crypto": {
+    "keyword": "crypto",
+    "definition": "(Cryptovaluta) Valuta die eigen zijn aan het internet, niet aan een land. In plaats van door een centrale bank worden ze vaak bestuurd door hun gebruikers."
+  },
+  "crypto wallet": {
+    "keyword": "cryptowallet",
+    "keyword_plural": "cryptowallets",
+    "definition": "Een app waarmee je je cryptovaluta kunt bewaren, versturen, ontvangen of uitgeven."
+  },
+  "cryptocurrencies": {
+    "keyword": "cryptovaluta's",
+    "definition": "Valuta die eigen zijn aan het internet, niet aan afzonderlijke landen. In plaats van door een centrale bank worden ze vaak bestuurd door hun gebruikers."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptovaluta",
+    "keyword_plural": "cryptovaluta's",
+    "definition": "Een valuta die eigen is aan het internet, niet aan een land. In plaats van door een centrale bank wordt die vaak bestuurd door de gebruikers."
+  },
+  "cryptocurrency mining": {
+    "keyword": "cryptomining",
+    "definition": "Het verifiëren van blockchain-transacties in ruil voor cryptobeloningen, gebruikt op Proof-of-Work-netwerken zoals Bitcoin."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "cryptowallet",
+    "keyword_plural": "cryptowallets",
+    "definition": "Een app waarmee je je cryptovaluta kunt bewaren, versturen, ontvangen of uitgeven."
+  },
+  "cryptography": {
+    "keyword": "cryptografie",
+    "definition": "Technieken voor veilige communicatie of transacties, die inmenging van buitenaf voorkomen."
+  },
+  "custodial wallet": {
+    "keyword": "custodial wallet",
+    "keyword_plural": "custodial wallets",
+    "definition": "Bij een custodial wallet beheert een andere partij de privésleutels, en daarmee de toegang tot je crypto-assets."
+  },
+  "custodian": {
+    "keyword": "custodian",
+    "keyword_plural": "custodians",
+    "definition": "Een financiële instelling die de verantwoordelijkheid krijgt om je assets te beveiligen."
+  },
+  "custom record": {
+    "keyword": "custom record",
+    "keyword_plural": "custom records",
+    "definition": "Een zelf ingestelde datavermelding gekoppeld aan een ENS-domein, waarmee je naast standaardadressen extra informatie toevoegt, zoals een website of sociale links."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "keyword_plural": "DAO's",
+    "definition": "(Decentralized Autonomous Organization) Een organisatiestructuur die blockchain-technologie gebruikt om stemmen en beheer te automatiseren."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "keyword_plural": "dApps",
+    "definition": "Een \"gedecentraliseerde applicatie\" die verbinding maakt met blockchains en gedecentraliseerde netwerken."
+  },
+  "death spiral": {
+    "keyword": "doodsspiraal",
+    "keyword_plural": "doodsspiralen",
+    "definition": "Een zichzelf versterkende ineenstorting waarbij een dalende prijs acties afdwingt die de prijs nog verder omlaag duwen, zoals bij sommige algoritmische stablecoins."
+  },
+  "decentralization": {
+    "keyword": "decentralisatie",
+    "definition": "Het overdragen van controle aan veel individuen in plaats van aan één enkele autoriteit."
+  },
+  "decentralized": {
+    "keyword": "gedecentraliseerd",
+    "definition": "Geen enkele autoriteit of partij beheert het systeem."
+  },
+  "decentralized exchange": {
+    "keyword": "gedecentraliseerde beurs",
+    "keyword_plural": "gedecentraliseerde beurzen",
+    "definition": "(DEX) Een protocol dat handel mogelijk maakt zonder vertrouwde tussenpartijen."
+  },
+  "decentralized finance": {
+    "keyword": "Decentralized Finance",
+    "definition": "(DeFi) Een set financiële self-custody tools, gehost op een blockchain."
+  },
+  "decentralized money": {
+    "keyword": "gedecentraliseerd geld",
+    "definition": "Geld met eigenschappen die door de community worden bepaald, in plaats van door een instelling."
+  },
+  "decentralized services": {
+    "keyword": "gedecentraliseerde diensten",
+    "definition": "(dApps) Online diensten die automatisering gebruiken om kosten te verlagen en de gebruikerservaring te verbeteren."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "(Decentralized Finance) Een set financiële self-custody tools, gehost op een blockchain."
+  },
+  "delegate": {
+    "keyword": "gedelegeerde",
+    "keyword_plural": "gedelegeerden",
+    "definition": "Het geven van een specifieke verantwoordelijkheid aan iemand anders, bijvoorbeeld het delegeren van de stemkracht van je tokens."
+  },
+  "delegation": {
+    "keyword": "delegatie",
+    "keyword_plural": "delegaties",
+    "definition": "Het geven van een specifieke verantwoordelijkheid aan iemand anders, bijvoorbeeld het delegeren van de stemkracht van je tokens."
+  },
+  "democracy": {
+    "keyword": "democratie",
+    "keyword_plural": "democratieën",
+    "definition": "Een bestuurssysteem waarin burgers macht uitoefenen door een sleutelrol te spelen in de besluitvorming."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "keyword_plural": "DEX's",
+    "definition": "(Decentralized Exchange) Een protocol dat handel mogelijk maakt zonder vertrouwde tussenpartijen."
+  },
+  "dex aggregator": {
+    "keyword": "DEX-aggregator",
+    "keyword_plural": "DEX-aggregators",
+    "definition": "Protocol dat DEX-liquiditeit uit meerdere bronnen combineert in één interface."
+  },
+  "digital assets": {
+    "keyword": "digitale assets",
+    "definition": "Alles van waarde dat digitaal wordt opgeslagen."
+  },
+  "digital signature": {
+    "keyword": "digitale handtekening",
+    "keyword_plural": "digitale handtekeningen",
+    "definition": "Bewijs, gemaakt met je privésleutel, dat je een bericht of transactie hebt goedgekeurd. Het werkt als een handgeschreven handtekening, maar kan niet worden vervalst."
+  },
+  "double-spend": {
+    "keyword": "double-spend",
+    "keyword_plural": "double-spends",
+    "definition": "Hetzelfde digitale geld twee keer uitgeven. Blockchain-consensus bestaat om dit te voorkomen zonder centrale autoriteit."
+  },
+  "earn": {
+    "keyword": "verdienen",
+    "definition": "Waarde bijdragen in ruil voor beloningen; een geld-werkwoord op de skill cube."
+  },
+  "encryption": {
+    "keyword": "encryptie",
+    "definition": "Het omzetten van informatie in een geheime, beveiligde code, om onbevoegde toegang te voorkomen."
+  },
+  "epoch": {
+    "keyword": "epoch",
+    "keyword_plural": "epochs",
+    "definition": "De tijd die nodig is om een bepaald aantal blokken aan een blockchain toe te voegen."
+  },
+  "equality of opportunity": {
+    "keyword": "gelijke kansen",
+    "definition": "Een eerlijkheidsprincipe waarbij iedereen dezelfde kansen krijgt om te slagen, ongeacht achtergrond of omstandigheden."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20's",
+    "definition": "Een standaard voor fungibele tokens op Ethereum. Deze tokens zijn deelbaar en niet-uniek."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721's",
+    "definition": "Een standaard voor non-fungible tokens op Ethereum. Deze tokens hebben een unieke digitale identificatie en kunnen niet worden gekopieerd of opgedeeld."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155's",
+    "definition": "Een standaard om zowel fungibele als non-fungible tokens op Ethereum uit te geven, onder één geoptimaliseerd contract."
+  },
+  "etf": {
+    "keyword": "ETF",
+    "keyword_plural": "ETF's",
+    "definition": "(Exchange-Traded Fund) Een beleggingsfonds dat op de aandelenmarkt wordt verhandeld en assets bevat zoals aandelen, goud of bitcoin."
+  },
+  "eth": {
+    "keyword": "ETH",
+    "definition": "(Ether) De eigen cryptovaluta van Ethereum. Gebruikt om transacties op het netwerk uit te voeren, een validatornode te draaien en meer."
+  },
+  "ether": {
+    "keyword": "ether",
+    "definition": "(ETH) De eigen cryptovaluta van Ethereum. Gebruikt om transacties op het netwerk uit te voeren, een validatornode te draaien en meer."
+  },
+  "ethereum blockchain": {
+    "keyword": "Ethereum-blockchain",
+    "definition": "Een publiek grootboek dat transacties en eigendom op het Ethereum-netwerk vastlegt."
+  },
+  "ethereum mainnet": {
+    "keyword": "Ethereum-mainnet",
+    "definition": "Het belangrijkste Layer 1-netwerk van Ethereum, waar transacties echte waarde hebben. Het is de settlement-laag voor de Layer 2's van Ethereum."
+  },
+  "ethereum virtual machine": {
+    "keyword": "Ethereum Virtual Machine",
+    "definition": "De Ethereum Virtual Machine of EVM is software die smart contracts uitvoert en de staat van het Ethereum-netwerk berekent."
+  },
+  "fiat": {
+    "keyword": "fiat",
+    "definition": "Een nationale valuta die niet wordt gedekt door een grondstof zoals goud, maar waarde ontleent aan het vertrouwen van het publiek in de uitgever."
+  },
+  "finality": {
+    "keyword": "finaliteit",
+    "definition": "De garantie dat een bevestigde blockchain-transactie permanent is en niet kan worden teruggedraaid of gewijzigd."
+  },
+  "finality time": {
+    "keyword": "finaliteitstijd",
+    "definition": "De tijd die het kost om zeker te weten dat een transactie geldig en definitief is, en dus niet meer wordt teruggedraaid of gewijzigd."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) Angst of onrust dat je ergens buiten valt of iets misloopt."
+  },
+  "fork": {
+    "keyword": "fork",
+    "keyword_plural": "forks",
+    "definition": "Een ingrijpende wijziging in een blockchain-netwerk die twee takken oplevert: één die het oude protocol volgt en één die een nieuw protocol volgt."
+  },
+  "fraud": {
+    "keyword": "fraude",
+    "definition": "In blockchain-economieën: oneerlijke of valse transacties om de hoeveelheid cryptovaluta die iemand bezit te veranderen."
+  },
+  "fraud proof": {
+    "keyword": "fraudebewijs",
+    "keyword_plural": "fraudebewijzen",
+    "definition": "Bewijs dat een transactie ongeldig is en dat er fraude heeft plaatsgevonden."
+  },
+  "front-running": {
+    "keyword": "front-running",
+    "definition": "Andermans wachtende transactie zien en betalen om je eigen transactie eerst te laten verwerken, met winst ten koste van de ander."
+  },
+  "fungibility": {
+    "keyword": "fungibiliteit",
+    "definition": "De eigenschap dat eenheden onderling inwisselbaar zijn: elke eenheid heeft dezelfde waarde en kan elke andere vervangen, zoals het ene eurobiljet het andere."
+  },
+  "gas": {
+    "keyword": "gas",
+    "definition": "Transactiekosten voor blockchain-netwerken."
+  },
+  "gas fee": {
+    "keyword": "gas fee",
+    "keyword_plural": "gas fees",
+    "definition": "Een transactievergoeding die je betaalt om een blockchain-netwerk te gebruiken."
+  },
+  "gasless transactions": {
+    "keyword": "gasless transacties",
+    "definition": "Transacties waarbij de gas fee wordt betaald in het token dat je verhandelt, of door een sponsor wordt gedekt, in plaats van in de eigen munt van het netwerk."
+  },
+  "gold standard": {
+    "keyword": "goudstandaard",
+    "keyword_plural": "goudstandaarden",
+    "definition": "Een monetair systeem waarin de valuta van een land een waarde heeft die direct aan goud is gekoppeld."
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "definition": "Een eenheid op de Ethereum-blockchain, gelijk aan 0,000000001 ETH (een miljardste), vaak gebruikt om gasprijzen aan te duiden."
+  },
+  "halving": {
+    "keyword": "halving",
+    "keyword_plural": "halvings",
+    "definition": "Een gepland moment, ongeveer elke vier jaar, waarop de beloning voor het minen van nieuwe bitcoin wordt gehalveerd."
+  },
+  "hardware wallet": {
+    "keyword": "hardware wallet",
+    "keyword_plural": "hardware wallets",
+    "definition": "Een type self-custody wallet dat privésleutels offline bewaart in een fysiek apparaat."
+  },
+  "hash": {
+    "keyword": "hash",
+    "keyword_plural": "hashes",
+    "definition": "Een digitale vingerafdruk van informatie."
+  },
+  "hashing function": {
+    "keyword": "hashfunctie",
+    "keyword_plural": "hashfuncties",
+    "definition": "Een functie die elke invoer omzet in een unieke vingerafdruk (hash) van vaste lengte. Makkelijk te berekenen in één richting, maar praktisch onmogelijk om terug te draaien."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) Cryptoslang voor je crypto niet verkopen, hoe de markt er ook voor staat."
+  },
+  "hot wallet": {
+    "keyword": "hot wallet",
+    "keyword_plural": "hot wallets",
+    "definition": "Een type self-custody wallet dat permanent met het internet is verbonden."
+  },
+  "inflation": {
+    "keyword": "inflatie",
+    "definition": "Een algemene stijging van prijzen en daling van de koopkracht van geld."
+  },
+  "intent": {
+    "keyword": "intent",
+    "keyword_plural": "intents",
+    "definition": "Een ondertekend handelsverzoek dat het gewenste resultaat beschrijft, zoals \"swap X voor minimaal Y\", en de beste route overlaat aan specialisten."
+  },
+  "intermediaries": {
+    "keyword": "tussenpartijen",
+    "definition": "Partijen of diensten die mensen met elkaar verbinden om uitwisseling van waarde of informatie mogelijk te maken."
+  },
+  "intermediary": {
+    "keyword": "tussenpartij",
+    "keyword_plural": "tussenpartijen",
+    "definition": "Een partij of dienst die mensen met elkaar verbindt om een uitwisseling van waarde of informatie mogelijk te maken."
+  },
+  "intermediary token": {
+    "keyword": "tussentoken",
+    "keyword_plural": "tussentokens",
+    "definition": "Een token dat in het midden van een handelsroute zit, dus niet het begin- of eindtoken."
+  },
+  "interoperability": {
+    "keyword": "interoperabiliteit",
+    "definition": "Het vermogen van verschillende apps, tokens en blockchains om samen te werken en informatie te delen."
+  },
+  "invest": {
+    "keyword": "investeren",
+    "definition": "Geld in een asset steken, zoals een coin of token, in de verwachting dat die in waarde groeit."
+  },
+  "know-your-customer": {
+    "keyword": "Know-Your-Customer",
+    "definition": "(KYC) Een door de overheid voorgeschreven proces om de identiteit van gebruikers te controleren."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know-Your-Customer) Een door de overheid voorgeschreven proces om de identiteit van gebruikers te controleren."
+  },
+  "l1": {
+    "keyword": "L1",
+    "keyword_plural": "L1's",
+    "definition": "Layer 1 verwijst naar een basisnetwerk zoals Bitcoin of Ethereum."
+  },
+  "l2": {
+    "keyword": "L2",
+    "keyword_plural": "L2's",
+    "definition": "Een blockchain die de schaalbaarheid van Ethereum vergroot en tegelijk de veiligheid van Ethereum erft."
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "keyword_plural": "Layer 1's",
+    "definition": "Layer 1 verwijst naar een basisnetwerk zoals Bitcoin of Ethereum."
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "keyword_plural": "Layer 2's",
+    "definition": "Een blockchain die de schaalbaarheid van Ethereum vergroot en tegelijk de veiligheid van Ethereum erft."
+  },
+  "ledger": {
+    "keyword": "grootboek",
+    "keyword_plural": "grootboeken",
+    "definition": "Het register van alle transacties die ooit hebben plaatsgevonden."
+  },
+  "lender": {
+    "keyword": "uitlener",
+    "keyword_plural": "uitleners",
+    "definition": "Zet assets in om rente te verdienen."
+  },
+  "lightning network": {
+    "keyword": "Lightning Network",
+    "definition": "Een betaalnetwerk bovenop Bitcoin dat betaalkanalen gebruikt om alledaagse betalingen direct en goedkoop te maken."
+  },
+  "liquid": {
+    "keyword": "liquide",
+    "definition": "In blockchain-economieën: de mogelijkheid om een digitale asset makkelijk te verhandelen of in smart contracts te gebruiken."
+  },
+  "liquid staking token": {
+    "keyword": "liquid staking token",
+    "keyword_plural": "liquid staking tokens",
+    "definition": "Tokens die gestakete ether vertegenwoordigen. Houders verdienen een deel van de stakingbeloningen, in verhouding tot de gestakete hoeveelheid."
+  },
+  "liquidation": {
+    "keyword": "liquidatie",
+    "keyword_plural": "liquidaties",
+    "definition": "De automatische verkoop van het onderpand van een lener wanneer de waarde te laag wordt om de lening nog veilig te dekken."
+  },
+  "liquidity": {
+    "keyword": "liquiditeit",
+    "definition": "De hoeveelheid van een token die beschikbaar is om te verhandelen."
+  },
+  "liquidity pool": {
+    "keyword": "liquiditeitspool",
+    "keyword_plural": "liquiditeitspools",
+    "definition": "Een gezamenlijke pot met tokens die permissionless token swaps mogelijk maakt."
+  },
+  "lp": {
+    "keyword": "LP",
+    "keyword_plural": "LP's",
+    "definition": "(Liquidity Provider) Blockchain-gebruikers die hun tokens aan protocollen uitlenen in ruil voor een deel van de fees."
+  },
+  "lsts": {
+    "keyword": "LST's",
+    "definition": "Tokens die gestakete Ether vertegenwoordigen. Houders verdienen een deel van de staking-beloningen, evenredig aan het gestakete bedrag."
+  },
+  "mainnet": {
+    "keyword": "Mainnet",
+    "definition": "Het belangrijkste, live blockchain-netwerk waar transacties echte waarde hebben, in tegenstelling tot testnetwerken. Verwijst vaak naar Layer 1 van Ethereum."
+  },
+  "market cap": {
+    "keyword": "marktkapitalisatie",
+    "keyword_plural": "marktkapitalisaties",
+    "definition": "De totale waarde van een bepaald token of een marktsector."
+  },
+  "max supply": {
+    "keyword": "maximale voorraad",
+    "keyword_plural": "maximale voorraden",
+    "definition": "Het maximale aantal coins of tokens dat ooit zal bestaan van een bepaalde cryptovaluta."
+  },
+  "memecoin": {
+    "keyword": "memecoin",
+    "keyword_plural": "memecoins",
+    "definition": "Een cryptotoken gebaseerd op een internetmeme, vaak zonder doel of nut."
+  },
+  "meta-aggregator": {
+    "keyword": "meta-aggregator",
+    "keyword_plural": "meta-aggregators",
+    "definition": "Een tool die andere aggregators samenbrengt in een extra overzichtslaag."
+  },
+  "mev": {
+    "keyword": "MEV",
+    "definition": "(Maximal Extractable Value) Winst die blokproducenten kunnen maken door transacties binnen blokken te herschikken, toe te voegen of te censureren."
+  },
+  "miner": {
+    "keyword": "miner",
+    "keyword_plural": "miners",
+    "definition": "Een deelnemer aan een Proof-of-Work-netwerk, zoals Bitcoin, die met anderen wedijvert om nieuwe blokken voor te stellen in ruil voor beloningen."
+  },
+  "mining": {
+    "keyword": "mining",
+    "definition": "Het Proof-of-Work-proces waarbij transacties worden geverifieerd en nieuwe blokken aan de blockchain worden toegevoegd, in ruil voor beloningen."
+  },
+  "mint": {
+    "keyword": "minten",
+    "definition": "Het uitgeven van nieuwe fungibele of niet-fungibele cryptotokens op een bepaalde blockchain."
+  },
+  "monetary policy": {
+    "keyword": "monetair beleid",
+    "keyword_plural": "monetaire beleidsvormen",
+    "definition": "Hoe een centrale bank de hoeveelheid geld beheert die in een economie circuleert."
+  },
+  "money": {
+    "keyword": "geld",
+    "definition": "Een ruilmiddel, rekeneenheid en opslag van waarde, gebruikt om transacties in goederen en diensten mogelijk te maken."
+  },
+  "multi-token standard": {
+    "keyword": "multi-token-standaard",
+    "definition": "Een tokenstandaard, zoals ERC-1155, die zowel fungibele als niet-fungibele tokens in één smart contract ondersteunt."
+  },
+  "network governance": {
+    "keyword": "netwerk-governance",
+    "definition": "Het proces waarmee een gedecentraliseerde community het eens wordt over functies en upgrades van het netwerk."
+  },
+  "neutrality": {
+    "keyword": "neutraliteit",
+    "definition": "Het principe dat alle deelnemers gelijk worden behandeld, zonder voorkeur voor een gebruiker of groep."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "keyword_plural": "NFT's",
+    "definition": "(Non-fungible Token) Een token met een unieke ID dat niet gekopieerd kan worden, in tegenstelling tot een fungibel token zoals Ether zonder unieke identificatie."
+  },
+  "node": {
+    "keyword": "node",
+    "keyword_plural": "nodes",
+    "definition": "Een computer met blockchain-software die een kopie van het grootboek bewaart en helpt het netwerk te verifiëren."
+  },
+  "node operator": {
+    "keyword": "node-operator",
+    "keyword_plural": "node-operators",
+    "definition": "Een lid van de Ethereum-community dat een validatornode draait om transacties op het netwerk te verwerken."
+  },
+  "non-custodial wallet": {
+    "keyword": "non-custodial wallet",
+    "keyword_plural": "non-custodial wallets",
+    "definition": "(Ook wel: self-custody wallet) Met een non-custodial wallet heb jij als enige controle over je privésleutels, die op hun beurt je crypto-assets beheren."
+  },
+  "offchain": {
+    "keyword": "offchain",
+    "definition": "Elke actie of data die buiten de blockchain plaatsvindt, bijvoorbeeld op gewone servers of in ondertekende berichten."
+  },
+  "onchain": {
+    "keyword": "onchain",
+    "definition": "Vastgelegd op een blockchain-netwerk. Verwijst naar acties op cryptonetwerken zoals Ethereum."
+  },
+  "onchain governance": {
+    "keyword": "onchain governance",
+    "definition": "Het geautomatiseerde systeem dat wijzigingen aan de structuur van een blockchain regelt."
+  },
+  "onchain identity": {
+    "keyword": "onchain identiteit",
+    "keyword_plural": "onchain identiteiten",
+    "definition": "Een publieke identiteit opgebouwd uit je blockchain-activiteit en -gegevens, zoals een ENS-naam gekoppeld aan je wallet-adres."
+  },
+  "onramp": {
+    "keyword": "onramp",
+    "keyword_plural": "onramps",
+    "definition": "Een dienst die gewoon geld, zoals dollars of euro's, omzet in cryptovaluta. Offramps doen het omgekeerde."
+  },
+  "open internet": {
+    "keyword": "open internet",
+    "definition": "Een toegankelijke digitale ruimte waar informatie, diensten en communicatie voor alle gebruikers beschikbaar zijn, zonder controle door gecentraliseerde partijen."
+  },
+  "open source": {
+    "keyword": "open source",
+    "definition": "Software waarvan de broncode door iedereen bekeken, aangepast en verbeterd kan worden."
+  },
+  "optimistic rollup": {
+    "keyword": "optimistic rollup",
+    "keyword_plural": "optimistic rollups",
+    "definition": "Een Layer 2-rollup die aanneemt dat alle transacties in zijn batch geldig zijn, tenzij een fraudebewijs tijdens een bezwaarperiode het tegendeel aantoont."
+  },
+  "oracle": {
+    "keyword": "oracle",
+    "keyword_plural": "oracles",
+    "definition": "Een dienst die externe informatie, zoals marktprijzen, naar de blockchain brengt zodat smart contracts die kunnen gebruiken."
+  },
+  "order book": {
+    "keyword": "orderboek",
+    "keyword_plural": "orderboeken",
+    "definition": "Een lijst met koop- en verkooporders tegen verschillende prijzen. Traditionele beurzen matchen transacties via deze lijst."
+  },
+  "otc": {
+    "keyword": "OTC",
+    "definition": "(Over the Counter) Transacties die rechtstreeks met private partijen worden gesloten."
+  },
+  "over the counter": {
+    "keyword": "over the counter",
+    "definition": "(OTC) Transacties die rechtstreeks met private partijen worden gesloten."
+  },
+  "password manager": {
+    "keyword": "wachtwoordmanager",
+    "keyword_plural": "wachtwoordmanagers",
+    "definition": "Een app die je wachtwoorden veilig opslaat en voor elk account een sterk, uniek wachtwoord kan genereren."
+  },
+  "payment channel": {
+    "keyword": "betaalkanaal",
+    "keyword_plural": "betaalkanalen",
+    "definition": "Laat twee partijen meerdere keren met elkaar handelen zonder dat elke transactie apart op de blockchain hoeft te worden vastgelegd."
+  },
+  "peer": {
+    "keyword": "peer",
+    "keyword_plural": "peers",
+    "definition": "Een persoon of partij die als gelijke wordt behandeld."
+  },
+  "peer-to-peer": {
+    "keyword": "peer-to-peer",
+    "definition": "Verbindingen tussen meerdere partijen zonder dat er een tussenpersoon nodig is."
+  },
+  "peg": {
+    "keyword": "peg",
+    "keyword_plural": "pegs",
+    "definition": "Een methode om de waarde van twee of meer assets gelijk aan elkaar te houden."
+  },
+  "permissionless": {
+    "keyword": "permissionless",
+    "definition": "Zonder dat je toestemming van welke partij dan ook nodig hebt."
+  },
+  "phishing": {
+    "keyword": "phishing",
+    "definition": "Een vorm van social engineering waarbij de aanvaller zich voordoet als een vertrouwd persoon of vertrouwde organisatie om slachtoffers gevoelige informatie te ontfutselen of geld afhandig te maken."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "keyword_plural": "POAP's",
+    "definition": "Een POAP (Proof of Attendance Protocol) is een badge die een betrouwbaar bewijs van ervaringen in je wallet bewaart, zoals het succesvol afronden van een les."
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "(Proof of Stake) Consensus waarbij validators een stake vastzetten om het netwerk te beveiligen."
+  },
+  "price impact": {
+    "keyword": "prijsimpact",
+    "keyword_plural": "prijsimpacts",
+    "definition": "Hoeveel jouw eigen trade de prijs op een DEX beweegt, afhankelijk van de omvang van de trade."
+  },
+  "primary name": {
+    "keyword": "primaire naam",
+    "keyword_plural": "primaire namen",
+    "definition": "De ENS-naam die aan je wallet-adres is gekoppeld, zodat apps je naam tonen in plaats van een lang adres."
+  },
+  "private key": {
+    "keyword": "privésleutel",
+    "keyword_plural": "privésleutels",
+    "definition": "Een privésleutel geeft toegang tot je wallet en laat je crypto-assets naar andere wallets sturen."
+  },
+  "private transaction routing": {
+    "keyword": "private transactieroutering",
+    "definition": "Transacties rechtstreeks naar blokbouwers sturen in plaats van naar de publieke wachtrij, zodat front-running-bots ze niet zien."
+  },
+  "proof of stake": {
+    "keyword": "Proof-of-Stake",
+    "definition": "Een consensusmethode die blokproducenten willekeurig selecteert op basis van de stake die elke deelnemer in het protocol heeft vastgezet."
+  },
+  "proof of work": {
+    "keyword": "Proof-of-Work",
+    "definition": "Een consensusmethode waarbij miners rekenkracht (het \"werk\") inzetten in een wedstrijd om geldige blokken voor te stellen."
+  },
+  "proof-of-stake": {
+    "keyword": "Proof-of-Stake",
+    "definition": "Een consensusmethode voor blockchains die validatornodes selecteert op basis van de hoeveelheid stake die de node heeft vastgezet."
+  },
+  "pseudonymous": {
+    "keyword": "pseudoniem",
+    "definition": "Handelen onder een zelfgekozen naam die je echte identiteit verbergt."
+  },
+  "public": {
+    "keyword": "publiek",
+    "definition": "Publieke blockchains laten iedereen het grootboek van de blockchain inzien."
+  },
+  "public good": {
+    "keyword": "publiek goed",
+    "keyword_plural": "publieke goederen",
+    "definition": "Een publiek goed is een product of dienst die voor alle leden van de samenleving beschikbaar is."
+  },
+  "public key": {
+    "keyword": "publieke sleutel",
+    "keyword_plural": "publieke sleutels",
+    "definition": "Een code die van je privésleutel is afgeleid en die je veilig kunt delen. Je wallet-adres wordt van je publieke sleutel afgeleid."
+  },
+  "quadratic funding": {
+    "keyword": "quadratic funding",
+    "definition": "Een crowdfundingmechanisme dat beschikbare middelen vergroot, waarbij individuele donaties van elke omvang als stemmen tellen. Hoe breder de steun, hoe groter de impact!"
+  },
+  "recovery phrase": {
+    "keyword": "herstelzin",
+    "keyword_plural": "herstelzinnen",
+    "definition": "Een herstelzin is een lijst van 12 tot 24 woorden waarmee de publieke sleutel en privésleutel van je wallet worden gegenereerd."
+  },
+  "red flag": {
+    "keyword": "red flag",
+    "keyword_plural": "red flags",
+    "definition": "Een waarschuwingssignaal voor gevaar."
+  },
+  "restaking": {
+    "keyword": "restaking",
+    "definition": "Gestakete Ether opnieuw inzetten om ook andere protocollen te helpen beveiligen en valideren, in ruil voor beloningen."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "definition": "(Retroactive Public Goods Funding) Een mechanisme om projecten te financieren op basis van de impact die ze al hebben gehad."
+  },
+  "rollup": {
+    "keyword": "rollup",
+    "keyword_plural": "rollups",
+    "definition": "Een Layer 2-schaaloplossing die veel transacties buiten de hoofdblockchain verwerkt en ze daarna in één batch plaatst, wat de doorvoer verhoogt en de kosten verlaagt."
+  },
+  "sandwich attack": {
+    "keyword": "sandwich attack",
+    "keyword_plural": "sandwich attacks",
+    "definition": "Een aanval waarbij bots vlak voor en na jouw trade handelen om de prijs te bewegen, en zo winst maken ten koste van jou."
+  },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "definition": "De pseudonieme bedenker van Bitcoin. Tot op de dag van vandaag weet niemand wie het echt is."
+  },
+  "scalability": {
+    "keyword": "schaalbaarheid",
+    "definition": "Het vermogen van een blockchain om een groeiende hoeveelheid werk, transacties en gebruik aan te kunnen met minimale hinder voor gebruikers."
+  },
+  "scam-token": {
+    "keyword": "scam-token",
+    "keyword_plural": "scam-tokens",
+    "definition": "Een cryptotoken dat alleen wordt gelanceerd om geld van investeerders te stelen."
+  },
+  "scarce": {
+    "keyword": "schaars",
+    "definition": "Slechts beperkt beschikbaar."
+  },
+  "scarcity": {
+    "keyword": "schaarste",
+    "definition": "Het slechts beperkt beschikbaar zijn."
+  },
+  "security": {
+    "keyword": "veiligheid",
+    "definition": "Het vermogen van een blockchain om hacks, code-exploits en economische aanvallen te weerstaan en gewoon te blijven functioneren."
+  },
+  "seed phrase": {
+    "keyword": "seed phrase",
+    "keyword_plural": "seed phrases",
+    "definition": "Een groep willekeurige woorden die je wallet bij het instellen genereert; ze vormen de hoofdsleutel tot ALLE accounts van die wallet. DEEL JE SEED PHRASE NOOIT MET IEMAND, OM GEEN ENKELE REDEN."
+  },
+  "self-custodial": {
+    "keyword": "self-custodial",
+    "definition": "Een manier om je assets te bewaren waarbij alleen jij er toegang toe hebt."
+  },
+  "self-custody": {
+    "keyword": "self-custody",
+    "definition": "Een manier om je assets te bewaren waarbij alleen jij er toegang toe hebt."
+  },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "keyword_plural": "self-custody wallets",
+    "definition": "(Ook wel: non-custodial wallet) Met een self-custody wallet heb jij als enige controle over je privésleutels, die op hun beurt je crypto-assets beheren."
+  },
+  "settlement layer": {
+    "keyword": "afwikkelingslaag",
+    "keyword_plural": "afwikkelingslagen",
+    "definition": "De \"laagste\" laag van een blockchain, die de details van afgeronde transacties definitief vastlegt. Ethereum Mainnet is de afwikkelingslaag voor de Layer 2-schaaloplossingen van Ethereum."
+  },
+  "settlement time": {
+    "keyword": "afwikkelingstijd",
+    "keyword_plural": "afwikkelingstijden",
+    "definition": "De tijd die nodig is om een transactie te bevestigen."
+  },
+  "sharding": {
+    "keyword": "sharding",
+    "definition": "Het opsplitsen van één blockchain in meerdere blockchains die parallel naast elkaar draaien om de schaalbaarheid te vergroten."
+  },
+  "sidechain": {
+    "keyword": "sidechain",
+    "keyword_plural": "sidechains",
+    "definition": "Een aparte blockchain die parallel aan een hoofdblockchain draait, verbonden via een bridge, met eigen validators en eigen beveiliging."
+  },
+  "slashed": {
+    "keyword": "geslasht",
+    "definition": "Een straf waarbij een validator een deel van zijn stake verliest voor aantoonbaar valsspelen op een Proof-of-Stake-blockchain."
+  },
+  "slashing": {
+    "keyword": "slashing",
+    "definition": "Een straf op Proof-of-Stake-netwerken die een deel van de stake van een validator vernietigt bij aantoonbaar valsspelen, zoals het ondertekenen van twee conflicterende blokken."
+  },
+  "slippage": {
+    "keyword": "slippage",
+    "definition": "Het verschil tussen de prijs die je verwacht en de prijs die je krijgt op het moment dat je trade wordt uitgevoerd."
+  },
+  "slippage tolerance": {
+    "keyword": "slippagetolerantie",
+    "keyword_plural": "slippagetoleranties",
+    "definition": "De maximale prijsverandering die je accepteert voor een trade. Beweegt de prijs meer dan dit, dan wordt de trade geannuleerd."
+  },
+  "smart account": {
+    "keyword": "smart account",
+    "keyword_plural": "smart accounts",
+    "definition": "Een wallet-account aangedreven door een smart contract; een andere naam voor een smart wallet."
+  },
+  "smart contract": {
+    "keyword": "smart contract",
+    "keyword_plural": "smart contracts",
+    "definition": "Computercode die de voorwaarden van een overeenkomst automatisch uitvoert."
+  },
+  "smart wallet": {
+    "keyword": "smart wallet",
+    "keyword_plural": "smart wallets",
+    "definition": "Een wallet die wordt aangestuurd door een smart contract in plaats van één privésleutel, met functies zoals accountherstel en inloggen met passkeys."
+  },
+  "social engineering": {
+    "keyword": "social engineering",
+    "definition": "Iemand manipuleren om gevoelige of vertrouwelijke informatie te delen, zoals wachtwoorden of seed phrases."
+  },
+  "solo staker": {
+    "keyword": "solo staker",
+    "keyword_plural": "solo stakers",
+    "definition": "Een node-operator die een onafhankelijke validatornode draait."
+  },
+  "solo staking": {
+    "keyword": "solo staking",
+    "definition": "Zelf een validatornode draaien om transacties te verwerken in Proof-of-Stake-systemen."
+  },
+  "solver": {
+    "keyword": "solver",
+    "keyword_plural": "solvers",
+    "definition": "Een specialist die met anderen concurreert om de intent van een gebruiker tegen de best mogelijke prijs uit te voeren."
+  },
+  "spend": {
+    "keyword": "uitgeven",
+    "definition": "Je crypto-assets gebruiken om voor goederen of diensten te betalen."
+  },
+  "spot etf": {
+    "keyword": "spot-ETF",
+    "keyword_plural": "spot-ETF's",
+    "definition": "Een ETF die de echte asset bezit, zoals bitcoin, zodat mensen er via de traditionele aandelenmarkt in kunnen beleggen."
+  },
+  "stablecoin": {
+    "keyword": "stablecoin",
+    "keyword_plural": "stablecoins",
+    "definition": "Een token dat is ontworpen om een stabiele waarde te houden, meestal 1:1 gekoppeld aan een valuta zoals de Amerikaanse dollar."
+  },
+  "stablecoin issuer": {
+    "keyword": "stablecoin-uitgever",
+    "keyword_plural": "stablecoin-uitgevers",
+    "definition": "Het bedrijf of de organisatie die een stablecoin creëert en de reserves beheert die de waarde dekken."
+  },
+  "stake": {
+    "keyword": "stake",
+    "keyword_plural": "stakes",
+    "definition": "De hoeveelheid van een financiële asset die iemand in een cryptoprotocol heeft vastgezet. Het staat voor financiële betrokkenheid bij het protocol: \"skin in the game\"."
+  },
+  "staked": {
+    "keyword": "gestaket",
+    "definition": "Het tijdelijk vastzetten van een deel van je crypto in een smart contract voor een bepaalde periode, in ruil voor rente (\"beloningen\")."
+  },
+  "staker": {
+    "keyword": "staker",
+    "keyword_plural": "stakers",
+    "definition": "Een lid van de Ethereum-community dat Ether aan een validatornode levert in ruil voor beloningen."
+  },
+  "stakers": {
+    "keyword": "stakers",
+    "definition": "Leden van de Ethereum-community die Ether aan validatornodes leveren in ruil voor beloningen."
+  },
+  "staking": {
+    "keyword": "staking",
+    "definition": "Het tijdelijk vastzetten van een deel van je crypto in een smart contract voor een bepaalde periode, in ruil voor rente (\"beloningen\")."
+  },
+  "staking pool": {
+    "keyword": "staking pool",
+    "keyword_plural": "staking pools",
+    "definition": "Op Ethereum: smart contracts waarmee stakers Ether leveren aan de validatornode van een andere staker."
+  },
+  "staking providers": {
+    "keyword": "staking-aanbieders",
+    "definition": "Digitale platforms die staking als dienst aanbieden, meestal via staking pools."
+  },
+  "standard record": {
+    "keyword": "standaardrecord",
+    "keyword_plural": "standaardrecords",
+    "definition": "Een gangbaar gegeven dat aan een ENS-domein is gekoppeld, zoals een wallet-adres, avatar of e-mailadres."
+  },
+  "swap": {
+    "keyword": "swap",
+    "keyword_plural": "swaps",
+    "definition": "Een ruil van het ene token naar het andere."
+  },
+  "token": {
+    "keyword": "token",
+    "keyword_plural": "tokens",
+    "definition": "Eenheden die assets of rechten kunnen vertegenwoordigen en die op een bestaande blockchain zijn gebouwd."
+  },
+  "token allowance": {
+    "keyword": "token allowance",
+    "keyword_plural": "token allowances",
+    "definition": "Een afspraak tussen een wallet en een smart contract die beperkte of onbeperkte toegang geeft tot een specifiek token."
+  },
+  "token approval": {
+    "keyword": "token approval",
+    "keyword_plural": "token approvals",
+    "definition": "Toestemming die je een smart contract geeft om een specifiek token uit je wallet te verplaatsen; ook wel een token allowance genoemd."
+  },
+  "token distribution": {
+    "keyword": "tokenverdeling",
+    "keyword_plural": "tokenverdelingen",
+    "definition": "De manier waarop tokens over verschillende groepen belanghebbenden worden verdeeld."
+  },
+  "token pair": {
+    "keyword": "tokenpaar",
+    "keyword_plural": "tokenparen",
+    "definition": "De twee gekoppelde cryptovaluta's waaruit een liquiditeitspool bestaat."
+  },
+  "token swap": {
+    "keyword": "token swap",
+    "keyword_plural": "token swaps",
+    "definition": "Een ruil van het ene token naar het andere."
+  },
+  "tps": {
+    "keyword": "TPS",
+    "definition": "(Transactions Per Second) Een maat voor de schaalbaarheid van een blockchain: het aantal transacties dat deze per seconde verwerkt."
+  },
+  "trade": {
+    "keyword": "trade",
+    "keyword_plural": "trades",
+    "definition": "Assets of geld ruilen voor iets waardevols; geld-werkwoord op de skill cube."
+  },
+  "trade route": {
+    "keyword": "handelsroute",
+    "keyword_plural": "handelsroutes",
+    "definition": "De route van begintoken naar eindtoken bij een trade."
+  },
+  "trade routing": {
+    "keyword": "handelsroutering",
+    "definition": "Het plannen van de route van begintoken naar eindtoken bij een trade."
+  },
+  "transaction": {
+    "keyword": "transactie",
+    "keyword_plural": "transacties",
+    "definition": "Een vastlegging van een overdracht, geldelijk of anderszins, op de blockchain."
+  },
+  "transaction finality": {
+    "keyword": "transactiefinaliteit",
+    "definition": "De tijd die nodig is om zeker te weten dat een transactie geldig en definitief is, dus dat die niet meer wordt teruggedraaid of gewijzigd."
+  },
+  "transaction hash": {
+    "keyword": "transactiehash",
+    "keyword_plural": "transactiehashes",
+    "definition": "De unieke identificatie van elke transactie, afgeleid van de transactiegegevens, de digitale handtekening van de verzender en een eenmalig nummer dat dubbele transacties voorkomt."
+  },
+  "transaction throughput": {
+    "keyword": "transactiedoorvoer",
+    "definition": "Hoeveel transacties een blockchain tegelijk kan verwerken, meestal gemeten in transacties per seconde (TPS)."
+  },
+  "trustless": {
+    "keyword": "trustless",
+    "definition": "Werkt zonder dat je mensen of instellingen hoeft te vertrouwen (automatisch, niet in handen van één persoon)."
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "definition": "(Total Value Locked) De totale waarde aan assets die op een specifieke plek is vastgezet."
+  },
+  "two factor authentication": {
+    "keyword": "tweefactorauthenticatie",
+    "definition": "Een extra beveiligingslaag die controleert of iemand die toegang zoekt tot een online account echt is wie die zegt te zijn."
+  },
+  "validating bridge": {
+    "keyword": "validating bridge",
+    "keyword_plural": "validating bridges",
+    "definition": "Een bridge-contract dat opnames zelf verifieert, zodat je geen externe autoriteit hoeft te vertrouwen."
+  },
+  "validator": {
+    "keyword": "validator",
+    "keyword_plural": "validators",
+    "definition": "Een deelnemer aan een Proof-of-Stake-netwerk die stake vastzet om transacties te controleren en blokken voor te stellen, en beloningen verdient voor eerlijk werk."
+  },
+  "validator client": {
+    "keyword": "validatorclient",
+    "keyword_plural": "validatorclients",
+    "definition": "De software die een validatornode draait om nieuwe blokken voor te stellen en te controleren op een Proof-of-Stake-netwerk."
+  },
+  "validator node": {
+    "keyword": "validatornode",
+    "keyword_plural": "validatornodes",
+    "definition": "Een computer die wordt gedraaid door een lid van de Ethereum-community. Deze verwerkt transacties op het netwerk in ruil voor beloningen."
+  },
+  "validator nodes": {
+    "keyword": "validatornodes",
+    "definition": "Computers die worden gedraaid door leden van de Ethereum-community. Ze verwerken transacties op het netwerk in ruil voor beloningen."
+  },
+  "validity proof": {
+    "keyword": "geldigheidsbewijs",
+    "keyword_plural": "geldigheidsbewijzen",
+    "definition": "Een wiskundig bewijs dat een batch transacties klopt, zodat een blockchain die kan verifiëren zonder het werk over te doen."
+  },
+  "value-creation": {
+    "keyword": "waardecreatie",
+    "definition": "Een bedrijfspraktijk gericht op het maken van innovatieve, hoogwaardige producten en diensten voor gebruikers en de economie."
+  },
+  "value-extraction": {
+    "keyword": "waarde-extractie",
+    "definition": "Een bedrijfspraktijk waarbij gebruikers worden uitgebuit via hoge kosten, dataverzameling en oneerlijke voorwaarden."
+  },
+  "value-extractive": {
+    "keyword": "waarde-extractief",
+    "definition": "Een bedrijfspraktijk waarbij gebruikers worden uitgebuit via hoge kosten, dataverzameling en oneerlijke voorwaarden."
+  },
+  "vault": {
+    "keyword": "vault",
+    "keyword_plural": "vaults",
+    "definition": "Een smart contract dat gestorte tokens bewaart en aan het werk zet, en inleggers een token geeft dat hun aandeel vertegenwoordigt."
+  },
+  "veto": {
+    "keyword": "veto",
+    "keyword_plural": "veto's",
+    "definition": "Een stem waarmee een governance-voorstel wordt afgewezen."
+  },
+  "wallet": {
+    "keyword": "wallet",
+    "keyword_plural": "wallets",
+    "definition": "Een wallet is een applicatie of apparaat waarmee je crypto-assets op de blockchain verstuurt en ontvangt."
+  },
+  "wallet app": {
+    "keyword": "wallet-app",
+    "keyword_plural": "wallet-apps",
+    "definition": "Een app op je computer of telefoon waarmee je verbinding maakt met je wallet op de blockchain."
+  },
+  "wallet provider": {
+    "keyword": "wallet-provider",
+    "keyword_plural": "wallet-providers",
+    "definition": "De maker van de software waarmee je je wallet gebruikt. Deze providers bezitten je wallet niet, maar vormen een brug die je toegang geeft tot je account op de blockchain."
+  },
+  "web2": {
+    "keyword": "web2",
+    "definition": "Het internet van gecentraliseerde platforms en accounts, zonder blockchain-infrastructuur."
+  },
+  "web3": {
+    "keyword": "web3",
+    "definition": "Het internet van blockchains, waar gebruikers hun assets en data in eigen beheer houden (self-custody)."
+  },
+  "yield farm": {
+    "keyword": "yield farm",
+    "keyword_plural": "yield farms",
+    "definition": "Een DeFi-protocol waarin gebruikers tokens storten om beloningen te verdienen. Yield farming is jagen op de beste van die beloningen."
+  },
+  "yourname.eth": {
+    "keyword": "jouwnaam.eth",
+    "definition": "Een voorbeeld van een ENS-naam: een leesbare web3-gebruikersnaam die naar je wallet-adres verwijst."
+  },
+  "zero-knowledge": {
+    "keyword": "zero-knowledge",
+    "definition": "Een wiskundige methode waarmee de ene partij kan bewijzen dat een bewering klopt, zonder verdere informatie erover prijs te geven."
+  },
+  "zk rollup": {
+    "keyword": "ZK-rollup",
+    "keyword_plural": "ZK-rollups",
+    "definition": "Een Layer 2-rollup die zero-knowledge-bewijzen gebruikt om wiskundig op de Layer 1-blockchain aan te tonen dat zijn gebundelde transacties geldig zijn."
+  }
+}
