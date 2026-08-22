@@ -34,19 +34,17 @@ const OnboardingModal = ({
   isOpen,
   onClose,
   newsletterOnly,
-  forceOnboarding,
 }: {
   isOpen: boolean
   onClose: () => void
   newsletterOnly?: boolean
-  forceOnboarding?: boolean
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [step, setStep] = useState<'initial' | 'learn' | 'subscribe' | ''>(
     newsletterOnly ? '' : 'initial'
   )
   const [, setOnboarding] = useLocalStorage('onboarding', '')
-  const [onboardingRetry, setOnboardingRetry] = useLocalStorage(
+  const [, setOnboardingRetry] = useLocalStorage(
     'onboarding-retry',
     0
   )
@@ -172,7 +170,9 @@ const OnboardingModal = ({
   const Buttons = {
     initial: (
       <>
-        <Box />
+        <Button onClick={onClose} variant="secondaryWhite" size="lg">
+          {t('Later')}
+        </Button>
         <Button onClick={handleNextStep} variant="primaryWhite" size="lg">
           {t('Next')}
         </Button>
@@ -210,22 +210,17 @@ const OnboardingModal = ({
     ),
   }
 
-  const allowClose =
-    // last step
-    step === 'subscribe' ||
-    // email provided
-    !!email ||
-    // not the first time
-    (onboardingRetry > 1 && !forceOnboarding)
-
+  // Always dismissible (X, ESC, overlay). Closing without finishing is a
+  // deferral, not an escape: the open-effect already stamped a timestamp, so
+  // the 3-day cooldown + 3-strike auto-show rules in utils/onboarding.ts do
+  // the persistence. A first-visit modal that traps the reader costs more
+  // trust than the emails it captures.
   return (
     <Modal
       onClose={onClose}
       size={isMobileScreen ? 'full' : 'xl'}
       isCentered
       isOpen={isOpen}
-      closeOnOverlayClick={allowClose}
-      closeOnEsc={allowClose}
     >
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent
@@ -236,7 +231,7 @@ const OnboardingModal = ({
         overflowY="auto"
         maxH="var(--chakra-vh)"
       >
-        {allowClose && <ModalCloseButton />}
+        <ModalCloseButton />
         <ModalBody
           padding={isMobileScreen ? '0' : 'default'}
           pb="4"

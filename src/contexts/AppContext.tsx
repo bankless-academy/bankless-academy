@@ -20,7 +20,6 @@ import { loadLanguage } from 'utils/translation'
 
 export interface OnboardingModalOptions {
   newsletterOnly?: boolean
-  forceOnboarding?: boolean
 }
 
 export interface AppContextType {

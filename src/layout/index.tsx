@@ -72,7 +72,6 @@ const Layout = ({
         isOpen={isOnboardingModalOpen}
         onClose={closeOnboardingModal}
         newsletterOnly={onboardingModalOptions.newsletterOnly}
-        forceOnboarding={onboardingModalOptions.forceOnboarding}
       />
       {/* <Footer /> */}
     </Box>

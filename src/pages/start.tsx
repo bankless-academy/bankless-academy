@@ -46,7 +46,7 @@ const Start = (): JSX.Element => {
   const { openOnboardingModal } = useApp()
 
   useEffect(() => {
-    openOnboardingModal({ forceOnboarding: true })
+    openOnboardingModal()
   }, [openOnboardingModal])
 
   return <HomePage />
