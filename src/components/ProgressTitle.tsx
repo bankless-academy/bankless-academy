@@ -26,24 +26,34 @@ const ProgressTitle = ({
         fontWeight="bold"
         justifyContent="flex-end"
       >
-        <Box mr="4" my="4px">
+        <Box me="4" my="4px">
           {score}
         </Box>
         <Box
           width={`${(score / max) * 200}px`}
-          borderLeftRadius="2px"
+          sx={{
+            'border-start-start-radius': '2px',
+            'border-end-start-radius': '2px',
+          }}
           background="linear-gradient(135.91deg, #634c70 29.97%, #3a355a 99.26%)"
           my="4px"
         />
-        <Box display="flex" height="50px" borderRight="1px #989898 solid" />
+        <Box
+          display="flex"
+          height="50px"
+          borderInlineEnd="1px #989898 solid"
+        />
         <Text
           as="h2"
           display="flex"
           alignItems="center"
           justifyContent="center"
-          borderRightRadius="2px"
+          sx={{
+            'border-start-end-radius': '2px',
+            'border-end-end-radius': '2px',
+          }}
           border="2px solid #8a68a2"
-          borderLeft="0"
+          borderInlineStart="0"
           minW={isSmallScreen ? '130px' : '200px'}
           fontSize={isSmallScreen ? 'md' : 'inherit'}
           backgroundColor="transparent"

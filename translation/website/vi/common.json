@@ -289,5 +289,15 @@
   "Chat history cleared": "Đã xóa lịch sử trò chuyện",
   "Failed to get AI response. Please try again.": "Không nhận được phản hồi từ AI. Hãy thử lại.",
   "Clear History": "Xóa lịch sử",
-  "Your changes": "Thay đổi của bạn"
+  "Your changes": "Thay đổi của bạn",
+  "Welcome to {{project}}!": "Chào mừng bạn đến với {{project}}!",
+  "Badge": "Huy hiệu",
+  "Back": "Quay lại",
+  "Start": "Bắt đầu",
+  "Signing up...": "Đang đăng ký...",
+  "Sign-up": "Đăng ký",
+  "Email missing.": "Thiếu email.",
+  "Please provide an email address.": "Vui lòng nhập địa chỉ email.",
+  "Wrong email format.": "Sai định dạng email.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Bạn đã đăng ký xong, Nhà thám hiểm! 🧑‍🚀"
 }

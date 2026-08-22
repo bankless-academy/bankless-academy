@@ -289,5 +289,15 @@
   "Chat history cleared": "聊天记录已清除",
   "Failed to get AI response. Please try again.": "获取 AI 回复失败，请重试。",
   "Clear History": "清除记录",
-  "Your changes": "你的修改"
+  "Your changes": "你的修改",
+  "Welcome to {{project}}!": "欢迎来到{{project}}！",
+  "Badge": "徽章",
+  "Back": "返回",
+  "Start": "开始",
+  "Signing up...": "注册中...",
+  "Sign-up": "注册",
+  "Email missing.": "缺少电子邮件。",
+  "Please provide an email address.": "请输入电子邮件地址。",
+  "Wrong email format.": "电子邮件格式错误。",
+  "You're all signed up, Explorer! 🧑‍🚀": "注册成功，探索者！🧑‍🚀"
 }

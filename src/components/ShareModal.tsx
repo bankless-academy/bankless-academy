@@ -91,10 +91,14 @@ const ShareModal = ({
               </Box>
               <Box
                 backgroundColor="#3F3154"
-                borderRightRadius="100px"
-                borderLeftRadius={isMobileScreen ? '100px' : '0'}
+                sx={{
+                  'border-start-end-radius': '100px',
+                  'border-end-end-radius': '100px',
+                  'border-start-start-radius': isMobileScreen ? '100px' : '0',
+                  'border-end-start-radius': isMobileScreen ? '100px' : '0',
+                }}
                 p={isMobileScreen ? '16px 32px' : '24px 48px'}
-                marginLeft={isMobileScreen ? '0' : '-50px'}
+                marginInlineStart={isMobileScreen ? '0' : '-50px'}
                 w={isMobileScreen ? '100%' : 'auto'}
                 mt={isMobileScreen ? '-40px' : '0'}
                 border="1px solid rgba(255, 255, 255, 0.16)"

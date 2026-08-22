@@ -1525,7 +1525,7 @@ const Lesson = ({
                   }}
                   rightIcon={<ArrowForwardIcon className="mirror-rtl" />}
                 >
-                  Next
+                  {t('Next')}
                 </Button>
               )
             ) : (

@@ -18,6 +18,7 @@ const StakingOnEthereum = (
   questComponent: React.ReactElement
 } => {
   const { t } = useTranslation('quests', { keyPrefix: 'StakingOnEthereum' })
+  const { t: tCommon } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-staking-on-ethereum') || 'false'
@@ -109,7 +110,7 @@ const StakingOnEthereum = (
                     lineHeight="1.5em"
                   >
                     {t('Obtain 0.0002 rETH on any supported network*.')}
-                    <Box ml="2">
+                    <Box ms="2">
                       {t('a) Visit a ')}
                       <ExternalLink href="https://app.uniswap.org/explore/tokens/base/0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c">
                         {t('Decentralized Exchange')}
@@ -129,7 +130,7 @@ const StakingOnEthereum = (
                 {t(
                   "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.",
                   {
-                    lesson_title: lesson.name,
+                    lesson_title: tCommon(lesson.name, { ns: 'lesson' }),
                     interpolation: { escapeValue: false },
                   }
                 )}
@@ -158,7 +159,7 @@ const StakingOnEthereum = (
               <Box zIndex="2" position="relative">
                 <Box py="8">
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
-                    {lesson.name}
+                    {tCommon(lesson.name, { ns: 'lesson' })}
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
@@ -174,7 +175,7 @@ const StakingOnEthereum = (
                     alt={lesson.englishName}
                     target="_blank"
                   >
-                    <Button variant="primary">{'Read Entry'}</Button>
+                    <Button variant="primary">{tCommon('Read Entry')}</Button>
                   </InternalLink>
                 </Box>
               </Box>

@@ -33,6 +33,13 @@ import keywords from '../../translation/keywords/en/keywords.json'
 // rendering English because its import was commented out.
 type NamespaceLoader = () => Promise<{ default: Record<string, unknown> }>
 export const LAZY_RESOURCES: { [lang: string]: { [ns: string]: NamespaceLoader } } = {
+  ar: {
+    common: () => import('../../translation/website/ar/common.json'),
+    homepage: () => import('../../translation/website/ar/homepage.json'),
+    quests: () => import('../../translation/website/ar/quests.json'),
+    keywords: () => import('../../translation/keywords/ar/keywords.json'),
+    lesson: () => import('../../translation/website/ar/lesson.json'),
+  },
   'pt-br': {
     common: () => import('../../translation/website/pt-br/common.json'),
     homepage: () => import('../../translation/website/pt-br/homepage.json'),

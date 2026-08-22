@@ -289,5 +289,15 @@
   "Chat history cleared": "Riwayat chat dihapus",
   "Failed to get AI response. Please try again.": "Gagal mendapatkan jawaban AI. Silakan coba lagi.",
   "Clear History": "Hapus Riwayat",
-  "Your changes": "Perubahan kamu"
+  "Your changes": "Perubahan kamu",
+  "Welcome to {{project}}!": "Selamat datang di {{project}}!",
+  "Badge": "Badge",
+  "Back": "Kembali",
+  "Start": "Mulai",
+  "Signing up...": "Mendaftar...",
+  "Sign-up": "Daftar",
+  "Email missing.": "Email belum diisi.",
+  "Please provide an email address.": "Masukkan alamat email.",
+  "Wrong email format.": "Format email salah.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Kamu sudah terdaftar, Penjelajah! 🧑‍🚀"
 }

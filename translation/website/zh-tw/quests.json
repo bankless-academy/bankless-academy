@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "以目前的區塊鏈技術水平，一條區塊鏈最多隻能同時最佳化三項特性中的兩項。",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "勾選比特幣和以太坊最初優先選擇的特性。"
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "勾選比特幣和以太坊最初優先選擇的特性。",
+    "decentralization": "去中心化",
+    "scalability": "可擴充套件性",
+    "security": "安全性"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "開啟你的 L2 之旅。",

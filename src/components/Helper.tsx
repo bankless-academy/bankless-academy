@@ -68,8 +68,11 @@ const ButtonHelper = ({
           ? '-16px'
           : '-12px'
       }
+      // Physical on purpose: this badge rides the floating chat widget, which
+      // stays bottom-right in every language (industry convention, like
+      // Intercom/Zendesk) — see docs/rtl-audit.md.
       style={{
-        insetInlineEnd: isHover
+        right: isHover
           ? isProfile
             ? '-14px'
             : '-15px'

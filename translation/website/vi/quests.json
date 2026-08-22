@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Với công nghệ blockchain hiện nay, một blockchain chỉ có thể tối ưu tối đa hai trong ba đặc tính.",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Đánh dấu những đặc tính mà Bitcoin và Ethereum ưu tiên ngay từ đầu."
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Đánh dấu những đặc tính mà Bitcoin và Ethereum ưu tiên ngay từ đầu.",
+    "decentralization": "sự phi tập trung",
+    "scalability": "khả năng mở rộng",
+    "security": "bảo mật"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "Bắt đầu hành trình L2 của bạn.",

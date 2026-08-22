@@ -7,6 +7,7 @@ import {
   InputGroup,
   Spinner,
   Image,
+  Stack,
   Text,
   Button,
 } from '@chakra-ui/react'
@@ -77,67 +78,74 @@ const DEXAggregators = (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
-            <p>
-              {t('1. Load ')}
-              <ExternalLink href="https://1inch.com/swap?src=8453:USDC">
-                1inch
-              </ExternalLink>
-              {t(' on the ')}
-              <Image
-                alt="Base"
-                src="/images/base.svg"
-                display="inline-flex"
-                height="24px"
-                m="0px 5px -5px 0"
-              />
-              <b>{t('Base network')}</b>
-              {'.'}
-            </p>
-            <p>{t('2. Swap any token.')}</p>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: t(
-                  '3. Paste the successful <b>swap</b> transaction hash below:'
-                ),
-              }}
-            />
-            <InputGroup maxW="530px" ml="14.4px">
-              <Input
-                placeholder="0x..."
-                value={tx}
-                mb="4"
-                onChange={(e): void => {
-                  setTx(e.target.value)
-                  localStorage.setItem(
-                    'quest-dex-aggregators-tx',
-                    e.target.value
-                  )
-                  validateQuest(e.target.value)
-                }}
-              />
-              <InputRightElement>
-                {isCheckingTx ? (
-                  <Spinner size="sm" speed="1s" color="orange" />
-                ) : isTransactionVerified === 'true' ? (
-                  <CheckIcon color={theme.colors.correct} />
-                ) : (
-                  tx &&
-                  tx?.length !== 0 && (
-                    <CloseIcon color={theme.colors.incorrect} />
-                  )
-                )}
-              </InputRightElement>
-            </InputGroup>
-            {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
-              <Box
-                mb="4"
+            {/* One padded container, normal-flow children: the padding is the
+                only gutter, so a width:100% InputGroup can never escape the
+                column (the slide's global `p { margin: 0.8em }` is defeated
+                per-Text, the codebase convention for quest layouts). */}
+            <Stack spacing="5" px="0.8em">
+              <Text m="0 !important">
+                {t('1. Load ')}
+                <ExternalLink href="https://1inch.com/swap?src=8453:USDC">
+                  1inch
+                </ExternalLink>
+                {t(' on the ')}
+                <Image
+                  alt="Base"
+                  src="/images/base.svg"
+                  display="inline-flex"
+                  height="24px"
+                  me="5px"
+                  mb="-5px"
+                />
+                <b>{t('Base network')}</b>
+                {'.'}
+              </Text>
+              <Text m="0 !important">{t('2. Swap any token.')}</Text>
+              <Text
+                m="0 !important"
                 dangerouslySetInnerHTML={{
                   __html: t(
-                    '<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.'
+                    '3. Paste the successful <b>swap</b> transaction hash below:'
                   ),
                 }}
               />
-            )}
+              <InputGroup>
+                <Input
+                  placeholder="0x..."
+                  dir="ltr"
+                  value={tx}
+                  onChange={(e): void => {
+                    setTx(e.target.value)
+                    localStorage.setItem(
+                      'quest-dex-aggregators-tx',
+                      e.target.value
+                    )
+                    validateQuest(e.target.value)
+                  }}
+                />
+                <InputRightElement>
+                  {isCheckingTx ? (
+                    <Spinner size="sm" speed="1s" color="orange" />
+                  ) : isTransactionVerified === 'true' ? (
+                    <CheckIcon color={theme.colors.correct} />
+                  ) : (
+                    tx &&
+                    tx?.length !== 0 && (
+                      <CloseIcon color={theme.colors.incorrect} />
+                    )
+                  )}
+                </InputRightElement>
+              </InputGroup>
+              {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
+                <Box
+                  dangerouslySetInnerHTML={{
+                    __html: t(
+                      '<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.'
+                    ),
+                  }}
+                />
+              )}
+            </Stack>
           </div>
           <div className="bloc2" style={{ alignSelf: 'center' }}>
             <StyledLessonCard

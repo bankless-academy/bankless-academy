@@ -289,5 +289,15 @@
   "Chat history cleared": "চ্যাট হিস্ট্রি মুছে ফেলা হয়েছে",
   "Failed to get AI response. Please try again.": "AI-র উত্তর পাওয়া যায়নি। আবার চেষ্টা করুন।",
   "Clear History": "হিস্ট্রি মুছুন",
-  "Your changes": "আপনার পরিবর্তন"
+  "Your changes": "আপনার পরিবর্তন",
+  "Welcome to {{project}}!": "{{project}}-এ স্বাগতম!",
+  "Badge": "ব্যাজ",
+  "Back": "পেছনে",
+  "Start": "শুরু করুন",
+  "Signing up...": "সাইন আপ হচ্ছে...",
+  "Sign-up": "নিবন্ধন করুন",
+  "Email missing.": "ইমেল দেওয়া হয়নি।",
+  "Please provide an email address.": "অনুগ্রহ করে একটি ইমেল ঠিকানা দিন।",
+  "Wrong email format.": "ইমেলের ফরম্যাট ভুল।",
+  "You're all signed up, Explorer! 🧑‍🚀": "তুমি সাইন আপ সম্পন্ন করেছ, এক্সপ্লোরার! 🧑‍🚀"
 }

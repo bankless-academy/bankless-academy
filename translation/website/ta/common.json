@@ -289,5 +289,15 @@
   "Chat history cleared": "சாட் வரலாறு நீக்கப்பட்டது",
   "Failed to get AI response. Please try again.": "AI பதிலைப் பெற முடியவில்லை. மீண்டும் முயற்சியுங்கள்.",
   "Clear History": "வரலாற்றை நீக்குங்கள்",
-  "Your changes": "உங்கள் மாற்றங்கள்"
+  "Your changes": "உங்கள் மாற்றங்கள்",
+  "Welcome to {{project}}!": "{{project}}-க்கு வரவேற்கிறோம்!",
+  "Badge": "பேட்ஜ்",
+  "Back": "பின்",
+  "Start": "தொடங்கு",
+  "Signing up...": "பதிவு செய்கிறது...",
+  "Sign-up": "பதிவு செய்",
+  "Email missing.": "மின்னஞ்சல் இல்லை.",
+  "Please provide an email address.": "மின்னஞ்சல் முகவரியை உள்ளிடவும்.",
+  "Wrong email format.": "மின்னஞ்சல் வடிவம் தவறு.",
+  "You're all signed up, Explorer! 🧑‍🚀": "பதிவு முடிந்தது, ஆய்வாளரே! 🧑‍🚀"
 }

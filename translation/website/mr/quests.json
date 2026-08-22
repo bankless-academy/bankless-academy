@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "आजच्या ब्लॉकचेन तंत्रज्ञानात कोणतीही ब्लॉकचेन तीनपैकी जास्तीत जास्त दोनच वैशिष्ट्यांमध्ये सर्वोत्तम होऊ शकते.",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "सुरुवातीला Bitcoin आणि Ethereum यांनी ज्या वैशिष्ट्यांना प्राधान्य दिले, ती निवडा."
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "सुरुवातीला Bitcoin आणि Ethereum यांनी ज्या वैशिष्ट्यांना प्राधान्य दिले, ती निवडा.",
+    "decentralization": "विकेंद्रीकरण",
+    "scalability": "स्केलेबिलिटी",
+    "security": "सुरक्षा"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "तुमचा L2 प्रवास सुरू करा.",

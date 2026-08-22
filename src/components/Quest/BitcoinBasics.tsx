@@ -185,7 +185,7 @@ const BitcoinBasics = (): {
                 p={8}
               >
                 <Box zIndex="2" position="relative" m="12px 0">
-                  <Text fontWeight="bold" textAlign="left" m="0 !important">
+                  <Text fontWeight="bold" textAlign="start" m="0 !important">
                     {t('Recipient')}
                   </Text>
                   <InputGroup size={isSmallScreen ? 'md' : 'lg'}>
@@ -217,7 +217,7 @@ const BitcoinBasics = (): {
                       )}
                     </InputRightElement>
                   </InputGroup>
-                  <Text fontWeight="bold" textAlign="left" m="0 !important">
+                  <Text fontWeight="bold" textAlign="start" m="0 !important">
                     {t('Asset')}
                   </Text>
                   <Box display="flex" justifyContent="space-between">
@@ -225,7 +225,7 @@ const BitcoinBasics = (): {
                       display="flex"
                       alignItems="center"
                       minW="fit-content"
-                      mr="2"
+                      me="2"
                     >
                       <Box maxW="30px">
                         <Image
@@ -235,7 +235,7 @@ const BitcoinBasics = (): {
                           src="/images/bitcoin.png"
                         />
                       </Box>
-                      <Box ml="1">BTC</Box>
+                      <Box ms="1">BTC</Box>
                     </Box>
                     <InputGroup maxW="200px" size={isSmallScreen ? 'md' : 'lg'}>
                       <Input
@@ -255,7 +255,7 @@ const BitcoinBasics = (): {
                       </InputRightElement>
                     </InputGroup>
                   </Box>
-                  <Text textAlign="left" m="0 !important">
+                  <Text textAlign="start" m="0 !important">
                     {t(`Balance`)}: {CORRECT_ANSWERS[1]}
                   </Text>
                   {areAnswersCorrect !== true && (

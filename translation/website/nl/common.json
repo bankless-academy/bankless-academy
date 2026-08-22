@@ -289,5 +289,15 @@
   "Chat history cleared": "Chatgeschiedenis gewist",
   "Failed to get AI response. Please try again.": "Geen antwoord van de AI ontvangen. Probeer het opnieuw.",
   "Clear History": "Geschiedenis wissen",
-  "Your changes": "Jouw wijzigingen"
+  "Your changes": "Jouw wijzigingen",
+  "Welcome to {{project}}!": "Welkom bij {{project}}!",
+  "Badge": "Badge",
+  "Back": "Terug",
+  "Start": "Starten",
+  "Signing up...": "Aanmelden...",
+  "Sign-up": "Aanmelden",
+  "Email missing.": "E-mail ontbreekt.",
+  "Please provide an email address.": "Vul een e-mailadres in.",
+  "Wrong email format.": "Onjuist e-mailformaat.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Je bent aangemeld, Explorer! 🧑‍🚀"
 }

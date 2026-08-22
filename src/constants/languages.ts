@@ -56,6 +56,7 @@ export interface LanguageDef {
 // docs/i18n-25-languages-plan.md (which deliberately carries no figures, since
 // traffic and index positions move and a pasted snapshot goes stale).
 const LANGUAGE_DEFS = [
+  { code: 'ar', name: 'Arabic', localName: 'العربية', dir: 'rtl' },
   { code: 'bn', name: 'Bengali', localName: 'বাংলা', dir: 'ltr' },
   { code: 'zh', name: 'Chinese Simplified', localName: '简体中文', dir: 'ltr' },
   {

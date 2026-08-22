@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "ด้วยเทคโนโลยีบล็อกเชนในปัจจุบัน บล็อกเชนสามารถเพิ่มประสิทธิภาพได้มากที่สุดเพียง 2 ใน 3 คุณสมบัติ",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "เลือกคุณสมบัติที่ Bitcoin และ Ethereum ให้ความสำคัญตั้งแต่แรกเริ่ม"
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "เลือกคุณสมบัติที่ Bitcoin และ Ethereum ให้ความสำคัญตั้งแต่แรกเริ่ม",
+    "decentralization": "การกระจายศูนย์",
+    "scalability": "ความสามารถในการขยายขนาด",
+    "security": "ความปลอดภัย"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "เริ่มต้นเส้นทาง L2 ของคุณ",

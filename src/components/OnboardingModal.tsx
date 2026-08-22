@@ -104,16 +104,16 @@ const OnboardingModal = ({
       toast.closeAll()
       if (!email)
         toast({
-          title: `Email missing.`,
-          description: `Please provide an email address.`,
+          title: t('Email missing.'),
+          description: t('Please provide an email address.'),
           status: 'warning',
           duration: 5000,
           isClosable: true,
         })
       else if (emailRegex.test(email) === false)
         toast({
-          title: `Wrong email format.`,
-          description: `Please check your email.`,
+          title: t('Wrong email format.'),
+          description: t('Please check your email.'),
           status: 'warning',
           duration: 5000,
           isClosable: true,
@@ -140,7 +140,7 @@ const OnboardingModal = ({
             }
           )
           toast({
-            title: `You're all signed up, Explorer! 🧑‍🚀`,
+            title: t("You're all signed up, Explorer! 🧑‍🚀"),
             description: t(`You'll hear from us soon!`),
             status: 'success',
             duration: 5000,
@@ -174,17 +174,17 @@ const OnboardingModal = ({
       <>
         <Box />
         <Button onClick={handleNextStep} variant="primaryWhite" size="lg">
-          Next
+          {t('Next')}
         </Button>
       </>
     ),
     learn: (
       <>
         <Button onClick={handlePrevStep} variant="secondaryWhite" size="lg">
-          Back
+          {t('Back')}
         </Button>
         <Button onClick={handleNextStep} variant="primaryWhite" size="lg">
-          Start
+          {t('Start')}
         </Button>
       </>
     ),
@@ -194,7 +194,7 @@ const OnboardingModal = ({
           <Box />
         ) : (
           <Button onClick={handlePrevStep} variant="secondaryWhite" size="lg">
-            Back
+            {t('Back')}
           </Button>
         )}
         <Button
@@ -202,9 +202,9 @@ const OnboardingModal = ({
           variant="primaryWhite"
           size="lg"
           isLoading={isLoading}
-          loadingText="Signing up..."
+          loadingText={t('Signing up...')}
         >
-          Sign-up
+          {t('Sign-up')}
         </Button>
       </>
     ),
@@ -257,7 +257,7 @@ const OnboardingModal = ({
                     textAlign="center"
                     mt="24px"
                   >
-                    Welcome to {PROJECT_NAME}!
+                    {t('Welcome to {{project}}!', { project: PROJECT_NAME })}
                   </Text>
                   {referrerData?.address ? (
                     <Box
@@ -279,18 +279,22 @@ const OnboardingModal = ({
                       </Box>
                       <Box
                         backgroundColor="#3F3154"
-                        borderRightRadius="100px"
-                        borderLeftRadius={isMobileScreen ? '100px' : '0'}
                         p={isMobileScreen ? '16px 32px' : '24px 48px'}
                         marginInlineStart={isMobileScreen ? '0' : '-50px'}
                         w={isMobileScreen ? '90%' : 'auto'}
                         mt={isMobileScreen ? '-40px' : '0'}
                         border="1px solid rgba(255, 255, 255, 0.16)"
+                        // kebab-case = browser-resolved logical corners; the
+                        // flat edge always faces ProfileScore on the start side
                         sx={{
-                          '[dir="rtl"] &': {
-                            borderRightRadius: isMobileScreen ? '100px' : '0',
-                            borderLeftRadius: '100px',
-                          },
+                          'border-start-end-radius': '100px',
+                          'border-end-end-radius': '100px',
+                          'border-start-start-radius': isMobileScreen
+                            ? '100px'
+                            : '0',
+                          'border-end-start-radius': isMobileScreen
+                            ? '100px'
+                            : '0',
                         }}
                       >
                         <Box

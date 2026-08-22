@@ -73,7 +73,7 @@ const Layer2Blockchains = (
                   src="/images/base.svg"
                   display="inline-flex"
                   height="24px"
-                  m="0px 5px -5px 0"
+                  me="5px" mb="-5px"
                 />
                 {'Base.'} */}
               </Text>
@@ -134,7 +134,7 @@ const Layer2Blockchains = (
                 </Text>
                 1. <OnrampButton address={account} />
                 {/* <br />
-                <Box mt="2" ml="5">
+                <Box mt="2" ms="5">
                   {'👆 free withdrawal to Base recommended'}
                 </Box> */}
                 <Box mt="4">

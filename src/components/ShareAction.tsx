@@ -158,7 +158,7 @@ const ShareAction = ({
               variant="primaryWhite"
               width="100%"
               borderRadius="6px"
-              borderLeftRadius="0"
+              sx={{ 'border-start-start-radius': '0', 'border-end-start-radius': '0' }}
               leftIcon={
                 hasCopied ? <Check size="30px" /> : <CopySimple size="30px" />
               }

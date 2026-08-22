@@ -86,7 +86,7 @@ const IntroToDeFi = (
         <Box textAlign="center" pb="5">
           {VERBS.map((verb, key) => (
             <Button
-              mr="3"
+              me="3"
               mb="3"
               key={key}
               onClick={() => setAnswer(verb)}

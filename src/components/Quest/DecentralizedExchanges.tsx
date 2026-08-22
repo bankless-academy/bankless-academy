@@ -7,6 +7,7 @@ import {
   InputGroup,
   Spinner,
   Image,
+  Stack,
   Text,
   Button,
 } from '@chakra-ui/react'
@@ -31,6 +32,7 @@ const DecentralizedExchanges = (
   const { t } = useTranslation('quests', {
     keyPrefix: 'DecentralizedExchanges',
   })
+  const { t: tCommon } = useTranslation()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-decentralized-exchanges')
   )
@@ -94,103 +96,101 @@ const DecentralizedExchanges = (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'} w="100%">
           <div className="bloc1">
-            <p>
-              {t('1. Load ')}
-              <ExternalLink href="https://velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042">
-                Velodrome
-              </ExternalLink>
-              {t(' on the ')}
-              <Image
-                alt="Optimism"
-                src="/images/op.svg"
-                display="inline-flex"
-                height="24px"
-                m="0px 5px -5px 0"
-              />
-              <b>{t('Optimism network')}</b>
-              {'.'}
-            </p>
-            <p>{t('2. Swap any token.')}</p>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: t(
-                  '3. Paste the successful <b>swap</b> transaction hash below:'
-                ),
-              }}
-            />
-            {/* 14.4px aligns the field with the numbered steps above, but on a
-                phone that is width taken from an input holding a 66-character
-                hash, and there is no second column to align against. */}
-            <InputGroup
-              maxW="530px"
-              ml={isSmallScreen ? '0' : '14.4px'}
-              size={isSmallScreen ? 'lg' : 'md'}
-            >
-              <Input
-                placeholder="0x..."
-                value={tx}
-                mb="4"
-                // This value always arrives by paste from a wallet or explorer
-                // in another app, which is exactly where a stray space or a
-                // mobile autocorrect comes from. Either one fails validation
-                // with a red cross and nothing on screen explaining why.
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="none"
-                spellCheck={false}
-                onChange={(e): void => {
-                  const value = e.target.value.trim()
-                  setTx(value)
-                  localStorage.setItem(
-                    'quest-decentralized-exchanges-tx',
-                    value
-                  )
-                  validateQuest(value)
-                }}
-              />
-              <InputRightElement>
-                {isCheckingTx ? (
-                  <Spinner size="sm" speed="1s" color="orange" />
-                ) : isTransactionVerified === 'true' ? (
-                  <CheckIcon color={theme.colors.correct} />
-                ) : (
-                  tx &&
-                  tx?.length !== 0 && (
-                    <CloseIcon color={theme.colors.incorrect} />
-                  )
-                )}
-              </InputRightElement>
-            </InputGroup>
-            <Box ml={isSmallScreen ? '0' : '14.4px'} mt="2" mb="4">
-              <b>{t('Resources:')}</b>
-              {/* left-aligned with the numbered steps and the hash input above;
-                  centering these read as a detached second block */}
-              {/* Grid, not flex: two equal columns give the pair the same width
-                  whatever the labels are, which shrink-to-fit never did
-                  ("Bridge" against "Add funds", and worse in languages that run
-                  longer). Capped at the input's 530px so they line up with the
-                  hash field above instead of sprawling. */}
-              <Box
-                display="grid"
-                gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}
-                maxW="530px"
-                gap="4"
-                mt="4"
-              >
-                <BridgeButton border="2px solid white" address={account} />
-                <OnrampButton border="2px solid white" address={account} />
-              </Box>
-            </Box>
-            {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
-              <Box
-                mb="4"
+            {/* One padded container, normal-flow children: the padding is the
+                only gutter, so the width:100% InputGroup can never escape the
+                column. The slide's global `p { margin: 0.8em }` is defeated
+                per-Text (the codebase convention for quest layouts). */}
+            <Stack spacing="5" px="0.8em">
+              <Text m="0 !important">
+                {t('1. Load ')}
+                <ExternalLink href="https://velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042">
+                  Velodrome
+                </ExternalLink>
+                {t(' on the ')}
+                <Image
+                  alt="Optimism"
+                  src="/images/op.svg"
+                  display="inline-flex"
+                  height="24px"
+                  me="5px"
+                  mb="-5px"
+                />
+                <b>{t('Optimism network')}</b>
+                {'.'}
+              </Text>
+              <Text m="0 !important">{t('2. Swap any token.')}</Text>
+              <Text
+                m="0 !important"
                 dangerouslySetInnerHTML={{
                   __html: t(
-                    '<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.'
+                    '3. Paste the successful <b>swap</b> transaction hash below:'
                   ),
                 }}
               />
-            )}
+              <InputGroup size={isSmallScreen ? 'lg' : 'md'}>
+                <Input
+                  placeholder="0x..."
+                  dir="ltr"
+                  value={tx}
+                  // This value always arrives by paste from a wallet or explorer
+                  // in another app, which is exactly where a stray space or a
+                  // mobile autocorrect comes from. Either one fails validation
+                  // with a red cross and nothing on screen explaining why.
+                  autoComplete="off"
+                  autoCorrect="off"
+                  autoCapitalize="none"
+                  spellCheck={false}
+                  onChange={(e): void => {
+                    const value = e.target.value.trim()
+                    setTx(value)
+                    localStorage.setItem(
+                      'quest-decentralized-exchanges-tx',
+                      value
+                    )
+                    validateQuest(value)
+                  }}
+                />
+                <InputRightElement>
+                  {isCheckingTx ? (
+                    <Spinner size="sm" speed="1s" color="orange" />
+                  ) : isTransactionVerified === 'true' ? (
+                    <CheckIcon color={theme.colors.correct} />
+                  ) : (
+                    tx &&
+                    tx?.length !== 0 && (
+                      <CloseIcon color={theme.colors.incorrect} />
+                    )
+                  )}
+                </InputRightElement>
+              </InputGroup>
+              <Box>
+                <b>{t('Resources:')}</b>
+                {/* Grid, not flex: two equal columns give the pair the same
+                    width whatever the labels are, which shrink-to-fit never did
+                    ("Bridge" against "Add funds", and worse in languages that
+                    run longer). Capped at 530px so they don't sprawl on wide
+                    slides. */}
+                <Box
+                  display="grid"
+                  gridTemplateColumns={{ base: '1fr', md: '1fr 1fr' }}
+                  maxW="530px"
+                  gap="4"
+                  mt="4"
+                >
+                  <BridgeButton border="2px solid white" address={account} />
+                  <OnrampButton border="2px solid white" address={account} />
+                </Box>
+              </Box>
+              {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
+                <Box
+                  dangerouslySetInnerHTML={{
+                    __html: t(
+                      '<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.'
+                    ),
+                  }}
+                />
+              )}
+            </Stack>
           </div>
           <div className="bloc2">
             <StyledLessonCard
@@ -206,7 +206,7 @@ const DecentralizedExchanges = (
                     "go read the handbook" link. */}
                 <Box py={isSmallScreen ? '4' : '8'}>
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
-                    {lesson.name}
+                    {tCommon(lesson.name, { ns: 'lesson' })}
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}

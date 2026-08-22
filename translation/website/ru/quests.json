@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "При нынешнем уровне блокчейн-технологий блокчейн может оптимизировать не более двух свойств из трёх.",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Отметьте свойства, которые Bitcoin и Ethereum выбрали изначально."
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Отметьте свойства, которые Bitcoin и Ethereum выбрали изначально.",
+    "decentralization": "децентрализация",
+    "scalability": "масштабируемость",
+    "security": "безопасность"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "Начните путь в L2.",

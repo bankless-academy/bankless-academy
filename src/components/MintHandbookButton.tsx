@@ -223,6 +223,7 @@ const MintHandbookButton = ({
         </Button>
       ) : (
         <Button
+          dir="ltr"
           isDisabled={isLoading || isMinting}
           isLoading={isLoading || isMinting}
           loadingText={isMinting ? t('Collecting Entry') : t('Minting...')}

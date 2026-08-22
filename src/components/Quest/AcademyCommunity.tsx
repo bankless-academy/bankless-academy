@@ -67,7 +67,7 @@ const AcademyCommunity = (
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
             <Box>
-              <VStack mt="20" alignItems="start" mr="4">
+              <VStack mt="20" alignItems="start" me="4">
                 <Button
                   cursor="default"
                   rightIcon={
@@ -84,7 +84,7 @@ const AcademyCommunity = (
                   cursor="default"
                   whiteSpace="break-spaces"
                   display="initial"
-                  textAlign="left"
+                  textAlign="start"
                   rightIcon={
                     hasUserJoinedGM ? (
                       <CheckIcon color={theme.colors.correct} />
@@ -124,7 +124,7 @@ const AcademyCommunity = (
                   {t('3. Join ')}
                   <ExternalLink
                     href="https://gm.xyz/c/BanklessAcademy?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson"
-                    ml="1"
+                    ms="1"
                   >
                     gm.xyz/c/BanklessAcademy
                   </ExternalLink>
@@ -138,7 +138,7 @@ const AcademyCommunity = (
                     }
                     onClick={verifyQuest}
                     variant="primary"
-                    ml="8"
+                    ms="8"
                   >
                     {t('Validate quest')}
                   </Button>

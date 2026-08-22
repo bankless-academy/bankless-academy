@@ -540,7 +540,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨‍🚀🚀`
                               variant="primary"
                               width="100%"
                               borderRadius="6px"
-                              borderLeftRadius="0"
+                              sx={{ 'border-start-start-radius': '0', 'border-end-start-radius': '0' }}
                               onClick={async () => {
                                 toast.closeAll()
                                 if (!email)

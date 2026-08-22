@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "ఇప్పటి బ్లాక్‌చైన్ టెక్నాలజీతో, ఒక బ్లాక్‌చైన్ మూడు లక్షణాల్లో గరిష్ఠంగా రెండింటినే మెరుగుపరచగలదు.",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin, Ethereum మొదట్లో ప్రాధాన్యం ఇచ్చిన లక్షణాలను గుర్తు పెట్టండి."
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin, Ethereum మొదట్లో ప్రాధాన్యం ఇచ్చిన లక్షణాలను గుర్తు పెట్టండి.",
+    "decentralization": "వికేంద్రీకరణ",
+    "scalability": "స్కేలబిలిటీ",
+    "security": "భద్రత"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "మీ L2 ప్రయాణం మొదలుపెట్టండి.",

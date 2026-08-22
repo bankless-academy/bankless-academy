@@ -289,5 +289,15 @@
   "Chat history cleared": "ล้างประวัติแชทแล้ว",
   "Failed to get AI response. Please try again.": "ไม่สามารถรับคำตอบจาก AI ได้ กรุณาลองอีกครั้ง",
   "Clear History": "ล้างประวัติ",
-  "Your changes": "การแก้ไขของคุณ"
+  "Your changes": "การแก้ไขของคุณ",
+  "Welcome to {{project}}!": "ยินดีต้อนรับสู่ {{project}}!",
+  "Badge": "แบดจ์",
+  "Back": "ย้อนกลับ",
+  "Start": "เริ่ม",
+  "Signing up...": "กำลังสมัคร...",
+  "Sign-up": "สมัคร",
+  "Email missing.": "ไม่มีอีเมล",
+  "Please provide an email address.": "กรุณากรอกอีเมล",
+  "Wrong email format.": "รูปแบบอีเมลไม่ถูกต้อง",
+  "You're all signed up, Explorer! 🧑‍🚀": "สมัครเรียบร้อยแล้ว นักสำรวจ! 🧑‍🚀"
 }

@@ -289,5 +289,15 @@
   "Chat history cleared": "Historia ya gumzo imefutwa",
   "Failed to get AI response. Please try again.": "Imeshindwa kupata jibu la AI. Tafadhali jaribu tena.",
   "Clear History": "Futa historia",
-  "Your changes": "Mabadiliko yako"
+  "Your changes": "Mabadiliko yako",
+  "Welcome to {{project}}!": "Karibu {{project}}!",
+  "Badge": "Beji",
+  "Back": "Rudi",
+  "Start": "Anza",
+  "Signing up...": "Inasajili...",
+  "Sign-up": "Jisajili",
+  "Email missing.": "Barua pepe haipo.",
+  "Please provide an email address.": "Tafadhali weka anwani ya barua pepe.",
+  "Wrong email format.": "Muundo wa barua pepe si sahihi.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Umejisajili, Mvumbuzi! 🧑‍🚀"
 }

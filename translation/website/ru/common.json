@@ -289,5 +289,15 @@
   "Chat history cleared": "История чата очищена",
   "Failed to get AI response. Please try again.": "Не удалось получить ответ ИИ. Попробуйте снова.",
   "Clear History": "Очистить историю",
-  "Your changes": "Ваши изменения"
+  "Your changes": "Ваши изменения",
+  "Welcome to {{project}}!": "Добро пожаловать в {{project}}!",
+  "Badge": "Бейдж",
+  "Back": "Назад",
+  "Start": "Начать",
+  "Signing up...": "Регистрация...",
+  "Sign-up": "Подписаться",
+  "Email missing.": "Не указан email.",
+  "Please provide an email address.": "Укажите адрес электронной почты.",
+  "Wrong email format.": "Неверный формат email.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Вы подписаны, Исследователь! 🧑‍🚀"
 }

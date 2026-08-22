@@ -289,5 +289,15 @@
   "Chat history cleared": "Chatverlauf gelöscht",
   "Failed to get AI response. Please try again.": "Keine Antwort von der KI. Bitte versuch es erneut.",
   "Clear History": "Verlauf löschen",
-  "Your changes": "Deine Änderungen"
+  "Your changes": "Deine Änderungen",
+  "Welcome to {{project}}!": "Willkommen bei {{project}}!",
+  "Badge": "Badge",
+  "Back": "Zurück",
+  "Start": "Starten",
+  "Signing up...": "Wird angemeldet...",
+  "Sign-up": "Anmelden",
+  "Email missing.": "E-Mail fehlt.",
+  "Please provide an email address.": "Bitte gib eine E-Mail-Adresse an.",
+  "Wrong email format.": "Falsches E-Mail-Format.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Du bist angemeldet, Explorer! 🧑‍🚀"
 }

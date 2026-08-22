@@ -45,7 +45,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -350,7 +351,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -620,7 +622,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Essentials',
     lessonWriters: 'Tetranome',
@@ -688,7 +691,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Essentials',
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
@@ -1025,7 +1029,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Essentials',
     lessonWriters: 'iSpeakNerd',
@@ -1320,7 +1325,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Essentials',
     tags: [
@@ -1653,7 +1659,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -2001,7 +2008,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     tags: [
@@ -2284,7 +2292,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     tags: [
@@ -2372,7 +2381,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     tags: [
@@ -2464,7 +2474,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     tags: [
@@ -2783,7 +2794,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -2852,7 +2864,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3198,7 +3211,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     tags: [
@@ -3271,7 +3285,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3582,7 +3597,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     lessonWriters: 'Tetranome',
@@ -3665,7 +3681,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     tags: [
@@ -3741,7 +3758,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
@@ -4038,7 +4056,8 @@ const LESSONS: LessonType[] = [
       'zh-tw',
       'nl',
       'tl',
-      'th'
+      'th',
+      'ar'
     ],
     level: 'Level 1',
     lessonWriters: 'Musharef, Tetranome',

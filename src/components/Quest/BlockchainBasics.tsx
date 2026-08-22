@@ -75,11 +75,11 @@ const BlockchainBasics = (): {
                 </ExternalLink>
               </>
             </p>
-            <Box pr="2">
+            <Box pe="2">
               <InputGroup maxW="530px">
                 <InputLeftAddon width="71px">{t('From')}</InputLeftAddon>
                 <Input
-                  placeholder="0x..."
+                  placeholder="0x..." dir="ltr"
                   value={from}
                   mb="8"
                   onChange={(e): void => {
@@ -103,7 +103,7 @@ const BlockchainBasics = (): {
               <InputGroup maxW="530px">
                 <InputLeftAddon width="71px">{t('To')}</InputLeftAddon>
                 <Input
-                  placeholder="0x..."
+                  placeholder="0x..." dir="ltr"
                   value={to}
                   onChange={(e): void => {
                     setTo(e.target.value)

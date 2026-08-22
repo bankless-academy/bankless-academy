@@ -207,7 +207,7 @@ const SocialSharing = (
                 </Text>
                 <Box w="250px" m="auto">
                   <Box pb="1">
-                    <ExternalLink href={twitterLink} mr="2">
+                    <ExternalLink href={twitterLink} me="2">
                       <Button
                         variant="primary"
                         w="100%"
@@ -236,7 +236,7 @@ const SocialSharing = (
                         {t('Share on Farcaster')}
                       </Button>
                     ) : (
-                      <ExternalLink href={farcasterLink} mr="2">
+                      <ExternalLink href={farcasterLink} me="2">
                         <Button
                           variant="primary"
                           w="100%"
@@ -323,7 +323,7 @@ const SocialSharing = (
                     />
                   </Box>
                   <Box m={2}>{`${platform.name}`}</Box>
-                  <Box flexGrow={1} textAlign="right">
+                  <Box flexGrow={1} textAlign="end">
                     {stamp ? (
                       // OK
                       <CircleIcon
@@ -359,7 +359,7 @@ const SocialSharing = (
                       href={`https://x.com/intent/retweet?tweet_id=${lesson?.questSocialMessage
                         ?.split('/')
                         ?.pop()}`}
-                      mr="2"
+                      me="2"
                     >
                       <Button
                         variant="primary"
@@ -375,7 +375,7 @@ const SocialSharing = (
                         {t('Repost on Twitter / X')}
                       </Button>
                     </ExternalLink>
-                    <Box flexGrow={1} textAlign="right">
+                    <Box flexGrow={1} textAlign="end">
                       {isQuestValidated === 'true' ? (
                         // OK
                         <CircleIcon

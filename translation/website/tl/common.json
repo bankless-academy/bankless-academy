@@ -289,5 +289,15 @@
   "Chat history cleared": "Na-clear na ang chat history",
   "Failed to get AI response. Please try again.": "Hindi nakakuha ng AI response. Subukan ulit.",
   "Clear History": "I-clear ang History",
-  "Your changes": "Ang mga pagbabago mo"
+  "Your changes": "Ang mga pagbabago mo",
+  "Welcome to {{project}}!": "Welcome sa {{project}}!",
+  "Badge": "Badge",
+  "Back": "Bumalik",
+  "Start": "Simulan",
+  "Signing up...": "Nagsa-sign up...",
+  "Sign-up": "Mag-sign up",
+  "Email missing.": "Walang email.",
+  "Please provide an email address.": "Maglagay ng email address.",
+  "Wrong email format.": "Mali ang format ng email.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Naka-sign up ka na, Explorer! 🧑‍🚀"
 }

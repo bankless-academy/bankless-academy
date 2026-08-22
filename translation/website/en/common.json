@@ -289,5 +289,15 @@
   "Chat history cleared": "Chat history cleared",
   "Failed to get AI response. Please try again.": "Failed to get AI response. Please try again.",
   "Clear History": "Clear History",
-  "Your changes": "Your changes"
+  "Your changes": "Your changes",
+  "Welcome to {{project}}!": "Welcome to {{project}}!",
+  "Badge": "Badge",
+  "Back": "Back",
+  "Start": "Start",
+  "Signing up...": "Signing up...",
+  "Sign-up": "Sign-up",
+  "Email missing.": "Email missing.",
+  "Please provide an email address.": "Please provide an email address.",
+  "Wrong email format.": "Wrong email format.",
+  "You're all signed up, Explorer! 🧑‍🚀": "You're all signed up, Explorer! 🧑‍🚀"
 }

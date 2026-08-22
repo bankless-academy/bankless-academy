@@ -159,7 +159,7 @@ const SelectCommunity = (): any => {
                 variant="primary"
                 width="100%"
                 borderRadius="6px"
-                borderLeftRadius="0"
+                sx={{ 'border-start-start-radius': '0', 'border-end-start-radius': '0' }}
                 onClick={async () => {
                   updateCommunity(community)
                   setAddCommunity('')

@@ -289,5 +289,15 @@
   "Chat history cleared": "Sohbet geçmişi silindi",
   "Failed to get AI response. Please try again.": "Yapay zekadan yanıt alınamadı. Lütfen tekrar dene.",
   "Clear History": "Geçmişi Sil",
-  "Your changes": "Değişikliklerin"
+  "Your changes": "Değişikliklerin",
+  "Welcome to {{project}}!": "{{project}}'ye hoş geldin!",
+  "Badge": "Rozet",
+  "Back": "Geri",
+  "Start": "Başla",
+  "Signing up...": "Kaydediliyor...",
+  "Sign-up": "Kaydol",
+  "Email missing.": "E-posta eksik.",
+  "Please provide an email address.": "Lütfen bir e-posta adresi gir.",
+  "Wrong email format.": "Yanlış e-posta biçimi.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Kaydın tamamlandı Kaşif! 🧑‍🚀"
 }

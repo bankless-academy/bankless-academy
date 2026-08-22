@@ -603,7 +603,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                             borderBottom="1px solid #989898"
                             pb="2"
                           >
-                            Badge
+                            {t('Badge')}
                           </Text>
                         </Box>
                         <Box textAlign="center">

@@ -289,5 +289,15 @@
   "Chat history cleared": "Cronologia chat cancellata",
   "Failed to get AI response. Please try again.": "Non è stato possibile ottenere la risposta dell'IA. Riprova.",
   "Clear History": "Cancella cronologia",
-  "Your changes": "Le tue modifiche"
+  "Your changes": "Le tue modifiche",
+  "Welcome to {{project}}!": "Ti diamo il benvenuto su {{project}}!",
+  "Badge": "Badge",
+  "Back": "Indietro",
+  "Start": "Inizia",
+  "Signing up...": "Iscrizione in corso...",
+  "Sign-up": "Iscriviti",
+  "Email missing.": "Email mancante.",
+  "Please provide an email address.": "Inserisci un indirizzo email.",
+  "Wrong email format.": "Formato email non valido.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Iscrizione completata, Explorer! 🧑‍🚀"
 }

@@ -67,7 +67,7 @@ const OptimismGovernance = (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
-            <Box ml="8">
+            <Box ms="8">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
                 {t('Begin your Optimism Network journey by delegating OP.')}
               </Text>
@@ -90,7 +90,7 @@ const OptimismGovernance = (
                     )
                   }
                 >
-                  <Box display="block" textAlign="left">
+                  <Box display="block" textAlign="start">
                     {t('Select a ')}
                     <ExternalLink href="https://vote.optimism.io/delegates">
                       {t('Delegate')}

@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Dengan kondisi teknologi blockchain saat ini, sebuah blockchain paling banyak bisa mengoptimalkan dua dari tiga karakteristik.",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Centang karakteristik yang awalnya diprioritaskan Bitcoin dan Ethereum."
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Centang karakteristik yang awalnya diprioritaskan Bitcoin dan Ethereum.",
+    "decentralization": "desentralisasi",
+    "scalability": "skalabilitas",
+    "security": "keamanan"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "Mulai perjalanan L2 kamu.",

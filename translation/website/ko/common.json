@@ -289,5 +289,15 @@
   "Chat history cleared": "채팅 기록을 지웠어요",
   "Failed to get AI response. Please try again.": "AI 응답을 받지 못했어요. 다시 시도해 주세요.",
   "Clear History": "기록 지우기",
-  "Your changes": "변경 내용"
+  "Your changes": "변경 내용",
+  "Welcome to {{project}}!": "{{project}}에 오신 것을 환영합니다!",
+  "Badge": "배지",
+  "Back": "뒤로",
+  "Start": "시작",
+  "Signing up...": "등록 중...",
+  "Sign-up": "가입하기",
+  "Email missing.": "이메일이 없습니다.",
+  "Please provide an email address.": "이메일 주소를 입력해 주세요.",
+  "Wrong email format.": "이메일 형식이 올바르지 않습니다.",
+  "You're all signed up, Explorer! 🧑‍🚀": "가입 완료! 탐험가님! 🧑‍🚀"
 }

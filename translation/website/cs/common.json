@@ -289,5 +289,15 @@
   "Chat history cleared": "Historie chatu vymazána",
   "Failed to get AI response. Please try again.": "Odpověď AI se nepodařilo získat. Zkus to prosím znovu.",
   "Clear History": "Vymazat historii",
-  "Your changes": "Tvoje změny"
+  "Your changes": "Tvoje změny",
+  "Welcome to {{project}}!": "Vítej v {{project}}!",
+  "Badge": "Odznak",
+  "Back": "Zpět",
+  "Start": "Začít",
+  "Signing up...": "Přihlašování...",
+  "Sign-up": "Přihlásit se",
+  "Email missing.": "Chybí e-mail.",
+  "Please provide an email address.": "Zadej e-mailovou adresu.",
+  "Wrong email format.": "Nesprávný formát e-mailu.",
+  "You're all signed up, Explorer! 🧑‍🚀": "Jsi přihlášen, průzkumníku! 🧑‍🚀"
 }

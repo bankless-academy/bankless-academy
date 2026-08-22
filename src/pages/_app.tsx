@@ -325,6 +325,56 @@ const App = ({
                         [dir='rtl'] .mirror-rtl {
                           transform: scaleX(-1);
                         }
+                        /* Chakra zeroes input-group join corners against the
+                           THEME direction (permanently LTR here), so under RTL
+                           the flat edges face outward. These logical-property
+                           overrides are browser-resolved and identical to
+                           Chakra's own output in LTR. An addon always joins
+                           the input on its inline side: left-addon on its end,
+                           right-addon on its start. */
+                        .chakra-input__left-addon {
+                          border-start-start-radius: var(
+                            --chakra-radii-md
+                          ) !important;
+                          border-end-start-radius: var(
+                            --chakra-radii-md
+                          ) !important;
+                          border-start-end-radius: 0 !important;
+                          border-end-end-radius: 0 !important;
+                        }
+                        .chakra-input__right-addon {
+                          border-start-start-radius: 0 !important;
+                          border-end-start-radius: 0 !important;
+                          border-start-end-radius: var(
+                            --chakra-radii-md
+                          ) !important;
+                          border-end-end-radius: var(
+                            --chakra-radii-md
+                          ) !important;
+                        }
+                        .chakra-input__group
+                          > .chakra-input__left-addon
+                          + .chakra-input {
+                          border-start-start-radius: 0 !important;
+                          border-end-start-radius: 0 !important;
+                          border-start-end-radius: var(
+                            --chakra-radii-md
+                          ) !important;
+                          border-end-end-radius: var(
+                            --chakra-radii-md
+                          ) !important;
+                        }
+                        .chakra-input__group
+                          > .chakra-input:has(+ .chakra-input__right-addon) {
+                          border-start-end-radius: 0 !important;
+                          border-end-end-radius: 0 !important;
+                          border-start-start-radius: var(
+                            --chakra-radii-md
+                          ) !important;
+                          border-end-start-radius: var(
+                            --chakra-radii-md
+                          ) !important;
+                        }
                         // HACK: mobile lesson button hover disabled
                         .css-fhy18r:hover:disabled,
                         .css-fhy18r[data-hover]:disabled,

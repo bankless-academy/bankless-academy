@@ -289,5 +289,15 @@
   "Chat history cleared": "チャット履歴を消去しました",
   "Failed to get AI response. Please try again.": "AI の応答を取得できませんでした。もう一度お試しください。",
   "Clear History": "履歴を消去",
-  "Your changes": "変更内容"
+  "Your changes": "変更内容",
+  "Welcome to {{project}}!": "{{project}}へようこそ！",
+  "Badge": "バッジ",
+  "Back": "戻る",
+  "Start": "開始",
+  "Signing up...": "登録中...",
+  "Sign-up": "登録",
+  "Email missing.": "メールアドレスが未入力です。",
+  "Please provide an email address.": "メールアドレスを入力してください。",
+  "Wrong email format.": "メールアドレスの形式が正しくありません。",
+  "You're all signed up, Explorer! 🧑‍🚀": "登録が完了しました、探検家さん！🧑‍🚀"
 }

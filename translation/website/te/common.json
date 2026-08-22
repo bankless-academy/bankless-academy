@@ -289,5 +289,15 @@
   "Chat history cleared": "చాట్ చరిత్ర తొలగించాం",
   "Failed to get AI response. Please try again.": "AI జవాబు రాలేదు. మళ్లీ ప్రయత్నించండి.",
   "Clear History": "చరిత్ర తొలగించండి",
-  "Your changes": "మీ మార్పులు"
+  "Your changes": "మీ మార్పులు",
+  "Welcome to {{project}}!": "{{project}}-కి స్వాగతం!",
+  "Badge": "బ్యాడ్జ్",
+  "Back": "వెనుకకు",
+  "Start": "ప్రారంభించండి",
+  "Signing up...": "సైన్ అప్ అవుతోంది...",
+  "Sign-up": "సైన్ అప్",
+  "Email missing.": "ఇమెయిల్ లేదు.",
+  "Please provide an email address.": "దయచేసి ఇమెయిల్ చిరునామా ఇవ్వండి.",
+  "Wrong email format.": "ఇమెయిల్ ఫార్మాట్ తప్పు.",
+  "You're all signed up, Explorer! 🧑‍🚀": "సైన్ అప్ పూర్తయింది, ఎక్స్‌ప్లోరర్! 🧑‍🚀"
 }

@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "தற்போதைய பிளாக்செயின் தொழில்நுட்பத்தில், மூன்று பண்புகளில் அதிகபட்சம் இரண்டை மட்டுமே ஒரு பிளாக்செயின் சிறப்பாகச் செய்ய முடியும்.",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin மற்றும் Ethereum ஆரம்பத்தில் முன்னுரிமை அளித்த பண்புகளைத் தேர்ந்தெடுங்கள்."
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin மற்றும் Ethereum ஆரம்பத்தில் முன்னுரிமை அளித்த பண்புகளைத் தேர்ந்தெடுங்கள்.",
+    "decentralization": "பரவலாக்கம்",
+    "scalability": "ஸ்கேலபிலிட்டி",
+    "security": "பாதுகாப்பு"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "உங்கள் L2 பயணத்தைத் தொடங்குங்கள்.",

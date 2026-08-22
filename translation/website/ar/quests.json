@@ -1,0 +1,151 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. بيتكوينك في طريقه إلى ساتوشي ناكاموتو.",
+    "2. It's now being verified by network miners...": "2. يجري الآن التحقق منه بواسطة معدني الشبكة...",
+    "3. Your transaction is added to the blockchain “database”...": "3. تمت إضافة معاملتك إلى \"قاعدة بيانات\" البلوكتشين...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. استلم ساتوشي ناكاموتو بيتكوينك!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "باستخدام محاكي بيتكوين المبسط لدينا، أرسل أي كمية من BTC إلى عنوان ساتوشي ناكاموتو",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "محاكاة تفاعلية: إرسال بيتكوين إلى ساتوشي ناكاموتو {{step}}",
+    "Reset simulation": "إعادة تعيين المحاكاة",
+    "Recipient": "المستلم",
+    "Address": "العنوان",
+    "Asset": "الأصل",
+    "Amount": "المبلغ",
+    "Balance": "الرصيد",
+    "Send": "إرسال"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "افهم معاملة",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "للتحقق من صحة هذه المهمة، الصق عنواني \"من\" و\"إلى\" لهذه المعاملة",
+    "From": "من",
+    "To": "إلى"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "ابدأ رحلتك في شبكة Optimism بتفويض OP.",
+    "Select a ": "اختر ",
+    "Delegate": "مفوض",
+    " for your OP": " لعملة OP الخاصة بك",
+    "or delegate to ": "أو فوض إلى ",
+    "Tip": "نصيحة",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "راجع مقالة كتيب المستكشف حول '{{lesson_title}}' للحصول على شرح كامل خطوة بخطوة للمهمة.",
+    "Refresh": "تحديث",
+    "Read Entry": "اقرأ المنشور"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "أنشئ محفظتك الأولى للعملات المشفرة.",
+    "If you already have a wallet, move to step 2.": "إذا كانت لديك محفظة بالفعل، انتقل إلى الخطوة 2.",
+    "1. Download and install the Zerion wallet from ": "1. حمل وثبت محفظة Zerion من ",
+    "2. Connect your wallet to Bankless Academy": "2. اربط محفظتك بـBankless Academy",
+    "Tip": "نصيحة",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "راجع مقالة كتيب المستكشف حول '{{lesson_title}}' للحصول على شرح خطوة بخطوة للمهمة.",
+    "Read Entry": "اقرأ المنشور"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "اختر جميع لقطات الشاشة التي تحتوي على عمليات احتيال 👆",
+    "Hint: 1 screenshot is not a scam": "تلميح: لقطة شاشة واحدة ليست عملية احتيال"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. اربط محفظتك بـBankless Academy",
+    "2. Join gm.xyz using this ": "2. انضم إلى gm.xyz باستخدام ",
+    "invite link": "رابط الدعوة",
+    " or register with a phone number": " أو سجل برقم هاتف",
+    "3. Join ": "3. انضم إلى ",
+    "Validate quest": "تحقق من المهمة"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "الإجابة المختارة:",
+    "Bankless Archetype results:": "نتائج نمط Bankless الخاص بك:",
+    "Risk": "المخاطرة",
+    "Self sovereignty": "السيادة الذاتية",
+    "DEX": "DEX",
+    "Trads": "تقليديون",
+    "LP": "LP",
+    "Long term": "المدى الطويل",
+    "Works in a DAO": "يعمل في DAO",
+    "Crypto knowledge": "معرفة بالكريبتو",
+    "Crypto donation": "تبرع بالكريبتو",
+    "Buys stuff in crypto": "يشتري أشياء بالكريبتو",
+    "Deployed smart contracts": "نشر عقودا ذكية",
+    "Anon": "مجهول",
+    "Works in web3": "يعمل في Web3",
+    "Creates digital art": "ينشئ فنا رقميا",
+    "Owns Bitcoin": "يملك بيتكوين",
+    "Owns NFTs": "يملك NFTs",
+    "Aping into something new": "يندفع نحو كل جديد",
+    "Owns shitcoin": "يملك عملة مشفرة عديمة القيمة"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "كيفية مبادلة الرموز باستخدام 1inch",
+    "1. Load ": "1. حمل ",
+    " on the ": " على ",
+    "Base network": "شبكة Base",
+    "2. Swap any token.": "2. بادل أي رمز.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. الصق أدناه تجزئة معاملة <b>المبادلة</b> الناجحة:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>نصيحة:</b> 🚨 تأكد من لصق تجزئة معاملة <b>المبادلة</b> التي تمت على <b>شبكة Base</b> وليس تجزئة معاملة <b>الموافقة</b> على الرمز.",
+    "Read documentation": "اقرأ الوثائق"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. حمل ",
+    " on the ": " على ",
+    "Optimism network": "شبكة Optimism",
+    "2. Swap any token.": "2. بادل أي رمز.",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. الصق أدناه تجزئة معاملة <b>المبادلة</b> الناجحة:",
+    "Resources:": "الموارد:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>نصيحة:</b> تأكد من لصق تجزئة معاملة <b>المبادلة</b> التي تمت على <b>شبكة Optimism</b> وليس تجزئة معاملة الموافقة على الرمز. اقرأ مقالة كتيب المستكشف لمزيد من المعلومات.",
+    "Read Entry": "اقرأ المنشور"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "ما الذي يثير اهتمامك أكثر لتتعلم فعله باستخدام DeFi؟",
+    "Signature verified": "تم التحقق من التوقيع",
+    "Sign your answer": "وقع إجابتك",
+    "Select your answer": "اختر إجابتك",
+    "Investing": "الاستثمار",
+    "Trading": "التداول",
+    "Lending & Borrowing": "الإقراض والاقتراض",
+    "Staking": "التخزين"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "ابدأ رحلتك في التخزين مع Rocket Pool.",
+    "Obtain 0.0002 rETH on any supported network*.": "احصل على 0.0002 rETH على أي شبكة مدعومة*.",
+    "a) Visit a ": "أ) قم بزيارة ",
+    "Decentralized Exchange": "منصة تداول لامركزية",
+    " to swap for rETH (Optimism or Base recommended)": " لمبادلة رموزك بـrETH (يفضل Optimism أو Base)",
+    "b) Or mint rETH on Mainnet via ": "ب) أو اسك rETH على الشبكة الرئيسية عبر ",
+    " (0.01 ETH minimum)": " (بحد أدنى 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "نصيحة: راجع مقالة كتيب المستكشف '{{lesson_title}}' لتجد أفضل طريقة لتمويل محفظتك.",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* الشبكات المدعومة: Ethereum وOptimism وBase وArbitrum وPolygon (POS)",
+    "Check Quest": "تحقق من المهمة"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "ستحتاج إلى محفظة عملات مشفرة لهذه المهمة.",
+    "Wallet connected!": "تم ربط المحفظة!",
+    "Waiting to detect your wallet ...": "جارٍ انتظار اكتشاف محفظتك ...",
+    "If you don't have one, let's set one up!": "إذا لم تكن تملك واحدة، فلننشئ واحدة!",
+    "Our onchain quests and rewards only work with a wallet connected.": "تعمل مهامنا ومكافآتنا على السلسلة فقط عند ربط محفظة.",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "المحافظ أشبه بحسابات على البلوكتشين. ستحتاج إلى واحدة للتفاعل مع تطبيقات البلوكتشين، أو لشراء العملات المشفرة والاحتفاظ بها وإرسالها.",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "شاهد هذا الفيديو التعليمي السريع لإنشاء محفظتك الأولى باستخدام Zerion: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "في ظل الوضع الحالي لتقنية البلوكتشين، يمكن لسلاسل الكتل تحسين خاصيتين فقط من أصل ثلاث خصائص.",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "حدد الخصائص التي أعطاها بيتكوين وإيثيريوم الأولوية في البداية.",
+    "decentralization": "لامركزية",
+    "scalability": "قابلية التوسع",
+    "security": "أمان"
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "ابدأ رحلتك مع L2.",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "احتفظ برصيد لا يقل عن 0.0002 ETH على Base أو Optimism",
+    "Options to fund your wallet:": "خيارات لتمويل محفظتك:",
+    "Explore other options": "استكشف خيارات أخرى",
+    "Check Quest": "تحقق من المهمة"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "قبل المطالبة بشهادتك على السلسلة:",
+    "Share on Twitter / X": "شارك على Twitter / X",
+    "Share on Farcaster": "شارك على Farcaster",
+    "See you there! Over and out 📡": "أراك هناك! انتهى الاتصال 📡",
+    "Connect": "اربط",
+    "Repost on Twitter / X": "أعد النشر على Twitter / X",
+    "Validate": "تحقق"
+  }
+}

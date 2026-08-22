@@ -39,7 +39,7 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
       <Box
         position="fixed"
         top="80px"
-        right="8px"
+        style={{ insetInlineEnd: '8px' }}
         h={isSmallScreen ? 'calc(100% - 160px)' : 'calc(100% - 90px)'}
         display="grid"
         overflowY="scroll"
@@ -57,7 +57,7 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
       </Box>
       <Box
         m="10"
-        pr="2"
+        pe="2"
         ml={isSmallScreen ? '20px' : '40px'}
         mt="0"
         maxW="1024px"

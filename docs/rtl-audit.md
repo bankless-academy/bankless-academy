@@ -83,11 +83,73 @@ hardcodes LTR:
 | `insetInlineStart/End`, `insetStart/End` | **`left`/`right`** (physical) | ❌ never as Chakra prop or `sx` |
 | `borderTopStartRadius`, `borderStartStartRadius`, `roundedStart/End`, … | **physical corners** | ❌ never as Chakra prop or `sx` |
 
-Escape hatch for the ❌ rows: inline `style={{ insetInlineStart: … }}` (React
-passes camelCase straight to CSS) or emotion template CSS
-(`inset-inline-start: …; border-start-start-radius: …`) — Chakra's resolver
-never sees either. `sx` goes through the SAME `css()` pipeline as props, so it
-is not an escape hatch.
+Escape hatches for the ❌ rows, best first (all verified against `css()`):
+1. **kebab-case keys in `sx`** — `sx={{ 'border-start-start-radius': 0 }}`.
+   Chakra's resolver matches config keys exactly (camelCase), so kebab keys
+   pass through untouched to emotion and the BROWSER resolves them. Works with
+   conditionals and pseudo-selectors; the preferred form.
+2. inline `style={{ insetInlineStart: … }}` (React passes camelCase straight
+   to CSS) — fine for static values, no pseudo/responsive.
+3. emotion template CSS (`inset-inline-start: …`) in styled components.
+CamelCase keys in `sx` go through the SAME `css()` pipeline as props and are
+NOT an escape hatch.
+
+## Post-launch defect class found by the first real-Arabic review (2026-08-22)
+
+**Interlocking-corner constructs**: two siblings shaped to join into one pill
+(flat edges meeting mid-row) via physical `borderLeftRadius="0"` /
+`borderRightRadius="0"`. Flex order flips under RTL, the physical corners do
+not, so the flat edges face OUTWARD (screenshot: LessonButton's sponsor chip +
+View Lesson button). **The Phase B greps were blind to this class** — corner
+props and 4-value `borderRadius` shorthands contain no "left"/"right" text.
+Fixed repo-wide with kebab-logical `sx` (LessonButton, ProgressTitle,
+ShareModal, OnboardingModal simplified to the same pattern, SelectCommunity /
+ShareAction / ExplorerProfile addon buttons); repo now has ZERO physical
+corner-radius props.
+
+**Chakra InputGroup internals**: Chakra zeroes input/addon join corners
+against the theme direction (permanently LTR), so every input-with-addon
+mis-joined under RTL (screenshot: Bitcoin quest recipient field). Fixed
+globally in `_app.tsx` with logical-property overrides on
+`.chakra-input__left-addon` / `__right-addon` / adjacent `.chakra-input` —
+identical output in LTR, correct join in RTL, covers all current and future
+input groups. Plus BitcoinBasics quest: icon-gap `ml`→`ms`, labels
+`textAlign="left"`→`"start"`.
+
+## Full-page + quest screenshot review round (2026-08-23, headless Chrome)
+
+Every page type, the slideshow (slides, quiz, feedback toast, hotkeys),
+all 14 quest components (via a TEMP parameterized /quest harness, reverted),
+and mobile — in ar, then the same surfaces in en for regression. Verified
+correct in RTL: rail placement, progress fill direction, mirrored prev/next
++ their edge placement, quiz layout + toast, keyword tooltips, glossary
+strip (moved to inline-end), mint button (LTR island), lesson-card sponsor
+pill, input-group joins, mobile nav. LTR regression: none — all touched
+surfaces render identical to the original design.
+
+Fixed during the round (several affect ALL languages, found only because RTL
+made them visible):
+- Untranslated hardcoded UI: OnboardingModal (Welcome/Next/Back/Start/
+  Sign-up loading/toasts), Lesson.tsx slideshow "Next", LessonDetail "Badge",
+  StakingOnEthereum + DecentralizedExchanges quest handbook cards
+  (lesson.name via `tCommon(lesson.name, { ns: 'lesson' })` + Read Entry).
+  10 new common.json keys added across ALL 26 languages (zh-tw via
+  converter, never by hand).
+- **Layer1Blockchains quest rendered raw i18n keys in EVERY language**
+  (`t(characteristic)` is a dynamic call, invisible to validate-i18n's
+  literal-key check; en/quests.json never had decentralization/scalability/
+  security). Keys added to all 26 languages, values sourced from each
+  language's own glossary keyword for perfect consistency.
+- tx-hash inputs (`placeholder="0x..."`) get `dir="ltr"` — hashes are Latin
+  and the placeholder bidi-scrambled (DEXAggregators, DecentralizedExchanges,
+  BlockchainBasics ×2).
+- Quest components bulk pass: `ml`/`mr` icon gaps → `ms`/`me`,
+  `textAlign` left/right → start/end (9 files).
+- OnboardingModal + ShareModal pills and ProgressTitle converted to the
+  kebab-logical pattern; LessonButton + all remaining physical corner-radius
+  props eliminated repo-wide.
+- OptimismGovernance card shows English by DESIGN (its handbook lesson is
+  deprecated → no translations exist; t() falls through). Not a defect.
 
 - A1. One helper in the registry (`applyDocumentLanguage(lang)`: sets
   `document.documentElement.dir` + `lang` from LANGUAGES). Call it from
@@ -132,10 +194,15 @@ Notable decisions made during conversion:
   `Prose code` (LessonArticle.tsx); the detached trailing punctuation is now
   re-emitted INSIDE the keyword's isolating nowrap span, so the bidi
   algorithm can never re-order it away from the term.
-- C5: ChatWidget Drawer `placement={isRtlDocument() ? 'left' : 'right'}`
-  (Chakra placement resolves against the permanently-LTR theme, so "end" would
-  no-op; render-time document read is safe in this client-only component).
-  Tooltip `placement="left"` sites left as-is (popper auto-flip mitigates).
+- C5 (REVISED 2026-08-22 after the first real-Arabic review): the floating
+  chat widget (trigger, Drawer, close button) and its Helper badge are pinned
+  PHYSICAL bottom-right in every language — industry convention (Intercom,
+  Zendesk, WhatsApp widgets do not flip in RTL locales), and it reduces the
+  "everything moved" effect for readers switching languages. The earlier
+  `isRtlDocument()` placement conditional was removed. This is the standing
+  rule for floating utility chrome: content and navigation mirror; floating
+  utilities stay put. Tooltip `placement="left"` sites left as-is (popper
+  auto-flip mitigates).
 
 Original per-task briefs below, kept for reference:
 

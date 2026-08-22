@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "Blokzincir teknolojisinin bugünkü hâliyle bir blokzincir, üç özellikten en fazla ikisini optimize edebilir.",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin ve Ethereum’un başlangıçta öncelik verdiği özellikleri işaretle."
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "Bitcoin ve Ethereum’un başlangıçta öncelik verdiği özellikleri işaretle.",
+    "decentralization": "merkeziyetsizlik",
+    "scalability": "ölçeklenebilirlik",
+    "security": "güvenlik"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "L2 yolculuğuna başla.",

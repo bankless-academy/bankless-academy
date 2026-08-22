@@ -53,7 +53,12 @@ const LessonButton = ({
                   ? '1px solid #3F3253 !important'
                   : '1px solid #B85FF1 !important'
               }
-              borderRightRadius="0"
+              // kebab-case so Chakra's resolver never sees it: the flat edge
+              // must face the main button in BOTH directions (see rtl-audit)
+              sx={{
+                'border-start-end-radius': '0',
+                'border-end-end-radius': '0',
+              }}
               leftIcon={<ChakraImage width="24px" src={lesson?.sponsorLogo} />}
               isActive
             >
@@ -73,7 +78,10 @@ const LessonButton = ({
               }
               paddingStart="6px !important"
               paddingEnd="30px !important"
-              borderRightRadius="0"
+              sx={{
+                'border-start-end-radius': '0',
+                'border-end-end-radius': '0',
+              }}
               leftIcon={<ChakraImage width="24px" src={lesson?.sponsorLogo} />}
               isActive
               zIndex="11"
@@ -101,7 +109,14 @@ const LessonButton = ({
                 ? '1px solid #B85FF1 !important'
                 : 'none !important'
             }
-            borderLeftRadius={lessonHasSponsor || lessonHasReward ? '0' : null}
+            sx={
+              lessonHasSponsor || lessonHasReward
+                ? {
+                    'border-start-start-radius': '0',
+                    'border-end-start-radius': '0',
+                  }
+                : undefined
+            }
             background={
               completed
                 ? isHover

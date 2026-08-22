@@ -127,7 +127,10 @@
   },
   "Layer1Blockchains": {
     "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "현재의 블록체인 기술로는 세 가지 특성 중 최대 두 가지까지만 최적화할 수 있어요.",
-    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "비트코인과 이더리움이 처음에 우선한 특성에 체크하세요."
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "비트코인과 이더리움이 처음에 우선한 특성에 체크하세요.",
+    "decentralization": "탈중앙화",
+    "scalability": "확장성",
+    "security": "보안"
   },
   "Layer2Blockchains": {
     "Begin your L2 journey.": "L2 여정을 시작해 보세요.",
