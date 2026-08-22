@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import i18next from 'i18next'
 
 import {
+  applyDocumentLanguage,
   hasLangSegment,
   isLocalizablePath,
   parseLangFromPath,
@@ -99,6 +100,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }
 
     setLanguage(next)
+    applyDocumentLanguage(next)
     // loadLanguage is idempotent and MUST NOT be gated on the language
     // differing: after a reload the detector has already set i18next.language
     // to the stored language, so that guard skipped the load entirely and left
@@ -114,6 +116,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     language,
     setLanguage: (lang: string) => {
       setLanguage(lang)
+      applyDocumentLanguage(lang)
       void loadLanguage(lang).then(() => i18next.changeLanguage(lang))
     },
     openLessons,

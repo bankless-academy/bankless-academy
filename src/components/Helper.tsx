@@ -68,15 +68,15 @@ const ButtonHelper = ({
           ? '-16px'
           : '-12px'
       }
-      right={
-        isHover
+      style={{
+        insetInlineEnd: isHover
           ? isProfile
             ? '-14px'
             : '-15px'
           : isProfile
           ? '-11px'
-          : '-12px'
-      }
+          : '-12px',
+      }}
     >
       <IconButton
         variant="unstyled"

@@ -17,7 +17,7 @@ import { useEffect } from 'react'
 import { LessonType } from 'entities/lesson'
 import LESSONS from 'constants/lessons'
 import { t } from 'i18next'
-import { LANGUAGE_CODES } from 'constants/languages'
+import { LANGUAGE_CODES, applyDocumentLanguage } from 'constants/languages'
 
 export interface MetaData {
   title?: string
@@ -123,6 +123,14 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
       tg.expand()
     }
   }, [])
+
+  // The nolayout /content pages mount no AppProvider, so nothing else corrects
+  // <html lang>/<dir> from _document's static default there. metadata.lang is
+  // only set by those pages; everywhere else this is a no-op and AppContext
+  // stays the authority.
+  useEffect(() => {
+    if (metadata?.lang) applyDocumentLanguage(metadata.lang)
+  }, [metadata?.lang])
 
   const canonical = url?.split('?')[0]
 

@@ -42,6 +42,20 @@ const ProgressSteps = ({
                   ? '#916AB8'
                   : '#ffffff22'
               }
+              // linear-gradient() has no logical direction in CSS, so the last
+              // step's gradient (which points toward the reading end) needs an
+              // explicit RTL mirror with the same stops run the other way.
+              sx={
+                index + 1 === total
+                  ? {
+                      '[dir="rtl"] &': {
+                        background: `linear-gradient(90deg, #FFFCF9 -44.74%, #F77B54 -11.81%, ${
+                          index <= step ? '#916AB8' : '#ffffff22'
+                        } 94.44%)`,
+                      },
+                    }
+                  : undefined
+              }
             ></Box>
           )}
         </Box>
@@ -52,7 +66,7 @@ const ProgressSteps = ({
         m={isSmallScreen ? 0.5 : 1}
         position="absolute"
         top="0"
-        right="0"
+        style={{ insetInlineEnd: 0 }}
         borderRadius={2}
         bg={'#FFEDEC'}
         boxShadow="0px 0px 5px 2px rgba(255, 252, 248, 0.88)"

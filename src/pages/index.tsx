@@ -152,7 +152,7 @@ const HomePage = (): JSX.Element => {
                   m="auto"
                 />
                 {IS_PARTNERSHIP_ACTIVACTED && (
-                  <Box ml="21%" w="79%">
+                  <Box ms="21%" w="79%">
                     <Text
                       fontSize={isSmallScreen ? '20px' : '25px'}
                       mt={isSmallScreen ? '0' : '-15px'}
@@ -360,13 +360,13 @@ const HomePage = (): JSX.Element => {
                           name: 'Newsletter signup',
                         })
                       }}
-                      mr="2"
+                      me="2"
                     >
                       {t(`Newsletter`)}
                     </NewsletterButton>
                   </Box>
                   <Box
-                    ml={isSmallScreen ? '0' : '2'}
+                    ms={isSmallScreen ? '0' : '2'}
                     mt={isSmallScreen ? '4' : '0'}
                     fontSize={isSmallScreen ? 'md' : 'lg'}
                     color="#9E9E9E"

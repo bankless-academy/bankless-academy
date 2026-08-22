@@ -314,6 +314,17 @@ const App = ({
                           left: 2vh !important;
                           max-width: 30vh !important;
                         }
+                        /* The toast hangs on the reading-start side, which is
+                           the right edge under RTL. */
+                        [dir='rtl'] #chakra-toast-manager-top-left {
+                          left: auto !important;
+                          right: 2vh !important;
+                        }
+                        /* Directional glyphs (prev/next arrows) opt in via
+                           this class; symmetric icons never need it. */
+                        [dir='rtl'] .mirror-rtl {
+                          transform: scaleX(-1);
+                        }
                         // HACK: mobile lesson button hover disabled
                         .css-fhy18r:hover:disabled,
                         .css-fhy18r[data-hover]:disabled,

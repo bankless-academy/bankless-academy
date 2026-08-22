@@ -101,14 +101,10 @@ const LanguageSelector = ({
     // fought, which is how the homepage lost the language.
   }, [defaultLanguage, setDefaultLanguage])
 
-  // RTL groundwork: keep <html dir> in sync with the active language
-  React.useEffect(() => {
-    if (typeof document === 'undefined') return
-    const def = LANGUAGES.find(
-      (l) => l.code === normalizeLangCode(i18n.language)
-    )
-    document.documentElement.dir = def?.dir || 'ltr'
-  }, [i18n.language])
+  // <html dir>/<lang> syncing lives in applyDocumentLanguage (constants/
+  // languages), called from AppContext — NOT here: this component unmounts
+  // with the nav on every lesson slide, so an effect here never covers the
+  // slideshow.
 
   const currentLang = normalizeLangCode(i18n.language)
 
@@ -246,7 +242,7 @@ const LanguageSelector = ({
         display="flex"
         alignItems="center"
         w="100%"
-        textAlign="left"
+        textAlign="start"
         minH="44px"
         px="3"
         py="1.5"
@@ -270,7 +266,7 @@ const LanguageSelector = ({
             {notTranslated ? ` (${t('not translated')})` : ''}
           </Text>
         </Box>
-        {isCurrent && <CheckIcon ml="2" boxSize="3" flexShrink={0} />}
+        {isCurrent && <CheckIcon ms="2" boxSize="3" flexShrink={0} />}
       </Box>
     )
   }
@@ -308,7 +304,7 @@ const LanguageSelector = ({
             >
               {LanguageDescription[currentLang] || LanguageDescription['en']}
             </Box>
-            {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
+            {isOpen ? <ChevronUpIcon ms="1" /> : <ChevronDownIcon ms="1" />}
           </Box>
         </Button>
       </PopoverTrigger>

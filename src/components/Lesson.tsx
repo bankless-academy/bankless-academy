@@ -71,7 +71,7 @@ import Helper from 'components/Helper'
 import { ANIMATIONS } from 'constants/animations'
 import { useApp } from 'contexts/AppContext'
 import dynamic from 'next/dynamic'
-import { normalizeKeyword } from 'constants/languages'
+import { normalizeKeyword, isRtlDocument } from 'constants/languages'
 
 const Animation = dynamic(() => import('components/Animation'), {
   ssr: false,
@@ -121,6 +121,9 @@ export const Slide = styled(Card)<{
     border-bottom: 1px dashed #e5afff;
     color: #e5afff;
     display: inline-block !important;
+    /* A Latin term inside RTL prose must stay one directional run; the
+       inline-block already isolates, this makes the intent explicit. */
+    unicode-bidi: isolate;
   }
   span.is-missing {
     ${!IS_PROD ? 'color:red;' : ''};
@@ -226,7 +229,7 @@ export const Slide = styled(Card)<{
     ol {
       font-size: var(--chakra-fontSizes-lg);
       ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
-      margin-left: 2em;
+      margin-inline-start: 2em;
     }
     /* hide all sibling elements that come after the <ol> element */
     ol.animation-in-progress ~ * {
@@ -259,8 +262,8 @@ export const Slide = styled(Card)<{
     blockquote {
       font-size: var(--chakra-fontSizes-lg);
       margin: 1em;
-      padding-left: 1em;
-      border-left: 2px solid white;
+      padding-inline-start: 1em;
+      border-inline-start: 2px solid white;
     }
 
     // toggle
@@ -300,6 +303,9 @@ const StyledKeywords = styled(Box)`
     border-bottom: 1px dashed #e5afff;
     color: #e5afff;
     display: inline-block !important;
+    /* A Latin term inside RTL prose must stay one directional run; the
+       inline-block already isolates, this makes the intent explicit. */
+    unicode-bidi: isolate;
   }
 `
 
@@ -309,7 +315,7 @@ const Answers = styled(Box)`
   align-items: center;
   span {
     color: black;
-    margin-right: 0.5em;
+    margin-inline-end: 0.5em;
     margin-bottom: 4px;
   }
 `
@@ -781,18 +787,11 @@ const Lesson = ({
   // shortcuts
   // TODO: add modal with all the shortcuts
   useHotkeys('?,shift+/', () => setIsShortcutsOpen((open) => !open))
-  useHotkeys('left', () => clickLeft(), [
-    isAnimationSlide,
-    animationStepLS,
-    animationSlideId,
-    slide,
-    currentSlide,
-    maxSlide,
-    isFirstSlide,
-    isDesktop,
-    isSmallScreen,
-  ])
-  useHotkeys('right', () => clickRight(), [
+  // Physical arrow keys keep their SCREEN meaning under RTL: pressing the key
+  // that points toward the reading end must advance, so left/right swap
+  // handlers when the document is RTL. Checked at event time (not render), so
+  // both hotkeys share the union of both handlers' dependencies.
+  const hotkeyDeps = [
     isAnimationSlide,
     animationStepLS,
     animationSlideId,
@@ -802,9 +801,20 @@ const Lesson = ({
     currentSlide,
     maxSlide,
     lesson,
+    isFirstSlide,
     isDesktop,
     isSmallScreen,
-  ])
+  ]
+  useHotkeys(
+    'left',
+    () => (isRtlDocument() ? clickRight() : clickLeft()),
+    hotkeyDeps
+  )
+  useHotkeys(
+    'right',
+    () => (isRtlDocument() ? clickLeft() : clickRight()),
+    hotkeyDeps
+  )
   useHotkeys('1', () => {
     answerRef?.current[1]?.click()
   })
@@ -961,18 +971,20 @@ const Lesson = ({
         if (nextHasPunctuation) node.next.data = ''
         if (!definition?.length) console.log('Missing definition:', keyword)
         return definition?.length ? (
-          <>
-            <span style={{ whiteSpace: 'nowrap' }}>
-              <Keyword
-                definition={definition}
-                keyword={keyword}
-                forceEnglish={
-                  language !== 'en' && englishDefition === definition
-                }
-              />
-            </span>
+          // The detached punctuation stays INSIDE the isolating wrapper: as a
+          // bare sibling, the bidi algorithm re-orders a neutral (.,:) away
+          // from a Latin keyword embedded in RTL prose. Isolating them as one
+          // run keeps them visually attached in every direction.
+          <span style={{ whiteSpace: 'nowrap', unicodeBidi: 'isolate' }}>
+            <Keyword
+              definition={definition}
+              keyword={keyword}
+              forceEnglish={
+                language !== 'en' && englishDefition === definition
+              }
+            />
             {extra}
-          </>
+          </span>
         ) : (
           <span className="is-missing">{keyword}</span>
         )
@@ -1021,7 +1033,7 @@ const Lesson = ({
               aria-label={t('Close')}
               position="absolute"
               top="-24px"
-              right="-24px"
+              style={{ insetInlineEnd: '-24px' }}
               iconSpacing="0"
               variant="secondaryBig"
               // bold weight + 48px box so it matches the edge Prev/Next
@@ -1058,7 +1070,7 @@ const Lesson = ({
             a quiet permanent affordance. */}
         <HStack
           position="absolute"
-          right="0"
+          style={{ insetInlineEnd: '0' }}
           top="50%"
           transform="translateY(-50%)"
           spacing="1"
@@ -1085,7 +1097,7 @@ const Lesson = ({
             </Tooltip>
           )}
         </HStack>
-        <Box display="inline-flex" alignItems="center" mr="4">
+        <Box display="inline-flex" alignItems="center" me="4">
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
           {slide.type === 'POLL' && <PollIcon />}
@@ -1264,7 +1276,7 @@ const Lesson = ({
                               }}
                               answerstate={answerState}
                               justifyContent="space-between"
-                              textAlign="left"
+                              textAlign="start"
                               rightIcon={
                                 answerState === 'UNSELECTED' &&
                                 slide.type === 'POLL' ? (
@@ -1350,12 +1362,12 @@ const Lesson = ({
         {edgeNav && !isFirstSlide && (
           <IconButton
             aria-label={t('Prev')}
-            icon={<ArrowBackIcon boxSize="24px" />}
+            icon={<ArrowBackIcon boxSize="24px" className="mirror-rtl" />}
             onClick={() => clickLeft()}
             variant="secondaryBig"
             isRound
             {...edgeNavButtonProps}
-            left="-24px"
+            style={{ insetInlineStart: '-24px' }}
           />
         )}
         {edgeNav &&
@@ -1363,7 +1375,7 @@ const Lesson = ({
           (!isLastSlide || (lesson?.endOfLessonText && !embed)) && (
             <IconButton
               aria-label={t('Next')}
-              icon={<ArrowForwardIcon boxSize="24px" />}
+              icon={<ArrowForwardIcon boxSize="24px" className="mirror-rtl" />}
               onClick={() => {
                 if (
                   !(slide.quiz && !answerIsCorrect) &&
@@ -1380,7 +1392,7 @@ const Lesson = ({
               variant="primaryBig"
               isRound
               {...edgeNavButtonProps}
-              right="-24px"
+              style={{ insetInlineEnd: '-24px' }}
             />
           )}
         <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
@@ -1408,7 +1420,7 @@ const Lesson = ({
                 variant="secondaryBig"
                 size="lg"
                 onClick={() => clickLeft()}
-                leftIcon={<ArrowBackIcon />}
+                leftIcon={<ArrowBackIcon className="mirror-rtl" />}
                 // Same treatment as Close above. Without it this button keeps
                 // size lg's 24px side padding plus 8px of icon spacing next to
                 // an empty label, making it ~74px against Close's 48px — the
@@ -1511,7 +1523,7 @@ const Lesson = ({
                     }
                     clickRight()
                   }}
-                  rightIcon={<ArrowForwardIcon />}
+                  rightIcon={<ArrowForwardIcon className="mirror-rtl" />}
                 >
                   Next
                 </Button>
@@ -1538,7 +1550,7 @@ const Lesson = ({
                     closeLesson()
                   }}
                   variant="primaryBigLast"
-                  rightIcon={<ArrowForwardIcon />}
+                  rightIcon={<ArrowForwardIcon className="mirror-rtl" />}
                 >
                   {lesson.badgeId &&
                   isBadgeMintedLS === false &&

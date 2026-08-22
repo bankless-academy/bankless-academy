@@ -128,7 +128,7 @@ const Nav: React.FC = () => {
   const logo = (
     <Image
       height={isSmallScreen ? '31px' : '40px'}
-      ml={isSmallScreen ? '' : '2'}
+      ms={isSmallScreen ? '' : '2'}
       src={isTinyScreen ? LOGO_SMALL : LOGO}
       alt={PROJECT_NAME}
     />
@@ -161,7 +161,7 @@ const Nav: React.FC = () => {
       <Box
         bgColor="black"
         borderBottom="1px solid #222222"
-        pr={isMobile ? 0 : 1}
+        pe={isMobile ? 0 : 1}
       >
         <Flex p={4}>
           <Box

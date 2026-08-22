@@ -48,10 +48,10 @@ const DesktopButton = ({
 }): React.ReactElement => {
   const button = (
     <Box w="100%" h="100%" display="flex" alignItems="center" color="white">
-      <Box ml="6" display="flex">
+      <Box ms="6" display="flex">
         <Icon width={'38px'} height={'38px'} />
       </Box>
-      <Box ml="6" fontSize="lg" fontWeight="semibold" textAlign="center">
+      <Box ms="6" fontSize="lg" fontWeight="semibold" textAlign="center">
         {label}
       </Box>
     </Box>
@@ -297,10 +297,10 @@ const Layout = ({
         bottom={0}
       >
         <Box
-          marginLeft={
+          marginInlineStart={
             isSmallScreen || shouldShowOnlyChildren ? '0' : menuBarWidth
           }
-          borderLeft={
+          borderInlineStart={
             isSmallScreen || shouldShowOnlyChildren ? '0' : '2px #3D3838 solid'
           }
           display={shouldShowOnlyChildren ? 'block' : 'grid'}

@@ -208,6 +208,31 @@ export const parseLangFromPath = (pathname: string): LanguageCode => {
   return 'en'
 }
 
+// Keep <html lang> and <html dir> in sync with the active language. This is
+// the ONLY place that may write these attributes. It used to live in a
+// LanguageSelector effect, but the selector is mounted by Nav and Lesson.tsx
+// hides Nav on every non-QUEST slide — so the lesson slideshow, the surface
+// RTL matters most for, never got a direction. AppContext (which sees every
+// route change) and Head (for the nolayout /content pages, which mount no
+// AppProvider) call this instead.
+export const applyDocumentLanguage = (lang: string): void => {
+  if (typeof document === 'undefined') return
+  const code = normalizeLangCode(lang)
+  const def = LANGUAGES.find((l) => l.code === code)
+  document.documentElement.lang = code
+  document.documentElement.dir = def?.dir || 'ltr'
+}
+
+export const isRtlLang = (lang?: string | null): boolean =>
+  LANGUAGES.find((l) => l.code === normalizeLangCode(lang))?.dir === 'rtl'
+
+// Runtime direction check for behavior that CSS logical properties can't
+// express (keyboard hotkey semantics, popper placements). Reads the attribute
+// applyDocumentLanguage maintains, so it is always in sync with the UI and
+// safe to call at event time. Client-only code paths only.
+export const isRtlDocument = (): boolean =>
+  typeof document !== 'undefined' && document.documentElement.dir === 'rtl'
+
 // Glossary lookups are case-folded, and case folding is not script-neutral.
 // JS lowercases Turkish İ (U+0130) to "i" + U+0307 (COMBINING DOT ABOVE), a
 // two-codepoint sequence that can never equal the single "i" in a glossary

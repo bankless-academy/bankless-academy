@@ -282,13 +282,19 @@ const OnboardingModal = ({
                         borderRightRadius="100px"
                         borderLeftRadius={isMobileScreen ? '100px' : '0'}
                         p={isMobileScreen ? '16px 32px' : '24px 48px'}
-                        marginLeft={isMobileScreen ? '0' : '-50px'}
+                        marginInlineStart={isMobileScreen ? '0' : '-50px'}
                         w={isMobileScreen ? '90%' : 'auto'}
                         mt={isMobileScreen ? '-40px' : '0'}
                         border="1px solid rgba(255, 255, 255, 0.16)"
+                        sx={{
+                          '[dir="rtl"] &': {
+                            borderRightRadius: isMobileScreen ? '100px' : '0',
+                            borderLeftRadius: '100px',
+                          },
+                        }}
                       >
                         <Box
-                          ml={isMobileScreen ? '0' : '0px'}
+                          ms={isMobileScreen ? '0' : '0px'}
                           w={isMobileScreen ? 'auto' : '200px'}
                           textAlign="center"
                         >

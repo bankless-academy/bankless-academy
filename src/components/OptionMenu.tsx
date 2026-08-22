@@ -68,38 +68,38 @@ const OptionMenu = ({
         <MenuList>
           <ExternalLink href="/faq" color="white">
             <MenuItem>
-              <Question size={20} style={{ marginRight: '5px' }} />
+              <Question size={20} style={{ marginInlineEnd: '5px' }} />
               {t('FAQ')}
             </MenuItem>
           </ExternalLink>
           <InternalLink href="/glossary" color="white">
             <MenuItem>
-              <Book size={20} style={{ marginRight: '5px' }} />
+              <Book size={20} style={{ marginInlineEnd: '5px' }} />
               {t('Glossary')}
             </MenuItem>
           </InternalLink>
           <InternalLink href="/about" color="white">
             <MenuItem>
-              <Info size={20} style={{ marginRight: '5px' }} />
+              <Info size={20} style={{ marginInlineEnd: '5px' }} />
               {t('About')}
             </MenuItem>
           </InternalLink>
           <InternalLink href="/disclaimer" color="white">
             <MenuItem>
-              <WarningDiamond size={20} style={{ marginRight: '5px' }} />
+              <WarningDiamond size={20} style={{ marginInlineEnd: '5px' }} />
               {t('Disclaimer')}
             </MenuItem>
           </InternalLink>
           <ExternalLink href="/report-an-issue" color="white">
             <MenuItem>
-              <Bug size={20} style={{ marginRight: '5px' }} />
+              <Bug size={20} style={{ marginInlineEnd: '5px' }} />
               {t('Report an Issue')}&nbsp;
             </MenuItem>
           </ExternalLink>
           {!IS_WHITELABEL && (
             <ExternalLink href="/feature-request" color="white">
               <MenuItem>
-                <Gear size={20} style={{ marginRight: '5px' }} />
+                <Gear size={20} style={{ marginInlineEnd: '5px' }} />
                 {t('Feature Request')}&nbsp;
               </MenuItem>
             </ExternalLink>
@@ -115,7 +115,7 @@ const OptionMenu = ({
                   })
                 }}
               >
-                <Newspaper size={20} style={{ marginRight: '5px' }} />
+                <Newspaper size={20} style={{ marginInlineEnd: '5px' }} />
                 {t('Newsletter Signup')}
               </MenuItem>
               {isWebApp ? null : (
@@ -130,14 +130,14 @@ const OptionMenu = ({
                 >
                   <DeviceMobileCamera
                     size={20}
-                    style={{ marginRight: '5px' }}
+                    style={{ marginInlineEnd: '5px' }}
                   />
                   {t('Install Mobile App')}
                 </MenuItem>
               )}
               <ExternalLink href="https://bankless.ac/farcaster" color="white">
                 <MenuItem>
-                  <Image src="/images/Farcaster.svg" w="20px" mr="5px" />
+                  <Image src="/images/Farcaster.svg" w="20px" me="5px" />
                   {t('Farcaster')}
                 </MenuItem>
               </ExternalLink>
@@ -145,13 +145,13 @@ const OptionMenu = ({
           )}
           <ExternalLink href={twitterLink} color="white">
             <MenuItem>
-              <Image src="/images/TwitterX.svg" w="16px" mr="5px" ml="4px" />
+              <Image src="/images/TwitterX.svg" w="16px" me="5px" ms="4px" />
               {t('Twitter')}
             </MenuItem>
           </ExternalLink>
           <ExternalLink href="https://bankless.ac/community" color="white">
             <MenuItem>
-              <TelegramLogo size={20} style={{ marginRight: '5px' }} />
+              <TelegramLogo size={20} style={{ marginInlineEnd: '5px' }} />
               {t('Telegram')}
             </MenuItem>
           </ExternalLink>

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import Layout from 'layout/Layout'
 import Glossary from 'components/Glossary'
 import { KEYWORDS } from 'constants/index'
-import { LanguageCode } from 'constants/languages'
+import { LanguageCode, applyDocumentLanguage } from 'constants/languages'
 
 // Shared body for both glossary routes: `/glossary` (English) and
 // `/glossary/<lang>` (localized, so each language is its own indexable URL
@@ -20,6 +20,7 @@ const GlossaryPage = ({
   // same way /lessons/<lang>/<slug> is for lessons.
   useEffect(() => {
     if (lang && i18n.language !== lang) i18n.changeLanguage(lang)
+    if (lang) applyDocumentLanguage(lang)
   }, [lang, i18n])
 
   // The page walks the English keyword list, because that is what carries the

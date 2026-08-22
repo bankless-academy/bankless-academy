@@ -37,6 +37,7 @@ const MacScrollbar = dynamic(
 
 import { useSmallScreen } from 'hooks'
 import { DEFAULT_AVATAR, LESSONS } from 'constants/index'
+import { isRtlDocument } from 'constants/languages'
 import Helper from 'components/Helper'
 import { t } from 'i18next'
 
@@ -296,7 +297,7 @@ export const ChatWidget = ({
           icon={<RiRobot2Line size={26} />}
           position="fixed"
           bottom={isSmallScreen ? '24' : '4'}
-          right="4"
+          style={{ insetInlineEnd: '1rem' }}
           size="lg"
           bg="linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)"
           _hover={{
@@ -312,7 +313,11 @@ export const ChatWidget = ({
 
       <Drawer
         isOpen={isOpen}
-        placement="right"
+        // Chakra resolves placement against the THEME direction, which stays
+        // LTR by design (see docs/rtl-audit.md), so "end" would never flip.
+        // Read the document instead; this is a client-only component and the
+        // open click re-renders, so the value is fresh whenever it matters.
+        placement={isRtlDocument() ? 'left' : 'right'}
         onClose={onClose}
         size="md"
         returnFocusOnClose={false}
@@ -324,10 +329,10 @@ export const ChatWidget = ({
             display="flex"
             alignItems="center"
             justifyContent="space-between"
-            pr="12" // Add space for the close button
+            pe="12" // Add space for the close button
             position="relative"
           >
-            <Box position="relative" pr="2">
+            <Box position="relative" pe="2">
               {t('Ask anything about crypto')}
               <Helper
                 title={t('Ask anything about crypto')}
@@ -347,7 +352,7 @@ export const ChatWidget = ({
             </Button>
             <DrawerCloseButton
               position="absolute"
-              right="12px"
+              style={{ insetInlineEnd: '12px' }}
               top="50%"
               transform="translateY(-50%)"
             />
@@ -366,7 +371,7 @@ export const ChatWidget = ({
                   <MacScrollbar
                     skin="dark"
                     suppressScrollX={true}
-                    style={{ maxHeight: '100%', paddingRight: '8px' }}
+                    style={{ maxHeight: '100%', paddingInlineEnd: '8px' }}
                   >
                     <VStack spacing={4} align="stretch" p={4}>
                       {messages.map((message) => {

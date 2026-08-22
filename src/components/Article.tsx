@@ -263,7 +263,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     list-style-type: none;
     margin-top: 8px;
     overflow-wrap: break-word;
-    padding-left: 32px;
+    padding-inline-start: 32px;
     position: relative;
     text-rendering: optimizelegibility;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
@@ -286,9 +286,9 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       list-style-type: none;
       overflow-wrap: break-word;
       position: absolute;
-      right: calc(100% - 1ch);
+      inset-inline-end: calc(100% - 1ch);
       top: -2px;
-      text-align: right;
+      text-align: end;
       text-rendering: optimizelegibility;
       -webkit-text-stroke-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke-width: 0px;
@@ -441,8 +441,9 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     max-width: 768px;
     overflow-wrap: break-word;
     padding-bottom: 0px;
-    padding-left: ${(props) => (props.issmallscreen === 'true' ? '24px' : '0')};
-    padding-right: 24px;
+    padding-inline-start: ${(props) =>
+      props.issmallscreen === 'true' ? '24px' : '0'};
+    padding-inline-end: 24px;
     padding-top: 0px;
     position: relative;
     text-rendering: optimizelegibility;
@@ -466,7 +467,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       font-kerning: normal;
       font-size: 17.6px;
       font-weight: 375;
-      left: 0px;
+      inset-inline-start: 0px;
       letter-spacing: -0.064px;
       line-height: 28.6px;
       overflow-wrap: break-word;
@@ -477,7 +478,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       -webkit-text-stroke-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke-width: 0px;
       display: block;
-      margin-left: ${(props) =>
+      margin-inline-start: ${(props) =>
         props.issmallscreen === 'true' ? '24px' : '0'};
     }
     p {
@@ -518,7 +519,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     ${!IS_PROD ? 'color: orange;' : ''};
   }
   ol {
-    padding-left: 43px;
+    padding-inline-start: 43px;
     li {
       margin-top: 0.75rem;
       margin-bottom: 0.75rem;
@@ -625,7 +626,7 @@ const Article = ({
         {!isMobile && !isSmallScreen && !IS_WHITELABEL && !!address && (
           <Box
             position="absolute"
-            right="24px"
+            style={{ insetInlineEnd: '24px' }}
             top="50%"
             transform="translateY(-50%)"
           >
@@ -688,7 +689,7 @@ const Article = ({
               <Button
                 variant="primary"
                 w="100%"
-                rightIcon={<ArrowRight size={16} />}
+                rightIcon={<ArrowRight size={16} className="mirror-rtl" />}
               >
                 {t('View on Mirror.xyz')}
               </Button>
@@ -783,7 +784,7 @@ const Article = ({
           </Text>
         </Box>
         <Box
-          textAlign={isSmallScreen ? 'left' : 'right'}
+          textAlign={isSmallScreen ? 'start' : 'end'}
           w={isSmallScreen ? '100%' : '30%'}
           alignSelf="center"
           alignItems="center"

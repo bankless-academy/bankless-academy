@@ -9,6 +9,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 
 import { LessonType } from 'entities/lesson'
+import { LANGUAGES } from 'constants/languages'
 import { ArticleHeading, contentAlternates } from 'utils/lessonContent'
 
 const Prose = styled(Box)`
@@ -39,14 +40,15 @@ const Prose = styled(Box)`
   }
   ul,
   ol {
-    margin: 0.9rem 0 0.9rem 1.4rem;
+    margin: 0.9rem 0;
+    margin-inline-start: 1.4rem;
   }
   li {
     margin: 0.4rem 0;
   }
   blockquote {
-    border-left: 3px solid #916ab8;
-    padding-left: 1rem;
+    border-inline-start: 3px solid #916ab8;
+    padding-inline-start: 1rem;
     margin: 1rem 0;
     opacity: 0.9;
   }
@@ -55,6 +57,8 @@ const Prose = styled(Box)`
     padding: 0.1em 0.35em;
     border-radius: 4px;
     font-size: 0.95em;
+    /* Latin terms embedded in RTL prose must stay one directional run. */
+    unicode-bidi: isolate;
   }
   a {
     color: #b85ff1;
@@ -96,6 +100,11 @@ const LessonArticle = ({
   strings: { startLesson: string; contents: string; deprecated?: string }
 }): React.ReactElement => {
   const alternates = contentAlternates(lesson)
+  // This page renders outside AppProvider, so <html dir> is never set for it
+  // server-side. Carrying dir/lang on the outer Box is what a crawler (and the
+  // pre-hydration paint) actually sees; Head.tsx repairs <html> after mount.
+  // Registry lookup is static, so server and client agree (no hydration risk).
+  const dir = LANGUAGES.find((l) => l.code === lang)?.dir || 'ltr'
   const lessonHref =
     lang === 'en' ? `/lessons/${lesson.slug}` : `/lessons/${lang}/${lesson.slug}`
   // The lessons index has no localized variant on purpose: isLocalizablePath()
@@ -104,7 +113,7 @@ const LessonArticle = ({
   const homeHref = '/lessons'
 
   return (
-    <Box bg="#1b1533" minH="100vh" color="#f0eeff">
+    <Box bg="#1b1533" minH="100vh" color="#f0eeff" dir={dir} lang={lang}>
       <Box as="header" borderBottom="1px solid rgba(255,255,255,.1)" py={4}>
         <Box maxW="860px" m="auto" px={5}>
           <ChakraLink href={homeHref} display="inline-block">
@@ -194,7 +203,7 @@ const LessonArticle = ({
             <Box fontWeight="700" mb={3}>
               {strings.contents}
             </Box>
-            <Box as="ol" pl={5} sx={{ li: { margin: '.3rem 0' } }}>
+            <Box as="ol" ps={5} sx={{ li: { margin: '.3rem 0' } }}>
               {headings.map((h) => (
                 <li key={h.id}>
                   <ChakraLink href={`#${h.id}`} color="#b85ff1">

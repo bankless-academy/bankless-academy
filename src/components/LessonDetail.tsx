@@ -379,7 +379,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               <Image
                 position="relative"
                 top="0"
-                right="-500px"
+                style={{ insetInlineEnd: '-500px' }}
                 h="100%"
                 zIndex="1"
                 src="/images/bankless-instructor.png"
@@ -406,7 +406,9 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     <Button
                       position="relative"
                       top={isSmallScreen ? '-4px' : '-70px'}
-                      left={isSmallScreen ? '-10px' : '-72px'}
+                      style={{
+                        insetInlineStart: isSmallScreen ? '-10px' : '-72px',
+                      }}
                       size="lg"
                       iconSpacing="0"
                       variant="secondaryBig"
@@ -626,7 +628,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             {!isSmallScreen && <LessonSlides lesson={lesson} />}
           </Box>
           {!isSmallScreen && (
-            <Box w="956px" pr="347px" m="auto">
+            <Box w="956px" pe="347px" m="auto">
               <NextLesson />
             </Box>
           )}

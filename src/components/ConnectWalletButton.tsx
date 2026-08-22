@@ -477,7 +477,7 @@ const ConnectWalletButton = ({
                   background="gray"
                   w={isSmallScreen ? '22px' : '28px'}
                   h={isSmallScreen ? '22px' : '28px'}
-                  mr={isSmallScreen ? '0' : '12px'}
+                  me={isSmallScreen ? '0' : '12px'}
                 />
                 {isSmallScreen ? (
                   ''
@@ -491,7 +491,7 @@ const ConnectWalletButton = ({
                     {name || t('Click here to sign in')}
                   </Text>
                 )}
-                {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
+                {isOpen ? <ChevronUpIcon ms="1" /> : <ChevronDownIcon ms="1" />}
               </Box>
             </Button>
           </PopoverTrigger>
