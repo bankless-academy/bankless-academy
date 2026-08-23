@@ -400,9 +400,15 @@ codes, renamed slugs, retired `/content` mirrors — every rule targeting its
 final URL in one hop. **Trap (measured on 16.1.7): a `locale: false` redirect
 NEVER matches an un-prefixed default-locale path** (sources are matched
 against the locale-normalized path), so the rules use automatic locale
-handling instead; the only `locale: false`-style cleanup, `/en/:path*` →
-`/:path*`, lives in `vercel.json` because platform redirects match the
-literal path before Next's locale machinery runs.
+handling instead. **The same normalization applies to `vercel.json` on the
+platform — worse, to its redirects AND rewrites** (measured in production
+2026-08-23): a `/en/:path*` redirect there matched every English URL and
+self-redirect-looped the whole site, and every un-prefixed rewrite source
+(`/sitemap.xml`, `/faq`, `/mp/*`) silently stopped matching and 404'd. With
+i18n enabled, `vercel.json` is for headers and crons ONLY — all path routing
+lives in `next.config.mjs`. Consequence: `/en/*` currently serves 200
+duplicates of the un-prefixed pages; their canonicals point at the
+un-prefixed URLs, so Google folds them. No safe cleanup mechanism found yet.
 
 - **Lessons**: `/lessons` (index), `/lessons/handbook`, `/lessons/preview`,
   and `/lessons/[slug].tsx` serving `/lessons/<slug>` (+ locale prefixes) and
@@ -423,11 +429,13 @@ literal path before Next's locale machinery runs.
   surfaced as `/faq`, `/about`, `/disclaimer`, `/privacy-policy`,
   `/terms-of-service` via `vercel.json` rewrites. Page IDs in
   `NOTION_PAGES` (`constants/index.ts`).
-- **vercel.json** rewrites `/sitemap.xml`→`/api/sitemap`,
-  `/rss.xml`→`/api/rss`, `/llms.txt` + `/agent.txt`→`/api/agent` (which just
-  serves `README.md`), and proxies Mixpanel under `/mp/*`. Its only redirects
-  are the `/en/*` → `/*` cleanup (see above); everything else moved to
-  `next.config.mjs`.
+- **vercel.json holds ONLY headers and crons.** All rewrites
+  (`/sitemap.xml`→`/api/sitemap`, `/rss.xml`→`/api/rss`, `/llms.txt` +
+  `/agent.txt`→`/api/agent`, the `/faq`-family Notion aliases, the Mixpanel
+  `/mp/*` proxy, `/lesson/images/*`) live in `next.config.mjs` `afterFiles` —
+  under i18n the platform's own matching breaks on un-prefixed sources (see
+  the trap above), and next.config rewrites also work in local `next start`,
+  which vercel.json ones never did.
 - **Rendering**: almost everything is SSG via `getStaticProps` with **no
   `revalidate` anywhere** — content changes require a redeploy. Only
   `/explore`, `/explorer/[address]`, `/notion/[slug]`,

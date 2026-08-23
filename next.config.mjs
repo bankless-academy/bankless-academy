@@ -151,6 +151,37 @@ const nextConfig = {
   // trip and a middleware invocation on the site's hottest static assets.
   async rewrites() {
     return {
+      // Moved here from vercel.json (2026-08-23): with Next i18n enabled, the
+      // PLATFORM matches vercel.json rewrites against the locale-NORMALIZED
+      // path, so an un-prefixed source like /sitemap.xml never matches again
+      // — every one of these 404'd in production while working locally.
+      // next.config rewrites apply automatic locale handling and match
+      // correctly. vercel.json keeps only headers and crons.
+      afterFiles: [
+        { source: '/llms.txt', destination: '/api/agent' },
+        { source: '/agent.txt', destination: '/api/agent' },
+        { source: '/sitemap.xml', destination: '/api/sitemap' },
+        { source: '/rss.xml', destination: '/api/rss' },
+        { source: '/faq', destination: '/notion/faq' },
+        { source: '/about', destination: '/notion/about' },
+        { source: '/disclaimer', destination: '/notion/disclaimer' },
+        { source: '/privacy-policy', destination: '/notion/privacy-policy' },
+        {
+          source: '/terms-of-service',
+          destination: '/notion/terms-of-service',
+        },
+        {
+          source: '/mp/lib.min.js',
+          destination: 'https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js',
+        },
+        {
+          source: '/mp/lib.js',
+          destination: 'https://cdn.mxpnl.com/libs/mixpanel-2-latest.js',
+        },
+        { source: '/mp/decide', destination: 'https://decide.mixpanel.com/decide' },
+        { source: '/mp/:slug', destination: 'https://api-eu.mixpanel.com/:slug' },
+        { source: '/lesson/images/:slug', destination: '/images/:slug' },
+      ],
       fallback: [
         {
           source: '/images/:slug/social-:file',
