@@ -215,6 +215,13 @@ export const LAZY_RESOURCES: { [lang: string]: { [ns: string]: NamespaceLoader }
     keywords: () => import('../../translation/keywords/tl/keywords.json'),
     lesson: () => import('../../translation/website/tl/lesson.json'),
   },
+  ur: {
+    common: () => import('../../translation/website/ur/common.json'),
+    homepage: () => import('../../translation/website/ur/homepage.json'),
+    quests: () => import('../../translation/website/ur/quests.json'),
+    keywords: () => import('../../translation/keywords/ur/keywords.json'),
+    lesson: () => import('../../translation/website/ur/lesson.json'),
+  },
 }
 
 const loaded = new Set<string>(['en'])

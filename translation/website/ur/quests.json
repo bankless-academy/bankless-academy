@@ -1,0 +1,151 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. آپ کا بٹ کوائن ساتوشی ناکاموٹو کی طرف روانہ ہو رہا ہے۔",
+    "2. It's now being verified by network miners...": "2. اب اسے نیٹ ورک کے کان کن تصدیق کر رہے ہیں...",
+    "3. Your transaction is added to the blockchain “database”...": "3. آپ کا ٹرانزیکشن بلاک چین ”ڈیٹا بیس“ میں شامل کیا جا رہا ہے...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. ساتوشی ناکاموٹو کو آپ کا بٹ کوائن مل گیا!",
+    "Using our simplified Bitcoin simulator, send any amount of BTC to Satoshi Nakamoto’s address": "ہمارے آسان بٹ کوائن سیمولیٹر کا استعمال کرتے ہوئے، ساتوشی ناکاموٹو کے پتے پر کسی بھی مقدار میں BTC بھیجیں",
+    "Interactive Simulation: Sending Bitcoin to Satoshi Nakamoto {{step}}": "انٹرایکٹو سیمولیشن: ساتوشی ناکاموٹو کو بٹ کوائن بھیجنا {{step}}",
+    "Reset simulation": "سیمولیشن ری سیٹ کریں",
+    "Recipient": "وصول کنندہ",
+    "Address": "پتہ",
+    "Asset": "اثاثہ",
+    "Amount": "رقم",
+    "Balance": "بیلنس",
+    "Send": "بھیجیں"
+  },
+  "BlockchainBasics": {
+    "Understand a transaction": "ٹرانزیکشن کو سمجھیں",
+    "To validate this quest, paste the \"From\" and \"To\" addresses of this transaction": "اس کوئسٹ کی توثیق کے لیے، اس ٹرانزیکشن کے \"سے\" اور \"تک\" پتے پیسٹ کریں",
+    "From": "سے",
+    "To": "تک"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "OP کا نمائندہ مقرر کر کے اپنے Optimism نیٹ ورک کا سفر شروع کریں۔",
+    "Select a ": "ایک ",
+    "Delegate": "نمائندہ",
+    " for your OP": " اپنے OP کے لیے",
+    "or delegate to ": "یا نمائندگی دیں ",
+    "Tip": "تجویز",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "مکمل کوئسٹ رہنمائی کے لیے ہماری Explorer's Handbook میں '{{lesson_title}}' کا اندراج دیکھیں۔",
+    "Refresh": "ریفریش کریں",
+    "Read Entry": "اندراج پڑھیں"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet.": "اپنا پہلا کرپٹو والیٹ بنائیں۔",
+    "If you already have a wallet, move to step 2.": "اگر آپ کے پاس پہلے سے والیٹ ہے تو مرحلہ 2 پر جائیں۔",
+    "1. Download and install the Zerion wallet from ": "1. یہاں سے Zerion والیٹ ڈاؤن لوڈ اور انسٹال کریں: ",
+    "2. Connect your wallet to Bankless Academy": "2. اپنا والیٹ Bankless Academy سے جوڑیں",
+    "Tip": "تجویز",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "کوئسٹ کی مرحلہ وار رہنمائی کے لیے ہماری Explorer's Handbook میں '{{lesson_title}}' کا اندراج دیکھیں۔",
+    "Read Entry": "اندراج پڑھیں"
+  },
+  "Web3Security": {
+    "Select all screenshots containing scams 👆": "جعل سازی والے تمام اسکرین شاٹس منتخب کریں 👆",
+    "Hint: 1 screenshot is not a scam": "اشارہ: 1 اسکرین شاٹ جعل سازی نہیں ہے"
+  },
+  "AcademyCommunity": {
+    "1. Connect your wallet to Bankless Academy": "1. اپنا والیٹ Bankless Academy سے جوڑیں",
+    "2. Join gm.xyz using this ": "2. اس کے ذریعے gm.xyz میں شامل ہوں ",
+    "invite link": "دعوتی لنک",
+    " or register with a phone number": " یا فون نمبر سے رجسٹر کریں",
+    "3. Join ": "3. شامل ہوں ",
+    "Validate quest": "کوئسٹ کی توثیق کریں"
+  },
+  "BanklessArchetypes": {
+    "Answer selected:": "منتخب کردہ جواب:",
+    "Bankless Archetype results:": "Bankless آرکی ٹائپ کے نتائج:",
+    "Risk": "خطرہ",
+    "Self sovereignty": "خود مختاری",
+    "DEX": "DEX",
+    "Trads": "روایت پسند",
+    "LP": "LP",
+    "Long term": "طویل مدتی",
+    "Works in a DAO": "DAO میں کام کرتا ہے",
+    "Crypto knowledge": "کرپٹو کا علم",
+    "Crypto donation": "کرپٹو عطیہ",
+    "Buys stuff in crypto": "کرپٹو سے چیزیں خریدتا ہے",
+    "Deployed smart contracts": "اسمارٹ کنٹریکٹ ڈیپلائے کیے",
+    "Anon": "گمنام",
+    "Works in web3": "web3 میں کام کرتا ہے",
+    "Creates digital art": "ڈیجیٹل آرٹ بناتا ہے",
+    "Owns Bitcoin": "بٹ کوائن رکھتا ہے",
+    "Owns NFTs": "NFTs رکھتا ہے",
+    "Aping into something new": "بغیر سوچے نئی چیز میں کود پڑنا",
+    "Owns shitcoin": "بیکار کوائن رکھتا ہے"
+  },
+  "DEXAggregators": {
+    "How to swap tokens with 1inch": "1inch کے ساتھ ٹوکن کیسے سواپ کریں",
+    "1. Load ": "1. لوڈ کریں ",
+    " on the ": " اس نیٹ ورک پر ",
+    "Base network": "Base نیٹ ورک",
+    "2. Swap any token.": "2. کوئی بھی ٹوکن سواپ کریں۔",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. کامیاب <b>سواپ</b> ٹرانزیکشن ہیش نیچے پیسٹ کریں:",
+    "<b>Tip:</b> 🚨 Make sure you paste the <b>swap</b> transaction hash done on <b>Base network</b> and not the token <b>approval</b> transaction hash.": "<b>تجویز:</b> 🚨 یقینی بنائیں کہ آپ <b>Base نیٹ ورک</b> پر کیے گئے <b>سواپ</b> ٹرانزیکشن کا ہیش پیسٹ کریں، نہ کہ ٹوکن <b>منظوری</b> ٹرانزیکشن کا ہیش۔",
+    "Read documentation": "دستاویزات پڑھیں"
+  },
+  "DecentralizedExchanges": {
+    "1. Load ": "1. لوڈ کریں ",
+    " on the ": " اس نیٹ ورک پر ",
+    "Optimism network": "Optimism نیٹ ورک",
+    "2. Swap any token.": "2. کوئی بھی ٹوکن سواپ کریں۔",
+    "3. Paste the successful <b>swap</b> transaction hash below:": "3. کامیاب <b>سواپ</b> ٹرانزیکشن ہیش نیچے پیسٹ کریں:",
+    "Resources:": "وسائل:",
+    "<b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash done on <b>Optimism network</b> and not the token approval transaction hash. Read the explorer handbook article for more information.": "<b>تجویز:</b> یقینی بنائیں کہ آپ <b>Optimism نیٹ ورک</b> پر کیے گئے <b>سواپ</b> ٹرانزیکشن کا ہیش پیسٹ کریں، نہ کہ ٹوکن کی منظوری کے ٹرانزیکشن کا ہیش۔ مزید معلومات کے لیے explorer handbook کا مضمون پڑھیں۔",
+    "Read Entry": "اندراج پڑھیں"
+  },
+  "IntroToDeFi": {
+    "What are you most interested to learn to do with DeFi?": "آپ DeFi کے ساتھ کیا کرنا سیکھنے میں سب سے زیادہ دلچسپی رکھتے ہیں؟",
+    "Signature verified": "دستخط کی تصدیق ہو گئی",
+    "Sign your answer": "اپنے جواب پر دستخط کریں",
+    "Select your answer": "اپنا جواب منتخب کریں",
+    "Investing": "سرمایہ کاری",
+    "Trading": "ٹریڈنگ",
+    "Lending & Borrowing": "قرض دینا اور لینا",
+    "Staking": "اسٹیکنگ"
+  },
+  "StakingOnEthereum": {
+    "Begin your staking journey with Rocket Pool.": "Rocket Pool کے ساتھ اپنا اسٹیکنگ کا سفر شروع کریں۔",
+    "Obtain 0.0002 rETH on any supported network*.": "کسی بھی معاون نیٹ ورک پر 0.0002 rETH حاصل کریں*۔",
+    "a) Visit a ": "a) ایک ",
+    "Decentralized Exchange": "غیر مرکزی ایکسچینج",
+    " to swap for rETH (Optimism or Base recommended)": " پر جا کر rETH کے لیے سواپ کریں (Optimism یا Base تجویز کردہ ہیں)",
+    "b) Or mint rETH on Mainnet via ": "b) یا Mainnet پر rETH منٹ کریں بذریعہ ",
+    " (0.01 ETH minimum)": " (کم از کم 0.01 ETH)",
+    "Tip: Check our Explorer's Handbook entry '{{lesson_title}}' to find the best funding pathway for you.": "تجویز: اپنے لیے بہترین فنڈنگ طریقہ جاننے کے لیے ہماری Explorer's Handbook میں '{{lesson_title}}' کا اندراج دیکھیں۔",
+    "* Supported networks: Ethereum, Optimism, Base, Arbitrum and Polygon (POS)": "* معاون نیٹ ورکس: Ethereum، Optimism، Base، Arbitrum اور Polygon (POS)",
+    "Check Quest": "کوئسٹ چیک کریں"
+  },
+  "ConnectFirst": {
+    "You'll need a crypto wallet for this quest.": "اس کوئسٹ کے لیے آپ کو کرپٹو والیٹ کی ضرورت ہوگی۔",
+    "Wallet connected!": "والیٹ جڑ گیا!",
+    "Waiting to detect your wallet ...": "آپ کے والیٹ کا پتہ لگانے کا انتظار ہو رہا ہے ...",
+    "If you don't have one, let's set one up!": "اگر آپ کے پاس نہیں ہے تو آئیں ایک بنائیں!",
+    "Our onchain quests and rewards only work with a wallet connected.": "ہمارے آن چین کوئسٹ اور انعامات صرف والیٹ جڑا ہونے پر کام کرتے ہیں۔",
+    "Wallets are like blockchain accounts. You'll need one to interact with blockchain apps, or to buy, hold and send cryptocurrency.": "والیٹ بلاک چین اکاؤنٹس کی طرح ہوتے ہیں۔ بلاک چین ایپس کے ساتھ تعامل کرنے، یا کرپٹو کرنسی خریدنے، رکھنے اور بھیجنے کے لیے آپ کو ایک والیٹ کی ضرورت ہوگی۔",
+    "Follow this quick instructional video to create your first wallet with Zerion: ": "Zerion کے ساتھ اپنا پہلا والیٹ بنانے کے لیے یہ مختصر ویڈیو دیکھیں: "
+  },
+  "Layer1Blockchains": {
+    "Given the current state of blockchain technology, blockchains can optimize for at most two of the three characteristics.": "بلاک چین ٹیکنالوجی کی موجودہ حالت کے مطابق، بلاک چین تین خصوصیات میں سے زیادہ سے زیادہ دو کو بہتر بنا سکتی ہے۔",
+    "Tick the characteristics that Bitcoin and Ethereum initially prioritized.": "وہ خصوصیات نشان زد کریں جنہیں بٹ کوائن اور ایتھیریم نے ابتدائی طور پر ترجیح دی۔",
+    "decentralization": "غیر مرکزیت",
+    "scalability": "توسیع پذیری",
+    "security": "سکیورٹی"
+  },
+  "Layer2Blockchains": {
+    "Begin your L2 journey.": "اپنا L2 سفر شروع کریں۔",
+    "Hold a balance of at least 0.0002 ETH on Base or Optimism": "Base یا Optimism پر کم از کم 0.0002 ETH کا بیلنس رکھیں",
+    "Options to fund your wallet:": "اپنے والیٹ کو فنڈ کرنے کے اختیارات:",
+    "Explore other options": "دیگر اختیارات دیکھیں",
+    "Check Quest": "کوئسٹ چیک کریں"
+  },
+  "SocialSharing": {
+    "Before claiming your onchain certification:": "اپنی آن چین سند حاصل کرنے سے پہلے:",
+    "Share on Twitter / X": "Twitter / X پر شیئر کریں",
+    "Share on Farcaster": "Farcaster پر شیئر کریں",
+    "See you there! Over and out 📡": "وہاں ملتے ہیں! اوور اینڈ آؤٹ 📡",
+    "Connect": "جوڑیں",
+    "Repost on Twitter / X": "Twitter / X پر ری پوسٹ کریں",
+    "Validate": "توثیق کریں"
+  }
+}

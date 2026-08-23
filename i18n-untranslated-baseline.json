@@ -39,8 +39,6 @@
   "src/components/MintNFT.tsx: untranslated user-facing string \"Gas price is currently high, try again later to claim your gas free transaction.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/MintNFT.tsx: untranslated user-facing string \"The total cost including gas fee exceeds your balance of ETH on Optimism.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/MintNFT.tsx: untranslated user-facing string \"You have already claimed your free sponsored mint.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
-  "src/components/OnboardingModal.tsx: untranslated user-facing string \"Please check your email.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
-  "src/components/OnboardingModal.tsx: untranslated user-facing string \"Please provide an email address.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/OnrampButton.tsx: untranslated user-facing string \"An unexpected error occurred. Please try again.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/OnrampButton.tsx: untranslated user-facing string \"Error loading Coinbase Onramp. Please try again.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",
   "src/components/OnrampButton.tsx: untranslated user-facing string \"Please allow popups for this site to use Coinbase Onramp.\" — wrap it in t(), or add it to ALLOWED if it is a brand name",

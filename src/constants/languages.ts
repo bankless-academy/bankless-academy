@@ -92,6 +92,7 @@ const LANGUAGE_DEFS = [
   { code: 'th', name: 'Thai', localName: 'ไทย', dir: 'ltr' },
   { code: 'tr', name: 'Turkish', localName: 'Türkçe', dir: 'ltr' },
   { code: 'uk', name: 'Ukrainian', localName: 'Українська', dir: 'ltr' },
+  { code: 'ur', name: 'Urdu', localName: 'اردو', dir: 'rtl' },
   { code: 'vi', name: 'Vietnamese', localName: 'Tiếng Việt', dir: 'ltr' },
 ] as const
 
