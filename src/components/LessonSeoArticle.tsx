@@ -17,7 +17,7 @@ import React from 'react'
 
 import { ArticleHeading } from 'utils/lessonContent'
 import { LessonType } from 'entities/lesson'
-import { LANGUAGES } from 'constants/languages'
+import { LANGUAGES, writePreferredLanguage } from 'constants/languages'
 
 // Typography for the rendered lesson markdown (inherited from the retired
 // /content reading page, whose styles were tuned for exactly this HTML).
@@ -290,6 +290,12 @@ const LessonSeoArticle = ({
                         fontSize="0.85rem"
                         border="1px solid #3f3154"
                         _hover={{ textDecoration: 'none', bg: '#3f3154' }}
+                        // Clicking a chip is a deliberate language choice, so
+                        // record it BEFORE navigating — like the nav selector
+                        // does. Without this, picking English navigated to the
+                        // en URL and AppContext instantly bounced back to the
+                        // stored preference (the auto-replace doing its job).
+                        onClick={() => writePreferredLanguage(l.code)}
                       >
                         {l.label}
                       </ChakraLink>
