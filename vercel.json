@@ -157,18 +157,6 @@
       "destination": "/images/:slug"
     }
   ],
-  "redirects": [
-    {
-      "source": "/en",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en/:path*",
-      "destination": "/:path*",
-      "permanent": true
-    }
-  ],
   "crons": [
     {
       "path": "/api/cron/leaderboard",
