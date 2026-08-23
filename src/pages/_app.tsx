@@ -24,6 +24,7 @@ import { SENTRY_ENABLED } from 'constants/index'
 import Head, { MetaData } from 'components/Head'
 import AppGlobalStyles from 'components/AppGlobalStyles'
 import LessonSeoBlock from 'components/LessonSeoBlock'
+import SeoContentBlock from 'components/SeoContentBlock'
 import Layout from 'layout/index'
 import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
@@ -203,10 +204,14 @@ const App = ({
                   </Layout>
                 </AppProvider>
         </Web3Providers>
-        {/* Server-rendered SEO surface (lesson pages): hero + full article.
-            Renders below the app once the app mounts; the hero hides then. */}
+        {/* Server-rendered SEO surfaces. Lessons: hero + full article
+            (LessonSeoBlock). Glossary/homepage/listings: their crawlable
+            content (SeoContentBlock). Both unmount when the app arrives. */}
         {pageProps.pageMeta?.articleHtml && (
           <LessonSeoBlock pageMeta={pageProps.pageMeta} />
+        )}
+        {pageProps.pageMeta?.seoHtml && (
+          <SeoContentBlock pageMeta={pageProps.pageMeta} />
         )}
       </ThemeProvider>
     </>

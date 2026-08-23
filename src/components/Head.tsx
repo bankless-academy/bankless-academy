@@ -44,6 +44,11 @@ export interface MetaData {
   strings?: { [key: string]: string }
   /** Serialized JSON-LD for the page (built in getStaticProps). */
   jsonLd?: string
+  /** Server-rendered crawlable content for client-rendered pages (glossary
+   * body, listing link blocks) — rendered by _app's SeoContentBlock, which
+   * unmounts when the app arrives. */
+  seoHtml?: string | null
+  seoTitle?: string
 }
 
 const umamiWebsiteId =

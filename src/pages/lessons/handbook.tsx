@@ -4,11 +4,17 @@ import { MetaData } from 'components/Head'
 import LessonCards from 'components/LessonCards'
 import Layout from 'layout/Layout'
 
-export const pageMeta: MetaData = {
-  title: 'Handbook',
-}
-
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  // Crawlable link list (the interactive cards are client-rendered) — served
+  // via _app's SeoContentBlock, unmounted when the app arrives.
+  const { lessonListSeoHtml, uiString } = await import('utils/seoContent')
+  const lang = locale || 'en'
+  const pageMeta: MetaData = {
+    title: 'Handbook',
+    seoTitle: uiString(lang, 'common', 'Handbook'),
+    seoHtml: lessonListSeoHtml(lang, 'handbooks'),
+    lang,
+  }
   return {
     props: { pageMeta },
   }

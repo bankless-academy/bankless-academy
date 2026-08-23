@@ -418,6 +418,15 @@ un-prefixed URLs, so Google folds them. No safe cleanup mechanism found yet.
   HTML — see "Hybrid lesson pages" below. The old `/content` mirror routes
   are retired (301 → lesson URL). `fallback: 'blocking'` + `notFound` for
   junk shapes.
+- **Crawlable surfaces on client-rendered pages**: `_app` renders two
+  server-side SEO blocks OUTSIDE `<Web3Providers>`, both unmounting when the
+  app arrives — `LessonSeoBlock` (lesson hero + article, keyed on
+  `pageMeta.articleHtml`) and the generic `SeoContentBlock` (keyed on
+  `pageMeta.seoHtml`, built by `utils/seoContent.ts` in getStaticProps):
+  the full glossary body with per-term anchors on `/glossary` + all locales
+  (~27-31k chars each), and localized lesson-link lists on `/`, `/lessons`,
+  `/lessons/handbook` (links locale-prefixed only where the translation
+  exists).
 - **Other pages**: `/` (homepage), `/glossary` (localized per locale, gated on
   the keywords file existing), `/explore`, `/explorer/[address]`,
   `/explorer/my-profile`, `/leaderboard`, `/stats`, `/quest`, `/quiz`,

@@ -13,8 +13,18 @@ import { loadLanguage } from 'utils/translation'
 // to search engines; this gives each translation its own crawlable address.
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const lang = (locale || 'en') as LanguageCode
+  // The interactive glossary is client-rendered, so the crawlable body is
+  // built here and served via _app's SeoContentBlock (unmounts when the app
+  // arrives). Same entries the app shows, with stable per-term anchors.
+  const { glossarySeoHtml } = await import('utils/seoContent')
+  const seoHtml = glossarySeoHtml(lang)
   if (lang === 'en') {
-    const pageMeta: MetaData = { title: 'Glossary' }
+    const pageMeta: MetaData = {
+      title: 'Glossary',
+      seoTitle: 'Glossary',
+      seoHtml,
+      lang,
+    }
     return { props: { pageMeta } }
   }
 
@@ -36,11 +46,15 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   // language's namespaces before asking for the string.
   await loadLanguage(lang)
   const translatedTitle = i18next.getFixedT(lang, 'common')('Glossary')
+  const title =
+    translatedTitle && translatedTitle !== 'Glossary'
+      ? translatedTitle
+      : `Glossary (${language?.localName || lang})`
   const pageMeta: MetaData = {
-    title:
-      translatedTitle && translatedTitle !== 'Glossary'
-        ? translatedTitle
-        : `Glossary (${language?.localName || lang})`,
+    title,
+    seoTitle: title,
+    seoHtml,
+    lang,
     // NOTE: description still falls back to the English default. Translating
     // it needs a new key in all locales, which is a content task rather
     // than a code one — validate-i18n rejects a t() call with no en key.

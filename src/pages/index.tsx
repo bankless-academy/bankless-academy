@@ -622,4 +622,20 @@ const HomePage = (): JSX.Element => {
     )
 }
 
+// Crawlable link block for the homepage (the page itself is client-rendered:
+// a crawler used to get zero links and zero text here) — served via _app's
+// SeoContentBlock, unmounted when the app arrives.
+export const getStaticProps = async ({ locale }: { locale?: string }) => {
+  const { lessonListSeoHtml } = await import('utils/seoContent')
+  const lang = locale || 'en'
+  const pageMeta = {
+    seoTitle: 'Bankless Academy',
+    seoHtml: lessonListSeoHtml(lang, 'all'),
+    lang,
+  }
+  return {
+    props: { pageMeta },
+  }
+}
+
 export default HomePage

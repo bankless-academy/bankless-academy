@@ -25,6 +25,24 @@ const Prose = styled(Box)`
   color: #f0eeff;
   line-height: 1.75;
   font-size: 1.05rem;
+  /* Long unbreakable strings (addresses, hex keys, URLs) must wrap, not
+     size the layout: measured at 375px, a 60-char hex token in PLAIN TEXT
+     (not code) set the panel's content-size contribution to 681px and the
+     shared grid track widened to match — clipping the LESSON HERO above, not
+     the panel. 'anywhere' (unlike 'break-word') reduces min/max-content
+     contributions, and it only breaks words that cannot fit a line, so
+     normal prose is unaffected. */
+  overflow-wrap: anywhere;
+  min-width: 0;
+  a,
+  code {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
   h2 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -155,7 +173,22 @@ const LessonSeoArticle = ({
     // app region's 80px spotlight glow (a later sibling's background covers
     // an earlier sibling's box-shadow) and clipped it in a hard horizontal
     // line. Transparent lets the glow bleed and fade naturally into the page.
-    <Box as="section" id="article" color="#f0eeff" dir={dir} lang={lang}>
+    <Box
+      as="section"
+      id="article"
+      color="#f0eeff"
+      dir={dir}
+      lang={lang}
+      // grid-item shrink permission + hard backstop against width blowout.
+      // contain:inline-size is the structural guarantee: the section's size
+      // becomes independent of its contents, so nothing inside can EVER
+      // widen the shared grid track (which is what clipped the lesson hero
+      // above the panel on mobile).
+      minW={0}
+      maxW="100%"
+      overflowX="hidden"
+      sx={{ contain: 'inline-size' }}
+    >
       {/* Standalone (pre-app) copy: continue the rail gutter/divider and
           clear the fixed 81px mobile action bar with base pb. In-app the
           PageLayout provides both, so neither wrapper concern applies. */}
