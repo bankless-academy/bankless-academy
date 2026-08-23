@@ -48,14 +48,16 @@ quizzes in the md but have no `[x]`; their type is pinned in `slideMeta`.
    their answer numbers saved in localStorage — the `[x]` must stay on the same
    option index. Rewrite question/option texts around the fixed position instead.
 2. **Don't make slide/section text much longer than it was.** Desktop slides
-   are a fixed 533px tall. Since 2026-08-14 overflow **scrolls** instead of
-   being clipped under the Close button (`Lesson.tsx`, `overflowY: auto`), so
-   long text no longer loses content, but a slide the reader has to scroll is
-   still a worse slide. `validate-content.js` enforces an estimated-line
-   ceiling (`MAX_SLIDE_LINES` in `content-lib.js`, image-aware) on English and
-   on generated translations — treat it as a quality bar, not a safety net,
-   and stay well under it since the estimate is approximate and mobile binds
-   sooner.
+   are a constant-height card (`SLIDE_H` in `Lesson.tsx`); since 2026-08-23
+   content the budget can't hold **grows the card** (body is `minH`-pinned,
+   not `h`) instead of scrolling or clipping, and the empty desktop nav row
+   unmounts so button-less slides give that space to content. A slide that
+   grows past the standard card still reads as an outlier next to its
+   neighbors, so length discipline stands. `validate-content.js` enforces an
+   estimated-line ceiling (`MAX_SLIDE_LINES` in `content-lib.js`, image-aware)
+   on English and on generated translations — treat it as a quality bar, not a
+   safety net, and stay well under it since the estimate is approximate and
+   mobile binds sooner.
 3. **Keep text consistent with the slide's image** (`![](...)`). If the new text
    no longer matches the image, adjust the text (or drop the image reference) —
    never reference an image file that doesn't exist in `public/`.
@@ -310,7 +312,7 @@ render a warning banner on the intro slide.
 - [x] **Unrenderable emphasis gated (2026-08-15):** `findBrokenEmphasis` in `content-lib.js` renders every line with markdown-it (the same parser `build-content.js` compiles slides with) and fails the build on any `**`/`_` marker that survives as literal text. CommonMark decides whether a delimiter opens or closes from the characters flanking it, and CJK breaks the rule constantly (no word spaces, full-width punctuation): `**価値：**時間` never renders, it ships a literal `**` to the reader. Do **not** hand-roll the flanking rules — a regex approximation missed 10 real cases and invented 9. The gate caught 87 lines in the ja/zh/uk wave and **three long-standing defects in the English source** that every translation had copied verbatim: `block_**chain**_`, `_**tri**_lemma` and `_0x__________` (which italicised "0x" and ate an underscore). Escaped `\_` and fill-in-the-blank `_____` runs are excluded.
 - [x] 8 structurally broken translations unregistered (2026-08-14): `bitcoin-basics` es/fr/pt-br/tr/uk/zh, `wallet-basics` uk, `optimism-governance` fr — files kept in git under `staleTranslations`, pages now serve English instead of mis-grading learners.
 - [x] `translate-content.js` built (2026-08-14): per-unit hash gating, ETHGlossary + style-guide terminology pinning, structural + length verification with retry, glossary sync, offline `--verify-only` / `--terms` / `--keywords` modes. French `bitcoin-basics` regenerated as the pilot. **The API path is still unrun** (no `ANTHROPIC_API_KEY` yet) — the pilot content was authored directly against the same contract.
-- [x] Slide overflow fixed in the UI (2026-08-14): the fixed-height slide container had `maxH: 533px` and no overflow rule, so long text was painted over by the nav bar. Now `overflowY: auto` on desktop + bottom padding clearing the fixed mobile nav. Overflow scrolls instead of vanishing, which matters most for languages that run longer than English.
+- [x] Slide overflow fixed in the UI (2026-08-14): the fixed-height slide container had `maxH: 533px` and no overflow rule, so long text was painted over by the nav bar. First fix scrolled; superseded 2026-08-23: the slide body is `minH`-pinned to `SLIDE_H` so every slide that fits is the same constant card and long content GROWS the card (no inner scroll). The empty desktop SlideNav row also unmounts (`navHasContent` in Lesson.tsx — prev/next live on the edge chevrons), and the desktop nav padding tightened so button-bearing slides (first/quest/last) fit the same card height as button-less ones. Verified: nl/bitcoin-basics slides 1/2/4/20 all exactly SLIDE_H, slide 19 (long) grows 1px, zero inner scroll. Mobile untouched.
 - [x] **Pre-translation gate cleared (2026-08-15):** quest components translatable, translated md served from disk (`/api/lesson-content/[...slug]`) instead of raw.githubusercontent, `.env.example` refreshed, `GITHUB_TOKEN` on Vercel
 - [x] **`nsSeparator: false`** (2026-08-15) — the single highest-impact i18n bug. Our keys ARE English sentences, and i18next reads a `:` in a key as a namespace prefix, so **every key ending in `:` resolved to an empty string**: "Resources:", "Answer selected:", "3. Paste the successful swap transaction hash below:" simply vanished from the UI in all languages, English included. Fixed in `src/utils/translation.ts`. `keySeparator` stays ON: `keyPrefix` joins with `.` regardless of the setting (i18next `getFixedT`), the quests bundle is nested, and i18next's `deepFind` already resolves keys containing dots. Glossary definitions no longer go through `t('<term>.definition')` — `Lesson.tsx`/`Article.tsx` read the resource bundle directly.
 - [x] **French complete (2026-08-15):** all 19 active lessons translated and structurally verified, `common` 266/266, `quests` 116/116, `homepage` 37/37, `lesson` 38/38, glossary 274/274 (80 French plurals added so plural display forms resolve to a tooltip). Site sweep closed the last hardcoded strings (`_app`, `explore`, `my-profile`, `mini-apps`, Mini* lists, `Reward`, `Badge`, `ShareModal`, `LessonContent`, `MintDatadisk*`, `confirmation`, `maintenance`). Out of scope by request: `leaderboard.tsx`, social share text, Notion pages, `onchain-summer-challenge`, `CryptoArchetypeQuiz.tsx`.

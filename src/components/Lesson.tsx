@@ -784,6 +784,21 @@ const Lesson = ({
       slide.type === 'QUEST' ||
       ((slide.type === 'QUIZ' || slide.type === 'POLL') && answerIsCorrect))
 
+  // Mirrors the SlideNav children conditions: with the edge chevrons carrying
+  // Prev/Next on desktop, a mid-lesson non-quest slide renders an EMPTY nav
+  // row whose padding still cost ~50px of card space. Unmount it instead.
+  // Card height stays identical across slides either way: the body is
+  // minH-pinned to SLIDE_H, so the content area simply flexes into the space
+  // an absent nav leaves (and long content starts growing the card later).
+  // The last-slide term matches the Finish branch; a last slide with
+  // endOfLessonText renders no nav buttons (the edge chevron advances it).
+  const navHasContent =
+    !edgeNav ||
+    isFirstSlide ||
+    slide.type === 'QUEST' ||
+    !!lesson?.isPreview ||
+    (isLastSlide && !(lesson?.endOfLessonText && !embed))
+
   // shortcuts
   // TODO: add modal with all the shortcuts
   useHotkeys('?,shift+/', () => setIsShortcutsOpen((open) => !open))
@@ -1146,31 +1161,28 @@ const Lesson = ({
             : null
         }
       />
-      {/* Desktop slides are a fixed 533px tall. Without an overflow rule,
-          anything taller simply spilled out and was painted over by SlideNav,
-          so the last lines disappeared under the Close/Next buttons. Text
-          length is not something we can fully control: translations run 15-20%
-          longer than English (more for German), so scroll instead of clip.
-          `auto` means slides that fit look exactly as before.
-          Keyword tooltips are unaffected: Chakra renders them in a portal. */}
-      {/* Body = content + nav, pinned to a constant height so the card is the
-          same size on every slide. The content area flexes into whatever the
-          nav leaves: the full SLIDE_H when the nav is empty (most slides now
-          that Prev/Next moved to the edges), or the old 533px when the nav
-          carries quest / end-of-lesson actions. */}
+      {/* Body = content + nav. minH (not h) so every slide that fits is the
+          same constant-size card, but content the budget can't hold GROWS the
+          card instead of scrolling inside it — translations run 15-20% longer
+          than English (more for German), and a reader should never have to
+          find an inner scrollbar to reach the last lines. The content area
+          flexes into whatever the nav leaves: the full SLIDE_H when the nav is
+          empty (most slides now that Prev/Next moved to the edges), or the old
+          533px when the nav carries quest / end-of-lesson actions. */}
       <Box
         display="flex"
         flexDirection="column"
-        h={isSmallScreen ? 'auto' : `${SLIDE_H}px`}
+        minH={isSmallScreen ? 'auto' : `${SLIDE_H}px`}
       >
         <Box
           flex="1"
           minH="0"
           display="flex"
           flexDirection="column"
-          // last-resort safety net: this should never engage now that the height
-          // budget matches the validator ceiling, but content silently
-          // disappearing under the nav is worse than a scrollbar on one slide
+          // last-resort safety net: with the body on minH the card grows
+          // instead of scrolling, so this can no longer engage — kept because
+          // content silently disappearing under the nav is worse than a
+          // scrollbar if some future fixed-height ancestor reintroduces a cap
           overflowY={isSmallScreen ? 'visible' : 'auto'}
           sx={{
             '&::-webkit-scrollbar': { width: '6px' },
@@ -1395,7 +1407,16 @@ const Lesson = ({
               style={{ insetInlineEnd: '-24px' }}
             />
           )}
-        <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
+        {navHasContent && (
+        <SlideNav
+          display="flex"
+          px={4}
+          // tighter on desktop so a nav-bearing slide keeps enough content
+          // share to fit the same SLIDE_H card as button-less slides; the
+          // mobile bar is position:fixed and keeps its touch padding
+          py={isSmallScreen ? 4 : 2}
+          issmallscreen={isSmallScreen.toString()}
+        >
           {/* Up to four buttons here on a quest slide (Close, Prev, Disclaimer,
               Report an Issue) plus Next/Finish opposite, so the gaps are
               tightened on mobile where that row is the binding constraint. */}
@@ -1563,6 +1584,7 @@ const Lesson = ({
             )}
           </HStack>
         </SlideNav>
+        )}
       </Box>
       <KeyboardShortcutsModal
         isOpen={isShortcutsOpen}
