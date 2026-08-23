@@ -252,6 +252,16 @@ dir="ltr">` from _document. Still open (needs a browser): the dev-mode
 click-through below with one language temporarily flipped to rtl, especially
 the Layout.tsx desktop rail (fixed/absolute box with NO inline inset, relying
 on document flow: the riskiest unverified spot) and the OnboardingModal pill.
+
+**UPDATE 2026-08-23 (locale-URL migration):** `_document.tsx` is no longer
+static — routing moved to Next pages-router i18n, so it sets `<html lang>`
+AND `dir` from the request locale (`isRtlLang` on `props.__NEXT_DATA__.
+locale`). Every `/ur/...` and `/ar/...` page now ships `dir="rtl"` in the
+static HTML itself, not just on the article root; `applyDocumentLanguage`
+remains the client-side authority on soft navigations. The old
+`/lessons/<lang>/<slug>/content` URLs in the recipes below are now
+`/<lang>/lessons/<slug>` (the /content mirrors are retired; the lesson page
+serves the article server-side — verify `dir` there with curl).
 - Dev recipe: temporarily set one shipped language to `dir:'rtl'` in the
   registry (NOT committed), `vercel dev`, click through: homepage, lesson
   landing, full slideshow (quiz + toast + tooltip + prev/next), handbook

@@ -26,6 +26,7 @@ import { FollowersYouKnow } from 'ethereum-identity-kit'
 import Badges from 'components/Badges'
 import Card from 'components/Card'
 import { DEFAULT_AVATAR, MAX_COLLECTIBLES } from 'constants/index'
+import { localePath } from 'constants/languages'
 import { UserType } from 'entities/user'
 import {
   emailRegex,
@@ -124,9 +125,10 @@ const ExplorerProfile = ({
         (lesson) => lesson.badgeId === parseInt(badge as string)
       )
       if (lesson) {
-        const redirect = `/lessons/${lng ? `${lng}/` : ''}${
-          lesson.slug
-        }?referrer=${profileAddress}`
+        const redirect = `${localePath(
+          (lng as string) || 'en',
+          `/lessons/${lesson.slug}`
+        )}?referrer=${profileAddress}`
         window.location.href = redirect
       }
     }

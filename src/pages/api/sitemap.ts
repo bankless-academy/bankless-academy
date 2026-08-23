@@ -66,33 +66,32 @@ export default async function handler(
       )
 
       const enLink = lessonLink(lesson)
+      // Locale-prefixed URLs: /<lang>/lessons/<slug>
       const localized = (language: string) =>
-        enLink.replace('/lessons/', `/lessons/${language}/`)
+        `${DOMAIN_URL}/${language}/lessons/${lesson.slug}`
 
-      // The content page exists for articles too. It used to be skipped with
-      // `if (!lesson?.isArticle)`, which left all 8 published articles x 10
-      // locales — 80 indexable URLs — out of the sitemap entirely.
-      for (const suffix of ['', '/content']) {
-        const cluster: Alt[] = [
-          { hreflang: 'x-default', href: `${enLink}${suffix}` },
-          { hreflang: 'en', href: `${enLink}${suffix}` },
-          ...langs.map((language) => ({
-            hreflang: language,
-            href: `${localized(language)}${suffix}`,
-          })),
-        ]
+      // One URL per lesson per language. (The /content mirrors are retired —
+      // the lesson URL itself carries the article server-side and the mirrors
+      // 301 there.)
+      const cluster: Alt[] = [
+        { hreflang: 'x-default', href: enLink },
+        { hreflang: 'en', href: enLink },
+        ...langs.map((language) => ({
+          hreflang: language,
+          href: localized(language),
+        })),
+      ]
+      urls.push({
+        loc: enLink,
+        lastmod: lastmodFor('en'),
+        alternates: cluster,
+      })
+      for (const language of langs)
         urls.push({
-          loc: `${enLink}${suffix}`,
-          lastmod: lastmodFor('en'),
+          loc: localized(language),
+          lastmod: lastmodFor(language),
           alternates: cluster,
         })
-        for (const language of langs)
-          urls.push({
-            loc: `${localized(language)}${suffix}`,
-            lastmod: lastmodFor(language),
-            alternates: cluster,
-          })
-      }
     }
 
     const siteLastmod = new Date(newest || Date.now())
@@ -103,7 +102,7 @@ export default async function handler(
       '/lessons',
       '/faq',
       '/glossary',
-      ...GLOSSARY_LANGUAGES.map((l) => `/glossary/${l.code}`),
+      ...GLOSSARY_LANGUAGES.map((l) => `/${l.code}/glossary`),
       '/onchain-summer-challenge',
       '/explore',
       // Indexable and self-canonical, but were absent from the sitemap.

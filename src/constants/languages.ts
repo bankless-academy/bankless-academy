@@ -130,34 +130,39 @@ export const normalizeLangCode = (code?: string | null): LanguageCode => {
   return 'en'
 }
 
-// Extract the language from a localized URL path. Two shapes carry a language:
-//   /lessons/<code>/<slug>[/content]
-//   /glossary/<code>
-// Returns a valid non-en registry code, else 'en'. Handles multi-char codes
-// ('pt-br') and never mistakes a lesson slug for a language.
-// Routes where the URL itself carries the language, and is therefore the
-// single source of truth for it: a lesson page and the glossary. Everywhere
-// else there is no localized URL to express a language, so the reader's stored
-// preference applies instead. Keeping these two cases apart is what stops the
-// UI rendering French chrome around an English lesson served from an English
-// URL, and what makes each URL deterministic for crawlers.
-// Sibling pages under /lessons that are NOT a lesson: they have no localized
-// URL, so they must fall back to the reader's stored preference like any other
-// page. Treating /lessons/handbook as a lesson slug forced it to English and
-// dropped the language on every visit.
-const RESERVED_LESSON_ROUTES = new Set(['handbook', 'preview'])
+// Pages that must never carry a locale prefix: personal dashboards (explorer)
+// and English-only Notion content (/faq, /about, ... are vercel.json rewrites
+// onto /notion/<slug>). Three layers enforce it, keep them in sync:
+//   - InternalLink pins locale="en" on links to these paths;
+//   - AppContext applies the reader's STORED preference for UI strings there
+//     (old pre-locale-URL behavior) instead of URL-swapping;
+//   - next.config.mjs 308s any locale-prefixed request back to the bare path.
+export const NON_LOCALIZED_PATHS = [
+  'explorer',
+  'notion',
+  'faq',
+  'about',
+  'disclaimer',
+  'privacy-policy',
+  'terms-of-service',
+]
 
-export const isLocalizablePath = (pathname: string): boolean => {
-  if (!pathname) return false
-  const segments = pathname.split(/[?#]/)[0].split('/').filter(Boolean)
-  if (segments[0] === 'glossary') return true
-  // /lessons/<slug> and /lessons/<lang>/<slug>, but not the /lessons index and
-  // not the sibling listing pages
-  return (
-    segments[0] === 'lessons' &&
-    segments.length > 1 &&
-    !RESERVED_LESSON_ROUTES.has(segments[1])
-  )
+export const isNonLocalizedPath = (path: string): boolean => {
+  const first = path.split(/[?#]/)[0].split('/').filter(Boolean)[0]
+  return !!first && NON_LOCALIZED_PATHS.includes(first)
+}
+
+// Absolute path for a locale under the site-wide /<lang>/ URL scheme:
+//   localePath('fr', '/lessons/x') -> '/fr/lessons/x'
+//   localePath('en', '/lessons/x') -> '/lessons/x'   (English is un-prefixed)
+//   localePath('fr', '/')          -> '/fr'
+// Only needed when building a URL as a STRING (plain <a> hrefs, sitemap, OG,
+// hreflang). next/link and router.push carry the locale via their `locale`
+// option instead and must not be given a pre-prefixed path.
+export const localePath = (lang: string, path: string): string => {
+  const code = normalizeLangCode(lang)
+  if (code === 'en') return path
+  return path === '/' ? `/${code}` : `/${code}${path}`
 }
 
 // localStorage key holding the reader's CHOSEN language. Distinct from
@@ -186,28 +191,6 @@ export const readPreferredLanguage = (): LanguageCode | null => {
 export const writePreferredLanguage = (lang: string): void => {
   if (typeof window === 'undefined') return
   window.localStorage.setItem(PREFERRED_LANGUAGE_KEY, JSON.stringify(lang))
-}
-
-// Does the URL literally carry a language segment (/lessons/fr/x, /glossary/fr)?
-// Distinct from parseLangFromPath, which answers 'en' both for an explicitly
-// English URL and for one with no segment at all. The difference matters:
-// arriving on /lessons/fr/x is a deliberate choice of language and should be
-// remembered, while /lessons/x merely means "this page is English" and must not
-// overwrite a reader who prefers French.
-export const hasLangSegment = (pathname: string): boolean =>
-  !!pathname && parseLangFromPath(pathname) !== 'en'
-
-export const parseLangFromPath = (pathname: string): LanguageCode => {
-  if (!pathname) return 'en'
-  const segments = pathname.split(/[?#]/)[0].split('/').filter(Boolean)
-  const candidate =
-    segments[0] === 'lessons' && segments.length > 2
-      ? segments[1]
-      : segments[0] === 'glossary' && segments.length > 1
-      ? segments[1]
-      : undefined
-  if (candidate && isLanguage(candidate) && candidate !== 'en') return candidate
-  return 'en'
 }
 
 // Keep <html lang> and <html dir> in sync with the active language. This is

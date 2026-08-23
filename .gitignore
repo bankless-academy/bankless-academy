@@ -50,3 +50,4 @@ yarn-error.log*
 # the file grants read access to the property and cannot be rotated silently.
 *.iam.gserviceaccount.com.json
 bankless-academy-*-*.json
+gsc-inspect-results.json

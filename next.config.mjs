@@ -1,6 +1,129 @@
 import { withSentryConfig } from '@sentry/nextjs'
+import fs from 'fs'
+
+// Single source of truth for languages is src/constants/languages.ts (TS, so
+// not importable here). Parse the codes the same way translate-content.js
+// does. Build-time only; throws loudly if the registry shape changes.
+const registrySrc = fs.readFileSync('src/constants/languages.ts', 'utf8')
+const LOCALES = [...registrySrc.matchAll(/code: '([a-z-]+)'/g)].map((m) => m[1])
+if (LOCALES.length < 20 || !LOCALES.includes('en'))
+  throw new Error('failed to parse language registry for i18n locales')
+const NON_EN = LOCALES.filter((l) => l !== 'en')
+const LANG_GROUP = `:lang(${NON_EN.join('|')})`
 
 const nextConfig = {
+  // Locale-prefixed URLs: /fr/lessons/<slug>, /fr/glossary, /fr/... for every
+  // page. English is the defaultLocale and stays UN-prefixed — the root URLs
+  // carry all the accumulated search equity and must never move.
+  // localeDetection stays off: Accept-Language auto-redirects hide the other
+  // language versions from crawlers, and the onboarding modal owns the
+  // language-suggestion UX.
+  i18n: {
+    locales: LOCALES,
+    defaultLocale: 'en',
+    localeDetection: false,
+  },
+  // The complete 301 table (ported from vercel.json so it lives next to the
+  // i18n config that defines the URL scheme).
+  //
+  // NONE of these use `locale: false`. Measured on Next 16.1.7: with i18n
+  // enabled, a `locale: false` redirect NEVER matches a default-locale
+  // (un-prefixed) request path, and every legacy URL below is un-prefixed —
+  // the whole table silently stopped matching. With automatic locale handling
+  // the source also matches under any locale prefix and the destination is
+  // auto-prefixed with the detected locale (empty for 'en'), which is exactly
+  // right here. Each rule targets its FINAL destination so real legacy URLs
+  // never chain.
+  async redirects() {
+    return [
+      // NOTE: /en/* (the default locale under its prefix) is reachable as a
+      // duplicate of every un-prefixed page. It CANNOT be redirected from
+      // here: a `locale: false` source is matched against the locale-
+      // NORMALIZED path, so `/en/:path*` also matches every un-prefixed
+      // English request and self-redirects the whole site (measured on
+      // 16.1.7). The cleanup lives in vercel.json instead — platform
+      // redirects run before Next and match the literal path. Locally /en/*
+      // serves 200 with a canonical pointing at the un-prefixed URL.
+      // Legacy pre-ISO language codes straight to the final shape
+      ...Object.entries({ br: 'pt-br', cn: 'zh', jp: 'ja', ua: 'uk' }).map(
+        ([legacy, code]) => ({
+          source: `/lessons/${legacy}/:path*`,
+          destination: `/${code}/lessons/:path*`,
+          permanent: true,
+        })
+      ),
+      // Renamed lesson slugs. The bare rule also covers /<locale>/lessons/<old>
+      // via automatic locale handling; the explicit old localized shape
+      // (/lessons/fr/<old>) needs its own rule to resolve in one hop.
+      ...[
+        ['how-to-fund-a-wallet-on-layer-2', 'funding-a-wallet-on-layer-2'],
+        ['the-stablecoin-guide', 'understanding-stablecoins'],
+        [
+          'how-to-swap-on-a-decentralized-exchange',
+          'swapping-on-a-decentralized-exchange',
+        ],
+      ].flatMap(([from, to]) => [
+        {
+          source: `/lessons/${from}`,
+          destination: `/lessons/${to}`,
+          permanent: true,
+        },
+        {
+          source: `/lessons/${LANG_GROUP}/${from}`,
+          destination: `/:lang/lessons/${to}`,
+          permanent: true,
+        },
+      ]),
+      {
+        source: '/lessons/:slug(conceptos-.*)',
+        destination: '/es/lessons/blockchain-basics',
+        permanent: true,
+      },
+      // The URL migration itself: /lessons/<lang>/... -> /<lang>/lessons/...
+      // Old content-mirror URLs collapse straight onto the lesson URL (the
+      // mirror pages are retired; the lesson page serves the full text).
+      {
+        source: `/lessons/${LANG_GROUP}/:slug/content`,
+        destination: '/:lang/lessons/:slug',
+        permanent: true,
+      },
+      // The mirrors' own (current) URL shape: automatic locale handling makes
+      // this one rule cover /lessons/x/content AND /<lang>/lessons/x/content.
+      {
+        source: '/lessons/:slug/content',
+        destination: '/lessons/:slug',
+        permanent: true,
+      },
+      {
+        source: `/lessons/${LANG_GROUP}/:slug`,
+        destination: '/:lang/lessons/:slug',
+        permanent: true,
+      },
+      {
+        source: `/glossary/${LANG_GROUP}`,
+        destination: '/:lang/glossary',
+        permanent: true,
+      },
+      // Non-localized pages: personal dashboards and English-only Notion
+      // content never carry a locale prefix (InternalLink pins locale "en";
+      // these catch direct entries). `locale: false` is CORRECT here, unlike
+      // above: the source carries an explicit non-default locale prefix, and
+      // an un-prefixed request normalizes to /en/... which the group never
+      // matches — so no self-redirects.
+      ...['explorer', 'notion'].map((base) => ({
+        source: `/${LANG_GROUP}/${base}/:path*`,
+        destination: `/${base}/:path*`,
+        permanent: true,
+        locale: false,
+      })),
+      {
+        source: `/${LANG_GROUP}/:page(faq|about|disclaimer|privacy-policy|terms-of-service)`,
+        destination: '/:page',
+        permanent: true,
+        locale: false,
+      },
+    ]
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

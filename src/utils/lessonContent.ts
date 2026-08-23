@@ -1,23 +1,19 @@
-// Lesson "content" pages: /lessons/<slug>/content and /lessons/<lang>/<slug>/content.
+// Lesson markdown -> the server-rendered article HTML embedded on
+// /lessons/<slug> (below the interactive island — see LessonSeoArticle).
 //
-// These exist for one reason: the interactive lesson is a client-rendered
-// slideshow, so a crawler sees nothing. The content page is meant to be the
-// readable, indexable mirror of the same material.
+// This exists for one reason: the interactive lesson is a client-rendered
+// slideshow that mounts only the current slide, so a crawler sees nothing.
+// The markdown is rendered to semantic HTML at build time and the lesson page
+// opts out of the app-wide NonSSRWrapper via `nolayout` + `ssr` (the same
+// escape hatch /onchain-summer-challenge and /quiz/[id] use), so the prose
+// actually reaches the crawler on the lesson's own URL.
 //
-// It was not doing that job. The markdown was fetched into state in a
-// useEffect and then passed through `hljs.highlight(md, 'markdown')`, so the
-// page shipped a syntax-highlighted *source dump* with no headings, and only
-// after JS ran. Measured against production, the whole document carried 80
-// characters of crawlable text: "You need to enable JavaScript to run this
-// app." Google indexed the URLs and none of the prose.
-//
-// So the markdown is rendered to semantic HTML here, at build time, and the
-// page opts out of the app-wide NonSSRWrapper via `nolayout` + `ssr` (the same
-// escape hatch /onchain-summer-challenge and /quiz/[id] already use).
+// History: this originally powered the /lessons/<slug>/content mirror pages,
+// retired 2026-08-23 when the lesson URLs started carrying the article
+// themselves (the mirrors 301 there now).
 import MarkdownIt from 'markdown-it'
 
 import { LessonType } from 'entities/lesson'
-import { LANGUAGES } from 'constants/languages'
 
 // Frontmatter + the ASCII banner sit above this marker. Everything above it is
 // metadata and decoration; none of it belongs in an article.
@@ -157,27 +153,6 @@ export const buildArticle = (
     return `<${topTag} id="${id}">${inner}</${topTag}>`
   })
   return { html, headings }
-}
-
-/**
- * The lesson's own languages, as links to the *content* variant.
- * The site-wide hreflang builder in Head.tsx points at `/lessons/<lang>/<slug>`,
- * which on a content page is a different page type that does not reciprocate —
- * hreflang requires both ends to agree, so those annotations are discarded.
- */
-export const contentAlternates = (
-  lesson: LessonType
-): { hreflang: string; href: string; label: string }[] => {
-  const slug = lesson.slug
-  const langs = (lesson.languages || []).filter((l) => l !== 'en')
-  return [
-    { hreflang: 'en', href: `/lessons/${slug}/content`, label: 'English' },
-    ...langs.map((l) => ({
-      hreflang: l,
-      href: `/lessons/${l}/${slug}/content`,
-      label: LANGUAGES.find((x) => x.code === l)?.localName || l,
-    })),
-  ]
 }
 
 /** JSON-LD so the page is understood as an article, not an app screen. */

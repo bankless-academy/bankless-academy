@@ -1,10 +1,21 @@
 /* eslint-disable no-console */
+// /lessons/<slug> (en) and /<lang>/lessons/<slug> (localized, via the i18n
+// locale prefix). Replaced the old [...slug].tsx catch-all when the language
+// moved out of the path segments and into the Next.js locale — the URL shape
+// is structural now, so the old validShape machinery is gone with it.
+//
+// This page is a NORMAL app page (default _app branch, providers and nav stay
+// mounted across navigation). Its SEO surface — hero + full quiz-stripped
+// article — is carried in pageMeta (articleHtml/headings/jsonLd) and rendered
+// by _app.tsx as LessonSeoBlock, OUTSIDE <Web3Providers>, which is what puts
+// it in the server HTML.
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { Container } from '@chakra-ui/react'
 import fs from 'fs'
 
 import { MetaData } from 'components/Head'
 import LessonDetail from 'components/LessonDetail'
+import LessonSeoArticle from 'components/LessonSeoArticle'
 import Article from 'components/Article'
 import { DEFAULT_METADATA, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
@@ -15,9 +26,9 @@ import { useApp } from 'contexts/AppContext'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import {
-  isLanguage,
+  isRtlLang,
+  localePath,
   normalizeLangCode,
-  parseLangFromPath,
   readPreferredLanguage,
 } from 'constants/languages'
 
@@ -127,51 +138,30 @@ const processMD = async (md, lang, englishLesson, updatedAt) => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log('params', params)
-  // /lessons/<lang>/<slug> when the first segment is a registry language code
-  // (multi-char codes like pt-br included); otherwise the segment is the slug
-  const hasLangSegment =
-    params.slug.length > 1 && isLanguage(params.slug[0] as string)
-  const slug = (hasLangSegment ? params.slug[1] : params.slug[0])?.replace(
-    '-datadisk',
-    ''
-  )
-  console.log('slug', slug)
-  const language: any = hasLangSegment ? params.slug[0] : 'en'
-  console.log('language', language)
-
-  // Reject anything that is not a shape this route actually serves. Without
-  // this the catch-all answered 200 to ANY url under /lessons/ — and because
-  // an unknown first segment is treated as a slug, /lessons/bitcoin-basics/
-  // contentt rendered the real lesson (title and all) at a junk URL, with
-  // `robots: all`. That is an unbounded indexable near-duplicate surface, and
-  // every unique URL also became a permanent prerender cache entry.
-  //
-  // Valid: [slug] | [slug-datadisk] | [lang, slug]
-  const segments = params.slug as string[]
-  const validShape =
-    segments.length === 1 ||
-    // `en` is in the registry but is NOT a URL segment: English lives at the
-    // unprefixed /lessons/<slug>. Accepting it minted 23 self-canonical
-    // duplicates (plus 2 datadisk) whose own hreflang cluster named the
-    // unprefixed URL as both x-default and en — contradictory signals.
-    (segments.length === 2 &&
-      isLanguage(segments[0]) &&
-      segments[0] !== 'en')
-  if (!validShape) return { notFound: true }
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+  const rawSlug = params.slug as string
+  const isDatadisk = rawSlug.endsWith('-datadisk')
+  const slug = rawSlug.replace('-datadisk', '')
+  const language = locale || 'en'
 
   const currentLessonMatch = LESSONS.find(
     (lesson: LessonType) => lesson.slug === slug
   )
   if (!currentLessonMatch) return { notFound: true }
 
-  // `-datadisk` is only a real page for lessons that have a collectible; the
-  // other 17 existed purely because `fallback: true` invented them, and served
-  // a social image (`/images/<slug>/social-datadisk.jpg`) that does not exist.
+  // `-datadisk` is only a real page for lessons that have a collectible, and
+  // only in English — the collectible flow itself is not localized.
+  if (isDatadisk && (!currentLessonMatch.hasCollectible || language !== 'en'))
+    return { notFound: true }
+
+  // A localized URL must serve that translation. When the language is not
+  // registered for this lesson (or its file is missing), the URL does not
+  // exist — serving the English lesson at /fr/... would give Google the same
+  // document at two URLs.
   if (
-    segments[segments.length - 1].endsWith('-datadisk') &&
-    !currentLessonMatch.hasCollectible
+    language !== 'en' &&
+    (!(currentLessonMatch.languages as any)?.includes(language) ||
+      !fs.existsSync(`translation/lesson/${language}/${slug}.md`))
   )
     return { notFound: true }
 
@@ -192,6 +182,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
   try {
     if (
+      language !== 'en' &&
       fs.existsSync(`translation/lesson/${language}/${currentLesson.slug}.md`)
     ) {
       const md = await fs.readFileSync(
@@ -227,7 +218,24 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
-  const isDatadisk = (params.slug as any).join('/').includes('-datadisk')
+  // The full lesson text, server-rendered below the interactive island so the
+  // lesson URL itself carries the prose for crawlers (the slideshow mounts
+  // only the current slide, client-side). Deprecated lessons stay island-only:
+  // server-rendering their prose would newly expose unmaintained material.
+  const { buildLessonArticleProps } = await import('utils/lessonContentPage')
+  const { articleJsonLd } = await import('utils/lessonContent')
+  const article =
+    currentLesson.publicationStatus === 'deprecated'
+      ? null
+      : buildLessonArticleProps(language, slug)
+  const jsonLd = articleJsonLd(
+    currentLesson,
+    `https://app.banklessacademy.com${localePath(
+      language,
+      `/lessons/${slug}`
+    )}`,
+    language
+  )
 
   const pageMeta: MetaData = {
     title: currentLesson.name,
@@ -239,10 +247,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     isLesson: !currentLesson.isArticle,
     lesson: currentLesson,
     isDatadisk,
-    // Deprecated lessons are excluded from listings, rss and the sitemap, and
-    // their /content mirror already serves noindex. The lesson page itself was
-    // still `robots: all`, so the unmaintained material stayed indexable
-    // through any inbound link. One policy, both page types.
+    // Consumed by _app.tsx (LessonSeoBlock): the server-rendered SEO surface.
+    articleHtml: article?.articleHtml || null,
+    headings: article?.headings || [],
+    lang: language,
+    strings: {
+      contents: article?.contentsLabel || '',
+      startLesson: article?.startLessonLabel || 'Start Lesson',
+    },
+    jsonLd,
+    // Deprecated lessons are excluded from listings, rss and the sitemap, but
+    // stay reachable by direct URL; noindex keeps the unmaintained material
+    // out of search through any inbound link.
     noindex: currentLesson.publicationStatus === 'deprecated',
   }
   return {
@@ -253,16 +269,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = []
   for (const lesson of LESSONS) {
-    paths.push({ params: { slug: [lesson.slug] } })
+    paths.push({ params: { slug: lesson.slug }, locale: 'en' })
     // /content is served by pages/lessons/[slug]/content.tsx (server-rendered);
     // generating it here too would produce the same URL from two routes.
     if (lesson.lessonCollectibleGif)
       paths.push({
-        params: { slug: [`${lesson.slug}-datadisk`] },
+        params: { slug: `${lesson.slug}-datadisk` },
+        locale: 'en',
       })
     if (lesson.languages) {
       for (const lang of lesson.languages) {
-        paths.push({ params: { slug: [lang, lesson.slug] } })
+        if (fs.existsSync(`translation/lesson/${lang}/${lesson.slug}.md`))
+          paths.push({ params: { slug: lesson.slug }, locale: lang })
       }
     }
   }
@@ -276,32 +294,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-// TODO: move to /lesson/lesson-name + add redirect
-
 const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const lesson = pageMeta?.lesson
   const { openLessons, hideNavBar } = useApp()
 
   const router = useRouter()
-  // router.asPath, not window.location: it is reactive and defined during SSR,
-  // so this no longer differs between server and client render.
-  const lang = parseLangFromPath(router.asPath)
+  // The locale IS the language now — no path parsing.
+  const lang = normalizeLangCode(router.locale)
 
   const isLessonOpen = lesson?.slug && openLessons.includes(lesson.slug)
 
-  // A corrective redirect must REPLACE, never push. `document.location.href`
-  // added a history entry, so Back returned to the bad URL, which redirected
-  // forward again: the back button was trapped on any lesson whose translation
-  // had been unregistered. Running it in an effect also keeps render pure —
-  // assigning to document.location during render is a side effect that React
-  // 18 strict mode fires twice.
+  // A corrective redirect must REPLACE, never push, so Back is not trapped on
+  // the bad URL. Only reachable via the getStaticProps English-fallback path
+  // (a registered translation whose md failed to parse).
   const wrongLanguage = !!lesson && lang !== 'en' && lang !== lesson?.lang
   useEffect(() => {
     if (!lesson) {
       router.replace('/lessons')
     } else if (wrongLanguage) {
-      router.replace(`/lessons/${lesson.slug}`)
+      router.replace(`/lessons/${lesson.slug}`, undefined, { locale: 'en' })
     }
   }, [lesson, wrongLanguage, router])
 
@@ -324,10 +336,31 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
     const browserLang = normalizeLangCode(navigator.language)
     if (browserLang === 'en') return
     if (!lesson.languages?.includes(browserLang)) return
-    router.replace(`/lessons/${browserLang}/${lesson.slug}`)
+    router.replace(router.asPath, undefined, { locale: browserLang })
   }, [lesson, wrongLanguage, lang, router])
 
   if (!lesson || wrongLanguage) return null
+
+  // The reading panel lives INSIDE the app layout (below the lesson, above
+  // the floating chrome), so the lesson background effect encloses it — as a
+  // sibling section it kept cutting the gradient/glow at the layout boundary.
+  // Hidden while the slideshow is open; handbooks skip it entirely (the app
+  // view IS this content). Crawlers never see this copy — theirs is the
+  // pre-mount one in LessonSeoBlock.
+  const readingPanel = !lesson.isArticle &&
+    pageMeta.articleHtml &&
+    !isLessonOpen && (
+      <LessonSeoArticle
+        articleHtml={pageMeta.articleHtml}
+        headings={pageMeta.headings || []}
+        lang={lang}
+        dir={isRtlLang(lang) ? 'rtl' : 'ltr'}
+        contentsLabel={pageMeta.strings?.contents || ''}
+        startLessonLabel={pageMeta.strings?.startLesson || 'Start Lesson'}
+        lesson={lesson}
+        inApp
+      />
+    )
 
   return (
     <>
@@ -337,18 +370,21 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
         </Layout>
       ) : (
         <Layout page="LESSON-DETAIL" isLessonOpen={isLessonOpen}>
-          <Container
-            maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
-            px={isSmallScreen ? '8px' : isLessonOpen ? '24px' : '0'}
-            minH={
-              isMediumScreen
-                ? `calc(100vh - 146px${hideNavBar ? ' + 65px' : ''})`
-                : 'default'
-            }
-            pb={isSmallScreen ? '0' : isLessonOpen ? '8px' : '0'}
-          >
-            <LessonDetail key={lesson.slug} lesson={lesson} />
-          </Container>
+          <>
+            <Container
+              maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
+              px={isSmallScreen ? '8px' : isLessonOpen ? '24px' : '0'}
+              minH={
+                isMediumScreen
+                  ? `calc(100vh - 146px${hideNavBar ? ' + 65px' : ''})`
+                  : 'default'
+              }
+              pb={isSmallScreen ? '0' : isLessonOpen ? '8px' : '0'}
+            >
+              <LessonDetail key={lesson.slug} lesson={lesson} />
+            </Container>
+            {readingPanel}
+          </>
         </Layout>
       )}
     </>

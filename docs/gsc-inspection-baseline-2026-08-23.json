@@ -1,0 +1,1136 @@
+[
+  {
+    "url": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-19T03:28:00Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet",
+    "userCanonical": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet",
+    "referringUrls": 4
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/ethereum-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-06T02:40:49Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/ethereum-basics",
+    "userCanonical": "https://app.banklessacademy.com/lessons/ethereum-basics",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/ethereum-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/registering-your-web3-username/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/registering-your-web3-username",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-13T04:25:47Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/registering-your-web3-username",
+    "userCanonical": "https://app.banklessacademy.com/lessons/registering-your-web3-username",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Crawled - currently not indexed",
+    "lastCrawlTime": "2026-08-18T09:02:36Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet/content",
+    "referringUrls": 8
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/wallet-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/wallet-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-10T06:00:34Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/wallet-basics",
+    "userCanonical": "https://app.banklessacademy.com/lessons/wallet-basics",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/bitcoin-basics/content",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-18T09:53:03Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/bitcoin-basics/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/bitcoin-basics/content",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/bitcoin-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-10T20:24:36Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/bitcoin-basics",
+    "userCanonical": "https://app.banklessacademy.com/lessons/bitcoin-basics",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 6
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/staking-on-ethereum",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-07-10T13:14:40Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/staking-on-ethereum",
+    "userCanonical": "https://app.banklessacademy.com/lessons/staking-on-ethereum",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/staking-on-ethereum/content",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-17T11:42:01Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/staking-on-ethereum/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/staking-on-ethereum/content",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/staking-ether",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-05T16:44:55Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards",
+    "userCanonical": "https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/staking-ether/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/managing-token-allowances",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-22T21:46:53Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/managing-token-allowances",
+    "userCanonical": "https://app.banklessacademy.com/lessons/managing-token-allowances",
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/managing-token-allowances/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Crawled - currently not indexed",
+    "lastCrawlTime": "2026-08-17T09:36:06Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/managing-token-allowances/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/managing-token-allowances/content",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/understanding-stablecoins",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-06-04T21:19:01Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/understanding-stablecoins",
+    "userCanonical": "https://app.banklessacademy.com/lessons/understanding-stablecoins",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/understanding-stablecoins/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/decentralized-exchanges",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-15T23:26:39Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/decentralized-exchanges",
+    "userCanonical": "https://app.banklessacademy.com/lessons/decentralized-exchanges",
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/decentralized-exchanges/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/layer-2-blockchains",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-07-10T08:44:56Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/layer-2-blockchains",
+    "userCanonical": "https://app.banklessacademy.com/lessons/layer-2-blockchains",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/layer-2-blockchains/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-06T02:48:52Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2",
+    "userCanonical": "https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2",
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-10T16:54:06Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange",
+    "userCanonical": "https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/layer-1-blockchains",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-07-10T03:09:52Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/layer-1-blockchains",
+    "userCanonical": "https://app.banklessacademy.com/lessons/layer-1-blockchains",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/layer-1-blockchains/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Crawled - currently not indexed",
+    "lastCrawlTime": "2026-08-22T00:00:08Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/layer-1-blockchains/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/layer-1-blockchains/content",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/dex-aggregators",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-17T19:51:17Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/dex-aggregators",
+    "userCanonical": "https://app.banklessacademy.com/lessons/dex-aggregators",
+    "referringUrls": 4
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/dex-aggregators/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Crawled - currently not indexed",
+    "lastCrawlTime": "2026-08-19T04:02:58Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/dex-aggregators/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/dex-aggregators/content",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/web3-security",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-07-23T02:51:02Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/web3-security",
+    "userCanonical": "https://app.banklessacademy.com/lessons/web3-security",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/web3-security/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/blockchain-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-19T02:33:27Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/blockchain-basics",
+    "userCanonical": "https://app.banklessacademy.com/lessons/blockchain-basics",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/blockchain-basics/content",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-16T01:43:26Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/blockchain-basics/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/blockchain-basics/content",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 4
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/intro-to-defi/content",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-07T19:15:01Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/intro-to-defi/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/intro-to-defi/content",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/ethereum-basics",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/ethereum-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/registering-your-web3-username/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/creating-a-crypto-wallet",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 4
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/intro-to-defi",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-10T18:15:00Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/intro-to-defi",
+    "userCanonical": "https://app.banklessacademy.com/lessons/intro-to-defi",
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/wallet-basics",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/wallet-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/creating-a-crypto-wallet/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/bitcoin-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/bitcoin-basics",
+    "verdict": "NEUTRAL",
+    "coverageState": "Crawled - currently not indexed",
+    "lastCrawlTime": "2026-05-03T04:49:30Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/fr/bitcoin-basics",
+    "userCanonical": "https://app.banklessacademy.com/lessons/fr/bitcoin-basics",
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/staking-on-ethereum/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 4
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/staking-ether/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/staking-on-ethereum",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/understanding-ethereum-token-standards",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/understanding-ethereum-token-standards/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/registering-your-web3-username",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/managing-token-allowances",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/managing-token-allowances/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/understanding-stablecoins/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/staking-ether",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/decentralized-exchanges",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-17T09:59:31Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/fr/decentralized-exchanges",
+    "userCanonical": "https://app.banklessacademy.com/lessons/fr/decentralized-exchanges",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/decentralized-exchanges/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/swapping-on-a-decentralized-exchange",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/swapping-on-a-decentralized-exchange/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 4
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/understanding-stablecoins",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/layer-2-blockchains",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/layer-2-blockchains/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/funding-a-wallet-on-layer-2",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/funding-a-wallet-on-layer-2/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/layer-1-blockchains",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/layer-1-blockchains/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/dex-aggregators",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/dex-aggregators/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/web3-security",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/blockchain-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-20T03:04:37Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/fr/blockchain-basics",
+    "userCanonical": "https://app.banklessacademy.com/lessons/fr/blockchain-basics",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/blockchain-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/ethereum-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 9
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/web3-security/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/intro-to-defi",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 3
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/creating-a-crypto-wallet/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/wallet-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/bitcoin-basics/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 6
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/staking-on-ethereum/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 7
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/staking-ether/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 6
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/understanding-stablecoins/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/decentralized-exchanges/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/registering-your-web3-username/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/swapping-on-a-decentralized-exchange/content",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-21T04:12:33Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/es/swapping-on-a-decentralized-exchange/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/es/swapping-on-a-decentralized-exchange/content",
+    "referringUrls": 4
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/layer-2-blockchains/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/fr/intro-to-defi/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/understanding-ethereum-token-standards/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/dex-aggregators/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/web3-security/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 5
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/blockchain-basics/content",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-17T06:08:26Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/es/blockchain-basics/content",
+    "userCanonical": "https://app.banklessacademy.com/lessons/es/blockchain-basics/content",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/funding-a-wallet-on-layer-2/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 7
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/managing-token-allowances/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/layer-1-blockchains/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/es/intro-to-defi/content",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 4
+  }
+]

@@ -4,19 +4,21 @@ import React, {
   useContext,
   useState,
   useEffect,
+  useLayoutEffect,
 } from 'react'
 import { useRouter } from 'next/router'
 import i18next from 'i18next'
 
 import {
   applyDocumentLanguage,
-  hasLangSegment,
-  isLocalizablePath,
-  parseLangFromPath,
+  isNonLocalizedPath,
+  normalizeLangCode,
   readPreferredLanguage,
   writePreferredLanguage,
 } from 'constants/languages'
+import { LESSONS } from 'constants/index'
 import { loadLanguage } from 'utils/translation'
+import { markAppMounted } from 'utils/appMounted'
 
 export interface OnboardingModalOptions {
   newsletterOnly?: boolean
@@ -61,6 +63,21 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     useState<OnboardingModalOptions>({})
   const router = useRouter()
 
+  // Tells the lesson pages' server-rendered hero (LessonSeoBlock) that the
+  // interactive app tree is on screen. AppProvider mounts once Web3Providers'
+  // dynamic chunk has loaded and stays mounted across client-side navigations,
+  // which is exactly the signal's meaning.
+  //
+  // useLayoutEffect, not useEffect: it fires before the browser paints the
+  // newly-mounted app tree, and the hero's listener setState flushes in the
+  // same pre-paint pass — so the app appearing and the hero disappearing are
+  // ONE paint. With useEffect there was a one-frame double-stack (app + hero
+  // + article) that made the article visibly jump. AppProvider is client-only
+  // (inside a dynamic ssr:false boundary), so the SSR warning cannot fire.
+  useLayoutEffect(() => {
+    markAppMounted()
+  }, [])
+
   const openOnboardingModal = useCallback(
     (options: OnboardingModalOptions = {}) => {
       setOnboardingModalOptions(options)
@@ -75,39 +92,72 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     []
   )
 
-  // Single source of truth for the active language. This used to be split
-  // between here and LanguageSelector, which each re-applied their own answer
-  // on every route change and fought: reading a French lesson then going to the
-  // homepage snapped back to English, because the URL had set the language
-  // without ever recording it as the reader's preference.
+  // Single source of truth for the active language: the Next.js locale. Every
+  // page has one URL per language (/fr/..., English un-prefixed), so the URL
+  // decides what renders — no page ever shows French chrome at an English URL.
   //
-  // Three cases, in order:
-  //   /lessons/fr/x, /glossary/fr  explicit choice -> apply AND remember
-  //   /lessons/x, /glossary        this page is English -> apply, remember
-  //                                nothing (a French reader keeps their pref)
-  //   anywhere else                no language in the URL -> apply the pref
+  //   locale !== 'en'  explicit choice -> apply AND remember
+  //   locale === 'en'  apply English; when the reader has a stored non-English
+  //                    preference, NAVIGATE to their locale's URL instead of
+  //                    restyling this one (replace, so Back is not trapped).
+  //                    Exception: a lesson without that translation stays on
+  //                    the English URL — its localized URL does not exist.
   useEffect(() => {
-    const path = router.asPath
-    let next: string
-    if (hasLangSegment(path)) {
-      next = parseLangFromPath(path)
-      writePreferredLanguage(next)
-    } else if (isLocalizablePath(path)) {
-      next = 'en'
-    } else {
-      next = readPreferredLanguage() || 'en'
+    const locale = normalizeLangCode(router.locale)
+    const path = router.asPath.split(/[?#]/)[0]
+
+    // Non-localized pages (explorer, Notion aliases) keep the pre-locale-URL
+    // behavior: the URL stays bare and the UI renders the STORED preference.
+    // Never URL-swap here — the localized URLs only 308 back, which would
+    // loop through the network.
+    if (isNonLocalizedPath(path)) {
+      const pref = readPreferredLanguage() || 'en'
+      setLanguage(pref)
+      applyDocumentLanguage(pref)
+      void loadLanguage(pref).then(() => {
+        if (i18next.language !== pref) i18next.changeLanguage(pref)
+      })
+      return
     }
 
-    setLanguage(next)
-    applyDocumentLanguage(next)
+    if (locale === 'en') {
+      const pref = readPreferredLanguage()
+      if (pref && pref !== 'en') {
+        const segments = path.split('/').filter(Boolean)
+        const isLessonPage =
+          segments[0] === 'lessons' &&
+          segments.length === 2 &&
+          !['handbook', 'preview'].includes(segments[1])
+        const lessonSlug = isLessonPage
+          ? segments[1].replace('-datadisk', '')
+          : null
+        const translationExists =
+          !isLessonPage ||
+          LESSONS.some(
+            (l) =>
+              l.slug === lessonSlug &&
+              (l.languages as any)?.includes(pref) &&
+              !segments[1].endsWith('-datadisk')
+          )
+        if (translationExists) {
+          void router.replace(router.asPath, undefined, { locale: pref })
+          return
+        }
+      }
+    } else {
+      writePreferredLanguage(locale)
+    }
+
+    setLanguage(locale)
+    applyDocumentLanguage(locale)
     // loadLanguage is idempotent and MUST NOT be gated on the language
     // differing: after a reload the detector has already set i18next.language
     // to the stored language, so that guard skipped the load entirely and left
     // the UI in English with the right language selected.
-    void loadLanguage(next).then(() => {
-      if (i18next.language !== next) i18next.changeLanguage(next)
+    void loadLanguage(locale).then(() => {
+      if (i18next.language !== locale) i18next.changeLanguage(locale)
     })
-  }, [router.asPath])
+  }, [router.asPath, router.locale])
 
   const value = {
     hideNavBar,

@@ -17,7 +17,11 @@ import { useEffect } from 'react'
 import { LessonType } from 'entities/lesson'
 import LESSONS from 'constants/lessons'
 import { t } from 'i18next'
-import { LANGUAGE_CODES, applyDocumentLanguage } from 'constants/languages'
+import {
+  LANGUAGE_CODES,
+  applyDocumentLanguage,
+  localePath,
+} from 'constants/languages'
 
 export interface MetaData {
   title?: string
@@ -36,8 +40,10 @@ export interface MetaData {
   lang?: string
   /** Section anchors for the /content contents nav. */
   headings?: { id: string; text: string }[]
-  /** Build-time UI strings for the /content pages (rendered outside i18next). */
+  /** Build-time UI strings for the article section (rendered outside i18next). */
   strings?: { [key: string]: string }
+  /** Serialized JSON-LD for the page (built in getStaticProps). */
+  jsonLd?: string
 }
 
 const umamiWebsiteId =
@@ -63,27 +69,20 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   // where a reader with no matching language should land.
   const alternateSlug = metadata?.lesson?.slug
   const lessonLanguages = metadata?.lesson?.languages || []
-  // A /content page's alternates must point at other /content pages. Pointing
-  // them at /lessons/<lang>/<slug> annotated a different page type, which does
-  // not reciprocate, and hreflang requires both ends to agree — so the whole
-  // cluster was discarded and the two page types looked like duplicates.
-  const contentSuffix = router.asPath.split(/[?#]/)[0].endsWith('/content')
-    ? '/content'
-    : ''
   const isGlossary = router.asPath.split(/[?#]/)[0].startsWith('/glossary')
   const alternates: { hreflang: string; href: string }[] = alternateSlug
     ? [
         {
           hreflang: 'x-default',
-          href: `${DOMAIN_URL_}/lessons/${alternateSlug}${contentSuffix}`,
+          href: `${DOMAIN_URL_}/lessons/${alternateSlug}`,
         },
         {
           hreflang: 'en',
-          href: `${DOMAIN_URL_}/lessons/${alternateSlug}${contentSuffix}`,
+          href: `${DOMAIN_URL_}/lessons/${alternateSlug}`,
         },
         ...lessonLanguages.map((l) => ({
           hreflang: l,
-          href: `${DOMAIN_URL_}/lessons/${l}/${alternateSlug}${contentSuffix}`,
+          href: `${DOMAIN_URL_}${localePath(l, `/lessons/${alternateSlug}`)}`,
         })),
       ]
     : isGlossary
@@ -92,7 +91,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         { hreflang: 'en', href: `${DOMAIN_URL_}/glossary` },
         ...LANGUAGE_CODES.filter((l) => l !== 'en').map((l) => ({
           hreflang: l,
-          href: `${DOMAIN_URL_}/glossary/${l}`,
+          href: `${DOMAIN_URL_}${localePath(l, '/glossary')}`,
         })),
       ]
     : []
@@ -101,7 +100,12 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
       ? `${metadata?.image}`
       : `${DOMAIN_URL_}${metadata?.image}`
     : `${DOMAIN_URL_}${DEFAULT_METADATA.image}`
-  const url = `${DOMAIN_URL_}${router.asPath}`
+  // router.asPath excludes the locale prefix under Next i18n, so it must be
+  // added back for any absolute URL (canonical, og:url).
+  const url = `${DOMAIN_URL_}${localePath(
+    router.locale || 'en',
+    router.asPath
+  )}`
 
   useEffect(() => {
     const isEmbedded = typeof window !== 'undefined' && window !== window.parent

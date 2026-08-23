@@ -6,6 +6,7 @@ import {
 
 import { Mixpanel, getNodeText } from 'utils/index'
 import { LESSONS } from 'constants/index'
+import { isNonLocalizedPath } from 'constants/languages'
 import { useApp } from 'contexts/AppContext'
 
 type ChakraLinkAndNextProps = ChakraLinkProps & LinkProps & any
@@ -19,36 +20,42 @@ const InternalLink = ({
 }: ChakraLinkAndNextProps): JSX.Element => {
   const { language } = useApp()
 
+  // next/link carries the active locale automatically (/fr/... URLs), so no
+  // href rewriting is needed. Two exceptions pin locale="en":
+  //   - a lesson link whose lesson has no translation in the active language
+  //     (its localized URL does not exist and would 404);
+  //   - the non-localized pages (explorer, Notion aliases) — their localized
+  //     URLs only 308 back to the bare path.
+  // /lessons/handbook and /lessons/preview are listings, not lessons: they
+  // exist at every locale and must NOT be forced to English.
+  const path =
+    href?.replace('https://app.banklessacademy.com', '') || ''
+  const lessonSlug = path.startsWith('/lessons/')
+    ? path.split('/').filter(Boolean)[1]
+    : ''
   const isLessonLink =
-    (href?.startsWith('/lessons/') ||
-      href?.startsWith('https://app.banklessacademy.com/lessons/')) &&
+    !!lessonSlug &&
+    !['handbook', 'preview'].includes(lessonSlug) &&
     !ignoreLocale
 
-  const lessonSlug = isLessonLink ? href?.split('/')?.pop() : ''
-
-  // the glossary has one URL per language too, so navigating to it should keep
-  // the reader in the language they are already browsing in
-  const isGlossaryLink =
-    !ignoreLocale &&
-    (href === '/glossary' ||
-      href === 'https://app.banklessacademy.com/glossary')
-
-  const iHref = isGlossaryLink
-    ? language !== 'en'
-      ? `/glossary/${language}`
-      : '/glossary'
-    : isLessonLink &&
+  const forceEnglish =
+    (isLessonLink &&
       language !== 'en' &&
-      LESSONS.some(
+      !LESSONS.some(
         (lesson) =>
           lesson.slug === lessonSlug &&
           (lesson.languages as any)?.includes(language)
-      )
-    ? href.replace('/lessons/', `/lessons/${language}/`)
-    : href
+      )) ||
+    isNonLocalizedPath(path) ||
+    ignoreLocale
 
   return (
-    <NextLink href={iHref} passHref legacyBehavior>
+    <NextLink
+      href={href}
+      locale={forceEnglish ? 'en' : undefined}
+      passHref
+      legacyBehavior
+    >
       <ChakraLink
         {...props}
         onClick={(e) => {
@@ -56,7 +63,7 @@ const InternalLink = ({
           if (props.onClick) {
             props.onClick(e)
           }
-          const link = iHref || 'NO_LINK'
+          const link = href || 'NO_LINK'
           const name = alt || getNodeText(children) || 'NO_NAME'
           Mixpanel.track('click_internal_link', { link, name })
         }}

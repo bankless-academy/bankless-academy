@@ -1,8 +1,29 @@
 # Server-side rendering: where it stands
 
-Status: **not done, deliberately.** The mechanical blockers are fixed; the
-remaining work is a refactor, not a wrapper change. This file exists so the next
-attempt starts from the findings instead of rediscovering them.
+Status (2026-08-23): **lesson pages DONE via the sibling-SEO architecture;
+the rest of the app deliberately not.** `/lessons/<slug>` (every locale) now
+serves a static hero + the full quiz-stripped article server-side: `_app`'s
+default branch renders `LessonSeoBlock` as a SIBLING outside
+`<Web3Providers>` (the `dynamic({ssr:false})` boundary renders nothing on the
+server, but siblings render fine). The lesson page itself stays a completely
+normal client page — nothing that reads localStorage renders on the server,
+nothing server-rendered reads localStorage, and the providers/Nav never
+unmount across navigation. The `/content` mirror pages are retired (301 →
+lesson URL). Locale-prefixed URLs (prerequisite 2 below) also shipped
+2026-08-23 via Next pages-router i18n.
+
+(A first attempt used a per-page client ISLAND under the `nolayout`+`ssr`
+branch instead. Same crawlable output, but crossing the _app branch boundary
+on every `/lessons` ↔ lesson navigation tore down and remounted the whole
+provider tree — visible as a fake full-page refresh. The sibling pattern
+replaced it the same day; don't resurrect the island.)
+
+What remains "not done, deliberately" is SSR for the homepage, /explore,
+listings and the glossary body. The mechanical blockers are fixed; the
+remaining work there is the state-out-of-render refactor described below, or
+the same sibling-SEO trick where a static rendering of the content is
+acceptable. This file exists so the next attempt starts from the findings
+instead of rediscovering them.
 
 ## The symptom
 

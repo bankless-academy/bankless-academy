@@ -6,7 +6,7 @@ import {
 
 import { Mixpanel, getNodeText } from 'utils/index'
 import { LESSONS } from 'constants/index'
-import { normalizeLangCode } from 'constants/languages'
+import { localePath, normalizeLangCode } from 'constants/languages'
 
 type ChakraLinkAndNextProps = ChakraLinkProps & LinkProps & any
 
@@ -31,7 +31,8 @@ const ExternalLink = ({
         lesson.slug === lessonSlug &&
         (lesson.languages as any)?.includes(i18nextLng)
     )
-      ? `/lessons/${i18nextLng}/${lessonSlug}`
+      ? // plain <a>, so the locale prefix must be in the path itself
+        localePath(i18nextLng, `/lessons/${lessonSlug}`)
       : href
   const whiteProps =
     props.underline === 'true'

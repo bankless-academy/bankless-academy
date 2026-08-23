@@ -361,13 +361,14 @@ render a warning banner on the intro slide.
 - [x] **Registering a language put empty pages in the sitemap (2026-08-15):** the sitemap mapped the whole `LANGUAGES` registry into `/glossary/<code>`, but a language joins the registry when its wave *starts*, long before any content exists. Adding hi/id/vi (0 keywords, 0 namespaces, 0 lessons) therefore submitted three more copies of the English glossary to Google. `sitemap.ts` now emits `/glossary/<code>` only where `translation/keywords/<code>/keywords.json` exists (401 -> 398 URLs). Lesson URLs were already safe — they key off `languages[]` in lesson-meta.json, and hreflang correctly listed only the 9 translated languages. **Register languages freely; content-derived URL lists must gate on the content, not the registry.**
 - [x] **`<lastmod>` was the build date on every URL (2026-08-15):** `build-lastmod.js` runs inside `yarn build`, and **Vercel checks out a shallow (depth-1) clone**, so `git log -1 -- <file>` found the same single commit for all 204 files. The build log proves it — `204 files (2026-08-15 .. 2026-08-15)` on Vercel vs `2026-08-08 .. 2026-08-15` locally — and 380 of 401 sitemap URLs claimed to have changed that day. Worse than a failure, because git *succeeded*: the per-URL fallback to `publicationDate` never fired, and a `<lastmod>` that always equals build time is exactly what makes Google discard `<lastmod>` site-wide. The script now refuses to write when the checkout is shallow or not a repo, and never replaces a manifest with a smaller one, so **the committed manifest is the source of truth anywhere the full history is absent**. Reproduce with `git clone --depth=1 file://$PWD`.
 
+- [x] **Locale-prefixed URLs + hybrid lesson SSR + /content retirement (2026-08-23):** the big one, executed as one deploy train (plan: `docs/superpowers/plans/2026-08-23-locale-urls-and-ssr.md`). Triggered by GSC evidence (URL Inspection API, 153 URLs measured): Google was refusing to index `/content` mirrors it had crawled ("Crawled - currently not indexed") — near-duplicates of already-indexed lesson URLs with refs=1 in the link graph — while the mirrors that DID index sat at positions 7-25. Three moves, each shippable alone: (1) **Next pages-router i18n**: `/<lang>/...` site-wide, English un-prefixed at the root (equity untouched), locale list parsed from the registry, full 301 table in `next.config.mjs` (see the routing map for the `locale: false` matching trap and the vercel.json `/en/*` cleanup); timed while the 1000+ translated URLs were still largely uncrawled, so the move was nearly free. (2) **Hybrid lesson pages**: hero + full quiz-stripped article server-rendered on the lesson URL itself, interactive app as a client island — ZERO localStorage refactoring (see "Hybrid lesson pages"). (3) **Mirrors retired**: `/content` routes deleted, all shapes 301 to the lesson URL, sitemap 1100 -> 568 URLs (one per lesson per language + glossaries + static). Verified on `next start`: full redirect matrix one-hop, 13.3k crawlable chars on en bitcoin-basics (was ~80), 14.6k fr, 11.4k ur with `dir="rtl"` in the static HTML, JSON-LD per locale, 0 type errors. **User action after deploy: resubmit the sitemap in GSC; re-run the inspection sample (~Sep 1) against the 2026-08-23 baseline.**
+
 ### Next up, in order
 
-1. **Wait on Search Console** (no work). Two weeks of data on the `/content` pages decides whether the SSR migration below is necessary or merely nice. Deciding earlier means deciding without evidence.
-2. **Cold start**: Fluid Compute (a project setting) or ISR for `/explore` + the Notion pages, which have no per-request data. Do NOT keep shrinking the bundle — see the measurement above.
-3. ~~Stale KV with no cron~~ — adjudicated 2026-08-22: `announcement` and `bankless-dao-news` are DEPRECATED KV surfaces; leave them as they are. Only `leaderboard` has (and needs) a scheduled cron.
-4. **`middleware` -> `proxy`** (Next 16 deprecation) and the `@sentry/nextjs` peer conflict with Next 16, before any Next upgrade.
-5. **SSR migration** (`docs/ssr-migration.md`) — the big one, gated on item 1. `/lessons/<slug>` still serves 80 crawlable characters; `/content` is a mirror of the page you actually want ranking.
+1. **Cold start**: Fluid Compute (a project setting) or ISR for `/explore` + the Notion pages, which have no per-request data. Do NOT keep shrinking the bundle — see the measurement above.
+2. ~~Stale KV with no cron~~ — adjudicated 2026-08-22: `announcement` and `bankless-dao-news` are DEPRECATED KV surfaces; leave them as they are. Only `leaderboard` has (and needs) a scheduled cron.
+3. **`middleware` -> `proxy`** (Next 16 deprecation) and the `@sentry/nextjs` peer conflict with Next 16, before any Next upgrade.
+4. **SSR for the rest** (`docs/ssr-migration.md`) — homepage, `/explore`, glossary body. Lesson pages are done (hybrid, 2026-08-23); the remaining pages still need user state out of render. Decide after the lesson-page results land in Search Console.
 
 ## Website structure
 
@@ -387,16 +388,32 @@ and `test-content.js`.
 
 ### Routing map (`src/pages`)
 
-- **Lessons**: `/lessons` (index), `/lessons/handbook`, and the catch-all
-  `/lessons/[...slug].tsx` which resolves four shapes:
-  `/lessons/<slug>`, `/lessons/<slug>/content`, `/lessons/<lang>/<slug>`,
-  `/lessons/<lang>/<slug>/content`, plus `/lessons/<slug>-datadisk`.
-  The first segment is treated as a language only if `isLanguage()` says so.
-  `/content` is **no longer served here** — it has dedicated server-rendered
-  routes (see "Lesson content pages" below), and generating it in both places
-  would produce the same URL from two routes. A full `next build` emits ~449
-  static pages, 203 of them content pages.
-- **Other pages**: `/` (homepage), `/glossary`, `/explore`, `/explorer/[address]`,
+**Locale-prefixed URLs site-wide (2026-08-23).** `next.config.mjs` enables
+pages-router built-in i18n: every page exists at `/<lang>/<path>` for all 27
+non-English registry codes, English is the `defaultLocale` and stays
+UN-prefixed (`/lessons/x`, never `/en/lessons/x` — the root URLs carry the
+search equity). `localeDetection: false` (no Accept-Language redirects). The
+locale list is PARSED out of `src/constants/languages.ts` at config load, so
+the registry stays the single declaration point. The full 301 table lives in
+`next.config.mjs redirects()` — old `/lessons/<lang>/<slug>` shapes, legacy
+codes, renamed slugs, retired `/content` mirrors — every rule targeting its
+final URL in one hop. **Trap (measured on 16.1.7): a `locale: false` redirect
+NEVER matches an un-prefixed default-locale path** (sources are matched
+against the locale-normalized path), so the rules use automatic locale
+handling instead; the only `locale: false`-style cleanup, `/en/:path*` →
+`/:path*`, lives in `vercel.json` because platform redirects match the
+literal path before Next's locale machinery runs.
+
+- **Lessons**: `/lessons` (index), `/lessons/handbook`, `/lessons/preview`,
+  and `/lessons/[slug].tsx` serving `/lessons/<slug>` (+ locale prefixes) and
+  `/lessons/<slug>-datadisk` (en-only, `hasCollectible` gate). The page is a
+  NORMAL app page whose SEO surface (hero + full quiz-stripped article) is
+  rendered by `_app.tsx` outside `<Web3Providers>` so it reaches the server
+  HTML — see "Hybrid lesson pages" below. The old `/content` mirror routes
+  are retired (301 → lesson URL). `fallback: 'blocking'` + `notFound` for
+  junk shapes.
+- **Other pages**: `/` (homepage), `/glossary` (localized per locale, gated on
+  the keywords file existing), `/explore`, `/explorer/[address]`,
   `/explorer/my-profile`, `/leaderboard`, `/stats`, `/quest`, `/quiz`,
   `/quiz/[id]`, `/module/[slug]`, `/animation/[slug]`, `/passport`, `/mini-apps`,
   `/newsletter`, `/start`, `/mobile`, `/onchain-summer-challenge`,
@@ -406,15 +423,17 @@ and `test-content.js`.
   surfaced as `/faq`, `/about`, `/disclaimer`, `/privacy-policy`,
   `/terms-of-service` via `vercel.json` rewrites. Page IDs in
   `NOTION_PAGES` (`constants/index.ts`).
-- **vercel.json** also rewrites `/sitemap.xml`→`/api/sitemap`,
+- **vercel.json** rewrites `/sitemap.xml`→`/api/sitemap`,
   `/rss.xml`→`/api/rss`, `/llms.txt` + `/agent.txt`→`/api/agent` (which just
-  serves `README.md`), and proxies Mixpanel under `/mp/*`. Redirects cover the
-  legacy language codes (`/lessons/br|cn|jp|ua/*` → `pt-br|zh|ja|uk`) and three
-  renamed lesson slugs.
+  serves `README.md`), and proxies Mixpanel under `/mp/*`. Its only redirects
+  are the `/en/*` → `/*` cleanup (see above); everything else moved to
+  `next.config.mjs`.
 - **Rendering**: almost everything is SSG via `getStaticProps` with **no
   `revalidate` anywhere** — content changes require a redeploy. Only
   `/explore`, `/explorer/[address]`, `/notion/[slug]`,
   `/onchain-summer-challenge`, `/quiz/[id]` and `/start` are SSR.
+  `_document.tsx` sets `<html lang>` and `dir` from the request locale, so
+  RTL pages (`ar`, `ur`) ship `dir="rtl"` in the static HTML.
 
 ### Client state (no store — context + localStorage)
 
@@ -475,57 +494,76 @@ Basenames resolution, and a hosted Envio indexer at
   `NOTION_SECRET`, `GITHUB_TOKEN`, Alchemy/KV/iron-session keys). ~75 env vars
   are referenced in code.
 
-### Lesson content pages (`/lessons/<lang>/<slug>/content`)
+### Hybrid lesson pages (`/lessons/<slug>`, `/<lang>/lessons/<slug>`)
 
-These exist because the interactive lesson is a client-rendered slideshow that
-a crawler cannot read; the content page is the indexable mirror. **It was not
-doing that job.** The markdown was fetched into state in a `useEffect` and run
-through `hljs.highlight(md, 'markdown')`, so the page shipped a
-syntax-highlighted *source dump* with no headings, and only after JS. Measured
-against production, the whole document carried **80 characters** of crawlable
-text ("You need to enable JavaScript to run this app.") — Google indexed the
-URLs and none of the prose. Rebuilt 2026-08-15; `bitcoin-basics/content` now
-serves ~13,500 crawlable characters.
+The interactive lesson is a client-rendered slideshow that mounts only the
+current slide, so on its own a crawler sees ~80 characters. From 2026-08-15 to
+2026-08-23 the fix was a separate `/content` mirror page — Google crawled
+those and refused to index a chunk of them (near-duplicates of an
+already-indexed URL with no link equity, measured via the URL Inspection API).
+**The mirror is retired: the lesson URL itself carries the text.**
+
+The mechanism lives in `_app.tsx`'s DEFAULT branch, and rests on one fact:
+`<Web3Providers>` is `dynamic({ ssr: false })`, so it renders NOTHING on the
+server — but its SIBLINGS render fine. The lesson page is a completely normal
+app page (inside the providers, localStorage habits and all), and `_app`
+renders `LessonSeoBlock` (JSON-LD + `LessonHero` `<h1>` + the full
+quiz-stripped `LessonSeoArticle`, ~13k crawlable chars) as a sibling AFTER the
+provider tree whenever `pageMeta.articleHtml` is present. Served HTML = head +
+hero + article; the interactive app appears above it when its JS arrives.
+
+A first attempt mounted the whole app as a per-page island under the
+`nolayout`+`ssr` branch instead — same crawlable output, but every
+`/lessons` ↔ lesson navigation crossed the branch boundary and TORE DOWN the
+provider/Nav tree ("the page looks like it refreshes, the layout loads
+late"). The sibling architecture keeps the providers mounted across all
+navigation. Don't reintroduce a branch switch on lesson pages.
 
 | File | Role |
 |---|---|
-| `src/pages/lessons/[slug]/content.tsx` | English route |
-| `src/pages/lessons/[slug]/[lessonSlug]/content.tsx` | Localized route. **`slug` is the LANGUAGE here** — Next.js requires one name per dynamic position across sibling routes, and position 1 is already `[slug]` in the English route. |
-| `src/utils/lessonContentPage.ts` | Server-only build-time data (`fs`); imported only from getStaticProps/Paths so it leaves the client bundle. |
-| `src/utils/lessonContent.ts` | markdown -> semantic HTML, heading anchors, hreflang alternates, JSON-LD. |
-| `src/components/LessonArticle.tsx` | The rendering. **Must stay free of localStorage/matchMedia/wallet/router state.** |
-| `src/components/RecordPreferredLanguage.tsx` | Effect-only; records the language AppProvider would have. |
+| `src/pages/lessons/[slug].tsx` | The one lesson route (language = Next locale), a normal client page. Its getStaticProps puts `articleHtml`/`headings`/`jsonLd`/`lang`/`strings` into pageMeta for _app to render. |
+| `src/components/LessonSeoBlock.tsx` | JSON-LD + hero gate + article, rendered by `_app` outside `<Web3Providers>`. **Everything in it must stay free of localStorage/matchMedia/wallet/router state** — it is the part of the page that server-renders. |
+| `src/components/LessonHero.tsx` | The `<h1>` block filling the viewport until the app mounts. Hidden via `utils/appMounted.ts` (AppProvider fires `markAppMounted()`): on direct loads it hides when the app paints; on client-side navigations it never shows. |
+| `src/components/LessonSeoArticle.tsx` | The reading panel (gradient card, custom chevron — the native `<details>` marker is invisible on some mobile browsers), rendered in TWO places that never coexist: (1) the SEO copy in LessonSeoBlock — the crawler surface and pre-JS readable page, which unmounts when the app arrives (handbooks render it `alwaysExpanded`: it IS their page pre-JS); (2) for interactive lessons only, an `inApp` copy rendered by `lessons/[slug].tsx` INSIDE PageLayout below LessonDetail — inside the lesson background effect, so nothing cuts the gradient/glow (as a sibling section it kept clipping them; that is WHY it lives in-app). The in-app copy hides while the slideshow is open (plain `useApp().openLessons`) and skips the standalone wrappers (rail gutter, mobile bottom clearance — PageLayout provides both). Inside the card: language chips (next/link + `locale` prop: crawlable locale-prefixed anchors, smooth client-side switch; href must stay UN-prefixED), contents nav, prose (images capped 480px), one Start Lesson CTA at the end. NO opaque section background (it would paint over the app's spotlight box-shadow); the page ground pre-JS is a fixed `#161515` backdrop at z-index −1 in LessonSeoBlock. Same purity contract for the SEO copy. |
+| `src/utils/lessonContentPage.ts` | `buildLessonArticleProps(lang, slug)` — server-only (`fs`), imported only from getStaticProps. |
+| `src/utils/lessonContent.ts` | markdown -> semantic HTML (`buildArticle`), heading anchors, JSON-LD. |
 
 Rules that keep it working:
 
-- The page opts out of the app-wide `NonSSRWrapper` via **`nolayout: true` +
-  `ssr: true`** in pageMeta (the same escape hatch `/onchain-summer-challenge`
-  and `/quiz/[id]` use). Anything added to the tree that reads user state
-  reintroduces a hydration mismatch and silently reverts the page to
-  client-only — which is invisible until someone measures the served HTML.
-- **Do not add the site nav.** It reads localStorage and wallet state. The
-  logo is a plain link + `<img>` on purpose.
-- That branch mounts no `AppProvider`, so `AppContext` never records the
-  reader's language. `RecordPreferredLanguage` mirrors its exact rule: an
-  explicit language segment records a preference, the English (no-segment) URL
-  does not — recording there would strand a translated reader in English.
-- `getContentPageProps` **throws** rather than emit an empty page: a page whose
-  only purpose is being crawlable is worse than absent if it renders a shell.
-- Quiz answers are stripped (`[x]` neutralized, `> ℹ️` feedback dropped) so the
-  page is not an answer key.
-- Slide headings are demoted `#` -> `##` so the page has one `<h1>` (the lesson
-  name) instead of twenty. ja/zh headings slugify to nothing, so they fall back
-  to `section-N` anchors.
-- **Deprecated lessons get `noindex`** plus the same warning banner the lesson
-  pages show. They are excluded from the sitemap (`publicationStatus ===
-  'publish'`) but still generated, and server-rendering them would newly expose
-  unmaintained prose to search.
-- `Head.tsx` appends `/content` to the hreflang cluster on these URLs.
-  Previously they annotated `/lessons/<lang>/<slug>`, a different page type
-  that does not reciprocate, so the whole cluster was discarded.
-- No new i18n keys: the page reuses `Start Lesson` and `Lesson Content:`, read
-  from `translation/website/<lang>/common.json` at build time (it renders
-  outside i18next). ja/zh use full-width `：` U+FF1A when trimming.
+- **Anything that must reach a crawler goes OUTSIDE `<Web3Providers>`** in
+  `_app.tsx`; anything inside is client-only by construction. Adding user
+  state to `LessonSeoBlock`/`LessonHero`/`LessonSeoArticle` reintroduces a
+  hydration mismatch — invisible until someone measures the served HTML.
+- **ALL hooks in `_app.tsx` must sit above its conditional returns.** The App
+  component renders multiple branches (maintenance, nolayout, default); a
+  hook declared after an early return crashes React ("Rendered more/fewer
+  hooks") on any client-side navigation that switches branches.
+- `Web3Providers` must stay behind `dynamic({ ssr: false })` — that is what
+  keeps @walletconnect/@reown/viem out of the server bundle (the 15s
+  cold-start lesson).
+- The app-wide emotion Global styles (`components/AppGlobalStyles.tsx`)
+  render OUTSIDE `<Web3Providers>` too, so the server-rendered article gets
+  fonts and body background on first paint.
+- `_app.tsx` warm-imports the Web3Providers chunk at module scope
+  (client-only) so the ~840KB fetch overlaps hydration — without it the app
+  chrome appeared ~half a second after the server-rendered content.
+- `LessonHero` MIMICS the app chrome (65px black top bar, 230px rail skeleton
+  above 800px — `useSmallScreen`'s exact breakpoint) so mounting the real app
+  doesn't read as a layout shift; keep its dimensions in sync with
+  `Nav`/`layout/Layout.tsx` if those change. `markAppMounted` fires from a
+  useLayoutEffect so the hero swap is a single paint.
+- Quiz answers are stripped (`[x]` neutralized, `> ℹ️` feedback dropped) by
+  `buildArticle`, so the page is not an answer key.
+- Slide headings are demoted `#` -> `##` so the page has one `<h1>` (the hero)
+  instead of twenty. ja/zh headings slugify to nothing, so they fall back to
+  `section-N` anchors.
+- **Deprecated lessons get `noindex` and NO article** (`articleHtml: null` →
+  `_app` renders no SeoBlock): server-rendering their prose would newly
+  expose unmaintained material to search. Excluded from the sitemap but still
+  generated.
+- The `contents` label reuses `Lesson Content:` from
+  `translation/website/<lang>/common.json` at build time (the article section
+  renders outside i18next). ja/zh use full-width `：` U+FF1A when trimming.
 
 ### Whitelabel mode
 
@@ -539,16 +577,18 @@ Understand all five before touching translations — they fail independently.
 
 1. **Registry** — `src/constants/languages.ts` is the single declaration point
    (`LANGUAGES`, `LANGUAGE_CODES`, `isLanguage`, `LEGACY_CODE_MAP`,
-   `normalizeLangCode`, `parseLangFromPath`). `LanguageType`,
-   `LanguageDescription`, the selector and the validators all derive from it.
+   `normalizeLangCode`, `localePath`). `LanguageType`,
+   `LanguageDescription`, the selector, the validators AND the `i18n.locales`
+   list in `next.config.mjs` (regex-parsed at config load) all derive from it.
 2. **UI strings** — i18next, initialized in `src/utils/translation.ts` with
    **static imports for every language** (won't scale past ~10; Phase D lazy-loads).
    Namespaces: `common` (133 en keys), `quests` (5), `homepage` (37, **en + fr
    only**), `keywords`, `lesson`. Only 38 of 72 components call `useTranslation`.
 3. **Lesson prose** — `translation/lesson/<lang>/<slug>.md`, gated per lesson by
    `languages[]` in `lesson-meta.json`, parsed at build time by `processMD` in
-   `lessons/[...slug].tsx`. `validate-content.js` enforces that the file on disk
-   and the `languages[]` entry agree in both directions.
+   `lessons/[slug].tsx` (per-locale via `getStaticPaths`). `validate-content.js`
+   enforces that the file on disk and the `languages[]` entry agree in both
+   directions.
 4. **Lesson names/descriptions in listings** — `translation/website/<lang>/lesson.json`,
    keyed by the **English string** (`t(lesson.name, { ns: 'lesson' })` in
    `LessonCard`/`FeaturedLessons`). There is deliberately **no `en/lesson.json`**:
@@ -594,41 +634,47 @@ Understand all five before touching translations — they fail independently.
   slides do, and the stale `title` field was dropped from all 90 QUIZ/POLL
   `slideMeta` entries. **Keep every quiz heading as `Knowledge Check <n>`** in
   the md, numbered sequentially per lesson.
-### Server-side rendering: off, on purpose
+### Server-side rendering: lesson pages hybrid, the rest off on purpose
 
-Every page currently serves an empty `<div id="__next">`: `_app.tsx` wraps the
-whole tree in `NonSSRWrapper` (`dynamic(..., { ssr: false })`). `<head>` is
-server-rendered and correct (hreflang, canonicals, localized titles), but no
-page content reaches a crawler without JS.
-
-The router-singleton, `localStorage`, `document` and `window` accesses that
-blocked SSR are all fixed. What blocks it now is hydration: the UI reads
-`localStorage` during render in ~116 places, so the server says "15 minutes" /
-"English" / "Start Lesson" where the client says "Done" / "Deutsch" / "View
-Lesson". Unlocking it needs user state out of render plus locale-prefixed URLs
-site-wide. Full findings and a reproduction recipe: `docs/ssr-migration.md`.
+`_app.tsx`'s default branch keeps the interactive tree client-only
+(hydration: the UI reads `localStorage` during render in ~116 places, so naive
+SSR flashes "15 minutes" -> "Done" everywhere). The LESSON pages escaped this
+2026-08-23 without touching any of those call sites: their SEO surface
+(hero + article) renders as a sibling OUTSIDE `<Web3Providers>` in `_app`,
+which server-renders fine while the app tree stays client-only (see "Hybrid
+lesson pages"). Extending SSR to other pages (homepage, /explore, glossary
+body) means either the same sibling trick or user state out of render —
+findings in `docs/ssr-migration.md`.
 
 **Optional chaining does not guard a global.** `window?.location` and
 `document?.referrer` still throw during prerender — optional chaining protects
 a null value, not an undeclared identifier. Use `typeof x !== 'undefined'`.
 
-### Language resolution (one place, three cases)
+### Language resolution (the locale IS the language)
 
-`AppContext` is the **single** source of truth for the active language. It used
-to be split between `AppContext` and `LanguageSelector`, which each re-applied
-their own answer on every route change and fought each other; that is how
-reading a French lesson and then going to the homepage snapped back to English.
-`LanguageSelector` now only migrates legacy codes and handles the picker.
+Since 2026-08-23 every page has one URL per language (Next i18n locale
+prefix), so `router.locale` is the single runtime source of truth.
+`AppContext` applies it on every route change:
 
 | URL | renders | records the preference |
 |---|---|---|
-| `/lessons/fr/x`, `/glossary/fr` (explicit segment) | that language | **yes** |
-| `/lessons/x`, `/glossary` (localizable, no segment) | English | no |
-| `/`, `/explore`, `/lessons/handbook`, everything else | stored preference | no |
+| `/fr/...` (any page, locale prefix) | that language | **yes** |
+| un-prefixed (English) | English | no — and if the reader's stored preference is non-English, AppContext `router.replace`s to their locale's URL instead of restyling the English one (exception: a lesson without that translation stays on the English URL) |
+| `NON_LOCALIZED_PATHS` (explorer, /notion + its /faq//about/... aliases) | the STORED preference, URL stays bare | no |
 
-`isLocalizablePath()` decides row 2 vs row 3, and excludes the sibling pages
-under `/lessons` (`handbook`, `preview`) — they are listings, not lessons, and
-treating them as lessons forced them to English.
+**Non-localized pages** (`NON_LOCALIZED_PATHS` in `languages.ts` — personal
+dashboards and English-only Notion content) are enforced in three layers that
+must stay in sync: `InternalLink` pins `locale="en"` on links to them,
+`AppContext` applies the stored preference there WITHOUT URL-swapping (a swap
+would loop through the server 308), and `next.config.mjs` 308s any
+locale-prefixed request back to the bare path — the one place `locale: false`
+IS correct, because the source carries an explicit non-default prefix.
+
+`parseLangFromPath` / `hasLangSegment` / `isLocalizablePath` are GONE — there
+is no path parsing. `localePath(lang, path)` in the registry builds
+locale-prefixed URLs for plain-string contexts (sitemap, `<a>` hrefs, OG);
+`next/link`/`router.push` take `{ locale }` and must NOT be given a
+pre-prefixed path.
 
 **Two storage keys, do not confuse them.** `default-language`
 (`PREFERRED_LANGUAGE_KEY`) is the reader's *chosen* language; `i18nextLng` is
@@ -642,11 +688,12 @@ bare `es` makes that hook throw on the next render. Always go through
 `readPreferredLanguage()` / `writePreferredLanguage()` in the registry; nothing
 else may touch the key.
 
-Navigation is language-aware through `InternalLink`, which rewrites `/glossary`
--> `/glossary/<lang>` and `/lessons/<slug>` -> `/lessons/<lang>/<slug>` when the
-translation exists. Every entry point (sidebar `DesktopButton`, `LessonCard`,
-`FeaturedLessons`, homepage) goes through it. A raw `<a href>` or `ExternalLink`
-to a localizable route silently drops the language.
+Navigation carries the locale automatically through `next/link` (so
+`InternalLink` no longer rewrites hrefs — it only pins `locale="en"` on lesson
+links whose lesson lacks the active language, since that localized URL would
+404). `ExternalLink` and other plain `<a>` builders use `localePath`.
+`LanguageSelector` switches language by pushing the same path with the new
+`{ locale }`.
 
 ### `validate-i18n.js` (runs in `yarn build`)
 

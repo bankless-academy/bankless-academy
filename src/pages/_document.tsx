@@ -1,13 +1,17 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import type { DocumentProps } from 'next/document'
 
-// Static defaults only. Routing is path-segment based (not Next i18n), so the
-// server cannot know the reader's language here; the real lang/dir are applied
-// per page: client-side by applyDocumentLanguage (constants/languages) via
-// AppContext and Head, and on the server-rendered /content pages as attributes
-// on LessonArticle's outer Box, which is what a crawler actually sees.
-export default function Document(): JSX.Element {
+import { isRtlLang } from 'constants/languages'
+
+// Routing is Next i18n locale-based, so the server knows the language here:
+// Next sets <html lang> itself from the locale, and `dir` is derived from the
+// registry. applyDocumentLanguage (constants/languages) remains the CLIENT
+// authority and keeps both attributes in sync on soft navigations, which a
+// static document attribute cannot cover.
+export default function Document(props: DocumentProps): JSX.Element {
+  const locale = props.__NEXT_DATA__?.locale || 'en'
   return (
-    <Html lang="en" dir="ltr">
+    <Html lang={locale} dir={isRtlLang(locale) ? 'rtl' : 'ltr'}>
       <Head />
       <body>
         <Main />

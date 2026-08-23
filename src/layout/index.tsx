@@ -53,6 +53,8 @@ const Layout = ({
       // minH={isLesson ? '100vh' : 'unset'}
       minH="100vh"
       // height="100%"
+      // clearance for the fixed 81px mobile action bar (the reading panel
+      // renders INSIDE this box, so this is the end of the page again)
       paddingBottom={isSmallLesson && isLesson ? '81px' : '0'}
       bgColor="#161515"
       overflowX={'hidden'}

@@ -1332,7 +1332,7 @@ const Lesson = ({
                 ) : (
                   <>
                     {lesson.badgeImageLink && (
-                      <Box w="290px" h="290px">
+                      <Box w="290px" h="290px" border="0">
                         <NFT nftLink={lesson.badgeImageLink} />
                       </Box>
                     )}
@@ -1407,182 +1407,182 @@ const Lesson = ({
             />
           )}
         {navHasContent && (
-        <SlideNav
-          display="flex"
-          px={4}
-          // tighter on desktop so a nav-bearing slide keeps enough content
-          // share to fit the same SLIDE_H card as button-less slides; the
-          // mobile bar is position:fixed and keeps its touch padding
-          py={isSmallScreen ? 4 : 2}
-          issmallscreen={isSmallScreen.toString()}
-        >
-          {/* Up to four buttons here on a quest slide (Close, Prev, Disclaimer,
+          <SlideNav
+            display="flex"
+            px={4}
+            // tighter on desktop so a nav-bearing slide keeps enough content
+            // share to fit the same SLIDE_H card as button-less slides; the
+            // mobile bar is position:fixed and keeps its touch padding
+            py={isSmallScreen ? 4 : 2}
+            issmallscreen={isSmallScreen.toString()}
+          >
+            {/* Up to four buttons here on a quest slide (Close, Prev, Disclaimer,
               Report an Issue) plus Next/Finish opposite, so the gaps are
               tightened on mobile where that row is the binding constraint. */}
-          <HStack flex="auto" spacing={isSmallScreen ? '1' : '2'}>
-            {!edgeNav && (
-              <Button
-                ref={buttonLeftRef}
-                variant="secondaryBig"
-                size="lg"
-                onClick={() => closeLesson()}
-                leftIcon={<X width="24px" height="24px" />}
-                p={isSmallScreen ? '0' : '24px'}
-                _hover={{ px: isSmallScreen ? '0' : '24px' }}
-                iconSpacing={isSmallScreen ? '0' : '8px'}
-              >
-                {isSmallScreen ? '' : t('Close')}
-              </Button>
-            )}
-            {!edgeNav && !isFirstSlide && (
-              <Button
-                ref={buttonLeftRef}
-                variant="secondaryBig"
-                size="lg"
-                onClick={() => clickLeft()}
-                leftIcon={<ArrowBackIcon className="mirror-rtl" />}
-                // Same treatment as Close above. Without it this button keeps
-                // size lg's 24px side padding plus 8px of icon spacing next to
-                // an empty label, making it ~74px against Close's 48px — the
-                // single biggest waste in a nav row that overflows on mobile.
-                p={isSmallScreen ? '0' : '24px'}
-                _hover={{ px: isSmallScreen ? '0' : '24px' }}
-                iconSpacing={isSmallScreen ? '0' : '8px'}
-              >
-                {isSmallScreen ? '' : t('Prev')}
-              </Button>
-            )}
-            {canSuggestChanges && isFirstSlide && (
-              <EditContentModal lesson={lesson} slide={slide} />
-            )}
-            {lesson?.isPreview && (
-              <Box position="relative">
-                DEBUG
-                <Helper
-                  fullscreen
-                  title="DEBUG"
-                  definition={
-                    <Box>
-                      <StyledKeywords>
-                        Keyword list:{' '}
-                        {ReactHtmlParser(
-                          lesson.keywords
-                            .map((keyword) => `<code>${keyword}</code>`)
-                            .join(', '),
-                          { transform }
-                        )}
-                      </StyledKeywords>
-                      Number of words:{' '}
-                      {lesson.slides
-                        .map((slide) => countWords(slide.content))
-                        .reduce((a, b) => {
-                          return a + b
-                        }, 0)}
-                    </Box>
-                  }
-                />
-              </Box>
-            )}
-            {/* Not gated on `address` like Report an Issue below it: the risk
+            <HStack flex="auto" spacing={isSmallScreen ? '1' : '2'}>
+              {!edgeNav && (
+                <Button
+                  ref={buttonLeftRef}
+                  variant="secondaryBig"
+                  size="lg"
+                  onClick={() => closeLesson()}
+                  leftIcon={<X width="24px" height="24px" />}
+                  p={isSmallScreen ? '0' : '24px'}
+                  _hover={{ px: isSmallScreen ? '0' : '24px' }}
+                  iconSpacing={isSmallScreen ? '0' : '8px'}
+                >
+                  {isSmallScreen ? '' : t('Close')}
+                </Button>
+              )}
+              {!edgeNav && !isFirstSlide && (
+                <Button
+                  ref={buttonLeftRef}
+                  variant="secondaryBig"
+                  size="lg"
+                  onClick={() => clickLeft()}
+                  leftIcon={<ArrowBackIcon className="mirror-rtl" />}
+                  // Same treatment as Close above. Without it this button keeps
+                  // size lg's 24px side padding plus 8px of icon spacing next to
+                  // an empty label, making it ~74px against Close's 48px — the
+                  // single biggest waste in a nav row that overflows on mobile.
+                  p={isSmallScreen ? '0' : '24px'}
+                  _hover={{ px: isSmallScreen ? '0' : '24px' }}
+                  iconSpacing={isSmallScreen ? '0' : '8px'}
+                >
+                  {isSmallScreen ? '' : t('Prev')}
+                </Button>
+              )}
+              {canSuggestChanges && isFirstSlide && (
+                <EditContentModal lesson={lesson} slide={slide} />
+              )}
+              {lesson?.isPreview && (
+                <Box position="relative">
+                  DEBUG
+                  <Helper
+                    fullscreen
+                    title="DEBUG"
+                    definition={
+                      <Box>
+                        <StyledKeywords>
+                          Keyword list:{' '}
+                          {ReactHtmlParser(
+                            lesson.keywords
+                              .map((keyword) => `<code>${keyword}</code>`)
+                              .join(', '),
+                            { transform }
+                          )}
+                        </StyledKeywords>
+                        Number of words:{' '}
+                        {lesson.slides
+                          .map((slide) => countWords(slide.content))
+                          .reduce((a, b) => {
+                            return a + b
+                          }, 0)}
+                      </Box>
+                    }
+                  />
+                </Box>
+              )}
+              {/* Not gated on `address` like Report an Issue below it: the risk
                 warning is about what the quest asks you to do, which does not
                 depend on whether a wallet happens to be connected yet. */}
-            {slide.type === 'QUEST' && (
-              <QuestDisclaimer isSmallScreen={isSmallScreen} />
-            )}
-            {slide.type === 'QUEST' && address && (
-              <ExternalLink
-                href={'/report-an-issue'}
-                alt={t('Report an Issue')}
-              >
-                <Button
-                  leftIcon={<Bug width="24px" height="24px" />}
-                  iconSpacing={isSmallScreen ? 0 : '8px'}
-                  variant="outline"
-                  // Icon-only on mobile, so the 16px side padding is buying
-                  // nothing but width in the row that overflows.
-                  px={isSmallScreen ? '2' : '4'}
+              {slide.type === 'QUEST' && (
+                <QuestDisclaimer isSmallScreen={isSmallScreen} />
+              )}
+              {slide.type === 'QUEST' && address && (
+                <ExternalLink
+                  href={'/report-an-issue'}
+                  alt={t('Report an Issue')}
                 >
-                  {isSmallScreen ? '' : t('Report an Issue')}
-                </Button>
-              </ExternalLink>
-            )}
-          </HStack>
-          <HStack>
-            {slide.type === 'QUEST' &&
-            !Quest?.isQuestCompleted &&
-            !isSmallScreen ? (
-              <Tooltip
-                hasArrow
-                label={t(
-                  "By skipping this quest you won't be able to claim the lesson badge"
-                )}
-              >
-                <Button variant="outline" onClick={() => closeLesson()}>
-                  {t('Skip Quest')}
-                </Button>
-              </Tooltip>
-            ) : null}
-            {!isLastSlide || (lesson?.endOfLessonText && !embed) ? (
-              // plain "Next" only: the end-of-lesson branch below (Finish /
-              // Mint) must always render, it has no edge-chevron equivalent
-              edgeNav && !isFirstSlide ? null : (
-                <Button
-                  ref={buttonRightRef}
-                  variant="primaryBig"
-                  size="lg"
-                  isDisabled={
-                    (slide.quiz && !answerIsCorrect) ||
-                    (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-                  }
-                  onClick={() => {
-                    if (
-                      !(slide.quiz && !answerIsCorrect) &&
-                      !(slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-                    ) {
-                      triggerHaptic(200)
+                  <Button
+                    leftIcon={<Bug width="24px" height="24px" />}
+                    iconSpacing={isSmallScreen ? 0 : '8px'}
+                    variant="outline"
+                    // Icon-only on mobile, so the 16px side padding is buying
+                    // nothing but width in the row that overflows.
+                    px={isSmallScreen ? '2' : '4'}
+                  >
+                    {isSmallScreen ? '' : t('Report an Issue')}
+                  </Button>
+                </ExternalLink>
+              )}
+            </HStack>
+            <HStack>
+              {slide.type === 'QUEST' &&
+              !Quest?.isQuestCompleted &&
+              !isSmallScreen ? (
+                <Tooltip
+                  hasArrow
+                  label={t(
+                    "By skipping this quest you won't be able to claim the lesson badge"
+                  )}
+                >
+                  <Button variant="outline" onClick={() => closeLesson()}>
+                    {t('Skip Quest')}
+                  </Button>
+                </Tooltip>
+              ) : null}
+              {!isLastSlide || (lesson?.endOfLessonText && !embed) ? (
+                // plain "Next" only: the end-of-lesson branch below (Finish /
+                // Mint) must always render, it has no edge-chevron equivalent
+                edgeNav && !isFirstSlide ? null : (
+                  <Button
+                    ref={buttonRightRef}
+                    variant="primaryBig"
+                    size="lg"
+                    isDisabled={
+                      (slide.quiz && !answerIsCorrect) ||
+                      (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
                     }
-                    clickRight()
-                  }}
-                  rightIcon={<ArrowForwardIcon className="mirror-rtl" />}
-                >
-                  {t('Next')}
-                </Button>
-              )
-            ) : (
-              <>
-                <Button
-                  size="lg"
-                  isDisabled={
-                    lesson.badgeId &&
-                    !Quest?.isQuestCompleted &&
-                    lesson.slug !== 'ethereum-basics'
-                  }
-                  onClick={() => {
-                    if (
-                      !(
-                        lesson.badgeId &&
-                        !Quest?.isQuestCompleted &&
-                        lesson.slug !== 'ethereum-basics'
-                      )
-                    ) {
-                      triggerHaptic(200)
+                    onClick={() => {
+                      if (
+                        !(slide.quiz && !answerIsCorrect) &&
+                        !(slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                      ) {
+                        triggerHaptic(200)
+                      }
+                      clickRight()
+                    }}
+                    rightIcon={<ArrowForwardIcon className="mirror-rtl" />}
+                  >
+                    {t('Next')}
+                  </Button>
+                )
+              ) : (
+                <>
+                  <Button
+                    size="lg"
+                    isDisabled={
+                      lesson.badgeId &&
+                      !Quest?.isQuestCompleted &&
+                      lesson.slug !== 'ethereum-basics'
                     }
-                    closeLesson()
-                  }}
-                  variant="primaryBigLast"
-                  rightIcon={<ArrowForwardIcon className="mirror-rtl" />}
-                >
-                  {lesson.badgeId &&
-                  isBadgeMintedLS === false &&
-                  Quest?.isQuestCompleted
-                    ? // ? t('Mint Badge')
-                      t('Finish')
-                    : t('Finish')}
-                </Button>
-              </>
-            )}
-          </HStack>
-        </SlideNav>
+                    onClick={() => {
+                      if (
+                        !(
+                          lesson.badgeId &&
+                          !Quest?.isQuestCompleted &&
+                          lesson.slug !== 'ethereum-basics'
+                        )
+                      ) {
+                        triggerHaptic(200)
+                      }
+                      closeLesson()
+                    }}
+                    variant="primaryBigLast"
+                    rightIcon={<ArrowForwardIcon className="mirror-rtl" />}
+                  >
+                    {lesson.badgeId &&
+                    isBadgeMintedLS === false &&
+                    Quest?.isQuestCompleted
+                      ? // ? t('Mint Badge')
+                        t('Finish')
+                      : t('Finish')}
+                  </Button>
+                </>
+              )}
+            </HStack>
+          </SlideNav>
         )}
       </Box>
       <KeyboardShortcutsModal

@@ -24,6 +24,7 @@ import {
   LanguageCode,
   LanguageDef,
   isLanguage,
+  isNonLocalizedPath,
   normalizeLangCode,
 } from 'constants/languages'
 import { LessonType, LanguageType } from 'entities/lesson'
@@ -57,20 +58,16 @@ const LanguageSelector = ({
   const [query, setQuery] = useState('')
   const [activeIndex, setActiveIndex] = useState(-1)
 
-  // ---- lesson-page detection (same as the old SelectLanguage) ----
+  // ---- lesson-page detection ----
+  // The language lives in router.locale now (site-wide /<lang>/ URLs); only
+  // the lesson slug still comes from the path.
   const isLessonPage =
     router.pathname.startsWith('/lessons/') &&
-    router.pathname !== '/lessons/handbook'
-  // the glossary has one indexable URL per language too, so switching language
-  // there should move the user to that URL rather than only swapping strings
-  const isGlossaryPage = router.pathname.startsWith('/glossary')
-  const lessonSlugs = isLessonPage ? (router.query.slug as string[]) : []
-  const selectedLanguage = lessonSlugs?.length > 1 ? lessonSlugs[0] : null
-  const isContentPage = router.asPath.endsWith('/content')
-  const lessonSlug = isContentPage
-    ? lessonSlugs?.[lessonSlugs.length - 2]
-    : lessonSlugs?.[lessonSlugs.length - 1]
-  const content = isContentPage ? '/content' : ''
+    !['handbook', 'preview'].some((p) => router.pathname === `/lessons/${p}`)
+  const lessonSlug = isLessonPage
+    ? (router.query.slug as string)?.replace('-datadisk', '')
+    : undefined
+  const urlLocale = normalizeLangCode(router.locale)
 
   // lesson prop wins; fall back to the lesson derived from the URL so the
   // nav globe keeps its per-lesson behavior without a prop
@@ -81,8 +78,8 @@ const LanguageSelector = ({
   // ---- persisted language (same as the old SelectLanguage) ----
   const [defaultLanguage, setDefaultLanguage] = useLocalStorage<string>(
     'default-language',
-    selectedLanguage && isLanguage(selectedLanguage)
-      ? selectedLanguage
+    urlLocale !== 'en' && isLanguage(urlLocale)
+      ? urlLocale
       : typeof window !== 'undefined'
       ? // browser tags (pt-BR, zh-TW, ja-JP...) -> registry codes
         normalizeLangCode(window.navigator.language)
@@ -164,23 +161,30 @@ const LanguageSelector = ({
     void loadLanguage(code).then(() => i18n.changeLanguage(code))
     setDefaultLanguage(code)
     setLanguage(code)
-    let path: string | null = null
-    if (isGlossaryPage) {
-      path = code === 'en' ? '/glossary' : `/glossary/${code}`
-      router.push(path)
-    } else if (isLessonPage && lessonSlug) {
-      // route to the translated lesson URL when it exists, else keep the
-      // user on the English lesson URL (UI language still switches)
-      path =
-        code !== 'en' && currentLesson?.languages?.includes(code)
-          ? `/lessons/${code}/${lessonSlug}${content}`
-          : `/lessons/${lessonSlug}${content}`
-      router.push(path)
+    // Every page has one URL per language now, so switching language means
+    // navigating to this page's URL in that locale. Two exceptions:
+    //   - a lesson without that translation has no localized URL, so it stays
+    //     (or lands) on the English lesson URL;
+    //   - non-localized pages (explorer, Notion aliases) never navigate — the
+    //     UI strings switch in place via the stored preference.
+    const untranslatedLesson =
+      isLessonPage &&
+      code !== 'en' &&
+      !currentLesson?.languages?.includes(code)
+    const target = code === 'en' || untranslatedLesson ? 'en' : code
+    if (!isNonLocalizedPath(router.asPath)) {
+      void router.push(
+        untranslatedLesson && lessonSlug
+          ? `/lessons/${lessonSlug}`
+          : router.asPath,
+        undefined,
+        { locale: target }
+      )
     }
     Mixpanel.track('change_language', {
       lesson: currentLesson?.englishName,
       language: code,
-      link: path || router.asPath,
+      link: router.asPath,
       name: code,
     })
     setQuery('')
