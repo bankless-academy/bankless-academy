@@ -53,13 +53,6 @@ import {
   KEYWORDS,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
-import {
-  LearnIcon,
-  QuizIcon,
-  PollIcon,
-  QuestIcon,
-  RewardsIcon,
-} from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
 import QuestDisclaimer from 'components/Quest/QuestDisclaimer'
@@ -1085,7 +1078,9 @@ const Lesson = ({
             a quiet permanent affordance. */}
         <HStack
           position="absolute"
-          style={{ insetInlineEnd: '0' }}
+          // 12px = ProgressSteps' m="3": header anchors, progress bar and
+          // (within 3px) the body text all share the same side rails
+          style={{ insetInlineEnd: '12px' }}
           top="50%"
           transform="translateY(-50%)"
           spacing="1"
@@ -1112,14 +1107,18 @@ const Lesson = ({
             </Tooltip>
           )}
         </HStack>
-        <Box display="inline-flex" alignItems="center" me="4">
-          {slide.type === 'LEARN' && <LearnIcon />}
-          {slide.type === 'QUIZ' && <QuizIcon />}
-          {slide.type === 'POLL' && <PollIcon />}
-          {slide.type === 'QUEST' && <QuestIcon />}
-          {slide.type === 'END' && <RewardsIcon />}
-        </Box>
-        <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
+        {/* No slide-type icon here on purpose: it drifted with title width
+            on every slide change, and it only repeated what the title already
+            says (Knowledge Check / Quest). The title centers on the card's
+            own axis, which never moves between slides. */}
+        <Box
+          color={slide.type === 'END' ? theme.colors.secondary : 'unset'}
+          flex="1"
+          textAlign="center"
+          // symmetric clearance for the actions stack at inline-end (desktop
+          // only), so a long title wraps centered instead of sliding under it
+          px={isSmallScreen ? '8px' : '72px'}
+        >
           {slide.type === 'QUIZ' || slide.type === 'POLL' ? (
             <>
               {lesson?.isPreview || !IS_PROD ? (
