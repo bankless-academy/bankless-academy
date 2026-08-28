@@ -2,6 +2,8 @@
 
 This document contains technical information and setup instructions for developers who want to contribute to Bankless Academy. For general information about the platform, please refer to our [README](./README.md).
 
+Working on the codebase with an AI assistant? [CLAUDE.md](./CLAUDE.md) is the deep-dive companion to this file: content pipeline, i18n internals, routing, and the traps behind each.
+
 ## Project Links
 
 - [Documentation](https://documentation.banklessacademy.com/): Understand how you can integrate Bankless Academy to your website.
@@ -10,7 +12,7 @@ This document contains technical information and setup instructions for develope
 
 ### Bootstrapped with
 
-- [Next.js](https://nextjs.org/docs)
+- [Next.js](https://nextjs.org/docs) (pages router)
 - [Chakra UI v2](https://v2.chakra-ui.com/getting-started) (includes [@emotion/styled](https://emotion.sh/docs/styled), which works like [Styled Components](https://styled-components.com/docs/basics))
 - [wagmi](https://wagmi.sh/)
 - [reown](https://docs.reown.com/appkit/overview)
@@ -26,8 +28,11 @@ This document contains technical information and setup instructions for develope
 ## Local Development
 
 ```bash
+yarn install
 yarn dev
 ```
+
+Type errors do not fail the build (`typescript.ignoreBuildErrors: true`), so run `yarn type-check` yourself before opening a PR.
 
 ## Database
 
@@ -79,67 +84,39 @@ We save the encrypted account username associated with each Passport stamp to de
 Heatmap recording via [hotjar.com](https://hotjar.com)
 This helps us understand how a user interacts with the product in order to improve the user experience.
 
-## Content Management
+## Content
 
-### How to import content from Notion
+**This repository is the source of truth for lesson content.** Lessons were historically authored in Notion and imported; that flow is retired. The Notion import scripts are kept for reference only and refuse to run without an explicit opt-in.
 
-#### Where to update the content
+### Editing a lesson
 
-[https://banklessacademy.notion.site/129141602de240e484356bd85f7c75e0](https://banklessacademy.notion.site/129141602de240e484356bd85f7c75e0)
+1. Edit `translation/lesson/en/<slug>.md` — frontmatter, slides as `#` sections, quizzes as `- [ ]` options with the correct one marked `- [x]`, per-option feedback as `> ℹ️` blockquotes. Lesson metadata that isn't prose (badges, quest binding, duration, per-slide types, `languages[]`) lives in `src/constants/lesson-meta.json`.
+2. `yarn build-content` — regenerates `src/constants/lessons.json` + `lessons.ts`. Commit sources and generated files together.
+3. `yarn validate-content && yarn test-content` — both also run inside `yarn build`, so a deploy fails on invalid content or stale artifacts.
 
-#### Default content import command
+Two rules that are easy to break and expensive to fix, because user progress lives in the visitor's own browser (`localStorage`):
 
-```bash
-yarn import-content
-```
+- **Never move the correct answer to a different option position** — saved answers are option *numbers*.
+- **Don't add, remove or reorder slides** — a resume position is a slide *index*, and quiz ids are positional.
 
-#### Show import command help
+The full editing rules (length limits, glossary/backtick rules, writing for translatability) are in [CLAUDE.md](./CLAUDE.md).
 
-```bash
-yarn import-content -h
-```
+### Glossary
 
-#### Import content with a specific Notion ID
+`translation/keywords/en/keywords.json` is hand-edited and canonical. Every backticked `term` in a lesson must resolve to an entry there — `validate-content.js` fails the build otherwise.
 
-```bash
-yarn import-content -nid 129141602de240e484356bd85f7c75e0
-```
+### Translations
 
-#### Import all translations for a specific lesson
+Every published lesson ships in 28 languages. Translations are generated (never hand-edited per language on a whim) against `translation/style/<lang>.md` and verified structurally — same section count, same quiz options, `[x]` in the same position:
 
 ```bash
-yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -lg all
+yarn translate-content --lang fr --slug bitcoin-basics
+yarn translate-content --lang fr --all
 ```
 
-#### Import a translation for a specific lesson
+Needs `ANTHROPIC_API_KEY` in `.env`. See [docs/translation-pipeline.md](./docs/translation-pipeline.md) for the full walkthrough.
 
-```bash
-yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -lg fr
-```
-
-#### How does it work
-
-The [import script](https://github.com/bankless-academy/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/bankless-academy/potion](https://github.com/bankless-academy/potion) and transforms the content into [this Object](https://github.com/bankless-academy/bankless-academy/blob/main/src/constants/lessons.ts).
-
-### How to import keywords definitions from Notion
-
-Note: import keywords before importing content.
-
-#### Where to update the keywords
-
-[https://banklessacademy.notion.site/d452559560a447169e10f2d3c6ee5288](https://banklessacademy.notion.site/d452559560a447169e10f2d3c6ee5288)
-
-#### Default keywords import command
-
-```bash
-yarn import-keywords
-```
-
-#### Import keywords with a specific Notion ID
-
-```bash
-yarn import-keywords d452559560a447169e10f2d3c6ee5288
-```
+Traditional Chinese (`zh-tw`) is **derived** from `zh` by `node convert-zh-tw.js` — never hand-edit it; fix `zh` (or the converter's override table) and re-run.
 
 ## How to get started for devs
 

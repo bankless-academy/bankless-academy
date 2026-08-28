@@ -1,78 +1,37 @@
-# RTL audit — findings and implementation plan (2026-08-22)
+# RTL support — architecture, measurements and defect classes
 
-Gate for shipping `ar` + `ur` (both `dir: 'rtl'` in the registry when added).
-Audit of the full UI surface; implementation phases below. `am` is LTR and
-does not need this.
+Written as the gate for shipping `ar` + `ur` (2026-08-22); both are live, so
+this is now the reference for **keeping** RTL working rather than a plan. Keep
+it current if any of the architecture below moves.
 
-## Key findings (file:line refs verified 2026-08-22)
+## The architecture
 
-1. **Only one thing consumes `dir` today, and it's mounted in the wrong
-   place**: `LanguageSelector.tsx:104-111` sets `document.documentElement.dir`
-   in an effect — but LanguageSelector is mounted by `Nav`, and `Lesson.tsx`
-   sets `hideNavBar=true` on every non-QUEST slide (layout/index.tsx:60 skips
-   Nav), so **the lesson slideshow never gets a direction**. The SSR content
-   pages (`nolayout` branch) never mount it at all.
-2. **No `_document.tsx` exists** — `<html>` ships with neither `lang` nor
-   `dir` on any page. It must be created, but can only carry a static default
-   (path-segment routing, not Next i18n).
-3. **Server-rendered content mirror**: `lessonContentPage.ts:54,109` computes
-   `lang` into pageMeta; `LessonArticle.tsx:107` outer Box is the only place
-   `dir`/`lang` can attach (html is out of reach on that route).
-   `Head.tsx:36` declares `MetaData.lang` but never consumes it (free carrier).
-4. **Chakra theme has no `direction`** (`theme/index.tsx:15`, module-scope
-   singleton, imported directly by `Lesson.tsx:63`). Recreating it per
-   language would change emotion's hashed class names and silently break the
-   ~12 hard-coded `.css-XXXXXX` selectors in `_app.tsx:212-331`.
-5. **~146 direction-sensitive style sites on the critical path** (of ~180+
-   repo-wide). Worst files: `Article.tsx` 48, `OnboardingModal.tsx` 14,
-   `Lesson.tsx` 13, `OptionMenu.tsx` 12 (all inline `style`, Chakra-invisible),
-   `Layout.tsx` 11 (the 230px rail: `marginLeft` + `borderLeft` at :299-310),
-   `Animation.tsx` 11, `LessonDetail.tsx` 10, `ConnectWalletButton.tsx` 10,
-   `pages/index.tsx` 8. Deferrable (0 hits): stats, debug, whitelabel, quiz,
-   passport, lessons index/catch-all, LessonButton, FeaturedLessons.
-6. **The one outright-broken-looking defect**: `Article.tsx:266-291` hangs
-   list bullets via `li::before { position:absolute; right: calc(100% - 1ch);
-   text-align:right }` — under RTL the bullet lands on top of the text.
-7. **Directional glyphs**: only 8 sites repo-wide (Lesson.tsx:1353,1366,1411,
-   1514,1541 ArrowBack/Forward; Article.tsx:691; plus 3 ArrowSquareOut
-   external-link glyphs). Keyboard hotkeys `left`/`right` at Lesson.tsx:784,795
-   need semantic swap under RTL.
-8. **Bidi is the sleeper risk, not layout**: `Lesson.tsx:958-974` detaches
-   trailing ASCII punctuation from keyword nodes and re-emits it as a bare
-   sibling (UBA will misplace it in Arabic prose); `LessonArticle.tsx` renders
-   backticked terms as plain `<code>` with no isolation (`Prose` :53-58).
-   `span.keyword`'s `display:inline-block` (Lesson.tsx:119-124) already
-   isolates in the slideshow.
-9. **Free flips that need review, not code**: ProgressSteps fill grows from
-   flex-start (flips correctly); `.bloc1/.bloc2` flex rows put images on the
-   other side under RTL (probably desirable); Nav's Flex order reverses.
-   ProgressSteps :38 `linear-gradient(270deg,…)` and :49-59 head dot
-   (`right:0`) are physical. ChatWidget Drawer `placement="right"` → `"end"`.
-10. **Only logical-property usage in the repo**: LessonButton.tsx:74-75
-    `paddingStart/End` — currently LTR-fixed because the theme has no
-    direction.
+**The Chakra theme stays LTR forever.** It is a static module-scope singleton
+imported directly by `Lesson.tsx`; recreating it per language churns emotion's
+hashed class names and breaks the hard-coded `.css-XXXXXX` selectors in
+`_app.tsx`. Direction comes from the DOM instead, and styles use raw CSS
+logical properties, which browsers resolve against the element's computed
+direction with no Chakra involvement.
 
-## Architectural decision: keep the Chakra theme LTR
+Who sets direction:
 
-Do NOT flip `theme.direction` per language. Rationale: the theme is a static
-singleton with a direct import (Lesson.tsx:63); per-language recreation churns
-emotion class hashes and breaks the hard-coded `.css-XXXXXX` selectors in
-`_app.tsx`; and the repo uses Chakra logical shorthands exactly once. Instead:
-**set `dir` on the DOM and use raw CSS logical properties**
-(`margin-inline-start`, `inset-inline-end`, `border-inline-start`,
-`padding-inline-*`, `text-align: start`), which browsers resolve against the
-element's computed direction with no Chakra involvement. In JSX use
-`sx={{ marginInlineStart: … }}` or `style={{…}}`; in emotion template blocks
-use the CSS property names directly. Implementation must verify computed CSS
-on one converted case before fanning out (Chakra prop-name collisions).
+- `_document.tsx` renders `<html lang dir>` from the **request locale**
+  (`isRtlLang` on `props.__NEXT_DATA__.locale`), so every `/ar/...` and
+  `/ur/...` page ships `dir="rtl"` in the static HTML — crawler-visible, and
+  correct before any JS runs.
+- `applyDocumentLanguage()` in `src/constants/languages.ts` is the **only**
+  client-side writer of `<html lang>/<dir>`. `AppContext` calls it on every
+  route change and on the imperative language switch. It used to live in
+  `LanguageSelector`, which is mounted by `Nav` — and `Lesson.tsx` hides the
+  nav on every non-QUEST slide, so the slideshow never got a direction at all.
+  Don't move it back into a component that can unmount.
+- `isRtlDocument()` reads that attribute back for the rare runtime conditional
+  (the lesson hotkeys swap handlers at event time).
 
-## Implementation plan
+## Chakra prop resolution — MEASURED 2026-08-22
 
-## Chakra prop resolution — MEASURED 2026-08-22 (binding for Phase B)
-
-Probed `@chakra-ui/styled-system`'s `css()` with no theme direction (ours stays
-LTR forever). Two classes of "logical" prop, and confusing them silently
-hardcodes LTR:
+Probed `@chakra-ui/styled-system`'s `css()` with no theme direction. Two
+classes of "logical" prop, and confusing them silently hardcodes LTR:
 
 | write it as | Chakra emits | verdict |
 |---|---|---|
@@ -84,6 +43,7 @@ hardcodes LTR:
 | `borderTopStartRadius`, `borderStartStartRadius`, `roundedStart/End`, … | **physical corners** | ❌ never as Chakra prop or `sx` |
 
 Escape hatches for the ❌ rows, best first (all verified against `css()`):
+
 1. **kebab-case keys in `sx`** — `sx={{ 'border-start-start-radius': 0 }}`.
    Chakra's resolver matches config keys exactly (camelCase), so kebab keys
    pass through untouched to emotion and the BROWSER resolves them. Works with
@@ -91,193 +51,81 @@ Escape hatches for the ❌ rows, best first (all verified against `css()`):
 2. inline `style={{ insetInlineStart: … }}` (React passes camelCase straight
    to CSS) — fine for static values, no pseudo/responsive.
 3. emotion template CSS (`inset-inline-start: …`) in styled components.
+4. an explicit `sx={{ '[dir="rtl"] &': …physical mirror… }}` block — needed for
+   gradients and corner radii, which have no browser-resolved logical form
+   that survives Chakra.
+
 CamelCase keys in `sx` go through the SAME `css()` pipeline as props and are
-NOT an escape hatch.
+NOT an escape hatch. Drawer/Popover `placement="end"` resolves against the
+theme direction too, so it is in the ❌ class.
 
-## Post-launch defect class found by the first real-Arabic review (2026-08-22)
+## Defect classes worth remembering
 
-**Interlocking-corner constructs**: two siblings shaped to join into one pill
-(flat edges meeting mid-row) via physical `borderLeftRadius="0"` /
-`borderRightRadius="0"`. Flex order flips under RTL, the physical corners do
-not, so the flat edges face OUTWARD (screenshot: LessonButton's sponsor chip +
-View Lesson button). **The Phase B greps were blind to this class** — corner
-props and 4-value `borderRadius` shorthands contain no "left"/"right" text.
-Fixed repo-wide with kebab-logical `sx` (LessonButton, ProgressTitle,
-ShareModal, OnboardingModal simplified to the same pattern, SelectCommunity /
-ShareAction / ExplorerProfile addon buttons); repo now has ZERO physical
-corner-radius props.
+1. **Interlocking-corner constructs.** Two siblings shaped to join into one
+   pill (flat edges meeting mid-row) via physical `borderLeftRadius="0"` /
+   `borderRightRadius="0"`. Flex order flips under RTL, the physical corners do
+   not, so the flat edges face OUTWARD. **Greps for direction are blind to this
+   class** — corner props and 4-value `borderRadius` shorthands contain no
+   "left"/"right" text. The repo now has ZERO physical corner-radius props;
+   keep it that way.
+2. **Chakra InputGroup internals.** Chakra zeroes input/addon join corners
+   against the theme direction (permanently LTR), so every input-with-addon
+   mis-joined under RTL. Fixed globally in `_app.tsx` with logical-property
+   overrides on `.chakra-input__left-addon` / `__right-addon` / adjacent
+   `.chakra-input` — identical output in LTR, correct join in RTL, covers all
+   current and future input groups.
+3. **Bidi, not layout, is the sleeper risk.** Keyword tooltips and `<code>`
+   carry `unicode-bidi: isolate` (`Lesson.tsx`, `LessonSeoArticle.tsx`), and
+   the trailing ASCII punctuation `Lesson.tsx` detaches from a keyword node is
+   re-emitted INSIDE that isolating span, so the bidi algorithm can never
+   re-order it away from the term. Latin-only inputs (tx hashes,
+   `placeholder="0x..."`) get an explicit `dir="ltr"`.
+4. **Arabic cursive joining vs. `inline-block`.** The keyword span's
+   `inline-block` breaks joining, so attached ف/ب/ل/ك prepositions and pronoun
+   suffixes must never touch a backticked term. This is a *content* rule,
+   encoded in `translation/style/ar.md`.
+5. **Floating utility chrome does NOT mirror.** The ChatWidget and its Helper
+   badge are pinned physical bottom-right in every language — industry
+   convention (Intercom, Zendesk, WhatsApp), and it reduces the "everything
+   moved" effect for readers switching languages. The standing rule: **content
+   and navigation mirror; floating utilities stay put.**
+6. **Deliberately left physical:** symmetric values, centering transforms,
+   OnboardingModal icon-composition margins (calibrated against fixed
+   decorative images), and `Animation.tsx` scene composition *including* its
+   embedded `<`/`>` step buttons — the artwork doesn't mirror, so flipping only
+   the controls would disorient. External-link glyphs (ArrowSquareOut) are not
+   mirrored either (universal convention). Prev/next arrows DO mirror, via the
+   `.mirror-rtl` global class (`[dir='rtl'] .mirror-rtl { transform: scaleX(-1) }`).
 
-**Chakra InputGroup internals**: Chakra zeroes input/addon join corners
-against the theme direction (permanently LTR), so every input-with-addon
-mis-joined under RTL (screenshot: Bitcoin quest recipient field). Fixed
-globally in `_app.tsx` with logical-property overrides on
-`.chakra-input__left-addon` / `__right-addon` / adjacent `.chakra-input` —
-identical output in LTR, correct join in RTL, covers all current and future
-input groups. Plus BitcoinBasics quest: icon-gap `ml`→`ms`, labels
-`textAlign="left"`→`"start"`.
+## Bugs the RTL work exposed in every language
 
-## Full-page + quest screenshot review round (2026-08-23, headless Chrome)
+Worth knowing because they were invisible until RTL made someone look:
 
-Every page type, the slideshow (slides, quiz, feedback toast, hotkeys),
-all 14 quest components (via a TEMP parameterized /quest harness, reverted),
-and mobile — in ar, then the same surfaces in en for regression. Verified
-correct in RTL: rail placement, progress fill direction, mirrored prev/next
-+ their edge placement, quiz layout + toast, keyword tooltips, glossary
-strip (moved to inline-end), mint button (LTR island), lesson-card sponsor
-pill, input-group joins, mobile nav. LTR regression: none — all touched
-surfaces render identical to the original design.
+- Hardcoded English in OnboardingModal, the slideshow "Next", LessonDetail
+  "Badge", and two quest handbook cards — 10 new `common.json` keys across all
+  languages.
+- **Layer1Blockchains quest rendered raw i18n keys in EVERY language.**
+  `t(characteristic)` is a dynamic call, invisible to `validate-i18n`'s
+  literal-key check, and `en/quests.json` never had the keys at all.
+- OptimismGovernance's card shows English **by design** — its handbook lesson
+  is deprecated, so no translations exist and `t()` falls through.
 
-Fixed during the round (several affect ALL languages, found only because RTL
-made them visible):
-- Untranslated hardcoded UI: OnboardingModal (Welcome/Next/Back/Start/
-  Sign-up loading/toasts), Lesson.tsx slideshow "Next", LessonDetail "Badge",
-  StakingOnEthereum + DecentralizedExchanges quest handbook cards
-  (lesson.name via `tCommon(lesson.name, { ns: 'lesson' })` + Read Entry).
-  10 new common.json keys added across ALL 26 languages (zh-tw via
-  converter, never by hand).
-- **Layer1Blockchains quest rendered raw i18n keys in EVERY language**
-  (`t(characteristic)` is a dynamic call, invisible to validate-i18n's
-  literal-key check; en/quests.json never had decentralization/scalability/
-  security). Keys added to all 26 languages, values sourced from each
-  language's own glossary keyword for perfect consistency.
-- tx-hash inputs (`placeholder="0x..."`) get `dir="ltr"` — hashes are Latin
-  and the placeholder bidi-scrambled (DEXAggregators, DecentralizedExchanges,
-  BlockchainBasics ×2).
-- Quest components bulk pass: `ml`/`mr` icon gaps → `ms`/`me`,
-  `textAlign` left/right → start/end (9 files).
-- OnboardingModal + ShareModal pills and ProgressTitle converted to the
-  kebab-logical pattern; LessonButton + all remaining physical corner-radius
-  props eliminated repo-wide.
-- OptimismGovernance card shows English by DESIGN (its handbook lesson is
-  deprecated → no translations exist; t() falls through). Not a defect.
+## Verification status
 
-- A1. One helper in the registry (`applyDocumentLanguage(lang)`: sets
-  `document.documentElement.dir` + `lang` from LANGUAGES). Call it from
-  AppContext's route effect (AppContext.tsx:89-109) AND its imperative
-  `setLanguage` (:115-118). Remove the effect from LanguageSelector.
-  GlossaryPage.tsx:22 has a third rogue `i18n.changeLanguage` — route it
-  through the same helper.
-- A2. Create `src/pages/_document.tsx` with static `<Html lang="en" dir="ltr">`.
-- A3. SSR content pages: emit `dir` from `lessonContentPage.ts` (registry
-  lookup on `usedLang`), attach `dir` + `lang` on `LessonArticle.tsx:107`'s
-  outer Box; wire `MetaData.lang` in Head.tsx while there.
+Machine-verified: `yarn build` green; banned-prop sweep clean (no
+`insetInline*` or logical-radius as a Chakra prop or `sx` key); served HTML
+carries `dir`/`lang` from `_document`. A full headless-Chrome screenshot round
+(2026-08-23) covered every page type, the slideshow (slides, quiz, feedback
+toast, hotkeys), all 14 quest components and mobile, in `ar` and then `en` for
+regression: no LTR regressions, and the RTL surfaces render correctly.
 
-**Phase B — critical-path physical→logical conversion: ✅ DONE 2026-08-22**
-(4 Sonnet-medium agents, diffs reviewed centrally, banned-prop sweep clean.)
-Notable decisions made during conversion:
-- Escape-hatch pattern in practice: static insets went to inline
-  `style={{ insetInline… }}` (Lesson close/prev/next, ChatWidget trigger/close,
-  Helper badge, Article edit button); the ProgressSteps last-step gradient and
-  the OnboardingModal pill radii use explicit `sx={{ '[dir="rtl"] &': …physical
-  mirror… }}` blocks since gradients/corner-radii have no browser-resolved
-  logical form that survives Chakra.
-- Left physical on purpose: symmetric values, centering transforms,
-  OnboardingModal icon-composition margins (calibrated against fixed decorative
-  images), Animation.tsx scene composition AND its embedded `<`/`>` step
-  buttons (the artwork doesn't mirror, so flipping only the controls would
-  disorient), Layout.tsx:577 dead `borderRight={0}`.
-- LessonDetail.tsx:382/409 conversions sit in commented-out JSX (dead code,
-  converted so reactivation is safe).
+**Still open:** a human browser click-through, especially the `Layout.tsx`
+desktop rail (a fixed/absolute box with NO inline inset, relying on document
+flow — the riskiest unverified spot) and the OnboardingModal pill.
 
-**Phase C — behavior, glyphs, bidi: ✅ DONE 2026-08-22 (central)**
-- C1: `.mirror-rtl` utility class in _app.tsx global CSS
-  (`[dir='rtl'] .mirror-rtl { transform: scaleX(-1) }`); applied to the 5
-  Lesson.tsx prev/next arrows + Article.tsx newsletter ArrowRight.
-  External-link glyphs (ArrowSquareOut) deliberately NOT mirrored (universal
-  convention). Animation `<`/`>` not mirrored (see Phase B note).
-- C2: hotkeys swap handlers at EVENT time via `isRtlDocument()` (new registry
-  helper reading the attribute `applyDocumentLanguage` maintains); both
-  hotkeys now share the union of both handlers' deps.
-- C3: `[dir='rtl'] #chakra-toast-manager-top-left { right: 2vh; left: auto }`
-  (both !important, same specificity trick as the existing LTR rule).
-- C4: `unicode-bidi: isolate` on both `span.keyword` blocks (Lesson.tsx) and
-  `Prose code` (LessonArticle.tsx); the detached trailing punctuation is now
-  re-emitted INSIDE the keyword's isolating nowrap span, so the bidi
-  algorithm can never re-order it away from the term.
-- C5 (REVISED 2026-08-22 after the first real-Arabic review): the floating
-  chat widget (trigger, Drawer, close button) and its Helper badge are pinned
-  PHYSICAL bottom-right in every language — industry convention (Intercom,
-  Zendesk, WhatsApp widgets do not flip in RTL locales), and it reduces the
-  "everything moved" effect for readers switching languages. The earlier
-  `isRtlDocument()` placement conditional was removed. This is the standing
-  rule for floating utility chrome: content and navigation mirror; floating
-  utilities stay put. Tooltip `placement="left"` sites left as-is (popper
-  auto-flip mitigates).
-
-Original per-task briefs below, kept for reference:
-
-**Phase B — critical-path physical→logical conversion (~146 sites, mechanical,
-agent-friendly; one agent per file group, verify with build + visual dev pass):**
-- B1. `Article.tsx` (48) — includes redesigning the li::before bullet hang to
-  `inset-inline-end: calc(100% - 1ch); text-align: end`, blockquote/callout
-  rules, newsletter CTA `textAlign` → `start`/`end`.
-- B2. `Lesson.tsx` (13 + slide CSS): ul/ol `margin-inline-start`, blockquote
-  `border/padding-inline-start`, close button + header stack insets, prev/next
-  `left/right:-24px` → `inset-inline-*`, quiz `textAlign="left"` → `"start"`,
-  `.chakra` details corner radii; ProgressSteps insets + gradient.
-- B3. Chrome: `Layout.tsx` rail (`marginInlineStart`, `borderInlineStart`,
-  verify the rail's no-inset absolute box actually flips — riskiest spot),
-  `OptionMenu.tsx` 12 inline styles → `marginInlineEnd`, `Nav.tsx`,
-  `LanguageSelector.tsx` (`textAlign: start`, CheckIcon margin),
-  `ConnectWalletButton.tsx`, `Helper.tsx`, ChatWidget Drawer `placement="end"`
-  + its fixed trigger/close insets.
-- B4. `OnboardingModal.tsx`, `LessonDetail.tsx` (incl. :382/:409/:629 offsets),
-  `Animation.tsx`, `pages/index.tsx`, `LessonArticle.tsx` Prose CSS (ul/ol
-  shorthand, blockquote, contents `pl`).
-- Rule: convert only direction-RELATIVE intent; leave genuinely physical or
-  symmetric values; `textAlign="center"` and translateY untouched.
-
-**Phase C — behavior, glyphs, bidi (judgment work, keep central or one agent):**
-- C1. Mirroring arrows: a tiny `DirectionalIcon` (or conditional swap) for the
-  5 Lesson.tsx arrow sites + Article.tsx:691; decide external-link glyphs
-  (probably leave).
-- C2. Hotkeys: under RTL, physical ArrowLeft = next / ArrowRight = prev
-  (Lesson.tsx:784,795).
-- C3. Toast manager: `_app.tsx:312-316` `#chakra-toast-manager-top-left
-  { left: 2vh }` needs an RTL counterpart (`[dir=rtl] … { right: 2vh;
-  left: auto }`).
-- C4. Bidi isolation: `unicode-bidi: isolate` on `span.keyword`
-  (Lesson.tsx:119) and on `Prose code` (LessonArticle.tsx:53); wrap the
-  re-emitted trailing punctuation (Lesson.tsx:974) together with the keyword
-  span in one isolating wrapper so UBA keeps them attached.
-- C5. Tooltip placements: `placement="left"` sites (Lesson.tsx:1017,
-  ChatWidget:293) → `"start"`-equivalents if Chakra supports, else leave
-  (auto-flip on overflow already mitigates).
-
-**Phase D — verification: machine checks done 2026-08-22; visual pass OPEN.**
-Machine-verified: full `yarn build` green after B+C; banned-prop sweep clean
-(no `insetInline*`/logical-radius as Chakra prop or sx key); prerendered
-content pages carry `dir`+`lang` on the article root and `<html lang="en"
-dir="ltr">` from _document. Still open (needs a browser): the dev-mode
-click-through below with one language temporarily flipped to rtl, especially
-the Layout.tsx desktop rail (fixed/absolute box with NO inline inset, relying
-on document flow: the riskiest unverified spot) and the OnboardingModal pill.
-
-**UPDATE 2026-08-23 (locale-URL migration):** `_document.tsx` is no longer
-static — routing moved to Next pages-router i18n, so it sets `<html lang>`
-AND `dir` from the request locale (`isRtlLang` on `props.__NEXT_DATA__.
-locale`). Every `/ur/...` and `/ar/...` page now ships `dir="rtl"` in the
-static HTML itself, not just on the article root; `applyDocumentLanguage`
-remains the client-side authority on soft navigations. The old
-`/lessons/<lang>/<slug>/content` URLs in the recipes below are now
-`/<lang>/lessons/<slug>` (the /content mirrors are retired; the lesson page
-serves the article server-side — verify `dir` there with curl).
-- Dev recipe: temporarily set one shipped language to `dir:'rtl'` in the
-  registry (NOT committed), `vercel dev`, click through: homepage, lesson
-  landing, full slideshow (quiz + toast + tooltip + prev/next), handbook
-  article, `/lessons/<lang>/<slug>/content` (view-source for dir attr),
-  glossary, onboarding modal, nav/rail/mobile bar, ChatWidget.
-- The SSR content page must show `dir="rtl"` in the served HTML (curl, not
-  browser).
-- Do NOT register `ar` until its wave starts (registry entry + empty content
-  is safe post-sitemap-fix, but the selector would show a dead language).
-
-## Effort estimate
-
-A: one sitting, central. B: ~4 mechanical agent-tasks (B1-B4), verifiable by
-build + dev pass. C: one focused task. D: manual pass per phase. Total is a
-day-scale effort, then ar/ur becomes a standard wave (both lack ETHGlossary
-data upstream — same degraded-pins path wave 6 used; ur additionally shares
-the Arabic script's typography questions — settle numerals (Arabic vs
-Eastern-Arabic digits) and punctuation (، ؟) per language in their style
-guides).
+Dev recipe: temporarily set one shipped language to `dir:'rtl'` in the registry
+(NOT committed), `vercel dev`, and click through the homepage, a lesson landing
+page, the full slideshow (quiz + toast + tooltip + prev/next), a handbook
+article, `/<lang>/lessons/<slug>` (curl it and check `dir` in the served HTML,
+not just the browser), the glossary, the onboarding modal, nav/rail/mobile bar
+and the ChatWidget.

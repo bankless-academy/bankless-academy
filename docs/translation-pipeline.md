@@ -1,7 +1,14 @@
 # How lesson translation works
 
 Detailed walkthrough of `translate-content.js`. `CLAUDE.md` carries the short
-version; this is the reference. Written 2026-08-14.
+version; this is the reference. Written 2026-08-14, status refreshed
+2026-08-28.
+
+**Read the Status section at the bottom first.** The script defines the
+contract every translation must meet, and its offline modes are used
+constantly — but all 27 shipped languages were produced by *agents* writing
+against that same contract (`docs/translation-wave.md`), not by the API path,
+which has still never run.
 
 ## Command surface
 
@@ -127,7 +134,7 @@ checked against its English source:
 - prose units only: not over `MAX_SLIDE_LINES` *and* longer than English
 
 The option-count and `[x]` checks are the important ones. `processMD` in
-`src/pages/lessons/[...slug].tsx` overwrites a translated lesson's
+`src/pages/lessons/[slug].tsx` overwrites a translated lesson's
 question/answers/feedback but **keeps `rightAnswerNumber` from the compiled
 English lesson**, so drift there grades learners against options that are not
 on screen. That is exactly the live bug found in six `bitcoin-basics`
@@ -145,9 +152,14 @@ deterministically instead of asking the model to remember it. French inserts a
 the line wrap and strands the punctuation alone on the next line.
 
 It is idempotent, skips `!` followed by `[` so markdown images are untouched,
-and is a no-op for any language with no rule defined. Other languages have their
-own conventions (Spanish `¿…?`, CJK full-width punctuation) — the hook exists,
-each language just needs its rule added before its first run.
+and is a no-op for any language with no rule defined. Rules exist today for
+`fr`, `cs` and `pl` (the latter two forbid leaving a one-letter word at the end
+of a line). Other languages have their own conventions (Spanish `¿…?`, CJK
+full-width punctuation) — the hook exists, each language just needs its rule
+added before its first run. **Encode the rule here rather than telling agents
+to hand-run a script**: doing that for cs/pl immediately surfaced 19 real
+misses the hand-runs had left. Note the gate checks the BODY only, so
+frontmatter `DESCRIPTION` still escapes typography in fr/cs/pl.
 
 ### 7. Assemble and write
 
@@ -199,21 +211,29 @@ bar than the legacy files still awaiting regeneration.
   have no canonical translation. Run this before a language's first wave to
   find out what its override block needs.
 - **`--keywords`** finds glossary entries whose definition is byte-identical to
-  an English one and re-translates them in batches of 25. Around **156 of 342
-  French entries** are in that state, inherited from the Crowdin import; every
-  language is similar. (This one does call the API.)
+  an English one and re-translates them in batches of 25. It was written for
+  the Crowdin-era files, where roughly half of every glossary was in that
+  state; all 27 shipped glossaries are now fully translated and English-keyed,
+  so this is only for a language whose glossary is being repaired. (This one
+  does call the API.) **`--keywords` REPLACES the file** — nothing from the
+  existing data survives.
 
 ## Status
 
 Everything above is implemented and lints clean, and the offline modes are
-exercised. **The API path has never run** — there was no `ANTHROPIC_API_KEY`
-available — so `callClaude`, the retry loop, hash-gated reuse and the
-concurrency pool are written but unproven.
+exercised constantly. **The API path has still never run** — there has never
+been an `ANTHROPIC_API_KEY` on this project — so `callClaude`, the retry loop,
+hash-gated reuse and the concurrency pool are written but unproven.
 
-The French `bitcoin-basics` pilot was authored directly against the same
-contract and verified with `--verify-only`. That validated the unit format,
-terminology pinning, structural gates, typography and glossary sync, but not the
-network code.
+What actually produced all 27 languages is the agent path, which meets the same
+contract by other means: agents write only the lesson **body** to
+`$TRANSLATION_SCRATCH`, and `build-translation.sh` applies the language's
+typography, assembles the file through *this script's own* parser/renderer
+(`assemble-translation.js`, so banner and frontmatter are byte-exact) and runs
+the structural verifier. The brief is `docs/translation-wave.md`; the
+orchestration and cost lessons are in `CLAUDE.md`.
 
-First real run should be a single lesson with `--dry-run` first, then without,
-and read the diff before doing a wave.
+So the contract, the unit format, terminology pinning, the structural gates,
+typography and glossary sync are all proven at scale — only the network code
+is not. First real API run should be a single lesson with `--dry-run` first,
+then without, and read the diff before doing a wave.

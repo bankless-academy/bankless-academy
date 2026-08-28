@@ -32,7 +32,7 @@ Bankless Academy offers a comprehensive set of features designed to enhance the 
 
 ## Educational Content
 
-- **Multilingual Support**: Lessons available in multiple languages
+- **Multilingual Support**: Every lesson available in 28 languages (see Public Content below)
 - **Visual Learning**: Rich graphics, animations, and interactive simulations
 - **Real-World Examples**: Practical demonstrations of blockchain concepts
 - **Up-to-Date Content**: Regular updates to reflect the latest developments in Web3
@@ -63,7 +63,7 @@ For developers interested in contributing to Bankless Academy, please refer to o
 - **UI Framework**: Chakra UI with @emotion/styled
 - **Web3 Integration**: wagmi, reown, and viem
 - **Database**: PostgreSQL for storing wallet addresses, encrypted Human Passport stamps & lesson completions
-- **Content Management**: Integration with Notion API via custom Potion solution
+- **Content Management**: Lessons are open-source Markdown in this repository, compiled at build time
 
 ### Development Tools
 
@@ -81,7 +81,7 @@ For developers interested in contributing to Bankless Academy, please refer to o
 
 ### Content Management
 
-The platform uses a custom Notion integration for content management, with content being imported through a custom unofficial Notion API called Potion.
+Lesson content lives in this repository as Markdown (`translation/lesson/<lang>/<slug>.md`) and is compiled into the app at build time. Translations are AI-generated against a per-language style guide and a shared glossary, then verified structurally before they ship.
 
 These features work together to create an engaging, accessible, and effective learning environment for Web3 education.
 
@@ -134,35 +134,51 @@ Persona: "A friendly yet wise Web3 mentor guiding users toward self-sovereignty.
 
 # Public Content
 
+Every lesson below is published in **28 languages**. English lives at the
+un-prefixed URL, and each translation at the same path behind its language
+code: `https://app.banklessacademy.com/<lang>/lessons/<slug>` — for example
+[/fr/lessons/bitcoin-basics](https://app.banklessacademy.com/fr/lessons/bitcoin-basics)
+or [/ja/lessons/bitcoin-basics](https://app.banklessacademy.com/ja/lessons/bitcoin-basics).
+
+Language codes: `ar` Arabic, `bn` Bengali, `cs` Czech, `de` German, `en`
+English, `es` Spanish, `fr` French, `hi` Hindi, `id` Indonesian, `it` Italian,
+`ja` Japanese, `ko` Korean, `mr` Marathi, `nl` Dutch, `pl` Polish, `pt-br`
+Portuguese (Brazilian), `ru` Russian, `sw` Swahili, `ta` Tamil, `te` Telugu,
+`th` Thai, `tl` Filipino, `tr` Turkish, `uk` Ukrainian, `ur` Urdu, `vi`
+Vietnamese, `zh` Chinese (Simplified), `zh-tw` Chinese (Traditional).
+
 ## Lessons
 
-- [Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics) [[Español](https://app.banklessacademy.com/lessons/es/bitcoin-basics),[Français](https://app.banklessacademy.com/lessons/fr/bitcoin-basics),[Português (BR)](https://app.banklessacademy.com/lessons/br/bitcoin-basics),[Türkçe](https://app.banklessacademy.com/lessons/tr/bitcoin-basics),[Українська](https://app.banklessacademy.com/lessons/ua/bitcoin-basics),[简体中文](https://app.banklessacademy.com/lessons/cn/bitcoin-basics)]
-- [Ethereum Basics](https://app.banklessacademy.com/lessons/ethereum-basics) [[Français](https://app.banklessacademy.com/lessons/fr/ethereum-basics)]
-- [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) [[Español](https://app.banklessacademy.com/lessons/es/wallet-basics),[Français](https://app.banklessacademy.com/lessons/fr/wallet-basics),[Italiano](https://app.banklessacademy.com/lessons/it/wallet-basics),[Português (BR)](https://app.banklessacademy.com/lessons/br/wallet-basics),[Türkçe](https://app.banklessacademy.com/lessons/tr/wallet-basics),[Українська](https://app.banklessacademy.com/lessons/ua/wallet-basics),[简体中文](https://app.banklessacademy.com/lessons/cn/wallet-basics)]
-- [Blockchain Basics](https://app.banklessacademy.com/lessons/blockchain-basics) [[Deutsch](https://app.banklessacademy.com/lessons/de/blockchain-basics),[Español](https://app.banklessacademy.com/lessons/es/blockchain-basics),[Français](https://app.banklessacademy.com/lessons/fr/blockchain-basics)]
-- [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) [[Français](https://app.banklessacademy.com/lessons/fr/web3-security)]
-- [Layer 1 Blockchains](https://app.banklessacademy.com/lessons/layer-1-blockchains)
-- [Layer 2 Blockchains](https://app.banklessacademy.com/lessons/layer-2-blockchains)
-- [Intro to DeFi](https://app.banklessacademy.com/lessons/intro-to-defi)
-- [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges)
-- [Staking on Ethereum](https://app.banklessacademy.com/lessons/staking-on-ethereum)
-- [DEX Aggregators](https://app.banklessacademy.com/lessons/dex-aggregators)
-- [Gitcoin 2.0 Essentials](https://app.banklessacademy.com/lessons/gitcoin-2.0-essentials)
-- [Optimism Governance](https://app.banklessacademy.com/lessons/optimism-governance) [[Deutsch](https://app.banklessacademy.com/lessons/de/optimism-governance),[Español](https://app.banklessacademy.com/lessons/es/optimism-governance),[Français](https://app.banklessacademy.com/lessons/fr/optimism-governance),[简体中文](https://app.banklessacademy.com/lessons/cn/optimism-governance),[英語](https://app.banklessacademy.com/lessons/jp/optimism-governance)]
+Interactive lessons with slides, knowledge checks, and optional onchain quests.
+
+- [Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics) — What is Bitcoin? Explore the first successful cryptocurrency and rethink money.
+- [Ethereum Basics](https://app.banklessacademy.com/lessons/ethereum-basics) — What is Ethereum? Unlock the "new internet" and your digital freedom.
+- [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) — What is a crypto wallet? Learn how wallets work and create your first one today!
+- [Blockchain Basics](https://app.banklessacademy.com/lessons/blockchain-basics) — Learn about the fundamental architecture of blockchain technology.
+- [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) — Protect yourself and your wallet from the most common scams in web3.
+- [Layer 1 Blockchains](https://app.banklessacademy.com/lessons/layer-1-blockchains) — Understand how Layer 1 blockchains work and learn their limitations!
+- [Layer 2 Blockchains](https://app.banklessacademy.com/lessons/layer-2-blockchains) — Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.
+- [Intro to DeFi](https://app.banklessacademy.com/lessons/intro-to-defi) — Understand the basics of decentralized finance.
+- [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) — Discover how smart-contract exchanges enable permissionless token swaps!
+- [Staking on Ethereum](https://app.banklessacademy.com/lessons/staking-on-ethereum) — Become a guardian of Ethereum: Secure the network, earn Ether rewards.
+- [DEX Aggregators](https://app.banklessacademy.com/lessons/dex-aggregators) — Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.
 
 ## Handbooks
 
 Quick guides for getting your crypto journey started.
 
-- [Creating a Crypto Wallet](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet) [[Español](https://app.banklessacademy.com/lessons/es/creating-a-crypto-wallet),[Français](https://app.banklessacademy.com/lessons/fr/creating-a-crypto-wallet),[Italiano](https://app.banklessacademy.com/lessons/it/creating-a-crypto-wallet),[Português (BR)](https://app.banklessacademy.com/lessons/br/creating-a-crypto-wallet),[Türkçe](https://app.banklessacademy.com/lessons/tr/creating-a-crypto-wallet),[Українська](https://app.banklessacademy.com/lessons/ua/creating-a-crypto-wallet),[简体中文](https://app.banklessacademy.com/lessons/cn/creating-a-crypto-wallet)]
-- [Funding a Wallet on Layer 2](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2)
-- [Registering Your Web3 Username](https://app.banklessacademy.com/lessons/registering-your-web3-username)
-- [Understanding Stablecoins](https://app.banklessacademy.com/lessons/understanding-stablecoins)
-- [Swapping on a Decentralized Exchange](https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange)
-- [Staking Ether](https://app.banklessacademy.com/lessons/staking-ether)
-- [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances)
-- [Understanding Ethereum Token Standards](https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards)
-- [Delegating on Optimism](https://app.banklessacademy.com/lessons/delegating-on-optimism) [[Deutsch](https://app.banklessacademy.com/lessons/de/delegating-on-optimism),[Español](https://app.banklessacademy.com/lessons/es/delegating-on-optimism),[Français](https://app.banklessacademy.com/lessons/fr/delegating-on-optimism),[简体中文](https://app.banklessacademy.com/lessons/cn/delegating-on-optimism),[英語](https://app.banklessacademy.com/lessons/jp/delegating-on-optimism)]
+- [Creating a Crypto Wallet](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet) — Set up your first crypto wallet with our step-by-step walkthrough.
+- [Funding a Wallet on Layer 2](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2) — Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.
+- [Registering Your Web3 Username](https://app.banklessacademy.com/lessons/registering-your-web3-username) — Customize your wallet address with ENS, start building your digital identity.
+- [Understanding Stablecoins](https://app.banklessacademy.com/lessons/understanding-stablecoins) — Use dollars, euros, and more on the blockchain.
+- [Swapping on a Decentralized Exchange](https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange) — Begin your journey into DeFi with this Decentralized Exchange walkthrough.
+- [Staking Ether](https://app.banklessacademy.com/lessons/staking-ether) — Generate yield on your Ether by protecting Ethereum.
+- [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances) — Protect your wallet from unwanted smart contract interactions.
+- [Understanding Ethereum Token Standards](https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards) — Learn how Ethereum's asset templates support both traditional and emerging asset classes.
+
+A few older lessons (Gitcoin 2.0 Essentials, Optimism Governance, Delegating on
+Optimism, Public Nouns) are deprecated: still reachable by direct URL for
+historical reference, but unmaintained and excluded from listings.
 
 # AI Content Guidelines
 
@@ -200,7 +216,9 @@ Incorrect:
 
 # AI-Friendly API Endpoints (Public)
 
-Lessons and Handbooks: `https://app.banklessacademy.com/api/lessons` (API returns detailed lesson data including slides content, quizzes, translations, and more. Lessons have isArticle: false or null, while Handbooks have isArticle: true.)
+- Lessons and Handbooks: `https://app.banklessacademy.com/api/lessons` (detailed lesson data including slide content, quizzes, translations, and more. Lessons have `isArticle: false` or null, Handbooks have `isArticle: true`.)
+- Sitemap: `https://app.banklessacademy.com/sitemap.xml` (every lesson in every language, with `hreflang` alternates)
+- This document: `https://app.banklessacademy.com/llms.txt` (also served at `/agent.txt`)
 
 # Keywords for AI Search Optimization
 
@@ -231,4 +249,8 @@ AI Usage Notice: "Bankless Academy content is designed for educational purposes 
 
 # File Version
 
-Version: 1.0 (Last Updated: 2025-02-24)
+Version: 1.1 (Last Updated: 2026-08-28)
+
+This file is served publicly as `/llms.txt` and `/agent.txt`
+([src/pages/api/agent.ts](./src/pages/api/agent.ts)) — keep the lesson list and
+URL shapes accurate when content or routing changes.

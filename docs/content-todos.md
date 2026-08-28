@@ -1,6 +1,8 @@
 # Content debts (tracked outside lesson md — the validator fails on inline TODOs)
 
-Updated 2026-08-08 during the content review/rewrite phase.
+Started 2026-08-08 during the content review/rewrite phase; refreshed
+2026-08-28. The artwork table below is the only live debt — the rest is the
+adjudication record, kept so settled questions are not re-litigated.
 
 ## Screenshot / artwork debts (keep-unless-flatly-wrong policy)
 
@@ -61,9 +63,10 @@ Non-issue verified: `liquidity pools` resolves via the trailing-s fallback to
   browsers); recheck occasionally.
 - bitcoin-basics line 318 keeps one em dash as a quote attribution dash
   ("…" — United Nations): legitimate typography, exempt from rule 13.
-- en `public key` glossary definition was corrected (address is *derived from*
-  the public key); the 9 translated keyword files still carry the old conflated
-  definition until the translation pass regenerates them.
+- ~~en `public key` glossary definition was corrected (address is *derived
+  from* the public key); the translated keyword files still carry the old
+  conflated definition.~~ Resolved — all 27 glossaries were regenerated from
+  the corrected English during the translation waves.
 - Deprecated lessons (gitcoin-2.0-essentials, optimism-governance,
   delegating-on-optimism, public-nouns) were intentionally excluded from the
   em-dash sweep, feedback additions, and rewrites — frozen for history.

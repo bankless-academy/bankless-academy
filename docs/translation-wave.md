@@ -15,10 +15,12 @@ first. They are not suggestions.
 
 Reference material, in order of authority:
 1. `translation/style/<lang>.md` — authoritative.
-2. `translation/ethglossary/<lang>.json` — 541 vendored terms with morphology,
+2. `translation/ethglossary/<lang>.json` — 532 vendored terms with morphology,
    aliases and a `contexts.prose` form. Good for terms the style guide does not
    pin. It prefers formally-correct coinages that native crypto speakers often
-   avoid, so sanity-check against real usage.
+   avoid, so sanity-check against real usage. **Upstream covers 24 languages
+   only** — if this file does not exist for yours, the style guide is the sole
+   terminology authority and its pins are absolute.
 3. `translation/lesson/fr/*.md`, `translation/keywords/fr/keywords.json`,
    `translation/website/fr/*.json` and the matching `es` files — two FINISHED,
    reviewed languages. Copy their shape and their level of polish. Do **not**

@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
-// Search Console report: is the /content mirror actually earning traffic?
-//
-// The lesson pages are a client-rendered slideshow and serve ~80 characters of
-// crawlable text, so /lessons/<slug>/content exists as the indexable mirror.
-// Whether that mirror is worth keeping — and whether the SSR migration in
-// docs/ssr-migration.md is necessary — is an empirical question this answers.
+// Search Console report: which URLs earn impressions and clicks, by page and
+// by query. Written in 2026-08 to test whether the /content mirror pages were
+// worth keeping (they were not — the mirrors are retired and the lesson URLs
+// now carry the text themselves), and kept as the general traffic view.
+// Companion: gsc-inspect.mjs, which asks Google what it thinks of a URL.
 //
 //   node gsc-report.js              # last 28 days
 //   node gsc-report.js --days 90

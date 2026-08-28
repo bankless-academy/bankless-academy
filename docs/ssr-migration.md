@@ -1,71 +1,42 @@
 # Server-side rendering: where it stands
 
-Status (2026-08-23): **lesson pages DONE via the sibling-SEO architecture;
-the rest of the app deliberately not.** `/lessons/<slug>` (every locale) now
-serves a static hero + the full quiz-stripped article server-side: `_app`'s
-default branch renders `LessonSeoBlock` as a SIBLING outside
-`<Web3Providers>` (the `dynamic({ssr:false})` boundary renders nothing on the
-server, but siblings render fine). The lesson page itself stays a completely
-normal client page — nothing that reads localStorage renders on the server,
-nothing server-rendered reads localStorage, and the providers/Nav never
-unmount across navigation. The `/content` mirror pages are retired (301 →
-lesson URL). Locale-prefixed URLs (prerequisite 2 below) also shipped
-2026-08-23 via Next pages-router i18n.
+Status (2026-08-24): **every page that needs a crawlable body has one; the
+interactive app tree is still client-only, on purpose.**
 
-(A first attempt used a per-page client ISLAND under the `nolayout`+`ssr`
-branch instead. Same crawlable output, but crossing the _app branch boundary
-on every `/lessons` ↔ lesson navigation tore down and remounted the whole
-provider tree — visible as a fake full-page refresh. The sibling pattern
-replaced it the same day; don't resurrect the island.)
+The app tree renders inside `NonSSRWrapper` (`dynamic({ ssr: false })`), so it
+contributes nothing to the server HTML on any route. What reaches a crawler is
+rendered as a **sibling** of that wrapper in `_app.tsx`, outside the
+client-only boundary:
 
-What remains "not done, deliberately" is SSR for the homepage, /explore,
-listings and the glossary body. The mechanical blockers are fixed; the
-remaining work there is the state-out-of-render refactor described below, or
-the same sibling-SEO trick where a static rendering of the content is
-acceptable. This file exists so the next attempt starts from the findings
-instead of rediscovering them.
+| surface | what the server sends | built by |
+|---|---|---|
+| `/lessons/<slug>` (+ every locale) | hero `<h1>` + the full quiz-stripped article, ~13k chars | `LessonSeoBlock` ← `utils/lessonContentPage.ts` |
+| `/glossary` (+ every locale) | the whole glossary as a `<dl>` with per-term anchors, 27-31k chars | `SeoContentBlock` ← `utils/seoContent.ts` |
+| `/`, `/lessons`, `/lessons/handbook` | localized lesson-link lists | `SeoContentBlock` ← `utils/seoContent.ts` |
 
-## The symptom
+Both blocks unmount as soon as the app mounts (`utils/appMounted.ts`), so a
+reader sees the interactive UI and a crawler sees the text. Nothing in them may
+read `localStorage`, `matchMedia`, wallet or router state — that purity is what
+lets them render on the server at all.
 
-Every page serves an empty body:
+The `/content` mirror pages are retired (301 → lesson URL), and locale-prefixed
+URLs shipped the same day, so language derives from the URL everywhere.
 
-```html
-<div id="__next"><span></span><span id="__chakra_env" hidden=""></span></div>
-```
+(A first attempt at the lesson pages used a per-page client ISLAND under the
+`nolayout`+`ssr` branch instead. Same crawlable output, but crossing the _app
+branch boundary on every `/lessons` ↔ lesson navigation tore down and remounted
+the whole provider tree — visible as a fake full-page refresh. The sibling
+pattern replaced it the same day; don't resurrect the island.)
 
-77 bytes of markup after stripping CSS and scripts, identical on `/`,
-`/lessons`, `/glossary`, `/glossary/fr` and every lesson page. These are SSG
-pages, so that file *is* what a crawler receives. No `<h1>`, no lesson prose, no
-glossary terms.
+## What is still client-only
 
-`<head>` is fine and server-rendered: reciprocal `hreflang` across the
-translated languages, self-referencing canonicals, localized `<title>`. Google
-executes JS so pages do get indexed; they just cost crawl budget, and nothing
-above the fold is in the HTML.
+`/explore`, `/explorer/*`, `/quest`, `/passport` and the interactive half of
+the homepage and listings. For the personal pages that is correct — they are
+per-user and `noindex`-worthy. For the rest, the sibling trick is available
+whenever a static rendering of the content is worth having; **true** SSR of the
+app tree still needs the refactor below.
 
-## The cause
-
-`src/pages/_app.tsx` wraps the entire tree — providers, `Layout`, and
-`<Component {...pageProps} />` — in `NonSSRWrapper`, which is
-`dynamic(..., { ssr: false })`. Nothing renders on the server, on any route.
-
-## What was fixed while attempting it (all landed, all correct regardless)
-
-Removing the wrapper surfaced five classes of prerender failure. Four are gone:
-
-| class | fix |
-|---|---|
-| `next/router` **singleton** read during render | `ConnectWalletButton`, `ExplorerProfile` -> `useRouter()`. Note the grep trap: `import router, { useRouter } from 'next/router'` hides the singleton on a line that also matches `useRouter`. |
-| `localStorage` during render | `src/utils/ssrStorage.ts` installs a non-persisting server stub, imported first in `_app.tsx`. Deliberately does not persist: a prerender has no user, and a process-global Map would leak one visitor's state into another's render. |
-| `document` during render | `LessonContent` built a real `<div>` to add image alt text (now string work, which also keeps alt text in the crawled HTML); `document?.referrer` in `feature-request` and `report-an-issue`. |
-| `window` during render | `SocialSharing`, `PassportModal`, `MintDatadiskModal`. |
-
-**The optional-chaining trap, four times over:** `window?.location` and
-`document?.referrer` do *not* guard anything. Optional chaining protects against
-a null **value**, not an undeclared **identifier** — `typeof x !== 'undefined'`
-is the only safe check.
-
-## What actually blocks it
+## Why the app tree can't just be unwrapped
 
 Hydration. The UI is a pure function of `localStorage` in ~116 call sites, so
 the server and client disagree on the first render:
@@ -73,7 +44,6 @@ the server and client disagree on the first render:
 | server renders | client renders | source |
 |---|---|---|
 | `15 minutes` | `Done` | lesson progress |
-| `English` | `Deutsch` | stored language preference |
 | `Start Lesson` | `View Lesson` | resume position |
 
 Each is a React hydration mismatch *and* a visible flash. Wrapping the
@@ -82,31 +52,26 @@ through the lesson cards, the nav, the buttons and the badges, so the page
 becomes a mosaic of client-only islands that pop in separately — worse for
 perceived speed than today's single paint.
 
-## What would actually unlock it
+Unlocking it means **moving user state out of render**: progress, badges,
+resume position and language must stop being read synchronously during render —
+a `useSyncExternalStore` (or equivalent) refactor with an explicit SSR
+snapshot, across those ~116 sites. That is a project, not an edit.
 
-Two pieces, in order. Both are projects.
+## Prerender failures already fixed (all correct regardless)
 
-1. **Move user state out of render.** Progress, badges, resume position and
-   language must stop being read synchronously during render — a
-   `useSyncExternalStore` (or equivalent) refactor with an explicit SSR
-   snapshot, across those ~116 sites. Until this is done, every
-   progress-dependent element is a mismatch.
-2. **Locale-prefixed URLs site-wide** (`/de/explore`, not only
-   `/lessons/de/...`). Language then derives from the URL everywhere, so the
-   server renders the right one and there is no post-hydration swap. Today only
-   lessons and the glossary carry a language segment; everything else reads the
-   stored preference, which the server cannot know.
+An earlier attempt to unwrap the tree surfaced these; the fixes all landed.
 
-## The tradeoff, stated plainly
+| class | fix |
+|---|---|
+| `next/router` **singleton** read during render | `ConnectWalletButton`, `ExplorerProfile` → `useRouter()`. Note the grep trap: `import router, { useRouter } from 'next/router'` hides the singleton on a line that also matches `useRouter`. |
+| `localStorage` during render | `src/utils/ssrStorage.ts` installs a non-persisting server stub, imported first in `_app.tsx`. Deliberately does not persist: a prerender has no user, and a process-global Map would leak one visitor's state into another's render. |
+| `document` during render | image alt text built with string work instead of a real `<div>`; `document?.referrer` in `feature-request` and `report-an-issue`. |
+| `window` during render | `SocialSharing`, `PassportModal`, `MintDatadiskModal`. |
 
-- **Today:** blank, then painted. Fast-feeling, single paint, invisible to
-  crawlers above the fold.
-- **Naive SSR:** painted, then corrected. Indexable, but flashes on anything
-  user-specific.
-
-Today's default is the right one until step 1 above is done. Turning SSR on is
-one edit (`_app.tsx`, unwrap `NonSSRWrapper`) — the edit is trivial, the
-consequences are not.
+**The optional-chaining trap, four times over:** `window?.location` and
+`document?.referrer` do *not* guard anything. Optional chaining protects against
+a null **value**, not an undeclared **identifier** — `typeof x !== 'undefined'`
+is the only safe check.
 
 ## Reproducing
 
@@ -114,4 +79,4 @@ Unwrap `NonSSRWrapper` in `_app.tsx` and run `npx next build` (skips the content
 validators). Failures name one page at a time; fix, rebuild, repeat. Server
 chunks are minified, so stacks are unhelpful — `experimental.serverSourceMaps`
 in `next.config.mjs` deminifies them if needed. Bisect by moving the wrapper
-inward (providers -> Layout -> page) to find which layer owns a failure.
+inward (providers → Layout → page) to find which layer owns a failure.

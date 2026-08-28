@@ -64,11 +64,10 @@ const App = ({
   const [isTelegramWebApp, setIsTelegramWebApp] = useState(false)
 
   // ALL hooks must sit above the conditional returns below. This component
-  // renders BOTH page types: hooks declared after the nolayout return gave the
-  // maintenance/nolayout branches a shorter hook list, and since the hybrid
-  // lesson pages are nolayout, any client-side navigation between a lesson and
-  // a normal page crashed React with "Rendered more/fewer hooks than during
-  // the previous render".
+  // renders SEVERAL page types (maintenance, nolayout, default): a hook
+  // declared after one of those returns gives that branch a shorter hook list,
+  // so any client-side navigation that switches branches crashes React with
+  // "Rendered more/fewer hooks than during the previous render".
   const [isLoadingProfile, setIsLoadingProfile] = useState(false)
   useEffect(() => {
     Router.events.on('routeChangeStart', (url) => {

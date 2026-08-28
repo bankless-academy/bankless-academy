@@ -45,16 +45,14 @@ export interface LanguageDef {
 //   - `tr` dotted-I folds to i + U+0307, which never equals a glossary `i`.
 //     Handled by `normalizeKeyword` below.
 //
-// Still absent by design, and queued on two tracks rather than one ranking.
-// REACH, from crypto-adoption data (cohorts we do not have yet): `ar`, `ur`,
-// `am`, with `fa` held pending a sanctions decision. `ar`/`ur` ship together
-// behind the one-time RTL audit; `am` is LTR and unblocked.
+// Still absent by design: `am` (REACH track, LTR, unblocked) and `fa` (held
+// pending a sanctions decision).
 //
 // Ranking on analytics alone is a trap: a language shows little traffic partly
 // BECAUSE there is nothing to read in it, so measured readers optimize
-// retention and quietly foreclose acquisition. See
-// docs/i18n-25-languages-plan.md (which deliberately carries no figures, since
-// traffic and index positions move and a pasted snapshot goes stale).
+// retention and quietly foreclose acquisition. See docs/language-roadmap.md
+// (which deliberately carries no figures, since traffic and index positions
+// move and a pasted snapshot goes stale).
 const LANGUAGE_DEFS = [
   { code: 'ar', name: 'Arabic', localName: 'العربية', dir: 'rtl' },
   { code: 'bn', name: 'Bengali', localName: 'বাংলা', dir: 'ltr' },

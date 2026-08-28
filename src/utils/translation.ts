@@ -276,7 +276,7 @@ i18next
       convertDetectedLanguage: (lng: string) => normalizeLangCode(lng),
     },
     resources: {
-      // English only — see LAZY_RESOURCES above for the other nine.
+      // English only — see LAZY_RESOURCES above for the other 27.
       en: {
         common,
         homepage,
