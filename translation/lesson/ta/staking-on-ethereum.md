@@ -38,7 +38,7 @@ Bitcoin நெட்வொர்க்கில் நடக்கும் `ம
 
 இருந்தாலும் மைனிங்குக்கும் ஸ்டேக்கிங்குக்கும் ஒரு முக்கிய வேறுபாடு உண்டு. Ethereum-இல் ஸ்டேக்கிங் செய்யப் பிறருடன் போட்டியிடும் சக்திவாய்ந்த கணினி தேவையில்லை. நெட்வொர்க்கின் `ஸ்மார்ட் ஒப்பந்தம்` ஒன்றில் ஈதரை (ETH) பூட்டி வைத்தாலே Ethereum இயங்கிக்கொண்டிருக்கும், உங்களுக்கு வெகுமதியும் கிடைக்கும்.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum-க்கு நீங்கள் தேவை!
 
@@ -54,7 +54,7 @@ Bitcoin நெட்வொர்க்கில் நடக்கும் `ம
 
 கருவிகளை எடுத்துக்கொள்ளுங்கள், கிளம்பலாம்!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # பிளாக்செயின் பாதுகாப்பு
 

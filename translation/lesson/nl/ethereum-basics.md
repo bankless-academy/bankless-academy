@@ -42,7 +42,7 @@ Je kunt Ethereum zien als de `app store` van Google of Apple, maar met een paar 
 
 Om te begrijpen waarom miljoenen mensen over de hele wereld Ethereum gebruiken, moeten we naar de kernmissie kijken…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Een wereldwijd stadsplein
 
@@ -312,7 +312,7 @@ Klaar om je stempel te drukken?
 
 Om je reis te beginnen, maak je eerst je `cryptowallet` aan. Dat is je paspoort voor de wereld van Ethereum. In je volgende les, 'Basiskennis wallets', maken we die samen aan.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

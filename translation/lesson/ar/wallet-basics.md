@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 في هذا الدرس، سنقدم لك المحافظ وكيفية عملها وكيفية الحفاظ على أمان عملاتك المشفرة. سننهي الدرس بشرح لكيفية إنشاء محفظة والوصول إلى **بلوكتشين إيثيريوم، موطن Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # تعريف المحفظة
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 كل محفظة تخدم حالة استخدام مختلفة. لا تقلق، سننشئ محفظة واحدة فقط اليوم.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # المحافظ الوصائية
 
@@ -299,7 +299,7 @@ Ledger وTrezor مثالان على `المحافظ الباردة`.
 
 🛡️ احذر من عمليات الاحتيال التي تخدعك لتوقيع معاملات أو موافقات ضارة: يوضح لك درس [أمان Web3](https://app.banklessacademy.com/lessons/web3-security) كيفية اكتشافها.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

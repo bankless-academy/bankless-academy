@@ -674,33 +674,70 @@ already used in `utils/index` for `alchemy-sdk`, `@wagmi/core` and
 `utils/wagmi`; extending it to `@ethersproject/*` and `graphql-request` is the
 next real step, and it is a refactor, not a small change.
 
-**4. Images: cache headers first, then optimise, then consider offloading**
-(measured 2026-08-29). Three separate problems, in value order:
+**4. Images — one consolidation done, the rest deliberately parked.**
 
-- **They are served `cache-control: public, max-age=0, must-revalidate`** —
-  Next's default for `public/`, which means a browser revalidates EVERY image
-  on EVERY page load. `x-vercel-cache: HIT` shows the CDN caches them, but
-  visitors still pay a round trip each, 13 of them on a lesson page. **391 of
-  the 553 image files are already content-hashed** (`…-cc6189d4.png`), so those
-  can safely take `Cache-Control: public, max-age=31536000, immutable` — a
-  headers rule in `vercel.json` (headers are still allowed there; only path
-  routing moved out). That is the cheapest fix and it is exactly what makes the
-  cache survive a deploy. **Scope it to the hashed paths**: the other 162 files
-  have stable names whose CONTENT can change, and immutable caching would pin
-  a stale version in every visitor's browser with no way to bust it.
-- **The assets are simply too big**: `public/` is 356MB (280MB of images),
-  33 files exceed 1MB and total 158MB. Six GIFs account for **86MB** — one is
-  22MB — and belong as WebM/MP4 (one lesson already has a `.webm` twin). Slide
-  PNGs run to 2MB each where a compressed WebP would be a fraction. Going
-  through them file by file is real work but needs no architecture change.
-- **Only then consider moving them off the deployment** (Vercel Blob, R2, S3):
-  it would stop shipping 356MB with every build. Note the *caching* benefit is
-  already won by the header fix, so do not do this for caching reasons alone.
+Done 2026-08-29:
 
-Related, already done: article images are `loading="lazy"` since 2026-08-29 —
-they sit in a collapsed `<details>` that a browser still fetches from, which
-was pulling **8.25MB of invisible artwork** per lesson load against the ~840KB
-web3 chunk.
+- **A shared `/images/welcome-explorer.png`.** The recurring explorer character
+  was stored as **14 byte-identical PNGs** under lesson-specific names and
+  served under 10 different URLs across bitcoin-basics, ethereum-basics,
+  staking-on-ethereum and wallet-basics — so a reader downloaded the same 2MB
+  art up to 10 times. There is now one optimised copy at the images root
+  (2000x2000 2055KB → 1200x1200 798KB, lossless, alpha intact) and all 280
+  markdown references across 28 languages point at it. **The 14 originals stay
+  on disk** so external links keep resolving; only the references moved.
+- **Browser caching**: images now send `public, max-age=86400,
+  stale-while-revalidate=2592000` via `headers()` in `next.config.mjs`.
+  **vercel.json's `/images/(.*)/(.*)` immutable rule had NEVER worked** —
+  measured: images still served Next's default `max-age=0, must-revalidate`.
+  **A vercel.json header cannot override a Cache-Control the framework already
+  sets**; only sources that set none of their own (the exact-path
+  `/api/og/rewards`) take effect there. `/module/(.*)` and `/api/metadata/(.*)`
+  are dead for the same reason. The dead `/images` rule was removed.
+  **NOT `immutable`, deliberately**: the `-cb12b11e` suffix looks like a
+  content hash but is `crc32(imageLink)` from `import-content.js`, a hash of
+  the SOURCE URL — byte-identical files carry different suffixes, and a changed
+  image behind an unchanged source URL keeps its filename, so `immutable` would
+  pin a stale copy in every browser for a year.
+- **`imageLinks` is now DERIVED in `build-content.js`**, not stored in
+  `lesson-meta.json`. It is the preload list `Lesson.tsx` fetches 3s after a
+  lesson opens, and the hand-maintained copy silently drifted: after the
+  consolidation it still listed the retired URLs, which would have
+  re-downloaded exactly the copies the change removed. Deriving also picked up
+  two images that were in slides but had never been preloaded. **Never
+  reintroduce a stored copy of derivable data there.**
+- Article images are `loading="lazy"`: they sit in a collapsed `<details>` that
+  browsers still fetch from, which was pulling **8.25MB of invisible artwork**
+  per lesson load against the ~840KB web3 chunk.
+
+**Two standing constraints, both from Didier:**
+
+1. **Never DELETE an image file.** External things point at them — `social-*`
+   images are the OG art in every historical tweet and cast, and removing one
+   breaks those previews permanently.
+2. **Do not bulk-optimise artwork.** A pass that resized 60 oversized slide
+   PNGs in place (39MB → 19MB, same filenames) was **rolled back on request**:
+   with a median slide image of 270KB nothing else is anomalous enough to be
+   worth touching the assets. Optimise an image only when it is a genuine
+   outlier, as the 2MB explorer was.
+
+Not done, and not scheduled:
+
+[ ] **Idea — 46.6MB is still exact duplication** (553 files, 462 unique
+contents) and 58.9MB is referenced nowhere. Reclaiming either needs deletion,
+so it needs the redirect approach: keep one file, 301 the retired URLs at it.
+Only the explorer group has been consolidated, and only by reference.
+
+[ ] **Idea — GIFs (128MB of the >1MB tail).** **Do NOT convert to MP4/WebM**:
+H.264 has no alpha and VP9-with-alpha is unreliable in Safari, and
+`bitcoin-basics/datadisk-gif` is genuinely non-opaque (`magick identify
+-format '%[opaque]'` → False). Alpha-safe and measured: `magick -layers
+optimize` keeps format and URL for ~27%, animated **WebP** saves ~55% with
+transparency intact (22MB → 10MB, 270 frames verified).
+
+[ ] **Idea — move images off the deployment** (Blob, R2, S3). Would stop
+shipping ~280MB per build; a deploy takes ~3m40s, so the win is modest. **Not
+a caching argument** — that is already won above.
 
 **5. `middleware` → `proxy`: deliberately deferred** (decided 2026-08-29).
 `middleware` is deprecated in Next 16 but still works on 16.1.7, and

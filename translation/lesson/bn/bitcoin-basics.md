@@ -38,7 +38,7 @@ Bankless Academy-র লক্ষ্য একটাই: আপনার মত�
 
 Bitcoin এক নতুন ধরনের টাকা, যা `মুদ্রাস্ফীতি` ঠেকাতে তৈরি: এর সরবরাহ কোডেই বাঁধা, তাই কেউ বাড়তি ছাপাতে পারে না। অল্প সময়ে দাম ওঠানামা করে, কিন্তু নিয়ম কখনও বদলায় না।
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bitcoin-এর গল্প
 
@@ -52,7 +52,7 @@ Bitcoin কীভাবে অর্থব্যবস্থা বদলে দ
 
 **টাকা নিয়ে নতুন করে ভাবার সময় এসেছে**।
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # টাকার সংক্ষিপ্ত ইতিহাস
 
@@ -327,4 +327,4 @@ Bitcoin-এর লেনদেন আর মাইনিং ঠিক কোন 
 সব তথ্য ঠিক আছে কিনা মিলিয়ে নিতে ভুলবেন না।
 একবার Bitcoin লেনদেন নিশ্চিত হয়ে গেলে আর ফেরানো যায় না।
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

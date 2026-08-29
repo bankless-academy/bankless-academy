@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 இந்தப் பாடத்தில் வாலெட்டுகள் என்றால் என்ன, அவை எப்படி இயங்குகின்றன, உங்கள் கிரிப்டோகரன்சியை எப்படிப் பாதுகாப்பது என்று பார்ப்போம். இறுதியில், ஒரு வாலெட்டை உருவாக்கி **Bankless Academy-இன் இல்லமான Ethereum பிளாக்செயினை** அணுகும் வழிகாட்டி இருக்கும்.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # வாலெட் வரையறை
 
@@ -191,7 +191,7 @@ ________________________________________________________________________________
 
 ஒவ்வொரு வாலெட்டும் வெவ்வேறு தேவைக்கானது. கவலை வேண்டாம், இன்று ஒரே ஒரு வாலெட்டைத்தான் உருவாக்குவோம்.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # கஸ்டோடியல் வாலெட்டுகள்
 
@@ -297,7 +297,7 @@ Ledger, Trezor ஆகியவை `கோல்ட் வாலெட்` வக
 
 🛡️ தீங்கான பரிவர்த்தனைகளிலோ அனுமதிகளிலோ கையொப்பமிட வைக்கும் மோசடிகளிடம் எச்சரிக்கை: அவற்றைக் கண்டறியும் வழியை [Web3 பாதுகாப்பு](https://app.banklessacademy.com/lessons/web3-security) பாடம் காட்டும்.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

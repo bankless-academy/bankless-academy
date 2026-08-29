@@ -42,7 +42,7 @@ Madaling maintindihan ang Ethereum: parang Google o Apple `app store` ito, pero 
 
 Para maintindihan kung bakit milyon-milyon ang gumagamit ng Ethereum, tingnan natin ang core mission nito…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Isang Global na Town Square
 
@@ -312,7 +312,7 @@ Handa ka na bang mag-iwan ng marka?
 
 Para simulan ang journey mo, kakailanganin mong gumawa ng `crypto wallet` mo. Ito ang passport mo sa mundo ng Ethereum. Ise-set up natin ang sa iyo sa susunod mong lesson, ang “Basics ng Wallet”.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

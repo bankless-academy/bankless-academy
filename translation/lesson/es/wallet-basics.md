@@ -38,7 +38,7 @@ Las billeteras se parecen a las cuentas del internet `web2` que ya conoces. Usar
 
 En esta lección te presentaremos las billeteras, cómo funcionan y cómo mantener seguras tus criptomonedas. Terminaremos con una guía para crear una y acceder a **la blockchain de Ethereum, el hogar de Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Definición de billetera
 
@@ -193,7 +193,7 @@ También oirás hablar de las `billeteras inteligentes`: un tipo emergente que e
 
 Cada billetera sirve para un caso distinto. Tranquilo, hoy solo crearemos una.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Billeteras con custodia
 
@@ -299,7 +299,7 @@ Sea caliente o fría, tu `billetera de autocustodia` merece varias buenas práct
 
 🛡️ Cuidado con las estafas que te hacen firmar autorizaciones dañinas: nuestra lección [Seguridad en Web3](https://app.banklessacademy.com/lessons/web3-security) enseña a detectarlas.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

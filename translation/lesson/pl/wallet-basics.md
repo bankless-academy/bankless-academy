@@ -38,7 +38,7 @@ Portfele przypominają konta ze znanego ci internetu `Web2`. Portfel służy do 
 
 W tej lekcji poznasz portfele, ich działanie i sposoby na bezpieczne przechowywanie kryptowalut. Na koniec pokażemy, jak utworzyć własny portfel i wejść do **blockchaina Ethereum, domu Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Czym jest portfel
 
@@ -193,7 +193,7 @@ Usłyszysz też o nowości: `inteligentny portfel` uruchamia kod, co daje logow
 
 Każdy portfel ma inne zastosowanie. Spokojnie, dziś utworzymy tylko jeden.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Portfele powiernicze
 
@@ -299,7 +299,7 @@ Gorący czy zimny, `portfel samodzielnego przechowywania` wymaga dobrych nawykó
 
 🛡️ Uważaj na oszustwa, które nakłaniają do podpisania szkodliwych transakcji lub zgód. Nasza lekcja [Bezpieczeństwo w Web3](https://app.banklessacademy.com/lessons/web3-security) pokazuje, jak je rozpoznać.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

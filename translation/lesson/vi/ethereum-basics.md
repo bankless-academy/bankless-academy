@@ -42,7 +42,7 @@ Có thể hình dung Ethereum giống `cửa hàng ứng dụng` của Google ha
 
 Để hiểu vì sao hàng triệu người khắp thế giới đang dùng Ethereum, hãy nhìn vào sứ mệnh cốt lõi của nó…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Quảng trường toàn cầu
 
@@ -310,7 +310,7 @@ Bạn sẵn sàng ghi dấu ấn chưa?
 
 Để bắt đầu hành trình, bạn cần tạo `ví tiền mã hóa` của mình. Đây là tấm hộ chiếu vào thế giới Ethereum. Chúng ta sẽ tạo ví của bạn trong bài học tiếp theo, “Kiến thức cơ bản về ví”.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

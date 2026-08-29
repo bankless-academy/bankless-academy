@@ -38,7 +38,7 @@ Bankless Academy의 사명은 탐험가에게 최고의 도구와 지식을 전�
 
 비트코인은 `인플레이션`에 강하도록 설계된 새로운 돈이에요. 공급량이 코드로 고정되어 있어서 누구도 더 발행할 수 없어요. 단기 가격은 크게 움직이지만, 규칙은 절대 바뀌지 않아요.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 비트코인 이야기
 
@@ -52,7 +52,7 @@ Bankless Academy의 사명은 탐험가에게 최고의 도구와 지식을 전�
 
 **돈을 다시 생각해 볼 시간이에요.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 돈의 짧은 역사
 
@@ -327,4 +327,4 @@ Bankless Academy의 사명은 탐험가에게 최고의 도구와 지식을 전�
 모든 정보가 정확한지 꼭 확인하세요.
 비트코인 트랜잭션은 한번 확정되면 되돌릴 수 없어요.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

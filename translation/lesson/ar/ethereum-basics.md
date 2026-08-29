@@ -42,7 +42,7 @@ ________________________________________________________________________________
 
 لفهم لماذا يستخدم ملايين الأشخاص إيثيريوم حول العالم، علينا أن ننظر إلى مهمته الأساسية...
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ساحة عامة عالمية
 
@@ -312,7 +312,7 @@ ________________________________________________________________________________
 
 لتبدأ رحلتك، ستحتاج إلى إنشاء `محفظة عملات مشفرة`. هذا جواز سفرك إلى عالم إيثيريوم. سنعدها معا في درسك التالي، "أساسيات المحفظة".
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

@@ -38,7 +38,7 @@ Bankless Academy の使命は、エクスプローラーのみなさんに最高
 
 Bitcoin は`インフレ`に強くなるよう設計された新しいお金です。供給量はコードで固定されていて、誰も追加で発行できません。短期的には価格が大きく動きますが、そのルールは決して変わりません。
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bitcoin の物語
 
@@ -52,7 +52,7 @@ Bitcoin がどのように金融を変えているのか、学んでいきまし
 
 **お金のあり方を、考え直す時です。**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # お金の短い歴史
 
@@ -327,4 +327,4 @@ Bitcoin は単なるお金の道具を超えて進化しました。`分散型�
 すべての内容が正しいか、必ず確認してください。
 Bitcoin のトランザクションは、確定すると取り消せません。
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

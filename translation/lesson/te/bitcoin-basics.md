@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 Bitcoin ఒక కొత్త రకం డబ్బు. `ద్రవ్యోల్బణాన్ని` తట్టుకునేలా దీన్ని రూపొందించారు: దీని సరఫరా కోడ్‌లోనే స్థిరంగా ఉంటుంది, కాబట్టి ఎవరూ అదనంగా ముద్రించలేరు. స్వల్పకాలంలో ధర హెచ్చుతగ్గులకు లోనవుతుంది, కానీ దీని నియమాలు మాత్రం ఎప్పటికీ మారవు.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bitcoin కథ
 
@@ -52,7 +52,7 @@ Bitcoin ఫైనాన్స్‌లో ఎలాంటి విప్లవ�
 
 **డబ్బు గురించి కొత్తగా ఆలోచించే సమయం ఇది.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # డబ్బు సంక్షిప్త చరిత్ర
 
@@ -327,4 +327,4 @@ Bitcoin లావాదేవీలు, మైనింగ్ వెనుక �
 అన్ని వివరాలు కచ్చితంగా ఉన్నాయో లేదో చూసుకోండి.
 Bitcoin లావాదేవీ నిర్ధారణ అయ్యాక దాన్ని వెనక్కి తీసుకోలేరు.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

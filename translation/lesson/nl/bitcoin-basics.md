@@ -38,7 +38,7 @@ Vandaag kijken we naar de `cryptovaluta` waarmee het allemaal begon: Bitcoin.
 
 Bitcoin is een nieuw soort geld, ontworpen om `inflatie` te weerstaan: de voorraad ligt vast in code, dus niemand kan er meer van bijdrukken. De prijs schommelt op de korte termijn, maar de regels veranderen nooit.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Het verhaal van Bitcoin
 
@@ -52,7 +52,7 @@ Het is tijd om te ontdekken hoe Bitcoin de financiële wereld radicaal verandert
 
 **Het is tijd om anders naar geld te kijken.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Een korte geschiedenis van geld
 
@@ -327,4 +327,4 @@ Er zit ook een transactievergoeding bij, die naar de `miners` gaat.
 Controleer goed of alle gegevens kloppen.
 Een bevestigde Bitcoin-transactie kun je niet meer terugdraaien.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

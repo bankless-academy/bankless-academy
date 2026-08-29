@@ -42,7 +42,7 @@ Ethereum समजून घ्यायचा सोपा मार्ग म�
 
 जगभरातील लाखो लोक Ethereum का वापरतात हे समजण्यासाठी त्याचे मूळ ध्येय पाहायला हवे…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # जागतिक चावडी
 
@@ -312,7 +312,7 @@ Ethereum-मध्ये गुंतवणूक करण्यासाठी
 
 प्रवास सुरू करण्यासाठी `क्रिप्टो वॉलेट` तयार करावे लागेल. Ethereum-च्या जगाचा हाच तुमचा पासपोर्ट. पुढच्या धड्यात, “वॉलेटची मूलतत्त्वे”, ते तयार करूया.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

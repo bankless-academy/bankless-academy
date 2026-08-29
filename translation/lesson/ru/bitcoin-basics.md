@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 Bitcoin это деньги нового типа, устойчивые к `инфляции`: их количество задано в коде, и напечатать больше невозможно. Цена в короткую всё ещё колеблется, но правила не меняются никогда.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # История Bitcoin
 
@@ -52,7 +52,7 @@ Bitcoin запустил в 2009 году загадочный «`Satoshi Nakamo
 
 **Пора по-новому взглянуть на деньги.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Краткая история денег
 
@@ -325,4 +325,4 @@ Bitcoin работает на общей сети из тысяч компьют
 Проверьте, что все данные верны.
 Подтверждённую транзакцию Bitcoin отменить нельзя.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

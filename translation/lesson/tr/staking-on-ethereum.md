@@ -38,7 +38,7 @@ Bugün “staking” sürecine bakacağız: dijital servet kurmanın basit bir y
 
 Ama madencilik ile staking arasında önemli bir fark var. Ethereum'da staking, başkalarıyla yarışmak için güçlü bir bilgisayar gerektirmez. Ether'i (ETH) bir ağ `akıllı sözleşmesine` kilitlemen Ethereum'u çalışır tutar ve sana ödül kazandırır.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum Seni İstiyor!
 
@@ -54,7 +54,7 @@ Bir `staker` olarak **Ethereum'un koruyucusu olursun!**
 
 Ekipmanını kap, hadi gidelim!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Blokzincir Güvenliği
 

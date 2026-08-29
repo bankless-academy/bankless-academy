@@ -38,7 +38,7 @@ Heute schauen wir uns „Staking“ an, einen einfachen Weg zu digitalem Vermög
 
 Es gibt aber einen wichtigen Unterschied. Für Staking auf Ethereum brauchst du keinen starken Computer, der gegen andere antritt. Du sperrst einfach Ether (ETH) in einem `Smart Contract` des Netzwerks. Das hält Ethereum am Laufen und belohnt dich.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum braucht dich!
 
@@ -54,7 +54,7 @@ Sehen wir uns die Mechanik des Stakings genauer an und finden einen entspannten,
 
 Schnapp dir deine Ausrüstung, los geht’s!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Sicherheit der Blockchain
 

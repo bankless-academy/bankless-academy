@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 อย่างไรก็ตาม การขุดและ Staking มีความแตกต่างสำคัญอย่างหนึ่ง การ Staking บน Ethereum ไม่ต้องใช้คอมพิวเตอร์ประสิทธิภาพสูงมาแข่งกับผู้อื่น เพียงล็อก Ether (ETH) ไว้ใน `สัญญาอัจฉริยะ` ของเครือข่าย ก็ช่วยให้ Ethereum ทำงานต่อไปได้และคุณจะได้รับรางวัลตอบแทน
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum ต้องการคุณ!
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 หยิบอุปกรณ์ของคุณ แล้วไปกันเลย!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ความปลอดภัยของบล็อกเชน
 

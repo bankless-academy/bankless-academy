@@ -38,7 +38,7 @@ Mikoba inafanana kiasi na akaunti za intaneti ya `Web2` uliyoizoea. Utatumia mko
 
 Katika somo hili, tutakutambulisha kwa mikoba, jinsi inavyofanya kazi, na jinsi ya kulinda sarafu yako ya kripto. Tutamalizia kwa mwongozo wa kutengeneza mkoba na kufikia **blockchain ya Ethereum, nyumbani kwa Bankless Academy**.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Mkoba ni nini?
 
@@ -193,7 +193,7 @@ Unaweza pia kusikia kuhusu `mikoba mahiri`: aina inayochipuka inayoendesha msimb
 
 Kila mkoba una matumizi yake. Usijali, leo tutatengeneza mkoba mmoja tu.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Mikoba yenye mdhamini
 
@@ -299,7 +299,7 @@ Iwe `mkoba wa uhifadhi binafsi` wako ni wa mtandaoni au wa nje ya mtandao, kuna 
 
 🛡️ Jihadhari na ulaghai unaokudanganya utie saini miamala au idhini hatari: somo letu la [Usalama wa Web3](https://app.banklessacademy.com/lessons/web3-security) linaonyesha jinsi ya kuutambua.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

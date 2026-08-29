@@ -38,7 +38,7 @@ Bitcoin నెట్‌వర్క్‌లోని `మైనింగ్` �
 
 అయితే మైనింగ్‌కు, స్టేకింగ్‌కు ఒక ముఖ్యమైన తేడా ఉంది. Ethereum-లో స్టేకింగ్ కోసం ఇతరులతో పోటీపడే శక్తివంతమైన కంప్యూటర్ అక్కర్లేదు. నెట్‌వర్క్ `స్మార్ట్ కాంట్రాక్ట్`లో ఈథర్ (ETH) లాక్ చేస్తే చాలు, Ethereum నడుస్తుంది, మీకు రివార్డ్ వస్తుంది.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum-కు మీరు కావాలి!
 
@@ -54,7 +54,7 @@ Bitcoin నెట్‌వర్క్‌లోని `మైనింగ్` �
 
 మీ సామాన్లు తీసుకోండి, బయలుదేరదాం!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # బ్లాక్‌చైన్ భద్రత
 

@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 ただし、マイニングとステーキングには大きな違いがあります。Ethereum のステーキングでは、他人と競うための高性能なコンピューターは要りません。Ether（ETH）をネットワークの`スマートコントラクト`にロックするだけで、Ethereum は動き続け、報酬も受け取れます。
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum は守り手を求めています！
 
@@ -54,7 +54,7 @@ Ether をステークすると、それは Ethereum のトランザクション�
 
 装備を持って、出発です！
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ブロックチェーンのセキュリティ
 

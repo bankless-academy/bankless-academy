@@ -38,7 +38,7 @@ Les portefeuilles ressemblent un peu aux comptes de l'internet `Web2` dont vous 
 
 Dans cette leçon, nous vous présenterons les portefeuilles, leur fonctionnement et la façon de sécuriser vos cryptomonnaies. Nous terminerons par un guide pour en créer un et accéder à **la blockchain Ethereum, la maison de Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Définition du portefeuille
 
@@ -193,7 +193,7 @@ Vous entendrez peut-être parler de `portefeuilles intelligents` : un type éme
 
 Chaque portefeuille répond à un usage différent. Rassurez-vous, nous n'en créerons qu'un seul aujourd'hui.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Portefeuilles avec dépositaire
 
@@ -299,7 +299,7 @@ Que votre `portefeuille en auto-conservation` soit à chaud ou à froid, adoptez
 
 🛡️ Méfiez-vous des arnaques qui font signer des transactions néfastes : notre leçon [Sécurité Web3](https://app.banklessacademy.com/lessons/web3-security) montre comment les repérer.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

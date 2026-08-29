@@ -42,7 +42,7 @@ Najprościej myśleć o Ethereum jak o `sklepie z aplikacjami` Google czy Appl
 
 Aby zrozumieć, dlaczego miliony ludzi na świecie używają Ethereum, spójrzmy na jego główną misję…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Globalny plac miejski
 
@@ -312,7 +312,7 @@ Chcesz zostawić po sobie ślad?
 
 Podróż zaczyna się od utworzenia `portfela kryptowalutowego`. To twój paszport do świata Ethereum. Utworzysz go w następnej lekcji, „Podstawy portfela”.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

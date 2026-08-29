@@ -42,7 +42,7 @@ Cara mudah memahami Ethereum: bayangkan `app store` milik Google atau Apple, tap
 
 Untuk memahami kenapa jutaan orang di dunia memakai Ethereum, kita perlu melihat misi utamanya…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Alun-Alun Global
 
@@ -312,7 +312,7 @@ Siap meninggalkan jejakmu?
 
 Untuk memulai perjalanan, kamu perlu membuat `dompet kripto`. Inilah paspormu ke dunia Ethereum. Kita akan menyiapkannya di pelajaran berikutnya, "Dasar-Dasar Dompet".
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

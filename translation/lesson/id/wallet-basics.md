@@ -38,7 +38,7 @@ Dompet mirip akun di internet `web2` yang sudah biasa kamu pakai. Kamu memakai d
 
 Di pelajaran ini kami akan memperkenalkan dompet, cara kerjanya, dan cara menjaga mata uang kripto kamu tetap aman. Di akhir ada panduan membuat dompet dan mengakses **blockchain Ethereum, rumah Bankless Academy**.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Definisi Dompet
 
@@ -193,7 +193,7 @@ Kamu mungkin juga mendengar `dompet pintar`: jenis baru yang menjalankan kode, s
 
 Tiap dompet punya kegunaan berbeda. Tenang, hari ini kita hanya akan membuat satu dompet.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Dompet Kustodian
 
@@ -299,7 +299,7 @@ Baik `dompet penyimpanan mandiri` kamu panas maupun dingin, ada banyak kebiasaan
 
 🛡️ Waspadai penipuan yang menjebak kamu menandatangani transaksi atau persetujuan berbahaya: pelajaran [Keamanan Web3](https://app.banklessacademy.com/lessons/web3-security) menunjukkan cara mengenalinya.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

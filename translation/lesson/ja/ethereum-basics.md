@@ -42,7 +42,7 @@ Ethereum は、Google や Apple の`アプリストア`のようなものだと�
 
 世界中で何百万人もが Ethereum を使う理由を知るために、その中心にある目的を見てみましょう。
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 世界の広場
 
@@ -312,7 +312,7 @@ Ethereum は、仲介者がインターネットの一角に築いた壁を崩�
 
 旅を始めるには`暗号資産ウォレット`を作る必要があります。Ethereum の世界へのパスポートです。次のレッスン「ウォレットの基礎」で一緒に用意します。
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

@@ -38,7 +38,7 @@ Vandaag bekijken we het proces van "staking": een eenvoudige manier om digitaal 
 
 Toch is er een belangrijk verschil tussen mining en staking. Voor staking op Ethereum heb je geen krachtige computer nodig om met anderen te concurreren. Door simpelweg Ether (ETH) vast te zetten in een `smart contract` van het netwerk houd je Ethereum draaiend en word je beloond.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum heeft jou nodig!
 
@@ -54,7 +54,7 @@ Laten we nu diep in de werking van staking duiken en een stressvrije, goedkope m
 
 Pak je spullen, we gaan!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Blockchain-veiligheid
 

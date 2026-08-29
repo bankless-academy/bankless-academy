@@ -38,7 +38,7 @@ Wallets are kind of like the accounts from the `web2` internet that you’re use
 
 In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain, the home of Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Wallet Definition
 
@@ -193,7 +193,7 @@ You may also hear about `smart wallets`: an emerging type that runs code, enabli
 
 Each wallet serves a different use-case. Don’t worry, we’ll only be creating one wallet today.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Custodial Wallets
 
@@ -299,7 +299,7 @@ Regardless if your `self-custody wallet` is hot or cold, there are many smart se
 
 🛡️ Watch out for scams that trick you into signing harmful transactions or approvals: our [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) lesson shows how to spot them.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

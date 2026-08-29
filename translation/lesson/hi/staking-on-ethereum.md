@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 पर माइनिंग और स्टेकिंग में एक अहम फ़र्क़ है। Ethereum पर स्टेकिंग के लिए दूसरों से होड़ करने वाला ताक़तवर कंप्यूटर नहीं चाहिए। नेटवर्क के `स्मार्ट कॉन्ट्रैक्ट` में ईथर (ETH) लॉक करना ही Ethereum को चलाए रखता है और आपको इनाम दिलाता है।
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum को आपकी ज़रूरत है!
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 सामान उठाएँ, चलिए!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ब्लॉकचेन की सुरक्षा
 

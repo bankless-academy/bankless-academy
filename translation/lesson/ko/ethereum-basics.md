@@ -42,7 +42,7 @@ ________________________________________________________________________________
 
 전 세계 수백만 명이 이더리움을 쓰는 이유를 알려면 핵심 목표부터 봐야 해요.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 전 세계의 광장
 
@@ -312,7 +312,7 @@ ________________________________________________________________________________
 
 여정을 시작하려면 `암호화폐 지갑`을 만들어야 해요. 이더리움 세계로 들어가는 여권이에요. 다음 레슨 “지갑 기초”에서 함께 만들어 봐요.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

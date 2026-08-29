@@ -34,6 +34,38 @@ const nextConfig = {
   // auto-prefixed with the detected locale (empty for 'en'), which is exactly
   // right here. Each rule targets its FINAL destination so real legacy URLs
   // never chain.
+  // Long-lived caching for lesson artwork.
+  //
+  // vercel.json has carried `/images/(.*)/(.*)` -> `max-age=31536000,
+  // immutable` for a long time and it has NEVER been applied: measured
+  // 2026-08-29, images still serve Next's default `max-age=0,
+  // must-revalidate`, so every visitor revalidates every image on every page
+  // load (13 round trips on a lesson page). A vercel.json header cannot
+  // override a Cache-Control the framework already sets — only sources that
+  // set no cache header of their own (e.g. the exact-path /api/og/rewards
+  // rule) take effect there. Setting it here instead puts it in the layer that
+  // owns the response.
+  //
+  // NOT `immutable`, deliberately: the `-cb12b11e` suffix looks like a content
+  // hash but is `crc32(imageLink)` from import-content.js — a hash of the
+  // SOURCE URL. A changed image behind an unchanged source URL keeps its
+  // filename, so `immutable` would pin the stale version in every visitor's
+  // browser for a year with no way to bust it. A day of freshness plus
+  // stale-while-revalidate gets almost all the benefit and stays correctable.
+  async headers() {
+    return [
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, stale-while-revalidate=2592000',
+          },
+        ],
+      },
+    ]
+  },
+
   async redirects() {
     return [
       // NOTE: /en/* (the default locale under its prefix) is reachable as a

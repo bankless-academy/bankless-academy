@@ -38,7 +38,7 @@ Cüzdanlar, alıştığın `web2` internetindeki hesaplara benzer. `web3` olarak
 
 Bu derste cüzdanları, nasıl çalıştıklarını ve kripto paranı nasıl güvende tutacağını anlatacağız. Sonunda ise bir cüzdan kurup **Bankless Academy'nin yuvası olan Ethereum blokzincirine** nasıl erişeceğini göstereceğiz.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Cüzdanın Tanımı
 
@@ -193,7 +193,7 @@ Bilgisayar yazılımlarında olduğu gibi, cüzdanlarda da pek çok tür var. D�
 
 Her cüzdan farklı bir ihtiyaca hizmet eder. Merak etme, bugün tek bir cüzdan oluşturacağız.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Emanet Cüzdanlar
 
@@ -299,7 +299,7 @@ Aşağıdaki cüzdan türlerinden hangisi en güvenli kabul edilir?
 
 🛡️ Seni zararlı işlemleri veya onayları imzalamaya kandıran dolandırıcılıklara dikkat et: [Web3 Güvenliği](https://app.banklessacademy.com/lessons/web3-security) dersimiz bunları nasıl fark edeceğini gösteriyor.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

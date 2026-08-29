@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 Bitcoin це новий тип грошей, створений, щоб протистояти `інфляції`: його пропозиція зафіксована в коді, тож ніхто не може надрукувати більше. Ціна досі коливається в короткому періоді, але правила ніколи не змінюються.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Історія Bitcoin
 
@@ -52,7 +52,7 @@ Bitcoin це новий тип грошей, створений, щоб прот
 
 **Час переосмислити гроші.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Коротка історія грошей
 
@@ -327,4 +327,4 @@ Bitcoin працює на спільній мережі з тисяч комп'�
 Не забудь перевірити, що всі дані правильні.
 Підтверджену транзакцію Bitcoin неможливо скасувати.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

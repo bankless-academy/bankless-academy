@@ -42,7 +42,7 @@ A simple way to think of Ethereum is like the Google or Apple `app store`, but w
 
 To understand why millions of people are using Ethereum across the world, we need to look at its core mission…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # A Global Town Square
 
@@ -312,7 +312,7 @@ Ready to make your mark?
 
 To start your journey you’ll need to create your `crypto wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, “Wallet Basics”.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

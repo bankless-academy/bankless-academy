@@ -38,7 +38,7 @@ Peněženky se trochu podobají účtům, které znáš z internetu `Web2`. Pen
 
 V této lekci ti představíme peněženky, ukážeme, jak fungují, a poradíme, jak udržet kryptoměny v bezpečí. Na konci najdeš návod, jak si peněženku vytvořit a dostat se na **blockchain Ethereum, domov Bankless Academy**.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Co je peněženka
 
@@ -193,7 +193,7 @@ Můžeš slyšet i o `chytrých peněženkách`: nový typ, který umí spoušt
 
 Každá peněženka se hodí na něco jiného. Nemusíš se bát, dnes si vytvoříme jen jednu.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Kustodiální peněženky
 
@@ -299,7 +299,7 @@ Ať je tvoje `peněženka ve vlastní správě` horká, nebo studená, osvoj si 
 
 🛡️ Pozor na podvody, které tě navedou podepsat škodlivou transakci nebo schválení. Jak je poznat, ukáže lekce [Bezpečnost ve Web3](https://app.banklessacademy.com/lessons/web3-security).
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

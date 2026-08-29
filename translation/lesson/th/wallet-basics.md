@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 ในบทเรียนนี้ เราจะแนะนำให้คุณรู้จักกระเป๋าเงิน วิธีทำงานของมัน และวิธีรักษาความปลอดภัยของคริปโทเคอร์เรนซี ปิดท้ายด้วยคู่มือการตั้งค่าและเข้าถึง **บล็อกเชน Ethereum บ้านของ Bankless Academy**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # นิยามของกระเป๋าเงิน
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 กระเป๋าเงินแต่ละแบบเหมาะกับการใช้งานต่างกัน ไม่ต้องกังวล วันนี้เราจะสร้างกระเป๋าเงินแค่ใบเดียว
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # กระเป๋าเงินแบบ Custodial
 
@@ -299,7 +299,7 @@ Ledger และ Trezor เป็นตัวอย่างของ `cold wall
 
 🛡️ ระวังกลโกงที่หลอกให้คุณเซ็นธุรกรรมหรือการอนุมัติที่เป็นอันตราย บทเรียน [ความปลอดภัยใน Web3](https://app.banklessacademy.com/lessons/web3-security) ของเราสอนวิธีสังเกตกลโกงเหล่านี้
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

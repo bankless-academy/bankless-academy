@@ -38,7 +38,7 @@ Wallets lijken op de accounts die je kent van het `web2`-internet. Je gebruikt e
 
 In deze les maken we je wegwijs in wallets: hoe ze werken en hoe je je cryptovaluta veilig houdt. We sluiten af met een gids om er zelf een aan te maken en toegang te krijgen tot **de Ethereum-blockchain, de thuisbasis van Bankless Academy**.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Definitie van een wallet
 
@@ -193,7 +193,7 @@ Je hoort misschien ook over `smart wallets`: een opkomend type dat code uitvoert
 
 Elke wallet heeft zijn eigen toepassing. Geen zorgen, vandaag maken we er maar één aan.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Custodial wallets
 
@@ -299,7 +299,7 @@ Of je `self-custody wallet` nu hot of cold is, er zijn veel slimme veiligheidsge
 
 🛡️ Pas op voor scams die je schadelijke transacties of goedkeuringen laten ondertekenen: onze les [Web3-veiligheid](https://app.banklessacademy.com/lessons/web3-security) leert je ze herkennen.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

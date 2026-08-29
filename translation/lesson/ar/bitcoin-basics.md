@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 بيتكوين نوع جديد من المال، مصمم لمقاومة `التضخم`: معروضه ثابت في الكود، فلا يستطيع أحد طباعة المزيد منه. لا يزال سعره يتقلب على المدى القصير، لكن قواعده لا تتغير أبدا.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # قصة بيتكوين
 
@@ -52,7 +52,7 @@ ________________________________________________________________________________
 
 **حان وقت إعادة التفكير في مفهوم المال.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # تاريخ موجز للمال
 
@@ -327,4 +327,4 @@ ________________________________________________________________________________
 تذكر التأكد من دقة جميع التفاصيل.
 بمجرد تأكيد معاملة بيتكوين، لا يمكنك التراجع عنها.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

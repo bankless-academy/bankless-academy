@@ -38,7 +38,7 @@ As carteiras se parecem com as contas da internet `web2` que você já conhece. 
 
 Nesta lição vamos apresentar as carteiras, como elas funcionam e como manter suas criptomoedas seguras. No final, um guia para criar a sua e acessar **a blockchain do Ethereum, a casa da Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Definição de carteira
 
@@ -193,7 +193,7 @@ Você também vai ouvir falar das `carteiras inteligentes`: um tipo emergente qu
 
 Cada carteira serve a um uso diferente. Fique tranquilo: hoje vamos criar só uma.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Carteiras com custódia
 
@@ -299,7 +299,7 @@ Sendo quente ou fria, sua `carteira de autocustódia` pede boas práticas de seg
 
 🛡️ Cuidado com golpes que levam você a assinar transações ou permissões nocivas: nossa lição [Segurança no web3](https://app.banklessacademy.com/lessons/web3-security) ensina a identificá-los.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

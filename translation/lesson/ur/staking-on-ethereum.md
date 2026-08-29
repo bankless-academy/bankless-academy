@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 تاہم، مائننگ اور اسٹیکنگ میں ایک اہم فرق ہے۔ ایتھیریم پر اسٹیکنگ کے لیے دوسروں کا مقابلہ کرنے کے لیے کسی طاقتور کمپیوٹر کی ضرورت نہیں۔ صرف ایتھر (ETH) کو نیٹ ورک کے `اسمارٹ کنٹریکٹ` میں لاک کرنا ہی ایتھیریم کو چلائے رکھتا ہے اور آپ کو اجر دیتا ہے۔
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ایتھیریم کو آپ کی ضرورت ہے!
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 اپنا سامان تیار کریں، چلتے ہیں!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # بلاک چین سکیورٹی
 

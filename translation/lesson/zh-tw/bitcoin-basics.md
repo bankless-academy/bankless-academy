@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 比特幣是一種新型貨幣，天生用來抵抗`通貨膨脹`：它的供應量寫在程式碼裡，誰也無法增發。短期價格仍會波動，但規則永遠不變。
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 比特幣的故事
 
@@ -52,7 +52,7 @@ ________________________________________________________________________________
 
 **是時候重新思考貨幣了。**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 貨幣簡史
 
@@ -327,4 +327,4 @@ ________________________________________________________________________________
 記得確認所有資訊準確無誤。
 比特幣交易一旦確認，就無法撤銷。
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

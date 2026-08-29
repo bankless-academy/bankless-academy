@@ -38,7 +38,7 @@ Hôm nay chúng ta tìm hiểu “staking”: một cách đơn giản để xâ
 
 Tuy nhiên, giữa hai cách có một khác biệt quan trọng. Staking trên Ethereum không đòi hỏi máy tính mạnh để đua với người khác. Chỉ cần khóa Ether (ETH) vào một `hợp đồng thông minh` của mạng lưới là bạn đã giúp Ethereum vận hành và được thưởng.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum cần bạn!
 
@@ -54,7 +54,7 @@ Giờ hãy đi sâu vào cơ chế staking và khám phá một cách bắt đ�
 
 Chuẩn bị hành trang, lên đường thôi!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bảo mật blockchain
 

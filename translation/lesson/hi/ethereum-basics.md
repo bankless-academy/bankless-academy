@@ -42,7 +42,7 @@ Ethereum को समझने का आसान तरीक़ा यह �
 
 दुनिया भर में लाखों लोग Ethereum क्यों इस्तेमाल करते हैं, यह समझने के लिए इसके मूल मकसद पर नज़र डालनी होगी…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # दुनिया की चौपाल
 
@@ -312,7 +312,7 @@ Ethereum में निवेश के लिए `ETH` रखना होग
 
 सफ़र शुरू करने के लिए अपना `क्रिप्टो वॉलेट` बनाना होगा। यही Ethereum की दुनिया का आपका पासपोर्ट है। अगले पाठ “वॉलेट की बुनियादी बातें” में हम इसे साथ मिलकर बनाएँगे।
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

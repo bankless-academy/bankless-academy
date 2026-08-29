@@ -42,7 +42,7 @@ Ethereum-ஐ Google அல்லது Apple `ஆப் ஸ்டோர்` ப�
 
 உலகெங்கும் மில்லியன் கணக்கானோர் Ethereum-ஐப் பயன்படுத்துவது ஏன் என்று புரிந்துகொள்ள, அதன் அடிப்படைக் குறிக்கோளைப் பார்க்க வேண்டும்…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # உலகளாவிய பொதுச் சதுக்கம்
 
@@ -312,7 +312,7 @@ Ethereum-இல் முதலீடு செய்ய, நெட்வொர�
 
 பயணத்தைத் தொடங்க உங்கள் `கிரிப்டோ வாலெட்`டை உருவாக்க வேண்டும். Ethereum உலகுக்கு இதுதான் உங்கள் பாஸ்போர்ட். அடுத்த பாடமான “வாலெட் அடிப்படைகள்” இல் உங்களுடையதை அமைப்போம்.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

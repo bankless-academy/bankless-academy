@@ -42,7 +42,7 @@ Piensa en Ethereum como la `tienda de aplicaciones` de Google o Apple, pero con 
 
 Para entender por qué millones de personas usan Ethereum, veamos su misión central…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Una plaza pública global
 
@@ -312,7 +312,7 @@ Ethereum está derribando los muros que los intermediarios levantaron en sus rin
 
 Para empezar tu viaje necesitarás crear tu `billetera cripto`. Es tu pasaporte al mundo de Ethereum. Configuraremos la tuya en la próxima lección, “Fundamentos de la billetera”.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

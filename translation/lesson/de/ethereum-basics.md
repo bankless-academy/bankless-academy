@@ -42,7 +42,7 @@ Stell dir Ethereum wie den `App Store` von Google oder Apple vor, aber mit wicht
 
 Warum nutzen Millionen Menschen weltweit Ethereum? Dafür schauen wir auf seine Kernmission…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ein globaler Marktplatz
 
@@ -312,7 +312,7 @@ Bereit, deine Spur zu hinterlassen?
 
 Für den Start brauchst du deine `Krypto-Wallet`. Sie ist dein Pass in die Welt von Ethereum. In der nächsten Lektion, „Wallet-Grundlagen“, richten wir sie ein.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

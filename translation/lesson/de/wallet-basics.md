@@ -38,7 +38,7 @@ Eine `Wallet` ähnelt den Konten aus dem `Web2`-Internet, die du kennst. Mit ihr
 
 In dieser Lektion lernst du, was Wallets sind, wie sie funktionieren und wie du deine Kryptowährung schützt. Zum Schluss richtest du selbst eine ein und betrittst **die Ethereum-Blockchain, die Heimat der Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Was ist eine Wallet?
 
@@ -193,7 +193,7 @@ Du wirst auch von `Smart Wallets` hören: ein neuer Typ, der Code ausführt und 
 
 Jeder Typ hat seinen Zweck. Keine Sorge, heute erstellen wir nur eine Wallet.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Custodial-Wallets
 
@@ -299,7 +299,7 @@ Egal ob deine `Selbstverwahrungs-Wallet` hot oder cold ist: Ein paar Gewohnheite
 
 🛡️ Achte auf Betrug, der dich zu schädlichen Signaturen verleitet: Unsere Lektion [Web3-Sicherheit](https://app.banklessacademy.com/lessons/web3-security) zeigt, wie du ihn erkennst.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

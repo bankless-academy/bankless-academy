@@ -38,7 +38,7 @@ Hôm nay, chúng ta tìm hiểu `tiền mã hóa` đã khởi đầu tất cả:
 
 Bitcoin là một loại tiền mới, được thiết kế để chống `lạm phát`: nguồn cung cố định trong mã nguồn, nên không ai in thêm được. Giá vẫn biến động ngắn hạn, nhưng luật lệ thì không bao giờ đổi.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Câu chuyện của Bitcoin
 
@@ -52,7 +52,7 @@ Thực tế là ngày nay, chúng ta không kiểm soát tiền của mình theo
 
 **Đã đến lúc nghĩ lại về tiền tệ.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Lược sử tiền tệ
 
@@ -327,4 +327,4 @@ Nó cũng gồm một khoản phí giao dịch trả cho `thợ đào`.
 Nhớ kiểm tra mọi thông tin thật chính xác.
 Một khi giao dịch Bitcoin đã được xác nhận, bạn không thể đảo ngược nó.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

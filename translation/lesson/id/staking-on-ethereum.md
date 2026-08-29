@@ -38,7 +38,7 @@ Hari ini kita membahas proses "staking": satu cara sederhana membangun kekayaan 
 
 Tapi ada perbedaan penting antara penambangan dan staking. Staking di Ethereum tidak butuh komputer bertenaga besar untuk bersaing dengan yang lain. Cukup mengunci Ether (ETH) di sebuah `kontrak pintar` jaringan, Ethereum tetap berjalan dan kamu mendapat imbalan.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum Membutuhkan Kamu!
 
@@ -54,7 +54,7 @@ Sekarang mari menyelami mekanisme staking dan menemukan peluang murah tanpa repo
 
 Siapkan perlengkapanmu, ayo berangkat!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Keamanan Blockchain
 

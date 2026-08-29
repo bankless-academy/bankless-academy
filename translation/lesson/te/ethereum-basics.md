@@ -42,7 +42,7 @@ Ethereum-ను Google లేదా Apple `యాప్ స్టోర్` ల�
 
 ప్రపంచవ్యాప్తంగా మిలియన్ల మంది Ethereum ఎందుకు వాడుతున్నారో అర్థం కావాలంటే, దాని మూల లక్ష్యం చూడాలి…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ప్రపంచ కూడలి
 
@@ -312,7 +312,7 @@ Ethereum-లో పెట్టుబడి పెట్టాలంటే న�
 
 ప్రయాణం మొదలుపెట్టాలంటే మీ `క్రిప్టో వాలెట్` తయారు చేసుకోవాలి. Ethereum ప్రపంచానికి ఇదే మీ పాస్‌పోర్ట్. తర్వాతి పాఠం “వాలెట్ ప్రాథమిక అంశాలు”లో మీది ఏర్పాటు చేసుకుందాం.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

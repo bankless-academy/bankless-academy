@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 这一课会介绍钱包是什么、怎样运作，以及如何保护你的加密货币。最后我们会带你创建一个钱包，进入**以太坊区块链，也就是 Bankless Academy 所在的地方**。
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 钱包的定义
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 每种钱包适合不同的场景。别担心，今天我们只创建一个钱包。
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 托管钱包
 
@@ -299,7 +299,7 @@ Ledger 和 Trezor 就是`冷钱包`的例子。
 
 🛡️ 当心那些诱骗你签署有害交易或授权的骗局：我们的 [Web3 安全](https://app.banklessacademy.com/lessons/web3-security)课程会教你如何识别它们。
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

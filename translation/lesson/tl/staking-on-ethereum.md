@@ -38,7 +38,7 @@ Ang `staking` ay katulad ng `mining` sa Bitcoin network: parehong sistema ito pa
 
 Pero may isang mahalagang pagkakaiba ang mining at staking. Ang staking sa Ethereum ay hindi nangangailangan ng malakas na computer para makipagkumpitensya sa iba. Ang pag-lock lang ng Ether (ETH) sa isang network `smart contract` ang nagpapatakbo sa Ethereum at nagbibigay sa iyo ng rewards.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Kailangan Ka ng Ethereum!
 
@@ -54,7 +54,7 @@ Ngayon, tingnan natin nang malalim ang staking mechanics at tuklasin ang isang s
 
 Kunin mo na ang gear mo, tara na!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Seguridad ng Blockchain
 

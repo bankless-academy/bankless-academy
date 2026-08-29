@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 이번 레슨에서는 지갑이 무엇이고 어떻게 작동하는지, 암호화폐를 어떻게 안전하게 지키는지 알아봐요. 마지막에는 지갑을 직접 만들고 **Bankless Academy의 고향인 이더리움 블록체인**에 접속하는 방법을 안내해요.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 지갑이란 무엇일까요?
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 지갑마다 쓰임새가 달라요. 걱정 마세요, 오늘은 지갑 하나만 만들어요.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 커스터디 지갑
 
@@ -299,7 +299,7 @@ Ledger와 Trezor가 대표적인 `콜드 지갑`이에요.
 
 🛡️ 해로운 트랜잭션이나 승인에 서명하도록 속이는 사기를 조심하세요. [Web3 보안](https://app.banklessacademy.com/lessons/web3-security) 레슨에서 알아보는 법을 알려 줘요.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

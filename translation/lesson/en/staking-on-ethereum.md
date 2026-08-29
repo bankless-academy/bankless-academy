@@ -38,7 +38,7 @@ Today, we’ll look at the process of “staking”: one simple way to build dig
 
 However, there’s an important difference between mining and staking. Staking on Ethereum doesn’t require a powerful computer to compete against others. Simply locking Ether (ETH) in a network `smart contract` keeps Ethereum running and rewards you.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum Wants You!
 
@@ -54,7 +54,7 @@ Now, let's take a deep look into staking mechanics and discover a stress-free an
 
 Grab your gear, let’s go!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Blockchain Security
 

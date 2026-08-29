@@ -42,7 +42,7 @@ Ethereum'u Google ya da Apple `uygulama mağazası` gibi düşünebilirsin. Birk
 
 Dünyada milyonlarca insanın Ethereum'u neden kullandığını anlamak için temel misyonuna bakmamız gerekiyor…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Küresel Şehir Meydanı
 
@@ -312,7 +312,7 @@ Ethereum, aracıların internetin kendi köşelerine ördüğü duvarları aşı
 
 Yolculuğuna başlamak için `kripto cüzdanını` oluşturman gerekecek. Bu, Ethereum dünyasına açılan pasaportun. Sıradaki dersin “Cüzdan Temelleri”nde seninkini kuracağız.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

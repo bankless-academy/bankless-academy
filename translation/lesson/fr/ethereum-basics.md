@@ -42,7 +42,7 @@ Une façon simple de se représenter Ethereum, c'est comme le magasin d'applicat
 
 Pour comprendre pourquoi des millions de personnes utilisent Ethereum dans le monde, il faut regarder sa mission première...
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Une place publique mondiale
 
@@ -312,7 +312,7 @@ Prêt à laisser votre marque ?
 
 Pour commencer votre parcours, il vous faudra créer votre `portefeuille crypto`. C'est votre passeport pour le monde d'Ethereum. Nous créerons le vôtre dans la prochaine leçon, « Les bases du portefeuille ».
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

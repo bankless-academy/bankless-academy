@@ -42,7 +42,7 @@ Uma forma simples de pensar no Ethereum é como a `loja de aplicativos` do Googl
 
 Para entender por que milhões de pessoas usam o Ethereum, precisamos olhar sua missão central…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Uma praça global
 
@@ -312,7 +312,7 @@ Pronto para deixar sua marca?
 
 Para começar a jornada, você vai precisar criar sua `carteira cripto`. Ela é seu passaporte para o mundo do Ethereum. Vamos configurar a sua na próxima lição, “Fundamentos da carteira”.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

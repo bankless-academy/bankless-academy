@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 Але між майнінгом і стейкінгом є важлива різниця. Стейкінг в Ethereum не потребує потужного комп'ютера, щоб змагатися з іншими. Достатньо заблокувати ефір (ETH) у мережевому `смартконтракті`, і Ethereum працює, а ти отримуєш винагороду.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum потребує тебе!
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 Бери спорядження, рушаймо!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Безпека блокчейну
 

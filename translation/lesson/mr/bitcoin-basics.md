@@ -38,7 +38,7 @@ Bankless Academy-चे ध्येय एकच आहे: तुमच्य�
 
 Bitcoin हा नव्या प्रकारचा पैसा आहे, जो `चलनवाढ` रोखण्यासाठी बनवला आहे: त्याचा पुरवठा कोडमध्ये निश्चित आहे, त्यामुळे कोणीही जास्त छापू शकत नाही. अल्पकाळात किंमत वरखाली होते, पण नियम कधीच बदलत नाहीत.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bitcoin-ची कहाणी
 
@@ -52,7 +52,7 @@ Bitcoin वित्तव्यवस्था कशी बदलत आहे
 
 **पैशाकडे नव्याने पाहण्याची वेळ आली आहे**.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # पैशाचा थोडक्यात इतिहास
 
@@ -327,4 +327,4 @@ Bitcoin व्यवहार आणि मायनिंग नेमके �
 सर्व तपशील बरोबर असल्याची खात्री करा.
 Bitcoin व्यवहाराची एकदा पुष्टी झाली की तो मागे घेता येत नाही.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

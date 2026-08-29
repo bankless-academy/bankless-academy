@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 पण मायनिंग आणि स्टेकिंगमध्ये एक महत्त्वाचा फरक आहे. Ethereum-वर स्टेकिंगसाठी इतरांशी स्पर्धा करणारा शक्तिशाली संगणक लागत नाही. नेटवर्कच्या एका `स्मार्ट कॉन्ट्रॅक्ट`मध्ये फक्त Ether (ETH) लॉक केले तरी Ethereum चालू राहते आणि त्याबदल्यात बक्षीस मिळते.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum-ला तुमची गरज आहे!
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 सामान जमवा, निघूया!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ब्लॉकचेन सुरक्षा
 

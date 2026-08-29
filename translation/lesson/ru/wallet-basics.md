@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 В этом уроке мы расскажем, что такое кошельки, как они работают и как хранить криптовалюту безопасно. В конце будет инструкция, как создать кошелёк и войти в **блокчейн Ethereum, дом Bankless Academy**.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Что такое кошелёк
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 Каждый кошелёк решает свою задачу. Не волнуйтесь, сегодня мы создадим только один.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Кастодиальные кошельки
 
@@ -299,7 +299,7 @@ Ledger и Trezor это примеры `холодных кошельков`.
 
 🛡️ Остерегайтесь мошенников, которые подсовывают вредные транзакции и разрешения: распознать их учит урок [Безопасность в Web3](https://app.banklessacademy.com/lessons/web3-security).
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

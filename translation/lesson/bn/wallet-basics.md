@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 এই পাঠে ওয়ালেট কী, কীভাবে কাজ করে, আর ক্রিপ্টোকারেন্সি কীভাবে নিরাপদ রাখবেন তা শিখবেন। শেষে থাকবে ওয়ালেট তৈরি করে **Ethereum ব্লকচেইনে, অর্থাৎ Bankless Academy-র ঘরে, ঢোকার নির্দেশিকা**।
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ওয়ালেট কী
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 প্রতিটি ওয়ালেটের কাজ আলাদা। চিন্তা নেই, আজ আমরা একটিই ওয়ালেট তৈরি করব।
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # কাস্টোডিয়াল ওয়ালেট
 
@@ -299,7 +299,7 @@ Ledger আর Trezor হলো `কোল্ড ওয়ালেটের` উ
 
 🛡️ যেসব প্রতারণা আপনাকে ক্ষতিকর লেনদেন বা অনুমোদনে স্বাক্ষর করায়, সেগুলো থেকে সাবধান: আমাদের [Web3 নিরাপত্তা](https://app.banklessacademy.com/lessons/web3-security) পাঠে চেনার উপায় আছে।
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

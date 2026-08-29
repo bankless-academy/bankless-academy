@@ -42,7 +42,7 @@ ________________________________________________________________________________
 
 要理解为什么全球有数百万人在使用以太坊，我们得先看看它的核心使命……
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 全球广场
 
@@ -312,7 +312,7 @@ ________________________________________________________________________________
 
 要开始这段旅程，你需要创建自己的`加密钱包`。它是你通往以太坊世界的护照。下一课「钱包基础」里，我们就会帮你设置好。
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

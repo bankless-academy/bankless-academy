@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 Bitcoin ஒரு புதிய வகைப் பணம்; `பணவீக்கம்` தாக்காதபடி வடிவமைக்கப்பட்டது. அதன் வழங்கல் கோடில் நிலையாக நிர்ணயிக்கப்பட்டுள்ளது, எனவே யாரும் கூடுதலாக அச்சிட முடியாது. குறுகிய காலத்தில் விலை ஏறி இறங்கும்; ஆனால் அதன் விதிகள் ஒருபோதும் மாறாது.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bitcoin-இன் கதை
 
@@ -52,7 +52,7 @@ Bitcoin ஒரு புதிய வகைப் பணம்; `பணவீக
 
 **பணத்தை மறுபரிசீலனை செய்யும் நேரம் இது**.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # பணத்தின் சுருக்க வரலாறு
 
@@ -327,4 +327,4 @@ Bitcoin பரிவர்த்தனைகளையும் மைனிங�
 எல்லா விவரங்களும் சரியானவை என்பதை உறுதிசெய்யுங்கள்.
 Bitcoin பரிவர்த்தனை உறுதியானதும், அதைத் திரும்பப் பெற முடியாது.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

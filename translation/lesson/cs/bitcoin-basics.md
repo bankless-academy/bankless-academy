@@ -38,7 +38,7 @@ Dnes se podíváme na `kryptoměnu`, která to celé odstartovala: Bitcoin.
 
 Bitcoin je nový druh peněz navržený tak, aby odolával `inflaci`: jeho nabídka je pevně zapsaná v kódu, takže nikdo nemůže vytisknout víc. Cena krátkodobě kolísá, ale pravidla se nikdy nemění.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Příběh Bitcoinu
 
@@ -52,7 +52,7 @@ Je čas zjistit, jak Bitcoin mění svět financí.
 
 **Je čas přemýšlet o penězích jinak.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Stručná historie peněz
 
@@ -327,4 +327,4 @@ Součástí bude i poplatek za transakci, který dostanou `těžaři`.
 Zkontroluj, že jsou všechny údaje správně.
 Jakmile je bitcoinová transakce potvrzená, nejde vrátit zpět.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

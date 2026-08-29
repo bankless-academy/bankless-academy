@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 ఈ పాఠంలో వాలెట్‌లు అంటే ఏమిటి, ఎలా పనిచేస్తాయి, మీ క్రిప్టోకరెన్సీని ఎలా భద్రంగా ఉంచుకోవాలో చూస్తాం. చివరగా, ఒక వాలెట్ ఏర్పాటు చేసుకుని **Bankless Academy నిలయం అయిన Ethereum బ్లాక్‌చైన్** అందుకునే గైడ్ ఇస్తాం.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # వాలెట్ అంటే ఏమిటి
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 ప్రతి వాలెట్ వేర్వేరు అవసరానికి పనికొస్తుంది. చింత వద్దు, ఈరోజు మనం ఒకే వాలెట్ తయారు చేస్తాం.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # కస్టోడియల్ వాలెట్‌లు
 
@@ -299,7 +299,7 @@ Ledger, Trezor `కోల్డ్ వాలెట్`లకు ఉదాహర�
 
 🛡️ హానికరమైన లావాదేవీలపై లేదా ఆమోదాలపై సంతకం చేయించే మోసాల పట్ల జాగ్రత్త: వాటిని ఎలా గుర్తించాలో మా [Web3 భద్రత](https://app.banklessacademy.com/lessons/web3-security) పాఠం చూపిస్తుంది.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

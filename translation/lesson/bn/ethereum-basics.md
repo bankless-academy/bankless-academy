@@ -42,7 +42,7 @@ Ethereum-কে সহজে বুঝতে Google বা Apple-এর `অ্�
 
 সারা পৃথিবীর অসংখ্য মানুষ কেন Ethereum ব্যবহার করেন, তা বুঝতে এর মূল লক্ষ্যটি দেখা দরকার…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # বিশ্বের উন্মুক্ত চত্বর
 
@@ -312,7 +312,7 @@ Ethereum-এ বিনিয়োগ করতে চাইলে দরকা�
 
 যাত্রা শুরু করতে আপনাকে একটি `ক্রিপ্টো ওয়ালেট` বানাতে হবে। Ethereum-এর দুনিয়ায় এটিই আপনার পাসপোর্ট। সেটি আমরা বানাব পরের পাঠে: “ওয়ালেটের প্রাথমিক ধারণা”।
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

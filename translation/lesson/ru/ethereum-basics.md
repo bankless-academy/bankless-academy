@@ -42,7 +42,7 @@ ________________________________________________________________________________
 
 Чтобы понять, почему миллионы людей по всему миру пользуются Ethereum, посмотрим на его главную задачу…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Глобальная городская площадь
 
@@ -312,7 +312,7 @@ Ethereum разрушает стены, которыми посредники о
 
 Чтобы начать путь, понадобится `криптокошелёк`. Это ваш паспорт в мир Ethereum. Мы создадим его на следующем уроке, «Основы кошельков».
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

@@ -38,7 +38,7 @@ Leo, tutaangalia mchakato wa "staking": njia moja rahisi ya kujenga utajiri wa k
 
 Hata hivyo, kuna tofauti muhimu kati ya uchimbaji na staking. Staking kwenye Ethereum hakuhitaji kompyuta yenye nguvu ya kushindana na wengine. Kufunga tu Ether (ETH) kwenye `mkataba mahiri` wa mtandao kunaendesha Ethereum na kukuzawadia.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum inakuhitaji!
 
@@ -54,7 +54,7 @@ Sasa, hebu tuchunguze kwa kina mifumo ya staking na tugundue fursa nafuu na isiy
 
 Chukua vifaa vyako, twende!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Usalama wa blockchain
 

@@ -38,7 +38,7 @@ Ngayon, titingnan natin ang `cryptocurrency` na nagsimula ng lahat: Bitcoin.
 
 Bagong uri ng pera ang Bitcoin, ginawa para labanan ang `implasyon`: fixed sa code ang supply nito, kaya walang makakapag-print pa nito. Umaakyat-baba pa rin ang presyo nito sa maikling panahon, pero hindi nagbabago ang mga patakaran nito.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ang Kwento ng Bitcoin
 
@@ -52,7 +52,7 @@ Panahon na para matuto kung paano binabago ng Bitcoin ang finance.
 
 **Panahon na para baguhin ang pananaw natin sa pera.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Maikling Kasaysayan ng Pera
 
@@ -325,4 +325,4 @@ May kasama ring transaction fee na ibibigay sa mga `miner`.
 Tandaan, siguraduhing tama ang lahat ng detalye.
 Kapag na-confirm na ang isang Bitcoin transaction, hindi mo na ito mababawi.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 Но есть важное отличие. Для стейкинга в Ethereum не нужен мощный компьютер, чтобы соревноваться с другими. Достаточно заблокировать эфир (ETH) в `смарт-контракте` сети: Ethereum продолжает работать, а вы получаете награду.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum ждёт вас!
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 Берите снаряжение, вперёд!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Безопасность блокчейна
 

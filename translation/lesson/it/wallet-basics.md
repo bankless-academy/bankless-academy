@@ -38,7 +38,7 @@ I wallet somigliano agli account dell'internet `web2` che già conosci. Userai u
 
 In questa lezione ti presenteremo i wallet, come funzionano e come tenere al sicuro le tue criptovalute. Chiuderemo con una guida per crearne uno e accedere alla **blockchain di Ethereum, la casa di Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Che cos'è un wallet
 
@@ -193,7 +193,7 @@ Sentirai parlare anche di `smart wallet`: un tipo emergente che esegue codice e 
 
 Ogni wallet serve a un caso diverso. Tranquillo, oggi ne creeremo uno solo.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Wallet con custodia
 
@@ -299,7 +299,7 @@ Che il tuo `wallet di autocustodia` sia hot o cold, ci sono buone pratiche di si
 
 🛡️ Attento alle truffe che ti fanno firmare autorizzazioni dannose: la nostra lezione [Sicurezza nel web3](https://app.banklessacademy.com/lessons/web3-security) insegna a riconoscerle.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

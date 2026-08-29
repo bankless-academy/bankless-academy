@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 Bitcoin คือเงินรูปแบบใหม่ ออกแบบมาให้ต้านทาน `เงินเฟ้อ` อุปทานของมันถูกกำหนดตายตัวในโค้ด ไม่มีใครพิมพ์เพิ่มได้ ราคาของมันยังคงผันผวนในระยะสั้น แต่กฎของมันไม่เคยเปลี่ยน
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # เรื่องราวของ Bitcoin
 
@@ -52,7 +52,7 @@ Bitcoin คือเงินรูปแบบใหม่ ออกแบบ�
 
 **ถึงเวลาคิดใหม่เรื่องเงิน**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ประวัติศาสตร์โดยย่อของเงิน
 
@@ -327,4 +327,4 @@ decentralization คืออะไร?
 อย่าลืมตรวจสอบว่ารายละเอียดทั้งหมดถูกต้อง
 เมื่อธุรกรรม Bitcoin ได้รับการยืนยันแล้ว คุณไม่สามารถย้อนกลับได้
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

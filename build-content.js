@@ -457,7 +457,22 @@ const buildLesson = (slug, meta) => {
     }
   }
 
-  return { ...fields, slides }
+  // `imageLinks` is the preload list Lesson.tsx fetches 3s after a lesson
+  // opens. DERIVED here rather than stored in lesson-meta.json: it is just
+  // "every image these slides use", and keeping a hand-maintained copy let it
+  // drift — after the 2026-08-29 image dedup it still listed the retired
+  // duplicate URLs, which would have re-downloaded exactly the copies the
+  // dedup removed. Deriving also picked up two images that had always been in
+  // the slides but missing from the list.
+  const imageLinks = [
+    ...new Set(
+      JSON.stringify(slides)
+        .match(/(?:https:\/\/app\.banklessacademy\.com)?\/images\/[^"'()\s\\]+/g)
+        ?.map((u) => u.replace(IMAGE_HOST, '')) || []
+    ),
+  ]
+
+  return { ...fields, imageLinks, slides }
 }
 
 // ---------------------------------------------------------------------------

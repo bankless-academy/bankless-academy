@@ -38,7 +38,7 @@ Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
 
 Bitcoin is a new type of money, designed to resist `inflation`: its supply is fixed in code, so no one can print more of it. Its price still swings in the short term, but its rules never change.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bitcoin’s Story
 
@@ -52,7 +52,7 @@ It’s time to learn how Bitcoin is revolutionizing finance.
 
 **It’s time to rethink money.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # A Brief History of Money
 
@@ -327,4 +327,4 @@ It will also include a transaction fee given to the `miners`.
 Remember to make sure all details are accurate.
 Once a Bitcoin transaction is confirmed, you cannot reverse it.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

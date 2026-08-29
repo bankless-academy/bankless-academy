@@ -38,7 +38,7 @@ Oggi parliamo della `criptovaluta` che ha dato il via a tutto: Bitcoin.
 
 Bitcoin è un nuovo tipo di denaro, progettato per resistere all'`inflazione`: la sua offerta è fissata nel codice, quindi nessuno può crearne altro. Il prezzo oscilla ancora nel breve termine, ma le sue regole non cambiano mai.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # La storia di Bitcoin
 
@@ -52,7 +52,7 @@ La realtà è che oggi non controlliamo il nostro denaro quanto crediamo. Questo
 
 **È ora di ripensare il denaro.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Breve storia del denaro
 
@@ -327,4 +327,4 @@ Includerà anche una commissione di transazione destinata ai `miner`.
 Ricorda di controllare che tutti i dettagli siano corretti.
 Una volta confermata, una transazione Bitcoin non si può annullare.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

@@ -58,19 +58,6 @@
     "notionId": "6a440f5dd00a4179811178943bf89e1d",
     "englishName": "Bitcoin Basics",
     "slug": "bitcoin-basics",
-    "imageLinks": [
-      "/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png",
-      "/images/bitcoin-basics/bitcoins-story-98b007a5.png",
-      "/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg",
-      "/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg",
-      "/images/bitcoin-basics/enter-bitcoin-b108517c.svg",
-      "/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg",
-      "/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg",
-      "/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg",
-      "/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg",
-      "/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg",
-      "/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png"
-    ],
     "keywords": [
       "cryptocurrency",
       "satoshi nakamoto",
@@ -235,18 +222,6 @@
     "notionId": "2a957f2be160403ebdd7c89a4f0fa01d",
     "englishName": "Ethereum Basics",
     "slug": "ethereum-basics",
-    "imageLinks": [
-      "/images/ethereum-basics/ethereum-basics-b2e09ce5.png",
-      "/images/ethereum-basics/a-global-town-square-fcb47024.svg",
-      "/images/ethereum-basics/centralized-services-adf5be05.svg",
-      "/images/ethereum-basics/one-sided-trades-8d68270f.svg",
-      "/images/ethereum-basics/an-open-internet-31819e5b.svg",
-      "/images/ethereum-basics/peer-to-peer-trades-f043c3c0.svg",
-      "/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg",
-      "/images/ethereum-basics/a-global-banking-system-5a241dfc.svg",
-      "/images/ethereum-basics/how-it-works-08c71cad.svg",
-      "/images/ethereum-basics/joining-the-movement-44086b0b.png"
-    ],
     "keywords": [
       "apps",
       "app store",
@@ -412,7 +387,6 @@
     "notionId": "5f63090deb2b4800b699442a04e08314",
     "englishName": "Creating a Crypto Wallet",
     "slug": "creating-a-crypto-wallet",
-    "imageLinks": [],
     "keywords": [
       "crypto wallet",
       "blockchain",
@@ -478,21 +452,6 @@
     "notionId": "c2e79569863a4f5bbfdc9e86be5ae64f",
     "englishName": "Wallet Basics",
     "slug": "wallet-basics",
-    "imageLinks": [
-      "/images/wallet-basics/wallet-intro-b6d4487a.png",
-      "/images/wallet-basics/wallet-definition-d2912914.svg",
-      "/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg",
-      "/images/wallet-basics/your-wallets-public-key-87828c3e.svg",
-      "/images/wallet-basics/your-wallets-private-key-0d84ad39.svg",
-      "/images/wallet-basics/recovery-phrase-c614c36c.svg",
-      "/images/wallet-basics/types-of-wallet-094f0eb1.png",
-      "/images/wallet-basics/custodial-wallets-4eede755.svg",
-      "/images/wallet-basics/non-custodial-wallet-833c3d6b.svg",
-      "/images/wallet-basics/hot-wallets-9356886d.svg",
-      "/images/wallet-basics/cold-wallets-0e3183d1.svg",
-      "/images/wallet-basics/wallet-security-3a185d90.png",
-      "/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg"
-    ],
     "keywords": [
       "web2",
       "web3",
@@ -657,16 +616,6 @@
     "notionId": "1887f283a1b846008bcbd7fa1736bf49",
     "englishName": "Blockchain Basics",
     "slug": "blockchain-basics",
-    "imageLinks": [
-      "/images/blockchain-basics/introduction-1e34f31e.svg",
-      "/images/blockchain-basics/blockchain-structure-1c9a9ed4.svg",
-      "/images/blockchain-basics/examining-the-ledger-838ca24f.svg",
-      "/images/blockchain-basics/transactions-on-the-ledger-6b86493d.svg",
-      "/images/blockchain-basics/block-anatomy-5c22845b.svg",
-      "/images/blockchain-basics/inside-a-block-b0c2dd11.svg",
-      "/images/blockchain-basics/individual-transactions-de83e15c.svg",
-      "/images/blockchain-basics/user-addresses-57e130d9.svg"
-    ],
     "keywords": [
       "blockchain",
       "ledger",
@@ -810,17 +759,6 @@
     "notionId": "519c86d503954a629a2035eb1b401628",
     "englishName": "Web3 Security",
     "slug": "web3-security",
-    "imageLinks": [
-      "/images/web3-security/money-in-web2-7e1a5fd1.svg",
-      "/images/web3-security/money-in-web3-f575b0f6.svg",
-      "/images/web3-security/two-factor-authentication-7fa9bfdf.svg",
-      "/images/web3-security/social-engineering-scams-73c69132.svg",
-      "/images/web3-security/social-media-safety-a76a39f4.svg",
-      "/images/web3-security/social-media-best-practices-48ad350f.svg",
-      "/images/web3-security/scam-tokens-761d5f63.svg",
-      "/images/web3-security/hardware-wallets-22a096d4.svg",
-      "/images/web3-security/wallet-strategies-2b743061.svg"
-    ],
     "keywords": [
       "web3",
       "centralized exchange",
@@ -991,19 +929,6 @@
     "notionId": "7aeb05250dbc4d55a474fb817ff089d8",
     "englishName": "Layer 1 Blockchains",
     "slug": "layer-1-blockchains",
-    "imageLinks": [
-      "/images/layer-1-blockchains/introduction-feee7790.svg",
-      "/images/layer-1-blockchains/blockchain-trilemma-9bd1b1e4.svg",
-      "/images/layer-1-blockchains/security-and-consensus-4e857c50.svg",
-      "/images/layer-1-blockchains/security-and-attacks-a73febc0.svg",
-      "/images/layer-1-blockchains/scalability-throughput-d36672c5.svg",
-      "/images/layer-1-blockchains/scalability-finality-73177220.svg",
-      "/images/layer-1-blockchains/decentralization-distributes-power-feafb05a.svg",
-      "/images/layer-1-blockchains/is-it-decentralized-9cd381fb.svg",
-      "/images/layer-1-blockchains/some-examples-30020a8d.svg",
-      "/images/layer-1-blockchains/so-what-can-be-done-043c43fb.svg",
-      "/images/layer-1-blockchains/the-future-of-ethereum-1f05c338.svg"
-    ],
     "keywords": [
       "blockchain",
       "blockspace",
@@ -1181,17 +1106,6 @@
     "notionId": "5308fd17fcdb461b937bbc8717917ea2",
     "englishName": "Layer 2 Blockchains",
     "slug": "layer-2-blockchains",
-    "imageLinks": [
-      "/images/layer-2-blockchains/introduction-c1f2c88f.svg",
-      "/images/layer-2-blockchains/payment-channels-31677af9.svg",
-      "/images/layer-2-blockchains/bridging-layer-1-and-layer-2-c219a748.svg",
-      "/images/layer-2-blockchains/sidechains-464f0191.svg",
-      "/images/layer-2-blockchains/rollups-308dc6c9.svg",
-      "/images/layer-2-blockchains/optimistic-rollups-846aad61.svg",
-      "/images/layer-2-blockchains/zk-rollups-9d65de85.svg",
-      "/images/layer-2-blockchains/cross-chain-dapp-compatibility-8a372647.svg",
-      "/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism-or-base--54a0f80a.svg"
-    ],
     "keywords": [
       "blockchain trilemma",
       "payment channels",
@@ -1350,20 +1264,6 @@
     "notionId": "111a71126d5a4092b79a7c6981e05270",
     "englishName": "Funding a Wallet on Layer 2",
     "slug": "funding-a-wallet-on-layer-2",
-    "imageLinks": [
-      "/images/funding-a-wallet-on-layer-2/image-06c6d84b.png",
-      "/images/funding-a-wallet-on-layer-2/image-11e1d7f9.png",
-      "/images/funding-a-wallet-on-layer-2/image-c8d4dd72.png",
-      "/images/funding-a-wallet-on-layer-2/image-9598ee73.png",
-      "/images/funding-a-wallet-on-layer-2/image-4f0d6a11.png",
-      "/images/funding-a-wallet-on-layer-2/image-386958ca.png",
-      "/images/funding-a-wallet-on-layer-2/image-fe6487dc.png",
-      "/images/funding-a-wallet-on-layer-2/image-138ee98b.png",
-      "/images/funding-a-wallet-on-layer-2/image-99952ff9.png",
-      "/images/funding-a-wallet-on-layer-2/image-0f4e1bde.png",
-      "/images/funding-a-wallet-on-layer-2/image-659f509f.png",
-      "/images/funding-a-wallet-on-layer-2/image-8d84ca0b.png"
-    ],
     "keywords": [
       "Layer 2",
       "block",
@@ -1437,22 +1337,6 @@
     "notionId": "d862b38d9f104039b84a67c4f51399dd",
     "englishName": "Registering Your Web3 Username",
     "slug": "registering-your-web3-username",
-    "imageLinks": [
-      "/images/registering-your-web3-username/image-c7baff43.png",
-      "/images/registering-your-web3-username/image-c55c7950.png",
-      "/images/registering-your-web3-username/image-7086002e.png",
-      "/images/registering-your-web3-username/image-073b8d76.png",
-      "/images/registering-your-web3-username/image-09c3d858.png",
-      "/images/registering-your-web3-username/image-2297867c.png",
-      "/images/registering-your-web3-username/image-4d71d393.png",
-      "/images/registering-your-web3-username/image-0e183437.png",
-      "/images/registering-your-web3-username/image-91795816.png",
-      "/images/registering-your-web3-username/image-d312b342.png",
-      "/images/registering-your-web3-username/image-a8bece69.png",
-      "/images/registering-your-web3-username/image-0f779c34.png",
-      "/images/registering-your-web3-username/image-b83971f6.png",
-      "/images/registering-your-web3-username/image-ea2d6d2a.png"
-    ],
     "keywords": [
       "cryptocurrency",
       "onchain identity",
@@ -1527,18 +1411,6 @@
     "notionId": "409cd6ada1bd4ba7aa30f86239c98753",
     "englishName": "Intro to DeFi",
     "slug": "intro-to-defi",
-    "imageLinks": [
-      "/images/intro-to-defi/defi-defined-759c5922.svg",
-      "/images/intro-to-defi/earning-yield-bc952747.svg",
-      "/images/intro-to-defi/what-you-can-do-with-defi-e1e865b5.svg",
-      "/images/intro-to-defi/investing-7c8b44ed.svg",
-      "/images/intro-to-defi/trading-67935721.svg",
-      "/images/intro-to-defi/lending-borrowing-b7d58dfa.svg",
-      "/images/intro-to-defi/staking-8dbafcb8.svg",
-      "/images/intro-to-defi/defi-downsides-da1fdb68.svg",
-      "/images/intro-to-defi/defi-downsides-d533aeef.svg",
-      "/images/intro-to-defi/defi-downsides-0070f0e1.svg"
-    ],
     "keywords": [
       "decentralized",
       "blockchain",
@@ -1684,11 +1556,6 @@
     "notionId": "1181627a73fb463a814043d53f44559e",
     "englishName": "Understanding Stablecoins",
     "slug": "understanding-stablecoins",
-    "imageLinks": [
-      "/images/understanding-stablecoins/image-0c080b13.png",
-      "/images/understanding-stablecoins/image-573e657a.png",
-      "/images/understanding-stablecoins/image-4f6e4c7f.png"
-    ],
     "keywords": [
       "ERC-20",
       "peg",
@@ -1756,18 +1623,6 @@
     "notionId": "41209248612042d2b279261ee60e3a66",
     "englishName": "Decentralized Exchanges",
     "slug": "decentralized-exchanges",
-    "imageLinks": [
-      "/images/decentralized-exchanges/what-is-a-decentralized-exchange-7eed6afb.svg",
-      "/images/decentralized-exchanges/centralized-and-decentralized-exchanges-f6f6324c.svg",
-      "/images/decentralized-exchanges/decentralized-applications-99447b26.svg",
-      "/images/decentralized-exchanges/decentralized-applications-continued-728cfade.svg",
-      "/images/decentralized-exchanges/automated-market-makers-78ad7439.svg",
-      "/images/decentralized-exchanges/token-swaps-41ceb8e1.svg",
-      "/images/decentralized-exchanges/token-swaps-continued-bad45a9b.svg",
-      "/images/decentralized-exchanges/what-is-liquidity-a88af170.svg",
-      "/images/decentralized-exchanges/liquidity-providers-4f46eebb.svg",
-      "/images/decentralized-exchanges/dex-best-practices-62cbc83b.svg"
-    ],
     "keywords": [
       "liquidity pools",
       "defi",
@@ -1943,17 +1798,6 @@
     "notionId": "fe0ab896f8d74031bedf683510261b05",
     "englishName": "Swapping on a Decentralized Exchange",
     "slug": "swapping-on-a-decentralized-exchange",
-    "imageLinks": [
-      "/images/swapping-on-a-decentralized-exchange/image-a5b39b1d.png",
-      "/images/swapping-on-a-decentralized-exchange/image-1d7c44d3.png",
-      "/images/swapping-on-a-decentralized-exchange/image-6ecdef56.png",
-      "/images/swapping-on-a-decentralized-exchange/image-e3f7c7e8.png",
-      "/images/swapping-on-a-decentralized-exchange/image-8d15c6f6.png",
-      "/images/swapping-on-a-decentralized-exchange/image-7b117655.png",
-      "/images/swapping-on-a-decentralized-exchange/image-89f87156.png",
-      "/images/swapping-on-a-decentralized-exchange/image-c8b8abcc.png",
-      "/images/swapping-on-a-decentralized-exchange/image-bcfdf0ee.png"
-    ],
     "keywords": [
       "Decentralized Finance"
     ]
@@ -2011,21 +1855,6 @@
     "notionId": "e90059604739465ea99b9a2c8af5eb75",
     "englishName": "Staking on Ethereum",
     "slug": "staking-on-ethereum",
-    "imageLinks": [
-      "/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png",
-      "/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png",
-      "/images/staking-on-ethereum/blockchain-security-7f2149fe.svg",
-      "/images/staking-on-ethereum/proof-of-stake-49c358ed.svg",
-      "/images/staking-on-ethereum/slashing-ccabe137.svg",
-      "/images/staking-on-ethereum/ethernomics-33407ddc.svg",
-      "/images/staking-on-ethereum/types-of-staking-part-2-9de268fd.svg",
-      "/images/staking-on-ethereum/types-of-staking-part-2-96f11caf.svg",
-      "/images/staking-on-ethereum/types-of-staking-part-2-27091ef5.svg",
-      "/images/staking-on-ethereum/network-centralization-0622ba07.svg",
-      "/images/staking-on-ethereum/staking-pools-46c96251.svg",
-      "/images/staking-on-ethereum/network-centralization-again-43bfd55b.svg",
-      "/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-a5172608.svg"
-    ],
     "keywords": [
       "staking",
       "mining",
@@ -2203,12 +2032,6 @@
     "notionId": "fef542e5e6a8431b95081ba714c551cc",
     "englishName": "Staking Ether",
     "slug": "staking-ether",
-    "imageLinks": [
-      "/images/staking-ether/image-80cf7889.png",
-      "/images/staking-ether/image-255e1bf8.png",
-      "/images/staking-ether/image-8d944152.png",
-      "/images/staking-ether/image-5d667f3c.png"
-    ],
     "keywords": [
       "validator node",
       "token",
@@ -2290,11 +2113,6 @@
     "notionId": "7e849598acb245fea60fca7162b937c3",
     "englishName": "Managing Token Allowances",
     "slug": "managing-token-allowances",
-    "imageLinks": [
-      "/images/managing-token-allowances/image-f95ea594.png",
-      "/images/managing-token-allowances/image-f3b00f4a.png",
-      "/images/managing-token-allowances/image-138cb12e.png"
-    ],
     "keywords": [
       "smart contracts",
       "private keys",
@@ -2361,17 +2179,6 @@
     "notionId": "48b3a9d48fe34d5593c125d5811b1273",
     "englishName": "DEX Aggregators",
     "slug": "dex-aggregators",
-    "imageLinks": [
-      "/images/dex-aggregators/introduction-1f25c90b.svg",
-      "/images/dex-aggregators/an-example-of-how-liquidity-impacts-prices-24eb7dd7.svg",
-      "/images/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-384b90b6.svg",
-      "/images/dex-aggregators/recombining-liquidity-with-dex-aggregators-c12c49a1.svg",
-      "/images/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c7d692cd.svg",
-      "/images/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-aea20eff.svg",
-      "/images/dex-aggregators/meta-aggregators-7609a2ce.svg",
-      "/images/dex-aggregators/avoiding-sandwich-attacks-d4114147.svg",
-      "/images/dex-aggregators/more-protection-from-sandwiches-otc-trades-3da1b5df.svg"
-    ],
     "keywords": [
       "decentralized exchanges",
       "dex aggregators",
@@ -2521,15 +2328,6 @@
     "notionId": "c3d069346f984d6599f5190b04cffc11",
     "englishName": "Understanding Ethereum Token Standards",
     "slug": "understanding-ethereum-token-standards",
-    "imageLinks": [
-      "/images/understanding-ethereum-token-standards/image-eb8638eb.png",
-      "/images/understanding-ethereum-token-standards/image-8e5e9468.png",
-      "/images/understanding-ethereum-token-standards/image-ebe8683a.png",
-      "/images/understanding-ethereum-token-standards/image-242de5f5.png",
-      "/images/understanding-ethereum-token-standards/image-4708764e.png",
-      "/images/understanding-ethereum-token-standards/image-aa1af1d5.png",
-      "/images/understanding-ethereum-token-standards/image-d804ad2f.png"
-    ],
     "keywords": [
       "token",
       "ERC-20",
@@ -2570,19 +2368,6 @@
     "notionId": "6b05b52eae8a41e0ab27222ac27fca12",
     "englishName": "Gitcoin 2.0 Essentials",
     "slug": "gitcoin-2.0-essentials",
-    "imageLinks": [
-      "/images/gitcoin-2.0-essentials/welcome-to-gitcoin-2.0-gitcoin-grants-growth-3e78d2ef.png",
-      "/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png",
-      "/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-b699b9ea.png",
-      "/images/gitcoin-2.0-essentials/and-theres-more-99247fc7.png",
-      "/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png",
-      "/images/gitcoin-2.0-essentials/evolutionary-development-092753e6.png",
-      "/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png",
-      "/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png",
-      "/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-7334384f.png",
-      "/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png",
-      "/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png"
-    ],
     "keywords": [
       "allo protocol",
       "quadratic funding"
@@ -2690,21 +2475,6 @@
     "notionId": "7f53656c75b343d4b94c5b6a78fd0332",
     "englishName": "Optimism Governance",
     "slug": "optimism-governance",
-    "imageLinks": [
-      "/images/optimism-governance/old-problems-new-tools-fea84c8f.svg",
-      "/images/optimism-governance/network-governance-45b77eb1.svg",
-      "/images/optimism-governance/the-optimism-network-af6d1031.svg",
-      "/images/optimism-governance/progressive-decentralization-aaa9b55d.svg",
-      "/images/optimism-governance/a-new-economy-fd6cac83.svg",
-      "/images/optimism-governance/incentivizing-public-goods-b764ca38.svg",
-      "/images/optimism-governance/ethers-phoenix-2b7210df.svg",
-      "/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg",
-      "/images/optimism-governance/the-token-house-39ac02b5.svg",
-      "/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg",
-      "/images/optimism-governance/the-citizens-house-4c2b3821.svg",
-      "/images/optimism-governance/governance-seasons-a79f33e7.svg",
-      "/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg"
-    ],
     "keywords": [
       "dao",
       "delegation",
@@ -2871,12 +2641,6 @@
     "notionId": "a46f91a728e340f1a6bc66dd4367394d",
     "englishName": "Delegating on Optimism",
     "slug": "delegating-on-optimism",
-    "imageLinks": [
-      "/images/delegating-on-optimism/image-ce643a81.png",
-      "/images/delegating-on-optimism/image-9ec06fe9.png",
-      "/images/delegating-on-optimism/image-6443ae02.png",
-      "/images/delegating-on-optimism/image-245809cd.png"
-    ],
     "keywords": [
       "dApp",
       "network governance",
@@ -2910,19 +2674,6 @@
     "notionId": "20f12837a13b80fca3f0c312ba7d1fac",
     "englishName": "Public Nouns: A Public Goods DAO Experiment",
     "slug": "public-nouns-a-public-goods-dao-experiment",
-    "imageLinks": [
-      "/images/public-nouns-a-public-goods-dao-experiment/introduction-959fa0fe.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/public-goods-are-good-aa712ff1.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/using-web3-to-fund-public-goods-9ee02318.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/what-is-an-nft-the-role-of-meme-culture-71cedc1a.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/what-is-a-dao-e9562a03.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/forking-governance-contracts-07be6c71.svg",
-      "/images/public-nouns-a-public-goods-dao-experiment/how-onchain-funding-works-5d9d11c8.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-i-7b7c8535.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/public-nouns-impact-part-ii-5de36323.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/mission-accomplished-a808dbc2.png",
-      "/images/public-nouns-a-public-goods-dao-experiment/whats-next-an-open-invitation-5efe6f41.png"
-    ],
     "keywords": [
       "nft",
       "erc-721",

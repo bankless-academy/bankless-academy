@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 比特币是一种新型货币，天生用来抵抗`通货膨胀`：它的供应量写在代码里，谁也无法增发。短期价格仍会波动，但规则永远不变。
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 比特币的故事
 
@@ -52,7 +52,7 @@ ________________________________________________________________________________
 
 **是时候重新思考货币了。**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 货币简史
 
@@ -327,4 +327,4 @@ ________________________________________________________________________________
 记得确认所有信息准确无误。
 比特币交易一旦确认，就无法撤销。
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

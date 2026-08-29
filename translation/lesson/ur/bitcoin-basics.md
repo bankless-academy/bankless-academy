@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 بٹ کوائن ایک نئی طرح کی رقم ہے، جو `افراط زر` کا مقابلہ کرنے کے لیے بنائی گئی ہے: اس کی سپلائی کوڈ میں طے شدہ ہے، کوئی بھی اسے مزید نہیں چھاپ سکتا۔ اس کی قیمت مختصر مدت میں بدلتی رہتی ہے، لیکن اس کے اصول کبھی نہیں بدلتے۔
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # بٹ کوائن کی کہانی
 
@@ -52,7 +52,7 @@ ________________________________________________________________________________
 
 **اب وقت ہے پیسے کے بارے میں نئے سرے سے سوچنے کا۔**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # پیسے کی مختصر تاریخ
 
@@ -327,4 +327,4 @@ ________________________________________________________________________________
 یاد رکھیں کہ تمام تفصیلات درست ہوں۔
 ایک بار بٹ کوائن ٹرانزیکشن کی تصدیق ہو جائے تو آپ اسے واپس نہیں کر سکتے۔
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

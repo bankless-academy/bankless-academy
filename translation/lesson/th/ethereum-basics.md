@@ -42,7 +42,7 @@ ________________________________________________________________________________
 
 เพื่อเข้าใจว่าทำไมผู้คนหลายล้านคนทั่วโลกจึงใช้ Ethereum เราต้องมาดูภารกิจหลักของมัน…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # จัตุรัสกลางเมืองระดับโลก
 
@@ -312,7 +312,7 @@ Ethereum กำลังกัดเซาะกำแพงที่ตัว�
 
 หากต้องการเริ่มการเดินทาง คุณต้องสร้าง `กระเป๋าเงินคริปโต` ของคุณเสียก่อน นี่คือหนังสือเดินทางของคุณสู่โลกของ Ethereum เราจะตั้งค่าให้คุณในบทเรียนถัดไป "พื้นฐานกระเป๋าเงิน"
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

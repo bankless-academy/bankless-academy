@@ -38,7 +38,7 @@ Ví hơi giống các tài khoản trên internet `Web2` mà bạn đã quen. B�
 
 Bài học này giới thiệu về ví, cách chúng hoạt động và cách giữ an toàn cho tiền mã hóa. Cuối bài là hướng dẫn tạo ví và truy cập **blockchain Ethereum, ngôi nhà của Bankless Academy**.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Định nghĩa ví
 
@@ -193,7 +193,7 @@ Bạn cũng có thể nghe tới `ví thông minh`: loại mới nổi có thể
 
 Mỗi loại ví phục vụ một nhu cầu khác nhau. Đừng lo, hôm nay chúng ta chỉ tạo một chiếc ví.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ví lưu ký
 
@@ -299,7 +299,7 @@ Dù `ví tự lưu ký` của bạn là nóng hay lạnh, có nhiều thói quen
 
 🛡️ Cảnh giác với các trò lừa dụ bạn ký giao dịch hay phê duyệt độc hại: bài học [Bảo mật Web3](https://app.banklessacademy.com/lessons/web3-security) chỉ cho bạn cách nhận ra chúng.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

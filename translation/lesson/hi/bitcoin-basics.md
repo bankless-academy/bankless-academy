@@ -38,7 +38,7 @@ Bankless Academy का मकसद है: आप जैसे एक्सप
 
 Bitcoin एक नई तरह का पैसा है, जो `मुद्रास्फीति` से बचाने के लिए बना है: इसकी आपूर्ति कोड में तय है, इसलिए कोई और नहीं छाप सकता। दाम थोड़े समय में ऊपर-नीचे होता है, पर नियम कभी नहीं बदलते।
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bitcoin की कहानी
 
@@ -52,7 +52,7 @@ Bitcoin एक नई तरह का पैसा है, जो `मुद्
 
 **अब पैसे को नए सिरे से समझने का समय है**।
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # पैसे का छोटा इतिहास
 
@@ -327,4 +327,4 @@ Bitcoin के लेन-देन और माइनिंग की असल
 ध्यान रखें कि सारी जानकारी सही हो।
 Bitcoin लेन-देन की पुष्टि हो जाने के बाद उसे पलटा नहीं जा सकता।
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

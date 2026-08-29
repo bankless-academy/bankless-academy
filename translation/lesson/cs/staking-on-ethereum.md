@@ -38,7 +38,7 @@ Dnes se podíváme na „staking“: jednoduchý způsob, jak budovat digitáln�
 
 Mezi těžbou a stakingem je ale důležitý rozdíl. Staking na Ethereu nevyžaduje výkonný počítač, který soupeří s ostatními. Stačí zamknout ether (ETH) v `chytrém kontraktu` sítě, a tím Ethereum udržíš v chodu a získáš odměnu.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum tě potřebuje!
 
@@ -54,7 +54,7 @@ Pojďme se teď podrobně podívat na mechaniku stakingu a najít klidný a le
 
 Ber výbavu a jdeme na to!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bezpečnost blockchainu
 

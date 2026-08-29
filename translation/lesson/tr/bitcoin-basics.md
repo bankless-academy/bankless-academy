@@ -38,7 +38,7 @@ Bugün her şeyi başlatan `kripto parayı` ele alıyoruz: Bitcoin.
 
 Bitcoin, `enflasyona` direnmek için tasarlanmış yeni bir para türü: arzı kodda sabittir, kimse daha fazlasını basamaz. Fiyatı kısa vadede hâlâ dalgalanır, ama kuralları asla değişmez.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Bitcoin'in Hikâyesi
 
@@ -52,7 +52,7 @@ Bitcoin'in finansı nasıl dönüştürdüğünü öğrenmenin zamanı geldi.
 
 **Parayı yeniden düşünmenin zamanı geldi.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Paranın Kısa Tarihi
 
@@ -327,4 +327,4 @@ Ayrıca `madencilere` verilen bir işlem ücreti de içerecek.
 Tüm bilgilerin doğru olduğundan emin ol.
 Bir Bitcoin işlemi onaylandıktan sonra geri alınamaz.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

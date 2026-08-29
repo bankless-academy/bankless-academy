@@ -38,7 +38,7 @@ Hari ini kita membahas `mata uang kripto` yang memulai semuanya: Bitcoin.
 
 Bitcoin adalah jenis uang baru yang dirancang untuk melawan `inflasi`: pasokannya dikunci di dalam kode, jadi tidak ada yang bisa mencetak lebih banyak. Harganya tetap naik turun dalam jangka pendek, tapi aturannya tidak pernah berubah.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Kisah Bitcoin
 
@@ -52,7 +52,7 @@ Saatnya belajar bagaimana Bitcoin merevolusi keuangan.
 
 **Saatnya memikirkan ulang soal uang.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Sejarah Singkat Uang
 
@@ -327,4 +327,4 @@ Transaksi juga menyertakan biaya transaksi untuk `penambang`.
 Ingat, pastikan semua detail sudah benar.
 Setelah transaksi Bitcoin dikonfirmasi, kamu tidak bisa membatalkannya.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

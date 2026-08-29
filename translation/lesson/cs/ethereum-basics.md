@@ -42,7 +42,7 @@ Ethereum si nejjednodušeji představíš jako `obchod s aplikacemi` od Googlu n
 
 Proč Ethereum používají miliony lidí po celém světě? Podívejme se na jeho hlavní misi…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Globální náměstí
 
@@ -312,7 +312,7 @@ Chceš po sobě něco zanechat?
 
 Na začátek cesty potřebuješ `kryptopeněženku`. Je to tvůj pas do světa Etherea. Vytvoříme ji v další lekci „Základy peněženek“.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

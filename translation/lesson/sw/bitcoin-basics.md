@@ -38,7 +38,7 @@ Leo, tunaangalia `sarafu ya kripto` iliyoanzisha yote: Bitcoin.
 
 Bitcoin ni aina mpya ya pesa, iliyoundwa kuzuia `mfumuko wa bei`: ugavi wake umewekwa kwenye msimbo, hivyo hakuna anayeweza kutengeneza zaidi. Bei yake bado inayumba kwa muda mfupi, lakini sheria zake hazibadiliki kamwe.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Historia ya Bitcoin
 
@@ -52,7 +52,7 @@ Ni wakati wa kujifunza jinsi Bitcoin inavyobadilisha fedha.
 
 **Ni wakati wa kufikiri upya kuhusu pesa.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Historia fupi ya pesa
 
@@ -327,4 +327,4 @@ Pia utajumuisha ada ya muamala inayowaendea `wachimbaji`.
 Kumbuka kuhakikisha maelezo yote ni sahihi.
 Muamala wa Bitcoin ukishathibitishwa, huwezi kuutengua.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

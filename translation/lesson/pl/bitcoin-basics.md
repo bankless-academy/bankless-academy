@@ -38,7 +38,7 @@ Dziś zajmiemy się Bitcoinem. To `kryptowaluta`, od której wszystko się zacz�
 
 Bitcoin to nowy rodzaj pieniądza, odporny na `inflację`: jego podaż jest zapisana w kodzie, więc nikt nie dodrukuje więcej. Cena wciąż waha się w krótkim terminie, ale zasady nigdy się nie zmieniają.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Historia Bitcoina
 
@@ -52,7 +52,7 @@ Czas poznać, jak Bitcoin zmienia finanse.
 
 **Czas spojrzeć na pieniądz inaczej.**
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Krótka historia pieniądza
 
@@ -327,4 +327,4 @@ Doliczona zostanie też opłata transakcyjna dla `górników`.
 Pamiętaj, aby sprawdzić poprawność wszystkich danych.
 Potwierdzonej transakcji Bitcoin nie da się cofnąć.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)

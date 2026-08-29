@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 このレッスンでは、ウォレットとは何か、どう動くのか、暗号資産を安全に守る方法を紹介します。最後に、ウォレットの作り方と、**Bankless Academy の本拠地である Ethereum ブロックチェーン**への入り方を案内します。
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ウォレットの定義
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 種類ごとに用途が違います。心配は要りません。今日作るウォレットは 1 つだけです。
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # カストディアルウォレット
 
@@ -299,7 +299,7 @@ Ledger と Trezor は`コールドウォレット`の例です。
 
 🛡️ 有害なトランザクションや承認に署名させる詐欺に注意しましょう。見分け方は [Web3 のセキュリティ](https://app.banklessacademy.com/lessons/web3-security) のレッスンで学べます。
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

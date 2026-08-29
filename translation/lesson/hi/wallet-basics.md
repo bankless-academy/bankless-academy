@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 इस पाठ में वॉलेट से परिचय होगा: वे कैसे काम करते हैं, और अपनी क्रिप्टोकरेंसी को सुरक्षित कैसे रखें। आखिर में एक गाइड होगी कि वॉलेट कैसे बनाएँ और **Ethereum ब्लॉकचेन तक कैसे पहुँचें, जो Bankless Academy का घर है**।
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # वॉलेट की परिभाषा
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 हर वॉलेट का अपना काम है। चिंता न करें, आज हम सिर्फ़ एक वॉलेट बनाएँगे।
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # कस्टोडियल वॉलेट
 
@@ -299,7 +299,7 @@ Ledger और Trezor `कोल्ड वॉलेट` के उदाहरण
 
 🛡️ ऐसे स्कैम से बचें जो नुकसानदेह लेन-देन या मंज़ूरी पर हस्ताक्षर करा लेते हैं: हमारा [Web3 सुरक्षा](https://app.banklessacademy.com/lessons/web3-security) पाठ उन्हें पहचानना सिखाता है।
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

@@ -42,7 +42,7 @@ ________________________________________________________________________________
 
 یہ سمجھنے کے لیے کہ لاکھوں لوگ دنیا بھر میں ایتھیریم کیوں استعمال کر رہے ہیں، ہمیں اس کے بنیادی مقصد پر نظر ڈالنی ہوگی…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ایک عالمی چوک
 
@@ -312,7 +312,7 @@ ________________________________________________________________________________
 
 اپنا سفر شروع کرنے کے لیے آپ کو اپنا `کرپٹو والیٹ` بنانا ہوگا۔ یہ ایتھیریم کی دنیا کے لیے آپ کا پاسپورٹ ہے۔ ہم اسے آپ کے اگلے سبق، "والیٹ کی بنیادی باتیں"، میں سیٹ اپ کریں گے۔
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

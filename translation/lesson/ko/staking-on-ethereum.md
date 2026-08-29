@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 다만 채굴과 스테이킹에는 중요한 차이가 있어요. 이더리움 스테이킹은 남들과 경쟁할 강력한 컴퓨터가 필요 없어요. 네트워크 `스마트 컨트랙트`에 이더(ETH)를 잠가 두기만 하면 이더리움이 계속 돌아가고 보상도 받아요.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 이더리움이 부르고 있어요!
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 장비를 챙겨서 출발해요!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 블록체인 보안
 

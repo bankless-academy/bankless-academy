@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 不過挖礦和質押有個重要區別。在以太坊上質押，不需要用強大的電腦去和別人競爭。只要把以太幣（ETH）鎖進網路的`智能合約`，就能讓以太坊運轉下去，並獲得獎勵。
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 以太坊需要你！
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 帶上裝備，出發吧！
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # 區塊鏈安全
 

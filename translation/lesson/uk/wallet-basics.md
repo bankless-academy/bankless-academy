@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 У цьому уроці ми познайомимо тебе з гаманцями, покажемо, як вони працюють і як убезпечити свою криптовалюту. Наприкінці ти отримаєш інструкцію, як створити гаманець і зайти в **блокчейн Ethereum, дім Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Що таке гаманець
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 Кожен гаманець має своє призначення. Не хвилюйся, сьогодні створимо лише один.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Кастодіальні гаманці
 
@@ -299,7 +299,7 @@ Ledger і Trezor це приклади `холодних гаманців`.
 
 🛡️ Стережися шахрайств, які підштовхують підписати шкідливу транзакцію: як їх помічати, показує урок [Безпека у web3](https://app.banklessacademy.com/lessons/web3-security).
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 اس سبق میں ہم آپ کو والیٹس سے متعارف کرائیں گے، یہ کیسے کام کرتے ہیں، اور اپنی کرپٹو کرنسی کو محفوظ کیسے رکھیں۔ آخر میں ہم آپ کو ایک والیٹ بنانے اور **ایتھیریم بلاک چین، یعنی بینک لیس اکیڈمی کے گھر** تک رسائی کا طریقہ بتائیں گے۔
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # والیٹ کی تعریف
 
@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 ہر والیٹ ایک الگ مقصد کے لیے کام آتا ہے۔ فکر نہ کریں، آج ہم صرف ایک ہی والیٹ بنائیں گے۔
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # تحویلی والیٹس
 
@@ -299,7 +299,7 @@ Ledger اور Trezor `کولڈ والیٹس` کی مثالیں ہیں۔
 
 🛡️ ایسے فراڈز سے ہوشیار رہیں جو آپ کو نقصان دہ ٹرانزیکشنز یا اجازتوں پر دستخط کرنے کے لیے پھسلاتے ہیں: ہمارا [Web3 سکیورٹی](https://app.banklessacademy.com/lessons/web3-security) سبق دکھاتا ہے کہ انہیں کیسے پہچانا جائے۔
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

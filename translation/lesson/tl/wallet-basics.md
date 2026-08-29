@@ -38,7 +38,7 @@ Parang account ang wallet mula sa `web2` internet na sanay ka na. Gagamitin mo a
 
 Sa lesson na ito, ipakikilala namin sa iyo ang mga wallet, kung paano ito gumagana, at kung paano panatilihing secure ang cryptocurrency mo. Tatapusin natin ito ng gabay kung paano mag-set up ng wallet at ma-access ang **Ethereum blockchain, ang tahanan ng Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Kahulugan ng Wallet
 
@@ -193,7 +193,7 @@ Baka marinig mo rin ang tungkol sa mga `smart wallet`: bagong uri na nagpapatakb
 
 Iba-iba ang gamit ng bawat wallet. Wag mag-alala, isang wallet lang ang gagawin natin ngayon.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Mga Custodial Wallet
 
@@ -299,7 +299,7 @@ Kahit hot o cold ang `self-custody wallet` mo, sanayin ang mga matalinong gawi s
 
 🛡️ Mag-ingat sa scam na nanlilinlang sa iyong pumirma ng mapaminsalang transaksyon: tingnan ang lesson naming [Seguridad sa Web3](https://app.banklessacademy.com/lessons/web3-security) kung paano makilala ang mga ito.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 7
 

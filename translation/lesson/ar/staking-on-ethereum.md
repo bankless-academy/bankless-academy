@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 لكن يوجد فرق مهم بين التعدين والتخزين. التخزين في إيثيريوم لا يتطلب حاسوبا قويا للتنافس مع الآخرين. مجرد قفل الإيثر (ETH) في `عقد ذكي` للشبكة يبقي إيثيريوم يعمل ويكافئك.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # إيثيريوم يحتاجك!
 
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 
 جهز عدتك، هيا بنا!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # أمان سلسلة البلوكتشين
 

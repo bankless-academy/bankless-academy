@@ -42,7 +42,7 @@ Njia rahisi ya kufikiria Ethereum ni kama `duka la programu` la Google au Apple,
 
 Ili kuelewa kwa nini mamilioni ya watu duniani wanatumia Ethereum, tunahitaji kuangalia dhamira yake kuu…
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-basics-b2e09ce5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Uwanja wa mji wa dunia
 
@@ -312,7 +312,7 @@ Uko tayari kuacha alama yako?
 
 Ili kuanza safari yako utahitaji kutengeneza `mkoba wa kripto` wako. Mkoba ni pasipoti yako ya kuingia ulimwengu wa Ethereum. Tutautengeneza wako kwenye somo lijalo, "Misingi ya mkoba".
 
-![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Knowledge Check 5
 

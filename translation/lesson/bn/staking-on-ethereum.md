@@ -38,7 +38,7 @@ Bitcoin নেটওয়ার্কের `মাইনিংয়ের` �
 
 তবে মাইনিং আর স্টেকিংয়ের মধ্যে একটি বড় পার্থক্য আছে। Ethereum-এ স্টেক করতে অন্যদের সঙ্গে পাল্লা দেওয়ার মতো শক্তিশালী কম্পিউটার লাগে না। নেটওয়ার্কের একটি `স্মার্ট কন্ট্রাক্টে` ইথার (ETH) আটকে রাখলেই Ethereum চলতে থাকে, আর আপনি পুরস্কার পান।
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # Ethereum-এর আপনাকে দরকার!
 
@@ -54,7 +54,7 @@ Bitcoin নেটওয়ার্কের `মাইনিংয়ের` �
 
 সরঞ্জাম গুছিয়ে নিন, চলুন!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ব্লকচেইনের নিরাপত্তা
 

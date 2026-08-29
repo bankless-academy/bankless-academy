@@ -38,7 +38,7 @@ El `staking` se parece a la `minería` en la red de Bitcoin: ambos son sistemas 
 
 Pero hay una diferencia importante. Hacer staking en Ethereum no exige una computadora potente que compita con otras. Basta con bloquear Ether (ETH) en un `smart contract` de la red para que Ethereum siga funcionando y tú recibas recompensas.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # ¡Ethereum te necesita!
 
@@ -54,7 +54,7 @@ Ahora veamos a fondo la mecánica del staking y descubramos una forma tranquila 
 
 ¡Toma tu equipo, vamos!
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png)
+![](https://app.banklessacademy.com/images/welcome-explorer.png)
 
 # La seguridad de la blockchain
 
