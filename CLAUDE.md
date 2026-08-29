@@ -613,33 +613,60 @@ in an ESM package, two of them requiring a `knexfile.js` that does not exist.
 Fix or delete them (see "Repo scripts"); as-is, `import-poaps` and
 `migrate-quests` will fail exactly when someone needs them under pressure.
 
-**3. Cold start — Fluid Compute is ON (enabled 2026-08-29); re-measure next.**
-Instances are now reused across concurrent requests, so the import graph is
-evaluated once instead of per cold hit. **It only takes effect on deployments
-made after it was enabled** — the next push picks it up. Then re-run the
-`ssrTiming` marks on the six SSR pages (`/explore`, `/explorer/*`, `/notion/*`
-incl. the `/faq` family, `/quiz/[id]`, `/start`, `/onchain-summer-challenge`);
-everything else is static and was never affected.
+**3. Cold start — Fluid Compute is ON (enabled 2026-08-29); measured, and the
+remaining work is NOT small.** Enable/inspect it with `vercel api
+/v9/projects/<id>?teamId=<team>`, `PATCH` body `{"resourceConfig":{"fluid":true}}`
+(`defaultResourceConfig` is read-only, and `-d` means `--debug` in that CLI, not
+data). It also flips `functionDefaultMemoryType` to `standard`, moving billing
+to Active CPU.
 
-Two things to know about the change. It is not exposed in the CLI: read/write
-it with `vercel api /v9/projects/<id>?teamId=<team>`, `PATCH` body
-`{"resourceConfig":{"fluid":true}}` (`defaultResourceConfig` is read-only and
-`-d` means `--debug` in that CLI, not data). Enabling it also flipped
-`functionDefaultMemoryType` from `standard_legacy` to `standard`, which is
-Fluid's profile and moves billing onto Active CPU.
+Measured on the first deploy after enabling it, from the `[SSR-TIMING]` marks:
 
-**The new failure mode to watch**: instances are now shared across
-*concurrent* requests, not just sequential ones, so module-scope mutable state
-can leak between users. `utils/ssrStorage.ts` was already written for this (its
-server localStorage stub deliberately does not persist, precisely so one
-visitor's state cannot reach another's render) — keep any new module-scope
-state to the same standard.
+- Cold `/explore`: **9.4s** (was ~17s) — `boot@0.42s -> utils-index-done@8.92s`,
+  so **8.5s is still `utils/index`'s import graph**; `_app` adds 0.1s and
+  getServerSideProps 0.2s. Warm: 0.39-0.78s.
+- **Every SSR route shares ONE instance** (identical boot marks across
+  `/explore`, `/start`, `/notion/[slug]`, `/explorer/[address]`). So a
+  never-before-seen `/explorer/<address>` — a guaranteed CDN MISS, since the
+  address space is unbounded — renders in **0.29s** on a warm instance. Cold
+  start, not per-URL caching, is what makes those pages feel slow.
+- Those four pages send `s-maxage=300, stale-while-revalidate=86400` (Vercel
+  strips it from the client-facing response, so judge it by `x-vercel-cache`
+  and `age`, never by the absence of `s-maxage`). A deploy invalidates it.
 
-**Do NOT start by splitting `src/utils/index.ts`** (1111 lines, ~52 importers):
-the measured 13.8s is dominated by `viem/chains` via `constants/networks`,
-which instance reuse sidesteps and a refactor would not remove. The split is
-worth doing eventually for the client bundle and code health, but it is a
-wide-blast-radius change with no tests behind it, so it waits for evidence.
+**Post-deploy is the one case Fluid does not cover**, and it is handled by
+`.github/workflows/warm-production.yml`: on a successful Production
+`deployment_status`, it curls one SSR page so the ~9s lands on a CI runner
+instead of the first visitor. A fresh deployment has never been invoked, so
+scale-to-one has nothing warm yet and the bytecode cache is empty by definition
+("the first request isn't cached yet") — which is why the slowest request the
+system can produce is the first one after every deploy. One request suffices:
+all SSR routes share an instance. The cache-buster in that workflow is
+load-bearing — without it the edge serves the request and no function runs.
+
+**Do NOT add a warm-up cron.** Fluid includes **scale to one**: on Pro it keeps
+one instance of the current production deployment warm automatically, free, for
+any deployment invoked in the last 14 days, plus bytecode caching on
+production. A cron would pay for what the platform already does. (Verified this
+team is Pro.) Scale-to-one only lapses if the production deployment goes **14 days**
+without a single invocation, which real traffic makes impossible (static lesson
+pages are CDN-served and do not count, but `/explore`, `/faq` and `/explorer/*`
+do). If a long idle period ever does serve a cold page, the fallback that works
+is a `no-store` **page** route on a `*/5` cron — it must be a page,
+not `/api/*`, because the page function is the one that evaluates `_app` ->
+`utils/index`, and it must be uncacheable or the edge serves the cron and warms
+nothing.
+
+**Two dead ends, both measured — do not retry.** (1) Removing `viem/chains`
+from the server graph: Turbopack already tree-shakes it out of the server
+bundle, verified by build probe (chain markers appear in `.next/static`, in
+ZERO `.next/server` files, before and after; viem is bundled, not
+externalized). Details in the comment at the `getUD` call site in
+`utils/index.ts`. (2) Making that import lazy at one call site: measured 2.17s
+-> 2.14s. The only lever that has moved cold start is the lazy-import pattern
+already used in `utils/index` for `alchemy-sdk`, `@wagmi/core` and
+`utils/wagmi`; extending it to `@ethersproject/*` and `graphql-request` is the
+next real step, and it is a refactor, not a small change.
 
 **4. `middleware` → `proxy`: deliberately deferred** (decided 2026-08-29).
 `middleware` is deprecated in Next 16 but still works on 16.1.7, and

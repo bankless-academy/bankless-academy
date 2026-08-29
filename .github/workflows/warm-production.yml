@@ -1,0 +1,51 @@
+# Pays the post-deploy cold start so the first real visitor does not.
+#
+# WHY: a fresh production deployment has never been invoked, so Fluid's
+# "scale to one" has nothing warm yet, and its bytecode cache is empty by
+# definition ("the first request isn't cached yet"). Measured on this project:
+# the first /explore hit after a deploy took 9.4s, of which 8.5s was evaluating
+# utils/index's import graph and only 0.3s was data fetching.
+#
+# One request is enough: every SSR route (/explore, /explorer/*, /notion/*,
+# /start) is served by the SAME function instance — verified from the
+# [SSR-TIMING] boot marks — so warming one warms all of them, including
+# /explorer/<address> URLs that can never be pre-cached.
+#
+# This does NOT need a schedule. Fluid keeps one production instance warm
+# automatically on Pro, so idle cold starts are already handled; only the
+# post-deploy window is not.
+name: Warm production after deploy
+
+on:
+  deployment_status:
+
+# Needs no repo access at all: it only makes an outbound request to the public
+# site. Least privilege, so a compromised action step can do nothing here.
+permissions: {}
+
+jobs:
+  warm:
+    # Vercel reports a GitHub deployment_status per deployment; only the
+    # successful Production one matters. Previews are SSO-protected anyway.
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Warm the shared SSR function instance
+        run: |
+          set -uo pipefail
+          URL="https://app.banklessacademy.com/explore?warm=$GITHUB_RUN_ID"
+          # Cache-buster on purpose: these pages send s-maxage=300, and a CDN
+          # HIT would invoke no function and warm nothing.
+          echo "warming $URL"
+          code=$(curl -s -o /dev/null -D /tmp/h -w '%{http_code}' --max-time 120 "$URL" || echo "000")
+          echo "status: $code"
+          grep -i '^server-timing' /tmp/h || echo "(no Server-Timing header)"
+          # Second hit confirms the instance is now warm (expect cold;desc=0).
+          curl -s -o /dev/null -D /tmp/h2 --max-time 60 \
+            "https://app.banklessacademy.com/explore?warm=${GITHUB_RUN_ID}b" || true
+          grep -i '^server-timing' /tmp/h2 || true
+          # Never fail the run over a warm-up: it is an optimisation, not a gate.
+          exit 0

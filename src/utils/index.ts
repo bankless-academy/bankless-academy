@@ -748,6 +748,20 @@ export async function getUD(address: string): Promise<string | null> {
     // full chain objects and imports it statically, so deferring it here moved
     // nothing (measured: barrel eval 2.17s -> 2.14s). Keeping the static import
     // avoids pretending to an optimisation that does not exist.
+    //
+    // 2026-08-29, second attempt, also a dead end — do not try a third time.
+    // The theory was that removing ALL static paths to the barrel (here,
+    // constants/networks, constants/badges — every server-side use is only a
+    // chain `.id`) would drop it from the cold-start graph. It does not:
+    // **Turbopack already tree-shakes viem/chains out of the SERVER bundle.**
+    // Verified by build probe — chain-definition markers (`forno.celo.org`,
+    // `rpc.degen.tips`) appear in `.next/static` but in ZERO `.next/server`
+    // files, both before and after the change, and viem is bundled rather than
+    // externalized (no runtime `require("viem/chains")` in the server output).
+    // The ~8.5s that `utils/index` costs on a cold start is the rest of the
+    // bundled graph (ethers + @ethersproject/*, alchemy-sdk, graphql-request,
+    // mixpanel-browser) plus parse/eval of one large chunk. The only lever
+    // that has ever moved that number is the lazy-import pattern above.
     const [{ wagmiConfig }, { readContract }] = await Promise.all([
       import('utils/wagmi'),
       import('@wagmi/core'),
