@@ -116,6 +116,16 @@ export const buildArticle = (
 
   let html = md.render(localizeImages(demoteHeadings(hideQuizAnswers(body))))
 
+  // Lazy-load every slide image. This article ships inside a COLLAPSED
+  // <details> (and, in the in-app panel, one that is usually never opened),
+  // but a browser still fetches <img src> inside a closed details — measured
+  // on bitcoin-basics: 13 images, 8.7MB, of which 8.25MB was invisible slide
+  // artwork competing for bandwidth with the ~840KB web3 chunk the page needs
+  // in order to mount. Lazy defers them until the reader actually expands the
+  // panel and scrolls. The hero image and logo are NOT touched — they are
+  // above the fold and must stay eager.
+  html = html.replace(/<img /g, '<img loading="lazy" decoding="async" ')
+
   // Anchor every top-level section so the contents nav can link into it, and
   // so other pages can deep-link a single concept.
   //

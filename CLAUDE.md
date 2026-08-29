@@ -524,7 +524,13 @@ English too); see "i18n gotchas" for that and the rest.
   sibling-SEO trick generalized: `SeoContentBlock` renders `pageMeta.seoHtml`
   (built by `utils/seoContent.ts`) outside `<Web3Providers>` — the glossary
   body with per-term anchors in every locale (26.8k chars en / 31k fr / 26.4k
-  ur) and localized lesson-link lists on the homepage and both listings.
+  ur). Lesson-link lists were also added to the homepage and both listings,
+  then **removed 2026-08-29**: the block is VISIBLE until the app mounts
+  (measured with headless Chrome: ~1s on a fast connection, ~7s on Fast 3G),
+  and a bare list of links is a bad first impression on the most-visited page
+  for content the sitemap already gives Google. Lesson pages keep theirs
+  because `LessonHero` makes the wait look like loading, and the glossary keeps
+  its because there the block IS the page's content.
   Anchors come from the ENGLISH keys so they are stable across languages, and
   the `glossary: true` filter is read from the English file (translated files
   carry no flag).
@@ -668,7 +674,35 @@ already used in `utils/index` for `alchemy-sdk`, `@wagmi/core` and
 `utils/wagmi`; extending it to `@ethersproject/*` and `graphql-request` is the
 next real step, and it is a refactor, not a small change.
 
-**4. `middleware` → `proxy`: deliberately deferred** (decided 2026-08-29).
+**4. Images: cache headers first, then optimise, then consider offloading**
+(measured 2026-08-29). Three separate problems, in value order:
+
+- **They are served `cache-control: public, max-age=0, must-revalidate`** —
+  Next's default for `public/`, which means a browser revalidates EVERY image
+  on EVERY page load. `x-vercel-cache: HIT` shows the CDN caches them, but
+  visitors still pay a round trip each, 13 of them on a lesson page. **391 of
+  the 553 image files are already content-hashed** (`…-cc6189d4.png`), so those
+  can safely take `Cache-Control: public, max-age=31536000, immutable` — a
+  headers rule in `vercel.json` (headers are still allowed there; only path
+  routing moved out). That is the cheapest fix and it is exactly what makes the
+  cache survive a deploy. **Scope it to the hashed paths**: the other 162 files
+  have stable names whose CONTENT can change, and immutable caching would pin
+  a stale version in every visitor's browser with no way to bust it.
+- **The assets are simply too big**: `public/` is 356MB (280MB of images),
+  33 files exceed 1MB and total 158MB. Six GIFs account for **86MB** — one is
+  22MB — and belong as WebM/MP4 (one lesson already has a `.webm` twin). Slide
+  PNGs run to 2MB each where a compressed WebP would be a fraction. Going
+  through them file by file is real work but needs no architecture change.
+- **Only then consider moving them off the deployment** (Vercel Blob, R2, S3):
+  it would stop shipping 356MB with every build. Note the *caching* benefit is
+  already won by the header fix, so do not do this for caching reasons alone.
+
+Related, already done: article images are `loading="lazy"` since 2026-08-29 —
+they sit in a collapsed `<details>` that a browser still fetches from, which
+was pulling **8.25MB of invisible artwork** per lesson load against the ~840KB
+web3 chunk.
+
+**5. `middleware` → `proxy`: deliberately deferred** (decided 2026-08-29).
 `middleware` is deprecated in Next 16 but still works on 16.1.7, and
 `src/middleware.ts` is 55 lines matching three API paths, so the rename is
 cheap whenever it becomes necessary. Do it when a Next release you actually
@@ -677,14 +711,14 @@ conflict, and note Sentry is **off by default**
 (`NEXT_PUBLIC_SENTRY_ENABLED=false`), so removing the dependency may turn out
 to be simpler than resolving the conflict.
 
-**5. Measure the SEO migration** — re-run `node gsc-inspect.mjs sample` and
+**6. Measure the SEO migration** — re-run `node gsc-inspect.mjs sample` and
 compare against `docs/gsc-inspection-baseline-2026-08-23.json` (~Sep 1) to see
 whether "Crawled - currently not indexed" drains. Every page that needed a
 crawlable body now has one; true SSR of the app tree still needs user state out
 of render (`docs/ssr-migration.md`) and is only worth starting if the
 measurement says the static bodies are not enough.
 
-**6. Cheap cleanups**: delete the three dead components (`ChatWidgetWrapper`,
+**7. Cheap cleanups**: delete the three dead components (`ChatWidgetWrapper`,
 `GlobalScrollbarWrapper`, `SubscriptionModal` — zero importers) and the dead
 root scripts; reconcile the byte-identical `favorite-mini-apps.json` /
 `lesson-mini-apps.json`; wrap the hardcoded English `<b>` tip strings in
@@ -761,11 +795,12 @@ un-prefixed URLs, so Google folds them. No safe cleanup mechanism found yet.
   server-side SEO blocks OUTSIDE `<Web3Providers>`, both unmounting when the
   app arrives — `LessonSeoBlock` (lesson hero + article, keyed on
   `pageMeta.articleHtml`) and the generic `SeoContentBlock` (keyed on
-  `pageMeta.seoHtml`, built by `utils/seoContent.ts` in getStaticProps):
-  the full glossary body with per-term anchors on `/glossary` + all locales
-  (~27-31k chars each), and localized lesson-link lists on `/`, `/lessons`,
-  `/lessons/handbook` (links locale-prefixed only where the translation
-  exists).
+  `pageMeta.seoHtml`, built by `utils/seoContent.ts` in getStaticProps): the
+  full glossary body with per-term anchors on `/glossary` + all locales
+  (~27-31k chars each). **`SeoContentBlock` is user-visible until the app
+  mounts**, so only use it where the content justifies that (the glossary) or
+  where a chrome-mimicking placeholder covers it (`LessonHero` on lessons).
+  The homepage/listing link lists were removed for exactly this reason.
 - **Other pages**: `/` (homepage), `/glossary` (localized per locale, gated on
   the keywords file existing), `/explore`, `/explorer/[address]`,
   `/explorer/my-profile`, `/leaderboard`, `/stats`, `/quest`, `/quiz`,

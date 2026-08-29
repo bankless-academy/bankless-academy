@@ -1,14 +1,17 @@
-// Build-time crawlable content for pages whose interactive view is
-// client-rendered (glossary body, homepage/listing link blocks). Server-only
-// (fs) — import exclusively from getStaticProps so it stays out of the
-// client bundle. Rendered by _app.tsx as SeoContentBlock (outside
-// <Web3Providers>), which unmounts once the app arrives: the app then shows
-// the same content interactively.
+// Build-time crawlable content for the GLOSSARY, whose interactive view is
+// client-rendered. Server-only (fs) — import exclusively from getStaticProps
+// so it stays out of the client bundle. Rendered by _app.tsx as
+// SeoContentBlock (outside <Web3Providers>), which unmounts once the app
+// arrives: the app then shows the same content interactively.
+//
+// This module also built crawlable lesson-link lists for the homepage and the
+// two listings until 2026-08-29. They were removed, and the helpers with them:
+// the block is VISIBLE until the app mounts (~1s on a fast connection, ~7s on
+// Fast 3G), which is a poor first impression for a list of links that the
+// sitemap already gives Google. The glossary keeps its block because there the
+// block IS the page's content, not a duplicate of it.
 import fs from 'fs'
 
-import { LESSONS } from 'constants/index'
-import { LessonType } from 'entities/lesson'
-import { localePath } from 'constants/languages'
 
 const esc = (s: string): string =>
   s
@@ -25,13 +28,6 @@ const readJson = (path: string): { [k: string]: any } | null => {
   }
 }
 
-/** Website-namespace string for a locale; falls through to the English key
- * (same convention as the runtime: en has no files by design). */
-export const uiString = (locale: string, ns: string, key: string): string => {
-  if (locale === 'en') return key
-  const j = readJson(`translation/website/${locale}/${ns}.json`)
-  return (j && j[key]) || key
-}
 
 /**
  * The glossary as crawlable HTML: every entry the interactive page shows
@@ -74,38 +70,4 @@ export const glossarySeoHtml = (locale: string): string | null => {
       .join('') +
     '</dl>'
   )
-}
-
-/**
- * Published lessons as a crawlable link list, localized: names/descriptions
- * from translation/website/<locale>/lesson.json (keyed by the English
- * string), hrefs locale-prefixed only where the lesson's translation exists
- * (a localized URL without a translation would 404).
- */
-export const lessonListSeoHtml = (
-  locale: string,
-  kind: 'all' | 'lessons' | 'handbooks'
-): string => {
-  const names =
-    locale === 'en'
-      ? {}
-      : readJson(`translation/website/${locale}/lesson.json`) || {}
-  const published = (LESSONS as LessonType[])
-    .filter((l) => l.publicationStatus === 'publish')
-    .filter((l) =>
-      kind === 'all' ? true : kind === 'handbooks' ? l.isArticle : !l.isArticle
-    )
-  const items = published.map((l) => {
-    const translated =
-      locale !== 'en' && ((l.languages || []) as string[]).includes(locale)
-    const href = translated
-      ? localePath(locale, `/lessons/${l.slug}`)
-      : `/lessons/${l.slug}`
-    const name = (names as any)[l.name] || l.name
-    const description = (names as any)[l.description] || l.description || ''
-    return `<li><a href="${href}">${esc(name)}</a>${
-      description ? `: ${esc(description)}` : ''
-    }</li>`
-  })
-  return `<ul>${items.join('')}</ul>`
 }

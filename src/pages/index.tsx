@@ -626,15 +626,17 @@ const HomePage = (): JSX.Element => {
 // a crawler used to get zero links and zero text here) — served via _app's
 // SeoContentBlock, unmounted when the app arrives.
 export const getStaticProps = async ({ locale }: { locale?: string }) => {
-  const { lessonListSeoHtml } = await import('utils/seoContent')
+  // Deliberately NO `seoHtml` here (removed 2026-08-29). It used to serve a
+  // crawlable lesson-link list via _app's SeoContentBlock, but that block is
+  // visible until the app mounts — measured at ~1s on a fast connection and
+  // ~7s on Fast 3G — and a bare list of links is a poor first impression on
+  // the most-visited page. The links were the weakest of the three SEO
+  // surfaces anyway: the sitemap already exposes every lesson URL, and Google
+  // renders JS. Lesson pages and /glossary keep theirs, where the block IS
+  // real content and (on lessons) LessonHero makes the wait look intentional.
   const lang = locale || 'en'
-  const pageMeta = {
-    seoTitle: 'Bankless Academy',
-    seoHtml: lessonListSeoHtml(lang, 'all'),
-    lang,
-  }
   return {
-    props: { pageMeta },
+    props: { pageMeta: { lang } },
   }
 }
 
