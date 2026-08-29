@@ -5,7 +5,7 @@ import { ATTESTATION_ID, ConfigMismatchError } from "@selfxyz/core";
 import { buildSelfVerifier, extractUserId } from "utils/stamps/platforms/self";
 import { generateHash, VERSION } from "pages/api/stamps/callback/[...slug]";
 import { STAMP_PLATFORMS } from "constants/passport";
-import { TABLE, TABLES, db } from "utils/db";
+import { TABLE, TABLES, db, isValidAddress } from "utils/db";
 import { trackBE } from "utils/mixpanel";
 import { DEMO_ACCOUNTS_IDS } from "constants/index";
 
@@ -91,9 +91,13 @@ export default async function handler(
     }
 
     // Look up the BA user before doing the expensive verification.
-    const [user] = await db(TABLES.users)
-      .select("id")
-      .where("address", "ilike", `%${address}%`);
+    // Validated first: `ilike`/`whereILike` take a PATTERN, so an unvalidated
+    // `%` here would resolve to an arbitrary user and bind this stamp to them.
+    const [user] = isValidAddress(address)
+      ? await db(TABLES.users)
+          .select("id")
+          .whereILike("address", address.toLowerCase())
+      : [];
     const userId = user?.id;
     if (!(userId && Number.isInteger(userId))) {
       return res.status(403).json({ error: "userId not found" });

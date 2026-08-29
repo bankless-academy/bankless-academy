@@ -291,6 +291,45 @@ Deprecated lessons get `publicationStatus: "deprecated"` in `lesson-meta.json`:
 hidden from all website listings, still reachable by direct URL (history), and
 render a warning banner on the intro slide.
 
+### Repo scripts (all at the root, plain JS/ESM — `package.json` is `"type": "module"`)
+
+| Script | Does | Status |
+|---|---|---|
+| `build-content.js` | compiles en md + `lesson-meta.json` → `lessons.json`/`lessons.ts` | in `yarn build` |
+| `validate-content.js` | every content gate (frontmatter, quiz shape, glossary, translated md, emphasis, typography, consistency) | in `yarn build` |
+| `validate-i18n.js` | namespace registration, placeholder parity, growth warnings | in `yarn build` |
+| `test-content.js` | fails the build if the committed artifacts are stale vs the md | in `yarn build` |
+| `build-lastmod.js` | per-file git dates → `translation/.lastmod.json` for the sitemap | in `yarn build` |
+| `content-lib.js` | shared library for all of the above (emphasis lint, `TYPOGRAPHY`, `normalizeKeyword`, `displayWidth`, slide-length estimate, `parseStylePins`) | library |
+| `translate-content.js` | the AI translation pipeline (needs `ANTHROPIC_API_KEY`) | manual |
+| `assemble-translation.js` + `build-translation.sh` | what wave agents actually run: typography → assemble → verify one lesson | manual |
+| `lang-tools.js` | `pins` / `merge` / `register` for a language wave | manual |
+| `convert-zh-tw.js` | derives zh-tw from zh; re-run after ANY zh change | manual |
+| `gsc-report.js`, `gsc-inspect.mjs` | Search Console traffic + URL-inspection sweeps (service-account JWT) | manual |
+| `generate-translation-files.sh` | re-seeds the **English** UI namespace JSONs with i18next-scanner from `useTranslation()` call sites. Not in `package.json`, easy to miss when adding UI strings | manual |
+| `db.js`, `knexfile.mjs`, `migrations/` (17) | Postgres access + schema | live |
+| `import-content.js`, `import-translations.js` | retired Notion/Crowdin importers, refuse to run without `RUN_RETIRED_IMPORT=1` | retired |
+| `import-keywords.js`, `import-config.js`, `import-modules.js`, `import-poaps.js`, `migrate-quests.js`, `extract-content.js`, `utils.js`, `config.js` | **all broken or dead** — see below | dead |
+
+**Half the root scripts cannot run at all.** `import-keywords.js`, `import-config.js`,
+`import-modules.js`, `import-poaps.js` and `migrate-quests.js` use CommonJS
+`require()` inside an ESM package, so they throw `ReferenceError: require is
+not defined` on the first line; `import-poaps.js` and `migrate-quests.js`
+additionally require `./knexfile.js`, which does not exist (it is `.mjs`).
+`extract-content.js` is a one-time migration that emitted a
+`quiz-answers.json` the pipeline no longer has. None of them are guarded by
+`RUN_RETIRED_IMPORT`, so the guard on the other two importers gives a false
+sense that the rest are safe — they are merely broken. Decide per script:
+delete, or fix and guard. `utils.js`/`config.js` exist only to serve these
+importers (Notion field-name mapping and markdown helpers).
+
+**`assemble-translation.js` does not import `translate-content.js` — it slices
+its source text.** It reads the file, cuts from `const SPLIT =` to the
+`// structural verification` comment, strips the imports and evaluates the
+remainder through a `data:text/javascript` import. Renaming either marker, or
+moving code across them, silently breaks every wave agent's build step with an
+error that points nowhere near the cause.
+
 ### What is built, and the traps behind it
 
 The blow-by-blow is in git history. This keeps only what would cost real time
@@ -549,17 +588,99 @@ English too); see "i18n gotchas" for that and the rest.
   showed a German animation title. Raw keys, `t()` at render.
 - `notion-client` must stay current: Notion blocked the unofficial
   `loadPageChunk` endpoint and every Notion-backed page 500'd until 7.11.1.
-- The retired importers (`import-content.js`, `import-translations.js`,
-  `import-keywords.js`) stay in the repo for reference but refuse to run
-  without `RUN_RETIRED_IMPORT=1` — `yarn import-content` was a live command
-  that would overwrite the in-repo lesson markdown from Notion.
+- `import-content.js` and `import-translations.js` stay in the repo for
+  reference but refuse to run without `RUN_RETIRED_IMPORT=1` — `yarn
+  import-content` was a live command that would overwrite the in-repo lesson
+  markdown from Notion. The other importers carry no such guard; they are
+  simply broken (see "Repo scripts").
 
 ### Next up, in order
 
-1. **Cold start**: Fluid Compute (a project setting) or ISR for `/explore` + the Notion pages, which have no per-request data. Do NOT keep shrinking the bundle — see the measurement above.
-2. ~~Stale KV with no cron~~ — adjudicated 2026-08-22: `announcement` and `bankless-dao-news` are DEPRECATED KV surfaces; leave them as they are. Only `leaderboard` has (and needs) a scheduled cron.
-3. **`middleware` -> `proxy`** (Next 16 deprecation) and the `@sentry/nextjs` peer conflict with Next 16, before any Next upgrade.
-4. **Measure the SEO migration, then decide about more SSR** — re-run `node gsc-inspect.mjs sample` and compare against `docs/gsc-inspection-baseline-2026-08-23.json` (~Sep 1) to see whether "Crawled - currently not indexed" drains. Every page that needed a crawlable body now has one via the sibling blocks; true SSR of the app tree still needs user state out of render (`docs/ssr-migration.md`), and is only worth starting if the measurement says the static bodies are not enough.
+Ranked after a full code audit (2026-08-29). Security first, because these are
+live and cheap to fix; then correctness; then the structural work.
+
+**1. Auth review on write endpoints.** A full audit (2026-08-29) found a
+handful of API routes that write or spend without proving who is asking. Only
+one is both live and high-impact; the rest are dormant, nuisance-only, or have
+no caller at all — and per the convention below, an unused route with a weak
+guard gets **deleted, not hardened**. Details are deliberately
+**not in this public file** — they are in `SECURITY-TODO.local.md` (gitignored)
+so the repo does not ship a map before the fixes. As each one lands, write the
+rule back here as a trap. Do not re-audit from scratch; read that file first.
+
+**2. Half the root scripts cannot run** — five importers use CommonJS `require()`
+in an ESM package, two of them requiring a `knexfile.js` that does not exist.
+Fix or delete them (see "Repo scripts"); as-is, `import-poaps` and
+`migrate-quests` will fail exactly when someone needs them under pressure.
+
+**3. Cold start — Fluid Compute is ON (enabled 2026-08-29); re-measure next.**
+Instances are now reused across concurrent requests, so the import graph is
+evaluated once instead of per cold hit. **It only takes effect on deployments
+made after it was enabled** — the next push picks it up. Then re-run the
+`ssrTiming` marks on the six SSR pages (`/explore`, `/explorer/*`, `/notion/*`
+incl. the `/faq` family, `/quiz/[id]`, `/start`, `/onchain-summer-challenge`);
+everything else is static and was never affected.
+
+Two things to know about the change. It is not exposed in the CLI: read/write
+it with `vercel api /v9/projects/<id>?teamId=<team>`, `PATCH` body
+`{"resourceConfig":{"fluid":true}}` (`defaultResourceConfig` is read-only and
+`-d` means `--debug` in that CLI, not data). Enabling it also flipped
+`functionDefaultMemoryType` from `standard_legacy` to `standard`, which is
+Fluid's profile and moves billing onto Active CPU.
+
+**The new failure mode to watch**: instances are now shared across
+*concurrent* requests, not just sequential ones, so module-scope mutable state
+can leak between users. `utils/ssrStorage.ts` was already written for this (its
+server localStorage stub deliberately does not persist, precisely so one
+visitor's state cannot reach another's render) — keep any new module-scope
+state to the same standard.
+
+**Do NOT start by splitting `src/utils/index.ts`** (1111 lines, ~52 importers):
+the measured 13.8s is dominated by `viem/chains` via `constants/networks`,
+which instance reuse sidesteps and a refactor would not remove. The split is
+worth doing eventually for the client bundle and code health, but it is a
+wide-blast-radius change with no tests behind it, so it waits for evidence.
+
+**4. `middleware` → `proxy`: deliberately deferred** (decided 2026-08-29).
+`middleware` is deprecated in Next 16 but still works on 16.1.7, and
+`src/middleware.ts` is 55 lines matching three API paths, so the rename is
+cheap whenever it becomes necessary. Do it when a Next release you actually
+want forces it — not before. Same for the `@sentry/nextjs` ^8.55.1 peer
+conflict, and note Sentry is **off by default**
+(`NEXT_PUBLIC_SENTRY_ENABLED=false`), so removing the dependency may turn out
+to be simpler than resolving the conflict.
+
+**5. Measure the SEO migration** — re-run `node gsc-inspect.mjs sample` and
+compare against `docs/gsc-inspection-baseline-2026-08-23.json` (~Sep 1) to see
+whether "Crawled - currently not indexed" drains. Every page that needed a
+crawlable body now has one; true SSR of the app tree still needs user state out
+of render (`docs/ssr-migration.md`) and is only worth starting if the
+measurement says the static bodies are not enough.
+
+**6. Cheap cleanups**: delete the three dead components (`ChatWidgetWrapper`,
+`GlobalScrollbarWrapper`, `SubscriptionModal` — zero importers) and the dead
+root scripts; reconcile the byte-identical `favorite-mini-apps.json` /
+`lesson-mini-apps.json`; wrap the hardcoded English `<b>` tip strings in
+`Quest/DEXAggregators.tsx` and `Quest/DecentralizedExchanges.tsx` in `t()`; add
+the missing `sdk?.actions?.composeCast` guard in `useFrameActions.ts`; and
+harden two **latent** hook-order patterns — `QuestComponent` calls
+`useAccount()`/`useSmallScreen()` after an early return, and `useSmallScreen`
+itself returns before `useMediaQuery` when `window` is undefined. Neither can
+fire today (ethereum-basics, the only slug in `LessonDetail`'s skip-the-call
+ternary, has no quest, so the count is 0 either way; and every
+`useSmallScreen` caller sits behind `ssr: false`). Both become real crashes the
+moment those conditions change — checked 2026-08-29, do not re-derive.
+
+~~Stale KV with no cron~~ — adjudicated 2026-08-22: `announcement` and
+`bankless-dao-news` are DEPRECATED KV surfaces; leave them. Only `leaderboard`
+has (and needs) a scheduled cron.
+
+**Standing state of the codebase**: 0 test files (Jest passes vacuously — the
+real gates are `validate-content.js`, `validate-i18n.js` and `test-content.js`);
+`typescript.ignoreBuildErrors: true` with **10 real type errors** today
+(`utils/basenames.tsx` 5, `utils/index.ts` 2, `quest.tsx`, `lessons/[slug].tsx`,
+`middleware.ts`), so run `yarn type-check` deliberately; 81 TODO/HACK markers;
+113 `: any` annotations; `public/` is 356 MB and ships on every deploy.
 
 ## Website structure
 
@@ -681,6 +802,11 @@ DataDisk collectibles, Gitcoin Passport stamps (`src/utils/stamps/`), ENS +
 Basenames resolution, and a hosted Envio indexer at
 `indexer.banklessacademy.com/v1/graphql`.
 
+**`IS_BADGE_PROD` is hardcoded `true`** and the `BADGE_ENV` /
+`NEXT_PUBLIC_BADGE_ENV` switch above it is inert — badges always use the
+production contract. Deliberate (documented in the file, 2026-08-29); setting
+that env var on a deploy does nothing.
+
 ### Backend & data
 
 - **Postgres via Knex** (`knexfile.mjs`, `db.js`, `migrations/`, 17 migrations).
@@ -690,17 +816,128 @@ Basenames resolution, and a hosted Envio indexer at
   `announcement`, `leaderboard`, `explore` (+ derived `top200_leaderboard`).
   Only `leaderboard` has a scheduled Vercel cron (every 12h); **`explore` is
   refreshed manually** by hitting `/api/cron/explore`.
-- **~55 API routes**, grouped: content (`lessons`, `lesson-image`, `sitemap`,
-  `rss`, `agent`), auth (`siwe/*`, `user/[...slug]`), quests & badges
-  (`validate-quest`, `mint-badge`, `achievements/*`), NFT/metadata
-  (`nft/*`, `metadata/*`), OG images (`og/*`, `frame-og/*`), passport/stamps,
-  integrations (`lens`, `ud`, `base-ens`, `coinbase/session-token`,
-  `paymaster`, `subscribe-newsletter`, `suggest-content`), infra (`cache`,
-  `cron`, `deployment`, `monitor`, `stats`).
+- **56 API routes** — inventory and auth model in "API surface" below.
 - **Analytics**: Mixpanel (proxied through `/mp/*`) + Umami; Sentry optional.
-- `.env.example` is **stale** (still lists MintKudos vars; missing
-  `NOTION_SECRET`, `GITHUB_TOKEN`, Alchemy/KV/iron-session keys). ~75 env vars
-  are referenced in code.
+- **`.env.example` is current** (refreshed 2026-08-15; re-verified 2026-08-29):
+  75 env vars are referenced in code, 65 are listed, and the 10 that are not
+  are platform-injected (`NODE_ENV`, `CI`, `VERCEL_*`, `NEXT_PUBLIC_VERCEL_*`)
+  or tool-only (`GSC_SERVICE_ACCOUNT_JSON`, `GOOGLE_APPLICATION_CREDENTIALS`,
+  `RUN_RETIRED_IMPORT`, `TRANSLATION_SCRATCH`). Nothing listed there is dead.
+  Re-check with: referenced = `grep -rhoE 'process\.env\.[A-Z0-9_]+' src *.js`.
+
+### The quest system
+
+A lesson opts into an onchain/social exercise by setting `quest: "<Name>"` in
+`lesson-meta.json`; `QUESTS` (`constants/index.ts`) is just every `quest` value
+across `LESSONS`. Adding one means touching **five** places:
+
+1. `src/components/Quest/<Name>.tsx`, exporting `(address) => { isQuestCompleted, questComponent }`.
+2. the `QUEST_COMPONENTS` map inside `Quest/QuestComponent.tsx` (hardcoded, not a registry).
+3. `quest:` in that lesson's `lesson-meta.json`, then `yarn build-content`.
+4. `ONCHAIN_QUESTS` in `QuestComponent.tsx` **if** completion is a transaction — that list is what tells the dispatcher to let the component self-verify instead of POSTing.
+5. `translation/website/en/quests.json` under a `<Name>.` key prefix (components read it with `useTranslation('quests', { keyPrefix: Name })`), then every other language.
+
+Validation is two-sided: the component flips `isQuestCompleted`, a `useEffect`
+POSTs `{ address, quest, badgeId }` to `/api/validate-quest`, and the server
+resolves the lesson, looks up a `credentials` row and writes `completions`.
+Social-sharing quests are re-checked against the Twitter API server-side;
+everything else is trusted from the client. Unconnected wallets get
+`ConnectFirst` from `WalletConnect.tsx` unless the quest is `WalletBasics` or
+`BitcoinBasics`.
+
+**`notionId` is still the join key** between a lesson and its `credentials` /
+`completions` rows, years after the Notion import was retired. Removing or
+renaming it in `lesson-meta.json` silently breaks quest completion tracking
+server-side, and nothing in the build gates it.
+
+### API surface and its auth model
+
+56 routes under `src/pages/api`. Grouped: content/feed (`lessons`, `sitemap`,
+`rss`, `agent`, `lesson-content/[...slug]`, `lesson-image`, `mini-apps`),
+cache/cron (`cache/[cache]`, `cron/[cron]`, `get/*`), SIWE auth
+(`siwe/{nonce,verify,me,logout}` on iron-session), quests/badges
+(`validate-quest`, `mint-badge`, `achievements/*`), NFT/metadata (`nft/*`,
+`metadata/*`), identity (`user/[...slug]`, `updateENS/*`, `base-ens`, `ud`,
+`lens`, `link-email`, `update-community`), payments (`coinbase/session-token`,
+`paymaster`), OG images (`og/*`, `frame-og/*`), passport/stamps (`passport`,
+`stamps/*`), infra (`stats`, `deployment`, `monitor/[slug]`).
+
+**Never match an address with `ilike '%' + address + '%'`.** It is a PATTERN,
+so `%` or a short hex fragment matches every row — on an UPDATE that rewrites
+the whole table, on a SELECT-then-`[user]` it silently returns somebody else.
+Use **`isValidAddress`** (exported from `utils/db.ts`) then
+`whereILike(addr.toLowerCase())`. Matching must stay case-insensitive because
+the users INSERT stores the address exactly as the client sent it — so `=` is
+wrong too. Swept out of the whole of `src/` on 2026-08-29 (`link-email`,
+`subscribe-newsletter`, `getUserId`, `getNFTInfo`, `passport`, the stamps
+callback); `getUserId` now returns `null` for a malformed address and every
+caller 403s on that.
+
+**Most routes are deliberately public** (content, OG, metadata); the ones that
+write are the ones to review before changing. The established patterns to copy:
+`mint-badge` verifies a wallet signature with viem, `update-community` verifies
+a signature, `siwe/*` holds the iron-session cookie flow, and
+`lesson-content/[...slug]` is path-traversal guarded. Some older routes predate
+those patterns — the open items are tracked in `SECURITY-TODO.local.md`, not
+here. **`DEV_SECRET` must stay unset in production**: where it is set, it
+short-circuits verification.
+
+`middleware.ts` was NOT deleted when it stopped self-fetching images: it is
+still live, rescoped to `['/api/passport', '/api/mint-badge',
+'/api/validate-quest']`, and still carries the UA-based bot rule and the
+IP-based maintenance gate.
+
+### Component layer (97 files, ~23k LOC)
+
+The load-bearing ones: `Lesson.tsx` (1596 lines — the slideshow engine: slide
+nav, quiz grading, badge triggers and all the localStorage resume state),
+`Article.tsx` (838, handbook renderer), `LessonDetail.tsx` (641, lesson landing
++ quest binding + mint CTA), `ConnectWalletButton.tsx` (691),
+`ExplorerProfile.tsx` (894), `OnboardingModal.tsx` (517, the singleton),
+`ChatWidget.tsx` (501), `Head.tsx` (404, meta/OG/JSON-LD), plus the four SEO
+blocks documented above and 17 files under `Quest/`.
+`CryptoArchetypeQuiz.tsx` (1576) + `ArchetypeVisuals.tsx` (730, 162 hardcoded
+hex colors) are a self-contained island behind `/quiz`.
+
+Traps:
+
+- **Five near-parallel mint flows** (`MintNFT`, `MintSmartNFT`, `MintBadge`,
+  `MintDatadiskModal`/`Button`, `MintHandbookButton`) each re-implement wallet
+  and tx state. A fix in one usually needs replicating in five.
+- **Dead files that look canonical**: `ChatWidgetWrapper.tsx`,
+  `GlobalScrollbarWrapper.tsx` and `SubscriptionModal.tsx` have zero importers
+  (ChatWidget is mounted directly by `layout/Layout.tsx`). Deleting them is
+  free; leaving them invites a double-mount.
+- Chakra's theme is barely used as a token source: ~29 hardcoded pixel
+  breakpoints and a lot of raw hex live in components (see below).
+
+### Frontend internals (utils, constants, theme, hooks)
+
+- **`src/utils/index.ts` is 1111 lines and imported by ~52 files** — signature
+  verification, Mixpanel, achievements scoring, share-link builders, Alchemy
+  fetchers, all in one barrel. It is also the file measured at **13.8s of the
+  ~17s cold start**. Splitting it by concern is the single highest-leverage
+  performance change available, and unlike bundle-trimming it is safe.
+- **Module-scope side effects to know about**: `theme/index.tsx:13` calls
+  `localStorageManager.set('dark')` on import (light/system mode is commented
+  out and effectively dead); `utils/index.ts` initializes `mixpanel-browser`
+  and reads/writes `localStorage` for a DEBUG flag at import time;
+  `utils/wagmi.ts` and `utils/paymaster.ts` build clients at module scope
+  (`paymaster.ts` asserts `process.env.PAYMASTER_SERVICE_URL!` and is imported
+  by a client component).
+- **`useSmallScreen` (`hooks/index.ts`) returns early before calling
+  `useMediaQuery` when `window` is undefined** — a conditional hook. It is safe
+  only because every caller today sits behind the `ssr: false` boundary; the
+  first SSR-reachable caller gets a hydration hook-count crash.
+- **Two different components are called `Layout`**: `layout/index.tsx` (Nav +
+  background wrapper) and `layout/Layout.tsx` (595 lines, `PageLayout`, calls
+  wallet hooks). Importing the wrong one is easy and the failure is confusing.
+- **`entities/lesson.ts` imports a type from `components/Quest/QuestComponent`**
+  — the only entity that depends on a component. `LessonType` also marks
+  `languages`, `slides`, `quest` and `rightAnswerNumber` optional even though a
+  compiled lesson always has them, which is why call sites are full of `as any`.
+- `src/constants/favorite-mini-apps.json` and `lesson-mini-apps.json` are
+  **byte-identical duplicates** with no derivation link between them.
 
 ### Hybrid lesson pages (`/lessons/<slug>`, `/<lang>/lessons/<slug>`)
 
@@ -968,6 +1205,11 @@ fixed-width furniture — that is what caught "Connect Wallet" overflowing the
 ## Conventions
 
 - Temp/one-off scripts belong in the scratchpad, not the repo. Repo-level scripts live at the root (`import-*.js`, `extract-content.js` pattern, plain JS, ESM).
+- **If something is not used, deprecate it — do not fix it.** Before improving
+  a route, component or script, grep for its callers. No caller (or only a
+  commented-out one) means the change is a deletion, not a patch. This applies
+  to security findings too: an unused endpoint with a weak guard gets removed,
+  which is cheaper and permanent.
 - Lesson images: `public/images/<lesson-slug>/…`, referenced in md as full `https://app.banklessacademy.com/images/...` URLs, compiled to relative `/images/...` in lessons.json.
 - Translations for UI strings use i18next (`translation/` other subfolders).
 

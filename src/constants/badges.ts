@@ -23,6 +23,12 @@ export const BADGE_IDS: number[] = badgeIds.filter(
 
 export const BADGE_ENV: 'dev' | 'prod' = process.env.NEXT_PUBLIC_BADGE_ENV === 'prod' ? 'prod' : 'dev'
 
+// Deliberately pinned to the production badge contract. The BADGE_ENV switch
+// above is therefore INERT: setting NEXT_PUBLIC_BADGE_ENV changes nothing, and
+// BADGE_ADDRESS is always the mainnet address below. Kept (rather than deleted)
+// so the testnet path can be restored by uncommenting the line below — if you
+// do, add a build-time assertion that the var is set on production, or a typo
+// silently points live badges at the testnet contract.
 // export const IS_BADGE_PROD = BADGE_ENV === 'prod'
 export const IS_BADGE_PROD = true
 

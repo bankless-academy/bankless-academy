@@ -35,6 +35,18 @@ export default async function handler(
       .status(400)
       .json({ isQuestValidated: false, error: 'Wrong params' })
 
+  // A wallet is optional here (the onboarding modal fires before connect), but
+  // when present it must be a real address: it reaches an UPDATE below, and a
+  // pattern like `%` or a short hex fragment would match — and overwrite —
+  // every row in `users`. Reject rather than ignore, so a malformed wallet is
+  // visible instead of silently unlinked.
+  if (wallet !== undefined && wallet !== null && wallet !== '') {
+    if (typeof wallet !== 'string' || !/^0x[a-fA-F0-9]{40}$/.test(wallet))
+      return res
+        .status(400)
+        .json({ isQuestValidated: false, error: 'Invalid wallet' })
+  }
+
   console.log('email', email)
   console.log('notionId', notionId)
   const newsletterId = Object.keys(NEWSLETTER_LIST_IDS).includes(notionId)
@@ -82,8 +94,10 @@ export default async function handler(
       if (response && response.email_address === email) {
         // Link email to wallet in DB
         if (wallet?.length) {
+          // whereILike + the validated address above = exactly one row.
+          // Never reintroduce `ilike '%' + wallet + '%'` here.
           await db(TABLES.users)
-            .where('address', 'ilike', `%${wallet}%`)
+            .whereILike('address', wallet.toLowerCase())
             .update({
               newsletter_email: email,
             })

@@ -85,20 +85,35 @@ export const TABLE = {
   },
 }
 
+// Addresses are stored as the client sent them (the INSERT below does not
+// lowercase), which is why every lookup is case-insensitive. That makes
+// validation load-bearing: `whereILike` takes a PATTERN, so an unvalidated `%`
+// or short hex fragment matches an arbitrary row — on a SELECT that silently
+// returns somebody else's user, and every caller then acts on that id.
+export const isValidAddress = (address: unknown): address is string =>
+  typeof address === 'string' && /^0x[a-fA-F0-9]{40}$/.test(address)
+
 export async function getUserId(address: string, embed: string, isBot?: boolean, referral?: boolean): Promise<number> {
+  if (!isValidAddress(address)) {
+    console.error('getUserId: invalid address', address)
+    return null
+  }
   try {
-    // ilike = case insensitive search
+    // whereILike + the validated address above = exactly one row.
     const [user] = await db(TABLES.users)
       .select('id')
-      .where('address', 'ilike', `%${address}%`)
+      .whereILike('address', address.toLowerCase())
     console.log('user', user)
     let createUser = null
     if (!user) {
       let referrer = null
-      if (referral) {
+      // `referral` is a referrer ADDRESS despite the boolean type below.
+      // Malformed ones are ignored rather than rejected: a bad referral should
+      // cost the referral credit, not block the signup.
+      if (referral && isValidAddress(referral)) {
         [referrer] = await db(TABLES.users)
           .select('id')
-          .where('address', 'ilike', `%${referral}%`)
+          .whereILike('address', String(referral).toLowerCase())
         console.log('referrer', referrer)
       }
       [createUser] = await db(TABLES.users).insert({ address: address, referrer: referrer?.id }, [
@@ -119,7 +134,7 @@ export async function getUserId(address: string, embed: string, isBot?: boolean,
     // most likely because of `duplicate key value violates unique constraint "users_address_unique"`
     const [user] = await db(TABLES.users)
       .select('id')
-      .where('address', 'ilike', `%${address}%`)
+      .whereILike('address', address.toLowerCase())
     return user?.id
   }
 }
@@ -183,9 +198,11 @@ export async function getNFTInfo(
       console.log(`tokenIds: ${res.tokenIds}`);
 
       const smart_nft_mint_at = new Date(mintTimestamp).getTime()
-      const [user] = await db(TABLES.users)
-        .select('smart_nft_start_at')
-        .where('address', 'ilike', `%${owner}%`)
+      const [user] = isValidAddress(owner)
+        ? await db(TABLES.users)
+            .select('smart_nft_start_at')
+            .whereILike('address', owner.toLowerCase())
+        : []
       if (user?.smart_nft_start_at) {
         const smart_nft_start_at = user.smart_nft_start_at.getTime();
         console.log('smart_nft_start_at', smart_nft_start_at)

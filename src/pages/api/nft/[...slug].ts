@@ -23,6 +23,10 @@ export default async function handler(
 
     if (address && timestamp && timestamp - Date.now() < 60000) {
       const userId = await getUserId(address, 'onchain-summer-challenge', false, referral)
+      // getUserId returns null for a malformed address; without this the id
+      // goes straight into a .where() below as undefined.
+      if (!(userId && Number.isInteger(userId)))
+        return res.status(403).json({ error: 'userId not found' })
       const NFTInfo = await getNFTInfo(address, '')
       if (NFTInfo.tokenIds.length === 0) {
         await db(TABLES.users)

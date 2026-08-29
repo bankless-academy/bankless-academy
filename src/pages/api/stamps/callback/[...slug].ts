@@ -12,7 +12,7 @@ import * as ens from "utils/stamps/platforms/ens"
 // import * as tiktok from "utils/stamps/platforms/tiktok"
 import { RequestPayload } from "utils/stamps/passport-types";
 import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from "constants/passport"
-import { TABLE, TABLES, db } from "utils/db"
+import { TABLE, TABLES, db, isValidAddress } from "utils/db"
 import { trackBE } from "utils/mixpanel"
 import { DEMO_ACCOUNTS_IDS } from "constants/index"
 export const VERSION = "v0.0.0";
@@ -90,9 +90,13 @@ export default async function handler(
 
     const type = STAMP_PLATFORMS[platform].provider
 
-    const [user] = await db(TABLES.users)
-      .select('id')
-      .where('address', 'ilike', `%${address}%`)
+    // Validated, then matched exactly: `whereILike` takes a pattern, so a `%`
+    // here would resolve to an arbitrary user and bind this stamp to them.
+    const [user] = isValidAddress(address)
+      ? await db(TABLES.users)
+          .select('id')
+          .whereILike('address', address.toLowerCase())
+      : []
     const userId = user?.id
     console.log(userId)
     if (!(userId && Number.isInteger(userId))) {

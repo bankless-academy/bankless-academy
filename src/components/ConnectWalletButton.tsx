@@ -91,6 +91,11 @@ const ConnectWalletButton = ({
   const [avatar, setAvatar] = useState(null)
   const [, setBadges] = useState<number[]>([])
   const [siwe, setSiweLS] = useLocalStorage('siwe', '')
+  // Reused, never requested here: /api/link-email only needs a signature to
+  // CHANGE an already-linked email, and by then the reader has usually signed
+  // for something else (SelectCommunity writes this key). Passing it when we
+  // have it avoids a wallet popup on connect.
+  const [profileSignature] = useLocalStorage('profile-signature', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
@@ -307,7 +312,12 @@ const ConnectWalletButton = ({
           address?.length
         ) {
           try {
-            const res = await api('/api/link-email', { email, address })
+            const res = await api('/api/link-email', {
+              email,
+              address,
+              signature: profileSignature || undefined,
+              chainId,
+            })
             console.log('res', res.data)
             if (res.data?.message) {
               setEmailLinked(true)

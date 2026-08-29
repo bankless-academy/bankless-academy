@@ -50,9 +50,14 @@ export default async function handler(
 
   const [user] = await db(TABLES.users)
     .select(TABLE.users.sybil_user_id, TABLE.users.ba_stamps)
-    .where('address', 'ilike', `%${address}%`)
+    .whereILike('address', address.toLowerCase())
 
-  const initial_stamps = Object.keys(user.ba_stamps)
+  // getUserId above already rejected a malformed address and returned a 403,
+  // so reaching here with no row means the write raced; 404 beats the
+  // TypeError this used to throw on `user.ba_stamps`.
+  if (!user) return res.status(404).json({ error: 'User not found' })
+
+  const initial_stamps = Object.keys(user.ba_stamps || {})
   console.log('initial_stamps', initial_stamps)
   if (!initial_stamps?.includes('preloaded') && !isDemoAccount) {
     // pre-load farcaster & ens

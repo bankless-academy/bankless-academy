@@ -51,3 +51,6 @@ yarn-error.log*
 *.iam.gserviceaccount.com.json
 bankless-academy-*-*.json
 gsc-inspect-results.json
+
+# local security notes (never commit)
+SECURITY-TODO.local.md
