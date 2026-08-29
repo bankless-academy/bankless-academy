@@ -141,6 +141,11 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
               h="100%"
               objectFit="cover"
               bg="transparent"
+              // ~60 product cards render below the fold; without this every
+              // one of them is fetched on load. Measured 2026-08-29: /explore
+              // pulled 26.4MB of card images before lazy-loading.
+              loading="lazy"
+              decoding="async"
             />
           </Box>
           {/* Content container */}
@@ -245,6 +250,9 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
                     objectFit="cover"
                     bg="transparent"
                     aspectRatio="1200/630"
+                    // featured cards are above the fold, so these stay eager;
+                    // decoding async still keeps them off the main thread
+                    decoding="async"
                   />
                 </Box>
                 <Box bg="transparent" p={4} borderTop="1px solid #524f4f">

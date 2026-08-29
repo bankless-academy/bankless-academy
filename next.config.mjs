@@ -63,6 +63,18 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Explore product art lives under its own prefix (`/explore/<slug>.jpg`,
+        // per the convention in CLAUDE.md), so the /images rule above misses it
+        // — 67 files, 2.4MB, that were still revalidating on every visit.
+        source: '/explore/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, stale-while-revalidate=2592000',
+          },
+        ],
+      },
     ]
   },
 
