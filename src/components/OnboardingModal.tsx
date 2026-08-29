@@ -221,6 +221,12 @@ const OnboardingModal = ({
       size={isMobileScreen ? 'full' : 'xl'}
       isCentered
       isOpen={isOpen}
+      // Dismissing has to be deliberate: this modal opens on a timer (Nav's
+      // 10s auto-open), so a stray click on the backdrop or an Escape meant
+      // for something else would close it by accident mid-flow. The two
+      // explicit ways out stay: the X (ModalCloseButton) and "Later".
+      closeOnOverlayClick={false}
+      closeOnEsc={false}
     >
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent
