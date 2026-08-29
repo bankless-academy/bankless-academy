@@ -646,9 +646,23 @@ Measured on the first deploy after enabling it, from the `[SSR-TIMING]` marks:
 instead of the first visitor. A fresh deployment has never been invoked, so
 scale-to-one has nothing warm yet and the bytecode cache is empty by definition
 ("the first request isn't cached yet") — which is why the slowest request the
-system can produce is the first one after every deploy. One request suffices:
-all SSR routes share an instance. The cache-buster in that workflow is
+system can produce is the first one after every deploy. All SSR routes share an
+instance, so warming one warms all of them. The cache-buster in that workflow is
 load-bearing — without it the edge serves the request and no function runs.
+
+**But one request does NOT suffice, and the reason is subtle** (measured
+2026-08-29 on deploy `d84b42b9`, `[SSR-TIMING]` in the runtime logs). The
+workflow's two immediate hits landed on two DIFFERENT instances — uptimes 14.1s
+and 8.4s, nine seconds apart, where a reused instance would have read 23s — and
+Vercel then discarded both. The instance that survived was provisioned ~20s
+AFTER the workflow finished and sat there with its module graph unevaluated
+(`boot@159.771s`, i.e. 160s of process life before our first mark ran) until a
+real visitor arrived three minutes later and paid 8.6s. **Scale-to-one keeps a
+PROCESS alive, not an INITIALIZED one**, and the platform churns instances for
+the first minute or two after a deploy. So the warm-up polls instead: first
+probe at +45s, then every 20s for ~3.5 min, which outlasts the churn. It is a
+mitigation — the fix is splitting `utils/index.ts` (~7.6s of module evaluation,
+item 3 below). Judge a run by its "cold starts absorbed by CI" line.
 
 **Do NOT add a warm-up cron.** Fluid includes **scale to one**: on Pro it keeps
 one instance of the current production deployment warm automatically, free, for

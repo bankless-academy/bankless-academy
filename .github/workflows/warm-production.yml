@@ -3,17 +3,29 @@
 # WHY: a fresh production deployment has never been invoked, so Fluid's
 # "scale to one" has nothing warm yet, and its bytecode cache is empty by
 # definition ("the first request isn't cached yet"). Measured on this project:
-# the first /explore hit after a deploy took 9.4s, of which 8.5s was evaluating
+# the first /explore hit after a deploy took 9.4s, of which ~8.5s was evaluating
 # utils/index's import graph and only 0.3s was data fetching.
 #
-# One request is enough: every SSR route (/explore, /explorer/*, /notion/*,
-# /start) is served by the SAME function instance — verified from the
-# [SSR-TIMING] boot marks — so warming one warms all of them, including
-# /explorer/<address> URLs that can never be pre-cached.
+# One request is enough to warm one instance: every SSR route (/explore,
+# /explorer/*, /notion/*, /start) is served by the SAME instance — verified
+# from the [SSR-TIMING] boot marks — so warming one warms all of them,
+# including /explorer/<address> URLs that can never be pre-cached.
 #
-# This does NOT need a schedule. Fluid keeps one production instance warm
-# automatically on Pro, so idle cold starts are already handled; only the
-# post-deploy window is not.
+# WHY IT POLLS INSTEAD OF FIRING ONCE (measured 2026-08-29, deploy d84b42b9):
+# the two immediate hits landed on two DIFFERENT instances (uptimes 14.1s and
+# 8.4s, nine seconds apart), both of which Vercel then discarded. The instance
+# that survived was provisioned ~20s AFTER this workflow had already finished,
+# and sat idle with its module graph unevaluated — `boot@159.771s` — until a
+# real visitor arrived three minutes later and paid the full 8.6s. Scale-to-one
+# keeps a PROCESS alive, not an INITIALIZED one. So the window matters more
+# than the count: probe past the point where the platform stops churning
+# instances, and every survivor gets initialized here instead of by a reader.
+#
+# This is a mitigation, not the fix. The fix is splitting utils/index.ts
+# (~7.6s of module evaluation); see "Next up" in CLAUDE.md.
+#
+# Still does NOT need a schedule: Fluid keeps one production instance warm
+# automatically on Pro, so idle cold starts are already handled.
 name: Warm production after deploy
 
 on:
@@ -23,6 +35,12 @@ on:
 # site. Least privilege, so a compromised action step can do nothing here.
 permissions: {}
 
+# Back-to-back deploys make the older run pointless — its target is already
+# superseded, and two runs probing at once just race each other.
+concurrency:
+  group: warm-production
+  cancel-in-progress: true
+
 jobs:
   warm:
     # Vercel reports a GitHub deployment_status per deployment; only the
@@ -31,21 +49,37 @@ jobs:
       github.event.deployment_status.state == 'success' &&
       github.event.deployment.environment == 'Production'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - name: Warm the shared SSR function instance
+        env:
+          # First probe is deliberately late: the keep-warm instance does not
+          # exist at READY, and warming the instances that precede it is wasted.
+          FIRST_DELAY: 45
+          INTERVAL: 20
+          PROBES: 10
         run: |
           set -uo pipefail
-          URL="https://app.banklessacademy.com/explore?warm=$GITHUB_RUN_ID"
-          # Cache-buster on purpose: these pages send s-maxage=300, and a CDN
-          # HIT would invoke no function and warm nothing.
-          echo "warming $URL"
-          code=$(curl -s -o /dev/null -D /tmp/h -w '%{http_code}' --max-time 120 "$URL" || echo "000")
-          echo "status: $code"
-          grep -i '^server-timing' /tmp/h || echo "(no Server-Timing header)"
-          # Second hit confirms the instance is now warm (expect cold;desc=0).
-          curl -s -o /dev/null -D /tmp/h2 --max-time 60 \
-            "https://app.banklessacademy.com/explore?warm=${GITHUB_RUN_ID}b" || true
-          grep -i '^server-timing' /tmp/h2 || true
+          echo "waiting ${FIRST_DELAY}s for the platform to settle on an instance"
+          sleep "$FIRST_DELAY"
+
+          absorbed=0
+          for i in $(seq 1 "$PROBES"); do
+            # Cache-buster on purpose: these pages send s-maxage=300, and a CDN
+            # HIT would invoke no function and warm nothing.
+            url="https://app.banklessacademy.com/explore?warm=${GITHUB_RUN_ID}-${i}"
+            code=$(curl -s -o /dev/null -D /tmp/h -w '%{http_code}' --max-time 120 "$url" || echo "000")
+            timing=$(grep -i '^server-timing' /tmp/h | tr -d '\r' | cut -d' ' -f2- || true)
+            case "$timing" in
+              *'cold;desc=1'*) absorbed=$((absorbed + 1)); tag="COLD - absorbed here" ;;
+              *'cold;desc=0'*) tag="warm" ;;
+              *)               tag="(no timing)" ;;
+            esac
+            echo "probe $i/$PROBES  status=$code  $tag  ${timing:-}"
+            [ "$i" -lt "$PROBES" ] && sleep "$INTERVAL"
+          done
+
+          echo "---"
+          echo "cold starts absorbed by CI: $absorbed"
           # Never fail the run over a warm-up: it is an optimisation, not a gate.
           exit 0
