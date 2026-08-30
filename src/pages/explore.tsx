@@ -36,7 +36,9 @@ interface ExplorePageProps {
   initialData: ExploreType[]
 }
 
-const getServerSidePropsImpl: GetServerSideProps<ExplorePageProps> = async () => {
+const getServerSidePropsImpl: GetServerSideProps<
+  ExplorePageProps
+> = async () => {
   try {
     // Read KV directly. This used to fetch the page's OWN public URL
     // (`https://app.banklessacademy.com/api/cache/explore`) from inside the
@@ -188,413 +190,391 @@ function ExplorePage({ initialData }: ExplorePageProps): JSX.Element {
   }
 
   return (
-    <Layout page="EXPLORE">
-      <Box minH="100vh">
-        {error && (
-          <Text color="red.500" textAlign="center" mb={4}>
-            {error}
-          </Text>
-        )}
-        <Heading
-          as="h1"
-          size="xl"
-          textAlign="center"
-          pt={isSmallScreen ? '12px' : '16px'}
-        >
-          <Box
-            display="inline-block"
-            justifyContent="center"
-            position="relative"
-          >
-            {t('Explore Apps')}
-            <Box position="absolute" top="-4px" right="-10px">
-              <Helper
-                title={t('Disclaimer')}
-                definition={
-                  <>
-                    <Box mb="4">
-                      <Text fontWeight="bold">
-                        {t('Always do your own research.')}
-                      </Text>
-                      {t(
-                        'Blockchain is a new technology and most applications are new. Before depositing any large quantities of money, make sure you understand the risks.'
-                      )}
-                    </Box>
-                  </>
-                }
-              />
-            </Box>
+    <Box minH="100vh">
+      {error && (
+        <Text color="red.500" textAlign="center" mb={4}>
+          {error}
+        </Text>
+      )}
+      <Heading
+        as="h1"
+        size="xl"
+        textAlign="center"
+        pt={isSmallScreen ? '12px' : '16px'}
+      >
+        <Box display="inline-block" justifyContent="center" position="relative">
+          {t('Explore Apps')}
+          <Box position="absolute" top="-4px" right="-10px">
+            <Helper
+              title={t('Disclaimer')}
+              definition={
+                <>
+                  <Box mb="4">
+                    <Text fontWeight="bold">
+                      {t('Always do your own research.')}
+                    </Text>
+                    {t(
+                      'Blockchain is a new technology and most applications are new. Before depositing any large quantities of money, make sure you understand the risks.'
+                    )}
+                  </Box>
+                </>
+              }
+            />
           </Box>
-        </Heading>
-        <Heading
-          as="h2"
-          size="md"
-          color="#9E9E9E"
-          fontWeight="normal"
-          textAlign="center"
-          mt={4}
-          mb={6}
-        >
-          {t('The best apps for your crypto journey — all in one place.')}
-        </Heading>
-        <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
-          {featuredItems.map((item) => (
-            <Card key={item.product} w="100%" overflow="hidden">
-              <ExternalLink href={item.link} alt={item.product}>
-                <Box position="relative">
-                  <Image
-                    src={item.image}
-                    alt={item.product}
-                    w="100%"
-                    h="100%"
-                    objectFit="cover"
-                    bg="transparent"
-                    aspectRatio="1200/630"
-                    // featured cards are above the fold, so these stay eager;
-                    // decoding async still keeps them off the main thread
-                    decoding="async"
-                  />
-                </Box>
-                <Box bg="transparent" p={4} borderTop="1px solid #524f4f">
-                  <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
-                    {item.product}
-                  </Text>
-                  <Text
-                    fontSize="xs"
-                    mb={2}
-                    noOfLines={2}
-                    sx={{
-                      display: '-webkit-box',
-                      WebkitBoxOrient: 'vertical',
-                      WebkitLineClamp: 2,
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                    }}
-                    minH="40px"
-                    color="#9E9E9E"
-                  >
-                    {item.description}
-                  </Text>
-                  <Box display="flex" alignItems="center" mb={2} gap={2}>
-                    <Tag size="sm" colorScheme="purple" variant="outline">
-                      {item.category}
-                    </Tag>
-                  </Box>
-                </Box>
-              </ExternalLink>
-            </Card>
-          ))}
-        </SimpleGrid>
-        <Tabs variant="soft-rounded" colorScheme="purple" defaultIndex={0}>
-          <Box mt={12}>
-            <TabList
-              display="flex"
-              flexWrap="wrap"
-              justifyContent="center"
-              gap={2}
-              my={4}
-            >
-              <Tab _selected={{ bg: '#3f3154' }} color="white !important">
-                All
-              </Tab>
-              {Object.keys(groupedByType)
-                .sort(sortTypes)
-                .map((type) => (
-                  <Tab
-                    _selected={{ bg: '#3f3154' }}
-                    color="white !important"
-                    key={type}
-                  >
-                    {type}
-                  </Tab>
-                ))}
-              <ExternalLink href="/feature-request" ml={2}>
-                <Button leftIcon={<Plus />} variant="secondary">
-                  {t('Submit an App')}
-                </Button>
-              </ExternalLink>
-            </TabList>
-          </Box>
-          <TabPanels>
-            <TabPanel px="0">
-              <Box maxW="1400px" mx="auto">
-                <SimpleGrid
-                  columns={{ base: 1, lg: 2 }}
-                  spacing={8}
-                  alignItems="flex-start"
-                >
-                  {/* Left Column */}
-                  <Box display={{ base: 'none', lg: 'block' }}>
-                    {Object.entries(groupedItems)
-                      .sort(([a], [b]) => a.localeCompare(b))
-                      .filter((_, index) => index % 2 === 0)
-                      .map(([category, items]) => (
-                        <Box key={category} mb={4}>
-                          <Box
-                            height="102px"
-                            display="flex"
-                            alignItems="center"
-                            justifyContent="center"
-                            mb={4}
-                          >
-                            <Text
-                              fontSize="2xl"
-                              fontWeight="bold"
-                              color="white"
-                            >
-                              {category}
-                            </Text>
-                          </Box>
-                          <SimpleGrid
-                            spacing={4}
-                            templateColumns={{
-                              base: 'repeat(1, 1fr)',
-                            }}
-                          >
-                            {items
-                              .sort((a, b) =>
-                                a.product.localeCompare(b.product)
-                              )
-                              .map(renderRecommendedCard)}
-                          </SimpleGrid>
-                        </Box>
-                      ))}
-                  </Box>
-                  {/* Right Column */}
-                  <Box display={{ base: 'none', lg: 'block' }}>
-                    {Object.entries(groupedItems)
-                      .sort(([a], [b]) => a.localeCompare(b))
-                      .filter((_, index) => index % 2 === 1)
-                      .map(([category, items]) => (
-                        <Box key={category} mb={4}>
-                          <Box
-                            height="102px"
-                            display="flex"
-                            alignItems="center"
-                            justifyContent="center"
-                            mb={4}
-                          >
-                            <Text
-                              fontSize="2xl"
-                              fontWeight="bold"
-                              color="white"
-                            >
-                              {category}
-                            </Text>
-                          </Box>
-                          <SimpleGrid
-                            spacing={4}
-                            templateColumns={{
-                              base: 'repeat(1, 1fr)',
-                            }}
-                          >
-                            {items
-                              .sort((a, b) =>
-                                a.product.localeCompare(b.product)
-                              )
-                              .map(renderRecommendedCard)}
-                          </SimpleGrid>
-                        </Box>
-                      ))}
-                  </Box>
-                  {/* Single Column for Mobile */}
-                  <Box
-                    display={{ base: 'block', lg: 'none' }}
-                    gridColumn="1/-1"
-                  >
-                    {Object.entries(groupedItems)
-                      .sort(([a], [b]) => a.localeCompare(b))
-                      .map(([category, items]) => (
-                        <Box key={category} mb={4}>
-                          <Box
-                            height="48px"
-                            display="flex"
-                            alignItems="center"
-                            justifyContent="center"
-                            mb={4}
-                          >
-                            <Text
-                              fontSize="2xl"
-                              fontWeight="bold"
-                              color="white"
-                            >
-                              {category}
-                            </Text>
-                          </Box>
-                          <SimpleGrid
-                            spacing={4}
-                            templateColumns={{
-                              base: 'repeat(1, 1fr)',
-                            }}
-                          >
-                            {items
-                              .sort((a, b) =>
-                                a.product.localeCompare(b.product)
-                              )
-                              .map(renderRecommendedCard)}
-                          </SimpleGrid>
-                        </Box>
-                      ))}
-                  </Box>
-                </SimpleGrid>
+        </Box>
+      </Heading>
+      <Heading
+        as="h2"
+        size="md"
+        color="#9E9E9E"
+        fontWeight="normal"
+        textAlign="center"
+        mt={4}
+        mb={6}
+      >
+        {t('The best apps for your crypto journey — all in one place.')}
+      </Heading>
+      <SimpleGrid spacing={4} minChildWidth="300px" my={8}>
+        {featuredItems.map((item) => (
+          <Card key={item.product} w="100%" overflow="hidden">
+            <ExternalLink href={item.link} alt={item.product}>
+              <Box position="relative">
+                <Image
+                  src={item.image}
+                  alt={item.product}
+                  w="100%"
+                  h="100%"
+                  objectFit="cover"
+                  bg="transparent"
+                  aspectRatio="1200/630"
+                  // featured cards are above the fold, so these stay eager;
+                  // decoding async still keeps them off the main thread
+                  decoding="async"
+                />
               </Box>
-            </TabPanel>
-            {Object.entries(groupedByType)
-              .sort(([a], [b]) => sortTypes(a, b))
-              .map(([type, typeItems]) => (
-                <TabPanel key={type} px="0">
-                  <Box maxW="1400px" mx="auto">
-                    <SimpleGrid
-                      columns={{ base: 1, lg: 2 }}
-                      spacing={8}
-                      alignItems="flex-start"
-                    >
-                      {/* Group items by category first */}
-                      {(() => {
-                        // Group items by category
-                        const categoryGroups = typeItems.reduce(
-                          (acc: GroupedExploreItems, item: ExploreType) => {
-                            const category = item.category || 'Other'
-                            if (!acc[category]) {
-                              acc[category] = []
-                            }
-                            acc[category].push(item)
-                            return acc
-                          },
-                          {}
-                        )
-
-                        // Split categories into two columns
-                        const categories = Object.entries(categoryGroups).sort(
-                          ([a], [b]) => a.localeCompare(b)
-                        )
-
-                        return (
-                          <>
-                            {/* Left Column */}
-                            <Box display={{ base: 'none', lg: 'block' }}>
-                              {categories
-                                .filter((_, index) => index % 2 === 0)
-                                .map(([category, items]) => (
-                                  <Box key={category} mb={4}>
-                                    <Box
-                                      height="102px"
-                                      display="flex"
-                                      alignItems="center"
-                                      justifyContent="center"
-                                      mb={4}
-                                    >
-                                      <Text
-                                        fontSize="2xl"
-                                        fontWeight="bold"
-                                        color="white"
-                                      >
-                                        {category}
-                                      </Text>
-                                    </Box>
-                                    <SimpleGrid
-                                      spacing={4}
-                                      templateColumns={{
-                                        base: 'repeat(1, 1fr)',
-                                      }}
-                                    >
-                                      {items
-                                        .sort((a, b) =>
-                                          a.product.localeCompare(b.product)
-                                        )
-                                        .map(renderRecommendedCard)}
-                                    </SimpleGrid>
-                                  </Box>
-                                ))}
-                            </Box>
-                            {/* Right Column */}
-                            <Box display={{ base: 'none', lg: 'block' }}>
-                              {categories
-                                .filter((_, index) => index % 2 === 1)
-                                .map(([category, items]) => (
-                                  <Box key={category} mb={4}>
-                                    <Box
-                                      height="102px"
-                                      display="flex"
-                                      alignItems="center"
-                                      justifyContent="center"
-                                      mb={4}
-                                    >
-                                      <Text
-                                        fontSize="2xl"
-                                        fontWeight="bold"
-                                        color="white"
-                                      >
-                                        {category}
-                                      </Text>
-                                    </Box>
-                                    <SimpleGrid
-                                      spacing={4}
-                                      templateColumns={{
-                                        base: 'repeat(1, 1fr)',
-                                      }}
-                                    >
-                                      {items
-                                        .sort((a, b) =>
-                                          a.product.localeCompare(b.product)
-                                        )
-                                        .map(renderRecommendedCard)}
-                                    </SimpleGrid>
-                                  </Box>
-                                ))}
-                            </Box>
-                            {/* Single Column for Mobile */}
-                            <Box
-                              display={{ base: 'block', lg: 'none' }}
-                              gridColumn="1/-1"
-                            >
-                              {categories
-                                .sort(([a], [b]) => a.localeCompare(b))
-                                .map(([category, items]) => (
-                                  <Box key={category} mb={4}>
-                                    <Box
-                                      height="48px"
-                                      display="flex"
-                                      alignItems="center"
-                                      justifyContent="center"
-                                      mb={4}
-                                    >
-                                      <Text
-                                        fontSize="2xl"
-                                        fontWeight="bold"
-                                        color="white"
-                                      >
-                                        {category}
-                                      </Text>
-                                    </Box>
-                                    <SimpleGrid
-                                      spacing={4}
-                                      templateColumns={{
-                                        base: 'repeat(1, 1fr)',
-                                      }}
-                                    >
-                                      {items
-                                        .sort((a, b) =>
-                                          a.product.localeCompare(b.product)
-                                        )
-                                        .map(renderRecommendedCard)}
-                                    </SimpleGrid>
-                                  </Box>
-                                ))}
-                            </Box>
-                          </>
-                        )
-                      })()}
-                    </SimpleGrid>
-                  </Box>
-                </TabPanel>
+              <Box bg="transparent" p={4} borderTop="1px solid #524f4f">
+                <Text fontWeight="bold" mb={1} noOfLines={1} color="white">
+                  {item.product}
+                </Text>
+                <Text
+                  fontSize="xs"
+                  mb={2}
+                  noOfLines={2}
+                  sx={{
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 2,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                  }}
+                  minH="40px"
+                  color="#9E9E9E"
+                >
+                  {item.description}
+                </Text>
+                <Box display="flex" alignItems="center" mb={2} gap={2}>
+                  <Tag size="sm" colorScheme="purple" variant="outline">
+                    {item.category}
+                  </Tag>
+                </Box>
+              </Box>
+            </ExternalLink>
+          </Card>
+        ))}
+      </SimpleGrid>
+      <Tabs variant="soft-rounded" colorScheme="purple" defaultIndex={0}>
+        <Box mt={12}>
+          <TabList
+            display="flex"
+            flexWrap="wrap"
+            justifyContent="center"
+            gap={2}
+            my={4}
+          >
+            <Tab _selected={{ bg: '#3f3154' }} color="white !important">
+              All
+            </Tab>
+            {Object.keys(groupedByType)
+              .sort(sortTypes)
+              .map((type) => (
+                <Tab
+                  _selected={{ bg: '#3f3154' }}
+                  color="white !important"
+                  key={type}
+                >
+                  {type}
+                </Tab>
               ))}
-          </TabPanels>
-        </Tabs>
-      </Box>
-    </Layout>
+            <ExternalLink href="/feature-request" ml={2}>
+              <Button leftIcon={<Plus />} variant="secondary">
+                {t('Submit an App')}
+              </Button>
+            </ExternalLink>
+          </TabList>
+        </Box>
+        <TabPanels>
+          <TabPanel px="0">
+            <Box maxW="1400px" mx="auto">
+              <SimpleGrid
+                columns={{ base: 1, lg: 2 }}
+                spacing={8}
+                alignItems="flex-start"
+              >
+                {/* Left Column */}
+                <Box display={{ base: 'none', lg: 'block' }}>
+                  {Object.entries(groupedItems)
+                    .sort(([a], [b]) => a.localeCompare(b))
+                    .filter((_, index) => index % 2 === 0)
+                    .map(([category, items]) => (
+                      <Box key={category} mb={4}>
+                        <Box
+                          height="102px"
+                          display="flex"
+                          alignItems="center"
+                          justifyContent="center"
+                          mb={4}
+                        >
+                          <Text fontSize="2xl" fontWeight="bold" color="white">
+                            {category}
+                          </Text>
+                        </Box>
+                        <SimpleGrid
+                          spacing={4}
+                          templateColumns={{
+                            base: 'repeat(1, 1fr)',
+                          }}
+                        >
+                          {items
+                            .sort((a, b) => a.product.localeCompare(b.product))
+                            .map(renderRecommendedCard)}
+                        </SimpleGrid>
+                      </Box>
+                    ))}
+                </Box>
+                {/* Right Column */}
+                <Box display={{ base: 'none', lg: 'block' }}>
+                  {Object.entries(groupedItems)
+                    .sort(([a], [b]) => a.localeCompare(b))
+                    .filter((_, index) => index % 2 === 1)
+                    .map(([category, items]) => (
+                      <Box key={category} mb={4}>
+                        <Box
+                          height="102px"
+                          display="flex"
+                          alignItems="center"
+                          justifyContent="center"
+                          mb={4}
+                        >
+                          <Text fontSize="2xl" fontWeight="bold" color="white">
+                            {category}
+                          </Text>
+                        </Box>
+                        <SimpleGrid
+                          spacing={4}
+                          templateColumns={{
+                            base: 'repeat(1, 1fr)',
+                          }}
+                        >
+                          {items
+                            .sort((a, b) => a.product.localeCompare(b.product))
+                            .map(renderRecommendedCard)}
+                        </SimpleGrid>
+                      </Box>
+                    ))}
+                </Box>
+                {/* Single Column for Mobile */}
+                <Box display={{ base: 'block', lg: 'none' }} gridColumn="1/-1">
+                  {Object.entries(groupedItems)
+                    .sort(([a], [b]) => a.localeCompare(b))
+                    .map(([category, items]) => (
+                      <Box key={category} mb={4}>
+                        <Box
+                          height="48px"
+                          display="flex"
+                          alignItems="center"
+                          justifyContent="center"
+                          mb={4}
+                        >
+                          <Text fontSize="2xl" fontWeight="bold" color="white">
+                            {category}
+                          </Text>
+                        </Box>
+                        <SimpleGrid
+                          spacing={4}
+                          templateColumns={{
+                            base: 'repeat(1, 1fr)',
+                          }}
+                        >
+                          {items
+                            .sort((a, b) => a.product.localeCompare(b.product))
+                            .map(renderRecommendedCard)}
+                        </SimpleGrid>
+                      </Box>
+                    ))}
+                </Box>
+              </SimpleGrid>
+            </Box>
+          </TabPanel>
+          {Object.entries(groupedByType)
+            .sort(([a], [b]) => sortTypes(a, b))
+            .map(([type, typeItems]) => (
+              <TabPanel key={type} px="0">
+                <Box maxW="1400px" mx="auto">
+                  <SimpleGrid
+                    columns={{ base: 1, lg: 2 }}
+                    spacing={8}
+                    alignItems="flex-start"
+                  >
+                    {/* Group items by category first */}
+                    {(() => {
+                      // Group items by category
+                      const categoryGroups = typeItems.reduce(
+                        (acc: GroupedExploreItems, item: ExploreType) => {
+                          const category = item.category || 'Other'
+                          if (!acc[category]) {
+                            acc[category] = []
+                          }
+                          acc[category].push(item)
+                          return acc
+                        },
+                        {}
+                      )
+
+                      // Split categories into two columns
+                      const categories = Object.entries(categoryGroups).sort(
+                        ([a], [b]) => a.localeCompare(b)
+                      )
+
+                      return (
+                        <>
+                          {/* Left Column */}
+                          <Box display={{ base: 'none', lg: 'block' }}>
+                            {categories
+                              .filter((_, index) => index % 2 === 0)
+                              .map(([category, items]) => (
+                                <Box key={category} mb={4}>
+                                  <Box
+                                    height="102px"
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    mb={4}
+                                  >
+                                    <Text
+                                      fontSize="2xl"
+                                      fontWeight="bold"
+                                      color="white"
+                                    >
+                                      {category}
+                                    </Text>
+                                  </Box>
+                                  <SimpleGrid
+                                    spacing={4}
+                                    templateColumns={{
+                                      base: 'repeat(1, 1fr)',
+                                    }}
+                                  >
+                                    {items
+                                      .sort((a, b) =>
+                                        a.product.localeCompare(b.product)
+                                      )
+                                      .map(renderRecommendedCard)}
+                                  </SimpleGrid>
+                                </Box>
+                              ))}
+                          </Box>
+                          {/* Right Column */}
+                          <Box display={{ base: 'none', lg: 'block' }}>
+                            {categories
+                              .filter((_, index) => index % 2 === 1)
+                              .map(([category, items]) => (
+                                <Box key={category} mb={4}>
+                                  <Box
+                                    height="102px"
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    mb={4}
+                                  >
+                                    <Text
+                                      fontSize="2xl"
+                                      fontWeight="bold"
+                                      color="white"
+                                    >
+                                      {category}
+                                    </Text>
+                                  </Box>
+                                  <SimpleGrid
+                                    spacing={4}
+                                    templateColumns={{
+                                      base: 'repeat(1, 1fr)',
+                                    }}
+                                  >
+                                    {items
+                                      .sort((a, b) =>
+                                        a.product.localeCompare(b.product)
+                                      )
+                                      .map(renderRecommendedCard)}
+                                  </SimpleGrid>
+                                </Box>
+                              ))}
+                          </Box>
+                          {/* Single Column for Mobile */}
+                          <Box
+                            display={{ base: 'block', lg: 'none' }}
+                            gridColumn="1/-1"
+                          >
+                            {categories
+                              .sort(([a], [b]) => a.localeCompare(b))
+                              .map(([category, items]) => (
+                                <Box key={category} mb={4}>
+                                  <Box
+                                    height="48px"
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    mb={4}
+                                  >
+                                    <Text
+                                      fontSize="2xl"
+                                      fontWeight="bold"
+                                      color="white"
+                                    >
+                                      {category}
+                                    </Text>
+                                  </Box>
+                                  <SimpleGrid
+                                    spacing={4}
+                                    templateColumns={{
+                                      base: 'repeat(1, 1fr)',
+                                    }}
+                                  >
+                                    {items
+                                      .sort((a, b) =>
+                                        a.product.localeCompare(b.product)
+                                      )
+                                      .map(renderRecommendedCard)}
+                                  </SimpleGrid>
+                                </Box>
+                              ))}
+                          </Box>
+                        </>
+                      )
+                    })()}
+                  </SimpleGrid>
+                </Box>
+              </TabPanel>
+            ))}
+        </TabPanels>
+      </Tabs>
+    </Box>
   )
 }
+
+// PageLayout is attached here, not rendered inside the page - see _app.tsx.
+ExplorePage.getLayout = (page: JSX.Element): JSX.Element => (
+  <Layout page="EXPLORE">{page}</Layout>
+)
 
 export default ExplorePage
 

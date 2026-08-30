@@ -53,6 +53,15 @@ if (typeof window !== 'undefined') {
   void import('components/providers/Web3Providers')
 }
 
+// Pages that need the app chrome (PageLayout: side rail on desktop, the
+// bottom bar on mobile) attach it here instead of rendering it themselves.
+// WHY: rendering <PageLayout> inside a page puts it under <Component>, so
+// every navigation unmounts and rebuilds it — the mobile bottom bar's avatar
+// <img> was destroyed and refetched on each tap, while Nav (mounted above
+// <Component>) never flickered. Returned from getLayout the element is the
+// SAME component type at the SAME position across routes, so React reconciles
+// it and only `children` remounts. Never render PageLayout inside a page.
+type GetLayout = (page: JSX.Element, pageProps: any) => JSX.Element
 
 const App = ({
   Component,
@@ -61,6 +70,9 @@ const App = ({
   pageMeta: MetaData
   isNotion: boolean
 }>): JSX.Element => {
+  const getLayout: GetLayout =
+    (Component as unknown as { getLayout?: GetLayout }).getLayout ??
+    ((page) => page)
   const [isTelegramWebApp, setIsTelegramWebApp] = useState(false)
 
   // ALL hooks must sit above the conditional returns below. This component
@@ -158,8 +170,6 @@ const App = ({
     )
   }
 
-
-
   const appContent = (
     <>
       <Head metadata={pageProps.pageMeta} />
@@ -183,25 +193,31 @@ const App = ({
             full text while the app tree stays client-rendered and client-side
             navigation never remounts the providers. See CLAUDE.md. */}
         <Web3Providers>
-                <AppProvider>
-                  <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
-                      {isLoadingProfile ? (
-                        <Container maxW="container.xl">
-                          <Heading as="h2" size="xl" m="8" textAlign="center">
-                            {t('Loading Explorer Profile')}
-                          </Heading>
-                          <Image
-                            margin="auto"
-                            paddingTop="200px"
-                            width="250px"
-                            src="/loading_purple.svg"
-                          />
-                        </Container>
-                      ) : (
-                        <Component {...pageProps} />
-                      )}
-                  </Layout>
-                </AppProvider>
+          <AppProvider>
+            <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
+              {/* getLayout wraps the loading state too, so tapping
+                        Profile keeps the chrome mounted instead of tearing it
+                        down and rebuilding it once the profile resolves. */}
+              {getLayout(
+                isLoadingProfile ? (
+                  <Container maxW="container.xl">
+                    <Heading as="h2" size="xl" m="8" textAlign="center">
+                      {t('Loading Explorer Profile')}
+                    </Heading>
+                    <Image
+                      margin="auto"
+                      paddingTop="200px"
+                      width="250px"
+                      src="/loading_purple.svg"
+                    />
+                  </Container>
+                ) : (
+                  <Component {...pageProps} />
+                ),
+                pageProps
+              )}
+            </Layout>
+          </AppProvider>
         </Web3Providers>
         {/* Server-rendered SEO surfaces. Lessons: hero + full article
             (LessonSeoBlock). Glossary/homepage/listings: their crawlable

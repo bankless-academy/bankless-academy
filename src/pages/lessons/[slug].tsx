@@ -365,30 +365,38 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   return (
     <>
       {lesson.isArticle ? (
-        <Layout page="ARTICLE">
-          <Article lesson={lesson} />
-        </Layout>
+        <Article lesson={lesson} />
       ) : (
-        <Layout page="LESSON-DETAIL" isLessonOpen={isLessonOpen}>
-          <>
-            <Container
-              maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
-              px={isSmallScreen ? '8px' : isLessonOpen ? '24px' : '0'}
-              minH={
-                isMediumScreen
-                  ? `calc(100vh - 146px${hideNavBar ? ' + 65px' : ''})`
-                  : 'default'
-              }
-              pb={isSmallScreen ? '0' : isLessonOpen ? '8px' : '0'}
-            >
-              <LessonDetail key={lesson.slug} lesson={lesson} />
-            </Container>
-            {readingPanel}
-          </>
-        </Layout>
+        <>
+          <Container
+            maxW={isSmallScreen && isLessonOpen ? '100vw' : 'container.xl'}
+            px={isSmallScreen ? '8px' : isLessonOpen ? '24px' : '0'}
+            minH={
+              isMediumScreen
+                ? `calc(100vh - 146px${hideNavBar ? ' + 65px' : ''})`
+                : 'default'
+            }
+            pb={isSmallScreen ? '0' : isLessonOpen ? '8px' : '0'}
+          >
+            <LessonDetail key={lesson.slug} lesson={lesson} />
+          </Container>
+          {readingPanel}
+        </>
       )}
     </>
   )
 }
+
+// PageLayout is attached here, not rendered inside the page - see _app.tsx.
+// `lessonSlug` rather than a computed isLessonOpen: this runs outside any
+// component, so Layout derives the flag from openLessons itself.
+LessonPage.getLayout = (page: JSX.Element, pageProps: any): JSX.Element => (
+  <Layout
+    page={pageProps?.pageMeta?.lesson?.isArticle ? 'ARTICLE' : 'LESSON-DETAIL'}
+    lessonSlug={pageProps?.pageMeta?.lesson?.slug}
+  >
+    {page}
+  </Layout>
+)
 
 export default LessonPage

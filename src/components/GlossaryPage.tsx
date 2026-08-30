@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import Layout from 'layout/Layout'
 import Glossary from 'components/Glossary'
 import { KEYWORDS } from 'constants/index'
 import { LanguageCode, applyDocumentLanguage } from 'constants/languages'
@@ -53,11 +52,9 @@ const GlossaryPage = ({
       })
     )
 
-  return (
-    <Layout page="GLOSSARY">
-      <Glossary terms={terms} />
-    </Layout>
-  )
+  // No <Layout> here: the chrome is attached by the page's getLayout so it
+  // survives navigation (see _app.tsx).
+  return <Glossary terms={terms} />
 }
 
 export default GlossaryPage

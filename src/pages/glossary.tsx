@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next'
 
 import { MetaData } from 'components/Head'
 import GlossaryPage from 'components/GlossaryPage'
+import Layout from 'layout/Layout'
 import { LANGUAGES, LanguageCode } from 'constants/languages'
 import i18next from 'i18next'
 import 'utils/translation'
@@ -62,10 +63,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return { props: { pageMeta, lang } }
 }
 
-export default function Glossary({
-  lang,
-}: {
-  lang?: LanguageCode
-}): JSX.Element {
+function Glossary({ lang }: { lang?: LanguageCode }): JSX.Element {
   return <GlossaryPage lang={lang} />
 }
+
+// PageLayout is attached here, not rendered inside the page - see _app.tsx.
+Glossary.getLayout = (page: JSX.Element): JSX.Element => (
+  <Layout page="GLOSSARY">{page}</Layout>
+)
+
+export default Glossary

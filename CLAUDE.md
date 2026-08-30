@@ -1045,6 +1045,21 @@ Traps:
 - **Two different components are called `Layout`**: `layout/index.tsx` (Nav +
   background wrapper) and `layout/Layout.tsx` (595 lines, `PageLayout`, calls
   wallet hooks). Importing the wrong one is easy and the failure is confusing.
+- **`PageLayout` is attached via `getLayout`, NEVER rendered inside a page.**
+  `layout/index.tsx` sits above `<Component>` in `_app`, so Nav survives
+  navigation; `layout/Layout.tsx` used to be rendered *by each page*, which put
+  it under `<Component>` and rebuilt it on every route change. Measured: the
+  mobile bottom bar's avatar `<img>` node was destroyed and recreated on each
+  tap (and `/api/deployment` refired, and its 60s interval was recreated),
+  which is why the ENS avatar flickered on mobile while the wallet avatar in
+  Nav never did. The seven pages that need the chrome now do
+  `Page.getLayout = (page) => <Layout page="X">{page}</Layout>`, and `_app`
+  applies it around `<Component>` (including the explorer loading state).
+  **Every getLayout must return `Layout` as its ROOT element type** — a
+  different wrapper component at that position reintroduces the unmount for
+  navigations to/from that page. That is why the lesson page passes
+  `lessonSlug` and `Layout` derives `isLessonOpen` from `openLessons` itself,
+  instead of a wrapper component calling `useApp()`.
 - **`entities/lesson.ts` imports a type from `components/Quest/QuestComponent`**
   — the only entity that depends on a component. `LessonType` also marks
   `languages`, `slides`, `quest` and `rightAnswerNumber` optional even though a

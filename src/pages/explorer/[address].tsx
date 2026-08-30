@@ -3,6 +3,7 @@ import { MetaData } from 'components/Head'
 import { shortenAddress } from 'utils/index'
 import { DOMAIN_URL } from 'constants/index'
 import ExplorerProfile from 'components/ExplorerProfile'
+import Layout from 'layout/Layout'
 
 const getServerSidePropsImpl = async ({ query }: any) => {
   const { address, badge } = query
@@ -32,7 +33,7 @@ const getServerSidePropsImpl = async ({ query }: any) => {
   return { props: { ...data, pageMeta } }
 }
 
-export default function ExplorerPage({
+function ExplorerPage({
   profileAddress,
   badgeToHighlight,
   preloadError,
@@ -49,6 +50,13 @@ export default function ExplorerPage({
     />
   )
 }
+
+// PageLayout is attached here, not rendered inside the page - see _app.tsx.
+ExplorerPage.getLayout = (page: JSX.Element): JSX.Element => (
+  <Layout page="PROFILE">{page}</Layout>
+)
+
+export default ExplorerPage
 
 export const getServerSideProps = withSsrTiming(
   '/explorer/[address]',

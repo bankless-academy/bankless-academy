@@ -166,11 +166,18 @@ const MobileButton = ({
 const Layout = ({
   children,
   page,
-  isLessonOpen,
+  isLessonOpen: isLessonOpenProp,
+  lessonSlug,
 }: {
   children: ReactElement
   page?: PageType
   isLessonOpen?: boolean
+  // The lesson page passes its slug instead of a computed flag, because its
+  // <Layout> is built in getLayout (see _app.tsx), outside any component that
+  // could call useApp(). EVERY page's getLayout must return this same
+  // component type at the same position, or React unmounts the chrome on
+  // navigation — which is the whole bug this indirection exists to avoid.
+  lessonSlug?: string
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { address } = useAccount()
@@ -183,7 +190,10 @@ const Layout = ({
   const { scrollY } = useWindowScrollPositions()
   const addressLower = address?.toLowerCase()
   const [pwa] = useLocalStorage('pwa', false)
-  const { hideNavBar } = useApp()
+  const { hideNavBar, openLessons } = useApp()
+  const isLessonOpen =
+    isLessonOpenProp ??
+    (lessonSlug ? openLessons.includes(lessonSlug) : undefined)
   const username = address
     ? addressLower in nameCache &&
       nameCache[addressLower]?.name?.includes('.eth')

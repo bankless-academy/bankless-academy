@@ -18,11 +18,12 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 }
 
 function Lessons(): JSX.Element {
-  return (
-    <Layout page="HANDBOOK">
-      <LessonCards lessonType="HANDBOOK" />
-    </Layout>
-  )
+  return <LessonCards lessonType="HANDBOOK" />
 }
+
+// PageLayout is attached here, not rendered inside the page - see _app.tsx.
+Lessons.getLayout = (page: JSX.Element): JSX.Element => (
+  <Layout page="HANDBOOK">{page}</Layout>
+)
 
 export default Lessons
