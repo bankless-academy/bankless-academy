@@ -217,6 +217,30 @@ const Layout = ({
   )
   const [latestDeploymentId, setLatestDeploymentId] = useState(appDeploymentId)
 
+  // The update nudge exists ONLY for standalone/PWA mode, where there is no
+  // address bar and a reader cannot refresh a stale build themselves. In a
+  // normal tab — desktop OR mobile — they can, so we neither poll nor render
+  // it: the banner REPLACES the mobile bottom bar, so showing it in a mobile
+  // browser costs a reader their navigation for no reason.
+  // Deliberately NOT the `pwa` localStorage flag: that one is set from the
+  // manifest's `?webapp=true` start_url and never cleared, so after one launch
+  // of the installed app every normal tab on that device reports true. This
+  // reads the live display mode instead (`navigator.standalone` is the iOS
+  // legacy signal).
+  const [isStandalone, setIsStandalone] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(display-mode: standalone)')
+    const read = () =>
+      setIsStandalone(
+        mq.matches ||
+          (window.navigator as unknown as { standalone?: boolean })
+            .standalone === true
+      )
+    read()
+    mq.addEventListener('change', read)
+    return () => mq.removeEventListener('change', read)
+  }, [])
+
   async function openModal() {
     await open({ view: 'Connect' })
   }
@@ -231,6 +255,11 @@ const Layout = ({
   const profileHeight = community ? '309px' : '268px'
 
   useEffect(() => {
+    // Nothing to nudge about outside standalone: skipping this also stops a
+    // /api/deployment poll every 60s for every desktop and mobile-browser
+    // reader, none of whom can ever see the banner.
+    if (!isStandalone) return
+
     const fetchDeploymentId = async (loadType: string) => {
       try {
         const res = await fetch('/api/deployment')
@@ -257,21 +286,34 @@ const Layout = ({
     // on first load, fetch the deployment id
     fetchDeploymentId('first-load')
 
-    // Add visibility change listener
+    // Re-check the moment the app comes back to the foreground. This is the
+    // case that matters: a PWA left in the background for days is exactly when
+    // the running build is most likely to be stale, and the 60s interval is
+    // suspended while backgrounded.
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
         fetchDeploymentId('interval-load')
       }
     }
+    // visibilitychange does not reliably fire on a bfcache restore (iOS in
+    // particular); pageshow with persisted=true is the signal that does.
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) fetchDeploymentId('interval-load')
+    }
     document.addEventListener('visibilitychange', handleVisibilityChange)
+    window.addEventListener('pageshow', handlePageShow)
 
     return () => {
       clearInterval(interval)
       document.removeEventListener('visibilitychange', handleVisibilityChange)
+      window.removeEventListener('pageshow', handlePageShow)
     }
-  }, [appDeploymentId])
+  }, [appDeploymentId, isStandalone])
 
+  // isStandalone is redundant with the effect above (nothing polls otherwise),
+  // but stated here so the render condition carries the rule on its own.
   const newVersionAvailable =
+    isStandalone &&
     latestDeploymentId &&
     latestDeploymentId !== '' &&
     latestDeploymentId !== appDeploymentId

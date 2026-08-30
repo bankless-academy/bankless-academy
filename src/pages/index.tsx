@@ -618,8 +618,10 @@ const HomePage = (): JSX.Element => {
 // PageLayout is attached here, not rendered inside the page - see _app.tsx.
 // Whitelabel keeps its own chrome: that branch renders no PageLayout today,
 // and IS_WHITELABEL is a build constant, so this never changes at runtime.
-HomePage.getLayout = (page: JSX.Element): JSX.Element =>
-  IS_WHITELABEL ? page : <Layout page="INDEX">{page}</Layout>
+HomePage.getLayout = (page: JSX.Element): JSX.Element => {
+  if (IS_WHITELABEL) return page
+  return <Layout page="INDEX">{page}</Layout>
+}
 
 // Crawlable link block for the homepage (the page itself is client-rendered:
 // a crawler used to get zero links and zero text here) — served via _app's
