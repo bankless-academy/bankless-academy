@@ -636,8 +636,11 @@ export const getStaticProps = async ({ locale }: { locale?: string }) => {
   // renders JS. Lesson pages and /glossary keep theirs, where the block IS
   // real content and (on lessons) LessonHero makes the wait look intentional.
   const lang = locale || 'en'
+  // The one place the Organization node (with its sameAs profiles) and the
+  // WebSite node are emitted; lesson and glossary JSON-LD reference it by @id.
+  const { siteJsonLd } = await import('utils/seoContent')
   return {
-    props: { pageMeta: { lang } },
+    props: { pageMeta: { lang, jsonLd: siteJsonLd(lang) } },
   }
 }
 

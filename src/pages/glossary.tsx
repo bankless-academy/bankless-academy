@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next'
 import { MetaData } from 'components/Head'
 import GlossaryPage from 'components/GlossaryPage'
 import Layout from 'layout/Layout'
+import { DOMAIN_URL_ } from 'constants/index'
 import { LANGUAGES, LanguageCode } from 'constants/languages'
 import i18next from 'i18next'
 import 'utils/translation'
@@ -17,13 +18,16 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   // The interactive glossary is client-rendered, so the crawlable body is
   // built here and served via _app's SeoContentBlock (unmounts when the app
   // arrives). Same entries the app shows, with stable per-term anchors.
-  const { glossarySeoHtml } = await import('utils/seoContent')
+  const { glossarySeoHtml, glossaryJsonLd } = await import('utils/seoContent')
   const seoHtml = glossarySeoHtml(lang)
+  // Same entries as the body, typed as a DefinedTermSet for answer engines.
+  const pageUrl = `${DOMAIN_URL_}${lang === 'en' ? '' : `/${lang}`}/glossary`
   if (lang === 'en') {
     const pageMeta: MetaData = {
       title: 'Glossary',
       seoTitle: 'Glossary',
       seoHtml,
+      jsonLd: glossaryJsonLd(lang, pageUrl, 'Glossary'),
       lang,
     }
     return { props: { pageMeta } }
@@ -55,6 +59,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     title,
     seoTitle: title,
     seoHtml,
+    jsonLd: glossaryJsonLd(lang, pageUrl, title),
     lang,
     // NOTE: description still falls back to the English default. Translating
     // it needs a new key in all locales, which is a content task rather

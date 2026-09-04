@@ -136,6 +136,9 @@ const LessonSeoArticle = ({
   lesson,
   alwaysExpanded,
   inApp,
+  updatedLabel,
+  lastmod,
+  lastmodText,
 }: {
   articleHtml: string
   headings: ArticleHeading[]
@@ -144,6 +147,12 @@ const LessonSeoArticle = ({
   contentsLabel: string
   startLessonLabel: string
   lesson?: LessonType
+  /** "Updated" in the page language, and the file's git date (ISO) with its
+   * build-time formatted form. Formatted server-side on purpose: see
+   * formatLastmod in utils/lessonContentPage.ts. */
+  updatedLabel?: string
+  lastmod?: string
+  lastmodText?: string
   /** Handbooks: the article IS the page content, shown only until the
    * interactive app mounts — render it open, with no collapse affordance. */
   alwaysExpanded?: boolean
@@ -220,6 +229,7 @@ const LessonSeoArticle = ({
               as={alwaysExpanded ? 'div' : 'summary'}
               cursor={alwaysExpanded ? 'default' : 'pointer'}
               display="flex"
+              flexWrap="wrap"
               alignItems="center"
               gap={3}
               px={{ base: 5, md: 7 }}
@@ -253,81 +263,96 @@ const LessonSeoArticle = ({
                 </Box>
               )}
               {contentsLabel}
+              {/* Mobile: its own line under the title (sharing the row made
+                  "Lesson Content" wrap); desktop: pushed to the row's end. */}
+              {lastmod && (
+                <Box
+                  as="span"
+                  flexBasis={{ base: '100%', md: 'auto' }}
+                  ms={{ base: 0, md: 'auto' }}
+                  ps={{ base: alwaysExpanded ? 0 : '28px', md: 0 }}
+                  fontSize="0.8rem"
+                  fontWeight="400"
+                  lineHeight="1.2"
+                  textAlign={{ base: 'start', md: 'end' }}
+                  opacity={0.7}
+                >
+                  {updatedLabel ? `${updatedLabel} ` : ''}
+                  <time dateTime={lastmod}>{lastmodText || lastmod}</time>
+                </Box>
+              )}
             </Box>
             <Box px={{ base: 5, md: 7 }} pb={{ base: 6, md: 8 }}>
-            {/* "read this in another language" — most useful right where a
+              {/* "read this in another language" — most useful right where a
                 reader decides to read; crawlable either way */}
-            {languageLinks.length > 1 && (
-              <Box mt={6} display="flex" flexWrap="wrap" gap={2}>
-                {languageLinks.map((l) =>
-                  l.code === lang ? (
-                    <Box
-                      key={l.code}
-                      px={3}
-                      py={1}
-                      borderRadius="6px"
-                      fontSize="0.85rem"
-                      bg="#3f3154"
-                      fontWeight="600"
-                    >
-                      {l.label}
-                    </Box>
-                  ) : (
-                    // href stays un-prefixed; the locale prop adds the prefix
-                    // (a pre-prefixed href would get the current locale
-                    // prepended again)
-                    <NextLink
-                      key={l.code}
-                      href={`/lessons/${lesson.slug}`}
-                      locale={l.code}
-                      passHref
-                      legacyBehavior
-                    >
-                      <ChakraLink
+              {languageLinks.length > 1 && (
+                <Box mt={6} display="flex" flexWrap="wrap" gap={2}>
+                  {languageLinks.map((l) =>
+                    l.code === lang ? (
+                      <Box
+                        key={l.code}
                         px={3}
                         py={1}
                         borderRadius="6px"
                         fontSize="0.85rem"
-                        border="1px solid #3f3154"
-                        _hover={{ textDecoration: 'none', bg: '#3f3154' }}
-                        // Clicking a chip is a deliberate language choice, so
-                        // record it BEFORE navigating — like the nav selector
-                        // does. Without this, picking English navigated to the
-                        // en URL and AppContext instantly bounced back to the
-                        // stored preference (the auto-replace doing its job).
-                        onClick={() => writePreferredLanguage(l.code)}
+                        bg="#3f3154"
+                        fontWeight="600"
                       >
                         {l.label}
-                      </ChakraLink>
-                    </NextLink>
-                  )
-                )}
-              </Box>
-            )}
-            {headings.length > 2 && (
-              <Box
-                as="nav"
-                aria-label={contentsLabel}
-                mt={6}
-                p={5}
-                borderRadius="10px"
-                bg="rgba(255,255,255,.04)"
-              >
-                <Box as="ol" ps={5} sx={{ li: { margin: '.3rem 0' } }}>
-                  {headings.map((h) => (
-                    <li key={h.id}>
-                      <ChakraLink href={`#${h.id}`} color="#b85ff1">
-                        {h.text}
-                      </ChakraLink>
-                    </li>
-                  ))}
+                      </Box>
+                    ) : (
+                      // href stays un-prefixed; the locale prop adds the prefix
+                      // (a pre-prefixed href would get the current locale
+                      // prepended again)
+                      <NextLink
+                        key={l.code}
+                        href={`/lessons/${lesson.slug}`}
+                        locale={l.code}
+                        passHref
+                        legacyBehavior
+                      >
+                        <ChakraLink
+                          px={3}
+                          py={1}
+                          borderRadius="6px"
+                          fontSize="0.85rem"
+                          border="1px solid #3f3154"
+                          _hover={{ textDecoration: 'none', bg: '#3f3154' }}
+                          // Clicking a chip is a deliberate language choice, so
+                          // record it BEFORE navigating — like the nav selector
+                          // does. Without this, picking English navigated to the
+                          // en URL and AppContext instantly bounced back to the
+                          // stored preference (the auto-replace doing its job).
+                          onClick={() => writePreferredLanguage(l.code)}
+                        >
+                          {l.label}
+                        </ChakraLink>
+                      </NextLink>
+                    )
+                  )}
                 </Box>
-              </Box>
-            )}
-              <Prose
-                mt={6}
-                dangerouslySetInnerHTML={{ __html: articleHtml }}
-              />
+              )}
+              {headings.length > 2 && (
+                <Box
+                  as="nav"
+                  aria-label={contentsLabel}
+                  mt={6}
+                  p={5}
+                  borderRadius="10px"
+                  bg="rgba(255,255,255,.04)"
+                >
+                  <Box as="ol" ps={5} sx={{ li: { margin: '.3rem 0' } }}>
+                    {headings.map((h) => (
+                      <li key={h.id}>
+                        <ChakraLink href={`#${h.id}`} color="#b85ff1">
+                          {h.text}
+                        </ChakraLink>
+                      </li>
+                    ))}
+                  </Box>
+                </Box>
+              )}
+              <Prose mt={6} dangerouslySetInnerHTML={{ __html: articleHtml }} />
               {/* CTA for readers who reached the end of the text — the one
                   place a Start Lesson button earns its keep here */}
               <Box mt={10} textAlign="center">

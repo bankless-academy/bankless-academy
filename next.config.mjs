@@ -53,7 +53,39 @@ const nextConfig = {
   // browser for a year with no way to bust it. A day of freshness plus
   // stale-while-revalidate gets almost all the benefit and stays correctable.
   async headers() {
+    // Link headers (RFC 8288) announce the markdown mirror of a page, and the
+    // llms.txt index on the homepage, so an agent finds them without parsing
+    // HTML. Header rules are cumulative and for one key the LAST match wins,
+    // so the locale-prefixed rules (explicit `:lang`, `locale: false`) come
+    // AFTER the generic ones: the generic auto-locale source also matches
+    // /fr/... but cannot carry the prefix into its value. The lesson pattern
+    // excludes the two listing pages that share the /lessons/ prefix.
+    const LESSON_SLUG = ':slug((?!handbook$|preview$)[^/]+)'
+    const link = (href, rel) => [
+      { key: 'Link', value: `<${href}>; rel="${rel}"; type="text/markdown"` },
+    ]
     return [
+      { source: '/', headers: link('/llms.txt', 'describedby') },
+      {
+        source: `/${LANG_GROUP}`,
+        headers: link('/:lang/llms.txt', 'describedby'),
+        locale: false,
+      },
+      {
+        source: `/lessons/${LESSON_SLUG}`,
+        headers: link('/lessons/:slug.md', 'alternate'),
+      },
+      {
+        source: `/${LANG_GROUP}/lessons/${LESSON_SLUG}`,
+        headers: link('/:lang/lessons/:slug.md', 'alternate'),
+        locale: false,
+      },
+      { source: '/glossary', headers: link('/glossary.md', 'alternate') },
+      {
+        source: `/${LANG_GROUP}/glossary`,
+        headers: link('/:lang/glossary.md', 'alternate'),
+        locale: false,
+      },
       {
         source: '/images/:path*',
         headers: [
@@ -202,7 +234,44 @@ const nextConfig = {
       // next.config rewrites apply automatic locale handling and match
       // correctly. vercel.json keeps only headers and crons.
       afterFiles: [
-        { source: '/llms.txt', destination: '/api/agent' },
+        // Agent-facing mirrors (2026-09-04): the source markdown behind every
+        // page URL plus `.md`, the llms.txt index and llms-full.txt per
+        // language, the glossary as markdown. The locale-prefixed rules carry
+        // an explicit `:lang` group with `locale: false` and come FIRST: with
+        // automatic locale handling Next prepends `/:nextInternalLocale` to
+        // the DESTINATION as well, API routes are not localized, so
+        // `/fr/lessons/x.md` would have served the ENGLISH markdown. The
+        // un-prefixed English rules use automatic handling (a `locale: false`
+        // source never matches a default-locale path — see redirects()).
+        {
+          source: `/${LANG_GROUP}/lessons/:slug.md`,
+          destination: '/api/lesson-content/:lang/:slug',
+          locale: false,
+        },
+        {
+          source: '/lessons/:slug.md',
+          destination: '/api/lesson-content/:slug',
+        },
+        {
+          source: `/${LANG_GROUP}/glossary.md`,
+          destination: '/api/glossary-content/:lang',
+          locale: false,
+        },
+        { source: '/glossary.md', destination: '/api/glossary-content' },
+        {
+          source: `/${LANG_GROUP}/llms.txt`,
+          destination: '/api/llms?lang=:lang',
+          locale: false,
+        },
+        { source: '/llms.txt', destination: '/api/llms' },
+        {
+          source: `/${LANG_GROUP}/llms-full.txt`,
+          destination: '/api/llms-full?lang=:lang',
+          locale: false,
+        },
+        { source: '/llms-full.txt', destination: '/api/llms-full' },
+        // The README (brand voice, AI content guidelines) stays here; the
+        // generated index above links to it under Optional.
         { source: '/agent.txt', destination: '/api/agent' },
         { source: '/sitemap.xml', destination: '/api/sitemap' },
         { source: '/rss.xml', destination: '/api/rss' },
@@ -222,8 +291,14 @@ const nextConfig = {
           source: '/mp/lib.js',
           destination: 'https://cdn.mxpnl.com/libs/mixpanel-2-latest.js',
         },
-        { source: '/mp/decide', destination: 'https://decide.mixpanel.com/decide' },
-        { source: '/mp/:slug', destination: 'https://api-eu.mixpanel.com/:slug' },
+        {
+          source: '/mp/decide',
+          destination: 'https://decide.mixpanel.com/decide',
+        },
+        {
+          source: '/mp/:slug',
+          destination: 'https://api-eu.mixpanel.com/:slug',
+        },
         { source: '/lesson/images/:slug', destination: '/images/:slug' },
       ],
       fallback: [
@@ -240,7 +315,8 @@ const nextConfig = {
   },
 }
 
-const SENTRY_ENABLED = process.env.NEXT_PUBLIC_SENTRY_ENABLED === 'true' || false
+const SENTRY_ENABLED =
+  process.env.NEXT_PUBLIC_SENTRY_ENABLED === 'true' || false
 
 const sentryConfig = {
   org: 'bankless-academy',
@@ -254,4 +330,6 @@ const sentryConfig = {
   automaticVercelMonitors: false,
 }
 
-export default SENTRY_ENABLED ? withSentryConfig(nextConfig, sentryConfig) : nextConfig
+export default SENTRY_ENABLED
+  ? withSentryConfig(nextConfig, sentryConfig)
+  : nextConfig

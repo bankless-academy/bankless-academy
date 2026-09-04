@@ -222,19 +222,39 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   // lesson URL itself carries the prose for crawlers (the slideshow mounts
   // only the current slide, client-side). Deprecated lessons stay island-only:
   // server-rendering their prose would newly expose unmaintained material.
-  const { buildLessonArticleProps } = await import('utils/lessonContentPage')
-  const { articleJsonLd } = await import('utils/lessonContent')
+  const { buildLessonArticleProps, lessonLastmod } = await import(
+    'utils/lessonContentPage'
+  )
+  const { lessonJsonLd } = await import('utils/lessonContent')
   const article =
     currentLesson.publicationStatus === 'deprecated'
       ? null
       : buildLessonArticleProps(language, slug)
-  const jsonLd = articleJsonLd(
+  const abs = (p: string) =>
+    `https://app.banklessacademy.com${localePath(language, p)}`
+  // Deprecated lessons have no article; their date still comes from the file.
+  const lastmod =
+    article?.lastmod ||
+    lessonLastmod(language, slug) ||
+    lessonLastmod('en', slug)
+  const jsonLd = lessonJsonLd(
     currentLesson,
-    `https://app.banklessacademy.com${localePath(
-      language,
-      `/lessons/${slug}`
-    )}`,
-    language
+    abs(`/lessons/${slug}`),
+    language,
+    {
+      name: article?.name,
+      description: article?.description,
+      dateModified: lastmod,
+      englishUrl: `https://app.banklessacademy.com/lessons/${slug}`,
+      homeUrl: abs('/'),
+      homeName: 'Bankless Academy',
+      listing: {
+        url: abs(currentLesson.isArticle ? '/lessons/handbook' : '/lessons'),
+        name:
+          article?.listingLabel ||
+          (currentLesson.isArticle ? 'Handbooks' : 'Lessons'),
+      },
+    }
   )
 
   const pageMeta: MetaData = {
@@ -254,7 +274,10 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     strings: {
       contents: article?.contentsLabel || '',
       startLesson: article?.startLessonLabel || 'Start Lesson',
+      updated: article?.updatedLabel || 'Updated',
+      updatedDate: article?.updatedDate || '',
     },
+    lastmod: article?.lastmod || null,
     jsonLd,
     // Deprecated lessons are excluded from listings, rss and the sitemap, but
     // stay reachable by direct URL; noindex keeps the unmaintained material
@@ -357,6 +380,9 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
         dir={isRtlLang(lang) ? 'rtl' : 'ltr'}
         contentsLabel={pageMeta.strings?.contents || ''}
         startLessonLabel={pageMeta.strings?.startLesson || 'Start Lesson'}
+        updatedLabel={pageMeta.strings?.updated}
+        lastmod={pageMeta.lastmod || undefined}
+        lastmodText={pageMeta.strings?.updatedDate}
         lesson={lesson}
         inApp
       />

@@ -42,8 +42,11 @@ export interface MetaData {
   headings?: { id: string; text: string }[]
   /** Build-time UI strings for the article section (rendered outside i18next). */
   strings?: { [key: string]: string }
-  /** Serialized JSON-LD for the page (built in getStaticProps). */
+  /** Serialized JSON-LD for the page (built in getStaticProps), rendered
+   * in <head> for every page type. */
   jsonLd?: string
+  /** Git date (ISO) of the lesson file this page renders — see .lastmod.json. */
+  lastmod?: string | null
   /** Server-rendered crawlable content for client-rendered pages (glossary
    * body, listing link blocks) — rendered by _app's SeoContentBlock, which
    * unmounts when the app arrives. */
@@ -100,6 +103,18 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         })),
       ]
     : []
+  // The Markdown mirror of this page for agents: the same URL with `.md`,
+  // served from the source markdown by next.config rewrites (lessons and the
+  // glossary; the homepage's counterpart is /llms.txt, announced by a Link
+  // header from next.config instead).
+  const markdownAlternate = alternateSlug
+    ? `${DOMAIN_URL_}${localePath(
+        router.locale || 'en',
+        `/lessons/${alternateSlug}.md`
+      )}`
+    : isGlossary
+    ? `${DOMAIN_URL_}${localePath(router.locale || 'en', '/glossary.md')}`
+    : null
   const image = metadata?.image
     ? metadata?.image.startsWith('http')
       ? `${metadata?.image}`
@@ -252,6 +267,16 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
             href={a.href}
           />
         ))}
+        {markdownAlternate && (
+          <link rel="alternate" type="text/markdown" href={markdownAlternate} />
+        )}
+        {metadata?.jsonLd && (
+          <script
+            key="jsonld"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: metadata.jsonLd }}
+          />
+        )}
         {/* Robot indexing: only index in production */}
         <meta
           name="robots"

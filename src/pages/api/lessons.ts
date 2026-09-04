@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { LESSONS, DOMAIN_URL_, LanguageDescription } from 'constants/index'
 import { LessonType, LanguageType } from 'entities/lesson'
+import { localePath } from 'constants/languages'
 
 type ContentType = 'LESSON' | 'HANDBOOK'
 
@@ -33,7 +34,10 @@ export default async function handler(
             )
             .map(
               (lang) =>
-                `[${LanguageDescription[lang]}](${DOMAIN_URL_}/lessons/${lang}/${lesson.slug})`
+                `[${LanguageDescription[lang]}](${DOMAIN_URL_}${localePath(
+                  lang,
+                  `/lessons/${lesson.slug}`
+                )})`
             )
 
           if (otherLangs.length > 0) {
@@ -63,21 +67,23 @@ export default async function handler(
           en: `${DOMAIN_URL_}/lessons/${lesson.slug}`,
         }
 
-        // Initialize rawContentFiles with English content
+        // Markdown mirrors (the source md, served as text/markdown)
         lesson.rawContentFiles = {
-          en: `${DOMAIN_URL_}/api/lesson-content/${lesson.slug}`,
+          en: `${DOMAIN_URL_}/lessons/${lesson.slug}.md`,
         }
 
         // Add language-specific links and raw content files if languages are specified
         if (lesson.languages?.length) {
           lesson.languages.forEach((lang: LanguageType) => {
             if (lang !== 'en') {
-              lesson.lessonLinks![
-                lang
-              ] = `${DOMAIN_URL_}/lessons/${lang}/${lesson.slug}`
-              lesson.rawContentFiles![
-                lang
-              ] = `${DOMAIN_URL_}/api/lesson-content/${lang}/${lesson.slug}`
+              lesson.lessonLinks![lang] = `${DOMAIN_URL_}${localePath(
+                lang,
+                `/lessons/${lesson.slug}`
+              )}`
+              lesson.rawContentFiles![lang] = `${DOMAIN_URL_}${localePath(
+                lang,
+                `/lessons/${lesson.slug}.md`
+              )}`
             }
           })
         }

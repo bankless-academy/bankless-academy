@@ -13,7 +13,9 @@
 // themselves (the mirrors 301 there now).
 import MarkdownIt from 'markdown-it'
 
+import { DOMAIN_URL_ } from 'constants/index'
 import { LessonType } from 'entities/lesson'
+import { organizationRef, serializeJsonLd } from 'utils/jsonLd'
 
 // Frontmatter + the ASCII banner sit above this marker. Everything above it is
 // metadata and decoration; none of it belongs in an article.
@@ -89,9 +91,7 @@ const headingId = (text: string, index: number): string => {
     .join('')
     .normalize('NFD')
     .replace(/\p{M}+/gu, '')
-  const slug = folded
-    .replace(/[^\p{L}\p{N}]+/gu, '-')
-    .replace(/^-|-$/g, '')
+  const slug = folded.replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '')
   return /^[a-z0-9-]+$/.test(slug) && slug ? slug : `section-${index + 1}`
 }
 
@@ -165,25 +165,87 @@ export const buildArticle = (
   return { html, headings }
 }
 
-/** JSON-LD so the page is understood as an article, not an app screen. */
-export const articleJsonLd = (
+/** JSON-LD so the page is understood as a learning resource, not an app
+ * screen: dates (publication from lesson-meta, modification from the
+ * git-derived .lastmod.json), authors, a breadcrumb trail, and for translations
+ * the English original it derives from. `name`/`description` default to the
+ * English lesson; pass the translated pair when the article has them. */
+export const lessonJsonLd = (
   lesson: LessonType,
   url: string,
-  lang: string
-): string =>
-  JSON.stringify({
-    '@context': 'https://schema.org',
+  lang: string,
+  extra: {
+    name?: string
+    description?: string
+    dateModified?: string
+    englishUrl: string
+    homeUrl: string
+    homeName: string
+    listing: { url: string; name: string }
+  }
+): string => {
+  const authors = (lesson.lessonWriters || '')
+    .split(/\s*,\s*/)
+    .filter(Boolean)
+    .map((name) => ({ '@type': 'Person', name }))
+  const image = lesson.socialImageLink
+    ? lesson.socialImageLink.startsWith('http')
+      ? lesson.socialImageLink
+      : `${DOMAIN_URL_}${lesson.socialImageLink}`
+    : undefined
+  const resource = {
     '@type': 'LearningResource',
-    name: lesson.name,
-    description: lesson.description,
+    '@id': url,
+    name: extra.name || lesson.name,
+    description: extra.description || lesson.description,
     inLanguage: lang,
     url,
     learningResourceType: lesson.isArticle ? 'Handbook' : 'Lesson',
     educationalLevel: 'Beginner',
     isAccessibleForFree: true,
-    provider: {
-      '@type': 'Organization',
-      name: 'Bankless Academy',
-      url: 'https://app.banklessacademy.com',
-    },
+    ...(lesson.duration ? { timeRequired: `PT${lesson.duration}M` } : {}),
+    ...(lesson.publicationDate
+      ? { datePublished: lesson.publicationDate }
+      : {}),
+    ...(extra.dateModified ? { dateModified: extra.dateModified } : {}),
+    ...(authors.length ? { author: authors } : {}),
+    ...(image ? { image } : {}),
+    ...(lesson.keywords?.length
+      ? { keywords: lesson.keywords.join(', ') }
+      : {}),
+    ...(lang !== 'en'
+      ? {
+          translationOfWork: {
+            '@type': 'LearningResource',
+            '@id': extra.englishUrl,
+            url: extra.englishUrl,
+            inLanguage: 'en',
+          },
+        }
+      : {}),
+    provider: organizationRef(),
+    publisher: organizationRef(),
+  }
+  const breadcrumbs = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: extra.homeName,
+        item: extra.homeUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: extra.listing.name,
+        item: extra.listing.url,
+      },
+      { '@type': 'ListItem', position: 3, name: extra.name || lesson.name },
+    ],
+  }
+  return serializeJsonLd({
+    '@context': 'https://schema.org',
+    '@graph': [resource, breadcrumbs],
   })
+}

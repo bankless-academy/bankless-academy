@@ -1,5 +1,6 @@
-// The server-rendered SEO surface of a lesson page: JSON-LD, a hero carrying
-// the <h1>, and the full quiz-stripped article. Rendered by _app.tsx's
+// The server-rendered SEO surface of a lesson page: a hero carrying the <h1>
+// and the full quiz-stripped article (the JSON-LD lives in <Head>, like every
+// other page's). Rendered by _app.tsx's
 // DEFAULT branch as a SIBLING of <Web3Providers> — that dynamic({ssr:false})
 // boundary renders nothing on the server, so anything that must reach a
 // crawler has to live outside it. The interactive app renders above this
@@ -41,12 +42,6 @@ const LessonSeoBlock = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
           AND below their box-shadows, giving the whole page one consistent
           base the glow can dissolve into. */}
       <Box position="fixed" inset={0} bg="#161515" zIndex={-1} />
-      {pageMeta.jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: pageMeta.jsonLd }}
-        />
-      )}
       {showHero && <LessonHero lesson={pageMeta.lesson} />}
       {/* The SEO copy of the article: the crawler surface and the readable
           page for direct loads before JS. It unmounts when the app arrives
@@ -63,6 +58,9 @@ const LessonSeoBlock = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
           dir={dir}
           contentsLabel={pageMeta.strings?.contents || ''}
           startLessonLabel={pageMeta.strings?.startLesson || 'Start Lesson'}
+          updatedLabel={pageMeta.strings?.updated}
+          lastmod={pageMeta.lastmod || undefined}
+          lastmodText={pageMeta.strings?.updatedDate}
           lesson={pageMeta.lesson}
           alwaysExpanded={!!pageMeta.lesson?.isArticle}
         />

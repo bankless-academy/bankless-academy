@@ -216,9 +216,12 @@ Incorrect:
 
 # AI-Friendly API Endpoints (Public)
 
+- Index: `https://app.banklessacademy.com/llms.txt` (llmstxt.org format; `/<lang>/llms.txt` per language) and `https://app.banklessacademy.com/llms-full.txt` (every lesson inlined; `/<lang>/llms-full.txt`)
+- Lesson Markdown: `https://app.banklessacademy.com/lessons/<slug>.md` (the source markdown as `text/markdown`; `/<lang>/lessons/<slug>.md` for translations). Every lesson page also sends it as `Link: <...md>; rel="alternate"`.
+- Glossary Markdown: `https://app.banklessacademy.com/glossary.md` (`/<lang>/glossary.md`)
 - Lessons and Handbooks: `https://app.banklessacademy.com/api/lessons` (detailed lesson data including slide content, quizzes, translations, and more. Lessons have `isArticle: false` or null, Handbooks have `isArticle: true`.)
 - Sitemap: `https://app.banklessacademy.com/sitemap.xml` (every lesson in every language, with `hreflang` alternates)
-- This document: `https://app.banklessacademy.com/llms.txt` (also served at `/agent.txt`)
+- This document: `https://app.banklessacademy.com/agent.txt`
 
 # Keywords for AI Search Optimization
 
@@ -249,8 +252,12 @@ AI Usage Notice: "Bankless Academy content is designed for educational purposes 
 
 # File Version
 
-Version: 1.1 (Last Updated: 2026-08-28)
+Version: 1.2 (Last Updated: 2026-09-04)
 
-This file is served publicly as `/llms.txt` and `/agent.txt`
-([src/pages/api/agent.ts](./src/pages/api/agent.ts)) — keep the lesson list and
-URL shapes accurate when content or routing changes.
+This file is served publicly as `/agent.txt`
+([src/pages/api/agent.ts](./src/pages/api/agent.ts)). The machine-readable
+index at `/llms.txt` (with `/llms-full.txt`, `/lessons/<slug>.md` and
+`/glossary.md`) is generated from the lesson registry by
+`src/utils/agentContent.ts`, so only this document's prose needs
+hand-maintenance — keep the lesson list and URL shapes above accurate when
+content or routing changes.

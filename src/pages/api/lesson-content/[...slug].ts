@@ -21,7 +21,11 @@ export default async function handler(
   const segments = ([] as string[]).concat(req.query.slug || [])
   const hasLang = segments.length > 1 && isLanguage(segments[0])
   const language = hasLang ? segments[0] : 'en'
-  const slug = (hasLang ? segments[1] : segments[0])?.replace(/\.md$/, '')
+  // `.md` is stripped for direct calls; the /lessons/<slug>.md rewrite already
+  // removed it. `-datadisk` is the collectible's page for the same lesson.
+  const slug = (hasLang ? segments[1] : segments[0])
+    ?.replace(/\.md$/, '')
+    .replace(/-datadisk$/, '')
 
   if (!slug || !LESSONS.some((lesson: LessonType) => lesson.slug === slug)) {
     return res.status(404).send('Lesson not found')

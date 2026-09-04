@@ -548,6 +548,33 @@ English too); see "i18n gotchas" for that and the rest.
   navigating.** The reading panel's chips navigated correctly and AppContext
   instantly `router.replace`d back — the stored-preference auto-replace doing
   its job. `writePreferredLanguage()` on click, exactly like the nav selector.
+- **Agent surfaces (2026-09-04)**, all generated from what ships, never
+  hand-maintained: `/llms.txt` (llmstxt.org index, `/<lang>/llms.txt` with
+  translated titles), `/llms-full.txt` (every lesson inlined, per language),
+  `/lessons/<slug>.md` + `/<lang>/lessons/<slug>.md` (the source markdown,
+  rewritten to `/api/lesson-content`), `/glossary.md`. Builders in
+  `utils/agentContent.ts`; `/agent.txt` is still the README (brand voice, AI
+  guidelines), linked from the index under Optional. robots.txt names the AI
+  crawlers and sends `Content-Signal: search=yes, ai-input=yes, ai-train=yes`
+  (Didier's call: MIT content, mission is reach). Re-verify with
+  `POST https://isitagentready.com/api/scan {"url":"https://app.banklessacademy.com"}`
+  (the site is client-rendered; the API is what works). Three traps:
+  (1) **rewrite destinations get the locale prefix too** under automatic
+  handling, and API routes are not localized, so `/fr/lessons/x.md` rewritten
+  by the bare `/lessons/:slug.md` rule served ENGLISH — the translated rules
+  carry an explicit `:lang` group with `locale: false` and come first;
+  (2) `headers()` rules are cumulative and the LAST match wins per key, so
+  the locale-prefixed `Link` rules must come AFTER the generic ones;
+  (3) anything an API route reads from disk at runtime needs a literal
+  `path.resolve('translation/...')` root or Vercel's tracer omits the files.
+  JSON-LD now renders in `Head.tsx` from `pageMeta.jsonLd` for every page:
+  Organization (+`sameAs`) and WebSite on `/` (`siteJsonLd`), DefinedTermSet
+  on the glossary, LearningResource + BreadcrumbList on lessons with
+  `datePublished` from lesson-meta and `dateModified` from `.lastmod.json`
+  (the sitemap's source, so they agree). The visible "Updated" date on lesson
+  pages is formatted at BUILD time in Node's ICU (`formatLastmod`): the SEO
+  copy hydrates, and client Intl output differing for a small locale would be
+  a text mismatch that makes React re-render the tree.
 - The sitemap is a real `<urlset>` with `<lastmod>` and hreflang alternates (it
   used to return `feed.rss2()`); `/api/sitemap` and the lesson pages read
   translated md from disk, never `raw.githubusercontent.com`.
@@ -864,8 +891,8 @@ un-prefixed URLs, so Google folds them. No safe cleanup mechanism found yet.
   `/terms-of-service` via `vercel.json` rewrites. Page IDs in
   `NOTION_PAGES` (`constants/index.ts`).
 - **vercel.json holds ONLY headers and crons.** All rewrites
-  (`/sitemap.xml`→`/api/sitemap`, `/rss.xml`→`/api/rss`, `/llms.txt` +
-  `/agent.txt`→`/api/agent`, the `/faq`-family Notion aliases, the Mixpanel
+  (`/sitemap.xml`→`/api/sitemap`, `/rss.xml`→`/api/rss`, the agent
+  surfaces below, the `/faq`-family Notion aliases, the Mixpanel
   `/mp/*` proxy, `/lesson/images/*`) live in `next.config.mjs` `afterFiles` —
   under i18n the platform's own matching breaks on un-prefixed sources (see
   the trap above), and next.config rewrites also work in local `next start`,
