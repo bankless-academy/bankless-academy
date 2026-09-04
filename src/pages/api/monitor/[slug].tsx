@@ -35,8 +35,8 @@ const validateExplorerData = (data: any): boolean => {
 
     // Check if all required values are present
     // Handle both string and number types (indexer may return strings)
-    const hasAllRequired = REQUIRED_EXPLORER_DATA[key].every((value) =>
-      data[key].includes(value) || data[key].includes(String(value))
+    const hasAllRequired = REQUIRED_EXPLORER_DATA[key].every(
+      (value) => data[key].includes(value) || data[key].includes(String(value))
     )
     if (!hasAllRequired) return false
   }
@@ -355,9 +355,11 @@ export default async function handler(
           }
         )
         if (!response.ok) {
+          const upstream = await response.text().catch(() => '')
           return res.status(400).json({
             success: false,
             error: 'Failed to fetch data from read-x',
+            upstream: { status: response.status, body: upstream.slice(0, 500) },
           })
         }
         data = await response.json()
