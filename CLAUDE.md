@@ -1351,6 +1351,23 @@ fixed-width furniture — that is what caught "Connect Wallet" overflowing the
   components call `useTranslation`. The only remaining `// TODO: TRANSLATE` is
   the DataDisk share text, deliberately kept in English.
 
+## bankless.ac short links (self-hosted since 2026-09-05)
+
+`bankless.ac/<slug>` is served by the `bankless-academy/redirect` repo (one Vercel
+function + `links.json`), not Bitly
+any more (plan downgraded; `bit.ly/*` links stay there). Clicks are Umami
+pageviews on the "bankless.ac" website (id in that repo), seeded with Bitly's
+last 126 days (2,804 clicks, tag `bitly-import`). Edit a link = edit
+`links.json` there and push. Umami-on-Vercel traps learned while building it,
+relevant to ANY server-side Umami send from this app too: an `ip` in the
+payload makes Umami open a MaxMind file its Vercel deployment does not ship
+(500); geo must travel as Cloudflare-style headers (`cf-ipcountry`,
+`cf-region-code`, `cf-ipcity`, `cf-connecting-ip`), which Vercel forwards and
+Umami checks before its own `x-vercel-ip-*` (those get overwritten with the
+sender's region); and Umami's "Reset" stamps `reset_at`, after which every
+query is clamped to that moment, so backdated imports must go into a fresh
+website, never a reset one.
+
 ## Still on Notion (via Potion API `https://potion.banklessacademy.com`)
 
 - Explore products DB (`8f2f600b38a44cbb98f7fd240686c27a`) → `api/get/explore`, cached in Vercel KV, refreshed by hitting `/api/cron/explore`. Product images are self-hosted in `public/explore/` and referenced as `https://app.banklessacademy.com/explore/<slug>.<ext>`.

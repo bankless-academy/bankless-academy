@@ -1,6 +1,6 @@
 # Translation wave — shared brief (any language)
 
-Repo: `/Users/dj/git/ba`. You are acting as the translation engine: there is no
+Repo: the `bankless-academy` checkout you were launched in; paths below are relative to its root. You are acting as the translation engine: there is no
 `ANTHROPIC_API_KEY`, so you write the target language yourself, to the same
 contract `translate-content.js` enforces. Your prompt names your language code
 (`<lang>`) and your scope.
