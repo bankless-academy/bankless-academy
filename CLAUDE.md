@@ -1301,7 +1301,11 @@ Navigation carries the locale automatically through `next/link` (so
 links whose lesson lacks the active language, since that localized URL would
 404). `ExternalLink` and other plain `<a>` builders use `localePath`.
 `LanguageSelector` switches language by pushing the same path with the new
-`{ locale }`.
+`{ locale }`. **Share links** (`LessonDetail`, `Badge`, `ExplorerProfile`)
+carry the language the same way: `/uk/start?lesson=…&referrer=…`. The older
+`/start?lesson=…&lang=ua` form was silently ignored after the migration
+(nothing read `lang`, so shared links opened in English); `/start` now 307s
+`?lang=`/`?lng=` (legacy codes included) into the prefixed URL.
 
 ### `validate-i18n.js` (runs in `yarn build`)
 

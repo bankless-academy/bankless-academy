@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Box, Button, useDisclosure, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 import { useAccount, useEnsName } from 'wagmi'
 import { ShareFat, ShootingStar } from '@phosphor-icons/react'
 import styled from '@emotion/styled'
@@ -10,6 +11,7 @@ import styled from '@emotion/styled'
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
 import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
+import { localePath, normalizeLangCode } from 'constants/languages'
 import { BADGE_OPENSEA_URL, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
@@ -33,7 +35,7 @@ const Badge = ({
   lesson: LessonType
   isQuestCompleted: boolean
 }): JSX.Element => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const toast = useToast()
   const [triggerOpen, setTriggerOpen] = useState(false)
   const [isBadgeMintedLS] = useLocalStorage(
@@ -56,8 +58,9 @@ const Badge = ({
     onClose: onShareClose,
   } = useDisclosure()
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
-  const langURL = i18n.language !== 'en' ? `${i18n.language}` : ''
-  const lang = langURL ? `&lng=${langURL}` : ''
+  // Language as the URL locale prefix (see LessonDetail's share link).
+  const router = useRouter()
+  const shareLocale = normalizeLangCode(router.locale)
   const locationOrigin =
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
   const referrer = `${
@@ -66,9 +69,9 @@ const Badge = ({
       : address || currentWallet
   }`
   const shareLink = IS_WHITELABEL
-    ? `${locationOrigin}/lessons/${lang}${lesson.slug}`
-    : `${locationOrigin}/start?badge=${lesson.badgeId}${
-        langURL ? `&lang=${langURL?.replace('/', '')}` : ''
+    ? `${locationOrigin}${localePath(shareLocale, `/lessons/${lesson.slug}`)}`
+    : `${locationOrigin}${localePath(shareLocale, '/start')}?badge=${
+        lesson.badgeId
       }${referrer ? `&referrer=${referrer}` : ''}`
 
   // TODO: TRANSLATE

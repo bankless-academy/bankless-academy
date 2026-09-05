@@ -11,9 +11,35 @@ import {
   MINI_APP_TITLE,
   MINI_APP_DESCRIPTION,
 } from 'constants/index'
+import { localePath, normalizeLangCode } from 'constants/languages'
 
 const getServerSidePropsImpl: GetServerSideProps = async ({ query }) => {
-  const { lesson, badge, referrer, r } = query
+  const { lesson, badge, referrer, r, lang, lng } = query
+
+  // Legacy share links carried the language as `?lang=` (older ones `?lng=`,
+  // some with pre-ISO codes such as `ua`). Since the locale-URL migration the
+  // language IS the URL prefix and AppContext records it from there; nothing
+  // read the parameter any more, so such links opened in English. Send the
+  // visitor to /<lang>/start with the same query minus the legacy key.
+  const requested =
+    typeof lang === 'string' ? lang : typeof lng === 'string' ? lng : null
+  if (requested !== null) {
+    const rest = new URLSearchParams()
+    for (const [key, value] of Object.entries(query)) {
+      if (key === 'lang' || key === 'lng') continue
+      for (const item of ([] as string[]).concat(value || []))
+        rest.append(key, item)
+    }
+    const qs = rest.toString()
+    return {
+      redirect: {
+        destination: `${localePath(normalizeLangCode(requested), '/start')}${
+          qs ? `?${qs}` : ''
+        }`,
+        permanent: false,
+      },
+    }
+  }
 
   const pageMeta: MetaData = {
     title: MINI_APP_TITLE,

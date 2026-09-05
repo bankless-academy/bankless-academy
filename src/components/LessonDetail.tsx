@@ -37,6 +37,7 @@ import {
   TOKEN_GATING_ENABLED,
   TWITTER_ACCOUNT,
 } from 'constants/index'
+import { localePath, normalizeLangCode } from 'constants/languages'
 import { useEffect } from 'react'
 import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
@@ -171,7 +172,10 @@ const LessonDetail = ({
     address: address,
     chainId: 1,
   })
-  const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
+  // The language travels as the URL locale prefix, the only thing the app
+  // reads since the locale-URL migration; /start 307s the old `?lang=` form
+  // into this shape.
+  const shareLocale = normalizeLangCode(router.locale)
   const referrer = `${
     typeof ensName === 'string' && ensName?.includes('.')
       ? ensName
@@ -179,9 +183,10 @@ const LessonDetail = ({
   }`
   const locationOrigin =
     typeof window !== 'undefined' ? `${window.location.origin}` : ''
-  const shareLink = `${locationOrigin}/start?lesson=${lesson.slug}${
-    langURL ? `&lang=${langURL?.replace('/', '')}` : ''
-  }${referrer ? `&referrer=${referrer}` : ''}`
+  const shareLink = `${locationOrigin}${localePath(
+    shareLocale,
+    '/start'
+  )}?lesson=${lesson.slug}${referrer ? `&referrer=${referrer}` : ''}`
 
   const shareMessage = `Learn about "${lesson.name}" on @${TWITTER_ACCOUNT} 🎉
 

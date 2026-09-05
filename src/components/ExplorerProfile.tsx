@@ -26,7 +26,8 @@ import { FollowersYouKnow } from 'ethereum-identity-kit'
 import Badges from 'components/Badges'
 import Card from 'components/Card'
 import { DEFAULT_AVATAR, MAX_COLLECTIBLES } from 'constants/index'
-import { localePath } from 'constants/languages'
+import { localePath, normalizeLangCode } from 'constants/languages'
+import { useApp } from 'contexts/AppContext'
 import { UserType } from 'entities/user'
 import {
   emailRegex,
@@ -89,6 +90,7 @@ const ExplorerProfile = ({
   const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
   const [isMobileScreen] = useMediaQuery(['(max-width: 800px)'])
   const router = useRouter()
+  const { language: uiLanguage } = useApp()
   const { referral, badge, lng } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
@@ -267,8 +269,13 @@ const ExplorerProfile = ({
     collectibles.push(user?.stats.handbooks[i])
   }
 
+  // Explorer pages are non-localized (bare URL, UI in the stored language), so
+  // the share link carries that language as the /start locale prefix.
   const shareLink = profileUrl
-    ?.replace('/explorer/', '/start?referrer=')
+    ?.replace(
+      '/explorer/',
+      `${localePath(normalizeLangCode(uiLanguage), '/start')}?referrer=`
+    )
     ?.replace('?referral=true', '&profile=true')
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 
