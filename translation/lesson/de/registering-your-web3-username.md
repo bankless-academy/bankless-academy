@@ -93,7 +93,7 @@ Der Ablauf ähnelt stark der Registrierung einer .com-Adresse bei GoDaddy oder N
 
 **1\. Erstelle eine Krypto-Wallet**
 
-Um deinen ENS-Namen zu kaufen und zu halten, brauchst du eine Wallet, falls du noch keine hast. Sieh dir unsere kurze Anleitung [„Eine Krypto-Wallet erstellen“](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet) an und erstelle deine Wallet in 5 Minuten.
+Um deinen ENS-Namen zu kaufen und zu halten, brauchst du eine Wallet, falls du noch keine hast. Sieh dir unsere kurze Anleitung [„Krypto-Wallet erstellen“](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet) an und erstelle deine Wallet in 5 Minuten.
 
 **2\. Sorge für ETH in deiner Wallet auf dem Ethereum Mainnet**
 

@@ -1,6 +1,6 @@
 ---
-TITLE: Создание криптокошелька
-DESCRIPTION: Создайте свой первый криптокошелёк по пошаговой инструкции.
+TITLE: Как создать криптокошелёк
+DESCRIPTION: Пошаговое руководство: как создать свой первый криптокошелёк.
 LANGUAGE: Русский
 WRITERS: Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)

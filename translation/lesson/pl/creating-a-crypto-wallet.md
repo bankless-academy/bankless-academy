@@ -1,6 +1,6 @@
 ---
-TITLE: Tworzenie portfela kryptowalutowego
-DESCRIPTION: Utwórz swój pierwszy portfel kryptowalutowy dzięki naszemu przewodnikowi krok po kroku.
+TITLE: Jak założyć portfel kryptowalut
+DESCRIPTION: Załóż swój pierwszy portfel kryptowalut: przewodnik krok po kroku.
 LANGUAGE: Polski
 WRITERS: Tetranome
 EDITORS: Claude (Anthropic AI, 2026 review)

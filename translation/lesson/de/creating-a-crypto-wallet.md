@@ -1,5 +1,5 @@
 ---
-TITLE: Eine Krypto-Wallet erstellen
+TITLE: Krypto-Wallet erstellen
 DESCRIPTION: Erstelle deine erste Krypto-Wallet mit unserer Schritt-für-Schritt-Anleitung.
 LANGUAGE: Deutsch
 WRITERS: Tetranome

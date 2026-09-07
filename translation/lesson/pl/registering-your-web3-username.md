@@ -93,7 +93,7 @@ Proces bardzo przypomina rejestrację adresu strony .com na platformie takiej ja
 
 **1\. Utwórz portfel kryptowalutowy**
 
-Aby kupić i trzymać nazwę ENS, potrzebujesz portfela. Jeśli jeszcze go nie masz, skorzystaj z naszego krótkiego przewodnika [„Tworzenie portfela kryptowalutowego”](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet) i utwórz portfel w 5 minut.
+Aby kupić i trzymać nazwę ENS, potrzebujesz portfela. Jeśli jeszcze go nie masz, skorzystaj z naszego krótkiego przewodnika [„Jak założyć portfel kryptowalut”](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet) i utwórz portfel w 5 minut.
 
 **2\. Zadbaj o ETH w portfelu w sieci głównej Ethereum**
 
