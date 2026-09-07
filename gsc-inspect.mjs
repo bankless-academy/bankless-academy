@@ -108,13 +108,17 @@ const inspect = async (token, url) => {
 const buildSample = async () => {
   const xml = await (await fetch('https://app.banklessacademy.com/sitemap.xml')).text()
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
+  // URL shapes since the locale-URL migration (2026-08-23): the language is a
+  // PREFIX (/fr/lessons/x, /fr/glossary), English is un-prefixed, and the
+  // /content mirrors are gone. Pre-migration shapes (/lessons/fr/x,
+  // /glossary/fr, .../content) still group, for inspecting old URLs.
   const groups = {
-    root: (u) => /banklessacademy\.com\/($|lessons$|glossary$|explore$|[a-z-]+$)/.test(u),
-    lesson_en: (u) => /\/lessons\/[a-z0-9-]+$/.test(u) && !/\/lessons\/(handbook)$/.test(u),
-    lesson_loc: (u) => /\/lessons\/[a-z-]{2,5}\/[a-z0-9-]+$/.test(u),
+    root: (u) => /banklessacademy\.com\/($|lessons$|lessons\/handbook$|glossary$|explore$|[a-z-]+$)/.test(u),
+    lesson_en: (u) => /banklessacademy\.com\/lessons\/[a-z0-9-]+$/.test(u) && !/\/lessons\/(handbook|preview)$/.test(u),
+    lesson_loc: (u) => /banklessacademy\.com\/[a-z-]{2,5}\/lessons\/[a-z0-9-]+$/.test(u) || /\/lessons\/[a-z-]{2,5}\/[a-z0-9-]+$/.test(u),
     content_en: (u) => /\/lessons\/[a-z0-9-]+\/content$/.test(u),
     content_loc: (u) => /\/lessons\/[a-z-]{2,5}\/[a-z0-9-]+\/content$/.test(u),
-    glossary_loc: (u) => /\/glossary\/[a-z-]{2,5}$/.test(u),
+    glossary_loc: (u) => /banklessacademy\.com\/[a-z-]{2,5}\/glossary$/.test(u) || /\/glossary\/[a-z-]{2,5}$/.test(u),
   }
   const byGroup = {}
   for (const u of urls) {

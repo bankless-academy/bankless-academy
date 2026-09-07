@@ -20,6 +20,7 @@ import { t } from 'i18next'
 import {
   LANGUAGE_CODES,
   applyDocumentLanguage,
+  isNonLocalizedPath,
   localePath,
 } from 'constants/languages'
 
@@ -77,7 +78,23 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   // where a reader with no matching language should land.
   const alternateSlug = metadata?.lesson?.slug
   const lessonLanguages = metadata?.lesson?.languages || []
-  const isGlossary = router.asPath.split(/[?#]/)[0].startsWith('/glossary')
+  const pagePath = router.asPath.split(/[?#]/)[0]
+  const isGlossary = pagePath.startsWith('/glossary')
+  // Every other localizable page too (homepage, listings, explore, ...). They
+  // are client-rendered shells, but Google renders them and indexes them per
+  // language: measured 2026-09-07 via the URL Inspection API, 67 of the 81
+  // /<lang>, /<lang>/lessons and /<lang>/lessons/handbook pages were
+  // "Submitted and indexed" and self-canonical, 4 were folded into the
+  // English URL ("Duplicate, Google chose different canonical", e.g. /pl) and
+  // 10 had never been crawled — without a cluster Google had to guess the
+  // relation between the 28 copies. Skipped for pages that canonicalize
+  // elsewhere, are noindex, or live outside the locale scheme.
+  const isLocalizedShell =
+    !alternateSlug &&
+    !isGlossary &&
+    !metadata?.canonical &&
+    !metadata?.noindex &&
+    !isNonLocalizedPath(pagePath)
   const alternates: { hreflang: string; href: string }[] = alternateSlug
     ? [
         {
@@ -100,6 +117,15 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         ...LANGUAGE_CODES.filter((l) => l !== 'en').map((l) => ({
           hreflang: l,
           href: `${DOMAIN_URL_}${localePath(l, '/glossary')}`,
+        })),
+      ]
+    : isLocalizedShell
+    ? [
+        { hreflang: 'x-default', href: `${DOMAIN_URL_}${pagePath}` },
+        { hreflang: 'en', href: `${DOMAIN_URL_}${pagePath}` },
+        ...LANGUAGE_CODES.filter((l) => l !== 'en').map((l) => ({
+          hreflang: l,
+          href: `${DOMAIN_URL_}${localePath(l, pagePath)}`,
         })),
       ]
     : []
@@ -157,6 +183,14 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   }, [metadata?.lang])
 
   const canonical = url?.split('?')[0]
+
+  // Self-canonical in every locale (each localized URL is its own page, see
+  // the hreflang note above); the datadisk page canonicalizes to its lesson.
+  const canonicalHref = metadata?.canonical
+    ? `${DOMAIN_URL_}${metadata.canonical}`
+    : canonical?.endsWith('-datadisk')
+    ? canonical?.replace('-datadisk', '')
+    : canonical
 
   const lesson = metadata?.lesson
 
@@ -249,16 +283,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         <meta property="og:image" content={image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
-        <link
-          rel="canonical"
-          href={
-            metadata?.canonical
-              ? `${DOMAIN_URL_}${metadata.canonical}`
-              : canonical?.endsWith('-datadisk')
-              ? canonical?.replace('-datadisk', '')
-              : canonical
-          }
-        />
+        <link rel="canonical" href={canonicalHref} />
         {alternates.map((a) => (
           <link
             key={a.hreflang}

@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { DOMAIN_URL, GENERIC_ERROR_MESSAGE, LESSONS } from 'constants/index'
 import { lessonLink } from 'utils'
-import { LANGUAGES } from 'constants/languages'
+import { LANGUAGES, LANGUAGE_CODES } from 'constants/languages'
 
 // Real per-file dates from git, emitted by build-lastmod.js at build time.
 // Absent or partial is fine: each URL falls back to the lesson's
@@ -25,7 +25,8 @@ const LASTMOD: { [key: string]: string } = (() => {
 // Register a language freely; it reaches the sitemap when its content lands.
 const GLOSSARY_LANGUAGES = LANGUAGES.filter(
   (l) =>
-    l.code !== 'en' && fs.existsSync(`translation/keywords/${l.code}/keywords.json`)
+    l.code !== 'en' &&
+    fs.existsSync(`translation/keywords/${l.code}/keywords.json`)
 )
 
 export default async function handler(
@@ -97,18 +98,51 @@ export default async function handler(
     const siteLastmod = new Date(newest || Date.now())
       .toISOString()
       .slice(0, 10)
-    const staticPaths = [
-      '/',
-      '/lessons',
-      '/faq',
+    // Localized copies of the shell pages, each group with its hreflang
+    // cluster. Google indexes these per language (URL Inspection, 2026-09-07:
+    // 67 of 81 indexed) but had never crawled 10 of them — the language
+    // selector that links to them is client-rendered, so the sitemap is their
+    // only server-side discovery. UI translations exist for every registry
+    // language, so the gate is the namespace file, not the registry.
+    const uiLanguages = LANGUAGE_CODES.filter(
+      (l) => l !== 'en' && fs.existsSync(`translation/website/${l}/common.json`)
+    )
+    const clustered = (path: string, langs: string[]) => {
+      const cluster: Alt[] = [
+        { hreflang: 'x-default', href: `${DOMAIN_URL}${path}` },
+        { hreflang: 'en', href: `${DOMAIN_URL}${path}` },
+        ...langs.map((l) => ({
+          hreflang: l,
+          href: `${DOMAIN_URL}/${l}${path === '/' ? '' : path}`,
+        })),
+      ]
+      urls.push({
+        loc: `${DOMAIN_URL}${path}`,
+        lastmod: siteLastmod,
+        alternates: cluster,
+      })
+      for (const l of langs)
+        urls.push({
+          loc: `${DOMAIN_URL}/${l}${path === '/' ? '' : path}`,
+          lastmod: siteLastmod,
+          alternates: cluster,
+        })
+    }
+    clustered('/', uiLanguages)
+    clustered('/lessons', uiLanguages)
+    clustered('/lessons/handbook', uiLanguages)
+    clustered(
       '/glossary',
-      ...GLOSSARY_LANGUAGES.map((l) => `/${l.code}/glossary`),
+      GLOSSARY_LANGUAGES.map((l) => l.code)
+    )
+
+    const staticPaths = [
+      '/faq',
       '/onchain-summer-challenge',
       '/explore',
       // Indexable and self-canonical, but were absent from the sitemap.
       // (/start, /mobile, /newsletter, /mini-apps canonicalize to '/', so
       // their absence is correct and they stay out.)
-      '/lessons/handbook',
       '/leaderboard',
       '/feedback',
     ]

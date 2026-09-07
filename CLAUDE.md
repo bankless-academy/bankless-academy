@@ -575,6 +575,28 @@ English too); see "i18n gotchas" for that and the rest.
   pages is formatted at BUILD time in Node's ICU (`formatLastmod`): the SEO
   copy hydrates, and client Intl output differing for a small locale would be
   a text mismatch that makes React re-render the tree.
+- **Localized shell pages ARE indexed per language: measure before folding
+  them (2026-09-07).** `/pl` showed up in GSC as "Duplicate, Google chose
+  different canonical than user" (Google picked `/`), and the served HTML of
+  `/`, `/pl`, `/fr` is indeed identical bar `<html lang>` (client-rendered
+  homepage, English title/description, no hreflang). The tempting fix, canonical
+  → English for every client-rendered shell, would have DE-INDEXED pages: the
+  URL Inspection API showed 67 of the 81 `/<lang>`, `/<lang>/lessons`,
+  `/<lang>/lessons/handbook` pages "Submitted and indexed", self-canonical
+  (Google renders the JS and sees the localized UI); only 4 were folded, and 10
+  (`/de`, `/es`, `/ru`, `/it`, `/ko`...) had never been crawled because their
+  only inbound link is the client-rendered language selector. What shipped
+  instead: `Head.tsx` emits an hreflang cluster for every localizable,
+  indexable page (not just lessons/glossary), listing titles are localized at
+  build time like the glossary's (`loadLanguage` + `getFixedT`), and the
+  sitemap lists the localized shells with their clusters so the uncrawled ones
+  get discovered. The homepage description stays English (no translation key).
+- `gsc-inspect.mjs`'s sampler groups URLs by the locale-PREFIX shapes; a
+  2026-09-07 run had lumped all 513 localized lessons into `lesson_en` and
+  sampled 14 URLs because it still expected `/lessons/<lang>/`. When a
+  `String.replace` replacement contains a `$` right before a backtick, use a
+  replacer function: `$\`` in a replacement STRING splices the file prefix
+  in (it broke that script once).
 - The sitemap is a real `<urlset>` with `<lastmod>` and hreflang alternates (it
   used to return `feed.rss2()`); `/api/sitemap` and the lesson pages read
   translated md from disk, never `raw.githubusercontent.com`.

@@ -1,6 +1,9 @@
 import { GetStaticProps } from 'next'
+import i18next from 'i18next'
 
 import { MetaData } from 'components/Head'
+import 'utils/translation'
+import { loadLanguage } from 'utils/translation'
 import LessonCards from 'components/LessonCards'
 import Layout from 'layout/Layout'
 
@@ -8,8 +11,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   // No `seoHtml`: see the note in pages/index.tsx (removed 2026-08-29 —
   // the pre-mount link list was visible for ~1-7s and duplicated the sitemap).
   const lang = locale || 'en'
+  // Localized <title> in the served HTML, like the glossary page: the server
+  // only has English loaded, so load the language before asking for the key.
+  await loadLanguage(lang)
   const pageMeta: MetaData = {
-    title: 'Handbook',
+    title: i18next.getFixedT(lang, 'common')('Handbooks'),
     lang,
   }
   return {
