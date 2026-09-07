@@ -305,7 +305,7 @@ render a warning banner on the intro slide.
 | `assemble-translation.js` + `build-translation.sh` | what wave agents actually run: typography → assemble → verify one lesson | manual |
 | `lang-tools.js` | `pins` / `merge` / `register` for a language wave | manual |
 | `convert-zh-tw.js` | derives zh-tw from zh; re-run after ANY zh change | manual |
-| `gsc-report.js`, `gsc-inspect.mjs` | Search Console traffic + URL-inspection sweeps (service-account JWT) | manual |
+| `gsc-report.js`, `gsc-inspect.mjs` | Search Console: traffic by page type / language / query / country / device with previous-period trend (`--days`, `--top`, `--json`), and URL-inspection sweeps (service-account JWT) | manual |
 | `generate-translation-files.sh` | re-seeds the **English** UI namespace JSONs with i18next-scanner from `useTranslation()` call sites. Not in `package.json`, easy to miss when adding UI strings | manual |
 | `db.js`, `knexfile.mjs`, `migrations/` (17) | Postgres access + schema | live |
 | `import-content.js`, `import-translations.js` | retired Notion/Crowdin importers, refuse to run without `RUN_RETIRED_IMPORT=1` | retired |
