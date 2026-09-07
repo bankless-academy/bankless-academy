@@ -599,7 +599,14 @@ English too); see "i18n gotchas" for that and the rest.
   in (it broke that script once).
 - The sitemap is a real `<urlset>` with `<lastmod>` and hreflang alternates (it
   used to return `feed.rss2()`); `/api/sitemap` and the lesson pages read
-  translated md from disk, never `raw.githubusercontent.com`.
+  translated md from disk, never `raw.githubusercontent.com`. Dates: lesson
+  URLs carry their FILE date from `.lastmod.json`; shell pages (homepage,
+  listings, glossary) carry the newest lesson file date, since they change
+  whenever a lesson does (until 2026-09-07 they advertised the newest
+  `publicationDate`, 2024-09-10, while every lesson had been rewritten in
+  2026-08). `publicationDate` itself stays the ORIGINAL publish date: it is
+  JSON-LD `datePublished` (with `dateModified` from the file date) and the
+  RSS `pubDate`; the 2026 rewrites are updates, not new publications.
 - Heading anchors NFD-normalize before the ASCII test, or accented headings
   silently fall back to `section-N` (fr 12/22, tr 13/22, pt-br 10/22), with a
   map for non-decomposable letters like Turkish dotless `ı`.

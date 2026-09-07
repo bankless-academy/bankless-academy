@@ -95,6 +95,14 @@ export default async function handler(
         })
     }
 
+    // The shell pages (homepage, listings, glossary) change whenever a lesson
+    // does, so their <lastmod> is the newest lesson FILE date, not the newest
+    // publication date: every lesson was rewritten in 2026-08 while the newest
+    // publicationDate stayed 2024-09-10, which is what this used to advertise.
+    for (const d of Object.values(LASTMOD)) {
+      const t = Date.parse(d as string)
+      if (t > newest) newest = t
+    }
     const siteLastmod = new Date(newest || Date.now())
       .toISOString()
       .slice(0, 10)
