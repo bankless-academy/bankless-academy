@@ -96,7 +96,7 @@
     "mixpanel": "^0.17.0",
     "mixpanel-browser": "^2.78.0",
     "net": "^1.0.2",
-    "next": "16.1.7",
+    "next": "16.3.3",
     "notion-client": "^7.11.1",
     "notion-to-md": "^3.1.9",
     "notion-utils": "^7.11.1",
