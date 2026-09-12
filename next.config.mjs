@@ -243,9 +243,18 @@ const nextConfig = {
         // `/fr/lessons/x.md` would have served the ENGLISH markdown. The
         // un-prefixed English rules use automatic handling (a `locale: false`
         // source never matches a default-locale path — see redirects()).
+        //
+        // SECOND trap, measured in production on 16.3.5 (2026-09-12): a
+        // `locale: false` rewrite whose DESTINATION interpolates a param into
+        // the PATH stopped resolving on Vercel somewhere in 16.2 — every
+        // `/<lang>/lessons/<slug>.md` and `/<lang>/glossary.md` 404'd while
+        // still working under `next start`. The two rules that put `:lang` in
+        // the QUERY of a STATIC destination path (llms.txt, llms-full.txt)
+        // kept working, so every localized destination below is now that
+        // shape. `next build` cannot catch this — only a deployment can.
         {
           source: `/${LANG_GROUP}/lessons/:slug.md`,
-          destination: '/api/lesson-content/:lang/:slug',
+          destination: '/api/lesson-content?lang=:lang&slug=:slug',
           locale: false,
         },
         {
@@ -254,7 +263,7 @@ const nextConfig = {
         },
         {
           source: `/${LANG_GROUP}/glossary.md`,
-          destination: '/api/glossary-content/:lang',
+          destination: '/api/glossary-content?lang=:lang',
           locale: false,
         },
         { source: '/glossary.md', destination: '/api/glossary-content' },

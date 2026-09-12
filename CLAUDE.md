@@ -562,7 +562,7 @@ English too); see "i18n gotchas" for that and the rest.
   crawlers and sends `Content-Signal: search=yes, ai-input=yes, ai-train=yes`
   (Didier's call: MIT content, mission is reach). Re-verify with
   `POST https://isitagentready.com/api/scan {"url":"https://app.banklessacademy.com"}`
-  (the site is client-rendered; the API is what works). Three traps:
+  (the site is client-rendered; the API is what works). Four traps:
   (1) **rewrite destinations get the locale prefix too** under automatic
   handling, and API routes are not localized, so `/fr/lessons/x.md` rewritten
   by the bare `/lessons/:slug.md` rule served ENGLISH — the translated rules
@@ -570,7 +570,19 @@ English too); see "i18n gotchas" for that and the rest.
   (2) `headers()` rules are cumulative and the LAST match wins per key, so
   the locale-prefixed `Link` rules must come AFTER the generic ones;
   (3) anything an API route reads from disk at runtime needs a literal
-  `path.resolve('translation/...')` root or Vercel's tracer omits the files.
+  `path.resolve('translation/...')` root or Vercel's tracer omits the files;
+  (4) **a `locale: false` rewrite whose DESTINATION interpolates a param into
+  the PATH stopped resolving on Vercel in Next 16.2** — after the 16.3.5
+  upgrade every `/<lang>/lessons/<slug>.md` and `/<lang>/glossary.md` 404'd in
+  production while all four still worked under `next start`. The two rules that
+  put `:lang` in the QUERY of a STATIC destination path (llms.txt,
+  llms-full.txt) never broke, so all localized destinations are now that shape
+  (`/api/lesson-content?lang=:lang&slug=:slug`), which is why
+  `lesson-content` is an OPTIONAL catch-all — the bare path has to match.
+  **Neither `next build` nor `next start` can catch this class of bug**: the
+  Build Output route table is only exercised by a real deployment, so verify
+  agent surfaces against a preview URL after any Next upgrade
+  (`vercel curl <deployment-url>/<path>` reads a protected one).
   JSON-LD now renders in `Head.tsx` from `pageMeta.jsonLd` for every page:
   Organization (+`sameAs`) and WebSite on `/` (`siteJsonLd`), DefinedTermSet
   on the glossary, LearningResource + BreadcrumbList on lessons with
