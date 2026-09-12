@@ -79,7 +79,7 @@
     "i18next-browser-languagedetector": "^7.1.0",
     "iron-session": "^6.3.1",
     "js-crc": "^0.2.0",
-    "jsdom": "^22.0.0",
+    "jsdom": "^30.0.1",
     "knex": "^2.4.0",
     "luxon": "^3.7.2",
     "mac-scrollbar": "^0.10.3",
