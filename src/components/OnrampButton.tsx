@@ -1,15 +1,6 @@
 /* eslint-disable no-console */
-import { Box, Button, useToast } from '@chakra-ui/react'
-import { useState } from 'react'
-import { useAccount } from 'wagmi'
-import { signMessage } from '@wagmi/core'
-import { wagmiConfig } from 'utils/wagmi'
-import { verifySignature } from 'utils/SignatureUtil'
+import { Box, Button } from '@chakra-ui/react'
 import { ArrowCircleDown } from '@phosphor-icons/react'
-import {
-  generateSessionToken,
-  formatAddressesForToken,
-} from '../utils/coinbase'
 import { t } from 'i18next'
 
 interface OnrampButtonProps {
@@ -21,7 +12,12 @@ interface OnrampButtonProps {
 
 const OnrampButton = ({
   address,
+  // Declared props the current implementation ignores; destructured so they
+  // are not spread onto the DOM, and kept because the commented-out
+  // session-token flow below reads them.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   defaultNetwork = 'base',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   defaultExperience = 'send',
   ...props
 }: OnrampButtonProps) => {

@@ -305,6 +305,7 @@ render a warning banner on the intro slide.
 | `assemble-translation.js` + `build-translation.sh` | what wave agents actually run: typography → assemble → verify one lesson | manual |
 | `lang-tools.js` | `pins` / `merge` / `register` for a language wave | manual |
 | `convert-zh-tw.js` | derives zh-tw from zh; re-run after ANY zh change | manual |
+| `.github/workflows/smoke-production.yml` | asserts ~33 live URLs after every production deploy (markdown mirrors per language, llms.txt, OG images non-empty, redirect table) and FAILS the run — the only thing that catches Build-Output routing breaks | on deploy |
 | `gsc-report.js`, `gsc-inspect.mjs` | Search Console: traffic by page type / language / query / country / device with previous-period trend (`--days`, `--top`, `--json`), and URL-inspection sweeps (service-account JWT) | manual |
 | `generate-translation-files.sh` | re-seeds the **English** UI namespace JSONs with i18next-scanner from `useTranslation()` call sites. Not in `package.json`, easy to miss when adding UI strings | manual |
 | `db.js`, `knexfile.mjs`, `migrations/` (17) | Postgres access + schema | live |
@@ -571,18 +572,26 @@ English too); see "i18n gotchas" for that and the rest.
   the locale-prefixed `Link` rules must come AFTER the generic ones;
   (3) anything an API route reads from disk at runtime needs a literal
   `path.resolve('translation/...')` root or Vercel's tracer omits the files;
-  (4) **a `locale: false` rewrite whose DESTINATION interpolates a param into
-  the PATH stopped resolving on Vercel in Next 16.2** — after the 16.3.5
-  upgrade every `/<lang>/lessons/<slug>.md` and `/<lang>/glossary.md` 404'd in
-  production while all four still worked under `next start`. The two rules that
-  put `:lang` in the QUERY of a STATIC destination path (llms.txt,
-  llms-full.txt) never broke, so all localized destinations are now that shape
-  (`/api/lesson-content?lang=:lang&slug=:slug`), which is why
-  `lesson-content` is an OPTIONAL catch-all — the bare path has to match.
-  **Neither `next build` nor `next start` can catch this class of bug**: the
-  Build Output route table is only exercised by a real deployment, so verify
-  agent surfaces against a preview URL after any Next upgrade
-  (`vercel curl <deployment-url>/<path>` reads a protected one).
+  (4) **a rewrite into a DYNAMIC API route must not pass a query param named
+  like that route's dynamic segment.** After the 16.3.5 upgrade every
+  `/<lang>/lessons/<slug>.md` and `/<lang>/glossary.md` 404'd in production
+  while all four worked under `next start`. Vercel rewrites an API route to
+  `/api/lesson-content/[[...slug]]?nxtPslug=$nxtPslug`; when the `.md` rewrite
+  lands there with NO path segments, `$nxtPslug` expands to EMPTY and Next maps
+  it onto `slug`, **clobbering a `?slug=` of our own** — the handler answered
+  "Lesson not found", and the glossary one silently served ENGLISH, which is
+  the failure mode that looks like success. So the localized destinations pass
+  `?mdLang=`/`?mdSlug=` (names that collide with nothing) into a STATIC
+  destination path, and `lesson-content` is an OPTIONAL catch-all so the bare
+  path matches at all. `/api/llms?lang=` was never affected only because
+  `llms.ts` is a static route with no dynamic param called `lang`.
+  Handlers must also `.filter(Boolean)` the catch-all param, since Vercel
+  hands them `['']`.
+  **Neither `next build` nor `next start` can catch this class of bug** — they
+  skip the `nxtP*` indirection entirely and serve every one of these correctly.
+  Only a deployment exercises it, which is what
+  `.github/workflows/smoke-production.yml` now asserts on every production
+  deploy (`vercel curl <deployment-url>/<path>` reads a protected one).
   JSON-LD now renders in `Head.tsx` from `pageMeta.jsonLd` for every page:
   Organization (+`sameAs`) and WebSite on `/` (`siteJsonLd`), DefinedTermSet
   on the glossary, LearningResource + BreadcrumbList on lessons with
@@ -872,6 +881,22 @@ moment those conditions change — checked 2026-08-29, do not re-derive.
 ~~Stale KV with no cron~~ — adjudicated 2026-08-22: `announcement` and
 `bankless-dao-news` are DEPRECATED KV surfaces; leave them. Only `leaderboard`
 has (and needs) a scheduled cron.
+
+**Git hooks and lint were dead until 2026-09-12, which is why the debt below
+went unnoticed.** `package.json` carried a husky-**v4** `"husky": {"hooks":…}`
+block that husky 8 ignores outright, and there was no `.husky/` and no
+`prepare` script, so pre-commit and pre-push had never once run. `yarn lint`
+meanwhile reported **1103 errors**, 1085 of them from ESLint walking
+`ideas/archive/**` (gitignored, vendored, minified third-party bundles) because
+`.eslintignore` listed only node_modules/out/.next. Now: `ideas/` is ignored,
+lint is **0 errors** (30 warnings), `prepare: husky install` is wired, and the
+hooks are `.husky/pre-commit` (lint-staged) and `.husky/pre-push` (the three
+content gates, ~2s, quiet on success). **pre-push deliberately does NOT run
+`yarn type-check`** — the 10 errors below would block every push; restore it
+there once they are fixed. `eslint-plugin-react-hooks` is installed with
+`rules-of-hooks` at **warn**: it flags 30 real conditional-hook sites across 7
+files, including the two latent ones already listed under "Cheap cleanups".
+Raising it to error means fixing those first.
 
 **Standing state of the codebase**: 0 test files (Jest passes vacuously — the
 real gates are `validate-content.js`, `validate-i18n.js` and `test-content.js`);

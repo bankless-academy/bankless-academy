@@ -505,6 +505,9 @@ for (const lang of langDirs) {
     md.split('\n').map((l) => (l.match(/^\*\*([^*\n]{1,40})\*\*/) || [])[1] || null)
   // NBSP is invisible in terminal output, and French really did ship
   // "Réessayez !" 148 times and "Réessayez !" 7 times.
+  // The NBSP (U+00A0) and narrow NBSP (U+202F) below are the literals being
+  // detected, so they must stay verbatim.
+  // eslint-disable-next-line no-irregular-whitespace
   const show = (s) => JSON.stringify(s).replace(/ /g, '·NBSP·').replace(/ /g, '·NNBSP·')
 
   const published = Object.entries(meta)

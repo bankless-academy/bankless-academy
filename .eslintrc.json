@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "react-hooks"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -32,7 +32,9 @@
     "@typescript-eslint/no-unused-vars": [
       2,
       {
-        "argsIgnorePattern": "^_"
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
       }
     ],
     "no-console": [
@@ -41,6 +43,8 @@
         "allow": ["warn", "error"]
       }
     ],
-    "react/no-unescaped-entities": 1
+    "react/no-unescaped-entities": 1,
+    "react-hooks/rules-of-hooks": 1,
+    "react-hooks/exhaustive-deps": 0
   }
 }

@@ -1,0 +1,155 @@
+# Asserts the production surfaces that a build CANNOT verify.
+#
+# WHY THIS EXISTS (2026-09-12): the Next 16.1.7 -> 16.3.5 upgrade 404'd every
+# `/<lang>/lessons/<slug>.md` and `/<lang>/glossary.md` in production while all
+# of them returned 200 under `next build` + `next start`. The break was in the
+# Build Output route table, which only a real deployment exercises: a
+# `locale: false` rewrite whose destination interpolated a param into the PATH
+# stopped resolving on Vercel. Nothing in CI noticed. It was found by hand,
+# after it was live.
+#
+# So this checks the LIVE site after each production deploy, and it checks the
+# things that fail SILENTLY — surfaces no human opens, where a 404 or an
+# English fallback can sit for weeks:
+#   - the markdown mirrors and llms.txt, per language (agent-facing only)
+#   - that a localized mirror serves ITS language, not English (the other
+#     locale trap, 2026-09-04: the bare rule served ENGLISH for /fr/*.md)
+#   - the OG images, which can return `200 image/png` with a ZERO-byte body
+#   - the redirect table (legacy share links, non-localized paths)
+#
+# Unlike warm-production.yml, which is an optimisation and always exits 0,
+# THIS RUN FAILS when an assertion fails. That red X is the whole point.
+name: Smoke production after deploy
+
+on:
+  deployment_status:
+
+# Outbound requests to the public site only; no repo access needed.
+permissions: {}
+
+# A superseded deploy's smoke run is pointless — the URLs already serve the
+# newer build.
+concurrency:
+  group: smoke-production
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Assert production surfaces
+        env:
+          BASE: https://app.banklessacademy.com
+        run: |
+          set -uo pipefail
+
+          # The alias can take a moment to point at the new deployment.
+          sleep 20
+
+          failed=0
+          checked=0
+
+          # check <path> <code> <content-type substr> <min bytes> [body substr]
+          check() {
+            local path="$1" want_code="$2" want_ctype="$3" min_bytes="$4" want_text="${5:-}"
+            local url="${BASE}${path}"
+            local code size ctype attempt
+            checked=$((checked + 1))
+            for attempt in 1 2 3; do
+              code=$(curl -sS -o /tmp/body -D /tmp/hdr -w '%{http_code}' --max-time 90 "$url" 2>/dev/null || echo 000)
+              # Retry only transport/5xx blips, never a definite wrong answer.
+              case "$code" in 000|5??) sleep 6 ;; *) break ;; esac
+            done
+            size=$(wc -c < /tmp/body | tr -d ' ')
+            ctype=$(grep -i '^content-type:' /tmp/hdr | tail -1 | tr -d '\r' | cut -d' ' -f2- || echo "")
+
+            if [ "$code" != "$want_code" ]; then
+              echo "FAIL  $path  expected $want_code, got $code"; failed=$((failed + 1)); return
+            fi
+            case "$ctype" in
+              *"$want_ctype"*) ;;
+              *) echo "FAIL  $path  content-type '$ctype' does not contain '$want_ctype'"; failed=$((failed + 1)); return ;;
+            esac
+            # Guards the `200 image/png` with an EMPTY body class of failure.
+            if [ "$size" -lt "$min_bytes" ]; then
+              echo "FAIL  $path  body ${size}b < ${min_bytes}b"; failed=$((failed + 1)); return
+            fi
+            if [ -n "$want_text" ] && ! grep -qF -- "$want_text" /tmp/body; then
+              echo "FAIL  $path  body missing '$want_text'"; failed=$((failed + 1)); return
+            fi
+            echo "ok    $path  ${code} ${size}b"
+          }
+
+          # check_redirect <path> <code> <location substr>
+          check_redirect() {
+            local path="$1" want_code="$2" want_loc="$3"
+            local code loc
+            checked=$((checked + 1))
+            code=$(curl -sS -o /dev/null -D /tmp/hdr -w '%{http_code}' --max-time 60 "${BASE}${path}" 2>/dev/null || echo 000)
+            loc=$(grep -i '^location:' /tmp/hdr | tail -1 | tr -d '\r' | cut -d' ' -f2- || echo "")
+            if [ "$code" != "$want_code" ]; then
+              echo "FAIL  $path  expected $want_code, got $code"; failed=$((failed + 1)); return
+            fi
+            case "$loc" in
+              *"$want_loc"*) echo "ok    $path  ${code} -> ${loc}" ;;
+              *) echo "FAIL  $path  redirects to '$loc', expected to contain '$want_loc'"; failed=$((failed + 1)) ;;
+            esac
+          }
+
+          echo "== pages =="
+          check /                                    200 text/html      10000
+          check /lessons                             200 text/html      10000
+          check /lessons/handbook                    200 text/html      10000
+          check /glossary                            200 text/html      50000
+          check /faq                                 200 text/html      10000
+          check /explore                             200 text/html      10000
+          check /fr                                  200 text/html      10000
+          check /ru/lessons/creating-a-crypto-wallet 200 text/html      20000
+
+          echo "== agent surfaces: markdown mirrors =="
+          # Per language, and asserting the language actually differs from
+          # English — a mirror that silently falls back to English is the
+          # 2026-09-04 trap and looks identical to success from a status code.
+          check /lessons/bitcoin-basics.md           200 text/markdown   5000 "TITLE: Bitcoin Basics"
+          check /fr/lessons/bitcoin-basics.md        200 text/markdown   5000 "TITLE: Les bases du Bitcoin"
+          check /de/lessons/bitcoin-basics.md        200 text/markdown   5000 "TITLE: Bitcoin-Grundlagen"
+          check /ja/lessons/bitcoin-basics.md        200 text/markdown   5000 "TITLE:"
+          check /ar/lessons/bitcoin-basics.md        200 text/markdown   5000 "TITLE:"
+          check /zh-tw/lessons/bitcoin-basics.md     200 text/markdown   5000 "TITLE:"
+
+          echo "== agent surfaces: glossary + llms =="
+          check /glossary.md                         200 text/markdown  10000 "## 2 Factor Authentication"
+          check /fr/glossary.md                      200 text/markdown  10000
+          check /ru/glossary.md                      200 text/markdown  10000
+          check /llms.txt                            200 text/plain      2000
+          check /fr/llms.txt                         200 text/plain      2000
+          check /llms-full.txt                       200 text/plain    100000
+          check /fr/llms-full.txt                    200 text/plain    100000
+          check /agent.txt                           200 text/plain      1000
+
+          echo "== feeds and API =="
+          check /sitemap.xml                         200 xml           500000 "<loc>"
+          check /rss.xml                             200 xml             5000
+          check /api/lessons                         200 json          100000
+          check /robots.txt                          200 text/plain       200 "Content-Signal:"
+
+          echo "== OG images (200 with an empty body is a real failure mode) =="
+          check "/api/og/social?address=didierkrux.eth" 200 image/png   50000
+          check /api/og/rewards                        200 image/png   50000
+
+          echo "== SSR =="
+          check /explorer/didierkrux.eth             200 text/html      10000
+          check /start                               200 text/html      10000
+
+          echo "== redirect table =="
+          check_redirect "/start?lesson=web3-security&lang=ua" 307 /uk/start
+          check_redirect /fr/faq                               308 /faq
+          check_redirect /lessons/bitcoin-basics/content       308 /lessons/bitcoin-basics
+
+          echo "---"
+          echo "$checked checks, $failed failure(s)"
+          [ "$failed" -eq 0 ] || exit 1

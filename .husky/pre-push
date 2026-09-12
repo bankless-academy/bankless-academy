@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# The three gates `yarn build` runs BEFORE `next build`, so a content mistake
+# fails here in ~2s instead of after a 6-minute Vercel build. This is what the
+# 2026-08-30 production deploy tripped over (validate-i18n, caught only in CI).
+#
+# NOT `yarn type-check`, which the package.json husky-v4 block used to name:
+# it has 10 pre-existing errors (7 of them viem ABI-inference in
+# utils/basenames.tsx and utils/index.ts), so it would block every push.
+# Restore it here once those are fixed.
+#
+# Quiet on success on purpose: these validators print ~60 lines of KNOWN
+# warnings (divergent bold credit labels, label-growth) every run, and a hook
+# that shouts on every push is a hook people learn to ignore. On failure the
+# whole captured output is printed.
+if ! out=$(node validate-content.js 2>&1 && node validate-i18n.js 2>&1 && node test-content.js 2>&1); then
+  printf '%s\n' "$out"
+  echo ""
+  echo "pre-push: content gates FAILED — this would also fail the Vercel build."
+  exit 1
+fi
+echo "pre-push: content gates passed"

@@ -1,3 +1,8 @@
 **/node_modules/*
 **/out/*
 **/.next/*
+# Local scratch + vendored archives (gitignored): `ideas/archive/**` holds
+# downloaded third-party bundles, including minified JS, which produced 1085 of
+# the 1103 errors `yarn lint` reported and made the command useless to run.
+**/.vercel/*
+ideas/

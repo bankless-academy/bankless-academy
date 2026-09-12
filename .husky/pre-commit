@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# eslint --fix + prettier on staged .ts/.tsx (see lint-staged in package.json).
+npx lint-staged
