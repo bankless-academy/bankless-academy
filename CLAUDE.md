@@ -305,6 +305,7 @@ render a warning banner on the intro slide.
 | `assemble-translation.js` + `build-translation.sh` | what wave agents actually run: typography → assemble → verify one lesson | manual |
 | `lang-tools.js` | `pins` / `merge` / `register` for a language wave | manual |
 | `convert-zh-tw.js` | derives zh-tw from zh; re-run after ANY zh change | manual |
+| `.github/dependabot.yml` | weekly npm security updates, PR cap, and an `ignore` for `decode-uri-component` — an advisory with NO patched version, which made the Dependabot Updates job fail on every commit until 2026-09-12 | on schedule |
 | `.github/workflows/smoke-production.yml` | asserts ~33 live URLs after every production deploy (markdown mirrors per language, llms.txt, OG images non-empty, redirect table) and FAILS the run — the only thing that catches Build-Output routing breaks | on deploy |
 | `gsc-report.js`, `gsc-inspect.mjs` | Search Console: traffic by page type / language / query / country / device with previous-period trend (`--days`, `--top`, `--json`), and URL-inspection sweeps (service-account JWT) | manual |
 | `generate-translation-files.sh` | re-seeds the **English** UI namespace JSONs with i18next-scanner from `useTranslation()` call sites. Not in `package.json`, easy to miss when adding UI strings | manual |
@@ -1109,7 +1110,13 @@ short-circuits verification.
 `middleware.ts` was NOT deleted when it stopped self-fetching images: it is
 still live, rescoped to `['/api/passport', '/api/mint-badge',
 '/api/validate-quest']`, and still carries the UA-based bot rule and the
-IP-based maintenance gate.
+IP-based maintenance gate. **`request.ip` was removed in Next 16 and returns
+undefined**, which pinned `ipAddress` to `'local'` and made that gate a silent
+no-op — its `ipAddress !== 'local'` guard could never be true, so setting
+`NEXT_PUBLIC_MAINTENANCE` redirected nobody. Fixed 2026-09-12 by reading
+`x-real-ip` then the first `x-forwarded-for` hop. It surfaced only as one of
+the ignored `yarn type-check` errors, which is the argument for fixing the
+other nine.
 
 ### Component layer (97 files, ~23k LOC)
 

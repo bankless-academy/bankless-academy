@@ -7,14 +7,22 @@ import { LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { isLanguage } from 'constants/languages'
 
-// Serves the raw lesson markdown from this repo:
-//   /api/lesson-content/<slug>          -> English
-//   /api/lesson-content/<lang>/<slug>   -> that language
-//   /api/lesson-content?mdSlug=&mdLang= -> what the `.md` rewrites use
+// Serves the raw lesson markdown from this repo, behind the `.md` rewrites:
+//   /api/lesson-content?slug=<slug>          -> English
+//   /api/lesson-content?slug=<slug>&lang=<l> -> that language
 //
-// The query form exists because a `locale: false` rewrite whose DESTINATION
-// interpolates a param into the path stopped resolving on Vercel in Next 16.2
-// (see next.config.mjs). An optional catch-all so the bare path still matches.
+// A STATIC route on purpose, and the reason the path forms
+// (`/api/lesson-content/<lang>/<slug>`) are gone. Measured in production on
+// 16.3.5: a `locale: false` rewrite RESOLVES INTO A STATIC API ROUTE fine
+// (`/fr/llms.txt` -> `/api/llms?lang=fr` has never broken) but 404s when the
+// destination is a DYNAMIC/catch-all route — `check: true` does not re-enter
+// dynamic matching for those. The same dynamic route answered correctly when
+// requested directly, and via the automatic-locale rules; only the
+// `locale: false` -> dynamic combination failed. See next.config.mjs.
+//
+// Being static also removes the `nxtP*` hazard entirely: Vercel injects
+// `?nxtPslug=` only for dynamic routes, where an empty value silently
+// clobbers a query param of the same name.
 //
 // Exists so `/api/lessons` can advertise our own URLs instead of pointing
 // consumers at raw.githubusercontent, which served whatever was on `main`
@@ -23,24 +31,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  // `.filter(Boolean)`: Vercel rewrites this route with `?nxtPslug=`, which is
-  // EMPTY when the `.md` rewrite sent us here with no path segments, and Next
-  // turns that into `slug: ['']`.
-  const one = (v: unknown) => ([] as string[]).concat((v as any) || []).filter(Boolean)[0]
-  const segments = ([] as string[]).concat(req.query.slug || []).filter(Boolean)
-  const querySlug = one(req.query.mdSlug)
-  const queryLang = one(req.query.mdLang)
-  const hasLang = segments.length > 1 && isLanguage(segments[0])
-  const language = querySlug
-    ? isLanguage(queryLang)
-      ? queryLang
-      : 'en'
-    : hasLang
-      ? segments[0]
-      : 'en'
+  const one = (v: unknown) =>
+    ([] as string[]).concat((v as any) || []).filter(Boolean)[0]
+  const queryLang = one(req.query.lang)
+  const language = isLanguage(queryLang) ? queryLang : 'en'
   // `.md` is stripped for direct calls; the /lessons/<slug>.md rewrite already
   // removed it. `-datadisk` is the collectible's page for the same lesson.
-  const slug = (querySlug ?? (hasLang ? segments[1] : segments[0]))
+  const slug = one(req.query.slug)
     ?.replace(/\.md$/, '')
     .replace(/-datadisk$/, '')
 

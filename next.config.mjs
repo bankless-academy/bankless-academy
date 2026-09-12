@@ -244,30 +244,38 @@ const nextConfig = {
         // un-prefixed English rules use automatic handling (a `locale: false`
         // source never matches a default-locale path — see redirects()).
         //
-        // SECOND trap, measured in production on 16.3.5 (2026-09-12): on
-        // Vercel these localized destinations must be a STATIC path carrying
-        // their params in the QUERY, under names that do NOT collide with the
-        // target route's dynamic param. Vercel rewrites an API route to
-        // `/api/lesson-content/[[...slug]]?nxtPslug=$nxtPslug`; with no path
-        // segments `$nxtPslug` expands to EMPTY and Next maps it onto `slug`,
-        // clobbering a `?slug=` of our own — the handler then answers "not
-        // found", or worse, silently falls back to English. Hence `mdLang` /
-        // `mdSlug`. `/api/llms?lang=` is safe only because llms.ts is a static
-        // route with no dynamic param named `lang`.
-        // `next start` skips that indirection, so it serves all of these
-        // correctly no matter what: ONLY a deployment can verify this.
+        // SECOND trap, measured in production on 16.3.5 across three
+        // deployments (2026-09-12): **a `locale: false` rewrite resolves into
+        // a STATIC api route but 404s into a DYNAMIC/catch-all one.** Vercel's
+        // `check: true` pass does not re-enter dynamic matching for those. The
+        // evidence, all from live production:
+        //   /fr/llms.txt   -> /api/llms (static)          200, never broke
+        //   /fr/glossary.md-> /api/glossary-content/[[..]] 404
+        //   /en/glossary.md-> same dynamic route, but via the AUTOMATIC rule
+        //                                                  200
+        //   /api/lesson-content?... requested directly     200
+        // So both `.md` handlers are now STATIC index routes, and the
+        // `/api/lesson-content/<lang>/<slug>` path forms are GONE with them.
+        // Being static also removes the `nxtP*` hazard: Vercel injects
+        // `?nxtPslug=`/`?nxtPlang=` only for dynamic routes, and when the
+        // rewrite arrives with no path segments that value is EMPTY and Next
+        // maps it over a query param of the same name — which is how an
+        // earlier attempt made the handler answer "not found" and the glossary
+        // silently serve ENGLISH.
+        // `next build` and `next start` serve ALL of these correctly no matter
+        // what: only a deployment exercises the Build Output route table.
         {
           source: `/${LANG_GROUP}/lessons/:slug.md`,
-          destination: '/api/lesson-content?mdLang=:lang&mdSlug=:slug',
+          destination: '/api/lesson-content?lang=:lang&slug=:slug',
           locale: false,
         },
         {
           source: '/lessons/:slug.md',
-          destination: '/api/lesson-content/:slug',
+          destination: '/api/lesson-content?slug=:slug',
         },
         {
           source: `/${LANG_GROUP}/glossary.md`,
-          destination: '/api/glossary-content?mdLang=:lang',
+          destination: '/api/glossary-content?lang=:lang',
           locale: false,
         },
         { source: '/glossary.md', destination: '/api/glossary-content' },

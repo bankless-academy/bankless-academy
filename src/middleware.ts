@@ -5,7 +5,15 @@ import { userAgent } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
-  const ipAddress = request.ip || 'local'
+  // `request.ip` was REMOVED in Next 16 and silently returns undefined, which
+  // pinned ipAddress to 'local' and made the maintenance gate below a no-op:
+  // its `ipAddress !== 'local'` guard could never be true, so enabling
+  // NEXT_PUBLIC_MAINTENANCE redirected nobody. Read the forwarded headers
+  // instead, in the order @vercel/functions' own ipAddress() uses.
+  const ipAddress =
+    request.headers.get('x-real-ip') ||
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    'local'
   const ua = userAgent(request)
 
   // NOTE: the missing-image fallback used to live here. It fetched the image
