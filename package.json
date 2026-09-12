@@ -44,7 +44,7 @@
     "@google-cloud/bigquery": "^8.1.1",
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
-    "@notionhq/client": "^2.3.0",
+    "@notionhq/client": "^5.26.0",
     "@openzeppelin/contracts-upgradeable": "^4.9.6",
     "@phosphor-icons/react": "^2.1.10",
     "@reown/appkit": "~1.7.19",
