@@ -1,13 +1,18 @@
-# Without this, the Dependabot Updates job failed on EVERY commit: it kept
-# retrying a `decode-uri-component` advisory that has no patched version, so it
-# could never succeed and a real failure would have been invisible in the noise.
+# Security updates ONLY. `open-pull-requests-limit: 0` disables *version*
+# updates for npm while leaving security updates untouched — without it, adding
+# this file turns on weekly version bumps (it opened 10 major-version PRs on
+# 2026-09-12, every one of them a major we had already deferred).
+#
+# The file exists at all because the Dependabot Updates job failed on EVERY
+# commit: it kept retrying a `decode-uri-component` advisory with no patched
+# version, so it could never succeed and real failures were invisible.
 version: 2
 updates:
   - package-ecosystem: npm
     directory: '/'
     schedule:
       interval: weekly
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     ignore:
       # No patched version exists; reachable via @reown/appkit and jest.
       - dependency-name: decode-uri-component
