@@ -41,7 +41,7 @@
     "@farcaster/frame-host": "^0.0.32",
     "@farcaster/frame-sdk": "^0.0.34",
     "@gitcoinco/passport-sdk-types": "^0.2.0",
-    "@google-cloud/bigquery": "^8.1.1",
+    "@google-cloud/bigquery": "^9.0.3",
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@notionhq/client": "^2.3.0",
