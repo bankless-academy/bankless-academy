@@ -401,7 +401,11 @@ terms x 24 languages) as the terminology reference, not a runtime dependency.
   with `git clone --depth=1 file://$PWD`.
 - **`zh-tw` is DERIVED from `zh`** by `convert-zh-tw.js` (OpenCC cn→twp plus a
   corpus-adjudicated override table). Structural parity is free — a conversion
-  cannot change unit counts or `[x]` positions. The override table encodes a
+  cannot change unit counts or `[x]` positions. **An `opencc-js` bump is a zh-tw
+  content change**: 1.4.1 -> 1.4.2 alone moved `幾周`->`幾週` and `橋樑`->`橋梁`
+  (both toward the MOE standard forms). Re-run the converter in the SAME commit
+  as the lockfile bump, or the derived files silently disagree with the
+  installed library and the next unrelated zh edit carries the drift. The override table encodes a
   full corpus scan (`數字→數位` with number-sense phrases protected, `通過→透過`
   with pass/approve phrases protected, `智能合約/錢包/帳戶`, `帳` never `賬`,
   Latin `Gas`/`Blob`/`gwei`, …). **The protect lists are corpus-specific**: the
@@ -650,6 +654,19 @@ English too); see "i18n gotchas" for that and the rest.
   showed a German animation title. Raw keys, `t()` at render.
 - `notion-client` must stay current: Notion blocked the unofficial
   `loadPageChunk` endpoint and every Notion-backed page 500'd until 7.11.1.
+- **A symlink inside `public/` breaks the Vercel build from Next 16.2 on**, and
+  it is why `next` sat pinned at exactly `16.1.7` while five dependabot PRs
+  (16.2.3, 16.2.6, 16.2.11, 16.3.3) were closed unmerged. `public/lesson` was a
+  2024 back-compat shim pointing at `../translation/lesson`; the builder copies
+  `public/` into `.vercel/output/static/` and recreates the symlink verbatim,
+  where that relative target no longer resolves — the cloud builder dies with
+  `Cannot copy '../translation/lesson' to a subdirectory of itself`, a local
+  `vercel build` with `ENOENT ... mkdir '.vercel/output/static/lesson'`. Removed
+  2026-09-12 (the URLs it would have served already 404'd in production; the
+  `.md` mirrors moved to `/api/lesson-content` in 2026-08). **Reproduce
+  builder-stage failures with `vercel build`, never `next build`** — the copy
+  happens after `next build` has already printed its route table and exited 0,
+  so a green `next build` says nothing about whether the deploy will land.
 - `import-content.js` and `import-translations.js` stay in the repo for
   reference but refuse to run without `RUN_RETIRED_IMPORT=1` — `yarn
   import-content` was a live command that would overwrite the in-repo lesson
@@ -810,7 +827,8 @@ shipping ~280MB per build; a deploy takes ~3m40s, so the win is modest. **Not
 a caching argument** — that is already won above.
 
 **5. `middleware` → `proxy`: deliberately deferred** (decided 2026-08-29).
-`middleware` is deprecated in Next 16 but still works on 16.1.7, and
+`middleware` is deprecated in Next 16 but still works on 16.3.5 (it warns on
+every build, and the Edge Runtime now warns too), and
 `src/middleware.ts` is 55 lines matching three API paths, so the rename is
 cheap whenever it becomes necessary. Do it when a Next release you actually
 want forces it — not before. Same for the `@sentry/nextjs` ^8.55.1 peer
