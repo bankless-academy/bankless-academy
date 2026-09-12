@@ -70,7 +70,7 @@
     "ethereum-identity-kit": "^0.2.74",
     "ethereumjs-util": "^7.1.5",
     "ethers": "^5.8.0",
-    "feed": "^4.2.2",
+    "feed": "^6.0.0",
     "framer-motion": "^7.6.15",
     "graphql": "^16.13.2",
     "graphql-request": "^6.1.0",
