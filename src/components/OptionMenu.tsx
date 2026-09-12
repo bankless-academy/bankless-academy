@@ -22,6 +22,7 @@ import {
   Info,
   Question,
   Book,
+  Translate,
 } from '@phosphor-icons/react'
 
 import InstallAppModal from 'components/InstallAppModal'
@@ -76,6 +77,12 @@ const OptionMenu = ({
             <MenuItem>
               <Book size={20} style={{ marginInlineEnd: '5px' }} />
               {t('Glossary')}
+            </MenuItem>
+          </InternalLink>
+          <InternalLink href="/languages" color="white">
+            <MenuItem>
+              <Translate size={20} style={{ marginInlineEnd: '5px' }} />
+              {t('Languages')}
             </MenuItem>
           </InternalLink>
           <InternalLink href="/about" color="white">

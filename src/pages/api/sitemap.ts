@@ -153,6 +153,9 @@ export default async function handler(
       // their absence is correct and they stay out.)
       '/leaderboard',
       '/feedback',
+      // Links every locale root from static HTML; English only, since the
+      // localized copies would be 28 near-identical lists of endonyms.
+      '/languages',
     ]
     for (const p of staticPaths)
       urls.push({ loc: `${DOMAIN_URL}${p}`, lastmod: siteLastmod })

@@ -325,6 +325,15 @@ sense that the rest are safe — they are merely broken. Decide per script:
 delete, or fix and guard. `utils.js`/`config.js` exist only to serve these
 importers (Notion field-name mapping and markdown helpers).
 
+**The same trap catches third-party tooling installed INTO the repo.** `npx
+skills add typefully/agent-skills` dropped a CommonJS script into
+`.agents/skills/`, where this package.json's `"type": "module"` made Node parse
+it as ESM and it died on `require`. Fix without renaming (SKILL.md references
+the script by name): a scoped `{"type":"commonjs"}` package.json beside it.
+`.agents/` and `.claude/` are gitignored, so re-apply after any reinstall;
+`skills-lock.json` is gitignored too, so a fresh clone has neither: reinstall
+with `npx skills add <source>` and re-apply the package.json fix.
+
 **`assemble-translation.js` does not import `translate-content.js` — it slices
 its source text.** It reads the file, cuts from `const SPLIT =` to the
 `// structural verification` comment, strips the imports and evaluates the
@@ -1476,6 +1485,27 @@ assistants working on this repo, and it is loaded into every AI session — so
 happened on which day; this file earns its place by recording what would
 otherwise be re-learned the expensive way. When something here is superseded,
 replace it rather than appending next to it.
+
+## Writing tweets or the newsletter
+
+Voice guides derived from the full archives (555 original tweets 2021-2026, all
+12 "Academy Transmissions" issues 2023-2025) live in `ideas/` — **gitignored,
+local only**, alongside the raw archives they were measured from:
+
+| file | what it is |
+|---|---|
+| `ideas/voice-twitter.md` | measured tone, length, emoji, CTA verbs, content mix, templates |
+| `ideas/voice-newsletter.md` | masthead, TL;DR + section structure, register, template |
+| `ideas/voice-examples.md` | 33 verbatim high-engagement posts, by category — imitate these |
+| `ideas/content-facts.md` | **current** counts/partners/surfaces, because the archives are stale |
+| `ideas/brand/` | the house graphic templates and backgrounds for social/newsletter images (`bg-gradient-16x9.png` is the default) |
+
+Read `content-facts.md` before writing any claim about numbers: the X archive
+ends May 2026 and the newsletter May 2025, but the site is now 19 lessons in 28
+languages with badges, a Farcaster mini-app and agent surfaces. The single
+strongest voice rule in both: the reader is an **Explorer** and the product is a
+**frontier**, and "Explore" is the CTA verb (245 uses against 4 for "take the
+lesson").
 
 The companion docs are deliberately few: `docs/translation-pipeline.md` (how
 `translate-content.js` works), `docs/translation-wave.md` (the agent brief),

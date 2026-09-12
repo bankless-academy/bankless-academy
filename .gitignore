@@ -54,3 +54,13 @@ gsc-inspect-results.json
 
 # local security notes (never commit)
 SECURITY-TODO.local.md
+
+# Agent skills installed by `npx skills add`. Vendored third-party code;
+# reinstall to restore (see CLAUDE.md "Repo scripts").
+# `.claude/` here holds only the symlinks the installer creates into .agents/.
+.agents/
+.claude/
+
+# Third-party agent skills (see CLAUDE.md): the skill dirs are ignored, so the
+# lockfile that pins them has no value in-repo either.
+skills-lock.json
