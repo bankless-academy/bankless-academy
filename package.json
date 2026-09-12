@@ -39,7 +39,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@farcaster/frame-host": "^0.0.32",
-    "@farcaster/frame-sdk": "^0.0.34",
+    "@farcaster/frame-sdk": "^0.2.0",
     "@gitcoinco/passport-sdk-types": "^0.2.0",
     "@google-cloud/bigquery": "^8.1.1",
     "@lottiefiles/react-lottie-player": "^3.6.0",
