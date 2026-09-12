@@ -14,7 +14,14 @@ const schema = z.object({
     z.object({
       type: z.literal('intro'),
       name: z.string().optional(),
-      socialImageLink: z.string().optional(),
+      // Must be a plain path on our domain: this is interpolated as
+      // `${DOMAIN_URL}${socialImageLink}`, and a value starting with `//` or
+      // containing `@` makes our domain the URL's userinfo, pointing the
+      // server-side <img> fetch at another host (see og/mini-app).
+      socialImageLink: z
+        .string()
+        .regex(/^\/[^/@\\]/)
+        .optional(),
     }),
     z.object({
       type: z.literal('question'),

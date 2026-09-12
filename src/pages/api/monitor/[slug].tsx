@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+import crypto from 'crypto'
+
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createPublicClient, http, formatEther } from 'viem'
 import { base } from 'viem/chains'
@@ -142,8 +144,21 @@ export default async function handler(
 ) {
   // Get query parameters
   const { slug, address: addressParam, monitoringKey } = req.query
-  if (!monitoringKey || typeof monitoringKey !== 'string') {
-    return res.status(400).json({ error: 'Missing or invalid monitoringKey' })
+  // Until 2026-09-12 this only checked that monitoringKey was a non-empty
+  // string and never compared it, so any value passed.
+  const expectedKey = process.env.MONITORING_KEY
+  if (!expectedKey) {
+    return res.status(503).json({ error: 'MONITORING_KEY is not configured' })
+  }
+  if (
+    typeof monitoringKey !== 'string' ||
+    monitoringKey.length !== expectedKey.length ||
+    !crypto.timingSafeEqual(
+      Buffer.from(monitoringKey),
+      Buffer.from(expectedKey)
+    )
+  ) {
+    return res.status(401).json({ error: 'Invalid monitoringKey' })
   }
   const address = (
     typeof addressParam === 'string' ? addressParam : addressParam?.[0]

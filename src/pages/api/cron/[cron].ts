@@ -10,9 +10,30 @@ export const config = {
 
 const AUTHORIZED_CRON = AUTHORIZED_KV
 
+/** Constant-time compare; edge has no crypto.timingSafeEqual. */
+const secretMatches = (a: string, b: string) => {
+  if (a.length !== b.length) return false
+  let diff = 0
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i)
+  return diff === 0
+}
+
 export default async function handler(req: NextRequest) {
   if (IS_WHITELABEL) {
     return new Response('Cron disabled on whitelabel', { status: 400 })
+  }
+
+  // Had NO auth at all: anyone could force KV writes and repeated upstream
+  // Potion/indexer calls. Vercel sends this header on scheduled invocations
+  // once CRON_SECRET is set on the project; manual refreshes (e.g. `explore`)
+  // must pass it too. Fails closed when unset.
+  const cronSecret = process.env.CRON_SECRET
+  if (!cronSecret) {
+    return new Response('CRON_SECRET is not configured', { status: 503 })
+  }
+  const bearer = (req.headers.get('authorization') || '').replace(/^Bearer /, '')
+  if (!secretMatches(bearer, cronSecret)) {
+    return new Response('Unauthorized', { status: 401 })
   }
 
   const cron = req.nextUrl.pathname.split('/')[3]

@@ -7,12 +7,13 @@ import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PAS
 import { trackBE } from 'utils/mixpanel'
 import { PassportResponseSchema, fetchPassport } from 'utils/passport_lib'
 import { VERSION, generateHash } from 'pages/api/stamps/callback/[...slug]'
+import { devSecret } from 'utils/devSecret'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const DEV_SECRET = process.env.DEV_SECRET
+  const DEV_SECRET = devSecret()
   const version = PASSPORT_VERSION
   const param =
     DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body

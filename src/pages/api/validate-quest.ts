@@ -7,6 +7,7 @@ import { LESSONS, QUESTS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { ONCHAIN_QUESTS } from 'components/Quest/QuestComponent'
 import { validateOnchainQuest } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
+import { devSecret } from 'utils/devSecret'
 
 type TwitterResponse = {
   success: boolean
@@ -33,7 +34,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const DEV_SECRET = process.env.DEV_SECRET
+  const DEV_SECRET = devSecret()
   const param =
     DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
   const address =

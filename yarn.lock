@@ -388,7 +388,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@coinbase/cdp-sdk@^1.0.0", "@coinbase/cdp-sdk@^1.48.0":
+"@coinbase/cdp-sdk@^1.0.0":
   version "1.55.0"
   resolved "https://registry.yarnpkg.com/@coinbase/cdp-sdk/-/cdp-sdk-1.55.0.tgz#f2805c5d82757635475c58d3f515c769a9d0f3d4"
   integrity sha512-5PbUg3n3Jk9nm8nEStskRv6jTrVZKkgwxMFjW+i/xUDDzK1fXksKwXdjgUiHB1hf0FZx1LiYBosrh4IULxFyPA==

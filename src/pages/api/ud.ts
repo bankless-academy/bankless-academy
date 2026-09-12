@@ -3,12 +3,13 @@ import axios from 'axios'
 
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { devSecret } from 'utils/devSecret'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const DEV_SECRET = process.env.DEV_SECRET
+  const DEV_SECRET = devSecret()
   const param =
     DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
   const { address } = param

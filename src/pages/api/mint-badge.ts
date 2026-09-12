@@ -17,12 +17,13 @@ import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
 import { verifySignature } from 'utils/SignatureUtil'
 import { JsonRpcProvider } from '@ethersproject/providers'
+import { devSecret } from 'utils/devSecret'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const DEV_SECRET = process.env.DEV_SECRET
+  const DEV_SECRET = devSecret()
   const isDev = DEV_SECRET && req.query?.dev === DEV_SECRET
   const param = isDev ? req.query : req.body
     // check params + signature

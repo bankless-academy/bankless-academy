@@ -1021,7 +1021,9 @@ that env var on a deploy does nothing.
   `/api/cron/[cron]` writes. Whitelist (`AUTHORIZED_KV`): `bankless-dao-news`,
   `announcement`, `leaderboard`, `explore` (+ derived `top200_leaderboard`).
   Only `leaderboard` has a scheduled Vercel cron (every 12h); **`explore` is
-  refreshed manually** by hitting `/api/cron/explore`.
+  refreshed manually** by hitting `/api/cron/explore` — which since 2026-09-12
+  needs `-H "Authorization: Bearer $CRON_SECRET"` (the route had no auth at
+  all; Vercel adds that header to scheduled runs itself).
 - **56 API routes** — inventory and auth model in "API surface" below.
 - **Analytics**: Mixpanel (proxied through `/mp/*`) + Umami; Sentry optional.
 - **`.env.example` is current** (refreshed 2026-08-15; re-verified 2026-08-29):
@@ -1078,6 +1080,13 @@ wrong too. Swept out of the whole of `src/` on 2026-08-29 (`link-email`,
 `subscribe-newsletter`, `getUserId`, `getNFTInfo`, `passport`, the stamps
 callback); `getUserId` now returns `null` for a malformed address and every
 caller 403s on that.
+
+**`${DOMAIN_URL}${callerValue}` does NOT keep a fetch on our domain.** A value
+starting with `//`, or containing `@` before the first `/`, makes our domain the
+URL's *userinfo* and sends the server-side fetch elsewhere — an open proxy on
+our bandwidth. Bit `og/lesson-frame`, `frame-og/[props]` (zod `z.string()` is
+not a path check) and `og/mini-app`; all three now require `^/[^/@\\]` or an
+explicit host allowlist. Fixed 2026-09-12.
 
 **Most routes are deliberately public** (content, OG, metadata); the ones that
 write are the ones to review before changing. The established patterns to copy:
@@ -1443,7 +1452,7 @@ website, never a reset one.
 
 ## Still on Notion (via Potion API `https://potion.banklessacademy.com`)
 
-- Explore products DB (`8f2f600b38a44cbb98f7fd240686c27a`) → `api/get/explore`, cached in Vercel KV, refreshed by hitting `/api/cron/explore`. Product images are self-hosted in `public/explore/` and referenced as `https://app.banklessacademy.com/explore/<slug>.<ext>`.
+- Explore products DB (`8f2f600b38a44cbb98f7fd240686c27a`) → `api/get/explore`, cached in Vercel KV, refreshed by hitting `/api/cron/explore` (needs the `CRON_SECRET` bearer header). Product images are self-hosted in `public/explore/` and referenced as `https://app.banklessacademy.com/explore/<slug>.<ext>`.
 - Announcements + BanklessDAO news (`api/get/announcement`, `api/get/bankless-dao-news`).
 - Notion API access: `NOTION_SECRET` in `.env` (integration has read+write).
 
