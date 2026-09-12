@@ -234,36 +234,17 @@ const nextConfig = {
       // next.config rewrites apply automatic locale handling and match
       // correctly. vercel.json keeps only headers and crons.
       afterFiles: [
-        // Agent-facing mirrors (2026-09-04): the source markdown behind every
-        // page URL plus `.md`, the llms.txt index and llms-full.txt per
-        // language, the glossary as markdown. The locale-prefixed rules carry
-        // an explicit `:lang` group with `locale: false` and come FIRST: with
-        // automatic locale handling Next prepends `/:nextInternalLocale` to
-        // the DESTINATION as well, API routes are not localized, so
-        // `/fr/lessons/x.md` would have served the ENGLISH markdown. The
-        // un-prefixed English rules use automatic handling (a `locale: false`
-        // source never matches a default-locale path — see redirects()).
-        //
-        // SECOND trap, measured in production on 16.3.5 across three
-        // deployments (2026-09-12): **a `locale: false` rewrite resolves into
-        // a STATIC api route but 404s into a DYNAMIC/catch-all one.** Vercel's
-        // `check: true` pass does not re-enter dynamic matching for those. The
-        // evidence, all from live production:
-        //   /fr/llms.txt   -> /api/llms (static)          200, never broke
-        //   /fr/glossary.md-> /api/glossary-content/[[..]] 404
-        //   /en/glossary.md-> same dynamic route, but via the AUTOMATIC rule
-        //                                                  200
-        //   /api/lesson-content?... requested directly     200
-        // So both `.md` handlers are now STATIC index routes, and the
-        // `/api/lesson-content/<lang>/<slug>` path forms are GONE with them.
-        // Being static also removes the `nxtP*` hazard: Vercel injects
-        // `?nxtPslug=`/`?nxtPlang=` only for dynamic routes, and when the
-        // rewrite arrives with no path segments that value is EMPTY and Next
-        // maps it over a query param of the same name — which is how an
-        // earlier attempt made the handler answer "not found" and the glossary
-        // silently serve ENGLISH.
-        // `next build` and `next start` serve ALL of these correctly no matter
-        // what: only a deployment exercises the Build Output route table.
+        // Agent-facing mirrors: the source markdown behind each page, the
+        // llms.txt index, the glossary. Two rules that both bite here:
+        //   1. a `locale: false` source is needed to capture `:lang` (an
+        //      automatic-locale source is matched post-normalization and the
+        //      prefix is gone), and
+        //   2. such a rewrite only resolves into a STATIC api route — into a
+        //      dynamic/catch-all one it 404s. Hence the flat handlers, and no
+        //      `/api/lesson-content/<lang>/<slug>` path form.
+        // Verifiable ONLY on a deployment; `next build`/`next start` serve all
+        // of these correctly either way. Cost three production deploys in
+        // 2026-09; smoke-production.yml now guards it.
         {
           source: `/${LANG_GROUP}/lessons/:slug.md`,
           destination: '/api/lesson-content?lang=:lang&slug=:slug',

@@ -1,0 +1,461 @@
+[
+  {
+    "url": "https://app.banklessacademy.com/nl",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-25T14:46:22Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/nl",
+    "userCanonical": "https://app.banklessacademy.com/nl",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/ru",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-09-11T14:44:19Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/",
+    "userCanonical": "https://app.banklessacademy.com/",
+    "referringUrls": 4
+  },
+  {
+    "url": "https://app.banklessacademy.com/it",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "referringUrls": 0
+  },
+  {
+    "url": "https://app.banklessacademy.com/tr",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-24T01:58:34Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/tr",
+    "userCanonical": "https://app.banklessacademy.com/tr",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/glossary",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-17T21:54:18Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/glossary",
+    "userCanonical": "https://app.banklessacademy.com/glossary",
+    "referringUrls": 10
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/bitcoin-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-09-05T03:09:13Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/bitcoin-basics",
+    "userCanonical": "https://app.banklessacademy.com/lessons/bitcoin-basics",
+    "referringUrls": 6
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-09-05T23:23:41Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet",
+    "userCanonical": "https://app.banklessacademy.com/lessons/creating-a-crypto-wallet",
+    "referringUrls": 8
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/ethereum-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-27T00:07:35Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/ethereum-basics",
+    "userCanonical": "https://app.banklessacademy.com/lessons/ethereum-basics",
+    "referringUrls": 10
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/staking-ether",
+    "verdict": "NEUTRAL",
+    "coverageState": "Discovered - currently not indexed",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 10
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/managing-token-allowances",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-29T06:28:00Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/managing-token-allowances",
+    "userCanonical": "https://app.banklessacademy.com/lessons/managing-token-allowances",
+    "referringUrls": 10
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/decentralized-exchanges",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-28T20:13:55Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/decentralized-exchanges",
+    "userCanonical": "https://app.banklessacademy.com/lessons/decentralized-exchanges",
+    "referringUrls": 10
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/layer-2-blockchains",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-25T23:11:01Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/layer-2-blockchains",
+    "userCanonical": "https://app.banklessacademy.com/lessons/layer-2-blockchains",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 7
+  },
+  {
+    "url": "https://app.banklessacademy.com/lessons/layer-1-blockchains",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-26T09:15:02Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/lessons/layer-1-blockchains",
+    "userCanonical": "https://app.banklessacademy.com/lessons/layer-1-blockchains",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 8
+  },
+  {
+    "url": "https://app.banklessacademy.com/fr/lessons/ethereum-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-24T22:09:24Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/fr/lessons/ethereum-basics",
+    "userCanonical": "https://app.banklessacademy.com/fr/lessons/ethereum-basics",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 8
+  },
+  {
+    "url": "https://app.banklessacademy.com/vi/lessons/registering-your-web3-username",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-24T12:55:40Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/vi/lessons/registering-your-web3-username",
+    "userCanonical": "https://app.banklessacademy.com/vi/lessons/registering-your-web3-username",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/nl/lessons/creating-a-crypto-wallet",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-27T14:28:28Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/nl/lessons/creating-a-crypto-wallet",
+    "userCanonical": "https://app.banklessacademy.com/nl/lessons/creating-a-crypto-wallet",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/uk/lessons/bitcoin-basics",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-24T17:52:15Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/uk/lessons/bitcoin-basics",
+    "userCanonical": "https://app.banklessacademy.com/uk/lessons/bitcoin-basics",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/es/lessons/understanding-ethereum-token-standards",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-09-01T02:11:44Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/es/lessons/understanding-ethereum-token-standards",
+    "userCanonical": "https://app.banklessacademy.com/es/lessons/understanding-ethereum-token-standards",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/bn/lessons/staking-on-ethereum",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-26T15:11:08Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/bn/lessons/staking-on-ethereum",
+    "userCanonical": "https://app.banklessacademy.com/bn/lessons/staking-on-ethereum",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 10
+  },
+  {
+    "url": "https://app.banklessacademy.com/ru/lessons/managing-token-allowances",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-27T06:21:22Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/ru/lessons/managing-token-allowances",
+    "userCanonical": "https://app.banklessacademy.com/ru/lessons/managing-token-allowances",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/tl/lessons/understanding-stablecoins",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-26T05:45:27Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/tl/lessons/understanding-stablecoins",
+    "userCanonical": "https://app.banklessacademy.com/tl/lessons/understanding-stablecoins",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/mr/lessons/layer-2-blockchains",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-28T15:43:01Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/mr/lessons/layer-2-blockchains",
+    "userCanonical": "https://app.banklessacademy.com/mr/lessons/layer-2-blockchains",
+    "sitemap": [
+      "https://app.banklessacademy.com/sitemap.xml"
+    ],
+    "referringUrls": 8
+  },
+  {
+    "url": "https://app.banklessacademy.com/de/lessons/layer-1-blockchains",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-29T23:21:01Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/de/lessons/layer-1-blockchains",
+    "userCanonical": "https://app.banklessacademy.com/de/lessons/layer-1-blockchains",
+    "referringUrls": 9
+  },
+  {
+    "url": "https://app.banklessacademy.com/zh/lessons/swapping-on-a-decentralized-exchange",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-24T17:21:44Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/zh/lessons/swapping-on-a-decentralized-exchange",
+    "userCanonical": "https://app.banklessacademy.com/zh/lessons/swapping-on-a-decentralized-exchange",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/ko/lessons/dex-aggregators",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-25T14:39:51Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/ko/lessons/dex-aggregators",
+    "userCanonical": "https://app.banklessacademy.com/ko/lessons/dex-aggregators",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/th/lessons/web3-security",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-24T12:15:44Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/th/lessons/web3-security",
+    "userCanonical": "https://app.banklessacademy.com/th/lessons/web3-security",
+    "referringUrls": 2
+  },
+  {
+    "url": "https://app.banklessacademy.com/tr/lessons/intro-to-defi",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-28T20:56:06Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/tr/lessons/intro-to-defi",
+    "userCanonical": "https://app.banklessacademy.com/tr/lessons/intro-to-defi",
+    "referringUrls": 9
+  },
+  {
+    "url": "https://app.banklessacademy.com/ar/glossary",
+    "verdict": "NEUTRAL",
+    "coverageState": "Duplicate, Google chose different canonical than user",
+    "lastCrawlTime": "2026-08-26T00:42:52Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/glossary/ar",
+    "userCanonical": "https://app.banklessacademy.com/ar/glossary",
+    "referringUrls": 10
+  },
+  {
+    "url": "https://app.banklessacademy.com/zh-tw/glossary",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-23T23:48:54Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/zh-tw/glossary",
+    "userCanonical": "https://app.banklessacademy.com/zh-tw/glossary",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/tl/glossary",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-26T06:22:50Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/tl/glossary",
+    "userCanonical": "https://app.banklessacademy.com/tl/glossary",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/hi/glossary",
+    "verdict": "NEUTRAL",
+    "coverageState": "Duplicate, Google chose different canonical than user",
+    "lastCrawlTime": "2026-08-26T15:24:58Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/glossary/hi",
+    "userCanonical": "https://app.banklessacademy.com/hi/glossary",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/ja/glossary",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-25T13:31:05Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/ja/glossary",
+    "userCanonical": "https://app.banklessacademy.com/ja/glossary",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/pl/glossary",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-24T00:28:33Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/pl/glossary",
+    "userCanonical": "https://app.banklessacademy.com/pl/glossary",
+    "referringUrls": 1
+  },
+  {
+    "url": "https://app.banklessacademy.com/es/glossary",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-26T15:10:49Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/es/glossary",
+    "userCanonical": "https://app.banklessacademy.com/es/glossary",
+    "referringUrls": 10
+  },
+  {
+    "url": "https://app.banklessacademy.com/te/glossary",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "lastCrawlTime": "2026-08-23T22:48:59Z",
+    "pageFetchState": "SUCCESSFUL",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "googleCanonical": "https://app.banklessacademy.com/te/glossary",
+    "userCanonical": "https://app.banklessacademy.com/te/glossary",
+    "referringUrls": 1
+  }
+]

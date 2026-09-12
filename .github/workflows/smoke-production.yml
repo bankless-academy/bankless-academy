@@ -1,24 +1,12 @@
-# Asserts the production surfaces that a build CANNOT verify.
+# Asserts the LIVE site after each production deploy, because a whole class of
+# breakage is invisible to CI: the Next 16 upgrade 404'd every localized `.md`
+# mirror in production while `next build` and `next start` served them fine.
+# Only a deployment exercises the Build Output route table.
 #
-# WHY THIS EXISTS (2026-09-12): the Next 16.1.7 -> 16.3.5 upgrade 404'd every
-# `/<lang>/lessons/<slug>.md` and `/<lang>/glossary.md` in production while all
-# of them returned 200 under `next build` + `next start`. The break was in the
-# Build Output route table, which only a real deployment exercises: a
-# `locale: false` rewrite whose destination interpolated a param into the PATH
-# stopped resolving on Vercel. Nothing in CI noticed. It was found by hand,
-# after it was live.
-#
-# So this checks the LIVE site after each production deploy, and it checks the
-# things that fail SILENTLY — surfaces no human opens, where a 404 or an
-# English fallback can sit for weeks:
-#   - the markdown mirrors and llms.txt, per language (agent-facing only)
-#   - that a localized mirror serves ITS language, not English (the other
-#     locale trap, 2026-09-04: the bare rule served ENGLISH for /fr/*.md)
-#   - the OG images, which can return `200 image/png` with a ZERO-byte body
-#   - the redirect table (legacy share links, non-localized paths)
-#
-# Unlike warm-production.yml, which is an optimisation and always exits 0,
-# THIS RUN FAILS when an assertion fails. That red X is the whole point.
+# Checks the things that fail SILENTLY - surfaces no human opens: the markdown
+# mirrors per language (asserting the LANGUAGE, since an English fallback looks
+# like success), OG images (which can 200 with a zero-byte body), redirects.
+# Unlike warm-production.yml this FAILS the run; that red X is the point.
 name: Smoke production after deploy
 
 on:

@@ -403,11 +403,9 @@ terms x 24 languages) as the terminology reference, not a runtime dependency.
   with `git clone --depth=1 file://$PWD`.
 - **`zh-tw` is DERIVED from `zh`** by `convert-zh-tw.js` (OpenCC cn→twp plus a
   corpus-adjudicated override table). Structural parity is free — a conversion
-  cannot change unit counts or `[x]` positions. **An `opencc-js` bump is a zh-tw
-  content change**: 1.4.1 -> 1.4.2 alone moved `幾周`->`幾週` and `橋樑`->`橋梁`
-  (both toward the MOE standard forms). Re-run the converter in the SAME commit
-  as the lockfile bump, or the derived files silently disagree with the
-  installed library and the next unrelated zh edit carries the drift. The override table encodes a
+  cannot change unit counts or `[x]` positions. **An `opencc-js` bump is a zh-tw content
+  change** (1.4.1 -> 1.4.2 alone moved `幾周`->`幾週`, `橋樑`->`橋梁`): re-run the
+  converter in the SAME commit, or the next unrelated zh edit carries the drift. The override table encodes a
   full corpus scan (`數字→數位` with number-sense phrases protected, `通過→透過`
   with pass/approve phrases protected, `智能合約/錢包/帳戶`, `帳` never `賬`,
   Latin `Gas`/`Blob`/`gwei`, …). **The protect lists are corpus-specific**: the
@@ -573,26 +571,11 @@ English too); see "i18n gotchas" for that and the rest.
   the locale-prefixed `Link` rules must come AFTER the generic ones;
   (3) anything an API route reads from disk at runtime needs a literal
   `path.resolve('translation/...')` root or Vercel's tracer omits the files;
-  (4) **a rewrite into a DYNAMIC API route must not pass a query param named
-  like that route's dynamic segment.** After the 16.3.5 upgrade every
-  `/<lang>/lessons/<slug>.md` and `/<lang>/glossary.md` 404'd in production
-  while all four worked under `next start`. Vercel rewrites an API route to
-  `/api/lesson-content/[[...slug]]?nxtPslug=$nxtPslug`; when the `.md` rewrite
-  lands there with NO path segments, `$nxtPslug` expands to EMPTY and Next maps
-  it onto `slug`, **clobbering a `?slug=` of our own** — the handler answered
-  "Lesson not found", and the glossary one silently served ENGLISH, which is
-  the failure mode that looks like success. So the localized destinations pass
-  `?mdLang=`/`?mdSlug=` (names that collide with nothing) into a STATIC
-  destination path, and `lesson-content` is an OPTIONAL catch-all so the bare
-  path matches at all. `/api/llms?lang=` was never affected only because
-  `llms.ts` is a static route with no dynamic param called `lang`.
-  Handlers must also `.filter(Boolean)` the catch-all param, since Vercel
-  hands them `['']`.
-  **Neither `next build` nor `next start` can catch this class of bug** — they
-  skip the `nxtP*` indirection entirely and serve every one of these correctly.
-  Only a deployment exercises it, which is what
-  `.github/workflows/smoke-production.yml` now asserts on every production
-  deploy (`vercel curl <deployment-url>/<path>` reads a protected one).
+  (4) **a `locale: false` rewrite resolves into a STATIC api route but 404s
+  into a dynamic/catch-all one**, and a dynamic route's `?nxtP*` injection
+  silently clobbers a query param sharing its name. Cost three production
+  deploys in 2026-09; details at the rewrites in `next.config.mjs`. Neither
+  `next build` nor `next start` can see it — `smoke-production.yml` guards it.
   JSON-LD now renders in `Head.tsx` from `pageMeta.jsonLd` for every page:
   Organization (+`sameAs`) and WebSite on `/` (`siteJsonLd`), DefinedTermSet
   on the glossary, LearningResource + BreadcrumbList on lessons with
@@ -676,19 +659,13 @@ English too); see "i18n gotchas" for that and the rest.
   showed a German animation title. Raw keys, `t()` at render.
 - `notion-client` must stay current: Notion blocked the unofficial
   `loadPageChunk` endpoint and every Notion-backed page 500'd until 7.11.1.
-- **A symlink inside `public/` breaks the Vercel build from Next 16.2 on**, and
-  it is why `next` sat pinned at exactly `16.1.7` while five dependabot PRs
-  (16.2.3, 16.2.6, 16.2.11, 16.3.3) were closed unmerged. `public/lesson` was a
-  2024 back-compat shim pointing at `../translation/lesson`; the builder copies
-  `public/` into `.vercel/output/static/` and recreates the symlink verbatim,
-  where that relative target no longer resolves — the cloud builder dies with
-  `Cannot copy '../translation/lesson' to a subdirectory of itself`, a local
-  `vercel build` with `ENOENT ... mkdir '.vercel/output/static/lesson'`. Removed
-  2026-09-12 (the URLs it would have served already 404'd in production; the
-  `.md` mirrors moved to `/api/lesson-content` in 2026-08). **Reproduce
+- **A symlink inside `public/` breaks the Vercel build from Next 16.2 on.** The
+  builder recreates it inside `.vercel/output/static/`, where a relative target
+  no longer resolves (`Cannot copy '../translation/lesson' to a subdirectory of
+  itself`). `public/lesson` was a 2024 shim, removed 2026-09-12; it is why
+  `next` sat pinned at 16.1.7 through five dependabot PRs. **Reproduce
   builder-stage failures with `vercel build`, never `next build`** — the copy
-  happens after `next build` has already printed its route table and exited 0,
-  so a green `next build` says nothing about whether the deploy will land.
+  runs after `next build` has already exited 0.
 - `import-content.js` and `import-translations.js` stay in the repo for
   reference but refuse to run without `RUN_RETIRED_IMPORT=1` — `yarn
   import-content` was a live command that would overwrite the in-repo lesson
@@ -858,12 +835,22 @@ conflict, and note Sentry is **off by default**
 (`NEXT_PUBLIC_SENTRY_ENABLED=false`), so removing the dependency may turn out
 to be simpler than resolving the conflict.
 
-**6. Measure the SEO migration** — re-run `node gsc-inspect.mjs sample` and
-compare against `docs/gsc-inspection-baseline-2026-08-23.json` (~Sep 1) to see
-whether "Crawled - currently not indexed" drains. Every page that needed a
-crawlable body now has one; true SSR of the app tree still needs user state out
-of render (`docs/ssr-migration.md`) and is only worth starting if the
-measurement says the static bodies are not enough.
+**6. ~~Measure the SEO migration~~ — DONE 2026-09-12, and it worked.**
+`docs/gsc-inspection-2026-09-12.json` (36 URLs) vs the 2026-08-23 baseline (95):
+indexed 27% -> **86%**, "Crawled - currently not indexed" **5 -> 0**, unknown
+21% -> 3%. Different sample sizes, so read the direction. **True SSR of the app
+tree is therefore NOT needed** — the static bodies were enough. Traffic over the
+same period: 4,704 -> 10,811 impressions (+130%), with localized lessons going
+0 -> 5,886 across 357 pages, i.e. all of the growth is the locale-URL work.
+
+Two things it surfaced, neither a bug:
+- **Retired shapes still hold ~16% of impressions** and Google still prefers
+  `/glossary/ar` over `/ar/glossary` on some pages. All 308 correctly; this is
+  ordinary redirect-consolidation lag (1-3 months). Leave it.
+- **CTR is the ceiling now, not indexing**: 0.7% overall, 1.4% at positions
+  5-10 where 3,760 impressions sit, 37% of impressions at position 20+.
+  Ranking, not titles — the ru/de/pl retitles target pages at positions 16-48,
+  where no title earns a click.
 
 **7. Cheap cleanups**: delete the three dead components (`ChatWidgetWrapper`,
 `GlobalScrollbarWrapper`, `SubscriptionModal` — zero importers) and the dead
@@ -883,21 +870,15 @@ moment those conditions change — checked 2026-08-29, do not re-derive.
 `bankless-dao-news` are DEPRECATED KV surfaces; leave them. Only `leaderboard`
 has (and needs) a scheduled cron.
 
-**Git hooks and lint were dead until 2026-09-12, which is why the debt below
-went unnoticed.** `package.json` carried a husky-**v4** `"husky": {"hooks":…}`
-block that husky 8 ignores outright, and there was no `.husky/` and no
-`prepare` script, so pre-commit and pre-push had never once run. `yarn lint`
-meanwhile reported **1103 errors**, 1085 of them from ESLint walking
-`ideas/archive/**` (gitignored, vendored, minified third-party bundles) because
-`.eslintignore` listed only node_modules/out/.next. Now: `ideas/` is ignored,
-lint is **0 errors** (30 warnings), `prepare: husky install` is wired, and the
-hooks are `.husky/pre-commit` (lint-staged) and `.husky/pre-push` (the three
-content gates, ~2s, quiet on success). **pre-push deliberately does NOT run
-`yarn type-check`** — the 10 errors below would block every push; restore it
-there once they are fixed. `eslint-plugin-react-hooks` is installed with
-`rules-of-hooks` at **warn**: it flags 30 real conditional-hook sites across 7
-files, including the two latent ones already listed under "Cheap cleanups".
-Raising it to error means fixing those first.
+**Git hooks and lint were dead until 2026-09-12**, which is why the debt below
+went unnoticed: `package.json` carried a husky-**v4** `"husky": {"hooks":…}`
+block that husky 8 ignores, with no `.husky/` and no `prepare`, so neither hook
+had ever run; and `yarn lint` reported 1103 errors, 1085 of them from ESLint
+walking `ideas/archive/**` (gitignored, vendored, minified). Now: lint is 0
+errors, `.husky/pre-commit` runs lint-staged and `pre-push` the content gates.
+**pre-push does NOT run `type-check`** — the 9 errors below would block every
+push. `react-hooks/rules-of-hooks` is at **warn**: 30 real conditional-hook
+sites across 7 files, including the two under "Cheap cleanups".
 
 **Standing state of the codebase**: 0 test files (Jest passes vacuously — the
 real gates are `validate-content.js`, `validate-i18n.js` and `test-content.js`);
@@ -1112,11 +1093,8 @@ still live, rescoped to `['/api/passport', '/api/mint-badge',
 '/api/validate-quest']`, and still carries the UA-based bot rule and the
 IP-based maintenance gate. **`request.ip` was removed in Next 16 and returns
 undefined**, which pinned `ipAddress` to `'local'` and made that gate a silent
-no-op — its `ipAddress !== 'local'` guard could never be true, so setting
-`NEXT_PUBLIC_MAINTENANCE` redirected nobody. Fixed 2026-09-12 by reading
-`x-real-ip` then the first `x-forwarded-for` hop. It surfaced only as one of
-the ignored `yarn type-check` errors, which is the argument for fixing the
-other nine.
+no-op. Fixed 2026-09-12 via `x-real-ip` / `x-forwarded-for`. It showed up only
+as an ignored `type-check` error — the argument for fixing the other nine.
 
 ### Component layer (97 files, ~23k LOC)
 

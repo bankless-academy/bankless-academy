@@ -1,27 +1,15 @@
-# Added 2026-09-12. The repo had no dependabot config at all, so security
-# updates ran with defaults — and the "Dependabot Updates" job had been FAILING
-# on every single commit. Cause: a `decode-uri-component` advisory whose
-# metadata carries `"patched-versions": []` and `"unaffected-versions": []`,
-# i.e. no fixed release exists. The updater tries, cannot produce a bump, and
-# errors out. It cannot ever succeed, so the check was permanently red and a
-# real dependabot failure would have blended straight into the noise.
+# Without this, the Dependabot Updates job failed on EVERY commit: it kept
+# retrying a `decode-uri-component` advisory that has no patched version, so it
+# could never succeed and a real failure would have been invisible in the noise.
 version: 2
 updates:
   - package-ecosystem: npm
     directory: '/'
     schedule:
       interval: weekly
-    # Security PRs land one per advisory; without a cap a backlog of them
-    # (this repo has closed ~70) crowds out everything else.
     open-pull-requests-limit: 10
     ignore:
-      # No patched version exists. Reachable through @reown/appkit (live) as
-      # well as jest/babel-jest, so it cannot be dropped from the tree by
-      # removing the dead test stack either. Revisit if a fix is ever
-      # published; until then this only silences an impossible update, not a
-      # fixable one.
+      # No patched version exists; reachable via @reown/appkit and jest.
       - dependency-name: decode-uri-component
-      # Pinned by `resolutions` in package.json for @reown/appkit
-      # compatibility; an automated bump here would be reverted by the
-      # resolution anyway.
+      # Pinned by `resolutions`, so a bump here gets reverted anyway.
       - dependency-name: '@wagmi/connectors'
