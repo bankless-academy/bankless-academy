@@ -85,12 +85,11 @@ const BitcoinBasics = (): {
     t('4. Satoshi Nakamoto has received your Bitcoin!'),
   ]
 
+  // Persistence belongs to the effect above, never here: a hook called from a
+  // click handler throws, and this one threw between the two setStates, so Send
+  // marked the simulation as run and then never recorded the answers.
   const validateQuest = () => {
     setHasSimulationRun(true)
-
-    useEffect(() => {
-      localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
-    }, [selected])
     setSelected([toAddress, amount])
   }
 
@@ -110,7 +109,10 @@ const BitcoinBasics = (): {
     <Box display={isSmallScreen ? 'block' : 'flex'} maxW="100%" minH="inherit">
       <div className="bloc1" style={{ alignSelf: 'center' }}>
         <Box m="4">
-          <Text mx="0 !important" fontSize="xl">
+          {/* as="div": Text renders a <p>, and the block child below is
+              invalid inside one. Keeping the child a block preserves the line
+              break before the address. */}
+          <Text as="div" mx="0 !important" fontSize="xl">
             <div
               dangerouslySetInnerHTML={{
                 __html: `${t(

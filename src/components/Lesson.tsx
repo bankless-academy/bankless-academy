@@ -960,7 +960,10 @@ const Lesson = ({
           lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
             ? lowerCaseKeyword.slice(0, -1)
             : undefined
-        if (!lowerCaseKeyword?.length) return <>{keyword}</>
+        // Every return in this branch needs a key: transform() is called from
+        // processNodes via Array.map, so whatever it returns is a list child.
+        if (!lowerCaseKeyword?.length)
+          return <React.Fragment key={index}>{keyword}</React.Fragment>
         const englishDefition =
           keywords[lowerCaseKeyword]?.definition ||
           keywords[lowerCaseKeywordSingular]?.definition
@@ -983,7 +986,10 @@ const Lesson = ({
           // bare sibling, the bidi algorithm re-orders a neutral (.,:) away
           // from a Latin keyword embedded in RTL prose. Isolating them as one
           // run keeps them visually attached in every direction.
-          <span style={{ whiteSpace: 'nowrap', unicodeBidi: 'isolate' }}>
+          <span
+            key={index}
+            style={{ whiteSpace: 'nowrap', unicodeBidi: 'isolate' }}
+          >
             <Keyword
               definition={definition}
               keyword={keyword}
@@ -994,7 +1000,9 @@ const Lesson = ({
             {extra}
           </span>
         ) : (
-          <span className="is-missing">{keyword}</span>
+          <span key={index} className="is-missing">
+            {keyword}
+          </span>
         )
       } catch (error) {
         console.error('Error in code tag processing:', error)

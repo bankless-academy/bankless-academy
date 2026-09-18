@@ -257,7 +257,10 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   <OpenLesson
                     lesson={lesson}
                     click
-                    key={slide.notionId}
+                    // The QUEST slide is derived in build-content.js from the
+                    // `quest` field, so it carries no notionId and keyed as
+                    // undefined (13 of 23 lessons).
+                    key={slide.notionId || `${slide.type}-${index}`}
                     onLessonOpen={() => {
                       if (isDone) setCurrentSlide(index)
                       if (maxSlide === null) setMaxSlide(0)
