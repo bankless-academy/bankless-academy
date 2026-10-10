@@ -280,7 +280,9 @@ const nextConfig = {
         { source: '/faq', destination: '/notion/faq' },
         { source: '/about', destination: '/notion/about' },
         { source: '/disclaimer', destination: '/notion/disclaimer' },
-        { source: '/privacy-policy', destination: '/notion/privacy-policy' },
+        // /privacy-policy is a real page now (static, server-rendered) so
+        // Meta's crawler can read it. No rewrite: afterFiles loses to the
+        // filesystem anyway, and the Notion copy was invisible without JS.
         {
           source: '/terms-of-service',
           destination: '/notion/terms-of-service',

@@ -23,6 +23,7 @@ import {
   Question,
   Book,
   Translate,
+  ShieldCheck,
 } from '@phosphor-icons/react'
 
 import InstallAppModal from 'components/InstallAppModal'
@@ -89,6 +90,12 @@ const OptionMenu = ({
             <MenuItem>
               <Info size={20} style={{ marginInlineEnd: '5px' }} />
               {t('About')}
+            </MenuItem>
+          </InternalLink>
+          <InternalLink href="/privacy-policy" color="white">
+            <MenuItem>
+              <ShieldCheck size={20} style={{ marginInlineEnd: '5px' }} />
+              {t('Privacy Policy')}
             </MenuItem>
           </InternalLink>
           <InternalLink href="/disclaimer" color="white">

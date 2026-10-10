@@ -27,9 +27,9 @@
     "gsc-report": "node gsc-report.js"
   },
   "lint-staged": {
-    "*.@(ts|tsx)": [
-      "yarn lint --fix",
-      "yarn format"
+    "*.@(ts|tsx|js|mjs)": [
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "dependencies": {
