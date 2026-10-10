@@ -13,6 +13,17 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 0
+    # One PR per batch instead of one per advisory. Branch protection on `main`
+    # requires an approving review and Dependabot cannot approve its own PR, so
+    # every separate PR costs a manual approve + merge (four advisories landed
+    # on 2026-10-10). Grouping keeps the review gate and the signal, at one
+    # click instead of four. Trade-off: the group is all-or-nothing, so if one
+    # package breaks the build the rest wait until it is split out.
+    groups:
+      security:
+        applies-to: security-updates
+        patterns:
+          - '*'
     ignore:
       # No patched version exists; reachable via @reown/appkit and jest.
       - dependency-name: decode-uri-component
